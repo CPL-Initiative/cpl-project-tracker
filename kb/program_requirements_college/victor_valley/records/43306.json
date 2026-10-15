@@ -1,0 +1,176 @@
+{
+ "college": "Victor Valley College",
+ "control_number": "43306",
+ "shape": "noncredit",
+ "title": "Advanced Cosmetology",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/advanced-cosmetology-ccn/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6686,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6686,
+    "output_tokens": 1055,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1055,
+  "output_tokens_details": {
+   "thinking_tokens": 474
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04784,
+ "ms": 10095,
+ "seconds": 10.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": [
+    296.0,
+    333.0
+   ],
+   "against": "program",
+   "why": [
+    "a required course in 'Required Courses' has no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 8,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Advanced Cosmetology (Noncredit)",
+   "measure": "hours",
+   "total_units": {
+    "min": 296,
+    "max": 333
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "hairstyling",
+    "manicuring",
+    "esthetics",
+    "self-employed cosmetologists",
+    "educators",
+    "freelance and special event hires",
+    "salon management and ownership",
+    "cosmetology product developers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "COSM 0104",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COSM 0105",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page title is not in the extracted text; the section heading combines the program name with the printed '(Noncredit)' label. The description calls the award the 'Advanced Cosmetology Certificate of Completion'.",
+   "The award is counted in hours: 'Total Certificate Hours: 296.0 - 333.0'.",
+   "The courses are printed with 0.0 in the Units column and no hours each. Their hours fields are therefore left null, and the printed 'Total Units 0' is not used.",
+   "The catalog prints the codes as COSM 0104 and COSM 0105, with a leading zero. They are taken to be closed-list COSM 104 and COSM 105, so neither is marked as a catalog addition.",
+   "No program learning outcomes are printed in the text."
+  ]
+ },
+ "extracted_run": "38675237912"
+}

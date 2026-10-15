@@ -1,0 +1,2411 @@
+{
+ "college": "Victor Valley College",
+ "catalog_url": "https://catalog.vvc.edu/",
+ "platform": "courseleaf",
+ "catalog_year": "2026-2027",
+ "programs": 219,
+ "with_closed_list": 201,
+ "started": "2026-10-15T03:15:32Z",
+ "scope": null,
+ "sitemap": {
+  "url": "https://catalog.vvc.edu/sitemap.xml",
+  "status": 200,
+  "listed": 419,
+  "nested": 0,
+  "program_pages": 306,
+  "refused": null,
+  "errors": null
+ },
+ "pages_read": 306,
+ "child_pages": 0,
+ "banner_h1": null,
+ "loads": 355,
+ "seconds": 1682.8,
+ "found": 178,
+ "by_method": {
+  "no_closed_list": 18,
+  "not_found": 16,
+  "page_claimed": 7,
+  "sitemap_page": 178
+ },
+ "shared_pages": {
+  "https://catalog.vvc.edu//degrees-certificates/construction-manufacturing-technology/building-inspection-ca/": [
+   "07565",
+   "36761"
+  ],
+  "https://catalog.vvc.edu//degrees-certificates/communication-studies/communication-studies-2-aat/": [
+   "31612",
+   "44287"
+  ],
+  "https://catalog.vvc.edu//degrees-certificates/business-administration/business-administration-2-ast/": [
+   "37582",
+   "41784"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "04946",
+   "title": "Automotive Technology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.vvc.edu//degrees-certificates/automotive-technology/automotive-service-management-as/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.023,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 4,
+    "listed": 43,
+    "why": "coarse net: the page's code tokens name 4 of 43 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2837,
+     "content": 6783,
+     "tabs": 1019
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      999
+     ],
+     [
+      "PROGRAM MAP",
+      74
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "07595",
+   "title": "Fine Arts",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://catalog.vvc.edu//degrees-certificates/fine-arts/fine-arts-aa/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 158,
+    "why": "coarse net: the page's code tokens name 0 of 158 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3182,
+     "content": 7008,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      866
+     ],
+     [
+      "PROGRAM MAP",
+      74
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "17586",
+   "title": "Aviation Airframe Technician",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.vvc.edu//degrees-certificates/aviation/aviation-airframe-technician-ca/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2904,
+     "content": 6033,
+     "tabs": 200
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      180
+     ],
+     [
+      "PROGRAM MAP",
+      74
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "35957",
+   "title": "GENERAL AIRCRAFT MAINTENANCE TECHNICIAN",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.vvc.edu//degrees-certificates/aviation/general-aircraft-maintenance-technician-ca/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2961,
+     "content": 6032,
+     "tabs": 140
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      120
+     ],
+     [
+      "PROGRAM MAP",
+      74
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "36999",
+   "title": "Automotive Service Advisor and Manager",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.vvc.edu//degrees-certificates/automotive-technology/automotive-service-advisor-manager-ca/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 3,
+    "listed": 6,
+    "why": "coverage 0.00 in innerText+tabs, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 2915,
+     "content": 6341,
+     "tabs": 506
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      486
+     ],
+     [
+      "PROGRAM MAP",
+      74
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "37007",
+   "title": "Automotive Brake and Suspension Specialist Technician",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.vvc.edu//degrees-certificates/automotive-technology/automotive-brake-suspension-specialist-technician-ca/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.333,
+    "body": 0.0,
+    "content": 0.333,
+    "net": 2,
+    "listed": 3,
+    "why": "coverage 0.33 in innerText+tabs, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 2920,
+     "content": 6099,
+     "tabs": 250
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      230
+     ],
+     [
+      "PROGRAM MAP",
+      74
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "37008",
+   "title": "Automotive Transmission Specialist Technician",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.vvc.edu//degrees-certificates/automotive-technology/automotive-transmission-specialist-technician-ca/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.25,
+    "body": 0.0,
+    "content": 0.25,
+    "net": 2,
+    "listed": 4,
+    "why": "coverage 0.25 in innerText+tabs, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 2917,
+     "content": 6192,
+     "tabs": 349
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      329
+     ],
+     [
+      "PROGRAM MAP",
+      74
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "37067",
+   "title": "Business",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.vvc.edu//degrees-certificates/business-administration/business-administration-as/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.019,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 1,
+    "listed": 52,
+    "why": "coarse net: the page's code tokens name 1 of 52 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2607,
+     "content": 6718,
+     "tabs": 1171
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      1151
+     ],
+     [
+      "PROGRAM MAP",
+      74
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "37434",
+   "title": "Network Specialist",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.vvc.edu//degrees-certificates/agriculture-natural-resources/animal-science-specialist-ca/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3769,
+     "content": 6983,
+     "tabs": 289
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      269
+     ],
+     [
+      "PROGRAM MAP",
+      74
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "38355",
+   "title": "Automotive Emission Testing Specialist",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.vvc.edu//degrees-certificates/automotive-technology/automotive-brake-suspension-specialist-technician-ca/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 1,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 1 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2920,
+     "content": 6099,
+     "tabs": 250
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      230
+     ],
+     [
+      "PROGRAM MAP",
+      74
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "38356",
+   "title": "Automotive Heating and Air Conditioning Specialist",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.vvc.edu//degrees-certificates/automotive-technology/automotive-heating-air-conditioning-specialist-ca/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.4,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 3,
+    "listed": 5,
+    "why": "coverage 0.40 in innerText+tabs, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 2916,
+     "content": 6238,
+     "tabs": 397
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      377
+     ],
+     [
+      "PROGRAM MAP",
+      74
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "38848",
+   "title": "IFSAC / Pro-Board I",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "40630",
+   "title": "Automotive Dealership Technician",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.vvc.edu//degrees-certificates/automotive-technology/automotive-dealership-technician-ca/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.364,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 6,
+    "listed": 11,
+    "why": "coverage 0.36 in innerText+tabs, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 2882,
+     "content": 6507,
+     "tabs": 714
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      694
+     ],
+     [
+      "PROGRAM MAP",
+      74
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "41279",
+   "title": "Automotive Service Management",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.vvc.edu//degrees-certificates/automotive-technology/automotive-service-management-as/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.143,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 4,
+    "listed": 7,
+    "why": "coverage 0.14 in innerText+tabs, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 2837,
+     "content": 6783,
+     "tabs": 1019
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      999
+     ],
+     [
+      "PROGRAM MAP",
+      74
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "42106",
+   "title": "Corrections Officer Core",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "42122",
+   "title": "ESL Level 2 High Beginning Language Skills",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.vvc.edu//degrees-certificates/english-second-language/esl-level-2-high-beginning-language-skills-ccy/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 1,
+    "listed": 2,
+    "why": "coverage 0.00 in innerText+tabs, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 3283,
+     "content": 6434,
+     "tabs": 220
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      200
+     ],
+     [
+      "PROGRAM MAP",
+      74
+     ]
+    ]
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "07589",
+   "title": "Level II: Teacher (pre-school)",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://catalog.vvc.edu//degrees-certificates/calgetc/calgetc-ca/",
+    "https://catalog.vvc.edu//degrees-certificates/vvcge/"
+   ]
+  },
+  {
+   "control_number": "33082",
+   "title": "English",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://catalog.vvc.edu//degrees-certificates/vvcge/"
+   ]
+  },
+  {
+   "control_number": "36902",
+   "title": "California State University (CSU) General Education (GE) Requirements",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://catalog.vvc.edu//degrees-certificates/calgetc/calgetc-ca/",
+    "https://catalog.vvc.edu//degrees-certificates/vvcge/"
+   ]
+  },
+  {
+   "control_number": "37010",
+   "title": "Pathway to Law",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.vvc.edu//degrees-certificates/calgetc/calgetc-ca/",
+    "https://catalog.vvc.edu//degrees-certificates/vvcge/"
+   ]
+  },
+  {
+   "control_number": "37514",
+   "title": "Agricultural Animal Science",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://catalog.vvc.edu//degrees-certificates/agriculture-natural-resources/agricultural-plant-sciences-ast/",
+    "https://catalog.vvc.edu//degrees-certificates/calgetc/calgetc-ca/",
+    "https://catalog.vvc.edu//degrees-certificates/vvcge/"
+   ]
+  },
+  {
+   "control_number": "39102",
+   "title": "Geospatial Technology",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.vvc.edu//degrees-certificates/agriculture-natural-resources/natural-resource-environmental-technology-ca/",
+    "https://catalog.vvc.edu//degrees-certificates/agriculture-natural-resources/"
+   ]
+  },
+  {
+   "control_number": "45047",
+   "title": "Full Cal-GETC Certification",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://catalog.vvc.edu//degrees-certificates/calgetc/calgetc-ca/",
+    "https://catalog.vvc.edu//degrees-certificates/vvcge/"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 26,
+  "0.8-1.0": 37,
+  "1.0": 115
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 178,
+  "list": [
+   {
+    "control_number": "04941",
+    "title": "Management",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/business-administration/management-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04943",
+    "title": "Business Education Technologies",
+    "award": "A.S. Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/business-education-technologies/business-education-technology-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04947",
+    "title": "Welding",
+    "award": "A.S. Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/welding/welding-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04955",
+    "title": "Nursing",
+    "award": "A.S. Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/nursing/nursing-as/",
+    "coverage": 0.81,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04957",
+    "title": "Respiratory Therapy",
+    "award": "A.S. Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/respiratory-therapy/respiratory-therapy-as/",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04967",
+    "title": "Criminal Justice",
+    "award": "A.S. Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/criminal-justice/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04968",
+    "title": "Level I: Associate Teacher",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/child-development/associate-teacher-ca/",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04969",
+    "title": "Fire Fighter",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/fire-technology/fire-fighter-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04974",
+    "title": "Restaurant Management",
+    "award": "A.S. Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/restaurant-management/restaurant-management-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04976",
+    "title": "Math/Science",
+    "award": "A.S. Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/math-science/math-science-as/",
+    "coverage": 0.941,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04980",
+    "title": "Emergency Medical Services",
+    "award": "A.S. Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/emergency-medical-services-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07546",
+    "title": "Medical Office",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/business-education-technologies/medical-office-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07564",
+    "title": "Construction Technology",
+    "award": "A.S. Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/construction-manufacturing-technology/construction-technology-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07565",
+    "title": "Building Inspection",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/construction-manufacturing-technology/building-inspection-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07566",
+    "title": "Construction Management",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/construction-manufacturing-technology/construction-management-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07591",
+    "title": "Level III: Site Supervisor (pre-school)",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/child-development/site-supervisor-pre-school-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10789",
+    "title": "Administrative Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/business-education-technologies/administrative-assistant-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10791",
+    "title": "Computer Systems II",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/business-education-technologies/computer-systems-ca/",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10796",
+    "title": "Programming I",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/computer-information-science/programming-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10799",
+    "title": "Building Construction",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/construction-manufacturing-technology/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10802",
+    "title": "Child Development",
+    "award": "A.S. Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/child-development/child-development-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11836",
+    "title": "Paralegal Studies",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/paralegal-studies/paralegal-studies-ca/",
+    "coverage": 0.947,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17587",
+    "title": "Aviation Powerplant Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/aviation/aviation-powerplant-technician-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18594",
+    "title": "Liberal Arts: Mathematics & Science",
+    "award": "A.A. Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/liberal-arts/liberal-arts-mathematics-science-emphasis-aa/",
+    "coverage": 0.887,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18595",
+    "title": "Liberal Arts: Arts & Humanities",
+    "award": "A.A. Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/liberal-arts/liberal-arts-arts-humanities-emphasis-aa/",
+    "coverage": 0.798,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18596",
+    "title": "Liberal Arts: Social & Behavioral Sciences",
+    "award": "A.A. Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/liberal-arts/liberal-arts-social-behavioral-science-emphasis-aa/",
+    "coverage": 0.877,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20542",
+    "title": "Welding",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/welding/welding-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20543",
+    "title": "Medical Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/allied-health/medical-assistant-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20544",
+    "title": "Respiratory Therapy",
+    "award": "Certificate of Achievement requiring 60+S/90+Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/respiratory-therapy/respiratory-therapy-ca/",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20545",
+    "title": "Nursing Licensure",
+    "award": "Certificate of Achievement requiring 60+S/90+Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/nursing/",
+    "coverage": 0.867,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20546",
+    "title": "Paramedic",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/paramedic-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20547",
+    "title": "Restaurant Management",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/restaurant-management/restaurant-management-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20548",
+    "title": "Criminal Justice",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/criminal-justice/criminal-justice-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31025",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/mathematics/mathematics-ast/",
+    "coverage": 0.714,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31245",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/sociology/sociology-aat/",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31612",
+    "title": "Communication Studies",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/communication-studies/communication-studies-2-aat/",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31788",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/history/history-aat/",
+    "coverage": 0.933,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31802",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/child-development/early-childhood-education-ast/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33022",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/political-science/political-science-aat/",
+    "coverage": 0.909,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33025",
+    "title": "Geography",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/geography/",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33026",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/psychology/psychology-aat/",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35439",
+    "title": "Aviation Maintenance Technology",
+    "award": "A.S. Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/aviation/aviation-maintenance-technology-as/",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35831",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/kinesiology/kinesiology-aat/",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36761",
+    "title": "Construction Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/construction-manufacturing-technology/building-inspection-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36806",
+    "title": "Intersegmental General Education Transfer Curriculum",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/calgetc/calgetc-ca/",
+    "coverage": 0.839,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37000",
+    "title": "Light Duty Diesel Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/automotive-technology/light-duty-diesel-technician-ca/",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37006",
+    "title": "Automotive Alternate Propulsion",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/automotive-technology/automotive-alternative-propulsion-ca/",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37051",
+    "title": "Composite Aerospace Manufacturing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/aviation/composite-aerospace-manufacturing-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37076",
+    "title": "Automotive Detailer and Porter",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/automotive-technology/automotive-detailer-porter-ca/",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37136",
+    "title": "Drafting Technician I",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/engineering/drafting-technician-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37137",
+    "title": "Architectural CADD Technician I",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/architecture/architectural-cadd-technician-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37138",
+    "title": "Engineering Drafting and Design",
+    "award": "A.S. Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/engineering/engineering-drafting-design-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37151",
+    "title": "CADD Technician I",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/engineering/cadd-computer-aided-design-drafting-technician-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37152",
+    "title": "Architectural Drafting and Design",
+    "award": "A.S. Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/architecture/architectural-drafting-design-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37290",
+    "title": "Emergency Medical Technician",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/emergency-medical-technician-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37411",
+    "title": "Paralegal Studies",
+    "award": "A.A. Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/paralegal-studies/paralegal-studies-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37442",
+    "title": "Web Authoring",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/computer-information-science/",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37515",
+    "title": "Agricultural Plant Science",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/agriculture-natural-resources/agricultural-plant-sciences-ast/",
+    "coverage": 0.957,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37565",
+    "title": "UNIX Administrator",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/computer-information-science/unix-administrator-ca/",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37582",
+    "title": "Business Administration",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/business-administration/business-administration-2-ast/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37849",
+    "title": "MySQL Database Developer",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/computer-information-science/mysql-database-developer-ca/",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38120",
+    "title": "Philosophy",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/philosophy/philosophy-aat/",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38121",
+    "title": "Fire & Emergency Medical Services Foundation",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/fire-and-emergency-medical-services-foundation-ca/",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38197",
+    "title": "Physics",
+    "award": "A.S. Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/physics/physics-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38235",
+    "title": "Photography",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/photography/photography-ca/",
+    "coverage": 0.727,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38352",
+    "title": "Automotive Electrical Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/automotive-technology/automotive-electrical-specialist-technician-ca/",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38353",
+    "title": "Advanced Life Support Module 2",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/advanced-life-support-module-2-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38354",
+    "title": "Automotive Engine Performance Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/automotive-technology/automotive-engine-performance-specialist-ca/",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38366",
+    "title": "Advanced Life Support Module 3",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/advanced-life-support-module-3-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38368",
+    "title": "Automotive Engine Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/automotive-technology/automotive-engine-specialist-ca/",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38502",
+    "title": "Paramedic Internship",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/paramedic-internship-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38503",
+    "title": "Advanced Life Support Module 1",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/advanced-life-support-module-1-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38516",
+    "title": "Plant Sciences and Sustainable Agriculture",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/agriculture-natural-resources/plant-science-sustainable-agriculture-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38569",
+    "title": "Intermediate Firefighter",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/fire-technology/intermediate-firefighter-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38570",
+    "title": "All Risk Firefighter",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/fire-technology/all-risk-firefighter-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38574",
+    "title": "Environmental Horticulture and Landscaping",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/agriculture-natural-resources/environmental-horticulture-landscaping-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38577",
+    "title": "Wildland Firefighter",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/fire-technology/wildland-firefighter-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38779",
+    "title": "Applied Developmental Psychology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/psychology/applied-developmental-psychology-ca/",
+    "coverage": 0.818,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38843",
+    "title": "Digital Media - Animation and Motion Graphics Maya",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/3d-animation/digital-media-animation-motion-graphics-maya-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38844",
+    "title": "Digital Media - Animation and Motion Graphics 3ds Max",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/3d-animation/digital-media-animation-motion-graphics-3ds-max-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38849",
+    "title": "Animal Science Speicalist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/agriculture-natural-resources/animal-science-specialist-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38850",
+    "title": "Equine Science Specialist",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/agriculture-natural-resources/equine-science-specialist-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38852",
+    "title": "Irrigation and Water Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/agriculture-natural-resources/",
+    "coverage": 0.769,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39101",
+    "title": "Ecological Restoration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/agriculture-natural-resources/ecological-restoration-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39103",
+    "title": "Natural Resources and Environmental Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/agriculture-natural-resources/natural-resource-environmental-technology-ca/",
+    "coverage": 0.95,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39450",
+    "title": "Athletic Trainer Aide I",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/kinesiology/athletic-trainer-aide-i-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39681",
+    "title": "Global Competency",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/global-studies/global-competency-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39915",
+    "title": "Religious Studies",
+    "award": "A.A. Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/religious-studies/religious-studies-aa/",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40052",
+    "title": "Public Health Sciences",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/health/public-health-science-ast/",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40071",
+    "title": "Urban Search and Technical Rescue",
+    "award": "A.S. Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/fire-technology/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40093",
+    "title": "Dance Teacher I",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/kinesiology-dance/dance-teacher-i-ca/",
+    "coverage": 0.794,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40161",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/health/nutrition-dietetics-ast/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40656",
+    "title": "Advanced Paralegal",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/paralegal-studies/",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40891",
+    "title": "Dance",
+    "award": "A.A. Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/kinesiology-dance/dance-aa/",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40894",
+    "title": "Athletic Trainer Aide II",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/kinesiology/athletic-trainer-aide-ii-ca/",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40909",
+    "title": "Advanced Life Support Provider",
+    "award": "Noncredit program",
+    "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-certification/advanced-life-support-provider-ccn/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40910",
+    "title": "Basic Life Support Provider",
+    "award": "Noncredit program",
+    "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/basic-life-support-provider-ccn/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40924",
+    "title": "Correctional Science",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/criminal-justice/correctional-science-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41089",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/biological-science/biology-ast/",
+    "coverage": 0.909,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41095",
+    "title": "Basic Framing and Carpentry",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/construction-manufacturing-technology/basic-framing-carpentry-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41320",
+    "title": "Introduction to Automotive Drivability Theory",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/automotive-technology/introduction-automotive-drivability-theory-ca/",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41322",
+    "title": "Global Studies",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/global-studies/global-studies-aat/",
+    "coverage": 0.818,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41476",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/computer-information-science/computer-science-ast/",
+    "coverage": 0.7,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41554",
+    "title": "Coaching",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/kinesiology/coaching-ca/",
+    "coverage": 0.909,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41760",
+    "title": "Entrepreneurship",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/entrepreneurship/entrepreneurship-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41784",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/business-administration/business-administration-2-ast/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41786",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/art-design/art-history-aat/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41981",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/art-design/studio-arts-aat/",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41994",
+    "title": "Apparel Construction",
+    "award": "Noncredit program",
+    "url": "https://catalog.vvc.edu//degrees-certificates/adult-home-economics/apparel-construction-ccn/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42092",
+    "title": "American Sign Language",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/american-sign-language/american-sign-language-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42093",
+    "title": "Law Enforcement Module II basic Course",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/criminal-justice/law-enforcement-module-ii-basic-course-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42099",
+    "title": "Textile Measurement and Production",
+    "award": "Noncredit program",
+    "url": "https://catalog.vvc.edu//degrees-certificates/adult-home-economics/textile-measurement-production-ccn/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42301",
+    "title": "Elementary Teacher Education",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/vvcge/",
+    "coverage": 0.952,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42339",
+    "title": "Police Technician Specialist",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/criminal-justice/police-technician-specialist-ccp/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42419",
+    "title": "Commercial Driver Training",
+    "award": "Noncredit program",
+    "url": "https://catalog.vvc.edu//degrees-certificates/commercial-drivers-license/commercial-driver-training-ccn/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42596",
+    "title": "Community Mental Health",
+    "award": "Noncredit program",
+    "url": "https://catalog.vvc.edu//degrees-certificates/health/community-mental-health-ccn/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42603",
+    "title": "Office Services",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/business-education-technologies/office-services-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42656",
+    "title": "Ethnic Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/ethnic-studies/ethnic-studies-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42712",
+    "title": "Social Justice Studies: General",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/sociology/social-justice-studies-aat/",
+    "coverage": 0.963,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42728",
+    "title": "Career Success",
+    "award": "Noncredit program",
+    "url": "https://catalog.vvc.edu//degrees-certificates/work-force-preparation/career-success-ccn/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42739",
+    "title": "Career Preparation",
+    "award": "Noncredit program",
+    "url": "https://catalog.vvc.edu//degrees-certificates/work-force-preparation/career-preparation-ccn/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42740",
+    "title": "Career and Industry Exploration",
+    "award": "Noncredit program",
+    "url": "https://catalog.vvc.edu//degrees-certificates/work-force-preparation/career-industry-exploration-ccn/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42750",
+    "title": "Athletics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/athletics/athletics-ca/",
+    "coverage": 0.891,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42760",
+    "title": "Law Enforcement Module III Basic Course",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/criminal-justice/law-enforcement-module-iii-basic-course-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42802",
+    "title": "3D Animation - 3ds Max",
+    "award": "A.S. Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/3d-animation/3d-animation-3ds-max-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42803",
+    "title": "3D Animation - Maya",
+    "award": "A.S. Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/3d-animation/3d-animation-maya-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42857",
+    "title": "ESL Level 1 Low-Beginning English Language Skills",
+    "award": "Noncredit program",
+    "url": "https://catalog.vvc.edu//degrees-certificates/english-second-language/esl-level-1-low-beginning-english-language-skills-ccy/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42907",
+    "title": "ESL Level 3 Low-Intermediate English Language Skills",
+    "award": "Noncredit program",
+    "url": "https://catalog.vvc.edu//degrees-certificates/english-second-language/esl-level-3-low-intermediate-english-language-skills-ccy/",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43115",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/physics/",
+    "coverage": 0.714,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43176",
+    "title": "Electronics Technician II",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/electronics-computer-technology/electronics-technician-ii-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43177",
+    "title": "Electronics Technician I",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/electronics-computer-technology/electronics-technician-I-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43294",
+    "title": "Manicuring Academy",
+    "award": "Noncredit program",
+    "url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/manicuring-academy-ccn/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43295",
+    "title": "Barber Crossover",
+    "award": "Noncredit program",
+    "url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/barber-crossover-ccn/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43296",
+    "title": "Esthetician Academy",
+    "award": "Noncredit program",
+    "url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/esthetician-academy-ccn/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43297",
+    "title": "Introductory Cosmetology",
+    "award": "Noncredit program",
+    "url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/introductory-cosmetology-ccn/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43298",
+    "title": "Advanced Barbering",
+    "award": "Noncredit program",
+    "url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/advanced-barbering-ccn/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43299",
+    "title": "Introductory Barbering",
+    "award": "Noncredit program",
+    "url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/introductory-barbering-ccn/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43306",
+    "title": "Advanced Cosmetology",
+    "award": "Noncredit program",
+    "url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/advanced-cosmetology-ccn/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43307",
+    "title": "Intermediate Cosmetology",
+    "award": "Noncredit program",
+    "url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/intermediate-cosmetology-ccn/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43329",
+    "title": "Intermediate Barbering",
+    "award": "Noncredit program",
+    "url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/intermediate-barbering-ccn/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43449",
+    "title": "Forklift Class I, II, & III",
+    "award": "Noncredit program",
+    "url": "https://catalog.vvc.edu//degrees-certificates/manufacturing-logistics/forklift-i-ii-iii-ccn/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43568",
+    "title": "Forklift Class IV, & V",
+    "award": "Noncredit program",
+    "url": "https://catalog.vvc.edu//degrees-certificates/manufacturing-logistics/forklift-iv-v-ccn/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43569",
+    "title": "Fitness Specialist - Personal Trainer",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/kinesiology/fitness-specialist-personal-trainer-ca/",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43590",
+    "title": "Hairstylist Academy",
+    "award": "Noncredit program",
+    "url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/hairstylist-academy-ccn/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43596",
+    "title": "Community Health Worker",
+    "award": "Noncredit program",
+    "url": "https://catalog.vvc.edu//degrees-certificates/health/community-health-worker-ccn/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43736",
+    "title": "ESL Level 5 Advanced English Skills",
+    "award": "Noncredit program",
+    "url": "https://catalog.vvc.edu//degrees-certificates/english-second-language/esl-level-5-advanced-english-skills-ccy/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44111",
+    "title": "Real Estate Career Professional",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/business-real-estate/real-estate-career-professional-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44113",
+    "title": "Real Estate Management Professional",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/business-real-estate/real-estate-management-professional-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44114",
+    "title": "Real Estate Sales Professional",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/business-real-estate/real-estate-sales-professional-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44115",
+    "title": "Real Estate Business",
+    "award": "A.S. Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/business-real-estate/real-estate-business-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44148",
+    "title": "Trauma Life Support Provider",
+    "award": "Noncredit program",
+    "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-certification/trauma-life-support-provider-ccn/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44149",
+    "title": "Pediatric Life Support Provider",
+    "award": "Noncredit program",
+    "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-certification/pediatric-life-support-provider-ccn/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44151",
+    "title": "New Student Onboarding",
+    "award": "Noncredit program",
+    "url": "https://catalog.vvc.edu//degrees-certificates/guidance/new-student-onboarding-ccy/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44214",
+    "title": "ESL Level 4 High Intermediate English Skills",
+    "award": "Noncredit program",
+    "url": "https://catalog.vvc.edu//degrees-certificates/english-second-language/esl-level-4-high-intermediate-english-skills-ccy/",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44287",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/communication-studies/communication-studies-2-aat/",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44585",
+    "title": "Forensic Science, Biology Concentration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/biological-science/forensic-science-biology-concentration-ca/",
+    "coverage": 0.778,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44842",
+    "title": "Two-Dimensional Studio Arts",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/art-design/two-dimensional-studio-arts-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44878",
+    "title": "Adapted Fitness Certification",
+    "award": "Noncredit program",
+    "url": "https://catalog.vvc.edu//degrees-certificates/adapted-physical-education/adapted-fitness-certification-ccn/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45067",
+    "title": "Bachelor of Science in Respiratory Therapy",
+    "award": "Baccalaureate of Science (B.S.) Degree.",
+    "url": "https://catalog.vvc.edu//degrees-certificates/respiratory-therapy/bachelor-science-respiratory-therapy-bs/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45081",
+    "title": "Heartsaver First Aid, CPR, AED Provider",
+    "award": "Noncredit program",
+    "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-certification/heartsaver-first-aid-cpr-aed-provider-ccn/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45082",
+    "title": "Physical Therapy Aide",
+    "award": "Noncredit program",
+    "url": "https://catalog.vvc.edu//degrees-certificates/physical-therapy-services/physical-therapy-aide-ccn/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45110",
+    "title": "Basic Bleeding Control Provider",
+    "award": "Noncredit program",
+    "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-certification/basic-bleeding-control-provider-ccn/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45140",
+    "title": "Case Management with a Cardiopulmonary Focus",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/respiratory-therapy/case-management-cardiopulmonary-focus-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45628",
+    "title": "Expanded Animation Technician 3DSMAX",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/3d-animation/expanded-animation-technician-3ds-max-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45661",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/theater-arts/theatre-arts-aat/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45663",
+    "title": "Digital Animation Artist Maya",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/3d-animation/digital-animation-artist-maya-ca/",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45677",
+    "title": "Expanded Animation Technician MAYA",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/3d-animation/expanded-animation-technician-maya-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45678",
+    "title": "Digital Animation Artist 3ds Max",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/3d-animation/digital-animation-artist-3ds-max-ca/",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45844",
+    "title": "Basic Electrician Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/construction-manufacturing-technology/basic-electrician-technician-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45845",
+    "title": "Basic HVAC & Refrigeration Service Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/construction-manufacturing-technology/basic-heating-ventilation-air-conditioning-refrigeration-hvacr-service-technician-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45880",
+    "title": "Critical Care Paramedic Provider",
+    "award": "Noncredit program",
+    "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/critical-care-paramedic-provider-ccn/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45906",
+    "title": "Plumbing Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/construction-manufacturing-technology/plumbing-technician-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45916",
+    "title": "Social Work and Human Services Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/human-services/social-work-and-human-services-assistant-ca/",
+    "coverage": 0.706,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45921",
+    "title": "Sociological Foundations",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/sociology/sociological-foundations-ca/",
+    "coverage": 0.909,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46064",
+    "title": "Photovoltaic Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/construction-manufacturing-technology/photovoltaic-technician-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46065",
+    "title": "Basic Masonry and Concrete",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vvc.edu//degrees-certificates/construction-manufacturing-technology/basic-masonry-concrete-ca/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46076",
+    "title": "Pharmacy Principles",
+    "award": "Noncredit program",
+    "url": "https://catalog.vvc.edu//degrees-certificates/pharmacy-technician/pharmacy-principles-ccn/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46577",
+    "title": "Management",
+    "award": "A.S. Degree",
+    "url": "https://catalog.vvc.edu//degrees-certificates/business-administration/management-as/",
+    "coverage": 0.812,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "38675237912"
+}

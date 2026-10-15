@@ -1,0 +1,282 @@
+{
+ "college": "Victor Valley College",
+ "control_number": "10799",
+ "shape": "certificate",
+ "title": "Building Construction",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.vvc.edu//degrees-certificates/construction-manufacturing-technology/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12073,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12073,
+    "output_tokens": 1739,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1739,
+  "output_tokens_details": {
+   "thinking_tokens": 544
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08307,
+ "ms": 14898,
+ "seconds": 15.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 23,
+   "share": 0.0,
+   "missing": [
+    "CT101",
+    "CT104",
+    "CT105",
+    "CT106",
+    "CT107",
+    "CT110",
+    "CT116",
+    "CT120A",
+    "CT120B",
+    "CT121",
+    "CT122B",
+    "CT123",
+    "CT124",
+    "CT127",
+    "CT130",
+    "CT131",
+    "CT132",
+    "CT144",
+    "CT60A",
+    "CT60B",
+    "CT60C",
+    "CT60D",
+    "ENGD103"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 28,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Construction Technology Certificates",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify procedures and strategies to minimize safety hazards and environmental impact associated with construction and manufacturing projects.",
+    "Properly perform construction and manufacturing trade work following standard industry practice.",
+    "Describe building code and legal requirements associated with construction and manufacturing projects.",
+    "Properly perform masonry and concrete trade work following standard industry practice."
+   ],
+   "careers": [
+    "contractor",
+    "supervisor",
+    "building inspector",
+    "tradesperson",
+    "Bricklayer",
+    "Building Inspector",
+    "Cabinetmaker",
+    "Carpenter",
+    "Construction Estimator",
+    "Construction Law Specialist",
+    "Construction Safety Specialist",
+    "Construction Supervisor",
+    "Contractor",
+    "Cement Mason",
+    "Construction Superintendent",
+    "Electrician",
+    "Environmental Construction Specialist",
+    "Framer",
+    "Heating and Air Conditioning Technician",
+    "Job Foreman",
+    "Photovoltaic Technician",
+    "Plumber",
+    "Project Manager",
+    "Public Works Technician",
+    "Residential Maintenance Technician",
+    "Surveyor",
+    "Waste Water Specialist",
+    "Water Distribution System Specialist"
+   ]
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CT 101",
+    "why": "no Building Construction requirements section in the text; appears only in the AS major list and course descriptions"
+   },
+   {
+    "code": "CT 104",
+    "why": "no Building Construction requirements section in the text; appears only in the AS major list and course descriptions"
+   },
+   {
+    "code": "CT 105",
+    "why": "no Building Construction requirements section in the text; appears only in the AS major list and course descriptions"
+   },
+   {
+    "code": "CT 106",
+    "why": "no Building Construction requirements section in the text; appears only in the AS major list and course descriptions"
+   },
+   {
+    "code": "CT 107",
+    "why": "no Building Construction requirements section in the text; appears only in the AS major list and course descriptions"
+   },
+   {
+    "code": "CT 110",
+    "why": "no Building Construction requirements section in the text; appears only in the AS major list and course descriptions"
+   },
+   {
+    "code": "CT 116",
+    "why": "no Building Construction requirements section in the text; appears only in the AS major list and course descriptions"
+   },
+   {
+    "code": "CT 120A",
+    "why": "not in the text"
+   },
+   {
+    "code": "CT 120B",
+    "why": "not in the text"
+   },
+   {
+    "code": "CT 121",
+    "why": "not in the text"
+   },
+   {
+    "code": "CT 122B",
+    "why": "not in the text"
+   },
+   {
+    "code": "CT 123",
+    "why": "not in the text"
+   },
+   {
+    "code": "CT 124",
+    "why": "not in the text"
+   },
+   {
+    "code": "CT 130",
+    "why": "not in the text"
+   },
+   {
+    "code": "CT 131",
+    "why": "no Building Construction requirements section in the text; appears only in the AS major list"
+   },
+   {
+    "code": "CT 132",
+    "why": "not in the text"
+   },
+   {
+    "code": "CT 144",
+    "why": "not in the text"
+   },
+   {
+    "code": "CT 60A",
+    "why": "appears only in course descriptions; no requirements section for this award"
+   },
+   {
+    "code": "CT 60B",
+    "why": "appears only in course descriptions; no requirements section for this award"
+   },
+   {
+    "code": "CT 60C",
+    "why": "appears only in course descriptions; no requirements section for this award"
+   },
+   {
+    "code": "CT 60D",
+    "why": "appears only in course descriptions; no requirements section for this award"
+   },
+   {
+    "code": "CT127",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGD 103",
+    "why": "no Building Construction requirements section in the text; appears only in the AS major list"
+   }
+  ],
+  "notes": []
+ },
+ "extracted_run": "38675237912"
+}

@@ -1,0 +1,173 @@
+{
+ "college": "Victor Valley College",
+ "control_number": "43295",
+ "shape": "noncredit",
+ "title": "Barber Crossover",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/barber-crossover-ccn/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6637,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6637,
+    "output_tokens": 965,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 965,
+  "output_tokens_details": {
+   "thinking_tokens": 426
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04585,
+ "ms": 8725,
+ "seconds": 9.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": [
+    248.0,
+    279.0
+   ],
+   "against": "program",
+   "why": [
+    "a required course in 'Required Courses' has no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Barber Crossover (Noncredit)",
+   "measure": "hours",
+   "total_units": {
+    "min": 248,
+    "max": 279
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "self-employed barbers",
+    "barber school educators",
+    "barber product developers",
+    "freelance and special event hires",
+    "barbershop management and ownership"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "COSM 0205",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COSM 0206",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The program is noncredit and counted in hours ('Total Certificate Hours: 248.0 - 279.0'). The total_units field records that range in hours.",
+   "The catalog prints 0.0 in the Units column beside each course and prints no hours for individual courses, so course units are left null.",
+   "The catalog prints the codes as COSM 0205 and COSM 0206, zero-padded. These were matched to closed-list COSM 205 and COSM 206 and are not treated as catalog additions.",
+   "The page shows only '(Noncredit)' as a visible heading near the program text. The section heading is reconstructed from the program title and should be checked.",
+   "No program learning outcomes are printed in the text."
+  ]
+ },
+ "extracted_run": "38675237912"
+}

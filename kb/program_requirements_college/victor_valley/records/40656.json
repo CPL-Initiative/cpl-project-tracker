@@ -1,0 +1,186 @@
+{
+ "college": "Victor Valley College",
+ "control_number": "40656",
+ "shape": "certificate",
+ "title": "Advanced Paralegal",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.vvc.edu//degrees-certificates/paralegal-studies/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9881,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9881,
+    "output_tokens": 867,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 867,
+  "output_tokens_details": {
+   "thinking_tokens": 346
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05686,
+ "ms": 7900,
+ "seconds": 8.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 10,
+   "share": 0.0,
+   "missing": [
+    "BADM116",
+    "BADM117",
+    "BADM118",
+    "BRE110",
+    "PAL101",
+    "PAL200",
+    "PAL204",
+    "PAL205",
+    "PAL206",
+    "PAL207"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Program Learning Outcomes",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Describe the role and function of a paralegal.",
+    "Perform basic legal tasks."
+   ],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BADM 116",
+    "why": "not in the text"
+   },
+   {
+    "code": "BADM 117",
+    "why": "not in the text"
+   },
+   {
+    "code": "BADM 118",
+    "why": "not in the text"
+   },
+   {
+    "code": "BRE 110",
+    "why": "not in the text"
+   },
+   {
+    "code": "PAL 101",
+    "why": "appears only in the course descriptions tab; no Advanced Paralegal requirements in the text"
+   },
+   {
+    "code": "PAL 200",
+    "why": "appears only in the course descriptions tab; no Advanced Paralegal requirements in the text"
+   },
+   {
+    "code": "PAL 204",
+    "why": "appears only in the course descriptions tab; no Advanced Paralegal requirements in the text"
+   },
+   {
+    "code": "PAL 205",
+    "why": "appears only in the course descriptions tab; no Advanced Paralegal requirements in the text"
+   },
+   {
+    "code": "PAL 206",
+    "why": "appears only in the course descriptions tab; no Advanced Paralegal requirements in the text"
+   },
+   {
+    "code": "PAL 207",
+    "why": "appears only in the course descriptions tab; no Advanced Paralegal requirements in the text"
+   }
+  ],
+  "notes": []
+ },
+ "extracted_run": "38675237912"
+}
