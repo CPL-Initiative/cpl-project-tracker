@@ -1,0 +1,769 @@
+{
+ "college": "Victor Valley College",
+ "control_number": "40093",
+ "shape": "certificate",
+ "title": "Dance Teacher I",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.vvc.edu//degrees-certificates/kinesiology-dance/dance-teacher-i-ca/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8788,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8788,
+    "output_tokens": 4595,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4595,
+  "output_tokens_details": {
+   "thinking_tokens": 949
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.12705,
+ "ms": 33559,
+ "seconds": 33.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 27,
+   "listed": 34,
+   "share": 0.794,
+   "missing": [
+    "KIND1467",
+    "KIND1468",
+    "KIND1469",
+    "KIND1471",
+    "KIND1472",
+    "KIND1473",
+    "KIND1475"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 28,
+   "codes": [
+    "KIND152",
+    "KIND174A",
+    "KIND174B",
+    "KIND174C",
+    "KIND175A",
+    "KIND175B",
+    "KIND175C",
+    "KIND176A",
+    "TA160A",
+    "TA160B",
+    "TA160C",
+    "TA161A",
+    "TA161B",
+    "TA161C",
+    "TA166A",
+    "TA166B",
+    "TA167A",
+    "TA167B",
+    "TA167C",
+    "TA170A",
+    "TA170B",
+    "TA170C",
+    "TA171A",
+    "TA171B",
+    "TA171C",
+    "TA174A",
+    "TA175A",
+    "WEEKIN138"
+   ],
+   "flagged": [
+    "KIND152",
+    "KIND174A",
+    "KIND174B",
+    "KIND174C",
+    "KIND175A",
+    "KIND175B",
+    "KIND175C",
+    "KIND176A",
+    "TA160A",
+    "TA160B",
+    "TA160C",
+    "TA161A",
+    "TA161B",
+    "TA161C",
+    "TA166A",
+    "TA166B",
+    "TA167A",
+    "TA167B",
+    "TA167C",
+    "TA170A",
+    "TA170B",
+    "TA170C",
+    "TA171A",
+    "TA171B",
+    "TA171C",
+    "TA174A",
+    "TA175A",
+    "WEEKIN138"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    15.0,
+    24.0
+   ],
+   "stated": [
+    16.5,
+    26.0
+   ],
+   "against": "program",
+   "why": [
+    "'Category: Modern (Level I)' chooses 1 courses but 0 carry units",
+    "'Category: Modern (Level II)' chooses 1 courses but 0 carry units"
+   ]
+  },
+  "repeated": {
+   "codes": [
+    "TA166B in 'Category: Ballet (Level I)'"
+   ],
+   "pass": false
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Dance Teacher I Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 16.5,
+    "max": 26
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "KIN 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIND 152",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Category: Tap (Level I)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "KIND 160A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "TA 160A",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIND 160B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "TA 160B",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIND 160C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "TA 160C",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Category: Tap (Level II)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "KIND 161A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "TA 161A",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIND 161B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "TA 161B",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIND 161C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "TA 161C",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Category: Ballroom",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 2
+    },
+    "courses": [
+     {
+      "code": "KIND 162A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIND 162B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIND 163A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIND 163B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Category: Ballet (Level I)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "KIND 166A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "TA 166A",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIND 166B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "TA 166B",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIND 166C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "TA 166B",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Category: Ballet (Level II)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "KIND 167A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "TA 167A",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIND 167B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "TA 167B",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIND 167C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "TA 167C",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Category: Jazz (Level I)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "KIND 170A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "TA 170A",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIND 170B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "TA 170B",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIND 170C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "TA 170C",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Category: Jazz (Level II)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "KIND 171A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "TA 171A",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIND 171B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "TA 171B",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIND 171C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "TA 171C",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Category: Modern (Level I)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "KIND 174A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "TA 174A",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIND 174B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIND 174C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Category: Modern (Level II)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "KIND 175A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "TA 175A",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIND 175B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIND 175C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Category: Rehearsal/Production",
+    "rule": "choose_units",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 1,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "KIND 176A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIND 176B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIND 176C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIND 176D",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Category: World Dance",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 0.5,
+     "max": 1
+    },
+    "courses": [
+     {
+      "code": "KIND 190",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Work Experience",
+    "rule": "choose_units",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 1,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "WEE KIN138",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "KIND 1467",
+    "why": "not in the text; catalog lists KIND 174A Introduction to Modern Dance instead (likely renumbered)"
+   },
+   {
+    "code": "KIND 1468",
+    "why": "not in the text; catalog lists KIND 174B Basic Modern Dance I instead (likely renumbered)"
+   },
+   {
+    "code": "KIND 1469",
+    "why": "not in the text; catalog lists KIND 174C Beginning Modern Dance I instead (likely renumbered)"
+   },
+   {
+    "code": "KIND 1471",
+    "why": "not in the text; catalog lists KIND 175A Introduction to Modern Dance II instead (likely renumbered)"
+   },
+   {
+    "code": "KIND 1472",
+    "why": "not in the text; catalog lists KIND 175B Basic Modern Dance II instead (likely renumbered)"
+   },
+   {
+    "code": "KIND 1473",
+    "why": "not in the text; catalog lists KIND 175C Modern Dance II instead (likely renumbered)"
+   },
+   {
+    "code": "KIND 1475",
+    "why": "not in the text; catalog lists KIND 176A Introduction to Dance Rehearsal and Performance I instead (likely renumbered)"
+   }
+  ],
+  "notes": [
+   "The catalog prints no units beside individual dance courses (only category totals), so course units are null except KIN 103 (3.0) and KIND 152 (1.0); the closed list stores 1 unit for each KIND course.",
+   "Each of Tap, Ballet, Jazz and Modern says 'Complete one Level I and one Level II course' with a category total of 2.0; each is split into a Level I and a Level II block (choose 1 each), and the printed 2.0 category total is not attached to either half.",
+   "Under Ballet, KIND 166C is printed with alternative 'or TA 166B Building Ballet Basics IB', likely a typo for TA 166C; recorded as printed.",
+   "Ballroom list shows 'KIND 163B Standard Ballroom Dance (Category: Ballet)' — the parenthetical appears to be a page artifact.",
+   "TA cross-listed alternatives and KIND 152, KIND 174A-C, KIND 175A-C, KIND 176A and 'WEE KIN138' are not in the closed list; the modern and 176A courses match closed-list titles under KIND 1467-1475, suggesting a renumbering.",
+   "Work Experience code printed as 'WEE KIN138' with no title; recorded as printed.",
+   "No program learning outcomes or careers are printed in the text."
+  ]
+ },
+ "extracted_run": "38675237912"
+}

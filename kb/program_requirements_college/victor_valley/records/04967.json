@@ -1,0 +1,250 @@
+{
+ "college": "Victor Valley College",
+ "control_number": "04967",
+ "shape": "degree",
+ "title": "Criminal Justice",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.vvc.edu//degrees-certificates/criminal-justice/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12317,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12317,
+    "output_tokens": 3066,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3066,
+  "output_tokens_details": {
+   "thinking_tokens": 561
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.11059,
+ "ms": 23077,
+ "seconds": 23.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 15,
+   "share": 0.0,
+   "missing": [
+    "CJ101",
+    "CJ102",
+    "CJ103",
+    "CJ104",
+    "CJ127",
+    "CJ132",
+    "CJ135",
+    "CJ145",
+    "CJ150",
+    "CJ201",
+    "CJ58",
+    "CJ67",
+    "CJ80",
+    "CJ81",
+    "CJ92"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 33,
+   "courses": 0,
+   "count": 33,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Criminal Justice, AS",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate a comprehension and appreciation of the connections, contributions, experiences, and potential conflicts of various ethnicities, races, and genders as they interact with the criminal justice components.",
+    "Demonstrate an understanding of the criminal justice system and how the student, as an individual, understands career opportunities in the field as well as individual/community rights and responsibilities.",
+    "Demonstrate an awareness of crime causation, roles of the components of the criminal justice system, and social and economic impact of crime on society.",
+    "Critically analyze and evaluate behaviors and situations for violations of law; evaluate the lawful admissibility of evidence; and assess legal defenses.",
+    "Communicate effectively, orally and in written formats, to the various professional role players within the Criminal Justice system.",
+    "Critically analyze and assess various sample fingerprints and accurately classify each fingerprint.",
+    "Critically evaluate the search and/or seizure of evidence and determine the admissibility of evidence based on current Federal Supreme Court Decisions.",
+    "Critically analyze and evaluate the procedures in the preliminary investigation of specific crimes.",
+    "Critically examine and evaluate the types of evidence, admissibility of evidence given fourth and fifth amendment restrictions; analyze exceptions to the exclusionary rule.",
+    "Critically evaluate the processes involved in recognizing evidence and investigating any specific crime scene; recognize the barriers to an effective interviews and/or interrogations.",
+    "Critically analyze and describe the criminal trial processes from pre-arrest to sentencing.",
+    "Critically analyze and evaluate the proper procedures in conducting a criminal investigation involving crimes against persons, property, sex crimes, crimes against children, bombs and explosions, and vice and narcotics.",
+    "Critically evaluate and analyze the development of the role players, training and education, and present day challenges of the criminal justice system to include police, courts, and corrections.",
+    "Perform the duties and responsibilities of a Level II Reserve.",
+    "Critically appraise the legal restraints imposed on a peace officer by the US Constitution; critically evaluate the duties and responsibilities of a Level III Reserve.",
+    "Explain the sociological theories of criminology that relate specifically to juvenile delinquency.",
+    "Recognize and explain the development of the Juvenile court system.",
+    "Recognize and explain the role of parens patriae and its role in the social development of the juvenile offender.",
+    "Perform the duties, role, and function of a state certified correctional officer in a county jail or private prison.",
+    "Perform the duties and responsibilities of a campus Peace Officer employed on a K-12 or Community College campus.",
+    "Critically evaluate Vehicle Code violations to determine the cause for an accident.",
+    "Perform the fundamentals of firearm safety, shooting accurately, and cleaning a pistol.",
+    "Demonstrate understanding of U.S. justice systems, both juvenile and adult, and their legal basis as well as an awareness of the social and economic impact of crime on society, as it relates to law enforcement, the courts, corrections, and community partnerships.",
+    "Apply proper investigation procedures as they relate to evidence collection and preservation, crimes against people and property, and forensics.",
+    "Cultivate working knowledge and understanding of challenges and strategies of the Criminal Justice System in a diverse and multicultural society, developing a world view that acknowledges the vital role law enforcement plays in diverse communities.",
+    "Model aptitude for employment in the criminal justice field by demonstrating knowledge of responsibilities and scope of career trajectories.",
+    "Demonstrate the ability to effectively identify, collect, transport and store evidence in criminal investigations.",
+    "Demonstrate an understanding of the legal issues related to forensic science and the importance of adherance to local, state and federal laws, and protections afforded by the U.S. Constitution.",
+    "Perform the duties and responsibilities of a Level II Reserve Officer as prescribed by POST. Or, perform the duties of a peace officer in a State Hospital, Code Enforcement officer for city and county agencies, or perform the duties of a gaming officer in a casino.",
+    "Perform the duties and responsibilities of a Level III Reserve Peace Officer as prescribed in POST regulations . This certificate satisfies the prerequisite for entry into Module II Basic Law Enforcement Course.",
+    "Students will have demonstrated the safe handling of a firearm, cleaning principles, and have qualified on a firearms course of fire as prescribed by POST.",
+    "Perform the Laws of Arrest as prescribed by POST for peace officers with limited peace officer powers.",
+    "Be prepared for a variety of employment opportunities with any Law Enforcement Agency."
+   ],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CJ 101",
+    "why": "requirements section not in the text; appears only in course descriptions"
+   },
+   {
+    "code": "CJ 102",
+    "why": "requirements section not in the text; appears only in course descriptions"
+   },
+   {
+    "code": "CJ 103",
+    "why": "requirements section not in the text; appears only in course descriptions"
+   },
+   {
+    "code": "CJ 104",
+    "why": "requirements section not in the text; appears only in course descriptions"
+   },
+   {
+    "code": "CJ 127",
+    "why": "requirements section not in the text; appears only in course descriptions"
+   },
+   {
+    "code": "CJ 132",
+    "why": "requirements section not in the text; appears only in course descriptions"
+   },
+   {
+    "code": "CJ 135",
+    "why": "requirements section not in the text; appears only in course descriptions"
+   },
+   {
+    "code": "CJ 145",
+    "why": "requirements section not in the text; appears only in course descriptions"
+   },
+   {
+    "code": "CJ 150",
+    "why": "requirements section not in the text; appears only in course descriptions"
+   },
+   {
+    "code": "CJ 201",
+    "why": "requirements section not in the text; appears only in course descriptions"
+   },
+   {
+    "code": "CJ 67",
+    "why": "requirements section not in the text; appears only in course descriptions"
+   },
+   {
+    "code": "CJ 80",
+    "why": "requirements section not in the text; appears only in course descriptions"
+   },
+   {
+    "code": "CJ 92",
+    "why": "requirements section not in the text; appears only in course descriptions"
+   },
+   {
+    "code": "CJ58",
+    "why": "requirements section not in the text; appears only in course descriptions (as CJ 58)"
+   },
+   {
+    "code": "CJ81",
+    "why": "requirements section not in the text; appears only in course descriptions (as CJ 81)"
+   }
+  ],
+  "notes": [
+   "The supplied text contains only the Programs tab list (naming 'Criminal Justice, AS'), the Courses tab descriptions and the Outcomes tab; the A.S. degree's requirements (courses, totals, GE pattern) are not in the text, so no blocks or totals are recorded. A reviewer should fetch the program's requirements tab.",
+   "The outcomes recorded are the single Program Learning Outcomes list printed for the Criminal Justice program as a whole; the page states the PLOs apply to all certificates and/or degrees within the program, so the A.S. shares it. Several outcomes appear specific to certificates (e.g., Level II/III Reserve, PC 832, firearms).",
+   "No careers section or program description appears in the text; careers left empty.",
+   "Units in the course descriptions differ from the state file for CJ 80 (8.0 vs 6.5); CJ 58 printed 2.0 units and CJ 81 10.2 units."
+  ]
+ },
+ "extracted_run": "38675237912"
+}

@@ -1,0 +1,234 @@
+{
+ "college": "Victor Valley College",
+ "control_number": "35439",
+ "shape": "degree",
+ "title": "Aviation Maintenance Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.vvc.edu//degrees-certificates/aviation/aviation-maintenance-technology-as/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6915,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6915,
+    "output_tokens": 1164,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1164,
+  "output_tokens_details": {
+   "thinking_tokens": 287
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05094,
+ "ms": 11340,
+ "seconds": 11.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 5,
+   "share": 0.6,
+   "missing": [
+    "AVA151",
+    "AVA152"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "AVA51",
+    "AVA52",
+    "AVA61",
+    "AVA62",
+    "AVA63"
+   ],
+   "flagged": [
+    "AVA51",
+    "AVA52",
+    "AVA61",
+    "AVA62",
+    "AVA63"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    82.0,
+    82.0
+   ],
+   "stated": [
+    82.0,
+    82.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Aviation Maintenance Technology A.S. (REQUIREMENTS tab, Course List)",
+   "measure": "units",
+   "total_units": {
+    "min": 82,
+    "max": 82
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "VVC General Education (plus American Institutions and Kinesiology Competencies) or CalGETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 82,
+     "max": 82
+    },
+    "courses": [
+     {
+      "code": "AVA 51",
+      "units": 9.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AVA 52",
+      "units": 9.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AVA 61",
+      "units": 10.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AVA 62",
+      "units": 10.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AVA 63",
+      "units": 10.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AVA 71",
+      "units": 10.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AVA 72",
+      "units": 10.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AVA 73",
+      "units": 10.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AVA 151",
+    "why": "not in the text; catalog prints AVA 51 General Aviation I (same title), possibly a renumbering"
+   },
+   {
+    "code": "AVA 152",
+    "why": "not in the text; catalog prints AVA 52 General Aviation 2 (similar title), possibly a renumbering"
+   }
+  ],
+  "notes": [
+   "The page heading for the program is not printed in the extracted text; section_heading is taken from the page tabs and course list.",
+   "The 60 minimum degree-applicable units is a general graduation requirement, not recorded as this award's degree_total.",
+   "The block's stated total uses the printed 'Total Units 82', which is the major total.",
+   "AVA 61, 62, 63 (Airframe 1-3) are not on the closed list; AVA 51/52 appear to correspond to closed-list AVA 151/152 by title.",
+   "No program learning outcomes or careers appear in the text."
+  ]
+ },
+ "extracted_run": "38675237912"
+}

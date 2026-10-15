@@ -1,0 +1,208 @@
+{
+ "college": "Victor Valley College",
+ "control_number": "37000",
+ "shape": "certificate",
+ "title": "Light Duty Diesel Technician",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.vvc.edu//degrees-certificates/automotive-technology/light-duty-diesel-technician-ca/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7047,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7047,
+    "output_tokens": 926,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 926,
+  "output_tokens_details": {
+   "thinking_tokens": 176
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04671,
+ "ms": 8186,
+ "seconds": 8.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 6,
+   "share": 0.833,
+   "missing": [
+    "AUTO100"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "AUTO50"
+   ],
+   "flagged": [
+    "AUTO50"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    22.0,
+    22.0
+   ],
+   "stated": [
+    22.0,
+    22.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Light Duty Diesel Technician Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 22,
+    "max": 22
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "Light Duty Diesel Technician"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AUTO 50",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AUTO 77.3",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AUTO 99.1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 99.2",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 99.3",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 99.4",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AUTO 100",
+    "why": "not in the text; the catalog prints AUTO 50 with the same title (Introduction to Automotive Technology, 4 units), likely a renumbering"
+   },
+   {
+    "code": "AUTO 773",
+    "why": "not in the text; the catalog prints AUTO 77.3 with the same title (Automotive Workplace Professionalism, 2 units), likely the same course with the decimal dropped in the state file"
+   }
+  ],
+  "notes": [
+   "AUTO 50 and AUTO 77.3 are recorded as catalog additions because their codes are not in the closed list, though their titles and units match closed-list AUTO 100 and AUTO 773; a reviewer should confirm whether these are the same courses under different numbering.",
+   "The catalog prints no program learning outcomes for this certificate.",
+   "Program Length is printed as 22 months; total units printed as 22."
+  ]
+ },
+ "extracted_run": "38675237912"
+}
