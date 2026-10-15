@@ -5,11 +5,11 @@
  "title": "Theatre Arts/Drama",
  "award": "A.A. Degree",
  "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/theatre-arts-drama-associate-in-arts-a-a-fall-2025",
- "record_shape": 4,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6156,
+  "input_tokens": 7230,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6156,
-    "output_tokens": 3160,
+    "input_tokens": 7230,
+    "output_tokens": 3212,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 3160,
+  "output_tokens": 3212,
   "output_tokens_details": {
-   "thinking_tokens": 1252
+   "thinking_tokens": 1338
   },
   "service_tier": "standard",
   "inference_geo": "global"
  },
- "cost_usd": 0.08782,
- "ms": 28372,
- "seconds": 29.1,
+ "cost_usd": 0.09316,
+ "ms": 30567,
+ "seconds": 31.3,
  "parts": null,
  "error": null,
  "score": {
@@ -81,8 +81,8 @@
    "pass": false,
    "status": "unequal",
    "computed": [
-    42.0,
-    42.0
+    78.0,
+    78.0
    ],
    "stated": [
     60.0,
@@ -94,7 +94,7 @@
     24.0
    ],
    "why": [
-    "the blocks and general education sum to 42.0-42.0; the catalog prints 60.0-60.0 for the degree"
+    "the blocks and general education sum to 78.0-78.0; the catalog prints 60.0-60.0 for the degree"
    ]
   },
   "repeated": {
@@ -129,8 +129,21 @@
     "min": null,
     "max": null
    },
-   "open_elective_units": null,
+   "open_elective_units": 18,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": "Cabrillo College General Education",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 24
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Collaboratively create theatrical productions that effectively use theatre tools, techniques, and processes.",
     "Utilize basic theatre vocabulary to effectively communicate the aspects of the art form to an audience.",
@@ -149,15 +162,7 @@
     "business",
     "sales",
     "law"
-   ],
-   "degree_total": {
-    "min": 60,
-    "max": 60
-   },
-   "ge_units": {
-    "min": 24,
-    "max": 24
-   }
+   ]
   },
   "blocks": [
    {
@@ -230,8 +235,8 @@
    },
    {
     "name": "Recommended Major Electives",
-    "rule": "recommended",
-    "minimum": null,
+    "rule": "choose_units",
+    "minimum": 18,
     "option_group": null,
     "stated": {
      "min": 18,
@@ -356,48 +361,15 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog frames both lists as 'recommended by the department'; the degree text states 'at least 18 units in the major'. The first list ('Recommended Major Requirements', complete 18 credits) is recorded as choose_units 18; reviewer should confirm whether it is truly required.",
-   "The 'Recommended Major Electives' list says 'Complete the following number of credits: 18' but ends 'or any transferable or degree applicable course', so the listed courses are recommendations toward 18 elective units of the 60-unit degree (60 = 24 GE + 18 major + 18 electives). Recorded as recommended with stated 18; these elective units appear to be degree electives outside the 18-unit major, so open_elective_units left null.",
-   "Note in catalog: if TA27 is taken, only 3 units may be counted towards the 18 required units.",
-   "Note in catalog: if a repeatable course is taken, only 3 units for each repeatable course will be counted towards the 18 required units.",
-   "Codes are printed without a space (e.g., TA9, DANCE2A); matched to closed-list codes TA 9, DANCE 2A, etc.",
-   "Catalog text begins mid-sentence ('design, scene painting, ...'); the career list is truncated and earlier careers may be missing. Careers also include fields named as requiring persuasive communication skills (performance, teaching, business, sales, law); 'teaching' appears in both lists and is recorded once.",
-   "Program Outcomes are printed for the program as a whole on this A.A. page and recorded for this award.",
-   "Degree total of 60 units includes 24 units Cabrillo College General Education; total_units records the 18-unit major."
+   "Both blocks are labeled 'Recommended' but each states 'Complete the following number of credits: 18' and they make up the 60-unit degree with the 24-unit GE, so they were recorded as choose_units rather than 'recommended'. Reviewer should confirm.",
+   "The page's 'at least 18 units in the major' sentence is a generic A.A. requirement; total_units left null. The Major Requirements block itself prints 18.",
+   "The Recommended Major Electives list ends 'or any transferable or degree applicable course', so its 18 units were also recorded as open_elective_units (counted against degree_total 60); these are the same 18 units as that block, not additional.",
+   "Note under Major Requirements: if TA27 is taken, only 3 units may be counted towards the 18 required units.",
+   "Note under Major Electives: if a repeatable course is taken, only 3 units for each repeatable course count toward the 18 required units.",
+   "Catalog text begins mid-sentence; the career list ('design, scene painting, ... directing') is truncated at the start and may name more careers. Fields 'performance, teaching, business, sales, and law' are described as fields requiring persuasive communication skills and were included as career fields.",
+   "Program Outcomes are printed for the program as a whole; recorded for this A.A. award.",
+   "Codes recorded as printed without spaces (e.g., 'TA9' = closed-list 'TA 9')."
   ]
  },
- "extracted_run": 38639316727,
- "reconciled": [
-  {
-   "field": "degree_total",
-   "was": null,
-   "now": {
-    "min": 60,
-    "max": 60
-   },
-   "words": "Program Requirements\nTheatre Arts/Drama - Associate in Arts (A.A.)\nComplete the following number of credits: 60"
-  },
-  {
-   "field": "ge_units",
-   "was": null,
-   "now": {
-    "min": 24,
-    "max": 24
-   },
-   "words": "Cabrillo College General Education\n24"
-  },
-  {
-   "field": "total_units",
-   "was": {
-    "min": 18,
-    "max": 18
-   },
-   "now": {
-    "min": null,
-    "max": null
-   },
-   "words": "at least 18 units in the major"
-  }
- ],
- "read_run": "38442109713"
+ "extracted_run": "38661293784"
 }
