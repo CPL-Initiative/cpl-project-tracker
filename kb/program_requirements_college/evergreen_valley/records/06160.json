@@ -1,0 +1,243 @@
+{
+ "college": "Evergreen Valley College",
+ "control_number": "06160",
+ "shape": "degree",
+ "title": "CADD Technology (Computer Aided Design & Drafting)",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.evc.edu/degrees-certificates/computer-aided-design-drafting/cadd-computer-aided-drafting-design-cadd-associate-science/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7284,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7284,
+    "output_tokens": 1589,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1589,
+  "output_tokens_details": {
+   "thinking_tokens": 544
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06092,
+ "ms": 14020,
+ "seconds": 15.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "CADD133"
+   ],
+   "flagged": [
+    "CADD133"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    24.0
+   ],
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     60.0,
+     60.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     27.0,
+     27.0
+    ],
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 9,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "CADD - COMPUTER AIDED DRAFTING AND DESIGN (CADD) - ASSOCIATE IN SCIENCE",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 9,
+    "max": 9
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 27,
+    "max": 27
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate knowledge in AutoDesk products (Inventor, AutoCAD) and SolidWorks CAD systems.",
+    "Prepare for employment as an engineering technician/CAD drafter, in architectural engineering or in civil engineering and design at an entry level."
+   ],
+   "careers": [
+    "Drafters",
+    "designers",
+    "Computer hardware design",
+    "aerospace design",
+    "automotive design",
+    "architectural design",
+    "electronics design",
+    "technical illustration",
+    "engineering technician/CAD drafter"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Major Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 24,
+     "max": 24
+    },
+    "courses": [
+     {
+      "code": "CADD 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CADD 133",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CADD 134",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CADD 139",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CADD 140A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CADD 140B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CADD 141",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CADD 142",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "CADD 134, CADD 140A and CADD 141 appear in the closed list without a space (CADD134, CADD140A, CADD141); treated as the same courses printed with a space in the catalog.",
+   "CADD 130 is printed as 3 units in the catalog; the state file stores 2 units.",
+   "CADD 139 is titled 'Fundamentals of Solidworks' in the catalog but 'Using Solidworks' in the state file.",
+   "CADD 133 (Fundamentals of Autodesk Inventor) is not in the closed list; recorded as a catalog addition.",
+   "The Total Requirements table lists Major Requirements 24, General Education Requirements 27, Electives (A.S. applicable courses) 9, Total Units 60. The GE pattern is not named; the 9 elective units are recorded as degree electives outside the major.",
+   "Careers include job titles and areas of employment named in the program overview, plus the job title named in a program learning outcome."
+  ]
+ },
+ "extracted_run": "38748875071"
+}
