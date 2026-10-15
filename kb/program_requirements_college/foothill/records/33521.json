@@ -1,0 +1,321 @@
+{
+ "college": "Foothill College",
+ "control_number": "33521",
+ "shape": "certificate",
+ "title": "Air Conditioning and Refrigeration Technology",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.foothill.edu/degrees-certificates/apprenticeship-air-conditioning-refrigeration-technology/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8271,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8271,
+    "output_tokens": 2059,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2059,
+  "output_tokens_details": {
+   "thinking_tokens": 480
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07426,
+ "ms": 16328,
+ "seconds": 16.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 21,
+   "listed": 21,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    45.5,
+    70.0
+   ],
+   "stated": [
+    45.5,
+    70.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 7,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement in Air Conditioning and Refrigeration Technology",
+   "measure": "units",
+   "total_units": {
+    "min": 45.5,
+    "max": 70
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "In compliance with applicable standards and codes, students will demonstrate ability to install and remove refrigeration, heating, air conditioning, and ventilation systems, including the appropriate electrical/electronic control systems.",
+    "In compliance with applicable standards and codes, students will demonstrate ability to maintain, repair, extend, and/or alter refrigeration, heating, air conditioning, and ventilation systems, including electronic control systems."
+   ],
+   "careers": [
+    "Service Manager",
+    "Facilities Manager",
+    "Project Manager",
+    "Estimator",
+    "HVACR Instructor",
+    "HVACR Sustainable Technologies Technician",
+    "Union Business Agent/Business Manager"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Pathway 1 - Pipe Trades Training Center students",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Pathway",
+    "stated": {
+     "min": 70,
+     "max": 70
+    },
+    "courses": [
+     {
+      "code": "APPT 129",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 130",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 151",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 152",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 153",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 154",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 155",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 156",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 157",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 158",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 159",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Pathway 2 - UA Local 467 students",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Pathway",
+    "stated": {
+     "min": 45.5,
+     "max": 45.5
+    },
+    "courses": [
+     {
+      "code": "APPT 171",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 172",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 173",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 174",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 175",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 176",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 177",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 178",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 179",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APPT 180",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The certificate is awarded upon completion of the core courses, so the blocks are read from the shared 'Core and Support Courses' list; the student completes one of the two pathways (Pathway 1: 70 units; Pathway 2: 45.5 units).",
+   "The catalog prints no units beside individual courses, only pathway totals; course units are left null.",
+   "Units are quarter units (Foothill College).",
+   "The Program Learning Outcomes are printed once for the program as a whole (A.S. and Certificate of Achievement); the certificate shares them.",
+   "CWE 60A (10.5 units) is recommended only as an elective toward the 90-unit associate degree and is not part of the certificate; it is not recorded."
+  ]
+ },
+ "extracted_run": "38675242638"
+}

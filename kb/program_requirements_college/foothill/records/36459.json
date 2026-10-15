@@ -1,0 +1,172 @@
+{
+ "college": "Foothill College",
+ "control_number": "36459",
+ "shape": "noncredit",
+ "title": "Bridge to College Level Mathematics",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.foothill.edu/degrees-certificates/non-credit-bridge-college-level-mathematics/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6840,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6840,
+    "output_tokens": 518,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 518,
+  "output_tokens_details": {
+   "thinking_tokens": 0
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.03772,
+ "ms": 4554,
+ "seconds": 5.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    110.0,
+    410.0
+   ],
+   "stated": [
+    110.0,
+    410.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Bridge to College Level Mathematics Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 110,
+    "max": 410
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will demonstrate improved numerical literacy and quantitative reasoning skills necessary for future progression in math courses."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Course List",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 110,
+     "max": 410
+    },
+    "courses": [
+     {
+      "code": "NCBS 403A",
+      "units": 25,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NCBS 403B",
+      "units": 25,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NCBS 405",
+      "units": 60,
+      "units_max": 360,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Award is counted in hours (Hours: 110-410 [Non-Transcriptable]); the table column is labeled 'Units' but the values are hours, totaling 'Total Hours 110-410'.",
+   "The program learning outcome is printed for the program as a whole; the Certificate of Completion is the only award and shares it.",
+   "The block's stated total uses the printed 'Total Hours 110-410', which is the same figure as the certificate total."
+  ]
+ },
+ "extracted_run": "38675242638"
+}

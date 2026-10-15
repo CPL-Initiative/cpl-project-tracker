@@ -1,0 +1,220 @@
+{
+ "college": "Foothill College",
+ "control_number": "39512",
+ "shape": "noncredit",
+ "title": "Bridge to College Level English",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.foothill.edu/degrees-certificates/non-credit-bridge-college-level-english/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6872,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6872,
+    "output_tokens": 1305,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1305,
+  "output_tokens_details": {
+   "thinking_tokens": 302
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05359,
+ "ms": 10807,
+ "seconds": 11.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    24.0,
+    60.0
+   ],
+   "stated": [
+    48.0,
+    132.0
+   ],
+   "against": "program",
+   "why": [
+    "a required course in 'Support Course option: NCEN 401A' has no units",
+    "a required course in 'Support Course option: NCEL 403A & NCEL 403B' has no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Bridge to College Level English Certificate of Competency",
+   "measure": "hours",
+   "total_units": {
+    "min": 48,
+    "max": 132
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will be prepared to take degree-applicable credit coursework in pursuit of an associate degree or transfer.",
+    "Students will build college readiness skills in reading, writing, and critical thinking necessary to be successful in courses across the disciplines.",
+    "Students will develop metacognitive awareness of student success strategies for reading, writing, critical thinking, and academic progress.",
+    "Students will feel confident to seek assistance in and out of class as needed to self-advocate.",
+    "Students will be able to identify campus resources to promote their academic success.",
+    "Students will gain equal access to degree-applicable courses without barriers resulting from economic, national, or cultural status."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Core Course",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 24,
+     "max": 60
+    },
+    "courses": [
+     {
+      "code": "NCEN 400",
+      "units": 24,
+      "units_max": 60,
+      "alternatives": [
+       {
+        "code": "NCEL 400",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Support Course option: NCEN 401A",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Support Course options",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NCEN 401A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Support Course option: NCEL 403A & NCEL 403B",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Support Course options",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NCEL 403A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NCEL 403B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit Certificate of Competency counted in hours: 'Hours: 48-132 [Non-Transcriptable]' and 'Total Hours 48-132'.",
+   "The 24-60 hours are printed on the row 'NCEN 400 or NCEL 400' as a whole; recorded on NCEN 400 with NCEL 400 as an alternative with no hours printed of its own.",
+   "The catalog prints 24-72 hours for 'And one of the following Support Course options' as a whole, not for either option; no hours are printed beside the individual support courses, so option blocks have stated null and course hours null.",
+   "Footnote 1: both NCEL 403A and NCEL 403B must be completed to fulfill the support requirement.",
+   "The program learning outcomes are printed for the program as a whole; this certificate is the only award listed and shares them.",
+   "The text names no careers."
+  ]
+ },
+ "extracted_run": "38675242638"
+}

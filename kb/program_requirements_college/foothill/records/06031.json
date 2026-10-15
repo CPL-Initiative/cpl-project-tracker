@@ -1,0 +1,391 @@
+{
+ "college": "Foothill College",
+ "control_number": "06031",
+ "shape": "degree",
+ "title": "Physical Education",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.foothill.edu/degrees-certificates/physical-education/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7634,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7634,
+    "output_tokens": 2927,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2927,
+  "output_tokens_details": {
+   "thinking_tokens": 1066
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08908,
+ "ms": 23138,
+ "seconds": 24.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 17,
+   "codes": [
+    "BIOL10",
+    "BIOL14",
+    "BIOL40A",
+    "BIOL40B",
+    "BIOL40C",
+    "CHEM25",
+    "CHEM30A",
+    "DANC10",
+    "KINS1",
+    "KINS10",
+    "KINS16A",
+    "KINS16B",
+    "KINS16C",
+    "KINS49",
+    "KINS5",
+    "PSYCC1000",
+    "PSYCC1000H"
+   ],
+   "flagged": [
+    "BIOL10",
+    "BIOL14",
+    "BIOL40A",
+    "BIOL40B",
+    "BIOL40C",
+    "CHEM25",
+    "CHEM30A",
+    "DANC10",
+    "KINS1",
+    "KINS10",
+    "KINS16A",
+    "KINS16B",
+    "KINS16C",
+    "KINS49",
+    "KINS5",
+    "PSYCC1000",
+    "PSYCC1000H"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    37.0,
+    38.0
+   ],
+   "stated": [
+    37.0,
+    38.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Core and Support Courses",
+   "measure": "units",
+   "total_units": {
+    "min": 37,
+    "max": 38
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Foothill College General Education or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "The student will complete this program with the ability to communicate the components of a physical education program to their professional staff.",
+    "The student will demonstrate the necessary knowledge, skills, and values of a multi-disciplinary program, which satisfy core requirements for many physical education transfer majors, including the traditional concentrations in teaching and contemporary choices of fitness, dance, and athletic emphasis."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL 10",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL 14",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINS 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINS 2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINS 3",
+      "units": 4,
+      "units_max": 5,
+      "alternatives": [
+       {
+        "code": "DANC 10",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINS 4",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINS 8A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINS 16B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Support Courses",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "KINS 5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINS 10",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINS 49",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "ELECTIVE COURSES",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL 40A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 40B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 40C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM 25",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM 30A",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "DANC 10",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINS 9",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINS 15",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINS 16A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINS 16C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINS 51",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC C1000H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Foothill is on the quarter system; units are quarter units.",
+   "The page states 'A minimum of 90 units is required to complete the associate degree' as a general associate degree requirement; not recorded as degree_total. Reviewer may wish to check. Footnote says additional elective coursework may be needed to reach 90 units, so electives_fill_degree is true.",
+   "KINS 3 row prints '4-5' with 'or DANC 10'; the range likely reflects KINS 3 (4) vs DANC 10 (5, as printed in the electives list). Recorded as units 4, units_max 5 on KINS 3; DANC 10 alternative units left null.",
+   "Closed-list KINS 008A matches catalog KINS 8A.",
+   "Support Courses also allow any Physical Education (PHED) activity course, any Athletics (ATHL) course, or any Dance (DANC) activity course; these open options are not listed as individual courses.",
+   "The program learning outcomes are printed for the program page as a whole; the A.A. degree is the award described and shares them.",
+   "Elective courses are recommended to reach the 90-unit degree minimum and do not count toward the 37-38 unit major. DANC 10 footnote: may be completed only once for credit to satisfy degree requirements.",
+   "An Associate Degree for Transfer (Kinesiology AA-T) is mentioned but is a separate listing, not recorded here."
+  ]
+ },
+ "extracted_run": "38675242638"
+}
