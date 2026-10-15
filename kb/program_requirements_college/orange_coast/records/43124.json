@@ -1,0 +1,288 @@
+{
+ "college": "Orange Coast College",
+ "control_number": "43124",
+ "shape": "certificate",
+ "title": "Flight Operations",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-science/flight-operations-coa/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7419,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7419,
+    "output_tokens": 1724,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1724,
+  "output_tokens_details": {
+   "thinking_tokens": 551
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06416,
+ "ms": 13975,
+ "seconds": 14.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 8,
+   "codes": [
+    "ACCTA101",
+    "ACCTA101H",
+    "ACCTA102",
+    "ACCTA102H",
+    "ECONA170",
+    "ECONA170H",
+    "ECONA175",
+    "ECONA175H"
+   ],
+   "flagged": [
+    "ACCTA101",
+    "ACCTA101H",
+    "ACCTA102",
+    "ACCTA102H",
+    "ECONA170",
+    "ECONA170H",
+    "ECONA175",
+    "ECONA175H"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    17.0,
+    17.0
+   ],
+   "stated": [
+    17.0,
+    17.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 11,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Flight Operations Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 17,
+    "max": 17
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will develop a baseline understanding of industry and terminology along with the analytical and critical thinking skills necessary to enter the air transportation industry as professionals in non-flying capacities such as: ground operations, customer services, gate attendants, aviation sales, flight crew attendants, and charter flight coordinators."
+   ],
+   "careers": [
+    "flight operations",
+    "aircraft dispatch",
+    "aircraft, and aircrew scheduling",
+    "airport operations",
+    "Fixed Base Operations",
+    "ground operations",
+    "customer services",
+    "gate attendants",
+    "aviation sales",
+    "flight crew attendants",
+    "charter flight coordinators"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 17,
+     "max": 17
+    },
+    "courses": [
+     {
+      "code": "APT A110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APT A115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APT A130",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APT A145",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS A100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS A100H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Flight Operations Suggested Electives",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ACCT A101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ACCT A101H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACCT A102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ACCT A102H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON A170",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON A170H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON A175",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON A175H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The 'Total Units 17' is printed at the end of the Required Courses list; recorded as both the block's stated total and the certificate total.",
+   "BUS A100H is printed as an 'or' option without its own units; units left null.",
+   "Suggested electives are printed without units and are not required; recorded as a recommended block. Honors versions are paired with their standard courses as alternatives, reading them as twins, though the catalog lists them as separate rows.",
+   "Career entry 'aircraft, and aircrew scheduling' copied as printed; the comma may be a typo for 'aircraft and aircrew scheduling'. Non-flying roles listed in the program learning outcome were also recorded as careers.",
+   "APT A115 is marked as fall course only in the program sequence."
+  ]
+ },
+ "extracted_run": "38670927724"
+}

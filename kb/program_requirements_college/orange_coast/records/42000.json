@@ -1,0 +1,589 @@
+{
+ "college": "Orange Coast College",
+ "control_number": "42000",
+ "shape": "degree",
+ "title": "Environmental Science",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/environmental-science/environmental-science-associate-science-degree/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9384,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9384,
+    "output_tokens": 4989,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4989,
+  "output_tokens_details": {
+   "thinking_tokens": 1752
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.13732,
+ "ms": 39533,
+ "seconds": 39.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 41,
+   "listed": 41,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "CHEMISTRYA220",
+    "PHYSICSA120",
+    "PHYSICSA185",
+    "PHYSICSA280",
+    "PHYSICSA285"
+   ],
+   "flagged": [
+    "CHEMISTRYA220",
+    "PHYSICSA120",
+    "PHYSICSA185",
+    "PHYSICSA280",
+    "PHYSICSA285"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    43.0,
+    53.0
+   ],
+   "stated": [
+    60.0,
+    68.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the OCC AS General Education pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     43.0,
+     53.0
+    ],
+    "stated": [
+     43.0,
+     53.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Environmental Science, Associate in Science Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 43,
+    "max": 53
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "OCC AS General Education",
+   "degree_total": {
+    "min": 60,
+    "max": 68
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Describe the major biological, chemical, and physical components and processes within organisms and the environment.",
+    "Describe historical and current human activities that negatively impact the environment (energy resources, urbanization, agricultural methods, etc) and how economics, social interactions, policies, and laws affect human activity within the environment.",
+    "Develop the skills to research environmental topics, conduct and analyze experimental data, and communicate findings with their peers.",
+    "Students who complete the degree will be prepared for admission to California State University/University of California schools in environmental science."
+   ],
+   "careers": [
+    "field ecologist",
+    "geologist",
+    "hydrologist"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ESEC A100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ESEC A100H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2001H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2002H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL A180",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM A180",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM A185",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A Geology course with lab: GEOL A110",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Geology",
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "GEOL A110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A Geology course with lab: GEOL A105 and GEOL A105L",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Geology",
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "GEOL A105",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOL A105H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL A105L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOL A105M",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select additional Biology course(s): BIOL A185",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Biology",
+    "stated": {
+     "min": 4,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "BIOL A185",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select additional Biology course(s): or the following group",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Biology",
+    "stated": {
+     "min": 4,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "BIOL A182",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL A182H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL A182L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL A183",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL A183L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one Math course:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "MATH A140",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH A180",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH A180H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH A185",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH A185H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC A160",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Restricted Electives",
+    "rule": "choose_units",
+    "minimum": 7,
+    "option_group": null,
+    "stated": {
+     "min": 7,
+     "max": 13
+    },
+    "courses": [
+     {
+      "code": "ESEC A110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESEC A121",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MRSC A121",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESEC A124",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MRSC A124",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESEC A140",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESEC A141",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MRSC A187",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MRSC A188",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT A190",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL A160",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL A250",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG A190",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL A172",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Recommended prior to transfer",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "Physics A120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "Physics A185",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "Physics A280",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "Physics A285",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "Chemistry A220",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The text begins mid-sentence and the section heading is not printed; section_heading is inferred from the program title and the URL.",
+   "Only the block headings and a few required courses print units; courses in choice lists and alternatives print no units beside them, so their units are null.",
+   "Closed list stores MATH A180 and MATH A185 as 'MATHA180' and 'MATHA185' (no space); treated as the same courses as the catalog's MATH A180/A185, so catalog_addition is false.",
+   "The Geology requirement (4 units) is GEOL A110, or GEOL A105/A105H with GEOL A105L/A105M; it is recorded as two option blocks in option_group 'Geology'.",
+   "'Select additional Biology course(s): 4-8' is BIOL A185, or the group BIOL A182/A182H, A182L, A183, A183L; it is recorded as two option blocks in option_group 'Biology', each carrying the printed 4-8 total. The plan of study shows the Zoology/Botany set as 5-8 units; check whether all four group courses are required.",
+   "The OCC AS General Education is printed as 'up to 21' units, not as a fixed figure, so ge_units is null. Footnote 3 says the Cal-GETC pattern '(up to 334 units)' may be substituted; '334' looks like a typo.",
+   "Total Major Units are 43-53, and the Total Minimum Degree Units (OCC AS GE) are 60-68. The description says the major needs a minimum of 43 units, of which 36-40 are core. Transferable electives 'as needed' are printed as 'varies'.",
+   "Physics and Chemistry courses that the department 'strongly recommends' completing prior to transfer are recorded as a recommended block with codes as written in prose ('Physics A120', etc.); they are not required.",
+   "The fourth line under Program Learning Outcomes ('Students who complete the degree will be prepared for admission...') reads more like a statement than a learning outcome, but it is printed under the PLO heading, so it is recorded as an outcome; reviewer should check."
+  ]
+ },
+ "extracted_run": "38670927724"
+}

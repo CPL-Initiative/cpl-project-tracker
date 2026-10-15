@@ -1,0 +1,270 @@
+{
+ "college": "Orange Coast College",
+ "control_number": "03976",
+ "shape": "degree",
+ "title": "Heating,Ventilation,Air Conditioning & Refrigeration HVACR",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/heating-ventilation-air-conditioning-refrigeration/heating-ventilation-air-conditioning-refrigeration-associate-science-degree/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7504,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7504,
+    "output_tokens": 2246,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2246,
+  "output_tokens_details": {
+   "thinking_tokens": 947
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07494,
+ "ms": 18825,
+ "seconds": 19.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 10,
+   "share": 0.8,
+   "missing": [
+    "CISA100",
+    "CISA111"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "HVACA100",
+    "HVACA102",
+    "HVACA105"
+   ],
+   "flagged": [
+    "HVACA100",
+    "HVACA102",
+    "HVACA105"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    30.0,
+    30.0
+   ],
+   "stated": [
+    60.0,
+    62.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the OCC AS GE pattern, but no units for it"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Heating, Ventilation, Air Conditioning and Refrigeration (HVACR), Associate in Science Degree",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "OCC AS GE",
+   "degree_total": {
+    "min": 60,
+    "max": 62
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Prepare students for entry-level employment as an HVACR Technician and for industry certifications."
+   ],
+   "careers": [
+    "heating, ventilating and air conditioning technicians",
+    "HVACR Technician"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses (from Program Sequence)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHT A100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HVAC A100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HVAC A101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HVAC A140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HVAC A102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HVAC A110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HVAC A105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HVAC A103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose two: HVAC A104 or HVAC A106 or HVAC A111 (from Program Sequence)",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HVAC A104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HVAC A106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HVAC A111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CIS A100",
+    "why": "not in the text"
+   },
+   {
+    "code": "CIS A111",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The REQUIREMENTS tab content is not in the extracted text; the overview only says to complete the Certificate of Achievement and A.S. Graduation Requirements. Blocks were reconstructed from the Program Sequence (Plan of Study Grid), which is a curriculum map, not the official requirements list; reviewer should verify against the Requirements tab.",
+   "The sequence lists HVAC A104/A106/A111 in Year 1 Semester 1 and again as 'Choose one not already taken above' in Year 2 Semester 1, read as choose two of the three.",
+   "Closed-list code 'HVACA103' matched to catalog 'HVAC A103' (spacing difference).",
+   "degree_total 60-62 is the 'Total Units' of the Plan of Study Grid; no major/certificate total is printed in the text.",
+   "Elective (degree applicable) slots show 3 units each (9 total) but footnote says 'VARIES TO REACH MINIMUM 60 DEGREE APPLICABLE UNITS'; recorded electives_fill_degree true and open_elective_units null.",
+   "GE pattern recorded as OCC AS GE (local A.S. GE areas 1A, 1B, 2, 3, 4, 5, 6); no GE unit total printed.",
+   "Program learning outcome is printed under the program overview and applies to this award."
+  ]
+ },
+ "extracted_run": "38670927724"
+}

@@ -1,0 +1,291 @@
+{
+ "college": "Orange Coast College",
+ "control_number": "16634",
+ "shape": "degree",
+ "title": "Advanced Baking and Pastry",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/culinary-arts/advanced-baking-pastry-associate-science-degree/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7482,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7482,
+    "output_tokens": 2396,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2396,
+  "output_tokens_details": {
+   "thinking_tokens": 964
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07785,
+ "ms": 20214,
+ "seconds": 20.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 14,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "CAA131",
+    "CAA226",
+    "CAA236"
+   ],
+   "flagged": [
+    "CAA131",
+    "CAA226",
+    "CAA236"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    40.0,
+    41.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 8,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Advanced Baking and Pastry, Associate in Science Degree",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "OCC A.S. GE Pattern",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will be prepared for employment as professional and competent bakers, pastry cooks, or pastry entrepreneurs of retail and wholesale baking and pastry establishments."
+   ],
+   "careers": [
+    "entrepreneur",
+    "head baker",
+    "assistant pastry chef",
+    "pastry chef",
+    "executive pastry chef",
+    "bakers",
+    "pastry cooks",
+    "pastry entrepreneurs"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Program Sequence (major courses from Plan of Study Grid)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FBM A100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FBM A102",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FBM A222",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FBM A220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CA A149",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CA A120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CA A124",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FBM A221",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FN A140",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "FN A170",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CA A205",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CA A126",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CA A236",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FBM A215",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CA A226",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CA A237",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CA A131",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The REQUIREMENTS tab content is not in the supplied text; the overview says only to complete the Advanced Baking and Pastry Certificate of Achievement plus A.S. graduation requirements. The block was built from the Program Sequence (Plan of Study Grid), which is a suggested curriculum map, not a formal requirements list. Reviewer should verify against the certificate's requirements.",
+   "FN A140 or FN A170 row prints a single unit value (2); FN A170's own units are not printed, so its alternative units are null (state file stores 3).",
+   "Plan of Study Grid prints 'Total Units 55', which includes GE areas; it is not recorded as the major or degree total. Footnote 2 'VARIES TO REACH MINIMUM 60 DEGREE APPLICABLE UNITS' is not attached to a visible row, so electives_fill_degree left false.",
+   "Course titles in the grid differ from the state file for FBM A100 ('Introduction to the Hospitality Industry') and FBM A215 ('Foodservice Systems and Operations Management').",
+   "CA A236, CA A226 and CA A131 appear in the sequence but not in the closed list (catalog additions).",
+   "Careers 'bakers', 'pastry cooks', 'pastry entrepreneurs' are taken from the program learning outcome text; the others from the overview."
+  ]
+ },
+ "extracted_run": "38670927724"
+}

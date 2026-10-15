@@ -1,0 +1,318 @@
+{
+ "college": "Orange Coast College",
+ "control_number": "22389",
+ "shape": "certificate",
+ "title": "Fitness Specialist: Health Fitness Instructor/Personal Trainer",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/kinesiology/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 13042,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 13042,
+    "output_tokens": 1469,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1469,
+  "output_tokens_details": {
+   "thinking_tokens": 224
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08155,
+ "ms": 13198,
+ "seconds": 13.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 36,
+   "share": 0.0,
+   "missing": [
+    "HLEDA136",
+    "KINA105",
+    "KINA106",
+    "KINA107",
+    "KINA108",
+    "KINA114",
+    "KINA115",
+    "KINA125",
+    "KINA126",
+    "KINA127",
+    "KINA128",
+    "KINA129",
+    "KINA130",
+    "KINA147",
+    "KINA150",
+    "KINA151",
+    "KINA152",
+    "KINA153",
+    "KINA154",
+    "KINA156",
+    "KINA202",
+    "KINA206",
+    "KINA208",
+    "KINA210",
+    "KINA214",
+    "KINA215",
+    "KINA252",
+    "KINA253",
+    "KINA254",
+    "KINA270",
+    "KINA271",
+    "KINA279",
+    "KINA283",
+    "KINA296",
+    "KINA297",
+    "KINA298"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Fitness Specialist: Health Fitness Instructor/Personal Trainer, Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "HLED A136",
+    "why": "not in the text; program requirements section not included"
+   },
+   {
+    "code": "KIN A105",
+    "why": "course description only; requirements section not in the text"
+   },
+   {
+    "code": "KIN A106",
+    "why": "course description only; requirements section not in the text"
+   },
+   {
+    "code": "KIN A107",
+    "why": "course description only; requirements section not in the text"
+   },
+   {
+    "code": "KIN A108",
+    "why": "course description only; requirements section not in the text"
+   },
+   {
+    "code": "KIN A114",
+    "why": "course description only; requirements section not in the text"
+   },
+   {
+    "code": "KIN A115",
+    "why": "course description only; requirements section not in the text"
+   },
+   {
+    "code": "KIN A125",
+    "why": "course description only; requirements section not in the text"
+   },
+   {
+    "code": "KIN A126",
+    "why": "course description only; requirements section not in the text"
+   },
+   {
+    "code": "KIN A127",
+    "why": "course description only; requirements section not in the text"
+   },
+   {
+    "code": "KIN A128",
+    "why": "course description only; requirements section not in the text"
+   },
+   {
+    "code": "KIN A129",
+    "why": "course description only; requirements section not in the text"
+   },
+   {
+    "code": "KIN A130",
+    "why": "course description only (cut off); requirements section not in the text"
+   },
+   {
+    "code": "KIN A147",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN A150",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN A151",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN A152",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN A153",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN A154",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN A156",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN A202",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN A206",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN A208",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN A210",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN A214",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN A215",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN A252",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN A253",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN A254",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN A270",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN A271",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN A279",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN A283",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN A296",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN A297",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN A298",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied text contains only the end of the program overview and the start of the COURSES tab (course descriptions KIN A102 through a truncated KIN A130). The requirements section for the Fitness Specialist Certificate of Achievement is not in the text, so no blocks, totals, outcomes or careers could be recorded.",
+   "The section heading is taken from the 'Catalog Program Pages Referencing KIN A105' list, which names this certificate; it is a cross-reference, not a requirements section.",
+   "KIN A105 is referenced by this certificate's page per the course listing, but its role in the requirements (required, elective, etc.) cannot be determined from the text.",
+   "The text is cut off mid-description at KIN A130; a reviewer should obtain the program's Requirements tab."
+  ]
+ },
+ "extracted_run": "38670927724"
+}

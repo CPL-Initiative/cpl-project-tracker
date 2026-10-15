@@ -1,0 +1,347 @@
+{
+ "college": "Orange Coast College",
+ "control_number": "22372",
+ "shape": "certificate",
+ "title": "Business Administration",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/business/business-administration-certificate-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7864,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7864,
+    "output_tokens": 2019,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2019,
+  "output_tokens_details": {
+   "thinking_tokens": 624
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07184,
+ "ms": 16548,
+ "seconds": 16.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 16,
+   "share": 0.75,
+   "missing": [
+    "ACCTA110",
+    "BUSA200",
+    "PHILA150",
+    "PSYCA160"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 9,
+   "codes": [
+    "ACCTA101H",
+    "ACCTA102H",
+    "BUSA100H",
+    "BUSA110H",
+    "CISA111H",
+    "ECONC2001H",
+    "ECONC2002H",
+    "ENGLC1000",
+    "ESLA100"
+   ],
+   "flagged": [
+    "ACCTA101H",
+    "ACCTA102H",
+    "BUSA100H",
+    "BUSA110H",
+    "CISA111H",
+    "ECONC2001H",
+    "ECONC2002H",
+    "ENGLC1000",
+    "ESLA100"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    38.0,
+    38.0
+   ],
+   "stated": [
+    38.0,
+    38.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business Administration, Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 38,
+    "max": 38
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Function effectively in entry-level business positions or at a four-year college business program using the skills, principles, and tools they have acquired.",
+    "Effectively apply and utilize the business principles and techniques they have learned in a business environment or at a four-year college business program.",
+    "Demonstrate effective written and/or oral skills."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ACCT A101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ACCT A101H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT A102",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ACCT A102H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS A100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS A100H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS A110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS A110H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS A139",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS A111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CIS A111H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2001H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2002H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ESL A100",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "MATH A140",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH A180",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH A180H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ACCT A110",
+    "why": "not in the text"
+   },
+   {
+    "code": "BUS A200",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHIL A150",
+    "why": "not in the text"
+   },
+   {
+    "code": "PSYC A160",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "MATH A180 matched to closed-list entry 'MATHA180' (printed without a space in the state file); treated as not a catalog addition.",
+   "In the 'Select one of the following' block the 5 units are printed beside the block heading, not beside each course, so course units are left null; the program sequence also shows 5 for the MATH group.",
+   "Honors alternatives and ESL A100 have no units printed beside them in the requirements list.",
+   "The overview text describes the program as leading to an Associate in Science degree for transfer majors, though this section is the Certificate of Achievement; the program learning outcomes appear on the certificate page and may be shared with the degree.",
+   "CIS A111H is listed as an alternative in the requirements; the program sequence also shows it."
+  ]
+ },
+ "extracted_run": "38670927724"
+}
