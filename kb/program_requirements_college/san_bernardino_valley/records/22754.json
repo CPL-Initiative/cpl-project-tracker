@@ -1,0 +1,188 @@
+{
+ "college": "San Bernardino Valley College",
+ "control_number": "22754",
+ "shape": "certificate",
+ "title": "Computer Science",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/computer-science/computer-science-as-degree/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8308,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8308,
+    "output_tokens": 1223,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1223,
+  "output_tokens_details": {
+   "thinking_tokens": 528
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05769,
+ "ms": 12203,
+ "seconds": 12.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 10,
+   "share": 0.0,
+   "missing": [
+    "CIT100",
+    "CS100",
+    "CS102",
+    "CS102H",
+    "CS104",
+    "CS110",
+    "CS120",
+    "CS190",
+    "CS220",
+    "CS77"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Computer Science Associate of Science Degree",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CIT 100",
+    "why": "named only in the A.S. section"
+   },
+   {
+    "code": "CS 77",
+    "why": "named only in the A.S. section (printed as CS 077)"
+   },
+   {
+    "code": "CS 100",
+    "why": "named only in the A.S. section"
+   },
+   {
+    "code": "CS 102",
+    "why": "named only in the A.S. section"
+   },
+   {
+    "code": "CS 102H",
+    "why": "named only in the A.S. section"
+   },
+   {
+    "code": "CS 104",
+    "why": "named only in the A.S. section"
+   },
+   {
+    "code": "CS 110",
+    "why": "named only in the A.S. section"
+   },
+   {
+    "code": "CS 120",
+    "why": "named only in the A.S. section"
+   },
+   {
+    "code": "CS 220",
+    "why": "named only in the A.S. section"
+   },
+   {
+    "code": "CS 190",
+    "why": "named only in the A.S. section"
+   }
+  ],
+  "notes": [
+   "The source page is the Computer Science Associate of Science Degree page. It prints no section for the Computer Science Certificate of Achievement, which appears only as a link in the site menu. No certificate requirements were recorded.",
+   "The A.S. section lists the following required courses, totaling 33 units: CIT 100, CS 077, CS 100, CS 102 or CS 102H, CS 104, CS 110, CS 120, CS 220, and CS 190 or CS 215. It also recommends CS 160. A reviewer should fetch the certificate's own page (computer-science-certificate-of-achievement) to confirm the certificate's requirements.",
+   "CS 215 and CS 160 appear in the A.S. section but are not in the closed list.",
+   "The page's program learning outcomes and its career statement ('entry-level positions as programmers for scientific and business applications') belong to the A.S. degree. They were not recorded for the certificate."
+  ]
+ },
+ "extracted_run": "38748858322"
+}

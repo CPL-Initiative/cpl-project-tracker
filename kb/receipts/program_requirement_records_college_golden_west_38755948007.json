@@ -1,0 +1,196 @@
+{
+ "college": "Golden West College",
+ "load_run": "38755948007",
+ "function": "program_requirement_records_college_load",
+ "at": "2026-10-15T14:57:23Z",
+ "records": 81,
+ "posted": 50,
+ "batches": 2,
+ "inserted": 50,
+ "kept": 0,
+ "skipped": [
+  {
+   "control_number": "03923",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "03941",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "11415",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "18358",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "18416",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "18418",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "18427",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "18428",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21349",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "30641",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32098",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32848",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33676",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "38003",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "38007",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "38008",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39044",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "41897",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "42329",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "42608",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "42844",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "42858",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "42940",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "43170",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "43199",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "43954",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45308",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45330",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45331",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45333",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46427",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "extracted_runs": [
+  "38748828247"
+ ],
+ "machine_pass": 38,
+ "inserted_keys": [
+  "03903",
+  "03928",
+  "11418",
+  "11439",
+  "17960",
+  "18426",
+  "18572",
+  "18945",
+  "19379",
+  "19380",
+  "19382",
+  "19435",
+  "19436",
+  "19439",
+  "19461",
+  "30582",
+  "30701",
+  "30713",
+  "31116",
+  "31124",
+  "31125",
+  "31339",
+  "31340",
+  "31436",
+  "31541",
+  "32102",
+  "32118",
+  "32145",
+  "32277",
+  "35212",
+  "37279",
+  "37280",
+  "37281",
+  "37636",
+  "37746",
+  "37901",
+  "37902",
+  "38957",
+  "39189",
+  "40252",
+  "41101",
+  "41125",
+  "41509",
+  "42148",
+  "44209",
+  "45055",
+  "45056",
+  "46131",
+  "46426",
+  "46547"
+ ],
+ "kept_keys": [],
+ "rollback": "delete from public.program_requirement_records where college = 'Golden West College' and checked = false and control_number in ('03903', '03928', '11418', '11439', '17960', '18426', '18572', '18945', '19379', '19380', '19382', '19435', '19436', '19439', '19461', '30582', '30701', '30713', '31116', '31124', '31125', '31339', '31340', '31436', '31541', '32102', '32118', '32145', '32277', '35212', '37279', '37280', '37281', '37636', '37746', '37901', '37902', '38957', '39189', '40252', '41101', '41125', '41509', '42148', '44209', '45055', '45056', '46131', '46426', '46547');"
+}

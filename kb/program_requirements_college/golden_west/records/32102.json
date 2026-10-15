@@ -1,0 +1,224 @@
+{
+ "college": "Golden West College",
+ "control_number": "32102",
+ "shape": "adt",
+ "title": "Geology",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.cccd.edu/golden-west/pathways/stem/geology/geology-ast/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6813,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6813,
+    "output_tokens": 1312,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1312,
+  "output_tokens_details": {
+   "thinking_tokens": 233
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05349,
+ "ms": 11684,
+ "seconds": 12.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    26.0,
+    26.0
+   ],
+   "stated": [
+    26.0,
+    26.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     60.0,
+     60.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "fill": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Required Courses – Core",
+   "measure": "units",
+   "total_units": {
+    "min": 26,
+    "max": 26
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Define the application of the scientific method to geology and how it allows scientists to develop theories of the natural forces that shape the evolving Earth.",
+    "Describe the processes of plate tectonics as it relates to mountain building events, volcanoes, earthquakes, and evolution of landscapes.",
+    "Define the processes of mineral and rock formation and the importance of economic resources.",
+    "Evaluate geologic landscapes and structures, such as faults, folds and the physical forces required to develop a geologic landscape.",
+    "Relate geologic time and the fossil record to past climates and the tectonic and ecological environments responsible for the formation of the Earth.",
+    "Examine past climates, both those warmer and cooler than current conditions, and how ice ages impacted climate and shaped landscapes.",
+    "Perform rudimentary calculations relating to physical structure and chemical compositions."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses – Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 26,
+     "max": 26
+    },
+    "courses": [
+     {
+      "code": "GEOL G110",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL G120",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM G180",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM G185",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH G180",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH G185",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog text begins mid-description and the program's own page heading (e.g. 'Geology, A.S. T Degree') is not in the extracted text; section_heading uses the requirements table heading 'Required Courses – Core'.",
+   "The 'Major Total 26' is recorded both as total_units and as the core block's stated total, since the core is the only block in the major.",
+   "Total Units 60 recorded as degree_total; GE Pattern (Cal-GETC) 34 recorded as ge_units; transferable electives are printed 'as needed to reach 60 units' with no units, so electives_fill_degree is true.",
+   "The closing note says the 60-unit total 'can only be met with IGETC' while the table and requirements name Cal-GETC; likely outdated wording—reviewer should check.",
+   "Catalog course titles differ from the state file for MATH G180/G185 ('Calculus I/II: Early Transcendentals'), codes match.",
+   "Program learning outcomes are printed for the program page and recorded for this award. No careers are named in the extracted text."
+  ]
+ },
+ "extracted_run": "38748828247"
+}

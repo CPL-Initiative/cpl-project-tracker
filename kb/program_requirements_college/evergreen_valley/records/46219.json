@@ -1,0 +1,232 @@
+{
+ "college": "Evergreen Valley College",
+ "control_number": "46219",
+ "shape": "certificate",
+ "title": "Chemical and Materials Engineering",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.evc.edu/degrees-certificates/engineering/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12057,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12057,
+    "output_tokens": 1170,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1170,
+  "output_tokens_details": {
+   "thinking_tokens": 191
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07163,
+ "ms": 13163,
+ "seconds": 13.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 19,
+   "share": 0.0,
+   "missing": [
+    "CHEM12A",
+    "CHEM1A",
+    "CHEM1B",
+    "COMSC41",
+    "COMSC75",
+    "ENGR10",
+    "ENGR10A",
+    "ENGR30",
+    "ENGR50",
+    "ENGR66A",
+    "ENGR69",
+    "MATH66",
+    "MATH67",
+    "MATH71",
+    "MATH72",
+    "MATH73",
+    "MATH78",
+    "PHYS7A",
+    "PHYS7B"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "ENGINEERING (no Chemical and Materials Engineering section in the text)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CHEM 001A",
+    "why": "no requirements section for this award in the text; named only as a course prerequisite"
+   },
+   {
+    "code": "CHEM 001B",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHEM 012A",
+    "why": "not in the text"
+   },
+   {
+    "code": "COMSC 41",
+    "why": "no requirements section for this award in the text; COMSC 041 named only as a course prerequisite"
+   },
+   {
+    "code": "COMSC 75",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGR 010A",
+    "why": "no requirements section for this award in the text; appears only in course descriptions"
+   },
+   {
+    "code": "ENGR 066A",
+    "why": "no requirements section for this award in the text; appears only in course descriptions"
+   },
+   {
+    "code": "ENGR 10",
+    "why": "no requirements section for this award in the text; ENGR 010 appears only in course descriptions"
+   },
+   {
+    "code": "ENGR 30",
+    "why": "no requirements section for this award in the text; ENGR 030 appears only in course descriptions"
+   },
+   {
+    "code": "ENGR 50",
+    "why": "no requirements section for this award in the text; ENGR 050 appears only in course descriptions"
+   },
+   {
+    "code": "ENGR 69",
+    "why": "no requirements section for this award in the text; ENGR 069 appears only in course descriptions"
+   },
+   {
+    "code": "MATH 66",
+    "why": "no requirements section for this award in the text; named only as a course prerequisite"
+   },
+   {
+    "code": "MATH 67",
+    "why": "no requirements section for this award in the text; named only as a course prerequisite"
+   },
+   {
+    "code": "MATH 71",
+    "why": "no requirements section for this award in the text; named only as a course prerequisite"
+   },
+   {
+    "code": "MATH 72",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 73",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 78",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYS 007A",
+    "why": "no requirements section for this award in the text; named only as a course prerequisite"
+   },
+   {
+    "code": "PHYS 007B",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied text is the Engineering page navigation plus the Courses tab. It lists Engineering AA and Engineering Fundamentals 1/2, Civil, Computer, Electrical and Mechanical Engineering certificates, but no Chemical and Materials Engineering certificate, and no program requirements section at all. Nothing was recorded.",
+   "The course descriptions text is cut off mid-description (ENGR 071).",
+   "Reviewer should check whether the 2025-2026 catalog still offers this certificate or whether it appears on another page."
+  ]
+ },
+ "extracted_run": "38748875071"
+}

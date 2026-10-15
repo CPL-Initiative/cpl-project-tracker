@@ -1,0 +1,45 @@
+{
+ "college": "Evergreen Valley College",
+ "programs": 93,
+ "with_closed_list": 92,
+ "found": 86,
+ "extracted": 86,
+ "errors": 0,
+ "passed_machine_checks": 54,
+ "failed": {
+  "coverage": 12,
+  "invented": 0,
+  "arithmetic": 32,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 5.92,
+ "cost_per_program": 0.0688,
+ "not_found": [
+  {
+   "control_number": "45783",
+   "title": "Generative AI Entrepreneurship Program",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "45784",
+   "title": "Generative AI Application Development Program",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "46250",
+   "title": "Pathway to Citizenship",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "run": "38748875071"
+}

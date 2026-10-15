@@ -1,0 +1,244 @@
+{
+ "college": "Cuyamaca College",
+ "control_number": "17024",
+ "shape": "degree",
+ "title": "Social Work",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/social-work/social-work-aa/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6983,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6983,
+    "output_tokens": 1631,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1631,
+  "output_tokens_details": {
+   "thinking_tokens": 528
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06055,
+ "ms": 13425,
+ "seconds": 13.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    25.0,
+    25.0
+   ],
+   "stated": [
+    25.0,
+    25.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 17,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Social Work Associate in Arts",
+   "measure": "units",
+   "total_units": {
+    "min": 25,
+    "max": 25
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify and analyze barriers and issues faced by under-represented and vulnerable communities through the lenses of cultural competence and trauma-informed care.",
+    "Apply critical thinking skills to case management, crisis intervention, and theory-based assessment to understand and support positive interactions between individuals and their environments.",
+    "Facilitate use of community resources, community linkages and government assistance programs which support social work practices in diverse environments.",
+    "Apply knowledge of biopsychosocial factors that affect human development and behavior across life span to case management strategies and approaches.",
+    "Identify diverse roles of social workers in micro, mezzo and macro levels of practice and evaluate own’s professional identity and skills."
+   ],
+   "careers": [
+    "Administration",
+    "Child Welfare",
+    "Counseling",
+    "Therapy",
+    "Advocacy",
+    "Politics",
+    "Education",
+    "Criminal Justice/Corrections",
+    "Developmental Disabilities",
+    "Gerontology",
+    "Health Care",
+    "Organizational Development",
+    "Teaching",
+    "Wellness Promotion",
+    "Human Resources",
+    "Social Work",
+    "Research"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Associate in Arts Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 25,
+     "max": 25
+    },
+    "courses": [
+     {
+      "code": "BIOL-C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON-C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON-C2001",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HED-201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT-C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSY-215",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC-C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI-C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SW-100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SW-110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Careers are listed under group labels (Clinical:, Community Organizations:, Occupational:, Public Welfare:); the labels were not recorded as careers. 'Counseling' appears under both Clinical and Occupational and is recorded once. Each career carries footnote 1: 'Bachelor degree or higher recommended.'",
+   "Units for the 'or' alternatives ECON-C2001 and PSY-215 are not printed beside them; recorded as null.",
+   "The page says 'Plus General Education Requirements' without naming a pattern or printing GE units or a degree total."
+  ]
+ },
+ "extracted_run": "38748833332"
+}

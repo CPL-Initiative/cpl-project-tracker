@@ -1,0 +1,183 @@
+{
+ "college": "Cypress College",
+ "control_number": "42222",
+ "shape": "noncredit",
+ "title": "Practicum in Intermediate Machine Shorthand",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/court-reporting/practicum-in-intermediate-machine-shorthand-certificate/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7431,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7431,
+    "output_tokens": 1170,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1170,
+  "output_tokens_details": {
+   "thinking_tokens": 434
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05312,
+ "ms": 9741,
+ "seconds": 10.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.0,
+    360.0
+   ],
+   "stated": [
+    20.0,
+    360.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Practicum in Intermediate Machine Shorthand Certificate of Completion (Non-Credit)",
+   "measure": "hours",
+   "total_units": {
+    "min": 20,
+    "max": 360
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Acquire the necessary intermediate skills to take dictation at speeds ranging up to 160 words per minute. The certificate is designed for intermediate level work in machine shorthand. This certificate will provide the students with stenographic skills that are applicable to non-court work specifically in law offices transcribing attorney briefs, general office work where dictated material needs to be transcribed, medical transcription, and other settings where recordation of meetings needs to be transcribed. These skills are necessary to seek employment as a transcriptionist."
+   ],
+   "careers": [
+    "CART",
+    "hearing reporting",
+    "transcriptionist"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CTRP N030C",
+      "units": 5,
+      "units_max": 90,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTRP N044C",
+      "units": 5,
+      "units_max": 90,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTRP N045C",
+      "units": 5,
+      "units_max": 90,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTRP N046C",
+      "units": 5,
+      "units_max": 90,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit certificate counted in hours: each course prints 5-90 hours; Total Hours 20-360.",
+   "The outcomes tab prints a single paragraph labeled 'OUTCOME 1:'; the whole paragraph is recorded as one outcome, though only its first sentence reads as an outcome and the rest reads as program description. Reviewer may wish to check.",
+   "'Transcriptionist' is taken from the outcomes tab text; 'CART' and 'hearing reporting' from the program description."
+  ]
+ },
+ "extracted_run": "38748866826"
+}

@@ -1,0 +1,261 @@
+{
+ "college": "Cypress College",
+ "control_number": "32966",
+ "shape": "degree",
+ "title": "Law Office Administration",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/court-reporting/law-office-administration-associate-in-science-degree/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7705,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7705,
+    "output_tokens": 1681,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1681,
+  "output_tokens_details": {
+   "thinking_tokens": 436
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06444,
+ "ms": 13501,
+ "seconds": 13.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 15,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    26.5,
+    26.5
+   ],
+   "stated": [
+    26.5,
+    26.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Law Office Administration Associate in Science Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 26.5,
+    "max": 26.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cypress College Local General Education or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Acquire the necessary knowledge and skills to pursue a career in Legal Office Administration including specific aptitudes in Legal and Court Procedures, Legal Terminology and Rhetoric, Legal Research, and Legal Environment of Business. These skills and knowledge are essential for careers in law office administration and paralegal positions. These skills and preparation will allow an individual to branch out into the various areas of law and court system in California. These courses are necessary in order to work in the field of law office administration."
+   ],
+   "careers": [
+    "legal arena",
+    "law office administration",
+    "paralegal positions"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required courses are listed in suggested sequence",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 26.5,
+     "max": 26.5
+    },
+    "courses": [
+     {
+      "code": "CTRP 073AC",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTRP 073BC",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTRP 071 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTRP 072 C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 055 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 143 C",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTRP 067 C",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTRP 068 C",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTRP 076 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTRP 073DC",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTRP 073CC",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTRP 080 C",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CTRP 033 C",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "CTRP 034 C",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 240 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page states 'any elective courses to complete a minimum of 60 units' as a general Associate Degree requirement; recorded as electives_fill_degree true, with no degree_total since the page prints no total for this award including GE.",
+   "No units are printed beside the alternatives CTRP 033 C and CTRP 034 C; the state file lists 2 units each.",
+   "The single outcome was printed as 'OUTCOME 1:' on the page's outcomes tab; the label was omitted.",
+   "Careers 'law office administration' and 'paralegal positions' are taken from the program outcome text; 'legal arena' from the description."
+  ]
+ },
+ "extracted_run": "38748866826"
+}

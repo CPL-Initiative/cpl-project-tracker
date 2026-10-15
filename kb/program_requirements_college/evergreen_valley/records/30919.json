@@ -1,0 +1,210 @@
+{
+ "college": "Evergreen Valley College",
+ "control_number": "30919",
+ "shape": "adt",
+ "title": "Administration of Justice",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.evc.edu/graduation-transfer-general-education/identification-numbering-system-c-id/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9169,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9169,
+    "output_tokens": 1038,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1038,
+  "output_tokens_details": {
+   "thinking_tokens": 189
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05744,
+ "ms": 9146,
+ "seconds": 9.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 14,
+   "share": 0.0,
+   "missing": [
+    "AJ10",
+    "AJ11",
+    "AJ111",
+    "AJ112",
+    "AJ115",
+    "AJ116",
+    "AJ13",
+    "AJ14",
+    "AJ15",
+    "AJ19",
+    "BUS60",
+    "PSYCC1000",
+    "SOC10",
+    "STATC1000"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "IDENTIFICATION NUMBERING SYSTEM (C-ID)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AJ 10",
+    "why": "appears only in the C-ID table (as AJ 010); no program requirements in the text"
+   },
+   {
+    "code": "AJ 11",
+    "why": "appears only in the C-ID table (as AJ 011); no program requirements in the text"
+   },
+   {
+    "code": "AJ 111",
+    "why": "appears only in the C-ID table; no program requirements in the text"
+   },
+   {
+    "code": "AJ 112",
+    "why": "appears only in the C-ID table; no program requirements in the text"
+   },
+   {
+    "code": "AJ 115",
+    "why": "appears only in the C-ID table; no program requirements in the text"
+   },
+   {
+    "code": "AJ 116",
+    "why": "appears only in the C-ID table; no program requirements in the text"
+   },
+   {
+    "code": "AJ 13",
+    "why": "appears only in the C-ID table (as AJ 013); no program requirements in the text"
+   },
+   {
+    "code": "AJ 14",
+    "why": "not in the text"
+   },
+   {
+    "code": "AJ 15",
+    "why": "appears only in the C-ID table (as AJ 015); no program requirements in the text"
+   },
+   {
+    "code": "AJ 19",
+    "why": "appears only in the C-ID table (as AJ 019); no program requirements in the text"
+   },
+   {
+    "code": "BUS 60",
+    "why": "appears only in the C-ID table (as BUS 060); no program requirements in the text"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "appears only in the C-ID table; no program requirements in the text"
+   },
+   {
+    "code": "SOC 10",
+    "why": "appears only in the C-ID table (as SOC 010); no program requirements in the text"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "appears only in the C-ID table; no program requirements in the text"
+   }
+  ],
+  "notes": [
+   "The source page is the catalog's general C-ID numbering system list, not the Administration of Justice A.S.-T program page. It prints no requirements, totals, outcomes or careers for this award, so no blocks were recorded.",
+   "The correct program page (Degrees and Certificates > Administration of Justice, AS-T) should be fetched to record the requirements.",
+   "The C-ID table also lists AJ 113 and AJ 120, which are not in the closed list; they were not recorded because the table is not a requirements list."
+  ]
+ },
+ "extracted_run": "38748875071"
+}

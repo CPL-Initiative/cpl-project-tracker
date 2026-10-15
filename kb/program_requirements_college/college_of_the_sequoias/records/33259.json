@@ -1,0 +1,260 @@
+{
+ "college": "College of the Sequoias",
+ "control_number": "33259",
+ "shape": "adt",
+ "title": "Physics",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.cos.edu//areas-study/physics/associate-science-physics-transfer-as-t/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7367,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7367,
+    "output_tokens": 1594,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1594,
+  "output_tokens_details": {
+   "thinking_tokens": 405
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06135,
+ "ms": 14055,
+ "seconds": 14.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 9,
+   "share": 0.778,
+   "missing": [
+    "MATHC2210",
+    "MATHC2220"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "MATH65",
+    "MATH66"
+   ],
+   "flagged": [
+    "MATH65",
+    "MATH66"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    38.0,
+    38.0
+   ],
+   "stated": [
+    38.0,
+    38.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     72.0,
+     72.0
+    ],
+    "stated": [
+     65.0,
+     65.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Science in Physics for Transfer (AS-T)",
+   "measure": "units",
+   "total_units": {
+    "min": 38,
+    "max": 38
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "California-General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": 65,
+    "max": 65
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Develop the ability to identify, formulate, and solve physics problems.",
+    "Develop the ability to design and conduct experiments, as well as to analyze and interpret experimental data.",
+    "Develop the ability to use critical thinking in problem solving."
+   ],
+   "careers": [
+    "engineering",
+    "software development",
+    "research technician roles",
+    "high school science teaching"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED MAJOR COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 38,
+     "max": 38
+    },
+    "courses": [
+     {
+      "code": "CSCI 001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 065",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 066",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 067",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 080",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 081",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 055",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 056",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 057",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MATH C2210",
+    "why": "not in the text; catalog prints MATH 065 Calculus 1 instead (likely the same course under a different number)"
+   },
+   {
+    "code": "MATH C2220",
+    "why": "not in the text; catalog prints MATH 066 Calculus 2 instead (likely the same course under a different number)"
+   }
+  ],
+  "notes": [
+   "Catalog prints codes with leading zeros (CSCI 001, MATH 067, PHYS 055, etc.); these were matched to closed-list codes CSCI 1, MATH 67, MATH 80, MATH 81, PHYS 55, PHYS 56, PHYS 57.",
+   "MATH 065 (Calculus 1) and MATH 066 (Calculus 2) are not in the closed list, which instead names MATH C2210 and MATH C2220 (Calculus I/II: Early Transcendentals); reviewer should confirm whether these are renumbered equivalents under common course numbering.",
+   "Page prints REQUIRED MAJOR COURSES 38, GENERAL EDUCATION (Cal-GETC) 34, and TOTAL 65; it notes MATH 065 and PHYS 055 meet GE and 7 units may be double counted in Cal-GETC.",
+   "The page encourages taking chemistry but names no specific chemistry course, so no recommended block was recorded.",
+   "Program Outcomes are printed for this AS-T section and recorded as the award's outcomes."
+  ]
+ },
+ "extracted_run": "38748848139"
+}

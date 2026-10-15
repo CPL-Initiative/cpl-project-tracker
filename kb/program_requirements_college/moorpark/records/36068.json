@@ -1,0 +1,451 @@
+{
+ "college": "Moorpark College",
+ "control_number": "36068",
+ "shape": "adt",
+ "title": "Environmental Science",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/environmental-science/environmental-science-ast/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8314,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8314,
+    "output_tokens": 3773,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3773,
+  "output_tokens_details": {
+   "thinking_tokens": 1219
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.10872,
+ "ms": 30699,
+ "seconds": 31.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 27,
+   "listed": 27,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    40.0,
+    46.0
+   ],
+   "stated": [
+    42.0,
+    42.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 40.0-46.0; the catalog states 42.0-42.0"
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     74.0,
+     80.0
+    ],
+    "stated": [
+     63.0,
+     63.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "REQUIRED COURSES",
+   "measure": "units",
+   "total_units": {
+    "min": 42,
+    "max": 42
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 63,
+    "max": 63
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "analyze how energy, water, carbon, and biological materials cycle through natural and engineered systems—from ecosystems to energy grids and data infrastructure—and evaluate how thermodynamic, biochemical, and biogeochemical processes drive these flows.",
+    "evaluate the environmental impacts of converging technologies—including but not limited to AI-driven monitoring, robotic systems, energy storage, blockchain-enabled environmental markets, and biotechnology—alongside pollution sources, population dynamics, and resource consumption; and assess technological, policy, and management strategies for mitigation.",
+    "apply sustainability principles across local to global scales to both natural ecosystems and engineered systems, including energy grids, digital infrastructure, environmental monitoring platforms, and technology supply chains."
+   ],
+   "careers": [
+    "GIS analysts",
+    "remote sensing specialists",
+    "environmental entrepreneurs"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ENSC M01",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2210",
+      "units": 3,
+      "units_max": 5,
+      "alternatives": [
+       {
+        "code": "MATH C2210H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH M16A",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST A: Option 1 - Biology sequence with one semester of General Chemistry",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "LIST A",
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "BIOL M02A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL M02AH",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL M02B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL M02BH",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM M01A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM M01AH",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST A: Option 2 - Chemistry sequence with one semester of General Biology",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "LIST A",
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "CHEM M01A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM M01AH",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM M01B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL M02A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL M02AH",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST B: Select and complete two courses, the lecture must be associated with the lab",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "GEOG M01",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG M01L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL M02",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOL M02H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL M02L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST C: Complete one of the Physics sequences (PHYS M10A/M10B)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "LIST C",
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "PHYS M10A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS M10AL",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS M10B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS M10BL",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST C: Complete one of the Physics sequences (PHYS M20A/M20B)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "LIST C",
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "PHYS M20A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS M20AL",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS M20B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS M20BL",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The excerpt does not show the program's page heading; section_heading uses the first requirements heading printed ('REQUIRED COURSES'). Source URL indicates Environmental Science AS-T.",
+   "MATH C2210 group prints a single range 3-5 for C2210/C2210H/M16A; no separate units printed beside the alternatives (state file: 5, 5, 3).",
+   "LIST A total of 15 is printed once for the list; recorded as stated on each option block.",
+   "LIST B: the two courses must be a lecture with its associated lab (GEOG M01 & M01L, GEOL M02 & M02L, or GEOL M02H & GEOL M02L); GEOL M02L is printed twice and recorded once, with GEOL M02H as the honors alternative to GEOL M02. LIST B total of 4 comes from the summary table.",
+   "LIST C total of 10 is printed once for the list; recorded as stated on each sequence block.",
+   "Page prints Total Units for Major 42, Cal-GETC Pattern 34, Double-Counted Units 13, Total Units for the AS-T Degree 63.",
+   "Description strongly recommends programming (e.g., Python), GIS/geospatial, and statistics/data science courses, but names no course codes; no recommended block recorded.",
+   "Outcomes are from the page's program student learning outcomes tab for this program.",
+   "The catalog text begins mid-sentence ('olicy design; (7) Entrepreneurship...'); the start of the program description is cut off."
+  ]
+ },
+ "extracted_run": "38748862351"
+}

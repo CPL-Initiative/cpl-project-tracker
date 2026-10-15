@@ -1,0 +1,4557 @@
+[
+ {
+  "control_number": "04388",
+  "title": "Business Administration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.727,
+  "codes_found": [
+   "BADM103",
+   "BADM103H",
+   "BADM201",
+   "BADM530",
+   "ECONC2001H",
+   "ECONC2002H",
+   "MGT500",
+   "MGT520"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/business-business-administration/business-administration-as/",
+   "title": "Business Administration, A.S. | Mt. San Jacinto College Catalog",
+   "h1": "Business Administration, A.S.",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 6731
+ },
+ {
+  "control_number": "04389",
+  "title": "Small Business/Entrepreneurship",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "ACCT124",
+   "ACCT124H",
+   "BADM103",
+   "BADM103H",
+   "BADM104",
+   "BADM104H",
+   "BADM201",
+   "BADM530",
+   "BADM545",
+   "ECONC2002H",
+   "MGT520"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/business-business-administration/small-business-entrepreneurship-certificate/",
+   "title": "Small Business/Entrepreneurship Certificate | Mt. San Jacinto College Catalog",
+   "h1": "Small Business/Entrepreneurship Certificate",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 4969
+ },
+ {
+  "control_number": "04390",
+  "title": "Management/Supervision",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.867,
+  "codes_found": [
+   "ACCT740",
+   "BADM103",
+   "BADM103H",
+   "BADM104",
+   "BADM104H",
+   "BADM545",
+   "BADM730",
+   "ECONC2001H",
+   "ENGR505",
+   "MGT500",
+   "MGT760",
+   "PSYCC1000",
+   "PSYCC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/management-supervision/management-supervision-as/",
+   "title": "Management/Supervision, A.S. | Mt. San Jacinto College Catalog",
+   "h1": "Management/Supervision, A.S.",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 6539
+ },
+ {
+  "control_number": "04391",
+  "title": "Real Estate",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.818,
+  "codes_found": [
+   "ACCT124",
+   "ACCT124H",
+   "RE101",
+   "RE502",
+   "RE504",
+   "RE505",
+   "RE506",
+   "RE544",
+   "RE707"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/real-estate/real-estate-as/",
+   "title": "Real Estate, A.S. | Mt. San Jacinto College Catalog",
+   "h1": "Real Estate, A.S.",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 6506
+ },
+ {
+  "control_number": "04392",
+  "title": "Business, Clerical",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 13,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04395",
+  "title": "Computer Information Systems",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSIS101",
+   "CSIS103",
+   "CSIS111B",
+   "CSIS113A",
+   "CSIS113B",
+   "CSIS113C",
+   "CSIS115A",
+   "CSIS116E",
+   "CSIS118B",
+   "CSIS123A",
+   "CSIS123B",
+   "CSIS126E",
+   "CSIS201",
+   "CSIS202",
+   "CSIS211",
+   "CSIS501",
+   "CSIS502",
+   "CSIS503",
+   "CSIS504",
+   "CSIS514A",
+   "CSIS525",
+   "CSIS581",
+   "CSIS592",
+   "CSIS786",
+   "CSIS791",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/computer-information-systems/computer-information-systems-associates-degree/",
+   "title": "Computer Information Systems, A.S. | Mt. San Jacinto College Catalog",
+   "h1": "Computer Information Systems, A.S.",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 14696
+ },
+ {
+  "control_number": "04396",
+  "title": "Physical Education",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.981,
+  "codes_found": [
+   "PE106",
+   "PE110",
+   "PE112",
+   "PE112A",
+   "PE113",
+   "PE114A",
+   "PE114B",
+   "PE114C",
+   "PE115",
+   "PE119",
+   "PE119B",
+   "PE120",
+   "PE132",
+   "PE132B",
+   "PE133",
+   "PE134",
+   "PE137",
+   "PE195",
+   "PEIC139",
+   "PEIC139A",
+   "PEIC139B",
+   "PEIC140",
+   "PEIC140A",
+   "PEIC140B",
+   "PEIC141A",
+   "PEIC141B",
+   "PEIC141C",
+   "PEIC141D",
+   "PEIC142",
+   "PEIC142A",
+   "PEIC142B",
+   "PEIC143A",
+   "PEIC143B",
+   "PEIC143C",
+   "PEIC143D",
+   "PEIC144",
+   "PEIC144A",
+   "PEIC144B",
+   "PEIC145",
+   "PEIC145A",
+   "PEIC145B",
+   "PEIC146",
+   "PEIC146A",
+   "PEIC146B",
+   "PEIC147",
+   "PEIC147A",
+   "PEIC147B",
+   "PEIC148",
+   "PEIC148A",
+   "PEIC150",
+   "PEIC150A",
+   "PEIC150B"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/kinesiology/physical-education-aa/",
+   "title": "Physical Education, A.A. | Mt. San Jacinto College Catalog",
+   "h1": "Physical Education, A.A.",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 53,
+  "text_chars": 5531
+ },
+ {
+  "control_number": "04400",
+  "title": "Automotive/Transportation Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUME700",
+   "AUME770",
+   "AUME771",
+   "AUME780",
+   "AUME790"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/automotive-transportation-technology/automotive-technology-as/",
+   "title": "Automotive Technology, A.S. | Mt. San Jacinto College Catalog",
+   "h1": "Automotive Technology, A.S.",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 4548
+ },
+ {
+  "control_number": "04402",
+  "title": "Engineering: Drafting Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "ENGR121",
+   "ENGR154",
+   "ENGR155",
+   "ENGR164",
+   "ENGR180",
+   "ENGR523",
+   "ENGR549",
+   "ENGR567",
+   "ENGR756",
+   "GEOG115",
+   "PHOT125"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/engineering-technology/engineering-drafting-technology-as/",
+   "title": "Engineering: Drafting Technology, A.S. | Mt. San Jacinto College Catalog",
+   "h1": "Engineering: Drafting Technology, A.S.",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 5567
+ },
+ {
+  "control_number": "04403",
+  "title": "Art",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "ART103H",
+   "ART104",
+   "ART104H",
+   "ART108",
+   "ART109",
+   "ART112",
+   "ART115",
+   "ART120",
+   "ART121",
+   "ART122",
+   "ART131",
+   "ART170",
+   "ARTHC1100H",
+   "ARTHC1200H"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/art-design/art-aa/",
+   "title": "Art, A.A. | Mt. San Jacinto College Catalog",
+   "h1": "Art, A.A.",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 28,
+  "text_chars": 6371
+ },
+ {
+  "control_number": "04404",
+  "title": "Music",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04405",
+  "title": "Theater Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.583,
+  "codes_found": [
+   "DAN216",
+   "MUS216",
+   "THA110",
+   "THA111",
+   "THA112",
+   "THA201",
+   "THA216"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/theater-arts/",
+   "title": "Theater Arts | Mt. San Jacinto College Catalog",
+   "h1": "Theater Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 4141
+ },
+ {
+  "control_number": "04407",
+  "title": "Photography",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.722,
+  "codes_found": [
+   "ART120",
+   "BADM104",
+   "BADM104H",
+   "DIG110",
+   "DIG190",
+   "DIG580",
+   "PHOT125",
+   "PHOT524",
+   "PHOT525",
+   "PHOT530",
+   "PHOT790",
+   "PHOT791",
+   "THA136"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/creative-media/digital-photography/photography-as/",
+   "title": "Photography, A.S. | Mt. San Jacinto College Catalog",
+   "h1": "Photography, A.S.",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 6267
+ },
+ {
+  "control_number": "04413",
+  "title": "Nursing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.536,
+  "codes_found": [
+   "ANAT101",
+   "ANAT102",
+   "BIOL125",
+   "BIOL125H",
+   "COMMC1000",
+   "COMMC1000H",
+   "COMMC1004",
+   "COMMC1004H",
+   "NURS571",
+   "NURS572",
+   "POLSC1000",
+   "POLSC1000H",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/nursing-registered-nursing/nursing-as/",
+   "title": "Nursing, A.S. | Mt. San Jacinto College Catalog",
+   "h1": "Nursing, A.S.",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 28,
+  "text_chars": 9958
+ },
+ {
+  "control_number": "04414",
+  "title": "Vocational Nursing",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04416",
+  "title": "Medical Assistant",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04422",
+  "title": "Mathematics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04426",
+  "title": "Administration of Justice",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 18,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04427",
+  "title": "Child Development and Education",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04429",
+  "title": "Fire Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.727,
+  "codes_found": [
+   "EMS501",
+   "FIRE109",
+   "FIRE501",
+   "FIRE502",
+   "FIRE506",
+   "FIRE515",
+   "FIRE521",
+   "FIRE522"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/fire-technology/fire-technology-as/",
+   "title": "Fire Technology, A.S. | Mt. San Jacinto College Catalog",
+   "h1": "Fire Technology, A.S.",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 5315
+ },
+ {
+  "control_number": "04430",
+  "title": "Social/Behavioral Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 91,
+  "text_chars": 0
+ },
+ {
+  "control_number": "08675",
+  "title": "Office Administration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "ACCT776",
+   "ACCT777",
+   "BADM104",
+   "BADM104H",
+   "BADM505",
+   "BADM545",
+   "CSIS103",
+   "MGT500",
+   "MGT760"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/business-office-administration/office-administration-as/",
+   "title": "Office Administration, A.S. | Mt. San Jacinto College Catalog",
+   "h1": "Office Administration, A.S.",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 5916
+ },
+ {
+  "control_number": "08676",
+  "title": "Office Administration: Tech Prep",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "08678",
+  "title": "Microsoft Applications Specialist: Tech Prep",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "08679",
+  "title": "Technical Theater",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUD140",
+   "THA117",
+   "THA118",
+   "THA120",
+   "THA121",
+   "THA122",
+   "THA124"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/theater-arts/technical-theater-as/",
+   "title": "Technical Theater, A.S. | Mt. San Jacinto College Catalog",
+   "h1": "Technical Theater, A.S.",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 5059
+ },
+ {
+  "control_number": "08680",
+  "title": "Dance",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.867,
+  "codes_found": [
+   "DAN120",
+   "DAN121A",
+   "DAN121B",
+   "DAN121C",
+   "DAN121D",
+   "DAN122A",
+   "DAN122B",
+   "DAN123A",
+   "DAN123B",
+   "DAN124",
+   "DAN125",
+   "DAN126A",
+   "DAN126B",
+   "DAN127A",
+   "DAN127B",
+   "DAN129",
+   "DAN131A",
+   "DAN131B",
+   "DAN135A",
+   "DAN135B",
+   "DAN201",
+   "DAN212",
+   "DAN213",
+   "DAN214",
+   "DAN225",
+   "THA108"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/dance/",
+   "title": "Dance | Mt. San Jacinto College Catalog",
+   "h1": "Dance",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 30,
+  "text_chars": 4887
+ },
+ {
+  "control_number": "08681",
+  "title": "Musical Theater",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "MUS115",
+   "MUS116",
+   "MUS205"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/music/",
+   "title": "Music | Mt. San Jacinto College Catalog",
+   "h1": "Music",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 4124
+ },
+ {
+  "control_number": "08682",
+  "title": "Audio Production",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "AUD140",
+   "AUD141",
+   "AUD142",
+   "AUD143",
+   "AUD145",
+   "AUD546",
+   "DIG190",
+   "MUS103"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/creative-media/audio-production/audio-production-aa/",
+   "title": "Audio Production, A.A. | Mt. San Jacinto College Catalog",
+   "h1": "Audio Production, A.A.",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 6142
+ },
+ {
+  "control_number": "08685",
+  "title": "Gerontology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "08686",
+  "title": "Legal Studies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.923,
+  "codes_found": [
+   "AJ101",
+   "AJ103",
+   "AJ111",
+   "CWE549",
+   "LEG100",
+   "LEG503",
+   "LEG505",
+   "LEG507",
+   "LEG512",
+   "LEG524",
+   "LEG534",
+   "LEG560"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/legal-studies/legal-studies-as/",
+   "title": "Legal Studies, A.S. | Mt. San Jacinto College Catalog",
+   "h1": "Legal Studies, A.S.",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 6341
+ },
+ {
+  "control_number": "08688",
+  "title": "Alcohol & Drug Studies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 5,
+  "text_chars": 0
+ },
+ {
+  "control_number": "08689",
+  "title": "Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 1,
+  "text_chars": 0
+ },
+ {
+  "control_number": "08690",
+  "title": "Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "AH105",
+   "ANAT101",
+   "ANAT102",
+   "BIOL125",
+   "BIOL125H",
+   "CHEM101H",
+   "CHEM107",
+   "PHY100"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/science/science-as/",
+   "title": "Science, A.S. | Mt. San Jacinto College Catalog",
+   "h1": "Science, A.S.",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 7084
+ },
+ {
+  "control_number": "10769",
+  "title": "Microsoft Applications Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "11474",
+  "title": "Internet Authoring",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "CSIS103",
+   "CSIS115A",
+   "CSIS116E",
+   "CSIS514A",
+   "CSIS525",
+   "CSIS786"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/computer-information-systems/internet-authoring-certificate/",
+   "title": "Internet Authoring Certificate | Mt. San Jacinto College Catalog",
+   "h1": "Internet Authoring Certificate",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 4321
+ },
+ {
+  "control_number": "11475",
+  "title": "Networking",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSIS101",
+   "CSIS201",
+   "CSIS202",
+   "CSIS581",
+   "CSIS592",
+   "CSIS791"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/computer-information-systems/networking-certificate/",
+   "title": "Networking Certificate | Mt. San Jacinto College Catalog",
+   "h1": "Networking Certificate",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3316
+ },
+ {
+  "control_number": "11476",
+  "title": "Programming",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "CSIS113A",
+   "CSIS113B",
+   "CSIS115A",
+   "CSIS116E",
+   "CSIS118B",
+   "CSIS123A",
+   "CSIS123B",
+   "CSIS126E",
+   "CSIS201",
+   "CSIS211",
+   "CSIS514A",
+   "CSIS525",
+   "CSIS786"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/computer-information-systems/programming-certificate/",
+   "title": "Programming Certificate | Mt. San Jacinto College Catalog",
+   "h1": "Programming Certificate",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 5971
+ },
+ {
+  "control_number": "12022",
+  "title": "Digital Media",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.625,
+  "codes_found": [
+   "AUD143",
+   "DIG110",
+   "DIG181",
+   "DIG190",
+   "DIG570",
+   "DIG580",
+   "DIG582",
+   "DIG592",
+   "DIG593",
+   "DIG598"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/creative-media/digital-media/digital-media-as/",
+   "title": "Digital Media, A.S. | Mt. San Jacinto College Catalog",
+   "h1": "Digital Media, A.S.",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 5249
+ },
+ {
+  "control_number": "12443",
+  "title": "Geographic Information Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "DIG110",
+   "GEOG115",
+   "GIS520",
+   "GIS525",
+   "GIS540",
+   "GIS550",
+   "GIS551",
+   "GIS583",
+   "GIS584",
+   "GIS586"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/geospatial-information-science/geographic-information-science-as/",
+   "title": "Geographic Information Science, A.S. | Mt. San Jacinto College Catalog",
+   "h1": "Geographic Information Science, A.S.",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 5443
+ },
+ {
+  "control_number": "12877",
+  "title": "Horticulture",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 9,
+  "text_chars": 0
+ },
+ {
+  "control_number": "14270",
+  "title": "Water Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "WATR500",
+   "WATR503",
+   "WATR505",
+   "WATR507",
+   "WATR509",
+   "WATR520",
+   "WATR522",
+   "WATR525",
+   "WATR530",
+   "WATR533",
+   "WATR740",
+   "WATR790",
+   "WATR795"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/water-technology/water-technology-as/",
+   "title": "Water Technology, A.S. | Mt. San Jacinto College Catalog",
+   "h1": "Water Technology, A.S.",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 9861
+ },
+ {
+  "control_number": "16038",
+  "title": "Business Clerical: Tech Prep",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 5,
+  "text_chars": 0
+ },
+ {
+  "control_number": "16742",
+  "title": "Visual Design",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "ART120",
+   "ART122",
+   "ART131",
+   "ART141",
+   "ARTHC1100H",
+   "ARTHC1200H",
+   "DES104",
+   "DES112",
+   "DES115",
+   "DES123",
+   "DES151",
+   "DIG570",
+   "PHOT125",
+   "THA137",
+   "THA137H"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/art-design/visual-design-aa/",
+   "title": "Visual Design, A.A. | Mt. San Jacinto College Catalog",
+   "h1": "Visual Design, A.A.",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 6636
+ },
+ {
+  "control_number": "16765",
+  "title": "Environmental Studies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 23,
+  "text_chars": 0
+ },
+ {
+  "control_number": "16774",
+  "title": "Advanced Audio Technology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 12,
+  "text_chars": 0
+ },
+ {
+  "control_number": "16824",
+  "title": "Diagnostic Medical Sonography",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.769,
+  "codes_found": [
+   "COMMC1004",
+   "COMMC1004H",
+   "DMS500",
+   "DMS501",
+   "DMS502",
+   "DMS503",
+   "DMS504",
+   "DMS510",
+   "DMS514",
+   "DMS520",
+   "DMS522",
+   "DMS524",
+   "DMS525",
+   "DMS530",
+   "DMS532",
+   "DMS534",
+   "DMS535",
+   "DMS538",
+   "DMS540",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/diagnostic-medical-sonography/diagnostic-medical-sonography-as/",
+   "title": "Diagnostic Medical Sonography, A.S. | Mt. San Jacinto College Catalog",
+   "h1": "Diagnostic Medical Sonography, A.S.",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 5867
+ },
+ {
+  "control_number": "17904",
+  "title": "Liberal Arts: Arts, Humanities & Communications",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 1,
+  "text_chars": 0
+ },
+ {
+  "control_number": "17905",
+  "title": "Liberal Arts: Business & Technology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "17906",
+  "title": "Liberal Arts: Mathematics & Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.943,
+  "codes_found": [
+   "ANAT101",
+   "ANAT102",
+   "ANTHC1001",
+   "ANTHC1001H",
+   "ANTHC1001L",
+   "ASTR111",
+   "ASTRC1000",
+   "BIOL100",
+   "BIOL100H",
+   "BIOL117",
+   "BIOL125",
+   "BIOL125H",
+   "BIOL130",
+   "BIOL131",
+   "BIOL131H",
+   "BIOL134",
+   "BIOL140",
+   "BIOL144",
+   "BIOL144H",
+   "BIOL146",
+   "BIOL150",
+   "BIOL150H",
+   "BIOL151",
+   "BIOL151H",
+   "BIOLC1000H",
+   "CHEM100",
+   "CHEM101",
+   "CHEM101H",
+   "CHEM102",
+   "CHEM107",
+   "CHEM112",
+   "CHEM113",
+   "CHEM113H",
+   "CSIS213",
+   "ENVS100",
+   "ENVS100H",
+   "ENVS101",
+   "ENVS101H",
+   "ENVS102",
+   "ENVS102H",
+   "GEOG101",
+   "GEOG104",
+   "GEOG106",
+   "GEOL100",
+   "GEOL103",
+   "GEOL105",
+   "GEOL111",
+   "MATH105",
+   "MATH110",
+   "MATH115",
+   "MATH135",
+   "MATH213",
+   "MATH215",
+   "MATH215H",
+   "MATH218",
+   "MATHC2210H",
+   "MATHC2220H",
+   "PHY100",
+   "PHY101",
+   "PHY102",
+   "PHY201",
+   "PHY202",
+   "PHY203",
+   "SOCI121",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/liberal-arts/liberal-arts-mathematics-science-aa/",
+   "title": "Liberal Arts: Mathematics & Science, A.A. | Mt. San Jacinto College Catalog",
+   "h1": "Liberal Arts: Mathematics & Science, A.A.",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 70,
+  "text_chars": 5683
+ },
+ {
+  "control_number": "17907",
+  "title": "Liberal Arts: Social & Behavioral Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 114,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18192",
+  "title": "Horticulture",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 9,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18793",
+  "title": "Communication Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19301",
+  "title": "Geography",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20795",
+  "title": "English",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "22122",
+  "title": "Business Administration",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.522,
+  "codes_found": [
+   "ACCT124",
+   "ACCT124H",
+   "ACCT125",
+   "ACCT125H",
+   "BADM103",
+   "BADM103H",
+   "BADM104H",
+   "BADM201",
+   "ECONC2001H",
+   "ECONC2002H",
+   "MGT500",
+   "MGT520"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/business-business-administration/business-administration-certificate/",
+   "title": "Business Administration Certificate | Mt. San Jacinto College Catalog",
+   "h1": "Business Administration Certificate",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 5510
+ },
+ {
+  "control_number": "22123",
+  "title": "Management/Supervision",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "ACCT740",
+   "BADM103",
+   "BADM103H",
+   "BADM104",
+   "BADM104H",
+   "BADM545",
+   "BADM730",
+   "ECONC2001H",
+   "ENGR505",
+   "MGT500",
+   "MGT760",
+   "PSYCC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/management-supervision/management-supervision-certificate/",
+   "title": "Management/Supervision Certificate | Mt. San Jacinto College Catalog",
+   "h1": "Management/Supervision Certificate",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 5160
+ },
+ {
+  "control_number": "22124",
+  "title": "Real Estate",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.818,
+  "codes_found": [
+   "ACCT124",
+   "ACCT124H",
+   "RE101",
+   "RE502",
+   "RE504",
+   "RE505",
+   "RE506",
+   "RE544",
+   "RE707"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/real-estate/real-estate-certificate/",
+   "title": "Real Estate Certificate | Mt. San Jacinto College Catalog",
+   "h1": "Real Estate Certificate",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 5087
+ },
+ {
+  "control_number": "22125",
+  "title": "Office Administration Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 7,
+  "text_chars": 0
+ },
+ {
+  "control_number": "22126",
+  "title": "Office Administration: Tech Prep",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 7,
+  "text_chars": 0
+ },
+ {
+  "control_number": "22127",
+  "title": "Digital Media",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "AUD143",
+   "DIG110",
+   "DIG181",
+   "DIG190",
+   "DIG555",
+   "DIG570",
+   "DIG580",
+   "DIG582",
+   "DIG592",
+   "DIG593",
+   "DIG598",
+   "PHOT125"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/creative-media/digital-media/digital-media-certificate/",
+   "title": "Digital Media Certificate | Mt. San Jacinto College Catalog",
+   "h1": "Digital Media Certificate",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 5448
+ },
+ {
+  "control_number": "22128",
+  "title": "CIS: General Track",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "22129",
+  "title": "Automotive/Transportation Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUME700",
+   "AUME770",
+   "AUME771",
+   "AUME780",
+   "AUME790"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/automotive-transportation-technology/automotive-transportation-technology-certificate/",
+   "title": "Automotive/Transportation Technology Certificate | Mt. San Jacinto College Catalog",
+   "h1": "Automotive/Transportation Technology Certificate",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 4257
+ },
+ {
+  "control_number": "22130",
+  "title": "Engineering: Drafting Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 21,
+  "text_chars": 0
+ },
+ {
+  "control_number": "22131",
+  "title": "Water Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 15,
+  "text_chars": 0
+ },
+ {
+  "control_number": "22132",
+  "title": "Advanced Audio Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "22133",
+  "title": "Audio Production",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "AUD140",
+   "AUD141",
+   "AUD142",
+   "AUD143",
+   "AUD145",
+   "AUD546",
+   "DIG190",
+   "MUS103"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/creative-media/audio-production/audio-production-certificate/",
+   "title": "Audio Production Certificate | Mt. San Jacinto College Catalog",
+   "h1": "Audio Production Certificate",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 4748
+ },
+ {
+  "control_number": "22134",
+  "title": "Technical Theater",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUD140",
+   "THA117",
+   "THA118",
+   "THA120",
+   "THA121",
+   "THA122",
+   "THA124"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/theater-arts/technical-theater-certificate/",
+   "title": "Technical Theater Certificate | Mt. San Jacinto College Catalog",
+   "h1": "Technical Theater Certificate",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 4681
+ },
+ {
+  "control_number": "22135",
+  "title": "Musical Theater",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 23,
+  "text_chars": 0
+ },
+ {
+  "control_number": "22136",
+  "title": "Photography",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 18,
+  "text_chars": 0
+ },
+ {
+  "control_number": "22137",
+  "title": "Medical Assistant",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "22138",
+  "title": "Diagnostic Medical Sonography",
+  "award": "Certificate of Achievement requiring 60+S/90+Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "22139",
+  "title": "Child Development and Education",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "22140",
+  "title": "Gerontology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "22141",
+  "title": "Legal Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.769,
+  "codes_found": [
+   "AJ111",
+   "CWE549",
+   "LEG100",
+   "LEG503",
+   "LEG505",
+   "LEG507",
+   "LEG512",
+   "LEG524",
+   "LEG534",
+   "LEG560"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/legal-studies/legal-studies-certificate/",
+   "title": "Legal Studies Certificate | Mt. San Jacinto College Catalog",
+   "h1": "Legal Studies Certificate",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 5136
+ },
+ {
+  "control_number": "22142",
+  "title": "Alcohol & Drug Studies",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "22143",
+  "title": "Administration of Justice",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 18,
+  "text_chars": 0
+ },
+ {
+  "control_number": "22144",
+  "title": "Fire Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.636,
+  "codes_found": [
+   "EMS501",
+   "FIRE109",
+   "FIRE501",
+   "FIRE502",
+   "FIRE506",
+   "FIRE515",
+   "FIRE522"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/fire-technology/fire-technology-certificate/",
+   "title": "Fire Technology Certificate | Mt. San Jacinto College Catalog",
+   "h1": "Fire Technology Certificate",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 4458
+ },
+ {
+  "control_number": "22145",
+  "title": "Geographic Information Science",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.6,
+  "codes_found": [
+   "GEOG105",
+   "GEOG115",
+   "GIS520",
+   "GIS525",
+   "GIS582",
+   "GIS585"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/geospatial-information-science/geographic-information-science-certificate/",
+   "title": "Geographic Information Science Certificate | Mt. San Jacinto College Catalog",
+   "h1": "Geographic Information Science Certificate",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 4398
+ },
+ {
+  "control_number": "24030",
+  "title": "Light Duty Automotive Service",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24376",
+  "title": "ESL Multi-level",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 1,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24448",
+  "title": "ESL General",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24450",
+  "title": "ABE-GED Preparation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30314",
+  "title": "Anthropology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30315",
+  "title": "American Indian Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30449",
+  "title": "Mathematics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30494",
+  "title": "Early Intervention and Inclusion",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDE101",
+   "CDE103",
+   "CDE119",
+   "CDE125",
+   "CDE125H",
+   "CDE140",
+   "CDE143",
+   "CDE147",
+   "CDE544",
+   "CDEVC1000",
+   "CDEVC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/teacher-education-developmental-studies/early-intervention-inclusion-as/",
+   "title": "Early Intervention and Inclusion, A.S. | Mt. San Jacinto College Catalog",
+   "h1": "Early Intervention and Inclusion, A.S.",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 7106
+ },
+ {
+  "control_number": "30495",
+  "title": "Early Intervention and Inclusion",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDE101",
+   "CDE103",
+   "CDE119",
+   "CDE125",
+   "CDE125H",
+   "CDE140",
+   "CDE143",
+   "CDE147",
+   "CDE544",
+   "CDEVC1000",
+   "CDEVC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/teacher-education-developmental-studies/early-intervention-inclusion-certificate/",
+   "title": "Early Intervention and Inclusion Certificate | Mt. San Jacinto College Catalog",
+   "h1": "Early Intervention and Inclusion Certificate",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 6038
+ },
+ {
+  "control_number": "30679",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.692,
+  "codes_found": [
+   "CSIS113A",
+   "CSIS123A",
+   "MATH213",
+   "MATH215",
+   "MATH215H",
+   "MATHC2210H",
+   "MATHC2220H",
+   "PHY201",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/mathematics/mathematics-ast/",
+   "title": "Mathematics, A.S.-T | Mt. San Jacinto College Catalog",
+   "h1": "Mathematics, A.S.-T",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 7821
+ },
+ {
+  "control_number": "31140",
+  "title": "Business Administration",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "BADM103",
+   "BADM103H",
+   "BADM201",
+   "CSIS101",
+   "ECONC2002H",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/business-business-administration/business-administration-ast/",
+   "title": "Business Administration 2.0, A.S.-T | Mt. San Jacinto College Catalog",
+   "h1": "Business Administration 2.0, A.S.-T",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 8535
+ },
+ {
+  "control_number": "31716",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.769,
+  "codes_found": [
+   "CDE101",
+   "CDE103",
+   "CDE111",
+   "CDE118",
+   "CDE125",
+   "CDE125H",
+   "CDE147",
+   "CDE148",
+   "CDEVC1000",
+   "CDEVC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/teacher-education-developmental-studies/early-childhood-ast/",
+   "title": "Early Childhood Education, A.S.-T | Mt. San Jacinto College Catalog",
+   "h1": "Early Childhood Education, A.S.-T",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 7657
+ },
+ {
+  "control_number": "31798",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "POLSC1000",
+   "POLSC1000H",
+   "PS102",
+   "PS103",
+   "PS103H",
+   "PS105",
+   "PS105H",
+   "PS106",
+   "PS120",
+   "PS120H",
+   "SOCI121",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/political-science/political-science-aat/",
+   "title": "Political Science, A.A-T | Mt. San Jacinto College Catalog",
+   "h1": "Political Science, A.A-T",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 7892
+ },
+ {
+  "control_number": "31853",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 32,
+  "text_chars": 0
+ },
+ {
+  "control_number": "31869",
+  "title": "Geography",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.727,
+  "codes_found": [
+   "ANTH102",
+   "ANTH102H",
+   "GEOG101",
+   "GEOG104",
+   "GEOG105",
+   "GEOG106",
+   "GEOG108",
+   "GEOG111"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/geography/geography-aat/",
+   "title": "Geography, A.A.-T | Mt. San Jacinto College Catalog",
+   "h1": "Geography, A.A.-T",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 8012
+ },
+ {
+  "control_number": "32119",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.55,
+  "codes_found": [
+   "ED132H",
+   "ENGL130H",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "ENGLC1002H",
+   "ETHS240H",
+   "ETHS275H",
+   "ETHS280",
+   "ETHS280H",
+   "LIT131",
+   "LIT131H",
+   "LIT205H",
+   "LIT207H",
+   "LIT208H",
+   "LIT225H",
+   "LIT230",
+   "LIT230H",
+   "LIT231",
+   "LIT231H",
+   "LIT255H",
+   "LIT260",
+   "LIT260H"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/english/english-aat/",
+   "title": "English, A.A.-T | Mt. San Jacinto College Catalog",
+   "h1": "English, A.A.-T",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 40,
+  "text_chars": 9237
+ },
+ {
+  "control_number": "32120",
+  "title": "Communication Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "COMM104",
+   "COMM104H",
+   "COMM106",
+   "COMM108H",
+   "COMM113",
+   "COMM115",
+   "COMM117",
+   "COMM120",
+   "COMMC1000",
+   "COMMC1000H",
+   "COMMC1004",
+   "COMMC1004H"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/communication-studies/communication-studies-aat/",
+   "title": "Communication Studies 2.0, A.A.-T | Mt. San Jacinto College Catalog",
+   "h1": "Communication Studies 2.0, A.A.-T",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 8419
+ },
+ {
+  "control_number": "32181",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 61,
+  "text_chars": 0
+ },
+ {
+  "control_number": "32397",
+  "title": "Music",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.842,
+  "codes_found": [
+   "MUS100",
+   "MUS100H",
+   "MUS103",
+   "MUS104",
+   "MUS111",
+   "MUS118",
+   "MUS151",
+   "MUS175",
+   "MUS176",
+   "MUS201",
+   "MUS205",
+   "MUS210",
+   "MUS253",
+   "MUS254",
+   "MUS277",
+   "MUS278"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/music/music-aat/",
+   "title": "Music, A.A.-T | Mt. San Jacinto College Catalog",
+   "h1": "Music, A.A.-T",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 9854
+ },
+ {
+  "control_number": "32418",
+  "title": "Philosophy",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "ENGLC1001",
+   "ENGLC1001H",
+   "HIST101",
+   "HIST101H",
+   "HIST102",
+   "HIST102H",
+   "HIST118",
+   "PHIL101",
+   "PHIL101H",
+   "PHIL103",
+   "PHIL105",
+   "PHIL109",
+   "PHIL110"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/philosophy/philosophy-aat/",
+   "title": "Philosophy, A.A.-T | Mt. San Jacinto College Catalog",
+   "h1": "Philosophy, A.A.-T",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 8399
+ },
+ {
+  "control_number": "32472",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.704,
+  "codes_found": [
+   "BIOL100H",
+   "BIOL150H",
+   "BIOLC1000H",
+   "CDEVC1000H",
+   "PSYC102",
+   "PSYC103",
+   "PSYC103H",
+   "PSYC104",
+   "PSYC104H",
+   "PSYC105",
+   "PSYC107",
+   "PSYC107H",
+   "PSYC108",
+   "PSYC124",
+   "PSYC124H",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOCI105H",
+   "SOCI121"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/psychology/psychology-aat/",
+   "title": "Psychology, A.A-T | Mt. San Jacinto College Catalog",
+   "h1": "Psychology, A.A-T",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 27,
+  "text_chars": 9433
+ },
+ {
+  "control_number": "32473",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 21,
+  "text_chars": 0
+ },
+ {
+  "control_number": "32481",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 19,
+  "text_chars": 0
+ },
+ {
+  "control_number": "32492",
+  "title": "Computer Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.769,
+  "codes_found": [
+   "BIOL150",
+   "CSIS113A",
+   "CSIS113B",
+   "CSIS118B",
+   "CSIS211",
+   "CSIS213",
+   "MATHC2210H",
+   "MATHC2220H",
+   "PHY201",
+   "PHY202"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/computer-information-systems/computer-science-as-t/",
+   "title": "Computer Science A.S.-T | Mt. San Jacinto College Catalog",
+   "h1": "Computer Science A.S.-T",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 8306
+ },
+ {
+  "control_number": "32494",
+  "title": "Art History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "ANTH102H",
+   "ANTH104",
+   "ANTH104H",
+   "ANTH125",
+   "ANTH125H",
+   "ART103",
+   "ART103H",
+   "ART104",
+   "ART104H",
+   "ART108",
+   "ART116",
+   "ART120",
+   "ART121",
+   "ART122",
+   "ART131",
+   "ARTHC1100H",
+   "ARTHC1200H",
+   "DAN100",
+   "HIST101H",
+   "HIST102H",
+   "HIST103H",
+   "HIST104H",
+   "HIST106H",
+   "HIST107H",
+   "HIST108",
+   "HIST108H"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/art-design/art-history-aat/",
+   "title": "Art History, A.A.-T | Mt. San Jacinto College Catalog",
+   "h1": "Art History, A.A.-T",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 52,
+  "text_chars": 9435
+ },
+ {
+  "control_number": "32553",
+  "title": "Interpreter Preparation",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 12,
+  "text_chars": 0
+ },
+ {
+  "control_number": "32823",
+  "title": "Interpreter Preparation",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 12,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33297",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.632,
+  "codes_found": [
+   "ACCT124",
+   "ACCT124H",
+   "ACCT125",
+   "ACCT125H",
+   "BADM104H",
+   "ECONC2001H",
+   "ECONC2002H",
+   "MATH213",
+   "MATHC2210H",
+   "MATHC2220H",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/economics/economics-aat/",
+   "title": "Economics, A.A.-T | Mt. San Jacinto College Catalog",
+   "h1": "Economics, A.A.-T",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 8892
+ },
+ {
+  "control_number": "35043",
+  "title": "Engineering Technologist Support",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGR120",
+   "ENGR121",
+   "ENGR122",
+   "ENGR124",
+   "ENGR125",
+   "ENGR523"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/engineering-technology/engineering-technologist-support-certificate/",
+   "title": "Engineering Technologist Support Certificate | Mt. San Jacinto College Catalog",
+   "h1": "Engineering Technologist Support Certificate",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 4353
+ },
+ {
+  "control_number": "35093",
+  "title": "ESL-Advanced",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35502",
+  "title": "Theatre Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.636,
+  "codes_found": [
+   "THA101",
+   "THA101H",
+   "THA102",
+   "THA110",
+   "THA111",
+   "THA121",
+   "THA201"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/theater-arts/theatre-arts-aat/",
+   "title": "Theatre Arts, A.A-T | Mt. San Jacinto College Catalog",
+   "h1": "Theatre Arts, A.A-T",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 7836
+ },
+ {
+  "control_number": "35559",
+  "title": "Film, Television and Electronic Media",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "AUD141",
+   "COMM111",
+   "DIG190",
+   "DIG592",
+   "ENGL111",
+   "THA101",
+   "THA101H",
+   "THA136",
+   "THA137H"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/creative-media/digital-media/film-television-electronic-media-ast/",
+   "title": "Film, Television and Electronic Media, A.S.-T | Mt. San Jacinto College Catalog",
+   "h1": "Film, Television and Electronic Media, A.S.-T",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 8156
+ },
+ {
+  "control_number": "35602",
+  "title": "Accounting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.778,
+  "codes_found": [
+   "ACCT626",
+   "ACCT628",
+   "ACCT777",
+   "BADM103",
+   "BADM103H",
+   "BADM201",
+   "ECONC2002H"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/business-business-administration/accounting-certificate/",
+   "title": "Accounting Certificate | Mt. San Jacinto College Catalog",
+   "h1": "Accounting Certificate",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 5180
+ },
+ {
+  "control_number": "35689",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 46,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35829",
+  "title": "California Preschool Foundations and Framework",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 1,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36179",
+  "title": "Teacher",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDE101",
+   "CDE103",
+   "CDE111",
+   "CDE118",
+   "CDE125",
+   "CDE125H",
+   "CDE147",
+   "CDE148",
+   "CDEVC1000",
+   "CDEVC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/teacher-education-developmental-studies/teacher-certificate/",
+   "title": "Teacher Certificate | Mt. San Jacinto College Catalog",
+   "h1": "Teacher Certificate",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 4894
+ },
+ {
+  "control_number": "36220",
+  "title": "Associate Teacher",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDE101",
+   "CDE103",
+   "CDE125",
+   "CDE125H",
+   "CDEVC1000",
+   "CDEVC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/degrees-certificates-curricula/c-id/msjc-cid--chart/",
+   "title": "MSJC to C-ID Chart | Mt. San Jacinto College Catalog",
+   "h1": "MSJC to C-ID Chart",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 4349
+ },
+ {
+  "control_number": "36229",
+  "title": "Infant Toddler Teacher",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDE101",
+   "CDE120",
+   "CDE125",
+   "CDE125H",
+   "CDEVC1000",
+   "CDEVC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/teacher-education-developmental-studies/infant-toddler-teacher-low-unit-certificate/",
+   "title": "Infant Toddler Teacher Low-Unit Certificate | Mt. San Jacinto College Catalog",
+   "h1": "Infant Toddler Teacher Low-Unit Certificate",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 4634
+ },
+ {
+  "control_number": "36274",
+  "title": "Foundations of Math",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36360",
+  "title": "Child and Adolescent Development",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.537,
+  "codes_found": [
+   "ANTH102",
+   "ANTH102H",
+   "BIOL100H",
+   "BIOL150H",
+   "BIOL151H",
+   "BIOLC1000H",
+   "CDE125H",
+   "CDEVC1000",
+   "CDEVC1000H",
+   "NUTR100",
+   "NUTR100H",
+   "NUTR101H",
+   "PSYC103",
+   "PSYC103H",
+   "PSYC121",
+   "PSYC124",
+   "PSYC124H",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOCI121",
+   "SOCIC1000H",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/teacher-education-developmental-studies/child-adolescent-development-aat/",
+   "title": "Child and Adolescent Development, A.A.-T | Mt. San Jacinto College Catalog",
+   "h1": "Child and Adolescent Development, A.A.-T",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 41,
+  "text_chars": 8826
+ },
+ {
+  "control_number": "38019",
+  "title": "Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "CSIS113A",
+   "CSIS113B",
+   "MATH213",
+   "MATH215",
+   "MATH218",
+   "MATHC2210H",
+   "MATHC2220H",
+   "PHY201",
+   "PHY202",
+   "PHY203"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/physics/physics-ast/",
+   "title": "Physics, A.S-T | Mt. San Jacinto College Catalog",
+   "h1": "Physics, A.S-T",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 7782
+ },
+ {
+  "control_number": "38818",
+  "title": "Construction Technology",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38819",
+  "title": "Culinary Arts",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38820",
+  "title": "Digital Communication",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38847",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.643,
+  "codes_found": [
+   "BIOL125H",
+   "BIOL150",
+   "BIOL150H",
+   "BIOL151",
+   "BIOL151H",
+   "CHEM101",
+   "CHEM101H",
+   "CHEM102",
+   "CHEM112",
+   "CHEM113",
+   "CHEM113H",
+   "MATHC2210H",
+   "MATHC2220H",
+   "PHY101",
+   "PHY102",
+   "PHY201",
+   "PHY202",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/biology/biology-as-t/",
+   "title": "Biology, A.S.-T | Mt. San Jacinto College Catalog",
+   "h1": "Biology, A.S.-T",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 28,
+  "text_chars": 9788
+ },
+ {
+  "control_number": "38881",
+  "title": "Environmental Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.81,
+  "codes_found": [
+   "BIOL150",
+   "BIOL150H",
+   "BIOL151",
+   "BIOL151H",
+   "CHEM101",
+   "CHEM101H",
+   "ECONC2001H",
+   "ENVS101",
+   "ENVS101H",
+   "GEOG101",
+   "GEOG104",
+   "GEOL100",
+   "MATH135",
+   "PHY201",
+   "PHY202",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/environmental-studies/environmental-studies-ast/",
+   "title": "Environmental Science, A.S.-T | Mt. San Jacinto College Catalog",
+   "h1": "Environmental Science, A.S.-T",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 8522
+ },
+ {
+  "control_number": "38903",
+  "title": "Geology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.714,
+  "codes_found": [
+   "CHEM101",
+   "CHEM102",
+   "GEOL100",
+   "GEOL105",
+   "MATHC2220H"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/geology/geology-a.s.-t/",
+   "title": "Geology, A.S.-T | Mt. San Jacinto College Catalog",
+   "h1": "Geology, A.S.-T",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 7479
+ },
+ {
+  "control_number": "38950",
+  "title": "Dance",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 30,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39067",
+  "title": "Dance",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 30,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39068",
+  "title": "CSU GE-Breadth",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 306,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39079",
+  "title": "Intersegmental GE Transfer Curriculum (IGETC)",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 226,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39080",
+  "title": "Honors Enrichment Program Completion",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "ENGLC1000",
+   "ENGLC1000H",
+   "HEP201",
+   "HEP202",
+   "HEP203"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/honors-enrichment-program/honors-enrichment-program-completion-certificate/",
+   "title": "Honors Enrichment Program Completion Certificate | Mt. San Jacinto College Catalog",
+   "h1": "Honors Enrichment Program Completion Certificate",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 4552
+ },
+ {
+  "control_number": "39138",
+  "title": "Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMMC1004",
+   "COMMC1004H",
+   "FREN101",
+   "FREN102",
+   "HIST140",
+   "HIST140H",
+   "HIST141",
+   "HIST142",
+   "SPAN101",
+   "SPAN102",
+   "SPAN201",
+   "SPAN202",
+   "SPAN203",
+   "SPAN204"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/world-languages/world-languages-a.a.-t-in-spanish/",
+   "title": "Spanish, A.A.-T | Mt. San Jacinto College Catalog",
+   "h1": "Spanish, A.A.-T",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 10401
+ },
+ {
+  "control_number": "39224",
+  "title": "Journalism",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.708,
+  "codes_found": [
+   "COMM104",
+   "COMM104H",
+   "COMM111",
+   "ECONC2001H",
+   "ECONC2002H",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "JOUR110",
+   "JOUR130",
+   "JOUR131",
+   "POLSC1000",
+   "POLSC1000H",
+   "PS102H",
+   "PSYC121",
+   "SOCI121",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/journalism/journalism-a.a.-t/",
+   "title": "Journalism, A.A.-T | Mt. San Jacinto College Catalog",
+   "h1": "Journalism, A.A.-T",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 8827
+ },
+ {
+  "control_number": "39357",
+  "title": "Law, Public Policy, and Society",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.516,
+  "codes_found": [
+   "AJ101",
+   "AJ102",
+   "AJ102H",
+   "AJ118",
+   "ANTH102H",
+   "COMM104H",
+   "COMM108H",
+   "COMMC1000",
+   "COMMC1000H",
+   "CSCR100",
+   "ECONC2001H",
+   "ECONC2002H",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "ETHS113H",
+   "ETHS160",
+   "ETHS160H",
+   "HISTC1001",
+   "HISTC1001H",
+   "HISTC1002",
+   "HISTC1002H",
+   "PHIL105",
+   "POLSC1000",
+   "POLSC1000H",
+   "PS102H",
+   "PS105H",
+   "PS106H",
+   "SJS101",
+   "SJS101H",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/law-public-policy-and-society/law-public-policy-and-society-a.a.-t/",
+   "title": "Law, Public Policy and Society, A.A.-T | Mt. San Jacinto College Catalog",
+   "h1": "Law, Public Policy and Society, A.A.-T",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 64,
+  "text_chars": 10149
+ },
+ {
+  "control_number": "39455",
+  "title": "Public Health Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 19,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39466",
+  "title": "Nutrition and Dietetics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "ANAT101",
+   "BIOL100H",
+   "BIOL125",
+   "BIOL125H",
+   "BIOL150",
+   "BIOL150H",
+   "BIOL151",
+   "BIOL151H",
+   "BIOLC1000H",
+   "CHEM101",
+   "CHEM101H",
+   "CHEM102",
+   "CHEM113H",
+   "MATH105",
+   "NUTR101",
+   "NUTR101H",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/nutrition-and-dietetics/nutrition-and-dietetics-a.s.-t/",
+   "title": "Nutrition and Dietetics, A.S.-T | Mt. San Jacinto College Catalog",
+   "h1": "Nutrition and Dietetics, A.S.-T",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 30,
+  "text_chars": 8533
+ },
+ {
+  "control_number": "39486",
+  "title": "Social Justice Studies: General",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.92,
+  "codes_found": [
+   "ANTH102",
+   "ANTH102H",
+   "COMM108",
+   "COMM108H",
+   "ETHS103",
+   "ETHS103H",
+   "ETHS160",
+   "ETHS240",
+   "ETHS240H",
+   "ETHS275",
+   "ETHS275H",
+   "ETHS280",
+   "ETHS280H",
+   "GEOG108",
+   "HIST115",
+   "HIST115H",
+   "HIST118",
+   "HIST120",
+   "HIST120H",
+   "HIST160",
+   "HIST160H",
+   "LIT240",
+   "LIT240H",
+   "LIT255",
+   "LIT255H",
+   "LIT260",
+   "LIT260H",
+   "LIT275",
+   "LIT275H",
+   "LIT280",
+   "LIT280H",
+   "PS103",
+   "PS103H",
+   "PSYC104",
+   "PSYC104H",
+   "PSYC112",
+   "SJS101",
+   "SJS101H",
+   "SOCI102",
+   "SOCI106",
+   "SOCI112",
+   "SOCI115",
+   "SOCI121",
+   "SOCIC1000",
+   "SOCIC1000H",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/degrees-certificates-curricula/general-education-option-a/",
+   "title": "General Education Requirements: Local | Mt. San Jacinto College Catalog",
+   "h1": "General Education Requirements: Local",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.25
+   }
+  },
+  "listed": 50,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "39949",
+  "title": "Health Careers",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40010",
+  "title": "Chemistry",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 10,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40054",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.538,
+  "codes_found": [
+   "ANTH102H",
+   "PSYC105",
+   "PSYC121",
+   "PSYC124",
+   "PSYC124H",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOCI102",
+   "SOCI105H",
+   "SOCI125",
+   "SOCIC1000",
+   "SOCIC1000H",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/sociology/sociology-aat/",
+   "title": "Sociology, A.A.-T | Mt. San Jacinto College Catalog",
+   "h1": "Sociology, A.A.-T",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 8560
+ },
+ {
+  "control_number": "40366",
+  "title": "Medical Assisting Clinical",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AH105",
+   "AH549",
+   "BIOL100",
+   "CSIS101",
+   "MA122",
+   "MA773",
+   "MA775",
+   "MA777"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/medical-assisting/medical-assisting-clinical-certificate/",
+   "title": "Medical Assisting Clinical Certificate | Mt. San Jacinto College Catalog",
+   "h1": "Medical Assisting Clinical Certificate",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 4336
+ },
+ {
+  "control_number": "40367",
+  "title": "American Indian Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.65,
+  "codes_found": [
+   "ANTH102",
+   "ANTH102H",
+   "ANTH125",
+   "ANTH145",
+   "ANTH145H",
+   "ANTHC1001",
+   "ANTHC1001H",
+   "COMM108H",
+   "ETHS104",
+   "ETHS240",
+   "ETHS240H",
+   "HIST121",
+   "PS103H"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/american-indian-studies/american-indian-studies-aa/",
+   "title": "American Indian Studies, A.A. | Mt. San Jacinto College Catalog",
+   "h1": "American Indian Studies, A.A.",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 6852
+ },
+ {
+  "control_number": "40368",
+  "title": "Puente Program Completion",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "ANTH107",
+   "CSCR100",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "HIST140",
+   "HIST140H",
+   "HIST141",
+   "LIT275",
+   "LIT275H",
+   "LIT280",
+   "LIT280H",
+   "MATH105",
+   "MATH110",
+   "MATH115",
+   "MATH135",
+   "MATH155",
+   "MATHC2210H",
+   "SOCI115",
+   "SOCI121",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/puente-program/puente-program-completion-certificate/",
+   "title": "Puente Program Completion Certificate | Mt. San Jacinto College Catalog",
+   "h1": "Puente Program Completion Certificate",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 6052
+ },
+ {
+  "control_number": "40385",
+  "title": "Medical Assisting Administrative",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AH105",
+   "CSIS101",
+   "MA122",
+   "MA772",
+   "MA776"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/medical-assisting/medical-assisting-administrative-certificate/",
+   "title": "Medical Assisting Administrative Certificate | Mt. San Jacinto College Catalog",
+   "h1": "Medical Assisting Administrative Certificate",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 4218
+ },
+ {
+  "control_number": "40386",
+  "title": "Medical Assisting Administrative and Clinical",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AH105",
+   "AH549",
+   "BIOL100",
+   "CSIS101",
+   "MA122",
+   "MA772",
+   "MA773",
+   "MA775",
+   "MA776",
+   "MA777"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/medical-assisting/medical-assisting-administrative--clinical-as/",
+   "title": "Medical Assisting Administrative and Clinical, A.S. | Mt. San Jacinto College Catalog",
+   "h1": "Medical Assisting Administrative and Clinical, A.S.",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 5256
+ },
+ {
+  "control_number": "40534",
+  "title": "Aviation Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40535",
+  "title": "Certified Flight Instructor",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40549",
+  "title": "Commercial Pilot",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 5,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40550",
+  "title": "Culinary Arts",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CUL110",
+   "CUL120",
+   "CUL150",
+   "CUL500",
+   "CUL700",
+   "CUL705",
+   "CUL710",
+   "CUL750"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/culinary-arts/culinary-arts--hospitality-certificate/",
+   "title": "Culinary Arts & Hospitality Certificate | Mt. San Jacinto College Catalog",
+   "h1": "Culinary Arts & Hospitality Certificate",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 4308
+ },
+ {
+  "control_number": "41691",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "ACCT124",
+   "ACCT124H",
+   "ACCT125",
+   "ACCT125H",
+   "BADM103",
+   "BADM103H",
+   "BADM104H",
+   "BADM201",
+   "ECONC2001H",
+   "ECONC2002H",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/business-business-administration/business-administration-ast/",
+   "title": "Business Administration 2.0, A.S.-T | Mt. San Jacinto College Catalog",
+   "h1": "Business Administration 2.0, A.S.-T",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 8613
+ },
+ {
+  "control_number": "41764",
+  "title": "Crime Scene Investigation",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 5,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42375",
+  "title": "Facilities Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT740",
+   "BADM103",
+   "BADM103H",
+   "BADM201",
+   "BADM720",
+   "BADM730",
+   "MGT500",
+   "MGT760"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/business-business-administration/facilities-management-certificate/",
+   "title": "Facilities Management Certificate | Mt. San Jacinto College Catalog",
+   "h1": "Facilities Management Certificate",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 4833
+ },
+ {
+  "control_number": "42469",
+  "title": "Drone Applications in Geospatial Information Science",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GEOG115",
+   "GIS520",
+   "GIS540",
+   "GIS550",
+   "GIS551",
+   "GIS552"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/geospatial-information-science/drone-applications-in-geospatial-information-science-certificate/",
+   "title": "Drone Applications in Geospatial Information Science Certificate | Mt. San Jacinto College Catalog",
+   "h1": "Drone Applications in Geospatial Information Science Certificate",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2969
+ },
+ {
+  "control_number": "42886",
+  "title": "Logistics Analyst",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BADM545",
+   "CAPP523",
+   "GEOG115",
+   "LOGI710",
+   "LOGI711"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/logistics/logistics-analyst-certificate/",
+   "title": "Logistics Analyst Certificate | Mt. San Jacinto College Catalog",
+   "h1": "Logistics Analyst Certificate",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 4216
+ },
+ {
+  "control_number": "42922",
+  "title": "Logistics Leadership",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BADM104",
+   "LOGI710",
+   "LOGI711"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/logistics/logistics-leadership-certificate/",
+   "title": "Logistics Leadership Certificate | Mt. San Jacinto College Catalog",
+   "h1": "Logistics Leadership Certificate",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 4117
+ },
+ {
+  "control_number": "42923",
+  "title": "Logistics Operations Specialist",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BADM545",
+   "LOGI710",
+   "LOGI711",
+   "LOGI713"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/logistics/logistics-operations-specialist-certificate/",
+   "title": "Logistics Operations Specialist Certificate | Mt. San Jacinto College Catalog",
+   "h1": "Logistics Operations Specialist Certificate",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 4151
+ },
+ {
+  "control_number": "43000",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.762,
+  "codes_found": [
+   "COMM104",
+   "COMM104H",
+   "COMM106",
+   "COMM108H",
+   "COMM111",
+   "COMM113",
+   "COMM115",
+   "COMM117",
+   "COMM120",
+   "COMM150",
+   "COMM160",
+   "COMM516",
+   "COMMC1000",
+   "COMMC1000H",
+   "COMMC1004",
+   "COMMC1004H"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/communication-studies/communication-studies-aat/",
+   "title": "Communication Studies 2.0, A.A.-T | Mt. San Jacinto College Catalog",
+   "h1": "Communication Studies 2.0, A.A.-T",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 8419
+ },
+ {
+  "control_number": "43355",
+  "title": "Logistics E-Commerce for Entrepreneurs",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LOGI710",
+   "LOGI712",
+   "MGT520"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/logistics/logistics-for-entrepreneurs-certificate/",
+   "title": "Logistics E-Commerce for Entrepreneurs Certificate | Mt. San Jacinto College Catalog",
+   "h1": "Logistics E-Commerce for Entrepreneurs Certificate",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 4126
+ },
+ {
+  "control_number": "43810",
+  "title": "Basic Principles and Occupational Skills for Early Childhood Educators",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "43825",
+  "title": "Game Development",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "CSIS113C",
+   "DIG110",
+   "DIG551",
+   "DIG552",
+   "DIG553",
+   "DIG554",
+   "DIG580",
+   "DIG598"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/creative-media/digital-media/game-development-certificate/",
+   "title": "Game Development Certificate | Mt. San Jacinto College Catalog",
+   "h1": "Game Development Certificate",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 4430
+ },
+ {
+  "control_number": "43826",
+  "title": "Medical Laboratory Assistant",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AH105",
+   "MLT701",
+   "MLT702"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/allied-health/medical-laboratory-assistant-certificate/",
+   "title": "Medical Laboratory Assistant Certificate | Mt. San Jacinto College Catalog",
+   "h1": "Medical Laboratory Assistant Certificate",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 4102
+ },
+ {
+  "control_number": "43979",
+  "title": "Nursing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANAT101",
+   "ANAT102",
+   "BIOL125",
+   "BIOL125H",
+   "COMM106",
+   "COMMC1000",
+   "COMMC1000H",
+   "COMMC1004",
+   "COMMC1004H",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "HISTC1001",
+   "HISTC1001H",
+   "HISTC1002",
+   "HISTC1002H",
+   "NURS501",
+   "NURS502",
+   "NURS503",
+   "NURS504",
+   "NURS505",
+   "NURS506",
+   "NURS507",
+   "NURS508",
+   "NURS509",
+   "NURS510",
+   "NURS571",
+   "NURS572",
+   "POLSC1000",
+   "POLSC1000H",
+   "PSYC103",
+   "PSYC103H",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/nursing-registered-nursing/nursing-as/",
+   "title": "Nursing, A.S. | Mt. San Jacinto College Catalog",
+   "h1": "Nursing, A.S.",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 36,
+  "text_chars": 11538
+ },
+ {
+  "control_number": "44064",
+  "title": "Radiologic Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.947,
+  "codes_found": [
+   "AH105",
+   "ANAT101",
+   "ANAT102",
+   "COMMC1000",
+   "MATH105",
+   "RAD510",
+   "RAD515",
+   "RAD520",
+   "RAD525",
+   "RAD530",
+   "RAD535",
+   "RAD540",
+   "RAD645",
+   "RAD650",
+   "RAD655",
+   "RAD660",
+   "RAD665",
+   "RAD670"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/radiologic-technology/radiologic-technology-as/",
+   "title": "Radiologic Technology, A.S. | Mt. San Jacinto College Catalog",
+   "h1": "Radiologic Technology, A.S.",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 5871
+ },
+ {
+  "control_number": "44181",
+  "title": "Gerontology: Memory Care",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GERO504",
+   "GERO530",
+   "GERO531"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/gerontology-aging-studies/gerontology-memory-care-certificate/",
+   "title": "Gerontology: Memory Care Certificate | Mt. San Jacinto College Catalog",
+   "h1": "Gerontology: Memory Care Certificate",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 4115
+ },
+ {
+  "control_number": "44182",
+  "title": "Gerontology: Health and Aging Technology",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GERO504",
+   "GERO520",
+   "GERO521"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/gerontology-aging-studies/gerontology-health-aging-technology-certificate/",
+   "title": "Gerontology: Health and Aging Technology Certificate | Mt. San Jacinto College Catalog",
+   "h1": "Gerontology: Health and Aging Technology Certificate",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 4091
+ },
+ {
+  "control_number": "44183",
+  "title": "Gerontology: Caregiving",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GERO504",
+   "GERO510",
+   "GERO511"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/gerontology-aging-studies/gerontology-caregiving-certificate/",
+   "title": "Gerontology: Caregiving Certificate | Mt. San Jacinto College Catalog",
+   "h1": "Gerontology: Caregiving Certificate",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 4099
+ },
+ {
+  "control_number": "44373",
+  "title": "Gerontology/Aging Studies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GERO501",
+   "GERO502",
+   "GERO503",
+   "GERO504",
+   "GERO510",
+   "GERO511",
+   "GERO550"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/gerontology-aging-studies/gerontology-aging-studies-as/",
+   "title": "Gerontology/Aging Studies, A.S. | Mt. San Jacinto College Catalog",
+   "h1": "Gerontology/Aging Studies, A.S.",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 5034
+ },
+ {
+  "control_number": "44742",
+  "title": "Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.519,
+  "codes_found": [
+   "CHEM101",
+   "CHEM101H",
+   "ENGR120",
+   "ENGR181",
+   "ENGR182",
+   "ENGR183",
+   "ENGR756",
+   "MATH213",
+   "MATH215H",
+   "MATHC2210H",
+   "MATHC2220H",
+   "PHY201",
+   "PHY202",
+   "PHY203"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/engineering-technology/engineering-as/",
+   "title": "Engineering, A.S. | Mt. San Jacinto College Catalog",
+   "h1": "Engineering, A.S.",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 27,
+  "text_chars": 7103
+ },
+ {
+  "control_number": "44847",
+  "title": "General Education Breadth, Cal-GETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.926,
+  "codes_found": [
+   "AJ102",
+   "ANAT101",
+   "ANAT102",
+   "ANTH102",
+   "ANTH102H",
+   "ANTH104",
+   "ANTH104H",
+   "ANTH105",
+   "ANTH107",
+   "ANTH115",
+   "ANTH115H",
+   "ANTH121",
+   "ANTH125",
+   "ANTH125H",
+   "ANTH145",
+   "ANTH145H",
+   "ANTHC1001",
+   "ANTHC1001H",
+   "ANTHC1001L",
+   "ART100",
+   "ART103",
+   "ART103H",
+   "ART104",
+   "ART104H",
+   "ARTHC1100H",
+   "ARTHC1200H",
+   "ASL101",
+   "ASL110",
+   "ASL201",
+   "ASL202",
+   "ASTR111",
+   "ASTRC1000",
+   "BIOL100",
+   "BIOL100H",
+   "BIOL117",
+   "BIOL125",
+   "BIOL125H",
+   "BIOL128",
+   "BIOL128H",
+   "BIOL130",
+   "BIOL131",
+   "BIOL131H",
+   "BIOL134",
+   "BIOL140",
+   "BIOL144",
+   "BIOL144H",
+   "BIOL146",
+   "BIOL150",
+   "BIOL150H",
+   "BIOL151",
+   "BIOL151H",
+   "BIOLC1000H",
+   "CDEVC1000",
+   "CDEVC1000H",
+   "CHEM100",
+   "CHEM101",
+   "CHEM101H",
+   "CHEM102",
+   "CHEM107",
+   "CHEM112",
+   "CHEM113",
+   "CHEM113H",
+   "COMM108",
+   "COMM108H",
+   "CSIS213",
+   "DAN100",
+   "DAN125",
+   "DAN133",
+   "DAN225",
+   "ECONC2001H",
+   "ECONC2002H",
+   "ED132",
+   "ED132H",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "ENGLC1002",
+   "ENGLC1002H",
+   "ENVS100",
+   "ENVS100H",
+   "ENVS101",
+   "ENVS101H",
+   "ENVS102",
+   "ENVS102H",
+   "ETHS103",
+   "ETHS103H",
+   "ETHS112",
+   "ETHS113",
+   "ETHS113H",
+   "ETHS160",
+   "ETHS160H",
+   "ETHS240",
+   "ETHS240H",
+   "ETHS275",
+   "ETHS275H",
+   "ETHS280",
+   "ETHS280H",
+   "FREN102",
+   "GEOG101",
+   "GEOG102",
+   "GEOG104",
+   "GEOG106",
+   "GEOG107",
+   "GEOG108",
+   "GEOG111",
+   "GEOL100",
+   "GEOL103",
+   "GEOL105",
+   "GEOL106",
+   "GEOL109",
+   "GEOL111",
+   "HIST101",
+   "HIST101H",
+   "HIST102",
+   "HIST102H",
+   "HIST103",
+   "HIST103H",
+   "HIST104",
+   "HIST104H",
+   "HIST106",
+   "HIST106H",
+   "HIST107",
+   "HIST107H",
+   "HIST108",
+   "HIST108H",
+   "HIST115",
+   "HIST115H",
+   "HIST117",
+   "HIST117H",
+   "HIST118",
+   "HIST120",
+   "HIST120H",
+   "HIST121",
+   "HIST124",
+   "HIST124H",
+   "HIST125",
+   "HIST128",
+   "HIST128H",
+   "HIST136",
+   "HIST140",
+   "HIST140H",
+   "HIST141",
+   "HIST142",
+   "HIST151",
+   "HIST154",
+   "HIST160",
+   "HIST160H",
+   "HISTC1001",
+   "HISTC1001H",
+   "HISTC1002",
+   "HISTC1002H",
+   "LIT205",
+   "LIT205H",
+   "LIT207",
+   "LIT207H",
+   "LIT208",
+   "LIT208H",
+   "LIT225",
+   "LIT225H",
+   "LIT230",
+   "LIT230H",
+   "LIT231",
+   "LIT231H",
+   "LIT240",
+   "LIT240H",
+   "LIT255",
+   "LIT255H",
+   "LIT260",
+   "LIT260H",
+   "LIT275",
+   "LIT275H",
+   "LIT280",
+   "LIT280H",
+   "MATH105",
+   "MATH110",
+   "MATH115",
+   "MATH135",
+   "MATH213",
+   "MATH215",
+   "MATH215H",
+   "MATH218",
+   "MATHC2210H",
+   "MATHC2220H",
+   "MUS100",
+   "MUS100H",
+   "MUS106",
+   "MUS107",
+   "MUS107H",
+   "MUS108",
+   "MUS108H",
+   "MUS109",
+   "PE126",
+   "PHIL101",
+   "PHIL101H",
+   "PHIL105",
+   "PHIL109",
+   "PHIL110",
+   "PHIL112",
+   "PHY100",
+   "PHY101",
+   "PHY102",
+   "PHY201",
+   "PHY202",
+   "PHY203",
+   "POLSC1000",
+   "POLSC1000H",
+   "PS102",
+   "PS102H",
+   "PS103",
+   "PS103H",
+   "PS105",
+   "PS105H",
+   "PS106",
+   "PS106H",
+   "PS120",
+   "PS120H",
+   "PSYC102",
+   "PSYC103",
+   "PSYC103H",
+   "PSYC104",
+   "PSYC104H",
+   "PSYC105",
+   "PSYC105H",
+   "PSYC107",
+   "PSYC107H",
+   "PSYC108",
+   "PSYC112",
+   "PSYC121",
+   "PSYC124",
+   "PSYC124H",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SJS101",
+   "SJS101H",
+   "SJS130",
+   "SOCI102",
+   "SOCI103",
+   "SOCI105",
+   "SOCI105H",
+   "SOCI106",
+   "SOCI108",
+   "SOCI110",
+   "SOCI112",
+   "SOCI115",
+   "SOCI125",
+   "SOCIC1000",
+   "SOCIC1000H",
+   "SPAN102",
+   "SPAN201",
+   "SPAN202",
+   "SPAN203",
+   "SPAN204",
+   "STATC1000",
+   "STATC1000H",
+   "THA101",
+   "THA101H",
+   "THA102",
+   "THA135",
+   "THA136",
+   "THA137",
+   "THA137H"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/degrees-certificates-curricula/general-education-requirements-cal-getc/",
+   "title": "General Education Requirements: Cal-GETC | Mt. San Jacinto College Catalog",
+   "h1": "General Education Requirements: Cal-GETC",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.8
+   }
+  },
+  "listed": 283,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "44938",
+  "title": "Welding Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CWE549",
+   "WELD700",
+   "WELD701",
+   "WELD702",
+   "WELD703"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/welding-technology/welding-technology-certificate/",
+   "title": "Welding Technology Certificate | Mt. San Jacinto College Catalog",
+   "h1": "Welding Technology Certificate",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 4210
+ },
+ {
+  "control_number": "45049",
+  "title": "Medical Laboratory Technician, A.S.",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 9,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45127",
+  "title": "Truck Driver Training and Occupational Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45688",
+  "title": "Cybersecurity",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSIS116E",
+   "CSIS160",
+   "CSIS164",
+   "CSIS201",
+   "CSIS202",
+   "CSIS523",
+   "CSIS580",
+   "CSIS581",
+   "CSIS592",
+   "CSIS594",
+   "CSIS791"
+  ],
+  "source": {
+   "url": "https://catalog.msjc.edu/instructional-programs/computer-information-systems/cybersecurity-as/",
+   "title": "Cybersecurity, A.S. | Mt. San Jacinto College Catalog",
+   "h1": "Cybersecurity, A.S.",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 4588
+ },
+ {
+  "control_number": "46231",
+  "title": "Administrative Professional",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 13,
+  "text_chars": 0
+ },
+ {
+  "control_number": "46232",
+  "title": "Culinary Arts & Hospitality",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 14,
+  "text_chars": 0
+ }
+]

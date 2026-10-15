@@ -1,0 +1,256 @@
+{
+ "college": "Cuyamaca College",
+ "control_number": "05048",
+ "shape": "degree",
+ "title": "Biological Sciences",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/stem/biological-sciences/biological-sciences-as/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7131,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7131,
+    "output_tokens": 1442,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1442,
+  "output_tokens_details": {
+   "thinking_tokens": 254
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05736,
+ "ms": 11465,
+ "seconds": 12.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    41.0,
+    41.0
+   ],
+   "stated": [
+    41.0,
+    41.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 25,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Science Degree Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 41,
+    "max": 41
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Explain the basic structures and fundamental processes of life at the molecular, cellular, and organismal levels.",
+    "Identify the evolutionary processes that lead to adaptation and biological diversity.",
+    "Describe the relationship between life forms and their environment and ecosystems.",
+    "Collect, organize, analyze, interpret and present quantitative and qualitative data and incorporate them into the broader context of biological knowledge.",
+    "Effectively apply current technology and scientific methodologies for problem solving.",
+    "Find, select and evaluate various types of scientific information including primary research articles, mass media sources and World Wide Web information.",
+    "Communicate effectively in written and oral formats."
+   ],
+   "careers": [
+    "Aquatic Biologist",
+    "Athletic Trainer",
+    "Biologist",
+    "Biochemical Engineer",
+    "Biological Technician",
+    "Biomedical Equipment Technician",
+    "Biotechnologist",
+    "Botanist",
+    "Clinical Lab Technologist",
+    "Cytologist",
+    "Ecologist",
+    "Environmental Engineer",
+    "Environmental Technician",
+    "Environmental Microbiologist",
+    "Genetic Engineering Technician",
+    "Greenhouse Assistant",
+    "Laboratory Technician",
+    "Physical Therapist",
+    "Public Health Biologist",
+    "Purification Technician",
+    "Research Assistant",
+    "Safety Specialist",
+    "Teacher",
+    "Technical Writer",
+    "Waste Management Technician"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Associate in Science Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 41,
+     "max": 41
+    },
+    "courses": [
+     {
+      "code": "BIO-230",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO-240",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM-141",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM-142",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM-231",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH-C2210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYC-130",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYC-131",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT-C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSY-215",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Career titles in the catalog carry a footnote marker '1' (Bachelor Degree or higher required); the marker was dropped from the recorded career names.",
+   "PSY-215 is printed as an 'or' alternative to STAT-C1000 with no units beside it; units left null.",
+   "The page says 'Plus General Education Requirements' without naming a GE pattern or printing GE units or a degree total.",
+   "The 'Total Units 41' was recorded both as the award's total_units and as the single block's stated total."
+  ]
+ },
+ "extracted_run": "38748833332"
+}

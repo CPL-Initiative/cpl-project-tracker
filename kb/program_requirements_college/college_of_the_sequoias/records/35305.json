@@ -1,0 +1,261 @@
+{
+ "college": "College of the Sequoias",
+ "control_number": "35305",
+ "shape": "adt",
+ "title": "Biology",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.cos.edu//areas-study/biology/associate-science-biology-transfer-as-t/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7449,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7449,
+    "output_tokens": 1941,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1941,
+  "output_tokens_details": {
+   "thinking_tokens": 574
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06862,
+ "ms": 16066,
+ "seconds": 16.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 9,
+   "share": 0.889,
+   "missing": [
+    "MATHC2210"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "MATH65"
+   ],
+   "flagged": [
+    "MATH65"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    68.0,
+    70.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    34.0,
+    34.0
+   ],
+   "why": [],
+   "overlap": true
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Science in Biology for Transfer (AS-T)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": 2,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "California-General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Design, implement and analyze the results of experiments utilizing the scientific method as measured by the scientific method rubric.",
+    "Infer the role of evolution at the molecular, cellular, population or ecological level of biology as measured by the evolution rubric."
+   ],
+   "careers": [
+    "Laboratory technician",
+    "teaching",
+    "research scientist"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED MAJOR COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 24,
+     "max": 24
+    },
+    "courses": [
+     {
+      "code": "BIOL 001",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 002",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 001",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 002",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 065",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "REQUIRED PHYSICS COURSE SEQUENCE: PHYS 020 & PHYS 021",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Physics sequence",
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "PHYS 020",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 021",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "REQUIRED PHYSICS COURSE SEQUENCE: PHYS 055 & PHYS 056",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Physics sequence",
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "PHYS 055",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 056",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MATH C2210",
+    "why": "not in the text; catalog prints MATH 065 Calculus 1 instead (likely the same course under a different number)"
+   }
+  ],
+  "notes": [
+   "Catalog codes are printed with leading zeros (BIOL 001, CHEM 001, PHYS 020, etc.); treated as the closed-list courses BIOL 1, CHEM 1, PHYS 20, etc.",
+   "MATH 065 (Calculus 1) is not in the closed list and is recorded as a catalog addition; the closed list names MATH C2210 Calculus I: Early Transcendentals, possibly the common-course-numbered equivalent. Reviewer should check.",
+   "The physics sequence heading prints 8-10 units for the choice; each sequence prints only a combined total (PHYS 020 & PHYS 021 = 10; PHYS 055 & PHYS 056 = 8), so individual course units are null.",
+   "ELECTIVES prints 2-4 units ('Select additional transferable courses numbered 1-199 to achieve 60 units'); open_elective_units records the low end 2 since the field holds a single number. The range 2-4 depends on the physics sequence chosen.",
+   "The page prints no total for the major alone; TOTAL 60 is the whole degree with GE, recorded in degree_total. Cal-GETC 34 recorded in ge_units; the page notes 10 units of starred courses may be double counted in Cal-GETC."
+  ]
+ },
+ "extracted_run": "38748848139"
+}

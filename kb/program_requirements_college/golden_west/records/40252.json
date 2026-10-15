@@ -1,0 +1,601 @@
+{
+ "college": "Golden West College",
+ "control_number": "40252",
+ "shape": "adt",
+ "title": "Law, Public Policy, and Society",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.cccd.edu/golden-west/pathways/social-behavioral-sciences/political-science/law-public-policy-aat/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8737,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8737,
+    "output_tokens": 4620,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4620,
+  "output_tokens_details": {
+   "thinking_tokens": 1544
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.12735,
+ "ms": 34038,
+ "seconds": 34.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 38,
+   "listed": 54,
+   "share": 0.704,
+   "missing": [
+    "ANTHG100",
+    "ANTHG200",
+    "CMSTG255",
+    "ECONG170",
+    "ECONG175",
+    "ETHSG111",
+    "ETHSG133",
+    "ETHSG136",
+    "ETHSG137",
+    "ETHSG181",
+    "GEOGG185",
+    "HISTG170",
+    "HISTG175",
+    "PSYCG167",
+    "SOCG133",
+    "SOCG140"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 6,
+   "codes": [
+    "AFSG100",
+    "ASAMG100",
+    "ECONC2001",
+    "ECONC2002",
+    "HISTC1001",
+    "HISTC1002"
+   ],
+   "flagged": [
+    "AFSG100",
+    "ASAMG100",
+    "ECONC2001",
+    "ECONC2002",
+    "HISTC1001",
+    "HISTC1002"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    31.0,
+    36.0
+   ],
+   "stated": [
+    31.0,
+    36.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     65.0,
+     70.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 30,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "AA-T Area of Emphasis: Law, Public Policy and Society",
+   "measure": "units",
+   "total_units": {
+    "min": 31,
+    "max": 36
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Develop legal and critical-thinking skills in judicial issues.",
+    "Evaluate legal issues in a variety of different environments.",
+    "Analyze issues by application of relevant rules of law, ethical standards, and social mores."
+   ],
+   "careers": [
+    "Intellectual property lawyer",
+    "Judge advocate in the U.S. military",
+    "Compliance attorney",
+    "Political lawyer or policy attorney",
+    "Immigration attorney",
+    "Elder law attorney",
+    "Environmental lawyer",
+    "Judicial clerk",
+    "Administrative or regulatory attorney",
+    "Trial lawyer",
+    "Appellate lawyer",
+    "Corporate lawyer",
+    "Human rights or civil rights lawyer",
+    "International lawyer",
+    "Labor and employment lawyer",
+    "Legal librarian",
+    "Legal advisor",
+    "Paralegal",
+    "Politician",
+    "Legal editor",
+    "Law school counselor",
+    "Professor",
+    "Policy analyst",
+    "Union organizer",
+    "Contracts administrator",
+    "Lobbyist",
+    "Arbitrator",
+    "Foreign service officer",
+    "FBI agent",
+    "CIA agent"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PSCI G130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL G120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 4,
+      "units_max": 6,
+      "alternatives": [
+       {
+        "code": "ENGL C1000E",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMST G220",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC G130",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PHIL G125",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 3,
+      "units_max": 6,
+      "alternatives": [
+       {
+        "code": "STAT C1000E",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC G140",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC G125",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON G160",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST C1002",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSCI G181",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CJ G140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ G123",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ G150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC G160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHIL G150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSCI G150",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSCI G110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSCI G185",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSCI G100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GLST G102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC G185",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSCI G101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON G110",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON G130",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSCI G103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHS G103",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST G121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHS G134",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC G134",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHS G167",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AFS G100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ASAM G100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG G120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHS G120",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC G111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANTH G100",
+    "why": "not in the text"
+   },
+   {
+    "code": "ANTH G200",
+    "why": "not in the text"
+   },
+   {
+    "code": "CMST G255",
+    "why": "not in the text"
+   },
+   {
+    "code": "ECON G170",
+    "why": "not in the text; catalog lists ECON C2001 instead"
+   },
+   {
+    "code": "ECON G175",
+    "why": "not in the text; catalog lists ECON C2002 instead"
+   },
+   {
+    "code": "ETHS G111",
+    "why": "not in the text; catalog lists SOC G111 only"
+   },
+   {
+    "code": "ETHS G133",
+    "why": "not in the text"
+   },
+   {
+    "code": "ETHS G136",
+    "why": "not in the text; catalog lists AFS G100"
+   },
+   {
+    "code": "ETHS G137",
+    "why": "not in the text; catalog lists ASAM G100"
+   },
+   {
+    "code": "ETHS G181",
+    "why": "not in the text; catalog lists PSCI G181 only"
+   },
+   {
+    "code": "GEOG G185",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST G170",
+    "why": "not in the text; catalog lists HIST C1001 instead"
+   },
+   {
+    "code": "HIST G175",
+    "why": "not in the text; catalog lists HIST C1002 instead"
+   },
+   {
+    "code": "PSYC G167",
+    "why": "not in the text; catalog lists ETHS G167 only"
+   },
+   {
+    "code": "SOC G133",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOC G140",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "Section heading is truncated at the top of the text ('a of Emphasis: ...'); heading recorded from the program name as printed in the description ('AA-T Area of Emphasis: Law, Public Policy and Society').",
+   "List A: 'Select two courses from two of the following areas' (6 units). Recorded as one choose-2 block; the two courses must come from two different areas (Administrative of Justice/Criminal Justice/Criminology; Business: ECON C2001, ECON C2002; Political Science; Public Policy: GLST G102/SOC G185, PSCI G101/ECON G110/ECON G130; Diversity: PSCI G103 through SOC G111). Each area is printed as 'select one' with 3 units.",
+   "ENGL C1000 row prints 4-6 and STAT C1000 row prints 3-6 as ranges covering the alternatives; alternatives have no units printed beside them, so their units are null.",
+   "HIST C1001/HIST C1002, ECON C2001/C2002, AFS G100 and ASAM G100 are not in the closed list (closed list has HIST G170/G175, ECON G170/G175, ETHS G136/G137) and are marked catalog additions.",
+   "Total Units 60 recorded as degree_total; Major Total 31-36; Cal-GETC 34; transferable electives fill to 60 with no units printed.",
+   "'Legal librarian' is printed twice in the careers list; recorded once."
+  ]
+ },
+ "extracted_run": "38748828247"
+}

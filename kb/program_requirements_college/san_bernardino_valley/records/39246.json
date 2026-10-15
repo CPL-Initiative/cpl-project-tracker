@@ -1,0 +1,229 @@
+{
+ "college": "San Bernardino Valley College",
+ "control_number": "39246",
+ "shape": "adt",
+ "title": "Chemistry",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/chemistry/chemistry-as-t-degree/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7762,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7762,
+    "output_tokens": 1193,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1193,
+  "output_tokens_details": {
+   "thinking_tokens": 165
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05491,
+ "ms": 9468,
+ "seconds": 9.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    36.0,
+    36.0
+   ],
+   "stated": [
+    36.0,
+    36.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     70.0,
+     73.0
+    ],
+    "stated": [
+     63.0,
+     66.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Chemistry Associate in Science for Transfer Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 36,
+    "max": 36
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 0,
+    "max": 3
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 63,
+    "max": 66
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply fundamental principles of chemistry, including stoichiometry, bonding theory, thermodynamics, equilibrium, and kinetics, to solve quantitative and qualitative problems and predict the properties and behavior of chemical systems.",
+    "Demonstrate proficiency in organic chemistry by predicting reaction mechanisms, products, and synthetic pathways, as well as analyzing the stability and reactivity of organic compounds based on their structures and functional groups.",
+    "Interpret and analyze spectroscopic data, including infrared (IR), mass spectrometry (MS), and nuclear magnetic resonance (NMR) spectra, to elucidate the structures of organic compounds and justify reaction predictions.",
+    "Exhibit competency in laboratory techniques, including assembling experimental setups, collecting and analyzing data, performing calculations, and effectively communicating the results of experiments."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHEM 150",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 151",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 212",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 213",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSIC 202",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSIC 203",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2210",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The summary table prints 'Total Double-Counted Units 7' (major courses also counted toward Cal-GETC); this explains why 36 + 34 + 0-3 elective units yields a printed degree total of 63-66 rather than 70-73.",
+   "Elective Units 0-3 recorded as degree_elective_units since the page prints a separate Major Total Units of 36.",
+   "Areas of specialization (Environmental, Organic, Analytical, Physical Chemistry) named in the overview were not recorded as careers."
+  ]
+ },
+ "extracted_run": "38748858322"
+}

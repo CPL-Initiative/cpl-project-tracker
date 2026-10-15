@@ -1,0 +1,202 @@
+{
+ "college": "Golden West College",
+ "control_number": "46426",
+ "shape": "noncredit",
+ "title": "Law Enforcement Option",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/criminal-justice/law-enforcement-option-nc/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6936,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6936,
+    "output_tokens": 1313,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1313,
+  "output_tokens_details": {
+   "thinking_tokens": 279
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.054,
+ "ms": 11381,
+ "seconds": 11.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    755.0,
+    1091.0
+   ],
+   "stated": [
+    755.0,
+    1091.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Law Enforcement Option",
+   "measure": "hours",
+   "total_units": {
+    "min": 755,
+    "max": 1091
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Differentiate the roles of the law enforcement, courts, and corrections components of the criminal justice system.",
+    "Evaluate the biological, psychological, and social causes of criminal behavior.",
+    "Perform appropriate First Aid procedures.",
+    "Develop effective reading, writing, speaking, listening, and nonverbal communication skills for a variety of audiences.",
+    "Examine legal arguments plus explain constitutional and statutory limits on the application of law.",
+    "Interpret and practice the Six Pillars of Character as defined by the Josephson Institute of Ethics: trustworthiness, respect, fairness,responsibility, justice and fairness, caring, civic virtue and citizenship, and how they apply to personal and professional environments."
+   ],
+   "careers": [
+    "Police officer",
+    "Parole officer",
+    "Deputy sheriff"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses (Option 1: CJ G054N & CJ G064N)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Required Courses",
+    "stated": {
+     "min": 1091,
+     "max": 1091
+    },
+    "courses": [
+     {
+      "code": "CJ G054N",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ G064N",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Courses (Option 2: CJ G090N & CJ G089N)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Required Courses",
+    "stated": {
+     "min": 755,
+     "max": 755
+    },
+    "courses": [
+     {
+      "code": "CJ G090N",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ G089N",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Award counted in hours (noncredit Certificate of Completion). The catalog prints hours only for each paired option (1091 for CJ G054N & CJ G064N; 755 for CJ G090N & CJ G089N), not per course, so individual course hours are null and the pair totals are recorded in each block's stated.",
+   "The two pairs are joined by 'Or' and the description says 'There are two different options listed below to obtain this certificate', so each pair is recorded as a separate option block in the same option_group.",
+   "Total Hours printed as 755-1091.",
+   "The page heading itself is not in the extracted text; section_heading uses the program name 'Law Enforcement Option' as named in the description ('Certificate of Completion, Law Enforcement Option').",
+   "Outcomes were printed as run-on text without bullets; split at sentence boundaries. The sixth outcome is copied as printed, including the missing space in 'fairness,responsibility' and the repeated 'fairness'."
+  ]
+ },
+ "extracted_run": "38748828247"
+}

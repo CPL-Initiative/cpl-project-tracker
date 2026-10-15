@@ -1,0 +1,363 @@
+{
+ "college": "Cypress College",
+ "control_number": "03788",
+ "shape": "degree",
+ "title": "Health Information Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/health-information-technology/health-information-technology-associate-in-science-degree/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8683,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8683,
+    "output_tokens": 3054,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3054,
+  "output_tokens_details": {
+   "thinking_tokens": 997
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.09581,
+ "ms": 25211,
+ "seconds": 25.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 21,
+   "listed": 21,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    60.0,
+    63.0
+   ],
+   "stated": [
+    60.0,
+    62.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 60.0-63.0; the catalog states 60.0-62.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Health Information Technology Associate in Science Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 60,
+    "max": 62
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cypress College Local General Education or Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Provide training for entry-level positions in health information management, health information technology, and health informatics in health information/medical record departments, tumor/ cancer registries, and related areas throughout the health care delivery system.",
+    "Prepare students at a level of expertise in health information management and technology that will permit graduates to successfully write their respective national qualifying examinations.",
+    "Instill in students the importance of a professional attitude-toward work and encourage participation in local, state, and national professional organizations.",
+    "Assist students in developing a sense of self-worth and pride through the acquisition of specific knowledge and skills required in the pursuit of data accuracy and confidentiality in maintaining health information systems"
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Prerequisites (19 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 19,
+     "max": 19
+    },
+    "courses": [
+     {
+      "code": "CIS 111 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HS 145 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1000H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1000E",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 210 C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "SEMESTER 1 (11 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 11,
+     "max": 11
+    },
+    "courses": [
+     {
+      "code": "HI 101 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HI 116 C",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HS 147 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HI 102 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "SEMESTER 2 (10 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "HI 103 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HI 114 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HI 245 C",
+      "units": 1,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HI 230 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "SEMESTER 3 (10 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "HI 214 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HI 225 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HI 245 C",
+      "units": 1,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 236 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "SEMESTER 4 (10 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "HI 224 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HI 226 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HI 240 C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The Course List prints only ENGL C1000 under Prerequisites; ENGL C1000H and ENGL C1000E are recorded as alternatives because the minimum standards for applicants accept ENGL C1000 or ENGL C1000H or ENGL C1000E. Their units are not printed in the text.",
+   "HI 245 C (Coding Skills Lab, 1-2 units) is printed in both Semester 2 and Semester 3; it is recorded in each semester block as printed. The closed list stores it at 1 unit.",
+   "Total Units 60-62 is recorded as the major total; the text also says 'This degree requires 60 units in the major'. No separate degree total including GE is printed.",
+   "The text's generic sentence about 'any elective courses to complete a minimum of 60 units' is degree boilerplate; since no degree total is printed and the major alone is 60-62 units, electives_fill_degree is left false. A reviewer may check this.",
+   "GE pattern: Cypress College Local General Education requirements or Cal-GETC; no GE units printed.",
+   "Some course titles in the catalog differ from the closed list (e.g., HI 114 C 'Beginning ICD-10-CM and ICD-10-PCS Coding'); codes match.",
+   "Program Student Learning Outcomes come from the page's outcomes tab for this degree; the 'OUTCOME n:' labels were removed.",
+   "No careers or job titles are named apart from the RHIT certification exam credential and general references to health information professionals; careers left empty."
+  ]
+ },
+ "extracted_run": "38748866826"
+}

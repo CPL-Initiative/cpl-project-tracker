@@ -1,0 +1,245 @@
+{
+ "college": "College of the Sequoias",
+ "control_number": "39328",
+ "shape": "certificate",
+ "title": "Culinary Arts Fundamentals",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.cos.edu//areas-study/culinary-nutrition/certificate-achievement-culinary-arts-fundamentals/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7354,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7354,
+    "output_tokens": 1651,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1651,
+  "output_tokens_details": {
+   "thinking_tokens": 478
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06244,
+ "ms": 13908,
+ "seconds": 14.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "CULN224",
+    "WEXP193DD"
+   ],
+   "flagged": [
+    "CULN224",
+    "WEXP193DD"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    30.0,
+    30.0
+   ],
+   "stated": [
+    30.0,
+    30.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement in Culinary Arts Fundamentals",
+   "measure": "units",
+   "total_units": {
+    "min": 30,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify and practice food safety and sanitation to industry standards.",
+    "Use proper food service equipment and apply proper cooking methods and techniques in food preparation.",
+    "Given a standard recipe, correctly increase the yield of the recipe, including adjustment amounts, cooking techniques, and cooking time, if necessary.",
+    "Students will demonstrate professionalism and ability to perform in industry setting through work experience."
+   ],
+   "careers": [
+    "Line cook",
+    "prep cook",
+    "short-order cook",
+    "entry-level baker",
+    "restaurant management"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED CERTIFICATE COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 30,
+     "max": 30
+    },
+    "courses": [
+     {
+      "code": "CULN 221",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CULN 222",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CULN 223",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CULN 224",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CULN 225",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CULN 226",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NUTR 020",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NUTR 107",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WEXP 193DD",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "WEXP 194DD",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WEXP 195DD",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints NUTR 020 (Cultural Foods, 3 units); treated as the closed list's NUTR 20 (same title and units), so catalog_addition is false.",
+   "WEXP 195DD is printed with 3 units in the catalog, while the state file stores 1 unit; recorded as printed (3). The 3 units are needed for the listed courses to sum to the printed TOTAL of 30.",
+   "CULN 224 (Baking and Desserts) and WEXP 193DD (Culinary Internship - Work Experience - 1st Semester) are required in the catalog but absent from the closed list; recorded as catalog additions.",
+   "The block's stated total of 30 is taken from the TOTAL line printed under the single required course list, which is also the certificate total.",
+   "Careers were read from the Career Opportunities paragraph; 'Line cook' is qualified in the text as 'in institutional food services such as schools, hospitals, and cafeterias', and 'restaurant management' is printed as 'restaurant management opportunities'."
+  ]
+ },
+ "extracted_run": "38748848139"
+}

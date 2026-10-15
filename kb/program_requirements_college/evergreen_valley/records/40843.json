@@ -1,0 +1,163 @@
+{
+ "college": "Evergreen Valley College",
+ "control_number": "40843",
+ "shape": "certificate",
+ "title": "Advanced Taxation",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://catalog.evc.edu/degrees-certificates/accounting/advanced-taxation-certificate-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7185,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7185,
+    "output_tokens": 937,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 937,
+  "output_tokens_details": {
+   "thinking_tokens": 354
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04748,
+ "ms": 8218,
+ "seconds": 9.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 4,
+   "share": 0.0,
+   "missing": [
+    "ACCTG96A",
+    "ACCTG96B",
+    "ACCTG96C",
+    "ACCTG97"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "ADVANCED TAXATION - CERTIFICATE OF ACHIEVEMENT",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Recognize the federal income tax implications for individuals, corporations and flow-through entities.",
+    "Interpret Internal Revenue Service procedures and requirements to represent clients before the Internal Revenue Service.",
+    "Practice for the Enrolled Agent exam."
+   ],
+   "careers": [
+    "higher-level income tax preparation positions"
+   ]
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ACCTG 096A",
+    "why": "named only in the overview's residency rule; the Required Courses list is not in the text"
+   },
+   {
+    "code": "ACCTG 096B",
+    "why": "named only in the overview's residency rule; the Required Courses list is not in the text"
+   },
+   {
+    "code": "ACCTG 096C",
+    "why": "named only in the overview's residency rule; the Required Courses list is not in the text"
+   },
+   {
+    "code": "ACCTG 97",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The page has a 'Required Courses' tab, but its content was not captured in the text. No requirement list, course units or certificate total are printed, so no blocks were recorded.",
+   "The overview says ACCTG 096A, ACCTG 096B and ACCTG 096C must be completed at Evergreen Valley College to count toward this certificate. This implies they are part of the requirements, but the text gives no list or rule for them, so they were not placed in a block.",
+   "Program Learning Outcomes come from the page's outcomes tab for this certificate."
+  ]
+ },
+ "extracted_run": "38748875071"
+}
