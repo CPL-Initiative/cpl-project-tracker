@@ -1,0 +1,290 @@
+{
+ "college": "Citrus College",
+ "control_number": "30176",
+ "shape": "certificate",
+ "title": "Writing Competency",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://catalog.citruscollege.edu/disciplines/english/writing-competency-certificate-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7887,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7887,
+    "output_tokens": 1970,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1970,
+  "output_tokens_details": {
+   "thinking_tokens": 646
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07095,
+ "ms": 15625,
+ "seconds": 16.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ENGLC1001",
+    "ENGLC1002H"
+   ],
+   "flagged": [
+    "ENGLC1001",
+    "ENGLC1002H"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    15.0,
+    16.0
+   ],
+   "stated": [
+    14.0,
+    15.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 15.0-16.0; the catalog states 14.0-15.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 7,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Writing Competency Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 14,
+    "max": 15
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Employ a variety of rhetorical techniques in order to write multi-paragraph essays.",
+    "Use correct spelling, grammar, punctuation and capitalization in order to demonstrate knowledge of the conventions of the English language.",
+    "Use the Internet and word processing programs in order to compose and revise written work.",
+    "Critically analyze and synthesize source material to demonstrate ability to write at the college level."
+   ],
+   "careers": [
+    "composition tutoring",
+    "editing and publishing",
+    "journalism",
+    "pre-law",
+    "theater and entertainment",
+    "freelance writing",
+    "university or college teacher assisting"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Select one (1) of the following reading and composition courses:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ENGL C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1000E",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1000H",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one (1) of the following composition and critical thinking classes:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ENGL C1003",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1003H",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one (1) of the following courses:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "COMM 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1002H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 291",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 291H",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required rhetoric course:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ENGL C1001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1001H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Section heading taken from the outcomes text ('Writing Competency Certificate of Achievement'); the page's own title heading is not in the captured text.",
+   "Totals conflict: the overview says 'thirteen - fourteen units', the Requirements tab prints 'Total Units 14-15', and the curriculum map prints 'Total Units 15-16'. Recorded the Requirements tab figure 14-15.",
+   "ENGL C1001H in the catalog was matched to closed-list entry 'ENGLC1001H' (printed without a space); marked catalog_addition false. ENGL C1001 (non-honors) is not in the closed list and is marked as a catalog addition.",
+   "ENGL C1002H is printed as an 'or' alternative to ENGL C1002 with no units; it is not in the closed list.",
+   "The curriculum map omits ENGL C1002H from the third-choice options; requirements list used as authoritative."
+  ]
+ },
+ "extracted_run": "38675245799"
+}

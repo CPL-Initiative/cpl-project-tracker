@@ -1,0 +1,177 @@
+{
+ "college": "Citrus College",
+ "control_number": "41167",
+ "shape": "noncredit",
+ "title": "Business Entrepreneurship",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/business-entrepreneurship-certificate-competency/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7291,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7291,
+    "output_tokens": 838,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 838,
+  "output_tokens_details": {
+   "thinking_tokens": 175
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04592,
+ "ms": 7663,
+ "seconds": 8.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    110.0,
+    110.0
+   ],
+   "stated": [
+    110.0,
+    110.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business Entrepreneurship Certificate of Competency",
+   "measure": "hours",
+   "total_units": {
+    "min": 110,
+    "max": 110
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate knowledge of accounting cycle and financial statement.",
+    "Demonstrate proficiency in using QuickBooks accounting software.",
+    "Demonstrate ability to start and run a business, effectively communicate both in writing and orally, build positive rapport with customers, make decisions under pressure, navigate the competitive environment through uncertainty, and maintain positive professional relationships with employees, suppliers, partners, etc.",
+    "Demonstrate readiness to apply basic marketing skills to develop a marketing plan for a small business."
+   ],
+   "careers": [
+    "business entrepreneurs"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NC 654",
+      "units": 60,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NC 655",
+      "units": 30,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NC 656",
+      "units": 20,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page heading is not printed in the extracted text; section_heading is taken from the outcomes lead-in ('Business Entrepreneurship Certificate of Competency') and the URL.",
+   "The table's column is labeled 'Units' but the total row reads 'Total Hours 110'; the values are recorded as hours for this noncredit certificate.",
+   "A 'Career Information' tab is named but its content is not in the extracted text; the only career is taken from the overview ('prepare students to be business entrepreneurs')."
+  ]
+ },
+ "extracted_run": "38675245799"
+}

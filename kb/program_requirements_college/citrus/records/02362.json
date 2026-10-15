@@ -1,0 +1,287 @@
+{
+ "college": "Citrus College",
+ "control_number": "02362",
+ "shape": "degree",
+ "title": "Cosmetology",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.citruscollege.edu/disciplines/cosmetology/cosmetology-as/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7174,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7174,
+    "output_tokens": 2158,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2158,
+  "output_tokens_details": {
+   "thinking_tokens": 789
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07186,
+ "ms": 17566,
+ "seconds": 17.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    39.0,
+    39.0
+   ],
+   "stated": [
+    39.5,
+    39.5
+   ],
+   "against": "program",
+   "why": [
+    "a required course in 'Required courses: or COS 202' has no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 8,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Cosmetology A.S. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 39.5,
+    "max": 39.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "District General Education Pattern or Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Be prepared to pass the California Board of Barbering & Cosmetology written exam and acquire licensure.",
+    "Be trained theoretically and practically in the disciplines of haircutting, haircoloring, chemical training, hairstyling and skin & nail care.",
+    "Be inspired and challenged artistically through projects, community service and collaborative work with partnering industry professionals."
+   ],
+   "careers": [
+    "beauty industry",
+    "haircutting",
+    "hairstyling",
+    "colorist",
+    "chemical specialist",
+    "skin and nail technicians",
+    "sales",
+    "entrepreneurship"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Select one (1) of the following options: COS 141",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Introduction to Cosmetology",
+    "stated": {
+     "min": 7.5,
+     "max": 7.5
+    },
+    "courses": [
+     {
+      "code": "COS 141",
+      "units": 7.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one (1) of the following options: COS 141A & COS 141B",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Introduction to Cosmetology",
+    "stated": {
+     "min": 7.5,
+     "max": 7.5
+    },
+    "courses": [
+     {
+      "code": "COS 141A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COS 141B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "COS 184",
+      "units": 7.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COS 185",
+      "units": 8.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COS 186",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COS 231",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required courses: COS 202A & COS 202B",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Chemicals",
+    "stated": {
+     "min": 7.5,
+     "max": 7.5
+    },
+    "courses": [
+     {
+      "code": "COS 202A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COS 202B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required courses: or COS 202",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Chemicals",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "COS 202",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints 7.5 units beside the pair COS 141A & COS 141B as a whole, not per course; individual units left null (state file stores COS 141A as 4).",
+   "Under 'Required courses' the catalog prints 'COS 202A & COS 202B ... 7.5 or COS 202 Chemicals'; recorded as two option blocks in option_group 'Chemicals'. The 7.5 units are printed beside the 202A/202B pair; no units printed for COS 202 alone. The order of COS 231 relative to this choice was rearranged (COS 231 placed in the required block).",
+   "Closed-list codes without spaces (COS141, COS141B, COS184, COS185, COS202, COS202B) matched to the catalog's spaced codes.",
+   "Outcomes are the A.S. Degree Level Student Learning Outcomes from the page's outcomes tab.",
+   "No degree total with general education is printed; GE units not printed."
+  ]
+ },
+ "extracted_run": "38675245799"
+}

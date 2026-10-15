@@ -1,0 +1,292 @@
+{
+ "college": "Citrus College",
+ "control_number": "33602",
+ "shape": "degree",
+ "title": "Pre-Allied Health",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.citruscollege.edu/disciplines/biology/pre-allied-health-as/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8496,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8496,
+    "output_tokens": 1991,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1991,
+  "output_tokens_details": {
+   "thinking_tokens": 604
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0738,
+ "ms": 16382,
+ "seconds": 16.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 16,
+   "listed": 16,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "COMMC1004H"
+   ],
+   "flagged": [
+    "COMMC1004H"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    21.0,
+    23.0
+   ],
+   "stated": [
+    21.0,
+    23.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 21,
+    "max": 23
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "District General Education Pattern or Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Predict the function of unfamiliar structures based on knowledge of previously studied human cells, tissues, and organs.",
+    "Work safely in a laboratory or clinical setting with microorganisms.",
+    "Explain pharmaceutical drug actions based on knowledge of physiological mechanisms.",
+    "Communicate the importance of vaccination and antibiotic stewardship.",
+    "Apply knowledge of anatomy, physiology, and microbiology concepts to more advanced courses required for allied health careers."
+   ],
+   "careers": [
+    "nursing",
+    "dental hygiene",
+    "medical laboratory technology",
+    "physical therapy"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Course List",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHEM 103",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 200",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 201",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 220",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one (1) of the following courses",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHEM 104",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM C1000H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM C1004",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM C1004H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 170",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC C1000H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSY 205",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 201H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The requirements tab prints no program heading; section_heading uses the tab name 'Requirements'. Page is the Pre-Allied Health A.S. page.",
+   "Required courses are printed under semester labels (Fall Semester 1, Spring Semester 1, Fall Semester 2, Spring Semester 2); grouped here as one 'all' block under the 'Course List' heading.",
+   "Alternatives' units are not printed beside them in the catalog, so they are recorded as null.",
+   "Footnote 1 says BIOL 105 should be taken Fall Semester 1 or earlier; BIOL 105 is not listed as a requirement and is not recorded in a block.",
+   "Footnote 2: 'Speak to your counselor about chemistry alternatives.' Footnote 4: STAT C1000 counted with or without STAT 1000S (support course not listed as a requirement).",
+   "The Curriculum Map total of 61 units is an example pathway, not a printed degree total; degree_total left null.",
+   "Cal-GETC is strongly recommended for CSU/UC transfer; District GE pattern also accepted."
+  ]
+ },
+ "extracted_run": "38675245799"
+}

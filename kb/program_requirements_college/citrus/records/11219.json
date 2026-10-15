@@ -1,0 +1,255 @@
+{
+ "college": "Citrus College",
+ "control_number": "11219",
+ "shape": "certificate",
+ "title": "Administrative Office Occupations",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.citruscollege.edu/disciplines/office-technology/administrative-office-occupations-certificate-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7670,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7670,
+    "output_tokens": 1909,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1909,
+  "output_tokens_details": {
+   "thinking_tokens": 508
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06886,
+ "ms": 14983,
+ "seconds": 15.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 13,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    27.0,
+    29.0
+   ],
+   "stated": [
+    27.0,
+    29.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 19,
+   "courses": 0,
+   "count": 19,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Administrative Office Occupations Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 27,
+    "max": 29
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "use e-mail to communicate with others;",
+    "understand and utilize filing procedures;",
+    "examine incoming materials and code it numerically, alphabetically or by subject matter;",
+    "enter data electronically in various storage devices;",
+    "use electronic calendars;",
+    "use correct spelling, grammar, and punctuation in prepared documents;",
+    "file data on computers;",
+    "keyboard and file data on computers as well as access information;",
+    "keep payroll records and prepare invoices;",
+    "make photocopies and take inventory;",
+    "set up spreadsheets;",
+    "work with customers and answer questions;",
+    "format letters, memos, tables and reports using current office application programs;",
+    "compose routine letters memos and e-mail messages.",
+    "Understand current office procedures and techniques.",
+    "Prepare various business forms and documentation and understand their purpose.",
+    "Operate a variety of business machines, including computer equipment, photocopy machines, facsimiles, printers, telephone and calculating machines.",
+    "Follow directions as well as demonstrate management initiative, dependability and pride in good work.",
+    "Understand the systems and procedures of organizing and planning office work, and exercise leadership skills in the business environment."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required courses:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BUS 152",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OFF 101",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OFF 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OFF 215",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OFF 260",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OFF 281",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OFF 285",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OFF 294",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 3,
+      "units_max": 5,
+      "alternatives": [
+       {
+        "code": "ENGL C1000E",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1000H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM C1004",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM C1004H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog text prints no explicit section heading for the requirements; the section heading is taken from the program/award name used in the outcomes lead-in ('Administrative Office Occupations Certificate of Achievement').",
+   "The ENGL C1000 row prints a 3-5 unit range covering the whole 'or' group (ENGL C1000/C1000E/C1000H or COMM C1004/C1004H); no individual units are printed beside the alternatives, so their units are null. The 3-unit low end conflicts with the state file's 4 units for ENGL C1000; reviewer may check.",
+   "The outcomes list mixes lowercase semicolon-terminated items and capitalized sentences; all were copied as printed, including 'compose routine letters memos and e-mail messages.' without a comma.",
+   "The page has a 'Career Information' tab but its contents are not in the supplied text; the description mentions management assignments in the business office and office staff/entry-level office workers as audiences, not as named careers, so careers is left empty.",
+   "Catalog prints OFF 260 title as 'Computer Keyboarding and Document Processing' (state file: 'Document Process')."
+  ]
+ },
+ "extracted_run": "38675245799"
+}
