@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-366 document(s).
+367 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 396 | [Session 396 handoff: Santa Ana's extraction, Ventura and Oxnard, curriQunet, and the first reconcile steps of the sweep](../session_396_handoff.md) | 2026-10-15 |
 | 395 | [Session 395 handoff: the catalog sweep, wave 3, Santa Ana's load, and the readers the sweep parked](../session_395_handoff.md) | 2026-10-15 |
 | 394 | [Session 394 handoff: merge Cerritos's reconcile steps, read Cabrillo under extraction v9, the overnight sweep](../session_394_handoff.md) | 2026-10-15 |
 | 393 | [Session 393 handoff: Sheet 82, the reconcile pass beyond Cabrillo, a display build for Cabrillo's re-read](../session_393_handoff.md) | 2026-10-14 |

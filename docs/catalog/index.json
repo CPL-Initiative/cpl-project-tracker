@@ -15602,8 +15602,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 366,
+   "count": 367,
    "docs": [
+    {
+     "created": "2026-10-15",
+     "governs": [],
+     "n": 396,
+     "path": "docs/session_396_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "catalog-sweep",
+      "reconcile",
+      "reader"
+     ],
+     "title": "Session 396 handoff: Santa Ana's extraction, Ventura and Oxnard, curriQunet, and the first reconcile steps of the sweep",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-15",
      "governs": [],
@@ -21896,5 +21913,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1148
+ "total": 1149
 }
