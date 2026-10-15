@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-10-15T14:12:03.762982+00:00",
+  "scraped_at": "2026-10-15T17:10:51.664276+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 29115,
+    "jst": 29119,
     "star_colleges": 61
   },
   "computed_star_colleges": 61,
@@ -47,7 +47,7 @@
     },
     "Bakersfield College": {
       "vets": 416,
-      "jst": 586,
+      "jst": 587,
       "star": true
     },
     "Norco College": {
@@ -222,7 +222,7 @@
     },
     "Ventura College": {
       "vets": 254,
-      "jst": 189,
+      "jst": 190,
       "star": false
     },
     "Los Angeles Mission College": {
@@ -360,6 +360,11 @@
       "jst": 75,
       "star": false
     },
+    "Palo Verde College": {
+      "vets": 24,
+      "jst": 9,
+      "star": false
+    },
     "Pasadena City College": {
       "vets": 404,
       "jst": 141,
@@ -368,11 +373,6 @@
     "Coalinga College": {
       "vets": 17,
       "jst": 4,
-      "star": false
-    },
-    "Palo Verde College": {
-      "vets": 24,
-      "jst": 9,
       "star": false
     },
     "Hartnell College": {
@@ -387,7 +387,7 @@
     },
     "Porterville College": {
       "vets": 52,
-      "jst": 29,
+      "jst": 31,
       "star": false
     },
     "Crafton Hills College": {
