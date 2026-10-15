@@ -1,8 +1,8 @@
 {
- "_what": "The harvest registry's catalog and map columns for the harvest's twenty-two colleges (the pilot's five, Santa Monica, Irvine Valley, Moreno Valley, Norco, Long Beach City, Chaffey, San Diego City, San Diego Mesa, Bakersfield, Coastline, Cabrillo, Modesto Junior, Palo Verde, Southwestern, Fresno City, El Camino and San Joaquin Delta), as the ROEP display builder reads them (kb/_build_roep_display.py). program_source_registry is public-read; this file is a dated copy so the builder runs offline and its output is reproducible.",
+ "_what": "The harvest registry's catalog and map columns for the harvest's twenty-six colleges (the pilot's five, Santa Monica, Irvine Valley, Moreno Valley, Norco, Long Beach City, Chaffey, San Diego City, San Diego Mesa, Bakersfield, Coastline, Cabrillo, Modesto Junior, Palo Verde, Southwestern, Fresno City, El Camino, San Joaquin Delta, Santa Barbara City, Orange Coast, Foothill and Sierra), as the ROEP display builder reads them (kb/_build_roep_display.py). program_source_registry is public-read; this file is a dated copy so the builder runs offline and its output is reproducible.",
  "_source": "public.program_source_registry (census columns written by the weekly census; the four sequence_* columns written by S326's receipts)",
- "_read_at": "2026-10-14",
- "_read_by": "SkyTamarack (S392) through the Supabase MCP: El Camino and San Joaquin Delta added (Delta's row names no catalog year; its records carry 2026-2027 from the catalog menu, S391). Earlier: SkyPersimmon (S389) through the Supabase MCP: Southwestern and Fresno City added. Earlier: SkyHazel (S385) through the Supabase MCP: Modesto Junior and Palo Verde added. Earlier: SkySpruce (S383) through the Supabase MCP: Cabrillo added; Bakersfield and Coastline re-read, unchanged. Earlier: SkyRowan (S381) through the Supabase MCP: Bakersfield and Coastline added; San Diego Mesa re-read, unchanged. Earlier: SkyCypress (S373) through the Supabase MCP: San Diego Mesa added. Earlier: SkyLaurel (S369) through the Supabase MCP: Chaffey and San Diego City added. Earlier: SkyCedar (S363) through the Supabase MCP: Long Beach City added. Earlier: SkyFern (S358) through the Supabase MCP: Moreno Valley and Norco added; Riverside City re-read, unchanged. Earlier: SkyLedger (S340) through the Supabase MCP: all seven rows read; the pilot's five unchanged since 2026-10-04, Santa Monica and Irvine Valley added",
+ "_read_at": "2026-10-15",
+ "_read_by": "SkyMadrone (S394) through the Supabase MCP: Santa Barbara City, Orange Coast, Foothill and Sierra added (census of 2026-10-11). Earlier: SkyTamarack (S392) through the Supabase MCP: El Camino and San Joaquin Delta added (Delta's row names no catalog year; its records carry 2026-2027 from the catalog menu, S391). Earlier: SkyPersimmon (S389) through the Supabase MCP: Southwestern and Fresno City added. Earlier: SkyHazel (S385) through the Supabase MCP: Modesto Junior and Palo Verde added. Earlier: SkySpruce (S383) through the Supabase MCP: Cabrillo added; Bakersfield and Coastline re-read, unchanged. Earlier: SkyRowan (S381) through the Supabase MCP: Bakersfield and Coastline added; San Diego Mesa re-read, unchanged. Earlier: SkyCypress (S373) through the Supabase MCP: San Diego Mesa added. Earlier: SkyLaurel (S369) through the Supabase MCP: Chaffey and San Diego City added. Earlier: SkyCedar (S363) through the Supabase MCP: Long Beach City added. Earlier: SkyFern (S358) through the Supabase MCP: Moreno Valley and Norco added; Riverside City re-read, unchanged. Earlier: SkyLedger (S340) through the Supabase MCP: all seven rows read; the pilot's five unchanged since 2026-10-04, Santa Monica and Irvine Valley added",
  "_refresh": "Reread when the census applies or a sequence receipt lands: select the columns below for the harvest's colleges and file them here.",
  "colleges": {
   "Bakersfield College": {
@@ -76,6 +76,18 @@
    "sequence_url": null,
    "sequence_note": null,
    "sequence_checked_run": null
+  },
+  "Foothill College": {
+   "sequence_url": null,
+   "sequence_host": null,
+   "sequence_note": null,
+   "sequence_access": null,
+   "sequence_source": "none_found",
+   "catalog_platform": "courseleaf",
+   "sequence_checked_run": null,
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.foothill.edu/",
+   "census_run_id": "census-20261011T162433Z-s4of4"
   },
   "Fresno City College": {
    "catalog_platform": "curriqunet",
@@ -159,6 +171,18 @@
    "sequence_host": null,
    "sequence_url": null,
    "sequence_note": null,
+   "sequence_checked_run": null
+  },
+  "Orange Coast College": {
+   "catalog_url": "https://catalog.cccd.edu/orange-coast/",
+   "catalog_year": "2026-2027",
+   "sequence_url": null,
+   "census_run_id": "census-20261011T162433Z-s4of4",
+   "sequence_host": null,
+   "sequence_note": null,
+   "sequence_access": null,
+   "sequence_source": "none_found",
+   "catalog_platform": "courseleaf",
    "sequence_checked_run": null
   },
   "Palo Verde College": {
@@ -256,6 +280,18 @@
    "sequence_url": "https://www.smc.edu/academics/classes/program-maps.php",
    "sequence_note": "The college publishes its program maps on its own site (Program Maps), and the page answered on 2026-10-04 (probe run 37209313523) after timing out earlier that day.",
    "sequence_checked_run": "program-sequence-ppm run 37209313523"
+  },
+  "Sierra College": {
+   "sequence_url": null,
+   "sequence_host": null,
+   "sequence_note": null,
+   "sequence_access": null,
+   "sequence_source": "none_found",
+   "catalog_platform": "courseleaf",
+   "sequence_checked_run": null,
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.sierracollege.edu/",
+   "census_run_id": "census-20261011T162433Z-s4of4"
   },
   "Southwestern College": {
    "catalog_platform": "courseleaf",
