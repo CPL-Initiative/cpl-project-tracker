@@ -1,0 +1,242 @@
+{
+ "college": "Cuyamaca College",
+ "control_number": "41304",
+ "shape": "adt",
+ "title": "Business Administration 2.0",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/business/business-administration-2-transfer-as-t/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7178,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7178,
+    "output_tokens": 1566,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1566,
+  "output_tokens_details": {
+   "thinking_tokens": 498
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06003,
+ "ms": 13555,
+ "seconds": 13.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    28.0,
+    29.0
+   ],
+   "stated": [
+    28.0,
+    29.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     65.0,
+     67.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business Administration 2.0 for Transfer (AS-T)",
+   "measure": "units",
+   "total_units": {
+    "min": 28,
+    "max": 29
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 3,
+    "max": 4
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Recognize essential functions and concerns specific to human resources, management, and general business operations.",
+    "Identify and analyze business problems or entrepreneurial opportunities and effectively communicate recommendations for courses of actions."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Associate in Science Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 28,
+     "max": 29
+    },
+    "courses": [
+     {
+      "code": "BUS-120",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS-121",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS-125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS-128",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON-C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON-C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH-178",
+      "units": 4,
+      "units_max": 5,
+      "alternatives": [
+       {
+        "code": "MATH-C2210",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT-C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSY-215",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The 'Units for the Major 28-29' figure is recorded as total_units and as the block's stated total; the block has no separate heading beyond 'Course List' under 'Associate in Science Degree Requirements'.",
+   "The range 4-5 is printed on the MATH-178 / MATH-C2210 row as a whole. No units are printed beside the alternatives MATH-C2210 or PSY-215, so their units are null. The state file gives MATH C2210 5 units and PSY 215 4 units.",
+   "The page lists 'Double-Counted Units 6', 'Plus General Education Requirements (Cal-GETC) 34', 'Total Transferable Elective Units 3-4' and 'Total Units 60'. The transferable electives are recorded as degree_elective_units.",
+   "The general ADT sentence 'Minimum of 18 semester or 27 quarter units in the major' is not treated as this award's total.",
+   "The description names degree options (accounting, finance, human resources management, international business, management, operations management, marketing) rather than careers, so careers is left empty.",
+   "The program outcomes are printed for the program as a whole on this degree's page."
+  ]
+ },
+ "extracted_run": "38748833332"
+}

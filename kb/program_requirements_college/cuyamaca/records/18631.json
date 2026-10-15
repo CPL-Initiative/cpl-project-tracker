@@ -1,0 +1,1296 @@
+{
+ "college": "Cuyamaca College",
+ "control_number": "18631",
+ "shape": "degree",
+ "title": "General Studies: Social and Behavioral Sciences",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.gcccd.edu//grossmont/associate-degree-programs-certificates/social-behavioral-sciences/university-studies-social-behavioral-sciences-aa/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11116,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11116,
+    "output_tokens": 8150,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 8150,
+  "output_tokens_details": {
+   "thinking_tokens": 1832
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.20746,
+ "ms": 55539,
+ "seconds": 55.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 65,
+   "listed": 97,
+   "share": 0.67,
+   "missing": [
+    "ARBC145",
+    "BIO134",
+    "COMM110",
+    "COUN140",
+    "ES121",
+    "ETHN120",
+    "GEND117",
+    "GEND119",
+    "GEOG122",
+    "HED203",
+    "HED204",
+    "HED251",
+    "HIST128",
+    "HIST129",
+    "HIST275",
+    "HIST276",
+    "HIST277",
+    "KUMY128",
+    "KUMY129",
+    "KUMY150",
+    "KUMY160",
+    "KUMY166",
+    "KUMY170",
+    "POSC165",
+    "POSC166",
+    "POSC170",
+    "PSY119",
+    "PSY121",
+    "PSY201",
+    "SOC114",
+    "SOC138",
+    "SW170"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 53,
+   "codes": [
+    "ANTH122",
+    "ANTH127",
+    "AOJ110",
+    "AOJ200",
+    "AOJ240",
+    "COMM128",
+    "COMM144",
+    "COMM150",
+    "ECON261",
+    "ED200",
+    "ETHN115",
+    "ETHN118",
+    "ETHN119",
+    "ETHN125",
+    "ETHN135",
+    "ETHN137",
+    "ETHN138",
+    "ETHN143",
+    "ETHN144",
+    "ETHN160",
+    "ETHN161",
+    "ETHN180",
+    "ETHN181",
+    "FS115",
+    "FS120",
+    "GEND154",
+    "GEND155",
+    "GEOG100",
+    "GEOG101",
+    "GEOG170",
+    "HIST103",
+    "HIST113",
+    "HIST114",
+    "HIST115",
+    "HIST126",
+    "HIST136",
+    "HIST137",
+    "HIST154",
+    "HIST155",
+    "HIST160",
+    "HIST161",
+    "NUTR155",
+    "NUTR159",
+    "NUTR205",
+    "NUTR255",
+    "POSC121",
+    "POSC155",
+    "POSC160",
+    "PSY180",
+    "SOC135",
+    "SOC170",
+    "SOC180",
+    "SOC190"
+   ],
+   "flagged": [
+    "ANTH122",
+    "ANTH127",
+    "AOJ110",
+    "AOJ200",
+    "AOJ240",
+    "COMM128",
+    "COMM144",
+    "COMM150",
+    "ECON261",
+    "ED200",
+    "ETHN115",
+    "ETHN118",
+    "ETHN119",
+    "ETHN125",
+    "ETHN135",
+    "ETHN137",
+    "ETHN138",
+    "ETHN143",
+    "ETHN144",
+    "ETHN160",
+    "ETHN161",
+    "ETHN180",
+    "ETHN181",
+    "FS115",
+    "FS120",
+    "GEND154",
+    "GEND155",
+    "GEOG100",
+    "GEOG101",
+    "GEOG170",
+    "HIST103",
+    "HIST113",
+    "HIST114",
+    "HIST115",
+    "HIST126",
+    "HIST136",
+    "HIST137",
+    "HIST154",
+    "HIST155",
+    "HIST160",
+    "HIST161",
+    "NUTR155",
+    "NUTR159",
+    "NUTR205",
+    "NUTR255",
+    "POSC121",
+    "POSC155",
+    "POSC160",
+    "PSY180",
+    "SOC135",
+    "SOC170",
+    "SOC180",
+    "SOC190"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    6.0,
+    6.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 6.0-6.0; the catalog states 18.0-18.0"
+   ],
+   "degree": {
+    "pass": false,
+    "status": "unequal",
+    "computed": [
+     40.0,
+     40.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [
+     "the blocks and general education sum to 40.0-40.0; the catalog prints 60.0-60.0 for the degree"
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Describe general principles of the political institutions and government of the United States.",
+    "Demonstrate an understanding and appreciation of social, political, and economic institutions, including a historical perspective.",
+    "Evaluate the ways in which people interact both within and outside of their own culture as well as society as a whole.",
+    "Apply knowledge of social and behavioral sciences theories and scientific methods in an assessment of real-world problems."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Social Sciences",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AOJ-110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AOJ-200",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AOJ-240",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM-144",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM-150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COUN-120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON-C2001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON-C2002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON-110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON-261",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETHN-107",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN-114",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN-115",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETHN-118",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETHN-119",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETHN-125",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETHN-128",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN-130",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN-131",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN-135",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETHN-137",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETHN-138",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETHN-143",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETHN-144",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETHN-145",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN-160",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETHN-161",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETHN-180",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETHN-181",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEND-116",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEND-154",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEND-155",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG-100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG-101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG-106",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG-130",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG-170",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST-C1001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-C1002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-103",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST-105",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-106",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-107",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-113",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST-114",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST-115",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST-118",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-119",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-122",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-123",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-124",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-126",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST-130",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-131",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-136",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST-137",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST-148",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-154",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST-155",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST-160",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST-161",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST-180",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-181",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS-C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POSC-120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POSC-121",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POSC-124",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POSC-130",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POSC-140",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POSC-145",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POSC-147",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POSC-148",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POSC-150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POSC-155",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POSC-160",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC-150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN-145",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Behavioral Sciences",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ANTH-120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH-122",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH-127",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH-140",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD-115",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD-131",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD-145",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV-C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM-124",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM-128",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ED-200",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETHN-125",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FS-115",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FS-120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HED-120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HED-201",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NUTR-155",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NUTR-158",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NUTR-159",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NUTR-205",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NUTR-255",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC-C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSY-125",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSY-132",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSY-134",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSY-138",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSY-140",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSY-150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSY-170",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSY-180",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSY-211",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSY-220",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC-125",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC-130",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC-135",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC-140",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC-170",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC-180",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC-190",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOCI-C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ARBC 145",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIO 134",
+    "why": "not in the text"
+   },
+   {
+    "code": "COMM 110",
+    "why": "not in the text"
+   },
+   {
+    "code": "COUN 140",
+    "why": "not in the text"
+   },
+   {
+    "code": "ES 121",
+    "why": "not in the text"
+   },
+   {
+    "code": "ETHN 120",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEND 117",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEND 119",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOG 122",
+    "why": "not in the text"
+   },
+   {
+    "code": "HED 203",
+    "why": "not in the text"
+   },
+   {
+    "code": "HED 204",
+    "why": "not in the text"
+   },
+   {
+    "code": "HED 251",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 128",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 129",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 275",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 276",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 277",
+    "why": "not in the text"
+   },
+   {
+    "code": "KUMY 128",
+    "why": "not in the text"
+   },
+   {
+    "code": "KUMY 129",
+    "why": "not in the text"
+   },
+   {
+    "code": "KUMY 150",
+    "why": "not in the text"
+   },
+   {
+    "code": "KUMY 160",
+    "why": "not in the text"
+   },
+   {
+    "code": "KUMY 166",
+    "why": "not in the text"
+   },
+   {
+    "code": "KUMY 170",
+    "why": "not in the text"
+   },
+   {
+    "code": "POSC 165",
+    "why": "not in the text"
+   },
+   {
+    "code": "POSC 166",
+    "why": "not in the text"
+   },
+   {
+    "code": "POSC 170",
+    "why": "not in the text"
+   },
+   {
+    "code": "PSY 119",
+    "why": "not in the text"
+   },
+   {
+    "code": "PSY 121",
+    "why": "not in the text"
+   },
+   {
+    "code": "PSY 201",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOC 114",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOC 138",
+    "why": "not in the text"
+   },
+   {
+    "code": "SW 170",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The source URL and text are Grossmont College's 'University Studies: Social & Behavioral Sciences A.A.', not Cuyamaca College's 'General Studies: Social and Behavioral Sciences'; this may be the wrong college's page. Many closed-list courses (e.g., KUMY, HIST 128/129, POSC 165/166/170) are absent, consistent with a mismatch.",
+   "The major requires a minimum of 18 units total, with at least 3 units (one course) in Social Sciences and at least 3 units (one course) in Behavioral Sciences; the remaining 12 units may come from either list. Block minimums of 3 reflect the per-area floor; total_units 18 reflects the overall requirement.",
+   "No units are printed beside courses in the course lists; units left null.",
+   "Degree total recorded as 60 from 'Complete 60 Transferable Units'; Cal-GETC 34 units recorded as ge_units. No elective units are printed.",
+   "ETHN-125 appears in both the Social Sciences and Behavioral Sciences lists as printed. Cross-listed courses receive credit for only one course.",
+   "CDEV-C1000 and SOCI-C1000 treated as matching closed-list CDEVC1000 and SOCIC1000.",
+   "The trailing 'Certificate of Achievement' paragraph refers to a Cal-GETC certificate, not this award.",
+   "No careers are named; the text lists baccalaureate majors only."
+  ]
+ },
+ "extracted_run": "38748833332"
+}

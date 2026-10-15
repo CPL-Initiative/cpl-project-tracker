@@ -1,0 +1,357 @@
+{
+ "college": "Cuyamaca College",
+ "control_number": "31947",
+ "shape": "degree",
+ "title": "Networking, Security and System Administration - Enterprise Networking",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/computer-information-science/enterprise-networking-as-cert-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7657,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7657,
+    "output_tokens": 2308,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2308,
+  "output_tokens_details": {
+   "thinking_tokens": 596
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07679,
+ "ms": 20326,
+ "seconds": 20.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 19,
+   "listed": 19,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    34.5,
+    38.0
+   ],
+   "stated": [
+    34.5,
+    38.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 44,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Science Degree Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 34.5,
+    "max": 38
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Install, configure, upgrade, diagnose and troubleshoot a personal computer and its associated networking hardware and software in accordance with industry standards."
+   ],
+   "careers": [
+    "computer networking",
+    "system administration",
+    "computer support technicians",
+    "junior network administrators",
+    "junior system administrators",
+    "hardware technicians",
+    "data/voice/video cabling technicians",
+    "network project managers",
+    "designers/estimators",
+    "technical support personnel",
+    "Communications Specialist",
+    "Computer Game Programmer",
+    "Computer Hardware Specialist",
+    "Computer Help Desk Technician",
+    "Computer Maintenance Technician",
+    "Computer Software Technician",
+    "Computer Support Specialist",
+    "Computer Systems Analyst",
+    "Computing Analyst",
+    "Cyber Security Specialist",
+    "Database Manager",
+    "Information Specialist",
+    "Information Systems Programmer",
+    "LAN/WAN Manager",
+    "Manufacturer’s Representative",
+    "Network Administrator",
+    "Network Analyst",
+    "Network Consultant",
+    "Network Control Technician",
+    "Network Training and Support Specialist",
+    "Programmer Analyst",
+    "Sales and Service",
+    "Scientific Programmer",
+    "Software Consultant",
+    "Software Developer",
+    "Systems Analyst",
+    "Systems Programmer",
+    "Technical Support Representative",
+    "Telecommunications Programmer",
+    "Telecommunications Technician",
+    "Telecommunications Technical Engineer",
+    "Training Specialist",
+    "Web Designer",
+    "Web Developer"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Curriculum",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CIS-120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS-119",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS-119L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Area of Emphasis",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CIS-190",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CIS-191",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-202",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-203",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-209",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CIS-263",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select three of the following:",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 6.5,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "CIS-101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-210",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-261",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-264",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-265",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-271",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-272",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The single program learning outcome is printed once for the program as a whole (degree and certificate); the A.S. shares it.",
+   "Units for the 'or' alternatives CIS-191 and CIS-263 are not printed on their rows; recorded as 3, the units printed on the paired row (matching the state file).",
+   "Units for the courses in 'Select three of the following' are not printed beside each course; only the block total 6.5-10 is printed.",
+   "Career titles marked with footnote '1' (Bachelor Degree or higher required) were recorded without the footnote marker.",
+   "Degree total is not printed; the page says 'Plus General Education Requirements' without naming a pattern or units.",
+   "The Certificate of Achievement section states the certificate uses the same major courses including an area of emphasis; not recorded here."
+  ]
+ },
+ "extracted_run": "38748833332"
+}

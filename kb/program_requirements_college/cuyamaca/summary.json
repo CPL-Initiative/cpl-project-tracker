@@ -1,0 +1,20 @@
+{
+ "college": "Cuyamaca College",
+ "programs": 186,
+ "with_closed_list": 186,
+ "found": 182,
+ "extracted": 182,
+ "errors": 0,
+ "passed_machine_checks": 146,
+ "failed": {
+  "coverage": 4,
+  "invented": 0,
+  "arithmetic": 36,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 13.84,
+ "cost_per_program": 0.0761,
+ "not_found": [],
+ "run": "38748833332"
+}

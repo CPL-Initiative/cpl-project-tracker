@@ -1,0 +1,241 @@
+{
+ "college": "Cuyamaca College",
+ "control_number": "15804",
+ "shape": "certificate",
+ "title": "Environmental Technician",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/environmental-health-safety-management/environmental-technician-cert-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7092,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7092,
+    "output_tokens": 1073,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1073,
+  "output_tokens_details": {
+   "thinking_tokens": 204
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04983,
+ "ms": 8684,
+ "seconds": 9.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "EHSM150",
+    "EHSM210",
+    "EHSM215"
+   ],
+   "flagged": [
+    "EHSM150",
+    "EHSM210",
+    "EHSM215"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    26.0,
+    28.0
+   ],
+   "stated": [
+    26.0,
+    29.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 26.0-28.0; the catalog states 26.0-29.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Environmental Technician Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 26,
+    "max": 29
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Perform work-related functions according to current industry standards.",
+    "Assess and resolve work-related problems using current industry-specific tools and resources.",
+    "Communicate effectively to prospective clients, managers and coworkers in a workplace setting.",
+    "Abide by industry regulations regarding occupational health and safety, and/or environmental standards."
+   ],
+   "careers": [
+    "environmental technician"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "EHSM-100",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EHSM-110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EHSM-150",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "EHSM-200",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EHSM-210",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "EHSM-215",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "EHSM-230",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 1,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "EHSM-240",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EHSM-250",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints no units beside EHSM-240 or EHSM-250; only the block total 1-4 is printed, so their units are null.",
+   "EHSM-150, EHSM-210 and EHSM-215 appear in the catalog's required list but are not in the closed list; recorded as catalog additions.",
+   "The certificate's total of 26-29 units falls below 30, consistent with the award band stated for this program."
+  ]
+ },
+ "extracted_run": "38748833332"
+}
