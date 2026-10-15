@@ -1,0 +1,236 @@
+{
+ "college": "San Bernardino Valley College",
+ "control_number": "39193",
+ "shape": "noncredit",
+ "title": "Wastewater Technology",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/water-supply-technology/wastewater-technology-certificate-completion/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8100,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8100,
+    "output_tokens": 1649,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1649,
+  "output_tokens_details": {
+   "thinking_tokens": 612
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06538,
+ "ms": 14465,
+ "seconds": 14.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "CIT601",
+    "WST98"
+   ],
+   "flagged": [
+    "CIT601",
+    "WST98"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": [
+    164.0,
+    195.0
+   ],
+   "against": "program",
+   "why": [
+    "a required course in 'Required Courses' has no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Wastewater Technology Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 164,
+    "max": 195
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Have knowledge of fundamental aspects of water resource management, conservation, distribution, treatment, collection, recycle, and disposal operations.",
+    "Perform tasks in connection with the operation, control, and maintenance of water and sanitation systems.",
+    "Demonstrate effective oral and written communication skills and apply these tools in a regulatory context (i.e. the public health protection)."
+   ],
+   "careers": [
+    "wastewater collections",
+    "treatment",
+    "recycle operations"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CIT 601",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "VOCED 631",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WST 629",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WST 625",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WST 653",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WST 681",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WST 691",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Recommended (Cooperative Work Experience)",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "WST 098",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Program counted in hours: the catalog prints 'Total Hours 164-195'. The course table prints 0 in a UNITS column beside each course and no per-course hours, so course units are left null rather than recorded as hours.",
+   "CIT 601 is listed as a required course in the catalog but is not in the closed list (catalog_addition true).",
+   "WST 098 (Cooperative Work Experience) is described as 'highly recommended for students not currently employed in the field'; recorded as recommended, not counted toward the total; it is not in the closed list.",
+   "Catalog title for WST 625 reads 'Grades One and Two' vs. closed list 'Grades 1 and 2'; same course.",
+   "Program learning outcomes are taken from the page's outcomes tab; they read as general water supply technology outcomes and may be shared across the Water Supply Technology programs.",
+   "Careers taken from the description phrase 'entry-level employment in wastewater collections, treatment, and recycle operations'; reviewer may prefer it as a single career field."
+  ]
+ },
+ "extracted_run": "38748858322"
+}

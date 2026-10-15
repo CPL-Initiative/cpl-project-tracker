@@ -1,0 +1,178 @@
+{
+ "college": "San Bernardino Valley College",
+ "programs": 236,
+ "with_closed_list": 232,
+ "found": 225,
+ "extracted": 225,
+ "errors": 0,
+ "passed_machine_checks": 142,
+ "failed": {
+  "coverage": 30,
+  "invented": 5,
+  "arithmetic": 79,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 15.44,
+ "cost_per_program": 0.0686,
+ "not_found": [
+  {
+   "control_number": "04880",
+   "title": "Heating, Ventilation, Air Conditioning and Refrigeration",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/heating-ventilation-air-conditioning-refrigeration-hvacr/heating-ventilation-air-conditioning-refrigeration-as-degree/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.25,
+    "body": 0.25,
+    "content": 0.125,
+    "net": 2,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 2 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 6640,
+     "content": 14479,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Financial Aid",
+      123
+     ],
+     [
+      "Academic & Career Programs",
+      151
+     ],
+     [
+      "Students",
+      321
+     ],
+     [
+      "About SBVC",
+      250
+     ],
+     [
+      "PROGRAM LEARNING OUTCOMES",
+      611
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "17767",
+   "title": "Administration of Justice - Corrections",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "22768",
+   "title": "Heating, Ventilation, Air Conditioning and Refrigeration",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/heating-ventilation-air-conditioning-refrigeration-hvacr/heating-ventilation-air-conditioning-refrigeration-as-degree/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.222,
+    "body": 0.222,
+    "content": 0.111,
+    "net": 2,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 2 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 6640,
+     "content": 14479,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Financial Aid",
+      123
+     ],
+     [
+      "Academic & Career Programs",
+      151
+     ],
+     [
+      "Students",
+      321
+     ],
+     [
+      "About SBVC",
+      250
+     ],
+     [
+      "PROGRAM LEARNING OUTCOMES",
+      611
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "39611",
+   "title": "Industrial Maintenance",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.valleycollege.edu/degree-certificate-program-index/aeronautics/airframe-maintenance-technician-certificate-achievement/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 6869,
+     "content": 14748,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Financial Aid",
+      123
+     ],
+     [
+      "Academic & Career Programs",
+      151
+     ],
+     [
+      "Students",
+      321
+     ],
+     [
+      "About SBVC",
+      250
+     ],
+     [
+      "PROGRAM LEARNING OUTCOMES",
+      630
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "44225",
+   "title": "Administration of Justice - Corrections",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "run": "38748858322"
+}

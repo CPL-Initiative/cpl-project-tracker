@@ -1,0 +1,299 @@
+{
+ "college": "San Bernardino Valley College",
+ "control_number": "09372",
+ "shape": "degree",
+ "title": "Hospitality/Culinary Arts",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/culinary-arts/hospitality-aa-degree/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8380,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8380,
+    "output_tokens": 2267,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2267,
+  "output_tokens_details": {
+   "thinking_tokens": 845
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07886,
+ "ms": 18190,
+ "seconds": 18.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 11,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "CULART10",
+    "CULART11",
+    "CULART12"
+   ],
+   "flagged": [
+    "CULART10",
+    "CULART11",
+    "CULART12"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    48.0,
+    48.0
+   ],
+   "stated": [
+    48.0,
+    48.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Hospitality/Culinary Arts Associate of Arts Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 48,
+    "max": 48
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "SBVC General Education and Graduation Requirements or Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate how to use a knife and the basic knife cuts.",
+    "Calculate food costs as it applies to menus by pricing a menu as part of the final in this course.",
+    "Explain optimal quantity, and the price and standard specifications of ordering.",
+    "Recall the top five problems that the restaurant industry encounters.",
+    "Recall how to derive the “Break-even Point” of a restaurant.",
+    "Define and recall the purchasing function.",
+    "Recall the seven areas of a HACCP plan.",
+    "Be prepared to transfer a core curriculum to an accredited, four-year college or university with junior class standing in Culinary Arts or a related major."
+   ],
+   "careers": [
+    "commercial restaurants",
+    "institutions",
+    "health care facilities",
+    "school food services",
+    "related food service industries"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BUSAD 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Hospitality Management Courses:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HOSP 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOSP 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOSP 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOSP 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOSP 160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Culinary Arts Courses:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CULART 010",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CULART 011",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CULART 012",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "CULART 080",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CULART 161",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CULART 225",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CULART 240",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CULART 250",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "CULART 080 in the catalog is matched to closed-list CULART 80 (leading-zero formatting); treated as not a catalog addition.",
+   "CULART 010, CULART 011 and CULART 012 are not in the closed list; recorded as catalog additions. CULART 012 has no units printed beside it.",
+   "The description says students complete the certificate requirements plus general breadth requirements '(minimum total = 60 units)'; read as the general associate degree minimum, so degree_total left null. Reviewer may wish to check.",
+   "GE: the page says students must complete one of two patterns (SBVC General Education and Graduation Requirements, or Cal-GETC); no GE units printed.",
+   "Careers recorded are the industry settings named in the description (commercial restaurants, institutions, health care facilities, school food services, related food service industries) at the 'middle management level'; reviewer should confirm they count as career fields.",
+   "Printed block units sum to the stated 48 total."
+  ]
+ },
+ "extracted_run": "38748858322"
+}
