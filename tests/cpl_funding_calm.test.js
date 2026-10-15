@@ -406,7 +406,10 @@ function mountWords(doc) {
     /\bdraws?\b/i, /\bdrawn\b/i, /\bdraw(ing|-?down)\b/i, /\bunspent\b/i, /\bthe dollars\b/i,
     /\bbaked\b/i, /\bscored\b/i, /\bfalling back\b/i, /\bpin it\b/i, /\bno data yet\b/i,
     /\b(un)?earn(s|ed|ing|ings|able)?\b/i, /\bpric(e|ed|es|ing)\b/i, /\bpremium\b/i]
-    .map((re) => { const m = re.exec(t.replace(/Advancing career attainment[^.]*\./g, "")); return m ? m[0] + " @" + t.slice(Math.max(0, m.index - 40), m.index + 20).replace(/\s+/g, " ") : null; })
+    // "through apportionment" is Sam's word for the seed grant only (2026-10-01,
+    // #1798); since 2026-10-15 its passage shows in My CPL Funding's text.
+    .map((re) => { const m = re.exec(t.replace(/Advancing career attainment[^.]*\./g, "")
+      .replace(/received this funding through apportionment/g, "")); return m ? m[0] + " @" + t.slice(Math.max(0, m.index - 40), m.index + 20).replace(/\s+/g, " ") : null; })
     .filter(Boolean);
   check("no 'pool' / 'money' / 'apportion' / 'pot' / advance / 'draw' / 'unspent' / earn / price in the curate view's rendered text — " +
     (bad.length ? bad.join(" | ") : "clean"), bad.length === 0);
