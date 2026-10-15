@@ -1,14 +1,14 @@
 {
-  "scraped_at": "2026-10-14T17:22:06.656084+00:00",
+  "scraped_at": "2026-10-15T11:36:14.159648+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 29057,
-    "star_colleges": 60
+    "jst": 29115,
+    "star_colleges": 61
   },
-  "computed_star_colleges": 60,
+  "computed_star_colleges": 61,
   "colleges": {
     "Santiago Canyon College": {
       "vets": 288,
@@ -17,7 +17,7 @@
     },
     "Chaffey College": {
       "vets": 182,
-      "jst": 380,
+      "jst": 386,
       "star": true
     },
     "City College of San Francisco": {
@@ -132,7 +132,7 @@
     },
     "Santa Ana College": {
       "vets": 334,
-      "jst": 383,
+      "jst": 384,
       "star": true
     },
     "Barstow Community College": {
@@ -147,7 +147,7 @@
     },
     "Santa Rosa Junior College": {
       "vets": 523,
-      "jst": 443,
+      "jst": 444,
       "star": true
     },
     "Sierra College": {
@@ -172,7 +172,7 @@
     },
     "Glendale Community College": {
       "vets": 196,
-      "jst": 227,
+      "jst": 226,
       "star": true
     },
     "Los Angeles Trade Technical College": {
@@ -325,6 +325,11 @@
       "jst": 135,
       "star": false
     },
+    "Merritt College": {
+      "vets": 82,
+      "jst": 64,
+      "star": true
+    },
     "Saddleback College": {
       "vets": 873,
       "jst": 59,
@@ -334,11 +339,6 @@
       "vets": 48,
       "jst": 56,
       "star": true
-    },
-    "Merritt College": {
-      "vets": 82,
-      "jst": 54,
-      "star": false
     },
     "Skyline College": {
       "vets": 167,
@@ -432,7 +432,7 @@
     },
     "Cuesta College": {
       "vets": 206,
-      "jst": 181,
+      "jst": 182,
       "star": true
     },
     "Columbia College": {
@@ -477,7 +477,7 @@
     },
     "Los Angeles City College": {
       "vets": 301,
-      "jst": 154,
+      "jst": 194,
       "star": false
     },
     "Ohlone College": {
