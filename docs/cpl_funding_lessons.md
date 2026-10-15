@@ -1188,6 +1188,9 @@ Sam's asks for "the My College view of Implementation Funding" (verbatim: `cpl_m
   the re-read for `about` across a switch (`_lastRenderPublic`).
 - **A grid with `auto-fit` cannot collapse a track a spanning label occupies.** The priorities filled two of
   three columns; a wrapping flex row fixed it.
+- **A sentence moved out of code keeps its code copy as the fallback**, and a source pin on its line breaks
+  breaks when the fallback re-wraps: two `college_briefing` checks matched `"...the " + "following..."` and
+  failed until they matched the sentence. Pin the words, not where a string literal splits.
 - **Sam missed the calls at the foot of a long mockup** and answered in chat, then pressed Complete, which
   arrived as an artifact comment. A mockup's calls want a line at its top saying they are there.
 
