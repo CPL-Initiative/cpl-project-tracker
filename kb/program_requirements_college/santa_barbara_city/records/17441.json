@@ -1,0 +1,198 @@
+{
+ "college": "Santa Barbara City College",
+ "control_number": "17441",
+ "shape": "certificate",
+ "title": "Post-Professional Practice in Alcohol & Drug Counseling",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.sbcc.edu/academic-departments/addictive-disorders-counseling/post-professional-practice-alcohol-drug-counseling-certificate-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7318,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7318,
+    "output_tokens": 1424,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1424,
+  "output_tokens_details": {
+   "thinking_tokens": 382
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05775,
+ "ms": 12316,
+ "seconds": 12.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    16.0,
+    16.0
+   ],
+   "stated": [
+    16.0,
+    16.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 9,
+   "courses": 0,
+   "count": 9,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Post-Professional Practice in Alcohol and Drug Counseling, Certificate of Achievement (C)",
+   "measure": "units",
+   "total_units": {
+    "min": 16,
+    "max": 16
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Develop an appropriate case history.",
+    "Assess and diagnose both the existence and degree of dependence on alcohol and other drugs.",
+    "Define the scope, responsibility and limitations of the Alcohol and Drug Counselor.",
+    "Formulate a comprehensive treatment plan based on client need, incorporating adjunctive support systems with primary treatment programs.",
+    "Demonstrate effective verbal and written communication skills.",
+    "Describe what constitutes an effective intervention.",
+    "Describe the dynamics and common roles in the family of the chemically dependent person.",
+    "Describe how to utilize community support systems, Alanon, Alateen, ACA, etc., to support family members through the recovery process.",
+    "Apply therapeutic interventions with traditional and non-traditional family structures."
+   ],
+   "careers": [
+    "addictions counseling",
+    "entry-level addictions counselors"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "ADC 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADC 122",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADC 124",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADC 125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADC 126",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Footnote 1 lists acceptable substitutions not in the closed list: ADC 100 for ADC 120; ADC 102 for ADC 122; ADC 108 for ADC 124; ADC 112 for ADC 125; and ADC 105 and ADC 106, or ADC 106 and ADC 116, for ADC 126. These were recorded here rather than as alternatives because they are footnoted substitutions (likely legacy codes) and the ADC 126 substitution is a two-course pair; units for them are not printed.",
+   "The outcomes come from the page's Learning Outcomes tab; they appear to be the Alcohol and Drug Counseling program's general outcomes list, shared by this award.",
+   "The overview text describes the program generally (Certificate of Achievement and Associate Degree with fieldwork) and refers to the post-professional award as a 'Skills Competency Award', while the page heading names it a Certificate of Achievement; careers are taken from that shared overview.",
+   "The 'Total Units 16.00' figure is printed under Major Requirements and recorded as total_units."
+  ]
+ },
+ "extracted_run": "38670933359"
+}

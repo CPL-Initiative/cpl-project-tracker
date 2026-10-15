@@ -1,0 +1,257 @@
+{
+ "college": "Santa Barbara City College",
+ "control_number": "21680",
+ "shape": "certificate",
+ "title": "International Business",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.sbcc.edu/academic-departments/international-business/international-business-certificate-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7205,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7205,
+    "output_tokens": 1572,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1572,
+  "output_tokens_details": {
+   "thinking_tokens": 447
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06026,
+ "ms": 13277,
+ "seconds": 13.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 15,
+   "share": 0.933,
+   "missing": [
+    "FIN211"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    21.0,
+    21.0
+   ],
+   "stated": [
+    21.0,
+    21.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 21,
+    "max": 21
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Explain general management functions, roles and responsibilities required to effectively manage today?s contemporary organizations.",
+    "Recognize the ethical issues facing managers and apply decision-making techniques and ethical reasoning to resolve 21st century ethical dilemmas.",
+    "Work effectively in teams and appreciate the meaning of mutual responsibility.",
+    "Access and interpret information, respond and adapt to a dynamic business environment, make complex decisions, solve problems, and evaluate outcomes."
+   ],
+   "careers": [
+    "Entrepreneurship",
+    "Hospitality and Tourism",
+    "Economics",
+    "Banking and Finance",
+    "International Marketing",
+    "Import/Export (Operations)"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BUS 240",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "FP 240",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "IBUS 211",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "BLAW 204",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "IBUS 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IBUS 109",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IBUS 201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MKT 164",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MAT 164",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "MKT 212",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 151",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MKT 209",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MKT 220",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CIS 220",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "FIN 211",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "BUS/FP 240, MKT/MAT 164 and MKT/CIS 220 are printed as cross-listed codes; recorded the first code with the cross-listed twin as an alternative carrying the printed 3 units.",
+   "The 'or' options IBUS 211, BLAW 204, MKT 212 and COMM 151 have no units printed beside them; units left null.",
+   "The outcomes come from the page's outcomes tab and read as general business/management outcomes; recorded as printed (including 'today?s'), assuming the certificate shares them.",
+   "Career fields come from the program description paragraph that precedes the certificate description and may describe the program (or degree) as a whole.",
+   "The catalog text begins mid-sentence; the opening of the program description is cut off."
+  ]
+ },
+ "extracted_run": "38670933359"
+}

@@ -1,0 +1,347 @@
+{
+ "college": "Santa Barbara City College",
+ "control_number": "19011",
+ "shape": "certificate",
+ "title": "Creative Writing: General",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.sbcc.edu/academic-departments/english-composition-literature/creative-writing-certificate-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7858,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7858,
+    "output_tokens": 2798,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2798,
+  "output_tokens_details": {
+   "thinking_tokens": 930
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08739,
+ "ms": 23128,
+ "seconds": 23.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 24,
+   "listed": 24,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    19.0,
+    19.0
+   ],
+   "stated": [
+    19.0,
+    21.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 19.0-19.0; the catalog states 19.0-21.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Creative Writing, Certificate of Achievement (C): General Emphasis",
+   "measure": "units",
+   "total_units": {
+    "min": 19,
+    "max": 21
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Distinguish key elements of the four genres--fiction, drama, creative non-fiction and poetry and incorporate key elements of each genre in their own work.",
+    "Evaluate both student and professional writers' mastery of key elements of the four genres using criteria established by the course texts and by instructor during class lecture and discussions.",
+    "Synthesize critical appraisals of original drafts and incorporate that critical feedback into subsequent revisions of an original short fiction, drama, creative non-fiction, and poetry.",
+    "Participate actively in class by supporting the workshop environment through reading, class discussion, and peer feedback."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ENGL C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG 270",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Complete the following four courses (students may substitute two of the courses from the list of electives below for two of these four General Emphasis courses)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 14
+    },
+    "courses": [
+     {
+      "code": "ENG 271D",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG 271F",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG 271NF",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "JOUR 271NF",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG 271P",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List of Electives",
+    "rule": "choose_courses",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ENG 221",
+      "units": 3,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "ENG 221H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG 222",
+      "units": 3,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "ENG 222H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG 225",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG 226",
+      "units": 3,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "ENG 226H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG 231",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG 232",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG 240",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG 241",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG 242",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG 251",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG 261",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG 262",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FS 174",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The Overview says the certificate requires a total of 18 units (6 core + 12 track), but the Requirements table prints 'Total Units 19.00-21.00' (ENGL C1000 is 4 units). total_units records the table's 19-21; reviewer should check.",
+   "The List of Electives is not a required block: students may substitute up to two of these courses for two of the four General Emphasis courses (ENG 271D/F/NF/P). Recorded as choose_courses with minimum 0 since no minimum is required.",
+   "Footnote 1 marks ENG 240, ENG 241, ENG 242, ENG 251 and ENG 261 as 'Recommended Electives for General Emphasis'; they are kept in the electives list rather than duplicated in a recommended block.",
+   "The four General Emphasis courses print no individual units; the block's stated 12-14 is recorded. Honors alternatives print no own units; the 3-4 range is on the paired row.",
+   "ENG/JOUR 271NF recorded as ENG 271NF with JOUR 271NF as cross-listed alternative.",
+   "The Overview also requires a public reading of no less than twenty minutes during the semester the certificate is received (non-course requirement).",
+   "Outcomes come from the page's Learning Outcomes tab and appear to apply to the program as a whole; recorded for this award."
+  ]
+ },
+ "extracted_run": "38670933359"
+}

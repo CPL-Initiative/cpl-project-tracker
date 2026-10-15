@@ -1,0 +1,160 @@
+{
+ "college": "Santa Barbara City College",
+ "control_number": "32513",
+ "shape": "other",
+ "title": "ESL 4 Intermediate High",
+ "award": null,
+ "source_url": "https://catalog.sbcc.edu/degrees-certificates-awards/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7642,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7642,
+    "output_tokens": 668,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 668,
+  "output_tokens_details": {
+   "thinking_tokens": 152
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04393,
+ "ms": 7323,
+ "seconds": 7.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 4,
+   "share": 0.0,
+   "missing": [
+    "801160ESL",
+    "801161ESL",
+    "801162ESL",
+    "801163ESL"
+   ],
+   "unexplained": [
+    "801160ESL",
+    "801161ESL",
+    "801162ESL",
+    "801163ESL"
+   ],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not found in the provided text",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ESL 4-A",
+    "why": "not in the text; the excerpt holds no section for this program"
+   },
+   {
+    "code": "ESL 4-B",
+    "why": "not in the text; the excerpt holds no section for this program"
+   },
+   {
+    "code": "ESL 4-C",
+    "why": "not in the text; the excerpt holds no section for this program"
+   },
+   {
+    "code": "ESL 4-D",
+    "why": "not in the text; the excerpt holds no section for this program"
+   }
+  ],
+  "notes": [
+   "The catalog text is a fragment of a general education course list (art history, ethnic studies, literature, film studies, languages, history). It contains no section for the ESL 4 Intermediate High noncredit program, so no blocks, totals, outcomes or careers were recorded.",
+   "The text is cut off at both ends: it starts mid-word ('vey Of Non-Western Art') and ends mid-code ('HIS').",
+   "measure is left as 'units' because the text states nothing for this program. As a noncredit ESL program it is likely counted in hours; a reviewer should check the actual program page.",
+   "ESL 134 (Writing Level 5) appears in the GE list, but it is a credit course unrelated to this noncredit award and is not recorded."
+  ]
+ },
+ "extracted_run": "38670933359"
+}

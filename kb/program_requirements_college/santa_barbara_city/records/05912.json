@@ -1,0 +1,269 @@
+{
+ "college": "Santa Barbara City College",
+ "control_number": "05912",
+ "shape": "degree",
+ "title": "Computer Information Systems",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.sbcc.edu/academic-departments/computer-information-systems/computer-information-systems-as/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7056,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7056,
+    "output_tokens": 1787,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1787,
+  "output_tokens_details": {
+   "thinking_tokens": 628
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06396,
+ "ms": 14475,
+ "seconds": 15.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "CIS290"
+   ],
+   "flagged": [
+    "CIS290"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    34.0,
+    35.0
+   ],
+   "stated": [
+    34.0,
+    35.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Computer Information Systems, Associate of Science Degree (AS)",
+   "measure": "units",
+   "total_units": {
+    "min": 34,
+    "max": 35
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "SBCC General Education pattern or Cal-GETC pattern",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Describe the role of and explain the value of operating systems, databases, programming and project management in IT.",
+    "Participate on an IT project team as a programmer, database designer, or system administrator."
+   ],
+   "careers": [
+    "computer programming",
+    "systems analysis",
+    "computer operations and network management",
+    "information systems management",
+    "sales and technical information positions"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 34,
+     "max": 35
+    },
+    "courses": [
+     {
+      "code": "CIS 101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 107",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 119",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 181",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENG 181",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 201",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CIS 206",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 218",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 243",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 245",
+      "units": 3,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "CIS 246",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNEE 110",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Optional",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CIS 290",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "CIS/ENG 181 is printed as a cross-listed course; recorded as CIS 181 with ENG 181 as alternative.",
+   "The 3-4 range is printed beside the CIS 245 or CIS 246 row as a whole (closed list: CIS 245 4 units, CIS 246 3 units); recorded on CIS 245 as printed; no units printed beside CIS 246 or CIS 206.",
+   "Block stated total taken from the printed 'Total Units 34.00-35.00', which covers the whole major.",
+   "CIS 290 Work Experience is listed as 'Optional:' with no units; recorded as recommended and not counted toward the total.",
+   "Footnote: students who completed CIS 240 are not required to complete CIS 243; CIS 240 not recorded as a block course.",
+   "The 60-unit minimum is the generic associate degree graduation requirement, not recorded as degree_total.",
+   "Outcomes taken from the page's Learning Outcomes tab for this award."
+  ]
+ },
+ "extracted_run": "38670933359"
+}

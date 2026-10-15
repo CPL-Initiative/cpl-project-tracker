@@ -1,0 +1,235 @@
+{
+ "college": "Santa Barbara City College",
+ "control_number": "08589",
+ "shape": "degree",
+ "title": "Black Studies",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.sbcc.edu/academic-departments/american-ethnic-studies/black-studies-aa/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7259,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7259,
+    "output_tokens": 1688,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1688,
+  "output_tokens_details": {
+   "thinking_tokens": 565
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0628,
+ "ms": 14412,
+ "seconds": 14.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    19.0
+   ],
+   "stated": [
+    18.0,
+    19.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Black Studies, Associate of Arts (AA)",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "SBCC General Education pattern or Cal-GETC pattern",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will explain the development of racism within U.S. and its impact on America.",
+    "Students will be able to explain that American history is not just a history of whites, but that African Americans have also made many important contributions to the development of U.S. social, political, cultural, and economic institutions.",
+    "Students will create an intellectual setting in which participants from all communities can gain a knowledge of the Black world, assisting them in embracing diversity in their development into productive, lifelong learners, citizens, and activists seeking to improve their communities, their nations, and the world.",
+    "Students will present an analysis that displays their knowledge and understanding of the diverse history, cultural linkages, and social geography of people of African heritage in Africa and the Diaspora."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 19
+    },
+    "courses": [
+     {
+      "code": "BLST 101",
+      "units": 3,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "BLST 102",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "BLST 102H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BLST 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BLST 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BLST 113",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHST 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "NATA 101",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ASAM 101",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHS 117",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHS 107",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC 107",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The '3-4' printed beside BLST 101 applies to the whole or-group (BLST 102H is 4 units in the state file); recorded as units 3, units_max 4 on BLST 101.",
+   "The catalog prints no units beside the 'or' alternatives; their units are left null.",
+   "'ETHS/SOC 107' is a cross-listed course printed as one alternative; recorded as two alternatives, ETHS 107 and SOC 107.",
+   "The 'Total Units 18.00-19.00' is printed at the end of the major requirements; recorded as total_units and as the Required Core block's stated total.",
+   "The 60-unit minimum is a general associate degree graduation requirement, not printed as this award's total, so degree_total is null.",
+   "GE may be satisfied by either the SBCC General Education pattern or the Cal-GETC pattern; no GE units printed."
+  ]
+ },
+ "extracted_run": "38670933359"
+}
