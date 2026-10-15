@@ -1,0 +1,420 @@
+{
+ "college": "Orange Coast College",
+ "control_number": "03954",
+ "shape": "degree",
+ "title": "Horticulture",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/horticulture/horticulture-associate-science-degree/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8396,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8396,
+    "output_tokens": 3656,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3656,
+  "output_tokens_details": {
+   "thinking_tokens": 1314
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.1067,
+ "ms": 28260,
+ "seconds": 28.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 24,
+   "listed": 35,
+   "share": 0.686,
+   "missing": [
+    "BUSA100",
+    "BUSA100H",
+    "BUSA101",
+    "BUSA110",
+    "BUSA110H",
+    "BUSA138",
+    "BUSA139",
+    "BUSA141",
+    "BUSA186",
+    "BUSA200",
+    "BUSA210"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "HORTA286"
+   ],
+   "flagged": [
+    "HORTA286"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    12.0,
+    12.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "'Restricted Electives' chooses units but names no minimum",
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Program Sequence",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "OCC AS GE",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Use knowledge of various plant materials to better design and maintain an outdoor garden or landscape.",
+    "Describe man's relationship with plants for food and environmental enhancement.",
+    "Describe current sustainability issues in Southern California and how good horticultural practices will improve long-term sustainability.",
+    "Use knowledge of a particular chosen plant, greenhouse systems, and propagation practices to successfully produce a healthy crop by a target date",
+    "Use knowledge of site conditions, drafting skills, client needs, and various plant and building materials to solve a design problem."
+   ],
+   "careers": [
+    "Landscape Design",
+    "Landscape Contracting",
+    "Landscape Maintenance",
+    "Arboriculture",
+    "Nursery practices",
+    "Irrigation and Water Management"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Major courses (from Plan of Study Grid)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL A183",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HORT A105",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT A109",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT A181",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT A182",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Restricted Electives",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HORT A151",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT A170",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT A185",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT A285",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT A183",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT A186",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT A189",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT A283",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT A200",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT A286",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HORT A111",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT A184",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT A288",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT A289",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT A287",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT A115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT A116",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT A150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT A190",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT A191",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BUS A100",
+    "why": "not in the text"
+   },
+   {
+    "code": "BUS A100H",
+    "why": "not in the text"
+   },
+   {
+    "code": "BUS A101",
+    "why": "not in the text"
+   },
+   {
+    "code": "BUS A110",
+    "why": "not in the text"
+   },
+   {
+    "code": "BUS A110H",
+    "why": "not in the text"
+   },
+   {
+    "code": "BUS A138",
+    "why": "not in the text"
+   },
+   {
+    "code": "BUS A139",
+    "why": "not in the text"
+   },
+   {
+    "code": "BUS A141",
+    "why": "not in the text"
+   },
+   {
+    "code": "BUS A186",
+    "why": "not in the text"
+   },
+   {
+    "code": "BUS A200",
+    "why": "not in the text"
+   },
+   {
+    "code": "BUS A210",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The catalog text does not include the program's Requirements tab; blocks were read from the Program Sequence (Plan of Study Grid) and its Restricted Electives list only. A reviewer should verify against the actual requirements list, which may include BUS courses and a stated major total.",
+   "No section heading naming the award appears in the text; 'Program Sequence' is the tab heading the blocks were read from.",
+   "Restricted Electives: the plan shows four 'AS RESTRICTED ELECTIVES' slots of 3 units each, but no unit minimum is printed for the list, so minimum is left null. Courses are listed under semester 'Recommended Choices' headings (Fall 1, Spring 1, Fall 2, Spring 2); they were treated as one restricted-elective list.",
+   "HORT A285 appears under both Fall 1 and Fall 2 Recommended Choices; recorded once.",
+   "HORT A200 is printed with 1.5 units in the catalog list, while the state file stores 3 units.",
+   "HORT A286 Landscape Design Elements is not on the closed list (catalog addition).",
+   "The Plan of Study Grid prints 'Total Units 60-62' with GE and degree-applicable electives (6 and 9 units) and a footnote 'VARIES TO REACH MINIMUM 60 DEGREE APPLICABLE UNITS'; this is a sample plan total, so degree_total was left null for review.",
+   "GE pattern is the Orange Coast College local AS GE (OCC AS GE areas 1A, 1B, 2, 3, 4, 5, 6); no GE unit total is printed.",
+   "Trailing footnotes about Math A030 and OCC AS GE AREA A2 appear after a stray '\\cba' marker and may belong to a different grid.",
+   "Careers taken from the Program Mission statement, which refers to the Ornamental Horticulture Program as a whole.",
+   "Program Learning Outcomes are printed once for the program; the A.S. degree is assumed to share them."
+  ]
+ },
+ "extracted_run": "38670927724"
+}

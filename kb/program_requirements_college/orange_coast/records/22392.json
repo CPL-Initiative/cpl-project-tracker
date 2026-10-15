@@ -1,0 +1,287 @@
+{
+ "college": "Orange Coast College",
+ "control_number": "22392",
+ "shape": "certificate",
+ "title": "Airframe & Powerplant",
+ "award": "Certificate of Achievement requiring 60+S/90+Q units",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-maintenance-technology/airframe-powerplant-certificate-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7880,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7880,
+    "output_tokens": 1748,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1748,
+  "output_tokens_details": {
+   "thinking_tokens": 490
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06648,
+ "ms": 14660,
+ "seconds": 15.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 17,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    63.0,
+    63.0
+   ],
+   "stated": [
+    63.0,
+    63.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [
+    "Have the necessary skills and training for proficiency in taking written, oral and practical exams for Airframe & Powerplant certification which may be required for employment."
+   ],
+   "why": [
+    "not in the catalog text as printed: Have the necessary skills and training for proficiency in taking written, oral a"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 8,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Review Certificate Requirements.",
+   "measure": "units",
+   "total_units": {
+    "min": 63,
+    "max": 63
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Have the necessary skills and training for proficiency in taking written, oral and practical exams for Airframe & Powerplant certification which may be required for employment.",
+    "Be able to improve or develop additional proficiencies required for professional growth or advancement in their current employment.",
+    "All qualification training and tests are prescribed and follow the guide of the Federal Aviation."
+   ],
+   "careers": [
+    "aircraft manufacturing",
+    "electronics",
+    "hydraulics",
+    "pneumatics",
+    "welding",
+    "sheet metal",
+    "quality control",
+    "civil and military defense"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AMT A150",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT A151",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT A152",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT A153",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT A154",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT A155",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT A160",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT A161",
+      "units": 5.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT A162",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT A163",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT A170",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT A171",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT A172",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT A173",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT A174",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT A180",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT A181",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog text begins mid-description; the page title heading is cut off, so section_heading uses the requirements link text printed on the page.",
+   "The third entry under Program Learning Outcomes reads as a statement rather than an outcome and appears truncated ('Federal Aviation.' presumably 'Federal Aviation Administration'); copied as printed for reviewer check.",
+   "Careers taken from the partially truncated description ('related fields of ...'); earlier description text may name more careers.",
+   "Total Units 63 printed for the certificate; the award title states 60+ semester units, consistent with 63.",
+   "Plan of Study Grid repeats the same 17 courses with the same units totaling 63."
+  ]
+ },
+ "extracted_run": "38670927724"
+}

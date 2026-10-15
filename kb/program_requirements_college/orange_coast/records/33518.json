@@ -1,0 +1,1253 @@
+{
+ "college": "Orange Coast College",
+ "control_number": "33518",
+ "shape": "certificate",
+ "title": "Athletics",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/kinesiology-fitness-wellness-sports-athletic-performance/athletics/athletics-certificate-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12713,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12713,
+    "output_tokens": 8342,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 8342,
+  "output_tokens_details": {
+   "thinking_tokens": 1698
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.21769,
+ "ms": 58490,
+ "seconds": 58.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 121,
+   "listed": 132,
+   "share": 0.917,
+   "missing": [
+    "ARTHC1100",
+    "ARTHC1100H",
+    "ARTHC1200",
+    "ARTHC1200H",
+    "COMMC1004",
+    "ENGLA101H",
+    "HISTA170",
+    "HISTA170H",
+    "HISTA175",
+    "HISTA175H",
+    "HLEDA136"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 21,
+   "codes": [
+    "ARTA100",
+    "ARTA100H",
+    "ARTA101",
+    "ARTA101H",
+    "CHEMA180",
+    "CMSTA100",
+    "ECONC2001H",
+    "ECONC2002H",
+    "ENGLC1000",
+    "ENGLC1003H",
+    "ESECA100",
+    "ESECA100H",
+    "HISTC1001",
+    "HISTC1001H",
+    "HISTC1002",
+    "HISTC1002H",
+    "KINA203",
+    "KINA283",
+    "MATHA170",
+    "MATHA180",
+    "MATHA180H"
+   ],
+   "flagged": [
+    "ARTA100",
+    "ARTA100H",
+    "ARTA101",
+    "ARTA101H",
+    "CHEMA180",
+    "CMSTA100",
+    "ECONC2001H",
+    "ECONC2002H",
+    "ENGLC1000",
+    "ENGLC1003H",
+    "ESECA100",
+    "ESECA100H",
+    "HISTC1001",
+    "HISTC1001H",
+    "HISTC1002",
+    "HISTC1002H",
+    "KINA203",
+    "KINA283",
+    "MATHA170",
+    "MATHA180",
+    "MATHA180H"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Athletics, Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Student will make progress towards completing general education to be eligible to transfer to a four-year institution.",
+    "Students will gain transferable life skills related to teamwork, collaboration, dedication, and completion."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses: intercollegiate athletics courses (Athl A235 - A263)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ATHL A235",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATHL A236",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATHL A238",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATHL A239",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATHL A240",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATHL A241",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATHL A242",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATHL A243",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATHL A244",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATHL A245",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATHL A246",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATHL A247",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATHL A250",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATHL A251",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATHL A252",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATHL A253",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATHL A254",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATHL A255",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATHL A257",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATHL A258",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATHL A259",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATHL A260",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATHL A261",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATHL A263",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Courses: team conditioning courses",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ATHL A109",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATHL A119",
+      "units": 1,
+      "units_max": 5,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATHL A129",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN A105",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN A106",
+      "units": 1,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN A107",
+      "units": 0.5,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN A108",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN A208",
+      "units": 0.5,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Restricted Electives",
+    "rule": "choose_units",
+    "minimum": 12,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ANTH A100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH A100H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH A190",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASTR A100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ASTR A100H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASTR A100L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART A100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ART A100H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ART A101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ART A101H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ART A102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART A107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL A100",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL A100H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL A125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL A180",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL A210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL A220",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL A221",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL A225",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDE A180",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM A100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM A110",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM A130",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM A180",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CMST A100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CMST A180",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COUN A104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COUN A105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMAD A181",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON A100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2001H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2002H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESEC A100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ESEC A100H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL C1003",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1003H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHS A100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHS A150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FILM A100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FILM A150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FN A136",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FN A170",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG A100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOG A100H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL A105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOL A105H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL A105L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST A150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST A161",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST A161H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST C1001H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST C1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST C1002H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST A180",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST A180H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT A100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM A100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN A202",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN A203",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIN A270",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN A271",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN A272",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN A280",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN A282",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN A283",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH A100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH A115",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH A120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH A170",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH A180",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH A180H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "MRSC A100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MRSC A100H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MRSC A185",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MRSC A185L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS A100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS A105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS A115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS A139",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL A100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL A120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL A150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT A120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT A130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLS C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC A160",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC A165",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC A220",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC A260",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RLST A100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RLST A110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC A100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC A100H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC A110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC A150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC A185",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC A185H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA A100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA A101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA A105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ARTHC1100",
+    "why": "not in the text; catalog prints ART A100 with the same title"
+   },
+   {
+    "code": "ARTHC1100H",
+    "why": "not in the text; catalog prints ART A100H with the same title"
+   },
+   {
+    "code": "ARTHC1200",
+    "why": "not in the text; catalog prints ART A101 with the same title"
+   },
+   {
+    "code": "ARTHC1200H",
+    "why": "not in the text; catalog prints ART A101H with the same title"
+   },
+   {
+    "code": "COMM C1004",
+    "why": "not in the text; catalog prints CMST A100 Interpersonal Communication instead"
+   },
+   {
+    "code": "ENGL A101H",
+    "why": "not in the text; catalog prints ENGL C1003H as the honors alternative"
+   },
+   {
+    "code": "HIST A170",
+    "why": "not in the text; catalog prints HIST C1001"
+   },
+   {
+    "code": "HIST A170H",
+    "why": "not in the text; catalog prints HIST C1001H"
+   },
+   {
+    "code": "HIST A175",
+    "why": "not in the text; catalog prints HIST C1002"
+   },
+   {
+    "code": "HIST A175H",
+    "why": "not in the text; catalog prints HIST C1002H"
+   },
+   {
+    "code": "HLED A136",
+    "why": "not in the text; catalog prints FN A136 with the same title"
+   }
+  ],
+  "notes": [
+   "The catalog prints one 'Required Courses' list with the rule 'Choose 6 units from the following, including 3 units of intercollegiate athletics courses (Athl A235 - A263) and 3 units of team conditioning courses.' It is recorded as two choose_units blocks of 3 units each (athletics team courses; conditioning courses ATHL A109-A129 and KIN A105-A208). The combined 6 units is not printed as a block total, so stated is null.",
+   "Closed list stores KINA282 (no space); the catalog prints KIN A282 Introduction to Exercise Physiology, treated as the same course (catalog_addition false).",
+   "Units for conditioning courses are printed as ranges (e.g., ATHL A119 1-5, KIN A107 .5-3) though the state file stores 0.5 or 1.",
+   "Honors/'or' alternatives print no units beside them; their units are left null.",
+   "Program sequence shows Total Units 18-26 because restricted electives vary in units; the Requirements tab prints Total Units 18, recorded as total_units.",
+   "Program Learning Outcomes are printed under the Program Outcomes heading for this certificate."
+  ]
+ },
+ "extracted_run": "38670927724"
+}

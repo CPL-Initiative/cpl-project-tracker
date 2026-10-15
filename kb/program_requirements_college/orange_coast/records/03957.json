@@ -1,0 +1,286 @@
+{
+ "college": "Orange Coast College",
+ "control_number": "03957",
+ "shape": "degree",
+ "title": "Biology",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/biology/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12668,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12668,
+    "output_tokens": 1122,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1122,
+  "output_tokens_details": {
+   "thinking_tokens": 160
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07311,
+ "ms": 9365,
+ "seconds": 10.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 30,
+   "share": 0.0,
+   "missing": [
+    "BIOLA180",
+    "BIOLA182",
+    "BIOLA182H",
+    "BIOLA182L",
+    "BIOLA183",
+    "BIOLA183L",
+    "BIOLA185",
+    "BIOLA201",
+    "BIOLA210",
+    "BIOLA220",
+    "BIOLA221",
+    "BIOLA225",
+    "BIOLA280",
+    "BIOLA281",
+    "BIOLA282",
+    "BIOLA283",
+    "CHEMA180",
+    "CHEMA185",
+    "CHEMA220",
+    "CHEMA220L",
+    "CHEMA225",
+    "CHEMA225L",
+    "MATHA180",
+    "MATHA180H",
+    "MATHA185",
+    "MATHA185H",
+    "MATHA280",
+    "MATHA280H",
+    "MATHA285",
+    "MATHA285H"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Biology",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BIOL A180",
+    "why": "A.S. requirements not in the text; appears only in course listings"
+   },
+   {
+    "code": "BIOL A182",
+    "why": "A.S. requirements not in the text; appears only in course listings"
+   },
+   {
+    "code": "BIOL A182H",
+    "why": "A.S. requirements not in the text; appears only in course listings"
+   },
+   {
+    "code": "BIOL A182L",
+    "why": "A.S. requirements not in the text; appears only in course listings"
+   },
+   {
+    "code": "BIOL A183",
+    "why": "A.S. requirements not in the text; appears only in course listings"
+   },
+   {
+    "code": "BIOL A183L",
+    "why": "A.S. requirements not in the text; appears only in course listings"
+   },
+   {
+    "code": "BIOL A185",
+    "why": "A.S. requirements not in the text; appears only in course listings"
+   },
+   {
+    "code": "BIOL A201",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOL A210",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOL A220",
+    "why": "A.S. requirements not in the text; named only in course descriptions"
+   },
+   {
+    "code": "BIOL A221",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOL A225",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOL A280",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOL A281",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOL A282",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOL A283",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHEM A180",
+    "why": "A.S. requirements not in the text; named only in a course prerequisite"
+   },
+   {
+    "code": "CHEM A185",
+    "why": "A.S. requirements not in the text; named only in a course prerequisite"
+   },
+   {
+    "code": "CHEM A220",
+    "why": "A.S. requirements not in the text; named only in a course prerequisite"
+   },
+   {
+    "code": "CHEM A220L",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHEM A225",
+    "why": "A.S. requirements not in the text; named only in a course prerequisite"
+   },
+   {
+    "code": "CHEM A225L",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH A180H",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH A185H",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH A280H",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH A285H",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATHA180",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATHA185",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATHA280",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATHA285",
+    "why": "not in the text"
+   }
+  ],
+  "notes": []
+ },
+ "extracted_run": "38670927724"
+}

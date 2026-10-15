@@ -1,0 +1,144 @@
+{
+ "college": "Orange Coast College",
+ "control_number": "44029",
+ "shape": "noncredit",
+ "title": "Primary English Language Skills",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/english-language-learning/emergent-english-language-skills,certificate-competency/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6949,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6949,
+    "output_tokens": 1037,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1037,
+  "output_tokens_details": {
+   "thinking_tokens": 511
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04854,
+ "ms": 10354,
+ "seconds": 10.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 0,
+   "listed": 2,
+   "share": 0.0,
+   "missing": [
+    "ELLA17N",
+    "ELLA6N"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "English Language Learning - Beginning, Certificate of Competency",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ELL A006N",
+    "why": "not in the text"
+   },
+   {
+    "code": "ELL A017N",
+    "why": "named only in the English Language Learning - Beginning certificate section, not in a section for Primary English Language Skills"
+   }
+  ],
+  "notes": [
+   "The supplied page does not print a section for Primary English Language Skills. Its only program section is 'English Language Learning - Beginning, Certificate of Competency' (heading cut off at the start as 'ish Language Learning - Beginning'; Control Number 36913). The URL slug names 'emergent-english-language-skills', which matches neither title. No requirements were recorded because they belong to a different award.",
+   "For reference, the Beginning certificate's printed requirements are: ELL A016N (90 hours) or ELL A026N; ELL A025N (36 hours) or ELL A028N; and ELL A027N (54 hours) or ELL A017N. Its total is 180 hours. Its program learning outcomes were not copied because they belong to that award.",
+   "Please check the correct catalog page for Primary English Language Skills. Basic Literacy (ELL A006N) in the closed list suggests a literacy-level program that is not on this page."
+  ]
+ },
+ "extracted_run": "38670927724"
+}

@@ -1,0 +1,263 @@
+{
+ "college": "Orange Coast College",
+ "control_number": "19809",
+ "shape": "certificate",
+ "title": "Photography Digital Technician",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/language-communication/photography/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12056,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12056,
+    "output_tokens": 1128,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1128,
+  "output_tokens_details": {
+   "thinking_tokens": 204
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07078,
+ "ms": 10380,
+ "seconds": 10.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 25,
+   "share": 0.0,
+   "missing": [
+    "PHOTA123",
+    "PHOTA125",
+    "PHOTA180",
+    "PHOTA188",
+    "PHOTA200",
+    "PHOTA220",
+    "PHOTA223",
+    "PHOTA225",
+    "PHOTA230",
+    "PHOTA241",
+    "PHOTA260",
+    "PHOTA261",
+    "PHOTA262",
+    "PHOTA263",
+    "PHOTA264",
+    "PHOTA265",
+    "PHOTA266",
+    "PHOTA267",
+    "PHOTA280",
+    "PHOTA282",
+    "PHOTA285",
+    "PHOTA287",
+    "PHOTA288",
+    "PHOTA289",
+    "PHOTA290"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Photography (PHOT)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "PHOT A123",
+    "why": "appears only in a course description; the text has no requirements for this award"
+   },
+   {
+    "code": "PHOT A125",
+    "why": "appears only in a course description; the text has no requirements for this award"
+   },
+   {
+    "code": "PHOT A180",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHOT A188",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHOT A200",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHOT A220",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHOT A223",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHOT A225",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHOT A230",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHOT A241",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHOT A260",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHOT A261",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHOT A262",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHOT A263",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHOT A264",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHOT A265",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHOT A266",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHOT A267",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHOT A280",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHOT A282",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHOT A285",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHOT A287",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHOT A288",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHOT A289",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHOT A290",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied text is only a fragment of the Photography (PHOT) course descriptions (PHOT A107 through PHOT A142). It contains no program section, requirements, total, outcomes or careers for the Photography Digital Technician Certificate of Achievement, so no blocks were recorded.",
+   "Section_heading names the course listing heading because there is no section for this award in the text.",
+   "The course descriptions for PHOT A123 and PHOT A125 list 'Photography Digital Technician, Certificate of Achievement' among the program pages that reference them. This suggests both courses are part of the certificate, but the text does not give the requirement rule.",
+   "A reviewer should fetch the actual program page for the certificate's requirements."
+  ]
+ },
+ "extracted_run": "38670927724"
+}

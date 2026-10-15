@@ -1,0 +1,306 @@
+{
+ "college": "Orange Coast College",
+ "control_number": "08626",
+ "shape": "degree",
+ "title": "Powerplant",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-maintenance-technology/airframe-powerplant-associate-science-degree/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7694,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7694,
+    "output_tokens": 2588,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2588,
+  "output_tokens_details": {
+   "thinking_tokens": 1039
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08254,
+ "ms": 21216,
+ "seconds": 21.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "AMTA160",
+    "AMTA161",
+    "AMTA162",
+    "AMTA163",
+    "AMTA181"
+   ],
+   "flagged": [
+    "AMTA160",
+    "AMTA161",
+    "AMTA162",
+    "AMTA163",
+    "AMTA181"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    63.0,
+    63.0
+   ],
+   "stated": [
+    84.0,
+    84.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the OCC AS GE (Orange Coast College Associate in Science general education) pattern, but no units for it"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [
+    "Students successfully completing the Orange Coast College Aviation Maintenance Technology program will have the necessary skills and training for proficiency in taking written, oral and practical exams for AIRFRAME & POWERPLANT certification which may be required for employment."
+   ],
+   "why": [
+    "not in the catalog text as printed: Students successfully completing the Orange Coast College Aviation Maintenance T"
+   ],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": false
+  },
+  "careers": {
+   "count": 12,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Airframe & Powerplant, Associate in Science Degree",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "OCC AS GE (Orange Coast College Associate in Science general education)",
+   "degree_total": {
+    "min": 84,
+    "max": 84
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students successfully completing the Orange Coast College Aviation Maintenance Technology program will have the necessary skills and training for proficiency in taking written, oral and practical exams for AIRFRAME & POWERPLANT certification which may be required for employment.",
+    "Working craftsmen will be able to improve or develop additional proficiencies required for professional growth or advancement in their current employment. All qualification training and tests are prescribed and follow the guide of the Federal Aviation."
+   ],
+   "careers": [
+    "Airframe and Powerplant Certificated Mechanics",
+    "airframe inspection",
+    "powerplant inspection",
+    "maintenance",
+    "aircraft manufacturing",
+    "electronics",
+    "hydraulics",
+    "pneumatics",
+    "welding",
+    "sheet metal",
+    "quality control",
+    "civil and military defense"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Plan of Study Grid",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AMT A150",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT A151",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT A152",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT A153",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT A154",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT A160",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AMT A161",
+      "units": 5.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AMT A162",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AMT A181",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AMT A180",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT A155",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT A163",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AMT A174",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT A170",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT A171",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT A172",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT A173",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The program is named 'Powerplant' A.S. Degree, but the page is 'Airframe & Powerplant, Associate in Science Degree'; reviewer should confirm this is the correct page for the award.",
+   "The REQUIREMENTS tab content is not in the supplied text; the overview says only to complete the Airframe and Powerplant Certificate of Achievement plus A.S. graduation requirements. The block was built from the AMT courses in the Program Sequence (Plan of Study Grid), a suggested curriculum map, not a printed requirements list. GE area placeholders in the grid were omitted.",
+   "degree_total taken from 'Note: this AS degree requires 84 units for completion.' The Plan of Study Grid prints 'Total Units 84-86' including GE ranges.",
+   "No major/certificate total is printed; total_units left null.",
+   "AMT A160, A161, A162, A181 and A163 appear in the grid but not in the closed list (catalog additions).",
+   "Program learning outcomes are printed for the Aviation Maintenance Technology program as a whole; recorded for this award. The source text shows 'AIRFRAME &amp; POWERPLANT' (HTML entity), recorded as '&'."
+  ]
+ },
+ "extracted_run": "38670927724"
+}

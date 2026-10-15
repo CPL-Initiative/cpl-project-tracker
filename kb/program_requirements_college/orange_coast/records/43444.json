@@ -1,0 +1,250 @@
+{
+ "college": "Orange Coast College",
+ "control_number": "43444",
+ "shape": "certificate",
+ "title": "Pilates Mat Instructor",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/dance/pilates-mat-coa/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7507,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7507,
+    "output_tokens": 1650,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1650,
+  "output_tokens_details": {
+   "thinking_tokens": 640
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06303,
+ "ms": 13657,
+ "seconds": 14.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    9.5,
+    9.5
+   ],
+   "stated": [
+    9.5,
+    9.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Pilates Mat Instructor Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 9.5,
+    "max": 9.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Successfully teach a Pilates Mat class.",
+    "Communicate effectively through clear demonstration and verbal cueing using appropriate terminology and safety measures."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DANC A108",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A209",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A119",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A129",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A151",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A215",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Restricted Electives: Select one (1) unit from the following",
+    "rule": "choose_units",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 1,
+     "max": 1
+    },
+    "courses": [
+     {
+      "code": "DANC A106",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A107",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A115",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DANC A225",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A118",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC A139",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints DANC A129 at 2 units; the state file stores 1 unit.",
+   "Restricted elective courses have no units printed beside them in the catalog; units left null.",
+   "DANC A115 and DANC A225 appear in the closed list as DANCA115 and DANCA225 (no space); treated as the same courses, not catalog additions.",
+   "Program Sequence notes DANC A119 is offered only in Fall.",
+   "Program Learning Outcomes are printed for this certificate's page and recorded as printed.",
+   "No career titles named explicitly; description names workplaces (studios, clinics, health clubs) for teaching Mat work, which were not recorded as careers."
+  ]
+ },
+ "extracted_run": "38670927724"
+}

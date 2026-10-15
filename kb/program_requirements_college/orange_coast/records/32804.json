@@ -1,0 +1,367 @@
+{
+ "college": "Orange Coast College",
+ "control_number": "32804",
+ "shape": "adt",
+ "title": "Philosophy",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/social-science-humanities/philosophy/philosophy-associate-arts-degree-transfer-aat/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8801,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8801,
+    "output_tokens": 2533,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2533,
+  "output_tokens_details": {
+   "thinking_tokens": 780
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08586,
+ "ms": 20757,
+ "seconds": 21.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 21,
+   "listed": 22,
+   "share": 0.955,
+   "missing": [
+    "ENGLA101H"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "ENGLC1003H"
+   ],
+   "flagged": [
+    "ENGLC1003H"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    19.0
+   ],
+   "stated": [
+    18.0,
+    19.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     53.0,
+     67.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     25.0,
+     31.0
+    ],
+    "why": [],
+    "within": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate Degree for Transfer Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 10,
+    "max": 17
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 25,
+    "max": 31
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Articulate and critically evaluate philosophical arguments and theories.",
+    "Students will be eligible and prepared for admission (SB 1440 and Education Code 66746) to California State University system schools."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHIL A100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHIL A100H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PHIL A120",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL A220",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH A220",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PHIL A155",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A - Select one course from the Core not yet taken or the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "PHIL A125",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL A140",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL A150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B - Select two courses not used in List A or the following:",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "HIST A180",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST A180H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST A185",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST A185H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List C - Select one course from List A or B not yet taken or the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "PHIL A115",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL A118",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL A165",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM A100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM A101H",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1003",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1003H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1001H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ENGL A101H",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "List A also allows a Core course not yet taken (e.g., PHIL A120 or PHIL A155 if not used in Required Courses); List B allows courses from List A not used; List C allows courses from List A or B not yet taken. These cross-list paths are not duplicated in blocks.",
+   "Units are printed only on the first row of each Required Courses pair and as block totals for Lists A-C; individual list courses carry no printed units.",
+   "ge_units recorded from the printed column value 25.0 - 31.0; the row label reads 'Cal-GETC Education Breadth: 34 Units', with footnote noting 3 - 9 units double count between major and GE.",
+   "Transferable electives printed as '17.0 - 10.0' (reversed range); recorded as degree_elective_units 10-17.",
+   "Closed list stores 'ENGLC1001H' without a space; treated as matching catalog's ENGL C1001H.",
+   "ENGL C1003H is not in the closed list (catalog addition).",
+   "Program Sequence tab lists HIST C1001/C1001H/C1002/C1002H and POLS C1000/C1000H as American Institutions/GE courses; not placed in blocks. Sequence total 60-61 is a sample plan, not the degree total.",
+   "Outcomes are listed under a general 'Program Outcomes' heading on the program page and apply to this AA-T."
+  ]
+ },
+ "extracted_run": "38670927724"
+}
