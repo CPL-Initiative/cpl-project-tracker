@@ -233,6 +233,18 @@
    "sequence_note": null,
    "sequence_checked_run": null
   },
+  "Santa Barbara City College": {
+   "catalog_url": "https://catalog.sbcc.edu/",
+   "catalog_year": "2026-2027",
+   "sequence_url": null,
+   "census_run_id": "census-20261011T162427Z-s3of4",
+   "sequence_host": null,
+   "sequence_note": null,
+   "sequence_access": null,
+   "sequence_source": "none_found",
+   "catalog_platform": "courseleaf",
+   "sequence_checked_run": null
+  },
   "Santa Monica College": {
    "catalog_platform": "custom_html",
    "catalog_year": "2026-2027",
