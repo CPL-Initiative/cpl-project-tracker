@@ -1194,12 +1194,35 @@ Sam's asks for "the My College view of Implementation Funding" (verbatim: `cpl_m
 - **Sam missed the calls at the foot of a long mockup** and answered in chat, then pressed Complete, which
   arrived as an artifact comment. A mockup's calls want a line at its top saying they are there.
 
+## 2026-10-15 — SkyMeridian (side session beside the queue): one public page, calls back, build handed on
+
+Sam's ask after #2152 (verbatim: `cpl_memory` `sam-one-public-funding-view-ask-2026-10-15`), mocked up with eight
+calls (https://claude.ai/artifact/XtrzM3LoNcQfdZRGuFKwWM) and answered the same evening, all his own call
+(`sam-one-public-page-calls-2026-10-15`). The build brief: `CPLBrain/decision-sheets/one-public-funding-page/BUILD.md`.
+
+- **The consolidation was half built.** The explainer already kept its own block order (`pubSecOrder`, never set) and
+  its fourteen `x_*` passages were its alone; it borrowed only the FAQ, the table introduction and Timeline's title (the
+  shared `timing` id). The missing piece is an editing surface on the page, not a second page.
+- **The black box is a redraw, measured.** Once a college is opened, My College's `onModelChange` subscriber redraws
+  the whole tab on every model update, replacing `#cb-college` seven times in eight seconds; the funding pages' Step 1
+  list five times while loading. A MutationObserver counting insertions found it in one run; a reading of the code had
+  pointed at the funding page, and Sam's answer put the box on My College.
+- **Render a mockup with the anon feeds, not without them.** Answering `map_coordinator_summary`, the contacts and
+  the ledger from an anon-role read let every condition show Met or Not yet as a college sees it.
+- **Sam overruled two proposals:** the Introduction joins the page beside the Overview (call 3), and the black-box
+  fix ships with the rest (call 7).
+- **Screenshots spend context fast.** About a dozen full-page images took this session from 15% to 87% of its window
+  before the build began; crop to the region a question needs.
+
 ## Moved from the lane (SkyHarbor, 2026-10-15)
 
-The lane sits at its 20 KB budget; these three moved here verbatim.
+The lane sits at its 20 KB budget; these moved here verbatim (the fourth, `target_rate`, by SkyMeridian).
 
 ✅ **CSU LA stays out by name (Sam, sheet 33 card 2, 2026-10-04):** *"funding is only provided to CCC colleges and campuses. We do have project funding that supports our work with our partners, but no need to focus on that in our materials--also no need to hide it"*. `_build_funding_performance.py` reads `kb/non_ccc_institutions.json` and skips Cal State LA at the row, beside the partners; `tests/funding_origination_test.py` §4 guards it.
 
 ⚠️ **EVERY COMBINATOR IN `colHideStyleHtml()` IS A CHILD COMBINATOR** — a descendant one reached into the nested drill-in and hid its third cell for every reader; only `Element.matches()` can see it (`cpl_funding_col_hide_scope`).
 
 **HELD (Sam, 2026-09-12: "Hold, no action"):** the **LWDA partnership** stays undesignated on the (C) card — no register project names it and he chose to leave it; do **not** designate it on inference.
+
+⚠️ **`target_rate` IS DEAD ON BOTH ENDS — LEAVE IT THAT WAY.** `prioTarget()` reads it only on the students path; no control
+renders it. Sam had S263's wiring (#1579) REVERTED (#1580): `rate = k/factor` reproduces every target. **Do not rebuild it.**
