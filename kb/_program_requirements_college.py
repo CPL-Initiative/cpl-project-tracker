@@ -929,23 +929,40 @@ def cq_page(entry: dict, page: dict | None, prefix: str, children: list | None =
             "codes": page_codes(text), "node": entry.get("id"), "group": cq_group(entry.get("text") or title, url)}
 
 
+# A dropped connection loses a whole branch of the walk: Las Positas's two
+# ECONNRESETs mid-walk left 20 of 201 programs found (run 38935144431, S399), and
+# Butte's three left nodes unread (run 38948140330). A reset is the host's
+# moment, not its answer, so the call is made again after a longer wait, at
+# most CQ_RETRIES times; an HTTP status or any other error is final.
+CQ_RETRIES = 2
+CQ_RETRY_WAIT = 4          # the census delay, times this, before a retry
+CQ_DROPPED = re.compile(r"ECONNRESET|socket hang up|ECONNABORTED|EPIPE", re.I)
+
+
 def cq_json(reader, url: str, errors: list) -> dict | None:
-    """One JSON call through the census's rules: robots first, the delay, one load."""
+    """One JSON call through the census's rules: robots first, the delay, one
+    load; a dropped connection is tried again, slower."""
     from _program_source_census import robots_allows
     if not robots_allows(reader._robots_for(url), url):
         errors.append("%s: robots disallows" % url)
         return None
-    time.sleep(reader.delay)
-    reader.loads += 1
-    try:
-        resp = reader.request.get(url, timeout=60000)
-        if not resp.ok:
-            errors.append("%s: HTTP %s" % (url, resp.status))
+    for attempt in range(CQ_RETRIES + 1):
+        time.sleep(reader.delay * (CQ_RETRY_WAIT if attempt else 1))
+        reader.loads += 1
+        try:
+            resp = reader.request.get(url, timeout=60000)
+            if not resp.ok:
+                errors.append("%s: HTTP %s" % (url, resp.status))
+                return None
+            return resp.json()
+        except Exception as exc:
+            msg = str(exc).splitlines()[0][:160]
+            if CQ_DROPPED.search(msg) and attempt < CQ_RETRIES:
+                errors.append("%s: %s (tried again)" % (url, msg))
+                continue
+            errors.append("%s: %s" % (url, msg))
             return None
-        return resp.json()
-    except Exception as exc:
-        errors.append("%s: %s" % (url, str(exc).splitlines()[0][:160]))
-        return None
+    return None
 
 
 def cq_pages(reader, start: str, report: dict) -> list[dict]:
