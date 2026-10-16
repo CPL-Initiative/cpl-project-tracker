@@ -1562,6 +1562,33 @@ check(RC.reconcile(bare, OCC_MGMT, "Orange Coast College",
                    "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units")[1] == [],
       "Orange Coast's steps read associate degrees only")
 
+# Monterey Peninsula (S396): a local degree names MPC GE or Cal-GETC (read 38749721270, Horticulture A.S. 03599),
+# a transfer degree Cal-GETC (read 38843693844, Psychology AA-T); the GE page states 34 and eight 3-unit areas.
+MPC_HORT = ("HORT 51 Introduction to Horticulture I 3 HORT 52 Introduction to Horticulture II 3 Additional Requirements "
+            "39-42 Complete Competency Requirements, general education pattern (MPC General Education or Cal-GETC), and "
+            "electives, if needed, for a total of 60 degree-applicable units.")
+MPC_ADT = ("Minimum of 60 CSU-transferable semester units; Completion of a minimum of 18 semester units as detailed in the "
+           "Major Requirements; Certified completion of the California General Education Transfer Curriculum (Cal-GETC) "
+           "pattern. PSYC C1000 Introduction to Psychology 3")
+hort = {"program": {"total_units": {"min": 18, "max": 21}, "degree_total": {"min": 60, "max": 60},
+                    "ge_units": {"min": None, "max": None}, "ge_pattern": "MPC General Education or Cal-GETC",
+                    "electives_fill_degree": True}, "blocks": []}
+new, notes = RC.reconcile(hort, MPC_HORT, "Monterey Peninsula College", "A.S. Degree")
+deg = S.degree_check(new["program"], (60.0, 60.0), 18.0, 21.0, [], MPC_HORT, "A.S. Degree")
+check([n["field"] for n in notes] == ["ge_units"] and new["program"]["ge_units"] == {"min": 24, "max": 34}
+      and "catalog.mpc.edu" in notes[0]["words"] and deg["pass"] and deg["computed"] == [42.0, 55.0]
+      and deg["fill"] == [5.0, 18.0],
+      "Monterey Peninsula Horticulture: MPC GE or Cal-GETC is 24-34, an 18-21 major comes to 42-55, electives "
+      "make up the 60: %s" % json.dumps(deg))
+adt = {"program": {"total_units": {"min": 18, "max": 20}, "degree_total": {"min": 60, "max": 60},
+                   "ge_units": {"min": None, "max": None}, "ge_pattern": "Cal-GETC"}, "blocks": []}
+new, notes = RC.reconcile(adt, MPC_ADT, "Monterey Peninsula College", "A.A.-T Degree")
+check([n["field"] for n in notes] == ["ge_units"] and new["program"]["ge_units"] == {"min": 34, "max": 34},
+      "Monterey Peninsula's transfer degree: Cal-GETC's 34")
+check(RC.reconcile(hort, MPC_HORT + " " + MPC_ADT, "Monterey Peninsula College", "A.S. Degree")[0]["program"]["ge_units"]
+      == {"min": 24, "max": 34},
+      "a page naming both keeps the local pattern's span: the Cal-GETC step fills only an empty field")
+
 if failures:
     print("FAIL: %d" % len(failures))
     for f in failures:
