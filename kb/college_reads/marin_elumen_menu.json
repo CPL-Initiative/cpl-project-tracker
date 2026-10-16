@@ -1,5 +1,5 @@
 {
- "_readme": "S401 SkyManzanita, 2026-10-16. Marin's capture-only read (run 38978049676) found 0 program pages: the registry's start page is /catalog/current/home, the fast read's menu named no program, department or hub, and the rendered read found none from the start page or its hub academic-programs. This read prints the menu's links, to see whether they name another catalog slug than current. Read 2 (S401): read 1 (run 38978810670) shows the menu links about 100 subject pages one segment under current (current/aj, current/art) and award hubs (associates-degrees, transfer-degrees, coa-and-other-credit-programs, list-of-programs), and no /program/ link in the excerpts. This read takes the content calls of a subject page and three hubs, to see whether a program has its own page or prints inside its subject's page.",
+ "_readme": "S401 SkyManzanita, 2026-10-16. Marin's capture-only read (run 38978049676) found 0 program pages: the registry's start page is /catalog/current/home, the fast read's menu named no program, department or hub, and the rendered read found none from the start page or its hub academic-programs. This read prints the menu's links, to see whether they name another catalog slug than current. Read 2 (S401): read 1 (run 38978810670) shows the menu links about 100 subject pages one segment under current (current/aj, current/art) and award hubs (associates-degrees, transfer-degrees, coa-and-other-credit-programs, list-of-programs), and no /program/ link in the excerpts. This read takes the content calls of a subject page and three hubs, to see whether a program has its own page or prints inside its subject's page. Read 3 (S401): read 2 (run 38979564864) shows current/aj names its awards (A.S. in Administration of Justice, Occupational; AS-T; Certificate of Achievement) with no requirements; this read prints only the links that page holds to a program, course or other catalog page outside the menu.",
  "college": "College of Marin",
  "questions": {
   "menu": "Which catalog addresses the start page's menu links, besides program pages: departments, award hubs, program indexes, and the catalog slug its links name.",
@@ -18,26 +18,15 @@
    "answers": [
     "programs"
    ],
-   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/current,aj?tenant=marin.elumenapp.com"
-  },
-  {
-   "answers": [
-    "programs"
-   ],
-   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/current,list-of-programs?tenant=marin.elumenapp.com"
-  },
-  {
-   "answers": [
-    "programs"
-   ],
-   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/current,associates-degrees?tenant=marin.elumenapp.com"
-  },
-  {
-   "answers": [
-    "programs"
-   ],
    "url": "https://marin.elumenapp.com/catalog/current/aj",
-   "links": "/catalog/current/"
+   "links": "/catalog/current/(program|course|department)/|/catalog/(?!current/)"
+  },
+  {
+   "answers": [
+    "programs"
+   ],
+   "url": "https://marin.elumenapp.com/catalog/current/bus",
+   "links": "/catalog/current/(program|department)/|/catalog/(?!current/)"
   }
  ]
 }
