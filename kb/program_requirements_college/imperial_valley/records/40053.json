@@ -1,0 +1,357 @@
+{
+ "college": "Imperial Valley College",
+ "control_number": "40053",
+ "shape": "adt",
+ "title": "Global Studies",
+ "award": "A.A- T Degree",
+ "source_url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8331",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7590,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7590,
+    "output_tokens": 2528,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2528,
+  "output_tokens_details": {
+   "thinking_tokens": 706
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08092,
+ "ms": 20361,
+ "seconds": 20.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 21,
+   "listed": 23,
+   "share": 0.913,
+   "missing": [
+    "ECON101",
+    "ECON102"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ECONC2001",
+    "ECONC2002"
+   ],
+   "flagged": [
+    "ECONC2001",
+    "ECONC2002"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    21.0,
+    31.0
+   ],
+   "stated": [
+    21.0,
+    23.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 21.0-31.0; the catalog states 21.0-23.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 7,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "GLOBAL STUDIES FOR TRANSFER (MAJOR - A.A.-T.)",
+   "measure": "units",
+   "total_units": {
+    "min": 21,
+    "max": 23
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Evaluate their role as a member of a global network of independent societies.",
+    "Formulate a cohesive understanding of global issues and current events and incorporate this knowledge into their career and life.",
+    "Analyze various perspectives from the social sciences that explain the motivations for and consequences of globalization."
+   ],
+   "careers": [
+    "urban planning",
+    "market research",
+    "land use analysis",
+    "transportation",
+    "tourism",
+    "education",
+    "public and government agencies"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "GLST 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GLST 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Select five courses from at least four areas",
+    "rule": "choose_courses",
+    "minimum": 5,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 17
+    },
+    "courses": [
+     {
+      "code": "ANTH 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMSL 200",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMSL 202",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FREN 201",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FREN 211",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RELS 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RELS 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHIL 104",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 200",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 220",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 221",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECON 101",
+    "why": "not in the text; catalog lists ECON C2001 (Principles of Microeconomics) instead"
+   },
+   {
+    "code": "ECON 102",
+    "why": "not in the text; catalog lists ECON C2002 (Principles of Macroeconomics) instead"
+   }
+  ],
+  "notes": [
+   "List A requires five courses from at least four of five areas (Area 1 Culture and Society, Area 2 Geography, Area 3 Economics, Area 4 Politics, Area 5 Humanities); recorded as one choose_courses block in catalog order. The per-area figures printed (9.0, 9.0, 6.0, 6.0, 44.0) are sums of each area's course units, not requirements.",
+   "The page states 'Must complete a maximum of 60 CSU-transferable semester units' as a generic AA-T requirement; not recorded as degree_total. Wording 'maximum' is unusual and may warrant review.",
+   "Cal-GETC stated as '34 units minimum'; recorded as ge_units 34.",
+   "ECON C2001 and ECON C2002 are common course numbers not on the closed list (likely replacing ECON 101/102); marked as catalog additions.",
+   "RELS 104 / PHIL 104 (Ethics) printed as a cross-listed pair; recorded as one entry with PHIL 104 as alternative.",
+   "Careers: named agencies (Bureau of Census, CIA, etc.) were treated as employers, not careers, and not listed individually."
+  ]
+ },
+ "extracted_run": "38935136329"
+}

@@ -1,0 +1,217 @@
+{
+ "college": "Laney College",
+ "control_number": "43002",
+ "shape": "certificate",
+ "title": "Refrigeration Technology",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://lan.curriqunet.com/catalog/view/iq/44166/44192/44373",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6762,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6762,
+    "output_tokens": 1284,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1284,
+  "output_tokens_details": {
+   "thinking_tokens": 346
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05273,
+ "ms": 15349,
+ "seconds": 15.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    16.25,
+    16.25
+   ],
+   "stated": [
+    16.25,
+    16.25
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Refrigeration Technology - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 16.25,
+    "max": 16.25
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Safe use of materials: Demonstrate proper and safe use of chemicals, combustible materials, electricity, high-pressure gases, climbing ladders and lifting heavy objects.",
+    "Explain concepts related to refrigeration: Explain the theory of Refrigeration and Air Conditioning and the physical properties of components and devices.",
+    "Demonstrate critical thinking, interpersonal, writing, and reading skills working with team members and customers."
+   ],
+   "careers": [
+    "air conditioning installers",
+    "refrigeration technicians",
+    "building engineers",
+    "building engineer",
+    "warehouse specialist"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16.25,
+     "max": 16.25
+    },
+    "courses": [
+     {
+      "code": "E/ET 202",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECT 013",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECT 211",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECT 214",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECT 012",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECT 015",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 215A",
+      "units": 0.75,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 215B",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints ECT 013, ECT 012 and ECT 015 with zero-padded numbers; they are read as the closed-list courses ECT 13, ECT 12 and ECT 15 and not as catalog additions.",
+   "The catalog prints WELD 215A as 0.75 units; the state file stores 0.8.",
+   "The Career Opportunities line also lists 'opportunities at the Port area'. It names no job title or career field, so it is not recorded as a career.",
+   "Some outcomes begin with a printed label ('Safe use of materials:', 'Explain concepts related to refrigeration:'). The labels are kept as printed."
+  ]
+ },
+ "extracted_run": "38935141023"
+}

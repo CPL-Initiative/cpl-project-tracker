@@ -95,7 +95,7 @@ setTimeout(function () {
 
     const badge = body.querySelector(".cr-art-merged");
     check("⛓ merged badge rendered on the consolidated row", !!badge);
-    check("badge reads '⛓ 3 variants'", !!badge && /⛓\s*3 variants/.test(txt(badge)));
+    check("badge reads '3 variants merged'", !!badge && /3 variants merged/.test(txt(badge)));
     check("badge tooltip lists a folded member id", !!badge &&
       /EMST M1024/.test(badge.getAttribute("title") || "") &&
       /EMST M1054/.test(badge.getAttribute("title") || ""));

@@ -544,6 +544,24 @@ async function seedCcrList(page, theme) {
   await page.waitForTimeout(200);
 }
 
+// The CER's Industry credentials lane (2026-10-16 UI pass): the cobi sweep measures the
+// tab's first screen, the All lane. This opens the lane through its own button by
+// keyboard (a pointer click turns :focus-visible off for the focus check), then opens
+// the first articulated row so the industry record, its skills and links paint.
+async function seedCerIndustry(page, theme) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "credential-reference") location.hash = "credential-reference"; });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.waitForFunction(() => Array.from(document.querySelectorAll("#tab-credential-reference .cr-lane"))
+    .some((b) => /Industry credentials \(\d/.test(b.textContent)), null, { timeout: 60000 });
+  await page.evaluate(() => Array.from(document.querySelectorAll("#tab-credential-reference .cr-lane"))
+    .find((b) => /Industry credentials/.test(b.textContent)).focus());
+  await page.keyboard.press("Enter");
+  await page.waitForSelector("#tab-credential-reference table.cr-ind-table", { timeout: 30000 });
+  await page.evaluate(() => document.querySelector("#tab-credential-reference tr.cr-ind-row .cr-title-toggle").focus());
+  await page.keyboard.press("Enter");
+  await page.waitForTimeout(300);
+}
+
 // Seeds MAP Users as a signed-in reviewer sees it (S358 UI pass): the cobi sweep opens
 // the tab signed out with its reads aborted, so it paints only "Could not load". The
 // "all" lens has one roster open and a nudge logged; the "gaps" lens has a curator's
@@ -2058,6 +2076,22 @@ module.exports = {
      which lands on the tab's first pathway, never paints it. One target per
      theme, seeded through the selector the reader uses, on the record with the
      most on screen (Cerritos Ironworker: an option fork, every CPL kind). */
+  "cer-industry": {
+    file: "index.html",
+    title: "Common Exhibit Reference: the Industry credentials lane, a record open",
+    routes: [{ hash: "credential-reference", name: "industry" }],
+    widths: [320, 390, 1440],
+    seed: (page) => seedCerIndustry(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "cer-industry-dark": {
+    file: "index.html",
+    title: "Common Exhibit Reference: the Industry credentials lane, dark",
+    routes: [{ hash: "credential-reference", name: "industry-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedCerIndustry(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
   "cpl-pathways-roep": {
     file: "index.html",
     title: "CPL Pathways: a catalog record, By requirement",

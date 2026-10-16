@@ -1,0 +1,723 @@
+{
+ "college": "Berkeley City College",
+ "programs": 99,
+ "with_closed_list": 97,
+ "found": 67,
+ "extracted": 67,
+ "errors": 0,
+ "passed_machine_checks": 21,
+ "failed": {
+  "coverage": 2,
+  "invented": 1,
+  "arithmetic": 46,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 4.28,
+ "cost_per_program": 0.0639,
+ "not_found": [
+  {
+   "control_number": "09073",
+   "title": "Digital Imaging and Motion Graphic Design",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40051",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.323,
+    "body": 0.323,
+    "content": 0.323,
+    "net": 10,
+    "listed": 31,
+    "why": "coarse net: the page's code tokens name 10 of 31 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4694,
+     "content": 4694,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "11744",
+   "title": "Digital Imaging: Digital Printmaking",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40045",
+    "label": {
+     "award": 1,
+     "title": 0.75
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 16,
+    "why": "coarse net: the page's code tokens name 0 of 16 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1441,
+     "content": 1441,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "11745",
+   "title": "Digital Illustration",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40050",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.429,
+    "body": 0.429,
+    "content": 0.429,
+    "net": 9,
+    "listed": 21,
+    "why": "coverage 0.43 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 2992,
+     "content": 2992,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "16645",
+   "title": "Multimedia Arts - Animation and Game Design",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40044",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.269,
+    "body": 0.269,
+    "content": 0.269,
+    "net": 7,
+    "listed": 26,
+    "why": "coarse net: the page's code tokens name 7 of 26 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3523,
+     "content": 3523,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "16646",
+   "title": "Animation Level I",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40037",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.077,
+    "body": 0.077,
+    "content": 0.077,
+    "net": 1,
+    "listed": 13,
+    "why": "coarse net: the page's code tokens name 1 of 13 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2265,
+     "content": 2265,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "16647",
+   "title": "Animation Level II",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40038",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 11,
+    "why": "coarse net: the page's code tokens name 0 of 11 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2120,
+     "content": 2120,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "35046",
+   "title": "Game Design Level I",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40040",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.125,
+    "body": 0.125,
+    "content": 0.125,
+    "net": 1,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 1 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1954,
+     "content": 1954,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "35070",
+   "title": "Game Design Level II",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40041",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.125,
+    "body": 0.125,
+    "content": 0.125,
+    "net": 1,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 1 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2241,
+     "content": 2241,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "35267",
+   "title": "Multimedia Arts Core",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40044",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.294,
+    "body": 0.294,
+    "content": 0.294,
+    "net": 5,
+    "listed": 17,
+    "why": "coarse net: the page's code tokens name 5 of 17 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3523,
+     "content": 3523,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "36612",
+   "title": "Digital Imaging",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40045",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1441,
+     "content": 1441,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "36966",
+   "title": "Introduction to Animation and Game Design",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40042",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1691,
+     "content": 1691,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "37820",
+   "title": "Introduction to Motion Graphics",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40031",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.25,
+    "body": 0.25,
+    "content": 0.25,
+    "net": 1,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 1 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1425,
+     "content": 1425,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "37877",
+   "title": "Film, Television, And Electronic Media",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40052",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.273,
+    "body": 0.273,
+    "content": 0.273,
+    "net": 3,
+    "listed": 11,
+    "why": "coarse net: the page's code tokens name 3 of 11 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2976,
+     "content": 2976,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "37921",
+   "title": "Video Arts Level II: Directing And Producing",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40057",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.333,
+    "body": 0.333,
+    "content": 0.333,
+    "net": 4,
+    "listed": 12,
+    "why": "coarse net: the page's code tokens name 4 of 12 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2426,
+     "content": 2426,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "37934",
+   "title": "Video Arts Level I",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40056",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.308,
+    "body": 0.308,
+    "content": 0.308,
+    "net": 4,
+    "listed": 13,
+    "why": "coarse net: the page's code tokens name 4 of 13 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2332,
+     "content": 2332,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "37935",
+   "title": "Video Arts Level II: Editing and Post-Production",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40058",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.286,
+    "body": 0.286,
+    "content": 0.286,
+    "net": 4,
+    "listed": 14,
+    "why": "coarse net: the page's code tokens name 4 of 14 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2503,
+     "content": 2503,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "37936",
+   "title": "Multimedia Arts--Video Arts",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40054",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.2,
+    "body": 0.2,
+    "content": 0.2,
+    "net": 6,
+    "listed": 30,
+    "why": "coarse net: the page's code tokens name 6 of 30 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4071,
+     "content": 4071,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "38243",
+   "title": "Digital Photography",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40046",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 15,
+    "why": "coarse net: the page's code tokens name 0 of 15 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1602,
+     "content": 1602,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "38245",
+   "title": "Social Media Storytelling",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40053",
+    "label": {
+     "award": 1,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.048,
+    "body": 0.048,
+    "content": 0.048,
+    "net": 1,
+    "listed": 21,
+    "why": "coarse net: the page's code tokens name 1 of 21 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2008,
+     "content": 2008,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "39254",
+   "title": "Digital Imaging: Beginning Digital Photography",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40046",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1602,
+     "content": 1602,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "39287",
+   "title": "Digital Imaging: Beginning Digital Photography",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40046",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1602,
+     "content": 1602,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "39315",
+   "title": "Introduction to Social Media",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40053",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.167,
+    "body": 0.167,
+    "content": 0.167,
+    "net": 1,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 1 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2008,
+     "content": 2008,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "39333",
+   "title": "Motion Graphics",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40031",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 16,
+    "why": "coarse net: the page's code tokens name 0 of 16 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1425,
+     "content": 1425,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "43424",
+   "title": "Virtual Production Fundamentals",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41162",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.273,
+    "body": 0.273,
+    "content": 0.273,
+    "net": 3,
+    "listed": 11,
+    "why": "coarse net: the page's code tokens name 3 of 11 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4058,
+     "content": 4058,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "43827",
+   "title": "Advanced Virtual Production",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41176",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.118,
+    "body": 0.118,
+    "content": 0.118,
+    "net": 2,
+    "listed": 17,
+    "why": "coarse net: the page's code tokens name 2 of 17 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3887,
+     "content": 3887,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "46221",
+   "title": "Virtual Production",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41941",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.174,
+    "body": 0.174,
+    "content": 0.174,
+    "net": 4,
+    "listed": 23,
+    "why": "coarse net: the page's code tokens name 4 of 23 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3923,
+     "content": 3923,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "46474",
+   "title": "Digital Imaging Fundamentals",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40045",
+    "label": {
+     "award": 1,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1441,
+     "content": 1441,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  }
+ ],
+ "run": "38948136325"
+}

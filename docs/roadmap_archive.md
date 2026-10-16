@@ -10,6 +10,11 @@ status: archive
 
 # Roadmap Archive — Completed Work & Session Narratives
 
+## INDEX update-history entries rotated out (2026-10-16)
+
+- 2026-10-14 (S392 SkyTamarack): Sheet 81 carried out (#2127); the summary-row highlight (#2128); record shape 6 and the Major only gap (#2129); El Camino and San Joaquin Delta (#2131); the reconcile pass (#2130); Sheet 82; handoff 393 (SkySycamore).
+- 2026-10-14 (S391 SkyJuniper): handoff 392; Sheets 80 and 81; San Joaquin Delta's catalog year (#2125); the Program Requirements UI pass (#2124).
+
 ## INDEX update-history entries rotated out (2026-10-14)
 - 2026-10-13 S378 SkyHemlock (scheduled): #2063 already merged and run 586 green; Move to the team phrase held by the permission check (Open Asks Sheet 73); the Common Course Reference UI pass (list view measured by new a11y targets ccr-list and ccr-list-dark, 0 findings in both themes); handoff 379.
 - 2026-10-13 S377 SkySequoia: S375's checkpoint (#2058) and vault note (#327) merged; Refresh summaries shipped (#2059, `activity_summaries.js`, published by run 583; the activity header's Update link retired, its link row wraps at 390px); the Move control (#2056) green after its dialog led with Cancel, still held for its function; apply_migration down (nothing newer than 23:19Z in schema_migrations); KB note playbook-when-apply-migration-times-out-read-the-migrations-table; handoff 378.
@@ -5987,3 +5992,6 @@ Older bullets from the `## Update history` section of `docs/INDEX.md`, moved ver
 
 - **2026-10-14 (S390 SkySaguaro):** Southwestern merged with its procedure record (#2115); Fresno City loaded, displayed (build `04872c826890`) and its procedure record (#2120); the SLO links on Program records and COCI Lookup (#2116); the tabled line's email fixed at the generator (#2117); CIP Codes UI pass (#2118); the Acalog reader merged with San Joaquin Delta's capture (#2112); the Records view's District, College, SWP Region and CIP Sector dropdowns, Progress first, no Sierra (#2121); handoff 391 (SkyJuniper).
 - **2026-10-14 (S389 SkyPersimmon):** record shape 5, the degree total a page prints (#2110, Sam's Sheet 78 card 2); the re-read path (#2111); Palo Verde's 19 (#2114) and Cabrillo's 55 re-read and replaced, Southwestern loaded and displayed (#2115); an Acalog reader, El Camino captured (#2112); COCI Lookup UI pass (#2113); Open Asks Sheet 79; lessons doc compacted (S353-S359 to the archive); handoff 390 (SkySaguaro).
+
+<!-- moved from docs/INDEX.md Update history, S400 -->
+- 2026-10-14 (the funding session beside S392): a noncredit-portion setting, the explainer's three funding boxes on one row with the credit and noncredit split and editable words, Bold and Italic in the passage editor (#2132, live 22:36Z); KB note methodology-a-share-target-inside-a-bounded-allocation-is-a-solved-weight; a section in handoff 393.

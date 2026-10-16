@@ -160,7 +160,7 @@ const rowByRaw = (doc, raw) => Array.from(doc.querySelectorAll(".cr-wl-table tbo
   // ── 3. Initiate all assigned ──
   const initBtn = doc.getElementById("cr-wl-initall");
   check("init-all: button present with the deduped, skip-initiated count (2)",
-    !!initBtn && txt(initBtn) === "✓ Initiate all assigned (2)");
+    !!initBtn && txt(initBtn) === "Initiate all assigned (2)");
   initBtn.click();
   await sleep(60);
   const markers = log.writes.filter((w) =>

@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "chatbox/supabase_search_college_programs_fallback_2026_10_16.sql",
+ "name": "search_college_programs_fallback_by_college_2026_10_16_s400",
+ "version": "20261016210750",
+ "sha256": "412d5c6d971480e0fb42c2f0658a24931ca0270e58a90592cd2a4a6586ceaa8a",
+ "run": "38967045972",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

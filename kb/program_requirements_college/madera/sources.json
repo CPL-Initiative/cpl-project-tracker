@@ -1,0 +1,3805 @@
+[
+ {
+  "control_number": "39484",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BA23",
+   "CRIM1",
+   "CRIM11",
+   "CRIM20",
+   "CRIM3",
+   "CRIM4",
+   "CRIM5",
+   "CRIM6",
+   "CRIM8",
+   "PSYC42",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOCIC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1063",
+   "title": "Administration of Justice for Transfer, Associate in Science - Major #M.8880.AS-T",
+   "h1": "Administration of Justice for Transfer, Associate in Science - Major #M.8880.AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3084
+ },
+ {
+  "control_number": "39520",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.933,
+  "codes_found": [
+   "ACCTG4A",
+   "ACCTG4B",
+   "BA18",
+   "BA23",
+   "BA39",
+   "CSCI40",
+   "ECONC2001",
+   "ECONC2002",
+   "IS15",
+   "IS47",
+   "MATH17",
+   "MATH6",
+   "MATHC2220",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1073",
+   "title": "Economics for Transfer, Associate in Arts - Major #M.7200.AA-T",
+   "h1": "Economics for Transfer, Associate in Arts - Major #M.7200.AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2566
+ },
+ {
+  "control_number": "39521",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "BA23",
+   "ECONC2001",
+   "ECONC2002",
+   "ETHNST2",
+   "GEOG6",
+   "HIST22",
+   "HIST32",
+   "HIST5",
+   "HISTC1001",
+   "HISTC1002",
+   "HISTC1002H",
+   "POLS24",
+   "POLS3",
+   "POLS5",
+   "PSYC42",
+   "SOCI1B",
+   "SOCI2",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1082",
+   "title": "Political Science for Transfer, Associate in Arts - Major #M.7450.AA-T",
+   "h1": "Political Science for Transfer, Associate in Arts - Major #M.7450.AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 3145
+ },
+ {
+  "control_number": "39528",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.882,
+  "codes_found": [
+   "BA23",
+   "BIOL11A",
+   "BIOL5",
+   "CDEV38",
+   "CDEVC1000",
+   "PSYC16",
+   "PSYC25",
+   "PSYC38",
+   "PSYC42",
+   "PSYC45",
+   "PSYC5",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOCIC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1083",
+   "title": "Psychology for Transfer, Associate in Arts - Major #M.7550.AA-T",
+   "h1": "Psychology for Transfer, Associate in Arts - Major #M.7550.AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 2568
+ },
+ {
+  "control_number": "39529",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.938,
+  "codes_found": [
+   "CRIM17",
+   "ETHNST2",
+   "PSYC42",
+   "PSYC45",
+   "PSYC5",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOCI11",
+   "SOCI17",
+   "SOCI1B",
+   "SOCI2",
+   "SOCI3",
+   "SOCI32",
+   "SOCIC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1085",
+   "title": "Sociology for Transfer, Associate in Arts - Major #M.7611.AA-T",
+   "h1": "Sociology for Transfer, Associate in Arts - Major #M.7611.AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3250
+ },
+ {
+  "control_number": "39530",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDEV1",
+   "CDEV15",
+   "CDEV20",
+   "CDEV3",
+   "CDEV30",
+   "CDEV37A",
+   "CDEV6",
+   "CDEVC1000"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1071",
+   "title": "Early Childhood Education for Transfer, Associate in Science - Major #M.5609.AS-T",
+   "h1": "Early Childhood Education for Transfer, Associate in Science - Major #M.5609.AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2518
+ },
+ {
+  "control_number": "39690",
+  "title": "Biological Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "BIOL11A",
+   "BIOL11B",
+   "BIOL2",
+   "BIOL20",
+   "BIOL22",
+   "BIOL31",
+   "BIOL5",
+   "CHEM1A",
+   "CHEM1B",
+   "CHEM3A",
+   "CHEM3B",
+   "PHYS2A",
+   "PHYS2B",
+   "PHYS4A",
+   "PHYS4B",
+   "PHYS4C"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1115/1131",
+   "title": "Biological Science, Associate in Science - Major #M.6100.AS",
+   "h1": "Biological Science, Associate in Science - Major #M.6100.AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 1863
+ },
+ {
+  "control_number": "39691",
+  "title": "Communication Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "COMM10",
+   "COMM12",
+   "COMM15",
+   "COMM25",
+   "COMM4",
+   "COMM8",
+   "COMMC1000",
+   "COMMC1000H",
+   "COMMC1004",
+   "PHIL2"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1088/1153",
+   "title": "Communication Studies, Associate in Arts - Major #M.5343.AA",
+   "h1": "Communication Studies, Associate in Arts - Major #M.5343.AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 1377
+ },
+ {
+  "control_number": "39693",
+  "title": "English",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.906,
+  "codes_found": [
+   "ENGL15A",
+   "ENGL15B",
+   "ENGL15E",
+   "ENGL15F",
+   "ENGL17",
+   "ENGL2",
+   "ENGL2H",
+   "ENGL36",
+   "ENGL41",
+   "ENGL43A",
+   "ENGL43B",
+   "ENGL44A",
+   "ENGL44B",
+   "ENGL46A",
+   "ENGL46B",
+   "ENGL47",
+   "ENGL49",
+   "ENGL72",
+   "ENGL72A",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "ENGLC1002H",
+   "FILM1",
+   "FILM2A",
+   "FILM2B",
+   "LIBSKL1",
+   "LIBSKL2",
+   "LING10",
+   "LING11"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1093/1170",
+   "title": "English, Associate in Arts - Major #M.5300.AA",
+   "h1": "English, Associate in Arts - Major #M.5300.AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 32,
+  "text_chars": 2785
+ },
+ {
+  "control_number": "39694",
+  "title": "American Sign Language",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASL1",
+   "ASL2",
+   "ASL3",
+   "ASL4",
+   "ASL5",
+   "ASL6"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1117/1126",
+   "title": "American Sign Language, Associate in Arts - Major #M.5505.AA",
+   "h1": "American Sign Language, Associate in Arts - Major #M.5505.AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1895
+ },
+ {
+  "control_number": "39704",
+  "title": "Liberal Arts & Sciences: Arts & Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.963,
+  "codes_found": [
+   "ARTH2",
+   "ARTHC1200",
+   "ARTHC1200H",
+   "ENGL41",
+   "ENGL43A",
+   "ENGL43B",
+   "ENGL44A",
+   "ENGL44B",
+   "ENGL46A",
+   "ENGL46B",
+   "ENGL47",
+   "ENGL49",
+   "ENGLC1002H",
+   "HIST1",
+   "HIST2",
+   "HIST20",
+   "HISTC1001",
+   "HISTC1002",
+   "HISTC1002H",
+   "MUS12",
+   "MUS12H",
+   "MUS16",
+   "PHIL1",
+   "PHIL1C",
+   "PHIL1CH",
+   "PHIL1D"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1100/1194",
+   "title": "Liberal Arts & Sciences: Arts & Humanities, Associate in Arts - Major #M.5120.AA",
+   "h1": "Liberal Arts & Sciences: Arts & Humanities, Associate in Arts - Major #M.5120.AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 27,
+  "text_chars": 2459
+ },
+ {
+  "control_number": "39705",
+  "title": "Liberal Arts & Sciences: Natural Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.951,
+  "codes_found": [
+   "ASTRC1000",
+   "BIOL11A",
+   "BIOL11B",
+   "BIOL2",
+   "BIOL20",
+   "BIOL22",
+   "BIOL31",
+   "BIOL5",
+   "CHEM10",
+   "CHEM1A",
+   "CHEM1B",
+   "CHEM28A",
+   "CHEM28B",
+   "CHEM29A",
+   "CHEM29B",
+   "CHEM3A",
+   "CHEM3B",
+   "CHEM8",
+   "CHEM9",
+   "GEOG5",
+   "GEOG9",
+   "GEOL1",
+   "GEOL10",
+   "GEOL2",
+   "GEOL9",
+   "NR1",
+   "NR14",
+   "NR4",
+   "NR6",
+   "NR7",
+   "PHYS2A",
+   "PHYS2B",
+   "PHYS4A",
+   "PHYS4B",
+   "PHYS4C",
+   "PLS1",
+   "PLS1L",
+   "PLS2",
+   "SCI1A"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1100/1195",
+   "title": "Liberal Arts & Sciences: Natural Sciences, Associate in Arts - Major #M.5130.AA",
+   "h1": "Liberal Arts & Sciences: Natural Sciences, Associate in Arts - Major #M.5130.AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 41,
+  "text_chars": 3467
+ },
+ {
+  "control_number": "39706",
+  "title": "Accounting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.882,
+  "codes_found": [
+   "ACCTG31",
+   "ACCTG4A",
+   "ACCTG4B",
+   "BA10",
+   "BA18",
+   "BA23",
+   "BA33",
+   "BA39",
+   "BA5",
+   "BA52",
+   "ECONC2001",
+   "ECONC2002",
+   "IS15",
+   "IS18",
+   "MKTG10"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1119/1324",
+   "title": "Accounting, Associate in Science - Major #M.2010.AS",
+   "h1": "Accounting, Associate in Science - Major #M.2010.AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 2166
+ },
+ {
+  "control_number": "39707",
+  "title": "Agricultural Mechanics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "IT30",
+   "MAG40",
+   "MAG41",
+   "MAG42",
+   "MAG43",
+   "MAG44",
+   "MFGT21",
+   "PLS11"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1105/1212",
+   "title": "Agricultural Mechanics, Associate in Science - Major #M.8280.AS",
+   "h1": "Agricultural Mechanics, Associate in Science - Major #M.8280.AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 1829
+ },
+ {
+  "control_number": "39715",
+  "title": "Agriculture Business, Option A",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.958,
+  "codes_found": [
+   "AG4",
+   "AGBS1",
+   "AGBS2",
+   "AGBS3",
+   "AGBS4",
+   "AGBS5",
+   "AGBS6",
+   "AGBS7",
+   "AS1",
+   "AS2",
+   "AS3",
+   "AS4",
+   "AS5",
+   "EH30",
+   "PLS1",
+   "PLS11",
+   "PLS1L",
+   "PLS2",
+   "PLS3",
+   "PLS4A",
+   "PLS5",
+   "PLS7",
+   "PLS8"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1118/1123",
+   "title": "Agriculture Business, Option A, Associate in Science - Major #M.102A.AS",
+   "h1": "Agriculture Business, Option A, Associate in Science - Major #M.102A.AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 3233
+ },
+ {
+  "control_number": "39721",
+  "title": "Agriculture Education",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGBS1",
+   "AGBS2",
+   "AGBS3",
+   "AGBS4",
+   "AGBS5",
+   "AGBS8",
+   "AGED50",
+   "AS1",
+   "AS2",
+   "AS3",
+   "AS4",
+   "AS40",
+   "AS6",
+   "EH30",
+   "MAG40",
+   "MAG41",
+   "MAG42",
+   "MAG43",
+   "MAG44",
+   "NR1",
+   "NR12",
+   "NR20",
+   "NR4",
+   "NR7",
+   "PLS1",
+   "PLS2",
+   "PLS2L",
+   "PLS3",
+   "PLS4A",
+   "PLS8"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1118/1124",
+   "title": "Agriculture Education, Associate in Science - Major #M.0112.AS",
+   "h1": "Agriculture Education, Associate in Science - Major #M.0112.AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 30,
+  "text_chars": 2358
+ },
+ {
+  "control_number": "39722",
+  "title": "Art: Two Dimensional",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "ART13",
+   "ART17",
+   "ART19",
+   "ART23",
+   "ART3",
+   "ART30A",
+   "ART30B",
+   "ART33",
+   "ART37A",
+   "ART37B",
+   "ART38",
+   "ART4",
+   "ART7",
+   "ART9",
+   "ARTH2",
+   "ARTH70",
+   "ARTHC1100",
+   "ARTHC1200",
+   "ARTHC1200H",
+   "FILM1"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1116/1129",
+   "title": "Art: Two-Dimensional, Associate in Arts - Major #M.520A.AA",
+   "h1": "Art: Two-Dimensional, Associate in Arts - Major #M.520A.AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 2623
+ },
+ {
+  "control_number": "39723",
+  "title": "Business Administration: Entrepreneur",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.938,
+  "codes_found": [
+   "ACCTG40",
+   "ACCTG4A",
+   "BA10",
+   "BA23",
+   "BA33",
+   "BA38",
+   "BA39",
+   "BA47",
+   "BA5",
+   "BA52",
+   "BA61",
+   "ECONC2001",
+   "ECONC2002",
+   "IS15",
+   "MKTG10"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1114/1134",
+   "title": "Business Administration, Entrepreneur, Associate in Science - Major #M.205B.AS",
+   "h1": "Business Administration, Entrepreneur, Associate in Science - Major #M.205B.AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 2222
+ },
+ {
+  "control_number": "39724",
+  "title": "Business Administration:General Business",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.96,
+  "codes_found": [
+   "ACCTG31",
+   "ACCTG40",
+   "ACCTG4A",
+   "ACCTG4B",
+   "BA10",
+   "BA15",
+   "BA23",
+   "BA33",
+   "BA34",
+   "BA38",
+   "BA39",
+   "BA47",
+   "BA5",
+   "BA52",
+   "BA61",
+   "ECONC2001",
+   "ECONC2002",
+   "IS15",
+   "IS40A",
+   "IS60",
+   "IS62",
+   "MKTG10",
+   "MKTG11",
+   "MKTG12"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1114/1135",
+   "title": "Business Administration: General Business, Associate in Science - Major #M.P205C.AS",
+   "h1": "Business Administration: General Business, Associate in Science - Major #M.P205C.AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 2647
+ },
+ {
+  "control_number": "39725",
+  "title": "Business Administration: Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.938,
+  "codes_found": [
+   "ACCTG40",
+   "ACCTG4A",
+   "BA10",
+   "BA15",
+   "BA23",
+   "BA33",
+   "BA38",
+   "BA39",
+   "BA47",
+   "BA5",
+   "BA61",
+   "ECONC2001",
+   "ECONC2002",
+   "IS15",
+   "MKTG10"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1114/1137",
+   "title": "Business Administration: Management, Associate in Science - Major #M.P205F.AS",
+   "h1": "Business Administration: Management, Associate in Science - Major #M.P205F.AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 2108
+ },
+ {
+  "control_number": "39726",
+  "title": "Business Administration: Marketing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.933,
+  "codes_found": [
+   "ACCTG40",
+   "ACCTG4A",
+   "BA10",
+   "BA23",
+   "BA33",
+   "BA39",
+   "BA47",
+   "BA5",
+   "ECONC2001",
+   "ECONC2002",
+   "IS15",
+   "MKTG10",
+   "MKTG11",
+   "MKTG12"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1114/1138",
+   "title": "Business Administration: Marketing, Associate in Science - Major #M.205G.AS",
+   "h1": "Business Administration: Marketing, Associate in Science - Major #M.205G.AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2153
+ },
+ {
+  "control_number": "39742",
+  "title": "Business Administration: Information Systems Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.938,
+  "codes_found": [
+   "ACCTG40",
+   "ACCTG4A",
+   "BA10",
+   "BA23",
+   "BA33",
+   "BA39",
+   "BA47",
+   "BA5",
+   "ECONC2001",
+   "ECONC2002",
+   "IS15",
+   "IS18",
+   "IS40A",
+   "IS60",
+   "IS62"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1114/1136",
+   "title": "Business Administration - Information Systems Management, Associate in Science - Major #M.P205D.AS",
+   "h1": "Business Administration - Information Systems Management, Associate in Science - Major #M.P205D.AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 1953
+ },
+ {
+  "control_number": "39743",
+  "title": "Child Development",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "CDEV1",
+   "CDEV11",
+   "CDEV12",
+   "CDEV15",
+   "CDEV151",
+   "CDEV152",
+   "CDEV16",
+   "CDEV20",
+   "CDEV21",
+   "CDEV22",
+   "CDEV3",
+   "CDEV30",
+   "CDEV37A",
+   "CDEV37B",
+   "CDEV45",
+   "CDEV47",
+   "CDEV49",
+   "CDEV5",
+   "CDEV6",
+   "CDEVC1000"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1113/1149",
+   "title": "Child Development, Associate in Science - Major #M.5610.AS",
+   "h1": "Child Development, Associate in Science - Major #M.5610.AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 2954
+ },
+ {
+  "control_number": "39744",
+  "title": "Criminology-Corrections",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.941,
+  "codes_found": [
+   "CRIM1",
+   "CRIM10",
+   "CRIM12",
+   "CRIM13",
+   "CRIM14",
+   "CRIM15",
+   "CRIM20",
+   "CRIM23",
+   "CRIM24",
+   "CRIM28",
+   "CRIM3",
+   "CRIM4",
+   "CRIM5",
+   "CRIM6",
+   "CRIM7",
+   "CRIM8"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1090/1158",
+   "title": "Criminology-Corrections, Associate in Science - Major #M.P888A.AS",
+   "h1": "Criminology-Corrections, Associate in Science - Major #M.P888A.AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 2101
+ },
+ {
+  "control_number": "39768",
+  "title": "Administrative Assistant",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.941,
+  "codes_found": [
+   "ACCTG40",
+   "BT105",
+   "BT106",
+   "BT107",
+   "BT108",
+   "BT119",
+   "BT12",
+   "BT120",
+   "BT131",
+   "BT18",
+   "BT24",
+   "BT26",
+   "BT28",
+   "BT29",
+   "BT3",
+   "BT5"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1108/1225",
+   "title": "Administrative Assistant, Associate of Science - Major #M.226B.AS",
+   "h1": "Administrative Assistant, Associate of Science - Major #M.226B.AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 1499
+ },
+ {
+  "control_number": "39771",
+  "title": "Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1A",
+   "CHEM3A",
+   "ENGR10",
+   "ENGR4",
+   "ENGR40",
+   "ENGR4L",
+   "ENGR6",
+   "ENGR8",
+   "INTDS100",
+   "INTDS101",
+   "INTDS102",
+   "INTDS103",
+   "PHYS4A",
+   "PHYS4B",
+   "PHYS4C"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1092/1167",
+   "title": "Engineering, Associate in Science - Major #M.3010.AS",
+   "h1": "Engineering, Associate in Science - Major #M.3010.AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 1983
+ },
+ {
+  "control_number": "39772",
+  "title": "Industrial Maintenance Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "IT10",
+   "IT11",
+   "IT19",
+   "IT22",
+   "IT30",
+   "IT31",
+   "IT32",
+   "IT60",
+   "IT61"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1103/1202",
+   "title": "Industrial Maintenance Technician, Associate in Science - Major #M.3040.AS",
+   "h1": "Industrial Maintenance Technician, Associate in Science - Major #M.3040.AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2045
+ },
+ {
+  "control_number": "39773",
+  "title": "Liberal Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.893,
+  "codes_found": [
+   "ARTH2",
+   "ARTHC1200",
+   "ARTHC1200H",
+   "CDEVC1000",
+   "COMM25",
+   "EDUC10",
+   "ENGL2",
+   "ENGL2H",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "ENGLC1002H",
+   "GEOG6",
+   "GEOL9",
+   "HIST20",
+   "HISTC1001",
+   "HLTH1",
+   "IS15",
+   "MUS12",
+   "MUS12H",
+   "PHIL2",
+   "PHIL4",
+   "PHIL6",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SCI1A"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1101/1197",
+   "title": "Liberal Studies, Associate in Arts - Major #M.5890.AA",
+   "h1": "Liberal Studies, Associate in Arts - Major #M.5890.AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 28,
+  "text_chars": 2531
+ },
+ {
+  "control_number": "39779",
+  "title": "Licensed Vocational Nursing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LVN100",
+   "LVN101",
+   "LVN102",
+   "LVN120",
+   "LVN121",
+   "LVN122",
+   "LVN140"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1107/1220",
+   "title": "Licensed Vocational Nursing, Associate in Science - Major #M.4530.AS",
+   "h1": "Licensed Vocational Nursing, Associate in Science - Major #M.4530.AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2884
+ },
+ {
+  "control_number": "39780",
+  "title": "LVN-RN",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "RN160",
+   "RN74",
+   "RN75",
+   "RN77",
+   "RN78",
+   "RN79",
+   "RN85",
+   "RN87",
+   "RN88",
+   "RN89"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1107/1222",
+   "title": "LVN-RN, Associate in Science - Major #M.4520.AS",
+   "h1": "LVN-RN, Associate in Science - Major #M.4520.AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3030
+ },
+ {
+  "control_number": "39781",
+  "title": "Machine Tool Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MFGT21",
+   "MFGT22",
+   "MFGT23",
+   "MFGT51",
+   "MFGT60",
+   "MFGT80",
+   "MFGT81",
+   "MFGT82"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1103/1204",
+   "title": "Machine Tool Technology, Associate in Science - Major #M.838A.AS",
+   "h1": "Machine Tool Technology, Associate in Science - Major #M.838A.AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 1738
+ },
+ {
+  "control_number": "39782",
+  "title": "Mathematics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "BA23",
+   "CSCI40",
+   "ENGR40",
+   "MATH17",
+   "MATH6",
+   "MATHC2220",
+   "PHYS2A",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1104/1210",
+   "title": "Mathematics, Associate in Science - Major #M.6200.AS",
+   "h1": "Mathematics, Associate in Science - Major #M.6200.AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1416
+ },
+ {
+  "control_number": "39783",
+  "title": "Medical Administrative Assistant",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.812,
+  "codes_found": [
+   "BT106",
+   "BT107",
+   "BT108",
+   "BT119",
+   "BT12",
+   "BT120",
+   "BT15",
+   "BT18",
+   "BT24",
+   "BT26",
+   "BT28",
+   "BT29",
+   "BT3"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1108/1227",
+   "title": "Medical Administrative Assistant, Associate in Science - Major #M.2023.AS",
+   "h1": "Medical Administrative Assistant, Associate in Science - Major #M.2023.AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 1993
+ },
+ {
+  "control_number": "39784",
+  "title": "Physical Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "CHEM1A",
+   "CHEM1B",
+   "CHEM3A",
+   "CHEM8",
+   "MATHC2220",
+   "PHYS2A",
+   "PHYS2B",
+   "PHYS4A",
+   "PHYS4B",
+   "PHYS4C"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1109/1231",
+   "title": "Physical Science, Associate in Science - Major #M.6300.AS",
+   "h1": "Physical Science, Associate in Science - Major #M.6300.AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 1284
+ },
+ {
+  "control_number": "39785",
+  "title": "Plant and Soil Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGBS2",
+   "AGBS3",
+   "AGBS4",
+   "AS1",
+   "AS2",
+   "AS3",
+   "AS4",
+   "AS5",
+   "BA23",
+   "BIOL16",
+   "CHEM3A",
+   "CHEM3B",
+   "CHEM8",
+   "EH43",
+   "PLS1",
+   "PLS11",
+   "PLS14",
+   "PLS16",
+   "PLS17",
+   "PLS18",
+   "PLS1L",
+   "PLS2",
+   "PLS2L",
+   "PLS3",
+   "PLS4A",
+   "PLS5",
+   "PLS6",
+   "PLS7",
+   "PLS8",
+   "PLS9",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1110/1233",
+   "title": "Plant and Soil Science, Associate in Science - Major#M.1074.AS",
+   "h1": "Plant and Soil Science, Associate in Science - Major#M.1074.AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 31,
+  "text_chars": 4448
+ },
+ {
+  "control_number": "39786",
+  "title": "Social Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.897,
+  "codes_found": [
+   "CDEV38",
+   "ECONC2001",
+   "ECONC2002",
+   "ETHNST32",
+   "ETHNST5",
+   "HIST1",
+   "HIST2",
+   "HIST20",
+   "HIST22",
+   "HIST32",
+   "HIST5",
+   "HISTC1001",
+   "HISTC1002",
+   "HISTC1002H",
+   "POLS110",
+   "POLS5",
+   "PSYC25",
+   "PSYC38",
+   "PSYC5",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOCI11",
+   "SOCI1B",
+   "SOCI2",
+   "SOCI32",
+   "SOCIC1000"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1111/1237",
+   "title": "Social Science, Associate in Arts - Major #M.7410.AA",
+   "h1": "Social Science, Associate in Arts - Major #M.7410.AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 29,
+  "text_chars": 2538
+ },
+ {
+  "control_number": "39787",
+  "title": "Speech-Language Pathology Assistant",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 14,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39788",
+  "title": "Welding Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "MFGT21",
+   "MFGT22",
+   "MFGT23",
+   "MFGT51",
+   "MFGT52",
+   "MFGT60",
+   "MFGT61",
+   "MFGT62",
+   "MFGT80"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1103/1208",
+   "title": "Welding Technology, Associate in Science - Major #M.37A.AS",
+   "h1": "Welding Technology, Associate in Science - Major #M.37A.AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1238
+ },
+ {
+  "control_number": "39791",
+  "title": "Computer Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "CSCI26",
+   "CSCI40",
+   "CSCI41",
+   "CSCI45",
+   "CSCI5",
+   "MATHC2220",
+   "PHYS2A",
+   "PHYS2B",
+   "PHYS4A",
+   "PHYS4B"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1089/1156",
+   "title": "Computer Science, Associate in Science - Major #M.6920.AS",
+   "h1": "Computer Science, Associate in Science - Major #M.6920.AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 1718
+ },
+ {
+  "control_number": "39793",
+  "title": "Criminology- Law Enforcement",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.941,
+  "codes_found": [
+   "CRIM1",
+   "CRIM10",
+   "CRIM12",
+   "CRIM13",
+   "CRIM14",
+   "CRIM15",
+   "CRIM20",
+   "CRIM23",
+   "CRIM24",
+   "CRIM28",
+   "CRIM3",
+   "CRIM4",
+   "CRIM5",
+   "CRIM6",
+   "CRIM7",
+   "CRIM8"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1090/1160",
+   "title": "Criminology-Law Enforcement, Associate in Science - Major #M.888A.AS",
+   "h1": "Criminology-Law Enforcement, Associate in Science - Major #M.888A.AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 2126
+ },
+ {
+  "control_number": "39794",
+  "title": "Environmental Horticulture",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGBS3",
+   "AGBS4",
+   "AGBS5",
+   "AGBS6",
+   "AGBS7",
+   "EH30",
+   "EH37",
+   "EH43",
+   "EH48",
+   "MAG40",
+   "PLS1",
+   "PLS1L",
+   "PLS2",
+   "PLS2L",
+   "PLS5",
+   "PLS7"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1095/1177",
+   "title": "Environmental Horticulture, Associate in Science - Major #M.1061.AS",
+   "h1": "Environmental Horticulture, Associate in Science - Major #M.1061.AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 2886
+ },
+ {
+  "control_number": "39803",
+  "title": "Agriculture Business",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "AGBS1",
+   "AGBS2",
+   "AGBS3",
+   "AGBS4",
+   "AGBS5",
+   "BA18",
+   "BA23",
+   "BA39",
+   "CHEM3A",
+   "ECONC2002",
+   "PLS2",
+   "PLS2L",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1064",
+   "title": "Agriculture Business for Transfer, Associate in Science - Major #M.1021.AS-T",
+   "h1": "Agriculture Business for Transfer, Associate in Science - Major #M.1021.AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3146
+ },
+ {
+  "control_number": "39804",
+  "title": "Information Systems, Information Technology Support Option",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BA10",
+   "BA23",
+   "BA39",
+   "BA5",
+   "IS15",
+   "IS26A",
+   "IS31",
+   "IS40A",
+   "IS40B",
+   "IS60",
+   "IS62",
+   "IS63",
+   "IS80"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1099/1188",
+   "title": "Information Systems, Information Technology Support Option, Associate in Science - Major #M.6950.AS",
+   "h1": "Information Systems, Information Technology Support Option, Associate in Science - Major #M.6950.AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 1653
+ },
+ {
+  "control_number": "39805",
+  "title": "Information Systems, Networking and Security",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.947,
+  "codes_found": [
+   "BA10",
+   "BA23",
+   "BA39",
+   "BA5",
+   "IS15",
+   "IS26A",
+   "IS31",
+   "IS40A",
+   "IS40B",
+   "IS60",
+   "IS61",
+   "IS62",
+   "IS63",
+   "IS64",
+   "IS70",
+   "IS71",
+   "IS80",
+   "IS81"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1099/1189",
+   "title": "Information Systems, Networking and Security, Associate in Science - Major #M.6972.AS",
+   "h1": "Information Systems, Networking and Security, Associate in Science - Major #M.6972.AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 2077
+ },
+ {
+  "control_number": "39809",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "BIOL11A",
+   "BIOL11B",
+   "CHEM1A",
+   "CHEM1B",
+   "PHYS2A",
+   "PHYS2B",
+   "PHYS4A",
+   "PHYS4B"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1068",
+   "title": "Biology for Transfer, Associate in Science - Major #M.6110.AS-T",
+   "h1": "Biology for Transfer, Associate in Science - Major #M.6110.AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 1377
+ },
+ {
+  "control_number": "39810",
+  "title": "Elementary Teacher Education",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.808,
+  "codes_found": [
+   "ARTH2",
+   "CDEVC1000",
+   "COMMC1000",
+   "COMMC1000H",
+   "EDUC10",
+   "ENGL2",
+   "ENGL2H",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "ENGLC1002H",
+   "GEOG6",
+   "GEOL9",
+   "HIST20",
+   "HISTC1001",
+   "LING11",
+   "MATH10A",
+   "MUS12",
+   "PHIL2",
+   "SCI1A"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1074",
+   "title": "Elementary Teacher Education for Transfer, Associate in Arts - Major #M.5891.AA-T",
+   "h1": "Elementary Teacher Education for Transfer, Associate in Arts - Major #M.5891.AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 3323
+ },
+ {
+  "control_number": "39811",
+  "title": "Art History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.963,
+  "codes_found": [
+   "ART19",
+   "ART3",
+   "ART30A",
+   "ART37A",
+   "ART7",
+   "ART9",
+   "ARTH70",
+   "ARTHC1100",
+   "ARTHC1200",
+   "ARTHC1200H",
+   "HIST1",
+   "HIST2",
+   "HIST20",
+   "HIST22",
+   "HISTC1001",
+   "HISTC1002",
+   "HISTC1002H",
+   "PHIL1",
+   "PHIL1C",
+   "PHIL1CH",
+   "PHIL1D",
+   "SPAN2",
+   "SPAN3",
+   "SPAN3NS",
+   "SPAN4",
+   "SPAN4NS"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1066",
+   "title": "Art History for Transfer, Associate in Arts - Major #M.5204.AA-T",
+   "h1": "Art History for Transfer, Associate in Arts - Major #M.5204.AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 27,
+  "text_chars": 3863
+ },
+ {
+  "control_number": "39812",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "ASL1",
+   "ASL2",
+   "ASL3",
+   "ASL4",
+   "COMM12",
+   "ENGL15A",
+   "ENGL15B",
+   "ENGL15E",
+   "ENGL15F",
+   "ENGL17",
+   "ENGL2",
+   "ENGL2H",
+   "ENGL36",
+   "ENGL41",
+   "ENGL43A",
+   "ENGL43B",
+   "ENGL44A",
+   "ENGL44B",
+   "ENGL46A",
+   "ENGL46B",
+   "ENGL47",
+   "ENGL49",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "ENGLC1002H",
+   "LING10",
+   "LING11",
+   "SPAN1",
+   "SPAN2",
+   "SPAN3",
+   "SPAN3NS",
+   "SPAN4",
+   "SPAN4NS"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1075",
+   "title": "English for Transfer, Associate in Arts - Major #M.5301.AA-T",
+   "h1": "English for Transfer, Associate in Arts - Major #M.5301.AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 36,
+  "text_chars": 4341
+ },
+ {
+  "control_number": "39813",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BA23",
+   "BIOL20",
+   "BIOL22",
+   "CHEM1A",
+   "HLTH2",
+   "KINES22",
+   "PE14",
+   "PE15",
+   "PE16",
+   "PE19",
+   "PE2",
+   "PE27",
+   "PE29",
+   "PE6",
+   "PE7",
+   "PE71",
+   "PHYS2A",
+   "PHYS4A",
+   "PLS9",
+   "PSYC42",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOCIC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1077",
+   "title": "Kinesiology for Transfer, Associate in Arts - Major #M.1270.AA-T",
+   "h1": "Kinesiology for Transfer, Associate in Arts - Major #M.1270.AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 3912
+ },
+ {
+  "control_number": "39814",
+  "title": "Philosphy",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.975,
+  "codes_found": [
+   "ASL1",
+   "ASL2",
+   "ASL3",
+   "ASL4",
+   "ENGL43A",
+   "ENGL43B",
+   "ENGL44A",
+   "ENGL44B",
+   "ENGL46A",
+   "ENGL46B",
+   "ENGL47",
+   "ENGL49",
+   "ENGLC1002H",
+   "FILM2A",
+   "FILM2B",
+   "HIST1",
+   "HIST2",
+   "HIST20",
+   "HIST22",
+   "HISTC1001",
+   "HISTC1002",
+   "HISTC1002H",
+   "LING10",
+   "LING11",
+   "PHIL1",
+   "PHIL1C",
+   "PHIL1CH",
+   "PHIL1D",
+   "PHIL3A",
+   "PHIL3B",
+   "PHIL4",
+   "PHIL6",
+   "SPAN1",
+   "SPAN2",
+   "SPAN3",
+   "SPAN3NS",
+   "SPAN4",
+   "SPAN4NS",
+   "SPAN5"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1080",
+   "title": "Philosophy for Transfer, Associate in Arts - Major #M.5710.AA-T",
+   "h1": "Philosophy for Transfer, Associate in Arts - Major #M.5710.AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 40,
+  "text_chars": 5151
+ },
+ {
+  "control_number": "39815",
+  "title": "Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM10",
+   "ENGL49",
+   "ETHNST32",
+   "HIST32",
+   "SOCI2",
+   "SOCIC1000",
+   "SPAN1",
+   "SPAN15",
+   "SPAN16",
+   "SPAN2",
+   "SPAN3",
+   "SPAN3NS",
+   "SPAN4",
+   "SPAN4NS",
+   "SPAN5"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1086",
+   "title": "Spanish for Transfer, Associate in Arts Major - #M.5550.AA-T",
+   "h1": "Spanish for Transfer, Associate in Arts Major - #M.5550.AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3657
+ },
+ {
+  "control_number": "39817",
+  "title": "Agriculture Plant Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGBS2",
+   "AGBS3",
+   "BA23",
+   "CHEM3A",
+   "CHEM3B",
+   "ECONC2001",
+   "EH30",
+   "PLS1",
+   "PLS11",
+   "PLS1L",
+   "PLS2",
+   "PLS2L",
+   "PLS3",
+   "PLS5",
+   "PLS7",
+   "PLS9",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1065",
+   "title": "Agriculture Plant Science for Transfer, Associate in Science - Major #M1078.AS-T",
+   "h1": "Agriculture Plant Science for Transfer, Associate in Science - Major #M1078.AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 4385
+ },
+ {
+  "control_number": "39818",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.7,
+  "codes_found": [
+   "CSCI26",
+   "CSCI40",
+   "ENGR40",
+   "MATH17",
+   "MATH6",
+   "MATHC2220",
+   "PHYS4A"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1078",
+   "title": "Mathematics for Transfer, Associate in Science - Major #M.6201.AS-T",
+   "h1": "Mathematics for Transfer, Associate in Science - Major #M.6201.AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2182
+ },
+ {
+  "control_number": "39819",
+  "title": "Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "MATH6",
+   "MATHC2220",
+   "PHYS4A",
+   "PHYS4B",
+   "PHYS4C"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1081",
+   "title": "Physics for Transfer, Associate in Science - Major #M.6334.AS-T",
+   "h1": "Physics for Transfer, Associate in Science - Major #M.6334.AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2802
+ },
+ {
+  "control_number": "39820",
+  "title": "American Sign Language Conversational Proficiency",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASL1",
+   "ASL2",
+   "ASL3",
+   "ASL4",
+   "ASL5",
+   "ASL6"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1117/1127",
+   "title": "American Sign Language Conversational Proficiency, Certificate of Achievement - Major #M.5505.CA",
+   "h1": "American Sign Language Conversational Proficiency, Certificate of Achievement - Major #M.5505.CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1778
+ },
+ {
+  "control_number": "39822",
+  "title": "Business Foundations",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG40",
+   "ACCTG4A",
+   "BA10",
+   "BA18",
+   "BA23",
+   "BA39",
+   "ECONC2001",
+   "ECONC2002",
+   "IS15"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1114/1139",
+   "title": "Business Foundations, Certificate of Achievement - Major #M.2031.CA",
+   "h1": "Business Foundations, Certificate of Achievement - Major #M.2031.CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 1173
+ },
+ {
+  "control_number": "39825",
+  "title": "Communication Studies",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM10",
+   "COMM12",
+   "COMM15",
+   "COMM25",
+   "COMM4",
+   "COMM8",
+   "COMMC1000",
+   "COMMC1000H",
+   "COMMC1004"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1088/1153",
+   "title": "Communication Studies, Associate in Arts - Major #M.5343.AA",
+   "h1": "Communication Studies, Associate in Arts - Major #M.5343.AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 1377
+ },
+ {
+  "control_number": "39831",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTH2",
+   "ARTHC1200",
+   "ARTHC1200H",
+   "ASL1",
+   "ASL2",
+   "ASL3",
+   "ASL4",
+   "COMM12",
+   "ENGL44A",
+   "ENGL44B",
+   "ENGL49",
+   "FILM1",
+   "FILM2A",
+   "FILM2B",
+   "HIST1",
+   "HIST2",
+   "HIST20",
+   "HIST22",
+   "HIST32",
+   "HIST5",
+   "HISTC1001",
+   "HISTC1002",
+   "HISTC1002H",
+   "MUS12",
+   "MUS16",
+   "PHIL1D",
+   "POLS5",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOCI2",
+   "SOCIC1000",
+   "SPAN1",
+   "SPAN2",
+   "SPAN3",
+   "SPAN3NS",
+   "SPAN4",
+   "SPAN4NS"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1076",
+   "title": "History for Transfer, Associate in Arts - Major #M.7380.AA-T",
+   "h1": "History for Transfer, Associate in Arts - Major #M.7380.AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 37,
+  "text_chars": 4703
+ },
+ {
+  "control_number": "39857",
+  "title": "Associate Teacher",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDEV1",
+   "CDEV3",
+   "CDEV30",
+   "CDEV6",
+   "CDEVC1000"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1113/1148",
+   "title": "Associate Teacher, Certificate of Achievement - Major #M.561Q.CA",
+   "h1": "Associate Teacher, Certificate of Achievement - Major #M.561Q.CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1030
+ },
+ {
+  "control_number": "39858",
+  "title": "Environmental Horticulture",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EH30",
+   "EH37",
+   "EH43",
+   "EH48"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1095/1177",
+   "title": "Environmental Horticulture, Associate in Science - Major #M.1061.AS",
+   "h1": "Environmental Horticulture, Associate in Science - Major #M.1061.AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2707
+ },
+ {
+  "control_number": "39859",
+  "title": "Manufacturing 1",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MFGT21",
+   "MFGT22",
+   "MFGT23",
+   "MFGT51",
+   "MFGT60",
+   "MFGT80"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1103/1206",
+   "title": "Manufacturing 1, Certificate of Achievement - Major #M.835A.CA",
+   "h1": "Manufacturing 1, Certificate of Achievement - Major #M.835A.CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1013
+ },
+ {
+  "control_number": "39860",
+  "title": "Speech Aide",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "SLPA1",
+   "SLPA2",
+   "SLPA4",
+   "SLPA5",
+   "SLPA6"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1112/1239",
+   "title": "Speech Aide, Certificate of Achievement - Major #M.1220.CA",
+   "h1": "Speech Aide, Certificate of Achievement - Major #M.1220.CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 928
+ },
+ {
+  "control_number": "39861",
+  "title": "Accounting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "ACCTG31",
+   "ACCTG4A",
+   "ACCTG4B",
+   "BA33",
+   "IS15",
+   "IS18"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1119/1121",
+   "title": "Accounting, Certificate of Achievement - Major #M.2010.CA",
+   "h1": "Accounting, Certificate of Achievement - Major #M.2010.CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 1236
+ },
+ {
+  "control_number": "39862",
+  "title": "Administrative Assistant",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.944,
+  "codes_found": [
+   "ACCTG40",
+   "BT105",
+   "BT106",
+   "BT107",
+   "BT108",
+   "BT119",
+   "BT12",
+   "BT120",
+   "BT131",
+   "BT18",
+   "BT24",
+   "BT26",
+   "BT28",
+   "BT29",
+   "BT3",
+   "ENGL150",
+   "ENGLC1000"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1108/1226",
+   "title": "Administrative Assistant, Certificate of Achievement - Major #M.226B.CA",
+   "h1": "Administrative Assistant, Certificate of Achievement - Major #M.226B.CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 2376
+ },
+ {
+  "control_number": "39863",
+  "title": "Entry Level Business Skills",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG40",
+   "BA18",
+   "BA38",
+   "BA47",
+   "IS15",
+   "MKTG10"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1114/1140",
+   "title": "Entry Level Business Skills, Certificate of Achievement - Major #M.2041.CA",
+   "h1": "Entry Level Business Skills, Certificate of Achievement - Major #M.2041.CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 901
+ },
+ {
+  "control_number": "39864",
+  "title": "Child Development",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDEV1",
+   "CDEV15",
+   "CDEV20",
+   "CDEV3",
+   "CDEV30",
+   "CDEV37A",
+   "CDEV6",
+   "CDEVC1000"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1113/1149",
+   "title": "Child Development, Associate in Science - Major #M.5610.AS",
+   "h1": "Child Development, Associate in Science - Major #M.5610.AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2954
+ },
+ {
+  "control_number": "39865",
+  "title": "Criminology- Corrections",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CRIM1",
+   "CRIM12",
+   "CRIM15",
+   "CRIM20",
+   "CRIM23",
+   "CRIM24",
+   "CRIM3",
+   "CRIM6"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1090/1158",
+   "title": "Criminology-Corrections, Associate in Science - Major #M.P888A.AS",
+   "h1": "Criminology-Corrections, Associate in Science - Major #M.P888A.AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2101
+ },
+ {
+  "control_number": "39866",
+  "title": "Criminology-Law Enforcement",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CRIM1",
+   "CRIM12",
+   "CRIM13",
+   "CRIM15",
+   "CRIM3",
+   "CRIM6",
+   "CRIM7",
+   "CRIM8"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1090/1160",
+   "title": "Criminology-Law Enforcement, Associate in Science - Major #M.888A.AS",
+   "h1": "Criminology-Law Enforcement, Associate in Science - Major #M.888A.AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2126
+ },
+ {
+  "control_number": "39867",
+  "title": "Information Systems",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BA10",
+   "IS15",
+   "IS26A",
+   "IS31",
+   "IS33",
+   "IS40A",
+   "IS40B",
+   "IS47",
+   "IS50A",
+   "IS60"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1099/1187",
+   "title": "Information Systems, Certificate of Achievement - Major #M.6930.CA",
+   "h1": "Information Systems, Certificate of Achievement - Major #M.6930.CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1239
+ },
+ {
+  "control_number": "39868",
+  "title": "Information Systems, Networking and Security",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "IS15",
+   "IS26A",
+   "IS40A",
+   "IS60",
+   "IS62",
+   "IS63",
+   "IS64",
+   "IS80",
+   "IS81"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1099/1189",
+   "title": "Information Systems, Networking and Security, Associate in Science - Major #M.6972.AS",
+   "h1": "Information Systems, Networking and Security, Associate in Science - Major #M.6972.AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2077
+ },
+ {
+  "control_number": "39869",
+  "title": "Machinist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MFGT21",
+   "MFGT22",
+   "MFGT23",
+   "MFGT51",
+   "MFGT60",
+   "MFGT80",
+   "MFGT81",
+   "MFGT82"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1103/1205",
+   "title": "Machinist, Certificate of Achievement - Major #M.838A.CA",
+   "h1": "Machinist, Certificate of Achievement - Major #M.838A.CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 1480
+ },
+ {
+  "control_number": "39870",
+  "title": "Managerial Assistant",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "ACCTG40",
+   "BA10",
+   "BA15",
+   "BA33",
+   "BA5",
+   "IS15"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1114/1146",
+   "title": "Managerial Assistant, Certificate of Achievement - Major #M.2180.CA",
+   "h1": "Managerial Assistant, Certificate of Achievement - Major #M.2180.CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1063
+ },
+ {
+  "control_number": "39871",
+  "title": "Medical Administrative Assistant",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.812,
+  "codes_found": [
+   "BT106",
+   "BT107",
+   "BT108",
+   "BT119",
+   "BT12",
+   "BT120",
+   "BT15",
+   "BT28",
+   "BT29",
+   "BT3",
+   "BT34",
+   "ENGL150",
+   "ENGLC1000"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1108/1228",
+   "title": "Medical Administrative Assistant, Certificate of Achievement - Major #M.2023.CA",
+   "h1": "Medical Administrative Assistant, Certificate of Achievement - Major #M.2023.CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 2128
+ },
+ {
+  "control_number": "39872",
+  "title": "Office Assistant",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "BT105",
+   "BT106",
+   "BT107",
+   "BT108",
+   "BT119",
+   "BT12",
+   "BT120",
+   "BT28",
+   "BT29",
+   "BT3",
+   "BT5"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1108/1229",
+   "title": "Office Assistant, Certificate of Achievement - Major #M.2021.CA",
+   "h1": "Office Assistant, Certificate of Achievement - Major #M.2021.CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 1362
+ },
+ {
+  "control_number": "39873",
+  "title": "Welder",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "MFGT21",
+   "MFGT22",
+   "MFGT23",
+   "MFGT51",
+   "MFGT52",
+   "MFGT60",
+   "MFGT61",
+   "MFGT62",
+   "MFGT80"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1103/1207",
+   "title": "Welder, Certificate of Achievement - Major #M.837A.CA",
+   "h1": "Welder, Certificate of Achievement - Major #M.837A.CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1228
+ },
+ {
+  "control_number": "39874",
+  "title": "Industrial Maintenance Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "IT10",
+   "IT11",
+   "IT19",
+   "IT22",
+   "IT30",
+   "IT31",
+   "IT32",
+   "IT60",
+   "IT61"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1103/1202",
+   "title": "Industrial Maintenance Technician, Associate in Science - Major #M.3040.AS",
+   "h1": "Industrial Maintenance Technician, Associate in Science - Major #M.3040.AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2045
+ },
+ {
+  "control_number": "39875",
+  "title": "Human Services",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG40",
+   "HS19F",
+   "HS20",
+   "HS24",
+   "HS30",
+   "HS9",
+   "IS15"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1098/1184",
+   "title": "Human Services, Certificate of Achievement - Major #M.7420.CA",
+   "h1": "Human Services, Certificate of Achievement - Major #M.7420.CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1347
+ },
+ {
+  "control_number": "39876",
+  "title": "Early Intervention Assistant",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CDEV11",
+   "CDEV15",
+   "CDEV16",
+   "CDEV20",
+   "CDEV22",
+   "CDEV3",
+   "CDEV30",
+   "CDEV49",
+   "CDEV6",
+   "CDEVC1000"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1113/1151",
+   "title": "Early Intervention Assistant, Certificate of Achievement - Major #M.561R.CA",
+   "h1": "Early Intervention Assistant, Certificate of Achievement - Major #M.561R.CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1816
+ },
+ {
+  "control_number": "39877",
+  "title": "Licensed Vocational Nursing",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LVN100",
+   "LVN101",
+   "LVN102",
+   "LVN120",
+   "LVN121",
+   "LVN122",
+   "LVN140"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1107/1220",
+   "title": "Licensed Vocational Nursing, Associate in Science - Major #M.4530.AS",
+   "h1": "Licensed Vocational Nursing, Associate in Science - Major #M.4530.AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2884
+ },
+ {
+  "control_number": "39894",
+  "title": "LVN-RN",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "RN160",
+   "RN74",
+   "RN75",
+   "RN77",
+   "RN78",
+   "RN79",
+   "RN85",
+   "RN88",
+   "RN89"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1107/1222",
+   "title": "LVN-RN, Associate in Science - Major #M.4520.AS",
+   "h1": "LVN-RN, Associate in Science - Major #M.4520.AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3030
+ },
+ {
+  "control_number": "39897",
+  "title": "Agricultural Mechanics",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "IT30",
+   "MAG40",
+   "MAG41",
+   "MAG42",
+   "MAG43",
+   "MAG44",
+   "MFGT21",
+   "PLS11"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1105/1212",
+   "title": "Agricultural Mechanics, Associate in Science - Major #M.8280.AS",
+   "h1": "Agricultural Mechanics, Associate in Science - Major #M.8280.AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 1829
+ },
+ {
+  "control_number": "39914",
+  "title": "Information Technology Support Technician",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BT119",
+   "IS15",
+   "IS60",
+   "IS61",
+   "IS62",
+   "IS63",
+   "IS80"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1099/1191",
+   "title": "Information Technology Support Technician, Certificate of Achievement - Major #M.6931.CA",
+   "h1": "Information Technology Support Technician, Certificate of Achievement - Major #M.6931.CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1392
+ },
+ {
+  "control_number": "39981",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "ART13",
+   "ART17",
+   "ART3",
+   "ART30A",
+   "ART37A",
+   "ART7",
+   "ART9",
+   "ARTHC1200",
+   "ARTHC1200H"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1067",
+   "title": "Studio Arts for Transfer, Associate in Arts - Major #M.5203.AA-T",
+   "h1": "Studio Arts for Transfer, Associate in Arts - Major #M.5203.AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3298
+ },
+ {
+  "control_number": "40163",
+  "title": "21st Century Job Skills",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BA10",
+   "BA33",
+   "IS15"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1114/1133",
+   "title": "21st Century Job Skills, Certificate of Achievement - Major #M.2040.CA",
+   "h1": "21st Century Job Skills, Certificate of Achievement - Major #M.2040.CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 832
+ },
+ {
+  "control_number": "40333",
+  "title": "Academic and Vocational English as a Second Language",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL314",
+   "ESL314G",
+   "ESL314LS",
+   "ESL315",
+   "ESL315G",
+   "ESL315LS"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1094/1172",
+   "title": "Academic and Vocational English as a Second Language, Certificate of Competency - Major #M.3031.CC",
+   "h1": "Academic and Vocational English as a Second Language, Certificate of Competency - Major #M.3031.CC",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1194
+ },
+ {
+  "control_number": "40338",
+  "title": "Intermediate Academic and Vocational English as a Second Language",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL312",
+   "ESL312LS",
+   "ESL313",
+   "ESL313G",
+   "ESL313LS"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1094/1174",
+   "title": "Intermediate Academic and Vocational English as a Second Language, Certificate of Competency - Major #M.3033.CC",
+   "h1": "Intermediate Academic and Vocational English as a Second Language, Certificate of Competency - Major #M.3033.CC",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1223
+ },
+ {
+  "control_number": "40339",
+  "title": "Basic English as a Second Language",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL311"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1094/1173",
+   "title": "Basic English as a Second Language, Certificate of Competency - Major #M.3011.CC",
+   "h1": "Basic English as a Second Language, Certificate of Competency - Major #M.3011.CC",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 1,
+  "text_chars": 1098
+ },
+ {
+  "control_number": "40400",
+  "title": "Basics of Computers",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "IS15",
+   "IS26A",
+   "IS40A",
+   "IS60"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1099/1186",
+   "title": "Basics of Computers, Certificate of Achievement - Major #M.2085.CA",
+   "h1": "Basics of Computers, Certificate of Achievement - Major #M.2085.CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 827
+ },
+ {
+  "control_number": "40893",
+  "title": "Social Work and Human Services",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.939,
+  "codes_found": [
+   "BA23",
+   "BIOL20",
+   "BIOL22",
+   "BIOL5",
+   "CDEV30",
+   "CDEV38",
+   "CDEVC1000",
+   "COMM10",
+   "CRIM1",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "ETHNST2",
+   "HISTC1001",
+   "HISTC1002",
+   "HISTC1002H",
+   "HLTH1",
+   "HS19F",
+   "HS20",
+   "HS9",
+   "PHIL1C",
+   "PHIL1CH",
+   "PSYC16",
+   "PSYC38",
+   "PSYC42",
+   "PSYCC1000",
+   "SOCI1B",
+   "SOCI2",
+   "SOCIC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1084",
+   "title": "Social Work and Human Services for Transfer, Associate in Arts - Major #M.7701.AA-T",
+   "h1": "Social Work and Human Services for Transfer, Associate in Arts - Major #M.7701.AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 33,
+  "text_chars": 4290
+ },
+ {
+  "control_number": "41309",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG4A",
+   "ACCTG4B",
+   "BA10",
+   "BA18",
+   "BA23",
+   "BA39",
+   "ECONC2001",
+   "ECONC2002",
+   "PLS9",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1069",
+   "title": "Business Administration 2.0 for Transfer, Associate in Science - Major #M.2051.AS-T",
+   "h1": "Business Administration 2.0 for Transfer, Associate in Science - Major #M.2051.AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2144
+ },
+ {
+  "control_number": "42309",
+  "title": "Crime Scene Investigation",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CRIM12",
+   "CRIM3",
+   "CRIM4",
+   "CRIM8",
+   "CRIM8A",
+   "CRIM9A"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1090/1162",
+   "title": "Crime Scene Investigation, Certificate of Achievement - Major #M.8881.CA",
+   "h1": "Crime Scene Investigation, Certificate of Achievement - Major #M.8881.CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1097
+ },
+ {
+  "control_number": "43396",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.765,
+  "codes_found": [
+   "COMM10",
+   "COMM12",
+   "COMM15",
+   "COMM25",
+   "COMM4",
+   "COMM8",
+   "COMMC1000",
+   "COMMC1000H",
+   "COMMC1004",
+   "ENGLC1002H",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOCIC1000"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1072",
+   "title": "Communication Studies 2.0 for Transfer, Associate in Arts - Major #M.5346.AA-T",
+   "h1": "Communication Studies 2.0 for Transfer, Associate in Arts - Major #M.5346.AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 2576
+ },
+ {
+  "control_number": "43459",
+  "title": "Foundations of Hospitality",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BA12",
+   "BA47",
+   "BA5",
+   "FSM144",
+   "FSM35",
+   "HSP45",
+   "IS15",
+   "IS18"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1114/1143",
+   "title": "Foundations of Hospitality, Certificate of Achievement - Major #M.3000.CA",
+   "h1": "Foundations of Hospitality, Certificate of Achievement - Major #M.3000.CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2066
+ },
+ {
+  "control_number": "43474",
+  "title": "Drafting",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MFGT21",
+   "MFGT73",
+   "MFGT74",
+   "MFGT75"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1103/1201",
+   "title": "Drafting, Certificate of Achievement - Major #M.8393.CA",
+   "h1": "Drafting, Certificate of Achievement - Major #M.8393.CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 940
+ },
+ {
+  "control_number": "43485",
+  "title": "Fundamental Skills of Management in Hospitality",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "BA15",
+   "BA33",
+   "BA38",
+   "BA52",
+   "ECONC2001",
+   "FSM11",
+   "FSM15",
+   "MKTG10"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1114/1144",
+   "title": "Fundamental Skills of Management in Hospitality, Certificate of Achievement - Major #M.3001.CA",
+   "h1": "Fundamental Skills of Management in Hospitality, Certificate of Achievement - Major #M.3001.CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1737
+ },
+ {
+  "control_number": "43665",
+  "title": "Vocational English as a Second Language",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "VESL312V",
+   "VESL313V"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1094/1175",
+   "title": "Vocational English as a Second Language, Certificate of Competency - Major #M.3034.CC",
+   "h1": "Vocational English as a Second Language, Certificate of Competency - Major #M.3034.CC",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1017
+ },
+ {
+  "control_number": "43673",
+  "title": "General Music",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS12",
+   "MUS12H",
+   "MUS15",
+   "MUS16",
+   "MUS16B",
+   "MUS17",
+   "MUS1A",
+   "MUS1B",
+   "MUS20",
+   "MUS21",
+   "MUS22",
+   "MUS24",
+   "MUS25",
+   "MUS26",
+   "MUS27",
+   "MUS28",
+   "MUS29",
+   "MUS31",
+   "MUS33",
+   "MUS37",
+   "MUS38",
+   "MUS45",
+   "MUS7A",
+   "MUS7B",
+   "MUS81"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1106/1216",
+   "title": "General Music, Certificate of Achievement - Major #M.5810.CA",
+   "h1": "General Music, Certificate of Achievement - Major #M.5810.CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 1963
+ },
+ {
+  "control_number": "43674",
+  "title": "Music Theory",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS1A",
+   "MUS1B",
+   "MUS2A",
+   "MUS2B"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1106/1217",
+   "title": "Music Theory, Certificate of Achievement - Major #M.5811.CA",
+   "h1": "Music Theory, Certificate of Achievement - Major #M.5811.CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 683
+ },
+ {
+  "control_number": "43677",
+  "title": "Vocal Performance",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS12",
+   "MUS12H",
+   "MUS15",
+   "MUS16",
+   "MUS16B",
+   "MUS17",
+   "MUS1A",
+   "MUS26",
+   "MUS31",
+   "MUS33",
+   "MUS38",
+   "MUS81"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1106/1218",
+   "title": "Vocal Performance, Certificate of Achievement - Major #M.5813.CA",
+   "h1": "Vocal Performance, Certificate of Achievement - Major #M.5813.CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 1351
+ },
+ {
+  "control_number": "43705",
+  "title": "Pest Control Advisor",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.905,
+  "codes_found": [
+   "AS1",
+   "BIOL11A",
+   "BIOL11B",
+   "BIOL16",
+   "BIOL2",
+   "BIOL31",
+   "CHEM1A",
+   "CHEM3A",
+   "CHEM8",
+   "EH43",
+   "PLS1",
+   "PLS14",
+   "PLS18",
+   "PLS2",
+   "PLS3",
+   "PLS4A",
+   "PLS5",
+   "PLS6",
+   "PLS7"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1110/1234",
+   "title": "Pest Control Advisor, Certificate of Achievement - Major #M.8281.CA",
+   "h1": "Pest Control Advisor, Certificate of Achievement - Major #M.8281.CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 2729
+ },
+ {
+  "control_number": "44516",
+  "title": "Hospitality Management",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG4A",
+   "BA12",
+   "BA18",
+   "BA23",
+   "ECONC2001",
+   "FSM35",
+   "HSP20",
+   "HSP30",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1070",
+   "title": "Hospitality Management for Transfer, Associate in Science - Major #M.3002.AS-T",
+   "h1": "Hospitality Management for Transfer, Associate in Science - Major #M.3002.AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2412
+ },
+ {
+  "control_number": "44518",
+  "title": "Music",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS12",
+   "MUS12H",
+   "MUS1A",
+   "MUS1B",
+   "MUS22",
+   "MUS26",
+   "MUS29",
+   "MUS2A",
+   "MUS2B",
+   "MUS31",
+   "MUS33",
+   "MUS7A",
+   "MUS7B",
+   "MUS7C",
+   "MUS7D",
+   "MUS81"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1079",
+   "title": "Music for Transfer, Associate in Arts - Major #M.5812.AA-T",
+   "h1": "Music for Transfer, Associate in Arts - Major #M.5812.AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 2011
+ },
+ {
+  "control_number": "44523",
+  "title": "Food and Beverage Management Level 2",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BA38",
+   "ECONC2001",
+   "FSM15",
+   "HSP55",
+   "IS15",
+   "MKTG10"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1114/1142",
+   "title": "Food and Beverage Management Level 2, Certificate of Achievement - Major #M.3003.CA",
+   "h1": "Food and Beverage Management Level 2, Certificate of Achievement - Major #M.3003.CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1671
+ },
+ {
+  "control_number": "44524",
+  "title": "Food and Beverage Management Level I",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BA15",
+   "BA5",
+   "ENGLC1000",
+   "FSM35",
+   "HSP20",
+   "HSP30",
+   "IS18"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1114/1141",
+   "title": "Food and Beverage Management Level 1, Certificate of Achievement - Major #M.3002.CA",
+   "h1": "Food and Beverage Management Level 1, Certificate of Achievement - Major #M.3002.CA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1068
+ },
+ {
+  "control_number": "44721",
+  "title": "Music",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS12",
+   "MUS12H",
+   "MUS15",
+   "MUS16",
+   "MUS16B",
+   "MUS17",
+   "MUS1A",
+   "MUS1B",
+   "MUS20",
+   "MUS21",
+   "MUS22",
+   "MUS26",
+   "MUS29",
+   "MUS2A",
+   "MUS2B",
+   "MUS31",
+   "MUS33",
+   "MUS37",
+   "MUS38",
+   "MUS45",
+   "MUS7A",
+   "MUS7B",
+   "MUS7C",
+   "MUS7D",
+   "MUS81"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1106/1215",
+   "title": "Music, Associate in Arts - Major #M.5813.AA",
+   "h1": "Music, Associate in Arts - Major #M.5813.AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 2534
+ },
+ {
+  "control_number": "45293",
+  "title": "Modern Policing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 24,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45353",
+  "title": "California General Education Transfer Curriculum (Cal-GETC)",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 147,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45445",
+  "title": "Addiction and Drug Studies, AS",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 17,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45913",
+  "title": "Instrumental Performance",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 15,
+  "text_chars": 0
+ },
+ {
+  "control_number": "46140",
+  "title": "Social Justice Studies: General",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.92,
+  "codes_found": [
+   "BA23",
+   "COMM10",
+   "CRIM13",
+   "CRIM14",
+   "ENGL17",
+   "ENGL49",
+   "ETHNST15",
+   "ETHNST2",
+   "ETHNST3",
+   "ETHNST32",
+   "HIST32",
+   "HISTC1002",
+   "HISTC1002H",
+   "PHIL1C",
+   "PHIL1CH",
+   "PSYC17",
+   "PSYC42",
+   "PSYC45",
+   "SOCI11",
+   "SOCI1B",
+   "SOCI2",
+   "SOCI3",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degrees-for-Transfer/1327",
+   "title": "Social Justice Studies: General - Major #M.7210.AA-T",
+   "h1": "Social Justice Studies: General - Major #M.7210.AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 4284
+ },
+ {
+  "control_number": "46525",
+  "title": "Agriculture Business",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGBS1",
+   "AGBS2",
+   "AGBS3",
+   "AGBS4",
+   "AGBS5"
+  ],
+  "source": {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1118/1123",
+   "title": "Agriculture Business, Option A, Associate in Science - Major #M.102A.AS",
+   "h1": "Agriculture Business, Option A, Associate in Science - Major #M.102A.AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3233
+ }
+]

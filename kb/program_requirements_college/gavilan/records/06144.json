@@ -1,0 +1,329 @@
+{
+ "college": "Gavilan College",
+ "control_number": "06144",
+ "shape": "degree",
+ "title": "Child Development",
+ "award": "A.A. Degree",
+ "source_url": "https://gavilan.curriqunet.com/catalog/iq/4089/4099/4236",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7004,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7004,
+    "output_tokens": 2505,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2505,
+  "output_tokens_details": {
+   "thinking_tokens": 912
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07812,
+ "ms": 28624,
+ "seconds": 29.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 12,
+   "share": 0.917,
+   "missing": [
+    "CD40"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "CD190"
+   ],
+   "flagged": [
+    "CD190"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    35.0,
+    38.0
+   ],
+   "stated": [
+    35.0,
+    38.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     59.0,
+     64.0
+    ],
+    "stated": [
+     59.0,
+     64.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     26.0
+    ],
+    "why": [],
+    "fill": [
+     0.0,
+     5.0
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Child Development - A.A. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 35,
+    "max": 38
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Gavilan College AA/A.S. general education, CSU-GE Breadth, or IGETC",
+   "degree_total": {
+    "min": 59,
+    "max": 64
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 26
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "articulate five major child development theories and translate these theories into appropriate classroom environments that include learning centers and materials.",
+    "plan developmentally appropriate curriculum activities in the four domains of development: Cognitive (intellectual), Affective (social-emotional), Psychomotor (physical) and Language Development.",
+    "function within the scope of approved state and nationally accredited early childhood and childcare competencies.",
+    "practice within professional and legal standards, ethical principles, and demonstrate a sensitivity to language and cultural differences of the children, families, and staff where they will be working or completing their cooperative work experiences.",
+    "apply principles of written and verbal communication, and research to communicate relevant, accurate and complete information.",
+    "apply child development principles and sensitivity to theory and applications of working with families of children with special needs.",
+    "demonstrate an ability to design, develop and implement curriculum, appropriate educational environments, and successful teaching practices that enhance development in children in the early years."
+   ],
+   "careers": [
+    "child development",
+    "elementary and secondary education",
+    "child development professionals"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CD 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD 4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose one",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CD 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Requirements (continued)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CD 9",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD 19",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD 32",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Electives - Any CD courses",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": []
+   },
+   {
+    "name": "Student Teaching Practicum",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CD 30A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD 30B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD 190",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CD 40",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The 'Choose one:' heading has no printed end; it was read as covering only CD 5 and CD 7, with CD 9, CD 19, CD 20 and CD 32 required. This reading makes the courses sum to the printed 35-38 units (with CD 190 at 1-4 units). Reviewer should verify.",
+   "The heading reads 'Requirements (Core courses not required)', which seems contradictory; the courses were treated as required.",
+   "'Electives - Any CD courses (3 units)' is restricted to CD courses, so it was recorded as a choose_units block with no listed courses rather than as open electives.",
+   "CD 190 is not on the closed list and was recorded as a catalog addition.",
+   "General education may be Gavilan AA/A.S. GE, CSU-GE Breadth or IGETC (24-26 units), plus sufficient electives to meet a 60 unit total; printed degree total is 59-64.",
+   "Course titles are marked '(Historical)' in the catalog text; check that the listing reflects the 2026-2027 catalog."
+  ]
+ },
+ "extracted_run": "38948144064"
+}

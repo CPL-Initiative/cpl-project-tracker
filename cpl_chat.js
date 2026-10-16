@@ -761,12 +761,20 @@
       // or a course list can use the width and a paragraph still cannot.
       '.cplchat { max-width:none; margin:0; }',
       '.cplchat-intro h2 { margin:16px 0 6px; color:var(--navy-primary); }',
-      '.cplchat-intro p { margin:0 0 8px; color:var(--text-muted); max-width:var(--cpl-measure,none); }',
       // GROWS WITH THE ANSWER (Sam, 2026-08-17: "so users don't have to scroll
-      // so much"). Between a floor, so a one-line answer is not a sliver, and a
-      // viewport-relative cap, so the input row stays reachable; only an answer
-      // past the cap scrolls inside, and scrollDown() follows the PAGE for the rest.
-      '.cplchat-log { border:1px solid var(--border); border-radius:10px; background:var(--surface-subtle); min-height:240px; max-height:78vh; overflow-y:auto; padding:16px; margin:12px 0; }',
+      // so much"), up to a viewport-relative cap, so the input row stays
+      // reachable; only an answer past the cap scrolls inside, and scrollDown()
+      // follows the PAGE for the rest.
+      // NO FRAME AND NO FLOOR (S400, Sam 2026-10-16: My College "still has the
+      // old format"). Docked, the log drew a third bordered card inside the
+      // box, and its 240px floor left an empty panel under the starters. Sierra
+      // AI over a tab shows her starters and answers on the page itself; a
+      // docked box now does too, and each bubble keeps its own edge.
+      '.cplchat-log { max-height:78vh; overflow-y:auto; padding:2px 0; margin:12px 0 8px; }',
+      // Once she has answered, a docked log can pass its cap and scroll inside,
+      // and an answer cut at an unmarked edge reads as a fault: a rule above and
+      // below marks where the scrolling region ends. Full screen sets it aside.
+      '.cplchat-log:has(.cplchat-msg) { border-top:1px solid var(--border); border-bottom:1px solid var(--border); }',
       '.cplchat-msg { display:flex; margin:10px 0; }',
       '.cplchat-user { justify-content:flex-end; }',
       '.cplchat-bot { justify-content:flex-start; gap:8px; }',
@@ -799,7 +807,7 @@
       // waste on a phone, and the growth range is what makes that safe. The Send
       // button drops its wide padding so the input keeps the row.
       '@media (max-width: 600px) { .cplchat-bubble { max-width:88%; } .cplchat-bot .cplchat-bubble { max-width:calc(100% - 36px); }'
-        + ' .cplchat-user .cplchat-bubble { max-width:88%; } .cplchat-log { min-height:200px; max-height:68vh; padding:12px; }'
+        + ' .cplchat-user .cplchat-bubble { max-width:88%; } .cplchat-log { max-height:68vh; }'
         + ' .cplchat-send { padding:0 16px; } .cplchat-input { min-width:0; } }',
       // ── The audience row, the feedback row and the rest ────────────────────
       '.cplchat-audience { display:flex; flex-wrap:wrap; align-items:center; gap:7px; margin:8px 0 2px; padding:8px 11px; background:var(--surface-subtle, #f2f6fb); border:1px solid var(--border, #d8dde6); border-radius:10px; }',
@@ -825,7 +833,6 @@
       // is on tokens now; these stay because they still differ from it in dark (the
       // input's own fill and ink, the stronger focus halo, the disabled Send).
       darkRules([
-        ['.cplchat-log', 'background:var(--surface-subtle); border-color:var(--border);'],
         ['.cplchat-bot .cplchat-bubble', 'color:var(--text-body); border-color:var(--border);'],
         ['.cplchat-bot .cplchat-bubble a', 'color:var(--cobalt);'],
         ['.cplchat-chip', 'border-color:var(--border-strong);'],
@@ -890,16 +897,6 @@
       // ── The Sierra AI heading + its Whitney mark (Sam, 2026-08-17) ─────────
       // The mark is the same roundel the answer avatars carry, at heading size.
       // `em` so it tracks the h2 rather than needing a second breakpoint.
-      // ── The Note sentence, where the yellow Beta box used to be ──────────
-      // Distinct by a quiet RULE, never by fading. Sky175's finding on the
-      // public page was that the least legible text on it was the sentence
-      // telling a student to check with their coordinator — a caution rendered
-      // in a third, fainter gray. So this inherits the description's color
-      // exactly (no new contrast pair to verify) and earns its separation from
-      // a neutral border and spacing instead. It must out-specify the base
-      // `.cplchat-intro p` rule, hence the two-class selector.
-      '.cplchat-intro .cplchat-note { border-left:3px solid var(--border-strong, #c9cfd8);'
-        + ' padding-left:11px; margin-top:10px; font-size:.95em; }',
       // The suggestion row's heading. `.cplchat-suggest` is a wrapping flex row,
       // so the label claims a full line of its own rather than sitting in the
       // chip flow.
@@ -942,7 +939,7 @@
       '.cplchat-dock-btn { font:inherit; font-size:.85rem; font-weight:600; min-height:34px; padding:4px 14px; border-radius:999px;'
         + ' border:1px solid var(--border-strong, #cdd6e3); background:var(--surface-opaque, #fff); color:var(--seal-blue-text, #002F6D); cursor:pointer; }',
       '.cplchat-dock-btn:hover { border-color:var(--cobalt, #0047AB); }',
-      '.cplchat-full-note { display:none; }',
+      '.cplchat-foot { margin:6px 0 0; font-size:.8rem; line-height:1.45; color:var(--text-muted, #5C5C55); max-width:var(--cpl-measure,none); }',
       'html.cplchat-locked, html.cplchat-locked body { overflow:hidden; }',
       'html .cplchat.cplchat-full { position:fixed; inset:0; margin:0; max-width:none; box-sizing:border-box;'
         + ' display:flex; flex-direction:column; overflow-y:auto; overscroll-behavior:contain;'
@@ -957,7 +954,7 @@
       'html .cplchat.cplchat-full .cplchat-log { flex:1 0 auto; min-height:0; max-height:none; overflow:visible;'
         + ' border:0; border-radius:0; background:transparent; padding:8px 0; margin-top:0; margin-bottom:0; }',
       'html .cplchat.cplchat-full .cplchat-inputrow { position:sticky; bottom:0; z-index:1; padding:10px 0 12px; background:var(--paper, #F4F2ED); }',
-      'html .cplchat.cplchat-full .cplchat-full-note { display:block; margin-top:0; margin-bottom:0; padding:0 0 14px; font-size:.8rem; color:var(--text-muted, #5C5C55); }',
+      'html .cplchat.cplchat-full .cplchat-foot { margin-top:0; margin-bottom:0; padding:0 0 14px; }',
       '@media (prefers-reduced-motion: no-preference) { html .cplchat.cplchat-full { animation:cplchatFull .16s ease-out; } }',
       '@keyframes cplchatFull { from { opacity:0; } to { opacity:1; } }',
     ].join('\n');
@@ -1478,30 +1475,15 @@
     title.appendChild(mark);
     title.appendChild(el('span', null, 'Sierra AI'));
 
-    // ── One description, and the caution reads as a sentence (Sam, 2026-08-21) ──
-    // His wording, verbatim. It replaces BOTH the old four-line description and
-    // the yellow "Beta — in development" box he asked to delete: the box's two
-    // duties (say she is unfinished, say not to type personal information) are
-    // carried by the Note sentence, so nothing was dropped, only unboxed.
-    //
-    // ⚠ IT IS TWO PARAGRAPHS, NOT ONE BLOCK. The Note is a caution and has to
-    // survive being skimmed — a box earned that for free and plain prose does
-    // not. `.cplchat-note` is the quieter weight; it is deliberately NOT a
-    // colored panel, which is the thing that was removed.
-    //
-    // It has to read correctly in BOTH boxes — My College's and Sierra AI over
-    // any tab — so it cannot say "the sections below" (the wording My College's
-    // deleted paragraph used, which would be a promise about a page that isn't
-    // always there).
-    wrap.appendChild(el('div', { className: 'cplchat-intro' }, [
-      title,
-      el('p', null, 'Ask her anything about credit for prior learning.'),
-      el('p', { className: 'cplchat-note' },
-        'Note: Sierra is in the development phase and may present incomplete or ' +
-        'inaccurate information. Please give a thumbs up or down and include a ' +
-        'note if you notice an improvement to be made. Please don\'t enter ' +
-        'personal information; questions are logged to improve responses.'),
-    ]));
+    // ── The heading alone (S400) ─────────────────────────────────────────────
+    // Sierra AI's format, in both boxes: her name, the role row, the starters,
+    // the box, and the caution under the box (see `foot` below). The intro used
+    // to carry a description ("Ask her anything about credit for prior
+    // learning.") and the Note above the role row, which is what made My
+    // College's box read as the old format beside Sierra AI over a tab (Sam,
+    // 2026-10-16). The box's placeholder asks the same question. My College
+    // still hoists this heading into its section's <summary>.
+    wrap.appendChild(el('div', { className: 'cplchat-intro' }, [title]));
 
     /* The dock's one control, a word (Full screen / Back to the tab). A direct
      * child of the wrap, never inside the intro: My College hoists the intro's
@@ -1602,12 +1584,22 @@
     b.send.addEventListener('click', function () { submit(b); });
     row.appendChild(b.input); row.appendChild(b.send);
     wrap.appendChild(row);
-    // Expanded, the intro is hidden, so the privacy sentence the reader needs
-    // before typing a follow-up rides under the box (the public page's footer
-    // line). Docked, the intro carries it and this stays hidden.
+    // ── The caution, under the box, in both boxes and both states ───────────
+    // Sam's wording, verbatim (2026-08-21). It replaced BOTH the old four-line
+    // description and the yellow "Beta — in development" box he asked to
+    // delete: the box's two duties (say she is unfinished, say not to type
+    // personal information) are carried by this sentence, so nothing was
+    // dropped, only unboxed. It sat in the intro until S400, so Sierra AI over
+    // a tab, which hides the intro, showed only the privacy half; under the box
+    // it reads where the reader types, docked or full screen, and in both boxes
+    // the same. It cannot say "the sections below": it has to read correctly
+    // over any tab.
     if (dock) {
-      wrap.appendChild(el('p', { className: 'cplchat-full-note' },
-        'Please don\'t enter personal information; questions are logged to improve responses.'));
+      wrap.appendChild(el('p', { className: 'cplchat-foot' },
+        'Note: Sierra is in the development phase and may present incomplete or ' +
+        'inaccurate information. Please give a thumbs up or down and include a ' +
+        'note if you notice an improvement to be made. Please don\'t enter ' +
+        'personal information; questions are logged to improve responses.'));
     }
 
     mount.appendChild(wrap);

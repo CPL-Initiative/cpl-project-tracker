@@ -1,0 +1,148 @@
+{
+ "college": "Gavilan College",
+ "control_number": "21290",
+ "shape": "certificate",
+ "title": "Spanish Native Speakers 4",
+ "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+ "source_url": "https://gavilan.curriqunet.com/catalog/iq/4089/4148/4045",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6469,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6469,
+    "output_tokens": 1233,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1233,
+  "output_tokens_details": {
+   "thinking_tokens": 605
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05054,
+ "ms": 16819,
+ "seconds": 17.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 2,
+   "share": 0.0,
+   "missing": [
+    "SPAN12A",
+    "SPAN12B"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Spanish Non-Native Speakers Option 2 - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "SPAN 12A",
+    "why": "named only in the Spanish Non-Native Speakers Option 2 section; no section for Spanish Native Speakers 4 in the text"
+   },
+   {
+    "code": "SPAN 12B",
+    "why": "named only in the Spanish Non-Native Speakers Option 2 section; no section for Spanish Native Speakers 4 in the text"
+   }
+  ],
+  "notes": [
+   "Program mismatch: the requested program is 'Spanish Native Speakers 4' (Certificate of Achievement), but the only section in the text is 'Spanish Non-Native Speakers Option 2 - Certificate of Achievement'. Because that is a different program, no blocks, totals, outcomes or careers were recorded for this award. The source URL may point to the wrong program page.",
+   "For the reviewer, the Non-Native Option 2 section prints these requirements. Required: SPAN 1B (5), SPAN 2A (5) and SPAN 2B (5). Choose one course from the following list: SPAN 12A (5), SPAN 12B (5) or SPAN 23 (3). Its printed total is 18-20 units.",
+   "The Non-Native Option 2 section prints two learning outcomes: 'converse in Spanish at the basic level.' and 'demonstrate proper conjugation of verbs; in the written and oral form.' The department description mentions 'a career as a Spanish educator'. None of these were recorded, since they belong to a different program's section."
+  ]
+ },
+ "extracted_run": "38948144064"
+}

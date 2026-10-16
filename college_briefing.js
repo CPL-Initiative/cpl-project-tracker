@@ -792,7 +792,6 @@
       // intro carries its own margins; this only has to stop the first heading
       // pushing an extra 16px down from the top of the box.
       ".cb-assist-head .cplchat-intro h2{margin-top:0;}",
-      ".cb-assist-head .cplchat-intro p:last-child{margin-bottom:12px;}",
       // The fallback title, shown only if cpl_chat.js never mounted.
       ".cb-assist-fallback{margin:0 0 12px;font-size:1.3rem;letter-spacing:-.01em;color:var(--text-strong);}",
       // Visually hidden, still announced — the "(opens in a new tab)" cue that
@@ -859,6 +858,26 @@
          at heading scale rather than at the muted scale the others use. */
       ".cb-assist-d>.cb-sum h2{margin:0;font-size:1.15rem;}",
       ".cb-assist-body{padding-top:4px;}",
+      /* ── Sierra AI's format, in her seat (S400; Sam, 2026-10-16: My College
+         "still has the old format") ───────────────────────────────────────
+         Sierra AI over a tab is one column: her name and one control on a
+         ruled bar, the role row, the starters, the box, the caution under it.
+         Here she sat in three nested cards (.cb-assist, then the <details>
+         drawn as a .cb-sec card, then the log's own frame). The .cb-assist
+         frame stays, the heavier one that leads the tab (Sam, 2026-08-12);
+         the <details> inside it draws none, and its summary becomes the bar.
+         (0,3,0) selectors, because the .cb-sec rules sit later in this sheet. */
+      ".cb-assist>.cb-assist-d.cb-sec{border:0;border-radius:0;background:transparent;margin:0;position:relative;}",
+      ".cb-assist>.cb-assist-d>.cb-sum{padding:0 8.5rem 10px 0;border-radius:0;min-height:34px;box-sizing:border-box;align-items:center;}",
+      ".cb-assist>.cb-assist-d[open]>.cb-sum{border-bottom:1px solid var(--border);margin-bottom:10px;}",
+      ".cb-assist .cb-assist-body{padding-top:0;}",
+      ".cb-assist .cb-assist-mount{margin-top:0;}",
+      /* The one control, Full screen, at the bar's right end where Sierra AI
+         puts Back to the tab. cpl_chat.js keeps it a direct child of her box
+         (it travels with her to full screen, where her own bar takes it), so it
+         is placed here rather than moved: the <details> is its containing block,
+         and the control is gone with the section when Collapse all shuts it. */
+      ".cb-assist-d .cplchat:not(.cplchat-full)>.cplchat-dockbar{position:absolute;top:0;right:0;margin:0;}",
 
       /* ── The roll-up (district / statewide) ─────────────────────────────── */
       ".cb-roll{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 14px;}",

@@ -1,0 +1,37 @@
+{
+ "college": "Feather River College",
+ "programs": 62,
+ "with_closed_list": 49,
+ "found": 45,
+ "extracted": 45,
+ "errors": 0,
+ "passed_machine_checks": 33,
+ "failed": {
+  "coverage": 2,
+  "invented": 2,
+  "arithmetic": 10,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 3.15,
+ "cost_per_program": 0.07,
+ "not_found": [
+  {
+   "control_number": "34001",
+   "title": "Equine and Ranch Management",
+   "award": "Baccalaureate of Science (B.S.) Degree.",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "46533",
+   "title": "Ecosystem Restoration and Applied Fire Management",
+   "award": "Baccalaureate of Science (B.S.) Degree.",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "run": "38935127435"
+}

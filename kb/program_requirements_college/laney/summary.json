@@ -1,0 +1,309 @@
+{
+ "college": "Laney College",
+ "programs": 175,
+ "with_closed_list": 175,
+ "found": 150,
+ "extracted": 150,
+ "errors": 0,
+ "passed_machine_checks": 118,
+ "failed": {
+  "coverage": 0,
+  "invented": 0,
+  "arithmetic": 32,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 10.1,
+ "cost_per_program": 0.0673,
+ "not_found": [
+  {
+   "control_number": "01147",
+   "title": "Management and Supervision",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44212/44436",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.333,
+    "body": 0.333,
+    "content": 0.333,
+    "net": 2,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 2 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2097,
+     "content": 2097,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "01151",
+   "title": "Performance and Production for Video, Broadcast and Digital Cinematography",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "09024",
+   "title": "Video Production for Video, Broadcast and Digital Cinematography",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "09037",
+   "title": "Chicanx and Latinx Studies",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44211/44453",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.409,
+    "body": 0.409,
+    "content": 0.409,
+    "net": 9,
+    "listed": 22,
+    "why": "coverage 0.41 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 4651,
+     "content": 4651,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "21544",
+   "title": "Video Production for Video, Broadcast and Digital Cinematography",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "21546",
+   "title": "Performance And Production For Video, Broadcast And Digital Cinematography",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "30964",
+   "title": "Electrical Technology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44190/44612",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 11,
+    "why": "coarse net: the page's code tokens name 0 of 11 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2990,
+     "content": 2990,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "31279",
+   "title": "Electrical Technology",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44190/44613",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 11,
+    "why": "coarse net: the page's code tokens name 0 of 11 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2913,
+     "content": 2913,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "36572",
+   "title": "Commercial Music",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44217/44293",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 5,
+    "listed": 21,
+    "why": "coarse net: the page's code tokens name 5 of 21 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2792,
+     "content": 2792,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "36935",
+   "title": "AudioVisual Technologist",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "36936",
+   "title": "AR/VR: Immersive Design",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "37473",
+   "title": "Solar Photovoltaic Professionals",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44190/44614",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2019,
+     "content": 2019,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "37484",
+   "title": "Social Justice Studies: Chicanx and Latinx Studies",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44211/44454",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.294,
+    "body": 0.294,
+    "content": 0.294,
+    "net": 5,
+    "listed": 17,
+    "why": "coarse net: the page's code tokens name 5 of 17 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4563,
+     "content": 4563,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "37932",
+   "title": "Commercial Music",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44217/44294",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 6,
+    "listed": 22,
+    "why": "coarse net: the page's code tokens name 6 of 22 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2710,
+     "content": 2710,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "41602",
+   "title": "Offline and Online Editing with DaVinci Resolve",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "42407",
+   "title": "Virtual Production",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "44095",
+   "title": "Virtual Production Fundamentals",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "45097",
+   "title": "California General Education Transfer Curriculum (Cal-GETC)",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "run": "38935141023"
+}
