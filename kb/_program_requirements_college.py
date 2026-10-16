@@ -792,8 +792,36 @@ def cq_is_program(nav: dict) -> bool:
     text = nav.get("text") or ""
     if " - " in text and CQ_AWARD.search(text):
         return True
+    if cq_name_award(text)[1]:
+        return True
     head, colon, tail = text.rpartition(": ")
     return bool(colon and head.strip() and CQ_AWARD.search(tail))
+
+
+# Butte (S401, page reads 38977301962 and 38977912351) titles one program two
+# ways, once in each of its program sections: "AS Degree in Automotive
+# Technology" under Programs by Subject, "Automotive Technology (AS Degree)" under
+# Programs by Communities of Interest. Neither has a dash or a colon, so its walk
+# read 542 nodes and took 18 entries (those that happened to carry one) for 168
+# programs. The award leads before " in ", or closes the title in parentheses.
+# The award words are singular: "Degrees and Certificates in Business" is a list.
+CQ_AWARD_LEAD = re.compile(
+    r"^((?:[A-Z]{2}(?:-T)?|A\.[AS]\.(?:-T)?|associate(?: of \w+)?|noncredit)?\s*"
+    r"(?:degree|certificate)(?: of \w+)?(?: for transfer)?)\s+in\s+(\S.*)$", re.I)
+CQ_AWARD_PAREN = re.compile(r"^(\S.*?)\s*\(([^()]*\b(?:degree|certificate)\b[^()]*)\)\s*$", re.I)
+
+
+def cq_name_award(text: str) -> tuple[str, str | None]:
+    """(the program's name, its award) from a title that leads with its award
+    before " in " or closes with it in parentheses; else (the title, None)."""
+    text = (text or "").strip()
+    m = CQ_AWARD_LEAD.match(text)
+    if m:
+        return m.group(2).strip(), m.group(1).strip()
+    m = CQ_AWARD_PAREN.match(text)
+    if m:
+        return m.group(1).strip(), m.group(2).strip()
+    return text, None
 
 
 def cq_hidden(nav: dict) -> bool:
@@ -862,8 +890,11 @@ def cq_group(title: str, url: str) -> str:
 
 
 def cq_title_key(nav: dict) -> str:
-    """An entry's title as one key: case, spacing and dashes folded."""
-    return "title:" + re.sub(r"[\s\u2013\u2014-]+", " ", (nav.get("text") or "").lower()).strip()
+    """An entry's title as one key: case, spacing and dashes folded, and Butte's
+    two forms of one program ("AS Degree in X", "X (AS Degree)") one key."""
+    name, award = cq_name_award(nav.get("text") or "")
+    text = "%s (%s)" % (name, award) if award else name
+    return "title:" + re.sub(r"[\s\u2013\u2014-]+", " ", text.lower()).strip()
 
 
 def cq_distinct(entries: list[dict]) -> tuple[list[dict], int]:
