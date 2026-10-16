@@ -1,0 +1,41 @@
+{
+ "college": "Las Positas College",
+ "load_run": "38941349599",
+ "function": "program_requirement_records_college_load",
+ "at": "2026-10-16T17:40:03Z",
+ "records": 20,
+ "posted": 20,
+ "batches": 1,
+ "inserted": 20,
+ "kept": 0,
+ "skipped": [],
+ "error": null,
+ "extracted_runs": [
+  "38935144431"
+ ],
+ "machine_pass": 8,
+ "inserted_keys": [
+  "01004",
+  "01032",
+  "36234",
+  "36341",
+  "36349",
+  "36350",
+  "36361",
+  "36362",
+  "36363",
+  "36431",
+  "36479",
+  "37521",
+  "37523",
+  "37535",
+  "39066",
+  "40063",
+  "41980",
+  "45955",
+  "46194",
+  "46334"
+ ],
+ "kept_keys": [],
+ "rollback": "delete from public.program_requirement_records where college = 'Las Positas College' and checked = false and control_number in ('01004', '01032', '36234', '36341', '36349', '36350', '36361', '36362', '36363', '36431', '36479', '37521', '37523', '37535', '39066', '40063', '41980', '45955', '46194', '46334');"
+}

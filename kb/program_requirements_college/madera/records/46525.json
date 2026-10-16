@@ -1,0 +1,163 @@
+{
+ "college": "Madera College",
+ "control_number": "46525",
+ "shape": "certificate",
+ "title": "Agriculture Business",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1118/1123",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7072,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7072,
+    "output_tokens": 1112,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1112,
+  "output_tokens_details": {
+   "thinking_tokens": 407
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05053,
+ "ms": 10771,
+ "seconds": 11.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 5,
+   "share": 0.0,
+   "missing": [
+    "AGBS1",
+    "AGBS2",
+    "AGBS3",
+    "AGBS4",
+    "AGBS5"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Agriculture Business, Option A, Associate in Science - Major #M.102A.AS",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AGBS 1",
+    "why": "named only in the A.S. (Option A) section; no certificate section in the text"
+   },
+   {
+    "code": "AGBS 2",
+    "why": "named only in the A.S. (Option A) section; no certificate section in the text"
+   },
+   {
+    "code": "AGBS 3",
+    "why": "named only in the A.S. (Option A) section; no certificate section in the text"
+   },
+   {
+    "code": "AGBS 4",
+    "why": "named only in the A.S. (Option A) section; no certificate section in the text"
+   },
+   {
+    "code": "AGBS 5",
+    "why": "named only in the A.S. (Option A) section; no certificate section in the text"
+   }
+  ],
+  "notes": [
+   "The text has only one section: 'Agriculture Business, Option A, Associate in Science - Major #M.102A.AS'. It has no section for the Agriculture Business Certificate of Achievement, so no blocks, totals, outcomes or careers were recorded for the certificate.",
+   "For reference, the A.S. section has these parts: Required Courses (32.0 units: AG 4, AGBS 2, AGBS 3, AGBS 4, AGBS 5, AGBS 6, AGBS 7, AGBS 19, AS 1, PLS 1, PLS 1L, PLS 2, PLS 11) and 'Select two from the following' (6.0 units, including AGBS 1). The total is 38.0. Six learning outcomes and the phrase 'entry-level positions within the agriculture business industry' also appear, all belonging to the A.S.",
+   "The source URL points to the 2025-2026 MCC catalog, but the requested catalog year is 2026-2027. A reviewer should find the certificate section, possibly on another page of the catalog."
+  ]
+ },
+ "extracted_run": "38935148408"
+}

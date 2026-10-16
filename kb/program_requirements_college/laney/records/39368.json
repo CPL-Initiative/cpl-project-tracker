@@ -1,0 +1,176 @@
+{
+ "college": "Laney College",
+ "control_number": "39368",
+ "shape": "noncredit",
+ "title": "ESOL High Beginning",
+ "award": "Noncredit program",
+ "source_url": "https://lan.curriqunet.com/catalog/view/iq/44166/44195/44359",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6359,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6359,
+    "output_tokens": 830,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 830,
+  "output_tokens_details": {
+   "thinking_tokens": 243
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04204,
+ "ms": 7620,
+ "seconds": 8.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    245.0,
+    245.0
+   ],
+   "stated": [
+    172.0,
+    245.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 245.0-245.0; the catalog states 172.0-245.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "ESOL High Beginning - Certificate of Competency",
+   "measure": "hours",
+   "total_units": {
+    "min": 172,
+    "max": 245
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate high beginning skills in English listening, speaking, reading, and/or writing which will allow them to achieve their personal, vocational, and academic goals."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Core Courses (min 172 hours):",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 172,
+     "max": 245
+    },
+    "courses": [
+     {
+      "code": "ESOL 511",
+      "units": 105,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESOL 561",
+      "units": 70,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESOL 571",
+      "units": 70,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Program is counted in hours; course figures are the hours printed in the catalog.",
+   "Core block reads 'min 172 hours' with a range 172.00-245.00, while the three listed courses sum to 245 hours. The description says the certificate requires completing all three core classes, so the block is recorded as 'all'; the reason for the 172-hour minimum is unclear and should be checked.",
+   "Career Opportunities text mentions only preparation for 'vocational programs and job advancement'; no specific career, job title or field is named, so careers is empty.",
+   "Completion also requires a competency determination by the teacher or department."
+  ]
+ },
+ "extracted_run": "38935141023"
+}

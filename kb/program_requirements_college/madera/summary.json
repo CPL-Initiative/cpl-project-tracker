@@ -1,0 +1,53 @@
+{
+ "college": "Madera College",
+ "programs": 111,
+ "with_closed_list": 111,
+ "found": 106,
+ "extracted": 106,
+ "errors": 0,
+ "passed_machine_checks": 81,
+ "failed": {
+  "coverage": 13,
+  "invented": 4,
+  "arithmetic": 23,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 6.89,
+ "cost_per_program": 0.065,
+ "not_found": [
+  {
+   "control_number": "39787",
+   "title": "Speech-Language Pathology Assistant",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "45293",
+   "title": "Modern Policing",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "45353",
+   "title": "California General Education Transfer Curriculum (Cal-GETC)",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "45445",
+   "title": "Addiction and Drug Studies, AS",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "run": "38935148408"
+}

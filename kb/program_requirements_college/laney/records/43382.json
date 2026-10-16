@@ -1,0 +1,290 @@
+{
+ "college": "Laney College",
+ "control_number": "43382",
+ "shape": "certificate",
+ "title": "Data Science Fundamentals",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://lan.curriqunet.com/catalog/view/iq/44166/44180/44308",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7055,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7055,
+    "output_tokens": 3092,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3092,
+  "output_tokens_details": {
+   "thinking_tokens": 1550
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09006,
+ "ms": 27158,
+ "seconds": 27.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 11,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "MATH13"
+   ],
+   "flagged": [
+    "MATH13"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    15.0,
+    17.0
+   ],
+   "stated": [
+    16.0,
+    17.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 15.0-17.0; the catalog states 16.0-17.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 8,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Data Science Fundamentals - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 16,
+    "max": 17
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate the ability to apply statistical analysis of real world data using multiple representations such as graphs, text, or tables, being mindful of concerns around data bias and privacy.",
+    "Use programming and data analytics tools to make statistical inference on data and data sets using computational techniques.",
+    "Write computer scripts and programs to organize, produce visualizations, and numerical summaries of data and data sets."
+   ],
+   "careers": [
+    "Data analyst",
+    "data scientist",
+    "machine learning engineers",
+    "business analyst",
+    "computer systems analyst",
+    "logistics analyst",
+    "marketing analyst",
+    "database managers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Introduction to Programming",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "CIS 006",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 061",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 025",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 036A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 096F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 116",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CIS 116",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Introduction to SQL Programming (4 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "CIS 098",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Relational Databases and Business Applications ( 4 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "BUS 043B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Foundations in Data Science (4 units)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "MATH 118",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 13",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes with leading zeros (CIS 006, CIS 061, CIS 025, CIS 098); these were matched to closed-list CIS 6, CIS 61, CIS 25, CIS 98 and not marked as additions.",
+   "An unlabeled '4.00' row precedes 'MATH 116 (same as CIS 116) OR CIS 116' directly after the 'Introduction to Programming: Select one course' list, with no new block heading; it was read as an OR option within the Introduction to Programming choice. Reviewer should check whether it is instead a separate required 4-unit block (which would conflict with the printed 16-17 unit total).",
+   "The 'Foundations in Data Science (4 units)' block lists MATH 118 and STAT C1000 (followed by 'OR MATH 13 Introduction to Statistics') with a 4-unit block total; read as choose one course, with MATH 13 as an alternative to STAT C1000. MATH 13 is not in the closed list and its units are not printed. Reviewer should verify whether both MATH 118 and STAT C1000 are required.",
+   "Printed Total Units 16.00-17.00 does not cleanly match the block totals as read (3-5 + 4 + 4 + 4 = 15-17); recorded as printed.",
+   "CIS 025, CIS 096F and CIS 098 are marked '( Historical )' on the catalog page.",
+   "Careers appear both in the description and under Career Opportunities with the same list; recorded once, using the Career Opportunities wording."
+  ]
+ },
+ "extracted_run": "38935141023"
+}

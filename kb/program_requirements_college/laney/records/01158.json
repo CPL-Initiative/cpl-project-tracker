@@ -1,0 +1,251 @@
+{
+ "college": "Laney College",
+ "control_number": "01158",
+ "shape": "degree",
+ "title": "Wood Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://lan.curriqunet.com/catalog/view/iq/44166/44229/44515",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7134,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7134,
+    "output_tokens": 2053,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2053,
+  "output_tokens_details": {
+   "thinking_tokens": 723
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0696,
+ "ms": 25133,
+ "seconds": 25.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    21.0,
+    24.0
+   ],
+   "stated": [
+    21.0,
+    24.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     42.0,
+     45.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": [],
+    "fill": [
+     15.0,
+     18.0
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 7,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Core Courses (21-24 units):",
+   "measure": "units",
+   "total_units": {
+    "min": 21,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 21,
+    "max": 21
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Skills: Students will develop a foundation of core skills necessary to effectively use hand tools, operate power tools, do design and layout for projects, and work with CAD/CAM software and CNC equipment that is current for the cabinet and furniture making industry.",
+    "Materials and Practices: Students will identify, analyze, evaluate and apply materials of the trade to the appropriate production standards creating efficient work flows for shop projects with optimal material use.",
+    "Communication and Calculate: Students will interpret, analyze and calculate in order to create architectural drawings and other shop documents used in the contemporary woodworking trade and communicate essential information from these documents to coworkers and clients with the appropriate nomenclature.",
+    "Safety: Students will evaluate, set up and operate stationary woodworking machines, portable power tools, and hand tools according to safe standard operational practices."
+   ],
+   "careers": [
+    "Bench Carpenter",
+    "Mill persons",
+    "Cabinet instillation",
+    "Finishers",
+    "CNC operators",
+    "CNC programmers",
+    "Cabinet Detailers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Courses (21-24 units):",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 21,
+     "max": 24
+    },
+    "courses": [
+     {
+      "code": "WDTEC 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WDTEC 010L",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WDTEC 011",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WDTEC 020",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WDTEC 020L",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WDTEC 021",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WDTEC 223",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 220G",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 221",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The text begins mid-description and prints no program/award heading; section_heading uses the only requirements heading printed, 'Core Courses (21-24 units):'.",
+   "Catalog prints WDTEC 010, 011, 020, 021 with leading zeros; these match closed-list WDTEC 10, 11, 20, 21 (same titles and units), so they are not marked as catalog additions.",
+   "MATH 220G (1 unit) or MATH 221 (4 units) recorded as one entry with an alternative; this accounts for the 21-24 unit range. Catalog notes MATH 220G is the end of the MATH 220A-G series and students must complete or show competency in all its concepts, and that a higher level MATH course may be substituted.",
+   "Most WDTEC courses and MATH 221 are labeled '( Historical )' on the page; reviewer may wish to confirm currency for 2026-2027.",
+   "General Education Requirements printed as 21.00 units without naming a pattern; ge_pattern left null (presumably Laney local GE).",
+   "'Electives to meet 60 units:' prints no units, so electives_fill_degree is true; Total Units 60.00 recorded as degree_total.",
+   "Outcomes are copied including their printed labels (e.g., 'Skills:')."
+  ]
+ },
+ "extracted_run": "38935141023"
+}

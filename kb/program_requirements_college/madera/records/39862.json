@@ -1,0 +1,330 @@
+{
+ "college": "Madera College",
+ "control_number": "39862",
+ "shape": "certificate",
+ "title": "Administrative Assistant",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1108/1226",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7085,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7085,
+    "output_tokens": 2298,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2298,
+  "output_tokens_details": {
+   "thinking_tokens": 718
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0743,
+ "ms": 17813,
+ "seconds": 18.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 18,
+   "share": 0.944,
+   "missing": [
+    "OT44"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "BT5",
+    "BT6"
+   ],
+   "flagged": [
+    "BT5",
+    "BT6"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    30.0,
+    32.5
+   ],
+   "stated": [
+    25.5,
+    32.5
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 30.0-32.5; the catalog states 25.5-32.5"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Administrative Assistant, Certificate of Achievement - Major #M.226B.CA",
+   "measure": "units",
+   "total_units": {
+    "min": 25.5,
+    "max": 32.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Use application software to create and edit word processing documents.",
+    "Use application software to create and edit spreadsheets.",
+    "Manage a records system."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 23.5,
+     "max": 24
+    },
+    "courses": [
+     {
+      "code": "BT 3",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BT 105",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BT 12",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BT 28",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BT 29",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BT 24",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BT 18",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BT 26",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BT 120",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BT 119",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BT 6",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BT 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACCTG 40",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BT 131",
+        "units": 3.5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "*Typing Courses/Certification",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 4.5
+    },
+    "courses": [
+     {
+      "code": "BT 106",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BT 107",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BT 108",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ENGL 150",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "OT 44",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "Source URL is the 2025-2026 MCC catalog, while the program record is for catalog year 2026-2027; verify the year.",
+   "Each typing course (BT 106, BT 107, BT 108) may instead be met by a typing certification (25/35/45 wpm, via OT 150/OT 151/OT 152 certifications), which is why the block's stated total is 0.0-4.5. The certifications are not courses, so they are not recorded as alternatives.",
+   "ACCTG 40 (4.0) OR BT 131 (3.5) is printed under Required Courses with its own 3.5-4.0 sub-total; it is included in the Required Courses block, whose 23.5-24.0 total matches this reading.",
+   "Catalog prints BT 26, BT 106, BT 107, BT 108 and BT 131 with a space; the closed list has them without a space (BT26, BT106, etc.). They are treated as the same courses.",
+   "BT 12 is printed at 2.0 units, whereas the state file stores 1.5.",
+   "The printed total of 25.5-32.5 can fall below the 30-unit floor of the award type named in the program record; verify this.",
+   "BT 6 (Records Management) and BT 5 (Workplace Communication) are not in the closed list.",
+   "The Learning Outcome(s) are printed for this certificate section."
+  ]
+ },
+ "extracted_run": "38935148408"
+}

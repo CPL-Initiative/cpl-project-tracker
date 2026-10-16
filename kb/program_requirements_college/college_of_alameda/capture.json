@@ -1,0 +1,751 @@
+{
+ "college": "College of Alameda",
+ "catalog_url": "https://coa.curriqunet.com/catalog/iq/47367",
+ "platform": "curriqunet",
+ "catalog_year": "2026-2027",
+ "programs": 85,
+ "with_closed_list": 68,
+ "started": "2026-10-16T16:52:02Z",
+ "curriqunet": {
+  "catalog": 10507,
+  "view_prefix": "https://coa.curriqunet.com/catalog/iq/",
+  "errors": [],
+  "sections": [
+   "Curriculum, Associate Degrees and Certificates",
+   "Courses & Programs"
+  ],
+  "nodes_read": 39,
+  "calls": 79,
+  "entries": 89,
+  "stopped_at_cap": false,
+  "same_title_entries": 0,
+  "entries_read": 89
+ },
+ "pages_read": 89,
+ "banner_h1": null,
+ "loads": 169,
+ "seconds": 840.8,
+ "found": 59,
+ "by_method": {
+  "no_closed_list": 17,
+  "not_found": 6,
+  "page_claimed": 3,
+  "sitemap_page": 59
+ },
+ "shared_pages": {},
+ "not_found": [
+  {
+   "control_number": "01109",
+   "title": "Apparel Design & Merchandising",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "19838",
+   "title": "Apparel Design & Merchandising",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "40310",
+   "title": "ESOL High Intermediate",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47321/47444",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1651,
+     "content": 1651,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "40873",
+   "title": "Cal-GETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "41837",
+   "title": "Business Information Worker- Quick Start",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "43962",
+   "title": "Making with the Laser Cutter",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47369/47499",
+    "label": {
+     "award": 1,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2383,
+     "content": 2383,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "37416",
+   "title": "Anthropology",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://coa.curriqunet.com/catalog/iq/47221/47539/47543"
+   ]
+  },
+  {
+   "control_number": "41485",
+   "title": "Anthropology",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://coa.curriqunet.com/catalog/iq/47221/47539/47543"
+   ]
+  },
+  {
+   "control_number": "46531",
+   "title": "Liberal Arts Emphasis in Science, Technology, Engineering and Mathematics (STEM)",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://coa.curriqunet.com/catalog/iq/47221/47539/47542"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 3,
+  "0.8-1.0": 9,
+  "1.0": 47
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 59,
+  "list": [
+   {
+    "control_number": "01113",
+    "title": "Diesel Mechanics",
+    "award": "A.S. Degree",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47309/47555",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01114",
+    "title": "Engine Performance",
+    "award": "A.S. Degree",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47257/47400",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01116",
+    "title": "Aviation Maintenance Technology: Airframe Technician",
+    "award": "A.S. Degree",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47233/47513",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01118",
+    "title": "Art",
+    "award": "A.A. Degree",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47245/47520",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01124",
+    "title": "Dental Assisting",
+    "award": "A.S. Degree",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47305/47430",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01129",
+    "title": "Mathematics",
+    "award": "A.S. Degree",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47373/47460",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01132",
+    "title": "Psychology",
+    "award": "A.A. Degree",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47393/47472",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01138",
+    "title": "History",
+    "award": "A.A. Degree",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47341/47450",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01141",
+    "title": "Sociology",
+    "award": "A.A. Degree",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47397/47491",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01143",
+    "title": "Humanities",
+    "award": "A.A. Degree",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47353/47454",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09005",
+    "title": "Biology",
+    "award": "A.S. Degree",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47269/47408",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09009",
+    "title": "Chassis and Drivetrain",
+    "award": "A.S. Degree",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47257/47392",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09012",
+    "title": "Engine Repair Specialist",
+    "award": "A.S. Degree",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47257/47404",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09015",
+    "title": "Auto Paint",
+    "award": "A.S. Degree",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47265/47510",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09017",
+    "title": "Aviation Maintenance Technology: Powerplant Technician",
+    "award": "A.S. Degree",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47233/47515",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19827",
+    "title": "Diesel Mechanics",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47309/47556",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19831",
+    "title": "Engine Performance",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47257/47352",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19832",
+    "title": "Engine Repair Specialist",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47257/47368",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19833",
+    "title": "Auto Body",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47265/47509",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19834",
+    "title": "Auto Paint",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47265/47511",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19835",
+    "title": "Aviation Maintenance Technology: Airframe Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47233/47514",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19836",
+    "title": "Aviation Maintenance Technology: Powerplant Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47233/47516",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19837",
+    "title": "Dental Assisting",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47305/47429",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31145",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47373/47461",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31164",
+    "title": "Liberal Arts Emphasis in Social and Behavioral Sciences",
+    "award": "A.A. Degree",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47539/47543",
+    "coverage": 0.954,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31165",
+    "title": "Liberal Arts Emphasis in Natural Science",
+    "award": "A.A. Degree",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47539/47542",
+    "coverage": 0.895,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31166",
+    "title": "Liberal Arts Emphasis in Arts and Humanities",
+    "award": "A.A. Degree",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47539/47541",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32497",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47341/47451",
+    "coverage": 0.778,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32503",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47389/47465",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32714",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47317/47439",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32765",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47245/47380",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33032",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47397/47492",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33364",
+    "title": "Transportation, Distribution, and Logistics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47273/47417",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36691",
+    "title": "Athletic Trainer Aide",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47357/47457",
+    "coverage": 0.846,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37047",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47313/47432",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37829",
+    "title": "Tutor Training",
+    "award": "Noncredit program",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47544/47549",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38437",
+    "title": "Pathway to Academic English",
+    "award": "Noncredit program",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47544/47547",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38462",
+    "title": "Pathway to Success",
+    "award": "Noncredit program",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47544/47548",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40126",
+    "title": "ESOL Intermediate",
+    "award": "Noncredit program",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47321/47446",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40289",
+    "title": "Practitioner of Fine Art",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47245/47519",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40311",
+    "title": "ESOL High Beginning",
+    "award": "Noncredit program",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47321/47445",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40312",
+    "title": "ESOL Advanced",
+    "award": "Noncredit program",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47321/47447",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40627",
+    "title": "Making with Hand Tools",
+    "award": "Noncredit program",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47369/47500",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40628",
+    "title": "Gospel Music Performance",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47377/47526",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40629",
+    "title": "Jazz Studies/Popular Music Performance",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47377/47527",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41481",
+    "title": "Geology",
+    "award": "A.S. Degree",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47333/47477",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41482",
+    "title": "Geography",
+    "award": "A.A. Degree",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47329/47487",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41483",
+    "title": "Communication Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47289/47425",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41836",
+    "title": "Geology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47333/47478",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42192",
+    "title": "Desktop Support Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47285/47569",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42200",
+    "title": "General Chemistry",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47277/47420",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42899",
+    "title": "Making with the Desktop Cutter",
+    "award": "Noncredit program",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47369/47499",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42964",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47273/47413",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43995",
+    "title": "Making with the Dye Sublimation Printer",
+    "award": "Noncredit program",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47369/47501",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43996",
+    "title": "Making with the Printer Cutter",
+    "award": "Noncredit program",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47369/47505",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43997",
+    "title": "Making with the 3D Printer",
+    "award": "Noncredit program",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47369/47502",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45292",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47289/47424",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45448",
+    "title": "Geography",
+    "award": "A.A- T Degree",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47329/47524",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45995",
+    "title": "Digital Literacy and Critical Inquiry",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47361/47394",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "38935121852"
+}

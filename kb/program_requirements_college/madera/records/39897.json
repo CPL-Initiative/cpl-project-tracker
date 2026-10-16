@@ -1,0 +1,179 @@
+{
+ "college": "Madera College",
+ "control_number": "39897",
+ "shape": "certificate",
+ "title": "Agricultural Mechanics",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1105/1212",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6614,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6614,
+    "output_tokens": 1240,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1240,
+  "output_tokens_details": {
+   "thinking_tokens": 469
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05126,
+ "ms": 11952,
+ "seconds": 12.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 8,
+   "share": 0.0,
+   "missing": [
+    "IT30",
+    "MAG40",
+    "MAG41",
+    "MAG42",
+    "MAG43",
+    "MAG44",
+    "MFGT21",
+    "PLS11"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement section not present in text (only 'Agricultural Mechanics, Associate in Science - Major #M.8280.AS' is printed)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MAG 40",
+    "why": "named only in the A.S. section; certificate section not in text"
+   },
+   {
+    "code": "MAG 41",
+    "why": "named only in the A.S. section; certificate section not in text"
+   },
+   {
+    "code": "PLS 11",
+    "why": "named only in the A.S. section; certificate section not in text"
+   },
+   {
+    "code": "MAG 42",
+    "why": "named only in the A.S. section; certificate section not in text"
+   },
+   {
+    "code": "MAG 43",
+    "why": "named only in the A.S. section; certificate section not in text"
+   },
+   {
+    "code": "MAG 44",
+    "why": "named only in the A.S. section; certificate section not in text"
+   },
+   {
+    "code": "MFGT 21",
+    "why": "named only in the A.S. section; certificate section not in text"
+   },
+   {
+    "code": "IT 30",
+    "why": "named only in the A.S. section; certificate section not in text"
+   }
+  ],
+  "notes": [
+   "The requested award is a Certificate of Achievement of 8 to fewer than 16 semester units, but the catalog text contains only the Agricultural Mechanics Associate in Science section (Major #M.8280.AS), whose major totals 18.0 units. The A.S. requirements cannot be the certificate's, so no blocks were recorded. A reviewer should locate the certificate's own section.",
+   "The A.S. section lists Required Core Courses (MAG 40, MAG 41, PLS 11; 9.0) and 'Select 9 units of electives' (MAG 42, MAG 43, MAG 44, MFGT 21, IT 30; 9.0), Total 18.0. The certificate may be a subset of this.",
+   "The six learning outcomes and the career mention ('agricultural mechanics instructors') are printed for the A.S. degree only, so they were not recorded for the certificate.",
+   "The source URL references the 2025-2026 catalog, while the requested catalog year is 2026-2027."
+  ]
+ },
+ "extracted_run": "38935148408"
+}
