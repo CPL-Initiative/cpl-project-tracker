@@ -1,0 +1,3197 @@
+[
+ {
+  "control_number": "01192",
+  "title": "Basic Landscape Horticulture",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LANHT1",
+   "LANHT10",
+   "LANHT11",
+   "LANHT17",
+   "LANHT17E",
+   "LANHT1E",
+   "LANHT2",
+   "LANHT23",
+   "LANHT26",
+   "LANHT2E",
+   "LANHT4",
+   "LANHT4E",
+   "LANHT5A",
+   "LANHT5B",
+   "LANHT5EA",
+   "LANHT5EB",
+   "LANHT81"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48791",
+   "title": "Basic Landscape Horticulture - Certificate of Achievement - LANHT",
+   "h1": "Basic Landscape Horticulture - Certificate of Achievement - LANHT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 5126
+ },
+ {
+  "control_number": "01195",
+  "title": "Accounting",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS10",
+   "BUS1A",
+   "BUS1B",
+   "BUS2",
+   "BUS5",
+   "BUS50",
+   "BUS54",
+   "BUS76",
+   "CIS1",
+   "ECONC2001",
+   "ECONC2002"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48772",
+   "title": "Accounting - A.A. Degree - BUS",
+   "h1": "Accounting - A.A. Degree - BUS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 4546
+ },
+ {
+  "control_number": "01196",
+  "title": "Business Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS1A",
+   "BUS2",
+   "BUS20",
+   "BUS50",
+   "BUS51",
+   "BUS52",
+   "BUS54",
+   "BUS56",
+   "CIS1"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48795",
+   "title": "Business Management - Certificate of Achievement - BUS",
+   "h1": "Business Management - Certificate of Achievement - BUS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 4583
+ },
+ {
+  "control_number": "01197",
+  "title": "Real Estate",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "RLEST11",
+   "RLEST14",
+   "RLEST2A",
+   "RLEST4A",
+   "RLEST5",
+   "RLEST6A",
+   "RLEST7A",
+   "RLEST8",
+   "RLEST9"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48849",
+   "title": "Real Estate - A.A. Degree - RLEST",
+   "h1": "Real Estate - A.A. Degree - RLEST",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 4551
+ },
+ {
+  "control_number": "01208",
+  "title": "Nursing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NURS1",
+   "NURS10",
+   "NURS11",
+   "NURS12",
+   "NURS13",
+   "NURS14",
+   "NURS20",
+   "NURS3A",
+   "NURS3B",
+   "NURS4A",
+   "NURS4B",
+   "NURS5"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48840",
+   "title": "Nursing - A.S. Degree - NURS",
+   "h1": "Nursing - A.S. Degree - NURS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 11567
+ },
+ {
+  "control_number": "01210",
+  "title": "Radiologic Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "RADSC10A",
+   "RADSC10B",
+   "RADSC1B",
+   "RADSC1C",
+   "RADSC2A",
+   "RADSC2B",
+   "RADSC2C",
+   "RADSC3A",
+   "RADSC3B",
+   "RADSC4A",
+   "RADSC4B",
+   "RADSC5A",
+   "RADSC5B",
+   "RADSC7",
+   "RADSC8",
+   "RADSC9B",
+   "RADSC9C",
+   "RADSC9D",
+   "RADSC9E"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48847",
+   "title": "Radiologic Science - A.S. Degree - RADSC",
+   "h1": "Radiologic Science - A.S. Degree - RADSC",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 5001
+ },
+ {
+  "control_number": "01212",
+  "title": "Dietary Manager",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NUTR1",
+   "NUTR10",
+   "NUTR12",
+   "NUTR30",
+   "NUTR31",
+   "NUTR32",
+   "NUTR70A",
+   "NUTR71A"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48809",
+   "title": "Dietary Manager - Certificate of Achievement - NUTR",
+   "h1": "Dietary Manager - Certificate of Achievement - NUTR",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 9564
+ },
+ {
+  "control_number": "01213",
+  "title": "Paralegal Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJUS22",
+   "BUS1A",
+   "BUS2",
+   "COPED474A",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "ENGLC1001",
+   "PARLG1",
+   "PARLG10",
+   "PARLG11",
+   "PARLG12",
+   "PARLG15",
+   "PARLG16",
+   "PARLG4",
+   "PARLG6",
+   "PARLG8",
+   "PARLG9",
+   "PHIL1",
+   "POLSC1000"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48843",
+   "title": "Paralegal Studies - A.A. Degree - PARLG",
+   "h1": "Paralegal Studies - A.A. Degree - PARLG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 5027
+ },
+ {
+  "control_number": "01226",
+  "title": "Administration of Justice: Police Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJUS21",
+   "ADJUS22",
+   "ADJUS23",
+   "ADJUS24",
+   "ADJUS25",
+   "ADJUS51",
+   "ADJUS56",
+   "ADJUS57",
+   "ADJUS63",
+   "COSER10",
+   "COSER16B",
+   "COSER41",
+   "HLTED1",
+   "PSYCC1000",
+   "PSYCH10",
+   "SOC1",
+   "SOC2"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48777",
+   "title": "Administration of Justice: Police Science - A.A. Degree - ADJUS",
+   "h1": "Administration of Justice: Police Science - A.A. Degree - ADJUS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 4950
+ },
+ {
+  "control_number": "01227",
+  "title": "Child Development",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV50",
+   "CHDEV51",
+   "CHDEV52",
+   "CHDEV53",
+   "CHDEV54A",
+   "CHDEV54B",
+   "CHDEV55A",
+   "CHDEV55C",
+   "CHDEV56A",
+   "CHDEV56B",
+   "CHDEV60",
+   "CHDEV62",
+   "CHDEV68",
+   "CHDEV74",
+   "CHDEV80"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48797",
+   "title": "Child Development - A.A. Degree - CHDEV",
+   "h1": "Child Development - A.A. Degree - CHDEV",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 4910
+ },
+ {
+  "control_number": "01231",
+  "title": "African American Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.958,
+  "codes_found": [
+   "AFRAM10",
+   "AFRAM12",
+   "AFRAM14A",
+   "AFRAM14B",
+   "AFRAM16",
+   "AFRAM18",
+   "AFRAM19",
+   "AFRAM2",
+   "AFRAM200",
+   "AFRAM25",
+   "AFRAM3",
+   "AFRAM30",
+   "AFRAM31",
+   "AFRAM32",
+   "AFRAM33",
+   "AFRAM38",
+   "AFRAM39",
+   "AFRAM4",
+   "AFRAM41",
+   "AFRAM42",
+   "AFRAM43",
+   "AFRAM45",
+   "AFRAM5"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48780",
+   "title": "African American Studies - A.A. Degree - AFRAM",
+   "h1": "African American Studies - A.A. Degree - AFRAM",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 5920
+ },
+ {
+  "control_number": "09040",
+  "title": "Nursery Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LANHT1",
+   "LANHT10",
+   "LANHT11",
+   "LANHT16",
+   "LANHT19",
+   "LANHT1E",
+   "LANHT2",
+   "LANHT206",
+   "LANHT23",
+   "LANHT24",
+   "LANHT25",
+   "LANHT26",
+   "LANHT2E",
+   "LANHT4",
+   "LANHT4E",
+   "LANHT52",
+   "LANHT5A",
+   "LANHT5B",
+   "LANHT5EA",
+   "LANHT5EB"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48838",
+   "title": "Nursery Management  - A.S. Degree - LANHT",
+   "h1": "Nursery Management  - A.S. Degree - LANHT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 5371
+ },
+ {
+  "control_number": "09042",
+  "title": "Landscape Design and Construction",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LANHT1",
+   "LANHT14",
+   "LANHT14E",
+   "LANHT17",
+   "LANHT17E",
+   "LANHT18A",
+   "LANHT18B",
+   "LANHT18LB",
+   "LANHT1E",
+   "LANHT2",
+   "LANHT206",
+   "LANHT210A",
+   "LANHT29",
+   "LANHT29E",
+   "LANHT2E",
+   "LANHT33A",
+   "LANHT34A",
+   "LANHT35A",
+   "LANHT4",
+   "LANHT4E",
+   "LANHT5A",
+   "LANHT5B",
+   "LANHT5EA",
+   "LANHT5EB",
+   "LANHT60A",
+   "LANHT9"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48831",
+   "title": "Landscape Design and Construction - A.S. Degree - LANHT",
+   "h1": "Landscape Design and Construction - A.S. Degree - LANHT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 5814
+ },
+ {
+  "control_number": "09043",
+  "title": "Business Administration",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "09050",
+  "title": "Community Social Services/Substance Abuse",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COSER10",
+   "COSER16B",
+   "COSER20",
+   "COSER21",
+   "COSER22",
+   "COSER25",
+   "COSER26",
+   "COSER27",
+   "COSER28",
+   "COSER29",
+   "COSER41",
+   "COSER42",
+   "COSER476C",
+   "HLTED1",
+   "LRNRE211"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48800",
+   "title": "Community Social Services/Substance Abuse - A.A. Degree - COSER",
+   "h1": "Community Social Services/Substance Abuse - A.A. Degree - COSER",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 5182
+ },
+ {
+  "control_number": "09051",
+  "title": "Administration of Justice: Corrections",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJUS21",
+   "ADJUS22",
+   "ADJUS23",
+   "ADJUS24",
+   "ADJUS25",
+   "ADJUS51",
+   "ADJUS56",
+   "ADJUS63",
+   "AFRAM16",
+   "COSER10",
+   "COSER16B",
+   "COSER22",
+   "COSER41",
+   "COSER42",
+   "PSYCC1000",
+   "PSYCH10",
+   "SOC1",
+   "SOC2"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48775",
+   "title": "Administration of Justice: Corrections - A.A. Degree - ADJUS",
+   "h1": "Administration of Justice: Corrections - A.A. Degree - ADJUS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 5030
+ },
+ {
+  "control_number": "09054",
+  "title": "Health Sciences",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL10",
+   "BIOL2",
+   "BIOL20A",
+   "BIOL20B",
+   "BIOL24",
+   "BIOL3",
+   "BIOL4",
+   "BIOSC101",
+   "BIOSC105",
+   "CHEM1A",
+   "CHEM30A",
+   "HLTED1",
+   "HLTOC101",
+   "MATH1",
+   "MATH15",
+   "MATH3A",
+   "MATH50",
+   "NUTR10",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48821",
+   "title": "Health Sciences - A.S. Degree - BIOSC",
+   "h1": "Health Sciences - A.S. Degree - BIOSC",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 5131
+ },
+ {
+  "control_number": "09055",
+  "title": "Natural Sciences",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHR1",
+   "ANTHR1L",
+   "ASTR1",
+   "ASTR10",
+   "BIOL10",
+   "BIOL15",
+   "BIOL1A",
+   "BIOL1B",
+   "BIOL2",
+   "BIOL20A",
+   "BIOL20B",
+   "BIOL23",
+   "BIOL24",
+   "BIOL29",
+   "BIOL3",
+   "BIOL4",
+   "BIOL9",
+   "CHEM12A",
+   "CHEM12B",
+   "CHEM1A",
+   "CHEM1B",
+   "CHEM30A",
+   "CHEM30B",
+   "GEOG1",
+   "GEOG1L",
+   "GEOL1",
+   "LANHT1",
+   "LANHT1E",
+   "PHYS10",
+   "PHYS2A",
+   "PHYS2B",
+   "PHYS4A",
+   "PHYS4B",
+   "PHYS4C"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48837",
+   "title": "Natural Sciences - A.S. Degree - PHYS",
+   "h1": "Natural Sciences - A.S. Degree - PHYS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 34,
+  "text_chars": 5669
+ },
+ {
+  "control_number": "11693",
+  "title": "Landscape And Parks Maintenance",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LANHT1",
+   "LANHT10",
+   "LANHT11",
+   "LANHT13",
+   "LANHT13E",
+   "LANHT16",
+   "LANHT17",
+   "LANHT17E",
+   "LANHT19",
+   "LANHT1E",
+   "LANHT2",
+   "LANHT206",
+   "LANHT210A",
+   "LANHT23",
+   "LANHT26",
+   "LANHT2E",
+   "LANHT4",
+   "LANHT4E",
+   "LANHT5A",
+   "LANHT5B",
+   "LANHT5EA",
+   "LANHT5EB",
+   "LANHT81",
+   "LANHT84"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48828",
+   "title": "Landscape and Parks Maintenance  - A.S. Degree - LANHT",
+   "h1": "Landscape and Parks Maintenance  - A.S. Degree - LANHT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 5588
+ },
+ {
+  "control_number": "12299",
+  "title": "Dietetic Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL24",
+   "HLTOC201",
+   "NUTR10",
+   "NUTR12",
+   "NUTR30",
+   "NUTR31",
+   "NUTR32",
+   "NUTR70A",
+   "NUTR70B",
+   "NUTR70C",
+   "NUTR71A",
+   "NUTR71B",
+   "NUTR71C"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48810",
+   "title": "Dietetic Technology - A.S. Degree - NUTR",
+   "h1": "Dietetic Technology - A.S. Degree - NUTR",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 4698
+ },
+ {
+  "control_number": "19145",
+  "title": "California General Education Transfer Curriculum (Cal-GETC)",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.963,
+  "codes_found": [
+   "ADJUS21",
+   "ADJUS22",
+   "ADJUS63",
+   "AFRAM10",
+   "AFRAM11",
+   "AFRAM12",
+   "AFRAM14A",
+   "AFRAM14B",
+   "AFRAM16",
+   "AFRAM18",
+   "AFRAM19",
+   "AFRAM2",
+   "AFRAM23",
+   "AFRAM25",
+   "AFRAM3",
+   "AFRAM30",
+   "AFRAM31",
+   "AFRAM32",
+   "AFRAM33",
+   "AFRAM38",
+   "AFRAM39",
+   "AFRAM41",
+   "AFRAM42",
+   "AFRAM43",
+   "AFRAM45",
+   "AFRAM5",
+   "AFRAM52",
+   "ANTHR1",
+   "ANTHR16",
+   "ANTHR1L",
+   "ANTHR2",
+   "ANTHR3",
+   "ANTHR5",
+   "ANTHR7",
+   "ART1",
+   "ART4",
+   "ART7",
+   "ASAME19",
+   "ASAME30",
+   "ASTR1",
+   "ASTR10",
+   "BIOL10",
+   "BIOL15",
+   "BIOL1A",
+   "BIOL1B",
+   "BIOL2",
+   "BIOL20A",
+   "BIOL20B",
+   "BIOL23",
+   "BIOL24",
+   "BIOL29",
+   "BIOL3",
+   "BIOL4",
+   "BIOL42",
+   "BIOL5",
+   "BIOL9",
+   "BIOSC53",
+   "CHDEV51",
+   "CHDEV80",
+   "CHEM12A",
+   "CHEM12B",
+   "CHEM1A",
+   "CHEM1B",
+   "CHEM30A",
+   "CHEM30B",
+   "CIS11",
+   "COMM10",
+   "COMM19",
+   "COMM3",
+   "COMM4",
+   "COMM6",
+   "COMMC1000",
+   "COSER10",
+   "COSER22",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "ENGLC1001",
+   "ENGLC1002",
+   "ENVMT101",
+   "ENVMT12",
+   "ENVMT2",
+   "ENVMT3",
+   "GEOG1",
+   "GEOG1L",
+   "HISTC1001",
+   "HISTC1002",
+   "HUMAN2",
+   "MATH1",
+   "MATH11",
+   "MATH15",
+   "MATH2",
+   "MATH3A",
+   "MATH3B",
+   "MATH3C",
+   "MATH3E",
+   "MATH3F",
+   "MUSIC10",
+   "MUSIC11",
+   "MUSIC15A",
+   "MUSIC15B",
+   "MUSIC19",
+   "MUSIC9",
+   "NATAM19",
+   "PHIL1",
+   "PHIL2",
+   "PHYS10",
+   "PHYS2A",
+   "PHYS2B",
+   "PHYS4A",
+   "PHYS4B",
+   "PHYS4C",
+   "PSYCC1000",
+   "PSYCH10",
+   "PSYCH12",
+   "PSYCH21",
+   "PSYCH24",
+   "PSYCH28",
+   "PSYCH6",
+   "SOC1",
+   "SOC120",
+   "SOC13",
+   "SOC2",
+   "SOC3",
+   "SOC45",
+   "SOC5",
+   "SPAN1B",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/49733",
+   "title": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement - COUN",
+   "h1": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement - COUN",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 134,
+  "text_chars": 15032
+ },
+ {
+  "control_number": "22010",
+  "title": "Landscape and Parks Maintenance",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LANHT1",
+   "LANHT10",
+   "LANHT11",
+   "LANHT13",
+   "LANHT13E",
+   "LANHT16",
+   "LANHT17",
+   "LANHT17E",
+   "LANHT19",
+   "LANHT1E",
+   "LANHT2",
+   "LANHT206",
+   "LANHT210A",
+   "LANHT23",
+   "LANHT26",
+   "LANHT2E",
+   "LANHT4",
+   "LANHT4E",
+   "LANHT5A",
+   "LANHT5B",
+   "LANHT5EA",
+   "LANHT5EB",
+   "LANHT81",
+   "LANHT84"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48829",
+   "title": "Landscape and Parks Maintenance  - Certificate of Achievement - LANHT",
+   "h1": "Landscape and Parks Maintenance  - Certificate of Achievement - LANHT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 5588
+ },
+ {
+  "control_number": "22011",
+  "title": "Landscape Design and Construction",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LANHT1",
+   "LANHT14E",
+   "LANHT17",
+   "LANHT17E",
+   "LANHT18A",
+   "LANHT18B",
+   "LANHT18LA",
+   "LANHT18LB",
+   "LANHT1E",
+   "LANHT2",
+   "LANHT206",
+   "LANHT210A",
+   "LANHT29",
+   "LANHT29E",
+   "LANHT2E",
+   "LANHT33A",
+   "LANHT34A",
+   "LANHT35A",
+   "LANHT4",
+   "LANHT4E",
+   "LANHT5A",
+   "LANHT5B",
+   "LANHT5EA",
+   "LANHT5EB",
+   "LANHT60A",
+   "LANHT9"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48832",
+   "title": "Landscape Design and Construction - Certificate of Achievement - LANHT",
+   "h1": "Landscape Design and Construction - Certificate of Achievement - LANHT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 5841
+ },
+ {
+  "control_number": "22012",
+  "title": "Nursery Management",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LANHT1",
+   "LANHT10",
+   "LANHT11",
+   "LANHT16",
+   "LANHT19",
+   "LANHT1E",
+   "LANHT2",
+   "LANHT206",
+   "LANHT23",
+   "LANHT24",
+   "LANHT25",
+   "LANHT26",
+   "LANHT2E",
+   "LANHT4",
+   "LANHT4E",
+   "LANHT52",
+   "LANHT5A",
+   "LANHT5B",
+   "LANHT5EA",
+   "LANHT5EB"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48839",
+   "title": "Nursery Management - Certificate of Achievement - LANHT",
+   "h1": "Nursery Management - Certificate of Achievement - LANHT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 5367
+ },
+ {
+  "control_number": "22015",
+  "title": "Accounting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS10",
+   "BUS1A",
+   "BUS1B",
+   "BUS2",
+   "BUS5",
+   "CIS1",
+   "ECONC2001",
+   "ECONC2002"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48773",
+   "title": "Accounting - Certificate of Achievement - BUS",
+   "h1": "Accounting - Certificate of Achievement - BUS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 4396
+ },
+ {
+  "control_number": "22016",
+  "title": "Real Estate",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "RLEST11",
+   "RLEST14",
+   "RLEST250",
+   "RLEST2A",
+   "RLEST3",
+   "RLEST4A",
+   "RLEST5",
+   "RLEST6A",
+   "RLEST7A",
+   "RLEST8",
+   "RLEST9"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48850",
+   "title": "Real Estate Broker - Certificate of Achievement - RLEST",
+   "h1": "Real Estate Broker - Certificate of Achievement - RLEST",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 4548
+ },
+ {
+  "control_number": "22023",
+  "title": "Radiologic Science",
+  "award": "Certificate of Achievement requiring 60+S/90+Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "RADSC10A",
+   "RADSC10B",
+   "RADSC1B",
+   "RADSC1C",
+   "RADSC2B",
+   "RADSC2C",
+   "RADSC3A",
+   "RADSC3B",
+   "RADSC4A",
+   "RADSC4B",
+   "RADSC5A",
+   "RADSC5B",
+   "RADSC7",
+   "RADSC8",
+   "RADSC9B",
+   "RADSC9C",
+   "RADSC9D",
+   "RADSC9E"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48848",
+   "title": "Radiologic Science - Certificate of Achievement - RADSC",
+   "h1": "Radiologic Science - Certificate of Achievement - RADSC",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 5005
+ },
+ {
+  "control_number": "22025",
+  "title": "Teacher",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV50",
+   "CHDEV51",
+   "CHDEV52",
+   "CHDEV53",
+   "CHDEV54A",
+   "CHDEV54B",
+   "CHDEV55A",
+   "CHDEV55C",
+   "CHDEV60",
+   "CHDEV62",
+   "CHDEV68",
+   "CHDEV74",
+   "CHDEV80",
+   "CHDEV84",
+   "COMMC1004",
+   "ENGLC1000"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48854",
+   "title": "Teacher - Certificate of Achievement - CHDEV",
+   "h1": "Teacher - Certificate of Achievement - CHDEV",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 5032
+ },
+ {
+  "control_number": "22026",
+  "title": "Paralegal Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJUS22",
+   "BUS1A",
+   "BUS2",
+   "COPED474A",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "ENGLC1001",
+   "PARLG1",
+   "PARLG10",
+   "PARLG11",
+   "PARLG12",
+   "PARLG15",
+   "PARLG16",
+   "PARLG4",
+   "PARLG6",
+   "PARLG8",
+   "PARLG9",
+   "PHIL1",
+   "POLSC1000"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48844",
+   "title": "Paralegal Studies - Certificate of Achievement - PARLG",
+   "h1": "Paralegal Studies - Certificate of Achievement - PARLG",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 5126
+ },
+ {
+  "control_number": "22028",
+  "title": "Community Social Services/Substance Abuse",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COSER10",
+   "COSER16B",
+   "COSER21",
+   "COSER22",
+   "COSER25",
+   "COSER26",
+   "COSER27",
+   "COSER28",
+   "COSER29",
+   "COSER41",
+   "COSER42",
+   "COSER476C",
+   "HLTED1",
+   "LRNRE211"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48801",
+   "title": "Community Social Services/Substance Abuse - Certificate of Achievement - COSER",
+   "h1": "Community Social Services/Substance Abuse - Certificate of Achievement - COSER",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 5186
+ },
+ {
+  "control_number": "22029",
+  "title": "Administration of Justice: Police Science",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJUS21",
+   "ADJUS22",
+   "ADJUS23",
+   "ADJUS24",
+   "ADJUS25",
+   "ADJUS57",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "ENGLC1002",
+   "HLTED1",
+   "PSYCC1000",
+   "PSYCH10",
+   "SOC1",
+   "SOC2"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48778",
+   "title": "Administration of Justice: Police Science - Certificate of Achievement - ADJUS",
+   "h1": "Administration of Justice: Police Science - Certificate of Achievement - ADJUS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 4777
+ },
+ {
+  "control_number": "22030",
+  "title": "Administration of Justice: Corrections",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJUS21",
+   "ADJUS22",
+   "ADJUS23",
+   "ADJUS24",
+   "ADJUS25",
+   "ADJUS51",
+   "ADJUS56",
+   "ADJUS63",
+   "AFRAM16",
+   "COSER10",
+   "COSER16B",
+   "COSER22",
+   "COSER41",
+   "COSER42",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "PSYCC1000",
+   "PSYCH10",
+   "SOC1",
+   "SOC2"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48776",
+   "title": "Administration of Justice: Corrections - Certificate of Achievement - ADJUS",
+   "h1": "Administration of Justice: Corrections - Certificate of Achievement - ADJUS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 5162
+ },
+ {
+  "control_number": "30967",
+  "title": "Landscape Architecture",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LANHT14",
+   "LANHT14E",
+   "LANHT17",
+   "LANHT17E",
+   "LANHT18A",
+   "LANHT18B",
+   "LANHT18LA",
+   "LANHT18LB",
+   "LANHT2",
+   "LANHT210A",
+   "LANHT210B",
+   "LANHT29",
+   "LANHT29E",
+   "LANHT2E",
+   "LANHT33A",
+   "LANHT34A",
+   "LANHT35A",
+   "LANHT57",
+   "LANHT5A",
+   "LANHT5B",
+   "LANHT5EA",
+   "LANHT5EB",
+   "LANHT60A",
+   "LANHT9"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48830",
+   "title": "Landscape Architecture - A.A. Degree - LANHT",
+   "h1": "Landscape Architecture - A.A. Degree - LANHT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 5538
+ },
+ {
+  "control_number": "31180",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJUS21",
+   "ADJUS22",
+   "ADJUS23",
+   "ADJUS24",
+   "ADJUS25",
+   "ADJUS26",
+   "ADJUS51",
+   "ADJUS56",
+   "ADJUS63",
+   "PSYCC1000",
+   "SOC1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48774",
+   "title": "Administration of Justice - AS-T Degree - ADJUS",
+   "h1": "Administration of Justice - AS-T Degree - ADJUS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 4821
+ },
+ {
+  "control_number": "32928",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH11",
+   "MATH3A",
+   "MATH3B",
+   "MATH3C",
+   "MATH3E",
+   "MATH3F",
+   "PHYS4A",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/math2-ast",
+   "title": "Mathematics 2.0 - AS-T Degree - MATH",
+   "h1": "Mathematics 2.0 - AS-T Degree - MATH",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 4618
+ },
+ {
+  "control_number": "33054",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33081",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV50",
+   "CHDEV51",
+   "CHDEV52",
+   "CHDEV53",
+   "CHDEV54B",
+   "CHDEV55A",
+   "CHDEV74",
+   "CHDEV80"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48813",
+   "title": "Early Childhood Education - AS-T Degree - CHDEV",
+   "h1": "Early Childhood Education - AS-T Degree - CHDEV",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 4422
+ },
+ {
+  "control_number": "33332",
+  "title": "Homeland Security",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJUS116",
+   "ADJUS70",
+   "ADJUS72"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48823",
+   "title": "Homeland Security - Certificate of Achievement - ADJUS",
+   "h1": "Homeland Security - Certificate of Achievement - ADJUS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 4253
+ },
+ {
+  "control_number": "33357",
+  "title": "Applications Security",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS178",
+   "CIS221",
+   "CIS247",
+   "CIS51",
+   "CIS54",
+   "CIS55",
+   "CIS56",
+   "CIS57",
+   "CIS59",
+   "CIS6",
+   "CIS60",
+   "CIS7",
+   "CIS71",
+   "CIS98",
+   "COPED469",
+   "CS20"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48783",
+   "title": "Applications Security - Certificate of Achievement - CIS",
+   "h1": "Applications Security - Certificate of Achievement - CIS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 5030
+ },
+ {
+  "control_number": "33371",
+  "title": "Social and Behavioral Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.962,
+  "codes_found": [
+   "ADJUS21",
+   "ADJUS22",
+   "ADJUS25",
+   "ADJUS63",
+   "AFRAM11",
+   "AFRAM14A",
+   "AFRAM14B",
+   "AFRAM16",
+   "AFRAM18",
+   "AFRAM19",
+   "AFRAM23",
+   "AFRAM25",
+   "AFRAM31",
+   "AFRAM33",
+   "AFRAM38",
+   "AFRAM4",
+   "AFRAM45",
+   "ANTHR16",
+   "ANTHR3",
+   "ANTHR5",
+   "ANTHR7",
+   "ASAME30",
+   "BUS52",
+   "CHDEV51",
+   "CHDEV53",
+   "CHDEV80",
+   "COMM10",
+   "COMM19",
+   "COMM6",
+   "COMMC1004",
+   "COSER10",
+   "COSER22",
+   "COSER29",
+   "ECONC2001",
+   "ECONC2002",
+   "ENVMT2",
+   "HISTC1001",
+   "HISTC1002",
+   "HLTED1",
+   "POLSC1000",
+   "PSYCC1000",
+   "PSYCH10",
+   "PSYCH12",
+   "PSYCH21",
+   "PSYCH24",
+   "PSYCH28",
+   "PSYCH6",
+   "SOC1",
+   "SOC13",
+   "SOC2",
+   "SOC5"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48852",
+   "title": "Social and Behavioral Sciences - A.A. Degree - SOC",
+   "h1": "Social and Behavioral Sciences - A.A. Degree - SOC",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 53,
+  "text_chars": 7395
+ },
+ {
+  "control_number": "33439",
+  "title": "Infrastructure Security",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS178",
+   "CIS221",
+   "CIS247",
+   "CIS5",
+   "CIS51",
+   "CIS52",
+   "CIS53",
+   "CIS54",
+   "CIS55",
+   "CIS58",
+   "CIS6",
+   "CIS60",
+   "CIS7",
+   "CIS72",
+   "CIS98",
+   "COPED469",
+   "CS20"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48827",
+   "title": "Infrastructure Security - Certificate of Achievement - CIS",
+   "h1": "Infrastructure Security - Certificate of Achievement - CIS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 5114
+ },
+ {
+  "control_number": "33536",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHR1",
+   "ANTHR16",
+   "ANTHR1L",
+   "ANTHR2",
+   "ANTHR3",
+   "ANTHR5",
+   "ANTHR7",
+   "BIOL2",
+   "GEOL1",
+   "PSYCH28",
+   "SOC120",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48781",
+   "title": "Anthropology - AA-T Degree - ANTHR",
+   "h1": "Anthropology - AA-T Degree - ANTHR",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 4868
+ },
+ {
+  "control_number": "33540",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS1A",
+   "BUS1B",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH3A",
+   "MATH3B",
+   "MATH3C",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48814",
+   "title": "Economics - AA-T Degree - ECON",
+   "h1": "Economics - AA-T Degree - ECON",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 4554
+ },
+ {
+  "control_number": "33675",
+  "title": "Applications Security",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS178",
+   "CIS221",
+   "CIS247",
+   "CIS5",
+   "CIS51",
+   "CIS54",
+   "CIS55",
+   "CIS56",
+   "CIS57",
+   "CIS59",
+   "CIS6",
+   "CIS60",
+   "CIS7",
+   "CIS71",
+   "CIS98",
+   "COPED469",
+   "CS20"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48782",
+   "title": "Applications Security - A.S. Degree - CIS",
+   "h1": "Applications Security - A.S. Degree - CIS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 5030
+ },
+ {
+  "control_number": "33709",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJUS21",
+   "AFRAM10",
+   "ANTHR3",
+   "PSYCH6",
+   "SOC1",
+   "SOC120",
+   "SOC13",
+   "SOC2",
+   "SOC3",
+   "SOC45",
+   "SOC5",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48853",
+   "title": "Sociology - AA-T Degree - SOC",
+   "h1": "Sociology - AA-T Degree - SOC",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 4768
+ },
+ {
+  "control_number": "33716",
+  "title": "Infrastructure Security",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS178",
+   "CIS221",
+   "CIS247",
+   "CIS5",
+   "CIS51",
+   "CIS52",
+   "CIS53",
+   "CIS54",
+   "CIS55",
+   "CIS58",
+   "CIS6",
+   "CIS60",
+   "CIS7",
+   "CIS72",
+   "CIS98",
+   "COPED469",
+   "CS20"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48826",
+   "title": "Infrastructure Security - A.S. Degree - CIS",
+   "h1": "Infrastructure Security - A.S. Degree - CIS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 5114
+ },
+ {
+  "control_number": "35211",
+  "title": "Nutrition and Dietetics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL2",
+   "BIOL3",
+   "BIOL4",
+   "CHEM12A",
+   "CHEM1A",
+   "NUTR10",
+   "NUTR31",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48841",
+   "title": "Nutrition and Dietetics - AS-T Degree - NUTR",
+   "h1": "Nutrition and Dietetics - AS-T Degree - NUTR",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 4388
+ },
+ {
+  "control_number": "35315",
+  "title": "Histotechnician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL2",
+   "BIOL20A",
+   "BIOL20B",
+   "BIOL3",
+   "BIOL4",
+   "BIOSC101",
+   "BIOSC102",
+   "BIOSC30",
+   "BIOSC476G",
+   "BIOSC50",
+   "BIOSC55",
+   "BIOSC56",
+   "BIOSC9",
+   "CHEM1A",
+   "CHEM30A"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48822",
+   "title": "Histotechnician - Certificate of Achievement - BIOSC",
+   "h1": "Histotechnician - Certificate of Achievement - BIOSC",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 4917
+ },
+ {
+  "control_number": "36514",
+  "title": "Tree Care Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LANHT1",
+   "LANHT13",
+   "LANHT13E",
+   "LANHT1E",
+   "LANHT23",
+   "LANHT2E",
+   "LANHT80",
+   "LANHT81",
+   "LANHT84",
+   "LANHT85"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48856",
+   "title": "Tree Care Specialist  - Certificate of Achievement - LANHT",
+   "h1": "Tree Care Specialist  - Certificate of Achievement - LANHT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 4740
+ },
+ {
+  "control_number": "36515",
+  "title": "Tree Climber Specialist",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LANHT1",
+   "LANHT10",
+   "LANHT11",
+   "LANHT13",
+   "LANHT13E",
+   "LANHT16",
+   "LANHT1E",
+   "LANHT2",
+   "LANHT206",
+   "LANHT23",
+   "LANHT2E",
+   "LANHT4",
+   "LANHT4E",
+   "LANHT5A",
+   "LANHT5B",
+   "LANHT5EA",
+   "LANHT5EB",
+   "LANHT80",
+   "LANHT81",
+   "LANHT84",
+   "LANHT85",
+   "LANHT86",
+   "LANHT88"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48857",
+   "title": "Tree Climber Specialist - Certificate of Achievement - LANHT",
+   "h1": "Tree Climber Specialist - Certificate of Achievement - LANHT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 5595
+ },
+ {
+  "control_number": "36516",
+  "title": "Arboriculture",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LANHT1",
+   "LANHT10",
+   "LANHT11",
+   "LANHT13",
+   "LANHT13E",
+   "LANHT16",
+   "LANHT1E",
+   "LANHT2",
+   "LANHT206",
+   "LANHT23",
+   "LANHT2E",
+   "LANHT4",
+   "LANHT4E",
+   "LANHT5A",
+   "LANHT5B",
+   "LANHT5EA",
+   "LANHT5EB",
+   "LANHT80",
+   "LANHT81",
+   "LANHT84",
+   "LANHT85",
+   "LANHT86",
+   "LANHT88"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48784",
+   "title": "Arboriculture - A.S. Degree - LANHT",
+   "h1": "Arboriculture - A.S. Degree - LANHT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 5618
+ },
+ {
+  "control_number": "36826",
+  "title": "Bridge to Credit ESOL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESOL541A",
+   "ESOL541B",
+   "ESOL541C",
+   "ESOL541D"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48793",
+   "title": "Bridge to Credit ESOL - CP1: Certificate of Competency - ESOL",
+   "h1": "Bridge to Credit ESOL - CP1: Certificate of Competency - ESOL",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 4138
+ },
+ {
+  "control_number": "37718",
+  "title": "Art Fundamentals",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART1",
+   "ART137",
+   "ART166",
+   "ART20",
+   "ART22",
+   "ART26",
+   "ART27",
+   "ART35",
+   "ART50",
+   "ART52",
+   "ART60",
+   "ART80"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48785",
+   "title": "Art Fundamentals - Certificate of Achievement - ART",
+   "h1": "Art Fundamentals - Certificate of Achievement - ART",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 4597
+ },
+ {
+  "control_number": "37798",
+  "title": "Research Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LIS511",
+   "LIS512",
+   "LIS513"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48851",
+   "title": "Research Skills - CP1: Certificate of Competency - LIS",
+   "h1": "Research Skills - CP1: Certificate of Competency - LIS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 4079
+ },
+ {
+  "control_number": "37964",
+  "title": "Computer Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS100",
+   "CIS11",
+   "CIS178",
+   "CIS179",
+   "CIS247",
+   "CIS33",
+   "CIS51",
+   "CIS52",
+   "CIS53",
+   "CIS55",
+   "CIS56",
+   "CIS57",
+   "CIS59",
+   "CIS6",
+   "CIS60",
+   "CIS66",
+   "CIS7",
+   "CIS71",
+   "CIS78",
+   "CIS98",
+   "CS20",
+   "CS247",
+   "CS25",
+   "CS26",
+   "CS27",
+   "CS43",
+   "CS60",
+   "CS80",
+   "MATH3A",
+   "MATH3B",
+   "MATH3E",
+   "PHYS4A"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48803",
+   "title": "Computer Science - A.S. Degree - CS",
+   "h1": "Computer Science - A.S. Degree - CS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 32,
+  "text_chars": 6684
+ },
+ {
+  "control_number": "37966",
+  "title": "Computer Science",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS100",
+   "CIS11",
+   "CIS178",
+   "CIS179",
+   "CIS247",
+   "CIS33",
+   "CIS51",
+   "CIS52",
+   "CIS53",
+   "CIS55",
+   "CIS56",
+   "CIS57",
+   "CIS59",
+   "CIS6",
+   "CIS60",
+   "CIS66",
+   "CIS7",
+   "CIS71",
+   "CIS78",
+   "CIS98",
+   "CS20",
+   "CS247",
+   "CS25",
+   "CS26",
+   "CS27",
+   "CS43",
+   "CS60",
+   "CS80",
+   "MATH3A",
+   "MATH3B",
+   "MATH3E",
+   "PHYS4A"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48804",
+   "title": "Computer Science - Certificate of Achievement - CS",
+   "h1": "Computer Science - Certificate of Achievement - CS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 32,
+  "text_chars": 6601
+ },
+ {
+  "control_number": "38375",
+  "title": "Fire Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMT211",
+   "FISCI201",
+   "FISCI202",
+   "FISCI203",
+   "FISCI204",
+   "FISCI205",
+   "FISCI206",
+   "FISCI230",
+   "FISCI231",
+   "FISCI232",
+   "FISCI233",
+   "FISCI235",
+   "FISCI236",
+   "FISCI237",
+   "FISCI238",
+   "FISCI239"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48818",
+   "title": "Fire Technology - A.S. Degree - FISCI",
+   "h1": "Fire Technology - A.S. Degree - FISCI",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 5296
+ },
+ {
+  "control_number": "38376",
+  "title": "Fire Officer",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM3",
+   "COMM4",
+   "COMMC1000",
+   "ENGL208",
+   "FISCI230",
+   "FISCI231",
+   "FISCI232",
+   "FISCI233",
+   "FISCI234",
+   "FISCI235",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48817",
+   "title": "Fire Officer - Certificate of Achievement - FISCI",
+   "h1": "Fire Officer - Certificate of Achievement - FISCI",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 4677
+ },
+ {
+  "control_number": "38377",
+  "title": "Chief Fire Officer",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS52",
+   "CIS40",
+   "CIS42",
+   "COMM3",
+   "COMM4",
+   "FISCI236",
+   "FISCI237",
+   "FISCI238",
+   "FISCI239",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48796",
+   "title": "Chief Fire Officer - Certificate of Achievement - FISCI",
+   "h1": "Chief Fire Officer - Certificate of Achievement - FISCI",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 4697
+ },
+ {
+  "control_number": "38635",
+  "title": "Fire Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMT211",
+   "FISCI201",
+   "FISCI202",
+   "FISCI203",
+   "FISCI204",
+   "FISCI205",
+   "FISCI206"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48819",
+   "title": "Fire Technology - Certificate of Achievement - FISCI",
+   "h1": "Fire Technology - Certificate of Achievement - FISCI",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 4368
+ },
+ {
+  "control_number": "38636",
+  "title": "Optical Microscopy",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOSC101",
+   "BIOSC102"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48842",
+   "title": "Optical Microscopy - Certificate of Achievement - BIOSC",
+   "h1": "Optical Microscopy - Certificate of Achievement - BIOSC",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 4057
+ },
+ {
+  "control_number": "38637",
+  "title": "Fluorescence Bioscience Microscopy",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOSC103",
+   "BIOSC104"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48820",
+   "title": "Fluorescence Bioscience Microscopy - Certificate of Achievement - BIOSC",
+   "h1": "Fluorescence Bioscience Microscopy - Certificate of Achievement - BIOSC",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 4063
+ },
+ {
+  "control_number": "38648",
+  "title": "Conservation and Resource Management",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AFRAM38",
+   "ART166",
+   "BIOL15",
+   "BIOL29",
+   "BIOL5",
+   "BIOL9",
+   "ENVMT1",
+   "ENVMT101",
+   "ENVMT12",
+   "ENVMT14",
+   "ENVMT2",
+   "ENVMT39C",
+   "ENVMT44",
+   "ENVMT476F",
+   "ENVMT56",
+   "ENVMT57",
+   "ENVMT60A",
+   "ENVMT60B",
+   "ENVMT60C",
+   "ENVMT60E",
+   "ENVMT61H",
+   "ENVMT61K",
+   "ENVMT8",
+   "ENVMT80A",
+   "ENVMT80B",
+   "ENVMT80C",
+   "GEOG1",
+   "GEOL1",
+   "GEOL21",
+   "LANHT10",
+   "LANHT16",
+   "LANHT2",
+   "LANHT23",
+   "LANHT2E",
+   "LANHT53",
+   "LANHT5A",
+   "LANHT5B",
+   "LANHT5EA",
+   "LANHT5EB",
+   "LANHT81",
+   "NATAM76E"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/conservation-resource-mgmt",
+   "title": "Conservation and Resource Management - Certificate of Achievement - ENVMT",
+   "h1": "Conservation and Resource Management - Certificate of Achievement - ENVMT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 41,
+  "text_chars": 7109
+ },
+ {
+  "control_number": "38649",
+  "title": "Natural History and Resources",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AFRAM38",
+   "ART166",
+   "BIOL15",
+   "BIOL5",
+   "BIOL9",
+   "ENVMT1",
+   "ENVMT101",
+   "ENVMT14",
+   "ENVMT2",
+   "ENVMT35",
+   "ENVMT39C",
+   "ENVMT44",
+   "ENVMT476F",
+   "ENVMT5",
+   "ENVMT56",
+   "ENVMT57",
+   "ENVMT60A",
+   "ENVMT60B",
+   "ENVMT60E",
+   "ENVMT61H",
+   "ENVMT61K",
+   "ENVMT8",
+   "ENVMT80A",
+   "ENVMT80B",
+   "ENVMT80C",
+   "GEOG1",
+   "GEOL1",
+   "GEOL21",
+   "LANHT10",
+   "LANHT16",
+   "LANHT2",
+   "LANHT2E",
+   "LANHT53",
+   "LANHT5A",
+   "LANHT5B",
+   "LANHT5EA",
+   "LANHT5EB",
+   "LANHT81",
+   "NATAM76E"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48836",
+   "title": "Natural History and Resources - Certificate of Achievement - BIOL",
+   "h1": "Natural History and Resources - Certificate of Achievement - BIOL",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 39,
+  "text_chars": 7210
+ },
+ {
+  "control_number": "38650",
+  "title": "Urban Agroecology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AFRAM38",
+   "BIOL15",
+   "BIOL5",
+   "ENVMT1",
+   "ENVMT101",
+   "ENVMT12",
+   "ENVMT14",
+   "ENVMT2",
+   "ENVMT3",
+   "ENVMT35",
+   "ENVMT39C",
+   "ENVMT44",
+   "ENVMT476F",
+   "ENVMT5",
+   "ENVMT56",
+   "ENVMT57",
+   "ENVMT61H",
+   "ENVMT8",
+   "GEOG1",
+   "GEOL21",
+   "LANHT10",
+   "LANHT16",
+   "LANHT2",
+   "LANHT23",
+   "LANHT24",
+   "LANHT28A",
+   "LANHT2E",
+   "LANHT5A",
+   "LANHT5B",
+   "LANHT5EA",
+   "LANHT5EB",
+   "LANHT76",
+   "LANHT81",
+   "NATAM76E",
+   "NUTR31"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48858",
+   "title": "Urban Agroecology - Certificate of Achievement - ENVMT",
+   "h1": "Urban Agroecology - Certificate of Achievement - ENVMT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 35,
+  "text_chars": 6518
+ },
+ {
+  "control_number": "39761",
+  "title": "Computer Science and Information Systems Career Readiness",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS520",
+   "CIS521",
+   "CIS522",
+   "CIS523",
+   "CIS524",
+   "CIS525",
+   "CIS526",
+   "CIS527"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48805",
+   "title": "Computer Science and Information Systems Career Readiness - CP2: Certificate of Completion - CIS",
+   "h1": "Computer Science and Information Systems Career Readiness - CP2: Certificate of Completion - CIS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 4490
+ },
+ {
+  "control_number": "41119",
+  "title": "Digital Marketing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS74",
+   "BUS83",
+   "BUS90",
+   "BUS92",
+   "BUS94",
+   "BUS96"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48812",
+   "title": "Digital Marketing  - Certificate of Achievement - BUS",
+   "h1": "Digital Marketing  - Certificate of Achievement - BUS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 4319
+ },
+ {
+  "control_number": "41238",
+  "title": "Clinical Medical Assisting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HLTOC110",
+   "HLTOC201",
+   "MEDAS101A",
+   "MEDAS101B",
+   "MEDAS102A",
+   "MEDAS102B",
+   "MEDAS470F"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48798",
+   "title": "Clinical Medical Assisting - Certificate of Achievement - MEDAS",
+   "h1": "Clinical Medical Assisting - Certificate of Achievement - MEDAS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 4482
+ },
+ {
+  "control_number": "41274",
+  "title": "Administrative Medical Assisting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HLTOC101",
+   "HLTOC110",
+   "HLTOC201",
+   "HLTOC260",
+   "HLTOC263",
+   "MEDAS101A",
+   "MEDAS103A",
+   "MEDAS103B",
+   "MEDAS103C",
+   "MEDAS470F"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48779",
+   "title": "Administrative Medical Assisting - Certificate of Achievement - MEDAS",
+   "h1": "Administrative Medical Assisting - Certificate of Achievement - MEDAS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 4587
+ },
+ {
+  "control_number": "41331",
+  "title": "Computer Project Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS50",
+   "BUS54",
+   "BUS70",
+   "BUS74",
+   "BUS76",
+   "BUS83",
+   "CIS1",
+   "CIS100",
+   "CIS108",
+   "CIS234A",
+   "CIS234E",
+   "CIS42",
+   "CIS5",
+   "CIS51",
+   "CIS55",
+   "CIS59",
+   "CIS6",
+   "CIS60",
+   "CIS66",
+   "CIS7",
+   "CIS71",
+   "CIS98",
+   "COPED469",
+   "CS20",
+   "CS80"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48802",
+   "title": "Computer Project Management - Certificate of Achievement - CIS",
+   "h1": "Computer Project Management - Certificate of Achievement - CIS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 8426
+ },
+ {
+  "control_number": "41368",
+  "title": "Transitional Kindergarten (TK)",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV201",
+   "CHDEV202",
+   "CHDEV203",
+   "CHDEV204",
+   "CHDEV205",
+   "CHDEV206",
+   "CHDEV207",
+   "CHDEV208"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48855",
+   "title": "Transitional Kindergarten (TK)  - Certificate of Achievement - CHDEV",
+   "h1": "Transitional Kindergarten (TK)  - Certificate of Achievement - CHDEV",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 4602
+ },
+ {
+  "control_number": "41523",
+  "title": "Basic Cannabis Horticulture",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LANHT1",
+   "LANHT19",
+   "LANHT1E",
+   "LANHT230",
+   "LANHT233",
+   "LANHT234",
+   "LANHT235",
+   "LANHT237",
+   "LANHT239",
+   "LANHT240"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48788",
+   "title": "Basic Cannabis Horticulture - Certificate of Achievement - LANHT",
+   "h1": "Basic Cannabis Horticulture - Certificate of Achievement - LANHT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 4577
+ },
+ {
+  "control_number": "41761",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS10",
+   "BUS1A",
+   "BUS1B",
+   "BUS2",
+   "ECONC2001",
+   "ECONC2002",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48794",
+   "title": "Business Administration 2.0 - AS-T Degree - BUS",
+   "h1": "Business Administration 2.0 - AS-T Degree - BUS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 4394
+ },
+ {
+  "control_number": "42483",
+  "title": "DevOps - Development and Operations Automation",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS100",
+   "CIS107",
+   "CIS108",
+   "CIS110",
+   "CIS178",
+   "CIS179",
+   "CIS247",
+   "CIS33",
+   "CIS35",
+   "CIS5",
+   "CIS51",
+   "CIS52",
+   "CIS53",
+   "CIS55",
+   "CIS58",
+   "CIS6",
+   "CIS62",
+   "CIS7",
+   "CIS72",
+   "CIS8",
+   "CIS93",
+   "CS20",
+   "CS60",
+   "CS80",
+   "PSYCC1000",
+   "PSYCH6",
+   "SOC1"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48808",
+   "title": "DevOps - Development and Operations Automation - Certificate of Achievement - CIS",
+   "h1": "DevOps - Development and Operations Automation - Certificate of Achievement - CIS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 27,
+  "text_chars": 6378
+ },
+ {
+  "control_number": "42571",
+  "title": "DevOps - Development and Operations Automation",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS100",
+   "CIS107",
+   "CIS108",
+   "CIS110",
+   "CIS178",
+   "CIS179",
+   "CIS247",
+   "CIS33",
+   "CIS35",
+   "CIS5",
+   "CIS51",
+   "CIS52",
+   "CIS53",
+   "CIS55",
+   "CIS58",
+   "CIS6",
+   "CIS60",
+   "CIS62",
+   "CIS7",
+   "CIS72",
+   "CIS8",
+   "CIS93",
+   "CS20",
+   "CS60",
+   "CS80",
+   "PSYCC1000",
+   "PSYCH6",
+   "SOC1"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48807",
+   "title": "DevOps - Development and Operations Automation - A.S. Degree - CIS",
+   "h1": "DevOps - Development and Operations Automation - A.S. Degree - CIS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 28,
+  "text_chars": 6356
+ },
+ {
+  "control_number": "42959",
+  "title": "Digital Investment",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS20",
+   "BUS229",
+   "BUS88"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48811",
+   "title": "Digital Investment - Certificate of Achievement - BUS",
+   "h1": "Digital Investment - Certificate of Achievement - BUS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 4103
+ },
+ {
+  "control_number": "43040",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM10",
+   "COMM3",
+   "COMM4",
+   "COMM6",
+   "COMMC1000",
+   "COMMC1004",
+   "ENGLC1001",
+   "ENGLC1002",
+   "PSYCC1000",
+   "SOC1"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48799",
+   "title": "Communication Studies 2.0 - AA-T Degree - COMM",
+   "h1": "Communication Studies 2.0 - AA-T Degree - COMM",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 4697
+ },
+ {
+  "control_number": "43075",
+  "title": "Botanical Illustration",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART166",
+   "ART167",
+   "ART168",
+   "ART169",
+   "ART60",
+   "ART61",
+   "LANHT2",
+   "LANHT23",
+   "LANHT2E",
+   "LANHT4",
+   "LANHT4E",
+   "LANHT5A",
+   "LANHT5B",
+   "LANHT5EA",
+   "LANHT5EB"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48792",
+   "title": "Botanical Illustration - Certificate of Achievement - ART",
+   "h1": "Botanical Illustration - Certificate of Achievement - ART",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 4994
+ },
+ {
+  "control_number": "43947",
+  "title": "Permaculture Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LANHT1",
+   "LANHT10",
+   "LANHT11",
+   "LANHT16",
+   "LANHT1E",
+   "LANHT208A",
+   "LANHT23",
+   "LANHT26",
+   "LANHT28A",
+   "LANHT28B",
+   "LANHT5A",
+   "LANHT5B",
+   "LANHT5EA",
+   "LANHT5EB",
+   "LANHT76",
+   "LANHT81",
+   "LANHT84"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/49657",
+   "title": "Permaculture Design - Certificate of Achievement",
+   "h1": "Permaculture Design - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 5015
+ },
+ {
+  "control_number": "44195",
+  "title": "Municipal Gardener, Level 1",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COPED452A",
+   "LANHT1",
+   "LANHT12",
+   "LANHT13E",
+   "LANHT1E",
+   "LANHT201",
+   "LANHT26"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48834",
+   "title": "Municipal Gardener, Level 1 - Certificate of Achievement - LANHT",
+   "h1": "Municipal Gardener, Level 1 - Certificate of Achievement - LANHT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 4782
+ },
+ {
+  "control_number": "44196",
+  "title": "Municipal Gardener, Level 2",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COPED452A",
+   "LANHT12",
+   "LANHT13E",
+   "LANHT17E",
+   "LANHT201"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48835",
+   "title": "Municipal Gardener, Level 2 - Certificate of Achievement - LANHT",
+   "h1": "Municipal Gardener, Level 2 - Certificate of Achievement - LANHT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 5025
+ },
+ {
+  "control_number": "44202",
+  "title": "Paramedic",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMT221A",
+   "EMT221B",
+   "EMT221C",
+   "EMT221D"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48845",
+   "title": "Paramedic - Certificate of Achievement - EMT",
+   "h1": "Paramedic - Certificate of Achievement - EMT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 7798
+ },
+ {
+  "control_number": "44448",
+  "title": "Paramedic",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHR3",
+   "COMM3",
+   "COMM4",
+   "COMMC1004",
+   "EMT221A",
+   "EMT221B",
+   "EMT221C",
+   "EMT221D",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "PSYCC1000",
+   "SOC1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/paramedic-as-degree",
+   "title": "Paramedic - A.S. Degree - EMT",
+   "h1": "Paramedic - A.S. Degree - EMT",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 8539
+ }
+]
