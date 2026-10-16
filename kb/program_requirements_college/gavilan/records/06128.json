@@ -1,0 +1,403 @@
+{
+ "college": "Gavilan College",
+ "control_number": "06128",
+ "shape": "degree",
+ "title": "Music",
+ "award": "A.A. Degree",
+ "source_url": "https://gavilan.curriqunet.com/catalog/iq/4089/4141/3992",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7193,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7193,
+    "output_tokens": 2760,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2760,
+  "output_tokens_details": {
+   "thinking_tokens": 995
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08397,
+ "ms": 21804,
+ "seconds": 22.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 19,
+   "share": 0.895,
+   "missing": [
+    "MUS14",
+    "MUS2"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "MUS21"
+   ],
+   "flagged": [
+    "MUS21"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    20.0,
+    23.0
+   ],
+   "stated": [
+    21.0,
+    21.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 20.0-23.0; the catalog states 21.0-21.0"
+   ],
+   "degree": {
+    "pass": false,
+    "status": "unequal",
+    "computed": [
+     55.0,
+     62.0
+    ],
+    "stated": [
+     56.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     35.0,
+     39.0
+    ],
+    "why": [
+     "the blocks and general education come to 55.0-62.0, past the 56.0-60.0 the catalog prints for the degree"
+    ],
+    "fill": null
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Music - A.A. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 21,
+    "max": 21
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Gavilan College A.A./A.S. general education or Cal-GETC",
+   "degree_total": {
+    "min": 56,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 35,
+    "max": 39
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "hear, identify, and work conceptually with the elements of music: rhythm, harmony, melody, and structure.",
+    "demonstrate proficiency in areas of performance appropriate to his/her needs and interests, including historical and modern music.",
+    "identify styles of music, including historical periods, composers, performers, stylistic traits, cultural influences and performance practices.",
+    "operate recording studio equipment using live and taped performance.",
+    "demonstrate basic proficiency in reading and writing of music notation."
+   ],
+   "careers": [
+    "professional musician",
+    "music educators"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MUS 3A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 3B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 4A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 4B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose one",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MUS 1A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 1B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose one",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MUS 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 16A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Choose one",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MUS 5A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 5B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 5C",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 5D",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 8A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 8B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 9B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 12",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Recommended Electives",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MUS 6",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 7",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 16A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 21",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MUS 14",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 2",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "'Units: 21' printed under Requirements is read as the major total covering all four requirement groups (13 + 3 + 3 + 2 = 21 at minimum).",
+   "MUS 12 is printed with a 1-4 unit range though the closed list stores 1 unit.",
+   "MUS 7 and MUS 21 are marked (Historical) in the catalog; MUS 21 is not in the closed list.",
+   "Recommended Electives repeat the four courses of the second 'Choose one' list; printed without units.",
+   "Page prints 'Total: 56- 60' while the GE text says electives are added to meet a 60 unit total; degree_total recorded as printed and electives_fill_degree set true.",
+   "Learning outcomes are printed once for the program summary and recorded for this A.A. award."
+  ]
+ },
+ "extracted_run": "38948144064"
+}

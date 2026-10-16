@@ -1,0 +1,361 @@
+{
+ "college": "Gavilan College",
+ "control_number": "33049",
+ "shape": "adt",
+ "title": "English",
+ "award": "A.A- T Degree",
+ "source_url": "https://gavilan.curriqunet.com/catalog/iq/4089/4007/4010",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7487,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7487,
+    "output_tokens": 2615,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2615,
+  "output_tokens_details": {
+   "thinking_tokens": 785
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08225,
+ "ms": 19778,
+ "seconds": 20.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 16,
+   "share": 0.938,
+   "missing": [
+    "ENGLC1002"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ENGL1B",
+    "ENGL6A"
+   ],
+   "flagged": [
+    "ENGL1B",
+    "ENGL6A"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    18.0,
+    19.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 18.0-19.0; the catalog states 18.0-18.0"
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     60.0,
+     61.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "within": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 10,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "ADT: English AA - T - CSU Transfer PROGRAM REQUIREMENTS",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 8,
+    "max": 8
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Analyze and interpret, in text and writing, a variety of expository and literary texts, employing literary theory, critical methods and inquiry.",
+    "Examine and articulate the social, cultural, theoretical and historical contexts of expository and literary texts, and analyze the reader’s role and responsibility in interpreting those texts.",
+    "Compose stylistically appropriate essays that develop and defend an original thesis.",
+    "Apply purposeful voice and tone to a variety of rhetorical purposes.",
+    "Locate, evaluate and incorporate research to support critical inquiry.",
+    "Evaluate the role of reading and writing as tools for analyzing, reinforcing and challenging power structures, and apply those tools toward personal and/or civic engagement.",
+    "Apply collaborative communication skills to group discussions and projects."
+   ],
+   "careers": [
+    "teaching",
+    "journalism",
+    "publishing and editing",
+    "technical writing",
+    "public relations",
+    "advertising",
+    "law",
+    "communications",
+    "government",
+    "a variety of business environments"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIREMENTS",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ENGL 1B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST A: Select 2 (6 units)",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ENGL 6A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 5A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 5B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 4A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 4B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST B: Select 1 (3 units)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ENGL 9A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST C: Select 1 (3 units)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ENGL 2C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 2E",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 2F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 2J",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM 4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOUR 16A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA 4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CMUN 2",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ENGL C1002",
+    "why": "not in the text; the core lists ENGL 1B Composition and Literature instead"
+   }
+  ],
+  "notes": [
+   "The core block lists ENGL 1B (Composition and Literature), which is not in the closed list, while the closed list's ENGL C1002 (Introduction to Literature) does not appear; reviewer should check whether ENGL 1B was renumbered as ENGL C1002.",
+   "ENGL 6A (4 units) appears in List A, whose printed total is 6 units for 2 courses; it is not in the closed list.",
+   "List B and List C each also allow 'ANY COURSE NOT ALREADY USED IN LIST A (3 units)'.",
+   "JOUR 16A is marked (Historical) in the catalog.",
+   "Learning outcomes are printed once on the English program page before the ADT requirements; recorded as applying to this award.",
+   "Electives needed to reach 60 units are printed as 8 transferable units outside the 18-unit major, recorded in degree_elective_units.",
+   "The 'minimum of 18 semester units in a major' sentence is the general ADT rule; the major total of 18 is taken from 'Units Required for the Major: 18'."
+  ]
+ },
+ "extracted_run": "38948144064"
+}
