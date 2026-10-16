@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-10-16T13:59:46.916971+00:00",
+  "scraped_at": "2026-10-16T16:47:54.056782+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 29135,
+    "jst": 29139,
     "star_colleges": 62
   },
   "computed_star_colleges": 62,
@@ -52,7 +52,7 @@
     },
     "Bakersfield College": {
       "vets": 416,
-      "jst": 587,
+      "jst": 589,
       "star": true
     },
     "Norco College": {
@@ -62,12 +62,12 @@
     },
     "Cabrillo College": {
       "vets": 102,
-      "jst": 184,
+      "jst": 185,
       "star": true
     },
     "Merced College": {
       "vets": 142,
-      "jst": 276,
+      "jst": 277,
       "star": true
     },
     "West Los Angeles College": {
