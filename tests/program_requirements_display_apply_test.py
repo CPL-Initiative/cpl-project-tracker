@@ -20,6 +20,7 @@ college's receipt is megabytes. The ways that goes wrong are known in advance:
 Each is pinned against the module's own functions, with no network.
 Run from repo root: python3 tests/program_requirements_display_apply_test.py
 """
+import gzip
 import json
 import os
 import shutil
@@ -113,6 +114,28 @@ try:
           and rec["rollback"]["reapply"] == {"2360b83e8100": ["Mt. San Antonio College|03086"]},
           "the rollback names what goes back to null and what goes back by its own receipt")
     check(A.applied_path(full, "123").endswith("_%s.applied_123.json" % BUILD), "the applied record sits beside the receipt")
+
+    # S398: a receipt is gzipped from build fa8ee2a84935 on (72.7 MB of SQL against GitHub's
+    # 100 MB file limit). The gzipped one stands for its build, parses to the same rows, and
+    # its applied record sits beside it under the same name a plain one's would take.
+    zdir = tempfile.mkdtemp()
+    try:
+        zfull = os.path.join(zdir, "program_requirement_records_display_2026-10-16_%s.sql.gz" % BUILD)
+        with gzip.GzipFile(zfull, "wb", mtime=0) as gz:
+            gz.write(text.encode("utf-8"))
+        open(os.path.join(zdir, "program_requirement_records_display_2026-10-16_%s_delta.sql.gz" % BUILD), "w").write("")
+        check(A.receipt_for(BUILD, zdir) == zfull, "a gzipped full receipt stands for the build, never a gzipped delta")
+        check(A.parse(A.read_receipt(zfull)) == rows, "a gzipped receipt parses to the same rows as its plain text")
+        check(A.applied_path(zfull, "123") == os.path.join(zdir, "program_requirement_records_display_2026-10-16_%s.applied_123.json" % BUILD),
+              "a gzipped receipt's applied record drops .sql.gz, as a plain one's drops .sql")
+        open(os.path.join(zdir, "program_requirement_records_display_2026-10-15_%s.sql" % BUILD), "w").write(text)
+        try:
+            A.receipt_for(BUILD, zdir)
+            check(False, "a build with a plain and a gzipped full receipt is refused")
+        except SystemExit:
+            check(True, "a build with a plain and a gzipped full receipt is refused")
+    finally:
+        shutil.rmtree(zdir, ignore_errors=True)
 
     def gone(method, path_qs, body=None):
         return [] if method == "GET" and "03086" in path_qs else fake(method, path_qs, body)

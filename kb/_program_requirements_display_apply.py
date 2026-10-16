@@ -3,7 +3,8 @@
 
 WHY. kb/_build_roep_display.py writes each harvested program's display facts
 twice: into cpl_pathways_roep_data.js for the page, and into a receipt
-(kb/receipts/program_requirement_records_display_<date>_<build>.sql) for the
+(kb/receipts/program_requirement_records_display_<date>_<build>.sql.gz, gzipped
+from S398; earlier builds' are plain .sql) for the
 table Sierra and the Records view read. Until S356 a session applied the
 receipt through the Supabase connector's apply_migration, a batch of about
 twenty statements a migration. That held for the pilot's 22 programs (185 KB).
@@ -43,6 +44,7 @@ from __future__ import annotations
 
 import argparse
 import glob
+import gzip
 import hashlib
 import json
 import os
@@ -79,10 +81,12 @@ def page_build(src: str | None = None) -> str:
 
 
 def receipt_for(build: str, folder: str = RECEIPTS) -> str:
-    """The full receipt of a build. A delta receipt (its name ends _delta)
-    writes only the rows that moved, so it never stands for the build."""
-    hits = [p for p in glob.glob(os.path.join(folder, "program_requirement_records_display_*_%s.sql" % build))
-            if not os.path.basename(p).endswith("_delta.sql")]
+    """The full receipt of a build, gzipped (S398 on) or plain. A delta receipt
+    (its name ends _delta) writes only the rows that moved, so it never stands
+    for the build."""
+    hits = [p for pat in ("program_requirement_records_display_*_%s.sql", "program_requirement_records_display_*_%s.sql.gz")
+            for p in glob.glob(os.path.join(folder, pat % build))
+            if not os.path.basename(p).endswith(("_delta.sql", "_delta.sql.gz"))]
     if len(hits) != 1:
         raise SystemExit("%d full receipts name build %s in %s" % (len(hits), build, folder))
     return hits[0]
@@ -178,13 +182,22 @@ def apply(rows: list[dict], build: str, receipt: str, run: str | None, request=N
             "to_null": [k for k, b in before.items() if b is None and k in written],
             "reapply": {b: [k for k, v in before.items() if v == b and k in written] for b in held},
             "how": "set display to null for to_null; for each build in reapply, re-apply that build's "
-                   "full receipt (kb/receipts/program_requirement_records_display_*_<build>.sql) to those keys.",
+                   "full receipt (kb/receipts/program_requirement_records_display_*_<build>.sql, or .sql.gz) to those keys.",
         },
     }
 
 
+def read_receipt(path: str) -> str:
+    if path.endswith(".gz"):
+        with gzip.open(path, "rt", encoding="utf-8") as fh:
+            return fh.read()
+    with open(path, encoding="utf-8") as fh:
+        return fh.read()
+
+
 def applied_path(receipt: str, run: str | None) -> str:
-    return receipt[:-len(".sql")] + ".applied_%s.json" % (run or "local")
+    stem = receipt[:-len(".gz")] if receipt.endswith(".gz") else receipt
+    return stem[:-len(".sql")] + ".applied_%s.json" % (run or "local")
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -196,8 +209,7 @@ def main(argv: list[str] | None = None) -> int:
     args = ap.parse_args(argv)
     build = page_build()
     receipt = receipt_for(build)
-    with open(receipt, encoding="utf-8") as fh:
-        rows = parse(fh.read())
+    rows = parse(read_receipt(receipt))
     stale = [r["control_number"] for r in rows if (r["display"] or {}).get("build") != build]
     if stale:
         print("REFUSING: %d statements carry another build than %s (first: %s)" % (len(stale), build, stale[0]))

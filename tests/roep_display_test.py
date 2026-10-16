@@ -49,8 +49,8 @@ def sql_displays(path):
                      r"r\.program_title, r\.measure, r\.record, r\.checks, '(.*)'::jsonb from public\.program_requirement_records r "
                      r"where r\.college = '(.*)' and r\.control_number = '(.*)' on conflict \(college, control_number\) "
                      r"do update set display = excluded\.display;$")
-    for line in open(path, encoding="utf-8"):
-        m = pat.match(line.rstrip("\n"))
+    for line in b.read_receipt(path).splitlines():
+        m = pat.match(line)
         if m:
             out[(m.group(2).replace("''", "'"), m.group(3))] = json.loads(m.group(1).replace("''", "'"))
     return out
@@ -365,7 +365,7 @@ check(bool(iv) and iv[0]["display"]["figure"]["up_to"] == 3.0 and iv[0]["display
 # Sam loaded both on open-asks sheet 47 card 8 (2026-10-07): every record is filed in records/,
 # so the receipt names none waiting.
 check(all(p["filed"] == "records" for p in progs) and "are filed in records_maps/" not in
-      (open(receipt).read() if os.path.exists(receipt) else ""),
+      (b.read_receipt(receipt) if os.path.exists(receipt) else ""),
       "every record is filed in records/ and the receipt names none waiting")
 
 # 4. the figure the approved mock-up shows for the hand-built map
@@ -470,7 +470,7 @@ check("equivalent_units" not in chat and "equivalent units" not in chat.lower(),
 names = field_names(read, set()) | field_names(data, set()) | field_names(list(sql.values()), set())
 check(not [n for n in names if re.search(r"student|learner_id|ssn|emplid", n, re.I)],
       "no student field in the read or either output")
-check(not b.STALL.search(open(receipt).read()) if os.path.exists(receipt) else False,
+check(not b.STALL.search(b.read_receipt(receipt)) if os.path.exists(receipt) else False,
       "the receipt names no word the Supabase connector holds")
 
 print("\n%d failure(s)" % len(fails))
