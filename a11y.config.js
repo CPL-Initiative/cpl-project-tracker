@@ -1019,6 +1019,56 @@ async function seedGrPriorities(page, theme) {
   await page.waitForTimeout(300);
 }
 
+// Memory as a team-phrase holder sees it (S398 UI pass): signed out, the cobi sweep measures
+// the lock and the masthead only. The seed holds a team phrase, stubs the tab's read with
+// tests/cpl_memory.test.js's synthetic shapes (never a live row: the table is team-gated),
+// then opens one state through the view's own controls: the Add form, a record's tools, or
+// the Report view.
+async function seedMemory(page, theme, state) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "memory") location.hash = "memory"; });
+  await page.waitForFunction(() => !!window.CPL_MEMORY, null, { timeout: 20000 });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.evaluate((state) => {
+    try {
+      localStorage.setItem("cpl_team_pass", "seed-phrase");
+      localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString());
+    } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+    const ROWS = [
+      { id: "11111111-1111-1111-1111-111111111111", slug: "pr1", kind: "procedure", status: "verified",
+        title: "Change the generator", summary: "Change the generator, not the HTML",
+        detail: "Edit excel_to_dashboard.py; keep index.html identical. See f1.", tags: ["dashboard"],
+        source: "CLAUDE.md Rule 1", affects: ["excel_to_dashboard.py", "index.html"], related: ["f1"] },
+      { id: "22222222-2222-2222-2222-222222222222", slug: "f1", kind: "fact", status: "verified",
+        title: "Two HTMLs", summary: "index.html and CPL_Dashboard.html must stay identical",
+        detail: "The workflow copies one to the other.", tags: ["dashboard"], source: "CLAUDE.md Rule 4",
+        affects: ["index.html"], related: [] },
+      { id: "33333333-3333-3333-3333-333333333333", slug: "o1", kind: "opportunity", status: "proposed",
+        title: "Stale articulations", summary: "Systemwide stale-articulation signal",
+        detail: "Flag articulations absent from the current catalog.", tags: ["ccr"],
+        source: "methodology-filter-live-counts", affects: [], related: [] },
+    ];
+    const real = window.fetch;
+    window.fetch = function (url) {
+      const u = String(url);
+      const body = /\/cpl_memory_log/.test(u) ? [] : /\/cpl_memory\?/.test(u) ? ROWS : null;
+      if (body) return Promise.resolve(new Response(JSON.stringify(body), { status: 200, headers: { "Content-Type": "application/json" } }));
+      return real.apply(this, arguments);
+    };
+    window.CPL_MEMORY.activate();
+  }, state);
+  await page.waitForFunction(() => !!document.querySelector("#memory-root .mem-list li"), null, { timeout: 20000 });
+  await page.evaluate((state) => {
+    if (state === "add") { const b = document.querySelector("#memory-root .mem-addbtn"); if (b) b.click(); }
+    if (state === "entry") { const li = document.querySelector("#memory-root .mem-list li"); if (li) li.click(); }
+    if (state === "report") window.CPL_MEMORY._setViewMode("report");
+  }, state);
+  const ready = { add: ".mem-form-actions", entry: ".rp-tools", report: ".mr-btn" }[state];
+  await page.waitForFunction((sel) => !!document.querySelector("#memory-root " + sel), ready, { timeout: 20000 });
+  await page.waitForTimeout(300);
+}
+
 // College Identity's roster (S371 UI pass). The tab reads map_colleges (public) and
 // map_college_contacts (reviewer or team phrase) live; with every read aborted the cobi
 // sweep paints only the failed-read notice and the snapshot's findings. The seed stands in
@@ -1731,6 +1781,55 @@ module.exports = {
     routes: [{ hash: "gr-priorities", name: "gr" }],
     widths: [320, 390, 1440],
     seed: (page) => seedGrPriorities(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── Memory, unlocked with a team phrase (S398) ── */
+  "memory-add": {
+    file: "index.html",
+    title: "Memory, a team-phrase holder's view: the Add form open (synthetic rows)",
+    routes: [{ hash: "memory", name: "add" }],
+    widths: [390, 1440],
+    seed: (page) => seedMemory(page, "light", "add"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "memory-add-dark": {
+    file: "index.html",
+    title: "Memory, a team-phrase holder's view: the Add form open, dark (synthetic rows)",
+    routes: [{ hash: "memory", name: "add" }],
+    widths: [390, 1440],
+    seed: (page) => seedMemory(page, "dark", "add"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "memory-entry": {
+    file: "index.html",
+    title: "Memory, a team-phrase holder's view: a record's tools (synthetic rows)",
+    routes: [{ hash: "memory", name: "entry" }],
+    widths: [390, 1440],
+    seed: (page) => seedMemory(page, "light", "entry"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "memory-entry-dark": {
+    file: "index.html",
+    title: "Memory, a team-phrase holder's view: a record's tools, dark (synthetic rows)",
+    routes: [{ hash: "memory", name: "entry" }],
+    widths: [390, 1440],
+    seed: (page) => seedMemory(page, "dark", "entry"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "memory-report": {
+    file: "index.html",
+    title: "Memory, a team-phrase holder's view: the Report view (synthetic rows)",
+    routes: [{ hash: "memory", name: "report" }],
+    widths: [390, 1440],
+    seed: (page) => seedMemory(page, "light", "report"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "memory-report-dark": {
+    file: "index.html",
+    title: "Memory, a team-phrase holder's view: the Report view, dark (synthetic rows)",
+    routes: [{ hash: "memory", name: "report" }],
+    widths: [390, 1440],
+    seed: (page) => seedMemory(page, "dark", "report"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "contracts": {

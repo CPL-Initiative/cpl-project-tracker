@@ -1248,7 +1248,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1145
+     "line": 1195
     }
    ],
    "main_committers": []
@@ -5305,7 +5305,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1084
+     "line": 1134
     },
     {
      "id": "module:college_briefing.js",
@@ -20693,7 +20693,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1733,
+     "line": 1732,
      "tabs": [
       "memory"
      ]
@@ -20703,7 +20703,7 @@
      "kind": "module",
      "direction": "write",
      "how": "helper",
-     "line": 1661,
+     "line": 1660,
      "tabs": [
       "memory"
      ]
@@ -20725,7 +20725,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1586,
+     "line": 1585,
      "tabs": [
       "memory"
      ]
