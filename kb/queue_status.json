@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-16T18:38:54Z",
-  "session": 399,
-  "moniker": "SkyRowan",
+  "written_at": "2026-10-16T21:38:43Z",
+  "session": 400,
+  "moniker": "SkyBirch",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_400_handoff.md",
+  "handoff": "docs/session_401_handoff.md",
   "unchecked": [
     {
       "college": "Cerritos College",
@@ -60017,44 +60017,1307 @@
       "award": "A.S. Degree",
       "control_number": "44448",
       "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "American Sign Language",
+      "award": "A.A. Degree",
+      "control_number": "01101",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Art",
+      "award": "A.A. Degree",
+      "control_number": "01102",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Biotechnology",
+      "award": "A.S. Degree",
+      "control_number": "09056",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "General Business",
+      "award": "A.A. Degree",
+      "control_number": "09057",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Accounting",
+      "award": "A.A. Degree",
+      "control_number": "09058",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "English Literature/Writing",
+      "award": "A.A. Degree",
+      "control_number": "09065",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Creative Writing/Fiction",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "11676",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Creative Writing/Poetry",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "11677",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Multimedia Arts--Mobile and Web Design",
+      "award": "A.A. Degree",
+      "control_number": "11960",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Mobile and Web Design Level I",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "11961",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Mobile and Web Design Level II",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "11962",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Advanced Computer Programming",
+      "award": "A.S. Degree",
+      "control_number": "15570",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Social Sciences",
+      "award": "A.A. Degree",
+      "control_number": "18597",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Arts and Humanities",
+      "award": "A.A. Degree",
+      "control_number": "19267",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Biotechnology Research Laboratory Assistant",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "19969",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "General Business",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "19970",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Advanced Computer Programming",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "19972",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "American Sign Language",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "19975",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "English",
+      "award": "A.A- T Degree",
+      "control_number": "31138",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Elementary Teacher Education",
+      "award": "A.A- T Degree",
+      "control_number": "31835",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Political Science",
+      "award": "A.A- T Degree",
+      "control_number": "31984",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Teacher's Aide",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "33181",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Economics",
+      "award": "A.A- T Degree",
+      "control_number": "33548",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Analytical Chemistry",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "33774",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Analytical Chemistry",
+      "award": "A.S. Degree",
+      "control_number": "33788",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Academic Composition Skills",
+      "award": "Noncredit program",
+      "control_number": "35507",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Gender Studies",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37668",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "ESOL Advanced",
+      "award": "Noncredit program",
+      "control_number": "37789",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "ESOL High Intermediate",
+      "award": "Noncredit program",
+      "control_number": "37790",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Research Skills",
+      "award": "Noncredit program",
+      "control_number": "37797",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Studio Arts",
+      "award": "A.A- T Degree",
+      "control_number": "37850",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Art History",
+      "award": "A.A- T Degree",
+      "control_number": "37851",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Biotechnology Laboratory Assistant",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38228",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Management and Entrepreneurship",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39163",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Liberal Studies - Teacher Preparation",
+      "award": "A.A. Degree",
+      "control_number": "39347",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Sociology",
+      "award": "A.A- T Degree",
+      "control_number": "39386",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Anthropology",
+      "award": "A.A- T Degree",
+      "control_number": "39856",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Spanish",
+      "award": "A.A- T Degree",
+      "control_number": "40244",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Business Administration 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "41766",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Philosophy",
+      "award": "A.A- T Degree",
+      "control_number": "41777",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Mathematics",
+      "award": "A.S. T Degree",
+      "control_number": "41778",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "History",
+      "award": "A.A- T Degree",
+      "control_number": "41794",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Psychology",
+      "award": "A.A- T Degree",
+      "control_number": "41795",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Global Studies",
+      "award": "A.A- T Degree",
+      "control_number": "41796",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Child and Adolescent Development",
+      "award": "A.A- T Degree",
+      "control_number": "41834",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Social and Human Service Work Readiness",
+      "award": "Noncredit program",
+      "control_number": "41867",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Tutor Training",
+      "award": "Noncredit program",
+      "control_number": "41868",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Community Health Worker",
+      "award": "Noncredit program",
+      "control_number": "41869",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Social Work and Human Services",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41876",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Biology",
+      "award": "A.S. T Degree",
+      "control_number": "41902",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Social Work and Human Services",
+      "award": "A.A- T Degree",
+      "control_number": "42381",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Physics",
+      "award": "A.S. T Degree",
+      "control_number": "42838",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Communication Studies 2.0",
+      "award": "A.A- T Degree",
+      "control_number": "43006",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "ESOL Intermediate",
+      "award": "Noncredit program",
+      "control_number": "43023",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Law, Public Policy, and Society",
+      "award": "A.A- T Degree",
+      "control_number": "43097",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Film Studies",
+      "award": "A.A. Degree",
+      "control_number": "43214",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "ESOL Pathway to Business",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43931",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "ESOL Pathway to Humanities",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43932",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "ESOL Pathway to Social Sciences",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43933",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "ESOL Pathway to STEM",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43934",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "ESOL Pathway to Teaching and Social Work",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43935",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "ESOL Pathway to the Arts",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43936",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Fundamentals of Data Science",
+      "award": "A.S. Degree",
+      "control_number": "45941",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Data Science Analytics",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "46177",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Elementary Teacher Education: Integrated Programs",
+      "award": "A.A- T Degree",
+      "control_number": "46229",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Mathematics 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "46230",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Business:  Accounting Option",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "06113",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Real Estate",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "06116",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Business: Office Applications Option",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "06117",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Aviation Maintenance Technology",
+      "award": "A.S. Degree",
+      "control_number": "06124",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Studio Art",
+      "award": "A.A. Degree",
+      "control_number": "06127",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Music",
+      "award": "A.A. Degree",
+      "control_number": "06128",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Theatre Arts: Acting",
+      "award": "A.A. Degree",
+      "control_number": "06129",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Registered Nursing",
+      "award": "A.S. Degree",
+      "control_number": "06131",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Licensed Vocational Nursing",
+      "award": "A.S. Degree",
+      "control_number": "06132",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Child Development",
+      "award": "A.A. Degree",
+      "control_number": "06144",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Business: Technical Publishing Option",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "08456",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Law Enforcement, Option 2",
+      "award": "A.A. Degree",
+      "control_number": "08458",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Cosmetology",
+      "award": "A.S. Degree",
+      "control_number": "08460",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Liberal Arts (Multiple Subjects)",
+      "award": "A.A. Degree",
+      "control_number": "08464",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Business: Medical Office Option",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "08466",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Communication Studies",
+      "award": "A.A. Degree",
+      "control_number": "12002",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Computer Networking",
+      "award": "A.S. Degree",
+      "control_number": "13715",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Computer Programming",
+      "award": "A.S. Degree",
+      "control_number": "14041",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Digital Media (with options)",
+      "award": "A.A. Degree",
+      "control_number": "14878",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Theatre Arts: Technical Production",
+      "award": "A.A. Degree",
+      "control_number": "15555",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Communication Studies",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "17724",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Spanish Non-Native Speakers Option 1",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "17827",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Liberal Arts: Language Arts & Humanities",
+      "award": "A.A. Degree",
+      "control_number": "18453",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Liberal Arts: Social Science-Behavioral & Organizational",
+      "award": "A.A. Degree",
+      "control_number": "18455",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Liberal Arts: Elementary Education",
+      "award": "A.A. Degree",
+      "control_number": "18458",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Liberal Arts: Business Emphasis",
+      "award": "A.A. Degree",
+      "control_number": "18459",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Accounting",
+      "award": "A.A. Degree",
+      "control_number": "18541",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Communication Studies: Interpersonal Communication",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "19327",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Child Development and Educational Studies",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "19378",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Digital Design and Imaging",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "21281",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Computer Programming",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "21285",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Computer Networking",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "21287",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Aviation Maintenance Technology",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "21288",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Spanish Non-Native Speakers 2",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "21291",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Spanish Non-Native Speakers 3",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "21292",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Registered Nursing",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "21293",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Law Enforcement, Option 2",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "21297",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Cosmetology",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "21298",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "GED Preparation",
+      "award": "Noncredit program",
+      "control_number": "24369",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Aviation Maintenance Technology: Airframe",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "30203",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Aviation Maintenance Technology: Powerplant",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "30204",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Theater Arts-Television Performance",
+      "award": "A.A. Degree",
+      "control_number": "30260",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Television Performance Option",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "30270",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Music Composition and Production",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "30548",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Communication Studies",
+      "award": "A.A- T Degree",
+      "control_number": "30577",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Administration of Justice",
+      "award": "A.S. T Degree",
+      "control_number": "30652",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Mathematics",
+      "award": "A.S. T Degree",
+      "control_number": "31444",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Kinesiology and Athletics: Personal Fitness Training",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "31533",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Art History",
+      "award": "A.A- T Degree",
+      "control_number": "31609",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Water Resources Management",
+      "award": "A.A. Degree",
+      "control_number": "31626",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Water Resources Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "31647",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Studio Arts",
+      "award": "A.A- T Degree",
+      "control_number": "31654",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Theatre Arts",
+      "award": "A.A- T Degree",
+      "control_number": "31752",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Kinesiology",
+      "award": "A.A- T Degree",
+      "control_number": "31771",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Journalism",
+      "award": "A.A- T Degree",
+      "control_number": "31830",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Philosophy",
+      "award": "A.A- T Degree",
+      "control_number": "33045",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Spanish",
+      "award": "A.A- T Degree",
+      "control_number": "33046",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Physics",
+      "award": "A.S. T Degree",
+      "control_number": "33047",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "English",
+      "award": "A.A- T Degree",
+      "control_number": "33049",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Political Science",
+      "award": "A.A- T Degree",
+      "control_number": "33128",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Early Childhood Education",
+      "award": "A.S. T Degree",
+      "control_number": "33130",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Kinesiology",
+      "award": "A.A. Degree",
+      "control_number": "33446",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "History",
+      "award": "A.A- T Degree",
+      "control_number": "33621",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Fire Science",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "33778",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Computer Science",
+      "award": "A.S. T Degree",
+      "control_number": "35162",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Chemistry",
+      "award": "A.S. T Degree",
+      "control_number": "35459",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Social Justice Studies",
+      "award": "A.A- T Degree",
+      "control_number": "36198",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Computer Applications for ESL Students",
+      "award": "Noncredit program",
+      "control_number": "36286",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "ESL Advanced Level",
+      "award": "Noncredit program",
+      "control_number": "36289",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "ESL Citizenship",
+      "award": "Noncredit program",
+      "control_number": "36844",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "HVAC - Heating, Ventilation and Air Conditioning",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "36944",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "HVAC - Heating, Ventilation and Air Conditioning",
+      "award": "A.S. Degree",
+      "control_number": "36945",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Classical and Contemporary World Philosophies and Religions",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "37689",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Biology",
+      "award": "A.S. T Degree",
+      "control_number": "37750",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Welding Technology",
+      "award": "Noncredit program",
+      "control_number": "37812",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Engineering",
+      "award": "A.S. Degree",
+      "control_number": "37896",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Business (with options)",
+      "award": "A.A. Degree",
+      "control_number": "38119",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Public Health Science",
+      "award": "A.S. T Degree",
+      "control_number": "38634",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Elementary Teacher Education",
+      "award": "A.A- T Degree",
+      "control_number": "38787",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "ESL Lifeskills",
+      "award": "Noncredit program",
+      "control_number": "39624",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "SOCIOLOGY",
+      "award": "A.A- T Degree",
+      "control_number": "39708",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "ESL Intermediate I Level",
+      "award": "Noncredit program",
+      "control_number": "39753",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "ESL Beginning Level",
+      "award": "Noncredit program",
+      "control_number": "39754",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Film and Television Production",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40538",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Workforce Preparation and Success",
+      "award": "Noncredit program",
+      "control_number": "40556",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Job Coaching",
+      "award": "Noncredit program",
+      "control_number": "41166",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Business Administration 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "41394",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Communication Studies 2.0",
+      "award": "A.A- T Degree",
+      "control_number": "44470",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Chemistry for UC",
+      "award": "A.S. Degree",
+      "control_number": "44672",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Fire Technology",
+      "award": "A.S. Degree",
+      "control_number": "44798",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Fundamentals of Engineering I",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "44899",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Fundamentals of Engineering II",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44900",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Fundamentals of Engineering III",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "44901",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Water Environment",
+      "award": "A.A. Degree",
+      "control_number": "44975",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Introductory Culinary Arts",
+      "award": "Noncredit program",
+      "control_number": "45072",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "California General Education Transfer Curriculum (Cal-GETC)",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "45357",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Water Environment",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45683",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Intercollegiate Athletics",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45909",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Public Health",
+      "award": "A.S. T Degree",
+      "control_number": "46047",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Physics 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "46246",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Mathematics 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "46458",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Butte College",
+      "program": "Automotive Technology",
+      "award": "A.S. Degree",
+      "control_number": "01323",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Butte College",
+      "program": "Radio-TV-Film: Video Production",
+      "award": "A.S. Degree",
+      "control_number": "07474",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Butte College",
+      "program": "Law Enforcement Academy - Basic/Fish and Wildlife Emphasis",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "17970",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Butte College",
+      "program": "Radio-TV-Film: Video Production",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "19995",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Butte College",
+      "program": "Automotive Technology",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "19999",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Butte College",
+      "program": "Registered Nursing: LVN to ADN",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20005",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Butte College",
+      "program": "Law Enforcement Academy-Basic",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "33254",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Butte College",
+      "program": "Law Enforcement Academy-Basic/State Parks Emphasis",
+      "award": "A.S. Degree",
+      "control_number": "35937",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Butte College",
+      "program": "Law Enforcement Academy-Basic/State Parks Emphasis",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "36240",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Butte College",
+      "program": "Automotive Technology – Honda, Professional Automotive Career Training (PACT)",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "37972",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Butte College",
+      "program": "Automotive Technology – Honda, Professional Automotive Career Training (PACT)",
+      "award": "A.S. Degree",
+      "control_number": "38066",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Butte College",
+      "program": "Accelerated Track Registered Nursing",
+      "award": "A.S. Degree",
+      "control_number": "43185",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Butte College",
+      "program": "Accelerated Track Registered Nursing: LVN to ADN",
+      "award": "A.S. Degree",
+      "control_number": "43186",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Butte College",
+      "program": "Accelerated Track Registered Nursing: LVN to ADN",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43187",
+      "loaded": "2026-10-16"
     }
   ],
   "next_step": {
-    "title": "Wave 5's display, then the next build",
-    "text": "Confirm the display of build 9c74da80bad7 applied on main; load the rereads of Berkeley City, Butte and Gavilan; then build the display again with Merritt and the rereads."
+    "title": "Butte's reader, then the next wave",
+    "text": "Read Butte's catalog navigation on a runner to see how it titles program pages, fix the reader and read Butte again; then read Las Positas again and start the eLumen colleges."
   },
   "calls": [],
   "notes": {
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges.",
-    "procedures": "62 colleges have one: the nine of the sweep's wave 4 were written on Oct 16, and the 28 whose map host refuses or never reaches the reader each name the routes tried.",
+    "procedures": "68 colleges have one: the nine of the sweep's wave 5 were written on Oct 16, and the 28 whose map host refuses or never reaches the reader each name the routes tried.",
     "sierra": "The funding explainer's text is editable on the Implementation Funding tab since Oct 9, and its controls are underlined words, the First Light rule from that day.",
     "maps": "All 32 published maps are settled since Oct 8; Palo Verde's map columns were written that evening.",
     "reading": "Cerritos read on Oct 9 and Mt. San Antonio on Oct 10. RCCD's three colleges were read on Oct 10 and their Liberal Arts emphasis programs recovered on Oct 11. 18 records that read another program's page were removed on Oct 11. Long Beach City was read on Oct 11 and re-read on Oct 12: 344 records, unchecked. Chaffey was read and loaded on Oct 12: 191 records, unchecked, for 1,745 in all. Palo Verde's records come from its 2025-26 catalog; its 2026-27 catalog is on a platform the reader does not read yet."
   },
   "changes": [
     {
-      "at": "2026-10-16T17:52:00Z",
-      "text": "Sierra deployed with the statewide catalog: she lists every statewide exhibit by program area, on Sam's go."
+      "at": "2026-10-16T20:37:00Z",
+      "text": "My College's Sierra now has Sierra AI's format: one frame, her name and Full screen on one bar, and Sam's note under the box, on his ask."
     },
     {
-      "at": "2026-10-16T17:56:00Z",
-      "text": "The CPL Queue routine runs hourly from 10:12 PM to 6:12 AM Pacific; Sam set it."
+      "at": "2026-10-16T20:49:00Z",
+      "text": "Merritt, Berkeley City and Gavilan loaded, 248 records unchecked; the display build of 8,772 programs applied at 21:29."
     },
     {
-      "at": "2026-10-16T17:40:00Z",
-      "text": "Six colleges loaded from wave 5: College of Alameda 59, Feather River 44, Imperial Valley 83, Laney 150, Las Positas 20, Madera 98, unchecked."
+      "at": "2026-10-16T20:39:00Z",
+      "text": "Procedure records written for Alameda, Feather River, Laney, Imperial Valley, Madera and Las Positas."
     },
     {
-      "at": "2026-10-16T18:34:00Z",
-      "text": "Display build 9c74da80bad7 for 8,524 programs dispatched from main."
+      "at": "2026-10-16T21:07:00Z",
+      "text": "Sierra's program search reads one college by its index when nothing matches: the failing call went from 2.7 seconds to 0.2."
     },
     {
-      "at": "2026-10-16T18:40:00Z",
-      "text": "Merritt College loaded: 81 program records, unchecked."
-    },
-    {
-      "at": "2026-10-16T18:31:00Z",
-      "text": "The curriQunet reader now finds Berkeley City's, Butte's and Gavilan's catalogs; the three are reading again."
+      "at": "2026-10-16T21:33:00Z",
+      "text": "Procedure records written for Merritt, Berkeley City and Gavilan; Butte loaded 19 of 168 programs and waits for its reader."
     }
   ],
   "headline": [
@@ -60120,7 +61383,7 @@
   },
   "harvest": {
     "day": "2026-10-16",
-    "gaps": 2426,
+    "gaps": 2489,
     "parts": {
       "links": {
         "catalog": [
@@ -60137,11 +61400,11 @@
         ]
       },
       "roep": [
-        9876,
+        10602,
         20282
       ],
       "coci": [
-        7963,
+        8127,
         20282
       ],
       "outcomes": {
@@ -60150,12 +61413,12 @@
           89192
         ],
         "plo": [
-          7963,
+          8127,
           20282
         ]
       },
       "careers": [
-        6913,
+        7077,
         20282
       ]
     }
