@@ -1,0 +1,951 @@
+{
+ "college": "Lemoore College",
+ "catalog_url": "https://westhillslemoore.elumenapp.com/catalog/26-27/Welcome",
+ "platform": "elumen",
+ "catalog_year": "2026-2027",
+ "programs": 90,
+ "with_closed_list": 82,
+ "started": "2026-10-16T22:51:08Z",
+ "elumen": {
+  "catalog": "26-27",
+  "read": "publish/content",
+  "menu_programs": 0,
+  "errors": [],
+  "menu_departments": 0,
+  "department_programs": 0,
+  "menu_hubs": [
+   "associate-of-science-degree-requirements",
+   "additional-associate-degree",
+   "programs"
+  ],
+  "hub_programs": 77,
+  "program_pages": 77
+ },
+ "pages_read": 77,
+ "banner_h1": null,
+ "loads": 81,
+ "seconds": 337.4,
+ "found": 73,
+ "by_method": {
+  "no_closed_list": 8,
+  "not_found": 4,
+  "page_claimed": 5,
+  "sitemap_page": 73
+ },
+ "shared_pages": {
+  "https://westhillslemoore.elumenapp.com/catalog/26-27/program/mathematics-2-0-as-t-fall-2026": [
+   "10967",
+   "15290",
+   "46578"
+  ],
+  "https://westhillslemoore.elumenapp.com/catalog/26-27/program/liberal-arts-arts-and-humanities-aa-fall-2025": [
+   "19303",
+   "38968"
+  ],
+  "https://westhillslemoore.elumenapp.com/catalog/26-27/program/business-administration-ast-2-0-fall-2026": [
+   "32842",
+   "43103"
+  ],
+  "https://westhillslemoore.elumenapp.com/catalog/26-27/program/communication-studies-2-0-aat-fall-2026": [
+   "32899",
+   "44247"
+  ],
+  "https://westhillslemoore.elumenapp.com/catalog/26-27/program/elementary-teacher-education-integrated-programs-aat-fall-2026": [
+   "32933",
+   "45975"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "37153",
+   "title": "Project Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/advanced-hospitality-management-coa-fall-2020",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2598,
+     "content": 2598,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "38655",
+   "title": "Academic Readiness",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "45614",
+   "title": "Agriculture Systems Basics",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/agriculture-systems-fundamentals-coa-fall-2025",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1978,
+     "content": 1978,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "46271",
+   "title": "Hydraulic and Pneumatic Systems Technician 1",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/maintenance-electrical-systems-technician-1-coc-spring-2026",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2322,
+     "content": 2322,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "15266",
+   "title": "Biology",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://westhillslemoore.elumenapp.com/catalog/26-27/program/biology-ast-fall-2025",
+    "https://westhillslemoore.elumenapp.com/catalog/26-27/program/liberal-arts-math-and-science-aa-spring-2026",
+    "https://westhillslemoore.elumenapp.com/catalog/26-27/program/transfer-studies-cal-getc-coa-fall-2025",
+    "https://westhillslemoore.elumenapp.com/catalog/26-27/program/business-administration-as-fall-2025",
+    "https://westhillslemoore.elumenapp.com/catalog/26-27/program/mathematics-2-0-as-t-fall-2026",
+    "https://westhillslemoore.elumenapp.com/catalog/26-27/program/communication-studies-2-0-aat-fall-2026",
+    "https://westhillslemoore.elumenapp.com/catalog/26-27/program/kinesiology-aat-fall-2026"
+   ]
+  },
+  {
+   "control_number": "15274",
+   "title": "Computer Information Systems",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://westhillslemoore.elumenapp.com/catalog/26-27/program/business-information-systems-aa-fall-2025",
+    "https://westhillslemoore.elumenapp.com/catalog/26-27/program/business-information-worker-coa-spring-2021",
+    "https://westhillslemoore.elumenapp.com/catalog/26-27/program/business-bookkeeping-coa-spring-2021",
+    "https://westhillslemoore.elumenapp.com/catalog/26-27/program/business-management-as-fall-2025",
+    "https://westhillslemoore.elumenapp.com/catalog/26-27/program/retail-business-management-coa-fall-2021"
+   ]
+  },
+  {
+   "control_number": "15276",
+   "title": "Kinesiology",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://westhillslemoore.elumenapp.com/catalog/26-27/program/kinesiology-aat-fall-2026",
+    "https://westhillslemoore.elumenapp.com/catalog/26-27/program/health-science-as-fall-2025"
+   ]
+  },
+  {
+   "control_number": "38786",
+   "title": "CSU GE Breadth",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://westhillslemoore.elumenapp.com/catalog/26-27/program/transfer-studies-cal-getc-coa-fall-2025",
+    "https://westhillslemoore.elumenapp.com/catalog/26-27/program/liberal-arts-math-and-science-aa-spring-2026",
+    "https://westhillslemoore.elumenapp.com/catalog/26-27/program/mathematics-ast-fall-2025",
+    "https://westhillslemoore.elumenapp.com/catalog/26-27/program/child-development-aa-fall-2025",
+    "https://westhillslemoore.elumenapp.com/catalog/26-27/program/agriculture-as-fall-2025",
+    "https://westhillslemoore.elumenapp.com/catalog/26-27/program/business-information-systems-aa-fall-2025",
+    "https://westhillslemoore.elumenapp.com/catalog/26-27/program/hotel-restaurant-and-casino-management-aa-fall-2025",
+    "https://westhillslemoore.elumenapp.com/catalog/26-27/program/administration-of-justice-law-enforcement-aa-fall-2025"
+   ]
+  },
+  {
+   "control_number": "40164",
+   "title": "LVN to Nursing Program",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://westhillslemoore.elumenapp.com/catalog/26-27/program/lvn-to-adn-as-fall-2025",
+    "https://westhillslemoore.elumenapp.com/catalog/26-27/program/30-unit-lvn-to-rn-coa-summer-2021",
+    "https://westhillslemoore.elumenapp.com/catalog/26-27/program/nursing-as-fall-2025"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 10,
+  "0.8-1.0": 12,
+  "1.0": 51
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 73,
+  "list": [
+   {
+    "control_number": "10945",
+    "title": "Administration of Justice: Law Enforcement",
+    "award": "A.A. Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/administration-of-justice-law-enforcement-aa-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10954",
+    "title": "Computer Information Systems",
+    "award": "A.A. Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/business-bookkeeping-coa-spring-2021",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10963",
+    "title": "Child Development",
+    "award": "A.A. Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/child-development-aa-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10967",
+    "title": "Geology",
+    "award": "A.A. Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/mathematics-2-0-as-t-fall-2026",
+    "coverage": 0.778,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15268",
+    "title": "Business Administration",
+    "award": "A.S. Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/business-administration-as-fall-2025",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15270",
+    "title": "Business: Business Management",
+    "award": "A.S. Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/business-management-as-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15277",
+    "title": "Engineering",
+    "award": "A.S. Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/engineering-as-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15280",
+    "title": "Health Science, General",
+    "award": "A.S. Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/health-science-as-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15284",
+    "title": "Hotel, Restaurant,  and Casino Management",
+    "award": "A.A. Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/hotel-restaurant-and-casino-management-aa-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15285",
+    "title": "Introduction to Hotel Operations",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/introduction-to-hotel-operations-coa-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15290",
+    "title": "Geology",
+    "award": "A.S. Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/mathematics-2-0-as-t-fall-2026",
+    "coverage": 0.778,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17832",
+    "title": "LVN to ADN",
+    "award": "A.S. Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/lvn-to-adn-as-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17833",
+    "title": "30-unit LVN to RN",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/30-unit-lvn-to-rn-coa-summer-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19303",
+    "title": "Liberal Arts: Arts & Humanities",
+    "award": "A.A. Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/liberal-arts-arts-and-humanities-aa-fall-2025",
+    "coverage": 0.962,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19305",
+    "title": "Liberal Arts: Elementary Teacher Preparation",
+    "award": "A.A. Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/studio-arts-aat-fall-2025",
+    "coverage": 0.733,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19306",
+    "title": "Liberal Arts: Math & Science",
+    "award": "A.A. Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/liberal-arts-math-and-science-aa-spring-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19307",
+    "title": "Liberal Arts: Social Science",
+    "award": "A.A. Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/liberal-arts-social-science-aa-fall-2025",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20343",
+    "title": "Business: Retail Business Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/retail-business-management-coa-fall-2021",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20349",
+    "title": "Child Development Teacher Level",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/child-development-teacher-level-certificate-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30832",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/mathematics-ast-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30833",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/administration-of-justice-ast-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31225",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/physics-ast-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31235",
+    "title": "Chef Apprentice",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/chef-apprentice-coa-fall-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31883",
+    "title": "Paramedic",
+    "award": "A.S. Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/paramedic-as-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32842",
+    "title": "Business Administration",
+    "award": "A.S. T Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/business-administration-ast-2-0-fall-2026",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32899",
+    "title": "Communication Studies",
+    "award": "A.A- T Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/communication-studies-2-0-aat-fall-2026",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32900",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/geology-ast-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32908",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/early-childhood-education-ast-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32909",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/sociology-aat-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32911",
+    "title": "Geography",
+    "award": "A.A- T Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/geography-aat-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32926",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/political-science-aat-fall-2026",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32933",
+    "title": "Elementary Teacher Education",
+    "award": "A.A- T Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/elementary-teacher-education-integrated-programs-aat-fall-2026",
+    "coverage": 0.737,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33656",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/psychology-aat-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35960",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/history-aat-fall-2026",
+    "coverage": 0.933,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35963",
+    "title": "Business Information Worker",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/business-information-worker-coa-spring-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36295",
+    "title": "Correctional Rehabilitation",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/correctional-rehabilitation-coa-spring-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37123",
+    "title": "Introduction to Cybersecurity",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/introduction-to-cybersecurity-coa-spring-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37129",
+    "title": "Introduction to Industrial Automation",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/introduction-to-industrial-automation-coa-spring-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37134",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/english-aat-fall-2026",
+    "coverage": 0.909,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37155",
+    "title": "Agriculture Sales and Marketing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/agriculture-sales-and-marketing-coa-fall-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37364",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/kinesiology-aat-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38698",
+    "title": "ESL",
+    "award": "Noncredit program",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/esl-coc-summer-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38740",
+    "title": "Industrial Mechanic I",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/industrial-mechanic-i-coa-spring-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38968",
+    "title": "Transfer Studies- Full IGETC Certification: UC",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/liberal-arts-arts-and-humanities-aa-fall-2025",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39698",
+    "title": "Manufacturing Automation",
+    "award": "A.S. Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/manufacturing-automation-as-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39699",
+    "title": "Nursing",
+    "award": "A.S. Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/nursing-as-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40166",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/biology-ast-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40265",
+    "title": "Introduction to Culinary Arts",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/introduction-to-culinary-arts-coa-fall-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40269",
+    "title": "Introduction to Hospitality Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/introduction-to-hospitality-management-coa-fall-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40321",
+    "title": "Hospitality Management",
+    "award": "A.S. T Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/hospitality-management-ast-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40340",
+    "title": "Advanced Culinary Arts",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/advanced-culinary-arts-coa-spring-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40379",
+    "title": "Beverage Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/beverage-management-coa-fall-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40429",
+    "title": "Advanced Hospitality Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/advanced-hospitality-management-coa-fall-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40430",
+    "title": "Pastry and Baking Arts",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/pastry-and-baking-arts-coa-spring-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42096",
+    "title": "Full-Stack Web Development",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/full-stack-web-development-coa-spring-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42551",
+    "title": "Human Resources (COA)",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/human-resources-coa-fall-2022",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42563",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/economics-aat-fall-2026",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42593",
+    "title": "Information Technology",
+    "award": "A.A. Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/information-technology-aa-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42893",
+    "title": "User Experience (UX) Design (COA)",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/user-experience-ux-design-coa-fall-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43051",
+    "title": "Agriculture",
+    "award": "A.S. Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/agriculture-as-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43103",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/business-administration-ast-2-0-fall-2026",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43429",
+    "title": "Business Information Systems",
+    "award": "A.A. Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/business-information-systems-aa-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43533",
+    "title": "Information Technology Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/networking-fundamentals-coa-spring-2021",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44247",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/communication-studies-2-0-aat-fall-2026",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44549",
+    "title": "Public Health",
+    "award": "A.S. T Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/public-health-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45494",
+    "title": "Transfer studies - Cal GETC",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/transfer-studies-cal-getc-coa-fall-2025",
+    "coverage": 0.962,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45632",
+    "title": "Maintenance Electrical Systems Technician 1",
+    "award": "Noncredit program",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/maintenance-electrical-systems-technician-1-coc-spring-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45802",
+    "title": "Agriculture Business",
+    "award": "A.S. T Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/agriculture-business-ast-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45975",
+    "title": "Elementary Teacher Education: Integrated Programs",
+    "award": "A.A- T Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/elementary-teacher-education-integrated-programs-aat-fall-2026",
+    "coverage": 0.824,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46268",
+    "title": "Mechanical Systems 1",
+    "award": "Noncredit program",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/mechanical-systems-1-coc-spring-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46390",
+    "title": "Community Health Worker",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/community-health-worker-coa-spring-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46558",
+    "title": "Process Control Systems Technician Level 1",
+    "award": "Noncredit program",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/process-control-systems-technician-level-1-coc-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46578",
+    "title": "Mathematics 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/mathematics-2-0-as-t-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "38978057795"
+}
