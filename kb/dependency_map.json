@@ -4,7 +4,7 @@
   "supabase_tables": 99,
   "rpcs": 39,
   "edge_functions": 8,
-  "file_datasets": 650,
+  "file_datasets": 651,
   "external_services": 180,
   "consumers": 443,
   "workflows": 53,
@@ -13674,6 +13674,19 @@
      "direction": "read",
      "how": "literal",
      "line": 948
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/reference/industry_credential_skills.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_it_ai_credential_catalog.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 64
     }
    ],
    "served": true,
