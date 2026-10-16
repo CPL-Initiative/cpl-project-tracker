@@ -72,34 +72,37 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     43.0,
     53.0
    ],
    "stated": [
-    60.0,
-    68.0
+    43.0,
+    53.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the OCC AS General Education pattern, but no units for it"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     43.0,
-     53.0
+     64.0,
+     74.0
     ],
     "stated": [
-     43.0,
-     53.0
+     60.0,
+     68.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": null
    }
   },
   "repeated": {
@@ -124,7 +127,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -146,7 +149,7 @@
    },
    "ge_units": {
     "min": null,
-    "max": null
+    "max": 21
    },
    "electives_fill_degree": true,
    "outcomes": [
@@ -159,7 +162,8 @@
     "field ecologist",
     "geologist",
     "hydrologist"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -585,5 +589,26 @@
    "The fourth line under Program Learning Outcomes ('Students who complete the degree will be prepared for admission...') reads more like a statement than a learning outcome, but it is printed under the PLO heading, so it is recorded as an outcome; reviewer should check."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": 38843379313,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Degree Units - OCC AS GE\t60"
+  },
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": null,
+    "max": 21
+   },
+   "words": "OCC AS General Education   2,3\tup to 21"
+  }
+ ],
+ "read_run": "38670927724"
 }

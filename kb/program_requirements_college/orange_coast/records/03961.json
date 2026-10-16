@@ -80,34 +80,40 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     36.0,
     37.0
    ],
    "stated": [
-    60.0,
-    60.0
+    36.0,
+    37.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the OCC AS GE pattern, but no units for it"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     36.0,
-     37.0
+     57.0,
+     58.0
     ],
     "stated": [
-     36.0,
-     37.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     2.0,
+     3.0
+    ]
    }
   },
   "repeated": {
@@ -132,7 +138,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -154,7 +160,7 @@
    },
    "ge_units": {
     "min": null,
-    "max": null
+    "max": 21
    },
    "electives_fill_degree": true,
    "outcomes": [
@@ -164,7 +170,8 @@
     "Analyze the ethical dimensions of effective leaders and managers in everyday conduct and decision making.",
     "Demonstrate effective written and/or oral skills."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -366,5 +373,26 @@
    "Program Sequence total shows 60-64 units."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": 38843379313,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Degree Units - OCC AS GE\t60"
+  },
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": null,
+    "max": 21
+   },
+   "words": "OCC AS General Education   1,2\tup to 21"
+  }
+ ],
+ "read_run": "38670927724"
 }

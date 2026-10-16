@@ -75,6 +75,71 @@
      "pattern": "\\(3\\) electives as needed"
     }
    ]
+  },
+  "Orange Coast College": {
+   "why": "Orange Coast's degree pages print their totals on the REQUIREMENTS tab, which the reading took the major from and often left the rest of (S395: 41 associate-degree records named the degree total and the OCC AS GE pattern but no units for it). College page read 38752570705 (Management and Leadership Studies A.S., 03961, and Accounting A.S.) reads the tab's textContent: \"Total Major Units36 - 37 OCC AS General Education 1,2up to 21 Transferable electives as needed to satisfy unit requirementsvaries Total Minimum Degree Units - OCC AS GE60\", footnote 1 \"Some program major units may also meet GE requirements\" and footnote 2 \"Cal-GETC pattern (up to 34 units) may be substituted\". So the 60 is a minimum and electives make it up. \"Up to 21\" is a maximum: a major course may also meet GE, so the step sets the GE units' max to 21 and leaves its min unstated (the scorer reads the span as 21, the most the pattern asks, and the electives make up the rest of the 60). S396 SkyJacaranda, 2026-10-16.",
+   "awards": "associate",
+   "steps": [
+    {
+     "kind": "fill",
+     "field": "total_units",
+     "pattern": "Total Major Units\\s*(?P<min>\\d+(?:\\.\\d+)?)(?:\\s*-\\s*(?P<max>\\d+(?:\\.\\d+)?))?"
+    },
+    {
+     "kind": "fill",
+     "field": "degree_total",
+     "pattern": "Total Minimum Degree Units\\s*-\\s*OCC AS GE\\s*(?P<min>\\d+(?:\\.\\d+)?)"
+    },
+    {
+     "kind": "set",
+     "field": "degree_total_minimum",
+     "value": true,
+     "pattern": "Total Minimum Degree Units\\s*-\\s*OCC AS GE\\s*\\d+(?:\\.\\d+)?"
+    },
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "value": {
+      "min": null,
+      "max": 21
+     },
+     "pattern": "OCC AS General Education[\\s\\d,]*up to 21\\b"
+    },
+    {
+     "kind": "set",
+     "field": "electives_fill_degree",
+     "value": true,
+     "pattern": "Transferable electives as needed to satisfy unit requirements"
+    }
+   ]
+  },
+  "Monterey Peninsula College": {
+   "why": "Sixty-five of Monterey Peninsula's associate-degree records name the 60 and a GE pattern with no units for it (S395): 42 \"MPC General Education or Cal-GETC\", 23 Cal-GETC alone. A local degree page prints \"Complete Competency Requirements, general education pattern (MPC General Education or Cal-GETC), and electives, if needed, for a total of 60 degree-applicable units\" and no GE units (college page read 38749721270, Horticulture A.S.); a transfer degree page prints \"Certified completion of the California General Education Transfer Curriculum (Cal-GETC) pattern\" (read 38843693844, Psychology AA-T). The catalog's GE page (read 38759288106) says Cal-GETC \"satisfies the 34 units of lower-division general education\" and lists MPC GE as eight areas (1A, 1B, 2, 3, 4, 5, 6, 7), each \"Select three units\" (1A one 3-unit course), with no total. So a local degree's GE is 24 to 34: the least the MPC GE areas ask, eight times three, and Cal-GETC's 34. The 24 is a sum of the page's own figures, which the page does not print; S396 SkyJacaranda, 2026-10-16, proceeded on it and put it to Sam as a card.",
+   "awards": "associate",
+   "steps": [
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "value": {
+      "min": 24,
+      "max": 34
+     },
+     "pattern": "[Gg]eneral education pattern \\(MPC General Education or Cal-GETC\\)",
+     "source": "https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/",
+     "source_words": "MPC GE: Area 1A ENGL C1000 3; Areas 1B, 2, 3, 4, 5, 6 and 7, each \"Select three units from the following.\" Cal-GETC: \"satisfies the 34 units of lower-division general education requirements\""
+    },
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "value": {
+      "min": 34,
+      "max": 34
+     },
+     "pattern": "Certified completion of the California General Education Transfer Curriculum \\(Cal-GETC\\) pattern",
+     "source": "https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/",
+     "source_words": "Completion of this pattern satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T)"
+    }
+   ]
   }
  }
 }

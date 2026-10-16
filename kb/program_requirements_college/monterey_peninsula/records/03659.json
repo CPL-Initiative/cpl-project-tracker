@@ -68,34 +68,39 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     20.0,
     21.0
    ],
    "stated": [
-    60.0,
-    60.0
+    20.0,
+    21.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the MPC General Education or Cal-GETC pattern, but no units for it"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     20.0,
-     21.0
+     44.0,
+     55.0
     ],
     "stated": [
-     20.0,
-     21.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     24.0,
+     34.0
+    ],
+    "why": [],
+    "fill": [
+     5.0,
+     16.0
+    ]
    }
   },
   "repeated": {
@@ -120,7 +125,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -141,8 +146,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 24,
+    "max": 34
    },
    "electives_fill_degree": true,
    "outcomes": [
@@ -284,5 +289,20 @@
    "SOCI 1 and ETNC 10 and POLS 10 are not in the closed list and are marked as catalog additions."
   ]
  },
- "extracted_run": "38675240344"
+ "extracted_run": 38844053281,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 24,
+    "max": 34
+   },
+   "words": "general education pattern (MPC General Education or Cal-GETC) (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: MPC GE: Area 1A ENGL C1000 3; Areas 1B, 2, 3, 4, 5, 6 and 7, each \"Select three units from the following.\" Cal-GETC: \"satisfies the 34 units of lower-division general education requirements\")"
+  }
+ ],
+ "read_run": "38675240344"
 }

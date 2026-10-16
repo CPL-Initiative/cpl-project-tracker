@@ -1,0 +1,3191 @@
+{
+ "college": "Orange Coast College",
+ "reread_run": "38847265701",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "38843379313",
+ "at": "2026-10-16T04:13:38Z",
+ "posted": 11,
+ "batches": 1,
+ "skipped": [
+  {
+   "control_number": "03957",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "03960",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "03963",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "03970",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "03978",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "03993",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "04007",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "08624",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "16886",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "18197",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "18998",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "19541",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "19809",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "22389",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "22436",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "30642",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31075",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32081",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32231",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32235",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32737",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33569",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35918",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36517",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37987",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "38099",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "38293",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39134",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39359",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "40741",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "41593",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "41921",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "42115",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "43393",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "44029",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "44116",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 11,
+ "absent": 0,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [
+  "03955",
+  "03961",
+  "03968",
+  "04006",
+  "04013",
+  "08628",
+  "10278",
+  "11632",
+  "16887",
+  "16910",
+  "42000"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 10,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Orange Coast College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 38843379313;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 24,
+    "placed": 24,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ARCH A105",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARCH A110",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ARCH A110H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A115",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARCH A155",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A180",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARCH A205",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Architectural Design Restricted Electives",
+      "rule": "choose_units",
+      "stated": {
+       "max": 3,
+       "min": 2
+      },
+      "courses": [
+       {
+        "code": "ARCH A101",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARCH A102",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A104",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A107",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A121",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A122",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A141",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A150",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A142",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A156",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A160",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A162",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A165",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A170",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A171",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A172",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A201",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ARCH A201H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A210",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A241",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A242",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A243",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 2,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "entry-level professional position at an architectural or related design office"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 21,
+      "min": 21
+     },
+     "outcomes": [
+      "The 1st year Certificate of Achievement in Architectural Design 1 prepares students for an entry-level professional position at an architectural or related design office."
+     ],
+     "ge_pattern": "OCC AS General Education",
+     "total_units": {
+      "max": 20,
+      "min": 19
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Architectural Design 1, Associate in Science Degree",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 20,
+   "total_min": 19,
+   "source_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/architectural-technology/architectural-design-1-associate-science-degree/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38670927724,
+   "program_title": "Architectural Design 1",
+   "control_number": "03955"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 14,
+    "placed": 13,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BUS A100",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "BUS A100H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS A110",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BUS A139",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CIS A100",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "CIS A100H",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "CMST A100",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "LEAD A180",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "LEAD A200",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "MGMT A100",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MGMT A115",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MGMT A239",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "BUS A239",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "MKTG A110",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "COMM C1000",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Restricted Electives",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 4,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ACCT A101",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ACCT A102",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS A120",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS A240",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "COMM C1000",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MKTG A100",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MKTG A110",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHIL A120",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Function effectively in a leadership or management role using the skills, principles, and tools they have acquired.",
+      "Apply the leadership and management principles they have learned in their personal and/or organizational lives.",
+      "Distinguish between the qualities of effective and ineffective leaders and managers.",
+      "Analyze the ethical dimensions of effective leaders and managers in everyday conduct and decision making.",
+      "Demonstrate effective written and/or oral skills."
+     ],
+     "ge_pattern": "OCC AS GE",
+     "total_units": {
+      "max": 37,
+      "min": 36
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Management and Leadership Studies, Associate in Science Degree",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 37,
+   "total_min": 36,
+   "source_url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/management/management-leadership-studies-associate-science-degree/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38670927724,
+   "program_title": "Management and Leadership Studies",
+   "control_number": "03961"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 17,
+    "placed": 17,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ACCT A101",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ACCT A101H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ACCT A102",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ACCT A102H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS A110",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "BUS A110H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "CIS A111",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "CIS A111H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON C2001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ECON C2001H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON C2002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ECON C2002H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH A140",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "MATH A180",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "MATH A180H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select one of the following:",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 4,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "CS A131",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS A150",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CS A170",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 21,
+      "min": 21
+     },
+     "outcomes": [
+      "Students will be prepared for employment in entry-level positions in the computer and information systems industries."
+     ],
+     "ge_pattern": "OCC AS General Education",
+     "total_units": {
+      "max": 29,
+      "min": 28
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Computer Information Systems, Associate in Science Degree",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 29,
+   "total_min": 28,
+   "source_url": "https://catalog.cccd.edu/orange-coast/pathways/computers-computing/computer-information-systems/computer-information-systems-associate-science-degree/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38670927724,
+   "program_title": "Computer Information Systems",
+   "control_number": "03968"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 15,
+    "placed": 15,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "DA A100",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DA A101",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DA A110",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DA A115",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DA A120",
+        "units": 2.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DA A125",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DA A130",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DA A140",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DA A145",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DA A150",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DA A160",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DA A163",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DA A165",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DA A168",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DA A175",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Dental Assisting — Registered Suggested Electives",
+      "rule": "recommended",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CIS A100",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "COMM C1004",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "COMM C1000",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "COUN A105",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ENGL C1000",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "PHIL A120",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "PSYC C1000",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "registered dental assistant"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "The outcome of the program is to meet the needs of the local health care community by preparing students for employment as a professional and competent registered dental assistant."
+     ],
+     "ge_pattern": "OCC AS General Education",
+     "total_units": {
+      "max": 29,
+      "min": 29
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Dental Assisting - Registered, Associate in Science Degree",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 29,
+   "total_min": 29,
+   "source_url": "https://catalog.cccd.edu/orange-coast/pathways/careers-healthcare/dental-assisting/dental-assisting-registered-associate-science-degree/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38670927724,
+   "program_title": "Dental Assisting: Registered",
+   "control_number": "04006"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 11,
+    "placed": 10,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": 42,
+       "min": 42
+      },
+      "courses": [
+       {
+        "code": "BIOL A180",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL A210",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM A180",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM A185",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM A220",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM A220L",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1000",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL A101",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FN A195",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FN A286",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "food research and development",
+      "product development",
+      "recipe development",
+      "product duplication",
+      "quality assurance",
+      "sensory",
+      "flavor chemistry"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 21,
+      "min": 21
+     },
+     "outcomes": [
+      "Be competent entry-level Food Science graduates, meeting the employment needs of the community.",
+      "Be prepared to transfer to selected colleges in Food Science."
+     ],
+     "ge_pattern": "OCC AS General Education",
+     "total_units": {
+      "max": 42,
+      "min": 42
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Food Science, Associate in Science Degree",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 42,
+   "total_min": 42,
+   "source_url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/culinology-food-science/level-2-culinology-professional-level-associate-science-degree/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38670927724,
+   "program_title": "Food Science",
+   "control_number": "04013"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 27,
+    "placed": 25,
+    "coverage": false,
+    "invented": false,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CNST A165",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CNST A195",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "CNST A194",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Restricted Electives",
+      "rule": "choose_units",
+      "stated": {
+       "max": 12,
+       "min": 12
+      },
+      "courses": [
+       {
+        "code": "ARCH/CNST A196",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH/CNST A197",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CNST A100",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CNST A112",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CNST A114",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CNST A125",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CNST A150",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CNST A154",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CNST A155",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CNST A156",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CNST A157",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CNST A170",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CNST A180",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CNST A185",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CNST A189",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CNST A190",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CNST A198",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CNST A199",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CNST A209",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CNST A210",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CNST A211",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CNST A220",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CNST A225",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CNST A230",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CNST A240",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CNST A241",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CNST A250",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CNST A252",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CNST A260",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CNST A261",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CNST A265",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CNST A266",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CNST A270",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CNST A275",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CNST A285",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 12,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "inspection",
+      "management",
+      "hands-on skilled tradespeople"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 21,
+      "min": 21
+     },
+     "outcomes": [
+      "Demonstrate the knowledge, skills and experience to identify, assess, and participate in many entry-level construction trades.",
+      "Be prepared to work in the construction field in positions including, but not limited to work areas such as inspection, management, and as hands-on skilled tradespeople."
+     ],
+     "ge_pattern": "OCC AS General Education",
+     "total_units": {
+      "max": 18,
+      "min": 18
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Building Construction, Associate in Science Degree",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 18,
+   "total_min": 18,
+   "source_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/construction-technology/residential-construction-development-first-award-associate-science-degree/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38670927724,
+   "program_title": "Construction Technology: Residential Construction Dev",
+   "control_number": "08628"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 5,
+    "placed": 5,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": 37,
+       "min": 37
+      },
+      "courses": [
+       {
+        "code": "HTT A130",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HTT A150",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HTT A180",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "HTT A284",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "HTT A105",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "HTT A157",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "HTT A185",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "HTT A285",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HTT A138",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "HTT A265",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "HTT A266",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HTT A240",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "HTT A227",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Sales and Marketing Specialist Suggested Electives",
+      "rule": "recommended",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "COMM C1004",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "HTT A199",
+        "units": 0.5,
+        "units_max": 1.5,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "HTT A299",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "SPAN A180",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 18,
+      "min": 18
+     },
+     "outcomes": [
+      "The outcome for this degree is to prepare students for employment within the hospitality, travel, or tourism industries in a sales or marketing capacity."
+     ],
+     "ge_pattern": "OCC AS GE",
+     "total_units": {
+      "max": 37,
+      "min": 37
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Sales and Marketing Specialist, Associate in Science Degree",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": 5,
+      "min": 5
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 37,
+   "total_min": 37,
+   "source_url": "https://catalog.cccd.edu/orange-coast/pathways/hospitality-food-tourism/hospitality-travel/sales-marketing-specialist-associate-science-degree/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38670927724,
+   "program_title": "Sales and Marketing Specialist",
+   "control_number": "10278"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 19,
+    "placed": 19,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Prerequisites: Interior Design Foundation - Level 1, Certificate of Achievement (24 Units) - Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": 24,
+       "min": 24
+      },
+      "courses": [
+       {
+        "code": "ART A110",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ID A175",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ID A100",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ID A105",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ID A110",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ID A120",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ID A130",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ID A150",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ID A180",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ID A190",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ID A170",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ID A200",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ID A210",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ID A215",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ID A220",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ID A230",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ID A240",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ID A245",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ID A260",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "interior design assistant",
+      "design"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "The outcome of the Associate in Science Degree level is to prepare students for entry-level employment as an interior design assistant to a professional interior designer. In addition, the outcome of this level is for students to progress to Level 3 – Interior Design Professional Level and/or for transfer."
+     ],
+     "ge_pattern": "OCC AS General Education",
+     "total_units": {
+      "max": 49,
+      "min": 49
+     },
+     "degree_total": {
+      "max": 67,
+      "min": 67
+     },
+     "section_heading": "Level 2 - Interior Design Assistant, Associate in Science Degree",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 49,
+   "total_min": 49,
+   "source_url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/interior-design/level-2-interior-design-assistant-associate-science-degree/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38670927724,
+   "program_title": "Level 2 - Interior Design",
+   "control_number": "11632"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 19,
+    "placed": 16,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Prerequisites: Architectural Design 1 Certificate of Achievement - Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ARCH A105",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARCH A110",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ARCH A110H",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A115",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARCH A155",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A180",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARCH A205",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Architectural Design Restricted Electives (Architectural Design 1)",
+      "rule": "choose_units",
+      "stated": {
+       "max": 3,
+       "min": 2
+      },
+      "courses": [
+       {
+        "code": "ARCH A101",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARCH A102",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARCH A104",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARCH A107",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARCH A121",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARCH A122",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARCH A141",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARCH A150",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A142",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARCH A156",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A160",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A162",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A165",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A170",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A171",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A172",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A201",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ARCH A201H",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A210",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARCH A241",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARCH A242",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARCH A243",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 2,
+      "option_group": null
+     },
+     {
+      "name": "Architectural Design 2 Requirements - Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ARCH A185",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A215",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A220",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARCH A230",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ARCH A230H",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Architectural Design Restricted Electives (Architectural Design 2)",
+      "rule": "choose_units",
+      "stated": {
+       "max": 4,
+       "min": 4
+      },
+      "courses": [
+       {
+        "code": "ARCH A101",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARCH A102",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARCH A104",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARCH A107",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARCH A121",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARCH A122",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARCH A141",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARCH A142",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARCH A150",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A156",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A160",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A162",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A165",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A170",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A171",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A172",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A201",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ARCH A201H",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A202",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ARCH A202H",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH A210",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARCH A241",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARCH A242",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARCH A243",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 4,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "junior/intermediate level drafting/design position"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "The 2nd year Certificate of Achievement in Architectural Design 2 prepares students in the areas of critical thinking, design, and visual communication for successful transfer to a university professional program in Architecture and/or related Environmental Design or for a junior/intermediate level drafting/design position at an architectural or related firm."
+     ],
+     "ge_pattern": "OCC AS General Education",
+     "total_units": {
+      "max": 41,
+      "min": 40
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Architectural Design 2, Associate in Science Degree",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 41,
+   "total_min": 40,
+   "source_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/architectural-technology/architectural-design-2-associate-science-degree/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38670927724,
+   "program_title": "Architectural Design 2",
+   "control_number": "16887"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 13,
+    "placed": 8,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ACCT A101",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ACCT A101H",
+          "units": 4,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ACCT A102",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ACCT A102H",
+          "units": 4,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS A100",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "BUS A100H",
+          "units": 3,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS A110",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "BUS A110H",
+          "units": 3,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS A139",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CIS A111",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "CIS A111H",
+          "units": 3,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON A170",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ECON A170H",
+          "units": 3,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "ECON A175",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ECON A175H",
+          "units": 3,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "ENGL C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ESL A100",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "STAT C1000",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PSYC A160",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select one of the following:",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 5,
+       "min": 5
+      },
+      "courses": [
+       {
+        "code": "MATH A140",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "MATH A180",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "MATH A180H",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "MATH A182H",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 21,
+      "min": 21
+     },
+     "outcomes": [
+      "Function effectively in entry-level business positions or at a four-year college business program using the skills, principles, and tools they have acquired.",
+      "Effectively apply and utilize the business principles and techniques they have learned in a business environment or at a four-year college business program.",
+      "Demonstrate effective written and/or oral skills."
+     ],
+     "ge_pattern": "OCC AS General Education",
+     "total_units": {
+      "max": 38,
+      "min": 38
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Business Administration, Associate in Science Degree",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 38,
+   "total_min": 38,
+   "source_url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/business/business-administration-associate-science-degree/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38670927724,
+   "program_title": "Business Administration",
+   "control_number": "16910"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 41,
+    "placed": 41,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ESEC A100",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ESEC A100H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON C2001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ECON C2001H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON C2002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ECON C2002H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL A180",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM A180",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM A185",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "A Geology course with lab: GEOL A110",
+      "rule": "all",
+      "stated": {
+       "max": 4,
+       "min": 4
+      },
+      "courses": [
+       {
+        "code": "GEOL A110",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Geology"
+     },
+     {
+      "name": "A Geology course with lab: GEOL A105 and GEOL A105L",
+      "rule": "all",
+      "stated": {
+       "max": 4,
+       "min": 4
+      },
+      "courses": [
+       {
+        "code": "GEOL A105",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "GEOL A105H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOL A105L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "GEOL A105M",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Geology"
+     },
+     {
+      "name": "Select additional Biology course(s): BIOL A185",
+      "rule": "all",
+      "stated": {
+       "max": 8,
+       "min": 4
+      },
+      "courses": [
+       {
+        "code": "BIOL A185",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Biology"
+     },
+     {
+      "name": "Select additional Biology course(s): or the following group",
+      "rule": "all",
+      "stated": {
+       "max": 8,
+       "min": 4
+      },
+      "courses": [
+       {
+        "code": "BIOL A182",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "BIOL A182H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL A182L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL A183",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL A183L",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Biology"
+     },
+     {
+      "name": "Select one Math course:",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 5,
+       "min": 4
+      },
+      "courses": [
+       {
+        "code": "MATH A140",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH A180",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "MATH A180H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH A185",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "MATH A185H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC A160",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "Restricted Electives",
+      "rule": "choose_units",
+      "stated": {
+       "max": 13,
+       "min": 7
+      },
+      "courses": [
+       {
+        "code": "ESEC A110",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ESEC A121",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "MRSC A121",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ESEC A124",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "MRSC A124",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ESEC A140",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ESEC A141",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MRSC A187",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MRSC A188",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HORT A190",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOL A160",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOL A250",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG A190",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL A172",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 7,
+      "option_group": null
+     },
+     {
+      "name": "Recommended prior to transfer",
+      "rule": "recommended",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "Physics A120",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "Physics A185",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "Physics A280",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "Physics A285",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "Chemistry A220",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "field ecologist",
+      "geologist",
+      "hydrologist"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Describe the major biological, chemical, and physical components and processes within organisms and the environment.",
+      "Describe historical and current human activities that negatively impact the environment (energy resources, urbanization, agricultural methods, etc) and how economics, social interactions, policies, and laws affect human activity within the environment.",
+      "Develop the skills to research environmental topics, conduct and analyze experimental data, and communicate findings with their peers.",
+      "Students who complete the degree will be prepared for admission to California State University/University of California schools in environmental science."
+     ],
+     "ge_pattern": "OCC AS General Education",
+     "total_units": {
+      "max": 53,
+      "min": 43
+     },
+     "degree_total": {
+      "max": 68,
+      "min": 60
+     },
+     "section_heading": "Environmental Science, Associate in Science Degree",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 53,
+   "total_min": 43,
+   "source_url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/environmental-science/environmental-science-associate-science-degree/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38670927724,
+   "program_title": "Environmental Science",
+   "control_number": "42000"
+  }
+ ]
+}
