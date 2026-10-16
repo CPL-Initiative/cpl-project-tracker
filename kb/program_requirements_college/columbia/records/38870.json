@@ -1,0 +1,210 @@
+{
+ "college": "Columbia College",
+ "control_number": "38870",
+ "shape": "certificate",
+ "title": "Management & Restoration of Fire-Adapted Ecosystems",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/management-restoration-of-fire-adapted-ecosystems-coa-cc-fall-2023",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6684,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6684,
+    "output_tokens": 1223,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1223,
+  "output_tokens_details": {
+   "thinking_tokens": 218
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0512,
+ "ms": 10416,
+ "seconds": 10.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "FIRE111"
+   ],
+   "flagged": [
+    "FIRE111"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    17.0,
+    17.0
+   ],
+   "stated": [
+    17.0,
+    17.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Management & Restoration of Fire-Adapted Ecosystems COA",
+   "measure": "units",
+   "total_units": {
+    "min": 17,
+    "max": 17
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Possess a framework of facts, skills, and understanding of the management and restoration of fire-adapted ecosystems to make informed decisions about their personal lives, career choices, and the communities in which they live.",
+    "Think critically about the world, solve problems using appropriate analytic skills, and be discerning about the quality of information to identify and examine real-world examples of concepts explored in coursework and their implications for the management and restoration of fire-adapted ecosystems.",
+    "Communicate effectively across levels and disciplines utilizing a variety of methods and mediums on the subject of the management and restoration of fire-adapted ecosystems.",
+    "Participate in a vibrant community and culture, understand others, value diversity, and encourage understanding in the subject of the management and restoration of fire-adapted ecosystems."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Complete all of the following",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 17,
+     "max": 17
+    },
+    "courses": [
+     {
+      "code": "FIRE7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE111",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FNR22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FNR24",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FNR62",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FNR83",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FNR150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints course codes without a space (e.g., 'FIRE7', 'FNR22'); they are recorded as printed and correspond to closed-list codes FIRE 7, FNR 22, FNR 24, FNR 62, FNR 83 and FNR 150.",
+   "FIRE111 (Basic Power Saw Safety, 1 unit) is not in the closed list and is recorded as a catalog addition.",
+   "The block total of 17 units is from the printed '(Total 17 units)'; the course units printed also sum to 17.",
+   "An outcomes lead-in appears near the top of the page with no outcomes under it; the four outcomes are taken from the 'Program Learning Outcomes' section.",
+   "The description mentions 'employment in this exciting field' but names no specific career, so careers is empty."
+  ]
+ },
+ "extracted_run": "38979390136"
+}
