@@ -1,0 +1,587 @@
+{
+ "college": "Allan Hancock College",
+ "control_number": "19936",
+ "shape": "certificate",
+ "title": "Computer Networking and Electronics Technology: Mechatronics",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31079",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11450,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11450,
+    "output_tokens": 4181,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4181,
+  "output_tokens_details": {
+   "thinking_tokens": 1176
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.12942,
+ "ms": 31342,
+ "seconds": 31.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 41,
+   "listed": 43,
+   "share": 0.953,
+   "missing": [
+    "EL107",
+    "EL119"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 10,
+   "codes": [
+    "AB117",
+    "AT117",
+    "CNET107",
+    "CNET119",
+    "CS105",
+    "CS107",
+    "CS320",
+    "ET117",
+    "ET133",
+    "ET162"
+   ],
+   "flagged": [
+    "AB117",
+    "AT117",
+    "CNET107",
+    "CNET119",
+    "CS105",
+    "CS107",
+    "CS320",
+    "ET117",
+    "ET133",
+    "ET162"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    57.5,
+    59.0
+   ],
+   "stated": [
+    49.0,
+    49.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 57.5-59.0; the catalog states 49.0-49.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Computer Networking and Electronics Technology: Mechatronics - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 49,
+    "max": 49
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate a fundamental mastery of knowledge and the use of electronic equipment in electrical, digital and analog circuits.",
+    "Use computer simulation and design software to conduct, analyze and interpret electrical, digital and analog circuits.",
+    "Make calculations involving various electrical laws, formulas and principles for predicting circuit parameters using algebra and trigonometry required for electronics.",
+    "Use research strategies to acquire information pertinent to the solution of electronic circuits and systems.",
+    "Write technical laboratory reports with conclusions.",
+    "Demonstrate learned skills with a capstone project requiring you to design, build and evaluate a piece of electronic equipment.",
+    "Apply current knowledge and adapt to emerging applications of automation and control."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required core courses (34 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 34,
+     "max": 34
+    },
+    "courses": [
+     {
+      "code": "CNET 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CEL 104",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ET 104",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 111",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNET 118",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNET 119",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CNET 122",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNET 123",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNET 125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNET 126",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNET 146",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ET 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MT 109",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one from the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "MT 117",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "AB 117",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "AT 117",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "ET 117",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "WLDT 306",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Plus a minimum of 15 units selected from the following:",
+    "rule": "choose_units",
+    "minimum": 15,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "CNET 106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNET 107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CS 107",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "CNET 128",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CEL 128",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ET 128",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNET 131",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CEL 131",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ET 131",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNET 133",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CEL 133",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ET 133",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNET 135",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNET 136",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNET 139",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CEL 139",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ET 139",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNET 162",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CEL 162",
+        "units": 2,
+        "catalog_addition": false
+       },
+       {
+        "code": "ET 162",
+        "units": 2,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ET 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WLDT 106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WLDT 107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WLDT 315",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one from the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 2.5,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CNET 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CS 105",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNET 320",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CS 320",
+        "units": 2.5,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one from the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "PHYS 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHSC 111",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one from the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "WLDT 307",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WLDT 308",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "EL 107",
+    "why": "not in the text; catalog prints CNET 107 (same as CS 107) instead"
+   },
+   {
+    "code": "EL 119",
+    "why": "not in the text; catalog prints CNET 119 instead"
+   }
+  ],
+  "notes": [
+   "The three 'Select one from the following' blocks for CNET 105/CNET 320, PHYS 100/PHYS 110/PHSC 111, and WLDT 307/WLDT 308 are nested inside the 'Plus a minimum of 15 units' elective list; units chosen from them count toward that 15-unit minimum. In the catalog they are interleaved with the elective courses in printed order (CNET 105/320 choice first, physics choice after ET 100, welding choice after WLDT 107).",
+   "The 'Select one from the following' MT 117/WLDT 306 choice (3 units) is nested within the 34-unit required core; core courses listed sum to 31 plus 3 from this choice.",
+   "Cross-listed 'same as' courses are recorded as alternatives; several (AB 117, AT 117, ET 117, CS 105, CS 320, CS 107, ET 133, ET 162) are not in the closed list and are marked catalog additions.",
+   "Catalog prints CNET 119 and CNET 107 where the closed list has EL 119 and EL 107; possible renumbering to verify.",
+   "The Suggested Course Sequence (34 units) covers only core courses and was not used as a separate requirement."
+  ]
+ },
+ "extracted_run": "38843474519"
+}

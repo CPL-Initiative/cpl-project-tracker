@@ -1,0 +1,257 @@
+{
+ "college": "Allan Hancock College",
+ "control_number": "31092",
+ "shape": "noncredit",
+ "title": "Clothing Alterations Management",
+ "award": "Noncredit program",
+ "source_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31397",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7818,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7818,
+    "output_tokens": 1779,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1779,
+  "output_tokens_details": {
+   "thinking_tokens": 561
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06685,
+ "ms": 14648,
+ "seconds": 15.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "HOEC7100A",
+    "HOEC7101A",
+    "HOEC7110A"
+   ],
+   "flagged": [
+    "HOEC7100A",
+    "HOEC7101A",
+    "HOEC7110A"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    465.0,
+    530.0
+   ],
+   "stated": [
+    465.0,
+    530.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Clothing Alterations Management",
+   "measure": "hours",
+   "total_units": {
+    "min": 465,
+    "max": 530
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify the components of a custom tailored garments.",
+    "Analyze the techniques of traditional tailoring and select time saving modern methods that achieve comparable results.",
+    "Select appropriate fabric, interfacings, and notions for a quality, tailored garment.",
+    "Alter a pattern of a tailored garment for a custom fit.",
+    "Define factors that contribute to high quality sewing.",
+    "Research and use sewing methods appropriate for luxury fabrics such as wool, silk, and lace.",
+    "Analyze a garment's need for internal support, shaping, and structure."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required core courses:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 420,
+     "max": 479
+    },
+    "courses": [
+     {
+      "code": "HOEC 7100A",
+      "units": 15,
+      "units_max": 20,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HOEC 7101A",
+      "units": 60,
+      "units_max": 68,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HOEC 7103A",
+      "units": 60,
+      "units_max": 68,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOEC 7105A",
+      "units": 60,
+      "units_max": 68,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOEC 7108A",
+      "units": 45,
+      "units_max": 51,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOEC 7115A",
+      "units": 60,
+      "units_max": 68,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOEC 7106",
+      "units": 60,
+      "units_max": 68,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOEC 7112A",
+      "units": 60,
+      "units_max": 68,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Plus one course selected from the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 45,
+     "max": 51
+    },
+    "courses": [
+     {
+      "code": "HOEC 7110A",
+      "units": 45,
+      "units_max": 51,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HOEC 7111A",
+      "units": 45,
+      "units_max": 51,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOEC 7167A",
+      "units": 45,
+      "units_max": 51,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints no section heading text beyond the program page; the summary names the award 'Certificate of Competency in Clothing Alterations Management'.",
+   "Two conflicting totals are printed: the sentence 'A total of 544 hours is required for the certificate.' and the block total line 'Total : 465.0- 530.0'. total_units records the printed Total line (465-530 hours), which matches the block totals (420-479 + 45-51); reviewer should check which is current.",
+   "HOEC 7100A, HOEC 7101A and HOEC 7110A are marked '( Historical )' in the catalog and are not in the closed list; recorded as catalog additions. HOEC 7167A is marked '( Draft )'.",
+   "Course figures are hours ranges as printed (e.g. 60.0-68.0); the closed list's 0 units were not used.",
+   "Outcomes are printed in the Summary for the Certificate of Competency, which is this award."
+  ]
+ },
+ "extracted_run": "38843474519"
+}

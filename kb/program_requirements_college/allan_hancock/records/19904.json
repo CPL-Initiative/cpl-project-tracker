@@ -1,0 +1,307 @@
+{
+ "college": "Allan Hancock College",
+ "control_number": "19904",
+ "shape": "certificate",
+ "title": "Computer Networking & Electronics Technology: Network Maintenance and Digital Technologies",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31077",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9898,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9898,
+    "output_tokens": 2382,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2382,
+  "output_tokens_details": {
+   "thinking_tokens": 673
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08723,
+ "ms": 18874,
+ "seconds": 19.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 13,
+   "share": 0.846,
+   "missing": [
+    "EL107",
+    "EL119"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "CNET107",
+    "CNET119"
+   ],
+   "flagged": [
+    "CNET107",
+    "CNET119"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    26.0,
+    27.0
+   ],
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 26.0-27.0; the catalog states 24.0-24.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Computer Networking and Electronics Technology: Network Maintenance and Digital Technologies - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate a fundamental mastery of knowledge and the use of electronic equipment in electrical, digital and analog circuits.",
+    "Use computer simulation and design software to conduct, analyze and interpret electrical, digital and analog circuits.",
+    "Make calculations involving various electrical laws, formulas and principles for predicting circuit parameters using algebra and trigonometry required for electronics.",
+    "Use research strategies to acquire information pertinent to the solution of electronic circuits and systems.",
+    "Write technical laboratory reports with conclusions.",
+    "Demonstrate understanding of how computers communicate with each other and the methods employed to ensure that the communications is reliable.",
+    "Modify operating parameters of infrastructure network devices to meet network requirements."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required core courses (18 units):",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "CNET 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNET 106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNET 107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CNET 108",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNET 118",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNET 119",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Plus a minimum of 3 units selected from the following:",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "BUS 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CBIS 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one from the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CNET 125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNET 126",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Plus a minimum of 3 units selected from the following:",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CS 111",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNET 370",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "EL 107",
+    "why": "not in the text; catalog prints CNET 107 Networking Essentials 2 (same title) instead"
+   },
+   {
+    "code": "EL 119",
+    "why": "not in the text; catalog prints CNET 119 Fundamentals of DC and AC Circuits Analysis Laboratory (same title) instead"
+   }
+  ],
+  "notes": [
+   "Stated total is 24 units, but the printed blocks sum to 18 + 3 + 2-3 + 3 = 26-27 units. The suggested course sequence shows only the 18-unit core plus 'Core Elective: List A' (3) and 'Core Elective: List B' (3) = 24, so the 'Select one from the following' block (CNET 125/CNET 126) and the second 'Plus a minimum of 3 units' block (CS 111/CNET 370) may be nested within or alternative to the lists rather than additional requirements; reviewer should check the block structure.",
+   "Courses are printed with cross-listings: CNET 105 (same as CS 105), CNET 107 (same as CS 107), CNET 108 (same as CS 108), CNET 370 (same as AB 370, ARCH 370, AT 370, ET 370, MT 370, WLDT 370); these were not recorded as alternatives.",
+   "CNET 107 and CNET 119 are not in the closed list; the closed list has EL 107 and EL 119 with the same titles, likely a renumbering.",
+   "Outcomes are printed specifically for this Certificate of Achievement; the summary also mentions an associate in science degree option, which this record does not cover.",
+   "No careers are named in the text."
+  ]
+ },
+ "extracted_run": "38843474519"
+}

@@ -1,0 +1,252 @@
+{
+ "college": "Allan Hancock College",
+ "control_number": "30791",
+ "shape": "adt",
+ "title": "Mathematics",
+ "award": "A.S. T Degree",
+ "source_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30988",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10060,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10060,
+    "output_tokens": 1835,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1835,
+  "output_tokens_details": {
+   "thinking_tokens": 714
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07694,
+ "ms": 15461,
+ "seconds": 16.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "CS161",
+    "STATC1000"
+   ],
+   "flagged": [
+    "CS161",
+    "STATC1000"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.0,
+    21.0
+   ],
+   "stated": [
+    20.0,
+    21.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     59.0,
+     61.0
+    ],
+    "stated": [
+     59.0,
+     61.0
+    ],
+    "against": "degree",
+    "ge": [
+     31.0,
+     31.0
+    ],
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Mathematics - Associate in Science for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 21
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 8,
+    "max": 9
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 59,
+    "max": 61
+   },
+   "ge_units": {
+    "min": 31,
+    "max": 31
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Utilize a variety of problem-solving techniques and strategies to identify, analyze, and solve problems;",
+    "Represent mathematical information symbolically, graphically, numerically, and in writing;",
+    "Interpret and draw inferences from mathematical models such as formulas, graphs, and tables;",
+    "Create and analyze mathematical models of real world and/or theoretical situations, including the implications and limitations of those models;",
+    "Check mathematical results for reasonableness.",
+    "Use appropriate technologies to analyze and solve mathematical problems."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required core courses (17 units):",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 17,
+     "max": 17
+    },
+    "courses": [
+     {
+      "code": "MATH 181",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 182",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 183",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 184",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one course from the following (3-4 units):",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "CS 111",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 161",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS 161",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "PHYS 161 is printed with 4.0 units in the catalog; the state file stores 5 units. Recorded as printed.",
+   "MATH 181 and MATH 182 are marked '( Historical )' in the catalog requirement list.",
+   "The General Education block prints 31.0 units while the text says Cal-GETC is 34 units, with up to 3 units double counted with the major; ge_units recorded as the 31.0 printed on the block (20-21 + 8-9 + 31 = 59-61 matches the printed total). Reviewer may prefer 34.",
+   "Electives (8-9 units) are 'additional CSU transferable courses as needed to achieve 60 units'; recorded as degree_elective_units since the page prints a major total of 20-21 units.",
+   "The Suggested Course Sequence lists STEM 100 and Cal-GETC areas as electives/GE; these are not major requirements and were not placed in blocks.",
+   "Outcomes are printed for the AS-T program as a whole."
+  ]
+ },
+ "extracted_run": "38843474519"
+}

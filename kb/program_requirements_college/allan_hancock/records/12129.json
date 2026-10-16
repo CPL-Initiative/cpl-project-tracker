@@ -1,0 +1,243 @@
+{
+ "college": "Allan Hancock College",
+ "control_number": "12129",
+ "shape": "degree",
+ "title": "Mathematics: Physics",
+ "award": "A.A. Degree",
+ "source_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30986",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9847,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9847,
+    "output_tokens": 1939,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1939,
+  "output_tokens_details": {
+   "thinking_tokens": 790
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07817,
+ "ms": 17677,
+ "seconds": 18.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 7,
+   "share": 0.714,
+   "missing": [
+    "MATH181",
+    "MATH182"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "MATHC2210",
+    "MATHC2220"
+   ],
+   "flagged": [
+    "MATHC2210",
+    "MATHC2220"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    25.0,
+    25.0
+   ],
+   "stated": [
+    26.0,
+    26.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 25.0-25.0; the catalog states 26.0-26.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Mathematics with Physics Emphasis - Associate in Arts",
+   "measure": "units",
+   "total_units": {
+    "min": 26,
+    "max": 26
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "AHC GE or Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Utilize a variety of problem-solving techniques and strategies to identify, analyze and solve problems;",
+    "Represent mathematical information symbolically, graphically, numerically, and in writing;",
+    "Interpret and draw inferences from mathematical models such as formulas, graphs, and tables;",
+    "Create and analyze mathematical models of real world and/or theoretical situations, including the implications and limitations of those models;",
+    "Check mathematical results for reasonableness;",
+    "Use appropriate technologies to analyze and solve mathematical problems."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required core courses (22 units):",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 21,
+     "max": 21
+    },
+    "courses": [
+     {
+      "code": "MATH C2210",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH C2220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 183",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 184",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 161",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Plus 4 units selected from the following:",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "PHYS 162",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 163",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MATH 181",
+    "why": "not in the text; catalog lists MATH C2210 (Calculus I: Early Transcendentals), likely its common-course-numbered replacement"
+   },
+   {
+    "code": "MATH 182",
+    "why": "not in the text; catalog lists MATH C2220 (Calculus II: Early Transcendentals), likely its common-course-numbered replacement"
+   }
+  ],
+  "notes": [
+   "Unit totals conflict: the page states 'A major of 26 units is required for the degree', the core heading says '(22 units)' but its printed block total is 21.0 (courses sum to 21), and the requirements 'Total : 25.0' (21 + 4). total_units recorded as the stated 26; reviewer should check.",
+   "Closed-list code 'PHYS161' treated as the same course as catalog 'PHYS 161' (Engineering Physics 1).",
+   "The Suggested Course Sequence prints 'Total : 62.5- 68.0' including GE and electives; it is a suggested plan, not a stated degree total, so degree_total left null.",
+   "GE: students may follow AHC GE or Cal-GETC; no GE units printed.",
+   "Outcomes are printed for the A.A. in Mathematics with Physics Emphasis and recorded as printed."
+  ]
+ },
+ "extracted_run": "38843474519"
+}

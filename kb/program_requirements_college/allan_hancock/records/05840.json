@@ -1,0 +1,358 @@
+{
+ "college": "Allan Hancock College",
+ "control_number": "05840",
+ "shape": "degree",
+ "title": "Architectural Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31137",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10560,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10560,
+    "output_tokens": 2399,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2399,
+  "output_tokens_details": {
+   "thinking_tokens": 728
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09022,
+ "ms": 19196,
+ "seconds": 20.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 18,
+   "listed": 27,
+   "share": 0.667,
+   "missing": [
+    "ARCH370",
+    "ART103",
+    "ART104",
+    "ART105",
+    "ART110",
+    "ART113",
+    "ENGR161",
+    "ENGR162",
+    "MATH181"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "MATHC2210"
+   ],
+   "flagged": [
+    "MATHC2210"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    38.0,
+    38.0
+   ],
+   "stated": [
+    38.0,
+    38.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Architectural Technology - Associate in Science",
+   "measure": "units",
+   "total_units": {
+    "min": 38,
+    "max": 38
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "AHC GE or Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Communicate graphically using both manual and computer aided methods.",
+    "Produce a set of architectural plans that may be submitted for plan check approval.",
+    "Develop knowledge of and ability to apply building codes.",
+    "Produce a comphrensive architectural project that demonstrates the capacity to make design decisions across scales."
+   ],
+   "careers": [
+    "architectural interns",
+    "architectural drafters/CAD technicians",
+    "technical/production support staff within architecture or construction firms"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required core courses (32 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 32,
+     "max": 32
+    },
+    "courses": [
+     {
+      "code": "ARCH 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 121",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 131",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 151",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 152",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ET 160",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Plus a minimum of 6 units selected from the following:",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ARCH 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ET 100",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 122",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 321",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 152",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 156",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2210",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS 141",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 142",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ARCH 370",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 103",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 104",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 105",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 110",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 113",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGR 161",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGR 162",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 181",
+    "why": "not in the text; catalog lists MATH C2210 (Calculus I: Early Transcendentals), likely its common-course-numbering replacement"
+   }
+  ],
+  "notes": [
+   "ET 100 is printed as its own row in the elective list as well as 'same as' ARCH 100; recorded once as an alternative to ARCH 100. ET 160 recorded as alternative to ARCH 160 ('same as').",
+   "MATH C2210 is not in the closed list (catalog_addition); closed list's MATH 181 Calculus 1 is likely the predecessor.",
+   "The suggested course sequence prints 'Total : 69.5- 75.0'; this is a sample plan total, not a stated degree total, so degree_total left null. Reviewer may check.",
+   "Suggested sequence marks ARCH 321 and ARCH 122 as 'Recommended' for the core elective slots; they are already in the choose-6-units block so no separate recommended block was created.",
+   "GE: students may follow AHC GE or Cal-GETC; no GE unit total printed."
+  ]
+ },
+ "extracted_run": "38843474519"
+}

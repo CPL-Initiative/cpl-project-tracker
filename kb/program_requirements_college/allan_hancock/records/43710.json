@@ -1,0 +1,298 @@
+{
+ "college": "Allan Hancock College",
+ "control_number": "43710",
+ "shape": "adt",
+ "title": "Studio Arts",
+ "award": "A.A- T Degree",
+ "source_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31134",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10373,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10373,
+    "output_tokens": 2444,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2444,
+  "output_tokens_details": {
+   "thinking_tokens": 1016
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09037,
+ "ms": 20746,
+ "seconds": 21.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 13,
+   "share": 0.846,
+   "missing": [
+    "ART103",
+    "ART104"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ARTHC1100",
+    "ARTHC1200"
+   ],
+   "flagged": [
+    "ARTHC1100",
+    "ARTHC1200"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    24.0
+   ],
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     60.0,
+     60.0
+    ],
+    "stated": [
+     55.0,
+     55.0
+    ],
+    "against": "degree",
+    "ge": [
+     31.0,
+     31.0
+    ],
+    "why": [],
+    "overlap": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Art: Studio Arts - Associate in Arts for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 5,
+    "max": 5
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 55,
+    "max": 55
+   },
+   "ge_units": {
+    "min": 31,
+    "max": 31
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "demonstrate and apply understanding of a variety of theories, ideas and processes involved in creative research.",
+    "demonstrate and apply understanding of a variety of materials, techniques, and methods of analysis toward development of a body of work.",
+    "broaden knowledge of and develop an appreciation for the diverse practices and ways of thinking in art across cultures and time periods."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required core courses (15 units):",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "ARTH C1100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARTH C1200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ART 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 113",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select three courses from three different areas (9 units):",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "ART 121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 122",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 151",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 164",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTO 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ART 103",
+    "why": "not in the text; catalog lists ARTH C1100 in its place"
+   },
+   {
+    "code": "ART 104",
+    "why": "not in the text; catalog lists ARTH C1200 in its place"
+   }
+  ],
+  "notes": [
+   "The 9-unit block requires three courses from three different areas: Drawing (ART 121, ART 122; area printed 6.0), Color (ART 112), Painting (ART 151), Ceramics (ART 160), Sculpture (ART 164), Digital (ART 107), Photography (PHTO 110).",
+   "ART 107 printed in catalog matches closed-list entry 'ART107' (no space); treated as the same course.",
+   "The page prints 'Total : 55.0', which appears to be major 24 + General Education 31.0 and excludes the 5 elective units; recorded as degree_total as printed, though the text also states 60 units are required for the degree.",
+   "General Education block prints 31.0 while the pattern line states Cal-GETC 34 units, with 3 units allowed to double count with the major; ge_units recorded as 31.",
+   "Electives (5 units, 'additional CSU transferable courses as needed to achieve 60 units') recorded as degree_elective_units since a major total of 24 is printed.",
+   "Suggested course sequence total 59.0-66.0 not recorded as a requirement total.",
+   "The description mentions 'a commercial career in various art media' and 'the fine artist and the designer' in general terms; no careers recorded—reviewer may wish to check."
+  ]
+ },
+ "extracted_run": "38843474519"
+}

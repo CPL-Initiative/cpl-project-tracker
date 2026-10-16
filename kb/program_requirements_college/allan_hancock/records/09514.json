@@ -1,0 +1,537 @@
+{
+ "college": "Allan Hancock College",
+ "control_number": "09514",
+ "shape": "degree",
+ "title": "Media Arts: Multimedia",
+ "award": "A.S. Degree",
+ "source_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30980",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11464,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11464,
+    "output_tokens": 3793,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3793,
+  "output_tokens_details": {
+   "thinking_tokens": 1125
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.12172,
+ "ms": 28879,
+ "seconds": 29.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 29,
+   "listed": 30,
+   "share": 0.967,
+   "missing": [
+    "FILM127"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 6,
+   "codes": [
+    "ART101",
+    "ART108",
+    "FILM110",
+    "FILM117",
+    "FILM120",
+    "FILM121"
+   ],
+   "flagged": [
+    "ART101",
+    "ART108",
+    "FILM110",
+    "FILM117",
+    "FILM120",
+    "FILM121"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    37.0,
+    68.0
+   ],
+   "stated": [
+    37.0,
+    37.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 37.0-68.0; the catalog states 37.0-37.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Media Arts: Multimedia - Associate in Science",
+   "measure": "units",
+   "total_units": {
+    "min": 37,
+    "max": 37
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "AHC GE or Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Analyze and explain diverse multimedia products in terms of design, techniques, and point of view.",
+    "Employ a range of software programs to create and manipulate digital imagery, audio, animation, and video.",
+    "Design, build, test and present animations, motion graphics sequences, interactive applications and website designs.",
+    "Plan and prepare a project proposal for presentation to a client.",
+    "Produce work for a reel or digital portfolio that showcases individual multimedia competencies."
+   ],
+   "careers": [
+    "creative industries"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required core courses (28 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 28,
+     "max": 28
+    },
+    "courses": [
+     {
+      "code": "ART 108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GRPH 108",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "FILM 110",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GRPH 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MMAC 129",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GRPH 129",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MMAC 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MMAC 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "FILM 120",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTO 170",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one course from the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ART 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ART 106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FILM 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Emphasis in Digital Media",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": "emphasis",
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "MMAC 125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "FILM 125",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MMAC 126",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "FILM 126",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MMAC 128",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "FILM 128",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B - Emphasis in Interactive Media",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": "emphasis",
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "MMAC 126",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "FILM 126",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GRPH 118",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MMAC 114",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List C - Emphasis on Animation",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": "emphasis",
+    "stated": {
+     "min": 40,
+     "max": 40
+    },
+    "courses": [
+     {
+      "code": "ART 107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MMAC 115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ART 115",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "FILM 115",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MMAC 117",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "FILM 117",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MMAC 118",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "FILM 118",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "FILM 111",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MMAC 125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "FILM 125",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MMAC 126",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "FILM 126",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MMAC 128",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "FILM 128",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MMAC 114",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GRPH 116",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GRPH 118",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 116",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "FILM 121",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 117",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "FILM 127",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "Major total of 37 units printed ('A major of 37 units is required'; 'Total : 37.0') = 28 core (including the 3-unit art history choice) + 9 emphasis units.",
+   "The 'Select one course from the following' block appears nested within the 28-unit core (25 units of required courses + 3).",
+   "List C prints a block total of 40.0, which looks like the sum of its course units rather than a requirement; the header rule is a minimum of 9 units from any one emphasis list.",
+   "Lists A, B and C are recorded as alternative options (option_group 'emphasis'); the student completes 9 units from one list.",
+   "The Suggested Course Sequence prints 'Total : 65.5- 71.0' including GE; this is a sample plan total, not recorded as degree_total. Reviewer may check.",
+   "GE may follow AHC GE or Cal-GETC; no GE unit total printed.",
+   "Course titles differ from the state file for ART 107 ('Introduction to Digital Art') and GRPH 116 ('Portfolio Design & Development').",
+   "Program description appears truncated after 'four-year programs in digital media,'.",
+   "Sequence lists 'MMAC 126 Recommended' for a core elective slot; not treated as a separate recommended block since MMAC 126 is in the emphasis lists."
+  ]
+ },
+ "extracted_run": "38843474519"
+}

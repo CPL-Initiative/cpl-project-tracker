@@ -1,0 +1,191 @@
+{
+ "college": "Allan Hancock College",
+ "control_number": "40739",
+ "shape": "noncredit",
+ "title": "Early Childhood Studies: Family Childcare License Preparation",
+ "award": "Noncredit program",
+ "source_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31056",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7570,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7570,
+    "output_tokens": 880,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 880,
+  "output_tokens_details": {
+   "thinking_tokens": 189
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04788,
+ "ms": 7526,
+ "seconds": 7.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    69.0,
+    115.0
+   ],
+   "stated": [
+    69.0,
+    115.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Early Childhood Studies: Family Childcare License Preparation - Certificate of Competency",
+   "measure": "hours",
+   "total_units": {
+    "min": 69,
+    "max": 115
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Successfully apply for an in-home daycare license.",
+    "Understand and implement regulatory conditions for an in-home daycare service.",
+    "Understand the developmental needs of the infants, toddlers, and children being served.",
+    "Provide a safe and enriching environment for the children being served."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required core courses:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 69,
+     "max": 115
+    },
+    "courses": [
+     {
+      "code": "ECSN 7300",
+      "units": 9,
+      "units_max": 15,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECSN 7301",
+      "units": 18,
+      "units_max": 30,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECSN 7302",
+      "units": 15,
+      "units_max": 25,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECSN 7303",
+      "units": 12,
+      "units_max": 20,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECSN 7304",
+      "units": 15,
+      "units_max": 25,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit Certificate of Competency counted in hours; total 69.0-115.0 hours as printed ('Total : 69.0- 115.0').",
+   "The catalog also states demonstrated proficiency in English is required for the certificate (non-course requirement, not recorded as a block).",
+   "The text names no careers or job titles; the outcomes refer to an in-home daycare license but no career is named, so careers is empty.",
+   "The catalog text includes 'Suggested Course Sequence' heading but the content was cut off (only CSS follows)."
+  ]
+ },
+ "extracted_run": "38843474519"
+}
