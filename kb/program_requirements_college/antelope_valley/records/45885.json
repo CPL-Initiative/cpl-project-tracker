@@ -1,0 +1,205 @@
+{
+ "college": "Antelope Valley College",
+ "control_number": "45885",
+ "shape": "noncredit",
+ "title": "Research Fundamentals Skills",
+ "award": "Noncredit program",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/research-fundamentals-skills-certificate-noncredit-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6854,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6854,
+    "output_tokens": 1347,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1347,
+  "output_tokens_details": {
+   "thinking_tokens": 520
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05436,
+ "ms": 11925,
+ "seconds": 12.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    108.0,
+    126.0
+   ],
+   "stated": [
+    108.0,
+    216.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 108.0-126.0; the catalog states 108.0-216.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Research Fundamentals Skills Certificate (Noncredit)",
+   "measure": "hours",
+   "total_units": {
+    "min": 108,
+    "max": 216
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "field or laboratory assistant",
+    "technician"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Prep Courses",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 36,
+     "max": 144
+    },
+    "courses": [
+     {
+      "code": "BIOL991",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL992",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR911",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Course",
+    "rule": "choose_units",
+    "minimum": 72,
+    "option_group": null,
+    "stated": {
+     "min": 72,
+     "max": 72
+    },
+    "courses": [
+     {
+      "code": "BIOL990",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM990",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Program is noncredit; all values are hours as printed.",
+   "Prep Courses says 'Complete at least one of the following rules' with block total 36-144 hours; the Recommended Pathway says 'Take one of the following', so recorded as choose at least 1 course. The 144-hour maximum implies a student may take all three.",
+   "Required Course block says 'Complete the following number of hours: 72' over BIOL990 and CHEM990 (72 hours each); the pathway says take one of the two, so recorded as choose_units 72.",
+   "The page prints a list of 'Objectives' under 'Program Goals and Objectives' (Literature reviews; The scientific method and critical thinking; etc.). These are not labeled as program learning outcomes, so program.outcomes was left empty; a reviewer may decide whether they should count.",
+   "Careers taken from 'positions as a field or laboratory assistant or technician'; split into two entries — reviewer may prefer a different split.",
+   "Page includes catalog-administration text (workflow agreement, checklist) not related to requirements."
+  ]
+ },
+ "extracted_run": "38979725726"
+}

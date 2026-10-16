@@ -1,0 +1,233 @@
+{
+ "college": "Antelope Valley College",
+ "control_number": "02152",
+ "shape": "degree",
+ "title": "Automotive Collision Repair Specialist",
+ "award": "A.S. Degree",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-collision-repair-specialist-cert-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7946,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7946,
+    "output_tokens": 1996,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1996,
+  "output_tokens_details": {
+   "thinking_tokens": 736
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0717,
+ "ms": 18356,
+ "seconds": 18.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    30.0,
+    30.0
+   ],
+   "stated": [
+    30.0,
+    30.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Automotive Collision Repair Specialist Cert",
+   "measure": "units",
+   "total_units": {
+    "min": 30,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Analyze, evaluate, and apply critical aspects of the collision repair industry related to safe work practices, standards and tolerances, standard employer practices. Proper use of tools power equipment, hazardous materials and personal protective equipment."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses - Option 1",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Option 1 or Option 2",
+    "stated": {
+     "min": 30,
+     "max": 30
+    },
+    "courses": [
+     {
+      "code": "ABDY115",
+      "units": 10,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ABDY125",
+      "units": 10,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ABDY215",
+      "units": 10,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Courses - Option 2",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Option 1 or Option 2",
+    "stated": {
+     "min": 30,
+     "max": 30
+    },
+    "courses": [
+     {
+      "code": "ABDY112",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ABDY113",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ABDY122",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ABDY123",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ABDY212",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ABDY213",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Award mismatch: the requested award is the A.S. Degree, but the source page (URL slug '...-cert-fall-2026') and every heading are for the 'Automotive Collision Repair Specialist Cert'. No A.S. degree section, GE pattern, or degree total is printed. The blocks and the 30-unit total recorded here are read from the certificate section; the intro says the same core courses qualify for 'the degree or certificate', but a reviewer should confirm against the A.S. degree page.",
+   "The catalog prints 'Required Major Total 30 units' and 'Complete the following number of credits: 30' for the certificate; recorded as total_units 30.",
+   "Option 1 (Day Sequence) and Option 2 (Night Sequence) are alternative whole blocks ('Choose Option 1 or Option 2'), recorded with a shared option_group.",
+   "In the second requirements table, ABDY 125 is titled 'Advanced Aircraft Sheetmetal & Composite Structures', which conflicts with 'Basic Automotive Refinishing' in the main requirements list; likely a catalog error.",
+   "Program outcome 2 is cut off mid-sentence in the text ('Use oxyacetylene, MIG (metal inert gas) and plasma arc welding/cutting equipment to join automotive sheet metal/structure panels in a variety of joints/configurations common to'); it was not recorded because it is incomplete. Further outcomes may also be missing. The outcomes are printed under the certificate heading.",
+   "Program goal 'To prepare students for entry level employment in the Auto Body industry' names no specific career; careers left empty."
+  ]
+ },
+ "extracted_run": "38979725726"
+}
