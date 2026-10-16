@@ -1,0 +1,1743 @@
+{
+ "college": "Moorpark College",
+ "catalog_url": "https://catalog.vcccd.edu/moorpark/",
+ "platform": "courseleaf",
+ "catalog_year": "2026-2027",
+ "programs": 151,
+ "with_closed_list": 145,
+ "started": "2026-10-15T14:10:20Z",
+ "scope": "/moorpark/",
+ "sitemap": {
+  "url": "https://catalog.vcccd.edu/sitemap.xml",
+  "status": 200,
+  "listed": 1147,
+  "nested": 0,
+  "program_pages": 260,
+  "refused": null,
+  "errors": null
+ },
+ "pages_read": 260,
+ "child_pages": 0,
+ "banner_h1": "2026-2027\nAcademic Catalog",
+ "loads": 294,
+ "seconds": 1682.8,
+ "found": 99,
+ "by_method": {
+  "link_search": 6,
+  "no_closed_list": 6,
+  "not_found": 7,
+  "page_claimed": 39,
+  "sitemap_page": 93
+ },
+ "shared_pages": {
+  "https://catalog.vcccd.edu/moorpark/programs-courses/chemistry/chemistry-uctp/": [
+   "06878",
+   "39413"
+  ],
+  "https://catalog.vcccd.edu/moorpark/programs-courses/theatre-arts/": [
+   "22116",
+   "41151",
+   "41164",
+   "41450"
+  ],
+  "https://catalog.vcccd.edu/moorpark/transfer-information/transfer-uc/": [
+   "31117",
+   "31900",
+   "32056",
+   "33710"
+  ],
+  "https://catalog.vcccd.edu/moorpark/transfer-information/c-id/": [
+   "31394",
+   "31714",
+   "32055",
+   "39414"
+  ],
+  "https://catalog.vcccd.edu/moorpark/programs-courses/communication-studies/communication-2-studies-aat/": [
+   "31614",
+   "42992"
+  ],
+  "https://catalog.vcccd.edu/moorpark/programs-courses/mathematics/mathematics-ast/": [
+   "31617",
+   "45616"
+  ],
+  "https://catalog.vcccd.edu/moorpark/programs-courses/physics/physics-ast/": [
+   "32507",
+   "45617"
+  ],
+  "https://catalog.vcccd.edu/moorpark/programs-courses/education/elementary-teacher-education-aat/": [
+   "33654",
+   "45808"
+  ],
+  "https://catalog.vcccd.edu/moorpark/programs-courses/business-administration/business-administration-ast-2.0/": [
+   "36061",
+   "41375"
+  ],
+  "https://catalog.vcccd.edu/moorpark/programs-courses/criminal-justice/law-public-policy-society-aat/": [
+   "36857",
+   "42643"
+  ],
+  "https://catalog.vcccd.edu/moorpark/programs-courses/engineering/electronics-engineering-technology-coa/": [
+   "37292",
+   "41278"
+  ],
+  "https://catalog.vcccd.edu/moorpark/programs-courses/noncredit-programs-courses/": [
+   "37450",
+   "40636",
+   "41402",
+   "41403",
+   "41404",
+   "42647"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "06846",
+   "title": "Animal Care and Training",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/animal20care20and20training/animal-care-and-training-as/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 42,
+    "why": "coarse net: the page's code tokens name 0 of 42 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5463,
+     "content": 113585,
+     "tabs": 364
+    },
+    "tab_panels": [
+     [
+      "Print Options",
+      343
+     ],
+     [
+      "REQUIREMENTS",
+      3855
+     ],
+     [
+      "PROGRAM STUDENT LEARNING OUTCOMES",
+      433
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "22101",
+   "title": "Animal Care and Training",
+   "award": "Certificate of Achievement requiring 60+S/90+Q units",
+   "near_miss": {
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/animal20care20and20training/animal-care-and-training-coa/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.051,
+    "net": 2,
+    "listed": 39,
+    "why": "coarse net: the page's code tokens name 2 of 39 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5338,
+     "content": 111362,
+     "tabs": 364
+    },
+    "tab_panels": [
+     [
+      "Print Options",
+      343
+     ],
+     [
+      "REQUIREMENTS",
+      1753
+     ],
+     [
+      "PROGRAM STUDENT LEARNING OUTCOMES",
+      433
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "37389",
+   "title": "English as a Second Language: Academic",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/noncredit-programs-courses/english-second-language-academic-cocy/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5502,
+     "content": 109096,
+     "tabs": 364
+    },
+    "tab_panels": [
+     [
+      "Print Options",
+      343
+     ],
+     [
+      "REQUIREMENTS",
+      158
+     ],
+     [
+      "PROGRAM STUDENT LEARNING OUTCOMES",
+      189
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "37438",
+   "title": "English as a Second Language: Foundational",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/noncredit-programs-courses/english-second-language-foundational-cocy/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5540,
+     "content": 109156,
+     "tabs": 364
+    },
+    "tab_panels": [
+     [
+      "Print Options",
+      343
+     ],
+     [
+      "REQUIREMENTS",
+      163
+     ],
+     [
+      "PROGRAM STUDENT LEARNING OUTCOMES",
+      199
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "40304",
+   "title": "Emergency Medical Technician-EMT",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/emergency-medical-services/emergency-medical-technician-coa/",
+    "label": {
+     "award": 1,
+     "title": 0.75
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5815,
+     "content": 110323,
+     "tabs": 364
+    },
+    "tab_panels": [
+     [
+      "Print Options",
+      343
+     ],
+     [
+      "REQUIREMENTS",
+      304
+     ],
+     [
+      "PROGRAM STUDENT LEARNING OUTCOMES",
+      287
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "45480",
+   "title": "Emergency Medical Services",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/emergency-medical-services/ems-as/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5325,
+     "content": 111056,
+     "tabs": 364
+    },
+    "tab_panels": [
+     [
+      "Print Options",
+      343
+     ],
+     [
+      "REQUIREMENTS",
+      1361
+     ],
+     [
+      "PROGRAM STUDENT LEARNING OUTCOMES",
+      457
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "46405",
+   "title": "College Student Success",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/noncredit-programs-courses/college-student-success-cocy/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 6020,
+     "content": 109733,
+     "tabs": 364
+    },
+    "tab_panels": [
+     [
+      "Print Options",
+      343
+     ],
+     [
+      "REQUIREMENTS",
+      191
+     ],
+     [
+      "PROGRAM STUDENT LEARNING OUTCOMES",
+      323
+     ]
+    ]
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "06892",
+   "title": "Radiologic Technology",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.vcccd.edu/moorpark/programs-courses/nuclear-medicine/"
+   ]
+  },
+  {
+   "control_number": "07121",
+   "title": "Child Development Associate Teacher",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/moorpark/programs-courses/child-development/"
+   ]
+  },
+  {
+   "control_number": "07133",
+   "title": "Technical Theatre",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.vcccd.edu/moorpark/programs-courses/theatre-arts/",
+    "https://catalog.vcccd.edu/moorpark/transfer-information/transfer-uc/",
+    "https://catalog.vcccd.edu/moorpark/graduation-requirements/associate-degree-general-studies-pattern-i/",
+    "https://catalog.vcccd.edu/moorpark/programs-courses/general-studies/creative-arts-and-humanities/",
+    "https://catalog.vcccd.edu/moorpark/transfer-information/c-id/"
+   ]
+  },
+  {
+   "control_number": "12383",
+   "title": "Media Arts",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.vcccd.edu/moorpark/programs-courses/general-studies/creative-arts-and-humanities/",
+    "https://catalog.vcccd.edu/moorpark/programs-courses/design/",
+    "https://catalog.vcccd.edu/moorpark/graduation-requirements/associate-degree-general-studies-pattern-i/",
+    "https://catalog.vcccd.edu/moorpark/transfer-information/transfer-uc/"
+   ]
+  },
+  {
+   "control_number": "17654",
+   "title": "CNSE: Windows Engineering",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/moorpark/programs-courses/computer-network-systems-engineering/"
+   ]
+  },
+  {
+   "control_number": "22109",
+   "title": "Media Arts",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/moorpark/programs-courses/design/"
+   ]
+  },
+  {
+   "control_number": "22113",
+   "title": "CNSE: Advanced Network Specialist",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/moorpark/programs-courses/computer-network-systems-engineering/",
+    "https://catalog.vcccd.edu/moorpark/transfer-information/c-id/"
+   ]
+  },
+  {
+   "control_number": "22114",
+   "title": "Technical Theatre",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "pages": [
+    "https://catalog.vcccd.edu/moorpark/programs-courses/theatre-arts/",
+    "https://catalog.vcccd.edu/moorpark/graduation-requirements/associate-degree-general-studies-pattern-i/",
+    "https://catalog.vcccd.edu/moorpark/programs-courses/general-studies/creative-arts-and-humanities/",
+    "https://catalog.vcccd.edu/moorpark/transfer-information/transfer-uc/",
+    "https://catalog.vcccd.edu/moorpark/transfer-information/c-id/"
+   ]
+  },
+  {
+   "control_number": "22115",
+   "title": "Theatre Arts: Acting",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/moorpark/programs-courses/theatre-arts/",
+    "https://catalog.vcccd.edu/moorpark/programs-courses/general-studies/creative-arts-and-humanities/",
+    "https://catalog.vcccd.edu/moorpark/transfer-information/transfer-uc/",
+    "https://catalog.vcccd.edu/moorpark/transfer-information/c-id/",
+    "https://catalog.vcccd.edu/moorpark/graduation-requirements/associate-degree-general-studies-pattern-i/"
+   ]
+  },
+  {
+   "control_number": "22121",
+   "title": "Child Development",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/moorpark/programs-courses/child-development/child-adolescent-development-aat/",
+    "https://catalog.vcccd.edu/moorpark/programs-courses/child-development/",
+    "https://catalog.vcccd.edu/moorpark/transfer-information/c-id/",
+    "https://catalog.vcccd.edu/moorpark/graduation-requirements/associate-degree-general-studies-pattern-i/",
+    "https://catalog.vcccd.edu/moorpark/programs-courses/general-education-options/mc-ge/",
+    "https://catalog.vcccd.edu/moorpark/programs-courses/general-studies/interdisciplinary-studies/"
+   ]
+  },
+  {
+   "control_number": "30063",
+   "title": "Exercise Science",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.vcccd.edu/moorpark/transfer-information/transfer-uc/",
+    "https://catalog.vcccd.edu/moorpark/programs-courses/general-education-options/mc-ge/"
+   ]
+  },
+  {
+   "control_number": "30064",
+   "title": "Exercise Science: Fitness Specialist",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/moorpark/programs-courses/nutrition-science/nutrition-dietetics-ast/",
+    "https://catalog.vcccd.edu/moorpark/transfer-information/transfer-uc/",
+    "https://catalog.vcccd.edu/moorpark/programs-courses/general-education-options/mc-ge/",
+    "https://catalog.vcccd.edu/moorpark/graduation-requirements/associate-degree-general-studies-pattern-i/"
+   ]
+  },
+  {
+   "control_number": "30511",
+   "title": "FTMA: Film",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/moorpark/programs-courses/film-television-media-arts/",
+    "https://catalog.vcccd.edu/moorpark/transfer-information/transfer-uc/"
+   ]
+  },
+  {
+   "control_number": "33726",
+   "title": "CNSE: Technical Support Specialist",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/moorpark/programs-courses/computer-network-systems-engineering/"
+   ]
+  },
+  {
+   "control_number": "33807",
+   "title": "Game Design",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/moorpark/transfer-information/transfer-uc/",
+    "https://catalog.vcccd.edu/moorpark/graduation-requirements/associate-degree-general-studies-pattern-i/",
+    "https://catalog.vcccd.edu/moorpark/programs-courses/general-studies/creative-arts-and-humanities/"
+   ]
+  },
+  {
+   "control_number": "33836",
+   "title": "Game Design",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.vcccd.edu/moorpark/transfer-information/transfer-uc/",
+    "https://catalog.vcccd.edu/moorpark/graduation-requirements/associate-degree-general-studies-pattern-i/",
+    "https://catalog.vcccd.edu/moorpark/programs-courses/general-studies/creative-arts-and-humanities/"
+   ]
+  },
+  {
+   "control_number": "35659",
+   "title": "Accounting II",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/moorpark/programs-courses/accounting/",
+    "https://catalog.vcccd.edu/moorpark/programs-courses/business-administration/"
+   ]
+  },
+  {
+   "control_number": "36731",
+   "title": "Transitional Kindergarten",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "pages": [
+    "https://catalog.vcccd.edu/moorpark/programs-courses/child-development/"
+   ]
+  },
+  {
+   "control_number": "37625",
+   "title": "Songwriting",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/moorpark/programs-courses/music/",
+    "https://catalog.vcccd.edu/moorpark/transfer-information/c-id/",
+    "https://catalog.vcccd.edu/moorpark/transfer-information/transfer-uc/"
+   ]
+  },
+  {
+   "control_number": "39113",
+   "title": "FTMA: Audio",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/moorpark/programs-courses/film-television-media-arts/",
+    "https://catalog.vcccd.edu/moorpark/transfer-information/transfer-uc/"
+   ]
+  },
+  {
+   "control_number": "39160",
+   "title": "Cybersecurity",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.vcccd.edu/moorpark/programs-courses/computer-network-systems-engineering/",
+    "https://catalog.vcccd.edu/moorpark/transfer-information/c-id/"
+   ]
+  },
+  {
+   "control_number": "39161",
+   "title": "Cybersecurity Administration",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/moorpark/programs-courses/computer-network-systems-engineering/",
+    "https://catalog.vcccd.edu/moorpark/transfer-information/c-id/"
+   ]
+  },
+  {
+   "control_number": "40060",
+   "title": "Studio Lighting",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/moorpark/programs-courses/commercial-photography/",
+    "https://catalog.vcccd.edu/moorpark/programs-courses/photography/"
+   ]
+  },
+  {
+   "control_number": "40146",
+   "title": "Web Design",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/moorpark/programs-courses/computer-science/",
+    "https://catalog.vcccd.edu/moorpark/transfer-information/transfer-uc/"
+   ]
+  },
+  {
+   "control_number": "40152",
+   "title": "FTMA: Directing",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/moorpark/programs-courses/film-television-media-arts/",
+    "https://catalog.vcccd.edu/moorpark/transfer-information/transfer-uc/"
+   ]
+  },
+  {
+   "control_number": "40153",
+   "title": "FTMA: Editing",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/moorpark/programs-courses/film-television-media-arts/",
+    "https://catalog.vcccd.edu/moorpark/transfer-information/transfer-uc/"
+   ]
+  },
+  {
+   "control_number": "40302",
+   "title": "Global Business",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.vcccd.edu/moorpark/programs-courses/business-administration/business-administration-as/",
+    "https://catalog.vcccd.edu/moorpark/programs-courses/business-administration/business-administration-coa/",
+    "https://catalog.vcccd.edu/moorpark/programs-courses/business-administration/",
+    "https://catalog.vcccd.edu/moorpark/transfer-information/transfer-uc/",
+    "https://catalog.vcccd.edu/moorpark/graduation-requirements/associate-degree-general-studies-pattern-i/",
+    "https://catalog.vcccd.edu/moorpark/programs-courses/general-studies/society-human-behavior-culture/",
+    "https://catalog.vcccd.edu/moorpark/transfer-information/c-id/"
+   ]
+  },
+  {
+   "control_number": "40431",
+   "title": "Business Information Systems",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/moorpark/programs-courses/business-administration/",
+    "https://catalog.vcccd.edu/moorpark/transfer-information/c-id/"
+   ]
+  },
+  {
+   "control_number": "40526",
+   "title": "CNSE: Windows Administration",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/moorpark/programs-courses/computer-network-systems-engineering/"
+   ]
+  },
+  {
+   "control_number": "41415",
+   "title": "Cybersecurity Penetration Tester",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/moorpark/programs-courses/computer-network-systems-engineering/",
+    "https://catalog.vcccd.edu/moorpark/transfer-information/c-id/"
+   ]
+  },
+  {
+   "control_number": "42257",
+   "title": "Dance Arts",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/moorpark/programs-courses/dance/",
+    "https://catalog.vcccd.edu/moorpark/programs-courses/general-studies/creative-arts-and-humanities/",
+    "https://catalog.vcccd.edu/moorpark/transfer-information/transfer-uc/",
+    "https://catalog.vcccd.edu/moorpark/graduation-requirements/associate-degree-general-studies-pattern-i/"
+   ]
+  },
+  {
+   "control_number": "42464",
+   "title": "UI/UX Design Basics",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/moorpark/programs-courses/design/",
+    "https://catalog.vcccd.edu/moorpark/transfer-information/c-id/"
+   ]
+  },
+  {
+   "control_number": "42465",
+   "title": "Graphic Design",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/moorpark/programs-courses/design/",
+    "https://catalog.vcccd.edu/moorpark/graduation-requirements/associate-degree-general-studies-pattern-i/",
+    "https://catalog.vcccd.edu/moorpark/programs-courses/general-studies/creative-arts-and-humanities/"
+   ]
+  },
+  {
+   "control_number": "42466",
+   "title": "Web Design Basics",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/moorpark/programs-courses/design/"
+   ]
+  },
+  {
+   "control_number": "43122",
+   "title": "Accounting",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.vcccd.edu/moorpark/programs-courses/accounting/",
+    "https://catalog.vcccd.edu/moorpark/programs-courses/business-administration/"
+   ]
+  },
+  {
+   "control_number": "43379",
+   "title": "FTMA: Television",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/moorpark/programs-courses/film-television-media-arts/",
+    "https://catalog.vcccd.edu/moorpark/transfer-information/transfer-uc/"
+   ]
+  },
+  {
+   "control_number": "43380",
+   "title": "FTMA: Screenwriting",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/moorpark/programs-courses/film-television-media-arts/",
+    "https://catalog.vcccd.edu/moorpark/transfer-information/transfer-uc/"
+   ]
+  },
+  {
+   "control_number": "43512",
+   "title": "Taxation I",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/moorpark/programs-courses/accounting/",
+    "https://catalog.vcccd.edu/moorpark/programs-courses/business-administration/"
+   ]
+  },
+  {
+   "control_number": "46080",
+   "title": "Audio Engineering I",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.vcccd.edu/moorpark/programs-courses/music/",
+    "https://catalog.vcccd.edu/moorpark/transfer-information/c-id/"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 14,
+  "0.8-1.0": 28,
+  "1.0": 57
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 99,
+  "list": [
+   {
+    "control_number": "06847",
+    "title": "Biological Sciences",
+    "award": "A.S. Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/biological-sciences/biological-sciences-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06848",
+    "title": "Business Administration",
+    "award": "A.S. Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/business-administration/business-administration-as/",
+    "coverage": 0.963,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06855",
+    "title": "Film Television Media Arts",
+    "award": "A.A. Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/film-television-media-arts/",
+    "coverage": 0.962,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06859",
+    "title": "Engineering",
+    "award": "A.S. Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/engineering/engineering-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06863",
+    "title": "Art",
+    "award": "A.A. Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/art-history/art-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06871",
+    "title": "Nursing Science",
+    "award": "A.S. Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/nursing-science/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06875",
+    "title": "Philosophy",
+    "award": "A.A. Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/philosophy/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06878",
+    "title": "Chemistry",
+    "award": "A.S. Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/chemistry/chemistry-uctp/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06879",
+    "title": "Geology",
+    "award": "A.S. Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/geology/geology-as/",
+    "coverage": 0.933,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06881",
+    "title": "Criminal Justice",
+    "award": "A.S. Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/criminal-justice/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06882",
+    "title": "Child Development",
+    "award": "A.S. Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/child-development/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06883",
+    "title": "Anthropology",
+    "award": "A.A. Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/anthropology/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07106",
+    "title": "Biotechnology",
+    "award": "A.S. Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/biotechnology/biotechnology-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07114",
+    "title": "Dance",
+    "award": "A.A. Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/dance/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07123",
+    "title": "Environmental Studies",
+    "award": "A.A. Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/environmental-science/environmental-studies-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07124",
+    "title": "Environmental Science",
+    "award": "A.S. Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/general-education-options/mc-ge/",
+    "coverage": 0.909,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07129",
+    "title": "Archaeology",
+    "award": "A.A. Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/anthropology/anthropology-aat/",
+    "coverage": 0.808,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12123",
+    "title": "Computer Network Systems Engineering",
+    "award": "A.S. Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/computer-network-systems-engineering/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17779",
+    "title": "Biotechnology Manufacturing Operator",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/biotechnology/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18393",
+    "title": "General Studies: Interdisciplinary Studies",
+    "award": "A.A. Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/general-studies/interdisciplinary-studies/",
+    "coverage": 0.947,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18397",
+    "title": "General Studies: Sciences, Technology, Engineering, and Mathematics (STEM) Studies",
+    "award": "A.A. Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/general-studies/stem/",
+    "coverage": 0.895,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18398",
+    "title": "General Studies: Society, Human Behavior, and Culture",
+    "award": "A.A. Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/general-studies/society-human-behavior-culture/",
+    "coverage": 0.974,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18399",
+    "title": "General Studies: Creative Arts and Humanities",
+    "award": "A.A. Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/general-studies/creative-arts-and-humanities/",
+    "coverage": 0.995,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22102",
+    "title": "Biotechnology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/biotechnology/biotechnology-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22103",
+    "title": "Business Administration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/business-administration/business-administration-coa/",
+    "coverage": 0.963,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22116",
+    "title": "Theatre Arts: Directing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/theatre-arts/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22117",
+    "title": "Photography",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/photography/",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30484",
+    "title": "Nuclear Medicine",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/nuclear-medicine/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30626",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/psychology/psychology-aat/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30664",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/sociology/sociology-aat/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31117",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/transfer-information/transfer-uc/",
+    "coverage": 0.711,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31118",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/political-science/political-science-aat/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31141",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/kinesiology/kinesiology-aat/",
+    "coverage": 0.966,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31142",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/history/history-aat/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31394",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/transfer-information/c-id/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31614",
+    "title": "Communication Studies",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/communication-studies/communication-2-studies-aat/",
+    "coverage": 0.778,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31617",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/mathematics/mathematics-ast/",
+    "coverage": 0.733,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31694",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/geology/geology-ast/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31714",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/transfer-information/c-id/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31822",
+    "title": "Geography",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/geography/geography-aat/",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31833",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/art-history/studio-arts-aat/",
+    "coverage": 0.958,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31900",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/transfer-information/transfer-uc/",
+    "coverage": 0.963,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32055",
+    "title": "Music",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/transfer-information/c-id/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32056",
+    "title": "Philosophy",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/transfer-information/transfer-uc/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32507",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/physics/physics-ast/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32564",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/english/english-aat/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32565",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/languages-world/spanish-aat/",
+    "coverage": 0.71,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32700",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/economics/economics-aat/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32891",
+    "title": "Biomedical Device Manufacturing",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/biological-sciences/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33647",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/biological-sciences/biology-ast/",
+    "coverage": 0.778,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33650",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/nutrition-science/nutrition-dietetics-ast/",
+    "coverage": 0.93,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33654",
+    "title": "Elementary Teacher Education",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/education/elementary-teacher-education-aat/",
+    "coverage": 0.636,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33684",
+    "title": "Pre-Allied Health",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/biological-sciences/pre-allied-health-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33686",
+    "title": "Photography",
+    "award": "A.S. Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/commercial-photography/",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33710",
+    "title": "Film, Television, and Electronic Media",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/transfer-information/transfer-uc/",
+    "coverage": 0.676,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35172",
+    "title": "Music Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/music/",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35443",
+    "title": "Child and Adolescent Development",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/child-development/child-adolescent-development-aat/",
+    "coverage": 0.907,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35946",
+    "title": "Asian Studies",
+    "award": "A.A. Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/political-science/asian-studies-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36061",
+    "title": "Business Administration",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/business-administration/business-administration-ast-2.0/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36068",
+    "title": "Environmental Science",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/environmental-science/environmental-science-ast/",
+    "coverage": 0.815,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36855",
+    "title": "Hospitality Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/business-administration/hospitality-management-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36857",
+    "title": "Fundamentals of Law",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/criminal-justice/law-public-policy-society-aat/",
+    "coverage": 0.571,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37292",
+    "title": "Engineering Computer Aided Design and Drafting",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/engineering/electronics-engineering-technology-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37450",
+    "title": "Developmental Math Bridge",
+    "award": "Noncredit program",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/noncredit-programs-courses/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37575",
+    "title": "Organizational Communication",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/communication-studies/organizational-communication-coa/",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39112",
+    "title": "Computer Programming",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/computer-science/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39413",
+    "title": "UCTP Chemistry",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/chemistry/chemistry-uctp/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39414",
+    "title": "UCTP Physics",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/transfer-information/c-id/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39958",
+    "title": "Environmental Engineering Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/engineering/",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40301",
+    "title": "Global Business",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/business-administration/",
+    "coverage": 0.577,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40324",
+    "title": "Social Justice Studies: General",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/sociology/social-justice-studies-aat/",
+    "coverage": 0.935,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40537",
+    "title": "Engineering",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/engineering/engineering-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40636",
+    "title": "Solar Tech",
+    "award": "Noncredit program",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/noncredit-programs-courses/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40816",
+    "title": "Health Sciences",
+    "award": "A.A. Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/health-sciences/health-sciences-aa/",
+    "coverage": 0.95,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41151",
+    "title": "Technical Theatre: Audio Production",
+    "award": "Noncredit program",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/theatre-arts/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41164",
+    "title": "Technical Theatre: Lighting for Production",
+    "award": "Noncredit program",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/theatre-arts/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41185",
+    "title": "Data Science",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/mathematics/data-science-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41278",
+    "title": "Electronics Engineering Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/engineering/electronics-engineering-technology-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41375",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/business-administration/business-administration-ast-2.0/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41402",
+    "title": "Vinyl Cutting and Printing Level I",
+    "award": "Noncredit program",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/noncredit-programs-courses/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41403",
+    "title": "Screen Printing for Textiles Level I",
+    "award": "Noncredit program",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/noncredit-programs-courses/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41404",
+    "title": "Laser Cutting and Engraving Level I",
+    "award": "Noncredit program",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/noncredit-programs-courses/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41450",
+    "title": "Technical Theatre: Stage Management",
+    "award": "Noncredit program",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/theatre-arts/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42292",
+    "title": "Mechatronics Engineering Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/engineering/mechatronics-engineering-technology-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42447",
+    "title": "Paramedic Studies",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/paramedics/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42451",
+    "title": "Social Work and Human Services",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/sociology/social-work-and-human-services-aat/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42643",
+    "title": "Digital Public Relations",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/criminal-justice/law-public-policy-society-aat/",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42647",
+    "title": "Landscape Management",
+    "award": "Noncredit program",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/noncredit-programs-courses/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42791",
+    "title": "Design Fundamentals",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/art-history/art-history-aat/",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42799",
+    "title": "Film Studies",
+    "award": "A.A. Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/graduation-requirements/associate-degree-general-studies-pattern-i/",
+    "coverage": 0.562,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42992",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/communication-studies/communication-2-studies-aat/",
+    "coverage": 0.906,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43055",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/computer-science/computer-science-ast/",
+    "coverage": 0.941,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43405",
+    "title": "Accounting I",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/accounting/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43890",
+    "title": "Bachelor of Science in Biomanufacturing",
+    "award": "Baccalaureate of Science (B.S.) Degree.",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/biomanufacturing-bachelor-degree/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45352",
+    "title": "California General Education Transfer Curriculum (CaI-GETC)",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/general-education-options/cal-getc-coa/",
+    "coverage": 0.966,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45616",
+    "title": "Mathematics 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/mathematics/mathematics-ast/",
+    "coverage": 0.846,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45617",
+    "title": "Physics 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/physics/physics-ast/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45808",
+    "title": "Elementary Teacher Education: Integrated Programs",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/education/elementary-teacher-education-aat/",
+    "coverage": 0.941,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46473",
+    "title": "Design",
+    "award": "A.S. Degree",
+    "url": "https://catalog.vcccd.edu/moorpark/programs-courses/design/",
+    "coverage": 0.639,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "38748862351"
+}

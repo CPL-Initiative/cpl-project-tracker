@@ -1,0 +1,289 @@
+{
+ "college": "College of the Sequoias",
+ "control_number": "32176",
+ "shape": "adt",
+ "title": "Spanish",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.cos.edu//areas-study/spanish/associate-arts-spanish-transfer-aa-t/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7670,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7670,
+    "output_tokens": 2041,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2041,
+  "output_tokens_details": {
+   "thinking_tokens": 746
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0715,
+ "ms": 16090,
+ "seconds": 16.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 13,
+   "share": 0.923,
+   "missing": [
+    "SOCIC1000"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "SOC1"
+   ],
+   "flagged": [
+    "SOC1"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    72.0,
+    72.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    34.0,
+    34.0
+   ],
+   "why": [],
+   "overlap": true
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Arts in Spanish for Transfer (AA-T)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": 19,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "California-General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Speak, read, write and understand spoken Spanish at a near-native level of fluency."
+   ],
+   "careers": [
+    "international business",
+    "finance",
+    "healthcare",
+    "social services",
+    "travel",
+    "interpreting"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED MAJOR COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "SPAN 001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 002",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SPAN 022",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 003",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SPAN 023",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 004",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "RESTRICTED ELECTIVES",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ENGL 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 023",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 012",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "APPROVED SUBSTITUTIONS",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ANTH 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN 003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "SOCIC1000",
+    "why": "not in the text under this code; catalog prints SOC 001 Introduction to Sociology in Approved Substitutions, likely the same course"
+   }
+  ],
+  "notes": [
+   "Catalog prints codes with zero padding (SPAN 001, ENGL 010, etc.); these were matched to the closed-list codes (SPAN 1, ENGL 10, etc.) and not marked as catalog additions.",
+   "No units printed beside the alternatives SPAN 022 and SPAN 023; units left null.",
+   "Approved Substitutions are only required for students who place out of a required course without units; otherwise the Language Arts Division recommends electives be selected from Restricted Electives or Approved Substitutions. Recorded as a recommended block; reviewer may wish to check this reading.",
+   "No major total is printed; only block totals (16 and 3), Cal-GETC 34, Electives 19 and degree TOTAL 60. total_units left null; the 19 elective units are recorded in open_elective_units against degree_total.",
+   "Footnote: courses marked * meet GE requirements and 12 units may be double counted in Cal-GETC."
+  ]
+ },
+ "extracted_run": "38748848139"
+}

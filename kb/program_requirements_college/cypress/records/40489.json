@@ -1,0 +1,188 @@
+{
+ "college": "Cypress College",
+ "control_number": "40489",
+ "shape": "certificate",
+ "title": "Ultrasonic Scaling and Coronal Polishing",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/dental-hygiene/ultrasonic-scaling-and-coronal-polishing-certificate/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7271,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7271,
+    "output_tokens": 962,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 962,
+  "output_tokens_details": {
+   "thinking_tokens": 199
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04832,
+ "ms": 8334,
+ "seconds": 8.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 1,
+   "listed": 1,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "DH109C"
+   ],
+   "flagged": [
+    "DH109C"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    12.0,
+    12.0
+   ],
+   "stated": [
+    12.0,
+    12.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Ultrasonic Scaling and Coronal Polishing Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 12,
+    "max": 12
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Be able to provide patients with dental hygiene process of care in disease prevention and oral health promotion utilizing knowledge, skills, and values.",
+    "Serve in professional relationships within the community in which they serve.",
+    "Participate in a relationship amongst the allied health care team.",
+    "Be prepared to provide professional knowledge of and compliance with OSHA, HIPAA, Law and Ethics, Dental Hygiene Board of California, and local regulatory guidelines.",
+    "Adhere to professional sensitivity to the patient’s autonomy, beneficence, and nonmaleficence principles of ethical practice."
+   ],
+   "careers": [
+    "Registered Dental Hygienist"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Semester 1 (5 units):",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "DH 109 C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Semester 2: (7 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 7,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "DH 110 C",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The description says a 'Certificate of Completion' shall be issued, while the award is recorded as a Certificate of Achievement; the total of 12 units is stated both in the description and the Total Units row.",
+   "Outcome labels 'OUTCOME 1:' through 'OUTCOME 5:' were removed as list numbering.",
+   "Course list is headed 'Completion of Semester 1 and Semester 2 Courses in the Dental Hygiene Program'.",
+   "'Registered Dental Hygienist' is named as the licensure the curriculum prepares for; reviewer may check whether it counts as a career."
+  ]
+ },
+ "extracted_run": "38748866826"
+}

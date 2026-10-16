@@ -1,0 +1,266 @@
+{
+ "college": "Golden West College",
+ "control_number": "18428",
+ "shape": "degree",
+ "title": "Theater Arts",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/theater-arts/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12254,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12254,
+    "output_tokens": 1435,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1435,
+  "output_tokens_details": {
+   "thinking_tokens": 293
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07772,
+ "ms": 11907,
+ "seconds": 12.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 25,
+   "share": 0.0,
+   "missing": [
+    "THEAG100",
+    "THEAG102",
+    "THEAG106",
+    "THEAG107",
+    "THEAG108",
+    "THEAG110",
+    "THEAG111",
+    "THEAG112",
+    "THEAG115",
+    "THEAG119",
+    "THEAG125",
+    "THEAG135",
+    "THEAG160",
+    "THEAG161",
+    "THEAG166",
+    "THEAG170",
+    "THEAG174",
+    "THEAG175",
+    "THEAG176",
+    "THEAG177",
+    "THEAG178",
+    "THEAG188",
+    "THEAG206",
+    "THEAG207",
+    "THEAG210"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Theater Arts",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "THEA G100",
+    "why": "only in the Courses tab; A.A. requirements not in the text"
+   },
+   {
+    "code": "THEA G102",
+    "why": "only in the Courses tab; A.A. requirements not in the text"
+   },
+   {
+    "code": "THEA G106",
+    "why": "only in the Courses tab; A.A. requirements not in the text"
+   },
+   {
+    "code": "THEA G107",
+    "why": "only in the Courses tab; A.A. requirements not in the text"
+   },
+   {
+    "code": "THEA G108",
+    "why": "only in the Courses tab; A.A. requirements not in the text"
+   },
+   {
+    "code": "THEA G110",
+    "why": "only in the Courses tab; A.A. requirements not in the text"
+   },
+   {
+    "code": "THEA G111",
+    "why": "only in the Courses tab; A.A. requirements not in the text"
+   },
+   {
+    "code": "THEA G112",
+    "why": "only in the Courses tab; A.A. requirements not in the text"
+   },
+   {
+    "code": "THEA G115",
+    "why": "only in the Courses tab; A.A. requirements not in the text"
+   },
+   {
+    "code": "THEA G119",
+    "why": "only in the Courses tab; A.A. requirements not in the text"
+   },
+   {
+    "code": "THEA G125",
+    "why": "only in the Courses tab; A.A. requirements not in the text"
+   },
+   {
+    "code": "THEA G135",
+    "why": "only in the Courses tab, entry cut off; A.A. requirements not in the text"
+   },
+   {
+    "code": "THEA G160",
+    "why": "not in the text"
+   },
+   {
+    "code": "THEA G161",
+    "why": "not in the text"
+   },
+   {
+    "code": "THEA G166",
+    "why": "not in the text"
+   },
+   {
+    "code": "THEA G170",
+    "why": "not in the text"
+   },
+   {
+    "code": "THEA G174",
+    "why": "not in the text"
+   },
+   {
+    "code": "THEA G175",
+    "why": "not in the text"
+   },
+   {
+    "code": "THEA G176",
+    "why": "not in the text"
+   },
+   {
+    "code": "THEA G177",
+    "why": "not in the text"
+   },
+   {
+    "code": "THEA G178",
+    "why": "not in the text"
+   },
+   {
+    "code": "THEA G188",
+    "why": "not in the text"
+   },
+   {
+    "code": "THEA G206",
+    "why": "not in the text"
+   },
+   {
+    "code": "THEA G207",
+    "why": "not in the text"
+   },
+   {
+    "code": "THEA G210",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied text holds only the Theater Arts landing page navigation and the COURSES tab; the 'Theater Arts, Associate in Arts Degree' requirements section appears only as a link title, so no blocks, totals, outcomes or careers could be recorded.",
+   "Course descriptions list 'Theater Arts, Associate in Arts Degree' under 'Catalog Program Pages Referencing' for THEA G100, G102, G106, G107, G108, G110, G111, G112, G115, G119, G125, but this does not show how they count (required vs. elective), so they were not placed.",
+   "The courses listing is cut off mid-entry at THEA G135; the remaining courses are not in the text.",
+   "Reviewer should fetch the program page https://catalog.cccd.edu/golden-west/pathways/visual-performing-arts/theater-arts/theater-arts-associate-arts-degree/ (or equivalent) to read the requirements."
+  ]
+ },
+ "extracted_run": "38748828247"
+}

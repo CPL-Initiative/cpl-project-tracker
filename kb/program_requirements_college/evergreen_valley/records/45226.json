@@ -1,0 +1,306 @@
+{
+ "college": "Evergreen Valley College",
+ "control_number": "45226",
+ "shape": "certificate",
+ "title": "Engineering Fundamentals 2",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.evc.edu/degrees-certificates/engineering/engineering-fundamentals-2-certificate-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7652,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7652,
+    "output_tokens": 2061,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2061,
+  "output_tokens_details": {
+   "thinking_tokens": 585
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07183,
+ "ms": 20204,
+ "seconds": 20.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 15,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    28.0,
+    34.0
+   ],
+   "stated": [
+    28.0,
+    34.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "ENGINEERING FUNDAMENTALS 2",
+   "measure": "units",
+   "total_units": {
+    "min": 28,
+    "max": 34
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Acquire, develop, and refine the foundational skills in mathematics, physics, and science necessary to be successful in engineering courses.",
+    "Demonstrate the ability to write computer programs and apply them towards solving engineering problems."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Engineering Fundamentals 1 Coursework",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 14,
+     "max": 17
+    },
+    "courses": [
+     {
+      "code": "PHYS 007A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 010",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGR 010A",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "One of the following Math sequences: MATH 066 & MATH 067",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Math sequence",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MATH 066",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 067",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "One of the following Math sequences: MATH 071 & MATH 072",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Math sequence",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MATH 071",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 072",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Engineering Fundamentals 2 Coursework",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 13,
+     "max": 13
+    },
+    "courses": [
+     {
+      "code": "MATH 073",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 078",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 007B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose one programming course from the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 1,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "COMSC 041",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMSC 075",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 030",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 050",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 050L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints no units beside individual courses; only block totals (14-17, 13, 1-4) and Total Units 28-34 are printed.",
+   "The 14-17 unit total printed for 'Engineering Fundamentals 1 Coursework' covers PHYS 007A, ENGR 010/010A and the chosen Math sequence; it is recorded on the first block only, with the two Math sequence blocks in option_group 'Math sequence'.",
+   "Catalog codes with leading zeros (ENGR 010, MATH 066, COMSC 041, etc.) were matched to closed-list codes without them (ENGR 10, MATH 66, COMSC 41); ENGR 010 is treated as ENGR 10 in the closed list.",
+   "The programming block includes ENGR 050L (1 unit), which explains the 1-4 range; a reviewer may check whether ENGR 050L alone satisfies the requirement.",
+   "Outcomes are from the page's Program Learning Outcomes tab for this certificate."
+  ]
+ },
+ "extracted_run": "38748875071"
+}

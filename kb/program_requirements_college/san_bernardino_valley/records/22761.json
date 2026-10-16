@@ -1,0 +1,260 @@
+{
+ "college": "San Bernardino Valley College",
+ "control_number": "22761",
+ "shape": "certificate",
+ "title": "Communication Engineering Technology",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/communication-engineering-technology-as-degree/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8489,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8489,
+    "output_tokens": 1825,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1825,
+  "output_tokens_details": {
+   "thinking_tokens": 476
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07046,
+ "ms": 15298,
+ "seconds": 15.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 13,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "ELECTR230"
+   ],
+   "flagged": [
+    "ELECTR230"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    45.0,
+    45.0
+   ],
+   "stated": [
+    45.0,
+    45.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "REQUIREMENTS",
+   "measure": "units",
+   "total_units": {
+    "min": 45,
+    "max": 45
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Be prepared to transfer to an accredited, 4-year college or university with junior class standing in electronics technology or a related major.",
+    "Select and operate electronic test equipment during troubleshooting and repair operations, with an emphasis on safety in use and accuracy in results.",
+    "Analyze, interpret, and trace digital logic diagrams used in signal tracing of complex communications systems.",
+    "Effectively communicate with and advise customers and co-workers, both written and orally, regarding the progress of and decisions made concerning test and repair procedures.",
+    "Sit for industry/Federal-style examinations on the theory and procedures of electronic communications technology."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "TECALC 087",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELECTR 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELECTR 111",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELECTR 115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELECTR 116",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELECTR 155",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELECTR 230",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ELECTR 235",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELECTR 265",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELECTR 266",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELECTR 270",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELECTR 220C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELECTR 250C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELECTR 255C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The source URL and text are the Communication Engineering Technology A.S. degree page, not a separate certificate page. The page says degree students must 'complete all requirements for the certificate' plus general breadth requirements, so the printed course list (Total Units 45) was read as the certificate's requirements. A reviewer should confirm this against the certificate's own catalog page.",
+   "TECALC 087 as printed matches closed-list TECALC 87 (leading zero only), so it is not flagged as a catalog addition.",
+   "ELECTR 230 Semiconductor Devices (3 units) is not in the closed list and is flagged as a catalog addition. The printed course units sum to 45, matching the stated total.",
+   "The 'minimum total = 60 units' sentence and the GE patterns (SBVC GE, Cal-GETC) apply to the A.S. degree, not to the certificate. degree_total and ge_pattern are therefore left null.",
+   "The program learning outcomes come from the page's single outcomes tab for the program and are shared with the degree. The first outcome refers to transfer, which suggests it was written for the degree.",
+   "The text names no careers."
+  ]
+ },
+ "extracted_run": "38748858322"
+}

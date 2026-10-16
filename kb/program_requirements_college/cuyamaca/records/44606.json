@@ -1,0 +1,328 @@
+{
+ "college": "Cuyamaca College",
+ "control_number": "44606",
+ "shape": "degree",
+ "title": "Art-Animation",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/visual-performing-arts/art/art-animation-aa/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7249,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7249,
+    "output_tokens": 2009,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2009,
+  "output_tokens_details": {
+   "thinking_tokens": 363
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06918,
+ "ms": 14988,
+ "seconds": 15.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 18,
+   "listed": 18,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    30.0,
+    30.0
+   ],
+   "stated": [
+    30.0,
+    30.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 18,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Arts Degree Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 30,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Use the vocabulary of the visual arts to express their observations as they perceive and respond to works of art, objects in nature, events and the environment.",
+    "Apply artistic processes and skills, using a variety of media to communicate meaning and intent in original works of art.",
+    "Analyze the role and development of the visual arts in the past and present cultures throughout the world, noting human diversity as it relates to the visual arts and the artists.",
+    "Analyze, access and derive meaning from works of art, including their own, according to the elements of art, the principles of design and aesthetic qualities.",
+    "Apply what they learned in the visual arts across subject areas, develop competencies and creative skills in problem solving, communication, and management of time and resources that contribute to lifelong learning and career skills, and identify careers in and related to the visual arts."
+   ],
+   "careers": [
+    "Advertising Specialist",
+    "Animator",
+    "Antique Dealer",
+    "Art Conservator",
+    "Cartoonist",
+    "Curator",
+    "Designer",
+    "Display Manager",
+    "Gallery Owner",
+    "Illustrator",
+    "Independent Artist",
+    "Museum Technician",
+    "Museum Curator",
+    "Museum Director",
+    "Painter",
+    "Police Artist",
+    "Set Designer",
+    "Teacher/Professor"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ART-120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART-124",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART-129",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH-C1100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH-C1200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Animation Area of Emphasis",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ART-121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART-177",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART-184",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART-230",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART-243",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Recommended Electives",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ART-211",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART-221",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART-222",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART-231",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART-240",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART-241",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GD-105",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GD-225",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "ARTH-C1100 and ARTH-C1200 are printed with a hyphen; matched to closed-list ARTHC1100 and ARTHC1200 (units not stored in state file; catalog prints 3 each).",
+   "Recommended Electives are printed without units; they are not counted in the 30-unit total.",
+   "Careers: footnote markers (1 = Bachelor Degree or higher required; 2 = Bachelor Degree normally required) were stripped from Advertising Specialist, Animator, Museum Curator, Museum Director, Teacher/Professor and Designer. Designer is printed with sub-items Fashion, Floral, Graphic, Jewelry, Interior, Set, which were not recorded as separate careers.",
+   "Page says 'Plus General Education Requirements' without naming a specific GE pattern or printing GE units or a degree total."
+  ]
+ },
+ "extracted_run": "38748833332"
+}

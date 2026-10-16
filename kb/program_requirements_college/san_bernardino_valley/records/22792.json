@@ -1,0 +1,198 @@
+{
+ "college": "San Bernardino Valley College",
+ "control_number": "22792",
+ "shape": "certificate",
+ "title": "Aviation Maintenance Technician",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/aeronautics/aviation-maintenance-technician-as-degree/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8576,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8576,
+    "output_tokens": 1417,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1417,
+  "output_tokens_details": {
+   "thinking_tokens": 509
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06264,
+ "ms": 12411,
+ "seconds": 12.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 12,
+   "share": 0.0,
+   "missing": [
+    "AERO50",
+    "AERO50L",
+    "AERO51",
+    "AERO51L",
+    "AERO52",
+    "AERO52L",
+    "AERO53",
+    "AERO53L",
+    "AERO54",
+    "AERO54L",
+    "AERO55",
+    "AERO55L"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Aviation Maintenance Technician Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AERO 050L",
+    "why": "named only in the A.S. degree section; certificate section not in text"
+   },
+   {
+    "code": "AERO 051L",
+    "why": "named only in the A.S. degree section; certificate section not in text"
+   },
+   {
+    "code": "AERO 052L",
+    "why": "named only in the A.S. degree section; certificate section not in text"
+   },
+   {
+    "code": "AERO 053L",
+    "why": "named only in the A.S. degree section; certificate section not in text"
+   },
+   {
+    "code": "AERO 054L",
+    "why": "named only in the A.S. degree section; certificate section not in text"
+   },
+   {
+    "code": "AERO 055L",
+    "why": "named only in the A.S. degree section; certificate section not in text"
+   },
+   {
+    "code": "AERO 50",
+    "why": "named only in the A.S. degree section (as AERO 050); certificate section not in text"
+   },
+   {
+    "code": "AERO 51",
+    "why": "named only in the A.S. degree section (as AERO 051); certificate section not in text"
+   },
+   {
+    "code": "AERO 52",
+    "why": "named only in the A.S. degree section (as AERO 052); certificate section not in text"
+   },
+   {
+    "code": "AERO 53",
+    "why": "named only in the A.S. degree section (as AERO 053); certificate section not in text"
+   },
+   {
+    "code": "AERO 54",
+    "why": "named only in the A.S. degree section (as AERO 054); certificate section not in text"
+   },
+   {
+    "code": "AERO 55",
+    "why": "named only in the A.S. degree section (as AERO 055); certificate section not in text"
+   }
+  ],
+  "notes": [
+   "The source URL and text are for the Aviation Maintenance Technician Associate of Science Degree, not the Certificate of Achievement. The certificate's heading appears only in the navigation menu; its requirements are not in the text, so no blocks were recorded.",
+   "The A.S. section lists all twelve AERO courses (AERO 050-055 and 050L-055L) as Required Courses with Total Units 58, plus a GE pattern (SBVC GE or Cal-GETC) and a 60-unit minimum degree total. The certificate likely has the same 58-unit core; a reviewer should fetch the certificate page to confirm.",
+   "The A.S. page prints codes with a leading zero (AERO 050) where the closed list has AERO 50 for the lecture courses.",
+   "Program learning outcomes printed on the A.S. page were not recorded because it is not shown that the certificate shares them."
+  ]
+ },
+ "extracted_run": "38748858322"
+}

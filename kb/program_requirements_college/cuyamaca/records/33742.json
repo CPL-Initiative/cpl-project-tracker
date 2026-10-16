@@ -1,0 +1,214 @@
+{
+ "college": "Cuyamaca College",
+ "control_number": "33742",
+ "shape": "certificate",
+ "title": "Mechatronics",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/computer-science/mechatronics-cert-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7106,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7106,
+    "output_tokens": 1352,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1352,
+  "output_tokens_details": {
+   "thinking_tokens": 408
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05546,
+ "ms": 11301,
+ "seconds": 11.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    16.0,
+    19.0
+   ],
+   "stated": [
+    16.0,
+    19.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Mechatronics Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 16,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Write computer programs in high-level languages such as C++ and, when appropriate, in assembly language to control the operation of a microcontroller. In particular, students will be able to apply the following microcontroller capabilities: memory-mapped I/O (input/output), analog-to-digital (A/D) conversion, and volatile and non-volatile memory.",
+    "Design automatic devices and control systems which can respond to inputs from sensors with appropriate outputs in the form of motion, light, and sound.",
+    "Design mechanical components and devices, and create prototype versions of them.",
+    "Combine the above capabilities to design integrated electro-mechanical devices of arbitrary complexity."
+   ],
+   "careers": [
+    "advanced manufacturing"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 19
+    },
+    "courses": [
+     {
+      "code": "CADD-125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGR-125",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "CADD-129",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGR-129",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS-181",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS-267",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "ENGR-182",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR-100",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ET-110",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "CADD-125/ENGR-125 and CADD-129/ENGR-129 are cross-listed pairs printed as one row with an 'or'; recorded as one entry with the other three codes as alternatives. Units (3) are printed only on the first row; the 'or' rows print no units.",
+   "CIS-267 is printed as 1-4 units; the 'or ENGR-182' alternative prints no units (closed list stores 1).",
+   "Catalog prints codes with hyphens (e.g., CS-181); these match closed-list codes written with spaces.",
+   "'advanced manufacturing' recorded as a career field from the description ('working in advanced manufacturing')."
+  ]
+ },
+ "extracted_run": "38748833332"
+}

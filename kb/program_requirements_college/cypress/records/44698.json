@@ -1,0 +1,413 @@
+{
+ "college": "Cypress College",
+ "control_number": "44698",
+ "shape": "certificate",
+ "title": "Foreign Language for Professionals in Aviation and Travel Careers",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/foreign-language/foreign-language-for-professionals-in-aviation-and-travel-careers-certificate/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8043,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8043,
+    "output_tokens": 3555,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3555,
+  "output_tokens_details": {
+   "thinking_tokens": 1024
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.10327,
+ "ms": 28139,
+ "seconds": 28.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 21,
+   "listed": 21,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    21.0
+   ],
+   "stated": [
+    18.0,
+    21.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Foreign Language for Professionals in Aviation and Travel Careers Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 21
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Communicate effectively in a foreign language in a variety of aviation and travel settings, including airports, airlines, and customer service with 70% accuracy.",
+    "Provide language assistance to aviation and travel customers, including helping them check-in for flights, navigate airports, and find hotel accommodations with 70% accuracy.",
+    "Demonstrate knowledge of aviation and travel terminology and cultural competency in the language they are studying with 70% accuracy."
+   ],
+   "careers": [
+    "airlines",
+    "travel agencies",
+    "international tourism offices",
+    "multicultural corporations"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core: Courses to be taken as a discipline group in the suggested sequence listed (12-15 units).",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ENGL C1000",
+      "units": 4,
+      "units_max": 5,
+      "alternatives": [
+       {
+        "code": "ENGL C1000E",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ESL 110 C",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select TWO (2) Courses in ONE (1) Foreign Language Pathway: Chinese elementary",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Foreign Language Pathway",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHIN 101 C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHIN 102 C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select TWO (2) Courses in ONE (1) Foreign Language Pathway: French elementary",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Foreign Language Pathway",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FREN 101 C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FREN 102 C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select TWO (2) Courses in ONE (1) Foreign Language Pathway: Japanese elementary",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Foreign Language Pathway",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "JAPN 101 C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPN 102 C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select TWO (2) Courses in ONE (1) Foreign Language Pathway: Spanish elementary",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Foreign Language Pathway",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "SPAN 101 C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 102 C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select TWO (2) Courses in ONE (1) Foreign Language Pathway: Chinese intermediate",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Foreign Language Pathway",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHIN 203 C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHIN 204 C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select TWO (2) Courses in ONE (1) Foreign Language Pathway: French intermediate",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Foreign Language Pathway",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FREN 203 C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FREN 204 C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select TWO (2) Courses in ONE (1) Foreign Language Pathway: Japanese intermediate",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Foreign Language Pathway",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "JAPN 203 C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPN 204 C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select Aviation and Travel Careers Electives (6 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ATC 101 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select Aviation and Travel Careers Electives (6 units): one of ATC 183 C, ATC 270 C, ATC 112 C",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ATC 183 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATC 270 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATC 112 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The English row prints '4-5' beside ENGL C1000; this range appears to cover the choice among ENGL C1000 (4), ENGL C1000E (5) and ESL 110 C, recorded on ENGL C1000 as 4-5. Alternatives have no units printed beside them. The catalog repeats 'or ENGL C1000' as an alternative to itself; recorded once.",
+   "The Required Core heading states 12-15 units (English 4-5 plus a foreign language pathway 8-10); the pathway heading prints 8-10 units for whichever sequence is chosen. Each two-course pathway is recorded as its own block in option_group 'Foreign Language Pathway'; block names add the language/level for distinction. Stated left null on pathway blocks because the 8-10 applies to the choice as a whole.",
+   "CHIN 203 C title printed as 'Intermediate Chinese-Mandarin lll' (lowercase L's).",
+   "ATC electives rule is ambiguous: printed as 'ATC 101 C AND ATC 183 C OR ATC 270 C OR ATC 112 C' with 6 units. Read as ATC 101 C required plus one of ATC 183 C, ATC 270 C or ATC 112 C (3+3=6). It could instead mean any 6 units from the four courses. The printed 6 units covers both ATC blocks together, so stated is null on each.",
+   "Program outcomes printed on the page's outcomes tab with 'OUTCOME n:' labels, which were removed.",
+   "Description notes the program is not intended to meet requirements as a professional interpreter or translator; not recorded as careers."
+  ]
+ },
+ "extracted_run": "38748866826"
+}

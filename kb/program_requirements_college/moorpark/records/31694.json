@@ -1,0 +1,331 @@
+{
+ "college": "Moorpark College",
+ "control_number": "31694",
+ "shape": "adt",
+ "title": "Geology",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/geology/geology-ast/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7628,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7628,
+    "output_tokens": 1940,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1940,
+  "output_tokens_details": {
+   "thinking_tokens": 498
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06931,
+ "ms": 17202,
+ "seconds": 17.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 7,
+   "codes": [
+    "BIOLM2A",
+    "BIOLM2AH",
+    "GEOLM4",
+    "PHYSM20A",
+    "PHYSM20AL",
+    "PHYSM20B",
+    "PHYSM20BL"
+   ],
+   "flagged": [
+    "BIOLM2A",
+    "BIOLM2AH",
+    "GEOLM4",
+    "PHYSM20A",
+    "PHYSM20AL",
+    "PHYSM20B",
+    "PHYSM20BL"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    28.0,
+    28.0
+   ],
+   "stated": [
+    28.0,
+    28.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     65.0,
+     69.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     37.0,
+     39.0
+    ],
+    "why": [],
+    "overlap": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Geology A.S.-T (REQUIREMENTS)",
+   "measure": "units",
+   "total_units": {
+    "min": 28,
+    "max": 28
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 0,
+    "max": 2
+   },
+   "ge_pattern": "CSU General Education-Breadth or IGETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 37,
+    "max": 39
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "apply the principles of Earth system science and plate tectonic theory to describe and explain Earth’s materials, landscapes, natural hazards, and dynamic history.",
+    "analyze scientific data to make interpretations, propose hypotheses, or analyze existing hypotheses."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "GEOL M02",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOL M02H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL M02L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL M03",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL M03L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM M01A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM M01AH",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM M01B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH C2210H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2220",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH C2220H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Recommended Preparation (Not part of the TMC)",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL M02A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL M02AH",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOL M04",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS M20A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS M20AL",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS M20B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS M20BL",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Total Units for the Major printed as 28; Total Units Required for the AS-T Degree printed as 60.",
+   "The page prints two GE paths: CSU General Education-Breadth 39 units (7 double-counted, 0 elective units to reach 60) and IGETC Pattern 37 units (7 double-counted, 2 elective units to reach 60). ge_units recorded as 37-39 and degree_elective_units as 0-2 to span both paths.",
+   "Note on page: IGETC 1C is required for all CSU applicants.",
+   "PHYS M20A & M20AL and PHYS M20B & M20BL are printed as paired courses with a single 5-unit figure for each pair; the 5 units are recorded on the lecture code and the lab code has units null.",
+   "Honors alternatives have no units printed beside them; units left null.",
+   "Recommended Preparation courses are not part of the TMC and do not count toward the major total.",
+   "The outcomes are printed once for the program on the page's outcomes tab; recorded as shared by this award."
+  ]
+ },
+ "extracted_run": "38748862351"
+}

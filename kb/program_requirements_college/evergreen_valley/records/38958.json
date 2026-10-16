@@ -1,0 +1,181 @@
+{
+ "college": "Evergreen Valley College",
+ "control_number": "38958",
+ "shape": "certificate",
+ "title": "Foundational Chemistry",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.evc.edu/degrees-certificates/chemistry/foundational-chemistry-certificate-of-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7127,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7127,
+    "output_tokens": 1207,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1207,
+  "output_tokens_details": {
+   "thinking_tokens": 456
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05265,
+ "ms": 10739,
+ "seconds": 11.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 2,
+   "listed": 4,
+   "share": 0.5,
+   "missing": [
+    "CHEM1A",
+    "CHEM1B"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    10.0,
+    10.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "FOUNDATIONAL CHEMISTRY – CERTIFICATE OF ACHIEVEMENT",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Perform basic and complex calculations related to the preparation of solutions, as well as the skills to prepare chemical solutions.",
+    "Follow experimental protocols involving the uses of standard and analytical equipment, materials, and techniques employed in general, organic and analytical chemistry laboratory.",
+    "Carry out quantitative and qualitative analyses in experiments.",
+    "Function independently or with a team on experimental lab assignments that involve scientific methods."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHEM 012A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 012B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CHEM 001A",
+    "why": "not in the text; Required Courses tab content not captured"
+   },
+   {
+    "code": "CHEM 001B",
+    "why": "not in the text; Required Courses tab content not captured"
+   }
+  ],
+  "notes": [
+   "The page's 'Required Courses' tab content is not in the supplied text; only the Overview and Learning Outcomes tabs were captured. Course list, units and total must be checked against the live page.",
+   "CHEM 012A and CHEM 012B are placed from the Overview sentence stating that completion requires them to be completed at Evergreen Valley College; no units are printed beside them, so units are null.",
+   "The Overview says the certificate covers required general chemistry and organic chemistry courses with labs, so CHEM 001A/001B are likely required too, but the text does not list them.",
+   "No total units printed in the captured text; total_units left null.",
+   "The Overview says the certificate shows readiness 'to begin work in chemistry at the entry level'. This was not recorded as a named career."
+  ]
+ },
+ "extracted_run": "38748875071"
+}

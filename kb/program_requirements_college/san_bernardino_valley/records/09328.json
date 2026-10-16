@@ -1,0 +1,433 @@
+{
+ "college": "San Bernardino Valley College",
+ "control_number": "09328",
+ "shape": "degree",
+ "title": "Water Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/water-supply-technology/water-technology-as-degree/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8791,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8791,
+    "output_tokens": 2997,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2997,
+  "output_tokens_details": {
+   "thinking_tokens": 728
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0951,
+ "ms": 23573,
+ "seconds": 24.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 19,
+   "listed": 19,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "CIT101",
+    "WST98"
+   ],
+   "flagged": [
+    "CIT101",
+    "WST98"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    28.0,
+    28.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the SBVC General Education and Graduation Requirements or Cal-GETC - California General Education Transfer Curriculum pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     28.0,
+     28.0
+    ],
+    "stated": [
+     28.0,
+     28.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Water Technology Associate of Science Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 28,
+    "max": 28
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "SBVC General Education and Graduation Requirements or Cal-GETC - California General Education Transfer Curriculum",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Examine fundamental aspects of water resource management, including conservation, distribution, treatment (with a focus on advanced water treatment operations), collection, recycling, and disposal.",
+    "Perform tasks related to the operation, control, and maintenance of water and sanitation systems, including the application of instrumentation, pumps, motors, and advanced treatment technologies.",
+    "Apply analytical skills as decision-making tools to evaluate potable water and wastewater transport systems, treatment processes, and overall utility performance, thereby enhancing operational efficiency.",
+    "Establish effective oral and written communication skills, utilizing these tools in regulatory contexts to promote public health protection and ensure compliance with statutory mandates.",
+    "Apply relevant equipment, policies, procedures, and strategies to facilitate effective local, state, or national security operations in water resource management.",
+    "Combine knowledge from related fields such as organizational leadership, legislative policy, and environmental science to tackle complex water management challenges.",
+    "Critically analyze public policy and statutory mandates governing water demand, supply, and quality, preparing to address pressing issues in water resource management."
+   ],
+   "careers": [
+    "water and wastewater occupations",
+    "plant operator",
+    "engineering technician",
+    "surface water manager",
+    "environmental laboratory coordinator",
+    "industrial pre-treatment coordinator"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "WST 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "WST 101",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "WST 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "WST 150",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "WST 137",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WST 275",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Basic Waterworks Emphasis",
+    "rule": "choose_courses",
+    "minimum": 5,
+    "option_group": "emphasis",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "WST 131",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WST 145",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WST 148",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WST 186",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WST 188",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WST 238",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Water Technology Emphasis",
+    "rule": "choose_courses",
+    "minimum": 5,
+    "option_group": "emphasis",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "WST 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WST 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WST 150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WST 186",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WST 188",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WST 160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WST 235",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Wastewater Technology Emphasis",
+    "rule": "choose_courses",
+    "minimum": 5,
+    "option_group": "emphasis",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "WST 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WST 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WST 121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WST 186",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WST 188",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WST 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WST 235",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Recommended Courses",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CIT 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "WST 098",
+      "units": 0.5,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "WST 235 printed in the catalog is treated as the closed list's 'WST235' (Advanced Water Treatment Operator); only the spacing differs, so catalog_addition is false.",
+   "The 'or' alternatives WST 101 and WST 150 in Required Courses have no units printed beside them.",
+   "WST 110 and WST 150 appear both in the Required Courses or-rows and in an emphasis list; a reviewer may check whether one course can satisfy both.",
+   "Degree total of 60 units taken from the sentence 'general breadth requirements for the Associate of Science degree (total = 60 units)' printed in this award's description; Total Units 28 is the major total.",
+   "Two GE patterns are offered (SBVC General Education or Cal-GETC); no GE units printed.",
+   "The program learning outcomes come from the page's outcomes tab for the program as a whole; this award shares it.",
+   "Career titles are stated for graduates of the Associate of Science Degree; 'water and wastewater occupations' is from the program description."
+  ]
+ },
+ "extracted_run": "38748858322"
+}

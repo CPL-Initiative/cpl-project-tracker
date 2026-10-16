@@ -1,0 +1,472 @@
+{
+ "college": "Mt. San Jacinto College",
+ "control_number": "36360",
+ "shape": "adt",
+ "title": "Child and Adolescent Development",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.msjc.edu/instructional-programs/teacher-education-developmental-studies/child-adolescent-development-aat/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9996,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9996,
+    "output_tokens": 3037,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3037,
+  "output_tokens_details": {
+   "thinking_tokens": 937
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.10072,
+ "ms": 22909,
+ "seconds": 23.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 40,
+   "listed": 41,
+   "share": 0.976,
+   "missing": [
+    "BIOL115"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "BIOLC1000"
+   ],
+   "flagged": [
+    "BIOLC1000"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    19.0
+   ],
+   "stated": [
+    18.0,
+    19.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     52.0,
+     53.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "fill": [
+     7.0,
+     8.0
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": true,
+   "outcomes": [],
+   "careers": [
+    "child and adolescent care and education",
+    "elementary education",
+    "special education",
+    "youth-related social service careers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CDEV-C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CDEV-C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC-C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC-C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT-C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT-C1000H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC-121",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI-121",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A : Select Three Courses",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "ANTH-102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH-102H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL-100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL-100H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL-C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL-C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL-150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL-150H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL-151",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL-151H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDE-101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDE-103",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDE-111",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDE-118",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDE-119",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDE-125",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CDE-125H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDE-140",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDE-147",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDE-148",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ED-138",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HS-121",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NUTR-100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "NUTR-100H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "NUTR-101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "NUTR-101H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC-103",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC-103H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC-124",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC-124H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI-C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOCI-C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI-103",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BIOL 115",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "Closed-list codes CDEVC1000, CDEVC1000H, CDE101 and CDE148 were matched to the catalog's CDEV-C1000, CDEV-C1000H, CDE-101 and CDE-148 despite formatting differences.",
+   "BIOL-C1000 (non-honors) is not in the closed list; only BIOL C1000H is, so BIOL-C1000 is marked as a catalog addition.",
+   "The catalog prints 'PSYC/SOCI-121' as a statistics alternative; recorded as PSYC-121 and SOCI-121.",
+   "Units are not printed beside individual List A courses or beside honors/alternative courses; only the block total 9-10 is printed.",
+   "Page states 'Possible double counting: 13 units' between major and Cal-GETC; transferable electives fill to 60 units with no units printed.",
+   "The Program Map tab (sample plan of study) was not used for requirements.",
+   "No program learning outcomes are printed in the text."
+  ]
+ },
+ "extracted_run": "38748837644"
+}

@@ -1,0 +1,280 @@
+{
+ "college": "Napa Valley College",
+ "control_number": "32822",
+ "shape": "degree",
+ "title": "Business Administration",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.napavalley.edu//areas-of-study/business-and-entrepreneurship/business-administration-as/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7216,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7216,
+    "output_tokens": 1579,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1579,
+  "output_tokens_details": {
+   "thinking_tokens": 437
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06044,
+ "ms": 12374,
+ "seconds": 12.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 13,
+   "share": 0.692,
+   "missing": [
+    "COMM126",
+    "COMS101",
+    "ECON100",
+    "ECON101"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "BUSI148",
+    "ECONC2001",
+    "ECONC2002"
+   ],
+   "flagged": [
+    "BUSI148",
+    "ECONC2001",
+    "ECONC2002"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    37.0,
+    37.0
+   ],
+   "stated": [
+    37.0,
+    37.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 8,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "BUSINESS ADMINISTRATION: AS DEGREE",
+   "measure": "units",
+   "total_units": {
+    "min": 37,
+    "max": 37
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "NVC General Education pattern",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate oral, written, and critical thinking skills required to succeed in business.",
+    "Demonstrate professional and ethical behavior.",
+    "Apply knowledge of generally accepted accounting principles.",
+    "Demonstrate proficiency in the use of software applications to solve business problems."
+   ],
+   "careers": [
+    "bookkeeper",
+    "sales",
+    "ad agency staffer",
+    "office manager",
+    "supervisor",
+    "banking and investment staffer",
+    "marketing department staff",
+    "real estate agent"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ACCT-125",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT-126",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSI-100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSI-103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSI-105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSI-142",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSI-148",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUSI-251",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSI-297",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMS-165",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON-C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON-C2001",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COMM 126",
+    "why": "not in the text"
+   },
+   {
+    "code": "COMS 101",
+    "why": "not in the text"
+   },
+   {
+    "code": "ECON 100",
+    "why": "not in the text; catalog prints ECON-C2002 (Principles of Macroeconomics), apparently the common-course renumbering"
+   },
+   {
+    "code": "ECON 101",
+    "why": "not in the text; catalog prints ECON-C2001 (Principles of Microeconomics), apparently the common-course renumbering"
+   }
+  ],
+  "notes": [
+   "ECON-C2002 and ECON-C2001 share titles with closed-list ECON 100 and ECON 101; likely California common course numbering, recorded as catalog additions.",
+   "No units printed beside the alternative ECON-C2001; units left null.",
+   "The 60-unit sentence is the general associate degree requirement, not printed as this award's total, so degree_total is null.",
+   "BUSI-148 Leadership for Effective Organizations is required in the catalog but absent from the closed list."
+  ]
+ },
+ "extracted_run": "38748853261"
+}

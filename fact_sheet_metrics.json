@@ -1,57 +1,57 @@
 {
  "_about": "Snapshot-tier metrics for the public CPL Fact Sheet (fact-sheet/). Sourced from the same MAP Custom Reporting Module exhibit data as COBI's headline KPI cards, so the two never diverge. Refreshed by the daily dashboard cron.",
- "_as_of": "2026-10-15T11:36:13.769Z",
+ "_as_of": "2026-10-15T17:10:51.113Z",
  "credit_recommendations": {
-  "total": "14,312",
-  "ccc": "1,457",
-  "local": "12,855",
+  "total": "14,356",
+  "ccc": "1,473",
+  "local": "12,883",
   "by_type": [
    "Standardized Assessment: 7,433",
-   "Industry Certification: 3,990",
-   "Credit By Exam: 2,235",
-   "Portfolio Review: 409",
+   "Industry Certification: 4,018",
+   "Credit By Exam: 2,246",
+   "Portfolio Review: 414",
    "Military: 150"
   ]
  },
  "map_exhibits": {
-  "total": "3,128",
+  "total": "3,130",
   "ccc": "164",
-  "local": "2,964",
+  "local": "2,966",
   "originating_colleges": "87"
  },
  "statewide_exhibits": {
   "total": "164",
   "program_areas": "12",
-  "distinct_credit_recs": "1,258",
-  "adoptions": "1,444",
-  "adopting_colleges": "64",
+  "distinct_credit_recs": "1,269",
+  "adoptions": "1,460",
+  "adopting_colleges": "65",
   "by_sector": [
    {
     "sector": "Construction Technology",
     "exhibits": 56,
-    "credit_recs": 158,
-    "adoptions": 158,
+    "credit_recs": 161,
+    "adoptions": 161,
     "could_adopt": 0
    },
    {
     "sector": "Welding",
     "exhibits": 25,
-    "credit_recs": 213,
-    "adoptions": 268,
+    "credit_recs": 217,
+    "adoptions": 272,
     "could_adopt": 27
    },
    {
     "sector": "Fire Technology",
     "exhibits": 17,
-    "credit_recs": 293,
-    "adoptions": 346,
+    "credit_recs": 296,
+    "adoptions": 354,
     "could_adopt": 45
    },
    {
     "sector": "Computer Information Systems",
     "exhibits": 14,
-    "credit_recs": 120,
-    "adoptions": 124,
+    "credit_recs": 121,
+    "adoptions": 125,
     "could_adopt": 74
    },
    {
@@ -124,9 +124,9 @@
   ]
  },
  "articulating_colleges": {
-  "total": "100",
+  "total": "101",
   "originating": "87",
-  "adopting_ccc": "64"
+  "adopting_ccc": "65"
  },
  "veteran_sprint": {
   "star_colleges": "61",

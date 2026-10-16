@@ -684,8 +684,10 @@
       ".cb-prios{margin-top:12px;border-top:1px solid var(--border);padding-top:11px;}",
       ".cb-prow{padding:8px 0;border-top:1px solid var(--border);}",
       ".cb-prow:first-of-type{border-top:0;padding-top:0;}",
-      ".cb-prow .cb-whead{font-size:.85rem;}",
-      ".cb-prow .cb-whead .v{font-weight:700;color:var(--text-strong);font-size:.85rem;}",
+      // Each priority's award beside its title, a step larger (Sam, 2026-10-15, call 6).
+      ".cb-prow .cb-whead{justify-content:flex-start;flex-wrap:wrap;gap:.2em .55em;font-size:1.05rem;}",
+      ".cb-prow .cb-whead b{color:var(--text-strong);}",
+      ".cb-prow .cb-whead .v{font-weight:600;color:var(--text-strong);font-size:1.05rem;}",
       ".cb-ptarget{font-size:.76rem;color:var(--text-muted);margin-top:3px;line-height:1.45;}",
       ".cb-next{border:1px solid var(--border-strong);border-left:4px solid var(--brand,var(--cobalt));border-radius:8px;padding:13px 15px;margin-top:14px;background:var(--surface-subtle);}",
       ".cb-next ul{margin:0;padding-left:18px;font-size:.84rem;line-height:1.55;}",
@@ -701,7 +703,25 @@
       ".cb-resi a:hover{text-decoration:underline;}",
       ".cb-resi div{font-size:.76rem;color:var(--text-muted);margin-top:3px;line-height:1.45;}",
       // ── Funding, district roster, Sierra asks (2026-08-11) ──
-      ".cb-fund{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:12px;}",
+      // The two funding boxes stack, and the priorities sit side by side with
+      // their steps beneath (Sam, 2026-10-15, call 7): side by side, the open
+      // steps left the seed box beside a tall empty column.
+      ".cb-fund{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;}",
+      // A wrapping row, not a grid: the label spans the row, and a grid's empty
+      // third track could never collapse beneath it.
+      ".cb-fund .cb-prios{display:flex;flex-wrap:wrap;column-gap:28px;}",
+      ".cb-fund .cb-prios > .cb-prow{flex:1 1 320px;min-width:0;}",
+      ".cb-fund .cb-prios > .cb-plab{flex:0 0 100%;}",
+      // The boxes' tags read as plain words, and the noncredit line carries no
+      // red rule: red marks a state to act on (Sam, 2026-10-15, call 7).
+      ".cb-tagword{font-size:.82rem;font-weight:400;color:var(--text-muted);}",
+      // 24px tall (WCAG 2.2 SC 2.5.8): each link stands alone in its tag, as the resources' do.
+      ".cb-tagword a{display:inline-block;min-height:24px;padding:4px 0;box-sizing:border-box;color:var(--accent-link,var(--cobalt));text-decoration:underline;text-underline-offset:2px;}",
+      ".cb-fbig-k{font-size:.92rem;font-weight:600;color:var(--text-muted);margin-left:.25em;letter-spacing:.01em;}",
+      // How to meet it: underlined words, 24px tall (Sam, 2026-10-09: controls are underlined words).
+      ".cb-howto{font:inherit;font-size:.95em;font-weight:600;color:var(--accent-link,var(--cobalt));background:none;border:0;padding:0 2px;margin-left:.3em;min-height:24px;box-sizing:border-box;text-decoration:underline;text-underline-offset:3px;cursor:pointer;}",
+      ".cb-howto:focus-visible{outline:3px solid var(--gold-accent,var(--cobalt));outline-offset:2px;border-radius:2px;}",
+      ".cb-ncline{margin:10px 0 12px;}",
       ".cb-fbox{border:1px solid var(--border);border-radius:9px;padding:14px 15px;background:var(--surface);}",
       ".cb-fbox header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:8px;}",
       // The block also renders on the funding explainer (fundingPanel, 2026-09-30),
@@ -1721,12 +1741,13 @@
     return cap ? w.charAt(0).toUpperCase() + w.slice(1) : w;
   }
 
-  function stratHtml(items, label) {
+  function stratHtml(items, label, open) {
     if (!items || !items.length) return "";
     var n = items.length;
     // Sam, 2026-10-01 (mockup card 10): the steps name who suggests them; a
-    // college reader does not know "the team".
-    return '<details class="cb-strat"><summary>' + numWord(n, true) + " " + (n === 1 ? "step" : "steps")
+    // college reader does not know "the team". `open`: the funding block's
+    // steps arrive open (Sam, 2026-10-15, call 4: "Open one copy").
+    return '<details class="cb-strat"' + (open ? " open" : "") + '><summary>' + numWord(n, true) + " " + (n === 1 ? "step" : "steps")
       + " the CPL Initiative suggests" + (label ? " for " + esc(label) : "") + "</summary><ol>"
       + items.map(function (i) {
           var s = "<li>" + esc(i.text);
@@ -2662,6 +2683,11 @@
    * apportionment" (his words, card 2: the mechanism the ESS 25-82 funds used;
    * the implementation funding is still "allocated").
    * Dates read the CO style guide's way: "Nov. 1, 2026", "June 30, 2028". */
+  // The memo and the statute the funding boxes name (Sam, 2026-10-15, call 6).
+  // The memo answered 200 as a PDF on 2026-10-15; the statute link is the one
+  // the explainer already uses.
+  var ESS_MEMO_URL = "https://www.cccco.edu/-/media/CCCCO-Website/docs/memo/ess-25-82-credit-for-prior-learning-funding-a11y.pdf";
+  var STATUTE_URL = "https://california.public.law/codes/education_code_section_78093.2";
   var AP_MONTHS = ["Jan.", "Feb.", "March", "April", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."];
   function apDate(v) {
     var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(String(v || ""));
@@ -2693,12 +2719,22 @@
   function conditionsHtml(cond) {
     if (!cond || !cond.items || !cond.items.length) return "";
     var n = cond.items.length;
-    var h = '<div class="cb-lab cb-flagp">CPL funding requires the following ' + numWord(n)
-      + " minimum condition" + (n === 1 ? "" : "s") + ":</div>";
+    // The editable passage speaks of conditions in the plural; one condition
+    // keeps the house sentence's singular.
+    var h = '<div class="cb-lab cb-flagp">' + (n === 1
+      ? "CPL funding requires the following " + numWord(n) + " minimum condition:"
+      : mcText("mc_conds", { "condition count": numWord(n) }, "CPL funding requires the following " + numWord(n)
+        + " minimum conditions:")) + "</div>";
     h += '<ol class="cb-ess-list cb-conds">';
+    // How to meet it after each condition (Sam, 2026-10-15, call 5): the
+    // funding module opens its steps, one text on every surface.
+    var T = window.CPL_FUNDING_TAB;
+    var kinds = T && typeof T.howToKinds === "function" ? T.howToKinds() : [];
     cond.items.forEach(function (it, i) {
       var st = it.pending ? "pending" : it.met ? "met" : "not";
-      h += "<li>" + essMark({ state: st }) + "<div>" + (i + 1) + ". " + esc(condText(it, cond)) + "</div></li>";
+      h += "<li>" + essMark({ state: st }) + "<div>" + (i + 1) + ". " + esc(condText(it, cond))
+        + (kinds.indexOf(it.kind) >= 0 ? ' <button type="button" class="cb-howto" data-howto="' + esc(it.kind)
+          + '" aria-haspopup="dialog">How to meet it</button>' : "") + "</div></li>";
     });
     h += "</ol>";
     if (cond.pending) return h + '<div class="cb-lab cb-flagp">The minimum conditions are still loading.</div>';
@@ -2740,6 +2776,15 @@
    * drift. ctx: { funding, college, f, detail, b, implProg, stratsInline,
    * standalone }. Every figure is the funding module's; nothing here derives
    * one. */
+  /* A sentence of the block, from My CPL Funding's text on the funding tab
+   * (Sam, 2026-10-15, call 8: editable like the explainer's passages), with
+   * this institution's figures filled in. The house wording below is the
+   * fallback for a page the funding module has not reached. */
+  function mcText(key, figs, fallback) {
+    var T = window.CPL_FUNDING_TAB;
+    var h = T && typeof T.mcTextHtml === "function" ? T.mcTextHtml(key, figs || {}) : null;
+    return h != null ? h : fallback;
+  }
   function fundingBlockHtml(ctx) {
     var f = ctx.f, implProg = ctx.implProg, stratsInline = ctx.stratsInline;
     var fundBody = "";
@@ -2762,14 +2807,17 @@
       fundBody += '<div class="cb-fund">';
       // The tag keeps the distribution date: Sam's opening (card 2) carries
       // the memo and the commitment, not the date.
-      fundBody += '<div class="cb-fbox"><header><h4>2025&ndash;2026 $50K Seed Funding</h4><span class="cb-tag">ESS 25-82, distributed spring 2026</span></header>';
+      // ESS 25-82 links the memo itself (Sam, 2026-10-15, call 6).
+      fundBody += '<div class="cb-fbox"><header><h4>2025&ndash;2026 $50K Seed Funding</h4><span class="cb-tagword">'
+        + '<a href="' + ESS_MEMO_URL + '" target="_blank" rel="noopener">ESS 25-82</a>, distributed spring 2026</span></header>';
       if (f.grant.declined) {
-        fundBody += '<div class="cb-fbig">Declined</div><div class="cb-lab">The college declined this grant pending further review.</div>';
+        fundBody += '<div class="cb-fbig">Declined</div><div class="cb-lab">' +
+          mcText("mc_seed_declined", {}, "The college declined this grant pending further review.") + "</div>";
       } else {
         fundBody += '<div class="cb-fbig">' + money(f.grant.amount) + "</div>"
-          + '<div class="cb-lab">Based on the guidance provided in memo ESS 25-82, the college received this funding '
-          + "through apportionment with a commitment to achieve the three priority outcomes measured by CPL data in "
-          + "the MAP platform.</div>";
+          + '<div class="cb-lab">' + mcText("mc_seed", {}, "Based on the guidance provided in memo ESS 25-82, the "
+          + "college received this funding through apportionment with a commitment to achieve the three priority "
+          + "outcomes measured by CPL data in the MAP platform.") + "</div>";
       }
       var ess = essProgress(f, ctx.detail, window.CPL_FUNDING_ESS, accessPriorityTitle(f.prios));
       if (ess) {
@@ -2798,26 +2846,30 @@
       // with the session, not a label a college would recognize. The tag is
       // the dashboard's own term for the figure (Sam's max award, 2026-09-01);
       // "cap" names the $400,000 ceiling.
-      fundBody += '<div class="cb-fbox"><header><h4>2026&ndash;2028 College Implementation Funding</h4><span class="cb-tag">max award</span></header>';
+      // The tag names the statute and links it; "max award" follows the amount
+      // it names (Sam, 2026-10-15, call 6).
+      fundBody += '<div class="cb-fbox"><header><h4>2026&ndash;2028 College Implementation Funding</h4><span class="cb-tagword">'
+        + '<a href="' + STATUTE_URL + '" target="_blank" rel="noopener">Ed. Code &sect;78093.2</a></span></header>';
       if (!f.alloc) {
         fundBody += '<div class="cb-lab">CPL funding lists no allocation for this college.</div>';
       } else {
-        fundBody += '<div class="cb-fbig">' + money(f.alloc.total) + "</div>";
-        fundBody += '<div class="cb-lab">Potential (max) funding available for the two-year period 2026-28 is allocated '
-          + "based on priority outcomes measured in full-time equivalent students (FTES) in MAP. Achievement of the "
-          + "following priority outcomes determines funding.</div>";
+        fundBody += '<div class="cb-fbig">' + money(f.alloc.total) + ' <span class="cb-fbig-k">max award</span></div>';
+        fundBody += '<div class="cb-lab">' + mcText("mc_impl", {}, "Potential (max) funding available for the "
+          + "two-year period 2026-28 is allocated based on priority outcomes measured in full-time equivalent students "
+          + "(FTES) in MAP. Achievement of the following priority outcomes determines funding.") + "</div>";
         if (f.alloc.floored) {
-          fundBody += '<div class="cb-lab cb-flagp">The college qualifies for ' + money(f.floor) + " base funding to "
-            + "implement the CPL policies and procedures needed to achieve the priority outcomes.</div>";
+          fundBody += '<div class="cb-lab cb-flagp">' + mcText("mc_base", { "base award": money(f.floor) },
+            "The college qualifies for " + money(f.floor) + " base funding to implement the CPL policies and "
+            + "procedures needed to achieve the priority outcomes.") + "</div>";
         }
         // The floor's mirror image. Say where the difference WENT, not just
         // that the college lost it — the same reason the funding explainer
         // names the beneficiary of every amount it shows.
         if (f.alloc.capped && f.cap) {
-          fundBody += "<div class=\"cb-lab cb-flagp\">The college's proportional share of the funding exceeds the "
-            + money(f.cap) + " cap, so its funding stops at the cap and the difference is redirected to the other "
-            + "colleges. Its targets scale to the cap, so it qualifies for funding at the same rate as every college "
-            + "above the base.</div>";
+          fundBody += '<div class="cb-lab cb-flagp">' + mcText("mc_cap", { cap: money(f.cap) },
+            "The college's proportional share of the funding exceeds the " + money(f.cap) + " cap, so its funding "
+            + "stops at the cap and the difference is redirected to the other colleges. Its targets scale to the cap, "
+            + "so it qualifies for funding at the same rate as every college above the base.") + "</div>";
         }
         fundBody += conditionsHtml(f.cond);
 
@@ -2827,8 +2879,9 @@
         // visible as noncredit funding — and it is the noncredit dean who
         // needs to see it. The share is INSIDE the combined figure above.
         if (f.nc != null && f.nc > 0) {
-          fundBody += '<div class="cb-note cb-floor">Noncredit portion of the max funding is ' + money(f.nc)
-            + ", which is based on CPL FTES that originate from the college or district's noncredit program.</div>";
+          fundBody += '<div class="cb-note cb-ncline">' + mcText("mc_nc", { "noncredit portion": money(f.nc) },
+            "Noncredit portion of the max funding is " + money(f.nc) + ", which is based on CPL FTES that originate "
+            + "from the college or district's noncredit program.") + "</div>";
         }
 
         // ── What the max award is FOR — the priorities, each with this
@@ -2849,12 +2902,12 @@
             // intimidating audit; six to ten attached to a priority read as
             // advice about that priority.
             var progPrio = stratsInline ? programPriorityFor(implProg, p, i) : null;
-            if (progPrio) fundBody += stratHtml(progPrio.items, null);
+            if (progPrio) fundBody += stratHtml(progPrio.items, null, true);
             fundBody += "</div>";
           });
           fundBody += "</div>";
-          fundBody += '<div class="cb-lab" style="margin-top:8px;">Progress toward each priority goal is measured in FTES '
-            + "and funded up to the cap.</div>";
+          fundBody += '<div class="cb-lab" style="margin-top:8px;">' + mcText("mc_progress", {},
+            "Progress toward each priority goal is measured in FTES and funded up to the cap.") + "</div>";
         }
       }
       fundBody += "</div></div>";
@@ -2885,9 +2938,10 @@
       // 2026-09-30): the block sits beside the institution table it was drawn
       // from, so it points there rather than at a tab the reader cannot see.
       fundBody += ctx.standalone
-        ? '<div class="cb-note">CPL funding follows the same procedure for every institution under All institutions.</div>'
-        : '<div class="cb-note">CPL funding follows the same procedure for every institution. The Implementation '
-          + "Funding tab shows the full derivation and the year split.</div>";
+        ? '<div class="cb-note">' + mcText("mc_close", {},
+            "CPL funding follows the same procedure for every institution under All institutions.") + "</div>"
+        : '<div class="cb-note">' + mcText("mc_close_mc", {}, "CPL funding follows the same procedure for every "
+          + "institution. The Implementation Funding tab shows the full derivation and the year split.") + "</div>";
     }
     return fundBody;
   }
@@ -3771,6 +3825,9 @@
     });
     var rep = root.querySelector("#cb-report");
     if (rep) rep.onclick = function () { buildBriefingReport(root); };
+    // The roster's spelling, which the funding module keys on (MAP says
+    // "Laney College"; the roster, "Laney").
+    wireHowTo(root, state.college ? rosterKey(state.college) : null, "mycollege");
 
     var c = root.querySelector("#cb-college"), d = root.querySelector("#cb-district");
     if (c) c.onchange = function () { selectCollege(c.value, root); };
@@ -3998,7 +4055,37 @@
     var stratsInline = implProg && f && prioritiesAlign(f.prios, implProg);
     el.innerHTML = '<div class="cb-panel">' + fundingBlockHtml({ funding: "ready", college: key, f: f, detail: null,
       b: b, implProg: implProg, stratsInline: stratsInline, standalone: true }) + "</div>";
+    wireHowTo(el, key, "funding");
     return true;
+  }
+  /* How to meet it, wired by property: a redraw rebuilds the buttons, and the
+   * funding module owns the dialog and its text. */
+  function wireHowTo(scope, college, surface) {
+    var T = window.CPL_FUNDING_TAB;
+    if (!T || typeof T.howToOpen !== "function") return;
+    Array.prototype.forEach.call(scope.querySelectorAll("[data-howto]"), function (b) {
+      b.onclick = function () { T.howToOpen(b.getAttribute("data-howto"), college, { surface: surface, opener: b }); };
+    });
+  }
+
+  /* A list the reader is using: the focused element is a <select> in this tab.
+   * A redraw would replace it, and a replaced list closes in the reader's hand. */
+  function selectInUse(root) {
+    var ae = root && root.ownerDocument ? root.ownerDocument.activeElement : null;
+    return !!(ae && ae.tagName === "SELECT" && root.contains(ae));
+  }
+  /* The model update's redraw, held until that list loses focus. A choice made
+   * on the list redraws the tab by itself and reads the model as it stands, so
+   * a list no longer on the page has nothing left to redraw. */
+  function holdRedrawForSelect(root) {
+    var sel = root.ownerDocument.activeElement;
+    if (!sel || sel._cbRedrawHeld) return;
+    sel._cbRedrawHeld = true;
+    sel.addEventListener("blur", function () {
+      sel._cbRedrawHeld = false;
+      if (!sel.isConnected || !root.contains(sel)) return;
+      if (state.funding === "ready" && scopeReady()) render(root);
+    }, { once: true });
   }
 
   function loadFunding(root) {
@@ -4011,6 +4098,16 @@
         M.onModelChange(function () {
           if (state.funding !== "ready" || !root) return;
           adoptModelConfig();
+          // ⚠ THE COLLEGE LIST STAYS PUT (Sam, 2026-10-15, call 7: the black
+          // box). render() rewrites the whole tab, so a redraw on every model
+          // update replaced #cb-college about seven times in the eight seconds
+          // after Choose another college, and a list the reader had open
+          // vanished under the pointer. The pickers carry nothing the model
+          // decides, so a model update redraws only a page that shows the
+          // model (scopeReady), and never under a list the reader is using:
+          // that redraw waits for the list to lose focus.
+          if (!scopeReady()) return;
+          if (selectInUse(root)) { holdRedrawForSelect(root); return; }
           render(root);
         }, describeFunding);
       }

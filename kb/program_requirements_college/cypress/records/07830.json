@@ -1,0 +1,321 @@
+{
+ "college": "Cypress College",
+ "control_number": "07830",
+ "shape": "certificate",
+ "title": "Athletic Coach",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/kinesiology/athletic-coach-certificate/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8165,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8165,
+    "output_tokens": 2306,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2306,
+  "output_tokens_details": {
+   "thinking_tokens": 720
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07878,
+ "ms": 18427,
+ "seconds": 18.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 16,
+   "listed": 20,
+   "share": 0.8,
+   "missing": [
+    "KIN109C",
+    "KIN116C",
+    "KIN139C",
+    "KIN147C"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "PHS294C",
+    "PHS296C"
+   ],
+   "flagged": [
+    "PHS294C",
+    "PHS296C"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    16.0,
+    16.0
+   ],
+   "stated": [
+    16.0,
+    16.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Athletic Coach Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 16,
+    "max": 16
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Acquire workforce preparation skills, including game and practice planning, to become an athletic coach."
+   ],
+   "careers": [
+    "athletic coach"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses (9 units):",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "KIN 235 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "KIN 236 C",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 272 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 295 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Elective Courses (7 units):",
+    "rule": "choose_units",
+    "minimum": 7,
+    "option_group": null,
+    "stated": {
+     "min": 7,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "KIN 230 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 240 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 241 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 242 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 243 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 245 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 247 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 248 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 249 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 273 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 274 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHS 107 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHS 294 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHS 296 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "KIN 109 C",
+    "why": "not named individually; presumably covered by the elective range 'Activity Courses: KIN 100 - KIN 201 (1 units)'"
+   },
+   {
+    "code": "KIN 139 C",
+    "why": "not named individually; presumably covered by the elective range 'Activity Courses: KIN 100 - KIN 201 (1 units)'"
+   },
+   {
+    "code": "KIN116C",
+    "why": "not named individually; presumably covered by the elective range 'Activity Courses: KIN 100 - KIN 201 (1 units)'"
+   },
+   {
+    "code": "KIN147C",
+    "why": "not named individually; presumably covered by the elective range 'Activity Courses: KIN 100 - KIN 201 (1 units)'"
+   }
+  ],
+  "notes": [
+   "The elective block also allows 'Activity Courses: KIN 100 - KIN 201 (1 units)', a course-number range rather than named courses; it was not recorded as a course entry. Closed-list activity courses KIN 109 C, KIN 139 C, KIN116C and KIN147C likely fall in this range.",
+   "KIN 235 C may be waived with current Red Cross First Aid and CPR cards at the division's discretion.",
+   "PHS 294 C and PHS 296 C appear in the catalog electives but are not in the closed list (catalog additions).",
+   "The catalog prints PHS 107 C's title as 'Nutrition and World Food Issue'; the closed list has 'Issues'.",
+   "Program outcomes were taken from the page's outcomes tab, which prints one outcome for this certificate.",
+   "The career 'athletic coach' is taken from the program outcome; the description names 'occupational coaching at various levels'."
+  ]
+ },
+ "extracted_run": "38748866826"
+}

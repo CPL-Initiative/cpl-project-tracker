@@ -1,0 +1,281 @@
+{
+ "college": "Evergreen Valley College",
+ "control_number": "31559",
+ "shape": "certificate",
+ "title": "Entrepreneurship",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.evc.edu/degrees-certificates/business/entrepreneurship---certificate-of-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7385,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7385,
+    "output_tokens": 1572,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1572,
+  "output_tokens_details": {
+   "thinking_tokens": 338
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06098,
+ "ms": 12514,
+ "seconds": 12.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 10,
+   "share": 0.9,
+   "missing": [
+    "BUS71"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "BIS104",
+    "BIS138",
+    "BUS82",
+    "LA42"
+   ],
+   "flagged": [
+    "BIS104",
+    "BIS138",
+    "BUS82",
+    "LA42"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    27.0,
+    27.0
+   ],
+   "stated": [
+    27.0,
+    27.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 10,
+   "courses": 0,
+   "count": 10,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "ENTREPRENEURSHIP - CERTIFICATE OF ACHIEVEMENT",
+   "measure": "units",
+   "total_units": {
+    "min": 27,
+    "max": 27
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Define the roles of entrepreneurs and small business in today's economy.",
+    "Analyze and address the problems in buying or starting a new business.",
+    "Develop a business plan.",
+    "Demonstrate the ability to start a new business.",
+    "Execute business feasibility study.",
+    "Make critical business decisions in a timely manner.",
+    "Work collaboratively with potential business partners.",
+    "Identify the crucial factors impacting a business environment.",
+    "Analyze a balance statement, income statement, and bank statements.",
+    "Identify the various sources of funding to start a new business."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ACCTG 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIS 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 006",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 009",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 082",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS 084",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LA 042",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "3 units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ACCTG 030",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIS 104",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIS 109",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIS 135",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIS 138",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BUS 71",
+    "why": "not in the text; LA 042 is listed without a title and may be a cross-listed legal course, but this cannot be confirmed"
+   }
+  ],
+  "notes": [
+   "Catalog prints codes with leading zeros (BUS 004, BUS 006, BUS 009, BUS 084, ACCTG 030); matched to closed-list BUS 4, BUS006, BUS 9, BUS 84, ACCTG 30.",
+   "LA 042 is printed with units (3) but no title; recorded as a catalog addition. Reviewer should check whether it corresponds to closed-list BUS 71 Legal Environment of Business.",
+   "Units are not printed beside the courses in the '3 units from the following' list; units left null.",
+   "Required block (8 courses x 3 = 24) plus 3-unit choice matches the printed total of 27 units."
+  ]
+ },
+ "extracted_run": "38748875071"
+}

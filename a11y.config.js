@@ -1540,40 +1540,44 @@ module.exports = {
     mayHideBelow: [],
   },
 
-  /* ── The funding tab's Public view, and My CPL Funding (S307, 2026-09-30) ──
+  /* ── The funding tab's Public page view (S307, 2026-09-30; reshaped 2026-10-15) ──
      Sam asked for the Public view and the explainer to be audited for
-     consistent margins, AA and phone widths, and for My CPL Funding at the top
-     of both with a college or district chooser. The `cobi` target measures the
-     tab in its Internal view only, so these three hold the other renderings:
-     the Public view by its link (?fundview=public), and the one-institution
-     view on each surface, opened the way a reader opens it and set to the
-     largest district, whose line and member blocks are the longest page it
-     draws. */
+     consistent margins, AA and phone widths. Since 2026-10-15 (his call 1 on
+     the one public funding page) the Public page view frames funding-model/
+     itself, so this target measures the tab's chrome around the frame, opened
+     by its link (?fundview=public); the page inside it is the page the two
+     funding-model targets measure, and this runner does not read into frames.
+     The old funding-public-mycpl target drew My CPL Funding on the tab's own
+     public rendering, which retired with it; funding-model-mycpl holds that
+     view on the one page that draws it. */
   "funding-public": {
     file: "index.html",
     query: "?fundview=public",
-    title: "Implementation Funding, Public view",
+    title: "Implementation Funding, Public page view",
     routes: [{ hash: "implementation-funding", name: "public-view" }],
     widths: [390, 768, 1024, 1440],
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
-  "funding-public-mycpl": {
-    file: "index.html",
-    query: "?fundview=public",
-    title: "Implementation Funding, Public view: My CPL Funding for a district",
-    routes: [{ hash: "implementation-funding", name: "my-cpl-funding" }],
-    widths: [390, 768, 1024, 1440],
+  /* How to meet it (Sam, 2026-10-15, call 5): the confirmation condition's
+     dialog open over the statewide Eligibility requirements, the one dialog
+     every surface opens. */
+  "funding-model-howto": {
+    file: "funding-model/index.html",
+    title: "Funding model explainer: a How to meet it dialog open",
+    widths: [390, 1440],
     seed: async (page) => {
       await page.evaluate(() => {
-        const T = window.CPL_FUNDING_TAB;
-        if (T && T.showMyFunding) T.showMyFunding();
-        const pick = document.getElementById("cplFundOnePick");
-        const opts = pick ? Array.from(pick.querySelectorAll('optgroup[label="Districts"] option')) : [];
-        if (opts.length) { pick.value = opts[0].value; pick.dispatchEvent(new Event("change", { bubbles: true })); }
+        const b = document.querySelector('#req-list [data-howto="part"]');
+        if (b) b.click();
+        // showModal() makes the page behind the dialog inert without the
+        // attribute, which is what the focus measurement reads; say so, as
+        // the Sierra dock does (S349), so the page behind is not measured here.
+        const dlg = document.getElementById("cplFundHowTo");
+        Array.prototype.forEach.call(document.body.children, (el) => { if (el !== dlg) el.setAttribute("inert", ""); });
       });
-      await page.waitForTimeout(900);
+      await page.waitForTimeout(300);
     },
-    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+    mayHideBelow: [],
   },
   "funding-model-mycpl": {
     file: "funding-model/index.html",
@@ -1581,8 +1585,7 @@ module.exports = {
     widths: [390, 768, 1024, 1440],
     seed: async (page) => {
       await page.evaluate(() => {
-        const b = document.getElementById("my-funding-btn");
-        if (b) b.click();
+        // Step 1 is the one way in since 2026-10-15 (Sam's call 8).
         const pick = document.getElementById("cplFundOnePick");
         const opts = pick ? Array.from(pick.querySelectorAll('optgroup[label="Districts"] option')) : [];
         if (opts.length) { pick.value = opts[0].value; pick.dispatchEvent(new Event("change", { bubbles: true })); }

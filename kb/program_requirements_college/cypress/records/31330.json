@@ -1,0 +1,245 @@
+{
+ "college": "Cypress College",
+ "control_number": "31330",
+ "shape": "certificate",
+ "title": "Captioning",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/court-reporting/captioning-certificate/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7493,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7493,
+    "output_tokens": 1319,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1319,
+  "output_tokens_details": {
+   "thinking_tokens": 324
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05635,
+ "ms": 10877,
+ "seconds": 11.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 6,
+   "codes": [
+    "CTRP53C",
+    "CTRP54C",
+    "CTRP55C",
+    "CTRP56C",
+    "CTRP89C",
+    "CTRP90C"
+   ],
+   "flagged": [
+    "CTRP53C",
+    "CTRP54C",
+    "CTRP55C",
+    "CTRP56C",
+    "CTRP89C",
+    "CTRP90C"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    29.5,
+    29.5
+   ],
+   "stated": [
+    29.5,
+    29.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Captioning Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 29.5,
+    "max": 29.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Acquire the necessary skills and training to pursue a career as a captionist. Particular emphasis is put on Advanced Vocabulary Development, Dictionary Building, Congressional Record material, multi-voice applications, and Literary style dictation in order to work as a captionist for television programs, conventions, and both live on-air and the delayed realtime delivery of captioned shows, videos, and specific Internet applications. These skills are necessary in order to work as a captionist."
+   ],
+   "careers": [
+    "broadcast captioning",
+    "captionist"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required courses are listed in suggested sequence (29.5 units):",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 29.5,
+     "max": 29.5
+    },
+    "courses": [
+     {
+      "code": "CTRP 085 C",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTRP 090 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CTRP 053 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CTRP 054 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CTRP 055 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CTRP 056 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CTRP 089 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CTRP 096 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTRP 068 C",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTRP 091 C",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTRP 088 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Six required courses (CTRP 090 C, 053 C, 054 C, 055 C, 056 C, 089 C) are not in the closed list and are marked as catalog additions.",
+   "The single program outcome was printed as 'OUTCOME 1:' on the page's outcomes tab; the label was omitted.",
+   "'captionist' was taken from the program outcome text; 'broadcast captioning' from the program description."
+  ]
+ },
+ "extracted_run": "38748866826"
+}

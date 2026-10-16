@@ -370,19 +370,19 @@ function D_names(T) { return H.D.colleges.map((c) => c.college); }
     !Array.from(lane.querySelectorAll("button")).some((b) => b.textContent === "Confirm"));
   check("5g: the note's placeholder names who can read it",
     qd.querySelector("textarea.cplfund-note").getAttribute("placeholder") === "Visible to signed-in reviewers only");
-  // The public preview.
-  T._state.previewPublic = true;
+  // A public rendering.
+  window.CPL_FUNDING_PUBLIC = true;   // a public rendering, as the public page draws it (call 1 retired the tab's preview)
   T.render();
   const pq = openRow(window, doc, "c:" + QUAL);
   const mount = doc.getElementById("cplFundingMount");
-  check("5h: previewing Public, the self-attested institution's drill-in is open, and no Reject, Revoke or Confirm shows",
+  check("5h: on a public rendering, the self-attested institution's drill-in is open, and no Reject, Revoke or Confirm shows",
     !!pq && !mount.querySelector("[data-optinrevoke], [data-optinconfirm], [data-optinremove], [data-optin]"));
   check("5i: …no attester, no CO lane and no CO Monitor's note",
     !!pq && !/Attested by|attester@example\.edu/.test(pq.textContent) && !pq.querySelector(".cplfund-corow") &&
     !mount.querySelector(".cplfund-colane") && !mount.querySelector(".cplfund-notewrap"));
   check("5j: …while its Minimum Conditions line itself still reads",
     !!pq && !!pq.querySelector(".cf-conds .cf-cond"));
-  T._state.previewPublic = false;
+  window.CPL_FUNDING_PUBLIC = false;
   T.render();
   check("5k: back in the internal view, the controls return",
     !!doc.querySelector("#cplFundTable .cf-conds [data-optinrevoke]"));

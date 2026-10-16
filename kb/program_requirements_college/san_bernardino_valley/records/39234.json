@@ -1,0 +1,199 @@
+{
+ "college": "San Bernardino Valley College",
+ "control_number": "39234",
+ "shape": "certificate",
+ "title": "Production",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/ftvm/production-certificate-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7946,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7946,
+    "output_tokens": 1228,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1228,
+  "output_tokens_details": {
+   "thinking_tokens": 445
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05634,
+ "ms": 11197,
+ "seconds": 11.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    12.0,
+    12.0
+   ],
+   "stated": [
+    12.0,
+    12.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Production Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 12,
+    "max": 12
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Qualify for entry-level work in media, television, or film production.",
+    "Have an online portfolio of work to demonstrate entry-level skills.",
+    "Write a resume for entry level employment in media, television, or film production.",
+    "Modify and edit film and media content for distribution."
+   ],
+   "careers": [
+    "film",
+    "tv",
+    "media production"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FTVM 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTVM 122",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTVM 131",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTVM 233",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "FTVM 234",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "FTVM 235",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "FTVM 234 is printed with a space in the catalog; the closed list stores it as 'FTVM234' (no space). Treated as the same course, so catalog_addition is false.",
+   "FTVM 234 and FTVM 235 are printed as 'or' alternatives to FTVM 233 with no units beside them; units left null.",
+   "The catalog titles FTVM 130 'TV Production I' and FTVM 233 'TV Studio Production II', differing from the closed-list titles ('Film and TV Production Basics', 'TV Studio Production').",
+   "The description advises students pursuing the Associates in Media Production to take FTVM 102; this is advice for a different award, not a requirement or recommendation for this certificate, so it is not placed in a block.",
+   "Careers were split from 'career paths in film, tv, and media production' into three entries; a reviewer may prefer treating it as one field."
+  ]
+ },
+ "extracted_run": "38748858322"
+}

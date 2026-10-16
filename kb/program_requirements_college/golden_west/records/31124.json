@@ -1,0 +1,391 @@
+{
+ "college": "Golden West College",
+ "control_number": "31124",
+ "shape": "adt",
+ "title": "Political Science",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.cccd.edu/golden-west/pathways/social-behavioral-sciences/political-science/political-science-associate-aat/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7559,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7559,
+    "output_tokens": 2532,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2532,
+  "output_tokens_details": {
+   "thinking_tokens": 687
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08088,
+ "ms": 19708,
+ "seconds": 20.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 24,
+   "listed": 25,
+   "share": 0.96,
+   "missing": [
+    "ECONG175"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "ECONC2002"
+   ],
+   "flagged": [
+    "ECONC2002"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    21.0
+   ],
+   "stated": [
+    18.0,
+    21.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     52.0,
+     55.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "fill": [
+     5.0,
+     8.0
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 13,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate Degree for Transfer Graduation Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 21
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Examine political science subfields and their relevant theories, concepts, and methodology.",
+    "Analyze domestic and international political institutions, processes, and behavior.",
+    "Apply social science research methods to key political issues.",
+    "Examine factors that shape politics and policymaking including race, ethnicity, gender, class, political culture, political socialization, media, political ideologies, political movements, and publicopinion.",
+    "Assess potential solutions to political and policy problems."
+   ],
+   "careers": [
+    "Domestic and International Governmental Agencies",
+    "Law",
+    "Non-Governmental Agencies",
+    "Campaigns/Elected Positions",
+    "Advocacy (i.e, human rights, environment, consumer rights, labor)",
+    "Business/Multi-national Corporations",
+    "Education",
+    "Domestic and International Intelligence Agencies",
+    "Public Service",
+    "Media / Communication",
+    "Policy Analysis",
+    "Research and Development",
+    "Consulting"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core (Select 3 Courses)",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "POLS C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSCI G181",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ETHS G181",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSCI G150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHIL G150",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSCI G185",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSCI G110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "PSCI G100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000E",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC G140",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC G125",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON G160",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSCI G101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSCI G130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSCI G103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHS G103",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ECON G110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON G130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON G135",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSCI G135",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GLST G102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GLST G130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GLST G150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECON G175",
+    "why": "not in the text; List B prints ECON C2002 Principles of Macroeconomics instead"
+   }
+  ],
+  "notes": [
+   "The page's program heading is cut off in the excerpt; section_heading uses the requirements heading printed on the REQUIREMENTS tab.",
+   "List A also allows 'Any course not selected from Core'; List B also allows 'Any course from above NOT already taken'. These open options are not recorded as separate courses.",
+   "Units for 'or' alternatives are not printed beside them; recorded as null. STAT C1000 is printed at 4 units, which explains the 6-9 range for List A.",
+   "ECON C2002 (Principles of Macroeconomics) is not in the closed list, which has ECON G175 with the same title; likely a renumbering under common course numbering.",
+   "Major Total 18-21, Cal-GETC 34, transferable electives as needed to reach 60, Total Units 60.",
+   "Program learning outcomes are printed for the program page and recorded for this award; 'publicopinion' copied as printed."
+  ]
+ },
+ "extracted_run": "38748828247"
+}

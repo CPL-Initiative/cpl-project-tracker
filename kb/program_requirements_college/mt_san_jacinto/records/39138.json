@@ -1,0 +1,296 @@
+{
+ "college": "Mt. San Jacinto College",
+ "control_number": "39138",
+ "shape": "adt",
+ "title": "Spanish",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.msjc.edu/instructional-programs/world-languages/world-languages-a.a.-t-in-spanish/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10191,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10191,
+    "output_tokens": 1905,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1905,
+  "output_tokens_details": {
+   "thinking_tokens": 663
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07886,
+ "ms": 16163,
+ "seconds": 16.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 14,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    11.0,
+    20.0
+   ],
+   "stated": [
+    19.0,
+    20.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 11.0-20.0; the catalog states 19.0-20.0"
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     45.0,
+     54.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "fill": [
+     6.0,
+     15.0
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Spanish, A.A.-T",
+   "measure": "units",
+   "total_units": {
+    "min": 19,
+    "max": 20
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": true,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Option 1 for Non-Native Speakers",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Required Core Courses",
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "SPAN-101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN-102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN-201",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN-202",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Option 2 for Native Speakers",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Required Core Courses",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "SPAN-203",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN-204",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Select one",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "COMM-C1004",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM-C1004H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "FREN-101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FREN-102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-140",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST-140H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-141",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-142",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The Requirements tab prints no units beside individual courses, so course units are null; the Program Map tab shows SPAN-101/102/201/202/203/204 at 4 units and FREN/HIST courses at 3-4.",
+   "'Choose one of the following options: 16' applies to the core choice. Option 2 (Native Speakers) lists SPAN-203 and SPAN-204 plus 'any 8 units from List A below to clear CORE 16 unit requirement'; that substitution path is not recorded as a separate block, so Option 2's stated is left null.",
+   "Option 1 allows course substitution from List A for students placing out of core courses.",
+   "List A courses must be 'not used above' (i.e., not already used as core substitutions).",
+   "Degree summary: Units for Major 19-20, Cal-GETC Pattern 34, possible double counting 7, transferable electives as needed to reach 60 transferable units; Total Units for A.A.-T Degree: 60.",
+   "No program learning outcomes or careers are printed; the Career Exploration tab has no content in the text."
+  ]
+ },
+ "extracted_run": "38748837644"
+}

@@ -1,0 +1,377 @@
+{
+ "college": "San Bernardino Valley College",
+ "control_number": "41865",
+ "shape": "adt",
+ "title": "Global Studies",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/global-studies/global-studies-aat-degree/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8559,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8559,
+    "output_tokens": 2307,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2307,
+  "output_tokens_details": {
+   "thinking_tokens": 583
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08038,
+ "ms": 17818,
+ "seconds": 18.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 22,
+   "listed": 24,
+   "share": 0.917,
+   "missing": [
+    "ANTHRO102",
+    "ANTHRO102H"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ANTH102",
+    "ANTH102H"
+   ],
+   "flagged": [
+    "ANTH102",
+    "ANTH102H"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    21.0,
+    25.0
+   ],
+   "stated": [
+    21.0,
+    22.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 21.0-25.0; the catalog states 21.0-22.0"
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     68.0,
+     73.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 8,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Global Studies AA-T Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 21,
+    "max": 22
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 13,
+    "max": 14
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Develop an understanding of key concepts in the field of Global Studies and of key processes of globalization related to culture, economics, geography, politics, and history.",
+    "Analyze the interconnectedness of issues facing humans around the world and evaluate global responses."
+   ],
+   "careers": [
+    "international business",
+    "international law",
+    "government",
+    "sustainability",
+    "public health",
+    "development for social justice",
+    "education",
+    "research"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "GLST 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GLST 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A - Five courses from at least four areas below",
+    "rule": "choose_courses",
+    "minimum": 5,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "ANTH 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH 102H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 170",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 171",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GIS 130",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2002H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2001H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 141",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLS 141H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "RELIG 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 103",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SPAN 103H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 104",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 157",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 158",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANTHRO 102",
+    "why": "catalog prints it as ANTH 102 (recorded as printed, flagged as catalog addition)"
+   },
+   {
+    "code": "ANTHRO 102H",
+    "why": "catalog prints it as ANTH 102H (recorded as printed, flagged as catalog addition)"
+   }
+  ],
+  "notes": [
+   "List A requires five courses drawn from at least four of the five areas (Area 1 Culture and Society, Area 2 Geography, Area 3 Economics, Area 4 Politics, Area 5 Humanities); recorded as a single choose_courses block of 5 with the area distribution rule described here.",
+   "List A prints '(15 units)' although Area 5 Spanish courses are 4 units; the major total is printed as 21-22.",
+   "The catalog prints ANTH 102/ANTH 102H while the closed list stores ANTHRO 102/ANTHRO 102H; likely the same courses under a different subject prefix — reviewer should confirm.",
+   "Honors/or alternatives print no units of their own; units left null on alternatives.",
+   "Page also prints 'Total Double-Counted Units 9' (major courses double-counted with Cal-GETC) and 'Elective Units 13-14', recorded as degree_elective_units.",
+   "Program learning outcomes are printed once for the program on the outcomes tab; recorded for this award."
+  ]
+ },
+ "extracted_run": "38748858322"
+}

@@ -1,0 +1,3119 @@
+[
+ {
+  "control_number": "06154",
+  "title": "Business Administration",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.727,
+  "codes_found": [
+   "ACCTG1A",
+   "ACCTG1B",
+   "BUS60",
+   "BUS71",
+   "BUS82",
+   "CIT10",
+   "MATH61",
+   "MATH62"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/business/business-administration-associate-arts/",
+   "title": "Business Administration - Associate in Arts < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3872
+ },
+ {
+  "control_number": "06155",
+  "title": "Accounting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1A",
+   "ACCTG1B",
+   "ACCTG30",
+   "ACCTG62",
+   "ACCTG63",
+   "ACCTG97",
+   "BIS102",
+   "BUS71"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/accounting/accounting-associate-science/",
+   "title": "Accounting - Associate in Science < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3369
+ },
+ {
+  "control_number": "06156",
+  "title": "BIS: General Business",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "06159",
+  "title": "Automotive Technology, Drivetrain & Chassis",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO102",
+   "AUTO103",
+   "AUTO105",
+   "AUTO106",
+   "AUTO119",
+   "AUTO120",
+   "AUTO121",
+   "AUTO122",
+   "AUTO125",
+   "AUTO135",
+   "AUTO138",
+   "AUTO170",
+   "AUTO171",
+   "AUTO173"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/automotive-technology/auto-drivetrain-chassis-associate-science/",
+   "title": "Auto - Drivetrain and Chassis - Associate in Science < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3662
+ },
+ {
+  "control_number": "06160",
+  "title": "CADD Technology (Computer Aided Design & Drafting)",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CADD130",
+   "CADD134",
+   "CADD139",
+   "CADD140A",
+   "CADD140B",
+   "CADD141",
+   "CADD142"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/computer-aided-design-drafting/cadd-computer-aided-drafting-design-cadd-associate-science/",
+   "title": "CADD - Computer Aided Drafting and Design (CADD) - Associate in Science < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 0.833
+   }
+  },
+  "listed": 7,
+  "text_chars": 3358
+ },
+ {
+  "control_number": "06165",
+  "title": "Nursing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL71",
+   "BIOL72",
+   "BIOL74",
+   "ENGLC1000",
+   "NURS10",
+   "NURS11A",
+   "NURS11B",
+   "NURS12",
+   "NURS13",
+   "NURS14A",
+   "NURS14B",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/nursing/nursing-associate-in-science/",
+   "title": "Nursing - Associate in Science < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 4642
+ },
+ {
+  "control_number": "06175",
+  "title": "Administration of Justice",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.658,
+  "codes_found": [
+   "AJ10",
+   "AJ11",
+   "AJ113",
+   "AJ116",
+   "AJ123",
+   "AJ13",
+   "AJ19",
+   "ANTH63",
+   "BUS60",
+   "COMS35",
+   "ETH20",
+   "ETH35",
+   "HIST14",
+   "HIST21",
+   "HIST22",
+   "HIST23",
+   "PHIL65",
+   "POLSC1000",
+   "PSYCH18",
+   "PSYCH27",
+   "PSYCH51",
+   "SOC11",
+   "SOC18",
+   "SOC19",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/graduation-transfer-general-education/general-education-requirements-associate-arts-associate-science/",
+   "title": "General Education Requirements for Associate in Arts and Associate in Science < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 38,
+  "text_chars": 12944
+ },
+ {
+  "control_number": "06181",
+  "title": "Paralegal Studies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LA10",
+   "LA14",
+   "LA16",
+   "LA33",
+   "LA34",
+   "LA36",
+   "LA38",
+   "LA40",
+   "LA44",
+   "LA46",
+   "LA50",
+   "LA71",
+   "LA72"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/legal-assistant/paralegal-studies-associate-science/",
+   "title": "Paralegal Studies - Associate in Science < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3498
+ },
+ {
+  "control_number": "07516",
+  "title": "Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.615,
+  "codes_found": [
+   "CHEM1A",
+   "MATH66",
+   "MATH67",
+   "MATH71",
+   "MATH72",
+   "MATH73",
+   "PHYS7A",
+   "PHYS7B"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/graduation-transfer-general-education/general-education-requirements-associate-arts-associate-science/",
+   "title": "General Education Requirements for Associate in Arts and Associate in Science < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 12661
+ },
+ {
+  "control_number": "10051",
+  "title": "Paralegal Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LA10",
+   "LA14",
+   "LA16",
+   "LA33",
+   "LA34",
+   "LA36",
+   "LA38",
+   "LA40",
+   "LA44",
+   "LA46",
+   "LA50",
+   "LA71",
+   "LA72"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/legal-assistant/paralegal-studies-associate-arts/",
+   "title": "Paralegal Studies - Associate in Arts < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3498
+ },
+ {
+  "control_number": "10385",
+  "title": "Office Administration: Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.957,
+  "codes_found": [
+   "ACCTG101",
+   "BIS101",
+   "BIS102",
+   "BIS12",
+   "BIS135",
+   "BIS16",
+   "BIS160",
+   "BIS161",
+   "BIS162",
+   "BIS17",
+   "BIS7",
+   "BUS4",
+   "BUS6",
+   "BUS60",
+   "BUS84",
+   "BUS9",
+   "CIT10",
+   "CIT134A",
+   "CIT40",
+   "HED10",
+   "JOURN10",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/business-information-systems/office-administration-management-associate-science/",
+   "title": "Office Administration: Management - Associate in Science < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 4047
+ },
+ {
+  "control_number": "10387",
+  "title": "Automotive Electrical-Engine Performance",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO102",
+   "AUTO103",
+   "AUTO118",
+   "AUTO119",
+   "AUTO122",
+   "AUTO125",
+   "AUTO127",
+   "AUTO135",
+   "AUTO138",
+   "AUTO170",
+   "AUTO171",
+   "AUTO173",
+   "AUTO181A",
+   "AUTO181B"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/automotive-technology/auto-electrical-engine-performance-associate-science/",
+   "title": "Auto - Electrical-Engine Performance - Associate in Science < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3702
+ },
+ {
+  "control_number": "12133",
+  "title": "American Honda",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO102",
+   "AUTO103",
+   "AUTO105",
+   "AUTO106",
+   "AUTO119",
+   "AUTO120",
+   "AUTO121",
+   "AUTO122",
+   "AUTO125",
+   "AUTO132A",
+   "AUTO132B",
+   "AUTO132C",
+   "AUTO135",
+   "AUTO170",
+   "AUTO171",
+   "AUTO173"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/automotive-technology/american-honda-certificate-achievement/",
+   "title": "American Honda - Certificate of Achievement < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3566
+ },
+ {
+  "control_number": "13549",
+  "title": "Chemistry",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM12A",
+   "CHEM12B",
+   "CHEM1A",
+   "CHEM1B",
+   "MATH66",
+   "MATH67",
+   "MATH71",
+   "MATH72"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/chemistry/chemistry-associate-arts/",
+   "title": "Chemistry - Associate in Arts < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3692
+ },
+ {
+  "control_number": "13684",
+  "title": "Automotive Foundational Skills",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO102",
+   "AUTO103",
+   "AUTO119",
+   "AUTO170",
+   "AUTO173"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/automotive-technology/automotive-foundational-skills-certificate-of-achievement/",
+   "title": "Automotive Foundational Skills – Certificate of Achievement < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3058
+ },
+ {
+  "control_number": "14149",
+  "title": "Paralegal Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LA10",
+   "LA14",
+   "LA16",
+   "LA33",
+   "LA34",
+   "LA36",
+   "LA38",
+   "LA40",
+   "LA44",
+   "LA46",
+   "LA50",
+   "LA71",
+   "LA72"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/legal-assistant/paralegal-studies-certificate-achievement/",
+   "title": "Paralegal Studies - Certificate of Achievement < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3314
+ },
+ {
+  "control_number": "18692",
+  "title": "General Studies with Emphasis in Astronomy",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASTRO14",
+   "ASTRO16",
+   "ASTRO98",
+   "PHYS7A",
+   "PHYS7B",
+   "PHYS7C"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/physical-science/general-studies-emphasis-astronomy-associate-arts/",
+   "title": "General Studies with Emphasis in Astronomy - Associate in Arts < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3802
+ },
+ {
+  "control_number": "18693",
+  "title": "General Studies: Health Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL71",
+   "BIOL72",
+   "BIOL74",
+   "CHEM15",
+   "CHEM30A"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/biology/general-studies-emphasis-health-science-associate-arts/",
+   "title": "General Studies with Emphasis in Health Science - Associate in Arts < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3480
+ },
+ {
+  "control_number": "18695",
+  "title": "General Studies: Natural Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASTRO10",
+   "ASTRO10L",
+   "BIOL21",
+   "BIOL62",
+   "BIOL63",
+   "BIOL64",
+   "BIOL65",
+   "BIOL80C",
+   "BIOL80D",
+   "BIOL80F",
+   "BIOL80G",
+   "CHEM15",
+   "ENVIR10",
+   "OCEAN10",
+   "PHYS2A"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/biology/general-studies-emphasis-natural-science-associate-arts/",
+   "title": "General Studies with Emphasis in Natural Science - Associate in Arts < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 4141
+ },
+ {
+  "control_number": "18696",
+  "title": "General Studies: Emphasis in Sociology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ETH10",
+   "ETH11",
+   "ETH20",
+   "ETH22",
+   "ETH25",
+   "ETH29",
+   "ETH30",
+   "ETH35",
+   "ETH40",
+   "ETH42",
+   "ETH50",
+   "ETH56",
+   "SOC10",
+   "SOC11",
+   "SOC18",
+   "SOC19",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/sociology/general-studies-emphasis-sociology-associate-arts/",
+   "title": "General Studies with Emphasis in Sociology - Associate in Arts < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 4290
+ },
+ {
+  "control_number": "18991",
+  "title": "Biology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL20",
+   "BIOL4A",
+   "BIOL4B",
+   "BIOL61",
+   "BIOL62",
+   "BIOL63",
+   "BIOL64",
+   "BIOL65",
+   "BIOL71",
+   "BIOL72",
+   "BIOL74",
+   "BIOL80C",
+   "BIOL80D",
+   "BIOL80F",
+   "BIOL80G",
+   "CHEM1A",
+   "CHEM1B",
+   "ENVIR10"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/biology/biology-associate-arts/",
+   "title": "Biology - Associate in Arts < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 4355
+ },
+ {
+  "control_number": "19957",
+  "title": "General Studies with Emphasis in Women and Gender Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "ART97",
+   "EDIT26",
+   "ENGL32",
+   "PSYCH100",
+   "PSYCH25",
+   "PSYCH26",
+   "PSYCH96",
+   "SOC11",
+   "SOC19",
+   "WOMS10"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/womens-studies/general-studies-associate-arts-emphasis-women-gender-studies-associate-arts/",
+   "title": "General Studies with Emphasis in Women and Gender Studies - Associate in Arts < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 4539
+ },
+ {
+  "control_number": "21185",
+  "title": "Bookkeeping",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG101",
+   "ACCTG22",
+   "ACCTG30",
+   "ACCTG95",
+   "BIS102",
+   "BIS7"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/accounting/bookkeeping-certificate-achievement/",
+   "title": "Bookkeeping Certificate of Achievement < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3122
+ },
+ {
+  "control_number": "21189",
+  "title": "Office Assistant",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "ACCTG101",
+   "BIS102",
+   "BIS12",
+   "BIS135",
+   "BIS7"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/business-information-systems/medical-assistant-front-office-certificate-achievement/",
+   "title": "Medical Assistant - Front Office - Certificate of Achievement < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3381
+ },
+ {
+  "control_number": "21190",
+  "title": "Automotive Technology, Drivetrain & Chassis",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO102",
+   "AUTO103",
+   "AUTO105",
+   "AUTO106",
+   "AUTO119",
+   "AUTO120",
+   "AUTO121",
+   "AUTO122",
+   "AUTO125",
+   "AUTO135",
+   "AUTO170",
+   "AUTO171",
+   "AUTO173"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/automotive-technology/auto-drivetrain-chassis-certificate-achievement/",
+   "title": "Auto - Drivetrain and Chassis - Certificate of Achievement < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3516
+ },
+ {
+  "control_number": "21191",
+  "title": "Automotive Technology, Electrical-Engine Performance",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO102",
+   "AUTO103",
+   "AUTO118",
+   "AUTO119",
+   "AUTO122",
+   "AUTO125",
+   "AUTO127",
+   "AUTO135",
+   "AUTO170",
+   "AUTO171",
+   "AUTO173",
+   "AUTO181A",
+   "AUTO181B"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/automotive-technology/auto-electrical-engine-performance-certificate-achievement/",
+   "title": "Auto - Electrical-Engine Performance - Certificate of Achievement < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3504
+ },
+ {
+  "control_number": "30351",
+  "title": "Administration of Justice",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.6,
+  "codes_found": [
+   "AJ10",
+   "AJ11",
+   "AJ113",
+   "AJ116",
+   "AJ123",
+   "AJ13",
+   "AJ19",
+   "BUS60",
+   "PHIL65",
+   "POLSC1000",
+   "PSYCH18",
+   "PSYCH26",
+   "PSYCH27",
+   "PSYCH51",
+   "SOC11",
+   "SOC18",
+   "SOC19",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/graduation-transfer-general-education/general-education-requirements-associate-arts-associate-science/",
+   "title": "General Education Requirements for Associate in Arts and Associate in Science < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 30,
+  "text_chars": 10117
+ },
+ {
+  "control_number": "30571",
+  "title": "Spanish Translation and Interpreting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "TI51",
+   "TI52",
+   "TI53",
+   "TI55",
+   "TI56A",
+   "TI56B",
+   "TI57A",
+   "TI57B"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/world-languages/spanish-translation-interpreting-certificate-achievement/",
+   "title": "Spanish Translation and Interpreting - Certificate of Achievement < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3344
+ },
+ {
+  "control_number": "30668",
+  "title": "Building Information Modeling",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIM120",
+   "BIM121",
+   "BIM122",
+   "BIM123",
+   "BIM124",
+   "BIM125",
+   "BIM138",
+   "CIT10"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/building-information-modeling/building-information-modeling-bim-certificate-achievement/",
+   "title": "Building Information Modeling (BIM) - Certificate of Achievement < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3610
+ },
+ {
+  "control_number": "30854",
+  "title": "Medical Assistant-Front Office",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG101",
+   "BIS102",
+   "BIS135",
+   "BIS16",
+   "BIS160",
+   "BIS161",
+   "BIS7"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/business-information-systems/medical-assistant-front-office-certificate-achievement/",
+   "title": "Medical Assistant - Front Office - Certificate of Achievement < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3381
+ },
+ {
+  "control_number": "30919",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "AJ10",
+   "AJ11",
+   "AJ111",
+   "AJ112",
+   "AJ115",
+   "AJ116",
+   "AJ13",
+   "AJ15",
+   "AJ19",
+   "BUS60",
+   "PSYCC1000",
+   "SOC10",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/graduation-transfer-general-education/identification-numbering-system-c-id/",
+   "title": "Identification Numbering System (C-ID) < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 5773
+ },
+ {
+  "control_number": "30946",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.824,
+  "codes_found": [
+   "ANTH63",
+   "HIST10A",
+   "HIST10B",
+   "HIST21",
+   "HIST22",
+   "HIST23",
+   "HIST35",
+   "HIST3A",
+   "HIST3B",
+   "HIST40",
+   "HIST45",
+   "HIST47",
+   "POLSC1000",
+   "WOMS10"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/history/history-associate-arts-transfer/",
+   "title": "History - Associate in Arts for Transfer < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 4548
+ },
+ {
+  "control_number": "30980",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMSC41",
+   "COMSC75",
+   "MATH66",
+   "MATH67",
+   "MATH70",
+   "MATH71",
+   "MATH72",
+   "MATH73",
+   "MATH78",
+   "MATH79",
+   "PHYS7A",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/mathematics/mathematics-associate-science-transfer/",
+   "title": "Mathematics - Associate in Science for Transfer < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3918
+ },
+ {
+  "control_number": "31559",
+  "title": "Entrepreneurship",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "ACCTG101",
+   "ACCTG30",
+   "BIS101",
+   "BIS109",
+   "BIS135",
+   "BUS4",
+   "BUS6",
+   "BUS84",
+   "BUS9"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/business/entrepreneurship---certificate-of-achievement/",
+   "title": "Entrepreneurship - Certificate of Achievement < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3636
+ },
+ {
+  "control_number": "31718",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "BIOL20",
+   "BIOL21",
+   "BUS60",
+   "ENGLC1001",
+   "PSYCC1000",
+   "PSYCH100",
+   "PSYCH18",
+   "PSYCH25",
+   "PSYCH26",
+   "PSYCH27",
+   "PSYCH30",
+   "PSYCH60",
+   "PSYCH92",
+   "PSYCH99",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/psychology/psychology-associate-arts-transfer/",
+   "title": "Psychology - Associate in Arts for Transfer < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 4310
+ },
+ {
+  "control_number": "32715",
+  "title": "Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH66",
+   "MATH67",
+   "MATH71",
+   "MATH72",
+   "MATH73",
+   "PHYS7A",
+   "PHYS7B",
+   "PHYS7C"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/physics/physics-associate-science-transfer/",
+   "title": "Physics - Associate in Science for Transfer < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3900
+ },
+ {
+  "control_number": "33062",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.941,
+  "codes_found": [
+   "ENGL28",
+   "ENGL32",
+   "ENGL52",
+   "ENGL62",
+   "ENGL72",
+   "ENGL73",
+   "ENGL80",
+   "ENGL82A",
+   "ENGL84A",
+   "ENGL84B",
+   "ENGL86A",
+   "ENGL86B",
+   "ENGLC1001",
+   "HUMNT2",
+   "THEAT20",
+   "VIET1B"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/english/english-associate-arts-transfer/",
+   "title": "English - Associate in Arts for Transfer < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 4342
+ },
+ {
+  "control_number": "35478",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL4A",
+   "BIOL4B",
+   "CHEM1A",
+   "CHEM1B",
+   "MATH66",
+   "MATH71",
+   "PHYS2A",
+   "PHYS2B",
+   "PHYS7A",
+   "PHYS7B"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/biology/biology-associate-science-transfer/",
+   "title": "Biology - Associate in Science for Transfer < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3841
+ },
+ {
+  "control_number": "35621",
+  "title": "Music",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.933,
+  "codes_found": [
+   "MUSIC10A",
+   "MUSIC10B",
+   "MUSIC10C",
+   "MUSIC10D",
+   "MUSIC11A",
+   "MUSIC11B",
+   "MUSIC11C",
+   "MUSIC11D",
+   "MUSIC180",
+   "MUSIC190",
+   "MUSIC20",
+   "MUSIC50A",
+   "MUSIC50B",
+   "MUSIC91"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/music/music-associate-arts-transfer/",
+   "title": "Music - Associate in Arts for Transfer < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3895
+ },
+ {
+  "control_number": "35854",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.867,
+  "codes_found": [
+   "ACCTG1A",
+   "ACCTG1B",
+   "BUS60",
+   "CIT10",
+   "MATH61",
+   "MATH62",
+   "MATH66",
+   "MATH67",
+   "MATH71",
+   "MATH72",
+   "MATH73",
+   "MATH79",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/economics/economics-associate-in-arts-for-transfer/",
+   "title": "Economics - Associate in Arts for Transfer < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 4169
+ },
+ {
+  "control_number": "35890",
+  "title": "Child and Adolescent Development",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH63",
+   "BIOL20",
+   "BIOL21",
+   "BUS60",
+   "FCS19",
+   "FCS70",
+   "HED11",
+   "PSYCC1000",
+   "PSYCH92",
+   "PSYCH96",
+   "SOC10",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/family-consumer-studies/child-and-adolescent-development---associate-in-arts-for-transfer/",
+   "title": "Child and Adolescent Development - Associate in Arts for Transfer < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3920
+ },
+ {
+  "control_number": "36067",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.882,
+  "codes_found": [
+   "ART12",
+   "ART13",
+   "ART14",
+   "ART24",
+   "ART25",
+   "ART26A",
+   "ART35",
+   "ART42",
+   "ART43",
+   "ART55A",
+   "ART60A",
+   "ART60B",
+   "ART66",
+   "ART96",
+   "PHOTO22"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/art/studio-arts-associate-in-arts-for-transfer/",
+   "title": "Studio Arts - Associate in Arts for Transfer < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 4264
+ },
+ {
+  "control_number": "36204",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL71",
+   "BIOL72",
+   "BUS60",
+   "CHEM1A",
+   "CHEM30A",
+   "HED11",
+   "KINS12A",
+   "KINS12B",
+   "KINS22",
+   "KINS23",
+   "KINS25",
+   "KINS34",
+   "KINS37",
+   "KINS38A",
+   "KINS38B",
+   "KINS39A",
+   "KINS43",
+   "KINS47A",
+   "KINS47B",
+   "KINS51A",
+   "KINS51B",
+   "KINS52A",
+   "KINS52B",
+   "KINS52C",
+   "KINS53A",
+   "KINS53B",
+   "KINS54",
+   "KINS55",
+   "KINS56A",
+   "KINS56B",
+   "KINS56C",
+   "KINS70A",
+   "KINS8A",
+   "KINS8B",
+   "KINS9A",
+   "KINS9B",
+   "PHYS2A",
+   "PHYS7A",
+   "PSYCC1000",
+   "SOC10",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/kinesiology/kinesiology-associate-in-arts-for-transfer/",
+   "title": "Kinesiology - Associate in Arts for Transfer < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 41,
+  "text_chars": 5556
+ },
+ {
+  "control_number": "36484",
+  "title": "IGETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 136,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36492",
+  "title": "CSU GE-Breadth",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 199,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36932",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH62",
+   "ANTH62L",
+   "ANTH63",
+   "ANTH64",
+   "ANTH66",
+   "ANTH90",
+   "BIOL71",
+   "BUS60",
+   "COMS35",
+   "ENGL80",
+   "ENGL82A",
+   "ETH10",
+   "ETH20",
+   "ETH30",
+   "ETH35",
+   "ETH40",
+   "ETH42",
+   "GEOG10",
+   "HIST21",
+   "HIST22",
+   "PSYCH18",
+   "PSYCH25",
+   "PSYCH26",
+   "PSYCH51",
+   "SOC10",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/anthropology/anthropology-associate-arts-transfer/",
+   "title": "Anthropology - Associate in Arts for Transfer < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 4554
+ },
+ {
+  "control_number": "36954",
+  "title": "Studio Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.938,
+  "codes_found": [
+   "ART12",
+   "ART13",
+   "ART14",
+   "ART24",
+   "ART25",
+   "ART26A",
+   "ART32",
+   "ART35",
+   "ART38",
+   "ART39",
+   "ART42",
+   "ART43",
+   "ART55A",
+   "ART55B",
+   "ART55C",
+   "ART60A",
+   "ART60B",
+   "ART60C",
+   "ART62A",
+   "ART62B",
+   "ART66",
+   "ART67",
+   "ART68",
+   "ART75",
+   "ART76A",
+   "ART96",
+   "CADD130",
+   "CIT40",
+   "PHOTO22",
+   "PHOTO62"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/art/studio-arts-associate-in-arts/",
+   "title": "Studio Arts - Associate in Arts < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 32,
+  "text_chars": 4987
+ },
+ {
+  "control_number": "38331",
+  "title": "Nutrition and Dietetics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.882,
+  "codes_found": [
+   "BIOL21",
+   "BIOL71",
+   "BIOL72",
+   "BIOL74",
+   "BUS60",
+   "CHEM12A",
+   "CHEM12B",
+   "CHEM1A",
+   "CHEM1B",
+   "CHEM30A",
+   "CHEM30B",
+   "FCS19",
+   "PSYCC1000",
+   "SOC10",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/family-consumer-studies/nutrition-dietetics-associate-science-transfer/",
+   "title": "Nutrition and Dietetics-Associate in Science for Transfer < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 4334
+ },
+ {
+  "control_number": "38958",
+  "title": "Foundational Chemistry",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "CHEM12A",
+   "CHEM12B"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/chemistry/foundational-chemistry-certificate-of-achievement/",
+   "title": "Foundational Chemistry – Certificate of Achievement < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3465
+ },
+ {
+  "control_number": "39129",
+  "title": "Social Justice Studies - Asian American Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ19",
+   "ANTH63",
+   "ART96",
+   "BUS60",
+   "COMS35",
+   "ENGL62",
+   "ETH10",
+   "ETH40",
+   "ETH42",
+   "HIST23",
+   "PSYCH18",
+   "PSYCH51",
+   "SOC10",
+   "STATC1000",
+   "WOMS10"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/ethnic-studies/social-justice-studies-asian-american-studies-associate-in-arts-for-transfer/",
+   "title": "Social Justice Studies-Asian American Studies – Associate in Arts for Transfer < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 4421
+ },
+ {
+  "control_number": "39155",
+  "title": "Chemistry",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM12A",
+   "CHEM12B",
+   "CHEM1A",
+   "CHEM1B",
+   "MATH66",
+   "MATH67",
+   "PHYS7A",
+   "PHYS7B"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/chemistry/chemistry-associate-in-science-for-transfer/",
+   "title": "Chemistry – Associate in Science for Transfer < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3585
+ },
+ {
+  "control_number": "39157",
+  "title": "Social Justice Studies - African American Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ19",
+   "ANTH63",
+   "BUS60",
+   "COMS35",
+   "ENGL82A",
+   "ETH10",
+   "ETH20",
+   "ETH22",
+   "HIST21",
+   "PSYCH18",
+   "PSYCH51",
+   "SOC10",
+   "STATC1000",
+   "WOMS10"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/ethnic-studies/social-justice-studies-african-american-studies-associate-in-arts-for-transfer/",
+   "title": "Social Justice Studies-African American Studies – Associate in Arts for Transfer < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 4301
+ },
+ {
+  "control_number": "39402",
+  "title": "Social Justice Studies - Chicano Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS60",
+   "ENGL80",
+   "ETH10",
+   "ETH30",
+   "ETH35",
+   "HIST22",
+   "PSYCH18",
+   "SOC10",
+   "STATC1000",
+   "WOMS10"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/ethnic-studies/social-justice-studies-chicano-studies-associate-in-arts-for-transfer/",
+   "title": "Social Justice Studies-Chicano Studies – Associate in Arts for Transfer < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 4129
+ },
+ {
+  "control_number": "39416",
+  "title": "Social Justice Studies - Ethnic Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ19",
+   "BUS60",
+   "ETH10",
+   "ETH11",
+   "ETH20",
+   "ETH30",
+   "ETH35",
+   "ETH40",
+   "ETH42",
+   "HIST14",
+   "HIST21",
+   "HIST22",
+   "HIST23",
+   "PSYCH18",
+   "SOC10",
+   "STATC1000",
+   "WOMS10"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/ethnic-studies/social-justice-studies-ethnic-studies-associate-in-arts-for-transfer/",
+   "title": "Social Justice Studies-Ethnic Studies – Associate in Arts for Transfer < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 4628
+ },
+ {
+  "control_number": "39432",
+  "title": "Dance",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DANCE2",
+   "DANCE20",
+   "DANCE21",
+   "DANCE22",
+   "DANCE22B",
+   "DANCE50"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/dance/dance-certificate-of-achievement/",
+   "title": "Dance – Certificate of Achievement < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3462
+ },
+ {
+  "control_number": "40027",
+  "title": "Electric Vehicle Service (Tesla Start)",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO182A",
+   "AUTO182B",
+   "AUTO182C",
+   "AUTO182D"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/automotive-technology/electric-vehicle-service-tesla-start-certificate-of-achievement/",
+   "title": "Electric Vehicle Service (Tesla Start), Certificate of Achievement < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3292
+ },
+ {
+  "control_number": "40038",
+  "title": "Advanced Manufacturing Level I",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MFGT101",
+   "MFGT102",
+   "MFGT103",
+   "MFGT201",
+   "MFGT202",
+   "MFGT203"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/manufacturing-technology/advanced-manufacturing-level-i-certificate-of-achievement/",
+   "title": "Advanced Manufacturing, Level I, Certificate of Achievement < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3409
+ },
+ {
+  "control_number": "40353",
+  "title": "Community Service Officer",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40354",
+  "title": "Automotive Hybrid and Electric Vehicle Service",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO102",
+   "AUTO103",
+   "AUTO105",
+   "AUTO106",
+   "AUTO122",
+   "AUTO125",
+   "AUTO135",
+   "AUTO170",
+   "AUTO181A",
+   "AUTO181B"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/automotive-technology/automotive-hybrid-electric-vehicle-service-certificate-of-achievement/",
+   "title": "Automotive Hybrid and Electric Vehicle Service - Certificate of Achievement < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3478
+ },
+ {
+  "control_number": "40373",
+  "title": "Behavioral Intake and Assessment",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PSYCH52",
+   "PSYCH53",
+   "PSYCH54",
+   "PSYCH55"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/psychology/behavioral-intake-assessment-certificate-achievement/",
+   "title": "Behavioral Intake and Assessment - Certificate of Achievement < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3051
+ },
+ {
+  "control_number": "40692",
+  "title": "Online Teaching and Educational Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EDIT10",
+   "EDIT15",
+   "EDIT22",
+   "EDIT23",
+   "EDIT25",
+   "EDIT26",
+   "EDIT27"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/education-instruction-technology/online-teaching-educational-technology-certificate-achievement/",
+   "title": "Online Teaching and Educational Technology - Certificate of Achievement < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3498
+ },
+ {
+  "control_number": "40755",
+  "title": "Social Justice Studies-Gender Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART97",
+   "BUS60",
+   "ENGL32",
+   "ETH10",
+   "HIST14",
+   "POLSC1000",
+   "PSYCH100",
+   "PSYCH25",
+   "PSYCH26",
+   "PSYCH27",
+   "SOC11",
+   "STATC1000",
+   "WOMS10"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/womens-studies/social-justice-studies-gender-studies-associate-arts-transfer/",
+   "title": "Social Justice Studies-Gender Studies - Associate in Arts for Transfer < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 4440
+ },
+ {
+  "control_number": "40843",
+  "title": "Advanced Taxation",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "ACCTG96A",
+   "ACCTG96B",
+   "ACCTG96C"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/accounting/advanced-taxation-certificate-achievement/",
+   "title": "Advanced Taxation - Certificate of Achievement < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3306
+ },
+ {
+  "control_number": "40874",
+  "title": "Computer Programming",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIT130A",
+   "CIT134A",
+   "CIT41J",
+   "CIT43A",
+   "CIT44"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/computer-information-technology/computer-programming-certificate-achievement/",
+   "title": "Computer Programming - Certificate of Achievement < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3207
+ },
+ {
+  "control_number": "41063",
+  "title": "Water and Wastewater Technology",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WWT100",
+   "WWT101",
+   "WWT102",
+   "WWT103",
+   "WWT104"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/water-wastewater-technology/water-wastewater-technology-certificate-achievement/",
+   "title": "Water and Wastewater Technology - Certificate of Achievement < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3197
+ },
+ {
+  "control_number": "41146",
+  "title": "Computer Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL4A",
+   "COMSC41",
+   "COMSC42",
+   "COMSC75",
+   "COMSC76",
+   "COMSC77",
+   "COMSC80",
+   "MATH66",
+   "MATH67",
+   "MATH71",
+   "MATH72",
+   "PHYS7A",
+   "PHYS7B"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/computer-science/computer-science-associate-science-transfer/",
+   "title": "Computer Science - Associate in Science for Transfer < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 4106
+ },
+ {
+  "control_number": "41627",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "ACCTG1A",
+   "ACCTG1B",
+   "BUS60",
+   "BUS71",
+   "BUS82",
+   "MATH61",
+   "MATH62",
+   "MATH66",
+   "MATH71"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/business/business-administration-2.0-associate-science-transfer/",
+   "title": "Business Administration 2.0 - Associate in Science for Transfer < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 4227
+ },
+ {
+  "control_number": "42282",
+  "title": "Vietnamese Translation & Interpreting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "TI41",
+   "TI42",
+   "TI43",
+   "TI44",
+   "TI45A",
+   "TI45B",
+   "TI46A",
+   "TI46B"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/world-languages/vietnamese-translation-interpreting-certificate-achievement/",
+   "title": "Vietnamese Translation & Interpreting - Certificate of Achievement < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3562
+ },
+ {
+  "control_number": "43161",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "ANTH63",
+   "COMMC1000",
+   "COMS10",
+   "COMS18",
+   "COMS35",
+   "COMS40",
+   "COMS45",
+   "ENGLC1001",
+   "JOURN10",
+   "PSYCC1000",
+   "SOC10"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/communication-studies/communication-studies-2.0-associate-arts-transfer/",
+   "title": "Communication Studies 2.0 – Associate in Arts for Transfer < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 4316
+ },
+ {
+  "control_number": "43162",
+  "title": "Theatre Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEAT2",
+   "THEAT20",
+   "THEAT3",
+   "THEAT33A",
+   "THEAT35A",
+   "THEAT50",
+   "THEAT51",
+   "THEAT52",
+   "THEAT53",
+   "THEAT60"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/theatre-arts/theatre-arts-associate-arts-transfer/",
+   "title": "Theatre Arts – Associate in Arts for Transfer < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 4071
+ },
+ {
+  "control_number": "43163",
+  "title": "Philosophy",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "ENGL28",
+   "ENGLC1001",
+   "ETH10",
+   "HIST10A",
+   "HIST10B",
+   "HUMNT2",
+   "PHIL10",
+   "PHIL30",
+   "PHIL40",
+   "PHIL60",
+   "PHIL65",
+   "PHIL70",
+   "PHIL90"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/philosophy/philosophy-associate-arts-transfer/",
+   "title": "Philosophy – Associate in Arts for Transfer < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 4093
+ },
+ {
+  "control_number": "43641",
+  "title": "Low-Intermediate - Noncredit ESL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL511",
+   "ESL512"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/english-as-a-second-language/low-intermediate-noncredit-esl-certificate-competency/",
+   "title": "English As a Second Language - Low-Intermediate Noncredit ESL, Certificate of Competency < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 3462
+ },
+ {
+  "control_number": "43678",
+  "title": "Community Advocacy and Engagement",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SOC10",
+   "SOC11",
+   "SOC18",
+   "SOC19"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/sociology/community-advocacy-and-engagement-certificate-achievement/",
+   "title": "Community Advocacy and Engagement - Certificate of Achievement < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3069
+ },
+ {
+  "control_number": "43796",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.867,
+  "codes_found": [
+   "AJ10",
+   "ANTH63",
+   "BUS60",
+   "COMS35",
+   "GEOG10",
+   "HIST1",
+   "POLSC1000",
+   "POLSC2",
+   "POLSC3",
+   "POLSC4",
+   "PSYCC1000",
+   "SOC10",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/political-science/political-science-associate-arts-transfer/",
+   "title": "Political Science - Associate in Arts for Transfer < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 4274
+ },
+ {
+  "control_number": "43797",
+  "title": "Intermediate Noncredit ESL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL521",
+   "ESL522"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/english-as-a-second-language/intermediate-noncredit-esl-certificate-competency/",
+   "title": "English As a Second Language - Intermediate Noncredit ESL, Certificate of Competency < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 3427
+ },
+ {
+  "control_number": "44496",
+  "title": "Law, Public Policy, and Society",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.879,
+  "codes_found": [
+   "AJ10",
+   "AJ11",
+   "AJ111",
+   "AJ112",
+   "AJ113",
+   "AJ116",
+   "AJ120",
+   "AJ13",
+   "AJ19",
+   "ANTH63",
+   "BUS60",
+   "BUS71",
+   "COMMC1000",
+   "COMS35",
+   "COMS40",
+   "COMS45",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ETH10",
+   "PHIL65",
+   "PHIL90",
+   "POLSC1000",
+   "POLSC2",
+   "POLSC3",
+   "POLSC4",
+   "SOC11",
+   "SOC18",
+   "SOC19",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/graduation-transfer-general-education/identification-numbering-system-c-id/",
+   "title": "Identification Numbering System (C-ID) < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 33,
+  "text_chars": 5773
+ },
+ {
+  "control_number": "45025",
+  "title": "California General Education Transfer Curriculum (Cal-GETC)",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.94,
+  "codes_found": [
+   "AJ10",
+   "AJ11",
+   "AJ113",
+   "AJ116",
+   "AJ123",
+   "AJ13",
+   "AJ19",
+   "ANTH62",
+   "ANTH62L",
+   "ANTH63",
+   "ANTH64",
+   "ANTH66",
+   "ANTH90",
+   "ART90",
+   "ART93",
+   "ART96",
+   "ART97",
+   "ASTRO10",
+   "ASTRO10L",
+   "ASTRO14",
+   "ASTRO16",
+   "BIOL20",
+   "BIOL21",
+   "BIOL4A",
+   "BIOL4B",
+   "BIOL61",
+   "BIOL62",
+   "BIOL63",
+   "BIOL64",
+   "BIOL65",
+   "BIOL71",
+   "BIOL72",
+   "BIOL74",
+   "BUS60",
+   "CHEM12A",
+   "CHEM12B",
+   "CHEM15",
+   "CHEM1A",
+   "CHEM1B",
+   "CHEM30A",
+   "CHEM30B",
+   "COMMC1000",
+   "COMS35",
+   "COMSC80",
+   "DANCE2",
+   "ENGL28",
+   "ENGL32",
+   "ENGL52",
+   "ENGL62",
+   "ENGL73",
+   "ENGL80",
+   "ENGL84A",
+   "ENGL84B",
+   "ENGL86A",
+   "ENGL86B",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENVIR10",
+   "ETH10",
+   "ETH11",
+   "ETH20",
+   "ETH22",
+   "ETH25",
+   "ETH29",
+   "ETH30",
+   "ETH35",
+   "ETH40",
+   "ETH42",
+   "ETH50",
+   "ETH56",
+   "FCS70",
+   "GEOG10",
+   "HED10",
+   "HIST1",
+   "HIST10A",
+   "HIST10B",
+   "HIST14",
+   "HIST21",
+   "HIST22",
+   "HIST23",
+   "HIST35",
+   "HIST3A",
+   "HIST3B",
+   "HIST40",
+   "HIST45",
+   "HIST47",
+   "HUMNT2",
+   "JOURN10",
+   "MATH20",
+   "MATH21",
+   "MATH25",
+   "MATH61",
+   "MATH62",
+   "MATH66",
+   "MATH67",
+   "MATH70",
+   "MATH71",
+   "MATH72",
+   "MATH73",
+   "MATH78",
+   "MATH79",
+   "MUSIC83",
+   "MUSIC91",
+   "MUSIC93",
+   "OCEAN10",
+   "PHIL10",
+   "PHIL30",
+   "PHIL40",
+   "PHIL65",
+   "PHIL70",
+   "PHYS1",
+   "PHYS2A",
+   "PHYS2B",
+   "PHYS7A",
+   "PHYS7B",
+   "PHYS7C",
+   "PHYSC12",
+   "POLSC1000",
+   "POLSC2",
+   "POLSC3",
+   "POLSC4",
+   "PSYCC1000",
+   "PSYCH100",
+   "PSYCH18",
+   "PSYCH25",
+   "PSYCH26",
+   "PSYCH27",
+   "PSYCH51",
+   "PSYCH92",
+   "PSYCH96",
+   "PSYCH99",
+   "SOC10",
+   "SOC11",
+   "SOC18",
+   "SOC19",
+   "SPAN20A",
+   "SPAN20B",
+   "THEAT20",
+   "THEAT25A",
+   "THEAT40",
+   "VIET1B",
+   "WOMS10"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/graduation-transfer-general-education/california-general-education-transfer-curriculum/",
+   "title": "California General Education Transfer Curriculum (Cal-GETC) < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 151,
+  "text_chars": 12747
+ },
+ {
+  "control_number": "45225",
+  "title": "Engineering Fundamentals 1",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGR10",
+   "ENGR10A",
+   "MATH66",
+   "MATH67",
+   "MATH71",
+   "MATH72",
+   "PHYS7A"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/engineering/engineering-fundamentals-1-certificate-achievement/",
+   "title": "Engineering Fundamentals 1 - Certificate of Achievement < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3228
+ },
+ {
+  "control_number": "45226",
+  "title": "Engineering Fundamentals 2",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMSC41",
+   "COMSC75",
+   "ENGR10",
+   "ENGR10A",
+   "ENGR30",
+   "ENGR50",
+   "ENGR50L",
+   "MATH66",
+   "MATH67",
+   "MATH71",
+   "MATH72",
+   "MATH73",
+   "MATH78",
+   "PHYS7A",
+   "PHYS7B"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/engineering/engineering-fundamentals-2-certificate-achievement/",
+   "title": "Engineering Fundamentals 2 < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3729
+ },
+ {
+  "control_number": "45227",
+  "title": "Mechanical Engineering",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1A",
+   "COMSC41",
+   "COMSC75",
+   "ENGR10",
+   "ENGR10A",
+   "ENGR18",
+   "ENGR50",
+   "ENGR50L",
+   "ENGR66A",
+   "ENGR69",
+   "ENGR71",
+   "MATH66",
+   "MATH67",
+   "MATH71",
+   "MATH72",
+   "MATH73",
+   "MATH78",
+   "PHYS7A",
+   "PHYS7B",
+   "PHYS7C"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/engineering/mechanical-engineering-certificate-achievement/",
+   "title": "Mechanical Engineering - Certificate of Achievement < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 4106
+ },
+ {
+  "control_number": "45231",
+  "title": "Civil Engineering",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1A",
+   "COMSC41",
+   "COMSC75",
+   "ENGR10",
+   "ENGR10A",
+   "ENGR18",
+   "ENGR30",
+   "ENGR50",
+   "ENGR50L",
+   "ENGR61",
+   "ENGR69",
+   "MATH66",
+   "MATH67",
+   "MATH71",
+   "MATH72",
+   "MATH73",
+   "MATH78",
+   "PHYS7A",
+   "PHYS7B"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/engineering/civil-engineering-certificate-achievement/",
+   "title": "Civil Engineering - Certificate of Achievement < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 3967
+ },
+ {
+  "control_number": "45232",
+  "title": "Electrical Engineering",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1A",
+   "COMSC41",
+   "COMSC75",
+   "ENGR10",
+   "ENGR10A",
+   "ENGR30",
+   "ENGR50",
+   "ENGR50L",
+   "ENGR71",
+   "MATH66",
+   "MATH67",
+   "MATH71",
+   "MATH72",
+   "MATH73",
+   "MATH78",
+   "MATH79",
+   "PHYS7A",
+   "PHYS7B",
+   "PHYS7C"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/engineering/electrical-engineering-certificate-achievement/",
+   "title": "Electrical Engineering - Certificate of Achievement < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 4036
+ },
+ {
+  "control_number": "45233",
+  "title": "Computer Engineering",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMSC41",
+   "COMSC42",
+   "COMSC75",
+   "COMSC76",
+   "COMSC80",
+   "ENGR10",
+   "ENGR10A",
+   "ENGR30",
+   "ENGR50",
+   "ENGR50L",
+   "ENGR71",
+   "MATH66",
+   "MATH67",
+   "MATH70",
+   "MATH71",
+   "MATH72",
+   "MATH73",
+   "MATH78",
+   "MATH79",
+   "PHYS7A",
+   "PHYS7B"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/engineering/computer-engineering-certificate-achievement/",
+   "title": "Computer Engineering - Certificate of Achievement < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 4110
+ },
+ {
+  "control_number": "45496",
+  "title": "Business Communications and Marketing Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIS101",
+   "BIS109",
+   "BIS12",
+   "BIS7",
+   "BUS84",
+   "CIT40",
+   "COMS10",
+   "COMS35",
+   "COMS45",
+   "JOURN10",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/business-information-systems/business-communications-and-marketing-certificate-achievement/",
+   "title": "Business Communications and Marketing - Certificate of Achievement < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 0.75
+   }
+  },
+  "listed": 11,
+  "text_chars": 3506
+ },
+ {
+  "control_number": "45783",
+  "title": "Generative AI Entrepreneurship Program",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45784",
+  "title": "Generative AI Application Development Program",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 7,
+  "text_chars": 0
+ },
+ {
+  "control_number": "46137",
+  "title": "LGBTQ+ Studies",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.562,
+  "codes_found": [
+   "ETH10",
+   "ETH20",
+   "ETH25",
+   "ETH29",
+   "ETH30",
+   "ETH35",
+   "ETH40",
+   "ETH42",
+   "ETH56"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/ethnic-studies/",
+   "title": "Ethnic Studies < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.5
+   }
+  },
+  "listed": 16,
+  "text_chars": 11710
+ },
+ {
+  "control_number": "46171",
+  "title": "Professional and Workplace Communication",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "COMS10",
+   "COMS35",
+   "COMS45"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/communication-studies/",
+   "title": "Communication Studies < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.333
+   }
+  },
+  "listed": 6,
+  "text_chars": 5571
+ },
+ {
+  "control_number": "46218",
+  "title": "Biomedical and Biological Engineering",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "ENGR10",
+   "MATH66",
+   "MATH67",
+   "MATH71",
+   "MATH72",
+   "PHYS7A"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/engineering/engineering-associate-arts/",
+   "title": "Engineering - Associate in Arts < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.333
+   }
+  },
+  "listed": 7,
+  "text_chars": 4380
+ },
+ {
+  "control_number": "46219",
+  "title": "Chemical and Materials Engineering",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.737,
+  "codes_found": [
+   "CHEM1A",
+   "COMSC41",
+   "ENGR10",
+   "ENGR10A",
+   "ENGR30",
+   "ENGR50",
+   "ENGR66A",
+   "ENGR69",
+   "MATH66",
+   "MATH67",
+   "MATH71",
+   "MATH78",
+   "PHYS7A",
+   "PHYS7B"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/engineering/",
+   "title": "Engineering < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.333
+   }
+  },
+  "listed": 19,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "46250",
+  "title": "Pathway to Citizenship",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "46262",
+  "title": "Adult Education",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EDIT502",
+   "EDIT503",
+   "EDIT504",
+   "EDIT505"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/education-instruction-technology/",
+   "title": "Educational Instructional Technology < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.5
+   }
+  },
+  "listed": 4,
+  "text_chars": 7360
+ },
+ {
+  "control_number": "46457",
+  "title": "Mathematics 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMSC41",
+   "COMSC75",
+   "MATH66",
+   "MATH67",
+   "MATH71",
+   "MATH72",
+   "MATH73",
+   "MATH78",
+   "MATH79",
+   "PHYS7A"
+  ],
+  "source": {
+   "url": "https://catalog.evc.edu/degrees-certificates/mathematics/mathematics-associate-science-transfer/",
+   "title": "Mathematics - Associate in Science for Transfer < Evergreen Valley College",
+   "h1": "College Catalog",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3918
+ }
+]

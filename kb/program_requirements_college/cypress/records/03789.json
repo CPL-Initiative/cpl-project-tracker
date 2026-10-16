@@ -1,0 +1,377 @@
+{
+ "college": "Cypress College",
+ "control_number": "03789",
+ "shape": "degree",
+ "title": "Radiologic Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/radiologic-technology/radiologic-technology-associate-in-science-degree/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7878,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7878,
+    "output_tokens": 2478,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2478,
+  "output_tokens_details": {
+   "thinking_tokens": 724
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08107,
+ "ms": 19743,
+ "seconds": 20.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 22,
+   "listed": 23,
+   "share": 0.957,
+   "missing": [
+    "RADT262C"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    81.5,
+    82.5
+   ],
+   "stated": [
+    66.5,
+    66.5
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 81.5-82.5; the catalog states 66.5-66.5"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Radiologic Technology Associate in Science Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 66.5,
+    "max": 66.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cypress College Local General Education or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [],
+   "careers": [
+    "radiographers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "PROGRAM PREREQUISITES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "HS 145 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "RADT 145 C",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 210 C",
+      "units": 4,
+      "units_max": 5,
+      "alternatives": [
+       {
+        "code": "BIOL 231 C",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "RADT 142 C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RADT 146 C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "SEMESTER 1",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "RADT 148 C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RADT 150 C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RADT 153 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HS 147 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "RADT 147 C",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "SEMESTER 2",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "RADT 247 C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RADT 251 C",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RADT 162 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RADT 252 C",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RADT 253 C",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "SUMMER INTERSESSION",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 7.5,
+     "max": 7.5
+    },
+    "courses": [
+     {
+      "code": "RADT 254 C",
+      "units": 6.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RADT 196 C",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "SEMESTER 3",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 13,
+     "max": 13
+    },
+    "courses": [
+     {
+      "code": "RADT 255 C",
+      "units": 12,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RADT 197 C",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "SEMESTER 4",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 13,
+     "max": 13
+    },
+    "courses": [
+     {
+      "code": "RADT 256 C",
+      "units": 12,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RADT 198 C",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "RADT 262 C",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The stated major total of 66.5 units equals the sum of the semester blocks (15+18+7.5+13+13); the Program Prerequisites block (15-16 units) appears to be outside that total.",
+   "BIOL 210 C row prints '4-5' for the pair BIOL 210 C or BIOL 231 C; the range likely reflects BIOL 231 C (4) vs BIOL 210 C (5). Alternatives' units are not printed beside them.",
+   "Units for RADT 145 C and RADT 147 C alternatives are not printed beside them.",
+   "Page says electives complete a minimum of 60 units; recorded as electives_fill_degree true; no degree total printed as this award's own total, so degree_total left null.",
+   "A 'Program Goals and Student Learning Objectives' tab heading appears, but no outcomes are printed in the text; outcomes left empty.",
+   "Requirement list item numbering skips (4) in the catalog text."
+  ]
+ },
+ "extracted_run": "38748866826"
+}

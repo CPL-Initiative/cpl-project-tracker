@@ -1,0 +1,162 @@
+{
+ "college": "Moorpark College",
+ "control_number": "39958",
+ "shape": "certificate",
+ "title": "Environmental Engineering Technology",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/engineering/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11979,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11979,
+    "output_tokens": 899,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 899,
+  "output_tokens_details": {
+   "thinking_tokens": 351
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0659,
+ "ms": 12451,
+ "seconds": 12.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 5,
+   "share": 0.0,
+   "missing": [
+    "CHEMM12",
+    "ENGRM33",
+    "ENGRM35",
+    "ENGRM4",
+    "GISM1"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Engineering Courses",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CHEM M12",
+    "why": "program requirements not in text; named only as an advisory in the ENGR M33 course description"
+   },
+   {
+    "code": "ENGR M04",
+    "why": "program requirements not in text; appears only as a course description"
+   },
+   {
+    "code": "ENGR M33",
+    "why": "program requirements not in text; appears only as a course description"
+   },
+   {
+    "code": "ENGR M35",
+    "why": "program requirements not in text; its course description says it is part of the certificate but gives no rule"
+   },
+   {
+    "code": "GIS M01",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied text is the COURSES tab of the Moorpark Engineering page (course descriptions only), cut off mid-entry at ENGR M80. The program requirements section for the Environmental Engineering Technology Certificate of Achievement is not in the text, so no blocks, total, outcomes or careers could be recorded. A reviewer should check the page's PROGRAMS tab or the 2026-2027 catalog PDF.",
+   "ENGR M35's description states: 'This course is part of a Certificate in Environmental Engineering Technology.' This confirms the course belongs to the certificate but gives no requirement rule or units, so it is not placed in a block.",
+   "section_heading records the course-list heading because no program section for this award appears in the text."
+  ]
+ },
+ "extracted_run": "38748862351"
+}

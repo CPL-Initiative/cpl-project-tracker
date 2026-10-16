@@ -1,0 +1,189 @@
+{
+ "college": "Evergreen Valley College",
+ "control_number": "21189",
+ "shape": "certificate",
+ "title": "Office Assistant",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.evc.edu/degrees-certificates/business-information-systems/medical-assistant-front-office-certificate-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7319,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7319,
+    "output_tokens": 1656,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1656,
+  "output_tokens_details": {
+   "thinking_tokens": 629
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0624,
+ "ms": 16765,
+ "seconds": 17.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 10,
+   "share": 0.0,
+   "missing": [
+    "ACCTG101",
+    "BIS101",
+    "BIS102",
+    "BIS109",
+    "BIS12",
+    "BIS135",
+    "BIS7",
+    "BUS6",
+    "BUS60",
+    "CIT10"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "MEDICAL ASSISTANT - FRONT OFFICE - CERTIFICATE OF ACHIEVEMENT",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ACCTG 101",
+    "why": "no Office Assistant section in the text; the page is for the Medical Assistant - Front Office certificate"
+   },
+   {
+    "code": "BIS 101",
+    "why": "not in the text; no Office Assistant section"
+   },
+   {
+    "code": "BIS 102",
+    "why": "no Office Assistant section in the text; the page is for the Medical Assistant - Front Office certificate"
+   },
+   {
+    "code": "BIS 109",
+    "why": "not in the text; no Office Assistant section"
+   },
+   {
+    "code": "BIS 12",
+    "why": "no Office Assistant section in the text; the page is for the Medical Assistant - Front Office certificate"
+   },
+   {
+    "code": "BIS 135",
+    "why": "no Office Assistant section in the text; the page is for the Medical Assistant - Front Office certificate"
+   },
+   {
+    "code": "BIS 7",
+    "why": "no Office Assistant section in the text; the page is for the Medical Assistant - Front Office certificate"
+   },
+   {
+    "code": "BUS 6",
+    "why": "not in the text; no Office Assistant section"
+   },
+   {
+    "code": "BUS 60",
+    "why": "not in the text; no Office Assistant section"
+   },
+   {
+    "code": "CIT 10",
+    "why": "not in the text; no Office Assistant section"
+   }
+  ],
+  "notes": [
+   "The source page is for a different award: 'Medical Assistant - Front Office - Certificate of Achievement', not 'Office Assistant'. The text has no section for the Office Assistant Certificate of Achievement, so no blocks, total, outcomes or careers were recorded for it.",
+   "The page's own requirements (not recorded as blocks, because they belong to the Medical Assistant - Front Office certificate) are: ACCTG 101 3, BIS 007 3, BIS 012 2, BIS 016 2, BIS 017 1, BIS 102 3, BIS 135 3, BIS 138 2, BIS 160 2 or BIS 162, BIS 161 1; Total Units 22.",
+   "Only five of these codes match the closed list: ACCTG 101, BIS 7, BIS 12, BIS 102 and BIS 135. The closed list also names BIS 101, BIS 109, BUS 6, BUS 60 and CIT 10, which the page does not print. This suggests the closed list belongs to a separate Office Assistant program page.",
+   "The page's description names careers ('medical biller', 'patient specialist', 'office assistant') and prints eight program learning outcomes. Both belong to the Medical Assistant - Front Office certificate, so they were not recorded.",
+   "Reviewer: please locate the Office Assistant certificate page in the EVC 2025-2026 catalog and re-run this record against it."
+  ]
+ },
+ "extracted_run": "38748875071"
+}

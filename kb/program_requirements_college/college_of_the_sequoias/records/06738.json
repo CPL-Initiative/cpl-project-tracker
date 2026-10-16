@@ -1,0 +1,249 @@
+{
+ "college": "College of the Sequoias",
+ "control_number": "06738",
+ "shape": "degree",
+ "title": "Drafting Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.cos.edu//areas-study/drafting/associate-science-drafting-technology-not-for-transfer-as/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7509,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7509,
+    "output_tokens": 1607,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1607,
+  "output_tokens_details": {
+   "thinking_tokens": 467
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06218,
+ "ms": 13096,
+ "seconds": 13.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    63.0,
+    63.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    25.0,
+    25.0
+   ],
+   "why": [
+    "the blocks and general education sum to 63.0-63.0; the catalog prints 60.0-60.0 for the degree"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     35.0,
+     35.0
+    ],
+    "stated": [
+     35.0,
+     35.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate of Science in Drafting Technology (AS)",
+   "measure": "units",
+   "total_units": {
+    "min": 35,
+    "max": 35
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 3,
+    "max": 3
+   },
+   "ge_pattern": "College of the Sequoias Associate Degree General Education (COS-GE)",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 25,
+    "max": 25
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Create and analyze documents related to computer-assisted and tactile drafting/design.",
+    "Create and distinguish tactile 2D and 3D visual communication drawings.",
+    "Manage and explain computer operating systems and the World Wide Web.",
+    "Create and distinguish graphic design projects, i.e. illustrations and web page design and development.",
+    "Create and analyze documents related to construction technology, i.e., construction materials and methods, detailing, and construction documents."
+   ],
+   "careers": [
+    "manufacturing or industrial mechanical draftsperson/CAD technician"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED MAJOR COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 35,
+     "max": 35
+    },
+    "courses": [
+     {
+      "code": "ARCH 020",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 160",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 161",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 163",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DRFT 016",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DRFT 017",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DRFT 114",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DRFT 115",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DRFT 204",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GD 100",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints ARCH 020, DRFT 016 and DRFT 017 with leading zeros; treated as the closed-list ARCH 20, DRFT 16 and DRFT 17 (not catalog additions).",
+   "Total 60 recorded as degree_total; REQUIRED MAJOR COURSES 35 recorded as the major total (total_units) and block stated; COS-GE 25 recorded as ge_units.",
+   "ELECTIVES 3 ('Select additional degree applicable courses numbered 1-299 to achieve 60 units') recorded as degree_elective_units since units are printed and they fall outside the major total.",
+   "ARCH 020 is marked as meeting a General Education requirement; 3 units may double count in COS-GE.",
+   "Career text is a single phrase 'manufacturing or industrial mechanical draftsperson/CAD technician'; kept as one entry as printed."
+  ]
+ },
+ "extracted_run": "38748848139"
+}

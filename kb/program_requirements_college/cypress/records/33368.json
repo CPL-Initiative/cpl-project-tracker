@@ -1,0 +1,233 @@
+{
+ "college": "Cypress College",
+ "control_number": "33368",
+ "shape": "certificate",
+ "title": "Hearing Reporter",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/court-reporting/hearing-reporter-certificate/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7307,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7307,
+    "output_tokens": 1251,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1251,
+  "output_tokens_details": {
+   "thinking_tokens": 305
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05425,
+ "ms": 10100,
+ "seconds": 10.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 6,
+   "codes": [
+    "CTRP52C",
+    "CTRP53C",
+    "CTRP54C",
+    "CTRP55C",
+    "CTRP56C",
+    "CTRP90C"
+   ],
+   "flagged": [
+    "CTRP52C",
+    "CTRP53C",
+    "CTRP54C",
+    "CTRP55C",
+    "CTRP56C",
+    "CTRP90C"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    25.0,
+    25.0
+   ],
+   "stated": [
+    25.0,
+    25.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Hearing Reporter Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 25,
+    "max": 25
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Acquire the workforce preparation, abilities, and stenographic skills to record hearings in the state of California working with police departments, the Office of Administrative Hearings, legislative reporting, convention reporting, and related fields. Particular emphasis is put on Jury Charge and Congressional Record practice material. Students may pursue the goal of becoming a licensed hearing reporter in the state of California, or they can work for an agency specializing in hearing reporting without a license. These skills are necessary to work as a hearing reporter."
+   ],
+   "careers": [
+    "convention reporting",
+    "hearing reporting",
+    "police department reporting",
+    "congressional reporting"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required courses are listed in suggested sequence (25 units):",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 25,
+     "max": 25
+    },
+    "courses": [
+     {
+      "code": "CTRP 090 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CTRP 052 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CTRP 053 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CTRP 054 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CTRP 055 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CTRP 056 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CTRP 057 C",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTRP 058 C",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTRP 087 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Six of the nine required courses (CTRP 090 C, 052 C, 053 C, 054 C, 055 C, 056 C) are not in the closed list and are recorded as catalog additions.",
+   "The single outcome was printed with the label 'OUTCOME 1:', which was omitted; the outcome is multi-sentence and recorded as one entry.",
+   "Careers are taken from the program description's list of fields; 'and related fields' was not recorded as a career."
+  ]
+ },
+ "extracted_run": "38748866826"
+}

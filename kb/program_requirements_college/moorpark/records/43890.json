@@ -1,0 +1,403 @@
+{
+ "college": "Moorpark College",
+ "control_number": "43890",
+ "shape": "degree",
+ "title": "Bachelor of Science in Biomanufacturing",
+ "award": "Baccalaureate of Science (B.S.) Degree.",
+ "source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/biomanufacturing-bachelor-degree/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10226,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10226,
+    "output_tokens": 3028,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3028,
+  "output_tokens_details": {
+   "thinking_tokens": 731
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.10146,
+ "ms": 23898,
+ "seconds": 24.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 33,
+   "listed": 33,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    130.0,
+    130.0
+   ],
+   "stated": [
+    120.0,
+    120.0
+   ],
+   "against": "degree",
+   "ge": [
+    34.0,
+    34.0
+   ],
+   "why": [
+    "the blocks and general education sum to 130.0-130.0; the catalog prints 120.0-120.0 for the degree"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     87.0,
+     87.0
+    ],
+    "stated": [
+     87.0,
+     87.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Bachelor of Science in Biomanufacturing",
+   "measure": "units",
+   "total_units": {
+    "min": 87,
+    "max": 87
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 9,
+    "max": 9
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 120,
+    "max": 120
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Analyze two different biomanufacturing processes, including the technical, financial, and environmental impact of the two options as well as the identification of the benefits and disadvantages of each.",
+    "Perform an investigation that requires analysis of an Out of Specification (OOS) deviation that occurred during a production step in the manufacture  of a pharmaceutical protein.",
+    "Demonstrate the ability to apply Quality by Design (QbD) principles  as adopted by the U.S. Food and Drug Administration (FDA) to design a robust, stable, and controlled manufacturing process for a protein pharmaceutical that can be carried out under current Good Manufacturing Practices (cGMPs).",
+    "Produce a written Corrective Action Preventative Action report in a format standard to the industry. The report will include evidence to justify their conclusions and action plan.",
+    "Produce a professional report and presentation representing their opinion regarding the advantages of selecting a specific biomanufacturing process.",
+    "Perform a criticality assessment with a quality risk assessment approach to determine the Critical Process Parameters (CPPs) that would need to be monitored and controlled."
+   ],
+   "careers": [
+    "technical or quality positions in the manufacturing sector of the biotechnology industry"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Major Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 87,
+     "max": 87
+    },
+    "courses": [
+     {
+      "code": "BIOL M02A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL M02AH",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM M01A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM M01AH",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM M01B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MICR M01",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOT M10",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL M13",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOT M02A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL M12A",
+        "units": 2,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOT M02B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL M12B",
+        "units": 2,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOT M02C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL M12C",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOT M02D",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL M12D",
+        "units": 2,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOT M02E",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL M12E",
+        "units": 2,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOT M301",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOT M302",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOT M303",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOT M304",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOT M307",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOT M405",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOT M406",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOT M408",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOT M409",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOT M410",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS M400",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL M300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL M400",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Degree summary table prints: Total Units for Major 87, General Education (Cal-GETC) Pattern 34, Double-Counted Units 10, Elective Units 9, Total Units for the BS Degree 120. The 10 double-counted units (major courses also satisfying GE) are not recorded in any field; 87 + 34 - 10 + 9 = 120.",
+   "The 9 Elective Units are outside the major and counted toward the 120-unit degree total, so they are recorded in degree_elective_units, not open_elective_units.",
+   "Honors alternatives (BIOL M02AH, CHEM M01AH, STAT C1000H) are printed as 'or' rows with no units beside them; their units are left null (the shared row prints 5, 5 and 4 respectively).",
+   "Cross-listed courses printed with a slash (e.g., BIOT M10/BIOL M13) are recorded with the BIOT code as the main entry and the BIOL code as an alternative, both with the units printed on the shared row.",
+   "The program description also refers to upper-division GE requirements; no upper-division GE units are printed separately in the summary table.",
+   "Outcomes are copied as printed, including double spaces in 'manufacture  of' and 'principles  as'. The outcomes list is printed for the program on this page, which offers only the B.S. degree."
+  ]
+ },
+ "extracted_run": "38748862351"
+}

@@ -1,0 +1,2100 @@
+{
+ "college": "Cuyamaca College",
+ "catalog_url": "https://catalog.gcccd.edu/cuyamaca/",
+ "platform": "courseleaf",
+ "catalog_year": "2026-2027",
+ "programs": 186,
+ "with_closed_list": 186,
+ "started": "2026-10-15T14:10:08Z",
+ "scope": null,
+ "sitemap": {
+  "url": "https://catalog.gcccd.edu/sitemap.xml",
+  "status": 200,
+  "listed": 576,
+  "nested": 0,
+  "program_pages": 378,
+  "refused": null,
+  "errors": null
+ },
+ "pages_read": 378,
+ "child_pages": 2,
+ "banner_h1": "Academic Catalog",
+ "loads": 381,
+ "seconds": 1827.5,
+ "found": 182,
+ "by_method": {
+  "page_claimed": 4,
+  "sitemap_page": 182
+ },
+ "shared_pages": {
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/landscape-technology-as-cert-achievement/": [
+   "05047",
+   "21058"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/business/business-administration-as-cert-achievement/": [
+   "05049",
+   "21065"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/accounting/accounting-as-cert-achievement/": [
+   "05050",
+   "21064"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/management-as-cert-achievement/": [
+   "05051",
+   "21066"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/real-estate/real-estate-as-cert-achievement/": [
+   "05053",
+   "21068"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-as-cert-achievement/": [
+   "05057",
+   "21078"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/surveying/surveying-as-cert-achievement/": [
+   "05060",
+   "21081"
+  ],
+  "https://catalog.gcccd.edu//grossmont/associate-degree-programs-certificates/social-behavioral-sciences/child-development-master-teacher-as-cert-achievement/": [
+   "05061",
+   "10418"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/language-communication/english/english-aa-cert-achievement/": [
+   "05062",
+   "21092"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/stem/mathematics/mathematics-as-cert-achievement/": [
+   "05063",
+   "21093"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/golf-course-sports-turf-management-as-cert-achievement/": [
+   "07743",
+   "21061"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/irrigation-technology-as-cert-achievement/": [
+   "07744",
+   "21056"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/nursery-technology-as-cert-achievement/": [
+   "07745",
+   "21060"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/floral-design-as-cert-achievement/": [
+   "07746",
+   "21059"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/business-office-technology/business-office-technology-as-cert-achievement/": [
+   "07747",
+   "21069"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/business/entrepreneurship-small-business-management-as-cert-achievement/": [
+   "07755",
+   "21067"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/visual-performing-arts/graphic-design/graphic-design-as-cert-achievement/": [
+   "07758",
+   "21087"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/visual-performing-arts/art/art-drawing-painting-printmaking-aa/": [
+   "07761",
+   "44628"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-engine-performance-smog-technician-as-cert-achievement/": [
+   "10421",
+   "40953"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-drivetrain-specialist-as-cert-achievement/": [
+   "10422",
+   "41148"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-chassis-specialist-as-cert-achievement/": [
+   "10423",
+   "40878"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-general-motors-asep-as-cert-achievement/": [
+   "11743",
+   "40956"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/arboriculture-as-cert-achievement/": [
+   "12106",
+   "21055"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/landscape-architecture-as-cert-achievement/": [
+   "12108",
+   "21057"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/computer-information-science/web-development-as-cert-achievement/": [
+   "12128",
+   "21072"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/language-communication/spanish/spanish-asa-cert-achievement/": [
+   "12333",
+   "21088"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/business-office-technology/executive-assistant-as-cert-achievement/": [
+   "12505",
+   "21071"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/business-office-technology/administrative-assistant-as-cert-achievement/": [
+   "12506",
+   "21070"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/water-treatment-plant-operations-as-cert-achievement/": [
+   "14479",
+   "21086"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/wastewater-treatment-operations-as-cert-achievement/": [
+   "14480",
+   "21084"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/business/business-general-as-cert-achievement/": [
+   "15248",
+   "21063"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/backflow-cross-connection-control-as-cert-achievement/": [
+   "15518",
+   "21082"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/water-distribution-operations-as-cert-achievement/": [
+   "15699",
+   "21085"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/wastewater-collection-systems-as-cert-achievement/": [
+   "15700",
+   "21083"
+  ],
+  "https://catalog.gcccd.edu//grossmont/associate-degree-programs-certificates/social-behavioral-sciences/university-studies-social-behavioral-sciences-aa/": [
+   "18631",
+   "18637"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/sustainable-urban-landscapes-as-cert-achievement/": [
+   "23055",
+   "23056"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/language-communication/communication/communication-studies-2-transfer-aa-t/": [
+   "30630",
+   "43280"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/water-resources-management-as-cert-achievement/": [
+   "31510",
+   "31902"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/computer-information-science/enterprise-networking-as-cert-achievement/": [
+   "31947",
+   "31948"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/business/business-administration-2-transfer-as-t/": [
+   "32279",
+   "41304"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/stem/physics/physics-2-transfer-as-t/": [
+   "32363",
+   "46552"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/language-communication/arabic-studies-aa-cert-achievement/": [
+   "33663",
+   "33779"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/computer-information-science/enterprise-system-administration-as-cert-achievement/": [
+   "35154",
+   "35165"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/health-science/public-health-transfer-as-t/": [
+   "35522",
+   "44093"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-ascca-as-cert-achievement/": [
+   "36346",
+   "40879"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-service-management-as-cert-achievement/": [
+   "40805",
+   "40813"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-electronics-electric-vehicle-specialist-as-cert-achievement/": [
+   "40933",
+   "41149"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-engine-repair-specialist-as-cert-achievement/": [
+   "40954",
+   "40955"
+  ],
+  "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/advanced-water-treatment-as-cert-achievement/": [
+   "42002",
+   "42003"
+  ]
+ },
+ "not_found": [],
+ "page_claimed": [
+  {
+   "control_number": "05058",
+   "title": "CADD Technology: Building Design Industry",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/cadd-technology/cadd-technology-building-design-industry-as-coa/",
+    "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/cadd-technology/cadd-technology-manufacturing-industry-as-coa/"
+   ]
+  },
+  {
+   "control_number": "15471",
+   "title": "CADD Technology: Manufacturing Industry",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/cadd-technology/cadd-technology-manufacturing-industry-as-coa/",
+    "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/cadd-technology/cadd-technology-building-design-industry-as-coa/",
+    "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/stem/general-studies-science-mathematics/"
+   ]
+  },
+  {
+   "control_number": "18335",
+   "title": "IGETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://catalog.gcccd.edu//cuyamaca/degree-requirements-transfer-information/",
+    "https://catalog.gcccd.edu//grossmont/general-education-transfer/"
+   ]
+  },
+  {
+   "control_number": "45002",
+   "title": "California General Education Transfer Curriculum (Cal-GETC)",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://catalog.gcccd.edu//grossmont/general-education-transfer/",
+    "https://catalog.gcccd.edu//cuyamaca/degree-requirements-transfer-information/"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 10,
+  "0.8-1.0": 15,
+  "1.0": 157
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 182,
+  "list": [
+   {
+    "control_number": "05047",
+    "title": "Landscape Technology",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/landscape-technology-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05048",
+    "title": "Biological Sciences",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/stem/biological-sciences/biological-sciences-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05049",
+    "title": "Business Administration",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/business/business-administration-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05050",
+    "title": "Accounting",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/accounting/accounting-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05051",
+    "title": "Management",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/management-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05053",
+    "title": "Real Estate",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/real-estate/real-estate-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05054",
+    "title": "Exercise Science",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/health-science/kinesiology/exercise-science-as/",
+    "coverage": 0.977,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05055",
+    "title": "Civil Engineering",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/stem/engineering/civil-engineering-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05057",
+    "title": "Automotive Technology",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05060",
+    "title": "Surveying",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/surveying/surveying-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05061",
+    "title": "Preschool Children",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//grossmont/associate-degree-programs-certificates/social-behavioral-sciences/child-development-master-teacher-as-cert-achievement/",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05062",
+    "title": "English",
+    "award": "A.A. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/language-communication/english/english-aa-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05063",
+    "title": "Mathematics",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/stem/mathematics/mathematics-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05067",
+    "title": "Paralegal Studies",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/paralegal-studies-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05068",
+    "title": "Environmental Management",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/environmental-health-safety-management/environmental-management-as/",
+    "coverage": 0.882,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07743",
+    "title": "Golf Course and Sports Turf Management",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/golf-course-sports-turf-management-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07744",
+    "title": "Irrigation Technology",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/irrigation-technology-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07745",
+    "title": "Nursery Technology",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/nursery-technology-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07746",
+    "title": "Floral Design",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/floral-design-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07747",
+    "title": "Business Office Technology",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/business-office-technology/business-office-technology-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07748",
+    "title": "Bookkeeping",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/accounting/bookkeeping-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07750",
+    "title": "Broker's License",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/real-estate/brokers-license-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07751",
+    "title": "Automotive Technology - Ford ASSET",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-ford-asset-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07753",
+    "title": "Occupational Safety and Health (OSH) Management",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/environmental-health-safety-management/occupational-safety-health-management-as/",
+    "coverage": 0.947,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07754",
+    "title": "Chemistry",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/stem/chemistry-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07755",
+    "title": "Entrepreneurship - Small Business Management",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/business/entrepreneurship-small-business-management-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07758",
+    "title": "Graphic Design",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/visual-performing-arts/graphic-design/graphic-design-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07760",
+    "title": "Elementary Education",
+    "award": "A.A. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/elementary-education/elementary-education-aa/",
+    "coverage": 0.976,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07761",
+    "title": "Art-Drawing and Painting",
+    "award": "A.A. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/visual-performing-arts/art/art-drawing-painting-printmaking-aa/",
+    "coverage": 0.64,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07763",
+    "title": "Physics",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/stem/physics/physics-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07764",
+    "title": "History",
+    "award": "A.A. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/culture-people-ideas/history/history-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10418",
+    "title": "Infants and Toddlers",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//grossmont/associate-degree-programs-certificates/social-behavioral-sciences/child-development-master-teacher-as-cert-achievement/",
+    "coverage": 0.625,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10421",
+    "title": "Automotive Technology Engine Performance and Smog Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-engine-performance-smog-technician-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10422",
+    "title": "Automotive Technology Drivetrain Specialist",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-drivetrain-specialist-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10423",
+    "title": "Automotive Technology Chassis Specialist",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-chassis-specialist-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11743",
+    "title": "Automotive Technology – General Motors ASEP",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-general-motors-asep-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12086",
+    "title": "Art-Visual Communication Design",
+    "award": "A.A. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/visual-performing-arts/art/art-visual-communication-design-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12106",
+    "title": "Arboriculture",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/arboriculture-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12108",
+    "title": "Landscape Architecture",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/landscape-architecture-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12128",
+    "title": "Web Development",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/computer-information-science/web-development-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12333",
+    "title": "Spanish",
+    "award": "A.A. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/language-communication/spanish/spanish-asa-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12505",
+    "title": "Business Office Technology: Executive Assistant",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/business-office-technology/executive-assistant-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12506",
+    "title": "Business Office Technology: Administrative Assistant",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/business-office-technology/administrative-assistant-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "14479",
+    "title": "Water Treatment Plant Operations",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/water-treatment-plant-operations-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "14480",
+    "title": "Wastewater Treatment Operations",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/wastewater-treatment-operations-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15248",
+    "title": "Business-General",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/business/business-general-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15518",
+    "title": "Backflow & Cross-Connection Control",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/backflow-cross-connection-control-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15699",
+    "title": "Water Distribution Operations",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/water-distribution-operations-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15700",
+    "title": "Wastewater Collection Systems",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/wastewater-collection-systems-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15701",
+    "title": "Occupational Safety and Health (OSH) Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/environmental-health-safety-management/occupational-safety-health-technician-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15804",
+    "title": "Environmental Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/environmental-health-safety-management/environmental-technician-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16454",
+    "title": "Music Education",
+    "award": "A.A. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/visual-performing-arts/music/music-education-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16499",
+    "title": "Electrical and Computer Engineering",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/stem/engineering/electrical-computer-engineering-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16500",
+    "title": "Mechanical and Aerospace Engineering",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/stem/engineering/mechanical-aerospace-engineering-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16804",
+    "title": "Communication",
+    "award": "A.A. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/language-communication/communication/communication-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17024",
+    "title": "Social Work",
+    "award": "A.A. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/social-work/social-work-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18334",
+    "title": "CSU General Education Breadth",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.gcccd.edu//grossmont/general-education-transfer/",
+    "coverage": 0.839,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18627",
+    "title": "General Studies: Business and Technology",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/general-studies-business-technology/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18628",
+    "title": "General Studies: Communication and Language Arts",
+    "award": "A.A. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/language-communication/general-studies-communication-language-arts/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18629",
+    "title": "General Studies: Humanities and Fine Arts",
+    "award": "A.A. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/culture-people-ideas/general-studies-humanities-fine-arts/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18630",
+    "title": "General Studies: Science and Mathematics",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/stem/general-studies-science-mathematics/",
+    "coverage": 0.986,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18631",
+    "title": "General Studies: Social and Behavioral Sciences",
+    "award": "A.A. Degree",
+    "url": "https://catalog.gcccd.edu//grossmont/associate-degree-programs-certificates/social-behavioral-sciences/university-studies-social-behavioral-sciences-aa/",
+    "coverage": 0.67,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18632",
+    "title": "General Studies: Lifelong Health, Well-Being and Self-Development",
+    "award": "A.A. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/health-science/general-studies-lifelong-health-well-being-self-development/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18633",
+    "title": "University Studies: Business and Economics",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//grossmont/associate-degree-programs-certificates/business/business-administration-as-cert-achievement/",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18634",
+    "title": "University Studies: Communication and Language Arts",
+    "award": "A.A. Degree",
+    "url": "https://catalog.gcccd.edu//grossmont/associate-degree-programs-certificates/language-communication/university-studies-communication-language-arts-aa/",
+    "coverage": 0.63,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18635",
+    "title": "University Studies: Humanities and Fine Arts",
+    "award": "A.A. Degree",
+    "url": "https://catalog.gcccd.edu//grossmont/associate-degree-programs-certificates/humanities/university-studies-humanities-fine-arts-aa/",
+    "coverage": 0.698,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18636",
+    "title": "University Studies: Science and Mathematics",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//grossmont/associate-degree-programs-certificates/stem/university-studies-mathematics-natural-science-computer-science-as/",
+    "coverage": 0.727,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18637",
+    "title": "University Studies: Social and Behavioral Science",
+    "award": "A.A. Degree",
+    "url": "https://catalog.gcccd.edu//grossmont/associate-degree-programs-certificates/social-behavioral-sciences/university-studies-social-behavioral-sciences-aa/",
+    "coverage": 0.696,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18779",
+    "title": "Music Industry Studies",
+    "award": "A.A. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/visual-performing-arts/music/music-industry-studies-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21055",
+    "title": "Arboriculture",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/arboriculture-as-cert-achievement/",
+    "coverage": 0.95,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21056",
+    "title": "Irrigation Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/irrigation-technology-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21057",
+    "title": "Landscape Architecture",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/landscape-architecture-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21058",
+    "title": "Landscape Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/landscape-technology-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21059",
+    "title": "Floral Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/floral-design-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21060",
+    "title": "Nursery Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/nursery-technology-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21061",
+    "title": "Golf Course and Sports Turf Management",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/golf-course-sports-turf-management-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21063",
+    "title": "Business-General",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/business/business-general-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21064",
+    "title": "Accounting",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/accounting/accounting-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21065",
+    "title": "Business Administration",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/business/business-administration-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21066",
+    "title": "Management",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/management-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21067",
+    "title": "Entrepreneurship - Small Business Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/business/entrepreneurship-small-business-management-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21068",
+    "title": "Real Estate",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/real-estate/real-estate-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21069",
+    "title": "Business Office Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/business-office-technology/business-office-technology-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21070",
+    "title": "Business Office Technology: Administrative Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/business-office-technology/administrative-assistant-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21071",
+    "title": "Business Office Technology: Executive Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/business-office-technology/executive-assistant-as-cert-achievement/",
+    "coverage": 0.893,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21072",
+    "title": "Web Development",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/computer-information-science/web-development-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21078",
+    "title": "Automotive Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21079",
+    "title": "CADD Technology: Building Design Industry",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/cadd-technology/cadd-technology-building-design-industry-as-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21080",
+    "title": "CADD Technology: Manufacturing Industry",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/cadd-technology/cadd-technology-manufacturing-industry-as-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21081",
+    "title": "Surveying",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/surveying/surveying-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21082",
+    "title": "Backflow & Cross-Connection Control",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/backflow-cross-connection-control-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21083",
+    "title": "Wastewater Collection Systems",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/wastewater-collection-systems-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21084",
+    "title": "Wastewater Treatment Operations",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/wastewater-treatment-operations-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21085",
+    "title": "Water Distribution Operations",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/water-distribution-operations-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21086",
+    "title": "Water Treatment Plant Operations",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/water-treatment-plant-operations-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21087",
+    "title": "Graphic Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/visual-performing-arts/graphic-design/graphic-design-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21088",
+    "title": "Spanish",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/language-communication/spanish/spanish-asa-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21089",
+    "title": "Preschool Children",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/child-development/preschool-children-as-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21091",
+    "title": "Infants and Toddlers",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/child-development/infants-toddlers-as-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21092",
+    "title": "English",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/language-communication/english/english-aa-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21093",
+    "title": "Mathematics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/stem/mathematics/mathematics-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "23055",
+    "title": "Sustainable Urban Landscapes",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/sustainable-urban-landscapes-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "23056",
+    "title": "Sustainable Urban Landscapes",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/sustainable-urban-landscapes-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30597",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/psychology/psychology-transfer-aa-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30598",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/sociology-transfer-aa-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30630",
+    "title": "Communication Studies",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/language-communication/communication/communication-studies-2-transfer-aa-t/",
+    "coverage": 0.636,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31510",
+    "title": "Water Resources Management",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/water-resources-management-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31562",
+    "title": "American Sign Language",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/language-communication/american-sign-language/american-sign-language-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31902",
+    "title": "Water Resources Management",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/water-resources-management-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31947",
+    "title": "Networking, Security and System Administration - Enterprise Networking",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/computer-information-science/enterprise-networking-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31948",
+    "title": "Networking, Security and System Administration - Enterprise Networking",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/computer-information-science/enterprise-networking-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32239",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/culture-people-ideas/history/history-aa-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32240",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/political-science-transfer-aa-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32264",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/visual-performing-arts/art/studio-arts-transfer-aa-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32274",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/language-communication/english/english-transfer-aa-t/",
+    "coverage": 0.957,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32279",
+    "title": "Business Administration",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/business/business-administration-2-transfer-as-t/",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32290",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/stem/mathematics/mathematics-transfer-as-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32363",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/stem/physics/physics-2-transfer-as-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32384",
+    "title": "Music",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/visual-performing-arts/music/music-transfer-aa-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32465",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/child-development/early-childhood-education-transfer-as-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32831",
+    "title": "Philosophy",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/culture-people-ideas/philosophy-transfer-aa-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32904",
+    "title": "Elementary Teacher Education",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/elementary-education/elementary-teacher-education-transfer-aa-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33151",
+    "title": "Biological Sciences: Pre-Allied Health",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/health-science/biological-sciences-pre-allied-health-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33196",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/language-communication/spanish/spanish-transfer-aa-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33627",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/visual-performing-arts/art/art-history-transfer-aa-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33663",
+    "title": "Arabic Studies",
+    "award": "A.A. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/language-communication/arabic-studies-aa-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33742",
+    "title": "Mechatronics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/computer-science/mechatronics-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33779",
+    "title": "Arabic Studies",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/language-communication/arabic-studies-aa-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33936",
+    "title": "Kumeyaay Studies",
+    "award": "A.A. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/culture-people-ideas/kumeyaay-studies/kumeyaay-studies-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33937",
+    "title": "Kumeyaay Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/culture-people-ideas/kumeyaay-studies/kumeyaay-studies-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35067",
+    "title": "Business Information Worker",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/business-office-technology/business-information-worker-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35154",
+    "title": "Networking, Security and System Administration - Enterprise System Administration",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/computer-information-science/enterprise-system-administration-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35159",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/stem/biological-sciences/biology-transfer-as-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35165",
+    "title": "Networking, Security and System Administration - Enterprise System Administration",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/computer-information-science/enterprise-system-administration-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35446",
+    "title": "Child and Adolescent Development",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/child-development/child-adolescent-development-aa-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35522",
+    "title": "Public Health Science",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/health-science/public-health-transfer-as-t/",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35704",
+    "title": "American Sign Language",
+    "award": "A.A. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/language-communication/american-sign-language/american-sign-language-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35872",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/economics-transfer-aa-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35927",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/anthropology-transfer-aa-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36346",
+    "title": "Automotive Technology - Automotive Service Councils of California ASCCA",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-ascca-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39205",
+    "title": "Environmental Science",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/degree-requirements-transfer-information/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39282",
+    "title": "Marine Biology",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/stem/biological-sciences/marine-biology-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40781",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/computer-science/computer-science-transfer-as-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40805",
+    "title": "Automotive Technology Service Management",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-service-management-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40813",
+    "title": "Automotive Technology Service Management",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-service-management-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40878",
+    "title": "Automotive Technology Chassis Specialist",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-chassis-specialist-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40879",
+    "title": "Automotive Technology - Automotive Service Councils of California ASCCA",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-ascca-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40895",
+    "title": "Ethnic Studies",
+    "award": "A.A. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/ethnic-studies-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40933",
+    "title": "Automotive Technology Electronics and Electric Vehicle Specialist",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-electronics-electric-vehicle-specialist-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40953",
+    "title": "Automotive Technology Engine Performance and Smog Technician",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-engine-performance-smog-technician-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40954",
+    "title": "Automotive Technology Engine Repair Specialist",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-engine-repair-specialist-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40955",
+    "title": "Automotive Technology Engine Repair Specialist",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-engine-repair-specialist-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40956",
+    "title": "Automotive Technology – General Motors ASEP",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-general-motors-asep-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41148",
+    "title": "Automotive Technology Drivetrain Specialist",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-drivetrain-specialist-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41149",
+    "title": "Automotive Technology Electronics and Electric Vehicle Specialist",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-electronics-electric-vehicle-specialist-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41304",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/business/business/business-administration-2-transfer-as-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42002",
+    "title": "Advanced Water Treatment",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/advanced-water-treatment-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42003",
+    "title": "Advanced Water Treatment",
+    "award": "A.S. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/center-water-studies/advanced-water-treatment-as-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42769",
+    "title": "Laboratory Occupational Safety and Health Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/environmental-health-safety-management/laboratory-occupational-safety-and-health-technician-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43135",
+    "title": "Behavioral Training",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/psychology/behavioral-training-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43280",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/language-communication/communication/communication-studies-2-transfer-aa-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43768",
+    "title": "Human Services",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/social-work/human-services-coa/",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44093",
+    "title": "Public Health",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/health-science/public-health-transfer-as-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44606",
+    "title": "Art-Animation",
+    "award": "A.A. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/visual-performing-arts/art/art-animation-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44607",
+    "title": "Art-Illustration, Design, and Digital Arts",
+    "award": "A.A. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/visual-performing-arts/art/art-illustration-design-digital-arts-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44628",
+    "title": "Art-Drawing, Painting, and Printmaking",
+    "award": "A.A. Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/visual-performing-arts/art/art-drawing-painting-printmaking-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44648",
+    "title": "ESL Pathway Behavioral and Social Sciences",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/pre-academic-career-pathways/esl/esl-pathway-behavioral-social-sciences-cert-achievement/",
+    "coverage": 0.938,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44649",
+    "title": "ESL Pathway Business and Professional Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/pre-academic-career-pathways/esl/esl-pathway-business-professional-studies-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44650",
+    "title": "ESL Pathway Culture, People, and Ideas",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/pre-academic-career-pathways/esl/esl-pathway-culture-people-ideas-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44651",
+    "title": "ESL Pathway Environmental and Applied Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/pre-academic-career-pathways/esl/esl-pathway-environmental-applied-technology-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44652",
+    "title": "ESL Pathway Health Sciences",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/pre-academic-career-pathways/esl/esl-pathway-health-sciences-cert-achievement/",
+    "coverage": 0.909,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44653",
+    "title": "ESL Pathway Language and Communication",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/pre-academic-career-pathways/esl/esl-pathway-language-communication-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44654",
+    "title": "ESL Pathway STEM",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/pre-academic-career-pathways/esl/esl-pathway-stem-cert-achievement/",
+    "coverage": 0.938,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44655",
+    "title": "ESL Pathway Visual and Performing Arts",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/pre-academic-career-pathways/esl/esl-pathway-visual-performing-arts-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44687",
+    "title": "Music Education",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/visual-performing-arts/music/music-education-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46289",
+    "title": "Automotive Technology - Maintenance and Light Repair",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/automotive-technology/automotive-technology-maintenance-light-repair-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46327",
+    "title": "Elementary Teacher Education: Integrated Programs",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/elementary-education/elementary-teacher-education-transfer-integrated-programs-aa-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46372",
+    "title": "Floral Design Operations",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/floral-design-operations-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46455",
+    "title": "Creative Writing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/language-communication/english/creative-writing-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46479",
+    "title": "Landscape Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/ornamental-horticulture/landscape-design-cert-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46530",
+    "title": "Mathematics 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/stem/mathematics/mathematics-2-transfer-as-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46552",
+    "title": "Physics 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/stem/physics/physics-2-transfer-as-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "38748833332"
+}

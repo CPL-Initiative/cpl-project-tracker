@@ -1,0 +1,261 @@
+{
+ "college": "Cuyamaca College",
+ "control_number": "18633",
+ "shape": "degree",
+ "title": "University Studies: Business and Economics",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.gcccd.edu//grossmont/associate-degree-programs-certificates/business/business-administration-as-cert-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7156,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7156,
+    "output_tokens": 1610,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1610,
+  "output_tokens_details": {
+   "thinking_tokens": 396
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06082,
+ "ms": 14544,
+ "seconds": 14.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 12,
+   "share": 0.667,
+   "missing": [
+    "BUS110",
+    "CIS110",
+    "ECON110",
+    "MATHC2210"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "CSIS110"
+   ],
+   "flagged": [
+    "CSIS110"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    32.0,
+    32.0
+   ],
+   "stated": [
+    32.0,
+    32.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 12,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate Degree Major Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 32,
+    "max": 32
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate in-depth knowledge and understanding of fundamental business concepts.",
+    "Demonstrate the ability to identify, apply, and integrate functional business knowledge to solve problems in practical business situations involving accounting, law, and general business.",
+    "Demonstrate effective written and oral skills in these areas.",
+    "Demonstrate the ability to identify and resolve moral and ethical business issues."
+   ],
+   "careers": [
+    "Accountant",
+    "Administrative Assistant",
+    "Advertising/Marketing",
+    "Banking",
+    "Budget Analyst",
+    "Business Publications",
+    "Claim Agent",
+    "Computer Operations",
+    "Controller",
+    "Financial Manager",
+    "Insurance Agent",
+    "Lawyer"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Associate Degree Major Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 32,
+     "max": 32
+    },
+    "courses": [
+     {
+      "code": "BUS-120",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS-121",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS-125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS-128",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIS-110",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON-C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON-C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH-178",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT-C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BUS 110",
+    "why": "not in the text"
+   },
+   {
+    "code": "CIS 110",
+    "why": "not in the text; the page prints CSIS-110 (same title), recorded as a catalog addition"
+   },
+   {
+    "code": "ECON 110",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH C2210",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "Source mismatch: the program requested is Cuyamaca College 'University Studies: Business and Economics' A.S., but the source page is Grossmont College's 'Business Administration Associate in Science and Certificate of Achievement'. The record reflects the Grossmont Business Administration A.S. section only; a reviewer should locate the correct Cuyamaca page.",
+   "CSIS-110 'Principles of Information Systems' appears to correspond to closed-list CIS 110 (same title, 4 units) but the code differs, so it is flagged as a catalog addition.",
+   "The page says 'Plus General Education and Elective Requirements' but names no GE pattern and prints no degree total, GE units or elective units.",
+   "Career list footnote markers (1 = Bachelor's Degree or higher required; 2 = Bachelor Degree normally recommended) were removed from the career titles.",
+   "The program learning outcomes are printed once for the page, shared by the A.S. and the Certificate of Achievement."
+  ]
+ },
+ "extracted_run": "38748833332"
+}

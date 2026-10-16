@@ -1,0 +1,417 @@
+{
+ "college": "Golden West College",
+ "control_number": "19436",
+ "shape": "degree",
+ "title": "Liberal Arts: Emphasis in Business and Public Administration",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.cccd.edu/golden-west/pathways/business/liberal-arts/emphasis-bus-pub-aa/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7912,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7912,
+    "output_tokens": 2420,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2420,
+  "output_tokens_details": {
+   "thinking_tokens": 481
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08005,
+ "ms": 17891,
+ "seconds": 18.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 31,
+   "listed": 33,
+   "share": 0.939,
+   "missing": [
+    "ECONG170",
+    "ECONG175"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ECONC2001",
+    "ECONC2002"
+   ],
+   "flagged": [
+    "ECONC2001",
+    "ECONC2002"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     42.0,
+     52.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     34.0
+    ],
+    "why": [],
+    "fill": [
+     8.0,
+     18.0
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Liberal Arts: Emphasis in Business and Public Administration, Associate in Arts Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local or Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 34
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Examine structures of business and technology within the global economy.",
+    "Apply ethical standards to business practices and decisions.",
+    "Develop skills to administer, manage, or lead organizations."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Select a minimum of 18 units from two or more disciplines of the following:",
+    "rule": "choose_units",
+    "minimum": 18,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "ACCT G100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT G101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT G102",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS G100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS G101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS G108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS G121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS G130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS G139",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ G137",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ G140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMST G180",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMST G260",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS G130",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON G110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON G115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON G130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON G135",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MGMT G110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MGMT G111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MGMT G130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MKTG G100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH G140",
+      "units": 4,
+      "units_max": 6,
+      "alternatives": [
+       {
+        "code": "MATH G140S",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": 6,
+      "alternatives": [
+       {
+        "code": "STAT C1000E",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC G140",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC G125",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON G160",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH G180",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH G185",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECON G170",
+    "why": "not in the text; catalog lists ECON C2001 Principles of Microeconomics instead"
+   },
+   {
+    "code": "ECON G175",
+    "why": "not in the text; catalog lists ECON C2002 Principles of Macroeconomics instead"
+   }
+  ],
+  "notes": [
+   "Block requires the 18 units to come from two or more disciplines; this constraint is not captured by the schema.",
+   "ECON C2001 and ECON C2002 (common course numbers) appear in place of closed-list ECON G170 and ECON G175 with the same titles; likely renumbered equivalents.",
+   "Alternatives (BUS G139, MATH G140S, STAT C1000E, PSYC G140, SOC G125, ECON G160) have no units printed beside them; the 4-6 range on the MATH G140 and STAT C1000 rows covers the group.",
+   "Total Units 60 recorded as degree_total; GE Pattern (Local or Cal-GETC) 24-34 as ge_units; electives fill to 60 with no units printed.",
+   "Program Learning Outcomes are printed once on the page for the program; recorded for this A.A. degree."
+  ]
+ },
+ "extracted_run": "38748828247"
+}

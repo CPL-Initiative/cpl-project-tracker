@@ -304,15 +304,17 @@ function mountWords(doc) {
     T._getShared().text && T._getShared().text.elig_intro === "New intro sentence." &&
     T._getShared().eligIntro === undefined);
 
-  // the public preview renders the override with no control
+  // A public rendering renders the override with no control. Drawn the way
+  // the public page's engine draws it (CPL_FUNDING_PUBLIC): since 2026-10-15
+  // (Sam's call 1) the tab's Public page view frames funding-model/ instead.
   T._setShared({ text: { nc_rules: "Custom noncredit rule, for everyone." } });
-  T._state.previewPublic = true;
+  window.CPL_FUNDING_PUBLIC = true;
   T.render();
   const pubBlock = doc.querySelector('.cplfund-prose[data-textblock="nc_rules"]');
   check("the public rendering shows a customized block's text with NO Edit control",
     !!pubBlock && /Custom noncredit rule, for everyone\./.test(pubBlock.textContent) &&
     !doc.querySelector("[data-textedit], [data-textarea]"));
-  T._state.previewPublic = false;
+  window.CPL_FUNDING_PUBLIC = false;
   T._setShared({});
   T.render();
 }
@@ -406,7 +408,10 @@ function mountWords(doc) {
     /\bdraws?\b/i, /\bdrawn\b/i, /\bdraw(ing|-?down)\b/i, /\bunspent\b/i, /\bthe dollars\b/i,
     /\bbaked\b/i, /\bscored\b/i, /\bfalling back\b/i, /\bpin it\b/i, /\bno data yet\b/i,
     /\b(un)?earn(s|ed|ing|ings|able)?\b/i, /\bpric(e|ed|es|ing)\b/i, /\bpremium\b/i]
-    .map((re) => { const m = re.exec(t.replace(/Advancing career attainment[^.]*\./g, "")); return m ? m[0] + " @" + t.slice(Math.max(0, m.index - 40), m.index + 20).replace(/\s+/g, " ") : null; })
+    // "through apportionment" is Sam's word for the seed grant only (2026-10-01,
+    // #1798); since 2026-10-15 its passage shows in My CPL Funding's text.
+    .map((re) => { const m = re.exec(t.replace(/Advancing career attainment[^.]*\./g, "")
+      .replace(/received this funding through apportionment/g, "")); return m ? m[0] + " @" + t.slice(Math.max(0, m.index - 40), m.index + 20).replace(/\s+/g, " ") : null; })
     .filter(Boolean);
   check("no 'pool' / 'money' / 'apportion' / 'pot' / advance / 'draw' / 'unspent' / earn / price in the curate view's rendered text — " +
     (bad.length ? bad.join(" | ") : "clean"), bad.length === 0);

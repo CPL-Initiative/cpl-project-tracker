@@ -19,9 +19,12 @@
 //      what an author types is escaped, on a page every visitor reads.
 //   3. THE SEED IS THE TITLE THE CURATOR SEES. Renaming a section whose house
 //      title is a link must offer its WORDS, on one line, not its markup.
-//   4. HIDING IS PUBLIC-ONLY AND REVERSIBLE. A section held back must still
-//      render for the curator, carrying a word that says so — a control that
-//      makes a section vanish from its own author has no way back.
+//   4. HIDING IS PUBLIC-ONLY AND REVERSIBLE — and since 2026-10-15 (Sam's call
+//      1 on the one public funding page) it lives on the public page itself:
+//      the tab's Public page view frames funding-model/, whose Edit this page
+//      hides a block by its own id. The tab's sections carry no Hide, and a
+//      stale secHidden key still drops a section from a public rendering of
+//      the tab's own sections (asserted in 5 below).
 //   5. THE FOLD STILL WORKS. The controls sit in the body, not the <summary>,
 //      because a button inside a summary is nested interactive content: it
 //      toggles the fold on click and screen readers expose it inconsistently.
@@ -62,13 +65,15 @@ function clickSel(window, doc, sel) {
   // The explainer's text (2026-10-09) is the one curator-only section: it is
   // never public, so it has no Rename or Hide, and it says so by its mark.
   const curatorOnly = Array.from(doc.querySelectorAll(".cplfund-sec[data-curator-only]"));
-  check("signed in, EVERY rendered section carries Rename and a public-visibility word",
+  check("signed in, EVERY rendered section carries Rename, and none a Hide (call 1: hiding lives on the public page)",
     doc.querySelectorAll(".cplfund-sec:not([data-curator-only])").length === nSections &&
     doc.querySelectorAll("[data-secrename]").length === nSections &&
-    doc.querySelectorAll("[data-sechide], [data-secshow]").length === nSections);
-  check("...and the one curator-only section is the explainer's text, with neither control",
-    curatorOnly.length === 1 && curatorOnly[0].getAttribute("data-sec") === "explainer_text" &&
-    !curatorOnly[0].querySelector("[data-secrename], [data-sechide], [data-secshow]"));
+    doc.querySelectorAll("[data-sechide], [data-secshow]").length === 0);
+  // My CPL Funding's text joined it on 2026-10-15 (Sam, call 8): never public either.
+  check("...and the curator-only sections are the explainer's text and My CPL Funding's text, with neither control",
+    curatorOnly.length === 2 &&
+    curatorOnly.map((d) => d.getAttribute("data-sec")).join(",") === "explainer_text,mc_text" &&
+    curatorOnly.every((d) => !d.querySelector("[data-secrename], [data-sechide], [data-secshow]")));
   check("the controls sit in the section BODY, never inside the <summary>",
     !doc.querySelector(".cplfund-sec-sum [data-secrename]") &&
     !doc.querySelector(".cplfund-sec-sum button") &&
@@ -102,25 +107,16 @@ function clickSel(window, doc, sel) {
     !(T._getShared().titles && T._getShared().titles.priorities) &&
     !!head(doc, "priorities") && !!head(doc, "priorities").querySelector("a"));
 
-  // 4 — hide the formula section from the public page.
-  clickSel(window, doc, '[data-sechide="formula"]');
-  check("hiding stores the flag under secHidden.<id>", T._getShared().secHidden && T._getShared().secHidden.formula === true);
-  check("the curator still sees the section, and a word says it is held back",
-    !!sec(doc, "formula") &&
-    /Hidden on the public page/.test(sec(doc, "formula").querySelector("summary").textContent) &&
-    !!doc.querySelector('[data-secshow="formula"]'));
-  T._state.previewPublic = true;
+  // 4 — retired 2026-10-15 (Sam's call 1): the tab's sections carry no Hide;
+  // a curator hides a block on the public page with Edit this page
+  // (tests/funding_page_edit.test.js). A curator-held secHidden key no longer
+  // marks the Internal view either: nothing on it reads that key.
+  T._setShared({ secHidden: { formula: true } });
   T.render();
-  check("on the public rendering the hidden section is gone, and the others remain",
-    !sec(doc, "formula") && !!sec(doc, "about") && !!sec(doc, "college"));
-  check("the public rendering carries no Rename, no Hide and no title input",
-    !doc.querySelector("[data-secrename]") && !doc.querySelector("[data-sechide]") &&
-    !doc.querySelector("[data-secshow]") && !doc.querySelector("[data-sectitle]"));
-  T._state.previewPublic = false;
+  check("a stored secHidden key leaves the Internal view's section as it was, with no word about the public page",
+    !!sec(doc, "formula") && !/Hidden on the public page/.test(sec(doc, "formula").querySelector("summary").textContent));
+  T._setShared({});
   T.render();
-  clickSel(window, doc, '[data-secshow="formula"]');
-  check("Show brings it back and leaves no empty secHidden map behind",
-    !!sec(doc, "formula") && !(T._getShared().secHidden && T._getShared().secHidden.formula));
 }
 
 // 5 — a renamed, hidden section on the standalone public page: the rename

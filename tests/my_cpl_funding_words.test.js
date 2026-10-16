@@ -200,9 +200,11 @@ check("(5) apDate", M._apDate("2026-11-01") === "Nov. 1, 2026" && M._apDate("202
 
 // ── (6) the funding module's side ────────────────────────────────────────────
 const fsrc = fs.readFileSync("cpl_funding.js", "utf8");
+// Since 2026-10-15 (Sam, call 8) the sentence is the house text of the editable
+// passage mc_intro, which the view prints through mcTextHtml.
 check("(6) card 1: the My CPL Funding view's introduction is Sam's sentence",
-  /var ONE_VIEW_INTRO = "My CPL Funding is a summary view of CPL funding and expected outcomes\.";/.test(fsrc) &&
-  /oneView \? '<div class="cplfund-prose dk cplfund-college-intro" data-textblock="college_intro_one"><p>' \+\s*ONE_VIEW_INTRO/.test(fsrc));
+  /key: "mc_intro",[\s\S]{0,120}plain: "My CPL Funding is a summary view of CPL funding and expected outcomes\." \}/.test(fsrc) &&
+  /oneView \? '<div class="cplfund-prose dk cplfund-college-intro" data-textblock="college_intro_one"><p>' \+\s*mcTextHtml\("mc_intro", \{\}\)/.test(fsrc));
 check("(6) the module exports each institution's conditions and the measure key",
   /_conditions: function \(name\)/.test(fsrc) && /metric_src: p\.metric_src \|\| null/.test(fsrc));
 check("(6) the seed status lines name no feed while they load",

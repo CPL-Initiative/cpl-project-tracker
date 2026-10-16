@@ -1,0 +1,356 @@
+{
+ "college": "San Bernardino Valley College",
+ "control_number": "46386",
+ "shape": "degree",
+ "title": "Water Resources Management",
+ "award": "Baccalaureate of Science (B.S.) Degree.",
+ "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/water-supply-technology/wrm-bs-degree/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9063,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9063,
+    "output_tokens": 2584,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2584,
+  "output_tokens_details": {
+   "thinking_tokens": 564
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08793,
+ "ms": 20012,
+ "seconds": 20.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 22,
+   "listed": 22,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    60.0,
+    60.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 9,
+   "courses": 0,
+   "count": 9,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Water Resources Management Bachelor of Science Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 60,
+    "max": 60
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Engage proactively with stakeholders and community decision makers to promote the utility provider as valued, competent, and trustworthy environmental stewards and the water infrastructure as community assets.",
+    "Produce technical documents that respond to the needs of multiple audiences, including international/global audiences of water resources.",
+    "Employ project management processes and analytical tools to achieve a sustainable outcome to regulatory compliance and environmental problems.",
+    "Develop the skills of utilizing information technologies capabilities in water resources management to track performance, identify variability, and manage performance more effectively and precisely.",
+    "Apply key terminology, facts, concepts, principles, historical perspectives and theories to effectively “supply water” and “manage wastewater” infrastructure functions.",
+    "Gain comprehensive knowledge of integrated water resources management with specific emphasis on best practices leading to water sustainability and financial viability.",
+    "Acquire skills to address contemporary issues related to water resources management and understand their societal, economic, and environmental impacts.",
+    "Analyze social justice in the workplace and determine one’s own self-concept based on the dimensions of diversity equity, inclusion, and anti-racism.",
+    "Articulate the core concepts of sustainable management of water resources from local to state to national and global viewpoints."
+   ],
+   "careers": [
+    "Water Supply Utilities",
+    "Water/Wastewater Treatment Plants",
+    "Regulatory Agencies",
+    "Groundwater and Conservation Districts",
+    "Watershed/River Basin Authorities"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "General Education (GE) Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ENGL 300",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GIS 400",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT 300",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Water Resources Management Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "WRM 301",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WRM 302",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WRM 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WRM 315",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WRM 330",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WRM 401",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WRM 402",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WRM 420",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WRM 460",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WRM 495",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WRM 498",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Electives - Select Four Courses",
+    "rule": "choose_courses",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "WRM 320",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WRM 325",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WRM 335",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WRM 340",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WRM 430",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WRM 440",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Culminating Experience Requirement",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "WRM 499A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "WRM 499B",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "ENGL 300, GIS 400 and STAT 300 are printed under 'Required Courses: General Education (GE) Courses' inside the program's own course list and count toward the printed 'Total Units 60'; they are specific required upper-division courses rather than a GE pattern, so they were placed in a block. Reviewer may check this choice.",
+   "'Total Units 60' recorded as total_units: it covers the printed course list (12 GE-labeled + 33 core + 12 electives + 3 culminating = 60) and is not the full baccalaureate total; no lower-division GE pattern or 120-unit degree total is printed on the page.",
+   "Catalog prints WRM codes with a space (e.g., 'WRM 301'); closed list stores them without a space (WRM301). Treated as the same courses.",
+   "WRM 499B is printed as an 'or' alternative to WRM 499A with no units beside it.",
+   "Outcomes are taken from the page's Program Learning Outcomes tab for this B.S. program."
+  ]
+ },
+ "extracted_run": "38748858322"
+}

@@ -1,0 +1,320 @@
+{
+ "college": "Evergreen Valley College",
+ "control_number": "46457",
+ "shape": "adt",
+ "title": "Mathematics 2.0",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.evc.edu/degrees-certificates/mathematics/mathematics-associate-science-transfer/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7401,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7401,
+    "output_tokens": 1853,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1853,
+  "output_tokens_details": {
+   "thinking_tokens": 498
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06666,
+ "ms": 15135,
+ "seconds": 15.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "MATH70",
+    "STATC1000"
+   ],
+   "flagged": [
+    "MATH70",
+    "STATC1000"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    19.0,
+    22.0
+   ],
+   "stated": [
+    19.0,
+    23.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 19.0-22.0; the catalog states 19.0-23.0"
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     53.0,
+     56.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "fill": [
+     4.0,
+     7.0
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "MATHEMATICS - ASSOCIATE IN SCIENCE FOR TRANSFER",
+   "measure": "units",
+   "total_units": {
+    "min": 19,
+    "max": 23
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Develop creative and logical solutions to various abstract and practical problems.",
+    "Use mathematics to model and solve applied problems in engineering and science.",
+    "Demonstrate didactic reasoning to construct elementary proofs to theorems."
+   ],
+   "careers": [
+    "computer programmers",
+    "actuaries",
+    "data analysts",
+    "financial analysts",
+    "operations researchers",
+    "educators"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Option 1",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Core Requirements",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MATH 071",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 072",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 073",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Option 2",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Core Requirements",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MATH 066",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 067",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 073",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Select one course from the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "MATH 078",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 079",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B: Select one course from the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "COMSC 041",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMSC 075",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 070",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS 007A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes with leading zeros (MATH 071, COMSC 041); matched to closed-list codes MATH 71, COMSC 41 etc.",
+   "List A and List B print no units beside individual courses, only a block total of 3; course units left null.",
+   "MATH 070 (Discrete Mathematics) and STAT C1000 (Introduction to Statistics) appear in List B but are not in the closed list; recorded as catalog additions.",
+   "Major total 19-23 taken from the Total Requirements table ('Major Requirements 19-23'); the sentence requiring a minimum of 18 semester units in the major is a generic ADT rule and was not used as the total.",
+   "Total Units 60 recorded as degree_total; Cal-GETC 34 as ge_units; transferable electives 'as needed to complete 60 units' with no units printed, so electives_fill_degree is true.",
+   "Outcomes taken from the page's Program Learning Outcomes tab."
+  ]
+ },
+ "extracted_run": "38748875071"
+}

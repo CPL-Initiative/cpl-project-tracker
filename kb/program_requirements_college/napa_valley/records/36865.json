@@ -1,0 +1,205 @@
+{
+ "college": "Napa Valley College",
+ "control_number": "36865",
+ "shape": "degree",
+ "title": "Ethnic Studies",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.napavalley.edu//getting-your-degree/general-education/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10885,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10885,
+    "output_tokens": 1409,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1409,
+  "output_tokens_details": {
+   "thinking_tokens": 280
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07172,
+ "ms": 12618,
+ "seconds": 13.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 13,
+   "share": 0.0,
+   "missing": [
+    "ANTH150",
+    "COMM126",
+    "ENGL224",
+    "ENGL226",
+    "ETHS112",
+    "ETHS113",
+    "ETHS160",
+    "FILM110",
+    "HIST150",
+    "HIST152",
+    "HUMA151",
+    "MUSI114",
+    "PSYC128"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not found: the text is the Cal-GETC general education page (Area 1 through Area 6), not the Ethnic Studies A.A. Degree section",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANTH 150",
+    "why": "Appears only in the Cal-GETC Area 4 GE list; Ethnic Studies A.A. section not in text"
+   },
+   {
+    "code": "COMM 126",
+    "why": "Appears only in the Cal-GETC Area 4 GE list; Ethnic Studies A.A. section not in text"
+   },
+   {
+    "code": "ENGL 224",
+    "why": "Appears only in the Cal-GETC Area 3B and Area 4 GE lists; Ethnic Studies A.A. section not in text"
+   },
+   {
+    "code": "ENGL 226",
+    "why": "Appears only in the Cal-GETC Area 3B and Area 4 GE lists; Ethnic Studies A.A. section not in text"
+   },
+   {
+    "code": "ETHS 112",
+    "why": "Appears only in the Cal-GETC Area 3B and Area 6 GE lists; Ethnic Studies A.A. section not in text"
+   },
+   {
+    "code": "ETHS 113",
+    "why": "Appears only in the Cal-GETC Area 3B and Area 6 GE lists; Ethnic Studies A.A. section not in text"
+   },
+   {
+    "code": "ETHS 160",
+    "why": "Appears only in the Cal-GETC Area 3B and Area 6 GE lists; Ethnic Studies A.A. section not in text"
+   },
+   {
+    "code": "FILM 110",
+    "why": "Appears only in the Cal-GETC Area 3A GE list; Ethnic Studies A.A. section not in text"
+   },
+   {
+    "code": "HIST 150",
+    "why": "Appears only in the Cal-GETC Area 4 and CSU graduation requirement lists; Ethnic Studies A.A. section not in text"
+   },
+   {
+    "code": "HIST 152",
+    "why": "Appears only in the Cal-GETC Area 4 and CSU graduation requirement lists; Ethnic Studies A.A. section not in text"
+   },
+   {
+    "code": "HUMA 151",
+    "why": "Appears only in the Cal-GETC Area 3B GE list; Ethnic Studies A.A. section not in text"
+   },
+   {
+    "code": "MUSI 114",
+    "why": "Appears only in the Cal-GETC Area 3A GE list; Ethnic Studies A.A. section not in text"
+   },
+   {
+    "code": "PSYC 128",
+    "why": "Appears only in the Cal-GETC Area 4 GE list; Ethnic Studies A.A. section not in text"
+   }
+  ],
+  "notes": [
+   "The source page (getting-your-degree/general-education) is the Cal-GETC general education pattern page, not the Ethnic Studies A.A. Degree program page. No major requirements, totals, outcomes or careers for the Ethnic Studies A.A. are printed, so no blocks were recorded.",
+   "General education courses never go in a block; the closed-list courses appear in the text only within Cal-GETC area lists.",
+   "Reviewer should locate the Ethnic Studies A.A. Degree page in the Napa Valley College 2026-2027 catalog and re-extract."
+  ]
+ },
+ "extracted_run": "38748853261"
+}
