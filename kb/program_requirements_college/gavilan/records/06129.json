@@ -1,0 +1,385 @@
+{
+ "college": "Gavilan College",
+ "control_number": "06129",
+ "shape": "degree",
+ "title": "Theatre Arts: Acting",
+ "award": "A.A. Degree",
+ "source_url": "https://gavilan.curriqunet.com/catalog/iq/4089/4149/4022",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6972,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6972,
+    "output_tokens": 2976,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2976,
+  "output_tokens_details": {
+   "thinking_tokens": 1087
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08741,
+ "ms": 23688,
+ "seconds": 24.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 1,
+   "listed": 1,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 19,
+   "codes": [
+    "CMUN2",
+    "MCTV19",
+    "MUS8A",
+    "MUS8B",
+    "MUS8C",
+    "MUS8D",
+    "THEA1",
+    "THEA11",
+    "THEA12A",
+    "THEA13A",
+    "THEA13B",
+    "THEA13C",
+    "THEA13D",
+    "THEA14",
+    "THEA19",
+    "THEA2A",
+    "THEA2B",
+    "THEA4",
+    "THEA7"
+   ],
+   "flagged": [
+    "CMUN2",
+    "MCTV19",
+    "MUS8A",
+    "MUS8B",
+    "MUS8C",
+    "MUS8D",
+    "THEA1",
+    "THEA11",
+    "THEA12A",
+    "THEA13A",
+    "THEA13B",
+    "THEA13C",
+    "THEA13D",
+    "THEA14",
+    "THEA19",
+    "THEA2A",
+    "THEA2B",
+    "THEA4",
+    "THEA7"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    22.0,
+    30.0
+   ],
+   "stated": [
+    59.0,
+    65.0
+   ],
+   "against": "degree",
+   "ge": [
+    35.0,
+    39.0
+   ],
+   "why": [
+    "'Choose additional units from the courses below to complete the unit minimum requirement' chooses units but names no minimum"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Theatre Arts: Acting AA PROGRAM REQUIREMENTS",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Gavilan College A.A./A.S. general education, or the Cal-GETC pattern",
+   "degree_total": {
+    "min": 59,
+    "max": 65
+   },
+   "ge_units": {
+    "min": 35,
+    "max": 39
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "describe significant movements or genres in theatre history, and to elaborate on their social and cultural significance.",
+    "work effectively in a team, having developed collaboration and teamwork skills through class exercises, assignments and performances.",
+    "articulate the differences in theatrical styles and modes of creation. Students participate in both the organic creative process (in which the students participate in the creation of the performance or play) and the more traditional approaches to theatre and performance using an established or already created text.",
+    "discuss and critique theatrical performances, articulating the playwright’s view and director’s interpretation of the text. Students can evaluate the various technical elements of the production (costume, sets, lights & sound), to determine whether they support or detract from the production and text.",
+    "demonstrate practical knowledge regarding the responsibilities of the different technical and creative jobs related to theatre and theatre production.",
+    "master fundamental concepts and vocabulary relating to acting through class exercises and public performances."
+   ],
+   "careers": [
+    "producers",
+    "actors",
+    "writers",
+    "editors",
+    "directors"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "CORE COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 13,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "THEA 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "THEA 2A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "THEA 12A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "THEA 13A",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "THEA 14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "ADDITIONAL REQUIREMENTS (11 unit minimum)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 11,
+     "max": 11
+    },
+    "courses": [
+     {
+      "code": "THEA 13B",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "THEA 13C",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "THEA 13D",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Choose two of the following four courses",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "THEA 4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CMUN 2",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "THEA 2B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "THEA 12B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA 19",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MCTV 19",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Choose additional units from the courses below to complete the unit minimum requirement",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MUS 8A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS 8B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS 8C",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS 8D",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "THEA 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "THEA 11",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The 'ADDITIONAL REQUIREMENTS (11 unit minimum)' section's stated 11 units covers the whole section (THEA 13B/13C/13D, the choose-two list, and the additional-units list); it is recorded on the first sub-block. THEA 13B, 13C and 13D are listed without a choice rule and are read as required; reviewer should confirm.",
+   "The final choose-units block prints no unit figure; it fills whatever remains of the 11-unit minimum, so minimum is left null.",
+   "No major total is printed; 'Total: 59- 65' is recorded as degree_total. The page says students complete GE 'plus sufficient electives to meet a 60 unit total'.",
+   "The program summary and the single outcomes list appear to describe the Theatre and Television program generally (mentions an A.A. in Television Performance); outcomes are recorded as shared by this award. Careers are taken from the summary's roles (producers, actors, writers, editors, directors).",
+   "THEA 19 and THEA 11 are marked (Historical) in the catalog."
+  ]
+ },
+ "extracted_run": "38948144064"
+}

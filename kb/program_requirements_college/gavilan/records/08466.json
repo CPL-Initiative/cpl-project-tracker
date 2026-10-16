@@ -1,0 +1,483 @@
+{
+ "college": "Gavilan College",
+ "control_number": "08466",
+ "shape": "certificate",
+ "title": "Business: Medical Office Option",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://gavilan.curriqunet.com/catalog/iq/4089/4097/4117",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7791,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7791,
+    "output_tokens": 3310,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3310,
+  "output_tokens_details": {
+   "thinking_tokens": 932
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09736,
+ "ms": 24619,
+ "seconds": 25.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 37,
+   "listed": 39,
+   "share": 0.949,
+   "missing": [
+    "ECONC2001",
+    "ECONC2002"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "CSIS128",
+    "ECON1",
+    "ECON2"
+   ],
+   "flagged": [
+    "CSIS128",
+    "ECON1",
+    "ECON2"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    20.0
+   ],
+   "stated": [
+    18.0,
+    20.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business: Medical Office Option - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 20
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Perform common tasks for the medical office, such as patient record management and billing with common business software, while utilizing common medical terminology."
+   ],
+   "careers": [
+    "medical office assistant",
+    "front office medical assistant",
+    "office manager",
+    "medical receptionist/medical assistant",
+    "administrative medical assistant"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "CORE REQUIREMENT",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "CSIS 1",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIS 2",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "OPTION REQUIREMENTS",
+    "rule": "choose_units",
+    "minimum": 12,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "BOT 180",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BOT 182",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BOT 281",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIS 126",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BOT 283",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "ELECTIVES",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ACCT 20",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 21",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CSIS 120",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CSIS 121",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BOT 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 100",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BOT 212",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BOT 291A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BOT 291B",
+        "units": 1,
+        "catalog_addition": false
+       },
+       {
+        "code": "BOT 291C",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 11",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON 11",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 5",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON 14",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 80",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIS 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DM 6",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIS 8",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIS 75",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DM 75",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIS 122",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIS 126",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIS 128",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CSIS 129",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CMUN 129",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIS 212",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMUN 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECON C2001",
+    "why": "not in the text; catalog lists ECON 2 Principles of Microeconomics instead"
+   },
+   {
+    "code": "ECON C2002",
+    "why": "not in the text; catalog lists ECON 1 Principles of Macroeconomics instead"
+   },
+   {
+    "code": "CSIS126",
+    "why": "duplicate closed-list entry without space; placed as CSIS 126"
+   }
+  ],
+  "notes": [
+   "CSIS 121 in the catalog matched to closed-list entry 'CSIS121' (no space); treated as not a catalog addition.",
+   "ECON 1 (Macroeconomics) and ECON 2 (Microeconomics) are likely the older numbers of ECON C2002 and ECON C2001; recorded as catalog additions.",
+   "OPTION REQUIREMENTS says 'Choose 12 units' but lists exactly four 3-unit choices (CSIS 126 or BOT 283 as one choice), so effectively all are required.",
+   "Electives text says core plus option plus electives equals 18 units; elective block printed 'Units: 4' while the program total is printed as 18-20.",
+   "MATH 5 printed with 4 units in the catalog; the state file stores 3.",
+   "CSIS 126 is marked Historical and appears both in the option requirements (or BOT 283) and in the electives list.",
+   "CSIS 1 printed as 'Computer Literacy'; CSIS 128 Database - MS Access (Historical) not in closed list."
+  ]
+ },
+ "extracted_run": "38948144064"
+}

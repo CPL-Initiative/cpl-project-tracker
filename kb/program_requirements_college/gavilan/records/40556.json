@@ -1,0 +1,168 @@
+{
+ "college": "Gavilan College",
+ "control_number": "40556",
+ "shape": "noncredit",
+ "title": "Workforce Preparation and Success",
+ "award": "Noncredit program",
+ "source_url": "https://gavilan.curriqunet.com/catalog/iq/4089/4108/4250",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6387,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6387,
+    "output_tokens": 822,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 822,
+  "output_tokens_details": {
+   "thinking_tokens": 252
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04199,
+ "ms": 7688,
+ "seconds": 8.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    6.0,
+    20.0
+   ],
+   "stated": [
+    6.0,
+    20.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Workforce Preparation and Success - Noncredit Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 6,
+    "max": 20
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will develop a resume, cover letter, and other workplace communication documents.",
+    "Students will be able to identify and assess their career and personal goals, strengths, interests and abilities through a culturally diverse lens."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "non credit workforce prog req",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 20
+    },
+    "courses": [
+     {
+      "code": "LIFE 700",
+      "units": 3,
+      "units_max": 10,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIFE 701",
+      "units": 3,
+      "units_max": 10,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints '3- 10' beside each course and 'Total: 6- 20' without naming the measure. Because this is a noncredit certificate and the courses carry 0.0 units, these figures were read as hours. A reviewer should confirm the measure.",
+   "The course descriptions list '1.0 - 10.0 Lab' for each course, which differs from the 3-10 figure in the requirements table. The requirements-table figures were recorded.",
+   "No careers or job titles are named. The description refers only generally to obtaining and retaining employment.",
+   "The block name is the internal label printed on the page ('non credit workforce prog req')."
+  ]
+ },
+ "extracted_run": "38948144064"
+}

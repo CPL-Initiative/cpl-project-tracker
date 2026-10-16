@@ -1,8 +1,8 @@
 {
- "_what": "MAP's credit recommendations per course at the harvest's fifty-five colleges (the pilot's five, Santa Monica, Irvine Valley, Moreno Valley, Norco, Long Beach City, Chaffey, San Diego City, San Diego Mesa, Bakersfield, Coastline, Cabrillo, Modesto Junior, Palo Verde, Southwestern, Fresno City, El Camino, San Joaquin Delta, Santa Barbara City, Orange Coast, Foothill, Sierra, Fullerton, Citrus, Victor Valley, Monterey Peninsula, Golden West, Cuyamaca, Mt. San Jacinto, MiraCosta, College of the Sequoias, Napa Valley, San Bernardino Valley, Moorpark, Cypress, Evergreen Valley, Ventura, Oxnard, Santa Ana, Rio Hondo, Palomar, Saddleback, Allan Hancock, Reedley, Chabot, College of Alameda, Feather River, Imperial Valley, Laney, Las Positas and Madera): how many credit recommendations and exhibits MAP holds against each course code, and the exhibit titles behind them. Counts and credential titles only; no student column is read or carried. The ROEP display builder (kb/_build_roep_display.py) reads it as the 'articulated here' kind beside the CER's industry-credential lines.",
+ "_what": "MAP's credit recommendations per course at the harvest's fifty-eight colleges (the pilot's five, Santa Monica, Irvine Valley, Moreno Valley, Norco, Long Beach City, Chaffey, San Diego City, San Diego Mesa, Bakersfield, Coastline, Cabrillo, Modesto Junior, Palo Verde, Southwestern, Fresno City, El Camino, San Joaquin Delta, Santa Barbara City, Orange Coast, Foothill, Sierra, Fullerton, Citrus, Victor Valley, Monterey Peninsula, Golden West, Cuyamaca, Mt. San Jacinto, MiraCosta, College of the Sequoias, Napa Valley, San Bernardino Valley, Moorpark, Cypress, Evergreen Valley, Ventura, Oxnard, Santa Ana, Rio Hondo, Palomar, Saddleback, Allan Hancock, Reedley, Chabot, College of Alameda, Feather River, Imperial Valley, Laney, Las Positas, Madera, Merritt, Berkeley City and Gavilan): how many credit recommendations and exhibits MAP holds against each course code, and the exhibit titles behind them. Counts and credential titles only; no student column is read or carried. The ROEP display builder (kb/_build_roep_display.py) reads it as the 'articulated here' kind beside the CER's industry-credential lines.",
  "_source": "public.map_college_cr_unit (reviewer-gated) joined to map_colleges by college_id; exhibit titles from map_ace_exhibit_titles, else chatbox_exhibits. A college_course string naming several courses ('ADJ-13 ...(3.0), ADJ-19 ...(3.0)') counts toward each course it names. Course code = the SUBJ-NUM token with the hyphen read as a space.",
  "_read_at": "2026-10-16",
- "_read_by": "SkyRowan (S399) through the Supabase MCP, wave 5: Laney (7 course codes; md5 2b0dacf8 counts, 70f4d0f9 titles), Madera (4; 6ae2737b, cb29a40d), Las Positas (3; 43b0da84, bb8ede61); College of Alameda, Feather River and Imperial Valley (none: their few college_course strings name no SUBJ-NUM code) added, each matched in SQL after its load. SkyJacaranda (S396) through the Supabase MCP, wave 4: Santa Ana (83 course codes; md5 8cc90680 counts, 51ec66e8 titles, 05f6a23e exhibits by source), Reedley (24; 10515015, ed3bf609, d817484a), Ventura (4; 959aa3a8, b7841475, 74b4ac39), Allan Hancock (3; f784b555, 456ddf45, f07e8cd7), Oxnard (2; e3758fea, e3fdf5c4, 685d8c10); Rio Hondo, Palomar, Saddleback and Chabot (none: their few college_course strings name no SUBJ-NUM code) added, each matched in SQL ahead of its load. SkyHawthorn (S395) through the Supabase MCP, wave 3: Cypress (41 course codes; md5 f23dc34b counts, 09bded16 titles), Napa Valley (25; 46024a39, 1cb28039), San Bernardino Valley (83; f18f1313, 4e38c8e4), Moorpark (4; 61571f0e, 0064e895), College of the Sequoias (3; 80563542, 0bba198e), Evergreen Valley (2; d32576cf, 0540a44c); Golden West, Cuyamaca, Mt. San Jacinto and MiraCosta (none) added. SkyMadrone (S394) through the Supabase MCP, second batch: Fullerton (6 course codes; md5 057fed7f counts, 11d31a76 titles), Monterey Peninsula (3; eb85fce8, 1794bde6), Citrus and Victor Valley (none) added. SkyMadrone (S394) through the Supabase MCP: Santa Barbara City, Orange Coast, Foothill and Sierra added; MAP names no course code at any of the four (map_college_cr_unit rows carry no SUBJ-NUM college_course there). Fullerton (6 course codes; md5 057fed7f counts, 11d31a76 titles) and Diablo Valley (2; 0daebf68, f20f5e51) were read the same day, matched in SQL, and are held until their records load. Earlier: SkyTamarack (S392) through the Supabase MCP: El Camino (no course code: its one college_course reads \"-\") and San Joaquin Delta (1 course code; md5 c814004d counts, d7d7ab68 titles; its \"CSU GE E\" line names no course) added. Earlier: SkyPersimmon (S389) through the Supabase MCP: Southwestern (3 course codes; md5 220de7f7 counts, b4f52863 titles) and Fresno City (2; afd80e74, 6b4b8433) added. Earlier: SkyHazel (S385) through the Supabase MCP: Modesto Junior (162 course codes) and Palo Verde (58) added; the per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads 44f69ec1a24823e14935781dbd760bd8 and 4acabc5730dedeb1e0f28194796eb23c, and the md5 over each code's titles (code#title#source#recs, in the read's order) 30765bf9ceef64b44a2e862b58111469 and 83bbe816ab4eb109b72be382c170d47a, in SQL and over the filed rows. Earlier: SkySpruce (S383) through the Supabase MCP: Cabrillo added (112 course codes); the per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads 51b488541fdab60ea9e4d093eb052c0a and the md5 over each code's titles (code#title#source#recs, in the read's order) d71fa73bd6952487451eaeafb878f3eb, in SQL and over the filed rows. Earlier: SkyRowan (S381) through the Supabase MCP: Bakersfield (100 course codes) and Coastline (26) added; per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads c58de704f09a7b58007336979431dace and 8bccde4ad1bae0d610b6de34413e24e9 in SQL and over the filed rows. Earlier: SkyCypress (S373) through the Supabase MCP: San Diego Mesa added (44 course codes); the per-college md5 over code|recs|exhibits|untitled reads 9ad02bf038663b2c19ac0c6b8aed2574 and the md5 over each code's titles (title#source#recs, in the read's order) 38e86115426ffd0ca2856d3ad6713150, in SQL and over the filed rows. Earlier: SkyLaurel (S369) through the Supabase MCP: Chaffey (94 course codes) and San Diego City (33) added; per-college md5 over code|recs|exhibits|untitled reads 115340c8a405300f47c2bd0223964f68 and 249410c6592148fbf3beb7b68b7f1cd0 in SQL and over the filed rows. Earlier: SkyCedar (S363) through the Supabase MCP: Long Beach City added (33 course codes; the per-course fingerprint over code, recs, exhibits, untitled exhibits and titles reads 5c7d3a90393e710daa4f686a2f56c917 in SQL and over the filed rows). Earlier: SkyFern (S358) through the Supabase MCP: Moreno Valley (106 course codes) and Norco (82) added; Riverside City re-read in full and equal to the 2026-10-06 read on all 34 codes (md5 feff937a5b5c8320029a06ab06a97243). Earlier: SkyLedger (S340) through the Supabase MCP. Santa Monica and Irvine Valley were read in full. The pilot's five were proved against the 2026-10-04 read by a fingerprint per course; the four courses that differed (Riverside MAG 51; West LA AVIATEK 002, 005 and 017: one exhibit title each, and one credit recommendation fewer on AVIATEK 002) were re-read. Every college's fingerprint matches the live read.",
+ "_read_by": "SkyBirch (S400) through the Supabase MCP, wave 5's second half: Merritt (25 course codes; md5 ff9ac653 counts, 61638b16 titles), Berkeley City (3; c31979ed, 6a4bcd9a), Gavilan (3; 7766ec6e, 75d342d1) added, each matched in SQL (two CTEs, counts and titles) and over the filed rows after its load; Butte (none: its map_college_cr_unit rows name no college_course) held until its records load. SkyRowan (S399) through the Supabase MCP, wave 5: Laney (7 course codes; md5 2b0dacf8 counts, 70f4d0f9 titles), Madera (4; 6ae2737b, cb29a40d), Las Positas (3; 43b0da84, bb8ede61); College of Alameda, Feather River and Imperial Valley (none: their few college_course strings name no SUBJ-NUM code) added, each matched in SQL after its load. SkyJacaranda (S396) through the Supabase MCP, wave 4: Santa Ana (83 course codes; md5 8cc90680 counts, 51ec66e8 titles, 05f6a23e exhibits by source), Reedley (24; 10515015, ed3bf609, d817484a), Ventura (4; 959aa3a8, b7841475, 74b4ac39), Allan Hancock (3; f784b555, 456ddf45, f07e8cd7), Oxnard (2; e3758fea, e3fdf5c4, 685d8c10); Rio Hondo, Palomar, Saddleback and Chabot (none: their few college_course strings name no SUBJ-NUM code) added, each matched in SQL ahead of its load. SkyHawthorn (S395) through the Supabase MCP, wave 3: Cypress (41 course codes; md5 f23dc34b counts, 09bded16 titles), Napa Valley (25; 46024a39, 1cb28039), San Bernardino Valley (83; f18f1313, 4e38c8e4), Moorpark (4; 61571f0e, 0064e895), College of the Sequoias (3; 80563542, 0bba198e), Evergreen Valley (2; d32576cf, 0540a44c); Golden West, Cuyamaca, Mt. San Jacinto and MiraCosta (none) added. SkyMadrone (S394) through the Supabase MCP, second batch: Fullerton (6 course codes; md5 057fed7f counts, 11d31a76 titles), Monterey Peninsula (3; eb85fce8, 1794bde6), Citrus and Victor Valley (none) added. SkyMadrone (S394) through the Supabase MCP: Santa Barbara City, Orange Coast, Foothill and Sierra added; MAP names no course code at any of the four (map_college_cr_unit rows carry no SUBJ-NUM college_course there). Fullerton (6 course codes; md5 057fed7f counts, 11d31a76 titles) and Diablo Valley (2; 0daebf68, f20f5e51) were read the same day, matched in SQL, and are held until their records load. Earlier: SkyTamarack (S392) through the Supabase MCP: El Camino (no course code: its one college_course reads \"-\") and San Joaquin Delta (1 course code; md5 c814004d counts, d7d7ab68 titles; its \"CSU GE E\" line names no course) added. Earlier: SkyPersimmon (S389) through the Supabase MCP: Southwestern (3 course codes; md5 220de7f7 counts, b4f52863 titles) and Fresno City (2; afd80e74, 6b4b8433) added. Earlier: SkyHazel (S385) through the Supabase MCP: Modesto Junior (162 course codes) and Palo Verde (58) added; the per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads 44f69ec1a24823e14935781dbd760bd8 and 4acabc5730dedeb1e0f28194796eb23c, and the md5 over each code's titles (code#title#source#recs, in the read's order) 30765bf9ceef64b44a2e862b58111469 and 83bbe816ab4eb109b72be382c170d47a, in SQL and over the filed rows. Earlier: SkySpruce (S383) through the Supabase MCP: Cabrillo added (112 course codes); the per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads 51b488541fdab60ea9e4d093eb052c0a and the md5 over each code's titles (code#title#source#recs, in the read's order) d71fa73bd6952487451eaeafb878f3eb, in SQL and over the filed rows. Earlier: SkyRowan (S381) through the Supabase MCP: Bakersfield (100 course codes) and Coastline (26) added; per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads c58de704f09a7b58007336979431dace and 8bccde4ad1bae0d610b6de34413e24e9 in SQL and over the filed rows. Earlier: SkyCypress (S373) through the Supabase MCP: San Diego Mesa added (44 course codes); the per-college md5 over code|recs|exhibits|untitled reads 9ad02bf038663b2c19ac0c6b8aed2574 and the md5 over each code's titles (title#source#recs, in the read's order) 38e86115426ffd0ca2856d3ad6713150, in SQL and over the filed rows. Earlier: SkyLaurel (S369) through the Supabase MCP: Chaffey (94 course codes) and San Diego City (33) added; per-college md5 over code|recs|exhibits|untitled reads 115340c8a405300f47c2bd0223964f68 and 249410c6592148fbf3beb7b68b7f1cd0 in SQL and over the filed rows. Earlier: SkyCedar (S363) through the Supabase MCP: Long Beach City added (33 course codes; the per-course fingerprint over code, recs, exhibits, untitled exhibits and titles reads 5c7d3a90393e710daa4f686a2f56c917 in SQL and over the filed rows). Earlier: SkyFern (S358) through the Supabase MCP: Moreno Valley (106 course codes) and Norco (82) added; Riverside City re-read in full and equal to the 2026-10-06 read on all 34 codes (md5 feff937a5b5c8320029a06ab06a97243). Earlier: SkyLedger (S340) through the Supabase MCP. Santa Monica and Irvine Valley were read in full. The pilot's five were proved against the 2026-10-04 read by a fingerprint per course; the four courses that differed (Riverside MAG 51; West LA AVIATEK 002, 005 and 017: one exhibit title each, and one credit recommendation fewer on AVIATEK 002) were re-read. Every college's fingerprint matches the live read.",
  "_refresh": "By hand, the way kb/ccr_cpl_funnel.json is refreshed: run kb/program_requirements_pilot/map_cr_by_course.sql through the Supabase MCP when the funnel reloads (map-custom-report-load.yml) or the harvest adds a college, and file the rows here.",
  "colleges": {
   "Bakersfield College": {
@@ -31565,6 +31565,937 @@
     "untitled_exhibits": 0,
     "exhibits_by_source": {
      "ACE": 3
+    }
+   }
+  },
+  "Merritt College": {
+   "ADJUS 021": {
+    "recs": 9,
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Basic Combat Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Recruit Training Master FY11",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Structured Self Development (SSD-1)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Basic Infantry Marine",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electrical Equipment Repair Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Enlisted Combat Skills",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Expeditionary Combat Skills",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Hygiene Equipment Operator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Indirect Fire Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "M1A1 Abrams Armor Crewman One Station Unit Training (OSUT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Martial Arts Instructor",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruit Basic Military Training (BMT)",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 12,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 12
+    }
+   },
+   "ADJUS 022": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Aviation Electronics Technician (AT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Electronics Technician (AT) (4/21-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Behavioral Health Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Combat Medic Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cryptologic Technician (Interpretive) (CTI)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Distributed Leader I",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Hospital Corpsman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Technician (3/22-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Operations Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Structured Self Development (SSD-1)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warehouse Clerk",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warrior Leader (AC)",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 12,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 12
+    }
+   },
+   "ADJUS 023": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Avionics Electronics Technician (Intermediate Level) AT (I) Class A1",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Expeditionary Combat Skills",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 2
+    }
+   },
+   "ADJUS 025": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Combat Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Basic Military Police One Station Unit Training (OSUT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruit Training Master FY11",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 3,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 3
+    }
+   },
+   "BLDGM 248NA": {
+    "recs": 6,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AH-1Z/UH-1Y Aircraft Powerplants Organizational Maintenance",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "AN/USM-636 Series Common Operator/Maintainer Intermediate Maintenance",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "AN/USM-636A (V) Consolidated Automated Support System (CASS) Common Core Intermediate Maintenance",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Basic Engineer Equipment Electrical Systems Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electrical Equipment Repair Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Horizontal Construction Engineer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "M1A1 Abrams Armor Crewman One Station Unit Training (OSUT)",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 8,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 8
+    }
+   },
+   "BUS 050": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Career DEP",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electronics Technician, (Nuclear)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Structured Self Development (SSD-II)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warrior Leader (AC)",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 4,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 4
+    }
+   },
+   "BUS 051": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Sergeants DEP",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "BUS 052": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Recruit Basic Military Training (BMT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruit Training",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 2
+    }
+   },
+   "CIS 003": {
+    "recs": 10,
+    "titles": [
+     {
+      "recs": 5,
+      "title": "Information Systems Technician 'A' School",
+      "source": "ACE"
+     },
+     {
+      "recs": 3,
+      "title": "Information Systems Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Information Systems Technician (11/21-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Electronics Technician (AT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Technician Common Core, Class A1",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Behavioral Health Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Combat Medic Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cryptologic Technician (Interpretive) (CTI)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Cryptologic Technician, Interpretive",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Culinary Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electronics Technician, (Nuclear) (1/22-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Global Command And Control System-Maritime (GCCS-M) 4.0.3 Systems Administrator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Hospitalman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Technician (3/22-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Technician Class 'A'",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Network Administrator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Operations Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Telephone Systems Installer Maintainer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warehouse Clerk",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 20,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 20
+    }
+   },
+   "CIS 012": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Information Systems Technician",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "CIS 071": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Information Systems Technician",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "COMM 003": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Resident Staff Noncommissioned Officer (NCO) Career Reserve",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "CSU GE A1": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Instructor",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "CSU GE D5": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Combat Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "M777A2 Howitzer Section Chief",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruit Training Master FY11",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 3,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 3
+    }
+   },
+   "CSU GE E": {
+    "recs": 5,
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Recruit Basic Military Training (BMT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Electronics Technician (AT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Electronics Technician (AT) (4/21-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Basic Combat Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Basic Military Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Corporals",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Engineer Basic Officer Leader - Branch",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Leadership and Management School (LAMS)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Surface Common Core for CSCS (Center for Surface Combat Systems) Rates",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warehouse Clerk",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warrior Leader (AC)",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 12,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 12
+    }
+   },
+   "FISCI 203": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Heavy Construction Equipment Operator (USA)",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "HLTOC 248NB": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Dental Specialist",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "KIN 020": {
+    "recs": 10,
+    "titles": [
+     {
+      "recs": 6,
+      "title": "Recruit Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 3,
+      "title": "Basic Combat Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 3,
+      "title": "Recruit Basic Military Training (BMT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Airborne",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Basic Military Police One Station Unit Training (OSUT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Basic Military Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Enlisted Combat Skills",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "M777A2 Howitzer Section Chief",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Structured Self Development (SSD-1)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Total Army Training System (TATS) Primary Leadership Development",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warrior Leader (Modified)",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 11,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 11
+    }
+   },
+   "KIN 067A": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Enlisted Combat Skills",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Expeditionary Combat Skills",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "M1A1 Abrams Armor Crewman One Station Unit Training (OSUT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruit Training Master FY11",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 4,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 4
+    }
+   },
+   "KIN 150": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Combat Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Basic Military Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Resident Staff Noncommissioned Officer (NCO) Career Reserve",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 3,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 3
+    }
+   },
+   "KIN 58B": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Combat Training",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "KIN 67B": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Recruit Basic Military Training (BMT)",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "MEDAS 102A": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Hospital Corpsman Basic (USN)",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "NURS 010": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Reserve Sergeant's",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "NUTR 071A": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "The Certifying Board for Dietary Managers",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   }
+  },
+  "Berkeley City College": {
+   "BUS 009": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Structured Self Development (SSD-II)",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "BUS 019": {
+    "recs": 3,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Hospital Corpsman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Human Resources Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Technician (3/22-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "M1 Abrams Tank System Maintainer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Supply Administration and Operations Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Supply Chain and Materials Specialist (11/21-Pres)",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 6,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 6
+    }
+   },
+   "CIS 001": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Air Traffic Controller",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Equipment Operator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Hospital Corpsman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Hospitalman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Human Resources Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantry Unit Leader",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warehouse Clerk",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 8,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 8
+    }
+   }
+  },
+  "Gavilan College": {
+   "AJ 10": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Master-At-Arms",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "AJ 12": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Master-At-Arms",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "CMUN 1A": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "M1 Armor Crewman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Marine Corps Recruiter",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 2
     }
    }
   }
