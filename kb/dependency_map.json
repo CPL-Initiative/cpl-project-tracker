@@ -5680,21 +5680,21 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 101
+     "line": 102
     },
     {
      "id": "script:kb/_build_roep_display.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 101
+     "line": 102
     },
     {
      "id": "script:kb/_program_requirements_display_apply.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 58
+     "line": 60
     }
    ],
    "producers": [
@@ -5937,7 +5937,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 100
+     "line": 101
     },
     {
      "id": "script:kb/_preseed_null_issuers.py",
@@ -8446,7 +8446,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 95
+     "line": 96
     },
     {
      "id": "script:kb/_ccr_trail.py",
@@ -9115,7 +9115,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 98
+     "line": 99
     },
     {
      "id": "script:kb/_ccr_trail.py",
@@ -12467,7 +12467,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 83
+     "line": 84
     }
    ],
    "served": true,
@@ -12480,7 +12480,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 84
+     "line": 85
     }
    ],
    "served": true,
@@ -14738,7 +14738,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 99
+     "line": 100
     },
     {
      "id": "script:kb/_cred_rename_apply.py",
@@ -18798,7 +18798,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 97
+     "line": 98
     },
     {
      "id": "script:kb/_esl_package_actionable.py",
@@ -18938,7 +18938,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 96
+     "line": 97
     },
     {
      "id": "script:kb/_esl_ladder_relevel_dryrun.py",
