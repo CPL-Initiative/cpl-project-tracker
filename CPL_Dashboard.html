@@ -96,6 +96,7 @@
             --surface-subtle: #F7F5F1;
             --college-flag: #FBF6E8;   /* a flag the college owns (Program records; S347) */
             --reading-flag: #EEF3FA;   /* a flag the reading procedure owns */
+            --cer-cream: rgba(254,249,218,.8);   /* the Common Exhibit Reference tab ground (Sam, 2026-07-09: cream tint) */
             --surface-muted: #ECE9E2;
             /* ⚠️ THE LIGHT HALF OF THE STEP SCALE (Sam, open-asks item 11, 2026-09-22).
                --surface-1/--surface-2 were DARK-ONLY, so in light every use fell
@@ -212,6 +213,7 @@
             --surface-subtle: #262624;
             --college-flag: #2A2618;   /* a flag the college owns (Program records; S347) */
             --reading-flag: #1C2430;   /* a flag the reading procedure owns */
+            --cer-cream: rgba(42,38,24,.8);   /* the Common Exhibit Reference tab ground (Sam, 2026-07-09: cream tint) */
             --surface-muted: #30302E;
             /* ⚠️ --surface-1 / --surface-2 ARE DEFINED IN THE DARK BLOCKS ONLY,
                AND THAT IS THE FIX, NOT AN OVERSIGHT. Neither token was ever
@@ -333,6 +335,7 @@
             --surface-subtle: #262624;
             --college-flag: #2A2618;   /* a flag the college owns (Program records; S347) */
             --reading-flag: #1C2430;   /* a flag the reading procedure owns */
+            --cer-cream: rgba(42,38,24,.8);   /* the Common Exhibit Reference tab ground (Sam, 2026-07-09: cream tint) */
             --surface-muted: #30302E;
             /* ⚠️ --surface-1 / --surface-2 ARE DEFINED IN THE DARK BLOCKS ONLY,
                AND THAT IS THE FIX, NOT AN OVERSIGHT. Neither token was ever
@@ -9821,22 +9824,22 @@ Title 5 55050 revisions based on 78093 have been drafted and are in the making t
         <div class="main-container">
         <style>
             #tab-credential-reference h2 { margin-bottom:4px; }
-            #tab-credential-reference .cr-sub { font-weight:400; color:#6b7280; font-size:1rem; }
+            #tab-credential-reference .cr-sub { font-weight:400; color:var(--text-muted); font-size:1rem; }
             #tab-credential-reference .cr-intro { color:var(--text-muted); margin:0 0 14px; }
-            #tab-credential-reference .cr-stamp { display:inline-block; font-size:.7rem; color:#92400e; background:#FEF3C7; border:1px solid #F59E0B; padding:2px 8px; border-radius:10px; margin-left:8px; vertical-align:middle; font-weight:600; }
+            #tab-credential-reference .cr-stamp { display:inline-block; font-size:.7rem; color:var(--mustard-text); background:var(--college-flag); border:1px solid var(--mustard-fill); padding:2px 8px; border-radius:10px; margin-left:8px; vertical-align:middle; font-weight:600; }
             #tab-credential-reference .cr-toolbar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:10px; }
-            #tab-credential-reference .cr-filter { padding:6px 8px; border:1px solid #cbd5e1; border-radius:6px; font-size:.85rem; background:var(--surface-opaque); }
+            #tab-credential-reference .cr-filter { padding:6px 8px; border:1px solid var(--border-strong); border-radius:6px; font-size:.85rem; background:var(--surface-opaque); }
             #tab-credential-reference input.cr-filter { min-width:200px; }
             #tab-credential-reference .cr-search-wide { min-width:260px; }
             #tab-credential-reference .cr-flag-toggle { font-size:.85rem; color:var(--text-body); cursor:pointer; user-select:none; padding:6px 4px; }
             #tab-credential-reference .cr-summary { color:var(--on-mustard); font-size:.85rem; margin-bottom:8px; }
-            #tab-credential-reference .cr-table-wrap { overflow:auto; max-height:75vh; border:1px solid #e5e7eb; border-radius:8px; }
+            #tab-credential-reference .cr-table-wrap { overflow:auto; max-height:75vh; border:1px solid var(--border); border-radius:8px; }
             #tab-credential-reference table.cr-table { border-collapse:collapse; width:100%; font-size:.85rem; }
             #tab-credential-reference .cr-table th { position:sticky; top:0; background:var(--seal-blue); color:var(--gold-accent); text-align:center; vertical-align:middle; padding:8px 10px; white-space:nowrap; z-index:1; }
             #tab-credential-reference .cr-table th.sortable { cursor:pointer; }
-            #tab-credential-reference .cr-table th.sortable:hover { background:#0d2c52; }
-            #tab-credential-reference .cr-table td { padding:8px 10px; border-top:1px solid #eef2f7; text-align:center; vertical-align:middle; }
-            #tab-credential-reference .cr-table tr:hover td { background:#f8fafc; }
+            #tab-credential-reference .cr-table th.sortable:hover { background:var(--btn-primary-hover); }
+            #tab-credential-reference .cr-table td { padding:8px 10px; border-top:1px solid var(--border); text-align:center; vertical-align:middle; }
+            #tab-credential-reference .cr-table tr:hover td { background:var(--surface-subtle); }
             #tab-credential-reference .cr-table th:first-child,
             #tab-credential-reference .cr-table td:first-child { text-align:left; }
             #tab-credential-reference .cr-table tr.cr-expanded:hover td { background:var(--surface-opaque); }
@@ -9848,26 +9851,26 @@ Title 5 55050 revisions based on 78093 have been drafted and are in the making t
             #tab-credential-reference .cr-issuer-cell { max-width:32ch; color:var(--text-body); }
             #tab-credential-reference .cr-null { color:var(--text-muted); font-style:italic; }
             #tab-credential-reference .cr-conf-cell { font-family:ui-monospace,Menlo,monospace; font-weight:500; }
-            #tab-credential-reference .cr-conf-high { color:#166534; }
+            #tab-credential-reference .cr-conf-high { color:var(--hunter); }
             #tab-credential-reference .cr-conf-ok   { color:var(--navy-primary); }
-            #tab-credential-reference .cr-conf-mid  { color:#92400e; }
-            #tab-credential-reference .cr-conf-low  { color:#b45309; }
-            #tab-credential-reference .cr-conf-min  { color:#991b1b; font-weight:600; }
+            #tab-credential-reference .cr-conf-mid  { color:var(--mustard-text); }
+            #tab-credential-reference .cr-conf-low  { color:var(--mustard-text); }
+            #tab-credential-reference .cr-conf-min  { color:var(--crimson); font-weight:600; }
             #tab-credential-reference .cr-audit-chip { display:inline-block; font-size:.72rem; padding:2px 7px; border-radius:10px; font-weight:600; cursor:help; }
-            #tab-credential-reference .cr-audit-chip.warn  { background:#fee2e2; color:#991b1b; }
-            #tab-credential-reference .cr-audit-chip.mix   { background:#fef3c7; color:#92400e; }
-            #tab-credential-reference .cr-audit-chip.muted { background:#eef2f7; color:var(--text-muted); }
+            #tab-credential-reference .cr-audit-chip.warn  { background:var(--surface-subtle); color:var(--crimson); }
+            #tab-credential-reference .cr-audit-chip.mix   { background:var(--college-flag); color:var(--mustard-text); }
+            #tab-credential-reference .cr-audit-chip.muted { background:var(--surface-subtle); color:var(--text-muted); }
             #tab-credential-reference .cr-flag-cell { font-size:.78rem; }
-            #tab-credential-reference .cr-flag-badge { display:inline-block; background:#fef3c7; color:#92400e; padding:2px 7px; border-radius:10px; font-size:.7rem; }
-            #tab-credential-reference .cr-rev-on { color:#166534; font-weight:600; font-size:.75rem; white-space:nowrap; }
-            #tab-credential-reference .cr-action-btn { background:var(--seal-blue); color:#fff; border:none; padding:5px 11px; border-radius:5px; font-size:.78rem; cursor:pointer; }
-            #tab-credential-reference .cr-action-btn:hover { background:#0d2c52; }
-            #tab-credential-reference .cr-action-btn:disabled { background:#cbd5e1; cursor:wait; }
+            #tab-credential-reference .cr-flag-badge { display:inline-block; background:var(--college-flag); color:var(--mustard-text); padding:2px 7px; border-radius:10px; font-size:.7rem; }
+            #tab-credential-reference .cr-rev-on { color:var(--hunter); font-weight:600; font-size:.75rem; white-space:nowrap; }
+            #tab-credential-reference .cr-action-btn { background:var(--seal-blue); color:var(--on-accent); border:none; padding:5px 11px; border-radius:5px; font-size:.78rem; cursor:pointer; }
+            #tab-credential-reference .cr-action-btn:hover { background:var(--btn-primary-hover); }
+            #tab-credential-reference .cr-action-btn:disabled { background:var(--surface-muted); cursor:wait; }
             #tab-credential-reference .cr-action-noop { color:var(--text-muted); }
             #tab-credential-reference .cr-auth { font-size:.85rem; color:var(--text-body); margin-left:auto; }
             #tab-credential-reference .cr-auth-link { color:var(--navy-primary); font-weight:600; text-decoration:underline; cursor:pointer; }
-            #tab-credential-reference .cr-auth-on   { color:#166534; font-weight:600; }
-            #tab-credential-reference .cr-auth-tag  { display:block; font-size:.7rem; color:#9ca3af; margin-top:2px; }
+            #tab-credential-reference .cr-auth-on   { color:var(--hunter); font-weight:600; }
+            #tab-credential-reference .cr-auth-tag  { display:block; font-size:.7rem; color:var(--text-muted); margin-top:2px; }
             /* Sign-in feedback panel — replaces the corner toast for sign-in flow.
                Lives in-place where the "sign in to edit" link used to be so curators
                can't miss the "Magic link sent" / error confirmation. */
@@ -9875,97 +9878,97 @@ Title 5 55050 revisions based on 78093 have been drafted and are in the making t
             #tab-credential-reference .cr-auth-panel strong { display:block; font-size:.88rem; margin-bottom:3px; }
             #tab-credential-reference .cr-auth-panel-detail { opacity:.9; margin-bottom:5px; }
             #tab-credential-reference .cr-auth-panel .cr-auth-link { font-size:.73rem; }
-            #tab-credential-reference .cr-auth-panel-ok  { background:#ecfdf5; border:1px solid #34d399; color:#065f46; }
-            #tab-credential-reference .cr-auth-panel-ok strong { color:#065f46; }
-            #tab-credential-reference .cr-auth-panel-err { background:#fef2f2; border:1px solid #fca5a5; color:#991b1b; }
-            #tab-credential-reference .cr-auth-panel-err strong { color:#991b1b; }
-            #tab-credential-reference .cr-empty { color:#6b7280; font-style:italic; padding:16px; text-align:center !important; }
+            #tab-credential-reference .cr-auth-panel-ok  { background:var(--surface-subtle); border:1px solid var(--hunter); color:var(--hunter); }
+            #tab-credential-reference .cr-auth-panel-ok strong { color:var(--hunter); }
+            #tab-credential-reference .cr-auth-panel-err { background:var(--surface-subtle); border:1px solid var(--crimson); color:var(--crimson); }
+            #tab-credential-reference .cr-auth-panel-err strong { color:var(--crimson); }
+            #tab-credential-reference .cr-empty { color:var(--text-muted); font-style:italic; padding:16px; text-align:center !important; }
             /* Expanded row body */
-            #tab-credential-reference .cr-expanded td { background:#fafbfc; padding:0; }
+            #tab-credential-reference .cr-expanded td { background:var(--surface-subtle); padding:0; }
             #tab-credential-reference .cr-expanded-body { padding:12px 18px 16px; }
             #tab-credential-reference .cr-expanded-body h5 { margin:8px 0 4px; color:var(--navy-primary); font-size:.85rem; }
             /* PR-4 — curation panel inside the expanded body. Top of body so
                edit affordances are immediately visible after expanding a row. */
-            #tab-credential-reference .cr-curation-panel { background:var(--surface-opaque); border:1px solid #c7d2e0; border-left:4px solid var(--navy-primary); border-radius:6px; padding:10px 14px; margin:4px 0 14px; }
+            #tab-credential-reference .cr-curation-panel { background:var(--surface-opaque); border:1px solid var(--border); border-left:4px solid var(--navy-primary); border-radius:6px; padding:10px 14px; margin:4px 0 14px; }
             #tab-credential-reference .cr-curation-h { margin:0 0 6px !important; color:var(--navy-primary) !important; font-size:.85rem !important; }
-            #tab-credential-reference .cr-curation-note { color:#6b7280; font-size:.78rem; font-style:italic; margin:4px 0 0; }
+            #tab-credential-reference .cr-curation-note { color:var(--text-muted); font-size:.78rem; font-style:italic; margin:4px 0 0; }
             #tab-credential-reference .cr-curation-readonly { list-style:none; margin:8px 0 0; padding:0; font-size:.78rem; color:var(--text-body); }
             #tab-credential-reference .cr-curation-readonly li { padding:2px 0; }
             #tab-credential-reference .cr-curation-tbl { border-collapse:collapse; margin-top:4px; font-size:.82rem; }
-            #tab-credential-reference .cr-curation-tbl th { text-align:right; padding:5px 10px 5px 0; color:#475569; font-weight:600; vertical-align:top; white-space:nowrap; width:130px; }
+            #tab-credential-reference .cr-curation-tbl th { text-align:right; padding:5px 10px 5px 0; color:var(--text-muted); font-weight:600; vertical-align:top; white-space:nowrap; width:130px; }
             #tab-credential-reference .cr-curation-tbl td { padding:5px 0; vertical-align:top; }
             #tab-credential-reference .cr-curation-row.cr-curation-overridden th { color:var(--navy-primary); }
-            #tab-credential-reference .cr-curation-display { color:#1f2937; }
-            #tab-credential-reference .cr-curation-display .cr-null { color:#9ca3af; font-style:italic; }
-            #tab-credential-reference .cr-curation-input { font-size:.85rem; padding:3px 6px; border:1px solid #9ca3af; border-radius:4px; min-width:280px; margin-right:6px; }
+            #tab-credential-reference .cr-curation-display { color:var(--text-strong); }
+            #tab-credential-reference .cr-curation-display .cr-null { color:var(--text-muted); font-style:italic; }
+            #tab-credential-reference .cr-curation-input { font-size:.85rem; padding:3px 6px; border:1px solid var(--text-faint); border-radius:4px; min-width:280px; margin-right:6px; }
             #tab-credential-reference select.cr-curation-input { min-width:auto; }
             #tab-credential-reference .cr-curation-edit, #tab-credential-reference .cr-curation-clear, #tab-credential-reference .cr-curation-save, #tab-credential-reference .cr-curation-cancel { font-size:.7rem; padding:2px 7px; margin-left:6px; border:1px solid transparent; border-radius:4px; cursor:pointer; background:transparent; color:var(--navy-primary); }
-            #tab-credential-reference .cr-curation-edit:hover { background:#eef2f7; }
-            #tab-credential-reference .cr-curation-clear { color:#991b1b; }
-            #tab-credential-reference .cr-curation-clear:hover { background:#fee2e2; }
-            #tab-credential-reference .cr-curation-save { background:#166534; color:#fff; border-color:#166534; }
-            #tab-credential-reference .cr-curation-save:hover { background:#14532d; }
-            #tab-credential-reference .cr-curation-cancel { color:#6b7280; }
-            #tab-credential-reference .cr-curation-cancel:hover { background:#eef2f7; }
-            #tab-credential-reference .cr-curation-saving { color:#6b7280; font-style:italic; font-size:.78rem; }
-            #tab-credential-reference .cr-curation-meta { color:#475569; font-size:.72rem; margin-top:3px; font-style:italic; }
-            #tab-credential-reference .cr-curation-hint { color:#9ca3af; font-size:.7rem; margin-top:2px; font-style:italic; max-width:480px; }
+            #tab-credential-reference .cr-curation-edit:hover { background:var(--surface-subtle); }
+            #tab-credential-reference .cr-curation-clear { color:var(--crimson); }
+            #tab-credential-reference .cr-curation-clear:hover { background:var(--surface-subtle); }
+            #tab-credential-reference .cr-curation-save { background:var(--hunter); color:var(--on-accent); border-color:var(--hunter); }
+            #tab-credential-reference .cr-curation-save:hover { background:var(--hunter); }
+            #tab-credential-reference .cr-curation-cancel { color:var(--text-muted); }
+            #tab-credential-reference .cr-curation-cancel:hover { background:var(--surface-subtle); }
+            #tab-credential-reference .cr-curation-saving { color:var(--text-muted); font-style:italic; font-size:.78rem; }
+            #tab-credential-reference .cr-curation-meta { color:var(--text-muted); font-size:.72rem; margin-top:3px; font-style:italic; }
+            #tab-credential-reference .cr-curation-hint { color:var(--text-muted); font-size:.7rem; margin-top:2px; font-style:italic; max-width:480px; }
             #tab-credential-reference .cr-override-marker { color:var(--navy-primary); font-weight:600; cursor:help; }
             #tab-credential-reference .cr-variants-list { list-style:none; margin:0; padding:0; }
             #tab-credential-reference .cr-variants-list li { padding:3px 0; font-size:.85rem; }
             #tab-credential-reference .cr-variant-conf { display:inline-block; min-width:3.5ch; font-family:ui-monospace,Menlo,monospace; font-size:.75rem; margin-right:4px; }
-            #tab-credential-reference .cr-variant-code { background:#f3f4f6; padding:1px 5px; border-radius:3px; font-size:.82rem; color:var(--text-body); }
-            #tab-credential-reference .cr-variant-notes { color:#6b7280; font-size:.78rem; margin:2px 0 0 4ch; }
+            #tab-credential-reference .cr-variant-code { background:var(--surface-subtle); padding:1px 5px; border-radius:3px; font-size:.82rem; color:var(--text-body); }
+            #tab-credential-reference .cr-variant-notes { color:var(--text-muted); font-size:.78rem; margin:2px 0 0 4ch; }
             #tab-credential-reference .cr-cred-record { padding:4px 0; font-size:.85rem; color:var(--text-body); }
-            #tab-credential-reference .cr-cred-notes { color:#6b7280; font-size:.78rem; font-style:italic; margin-top:2px; }
+            #tab-credential-reference .cr-cred-notes { color:var(--text-muted); font-size:.78rem; font-style:italic; margin-top:2px; }
             #tab-credential-reference .cr-audit-list { margin:4px 0 0; padding-left:22px; font-size:.82rem; color:var(--text-body); }
             /* Scope (Local / Statewide) badge — PR-1 addition */
             #tab-credential-reference .cr-scope-cell { white-space:nowrap; }
             #tab-credential-reference .cr-scope-badge { display:inline-block; padding:2px 7px; border-radius:10px; font-size:.7rem; font-weight:600; }
-            #tab-credential-reference .cr-scope-state { background:#dbeafe; color:#1e40af; border:1px solid #93c5fd; }
-            #tab-credential-reference .cr-scope-local { background:#f3f4f6; color:var(--text-body); border:1px solid #d1d5db; }
+            #tab-credential-reference .cr-scope-state { background:var(--reading-flag); color:var(--cobalt); border:1px solid var(--cobalt); }
+            #tab-credential-reference .cr-scope-local { background:var(--surface-subtle); color:var(--text-body); border:1px solid var(--border); }
             /* Discipline column */
             #tab-credential-reference .cr-disc-cell { font-size:.82rem; color:var(--text-body); max-width:24ch; }
             /* Articulations table inside the expanded body */
-            #tab-credential-reference .cr-arts-table { border-collapse:collapse; width:100%; font-size:.82rem; margin:4px 0 14px; background:var(--surface-opaque); border:1px solid #e5e7eb; border-radius:6px; overflow:hidden; }
-            #tab-credential-reference .cr-arts-table th { background:#f8fafc; color:var(--text-body); font-weight:600; padding:6px 10px; text-align:left; border-bottom:1px solid #e5e7eb; font-size:.78rem; }
-            #tab-credential-reference .cr-arts-table td { padding:6px 10px; vertical-align:top; border-top:1px solid #eef2f7; }
-            #tab-credential-reference .cr-art-first td { border-top:2px solid #cbd5e1; }
-            #tab-credential-reference .cr-art-ident { background:#fafbfc; min-width:22ch; max-width:32ch; }
-            #tab-credential-reference .cr-art-ident.cr-sys-ccnid  { background:#ecfdf5; border-left:3px solid #16a34a; }
-            #tab-credential-reference .cr-art-ident.cr-sys-cid    { background:#eff6ff; border-left:3px solid #2563eb; }
-            #tab-credential-reference .cr-art-ident.cr-sys-mid    { background:#fefce8; border-left:3px solid #d4b146; }
-            #tab-credential-reference .cr-art-ident.cr-sys-cluster{ background:#faf5ff; border-left:3px solid #9333ea; }
-            #tab-credential-reference .cr-id-sys { display:inline-block; font-size:.66rem; padding:1px 5px; border-radius:4px; background:var(--seal-blue); color:#fff; font-weight:600; vertical-align:middle; }
+            #tab-credential-reference .cr-arts-table { border-collapse:collapse; width:100%; font-size:.82rem; margin:4px 0 14px; background:var(--surface-opaque); border:1px solid var(--border); border-radius:6px; overflow:hidden; }
+            #tab-credential-reference .cr-arts-table th { background:var(--surface-subtle); color:var(--text-body); font-weight:600; padding:6px 10px; text-align:left; border-bottom:1px solid var(--border); font-size:.78rem; }
+            #tab-credential-reference .cr-arts-table td { padding:6px 10px; vertical-align:top; border-top:1px solid var(--border); }
+            #tab-credential-reference .cr-art-first td { border-top:2px solid var(--border-strong); }
+            #tab-credential-reference .cr-art-ident { background:var(--surface-subtle); min-width:22ch; max-width:32ch; }
+            #tab-credential-reference .cr-art-ident.cr-sys-ccnid  { background:var(--surface-subtle); border-left:3px solid var(--hunter); }
+            #tab-credential-reference .cr-art-ident.cr-sys-cid    { background:var(--reading-flag); border-left:3px solid var(--cobalt); }
+            #tab-credential-reference .cr-art-ident.cr-sys-mid    { background:var(--college-flag); border-left:3px solid var(--mustard-fill); }
+            #tab-credential-reference .cr-art-ident.cr-sys-cluster{ background:var(--surface-subtle); border-left:3px solid var(--violet); }
+            #tab-credential-reference .cr-id-sys { display:inline-block; font-size:.66rem; padding:1px 5px; border-radius:4px; background:var(--seal-blue); color:var(--on-accent); font-weight:600; vertical-align:middle; }
             #tab-credential-reference .cr-id-code { font-family:ui-monospace,Menlo,monospace; font-weight:600; color:var(--navy-primary); margin-left:4px; }
-            #tab-credential-reference .cr-id-title { color:#1f2937; font-size:.8rem; margin-top:3px; }
-            #tab-credential-reference .cr-id-meta { color:#6b7280; font-size:.72rem; margin-top:2px; }
+            #tab-credential-reference .cr-id-title { color:var(--text-strong); font-size:.8rem; margin-top:3px; }
+            #tab-credential-reference .cr-id-meta { color:var(--text-muted); font-size:.72rem; margin-top:2px; }
             #tab-credential-reference .cr-art-local { min-width:18ch; }
             #tab-credential-reference .cr-lc-code { font-family:ui-monospace,Menlo,monospace; font-weight:600; color:var(--navy-primary); }
             #tab-credential-reference .cr-lc-title { color:var(--text-body); }
             #tab-credential-reference .cr-art-colleges { color:var(--text-body); font-size:.78rem; }
-            #tab-credential-reference .cr-empty-note { color:#6b7280; font-size:.82rem; font-style:italic; margin:4px 0 12px; }
+            #tab-credential-reference .cr-empty-note { color:var(--text-muted); font-size:.82rem; font-style:italic; margin:4px 0 12px; }
             /* PR-2: bulk-select + bulk "Mark N initiated" workflow */
             #tab-credential-reference .cr-chk-cell { width:28px; min-width:28px; padding:6px 4px; text-align:center; }
             #tab-credential-reference .cr-chk-cell input[type="checkbox"] { cursor:pointer; }
             #tab-credential-reference .cr-chk-cell input[type="checkbox"][disabled] { opacity:0.35; cursor:not-allowed; }
             #tab-credential-reference .cr-bulk { display:inline-flex; align-items:center; gap:6px; font-size:.82rem; color:var(--text-body); }
-            #tab-credential-reference .cr-bulk-btn { background:#16a34a; color:#fff; border:none; padding:6px 12px; border-radius:6px; font-size:.82rem; font-weight:600; cursor:pointer; }
-            #tab-credential-reference .cr-bulk-btn:hover { background:#15803d; }
+            #tab-credential-reference .cr-bulk-btn { background:var(--hunter); color:var(--on-accent); border:none; padding:6px 12px; border-radius:6px; font-size:.82rem; font-weight:600; cursor:pointer; }
+            #tab-credential-reference .cr-bulk-btn:hover { background:var(--hunter); }
             #tab-credential-reference .cr-bulk-clear { color:var(--navy-primary); font-size:.75rem; text-decoration:underline; cursor:pointer; }
-            #tab-credential-reference .cr-bulk-progress { background:#fef3c7; color:#92400e; padding:4px 10px; border-radius:6px; font-size:.78rem; font-weight:600; border:1px solid #fcd34d; }
+            #tab-credential-reference .cr-bulk-progress { background:var(--college-flag); color:var(--mustard-text); padding:4px 10px; border-radius:6px; font-size:.78rem; font-weight:600; border:1px solid var(--mustard-fill); }
             /* PR-3: TOP / Discipline grouping with collapsible category headers */
-            #tab-credential-reference .cr-group-hdr td { background:#f1f5f9; padding:0 !important; border-top:2px solid #cbd5e1; border-bottom:1px solid #cbd5e1; }
+            #tab-credential-reference .cr-group-hdr td { background:var(--surface-subtle); padding:0 !important; border-top:2px solid var(--border-strong); border-bottom:1px solid var(--border-strong); }
             #tab-credential-reference .cr-group-toggle { width:100%; text-align:left; padding:8px 14px; background:transparent; border:none; cursor:pointer; font-size:.88rem; color:var(--navy-primary); font-weight:600; }
-            #tab-credential-reference .cr-group-toggle:hover { background:#e2e8f0; }
+            #tab-credential-reference .cr-group-toggle:hover { background:var(--surface-muted); }
             #tab-credential-reference .cr-group-twisty { display:inline-block; min-width:14px; color:var(--text-muted); font-size:.72rem; }
             #tab-credential-reference .cr-group-label { color:var(--navy-primary); }
-            #tab-credential-reference .cr-group-count { color:#6b7280; font-size:.78rem; font-weight:500; margin-left:4px; }
+            #tab-credential-reference .cr-group-count { color:var(--text-muted); font-size:.78rem; font-weight:500; margin-left:4px; }
             /* Toast */
             #tab-credential-reference ~ .cr-toast,
-            .cr-toast { position:fixed; right:18px; bottom:18px; background:var(--seal-blue); color:#fff; padding:10px 14px; border-radius:8px; font-size:.85rem; box-shadow:0 4px 12px rgba(0,0,0,0.2); z-index:1000; opacity:0; transition:opacity 0.2s; pointer-events:none; }
+            .cr-toast { position:fixed; right:18px; bottom:18px; background:var(--seal-blue); color:var(--on-accent); padding:10px 14px; border-radius:8px; font-size:.85rem; box-shadow:0 4px 12px rgba(0,0,0,0.2); z-index:1000; opacity:0; transition:opacity 0.2s; pointer-events:none; }
             .cr-toast.show { opacity:1; }
-            .cr-toast.err { background:#991b1b; }
+            .cr-toast.err { background:var(--crimson); }
         </style>
 
         <h2>Common Exhibit Reference
@@ -9974,7 +9977,7 @@ Title 5 55050 revisions based on 78093 have been drafted and are in the making t
 
         <div id="cr-toolbar" class="cr-toolbar"></div>
         <div id="cr-summary" class="cr-summary"></div>
-        <div id="cr-table-wrap" class="cr-table-wrap"></div>
+        <div id="cr-table-wrap" class="cr-table-wrap" tabindex="0" role="region" aria-label="Common Exhibit Reference credentials"></div>
         </div>
         <!-- /main-container for Credential Reference tab -->
     </div>

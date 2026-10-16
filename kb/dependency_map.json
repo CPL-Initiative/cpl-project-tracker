@@ -1008,7 +1008,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 4144,
+     "line": 4223,
      "tabs": [
       "credential-reference"
      ]
@@ -2820,7 +2820,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4164,
+     "line": 4243,
      "tabs": [
       "credential-reference"
      ]
@@ -5837,7 +5837,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5408,
+     "line": 5817,
      "tabs": [
       "credential-reference"
      ]
@@ -10529,7 +10529,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5334,
+     "line": 5419,
      "tabs": [
       "credential-reference"
      ]
@@ -10825,7 +10825,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 618,
+     "line": 628,
      "tabs": [
       "credential-reference"
      ]
@@ -11741,7 +11741,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 621,
+     "line": 631,
      "tabs": [
       "credential-reference"
      ]
@@ -11934,7 +11934,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 489,
+     "line": 499,
      "tabs": [
       "credential-reference"
      ]
@@ -11966,6 +11966,16 @@
   },
   "file:kb/it_ai_credential_catalog.json": {
    "consumers": [
+    {
+     "id": "module:credential_reference.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 5442,
+     "tabs": [
+      "credential-reference"
+     ]
+    },
     {
      "id": "script:kb/_build_it_ai_credential_catalog.py",
      "kind": "script",
@@ -14701,7 +14711,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 478,
+     "line": 488,
      "tabs": [
       "credential-reference"
      ]
@@ -14731,7 +14741,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 467,
+     "line": 477,
      "tabs": [
       "credential-reference"
      ]
@@ -14776,7 +14786,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 615,
+     "line": 625,
      "tabs": [
       "credential-reference"
      ]
@@ -21318,7 +21328,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 276,
+     "line": 286,
      "tabs": [
       "credential-reference"
      ]
@@ -21328,7 +21338,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 334,
+     "line": 344,
      "tabs": [
       "credential-reference"
      ]

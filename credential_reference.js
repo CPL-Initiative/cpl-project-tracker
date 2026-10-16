@@ -84,6 +84,9 @@
   // site in this file; anything else is a programmer error and is ignored.
   function el(tag, attrs, kids) {
     var n = document.createElement(tag);
+    // Every header cell names its axis (First Light a11y rule); a row header
+    // passes scope "row" explicitly.
+    if (tag === "th" && !(attrs && attrs.scope)) n.setAttribute("scope", "col");
     if (attrs) {
       if (attrs["class"] != null) n.className = String(attrs["class"]);
       if (attrs.id != null) n.id = String(attrs.id);
@@ -100,6 +103,13 @@
       if (attrs["data-ut"] != null) n.setAttribute("data-ut", String(attrs["data-ut"]));
       if (attrs.role != null) n.setAttribute("role", String(attrs.role));
       if (attrs["aria-label"] != null) n.setAttribute("aria-label", String(attrs["aria-label"]));
+      if (attrs["aria-pressed"] != null) n.setAttribute("aria-pressed", String(attrs["aria-pressed"]));
+      if (attrs["aria-expanded"] != null) n.setAttribute("aria-expanded", String(attrs["aria-expanded"]));
+      if (attrs.scope != null) n.setAttribute("scope", String(attrs.scope));
+      if (attrs.tabindex != null) n.setAttribute("tabindex", String(attrs.tabindex));
+      // External links (an issuer's own page) open in a new tab, without opener.
+      if (attrs.target != null) n.setAttribute("target", String(attrs.target));
+      if (attrs.rel != null) n.setAttribute("rel", String(attrs.rel));
     }
     if (kids) for (var i = 0; i < kids.length; i++) {
       var c = kids[i];
@@ -995,6 +1005,16 @@
     // exists + loads; renders the ✓/≈ COS chips + the summary attribution.
     cosMatches: null,
     cosAttribution: null,
+    // Industry catalog (kb/it_ai_credential_catalog.json, lazy, read-only):
+    // the "Industry credentials" lane + the industry record on a joined row.
+    industry: null,
+    industryMeta: null,
+    industryByTitle: {},
+    industryLoading: false,
+    industryError: false,
+    indFilter: { domain: "all", status: "all", map: "all", emerging: false },
+    indShown: 100,
+    indExpanded: {},  // catalog id -> bool
   };
 
   // Group key for a row given the current state.groupBy mode (single-key modes).
@@ -1577,7 +1597,7 @@
     }, ["✓ Mark " + n + " initiated"]);
     btn.onclick = function () { bulkMarkInitiated(); };
     slot.appendChild(btn);
-    var clearLink = el("a", { class: "cr-bulk-clear", href: "#",
+    var clearLink = el("button", { type: "button", class: "cr-bulk-clear",
       title: "Clear the current selection" }, ["clear"]);
     clearLink.onclick = function (e) {
       e.preventDefault();
@@ -1651,7 +1671,7 @@
     if (state.sess) {
       auth.appendChild(el("span", { class: "cr-auth-on" }, ["✓ " + state.sess.email]));
       auth.appendChild(document.createTextNode("  "));
-      var out = el("a", { class: "cr-auth-link", href: "#" }, ["sign out"]);
+      var out = el("button", { type: "button", class: "cr-auth-link" }, ["sign out"]);
       out.onclick = function (e) {
         e.preventDefault(); signOut(); state.sess = null; renderAuth(); render();
       };
@@ -1664,7 +1684,7 @@
       var errPanel = el("div", { class: "cr-auth-panel cr-auth-panel-err" });
       errPanel.appendChild(el("strong", null, ["✗ Sign-in failed"]));
       errPanel.appendChild(el("div", { class: "cr-auth-panel-detail" }, [state.pendingSignInError]));
-      var retry = el("a", { class: "cr-auth-link", href: "#" }, ["try again"]);
+      var retry = el("button", { type: "button", class: "cr-auth-link" }, ["try again"]);
       retry.onclick = function (e) {
         e.preventDefault();
         state.pendingSignInError = null;
@@ -1682,7 +1702,7 @@
       panel.appendChild(el("div", { class: "cr-auth-panel-detail" },
         ["Check the inbox for ", state.pendingSignInEmail,
          " and click the link to complete sign-in. You'll land back on this tab signed in."]));
-      var diff = el("a", { class: "cr-auth-link", href: "#" }, ["use a different email"]);
+      var diff = el("button", { type: "button", class: "cr-auth-link" }, ["use a different email"]);
       diff.onclick = function (e) {
         e.preventDefault();
         state.pendingSignInEmail = null;
@@ -1694,7 +1714,7 @@
     }
 
     // Default: show sign-in link
-    var inn = el("a", { class: "cr-auth-link", href: "#" }, ["sign in to edit"]);
+    var inn = el("button", { type: "button", class: "cr-auth-link" }, ["sign in to edit"]);
     inn.onclick = function (e) {
       e.preventDefault();
       var email = prompt("Email (must be an allowed reviewer):");
@@ -1761,6 +1781,7 @@
     ensureCerScopeCss();  // scope/CPL chip styles now also used at the title level (collapsed rows)
     renderLanes();
     if (state.worklistOpen) { renderWorklist(); return; }
+    if (state.lane === "industry") { renderIndustry(); return; }
     // v2 triage lanes reuse the (already in-cell) worklist sections.
     if (state.lane === "unc" || state.lane === "noiss" || state.lane === "merge") {
       renderWorklist(state.lane === "unc" ? "unc" : state.lane);
@@ -2044,11 +2065,16 @@
         title: "Awaiting a one-time curator sign-off. \"Initiated\" only records that a human reviewed the AI classification (who + when) — it never changes the data, and no other action is required. Work these at your own pace." },
       { k: "done",  label: "Initiated", n: doneN,
         title: "A curator has signed off on the AI classification (the ✓ name · date stamp on the row). Purely a review receipt — the data is identical either way." },
+      { k: "industry", label: "Industry credentials",
+        n: state.industry ? state.industry.length : null,
+        nText: state.industryError ? "(unavailable)" : null,
+        title: "IT, cybersecurity, data and AI credentials the issuers publish, with CIP field, issuer status and whether MAP carries them. Read-only; the weekly credential watch keeps it current." },
     ];
     lanes.forEach(function (l) {
       var active = state.lane === l.k && !state.worklistOpen;
       var b = el("button", { type: "button", title: l.title,
-        class: "cr-lane" + (active ? " active" : "") });
+        class: "cr-lane" + (active ? " active" : ""),
+        "aria-pressed": active ? "true" : "false" });
       b.appendChild(document.createTextNode(l.label + " "));
       b.appendChild(el("span", { class: "cr-lane-n" },
         [l.nText || (l.n == null ? "(…)" : "(" + l.n + ")")]));
@@ -2763,7 +2789,7 @@
     var mode = rec[opts.field] || "display";  // "display" | "edit" | "saving"
 
     var tr = el("tr", { class: "cr-curation-row" + (opts.isOverridden ? " cr-curation-overridden" : "") });
-    tr.appendChild(el("th", { class: "cr-curation-label" }, [
+    tr.appendChild(el("th", { class: "cr-curation-label", scope: "row" }, [
       opts.label, opts.isOverridden ? el("span", { class: "cr-override-marker",
         title: "Curated"
       }, [" ✎"]) : ""
@@ -3026,15 +3052,15 @@
       "#tab-credential-reference .cr-chip-local{color:var(--text-muted);}" +
       "#tab-credential-reference .cr-chip-gen{color:var(--violet);}" +
       "#tab-credential-reference .cr-chip-none{background:var(--surface-1,#f1f5f9);color:var(--text-muted);}" +
-      "#tab-credential-reference .cr-chip-cpl{background:#f1f5f9;color:#475569;border-color:#e2e8f0;font-weight:500;}" +
-      "#tab-credential-reference .cr-rec{font-size:.78rem;color:#334155;margin-bottom:8px;}" +
+      "#tab-credential-reference .cr-chip-cpl{background:var(--surface-subtle);color:var(--text-muted);border-color:var(--border);font-weight:500;}" +
+      "#tab-credential-reference .cr-rec{font-size:.78rem;color:var(--text-muted);margin-bottom:8px;}" +
       "#tab-credential-reference .cr-rec-label{font-weight:600;}" +
       "#tab-credential-reference .cr-rec-ccc{color:var(--text-strong);}" +
-      "#tab-credential-reference .cr-rec-gen{color:#7a5c00;}" +
+      "#tab-credential-reference .cr-rec-gen{color:var(--mustard-text);}" +
       "#tab-credential-reference .cr-rec-val{font-family:ui-monospace,Menlo,monospace;}" +
       "#tab-credential-reference .cr-badges{display:flex;flex-direction:column;gap:6px;margin-bottom:6px;}" +
       "#tab-credential-reference .cr-badge-group{display:flex;flex-wrap:wrap;gap:4px;align-items:center;}" +
-      "#tab-credential-reference .cr-badge-grouplabel{font-size:.72rem;font-weight:600;color:#475569;margin-right:4px;}" +
+      "#tab-credential-reference .cr-badge-grouplabel{font-size:.72rem;font-weight:600;color:var(--text-muted);margin-right:4px;}" +
       "#tab-credential-reference .cr-college-badge{display:inline-block;padding:1px 7px;border-radius:9px;font-size:.68rem;font-weight:500;border:1px solid;}" +
       "#tab-credential-reference .cr-badge-green{background:rgba(255,255,255,.5);color:var(--hunter);border-color:var(--border-strong);}" +
       "#tab-credential-reference .cr-badge-orange{background:rgba(255,255,255,.5);color:var(--mustard-text);border-color:var(--border-strong);}" +
@@ -3054,7 +3080,7 @@
       "#tab-credential-reference table.cr-table td{padding:6px 8px;}" +
       // Curate panel is now opened from the row's Action cell (2026-06-03).
       "#tab-credential-reference .cr-curate-toggle{background:var(--surface-muted);border:1px solid var(--border-strong);border-radius:6px;color:var(--text-strong);font-size:.74rem;font-weight:600;cursor:pointer;padding:3px 10px;margin-bottom:8px;}" +
-      "#tab-credential-reference .cr-curate-toggle:hover{background:#e2e8f0;}" +
+      "#tab-credential-reference .cr-curate-toggle:hover{background:var(--surface-muted);}" +
       "#tab-credential-reference .cr-curate-toggle.is-open{background:var(--cobalt);color:var(--on-accent);border-color:var(--cobalt);}" +
       // Action cell stacks Curate over Mark-initiated / the ✓ initiated stamp.
       "#tab-credential-reference .cr-action-cell{display:flex;flex-direction:column;gap:4px;align-items:flex-start;}" +
@@ -3063,28 +3089,28 @@
       "#tab-credential-reference .cr-conf-sep{opacity:.45;}" +
       "#tab-credential-reference .cr-conf-issuer{opacity:.6;font-size:.92em;}" +
       // Unclassified-triage worklist.
-      "#tab-credential-reference .cr-triage-btn{background:#FEF3C7;border:1px solid #F59E0B;color:#92400e;border-radius:6px;font-size:.82rem;font-weight:600;cursor:pointer;padding:6px 10px;}" +
-      "#tab-credential-reference .cr-triage-btn:hover{background:#fde68a;}" +
+      "#tab-credential-reference .cr-triage-btn{background:var(--college-flag);border:1px solid var(--mustard-fill);color:var(--mustard-text);border-radius:6px;font-size:.82rem;font-weight:600;cursor:pointer;padding:6px 10px;}" +
+      "#tab-credential-reference .cr-triage-btn:hover{background:var(--college-flag);}" +
       "#tab-credential-reference .cr-worklist{padding:4px 2px 16px;}" +
-      "#tab-credential-reference .cr-wl-back{font-size:.82rem;color:#2563eb;text-decoration:none;}" +
+      "#tab-credential-reference .cr-wl-back{font-size:.82rem;color:var(--cobalt);text-decoration:none;}" +
       "#tab-credential-reference .cr-wl-back:hover{text-decoration:underline;}" +
       "#tab-credential-reference .cr-wl-title{color:var(--text-strong);margin:8px 0 4px;}" +
       "#tab-credential-reference .cr-wl-intro{color:var(--text-body);font-size:.85rem;margin:0 0 8px;max-width:var(--cpl-measure,none);}" +
       "#tab-credential-reference .cr-wl-progress{font-size:.85rem;color:var(--text-body);margin-bottom:10px;}" +
-      "#tab-credential-reference .cr-wl-note{color:#6b7280;font-style:italic;}" +
+      "#tab-credential-reference .cr-wl-note{color:var(--text-muted);font-style:italic;}" +
       "#tab-credential-reference .cr-wl-table{border-collapse:collapse;width:100%;font-size:.85rem;}" +
       // Dark headers ride the CO seal blue, never ink/black (Sam, 2026-07-08).
-      "#tab-credential-reference .cr-wl-table th{text-align:left;background:var(--seal-blue);color:#fff;padding:7px 10px;position:sticky;top:0;}" +
-      "#tab-credential-reference .cr-wl-table td{padding:6px 10px;border-top:1px solid #eef2f7;vertical-align:top;}" +
-      "#tab-credential-reference .cr-wl-row.cr-wl-done{background:#f0fdf4;}" +
+      "#tab-credential-reference .cr-wl-table th{text-align:left;background:var(--seal-blue);color:var(--on-accent);padding:7px 10px;position:sticky;top:0;}" +
+      "#tab-credential-reference .cr-wl-table td{padding:6px 10px;border-top:1px solid var(--border);vertical-align:top;}" +
+      "#tab-credential-reference .cr-wl-row.cr-wl-done{background:var(--surface-subtle);}" +
       "#tab-credential-reference .cr-wl-raw{max-width:42ch;}" +
       "#tab-credential-reference .cr-wl-band{color:var(--text-muted);font-size:.72rem;}" +
       "#tab-credential-reference .cr-wl-suggs{margin-top:3px;display:flex;flex-wrap:wrap;gap:4px;}" +
       "#tab-credential-reference .cr-wl-sugg{cursor:pointer;font-size:.68rem;text-align:left;color:var(--hunter);background:rgba(255,255,255,.6);}" +
-      "#tab-credential-reference .cr-wl-sugg:hover{background:#ecfdf5;}" +
+      "#tab-credential-reference .cr-wl-sugg:hover{background:var(--surface-subtle);}" +
       "#tab-credential-reference .cr-wl-sugg:disabled{cursor:default;opacity:.55;}" +
       // The chip that seeded the C-ID/CCN title pre-fill (2026-07-11) — filled look.
-      "#tab-credential-reference .cr-wl-sugg-active{background:#ecfdf5;border-color:var(--hunter);font-weight:600;}" +
+      "#tab-credential-reference .cr-wl-sugg-active{background:var(--surface-subtle);border-color:var(--hunter);font-weight:600;}" +
       "#tab-credential-reference .cr-wl-preseed-hint{margin-top:3px;font-size:.68rem;color:var(--hunter,#166534);cursor:help;white-space:nowrap;}" +
       // ⤷ use-raw-title chip (S110) — the .cr-wl-sugg look in the muted-text
       // role (it's a fallback, not an identity-anchored recommendation); its
@@ -3092,33 +3118,33 @@
       "#tab-credential-reference .cr-wl-rawfill{cursor:pointer;font-size:.68rem;text-align:left;color:var(--text-muted);background:rgba(255,255,255,.6);}" +
       "#tab-credential-reference .cr-wl-rawfill:hover{background:var(--surface-subtle);}" +
       "#tab-credential-reference .cr-wl-rawfill:disabled{cursor:default;opacity:.55;}" +
-      "#tab-credential-reference .cr-wl-input{width:100%;min-width:15ch;padding:4px 6px;border:1px solid #cbd5e1;border-radius:5px;font-size:.82rem;}" +
-      "#tab-credential-reference .cr-wl-input:disabled{background:#f8fafc;color:var(--text-muted);}" +
+      "#tab-credential-reference .cr-wl-input{width:100%;min-width:15ch;padding:4px 6px;border:1px solid var(--border-strong);border-radius:5px;font-size:.82rem;}" +
+      "#tab-credential-reference .cr-wl-input:disabled{background:var(--surface-subtle);color:var(--text-muted);}" +
       "#tab-credential-reference .cr-wl-act{white-space:nowrap;}" +
       "#tab-credential-reference .cr-wl-save{background:var(--cobalt);color:var(--on-accent);border:none;border-radius:5px;font-size:.78rem;font-weight:600;cursor:pointer;padding:4px 12px;}" +
       "#tab-credential-reference .cr-wl-save:disabled{opacity:.6;cursor:default;}" +
-      "#tab-credential-reference .cr-wl-clear{font-size:.74rem;color:#b45309;margin-left:8px;text-decoration:none;}" +
+      "#tab-credential-reference .cr-wl-clear{font-size:.74rem;color:var(--mustard-text);margin-left:8px;text-decoration:none;}" +
       "#tab-credential-reference .cr-wl-clear:hover{text-decoration:underline;}" +
-      "#tab-credential-reference .cr-wl-assigned-by{color:#1e7e45;font-size:.78rem;font-weight:600;}" +
+      "#tab-credential-reference .cr-wl-assigned-by{color:var(--hunter);font-size:.78rem;font-weight:600;}" +
       "#tab-credential-reference .cr-wl-toggle{display:flex;gap:0;margin:0 0 8px;}" +
-      "#tab-credential-reference .cr-wl-toggle-btn{border:1px solid #cbd5e1;background:rgba(255,255,255,.6);color:var(--text-body);font-size:.78rem;padding:4px 12px;cursor:pointer;}" +
+      "#tab-credential-reference .cr-wl-toggle-btn{border:1px solid var(--border-strong);background:rgba(255,255,255,.6);color:var(--text-body);font-size:.78rem;padding:4px 12px;cursor:pointer;}" +
       "#tab-credential-reference .cr-wl-toggle-btn:first-child{border-radius:6px 0 0 6px;}" +
       "#tab-credential-reference .cr-wl-toggle-btn:last-child{border-radius:0 6px 6px 0;border-left:none;}" +
-      "#tab-credential-reference .cr-wl-toggle-on{background:var(--seal-blue);color:#fff;border-color:var(--seal-blue);font-weight:600;}" +
-      "#tab-credential-reference .cr-wl-preseed-bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:.8rem;color:var(--text-body);background:#fffbeb;border:1px solid #fde68a;border-radius:6px;padding:6px 10px;margin:0 0 8px;}" +
+      "#tab-credential-reference .cr-wl-toggle-on{background:var(--seal-blue);color:var(--on-accent);border-color:var(--seal-blue);font-weight:600;}" +
+      "#tab-credential-reference .cr-wl-preseed-bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:.8rem;color:var(--text-body);background:var(--college-flag);border:1px solid var(--mustard-fill);border-radius:6px;padding:6px 10px;margin:0 0 8px;}" +
       "#tab-credential-reference .cr-wl-saveall{background:var(--hunter,#166534);color:var(--on-accent);border:none;border-radius:5px;font-size:.76rem;font-weight:600;cursor:pointer;padding:4px 10px;}" +
       "#tab-credential-reference .cr-wl-saveall:disabled{opacity:.6;cursor:default;}" +
-      "#tab-credential-reference .cr-wl-row.cr-wl-preseeded{background:#fffdf5;}" +
-      "#tab-credential-reference .cr-wl-preseed-badge{display:inline-block;margin-left:6px;font-size:.68rem;color:#92400e;background:#fef3c7;border:1px solid #fde68a;border-radius:9px;padding:0 6px;cursor:help;white-space:nowrap;}" +
+      "#tab-credential-reference .cr-wl-row.cr-wl-preseeded{background:var(--college-flag);}" +
+      "#tab-credential-reference .cr-wl-preseed-badge{display:inline-block;margin-left:6px;font-size:.68rem;color:var(--mustard-text);background:var(--college-flag);border:1px solid var(--mustard-fill);border-radius:9px;padding:0 6px;cursor:help;white-space:nowrap;}" +
       // Originating-college chips (Session 104) — who ENTERED the exhibit, so a
       // curator can resolve Cx rows against that college's local catalog.
       "#tab-credential-reference .cr-wl-colleges{margin-top:3px;display:flex;flex-wrap:wrap;gap:4px;}" +
-      "#tab-credential-reference .cr-wl-college{display:inline-block;font-size:.68rem;color:#334155;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:9px;padding:0 6px;cursor:help;white-space:nowrap;}" +
+      "#tab-credential-reference .cr-wl-college{display:inline-block;font-size:.68rem;color:var(--text-muted);background:var(--surface-subtle);border:1px solid var(--border);border-radius:9px;padding:0 6px;cursor:help;white-space:nowrap;}" +
       // Multi-issuer "+N" chip + the point-of-need "＋ set" issuer affordance
       // (Session 104 — Rule 4 multi-issuer families; the 10-Key null-issuer case).
-      "#tab-credential-reference .cr-issuer-more{display:inline-block;margin-left:5px;font-size:.68rem;color:#1e40af;background:#eff6ff;border:1px solid #bfdbfe;border-radius:9px;padding:0 6px;cursor:help;white-space:nowrap;}" +
-      "#tab-credential-reference .cr-issuer-set{margin-left:6px;font-size:.68rem;color:#92400e;background:#fef3c7;border:1px solid #fde68a;border-radius:9px;padding:0 6px;cursor:pointer;white-space:nowrap;}" +
-      "#tab-credential-reference .cr-issuer-set:hover{background:#fde68a;}" +
+      "#tab-credential-reference .cr-issuer-more{display:inline-block;margin-left:5px;font-size:.68rem;color:var(--cobalt);background:var(--reading-flag);border:1px solid var(--cobalt);border-radius:9px;padding:0 6px;cursor:help;white-space:nowrap;}" +
+      "#tab-credential-reference .cr-issuer-set{margin-left:6px;font-size:.68rem;color:var(--mustard-text);background:var(--college-flag);border:1px solid var(--mustard-fill);border-radius:9px;padding:0 6px;cursor:pointer;white-space:nowrap;}" +
+      "#tab-credential-reference .cr-issuer-set:hover{background:var(--college-flag);}" +
       // Item 4 (2026-06-04): the CCR identity runs on one line + muted inline
       // local-course units. The articulations table is LEFT-aligned (header +
       // data) — Sam's call 2026-06-04: the global center-align made the long
@@ -3143,7 +3169,7 @@
       "#tab-credential-reference table.cr-arts-table th:nth-child(2),#tab-credential-reference table.cr-arts-table td.cr-art-local{width:40%;}" +
       "#tab-credential-reference table.cr-arts-table th:nth-child(3),#tab-credential-reference table.cr-arts-table td.cr-art-colleges{width:18%;}" +
       "#tab-credential-reference table.cr-arts-table td{overflow-wrap:anywhere;}" +
-      "#tab-credential-reference .cr-lc-units{color:#6b7280;font-size:.92em;}" +
+      "#tab-credential-reference .cr-lc-units{color:var(--text-muted);font-size:.92em;}" +
       // R1 noise suppression (2026-06-04): subject-outlier review badge (amber,
       // matches the file's existing gen-chip/triage palette) + the collapsed
       // elective-bucket disclosure. Native <details> marker kept (the expand
@@ -3153,65 +3179,65 @@
       // is good), so navy-on-light like the Local chip, not the amber warn badges.
       "#tab-credential-reference .cr-art-merged{display:inline-block;margin-left:6px;padding:0 6px;border-radius:8px;font-size:.62rem;font-weight:600;background:rgba(255,255,255,.5);color:var(--text-muted);border:1px solid var(--border-strong);white-space:nowrap;cursor:help;}" +
       "#tab-credential-reference .cr-bucket-details{margin:8px 0 4px;}" +
-      "#tab-credential-reference .cr-bucket-summary{cursor:pointer;font-size:.78rem;font-weight:600;color:#92400e;background:#FEF3C7;border:1px solid #F59E0B;border-radius:6px;padding:4px 10px;display:inline-block;}" +
-      "#tab-credential-reference .cr-bucket-note{font-size:.74rem;color:#6b7280;font-style:italic;margin:6px 0 4px;max-width:var(--cpl-measure,none);}" +
+      "#tab-credential-reference .cr-bucket-summary{cursor:pointer;font-size:.78rem;font-weight:600;color:var(--mustard-text);background:var(--college-flag);border:1px solid var(--mustard-fill);border-radius:6px;padding:4px 10px;display:inline-block;}" +
+      "#tab-credential-reference .cr-bucket-note{font-size:.74rem;color:var(--text-muted);font-style:italic;margin:6px 0 4px;max-width:var(--cpl-measure,none);}" +
       "#tab-credential-reference .cr-bucket-table{opacity:.72;margin-top:2px;}" +
-      "#tab-credential-reference .cr-bucket-row .cr-id-code{color:#6b7280;}" +
+      "#tab-credential-reference .cr-bucket-row .cr-id-code{color:var(--text-muted);}" +
       // System-level GE-Area AP-credit callout (2026-06-04) — navy/brand accent
       // (authoritative statewide info), sits at the top of the expanded body.
       "#tab-credential-reference .cr-geap{border:1px solid var(--border-strong);border-left:4px solid var(--seal-blue);background:var(--surface-subtle);border-radius:6px;padding:8px 12px;margin:2px 0 12px;}" +
       "#tab-credential-reference .cr-geap-head{font-size:.68rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--text-strong);margin-bottom:3px;}" +
-      "#tab-credential-reference .cr-geap-body{font-size:.92rem;color:#1f2937;}" +
+      "#tab-credential-reference .cr-geap-body{font-size:.92rem;color:var(--text-strong);}" +
       "#tab-credential-reference .cr-geap-area{color:var(--text-strong);}" +
-      "#tab-credential-reference .cr-geap-na{color:#7a5c00;font-weight:600;}" +
-      "#tab-credential-reference .cr-geap-note{font-size:.72rem;color:#6b7280;font-style:italic;margin-top:4px;max-width:var(--cpl-measure,none);}" +
+      "#tab-credential-reference .cr-geap-na{color:var(--mustard-text);font-weight:600;}" +
+      "#tab-credential-reference .cr-geap-note{font-size:.72rem;color:var(--text-muted);font-style:italic;margin-top:4px;max-width:var(--cpl-measure,none);}" +
       // Students-served column (path 1) — the count stands out for triage; the
       // masked "<N" is muted (small-cell suppression).
       "#tab-credential-reference .cr-served-n{font-weight:600;color:var(--text-strong);}" +
       "#tab-credential-reference .cr-served-sup{color:var(--text-muted);font-style:italic;font-size:.85em;}" +
       // GE-Area coherence (item #3) — per-identity "off GE Area" badge (warn) +
       // the credential-level callout note.
-      "#tab-credential-reference .cr-ge-off{display:inline-block;margin-left:6px;padding:0 6px;border-radius:8px;font-size:.62rem;font-weight:600;background:#FEF3C7;color:#92400e;border:1px solid #F59E0B;white-space:nowrap;}" +
-      "#tab-credential-reference .cr-geap-off{font-size:.74rem;font-weight:600;color:#92400e;margin-top:5px;}" +
+      "#tab-credential-reference .cr-ge-off{display:inline-block;margin-left:6px;padding:0 6px;border-radius:8px;font-size:.62rem;font-weight:600;background:var(--college-flag);color:var(--mustard-text);border:1px solid var(--mustard-fill);white-space:nowrap;}" +
+      "#tab-credential-reference .cr-geap-off{font-size:.74rem;font-weight:600;color:var(--mustard-text);margin-top:5px;}" +
       // ── Session 105 (2026-07-08) — glass/light consistency pass ──
       // Curation panel: its label cells are <th> INSIDE .cr-table, so the main
       // table's sticky seal-blue th rule bled in (they rendered as black boxes
       // with dark slate text — Sam's screenshot). Neutralize + restyle quiet.
-      "#tab-credential-reference table.cr-table .cr-curation-tbl th{position:static;background:transparent;color:#475569;text-align:right;font-size:.8rem;z-index:auto;}" +
+      "#tab-credential-reference table.cr-table .cr-curation-tbl th{position:static;background:transparent;color:var(--text-muted);text-align:right;font-size:.8rem;z-index:auto;}" +
       "#tab-credential-reference .cr-curation-panel{background:var(--surface-opaque,#fff);border:1px solid var(--border);border-left:4px solid var(--seal-blue);}" +
-      "#tab-credential-reference .cr-curation-input{background:var(--surface-opaque);color:var(--text-body,#3A3A36);border:1px solid #cbd5e1;border-radius:5px;padding:4px 6px;font-size:.82rem;min-width:24ch;}" +
+      "#tab-credential-reference .cr-curation-input{background:var(--surface-opaque);color:var(--text-body,#3A3A36);border:1px solid var(--border-strong);border-radius:5px;padding:4px 6px;font-size:.82rem;min-width:24ch;}" +
       // A bulk/row save that failed is loud (2026-07-08 — a partial batch
       // previously read as success unless you noticed the button text).
-      "#tab-credential-reference .cr-wl-row.cr-wl-save-failed{background:#fef2f2;outline:1px solid #fca5a5;}" +
+      "#tab-credential-reference .cr-wl-row.cr-wl-save-failed{background:var(--surface-subtle);outline:1px solid var(--crimson);}" +
       "#tab-credential-reference .cr-wl-row.cr-wl-save-failed .cr-wl-save{background:var(--crimson,#920000);}" +
       // Missing-issuer lane — its own table/row classes (cr-ni-*) mirroring
       // the worklist look, so the two lanes never mix in queries or CSS.
       "#tab-credential-reference .cr-ni-title{margin-top:22px;}" +
       "#tab-credential-reference .cr-ni-table{border-collapse:collapse;width:100%;font-size:.85rem;}" +
-      "#tab-credential-reference .cr-ni-table th{text-align:left;background:var(--seal-blue);color:#fff;padding:7px 10px;position:sticky;top:0;}" +
-      "#tab-credential-reference .cr-ni-table td{padding:6px 10px;border-top:1px solid #eef2f7;vertical-align:top;}" +
-      "#tab-credential-reference .cr-ni-row.cr-wl-done{background:#f0fdf4;}" +
+      "#tab-credential-reference .cr-ni-table th{text-align:left;background:var(--seal-blue);color:var(--on-accent);padding:7px 10px;position:sticky;top:0;}" +
+      "#tab-credential-reference .cr-ni-table td{padding:6px 10px;border-top:1px solid var(--border);vertical-align:top;}" +
+      "#tab-credential-reference .cr-ni-row.cr-wl-done{background:var(--surface-subtle);}" +
       "#tab-credential-reference .cr-mg-table{width:100%;border-collapse:collapse;margin:.4em 0 1em;}" +
       "#tab-credential-reference .cr-mg-row td{padding:.3em .5em;border-bottom:1px solid var(--border-soft,#e5e7eb);vertical-align:middle;}" +
       "#tab-credential-reference .cr-mg-old{font-weight:600;max-width:26em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}" +
       "#tab-credential-reference .cr-mg-arrow{color:var(--text-soft,#6b7280);}" +
       "#tab-credential-reference .cr-mg-input{width:100%;min-width:16em;box-sizing:border-box;}" +
-      "#tab-credential-reference .cr-mg-row.cr-wl-done{background:#f0fdf4;}" +
-      "#tab-credential-reference .cr-mg-row.cr-wl-save-failed{background:#fef2f2;outline:1px solid #fca5a5;}" +
+      "#tab-credential-reference .cr-mg-row.cr-wl-done{background:var(--surface-subtle);}" +
+      "#tab-credential-reference .cr-mg-row.cr-wl-save-failed{background:var(--surface-subtle);outline:1px solid var(--crimson);}" +
       "#tab-credential-reference .cr-ni-lookup{margin-top:.25em;display:flex;align-items:center;gap:.5em;flex-wrap:wrap;}" +
       "#tab-credential-reference .cr-ni-search,#tab-credential-reference .cr-ni-suggest," +
       "#tab-credential-reference .cr-ni-tsearch,#tab-credential-reference .cr-ni-tsuggest{" +
         "background:none;border:none;padding:0;cursor:pointer;font-size:.78em;color:var(--link,#2563eb);text-decoration:underline;}" +
       "#tab-credential-reference .cr-ni-suggest:disabled,#tab-credential-reference .cr-ni-tsuggest:disabled{opacity:.5;cursor:wait;}" +
       "#tab-credential-reference .cr-ni-suggest-out,#tab-credential-reference .cr-ni-tsuggest-out{font-size:.78em;color:var(--text-soft,#6b7280);}" +
-      "#tab-credential-reference .cr-ni-suggest-chip{background:#eff6ff;border:1px solid var(--link,#2563eb);" +
+      "#tab-credential-reference .cr-ni-suggest-chip{background:var(--reading-flag);border:1px solid var(--link,#2563eb);" +
         "border-radius:1em;padding:.05em .6em;cursor:pointer;font-size:1em;color:var(--link,#2563eb);}" +
-      "#tab-credential-reference .cr-ni-row.cr-wl-preseeded{background:#fffdf5;}" +
-      "#tab-credential-reference .cr-ni-row.cr-wl-save-failed{background:#fef2f2;outline:1px solid #fca5a5;}" +
+      "#tab-credential-reference .cr-ni-row.cr-wl-preseeded{background:var(--college-flag);}" +
+      "#tab-credential-reference .cr-ni-row.cr-wl-save-failed{background:var(--surface-subtle);outline:1px solid var(--crimson);}" +
       // Session 106 — raw-title/college context + editable title in the lane.
       "#tab-credential-reference .cr-ni-table td.cr-wl-raw{width:34%;}" +
       "#tab-credential-reference .cr-ni-rawline{margin-top:3px;font-size:.72rem;color:var(--text-muted);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;}" +
-      "#tab-credential-reference .cr-ni-trainer-chip{display:inline-block;margin-top:3px;font-size:.68rem;color:var(--hunter,#166534);background:#ecfdf5;border:1px solid #a7f3d0;border-radius:9px;padding:0 6px;cursor:help;white-space:nowrap;}" +
+      "#tab-credential-reference .cr-ni-trainer-chip{display:inline-block;margin-top:3px;font-size:.68rem;color:var(--hunter,#166534);background:var(--surface-subtle);border:1px solid var(--hunter);border-radius:9px;padding:0 6px;cursor:help;white-space:nowrap;}" +
       "#tab-credential-reference .cr-ni-add-issuer{display:inline-block;margin-top:3px;font-size:.72rem;color:var(--seal-blue-text,#002F6D);text-decoration:none;}" +
       "#tab-credential-reference .cr-ni-add-issuer:hover{text-decoration:underline;}" +
       "#tab-credential-reference .cr-ni-iss2{margin-top:4px;}" +
@@ -3223,7 +3249,7 @@
       "#tab-credential-reference .cr-lanes{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 10px;}" +
       "#tab-credential-reference .cr-lane{border:1px solid var(--border-strong);background:var(--surface-opaque,#fff);color:var(--text-body,#3A3A36);border-radius:16px;padding:4px 12px;font-size:.78rem;font-weight:600;cursor:pointer;}" +
       "#tab-credential-reference .cr-lane:hover{background:var(--surface-muted,#ECE9E2);}" +
-      "#tab-credential-reference .cr-lane.active{background:var(--seal-blue);color:#fff;border-color:var(--seal-blue);}" +
+      "#tab-credential-reference .cr-lane.active{background:var(--seal-blue);color:var(--on-accent);border-color:var(--seal-blue);}" +
       "#tab-credential-reference .cr-lane-n{color:var(--text-muted,#5C5C55);font-variant-numeric:tabular-nums;}" +
       "#tab-credential-reference .cr-lane.active .cr-lane-n{color:var(--mustard-on-dark,#E3B341);}" +
       // In-cell inputs — quiet until hover/focus (the issuer-lane pattern
@@ -3239,7 +3265,7 @@
       // Dirty / saved / failed row states — the left stripe is the signal.
       "#tab-credential-reference tr.cr-dirty td:first-child{box-shadow:inset 3px 0 0 var(--mustard-fill,#E3B341);}" +
       "#tab-credential-reference tr.cr-saved td:first-child{box-shadow:inset 3px 0 0 var(--hunter,#2C601A);}" +
-      "#tab-credential-reference tr.cr-save-failed{background:#fef2f2;outline:1px solid #fca5a5;}" +
+      "#tab-credential-reference tr.cr-save-failed{background:var(--surface-subtle);outline:1px solid var(--crimson);}" +
       "#tab-credential-reference .cr-grid-save{background:var(--cobalt,#0047AB);color:var(--on-accent);border:none;border-radius:6px;font-size:.76rem;font-weight:600;padding:4px 10px;cursor:pointer;}" +
       "#tab-credential-reference .cr-grid-save:disabled{opacity:.6;cursor:default;}" +
       "#tab-credential-reference .cr-saveall{background:var(--cobalt,#0047AB);color:var(--on-accent);border:none;border-radius:7px;font-size:.8rem;font-weight:600;padding:6px 12px;cursor:pointer;}" +
@@ -3252,7 +3278,7 @@
       "#tab-credential-reference .cr-subj{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.78rem;font-weight:700;color:var(--text-strong,#1C1C1A);}" +
       // Inline merge-collision strip under the title input (PR-5b/2 at the
       // point of edit).
-      "#tab-credential-reference .cr-merge-strip{margin:4px 0 0;padding:4px 8px;border:1px solid var(--crimson,#920000);border-radius:6px;background:#FBF1F1;font-size:.72rem;color:var(--crimson,#920000);display:flex;gap:8px;align-items:center;flex-wrap:wrap;text-align:left;}" +
+      "#tab-credential-reference .cr-merge-strip{margin:4px 0 0;padding:4px 8px;border:1px solid var(--crimson,#920000);border-radius:6px;background:var(--surface-subtle);font-size:.72rem;color:var(--crimson,#920000);display:flex;gap:8px;align-items:center;flex-wrap:wrap;text-align:left;}" +
       "#tab-credential-reference .cr-merge-confirm{border:1px solid var(--crimson,#920000);background:var(--crimson,#920000);color:var(--on-accent);border-radius:5px;font-size:.7rem;font-weight:600;padding:2px 8px;cursor:pointer;}" +
       // ⚙ Columns popover.
       "#tab-credential-reference .cr-cols-dd{position:relative;display:inline-block;}" +
@@ -3272,14 +3298,14 @@
       // The tab's overall background: cream, not gray (scoped token).
       // Cream TINT, not opaque — the First Light ghost painting shows
       // through like the other tabs (Sam, round 3).
-      "#tab-credential-reference{--cer-cream:rgba(254,249,218,.8);background:var(--cer-cream);}" +
+      "#tab-credential-reference{background:var(--cer-cream);}" +
       "#tab-credential-reference .cr-table-wrap{background:var(--surface-opaque,#fff);}" +
       // In-cell SUBJ (uppercase display) + Discipline inputs.
       "#tab-credential-reference .cr-subj-in{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-weight:700;text-transform:uppercase;max-width:9ch;}" +
       // ⇆ merge-suggestion chip (violet = machine-suggested) + panel.
       "#tab-credential-reference .cr-chip-mergesug{color:var(--violet,#6D28D9);border-color:var(--violet,#6D28D9);background:var(--surface-1,#F6F2FD);cursor:pointer;}" +
       "#tab-credential-reference .cr-chip-mergesug:hover{background:var(--surface-2,#EDE4FB);}" +
-      "#tab-credential-reference .cr-mergesug-panel{margin:5px 0 0;padding:7px 10px;border:1px solid var(--violet,#6D28D9);border-radius:6px;background:#F6F2FD;font-size:.76rem;text-align:left;}" +
+      "#tab-credential-reference .cr-mergesug-panel{margin:5px 0 0;padding:7px 10px;border:1px solid var(--violet,#6D28D9);border-radius:6px;background:var(--surface-subtle);font-size:.76rem;text-align:left;}" +
       "#tab-credential-reference .cr-mergesug-h{font-weight:700;color:var(--violet,#6D28D9);margin-bottom:4px;}" +
       "#tab-credential-reference .cr-mergesug-row{padding:3px 0;display:flex;gap:6px;align-items:center;flex-wrap:wrap;}" +
       "#tab-credential-reference .cr-mergesug-title{font-weight:600;color:var(--text-strong,#1C1C1A);}" +
@@ -3295,14 +3321,56 @@
       "#tab-credential-reference .cr-chip-mergesug{color:var(--seal-blue-text,#002F6D);border-color:var(--seal-blue,#1e40af);}" +
       "#tab-credential-reference .cr-mergesug-h{color:var(--seal-blue-text,#002F6D);}" +
       // Header row text: white, not gold.
-      "#tab-credential-reference .cr-table th{color:#fff;}" +
-      "#tab-credential-reference .cr-sort-indicator.active{color:#fff;}" +
+      "#tab-credential-reference .cr-table th{color:var(--on-accent);}" +
+      "#tab-credential-reference .cr-sort-indicator.active{color:var(--on-accent);}" +
       // Column drag-resize handles (widths persist per-browser).
       "#tab-credential-reference .cr-table th{position:sticky;}" +
       "#tab-credential-reference .cr-resize{position:absolute;right:0;top:0;bottom:0;width:7px;cursor:col-resize;user-select:none;}" +
-      "#tab-credential-reference .cr-resize:hover{background:rgba(255,255,255,.35);}";
+      "#tab-credential-reference .cr-resize:hover{background:rgba(255,255,255,.35);}" +
+      CER_UI_PASS_CSS;
     document.head.appendChild(st);
   }
+
+  // ── First Light UI pass (2026-10-16) ─────────────────────────────────────
+  // Controls are underlined cobalt words, no border and no fill (Sam,
+  // 2026-10-09; reference-ui-design-system "Controls"), every target at least
+  // 24px (WCAG 2.2, 2.5.8), and the tab's cream ground a token so the dark
+  // theme gets its own value. This sheet lands in <head>, BEFORE the tab's
+  // <style> block in the body, so each selector carries `.cpl-tab-pane` to win
+  // on specificity rather than on order. Exceptions, per the spec: the lane
+  // chips are a toggle set (weight + aria-pressed), a chip is a category, and
+  // the caret / title / group toggles disclose a row.
+  var CER_CTRL = ["cr-action-btn", "cr-bulk-btn", "cr-bulk-clear", "cr-saveall",
+    "cr-wl-saveall", "cr-wl-save", "cr-wl-clear", "cr-wl-back", "cr-triage-btn",
+    "cr-export-btn", "cr-ni-suggest", "cr-ni-suggest-chip", "cr-ni-tsuggest",
+    "cr-ni-search", "cr-ni-tsearch", "cr-ni-add-issuer", "cr-mg-confirm",
+    "cr-merge-confirm", "cr-mergesug-btn", "cr-mergesug-close", "cr-issuer-add",
+    "cr-grid-save", "cr-curation-save", "cr-curation-edit", "cr-curation-clear",
+    "cr-curation-cancel", "cr-badge-more", "cr-auth-link", "cr-ind-more",
+    "cr-ind-open"];
+  function cerCtrlSel(suffix) {
+    return CER_CTRL.map(function (c) {
+      return "#tab-credential-reference.cpl-tab-pane button." + c + (suffix || "");
+    }).join(",");
+  }
+  var CER_UI_PASS_CSS =
+    "#tab-credential-reference.cpl-tab-pane{background:var(--cer-cream);}" +
+    cerCtrlSel() + "{border:0;border-radius:0;background:none;color:var(--cobalt);font-weight:600;" +
+      "font-size:.8rem;padding:2px 0;min-height:24px;cursor:pointer;text-decoration:underline;" +
+      "text-decoration-thickness:1px;text-underline-offset:3px;}" +
+    cerCtrlSel(":hover") + "{background:none;color:var(--cobalt);text-decoration-thickness:2px;}" +
+    cerCtrlSel(":disabled") + "{background:none;color:var(--text-muted);text-decoration:none;cursor:wait;}" +
+    cerCtrlSel(":focus-visible") + "{outline:2px solid var(--focus-ring);outline-offset:2px;}" +
+    // Clearing a curated value is the one destructive word: crimson, still a word.
+    "#tab-credential-reference.cpl-tab-pane button.cr-curation-clear{color:var(--crimson);}" +
+    // Disclosure + chip targets: 24px floor without changing their look.
+    "#tab-credential-reference.cpl-tab-pane button.cr-caret,#tab-credential-reference.cpl-tab-pane button.cr-curate-toggle{min-width:24px;min-height:24px;}" +
+    "#tab-credential-reference.cpl-tab-pane button.cr-title-toggle,#tab-credential-reference.cpl-tab-pane button.cr-chip,#tab-credential-reference.cpl-tab-pane button.cr-lane{min-height:24px;}" +
+    "#tab-credential-reference.cpl-tab-pane button.cr-lane[aria-pressed=\"true\"]{font-weight:700;}" +
+    // Phones: the grid scrolls inside its own frame; the bar wraps to one column.
+    "@media (max-width:560px){#tab-credential-reference.cpl-tab-pane .cr-toolbar{flex-direction:column;align-items:stretch;}" +
+      "#tab-credential-reference.cpl-tab-pane .cr-toolbar input.cr-filter,#tab-credential-reference.cpl-tab-pane .cr-search-wide{min-width:0;width:100%;}" +
+      "#tab-credential-reference.cpl-tab-pane .cr-auth{margin-left:0;}}";
 
   // Compact college label for the pills (full name kept in the title attr). Looks
   // up window.cplCollegeShort lazily — college_short_names.js loads after this file
@@ -3318,7 +3386,7 @@
       g.appendChild(el("span", { class: "cr-college-badge " + cls, title: c }, [SHORT(c)]));
     });
     if (names.length > CAP) {
-      var more = el("a", { href: "#", class: "cr-badge-more" }, ["+" + (names.length - CAP) + " more"]);
+      var more = el("button", { type: "button", class: "cr-badge-more" }, ["+" + (names.length - CAP) + " more"]);
       more.onclick = function (e) {
         e.preventDefault();
         names.slice(CAP).forEach(function (c) {
@@ -3339,6 +3407,16 @@
   // when there's nothing to show so the title stays clean.
   function crTitleChips(r) {
     var c = el("div", { class: "cr-title-chips" });
+    // Issuer change (industry catalog): a state the curator acts on, so it
+    // leads the chips and carries the one color this tab reserves for action.
+    var ch = industryChange(r);
+    if (ch) {
+      ensureIndustryCss();
+      c.appendChild(el("span", { class: "cr-chip cr-chip-indchange",
+        title: "From the issuer's own page (" + (ch.c.verified_on || "date TBA") + "): "
+          + ch.c.name + (ch.c.notes ? ". " + ch.c.notes : "")
+          + " Retitling the exhibit is a curation step; open the row for the industry record." }, [ch.word]));
+    }
     // "Generated Title" — the credential's Common Exhibit Title is an
     // AI-generated draft, not yet curator-confirmed (Mark initiated) or renamed
     // (✎). Shown on every AI-draft title so a curator can tell at a glance
@@ -3464,6 +3542,7 @@
     state.lane = k;
     state.worklistOpen = false;
     if (k === "unc" || k === "noiss" || k === "merge") ensureWorklistData();
+    if (k === "industry") { state.indShown = INDUSTRY_PAGE; fetchIndustry(); }
     render();
   }
 
@@ -3583,7 +3662,7 @@
 
     var panel = el("div", { class: "cr-worklist" });
     if (!section) {
-      var back = el("a", { class: "cr-wl-back", href: "#" }, ["← back to credentials"]);
+      var back = el("button", { type: "button", class: "cr-wl-back" }, ["← back to credentials"]);
       back.onclick = function (e) { e.preventDefault(); closeWorklist(); };
       panel.appendChild(back);
     }
@@ -4079,7 +4158,7 @@
       return x;
     }
     splitIssuers(iss2Base).forEach(addExtraIssuerInput);
-    var addLink = el("a", { class: "cr-ni-add-issuer", href: "#",
+    var addLink = el("button", { type: "button", class: "cr-ni-add-issuer",
       title: "Some credentials are certified by more than one body (Rule 4). "
         + "Record additional issuing agencies — each is ADDED alongside the "
         + "one above, never replacing it. Click again for another." },
@@ -4801,7 +4880,7 @@
       return x;
     }
     splitIssuers(iss2Base).forEach(addExtraIss);
-    var addIssLink = el("a", { class: "cr-ni-add-issuer", href: "#",
+    var addIssLink = el("button", { type: "button", class: "cr-ni-add-issuer",
       title: "Some credentials are certified by more than one body (Rule 4). "
         + "Record additional issuing agencies — each is ADDED alongside the one "
         + "above, never replacing it. Click again for another." },
@@ -4862,7 +4941,7 @@
     return tr;
   }
   function makeClearLink(raw, tr, actTd, saveBtn) {
-    var clr = el("a", { class: "cr-wl-clear", href: "#", title: "Remove this assignment" }, ["clear"]);
+    var clr = el("button", { type: "button", class: "cr-wl-clear", title: "Remove this assignment" }, ["clear"]);
     clr.onclick = function (e) {
       e.preventDefault();
       clearUnclass(raw).then(function (r) {
@@ -4984,6 +5063,12 @@
     // 2026-06-03 (they live on the collapsed-row title now). Skip if empty. ──
     var scopeBlock = renderScopeAndBadges(r);
     if (scopeBlock) div.appendChild(scopeBlock);
+
+    // ── Industry record (kb/it_ai_credential_catalog.json): what the issuer
+    // publishes now — status, CIP, skills, the official page. Only on rows the
+    // catalog joins to; absent until the catalog loads. ──
+    var indBlock = renderIndustryRecord(r);
+    if (indBlock) div.appendChild(indBlock);
 
     // ── Audit signals — moved up here (2026-06-04, Sam's call) so they sit
     // directly under the Articulated / Potential-adopter section, where a
@@ -5343,6 +5428,328 @@
       .catch(function () {});
   }
 
+  // ── Industry credentials (kb/it_ai_credential_catalog.json) ───────────────
+  // What the issuers publish in IT, cybersecurity, data and AI, joined to MAP:
+  // CareerOneStop, the Credential Engine sample and the issuer-verified watch
+  // file, built by kb/_build_it_ai_credential_catalog.py and kept current by
+  // the weekly credential watch (docs/reference/credential_watch_agent.md).
+  // READ-ONLY here: the catalog is derived, and the skills an issuer publishes
+  // are verified against course outcomes by faculty later, never in this view.
+  // Loaded after the first render, like the COS overlay, so the grid never
+  // waits on it. Two surfaces read it: the "Industry credentials" lane (the
+  // whole catalog) and, on a CER row MAP has articulated, the industry record
+  // plus an issuer-change chip (retired / retiring / renamed).
+  var INDUSTRY_URL = "kb/it_ai_credential_catalog.json";
+  var INDUSTRY_PAGE = 100;
+  var IND_STATUS = { active: "Active", "new": "New", beta: "Beta",
+    retiring: "Retiring", retired: "Retired" };
+  var IND_MAP = { "articulated": "Articulated",
+    "exhibit, not yet articulated": "Exhibit, not articulated",
+    "not in MAP": "Not in MAP" };
+
+  function fetchIndustry() {
+    if (state.industry || state.industryLoading) return Promise.resolve();
+    state.industryLoading = true;
+    state.industryError = false;
+    return fetch(INDUSTRY_URL, { cache: "no-store" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        state.industryLoading = false;
+        if (!d || !Array.isArray(d.credentials)) { state.industryError = true; return; }
+        indexIndustry(d);
+      })
+      .catch(function () { state.industryLoading = false; state.industryError = true; })
+      .then(function () { if (!state.worklistOpen) render(); });
+  }
+
+  // Exposed for tests: the join is the contract (a catalog row's map.titles are
+  // CER unified_title keys, the KB key and never a display override).
+  function indexIndustry(d) {
+    state.industry = d.credentials;
+    state.industryMeta = { inputs: d._inputs || {}, stats: d._stats || {},
+      attribution: d._attribution || "" };
+    var by = {};
+    d.credentials.forEach(function (c) {
+      ((c.map && c.map.titles) || []).forEach(function (t) { by[t] = c; });
+    });
+    state.industryByTitle = by;
+  }
+
+  // The issuer change a curator must act on for a CER row, or null. A rename
+  // reads from `formerly` (the CER title is an old name) or from a differing
+  // current name whose row is not itself retired.
+  function industryChange(r) {
+    var c = state.industryByTitle && state.industryByTitle[r.unified_title];
+    if (!c) return null;
+    if (c.status === "retired") return { word: "Retired by issuer", c: c };
+    if (c.status === "retiring") return { word: "Retiring", c: c };
+    if ((c.formerly || []).indexOf(r.unified_title) !== -1) return { word: "Renamed by issuer", c: c };
+    return null;
+  }
+
+  function industryMapWord(c) {
+    var w = IND_MAP[c.map_status] || c.map_status || "";
+    if (c.map_status === "articulated" && c.map && c.map.colleges_n) {
+      w += " at " + c.map.colleges_n + (c.map.colleges_n === 1 ? " college" : " colleges");
+    }
+    return w;
+  }
+
+  function industryFiltered() {
+    var f = state.indFilter, q = state.search;
+    return state.industry.filter(function (c) {
+      if (f.domain !== "all" && c.domain !== f.domain) return false;
+      if (f.status !== "all") {
+        if (f.status === "none" ? !!c.status : c.status !== f.status) return false;
+      }
+      if (f.map !== "all" && c.map_status !== f.map) return false;
+      if (f.emerging && !c.emerging) return false;
+      if (q) {
+        var hay = [c.name, c.issuer, c.code, c.acronym, (c.formerly || []).join(" "),
+          c.cip && c.cip.title, c.domain].join(" ").toLowerCase();
+        if (hay.indexOf(q) === -1) return false;
+      }
+      return true;
+    }).sort(function (a, b) {
+      // What MAP already carries first, then what is emerging, then A to Z.
+      var ra = a.map_status === "articulated" ? 0 : a.map ? 1 : 2;
+      var rb = b.map_status === "articulated" ? 0 : b.map ? 1 : 2;
+      if (ra !== rb) return ra - rb;
+      if (a.emerging !== b.emerging) return a.emerging ? -1 : 1;
+      return (a.issuer + " " + a.name).localeCompare(b.issuer + " " + b.name);
+    });
+  }
+
+  function indSelect(id, label, value, opts, onchange) {
+    var s = el("select", { class: "cr-filter", id: id, "aria-label": label });
+    opts.forEach(function (o) {
+      var op = el("option", { value: o[0] }, [o[1]]);
+      if (o[0] === value) op.selected = true;
+      s.appendChild(op);
+    });
+    s.onchange = function () { onchange(this.value); state.indShown = INDUSTRY_PAGE; render(); };
+    return s;
+  }
+
+  function renderIndustry() {
+    ensureIndustryCss();
+    var wrap = document.getElementById("cr-table-wrap");
+    var sum = document.getElementById("cr-summary");
+    if (!wrap) return;
+    clearNode(wrap);
+    if (sum) clearNode(sum);
+    if (!state.industry) {
+      if (!state.industryLoading && !state.industryError) fetchIndustry();
+      wrap.appendChild(el("p", { class: "cr-wl-note" }, [state.industryError
+        ? "The industry catalog did not load. Reload the page to try again."
+        : "Loading the industry catalog…"]));
+      return;
+    }
+    var f = state.indFilter, meta = state.industryMeta;
+    var domains = {};
+    state.industry.forEach(function (c) { if (c.domain) domains[c.domain] = 1; });
+    var bar = el("div", { class: "cr-ind-bar" });
+    bar.appendChild(indSelect("cr-ind-domain", "Field", f.domain,
+      [["all", "Field: any"]].concat(Object.keys(domains).sort().map(function (d) { return [d, d]; })),
+      function (v) { f.domain = v; }));
+    bar.appendChild(indSelect("cr-ind-status", "Issuer status", f.status,
+      [["all", "Status: any"], ["new", "New"], ["beta", "Beta"], ["active", "Active"],
+       ["retiring", "Retiring"], ["retired", "Retired"], ["none", "Registry only"]],
+      function (v) { f.status = v; }));
+    bar.appendChild(indSelect("cr-ind-map", "In MAP", f.map,
+      [["all", "MAP: any"], ["articulated", "Articulated"],
+       ["exhibit, not yet articulated", "Exhibit, not articulated"], ["not in MAP", "Not in MAP"]],
+      function (v) { f.map = v; }));
+    var emLab = el("label", { class: "cr-ind-check" });
+    var em = el("input", { type: "checkbox", id: "cr-ind-emerging" });
+    em.checked = !!f.emerging;
+    em.onchange = function () { f.emerging = this.checked; state.indShown = INDUSTRY_PAGE; render(); };
+    emLab.appendChild(em);
+    emLab.appendChild(document.createTextNode(" Emerging only"));
+    bar.appendChild(emLab);
+    wrap.appendChild(bar);
+
+    var rows = industryFiltered();
+    if (sum) {
+      sum.appendChild(el("strong", null, [String(rows.length)]));
+      sum.appendChild(document.createTextNode(" of " + state.industry.length
+        + " industry credentials shown · "
+        + (meta.stats.articulated != null ? meta.stats.articulated + " articulated in MAP · " : "")
+        + "issuers checked " + (meta.inputs.watch_verified_on || "TBA")
+        + " · the search box above filters this list too"));
+      if (meta.attribution) sum.appendChild(el("span", { class: "cr-cos-attrib" }, [meta.attribution]));
+    }
+    if (!rows.length) {
+      wrap.appendChild(el("p", { class: "cr-wl-note" }, ["No industry credential matches these filters."]));
+      return;
+    }
+
+    var table = el("table", { class: "cr-table cr-ind-table" });
+    var cg = el("colgroup");
+    ["cr-ind-c-name", "cr-ind-c-issuer", "cr-ind-c-level", "cr-ind-c-status",
+     "cr-ind-c-field", "cr-ind-c-map"].forEach(function (c) { cg.appendChild(el("col", { class: c })); });
+    table.appendChild(cg);
+    var thead = el("thead");
+    var hr = el("tr");
+    ["Credential", "Issuer", "Level", "Status", "Field (CIP)", "In MAP"].forEach(function (h) {
+      hr.appendChild(el("th", null, [h]));
+    });
+    thead.appendChild(hr);
+    table.appendChild(thead);
+    var tbody = el("tbody");
+    rows.slice(0, state.indShown).forEach(function (c) {
+      var open = !!state.indExpanded[c.id];
+      var tr = el("tr", { class: "cr-ind-row" + (open ? " cr-expanded-parent" : "") });
+      var nameTd = el("td", { class: "cr-ind-name" });
+      var tog = el("button", { type: "button", class: "cr-title-toggle",
+        "aria-expanded": open ? "true" : "false" }, [c.name]);
+      tog.onclick = function () { state.indExpanded[c.id] = !open; render(); };
+      nameTd.appendChild(tog);
+      var sub = [c.code || c.acronym, c.kind !== "certification" ? c.kind : null,
+        c.emerging ? "emerging" : null].filter(Boolean).join(" · ");
+      if (sub) nameTd.appendChild(el("div", { class: "cr-ind-sub" }, [sub]));
+      tr.appendChild(nameTd);
+      tr.appendChild(el("td", null, [c.issuer || ""]));
+      tr.appendChild(el("td", { class: "cr-ind-level" }, [c.level || ""]));
+      tr.appendChild(el("td", { class: "cr-ind-status cr-ind-st-" + (c.status || "none") },
+        [IND_STATUS[c.status] || "Registry only"]));
+      tr.appendChild(el("td", { class: "cr-ind-field" },
+        [c.cip ? c.cip.code + " " + c.cip.title : ""]));
+      var mapTd = el("td", { class: "cr-ind-map" }, [industryMapWord(c)]);
+      if (c.map && c.map.titles && c.map.titles.length) {
+        var go = el("button", { type: "button", class: "cr-ind-open",
+          title: "Show this credential's row in the Common Exhibit Reference" }, ["Open in the reference"]);
+        go.onclick = function () {
+          var t = c.map.titles[0];
+          state.search = t.toLowerCase();
+          state.expanded[t] = true;
+          var s = document.getElementById("cr-search");
+          if (s) s.value = t;
+          setLane("all");
+        };
+        mapTd.appendChild(el("div", null, [go]));
+      }
+      tr.appendChild(mapTd);
+      tbody.appendChild(tr);
+      if (open) tbody.appendChild(renderIndustryDetailRow(c, 6));
+    });
+    table.appendChild(tbody);
+    wrap.appendChild(table);
+    if (rows.length > state.indShown) {
+      var more = el("button", { type: "button", class: "cr-ind-more" },
+        ["Show " + Math.min(INDUSTRY_PAGE, rows.length - state.indShown) + " more of "
+          + (rows.length - state.indShown) + " remaining"]);
+      more.onclick = function () { state.indShown += INDUSTRY_PAGE; render(); };
+      wrap.appendChild(el("div", { class: "cr-ind-morewrap" }, [more]));
+    }
+  }
+
+  function renderIndustryDetailRow(c, colSpan) {
+    var tr = el("tr", { class: "cr-expanded" });
+    var td = el("td", { colspan: String(colSpan) });
+    td.appendChild(industryRecordBody(c, null));
+    tr.appendChild(td);
+    return tr;
+  }
+
+  // The body shared by the lane's expanded row and the CER row's record.
+  function industryRecordBody(c, change) {
+    var div = el("div", { class: "cr-expanded-body cr-ind-record" });
+    var facts = [c.issuer, c.code || c.acronym, c.level, IND_STATUS[c.status] || "Registry only",
+      c.launched ? "launched " + c.launched : null].filter(Boolean).join(" · ");
+    div.appendChild(el("p", { class: "cr-ind-facts" }, [facts]));
+    if (change && change.word === "Renamed by issuer") {
+      div.appendChild(el("p", { class: "cr-ind-change" },
+        ["The issuer now names this credential " + c.name + "."]));
+    }
+    if (c.formerly && c.formerly.length) {
+      div.appendChild(el("p", null, ["Formerly: " + c.formerly.join("; ")]));
+    }
+    if (c.notes) div.appendChild(el("p", { class: "cr-ind-notes" }, [c.notes]));
+    if (c.cip) {
+      div.appendChild(el("p", null, ["CIP " + c.cip.code + " " + c.cip.title
+        + " (sector " + c.cip.sector + ", " + c.cip.sector_title + "; assigned by "
+        + (c.cip.source || "rule") + ")"]));
+    }
+    if (c.skills && c.skills.domains && c.skills.domains.length) {
+      div.appendChild(el("h5", null, ["Skills the issuer publishes ("
+        + (c.skills.kind || "exam domains")
+        + (c.skills.exam_version ? ", exam version " + c.skills.exam_version : "") + ")"]));
+      var ul = el("ul", { class: "cr-ind-skills" });
+      c.skills.domains.forEach(function (d) {
+        var line = d.domain + (d.weight != null ? " (" + d.weight + "%)" : "");
+        var li = el("li", null, [line]);
+        if (d.skills && d.skills.length) li.appendChild(el("div", { class: "cr-ind-sub" }, [d.skills.join("; ")]));
+        ul.appendChild(li);
+      });
+      div.appendChild(ul);
+      div.appendChild(el("p", { class: "cr-ind-sub" },
+        ["Faculty verify these against course outcomes as they articulate; the list is the issuer's own."]));
+    }
+    if (c.map && c.map.colleges && c.map.colleges.length) {
+      div.appendChild(el("p", null, ["Articulated in MAP at: " + c.map.colleges.join(", ")
+        + (c.map.units_min != null ? " (" + (c.map.units_min === c.map.units_max ? c.map.units_min
+          : c.map.units_min + " to " + c.map.units_max) + " units)" : "")]));
+    }
+    var src = el("p", { class: "cr-ind-sub" }, ["Sources: " + (c.sources || []).join(", ")
+      + (c.verified_on ? " · issuer page checked " + c.verified_on : "")]);
+    if (c.url) {
+      src.appendChild(document.createTextNode(" · "));
+      src.appendChild(el("a", { href: c.url, target: "_blank", rel: "noopener noreferrer",
+        class: "cr-ind-link" }, ["Issuer's page"]));
+    }
+    div.appendChild(src);
+    return div;
+  }
+
+  // The CER row's industry record (expanded body), or null when the catalog
+  // holds no row joined to this credential.
+  function renderIndustryRecord(r) {
+    var c = state.industryByTitle && state.industryByTitle[r.unified_title];
+    if (!c) return null;
+    ensureIndustryCss();
+    var box = el("div", { class: "cr-ind-inrow" });
+    box.appendChild(el("h5", null, ["Industry record"]));
+    box.appendChild(industryRecordBody(c, industryChange(r)));
+    return box;
+  }
+
+  function ensureIndustryCss() {
+    if (document.getElementById("cr-ind-css")) return;
+    var P = "#tab-credential-reference.cpl-tab-pane ";
+    var st = document.createElement("style");
+    st.id = "cr-ind-css";
+    st.textContent =
+      P + ".cr-ind-bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:10px;background:var(--surface-subtle);border-bottom:1px solid var(--border);}" +
+      P + ".cr-ind-check{font-size:.82rem;color:var(--text-body);display:inline-flex;gap:6px;align-items:center;min-height:24px;cursor:pointer;}" +
+      P + "table.cr-ind-table{table-layout:fixed;}" +
+      P + ".cr-ind-table col.cr-ind-c-name{width:30%;}" + P + ".cr-ind-table col.cr-ind-c-issuer{width:14%;}" +
+      P + ".cr-ind-table col.cr-ind-c-level{width:10%;}" + P + ".cr-ind-table col.cr-ind-c-status{width:10%;}" +
+      P + ".cr-ind-table col.cr-ind-c-field{width:20%;}" + P + ".cr-ind-table col.cr-ind-c-map{width:16%;}" +
+      P + ".cr-ind-table td{text-align:left;vertical-align:top;overflow-wrap:anywhere;}" +
+      P + ".cr-ind-table th{text-align:left;}" +
+      P + ".cr-ind-sub{font-size:.75rem;color:var(--text-muted);margin-top:2px;}" +
+      P + ".cr-ind-field{font-size:.78rem;color:var(--text-body);}" +
+      // Status is a word; only the two states a curator acts on carry color.
+      P + ".cr-ind-st-retired,"+ P + ".cr-ind-st-retiring{color:var(--crimson);font-weight:600;}" +
+      P + ".cr-ind-st-new," + P + ".cr-ind-st-beta{font-weight:600;color:var(--text-strong);}" +
+      P + ".cr-ind-st-none{color:var(--text-muted);}" +
+      P + ".cr-ind-record p{margin:4px 0;font-size:.82rem;color:var(--text-body);}" +
+      P + ".cr-ind-change{color:var(--crimson)!important;font-weight:600;}" +
+      P + ".cr-ind-skills{margin:4px 0 6px;padding-left:20px;font-size:.82rem;color:var(--text-body);}" +
+      P + ".cr-ind-link{color:var(--cobalt);text-decoration:underline;text-underline-offset:3px;}" +
+      P + ".cr-ind-inrow{border-left:3px solid var(--border-strong);padding-left:10px;margin:0 0 12px;}" +
+      P + ".cr-ind-inrow .cr-expanded-body{padding:0;}" +
+      P + ".cr-ind-morewrap{padding:10px;text-align:center;}" +
+      P + ".cr-chip-indchange{color:var(--crimson);border-color:var(--crimson);}" +
+      // Phones: the two least-needed columns step aside; the rest wrap.
+      "@media (max-width:560px){" + P + ".cr-ind-table col.cr-ind-c-level," + P + ".cr-ind-table td.cr-ind-level,"
+        + P + ".cr-ind-table th:nth-child(3)," + P + ".cr-ind-table col.cr-ind-c-field,"
+        + P + ".cr-ind-table td.cr-ind-field," + P + ".cr-ind-table th:nth-child(5){display:none;}"
+        + P + ".cr-ind-table col.cr-ind-c-name{width:44%;}}";
+    document.head.appendChild(st);
+  }
+
   function init() {
     if (!document.getElementById("tab-credential-reference")) return;
     state.sess = getSession();
@@ -5376,6 +5783,7 @@
         renderToolbar();
         render();
         fetchCosMatches();
+        fetchIndustry();
         ensureWorklistData();  // v2 lanes — populate queue counts up front
       }).catch(renderInitError);
       return;
@@ -5394,6 +5802,7 @@
       renderToolbar();
       render();
       fetchCosMatches();
+      fetchIndustry();
     }).catch(renderInitError);
   }
 
