@@ -101,6 +101,7 @@
      21.0
     ],
     "why": [],
+    "minimum": true,
     "fill": [
      19.0,
      20.0
@@ -159,7 +160,8 @@
    ],
    "careers": [
     "entry-level professional position at an architectural or related design office"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -400,5 +402,14 @@
    "ARCH A105, ARCH A115, ARCH A180, ARCH A101 and ARCH A243 are not in the closed list and are marked as catalog additions."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": 38843379313,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Degree Units - OCC AS GE\t60"
+  }
+ ],
+ "read_run": "38670927724"
 }

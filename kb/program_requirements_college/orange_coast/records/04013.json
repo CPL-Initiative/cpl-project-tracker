@@ -66,38 +66,37 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    63.0,
-    63.0
+    42.0,
+    42.0
    ],
    "stated": [
-    60.0,
-    60.0
+    42.0,
+    42.0
    ],
-   "against": "degree",
-   "ge": [
-    21.0,
-    21.0
-   ],
-   "why": [
-    "the blocks and general education come to 63.0-63.0, past the 60.0-60.0 the catalog prints for the degree"
-   ],
-   "fill": null,
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     42.0,
-     42.0
+     63.0,
+     63.0
     ],
     "stated": [
-     42.0,
-     42.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": null
    }
   },
   "repeated": {
@@ -122,7 +121,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -159,7 +158,8 @@
     "quality assurance",
     "sensory",
     "flavor chemistry"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -268,5 +268,14 @@
    "Page URL refers to Culinology level-2 path, but the content and banner code (1_AS_CULN) is for the Food Science A.S. degree."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": 38843379313,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Degree Units - OCC AS GE\t60"
+  }
+ ],
+ "read_run": "38670927724"
 }

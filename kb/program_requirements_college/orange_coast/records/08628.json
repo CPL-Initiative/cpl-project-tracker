@@ -121,6 +121,7 @@
      21.0
     ],
     "why": [],
+    "minimum": true,
     "fill": [
      21.0,
      21.0
@@ -182,7 +183,8 @@
     "inspection",
     "management",
     "hands-on skilled tradespeople"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -489,5 +491,14 @@
    "Careers taken from the program learning outcome naming work areas (inspection, management, hands-on skilled tradespeople)."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": 38843379313,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Degree Units - OCC AS GE\t60"
+  }
+ ],
+ "read_run": "38670927724"
 }

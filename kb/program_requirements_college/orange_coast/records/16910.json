@@ -127,6 +127,7 @@
      21.0
     ],
     "why": [],
+    "minimum": true,
     "fill": [
      1.0,
      1.0
@@ -185,7 +186,8 @@
     "Effectively apply and utilize the business principles and techniques they have learned in a business environment or at a four-year college business program.",
     "Demonstrate effective written and/or oral skills."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -397,5 +399,14 @@
    "Program Learning Outcomes are printed on this degree page."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": 38843379313,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Degree Units - OCC AS GE\t60"
+  }
+ ],
+ "read_run": "38670927724"
 }
