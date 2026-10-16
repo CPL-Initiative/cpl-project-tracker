@@ -1,0 +1,216 @@
+{
+ "college": "Lemoore College",
+ "control_number": "19305",
+ "shape": "degree",
+ "title": "Liberal Arts: Elementary Teacher Preparation",
+ "award": "A.A. Degree",
+ "source_url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/studio-arts-aat-fall-2025",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8809,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8809,
+    "output_tokens": 1455,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1455,
+  "output_tokens_details": {
+   "thinking_tokens": 475
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06434,
+ "ms": 14819,
+ "seconds": 15.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 15,
+   "share": 0.0,
+   "missing": [
+    "ART16A",
+    "ART42",
+    "ARTHC1200",
+    "BIO10",
+    "COMMC1000",
+    "ENGLC1001",
+    "GEOG1",
+    "HIST17A",
+    "HISTC1002",
+    "HUM1",
+    "MATH10A",
+    "MUS42",
+    "PHYSCI2",
+    "POLSC1000",
+    "STATC1000"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Studio Arts (AAT)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ART 016A",
+    "why": "text is the Studio Arts AA-T page; no Elementary Teacher Preparation section"
+   },
+   {
+    "code": "ART 42",
+    "why": "appears only in Studio Arts AA-T recommended sequence (GE); no section for this award"
+   },
+   {
+    "code": "ARTHC1200",
+    "why": "not in the text; no section for this award"
+   },
+   {
+    "code": "BIO 10",
+    "why": "appears only in Studio Arts AA-T recommended sequence (GE); no section for this award"
+   },
+   {
+    "code": "COMM C1000",
+    "why": "appears only in Studio Arts AA-T recommended sequence (GE); no section for this award"
+   },
+   {
+    "code": "ENGL C1001",
+    "why": "appears only in Studio Arts AA-T recommended sequence (GE); no section for this award"
+   },
+   {
+    "code": "GEOG001",
+    "why": "appears only in Studio Arts AA-T recommended sequence (GE); no section for this award"
+   },
+   {
+    "code": "HIST 017A",
+    "why": "appears only in Studio Arts AA-T recommended sequence (GE); no section for this award"
+   },
+   {
+    "code": "HIST C1002",
+    "why": "not in the text; no section for this award"
+   },
+   {
+    "code": "HUM 1",
+    "why": "appears only in Studio Arts AA-T recommended sequence (GE); no section for this award"
+   },
+   {
+    "code": "MATH 010A",
+    "why": "not in the text; no section for this award"
+   },
+   {
+    "code": "MUS 42",
+    "why": "appears only in Studio Arts AA-T recommended sequence (GE); no section for this award"
+   },
+   {
+    "code": "PHYSCI 2",
+    "why": "not in the text; no section for this award"
+   },
+   {
+    "code": "POLS C1000",
+    "why": "appears only in Studio Arts AA-T recommended sequence (GE); no section for this award"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "appears only in Studio Arts AA-T recommended sequence (GE); no section for this award"
+   }
+  ],
+  "notes": [
+   "The source URL and catalog text are for Studio Arts (AAT), an A.A-T degree, not Liberal Arts: Elementary Teacher Preparation A.A. Degree. The text contains no section for the named award, so no blocks, totals, outcomes or careers were recorded.",
+   "section_heading names the only program heading in the text (Studio Arts (AAT)) for reviewer reference; none of its requirements, totals (60 total, 21 core, 3 electives, Cal-GETC 31, 5 transferable elective units), outcomes or careers were attributed to this award.",
+   "The correct catalog page for Liberal Arts: Elementary Teacher Preparation should be located and re-read."
+  ]
+ },
+ "extracted_run": "38979392604"
+}

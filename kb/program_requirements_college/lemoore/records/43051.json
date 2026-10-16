@@ -1,0 +1,294 @@
+{
+ "college": "Lemoore College",
+ "control_number": "43051",
+ "shape": "degree",
+ "title": "Agriculture",
+ "award": "A.S. Degree",
+ "source_url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/agriculture-as-fall-2025",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11069,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11069,
+    "output_tokens": 3114,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3114,
+  "output_tokens_details": {
+   "thinking_tokens": 1555
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10656,
+ "ms": 27820,
+ "seconds": 28.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "ELET1"
+   ],
+   "flagged": [
+    "ELET1"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    53.0,
+    60.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    21.0,
+    21.0
+   ],
+   "why": [],
+   "within": true
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Agriculture (AS)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": 11,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Requirements or Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 21,
+    "max": 21
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will be able to use digital and written documents to make farm management decisions and conduct a basic analysis of agriculture business trends and their economic impacts.",
+    "Students will be able to explain the soil characteristics and plant culture care practices and conditions that impact crop production at scale.",
+    "Students will be to identify and discuss current issues and practices in animal agriculture.",
+    "Students will demonstrate proficiency in agriculture technologies used in the field."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "AG015X",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGBUS024",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGBUS040",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASCI012",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CRPSCI001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SLSCI021",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Agriculture Business Track",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Program Track Options",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "AGBUS010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGBUS015",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Mechanized Agriculture Track",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Program Track Options",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ELET001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ITEC008",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Agriculture Education Track",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Program Track Options",
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "EDUC001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Agriculture General Track",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": "Program Track Options",
+    "stated": {
+     "min": 6,
+     "max": 10
+    },
+    "courses": []
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints 'Agriculture (AS) (Total 60) Complete the following number of credits: 60' over the core, track options, Local GE (21) and electives; recorded as degree_total. No separate major total is printed, so total_units is null.",
+   "Program Track Options (Total 3 - 10): 'Complete the following number of rules: 1' — the four tracks are recorded as one option_group.",
+   "Agriculture General Track lists no course codes, only 'Any lower division transferrable electives 6 - 10'; recorded as a choose_units block with minimum 6 and no courses.",
+   "Electives printed as 'Elective units for total of 60 degree applicable semester units 18 - 11' (range depends on track chosen); open_elective_units records the low end 11 because the field holds one number. Reviewer should check.",
+   "The page names both Local General Education (21 units printed) and Cal-GETC as GE options; ge_units reflects the Local GE figure printed in the requirements.",
+   "AG015X is printed with 2 units in the catalog; the state file stores 1.",
+   "Recommended Sequence lists GE courses and a duplicated 'Agriculture Business Track' choice list; not used for blocks.",
+   "Outcomes are printed once under 'Program Outcomes Agriculture (AS)'; 'PSLO n:' labels were removed. PSLO 3 is copied as printed, including the missing word ('will be to identify').",
+   "The description mentions 'entry-level positions ... in the diverse field of agriculture' but names no specific career titles; careers left empty."
+  ]
+ },
+ "extracted_run": "38979392604"
+}
