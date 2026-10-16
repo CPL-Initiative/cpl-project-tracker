@@ -1,0 +1,266 @@
+{
+ "college": "Moorpark College",
+ "control_number": "06855",
+ "shape": "degree",
+ "title": "Film Television Media Arts",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.vcccd.edu/moorpark/programs-courses/film-television-media-arts/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12782,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12782,
+    "output_tokens": 1147,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1147,
+  "output_tokens_details": {
+   "thinking_tokens": 189
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07407,
+ "ms": 12161,
+ "seconds": 12.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 26,
+   "share": 0.0,
+   "missing": [
+    "FTMAM100",
+    "FTMAM102",
+    "FTMAM103",
+    "FTMAM105",
+    "FTMAM106",
+    "FTMAM107",
+    "FTMAM115",
+    "FTMAM116",
+    "FTMAM124",
+    "FTMAM125",
+    "FTMAM126A",
+    "FTMAM130",
+    "FTMAM134",
+    "FTMAM138",
+    "FTMAM139",
+    "FTMAM140",
+    "FTMAM145A",
+    "FTMAM170",
+    "FTMAM190A",
+    "FTMAM190B",
+    "FTMAM192A",
+    "FTMAM192B",
+    "FTMAM194A",
+    "FTMAM194B",
+    "FTMAM80",
+    "JOURM1"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "COURSES (no A.A. Degree requirements section in the text)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "FTMA M100",
+    "why": "only a course description in the text; no degree requirements printed"
+   },
+   {
+    "code": "FTMA M102",
+    "why": "only a course description in the text; no degree requirements printed"
+   },
+   {
+    "code": "FTMA M103",
+    "why": "only a course description in the text; no degree requirements printed"
+   },
+   {
+    "code": "FTMA M105",
+    "why": "only a course description in the text; no degree requirements printed"
+   },
+   {
+    "code": "FTMA M106",
+    "why": "only a course description in the text; no degree requirements printed"
+   },
+   {
+    "code": "FTMA M107",
+    "why": "only a course description in the text; no degree requirements printed"
+   },
+   {
+    "code": "FTMA M115",
+    "why": "only a course description in the text; no degree requirements printed"
+   },
+   {
+    "code": "FTMA M116",
+    "why": "only a course description in the text; no degree requirements printed"
+   },
+   {
+    "code": "FTMA M124",
+    "why": "only a course description in the text; no degree requirements printed"
+   },
+   {
+    "code": "FTMA M125",
+    "why": "only a course description in the text; no degree requirements printed"
+   },
+   {
+    "code": "FTMA M126A",
+    "why": "only a course description in the text; no degree requirements printed"
+   },
+   {
+    "code": "FTMA M130",
+    "why": "only a truncated course description in the text; no degree requirements printed"
+   },
+   {
+    "code": "FTMA M134",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "FTMA M138",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "FTMA M139",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "FTMA M140",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "FTMA M145A",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "FTMA M170",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "FTMA M190A",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "FTMA M192A",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "FTMA M192B",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "FTMA M194A",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "FTMA M194B",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "FTMA M80",
+    "why": "only a course description in the text (titled Work Experience Education, 1-14 units); no degree requirements printed"
+   },
+   {
+    "code": "FTMAM190B",
+    "why": "not in the text (text cut off)"
+   },
+   {
+    "code": "JOUR M01",
+    "why": "not in the text"
+   }
+  ],
+  "notes": []
+ },
+ "extracted_run": "38748862351"
+}

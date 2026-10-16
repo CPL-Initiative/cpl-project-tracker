@@ -1,0 +1,780 @@
+{
+ "college": "Foothill College",
+ "control_number": "06094",
+ "shape": "degree",
+ "title": "Anthropology",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.foothill.edu/degrees-certificates/anthropology/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12539,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12539,
+    "output_tokens": 3967,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3967,
+  "output_tokens_details": {
+   "thinking_tokens": 782
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.1295,
+ "ms": 28638,
+ "seconds": 29.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 67,
+   "codes": [
+    "ANTH1",
+    "ANTH12",
+    "ANTH13",
+    "ANTH13H",
+    "ANTH13L",
+    "ANTH14",
+    "ANTH15",
+    "ANTH15H",
+    "ANTH16L",
+    "ANTH17L",
+    "ANTH1H",
+    "ANTH1HL",
+    "ANTH1L",
+    "ANTH20",
+    "ANTH22",
+    "ANTH2A",
+    "ANTH2AH",
+    "ANTH2B",
+    "ANTH3",
+    "ANTH4",
+    "ANTH5",
+    "ANTH51",
+    "ANTH52",
+    "ANTH55",
+    "ANTH56",
+    "ANTH57",
+    "ANTH5H",
+    "ANTH6",
+    "ANTH67A",
+    "ANTH67C",
+    "ANTH67E",
+    "ANTH6H",
+    "ANTH71R",
+    "ANTH72R",
+    "ANTH73R",
+    "ANTH8",
+    "ANTH8H",
+    "BIOL10",
+    "BIOL1C",
+    "ETHN1",
+    "ETHN2",
+    "ETHN3",
+    "ETHN4",
+    "ETHN5",
+    "GEOG1",
+    "GEOG11",
+    "GEOG12",
+    "GEOG2",
+    "GIST11",
+    "GIST12",
+    "GLST1",
+    "GLST1H",
+    "GLST2",
+    "GLST2H",
+    "HIST18",
+    "HIST4A",
+    "HIST8",
+    "HUMN1",
+    "HUMN1H",
+    "PSYC10",
+    "PSYC30",
+    "PSYC7",
+    "SOC10",
+    "SOC30",
+    "SOC40",
+    "SOC7",
+    "WMN5"
+   ],
+   "flagged": [
+    "ANTH1",
+    "ANTH12",
+    "ANTH13",
+    "ANTH13H",
+    "ANTH13L",
+    "ANTH14",
+    "ANTH15",
+    "ANTH15H",
+    "ANTH16L",
+    "ANTH17L",
+    "ANTH1H",
+    "ANTH1HL",
+    "ANTH1L",
+    "ANTH20",
+    "ANTH22",
+    "ANTH2A",
+    "ANTH2AH",
+    "ANTH2B",
+    "ANTH3",
+    "ANTH4",
+    "ANTH5",
+    "ANTH51",
+    "ANTH52",
+    "ANTH55",
+    "ANTH56",
+    "ANTH57",
+    "ANTH5H",
+    "ANTH6",
+    "ANTH67A",
+    "ANTH67C",
+    "ANTH67E",
+    "ANTH6H",
+    "ANTH71R",
+    "ANTH72R",
+    "ANTH73R",
+    "ANTH8",
+    "ANTH8H",
+    "BIOL10",
+    "BIOL1C",
+    "ETHN1",
+    "ETHN2",
+    "ETHN3",
+    "ETHN4",
+    "ETHN5",
+    "GEOG1",
+    "GEOG11",
+    "GEOG12",
+    "GEOG2",
+    "GIST11",
+    "GIST12",
+    "GLST1",
+    "GLST1H",
+    "GLST2",
+    "GLST2H",
+    "HIST18",
+    "HIST4A",
+    "HIST8",
+    "HUMN1",
+    "HUMN1H",
+    "PSYC10",
+    "PSYC30",
+    "PSYC7",
+    "SOC10",
+    "SOC30",
+    "SOC40",
+    "SOC7",
+    "WMN5"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    36.0,
+    36.0
+   ],
+   "stated": [
+    36.0,
+    36.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Core and Support Courses",
+   "measure": "units",
+   "total_units": {
+    "min": 36,
+    "max": 36
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ANTH 1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH 1H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 2A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH 2AH",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 8",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH 8H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Support Courses: Select 12 units from the following",
+    "rule": "choose_units",
+    "minimum": 12,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "ANTH 1L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH 1HL",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 2B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH 5H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 6",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH 6H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 12",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 13",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH 13H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 13L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 14",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 15",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH 15H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 16L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH 17L",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 20",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 22",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG 1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOG 2",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "GLST 1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GLST 1H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "GLST 2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GLST 2H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 7",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 7",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 10",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 10",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "And 12 units from the following",
+    "rule": "choose_units",
+    "minimum": 12,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "ANTH 51",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 52",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 55",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 56",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 57",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 67A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 67B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 67C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 67E",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 70R",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 71R",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 72R",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 73R",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 1C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 10",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETHN 1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETHN 2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETHN 3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETHN 4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETHN 5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GIST 11",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOG 11",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "GIST 12",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOG 12",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 4A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 8",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 18",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HUMN 1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HUMN 1H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC 30",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 30",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC 40",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "WMN 5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog text begins mid-sentence; the degree's heading, description, GE pattern and any outcomes/careers may have been cut off. Only a reference that pre-2025 students may use IGETC or CSU GE Breadth survives, so ge_pattern is left null.",
+   "The A.A. section has no explicit award heading in the text; 'Core and Support Courses' is the heading of the degree's course list, followed by certificate sections that were not read.",
+   "Closed-list ANTH 067B and ANTH 070R are recorded as the catalog prints them (ANTH 67B, ANTH 70R).",
+   "Per-course units are not printed in the support course lists, so units are null there.",
+   "Footnote 1: courses listed in the first section of support courses may also be used to fulfill the second 12-unit support section; those courses are recorded only once, in the first support block.",
+   "Total Units 36 is the major total; no degree total including GE is printed."
+  ]
+ },
+ "extracted_run": "38675242638"
+}

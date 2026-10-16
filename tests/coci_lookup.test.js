@@ -68,6 +68,22 @@ function makeDom() {
     },
     onActivate: function () {},
   };
+  // course_outcomes (Sam, 2026-10-14): CARPT 111 at American River has outcomes, read twice.
+  log.fetches = [];
+  window.fetch = function (url) {
+    log.fetches.push(String(url));
+    const qp = new URL(String(url)).searchParams;
+    const want = (qp.get("course_code") || "").replace(/^in\.\(|\)$/g, "").split(",").map((c) => c.replace(/^"|"$/g, ""));
+    if (want.indexOf("ESL-010") >= 0) return Promise.resolve({ ok: false, status: 503, json: () => Promise.resolve(null) });
+    const rows = qp.get("college") === "eq.American River College" && want.indexOf("CARPT111") >= 0 ? [
+      { course_code: "CARPT111", heading: "Student Learning Outcomes", lead: null, outcomes: ["Use hand tools safely.", "Maintain power equipment."],
+        maps_to: [["Critical Thinking"], null], shape: "list", fingerprint: "a".repeat(32), source_url: "https://example.org/outline/carpt111",
+        source_kind: "course_outline", source_system: "curriqunet", read_run: 20, loaded_at: "2026-10-13T20:00:00Z" },
+      { course_code: "CARPT111", heading: "Student Learning Outcomes", lead: null, outcomes: ["An older read."],
+        maps_to: null, shape: "list", fingerprint: "b".repeat(32), source_url: "https://example.org/outline/carpt111",
+        source_kind: "course_outline", source_system: "curriqunet", read_run: 10, loaded_at: "2026-10-12T20:00:00Z" }] : [];
+    return Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve(rows) });
+  };
   window.URL.createObjectURL = function (blob) { log.blobs.push(blob); return "blob:stub"; };
   window.URL.revokeObjectURL = function () {};
   window.eval(src);
@@ -193,6 +209,20 @@ const rowTitles = (doc) => visibleRows(doc).map((tr) => txt(tr.children[4]));
   const descRow = doc.querySelector("tr.cplcoci-desc");
   check("desc: the shard's description renders",
     !!descRow && txt(descRow).indexOf("Safety and health training") >= 0);
+  // Learning outcomes (Sam, 2026-10-14: "there should be a link to them on each course listing").
+  const outs = descRow.querySelector(".cplcoci-outs");
+  check("outcomes: the expanded row shows the newest read's outcomes, numbered, with what each maps to",
+    !!outs && /Student Learning Outcomes \(2\)/.test(txt(outs)) && outs.querySelectorAll("ol li").length === 2
+    && /Maps to: Critical Thinking/.test(txt(outs)) && !/older read/.test(txt(outs)));
+  const srcA = outs && outs.querySelector('a[href="https://example.org/outline/carpt111"]');
+  check("outcomes: it names and links where it was read", !!srcA && txt(srcA) === "the course outline of record"
+    && /read 2026-10-13\./.test(txt(outs)));
+  check("outcomes: asked under the code's spellings, for that college",
+    /college=eq\.American%20River%20College/.test(log.fetches[0] || "") && /%22CARPT%20111%22,%22CARPT111%22,%22CARPT-111%22/.test(log.fetches[0] || ""));
+  carptRow.querySelector(".cplcoci-caret").onclick();
+  carptRow.querySelector(".cplcoci-caret").onclick();
+  await sleep(20);
+  check("outcomes: re-expanding reads them from memory", log.fetches.length === 1);
 
   // ── 7. CSV of the filtered set ──
   const subjIn2 = doc.getElementById("cplcoci-subject");
@@ -240,6 +270,34 @@ const rowTitles = (doc) => visibleRows(doc).map((tr) => txt(tr.children[4]));
   courseBtn.click();
   check("programs: toggling back to Courses restores the course table",
     !!doc.getElementById("cplcoci-identity") && visibleRows(doc).length === 4);
+
+  // ── 9. The S389 UI pass: controls are underlined words; dark mode keeps every pair AA ──
+  // npm run a11y cobi-dark measured the CSV control at 1.29:1 (a dark fill under dark text),
+  // the chips at 1.2:1 (a half-white fill over the dark surface) and six inputs with no focus
+  // ring. The failures this guards: a fill coming back, a glyph standing in for the word, and
+  // outline:none with nothing in its place.
+  const css = (doc.getElementById("cpl-coci-lookup-css") || {}).textContent || "";
+  check("ui pass: the CSV control reads Download CSV, no glyph",
+    txt(doc.getElementById("cplcoci-csv")) === "Download CSV");
+  check("ui pass: a control is an underlined cobalt word with no border or fill, 24px tall",
+    /\.cplcoci-btn \{ border:0; background:none; color: var\(--cobalt\);[^}]*min-height:24px; text-decoration:underline;/.test(css)
+    && !/cplcoci-btn ghost/.test(src));
+  check("ui pass: a chip paints no light fill of its own", /\.cplcoci-chip \{[^}]*background: transparent;/.test(css)
+    && !/rgba\(255,255,255,\.5\)/.test(css));
+  check("ui pass: the filters show a focus ring", /\.cplcoci-toolbar input:focus-visible, \.cplcoci-toolbar select:focus-visible \{ outline:2px solid var\(--cobalt\)/.test(css)
+    && !/outline:none/.test(css));
+
+  // A failed outcomes read says so; it never reads as none.
+  {
+    const fresh = makeDom();
+    await sleep(20);
+    const fdoc = fresh.window.document;
+    const esl = visibleRows(fdoc).find((tr) => txt(tr.children[4]) === "English Fundamentals");
+    esl.querySelector(".cplcoci-caret").onclick();
+    await sleep(20);
+    const fouts = fdoc.querySelector("tr.cplcoci-desc .cplcoci-outs");
+    check("outcomes: a failed read says so, naming the table", !!fouts && /could not be read \(course_outcomes answered 503\)/.test(txt(fouts)));
+  }
 
   // ── report ──
   let fail = 0;

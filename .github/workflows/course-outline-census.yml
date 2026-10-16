@@ -1,0 +1,86 @@
+name: Course outline census
+# Where each college's course outlines of record open (Sam, 2026-10-12: "capture
+# also the system link to the colleges' course outlines of record (CORs)", so the
+# harvest can read course SLOs for skills matching and faculty assessment).
+# kb/_course_outline_census.py reads pages only and writes no table; it files
+# kb/course_outline_census/census_<run>.json (or, with probe=1 in .run, the
+# per-system probe probe_<run>.json), which this job commits back to the branch
+# that ran it. Runs when a claude/** push changes
+# kb/course_outline_census/.run to something main does not hold (the gate job). A
+# merge of main into a branch also carries that file's change, so a merge commit
+# does not start it (S372: merging main into claude/s371-miramar-read re-ran the
+# gallery's thumbnail job the same way), nor a later push of a file main holds.
+on:
+  push:
+    branches: ['claude/**']
+    paths:
+      - 'kb/course_outline_census/.run'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: course-outline-census-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  gate:
+    # Runs the job only when the pushed trigger file differs from main's. A merge of
+    # main carries every trigger file main holds, and a push after it (not only the
+    # merge commit) starts this workflow (S376: a display push on a branch that had
+    # merged main re-ran the SDCCD index). To run the same file again, change a
+    # field in it (run=).
+    if: github.actor != 'github-actions[bot]' && !startsWith(github.event.head_commit.message, 'Merge')
+    runs-on: ubuntu-latest
+    outputs:
+      go: ${{ steps.diff.outputs.go }}
+    steps:
+      - uses: actions/checkout@v7
+      - id: diff
+        run: |
+          git fetch -q --depth=1 origin main
+          if git diff --quiet FETCH_HEAD -- kb/course_outline_census/.run; then
+            echo "go=0" >> "$GITHUB_OUTPUT"; echo "kb/course_outline_census/.run matches main's: nothing to run."
+          else
+            echo "go=1" >> "$GITHUB_OUTPUT"
+          fi
+
+  census:
+    needs: gate
+    if: needs.gate.outputs.go == '1'
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Install Playwright + Chromium
+        run: |
+          pip install --quiet playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Census
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          CENSUS_DELAY_MS: '3000'
+        run: |
+          args=()
+          limit=$(sed -n 's/^limit=//p' kb/course_outline_census/.run)
+          only=$(sed -n 's/^only=//p' kb/course_outline_census/.run)
+          probe=$(sed -n 's/^probe=//p' kb/course_outline_census/.run)
+          [ "$probe" = "1" ] && args+=(--probe)
+          [ -n "$limit" ] && args+=(--limit "$limit")
+          [ -n "$only" ] && args+=(--only "$only")
+          python3 kb/_course_outline_census.py "${args[@]}"
+
+      - name: Commit the census to this branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add kb/course_outline_census/
+          if git diff --cached --quiet; then echo "Nothing new."; exit 0; fi
+          git commit -m "Course outline census (run ${{ github.run_id }})"
+          git push origin HEAD:${{ github.ref_name }}

@@ -34,8 +34,11 @@ for (const f of ["index.html", "CPL_Dashboard.html"]) {
     /class="uc-head"/.test(pane) && /justify-content:space-between/.test(s));
   // The glyph is decorative; the word must carry the meaning on its own.
   ok(`${f}: it is named in words, not by a glyph alone`, /Open SkyView/.test(pane));
-  ok(`${f}: the decorative mark is hidden from assistive tech`,
-    /<span aria-hidden="true">✦<\/span>/.test(pane));
+  // S378 UI pass: controls are underlined words (Sam, 2026-10-09), so the launcher
+  // carries no mark at all, and its gloss sits outside the link's underline.
+  ok(`${f}: no decorative mark on the launcher`, !/✦/.test(pane.slice(0, pane.indexOf("uc-intro"))));
+  ok(`${f}: the gloss sits outside the link`,
+    /Open SkyView<\/a><span class="uc-sv-sub">/.test(pane));
 }
 
 // The target must actually be committed, or the button is a 404 on the live site.

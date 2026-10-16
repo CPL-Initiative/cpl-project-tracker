@@ -1,0 +1,224 @@
+{
+ "college": "Allan Hancock College",
+ "control_number": "42208",
+ "shape": "certificate",
+ "title": "Viticulture Level 2",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30924",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9629,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9629,
+    "output_tokens": 1493,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1493,
+  "output_tokens_details": {
+   "thinking_tokens": 398
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06838,
+ "ms": 12439,
+ "seconds": 12.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 17,
+   "share": 0.0,
+   "missing": [
+    "AG149",
+    "VEN102",
+    "VEN120",
+    "VEN121",
+    "VEN125",
+    "VEN130",
+    "VEN135",
+    "VEN140",
+    "VEN141",
+    "VEN142",
+    "VEN307",
+    "VEN314",
+    "VEN315",
+    "VEN324",
+    "VEN325",
+    "VEN330",
+    "VEN331"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "(none: the text prints only the Viticulture Level 1 - Certificate of Achievement section; no Viticulture Level 2 section)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AG 149",
+    "why": "named only in the Level 1 certificate section; no Level 2 section in the text"
+   },
+   {
+    "code": "VEN 102",
+    "why": "named only in the Level 1 certificate section; no Level 2 section in the text"
+   },
+   {
+    "code": "VEN 120",
+    "why": "named only in the Level 1 certificate section; no Level 2 section in the text"
+   },
+   {
+    "code": "VEN 121",
+    "why": "named only in the Level 1 certificate section; no Level 2 section in the text"
+   },
+   {
+    "code": "VEN 125",
+    "why": "named only in the Level 1 certificate section; no Level 2 section in the text"
+   },
+   {
+    "code": "VEN 130",
+    "why": "named only in the Level 1 certificate section; no Level 2 section in the text"
+   },
+   {
+    "code": "VEN 135",
+    "why": "named only in the Level 1 certificate section; no Level 2 section in the text"
+   },
+   {
+    "code": "VEN 140",
+    "why": "not in the text"
+   },
+   {
+    "code": "VEN 141",
+    "why": "not in the text"
+   },
+   {
+    "code": "VEN 142",
+    "why": "not in the text"
+   },
+   {
+    "code": "VEN 307",
+    "why": "named only in the Level 1 certificate section; no Level 2 section in the text"
+   },
+   {
+    "code": "VEN 314",
+    "why": "not in the text"
+   },
+   {
+    "code": "VEN 315",
+    "why": "not in the text"
+   },
+   {
+    "code": "VEN 324",
+    "why": "named only in the Level 1 certificate section; no Level 2 section in the text"
+   },
+   {
+    "code": "VEN 325",
+    "why": "not in the text"
+   },
+   {
+    "code": "VEN 330",
+    "why": "named only in the Level 1 certificate section; no Level 2 section in the text"
+   },
+   {
+    "code": "VEN 331",
+    "why": "named only in the Level 1 certificate section; no Level 2 section in the text"
+   }
+  ],
+  "notes": [
+   "The supplied catalog text covers only Viticulture Level 1 - Certificate of Achievement (23 units: 17-unit core of VEN 102, 120, 121, 125, 130 plus a minimum of 6 units from VEN 122, VEN 135, AG 149, VEN 307, VEN 324, VEN 330, VEN 331). It contains no section for the requested Viticulture Level 2 certificate, so no blocks, totals, outcomes or careers were recorded for Level 2.",
+   "The Level 1 outcomes and careers (e.g., vineyard technician, crew/equipment supervisor, assistant vineyard supervisor) were not recorded because they belong to a different award.",
+   "Reviewer should fetch the Viticulture Level 2 page; the source URL appears to return the Level 1 program. Level 2 likely includes VEN 140, 141, 142, 314, 315, 325, which do not appear in the text.",
+   "The Level 1 suggested course sequence totals 29.0 units, inconsistent with its stated 23-unit total; irrelevant to Level 2 but noted."
+  ]
+ },
+ "extracted_run": "38843474519"
+}

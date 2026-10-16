@@ -1,0 +1,158 @@
+{
+ "college": "Monterey Peninsula College",
+ "control_number": "39294",
+ "shape": "certificate",
+ "title": "Glass",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://catalog.mpc.edu/programs-study/ceramics/ceramics-glass-coa/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7280,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7280,
+    "output_tokens": 1408,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1408,
+  "output_tokens_details": {
+   "thinking_tokens": 666
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05728,
+ "ms": 12982,
+ "seconds": 13.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 4,
+   "share": 0.0,
+   "missing": [
+    "ARCE4A",
+    "ARCE4B",
+    "ARCE4C",
+    "ARCE4D"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "CERAMICS AND GLASS, CERTIFICATE OF ACHIEVEMENT",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ARCE 4A",
+    "why": "Glass COA section not in the text; appears only in the Ceramics and Glass COA section"
+   },
+   {
+    "code": "ARCE 4B",
+    "why": "Glass COA section not in the text; appears only in the Ceramics and Glass COA elective list"
+   },
+   {
+    "code": "ARCE 4C",
+    "why": "Glass COA section not in the text; appears only in the Ceramics and Glass COA elective list"
+   },
+   {
+    "code": "ARCE 4D",
+    "why": "Glass COA section not in the text; appears only in the Ceramics and Glass COA elective list"
+   }
+  ],
+  "notes": [
+   "The supplied page is the Ceramics and Glass, Certificate of Achievement (Total Units 22.5-24), not the Glass, Certificate of Achievement (an 8 to fewer than 16 unit award). 'Glass, Certificate of Achievement' appears only as a navigation link in the site menu; its requirements are not in the text.",
+   "No requirements, totals, or outcomes were recorded, because the Ceramics and Glass COA content belongs to a different award. The Ceramics and Glass COA lists ARCE 1 (or ARCE 1A or ARCE 2A), ARCE 3A, ARCE 4A, ARCE 7 (1.5-3), and ARCE 11 as its required core. It also has a 9-unit elective list that includes ARCE 4B, 4C and 4D. These should not be used for the Glass COA.",
+   "The page prints five learning outcomes for the Ceramics and Glass COA. They are not copied here because they belong to that award.",
+   "A reviewer should fetch the Glass, Certificate of Achievement page (likely https://catalog.mpc.edu/programs-study/ceramics/glass-coa/ or similar) to record this award."
+  ]
+ },
+ "extracted_run": "38675240344"
+}

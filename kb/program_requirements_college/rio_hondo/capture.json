@@ -1,0 +1,3133 @@
+{
+ "college": "Rio Hondo College",
+ "catalog_url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22177",
+ "platform": "curriqunet",
+ "catalog_year": "2026-2027",
+ "programs": 321,
+ "with_closed_list": 301,
+ "started": "2026-10-16T03:03:19Z",
+ "curriqunet": {
+  "catalog": 16,
+  "view_prefix": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/",
+  "errors": [
+   "https://riohondo.curriqunet.com/Catalog/_getPage?catalogId=16&id=23699: APIRequestContext.get: socket hang up (ECONNRESET)"
+  ],
+  "sections": [
+   "7 - Degree & Certificate Guidelines",
+   "9 - Degree & Certificate Programs",
+   "10 - Bachelor of Science Degree Program",
+   "4 - Support Services & Special Academic Programs",
+   "11 - Learning Outcomes - Program & Institutional Level Outcomes",
+   "13 - Noncredit Programs and Courses"
+  ],
+  "nodes_read": 24,
+  "calls": 46,
+  "entries": 574,
+  "stopped_at_cap": false,
+  "same_title_entries": 246,
+  "entries_read": 328
+ },
+ "pages_read": 328,
+ "banner_h1": null,
+ "loads": 1643,
+ "seconds": 7436.1,
+ "found": 292,
+ "by_method": {
+  "no_closed_list": 20,
+  "not_found": 6,
+  "page_claimed": 3,
+  "sitemap_page": 292
+ },
+ "shared_pages": {
+  "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24152": [
+   "03222",
+   "44300"
+  ],
+  "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24254": [
+   "17757",
+   "32316"
+  ],
+  "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24155": [
+   "32258",
+   "46471"
+  ],
+  "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24311": [
+   "33785",
+   "39982"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "30863",
+   "title": "Diesel Fuel and Emission Systems",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "31408",
+   "title": "Fuel Injection Systems",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "34004",
+   "title": "Automotive Technology",
+   "award": "Baccalaureate of Science (B.S.) Degree.",
+   "near_miss": {
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24158",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 19,
+    "why": "coarse net: the page's code tokens name 0 of 19 listed courses",
+    "error": null,
+    "chars": {
+     "body": 9385,
+     "content": 9385,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "35257",
+   "title": "CSU General Education (CSU-GE-Breadth)",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "42032",
+   "title": "Secondary Education Social Science II",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22175/23987/24017",
+    "label": {
+     "award": 1,
+     "title": 0.8
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 879,
+     "content": 879,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45631",
+   "title": "Electronic Digital Instrument",
+   "award": "Baccalaureate of Science (B.S.) Degree.",
+   "near_miss": {
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/25502",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.273,
+    "body": 0.273,
+    "content": 0.273,
+    "net": 12,
+    "listed": 44,
+    "why": "coarse net: the page's code tokens name 12 of 44 listed courses",
+    "error": null,
+    "chars": {
+     "body": 10064,
+     "content": 10064,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "33717",
+   "title": "Civil Design Technology",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24142",
+    "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24146",
+    "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24223",
+    "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24143"
+   ]
+  },
+  {
+   "control_number": "35825",
+   "title": "Heavy Equipment General Service Technician",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24267"
+   ]
+  },
+  {
+   "control_number": "36955",
+   "title": "Computer Information Technology: Office Technologies",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24217",
+    "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24219",
+    "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24118",
+    "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24184",
+    "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24119",
+    "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24121",
+    "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24034/25576/25588",
+    "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24185",
+    "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24248"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 5,
+  "0.8-1.0": 9,
+  "1.0": 278
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 292,
+  "list": [
+   {
+    "control_number": "03175",
+    "title": "Architecture",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24146",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03178",
+    "title": "Business Administration",
+    "award": "A.A. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24177",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03179",
+    "title": "Accounting",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24118",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03180",
+    "title": "Management and Supervision",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24181",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03188",
+    "title": "Mass Communications - Print Media Specialization",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24292",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03190",
+    "title": "Computer Information Technology - Computer Systems",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24221",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03194",
+    "title": "Electronics Technology",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24235",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03198",
+    "title": "Automotive Technology",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24158",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03204",
+    "title": "Engineering Design Technology",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24241",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03207",
+    "title": "Welding Technology",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24322",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03210",
+    "title": "Studio Arts",
+    "award": "A.A. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24149",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03211",
+    "title": "Music: Composition, Performance, and Improvisation of Contemporary Music Practices",
+    "award": "A.A. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24295",
+    "coverage": 0.947,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03212",
+    "title": "Theatre Arts",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24314",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03222",
+    "title": "Nursing",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24152",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03223",
+    "title": "Vocational Nursing",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/22641",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03226",
+    "title": "Child Development",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24197",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03238",
+    "title": "Administration of Justice",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24123",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03239",
+    "title": "Corrections",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24224",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03243",
+    "title": "Fire Technology",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24249",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03250",
+    "title": "Mass Communications: Mass Media",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24247",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03252",
+    "title": "Environmental Technology",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24245",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09141",
+    "title": "Architectural Design and Drawing",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24142",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09142",
+    "title": "Small Business Management",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24184",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09146",
+    "title": "Engineering Design Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24242",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12112",
+    "title": "International Business",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24282",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "13872",
+    "title": "Drug Studies",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24230",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "14566",
+    "title": "Retail Management (WAFC)",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24183",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15148",
+    "title": "Fitness Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24287",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16252",
+    "title": "Preschool Teacher",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24201",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16662",
+    "title": "Wildland Fire Technology",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24321",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17655",
+    "title": "Chicana/o/x Studies",
+    "award": "A.A. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24196",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17757",
+    "title": "Civil Design Technology",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24254",
+    "coverage": 0.714,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18123",
+    "title": "Civil Drafting",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24207",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18126",
+    "title": "Civil Design Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24205",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18462",
+    "title": "Surveying, Mapping & Drawing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24206",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19274",
+    "title": "General Studies in Arts and Human Expression",
+    "award": "A.A. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24250",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19275",
+    "title": "General Studies in Science and Mathematics",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24251",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19276",
+    "title": "General Studies in Social Behavior and Self-Development",
+    "award": "A.A. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24252",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19277",
+    "title": "General Studies in Social Sciences",
+    "award": "A.A. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24253",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19811",
+    "title": "General Automotive Service",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24166",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22699",
+    "title": "Architectural Design and Drawing Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24143",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22700",
+    "title": "Environmental Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24246",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22701",
+    "title": "Accounting",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24119",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22702",
+    "title": "Management and Supervision",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24182",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22703",
+    "title": "Small Business Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24185",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22704",
+    "title": "Mass Communications: Mass Media",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24291",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22705",
+    "title": "Mass Communications - Print Media Specialization",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24293",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22708",
+    "title": "Computer Information Technology - Computer Systems",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24210",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22709",
+    "title": "Computer Information Technology: Office Technologies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24034/25576/25588",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22710",
+    "title": "Electronics Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24236",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22712",
+    "title": "LADBS Structural Steel Certification Program",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/22483",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22713",
+    "title": "Vocational Nursing",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/22643",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22714",
+    "title": "Child Development",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24198",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22715",
+    "title": "Drug Studies",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24231",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22716",
+    "title": "Fire Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24622",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30036",
+    "title": "Alternative Energy Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24133",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30287",
+    "title": "Biology",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24173",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30340",
+    "title": "English and Literature",
+    "award": "A.A. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24243",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30489",
+    "title": "Alternative Fuels & Advanced Transportation Technology",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24163",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30490",
+    "title": "Alternative Fuels and Advanced Transportation Technology",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24162",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30504",
+    "title": "Honda Professional Career Training Program Specialization (PACT)",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24275",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30510",
+    "title": "Alternative Energy Technology",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24132",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30530",
+    "title": "Environmental Science",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24244",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30648",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24312",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30649",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24305",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30753",
+    "title": "International Business Management",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24283",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30843",
+    "title": "Logistics Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24290",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30864",
+    "title": "Advanced Engine Performance-Technician",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24161",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30865",
+    "title": "Advanced Engine Performance",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24159",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30917",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24294",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30960",
+    "title": "Advanced Engine Performance",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24160",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30961",
+    "title": "Animation",
+    "award": "A.A. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24137",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31131",
+    "title": "Business Marketing",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24179",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31210",
+    "title": "Logistics Management",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24289",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31274",
+    "title": "Wildland Fire Technology",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24319",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31400",
+    "title": "Brake and Suspension Service",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24164",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31409",
+    "title": "Engine Repair",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24165",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31410",
+    "title": "Transmission Service",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24169",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31571",
+    "title": "Business Marketing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24180",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31985",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24285",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32243",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/23883",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32256",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24199",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32258",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24155",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32316",
+    "title": "Geographic Information Systems",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24254",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32339",
+    "title": "Safety, Comfort, and Convenience Systems",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24168",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32398",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24148",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32449",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24150",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32466",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24154",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32506",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24140",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32511",
+    "title": "Journalism",
+    "award": "A.A- T Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24284",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32516",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24313",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32580",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24315",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32591",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24124",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32618",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24304",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33242",
+    "title": "Honda/Acura Heating and Air Conditioning Systems",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24278",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33243",
+    "title": "Honda/Acura Powertrain and Transmission Systems",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24279",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33244",
+    "title": "Honda/Acura Brakes, Suspension, and Chassis Electrical Systems",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24276",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33245",
+    "title": "Honda/Acura Engine Repair and Engine Electrical Systems",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24277",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33342",
+    "title": "Philosophy",
+    "award": "A.A- T Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24301",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33394",
+    "title": "Elementary Teacher Education",
+    "award": "A.A- T Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24238",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33628",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24232",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33700",
+    "title": "Parametric Modeling and CADD Technology for Mechanical Design",
+    "award": "Noncredit program",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22175/23987/24009",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33701",
+    "title": "B.I.M. (Building Information Modeling) and CADD",
+    "award": "Noncredit program",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22175/23987/23992",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33702",
+    "title": "Civil Drawing and Pressure Piping",
+    "award": "Noncredit program",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22175/23987/23995",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33785",
+    "title": "Social Work",
+    "award": "A.A. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24311",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33839",
+    "title": "Dance",
+    "award": "A.A. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24227",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33955",
+    "title": "Electric Vehicle and Fuel Cell Technology Technician",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24233",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35071",
+    "title": "Engineering",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24240",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35187",
+    "title": "Environmental Technology - Field Technician",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/23896",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35188",
+    "title": "Environmental Technology - Health and Safety",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/23897",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35189",
+    "title": "Environmental Technology - Waste Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/23898",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35190",
+    "title": "Environmental Technology - Water Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/23899",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35297",
+    "title": "Intersegmental General Education Transfer Curriculum (IGETC)",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24034/24036/24052",
+    "coverage": 0.524,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35352",
+    "title": "Coaching of Sports",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24286",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35382",
+    "title": "Computer Information Technology/Network Administrator",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24218",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35396",
+    "title": "Computer Information Technology/System Administrator",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24034/24036/23359",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35399",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24174",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35536",
+    "title": "Graphic Design",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24258",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35562",
+    "title": "Computer Information Technology/Network Administrator",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24217",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35563",
+    "title": "Computer Information Technology/System Administrator",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24219",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35576",
+    "title": "Chemistry",
+    "award": "A.S. T Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24195",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35631",
+    "title": "Social Justice Studies",
+    "award": "A.A- T Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24307",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35688",
+    "title": "Computerized Accounting Systems",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24121",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35702",
+    "title": "Kinesiology/Sports Medicine",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24288",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35765",
+    "title": "Entertainment Art-Digital Environments",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24139",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35766",
+    "title": "Entertainment Art-Digital Characters",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24138",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35799",
+    "title": "Technical Drawing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24229",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36175",
+    "title": "Hospitality Management",
+    "award": "A.S. T Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24280",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36187",
+    "title": "Algebra I",
+    "award": "Noncredit program",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22175/23987/23990",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36233",
+    "title": "Orthopedic Technician Program",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24300",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36267",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24299",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36358",
+    "title": "Heat and Frost Insulators",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24261",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36381",
+    "title": "Algebra II",
+    "award": "Noncredit program",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22175/23987/23991",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36382",
+    "title": "Geometry",
+    "award": "Noncredit program",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22175/23987/24001",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36383",
+    "title": "Integrated Math I",
+    "award": "Noncredit program",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22175/23987/24003",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36443",
+    "title": "Electric Vehicle and Fuel Cell Technology Technician",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24234",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36444",
+    "title": "Automotive Technology: General Service Technician",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24167",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36547",
+    "title": "Carpentry - Concrete Forming",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24186",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36548",
+    "title": "Carpentry - Scaffold Construction",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24190",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36549",
+    "title": "Carpentry - Scaffold Construction",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24191",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36550",
+    "title": "Carpentry - Concrete Forming",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24187",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36551",
+    "title": "Carpentry - General",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24189",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36552",
+    "title": "Heat and Frost Insulators",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24262",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36553",
+    "title": "Carpentry - General",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24188",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36591",
+    "title": "Graphic Design: Branding & Identity Design",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24176",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36592",
+    "title": "Graphic Design: Advertising Design",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24131",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36593",
+    "title": "Graphic Design: Website Design",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/23953",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36594",
+    "title": "Graphic Design: Publication Design",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/23952",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36646",
+    "title": "Construction Management",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24223",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36734",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24255",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36741",
+    "title": "Photography",
+    "award": "A.A. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24302",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36812",
+    "title": "Advanced English as a Second Language",
+    "award": "Noncredit program",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22175/23987/23989",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36815",
+    "title": "English as a Second Language for College Preparation",
+    "award": "Noncredit program",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22175/23987/23999",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36816",
+    "title": "Intermediate English as a Second Language",
+    "award": "Noncredit program",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22175/23987/24006",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36859",
+    "title": "Foundational English as a Second Language",
+    "award": "Noncredit program",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22175/23987/24000",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36930",
+    "title": "Graphic Design: Packaging Design",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24259",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36956",
+    "title": "Homeland Security",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24272",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36957",
+    "title": "Homeland Security",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24273",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36977",
+    "title": "Computer Information Technology: Cybersecurity",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24212",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36989",
+    "title": "Computer Information Technology: Cybersecurity",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24211",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36990",
+    "title": "Computer Information Technology: Cybersecurity Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24213",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37019",
+    "title": "Pipe Welding and Fabrication",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/22487",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37020",
+    "title": "Graphic Art and Design",
+    "award": "A.A. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24256",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37021",
+    "title": "Graphic Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24257",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37022",
+    "title": "Computer Information Technology: Ethical Hacker",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24214",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37053",
+    "title": "Computer Information Technology/Information Systems and Technology",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24216",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37056",
+    "title": "Community Health Worker",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24208",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37057",
+    "title": "Yoga Teaching Training Certification",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/22867",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37063",
+    "title": "Strength and Performance Coach",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/22865",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37066",
+    "title": "Elementary Teacher Education",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24237",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37179",
+    "title": "Child Development: Language and Literacy Specialization",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24200",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37180",
+    "title": "Child Development: Infant/Toddler Specialization",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24203",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37181",
+    "title": "Child Development: Special Education Specialization",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24202",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37351",
+    "title": "Tesla Student Automotive Technician (START) Program",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24316",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37353",
+    "title": "Entrepreneurial Graphic Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/23951",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37356",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24222",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37380",
+    "title": "Civil Design",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24204",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37727",
+    "title": "Music",
+    "award": "A.A- T Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24156",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37728",
+    "title": "Accounting for Government and Nonprofit Organizations",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24120",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37740",
+    "title": "Applied Geographic Information Systems",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24141",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37758",
+    "title": "Computer Information Technology/Cloud Computing Practitioner",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24209",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37759",
+    "title": "Computer Information Technology: Network Technician",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24616",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37768",
+    "title": "Dance",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24228",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37853",
+    "title": "Deaf Studies",
+    "award": "A.A. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24135",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37869",
+    "title": "Basic Fire Academy",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24170",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37955",
+    "title": "Health Science Preparation",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24260",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37977",
+    "title": "Basic Police Academy",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24171",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37978",
+    "title": "Police Academy Module I",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24303",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38073",
+    "title": "Foundations of Interpreting",
+    "award": "A.A. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24136",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38432",
+    "title": "Finance",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24248",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38433",
+    "title": "Income Tax and Payroll",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24281",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38641",
+    "title": "Administration of Justice",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24125",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38792",
+    "title": "Homeland Security Planning and Administration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24274",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38969",
+    "title": "Fitness and Sport Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/22853",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39069",
+    "title": "Music and Integrated Technology",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24296",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39108",
+    "title": "Introductory Songwriting and Arraniging",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/22629",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39279",
+    "title": "Introductory Electronic Music",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/22627",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39280",
+    "title": "Advanced Electronic Music",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24128",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39303",
+    "title": "Live Sound Engineer",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/22633",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39393",
+    "title": "Music Composition",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/22635",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39395",
+    "title": "Creative Writing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24226",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39396",
+    "title": "Novel Writing",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24297",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39397",
+    "title": "Playwriting and Screenwriting",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/22645",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39398",
+    "title": "Poetry Writing",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/22647",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39399",
+    "title": "Short Story Writing",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24306",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39400",
+    "title": "Writing for Children",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24320",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39417",
+    "title": "Music Production",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/22637",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39420",
+    "title": "Recording Engineer",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/22639",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39421",
+    "title": "Introductory Sound Design",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/22631",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39422",
+    "title": "Advanced Sound Design",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24130",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39423",
+    "title": "Advanced Songwriting and Arranging",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24129",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39465",
+    "title": "Biotechnology",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24175",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39467",
+    "title": "Heavy Equipment Maintenance Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24267",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39565",
+    "title": "French",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24192",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39566",
+    "title": "Spanish",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24193",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39937",
+    "title": "Medical Office Assistant",
+    "award": "Noncredit program",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22175/23987/24008",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39938",
+    "title": "Medical Billing Specialist",
+    "award": "Noncredit program",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22175/23987/24007",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39982",
+    "title": "Social Work and Human Services",
+    "award": "A.A- T Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24311",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40116",
+    "title": "Architectural Drafting",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24144",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40133",
+    "title": "Architectural Theory and Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24145",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40134",
+    "title": "Residential Architecture Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24147",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40183",
+    "title": "Healthcare Career Preparation and CPR/Basic Life Support",
+    "award": "Noncredit program",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22175/23987/24002",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40381",
+    "title": "Computer Fundamentals",
+    "award": "Noncredit program",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22175/23987/23996",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40792",
+    "title": "Computer Skills for Business I",
+    "award": "Noncredit program",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22175/23987/23997",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40820",
+    "title": "Social Justice: LGBTQ Studies",
+    "award": "A.A- T Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24308",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40849",
+    "title": "Health, Safety, and Wellness",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/22855",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40850",
+    "title": "Peak Performance for Sport",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/22859",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40851",
+    "title": "Sport Studies",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/22863",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40852",
+    "title": "Sport Leadership",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/22861",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40853",
+    "title": "Intercollegiate Athletic Competition",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/22857",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40993",
+    "title": "Corrections",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24225",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40994",
+    "title": "Investigations",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24126",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41004",
+    "title": "Parole",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24127",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41109",
+    "title": "Computer Skills for Business II",
+    "award": "Noncredit program",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22175/23987/23998",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41347",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24178",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41408",
+    "title": "Entry Network Technician",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24215",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41592",
+    "title": "California Property Taxation and Appraisal",
+    "award": "Noncredit program",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22175/23987/23993",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41737",
+    "title": "UCTP-Chemistry",
+    "award": "A.S. T Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24317",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41785",
+    "title": "UCTP - Physics",
+    "award": "A.S. T Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24034/24043/22500",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41974",
+    "title": "Social Services Assistant",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24034/24038/23177",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41983",
+    "title": "Social Services Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24309",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42028",
+    "title": "Secondary Education English Language Arts I",
+    "award": "Noncredit program",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22175/23987/24014",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42029",
+    "title": "Secondary Education Science",
+    "award": "Noncredit program",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22175/23987/24016",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42030",
+    "title": "Secondary Education English Language Arts II",
+    "award": "Noncredit program",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22175/23987/24015",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42031",
+    "title": "Secondary Education Social Science I",
+    "award": "Noncredit program",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22175/23987/24017",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42362",
+    "title": "Social Services Career Preparation",
+    "award": "Noncredit program",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22175/23987/24559",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42613",
+    "title": "Engineering Design Technology: CAD Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24547",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42614",
+    "title": "Engineering Design Technology: Standards for Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24549",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42615",
+    "title": "Engineering Design Technology: Design & Production",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24548",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42915",
+    "title": "Environmental Science",
+    "award": "A.S. T Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24572",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42950",
+    "title": "Mat Pilates Instructor",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24583",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43054",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24543",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43159",
+    "title": "Film, Television, and Electronic Media",
+    "award": "A.S. T Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24576",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43278",
+    "title": "Pre-Algebra",
+    "award": "Noncredit program",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22175/23987/24515",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43334",
+    "title": "Precalculus I",
+    "award": "Noncredit program",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22175/23987/23638",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43335",
+    "title": "Family Child Care Home License Preparation",
+    "award": "Noncredit program",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22175/23987/23636",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43391",
+    "title": "Precalculus II",
+    "award": "Noncredit program",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22175/23987/23632",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43573",
+    "title": "Police Academy Module II and III",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/23532",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43574",
+    "title": "Architecture: Basic Skills",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/23526",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43575",
+    "title": "Automotive EV Specialist",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/23528",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43603",
+    "title": "Communications for Career and College Preparation",
+    "award": "Noncredit program",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22175/23987/23634",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43612",
+    "title": "Public Safety Dispatcher",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/23534",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43653",
+    "title": "Crime Scene Investigations and Forensics",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24034/24044/23602",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43658",
+    "title": "Architecture: Basic Knowledge",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/23524",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44030",
+    "title": "Secondary Education Visual Arts",
+    "award": "Noncredit program",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22175/23987/23658",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44103",
+    "title": "Ceramic Handbuilding",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/23674",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44106",
+    "title": "Ceramic Wheel Throwing",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/23672",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44107",
+    "title": "Advanced Ceramics with Ceramic History",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/23676",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44109",
+    "title": "Ceramics with 3D Printing",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/23678",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44112",
+    "title": "Advanced Mastery in Ceramics Fundamentals",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/23680",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44220",
+    "title": "Astronomy",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/23664",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44300",
+    "title": "Nursing",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24152",
+    "coverage": 0.969,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44400",
+    "title": "LVN to RN",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/23810",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44405",
+    "title": "Brewing Technology",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/23804",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44406",
+    "title": "Character Design for Games",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/23806",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44407",
+    "title": "Animation for Games",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/23802",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44408",
+    "title": "Emergency Medical Services",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/23808",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44482",
+    "title": "Information Technology Foundations",
+    "award": "Noncredit program",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22175/23987/23786",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44858",
+    "title": "ESL Conversations",
+    "award": "Noncredit program",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22175/23987/23784",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44979",
+    "title": "Game Development Fundamentals",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/25505",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44980",
+    "title": "Game Development Production",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/25506",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45274",
+    "title": "Drawing",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/23848",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45383",
+    "title": "Modern Policing",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/23854",
+    "coverage": 0.773,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45675",
+    "title": "Data Science",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/25504",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45706",
+    "title": "Data Analytics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/25503",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45745",
+    "title": "Global Studies",
+    "award": "A.A- T Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/25495",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45795",
+    "title": "Electronic Digital Instrument",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/25502",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46066",
+    "title": "Innovation, Invention, and Entrepreneurship",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/25563",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46069",
+    "title": "Kinesiology/Sport Leadership and Human Performance",
+    "award": "A.A. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24034/24042/25569",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46471",
+    "title": "Physics 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24155",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46559",
+    "title": "Health Science Preparation",
+    "award": "A.S. Degree",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/25610",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46560",
+    "title": "Communication Studies",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/25611",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "38843465712"
+}

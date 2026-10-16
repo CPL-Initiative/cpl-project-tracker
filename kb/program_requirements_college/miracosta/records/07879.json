@@ -1,0 +1,386 @@
+{
+ "college": "MiraCosta College",
+ "control_number": "07879",
+ "shape": "degree",
+ "title": "Child Development Master Teacher",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.miracosta.edu/disciplines/childdevelopment/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11337,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11337,
+    "output_tokens": 3102,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3102,
+  "output_tokens_details": {
+   "thinking_tokens": 1298
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.10739,
+ "ms": 26152,
+ "seconds": 26.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 17,
+   "codes": [
+    "CDEV105",
+    "CDEV106",
+    "CDEV109",
+    "CDEV111",
+    "CDEV112",
+    "CDEV130",
+    "CDEV140",
+    "CDEV150",
+    "CDEV160",
+    "CDEV200",
+    "CDEV205",
+    "CDEV210",
+    "CDEV230",
+    "CDEV235",
+    "CDEV240",
+    "CDEV245",
+    "CDEV270"
+   ],
+   "flagged": [
+    "CDEV105",
+    "CDEV106",
+    "CDEV109",
+    "CDEV111",
+    "CDEV112",
+    "CDEV130",
+    "CDEV140",
+    "CDEV150",
+    "CDEV160",
+    "CDEV200",
+    "CDEV205",
+    "CDEV210",
+    "CDEV230",
+    "CDEV235",
+    "CDEV240",
+    "CDEV245",
+    "CDEV270"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    36.0,
+    36.0
+   ],
+   "stated": [
+    52.0,
+    52.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 36.0-36.0; the catalog states 52.0-52.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 10,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement Child Development Master Teacher",
+   "measure": "units",
+   "total_units": {
+    "min": 52,
+    "max": 52
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "MiraCosta College Associate in Arts general education",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Upon completion of this program, the student will be able to design, implement, and evaluate effective program practices to successfully manage an early childhood classroom."
+   ],
+   "careers": [
+    "teachers",
+    "aides",
+    "directors",
+    "entrepreneurs",
+    "nannies",
+    "camp counselors",
+    "recreation leaders",
+    "elementary school teaching assistants",
+    "social service and health care practitioners",
+    "administrators"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CDEV 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 109",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CDEV C1000",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 205",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 245",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 270",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Select at least 3 units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CDEV 130",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 140",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 235",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Infant/Toddler",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": "Area of specialization",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CDEV 111",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 212",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Creative Arts",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": "Area of specialization",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CDEV 150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 160",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Special Needs",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": "Area of specialization",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CDEV 230",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 240",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints no separate section for the A.A. Degree; it states students earn the Child Development Master Teacher A.A. by completing the certificate of achievement plus MiraCosta's A.A. general education. The certificate section was therefore read, and its outcome is recorded as shared by the degree.",
+   "The certificate's printed Total Units 52 includes 'Select at least 16 units in general education' (at least one course each in Humanities, Social Sciences, Math and/or Science, English); those 16 GE units are not placed in a block. The 52 is recorded as printed in total_units; reviewer should check whether a major total excluding GE (36) is intended.",
+   "No degree total (e.g., 60 units) is printed for this A.A.; degree_total left null. ge_units left null because the 16 units belong to the certificate's GE requirement, not the A.A. GE pattern.",
+   "Specialization: 'Select at least 6 units from one area of specialization' recorded as three option blocks; the catalog also says 'Consult faculty for other specialization options.'",
+   "Units are not printed beside elective/specialization courses, so their units are null. Units beside CDEV C1000 (alternative to CDEV 112) not printed separately.",
+   "Careers taken from the shared Certificates introduction; the list 'Courses are also appropriate for...' (excluding 'parents') was included as occupations—reviewer may wish to limit to 'teachers, aides, directors, and entrepreneurs'."
+  ]
+ },
+ "extracted_run": "38748842603"
+}

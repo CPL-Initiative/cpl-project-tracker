@@ -1,0 +1,259 @@
+{
+ "college": "Allan Hancock College",
+ "control_number": "41542",
+ "shape": "adt",
+ "title": "Business Administration 2.0",
+ "award": "A.S. T Degree",
+ "source_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31118",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10022,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10022,
+    "output_tokens": 1910,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1910,
+  "output_tokens_details": {
+   "thinking_tokens": 722
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07829,
+ "ms": 15430,
+ "seconds": 16.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 8,
+   "share": 0.75,
+   "missing": [
+    "ECON101",
+    "ECON102"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "BUS101",
+    "ECONC2001",
+    "ECONC2002"
+   ],
+   "flagged": [
+    "BUS101",
+    "ECONC2001",
+    "ECONC2002"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    29.0,
+    29.0
+   ],
+   "stated": [
+    29.0,
+    29.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     66.0,
+     66.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business Administration 2.0 - Associate in Science for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 29,
+    "max": 29
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 3,
+    "max": 3
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Recall significant business administration issues, theories and applications relevant to subsequent upper-division coursework.",
+    "Apply business administration principles to produce workbased learning projects related to upper-division coursework.",
+    "Demonstrate the ability to follow instructions on assignments and class activities."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required courses (29 units):",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 29,
+     "max": 29
+    },
+    "courses": [
+     {
+      "code": "ACCT 131",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 132",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 135",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECON 101",
+    "why": "not in the text; catalog lists ECON C2002 Principles of Macroeconomics instead (likely common-course renumbering)"
+   },
+   {
+    "code": "ECON 102",
+    "why": "not in the text; catalog lists ECON C2001 Principles of Microeconomics instead (likely common-course renumbering)"
+   }
+  ],
+  "notes": [
+   "Electives are printed inconsistently: an 'Electives 3.0' row, a line 'Elective units required for Business Administration 2.0 AS-T: 6', and 'Complete additional CSU transferable courses as needed to achieve 60 units required for the degree: 3 units'. Recorded 3 in degree_elective_units since 29 major + 28 GE + 3 = 60; reviewer should check against the '6' figure.",
+   "General Education block prints 28.0 units while the Cal-GETC line states 34 units; the difference reflects 6 units allowed to double count with the major. ge_units records the 34 printed for Cal-GETC.",
+   "Degree total printed as 'Total : 60.0'. The Suggested Course Sequence prints 'Total : 58.0- 62.0'; not used for any total.",
+   "The generic ADT statement 'A minimum of 18 semester units in a major' was not used as the award total; the page prints 'A major of 29 units is required for the degree.'",
+   "BUS 101, ECON C2002 and ECON C2001 are not in the closed list and are marked as catalog additions.",
+   "No careers are named in the program text."
+  ]
+ },
+ "extracted_run": "38843474519"
+}

@@ -488,7 +488,40 @@ begin
 
   -- Corpus-side typos only ("Excellance"). A query-side vocabulary gap is the
   -- synonym table's job, not string distance's.
-  if not found then
+  --
+  -- ⚠️ TWO BRANCHES, ONE PER SCOPE (S400, 2026-10-16). This fallback filtered
+  -- with `(college_filter is null or p.college = college_filter)`. plpgsql
+  -- caches a GENERIC plan after a few calls on a pooled connection, and a
+  -- generic plan cannot use coci_programs_college for that OR, so a call scoped
+  -- to one college scanned all 22,335 statewide programs: 2.06 s measured under
+  -- force_generic_plan (2.65 s for the whole call, anon's limit is 3 s), against
+  -- 0.25 s for `p.college = $1`. The smoke's 7l negative control (a nonsense
+  -- phrase at Mt. San Antonio, every call reaching this fallback) timed out
+  -- with 57014 on 2026-10-16 (run 38957574640). Rows are unchanged: with a
+  -- college named the two filters are the same predicate, and the statewide
+  -- branch keeps the original text.
+  if not found and college_filter is not null then
+    return query
+    select p.college, p.program_title, p.award, p.status,
+           p.top_code, p.top_title, p.cip_code, p.cip_title,
+           'fuzzy'::text as matched_via,
+           g.region, g.county, pr.landing_page_url
+    from public.coci_college_programs p
+    left join public.college_geo g on g.college = p.college
+    left join public.chatbox_college_profiles pr on pr.college = p.college
+    where p.college = college_filter
+      and (select max(word_similarity(lower(tt), lower(public.cx_search_norm(p.program_title))))
+           from unnest(coalesce(search_terms, '{}'::text[])) tt
+           where length(tt) >= 6) > fuzzy_floor
+    order by
+      (anchor_county is not null and g.county is not distinct from anchor_county) desc,
+      (anchor_region is not null and g.region is not distinct from anchor_region) desc,
+      (select max(word_similarity(lower(tt), lower(public.cx_search_norm(p.program_title))))
+       from unnest(coalesce(search_terms, '{}'::text[])) tt
+       where length(tt) >= 6) desc,
+      p.college asc, p.program_title asc
+    limit result_limit;
+  elsif not found then
     return query
     select p.college, p.program_title, p.award, p.status,
            p.top_code, p.top_title, p.cip_code, p.cip_title,

@@ -1,0 +1,234 @@
+{
+ "college": "San Diego Mesa College",
+ "catalog_url": "https://sdccd.curriqunet.com/catalog/alias/mesa26-27",
+ "platform": "curriqunet",
+ "catalog_year": "2026-2027",
+ "programs": 202,
+ "with_closed_list": 184,
+ "started": "2026-10-12T23:34:09Z",
+ "curriqunet": {
+  "catalog": 70,
+  "view_prefix": "https://sdccd.curriqunet.com/catalog/iq/",
+  "errors": [],
+  "catalog_from": "_getCatalogs",
+  "sections": [
+   "Degree Curricula and Certificate Programs"
+  ],
+  "nodes_read": 3,
+  "calls": 7,
+  "entries": 199,
+  "stopped_at_cap": false,
+  "same_title_entries": 0,
+  "entries_read": 199
+ },
+ "pages_read": 199,
+ "loads": 1017,
+ "seconds": 5055.4,
+ "found": 177,
+ "by_method": {
+  "no_closed_list": 18,
+  "page_claimed": 7,
+  "sitemap_page": 177
+ },
+ "shared_pages": {
+  "https://sdccd.curriqunet.com/catalog/iq/17540/programs/22323": [
+   "05327",
+   "09401"
+  ],
+  "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17654": [
+   "05338",
+   "18265"
+  ],
+  "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17706": [
+   "05360",
+   "30738"
+  ],
+  "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17549": [
+   "05366",
+   "31851"
+  ],
+  "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17697": [
+   "09420",
+   "33570"
+  ],
+  "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17673": [
+   "12098",
+   "12099"
+  ],
+  "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17639": [
+   "31160",
+   "31797"
+  ]
+ },
+ "not_found": [],
+ "page_claimed": [
+  {
+   "control_number": "11726",
+   "title": "Architecture: University Track",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17554",
+    "https://sdccd.curriqunet.com/catalog/iq/17540/programs/22323",
+    "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17564"
+   ]
+  },
+  {
+   "control_number": "18263",
+   "title": "Liberal Arts & Sciences: Lang Arts & Humanities - Philosophy",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://sdccd.curriqunet.com/catalog/iq/17540/programs/22276",
+    "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17697",
+    "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17630"
+   ]
+  },
+  {
+   "control_number": "18286",
+   "title": "Liberal Arts & Sciences: Soc & Beh Sciences-Sociology",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17663",
+    "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17716",
+    "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17717"
+   ]
+  },
+  {
+   "control_number": "22320",
+   "title": "Physical Sciences",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17699"
+   ]
+  },
+  {
+   "control_number": "33567",
+   "title": "Elementary Teacher Education",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17630"
+   ]
+  },
+  {
+   "control_number": "42103",
+   "title": "3D Modeling and Animation",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17730",
+    "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17542",
+    "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17635"
+   ]
+  },
+  {
+   "control_number": "45826",
+   "title": "Elementary Teacher Education: Integrated Programs",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17670",
+    "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17630"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 4,
+  "0.8-1.0": 5,
+  "1.0": 168
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/san_diego_mesa",
+  "kept": 168,
+  "programs": 9,
+  "list": [
+   {
+    "control_number": "05301",
+    "title": "Veterinary Technology",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17727",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "05344",
+    "title": "Dental Assisting: RDA, CDA",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17589",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "05347",
+    "title": "Physical Therapist Assistant",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17700",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "05348",
+    "title": "Health Information Technology",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17626",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "05349",
+    "title": "Radiologic Technology",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17708",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "22313",
+    "title": "Radiologic Technology",
+    "award": "Certificate of Achievement requiring 60+S/90+Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17709",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "22314",
+    "title": "Dental Assisting: RDA, CDA",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17590",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "38642",
+    "title": "Neurodiagnostic Technology",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17687",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "38643",
+    "title": "Neurodiagnostic Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17688",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   }
+  ]
+ },
+ "run": "38322747831"
+}

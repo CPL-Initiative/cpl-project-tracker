@@ -1,0 +1,211 @@
+{
+ "college": "San Bernardino Valley College",
+ "control_number": "22818",
+ "shape": "certificate",
+ "title": "Welding Technology",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/welding-technology/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12365,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12365,
+    "output_tokens": 1032,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1032,
+  "output_tokens_details": {
+   "thinking_tokens": 227
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0701,
+ "ms": 8907,
+ "seconds": 9.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 15,
+   "share": 0.0,
+   "missing": [
+    "TECALC87",
+    "WELD10",
+    "WELD12",
+    "WELD15",
+    "WELD16",
+    "WELD27",
+    "WELD28",
+    "WELD45",
+    "WELD46",
+    "WELD60",
+    "WELD66",
+    "WELD80",
+    "WELD81",
+    "WELD90",
+    "WELD91"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "COURSES",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "TECALC 87",
+    "why": "no requirements section in the text; named only as a departmental recommendation in course descriptions"
+   },
+   {
+    "code": "WELD 10",
+    "why": "no requirements section in the text; appears only in the Courses tab"
+   },
+   {
+    "code": "WELD 12",
+    "why": "no requirements section in the text; appears only in the Courses tab"
+   },
+   {
+    "code": "WELD 15",
+    "why": "no requirements section in the text; appears only in the Courses tab"
+   },
+   {
+    "code": "WELD 16",
+    "why": "no requirements section in the text; appears only in the Courses tab"
+   },
+   {
+    "code": "WELD 27",
+    "why": "no requirements section in the text; appears only in the Courses tab"
+   },
+   {
+    "code": "WELD 28",
+    "why": "no requirements section in the text; appears only in the Courses tab"
+   },
+   {
+    "code": "WELD 45",
+    "why": "no requirements section in the text; appears only in the Courses tab"
+   },
+   {
+    "code": "WELD 46",
+    "why": "no requirements section in the text; appears only in the Courses tab"
+   },
+   {
+    "code": "WELD 60",
+    "why": "no requirements section in the text; appears only in the Courses tab"
+   },
+   {
+    "code": "WELD 66",
+    "why": "no requirements section in the text; appears only in the Courses tab"
+   },
+   {
+    "code": "WELD 80",
+    "why": "no requirements section in the text; appears only in the Courses tab"
+   },
+   {
+    "code": "WELD 81",
+    "why": "no requirements section in the text; appears only in the Courses tab"
+   },
+   {
+    "code": "WELD 90",
+    "why": "no requirements section in the text; appears only in the Courses tab"
+   },
+   {
+    "code": "WELD 91",
+    "why": "no requirements section in the text; appears only in the Courses tab"
+   }
+  ],
+  "notes": [
+   "The supplied catalog text contains only site navigation/language-menu boilerplate and the program page's COURSES tab (course descriptions). No requirements section, total, outcomes or careers for the Welding Technology Certificate of Achievement appear in the text; the program/requirements tab appears to be missing from the extraction and should be re-fetched.",
+   "No blocks were recorded because the text does not state which courses the certificate requires."
+  ]
+ },
+ "extracted_run": "38748858322"
+}

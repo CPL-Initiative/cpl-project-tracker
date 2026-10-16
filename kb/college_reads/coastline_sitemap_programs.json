@@ -1,0 +1,25 @@
+{
+ "_readme": "S381 SkyRowan, 2026-10-13. Coastline's re-read (run 38429656959) found 32 of 159: Information Technology A.S. (.../information-technology/information-technology-as/) reached its page only through the link search, and reading each page's program links beneath it added one page (child_pages 1), so either the sitemap names the program pages under another address or the reader's 2,500-link cap stops before a subject page's program links. This read asks the sitemap for three program pages the link search found and loads the subject page that links them. Two loads, no model call.",
+ "college": "Coastline Community College",
+ "questions": {
+  "sitemap_program_pages": "Whether the sitemap lists the program pages (information-technology-as, aging-studies-aa, business-as), and at which addresses.",
+  "subject_links": "How many links the subject page carries, and where its program links sit among them."
+ },
+ "keywords": [
+  "information-technology-as",
+  "aging-studies-aa",
+  "business-as",
+  "information-technology/"
+ ],
+ "pages": [
+  {
+   "answers": ["sitemap_program_pages"],
+   "url": "https://catalog.cccd.edu/sitemap.xml"
+  },
+  {
+   "answers": ["subject_links"],
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/information-technology/",
+   "links": "information-technology-(as|coa)|it-support|cisco|cloud"
+  }
+ ]
+}

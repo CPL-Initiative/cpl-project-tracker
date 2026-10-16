@@ -1,0 +1,224 @@
+{
+ "college": "Allan Hancock College",
+ "control_number": "39992",
+ "shape": "certificate",
+ "title": "Agricultural Pest Control Adviser Preparation (1 of 2): Crop Protection",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31147",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9462,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9462,
+    "output_tokens": 1408,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1408,
+  "output_tokens_details": {
+   "thinking_tokens": 499
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06601,
+ "ms": 11392,
+ "seconds": 11.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "VEN125",
+    "VEN130"
+   ],
+   "flagged": [
+    "VEN125",
+    "VEN130"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    21.0,
+    21.0
+   ],
+   "stated": [
+    21.0,
+    21.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 8,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Agricultural Pest Control Adviser Preparation (1 of 2): Crop Protection - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 21,
+    "max": 21
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "identify plant pathogens, insects and weed species and assess the economic impact of pest infestations to determine the proper course of action for treatment and control.",
+    "utilize integrated pest management strategies and techniques to sustainably prevent and control pathogen, insect and weed populations.",
+    "demonstrate working knowledge of plant physiological processes that affect crop production.",
+    "demonstrate knowledge of pesticide modes of action and the biology of host-pest interactions in order to make effective and sustainable pest management decisions."
+   ],
+   "careers": [
+    "crop protection",
+    "pest control",
+    "pest management and control",
+    "agronomy",
+    "farm management",
+    "greenhouse and nursery operations",
+    "agricultural inspection",
+    "crop advising"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required core courses (21 units):",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 21,
+     "max": 21
+    },
+    "courses": [
+     {
+      "code": "AG 125",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "VEN 125",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "AG 130",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "VEN 130",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "AG 149",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AG 161",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AG 166",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 100",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "VEN 125 and VEN 130 are printed as cross-listings ('same as') of AG 125 and AG 130, not as separate 'or' options; recorded as alternatives with the row's 4.0 units. Reviewer may prefer to drop them.",
+   "Careers taken from the program description; 'Pest Control Adviser' is named only as a licensing exam and the advanced-study fields (Crop Science, etc.) are not recorded as careers.",
+   "Suggested Course Sequence repeats the same six courses totaling 21.0 units."
+  ]
+ },
+ "extracted_run": "38843474519"
+}

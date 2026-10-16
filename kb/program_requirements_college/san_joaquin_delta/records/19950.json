@@ -1,0 +1,292 @@
+{
+ "college": "San Joaquin Delta College",
+ "control_number": "19950",
+ "shape": "degree",
+ "title": "Apparel Design",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3224&print",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6617,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6617,
+    "output_tokens": 2097,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2097,
+  "output_tokens_details": {
+   "thinking_tokens": 696
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06841,
+ "ms": 17027,
+ "seconds": 19.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 11,
+   "codes": [
+    "FASHION10",
+    "FASHION2",
+    "FASHION21",
+    "FASHION30",
+    "FASHION31",
+    "FASHION4",
+    "FASHION51",
+    "FASHION52",
+    "FASHION6",
+    "FASHION8",
+    "FASHION9"
+   ],
+   "flagged": [
+    "FASHION10",
+    "FASHION2",
+    "FASHION21",
+    "FASHION30",
+    "FASHION31",
+    "FASHION4",
+    "FASHION51",
+    "FASHION52",
+    "FASHION6",
+    "FASHION8",
+    "FASHION9"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    32.0,
+    32.0
+   ],
+   "stated": [
+    32.0,
+    32.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Apparel Design, AA",
+   "measure": "units",
+   "total_units": {
+    "min": 32,
+    "max": 32
+   },
+   "open_elective_units": null,
+   "ge_pattern": "San Joaquin Delta College Associate Degree General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 27,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Design and produce original garments and collections to industry standards.",
+    "Analyze and evaluate the effects of changing demographics and psychographics on consumer behavior in relation to fashion and related products in today’s market.",
+    "Analyze characteristics of various fibers and fabrics in relation to finished apparel goods.",
+    "Demonstrate an understanding of current fashion industry production techniques.",
+    "Demonstrate an understanding of the origins and history of textiles and fashion.",
+    "Demonstrate an understanding of the fashion design process, using flat pattern, custom clothing and industrial sewing techniques.",
+    "Demonstrate the skills and knowledge to use the tools and equipment used in apparel production in today’s industry.",
+    "Demonstrate an understanding of the relationship between current fashion trends and cultural, social, political, technological and environment issues."
+   ],
+   "careers": [
+    "industrial sewers",
+    "pattern makers",
+    "production room managers",
+    "fashion illustrators",
+    "designers",
+    "design assistants"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Major Requirements - Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 30,
+     "max": 30
+    },
+    "courses": [
+     {
+      "code": "FASHION 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FASHION 4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FASHION 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ID 6",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "FASHION 8",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FASHION 9",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FASHION 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FASHION 21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ID 21",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "FASHION 30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FASHION 31",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FASHION 51",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Major Requirements - Restricted Electives",
+    "rule": "choose_units",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 2
+    },
+    "courses": [
+     {
+      "code": "FASHION 37",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FASHION 52",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Restricted Electives says 'Complete 2 units selected from' but both listed courses are 3 units; recorded minimum 2 as printed. Core 30 units + 2 = 32 matches 'Minimum Major Units Required: 32'.",
+   "ID 21 is printed at 3 units in the catalog while the state file stores 2 units; recorded catalog's 3.",
+   "Students complete one of two GE patterns: SJDC Associate Degree GE (27 units) or Cal-GETC (34 units); ge_units recorded as range 27-34 spanning the two patterns.",
+   "Degree total recorded from 'Minimum Degree Units Required: 60' printed on this award's page.",
+   "All courses must be completed with a grade of 'C' or better."
+  ]
+ },
+ "extracted_run": "38631691511"
+}

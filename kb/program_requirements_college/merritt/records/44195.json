@@ -1,0 +1,242 @@
+{
+ "college": "Merritt College",
+ "control_number": "44195",
+ "shape": "certificate",
+ "title": "Municipal Gardener, Level 1",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48834",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7902,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7902,
+    "output_tokens": 2035,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2035,
+  "output_tokens_details": {
+   "thinking_tokens": 946
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07231,
+ "ms": 24443,
+ "seconds": 25.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "LANHT13"
+   ],
+   "flagged": [
+    "LANHT13"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    9.0,
+    9.0
+   ],
+   "stated": [
+    12.0,
+    12.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 9.0-9.0; the catalog states 12.0-12.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Program Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 12,
+    "max": 12
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate the following basic horticultural practices: proper planting, pruning and routine maintenance for landscape plants."
+   ],
+   "careers": [
+    "Landscaping and Groundskeeping",
+    "Entry level municipal garden positions"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Courses:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "LANHT 026",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COPED 452A",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose One:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "LANHT 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LANHT 001E",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose One: Select 1 of the 3 Focus Area Options:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "LANHT 012",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LANHT 013E",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "LANHT 013",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "LANHT 201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "COPED 452A is printed twice in Core Courses: 2.5 units for Semester 1 and 3 units for Semester 2 (290 hours, equivalent of 5.5 units total). It is recorded once with 2.5 units; the block's stated 6.0 units = LANHT 026 (0.5) + COPED 452A (2.5 + 3). The closed list stores COPED 452A at 1 unit.",
+   "LANHT 026 and LANHT 001 are taken as the closed list's LANHT 26 and LANHT 1; LANHT 012 and LANHT 013E as LANHT012 and LANHT013E.",
+   "LANHT 013E is printed '( same as LANHT 013 )'; LANHT 013 is recorded as an alternative not in the closed list, with no units printed beside it.",
+   "Both choice blocks are under the parent heading 'Required Courses: 12.0' / 'Select 12 Major Requirement Units from the courses below'; total printed 'Total Units: 12'.",
+   "The program description also refers to 'entry level municipal gardener positions', which overlaps the listed career 'Entry level municipal garden positions'."
+  ]
+ },
+ "extracted_run": "38935152199"
+}

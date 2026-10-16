@@ -1,0 +1,236 @@
+{
+ "college": "Santa Ana College",
+ "control_number": "33189",
+ "shape": "noncredit",
+ "title": "Adult Basic Education",
+ "award": "Noncredit program",
+ "source_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36225/36181",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6622,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6622,
+    "output_tokens": 1213,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1213,
+  "output_tokens_details": {
+   "thinking_tokens": 185
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05075,
+ "ms": 10938,
+ "seconds": 11.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    72.0,
+    144.0
+   ],
+   "stated": [
+    72.0,
+    144.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Adult Basic Education: Certificate of Competency (Noncredit)",
+   "measure": "hours",
+   "total_units": {
+    "min": 72,
+    "max": 144
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Write complete sentences that demonstrate proficiency with grammar, mechanics, and usage",
+    "Produce a basic project presentation that demonstrates effective math, reading, writing, financial, or speaking skills"
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Students must complete and pass ONE of the following courses:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 36,
+     "max": 72
+    },
+    "courses": [
+     {
+      "code": "ABE 023",
+      "units": 36,
+      "units_max": 72,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ABE 024",
+      "units": 36,
+      "units_max": 72,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ABE 025",
+      "units": 36,
+      "units_max": 72,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ABE 010",
+      "units": 36,
+      "units_max": 72,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ABE 036",
+      "units": 36,
+      "units_max": 72,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Students must complete and pass ONE of the following courses:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 36,
+     "max": 72
+    },
+    "courses": [
+     {
+      "code": "ABE 044",
+      "units": 36,
+      "units_max": 72,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSS 090",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ABE 018",
+      "units": 36,
+      "units_max": 72,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSS 092",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ABE 046",
+      "units": 36,
+      "units_max": 72,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints codes with leading zeros (e.g., ABE 023, HSS 090); these were matched to the closed-list codes without leading zeros (ABE 23, HSS 90), so none are marked as catalog additions.",
+   "The award is a Certificate of Competency (Noncredit) counted in hours; the hours printed beside each course and the total (72.0-144.0) are recorded as hours.",
+   "Most ABE courses are marked '( Historical )' in the catalog, while HSS 090 and HSS 092 are '( Active )'; a reviewer may want to confirm whether the historical courses are still offered for 2026-2027.",
+   "Each block is a 'choose ONE' list; courses joined by 'OR' were recorded as separate choices in a choose_courses block rather than as alternatives."
+  ]
+ },
+ "extracted_run": "38843461766"
+}

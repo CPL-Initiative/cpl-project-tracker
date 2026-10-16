@@ -1,0 +1,291 @@
+{
+ "college": "Modesto Junior College",
+ "control_number": "20325",
+ "shape": "certificate",
+ "title": "Medical Assisting",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/medical-assisting-mjc-spring-2026v2",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7768,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7768,
+    "output_tokens": 2522,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2522,
+  "output_tokens_details": {
+   "thinking_tokens": 837
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08151,
+ "ms": 20778,
+ "seconds": 21.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 14,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    35.5,
+    36.5
+   ],
+   "stated": [
+    35.5,
+    36.5
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "MEDICAL ASSISTING, CERTIFICATE *",
+   "measure": "units",
+   "total_units": {
+    "min": 35.5,
+    "max": 36.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Communicate effectively with colleagues, patients/clients, and other members of the health care team.",
+    "Demonstrate understanding of the legal implications of healthcare and use critical thinking skills to make ethical decisions.",
+    "Establish and maintain professional working relationships with men and women from diverse backgrounds.",
+    "Make a substantial contribution to the quality of healthcare by representing the medical assisting profession with pride and dedication.",
+    "Provide competent medical assisting care, in variety of settings, based on the entry-level competencies for the Medical Assistant.",
+    "Set and achieve professional goals."
+   ],
+   "careers": [
+    "medical assisting"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "AP 50",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANAT 125",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYCH 141",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "FIRST SEMESTER",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12.5,
+     "max": 12.5
+    },
+    "courses": [
+     {
+      "code": "MDAST 320",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MDAST 321",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MDAST 322",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MDAST 323",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "SECOND SEMESTER",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 14,
+     "max": 14
+    },
+    "courses": [
+     {
+      "code": "MDAST 324",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MDAST 325",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MDAST 326",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The three sub-blocks are each named 'REQUIRED COURSES' under the parent 'REQUIRED COURSES (NON MEDICAL ASSISTING)' (Total 9-10); the Medical Assisting blocks sit under 'REQUIRED COURSES (MEDICAL ASSISTING)' (Total 26.5). Parent groupings are not recorded as separate blocks.",
+   "The catalog phrases the three non-MDAST choices as 'Complete the following number of credits: 3-4' / '3'; recorded as choose one course, consistent with the admission list ('AP 50 ... OR ANAT 125', 'CHOOSE ONE PSYCH COURSE', 'CHOOSE ONE COMM COURSE').",
+   "Codes printed without spaces in the requirements table (e.g., AP50, PSYCC1000) are written with spaces as printed in the earlier required-courses list.",
+   "The admission list titles PSYCH 141 'Human Lifespan'; the requirements table titles it 'Human Lifespan Development'.",
+   "The page header shows a Seminole, FL address, which appears unrelated to Modesto Junior College; reviewer may check.",
+   "A stray lead-in 'Upon satisfactory completion of this award, the student should be prepared to:' appears before the section heading with nothing under it; the outcomes were taken from the Program Learning Outcomes heading.",
+   "Career 'medical assisting' taken from 'Any student considering a career in medical assisting'."
+  ]
+ },
+ "extracted_run": "38477845911"
+}

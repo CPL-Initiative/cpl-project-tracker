@@ -232,6 +232,12 @@ answer_must_not_match_unnegated() { # [-i] regex label
 # the articulation the same sentence names, so the absence is set aside only when
 # an articulation comes earlier in that sentence; "has set up an LVN program"
 # still fails.
+# And a verb before it (2026-10-12, S370): run 38251043198 wrote "No college in the San
+# Gabriel Valley (or statewide) has yet set up a formal CPL articulation specifically
+# matching a CNA into LVN coursework", after Pasadena NURS 102, Rio Hondo VN 61 and Citrus
+# VNRS 150. Set up, established, created, built, put in place, approved or adopted, then
+# an articulation or exhibit within a few words; "has yet set up a formal LVN program"
+# still fails.
 answer_must_not_claim_absence() { # [-i] regex label
   local flag=""; if [ "$1" = "-i" ]; then flag="-i"; shift; fi
   local re="$1" label="$2" stripped
@@ -243,7 +249,8 @@ answer_must_not_claim_absence() { # [-i] regex label
     -e "s/\\b(catalog( data)?|the data|our data|the records?) (lists|shows|holds|carries) (no|none)\\b/\\1 \\3 zero/Ig" \
     -e "s/\\b(no|none)\\b([^.]{0,80}) (has|have|had) (yet |not yet |ever |so far )?articulated/zero\\2 \\3 \\4articulated/Ig" \
     -e "s/\\b(no|none)\\b([^.]{0,80}) (has|have|had|shows?) (yet |not yet |ever |so far )?(an? |any )?(existing |current )?(([[:alnum:]-]+ ){0,3}articulat(ions?|ed|ing)|([[:alnum:]-]+ ){0,2}exhibits?)\\b/zero\\2 \\3 an articulation/Ig" \
-    -e "s/(articulat[^.]*)\\b(no|none)\\b([^.]{0,80}) (has|have|had) (yet |not yet |ever |so far )?(set (this|that|it|one) up|done (this|that|so|the same))\\b/\\1zero\\3 \\4 \\5\\6/Ig")"
+    -e "s/(articulat[^.]*)\\b(no|none)\\b([^.]{0,80}) (has|have|had) (yet |not yet |ever |so far )?(set (this|that|it|one) up|done (this|that|so|the same))\\b/\\1zero\\3 \\4 \\5\\6/Ig" \
+    -e "s/\\b(no|none)\\b([^.]{0,80}) (has|have|had) (yet |not yet |ever |so far )?(set up|established|created|built|put in place|approved|adopted) (an? |any )?(([[:alnum:]-]+ ){0,4}articulat(ions?|ed|ing)|([[:alnum:]-]+ ){0,3}exhibits?)\\b/zero\\2 \\3 \\4\\5 an articulation/Ig")"
   if printf '%s' "$stripped" | grep -E $flag -q -- "$re"; then
     echo "::error::$label: answer should NOT match /$re/ (regression)"; fail=1
   else
@@ -938,6 +945,31 @@ run "7v follow-up after a wrong 'no data' reply (COCI is not College of the Cany
   "$(printf '{"query":"You have the noncredit courses in COCI and the MIS program and course dataset. Check again and let me know.","session_id":"smoke-ci","history":[{"role":"user","content":"%s"},{"role":"assistant","content":"I do not have North Orange Continuing Education noncredit course catalog data in front of me, so I cannot confirm specific IT certification prep courses."}]}' "$NOCE_QUESTION")"
 answer_must_match "\bCIST[ -]?1[0-2][05]\b" "7v ⭐ the follow-up folds the NOCE question back in and names a CIST course"
 answer_must_not_match -i "College of the Canyons" "7v ⭐ the follow-up never reads College of the Canyons"
+
+# ── MODE 7w: the statewide catalog, asked for as a whole (S398) ───────────────
+# Sam's Training rule (2026-10-15): asked for "a complete list of statewide exhibit
+# titles categorized by sector", the first response is a table of every title with its
+# total units, and the Fact Sheet arrives as a link. He asked exactly this on the public
+# page three times that evening; each answer said the full list was not available and
+# quoted "114 statewide exhibits" and "949 credit recommendations (13.1% of all)" from
+# an April vault note, with the Fact Sheet by name and no link. The catalog block
+# (fact-sheet/statewide_catalog.json, read from main) now carries every exhibit.
+# Thresholds over long-standing titles and the program areas, never one named title
+# or a count: the set moves every morning (162 to 164 between 2026-10-14 and -16).
+run "7w statewide catalog (Sam's question, 2026-10-15)" \
+  '{"query":"Give me a complete list of statewide exhibit titles categorized by sector","session_id":"smoke-ci","surface":"public","history":[]}'
+answer_head_must_match 900 "\|[^|]+\|[^|]+\|" "7w ⭐ opens with the table"
+answer_must_name_at_least -i 9 "7w groups by the Fact Sheet's program areas" \
+  "Construction Technology" "Welding" "Fire Technology" "Computer Information Systems" \
+  "Automotive Technology" "Wildland" "Emergency Medical Services" "Corrections" \
+  "Real Estate" "World Languages" "Administration of Justice" "Kinesiology"
+answer_must_name_at_least -i 8 "7w lists exhibits from across the catalog" \
+  "POST Basic Academy" "Basic Military Training" "CompTIA Security\+" "ASE A5" "Firefighter 1" \
+  "EMT Certification" "Real Estate Salesperson" "NCCER Welding Level 1" \
+  "Correctional Officer Core Course" "Defense Language Proficiency Test"
+answer_must_match "cpl-initiative\.github\.io/cpl-project-tracker/fact-sheet" "7w ⭐ links the Fact Sheet rather than naming it"
+answer_must_not_match -i "do(n.?t| not) have (the|a|that) (full|complete|itemized)" "7w ⭐ never says the full list is not available"
+answer_must_not_match "13\.1%|\b949\b" "7w never quotes the April vault note's statewide figures"
 
 # Broad "who teaches this" — the catalog should surface colleges that TEACH
 # construction/carpentry (not only those with an existing exhibit).

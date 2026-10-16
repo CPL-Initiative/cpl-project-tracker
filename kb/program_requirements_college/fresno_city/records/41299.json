@@ -1,0 +1,260 @@
+{
+ "college": "Fresno City College",
+ "control_number": "41299",
+ "shape": "certificate",
+ "title": "Data Analytics and Predictive Modeling",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Decision-Science-Programs/7017",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6531,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6531,
+    "output_tokens": 2082,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2082,
+  "output_tokens_details": {
+   "thinking_tokens": 734
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06776,
+ "ms": 16593,
+ "seconds": 16.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 13,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.0,
+    23.0
+   ],
+   "stated": [
+    20.0,
+    23.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Data Analytics and Predictive Modeling, Certificate of Achievement - Major #2800",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 23
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Extract data from a database to solve data-related problems using programming languages used for data science and statistical software.",
+    "Produce, communicate, and interpret data analysis using data visualization, numerical summaries, modeling, and statistical inferences.",
+    "Recognize questions that can be investigated, the data source to select to make the investigation and understand the methods of randomly collecting data.",
+    "Fit, Interpret and evaluate statistical models for prediction and inference.",
+    "Acquire data from various sources, maintain databases, and perform data exploration techniques to prepare data for analysis.",
+    "Provide students with mathematical tools to help them form a mathematical foundation for data science."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 14,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "CIT 19",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIT 28",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DS 10",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DS 21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 21",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DS 23",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 42",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 42",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Emphasis Courses (DS 25 AND DS 55)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Emphasis Courses",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "DS 25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DS 55",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Emphasis Courses (CIT 95 AND CIT 99)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Emphasis Courses",
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "CIT 95",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIT 99",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints 'DS 10' (4 units); the closed list stores it as 'DS10' with no units. Treated as the same course (catalog_addition false); reviewer may confirm.",
+   "The Required Courses stated total 14-15 covers CIT 19, CIT 28, DS 10, the DS 21/MATH 21 choice (3) and the statistics choice DS 23/STAT C1000/MATH 42/PSYC 42 (3-4); the two 'or' choices are recorded as single entries with alternatives.",
+   "MATH 42 and PSYC 42 are printed as cross-listed ('same as'); both recorded as alternatives.",
+   "Emphasis Courses block total printed as 6-8: student completes either DS 25 and DS 55 (6) or CIT 95 and CIT 99 (8).",
+   "The description mentions students who wish to 'begin work in the field' of data science but names no specific career, so careers is left empty."
+  ]
+ },
+ "extracted_run": "38563582873"
+}

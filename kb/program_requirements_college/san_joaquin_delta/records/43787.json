@@ -1,0 +1,205 @@
+{
+ "college": "San Joaquin Delta College",
+ "control_number": "43787",
+ "shape": "certificate",
+ "title": "ESL Milestone for Multilingual Speakers: Pathway to Health Careers",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3382&print",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6289,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6289,
+    "output_tokens": 1271,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1271,
+  "output_tokens_details": {
+   "thinking_tokens": 361
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05058,
+ "ms": 10686,
+ "seconds": 11.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ESL86",
+    "ESL88"
+   ],
+   "flagged": [
+    "ESL86",
+    "ESL88"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    16.0,
+    16.0
+   ],
+   "stated": [
+    16.0,
+    16.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "ESL Milestone for Multilingual Speakers: Pathway to Health Careers Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 16,
+    "max": 16
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Write and edit clear, well-developed essays on academic topics and effectively use English as applied in Health Science classes as well as workplace environments in one of the Health Careers. Summarize, paraphrase, and quote readings using proper citation and formatting strategies, as a way to integrate outside sources into writing for Health Science classes.",
+    "Apply techniques of written communication, sentence structure, word usage, punctuation, spelling, medical terminology, and Health Sciences document formatting.",
+    "Analyze written health-related communication and compose and organize paragraphs into effective documents.",
+    "Participate in in-depth health-related discussions effectively, take clear notes, and give oral presentations.",
+    "Demonstrate the understanding and spelling of prefixes, root words, and suffixes to accurately decode common medical terms.",
+    "Demonstrate how to properly use common medical terms in health care practice."
+   ],
+   "careers": [
+    "health careers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 13,
+     "max": 13
+    },
+    "courses": [
+     {
+      "code": "ESL 88",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ESL 59",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "H S 36",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Restrictive Electives",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ESL 86",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ESL 87",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The first printed outcome line contains two sentences (Write and edit... / Summarize, paraphrase...); recorded as one outcome as printed on a single line.",
+   "Restrictive Electives stated total taken from 'Complete 3 units selected from'.",
+   "Career entry 'health careers' taken from the description ('a future in health careers'); the text names no specific job titles.",
+   "All courses require a grade of 'C' or better."
+  ]
+ },
+ "extracted_run": "38631691511"
+}

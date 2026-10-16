@@ -1,12 +1,18 @@
 /*
  * COBI — Project lifecycle overlay  (window.CPL_PROJECT_LIFECYCLE)
  *
- * Soft-delete for the Activities & Projects cards. A reviewer (magic-link) or a
- * team-phrase user can **Table** (pause) or **Archive** (close) a project; it
+ * Soft-delete for the Activities & Projects cards. A signed-in reviewer (magic
+ * link) can **Table** (pause) or **Archive** (close) a project; it
  * leaves the active grid + every CPL_DATA consumer (RACI matrix, Annual Report,
  * custom reports) and moves to a collapsed "Tabled & Archived" section with its
  * reason + date. Reversible — ♻ Restore deletes the overlay row and the project
  * returns to the grid (live, or on the next daily regen). Never a hard delete.
+ *
+ * REVIEWER ONLY (Sam, Open Asks Sheet 77 card 2, "Reviewer only on both tabs",
+ * 2026-10-13 22:25Z). From Session 84 the team phrase could table too; it took a
+ * sub-activity off the cards, the reports and the RACI list. The Annual Goals
+ * editor's Table (Sheet 75 card 3) opens this same dialog, so one rule covers
+ * both tabs, and the write policies on project_lifecycle name the reviewer alone.
  *
  * SCOPE — real work-item projects ONLY (Session 95, Sam 2026-07-02). Ids that
  * render Activity-metrics KPI cards (CPL_DATA.activity_kpis — the official
@@ -18,8 +24,8 @@
  *
  * Storage: the Supabase `public.project_lifecycle` overlay (project_id pk →
  * {state, reason, updated_by, updated_at}; absence of a row = active). Anon read;
- * writes gated by is_allowed_reviewer() OR team_pass_ok() (the RACI / Mission
- * Control gate). The committed kb/project_lifecycle.json ledger (written by the
+ * writes gated by is_allowed_reviewer() (kb/supabase_project_lifecycle.sql).
+ * The committed kb/project_lifecycle.json ledger (written by the
  * daily cron) is the "noted in the KB" record + the generator's bake-in source.
  *
  * Two layers, like card_updates.js + projects_editor.js:
@@ -36,7 +42,6 @@
 
   var SUPABASE_URL = "https://hvuwhnbuahrtptokpqfh.supabase.co";
   var SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM";
-  var TEAM_PASS_KEY = "cpl_team_pass";
 
   // ── Pure helpers (exported for tests) ───────────────────────────────────────
   function escapeHtml(s) {
@@ -81,16 +86,15 @@
 
   // Inner HTML for one collapsed "Tabled & Archived" card. Matches the server's
   // render_tabled_archived_section so a live-tabled entry looks identical to a
-  // baked one. `name`/`reason`/`by` are escaped (overlay text is reviewer-written
-  // but treated as untrusted).
+  // baked one. `name`/`reason` are escaped (overlay text is reviewer-written
+  // but treated as untrusted). The line names the date only: updated_by is the
+  // reviewer's sign-in email and the page is public (2026-10-14).
   function entryHtml(pid, name, meta) {
     meta = meta || {};
     var reason = (meta.reason || "").trim();
-    var by = (meta.updated_by || "").trim();
     var when = fmtDate(meta.updated_at);
     var metaBits = [];
     if (when) metaBits.push("Since " + when);
-    if (by) metaBits.push(escapeHtml(by));
     var reasonHtml = reason
       ? '<div class="tabled-reason" style="font-size:0.78rem;color:var(--text-body);margin:0.3rem 0;line-height:1.4;">' + escapeHtml(reason) + '</div>'
       : "";
@@ -110,16 +114,12 @@
     );
   }
 
-  // ── Auth (mirrors raci.js: magic-link session OR shared team phrase) ─────────
+  // ── Auth: a reviewer's magic-link session, never the team phrase (Sheet 77 card 2) ──
   function isValidJwt(t) { return typeof t === "string" && /^[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+$/.test(t); }
   function getSession() {
     try {
       var s = JSON.parse(sessionStorage.getItem("cpl_sb") || "null");
       if (s && isValidJwt(s.access_token) && (s.refresh_token || !s.exp || s.exp > Date.now())) return s;
-    } catch (e) {}
-    try {
-      var p = localStorage.getItem(TEAM_PASS_KEY);
-      if (p) return { teamPass: p, email: "(team)" };
     } catch (e) {}
     return null;
   }
@@ -147,25 +147,13 @@
     }
     return Promise.resolve(s);
   }
-  // Anon-RPC validate so a wrong team phrase is never stored (the raci.js pattern).
-  function verifyPhrase(p) {
-    return fetch(SUPABASE_URL + "/rest/v1/rpc/team_pass_ok", {
-      method: "POST",
-      headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON,
-        "Content-Type": "application/json", "x-team-pass": p },
-      body: "{}"
-    }).then(function (r) { return r.ok ? r.json() : false; })
-      .then(function (v) { return v === true; }).catch(function () { return false; });
-  }
-
   // ── Supabase REST ────────────────────────────────────────────────────────────
-  // Bearer = the user JWT for a real session, else the ANON key (NEVER an empty
-  // "Bearer " — PostgREST 401s that at the auth layer before RLS; the team phrase
-  // rides the x-team-pass header which team_pass_ok() validates).  (Session 83.)
+  // Bearer = the reviewer's JWT, else the ANON key (NEVER an empty "Bearer " —
+  // PostgREST 401s that at the auth layer before RLS). No x-team-pass header: the
+  // write policies name is_allowed_reviewer() alone (Sheet 77 card 2).
   function headersFor(s, prefer) {
     var token = (s && s.access_token) || SUPABASE_ANON;
     var h = { apikey: SUPABASE_ANON, "Content-Type": "application/json", Authorization: "Bearer " + token };
-    if (s && s.teamPass) h["x-team-pass"] = s.teamPass;
     if (prefer) h.Prefer = prefer;
     return h;
   }
@@ -174,7 +162,7 @@
       .then(function (r) { return r.ok ? r.json() : []; }).catch(function () { return []; });
   }
   function upsertLifecycle(pid, state, reason, s) {
-    var who = s ? (s.teamPass ? "(team)" : (s.email || "(reviewer)")) : "";
+    var who = s ? (s.email || "(reviewer)") : "";
     var body = { project_id: pid, state: state, reason: reason || null,
       updated_by: who, updated_at: new Date().toISOString() };
     return ensureFresh(s).then(function (fs) {
@@ -233,7 +221,7 @@
         '🗄 Tabled &amp; Archived <span class="tabled-archived-count" style="color:#888;font-weight:400;font-size:0.85rem;">(0)</span></summary>' +
       '<div class="tabled-archived-note" style="font-size:0.76rem;color:var(--text-muted);margin:0.5rem 0 0.8rem 0;line-height:1.4;">' +
         'Paused or closed projects — kept for the record but excluded from active priorities, reports, and the RACI matrix. ' +
-        'Sign in (or unlock with the team phrase) to Restore one.</div>' +
+        'Sign in as a reviewer to Restore one.</div>' +
       '<div class="tabled-archived-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:0.7rem;"></div>';
     grid.parentNode.insertBefore(wrap, grid.nextSibling);
     return wrap;
@@ -284,7 +272,8 @@
   function setGoalsRowsHidden(pid, hidden) {
     var q = esc4q(pid);
     Array.prototype.forEach.call(document.querySelectorAll('table [data-pid="' + q + '"]'), function (a) {
-      var nameCell = a.closest && a.closest("td[rowspan]");
+      // The name cell is a row header since the S375 UI pass (#2054), a td before it.
+      var nameCell = a.closest && a.closest("th[rowspan], td[rowspan]");
       if (!nameCell) return;                                  // not a goals-table name cell
       var span = parseInt(nameCell.getAttribute("rowspan"), 10) || 1;
       var row = a.closest("tr");
@@ -366,7 +355,7 @@
     return (n.firstChild && n.firstChild.textContent || "").trim();
   }
 
-  // ── Controls (shown only to a signed-in reviewer / team-phrase user) ─────────
+  // ── Controls (shown only to a signed-in reviewer) ─────────────────────────────
   function mountControls() {
     var authed = !!getSession();
     // Restore buttons on the collapsed entries.
@@ -389,11 +378,10 @@
       document.querySelectorAll('.activity-kpi-card[data-pid], #projectsGrid .project-card[data-pid]'),
       function (card) {
         var has = card.querySelector(".plc-ctl-row");
-        if (card.getAttribute("data-lifecycle")) { if (has) has.remove(); return; }
-        // The 🗄 control shows for EVERYONE (affordance-visibility vs action-
-        // eligibility) so the team-phrase / reviewer unlock is reachable from the
-        // card — a not-signed-in click opens the unlock in the popup. (Fixes the
-        // chicken-and-egg where the unlock was buried behind an authed-only button.)
+        // A reviewer's control only (Sheet 77 card 2). It showed for everyone
+        // while a click could unlock it with the team phrase; with the phrase
+        // gone, a signed-out visitor has nothing to do with it.
+        if (card.getAttribute("data-lifecycle") || !authed) { if (has) has.remove(); return; }
         if (has) return;
         var row = el("div", { "class": "plc-ctl-row" });
         var btn = el("button", { "class": "plc-table-btn", "type": "button",
@@ -410,10 +398,10 @@
     var ov = document.querySelector(".plc-modal-overlay");
     if (ov) ov.remove();
   }
-  function openTableModal(pid) {
+  function openTableModal(pid, nameHint) {
     closeModal();
     var card = cardFor(pid);
-    var name = (card && cardName(card)) || pid;
+    var name = (card && cardName(card)) || nameHint || pid;
     var sess = getSession();
 
     var overlay = el("div", { "class": "plc-modal-overlay" });
@@ -426,24 +414,8 @@
     var statusEl = el("div", { "class": "plc-modal-status" }, []);
 
     if (!sess) {
-      // Not authed → offer the team-phrase unlock in place (or sign in elsewhere).
-      var inp = el("input", { "type": "password", "placeholder": "team phrase", "class": "plc-in" });
-      var unlockBtn = el("button", { "class": "plc-btn plc-btn-go", "type": "button" }, ["🔓 Unlock"]);
-      unlockBtn.addEventListener("click", function () {
-        var p = (inp.value || "").trim();
-        if (!p) { statusEl.textContent = "Enter the team phrase."; return; }
-        statusEl.textContent = "Checking…"; unlockBtn.disabled = true;
-        verifyPhrase(p).then(function (ok) {
-          unlockBtn.disabled = false;
-          if (!ok) { statusEl.textContent = "That phrase doesn't match — try again, or sign in as a reviewer."; return; }
-          try { localStorage.setItem(TEAM_PASS_KEY, p); } catch (e) {}
-          openTableModal(pid); // re-open in edit mode
-        });
-      });
-      inp.addEventListener("keydown", function (e) { if (e.key === "Enter") unlockBtn.click(); });
-      modal.appendChild(el("div", { "class": "plc-unlock" }, [
-        el("div", { "class": "plc-modal-sub" }, ["Unlock editing with the team phrase — no sign-in needed:"]),
-        inp, unlockBtn ]));
+      // Signed out: the dialog says who may use it (Sheet 77 card 2). No phrase box.
+      statusEl.textContent = "Sign in as a reviewer to table or archive a sub-activity.";
       modal.appendChild(statusEl);
       var closeRow0 = el("div", { "class": "plc-modal-actions" }, []);
       var cancel0 = el("button", { "class": "plc-btn-cancel", "type": "button" }, ["Close"]);
@@ -451,7 +423,7 @@
       closeRow0.appendChild(cancel0);
       modal.appendChild(closeRow0);
       document.body.appendChild(overlay);
-      inp.focus();
+      cancel0.focus();
       return;
     }
 
@@ -488,28 +460,30 @@
       confirm.disabled = true;
       statusEl.className = "plc-modal-status";
       statusEl.textContent = "Saving…";
-      var meta = { state: state, reason: reason, updated_by: sess.teamPass ? "(team)" : (sess.email || "(reviewer)"),
+      var meta = { state: state, reason: reason, updated_by: sess.email || "(reviewer)",
         updated_at: new Date().toISOString() };
-      // Optimistic: hide the card + add the entry.
+      // Optimistic: hide the card and its Annual Goals rows, add the entry.
       hideCard(pid, state);
+      setGoalsRowsHidden(pid, true);
       addEntry(pid, name, meta);
       mountControls();
       upsertLifecycle(pid, state, reason, sess).then(function (r) {
         if (r.ok) {
           _overlay[pid] = meta;
           closeModal();
+          announce(pid, state);
         } else {
           // rollback
-          showCard(pid); removeEntry(pid); mountControls();
+          showCard(pid); setGoalsRowsHidden(pid, false); removeEntry(pid); mountControls();
           confirm.disabled = false;
           statusEl.className = "plc-modal-status err";
           return r.text().then(function (t) {
             statusEl.textContent = "Save failed (HTTP " + r.status + "). " +
-              (r.status === 401 || r.status === 403 ? "Your sign-in/phrase may have expired." : (t || "").slice(0, 120));
+              (r.status === 401 || r.status === 403 ? "Your reviewer sign-in may have expired." : (t || "").slice(0, 120));
           });
         }
       }).catch(function (e) {
-        showCard(pid); removeEntry(pid); mountControls();
+        showCard(pid); setGoalsRowsHidden(pid, false); removeEntry(pid); mountControls();
         confirm.disabled = false;
         statusEl.className = "plc-modal-status err";
         statusEl.textContent = "Network error: " + (e && e.message || "unknown");
@@ -520,6 +494,12 @@
     ta.focus();
   }
 
+  // A saved Table, Archive or Restore, for the other surfaces that list the row
+  // (the Annual Goals editor's Tabled and archived list, Sheet 75 card 3).
+  function announce(pid, state) {
+    try { window.dispatchEvent(new CustomEvent("cpl-lifecycle-changed", { detail: { pid: pid, state: state } })); } catch (e) {}
+  }
+
   function doRestore(pid, btn) {
     var sess = getSession();
     if (!sess) { return; }
@@ -527,19 +507,23 @@
     var name = entry ? entryNameOf(entry) : pid;
     var prevMeta = _overlay[pid];
     if (btn) { btn.disabled = true; btn.textContent = "Restoring…"; }
-    // Optimistic: un-hide the grid card (if present) + remove the entry.
+    // Optimistic: un-hide the grid card (if present) and its Annual Goals rows,
+    // remove the entry.
     showCard(pid);
+    setGoalsRowsHidden(pid, false);
     removeEntry(pid);
     mountControls();
     deleteLifecycle(pid, sess).then(function (r) {
-      if (r.ok) { delete _overlay[pid]; }
+      if (r.ok) { delete _overlay[pid]; announce(pid, null); }
       else {
         // rollback
+        setGoalsRowsHidden(pid, true);
         if (prevMeta) { hideCard(pid, prevMeta.state); addEntry(pid, name, prevMeta); mountControls(); }
         alert("Restore failed (HTTP " + r.status + "). " +
-          (r.status === 401 || r.status === 403 ? "Your sign-in/phrase may have expired." : ""));
+          (r.status === 401 || r.status === 403 ? "Your reviewer sign-in may have expired." : ""));
       }
     }).catch(function (e) {
+      setGoalsRowsHidden(pid, true);
       if (prevMeta) { hideCard(pid, prevMeta.state); addEntry(pid, name, prevMeta); mountControls(); }
       alert("Restore failed: " + (e && e.message || "network error"));
     });
@@ -584,13 +568,11 @@
       ".plc-modal-sub{font-size:0.8rem;color:var(--text-muted);margin-bottom:0.7rem;line-height:1.4;}" +
       ".plc-choice{display:flex;flex-direction:column;gap:0.4rem;margin:0.4rem 0 0.7rem 0;font-size:0.85rem;color:var(--text-strong);}" +
       ".plc-reason{width:100%;min-height:70px;font-family:inherit;font-size:0.85rem;padding:0.5rem;border:1px solid #ccc;border-radius:6px;box-sizing:border-box;}" +
-      ".plc-in{font-family:inherit;font-size:0.85rem;padding:0.4rem 0.5rem;border:1px solid #ccc;border-radius:6px;margin:0.3rem 0.4rem 0.3rem 0;}" +
-      ".plc-unlock{margin:0.4rem 0;}" +
       ".plc-modal-status{font-size:0.78rem;color:var(--text-muted);min-height:1.1em;margin-top:0.4rem;}" +
       ".plc-modal-status.err{color:var(--crimson,#a33);}" +
       ".plc-modal-actions{display:flex;justify-content:flex-end;gap:0.5rem;margin-top:0.8rem;}" +
-      ".plc-btn,.plc-btn-go,.plc-btn-cancel,.plc-btn-submit{font-size:0.85rem;padding:0.4rem 0.9rem;border-radius:6px;cursor:pointer;border:1px solid #ccc;background:#f3f3f3;}" +
-      ".plc-btn-submit,.plc-btn-go{background:var(--navy-primary,#16324f);color:var(--on-accent);border-color:var(--navy-primary,#16324f);}" +
+      ".plc-btn-cancel,.plc-btn-submit{font-size:0.85rem;padding:0.4rem 0.9rem;border-radius:6px;cursor:pointer;border:1px solid #ccc;background:#f3f3f3;}" +
+      ".plc-btn-submit{background:var(--navy-primary,#16324f);color:var(--on-accent);border-color:var(--navy-primary,#16324f);}" +
       ".tabled-archived-summary::-webkit-details-marker{display:none;}";
     var st = el("style", { "id": "plc-css" });
     st.textContent = css;
@@ -638,7 +620,7 @@
       // Re-light controls when auth changes (sign-in completes on another tab).
       window.addEventListener("hashchange", mountControls);
       window.addEventListener("storage", function (e) {
-        if (!e || e.key === "cpl_sb" || e.key === TEAM_PASS_KEY) mountControls();
+        if (!e || e.key === "cpl_sb") mountControls();
       });
     }
   }
@@ -653,6 +635,10 @@
     reconcile: reconcile,
     mountControls: mountControls,
     run: run,
+    // The Annual Goals editor opens the same dialog and the same Restore, so one
+    // writer keeps project_lifecycle (Sam, Open Asks Sheet 75 card 3).
+    openTable: function (pid, name) { openTableModal(pid, name); },
+    restore: function (pid) { doRestore(pid, null); },
     _setOverlay: function (m) { _overlay = m || {}; }  // test hook
   };
   if (typeof window !== "undefined") window.CPL_PROJECT_LIFECYCLE = api;

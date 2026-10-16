@@ -1,0 +1,107 @@
+{
+ "college": "Monterey Peninsula College",
+ "programs": 206,
+ "with_closed_list": 205,
+ "found": 199,
+ "extracted": 199,
+ "errors": 0,
+ "passed_machine_checks": 108,
+ "failed": {
+  "coverage": 5,
+  "invented": 0,
+  "arithmetic": 89,
+  "repeated": 2,
+  "outcomes": 1
+ },
+ "cost_usd": 13.26,
+ "cost_per_program": 0.0667,
+ "not_found": [
+  {
+   "control_number": "03653",
+   "title": "Administration of Justice: Law Enforcement",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.mpc.edu/programs-study/law-enforcement-training-program/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.333,
+    "body": 0.0,
+    "content": 0.267,
+    "net": 5,
+    "listed": 15,
+    "why": "coarse net: the page's code tokens name 5 of 15 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3997,
+     "content": 149656,
+     "tabs": 60027
+    },
+    "tab_panels": [
+     [
+      "Course Descriptions",
+      60000
+     ],
+     [
+      "Print Options",
+      419
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "22098",
+   "title": "Administration of Justice: Law Enforcement",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.mpc.edu/programs-study/law-enforcement-training-program/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.333,
+    "body": 0.0,
+    "content": 0.267,
+    "net": 5,
+    "listed": 15,
+    "why": "coarse net: the page's code tokens name 5 of 15 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3997,
+     "content": 149656,
+     "tabs": 60027
+    },
+    "tab_panels": [
+     [
+      "Course Descriptions",
+      60000
+     ],
+     [
+      "Print Options",
+      419
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "39356",
+   "title": "Administration of Justice - Level II Corrections",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "39361",
+   "title": "Administration of Justice - Level I Policing",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "run": "38844053281"
+}

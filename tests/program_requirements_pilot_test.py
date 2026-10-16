@@ -78,7 +78,14 @@ REFUSE = [
     ("KIN4", "KIN 40 Something"),
     ("CHLD 66", "CHLD 66L Observation Laboratory"),
     ("FIRE 1", "FIRE 12 Wildland Fire Control"),
+    # NOCCCD's campus letter is part of the code (S394): HORT 001 F is not Fundamentals, nor HORT 001 C
+    ("HORT 001 F", "HORT 001 Fundamentals of Horticulture"),
+    ("HORT 001 F", "HORT 001 C Principles of Horticulture I"),
 ]
+# NOCCCD writes the campus letter as its own word, in the state's file and on the page (S394)
+MATCH += [("HORT 001 F", "HORT 001 F · Principles of Horticulture I"),
+          ("HORT 001 F", "HORT 1F Principles of Horticulture I"),
+          ("ACCT 101A F", "ACCT 101AF Financial Accounting")]
 for code, text in MATCH:
     check(P.code_pattern(code).search(text), "%r must be found in %r" % (code, text))
 for code, text in REFUSE:
@@ -510,6 +517,11 @@ _extract = re.search(r"- name: Extract and score\n\s+if: steps\.guard\.outputs\.
 check(bool(_guard) and bool(_extract) and xwf.index("id: guard") < xwf.index("- name: Extract and score"),
       "a push whose extraction script matches main's makes no model calls (the guard runs first, "
       "and Extract and score waits on it); a dispatch always runs")
+# S389: #2110 changed the script for record shape 5 and its first push ran the whole pilot ($1.6).
+check(re.search(r"id: guard\n(?:.*\n)*?\s+MSG: \$\{\{ github\.event\.head_commit\.message \}\}\n(?:.*\n)*?"
+                r"\s+case \"\$MSG\" in\n\s+\"\[extract\]\"\*\) ;;\n\s+\*\) echo \"run=no\"", xwf),
+      "a push makes model calls only when its commit message starts with [extract], read through the "
+      "environment, never pasted into the script")
 
 # ── The scorer: the plan's three automatic bars ──────────────────────────────
 rec = {"program": {"total_units": 33.5, "open_elective_units": 0},
@@ -656,6 +668,167 @@ r = S.score({"program": {}, "blocks": [{"name": "Core", "rule": "all",
 check(not r["arithmetic"]["pass"] and r["arithmetic"]["status"] == "incomplete",
       "a credit record with no total is never 'unstated': the state file holds its units")
 
+# Record shape 5 (Sam, Open Asks Sheet 78 card 2, 2026-10-14, "Record both figures"): a page that
+# prints the degree total with general education and no major total is checked against the degree.
+AUT = [{"code": c, "units": u} for c, u in (("AUT 100", 24), ("AUT 120", 3), ("AUT 121", 3), ("AUT 122", 3))]
+aut = {"program": {"total_units": {"min": None, "max": None}, "degree_total": {"min": 64, "max": 68},
+                   "ge_units": {"min": 34, "max": 38}, "ge_pattern": "CalGETC", "electives_fill_degree": False},
+       "blocks": [{"name": "Required Core", "rule": "all", "courses": [{"code": "AUT 100", "units": 24}]},
+                  {"name": "Electives", "rule": "choose_units", "minimum": 6, "stated": {"min": 6, "max": 6},
+                   "courses": [{"code": "AUT 120", "units": 3}, {"code": "AUT 121", "units": 3},
+                               {"code": "AUT 122", "units": 3}]}]}
+AUT_TEXT = "Required Core 24 units AUT 100 Electives 6 units AUT 120 AUT 121 AUT 122 CalGETC 34 - 38 Total 64 - 68"
+r = S.score(aut, AUT, AUT_TEXT)
+check(r["pass"] and r["arithmetic"]["against"] == "degree" and r["arithmetic"]["computed"] == [64.0, 68.0]
+      and r["arithmetic"]["stated"] == [64.0, 68.0],
+      "Palo Verde Automotive Technology A.S.: a 24-unit core, 6 units of electives and CalGETC 34-38 "
+      "make the 64-68 the page prints for the degree: %s" % json.dumps(r["arithmetic"]))
+r = S.score({**aut, "program": {**aut["program"], "degree_total": {"min": 60, "max": 60}}}, AUT, AUT_TEXT)
+check(not r["pass"] and r["arithmetic"]["status"] == "unequal" and r["arithmetic"]["against"] == "degree",
+      "blocks and general education that miss the printed degree total fail as unequal")
+r = S.score({**aut, "program": {**aut["program"], "ge_units": {"min": None, "max": None}}}, AUT, AUT_TEXT)
+check(not r["pass"] and r["arithmetic"]["status"] == "incomplete"
+      and "no units for it" in " ".join(r["arithmetic"]["why"]),
+      "a degree total with a general education pattern and no units for it cannot be added up")
+r = S.score({**aut, "program": {**aut["program"], "total_units": {"min": 30, "max": 30}}}, AUT, AUT_TEXT)
+check(r["pass"] and r["arithmetic"]["against"] == "program" and r["arithmetic"]["computed"] == [30.0, 30.0],
+      "a major total, when the page prints one, is still the one checked")
+check(S.has_figure({"program": {"degree_total": {"min": 60, "max": 60}}, "blocks": []}),
+      "a degree total is a figure: such a record is never 'unstated'")
+
+# Psychology AA-T: Total 60 = a 19-21-unit major, CalGETC 34-38 and transferable electives as needed.
+PSY = [{"code": "PSYC C1000", "units": 3}, {"code": "STAT C1000", "units": 4},
+       {"code": "PSY 107", "units": 3}, {"code": "PSY 108", "units": 3}, {"code": "BIO 101", "units": 5},
+       {"code": "PSY 115", "units": 3}, {"code": "PSY 116", "units": 3}]
+psy = {"program": {"total_units": {"min": None, "max": None}, "degree_total": {"min": 60, "max": 60},
+                   "ge_units": {"min": 34, "max": 38}, "ge_pattern": "CalGETC", "electives_fill_degree": True},
+       "blocks": [{"name": "Required Core", "rule": "all",
+                   "courses": [{"code": "PSYC C1000", "units": 3}, {"code": "STAT C1000", "units": 4},
+                               {"code": "PSY 107", "units": 3}]},
+                  {"name": "List A", "rule": "choose_courses", "minimum": 1, "stated": {"min": 3, "max": 5},
+                   "courses": [{"code": "PSY 108", "units": 3}, {"code": "BIO 101", "units": 5}]},
+                  {"name": "List B", "rule": "choose_courses", "minimum": 2, "stated": {"min": 6, "max": 6},
+                   "courses": [{"code": "PSY 115", "units": 3}, {"code": "PSY 116", "units": 3}]}]}
+PSY_TEXT = "Psychology (Total 60) Required Core ... CalGETC 34 - 38 Transferable electives to reach 60 units"
+r = S.score(psy, PSY, PSY_TEXT)
+check(r["pass"] and r["arithmetic"]["status"] == "equal" and r["arithmetic"]["computed"] == [53.0, 59.0]
+      and r["arithmetic"]["fill"] == [1.0, 7.0],
+      "Psychology AA-T: a 19-21-unit major and CalGETC 34-38 fit the 60, and the electives make up "
+      "1 to 7 units: %s" % json.dumps(r["arithmetic"]))
+r = S.score(psy, PSY, PSY_TEXT.replace("Transferable electives", "Transferable courses"))
+check(not r["pass"] and r["arithmetic"]["status"] == "incomplete",
+      "electives that fill the degree must be named in the catalog text")
+r = S.score({**psy, "program": {**psy["program"], "electives_fill_degree": False}}, PSY, PSY_TEXT)
+check(not r["pass"] and r["arithmetic"]["status"] == "unequal",
+      "without electives filling the rest, a major and general education short of the degree total fail")
+r = S.score({**psy, "program": {**psy["program"], "degree_total": {"min": 55, "max": 55}}}, PSY, PSY_TEXT)
+check(not r["pass"] and r["arithmetic"]["status"] == "unequal" and r["arithmetic"].get("fill") is None,
+      "a major and general education past the degree total fail even when electives fill the rest")
+
+# Sam, Open Asks Sheet 81 card 1 ("count", 2026-10-14): a degree total inside the span the
+# requirements allow adds up (Cabrillo: 57-60 against a printed 60).
+r = S.score({**aut, "program": {**aut["program"], "degree_total": {"min": 66, "max": 66}}}, AUT, AUT_TEXT)
+check(r["pass"] and r["arithmetic"]["status"] == "equal" and r["arithmetic"].get("within") is True
+      and r["arithmetic"]["computed"] == [64.0, 68.0],
+      "a printed degree total of 66 inside the 64-68 the blocks and CalGETC allow adds up: %s"
+      % json.dumps(r["arithmetic"]))
+r = S.score({**aut, "program": {**aut["program"], "degree_total": {"min": 64, "max": 70}}}, AUT, AUT_TEXT)
+check(not r["pass"] and r["arithmetic"]["status"] == "unequal" and not r["arithmetic"].get("within"),
+      "a printed degree total reaching past the span (64-70 against 64-68) still fails")
+r = S.score(aut, AUT, AUT_TEXT)
+check(r["pass"] and not r["arithmetic"].get("within"), "an exact match is equal, not within")
+
+# Card 2 ("adt"): a transfer degree printing Total 60, its major and CalGETC, and no electives line
+# (Palo Verde's Sociology AA-T, 30710, read 53-57): transferable electives make up the 60.
+adt = {**psy, "program": {**psy["program"], "electives_fill_degree": False}}
+r = S.score(adt, PSY, PSY_TEXT, "A.A- T Degree")
+check(r["pass"] and r["arithmetic"]["status"] == "equal" and r["arithmetic"].get("transfer") is True
+      and r["arithmetic"]["fill"] == [1.0, 7.0],
+      "an AA-T whose major and CalGETC fit under 60 is filled by transferable electives: %s"
+      % json.dumps(r["arithmetic"]))
+r = S.score({**adt, "program": {**adt["program"], "section_heading": "AS-T in Psychology for Transfer"}}, PSY, PSY_TEXT)
+check(r["pass"] and r["arithmetic"].get("transfer") is True, "the page's heading names a transfer degree too")
+r = S.score(adt, PSY, PSY_TEXT, "A.S. Degree")
+check(not r["pass"] and r["arithmetic"]["status"] == "unequal",
+      "an A.S. that is not for transfer and falls short of its degree total still fails")
+r = S.score({**adt, "program": {**adt["program"], "open_elective_units": 0.5}}, PSY, PSY_TEXT, "A.S. T Degree")
+check(not r["pass"] and r["arithmetic"]["status"] == "unequal",
+      "a transfer degree whose page names its electives is checked against them, never filled")
+# Sheet 82 card 2 ("overlap", Sam, 2026-10-14): a course counts toward the major and Cal-GETC both,
+# so a transfer degree whose sum runs past its printed total adds up (Cabrillo Geology AS-T: 62 against 60).
+r = S.score({**adt, "program": {**adt["program"], "degree_total": {"min": 52, "max": 52}}}, PSY, PSY_TEXT, "A.A- T Degree")
+check(r["pass"] and r["arithmetic"]["status"] == "equal" and r["arithmetic"].get("overlap") is True
+      and r["arithmetic"]["computed"] == [53.0, 59.0] and r["arithmetic"]["stated"] == [52.0, 52.0],
+      "a transfer degree whose major and general education run past its total adds up and keeps both figures: %s"
+      % json.dumps(r["arithmetic"]))
+r = S.score({**psy, "program": {**psy["program"], "degree_total": {"min": 52, "max": 52}}}, PSY, PSY_TEXT, "A.S. T Degree")
+check(r["pass"] and r["arithmetic"].get("overlap") is True,
+      "the overlap holds where the record says electives fill the degree, too")
+r = S.score({**adt, "program": {**adt["program"], "degree_total": {"min": 52, "max": 52}}}, PSY, PSY_TEXT, "A.S. Degree")
+check(not r["pass"] and r["arithmetic"]["status"] == "unequal" and not r["arithmetic"].get("overlap"),
+      "an A.S. that is not for transfer and runs past its degree total still fails")
+r = S.score({**adt, "program": {**adt["program"], "degree_total": {"min": 55, "max": 58}}}, PSY, PSY_TEXT, "A.A- T Degree")
+check(r["arithmetic"].get("within") and not r["arithmetic"].get("overlap"),
+      "a transfer degree whose total sits inside the span is within, not overlap")
+for award, want in (("A.A- T Degree", True), ("A.S. T Degree", True), ("A.S. Degree", False),
+                    ("A.A. Degree", False), ("Associate in Science for Transfer", True), (None, False)):
+    check(S.transfer_degree(award, {}) is want, "transfer_degree(%r) is %s" % (award, want))
+
+# Record shape 6 (S392; Sam, 2026-10-14, Cabrillo Biology 06328 Needs a fix): a page printing the
+# major's total and the degree's checks both. Cabrillo Astronomy, which Sam confirmed: GE 24, a
+# 30-unit major and 6 units of major electives make the 60 the page prints.
+AST = [{"code": "ASTRO %d" % i, "units": 3} for i in range(1, 13)]
+ast = {"program": {"total_units": {"min": 30, "max": 30}, "degree_total": {"min": 60, "max": 60},
+                   "ge_units": {"min": 24, "max": 24}, "ge_pattern": "Cabrillo College General Education",
+                   "degree_elective_units": {"min": 6, "max": 6}, "electives_fill_degree": False},
+       "blocks": [{"name": "Recommended Major Requirements", "rule": "all",
+                   "courses": [{"code": "ASTRO %d" % i, "units": 3} for i in range(1, 11)]},
+                  {"name": "Recommended Major Electives", "rule": "choose_units", "minimum": 6,
+                   "stated": {"min": 6, "max": 6}, "optional": False,
+                   "courses": [{"code": "ASTRO 11", "units": 3}, {"code": "ASTRO 12", "units": 3}]}]}
+ast["blocks"][1]["name"] = "General electives"
+ast_major = {**ast, "blocks": [ast["blocks"][0]]}
+AST = AST[:10]
+r = S.score(ast_major, AST, None, "A.S. Degree")
+check(r["pass"] and r["arithmetic"]["against"] == "program" and r["arithmetic"]["degree"]["pass"]
+      and r["arithmetic"]["degree"]["computed"] == [60.0, 60.0],
+      "a 30-unit major, GE 24 and 6 degree electives check the major and the degree both: %s" % json.dumps(r["arithmetic"]))
+r = S.score({**ast_major, "program": {**ast["program"], "degree_elective_units": {"min": None, "max": None}}},
+            AST, None, "A.S. Degree")
+check(not r["pass"] and r["arithmetic"]["against"] == "degree" and r["arithmetic"]["status"] == "unequal"
+      and r["arithmetic"]["major"]["pass"] and r["arithmetic"]["computed"] == [54.0, 54.0],
+      "a major that meets its total and a degree that misses its 60 names the degree: %s" % json.dumps(r["arithmetic"]))
+r = S.score({**ast_major, "program": {**ast["program"], "total_units": {"min": 33, "max": 33}}}, AST, None, "A.S. Degree")
+check(not r["pass"] and r["arithmetic"]["against"] == "program" and "degree" in r["arithmetic"],
+      "a major that misses its own total is named first, with the degree's check beside it")
+check(S.score(ast_major, AST, None, "A.S. Degree")["degree"]["status"] == "read"
+      and S.score({**ast_major, "program": {"total_units": {"min": 30, "max": 30}}}, AST, None, "A.S. Degree")["degree"]["status"] == "major only"
+      and S.score({**ast_major, "program": {"total_units": {"min": 30, "max": 30}}}, AST, None,
+                  "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units")["degree"]["status"] == "n/a",
+      "the degree reading: read, major only, or n/a for a certificate")
+
+# The rescore (kb/_program_requirements_rescore.py) applies the same verdict to a filed record's sum.
+import _program_requirements_rescore as RS  # noqa: E402
+filed = {"award": "A.A. Degree", "record": {"program": {"electives_fill_degree": False}},
+         "score": {"arithmetic": {"pass": False, "status": "unequal", "computed": [57.0, 60.0],
+                                  "stated": [60.0, 60.0], "against": "degree", "why": ["..."]}}}
+new = RS.rescore(filed)
+check(new and new["pass"] and new["status"] == "equal" and new.get("within") and new["computed"] == [57.0, 60.0]
+      and not new["why"], "the rescore passes a filed 57-60 against 60 as within: %s" % json.dumps(new))
+check(RS.rescore({**filed, "score": {"arithmetic": {**filed["score"]["arithmetic"], "against": "program"}}}) is None,
+      "the rescore leaves a record checked against its major total alone")
+check(RS.rescore({**filed, "score": {"arithmetic": {**filed["score"]["arithmetic"], "computed": [50.0, 55.0]}}}) is None,
+      "the rescore leaves a record that still falls short alone")
+new = RS.rescore({**filed, "award": "A.S. T Degree",
+                  "score": {"arithmetic": {**filed["score"]["arithmetic"], "computed": [62.0, 62.0]}}})
+check(new and new["pass"] and new.get("overlap") and new["rescored"] == "Open Asks Sheet 82" and RS.how(new) == "overlap",
+      "the rescore passes a filed AS-T at 62 against 60 as overlap (Sheet 82 card 2): %s" % json.dumps(new))
+check(RS.rescore({**filed, "score": {"arithmetic": {**filed["score"]["arithmetic"], "computed": [62.0, 62.0]}}}) is None,
+      "the rescore leaves an A.A. that is not for transfer and runs past its total alone")
+stale = RS.run(write=False)
+check(not stale, "every filed record's degree arithmetic is scored by the current rule (run "
+      "kb/_program_requirements_rescore.py): %s" % [(c["college"], c["control_number"]) for c in stale][:6])
+
 # Sam's review, card 5: a course listed twice in one block is refused; the same
 # course in two blocks is not (Miramar Entrepreneurship's BUSE 155).
 TWICE = [{"code": "FIRE 1", "units": 3}, {"code": "FIRE 6", "units": 3}, {"code": "FIRE86", "units": None}]
@@ -709,7 +882,16 @@ for field in ('"outcomes"', '"course_outcomes"'):
 check("exactly as printed" in fn and "Never reword" in fn,
       "the prompt tells the model to copy each outcome as printed and never reword one")
 import _program_requirements_extract as X3  # noqa: E402
-check(X3.RECORD_SHAPE == 4, "the extraction pass stamps record shape 4 on what it files")
+check(X3.RECORD_SHAPE == 6, "the extraction pass stamps record shape 6 on what it files")
+check("degree_elective_units" in fn and "at least 30 units in the major" in fn,
+      "the prompt keeps a degree's own electives and never reads a major-minimum sentence as the major total")
+# Record shape v5 (Sam, Open Asks Sheet 78 card 2): the degree total and the general education
+# units as printed, never in total_units, and electives that fill the degree named, never computed.
+for field in ('"degree_total"', '"ge_units"', '"electives_fill_degree"'):
+    check(re.search(r"required: \[[^\]]*%s" % field, fn),
+          "the function's schema requires %s (record shape 5)" % field)
+check("never in total_units" in fn and "never compute their units" in fn,
+      "the prompt keeps the degree total out of total_units and never computes the electives that fill it")
 
 PLO_TEXT = ("Program Learning Outcomes\nUpon completion of this program, the student will be able to:\n"
             "1. Meet the educational requirements to qualify for the \nDRE Real Estate Broker license exam. \n"
@@ -1234,6 +1416,178 @@ check(some["coverage"]["pass"] and not some["coverage"]["none_placed"],
 check(S.places_none({"coverage": {"listed": 6, "placed": 0}}) and not S.places_none({"coverage": {"listed": 6, "placed": 1}})
       and not S.places_none({"coverage": {"listed": 0, "placed": 0}}) and not S.places_none(None),
       "places_none: a program with listed courses and none placed, and nothing else")
+
+
+# ── the reconcile pass (S392; Sam, 2026-10-14: "a secondary search of the catalog text to see if we
+# can reconcile after the initial PR harvest", each catalog's own steps) ──────────────────────────
+# The pages as the runner read them (college-page-read 38633618089), in the harvest's line form.
+import _program_requirements_reconcile as RC  # noqa: E402
+BIO_TEXT = ("An Associate in Science degree requires 60 units appropriate to your educational goal, including general "
+            "education and at least 30 units in the major.\nProgram Requirements\nBiology - Associate in Science (A.S.)\n"
+            "Complete the following number of credits: 60\nCabrillo College General Education 24\nRecommended Major "
+            "Requirements\nComplete the following number of credits: 15\nCHEM1A - General Chemistry I 5\n"
+            "General electives: any transferable or degree applicable course. 6")
+bio = {"program": {"total_units": {"min": 30, "max": None}, "open_elective_units": 6,
+                   "ge_pattern": "Cabrillo College General Education"}, "blocks": []}
+new, notes = RC.reconcile(bio, BIO_TEXT, "Cabrillo College", "A.S. Degree")
+p = new["program"]
+check(p["degree_total"] == {"min": 60, "max": 60} and p["ge_units"] == {"min": 24, "max": 24}
+      and p["total_units"] == {"min": None, "max": None} and p["open_elective_units"] == 6
+      and not p.get("degree_elective_units") and [n["field"] for n in notes] == ["degree_total", "ge_units", "total_units"],
+      "Cabrillo Biology (Sam's Needs a fix): the degree's 60 and GE 24 are read, the 30 from 'at least 30 units in the "
+      "major' is cleared, and the 6 electives the reading kept are not counted twice: %s" % json.dumps(notes))
+check(all(n["words"] for n in notes) and notes[0]["words"].endswith("60") and bio["program"].get("degree_total") is None,
+      "each change names the words it came from, and the record passed in is never altered")
+dot = BIO_TEXT.replace("\n", " \u00b7 ")
+check([n["field"] for n in RC.reconcile(bio, dot, "Cabrillo College", "A.S. Degree")[1]] == ["degree_total", "ge_units", "total_units"],
+      "the same steps read a page whose pieces are joined by middle dots")
+AST_TEXT = BIO_TEXT.replace("Biology", "Astronomy").replace(
+    "General electives: any transferable or degree applicable course. 6", "Recommended Major Electives\nComplete the following number of credits: 6")
+ast_r = {"program": {"total_units": {"min": 30, "max": 30}, "measure": "units"},
+         "blocks": [{"name": "Recommended Major Requirements", "rule": "all",
+                     "courses": [{"code": "ASTRO %d" % i, "units": 3} for i in range(1, 11)]},
+                    {"name": "Recommended Major Electives", "rule": "choose_units", "minimum": 6, "stated": {"min": 6, "max": 6},
+                     "courses": [{"code": "ASTRO 11", "units": 3}, {"code": "ASTRO 12", "units": 3}]}]}
+new, notes = RC.reconcile(ast_r, AST_TEXT, "Cabrillo College", "A.S. Degree")
+sc = S.score(new, [{"code": "ASTRO %d" % i, "units": 3} for i in range(1, 13)], AST_TEXT, "A.S. Degree")
+check(sc["arithmetic"]["status"] == "equal" and sc["arithmetic"]["against"] == "degree"
+      and sc["arithmetic"]["computed"] == [60.0, 60.0] and sc["degree"]["status"] == "read",
+      "Cabrillo Astronomy (Sam confirmed it): reconciled, a 30-unit major, 6 units of major electives and GE 24 make "
+      "the 60 the page prints: %s" % json.dumps(sc["arithmetic"]))
+cert_text = AST_TEXT.replace("Astronomy - Associate in Science (A.S.)", "Accounting Certificate of Achievement")
+check(RC.reconcile(ast_r, cert_text, "Cabrillo College", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units")[1] == [],
+      "a certificate's page prints its own total in the same words, and the degree steps leave it alone")
+check(RC.reconcile(ast_r, AST_TEXT, "Long Beach City College", "A.S. Degree")[1] == [],
+      "a college with no reconcile steps keeps its records as read")
+read_already = {"program": {"total_units": {"min": None, "max": None}, "degree_total": {"min": 60, "max": 60},
+                            "ge_units": {"min": 34, "max": 34}, "open_elective_units": 5}, "blocks": []}
+check(RC.reconcile(read_already, BIO_TEXT, "Cabrillo College", "A.A- T Degree")[1] == [],
+      "a step never overwrites a figure the reading holds")
+both = {"program": {"total_units": {"min": 36, "max": 36}}, "blocks": []}
+new, notes = RC.reconcile(both, BIO_TEXT.replace("at least 30 units", "at least 18 units"), "Cabrillo College", "A.S. Degree")
+check(new["program"]["total_units"] == {"min": 36, "max": 36} and new["program"]["degree_elective_units"] == {"min": 6, "max": 6}
+      and not new["program"].get("open_elective_units"),
+      "a major total that is not the minimum sentence's stays, and the degree's electives go beside it")
+
+# A set step (S393, Cerritos): a figure the catalog prints once for every degree, on its own page, set
+# where the program page's words point to it, never over a figure the reading holds, citing both.
+SET_STEPS = {"Test College": {"awards": "associate", "steps": [
+    {"kind": "set", "field": "ge_units", "value": {"min": 21, "max": 21},
+     "pattern": "\\(2\\) the General Education requirements",
+     "source": "https://example.edu/cgec/", "source_words": "a minimum of 21 units"}]}}
+SET_TEXT = ("Total Units 28 \u00b7 ASSOCIATE OF ARTS DEGREE REQUIREMENTS\nComplete a minimum of 60 units to include "
+            "(1) the above major requirements, (2) the General Education requirements, and (3) electives as needed")
+new, notes = RC.reconcile({"program": {"total_units": {"min": 28, "max": 28}}, "blocks": []}, SET_TEXT,
+                          "Test College", "A.A. Degree", steps=SET_STEPS)
+check(new["program"]["ge_units"] == {"min": 21, "max": 21} and len(notes) == 1
+      and "(2) the General Education requirements" in notes[0]["words"] and "https://example.edu/cgec/" in notes[0]["words"]
+      and "a minimum of 21 units" in notes[0]["words"],
+      "a set step fills the GE units the catalog's GE page states, citing the program page's words and that page's: %s"
+      % json.dumps(notes))
+check(RC.reconcile({"program": {"ge_units": {"min": 34, "max": 34}}, "blocks": []}, SET_TEXT, "Test College",
+                   "A.A. Degree", steps=SET_STEPS)[1] == []
+      and RC.reconcile({"program": {}, "blocks": []}, "Total Units 28", "Test College", "A.A. Degree", steps=SET_STEPS)[1] == [],
+      "a set step never overwrites the reading's figure, and needs the program page's words")
+
+# Cerritos (S393): every degree page prints the major's total and "Complete a minimum of 60 units to include
+# (1) the above major requirements, (2) the General Education requirements, and (3) electives as needed"
+# (college-page-read 38654411937); the CGEC page states GE of 24-28 (read 38656043692). The 60 is a floor.
+CER_BIO = ("Program Requirements \u00b7 Course List \u00b7 Code Number\tCourse Title\tUnits \u00b7 Required Courses\n"
+           "BIOL 120\tIntroduction To Biological Science\t4.0\nBIOL 200\tPrinciples of Biology\t5.0 \u00b7 BIOL 201\tPrinciples of "
+           "Biology\t5.0 \u00b7 CHEM 111\tGeneral Chemistry\t5.0 \u00b7 CHEM 112\tGeneral Chemistry\t5.0 \u00b7 Select one of the "
+           "following two courses\nMATH 116\tCalculus for Managerial, Biological and Social Sciences\t4.0\nor MATH 170\tAnalytic "
+           "Geometry and Calculus I \u00b7 Total Units\t28 \u00b7 ASSOCIATE OF ARTS DEGREE REQUIREMENTS\nComplete a minimum of 60 "
+           "units to include (1) the above major requirements, (2) the General Education requirements, and (3) electives as needed")
+CER_BIO_LIST = [{"code": c, "units": u} for c, u in (("BIOL 120", 4), ("BIOL 200", 5), ("BIOL 201", 5), ("CHEM 111", 5),
+                                                      ("CHEM 112", 5), ("MATH 116", 4), ("MATH 170", 4))]
+cer_bio = {"program": {"total_units": {"min": 28, "max": 28}, "measure": "units"},
+           "blocks": [{"name": "Required Courses", "rule": "all", "courses": [{"code": c} for c in
+                       ("BIOL 120", "BIOL 200", "BIOL 201", "CHEM 111", "CHEM 112")]},
+                      {"name": "Select one", "rule": "choose_courses", "minimum": 1,
+                       "courses": [{"code": "MATH 116"}, {"code": "MATH 170"}]}]}
+check(S.score(cer_bio, CER_BIO_LIST, CER_BIO, "A.A. Degree")["degree"]["status"] == "major only",
+      "Cerritos Biology as read: the major only")
+new, notes = RC.reconcile(cer_bio, CER_BIO, "Cerritos College", "A.A. Degree")
+sc = S.score(new, CER_BIO_LIST, CER_BIO, "A.A. Degree")
+check([n["field"] for n in notes] == ["degree_total", "degree_total_minimum", "ge_units", "electives_fill_degree"]
+      and new["program"]["total_units"] == {"min": 28, "max": 28} and new["program"]["ge_units"] == {"min": 24, "max": 28}
+      and "cgec" in notes[2]["words"] and sc["degree"]["status"] == "read" and sc["pass"]
+      and sc["arithmetic"]["against"] == "program" and sc["arithmetic"]["degree"]["pass"]
+      and sc["arithmetic"]["degree"].get("minimum") and sc["arithmetic"]["degree"]["fill"] == [4.0, 8.0],
+      "Cerritos Biology reconciled: the 28-unit major stays, the 60 is a minimum, GE 24-28 from the CGEC page, and "
+      "electives make up 4 to 8: %s" % json.dumps(sc["arithmetic"]))
+CER_AUTO = CER_BIO.replace("Total Units\t28", "Total Units\t42-43").replace("ARTS", "SCIENCE")
+auto = {**cer_bio, "program": {"total_units": {"min": 42, "max": 43}, "measure": "units"},
+        "blocks": [{"name": "Required Courses", "rule": "all", "courses": [{"code": "AUTO %d" % i} for i in range(1, 10)]}]}
+AUTO_LIST = [{"code": "AUTO %d" % i, "units": 5 if i > 1 else None} for i in range(1, 10)]
+new, notes = RC.reconcile(auto, CER_AUTO, "Cerritos College", "A.S. Degree")
+deg = S.degree_check(new["program"], (60.0, 60.0), 42.0, 43.0, [], CER_AUTO, "A.S. Degree")
+check(deg["pass"] and deg.get("minimum") and deg["computed"] == [66.0, 71.0] and deg.get("fill") is None,
+      "Cerritos Automotive: a 42-43-unit major and GE 24-28 come to 66-71, past the minimum of 60, which they meet: %s"
+      % json.dumps(deg))
+check(not S.degree_verdict({"electives_fill_degree": True}, (60.0, 60.0), 66.0, 71.0, "A.S. Degree")["pass"],
+      "without the minimum, a non-transfer degree past its printed total still fails")
+check(RC.reconcile(cer_bio, CER_BIO.replace("(2) the General Education requirements", "(2) Cal-GETC"),
+                   "Cerritos College", "A.A. Degree")[0]["program"].get("ge_units") is None,
+      "the GE step needs the page's own words for the local pattern")
+
+# Orange Coast (S396): the REQUIREMENTS tab's textContent, college page read 38752570705, Management and
+# Leadership Studies A.S. (03961). The reading held the major and the 60 and no GE units.
+OCC_MGMT = ("Restricted Electives3-4 ACCT A101Financial Accounting ACCT A102Managerial Accounting PHIL A120Ethics "
+            "Total Major Units36 - 37 OCC AS General Education 1,2up to 21 Transferable electives as needed to satisfy "
+            "unit requirementsvaries Total Minimum Degree Units - OCC AS GE60 1 Some program major units may also meet "
+            "GE requirements. 2 Cal-GETC pattern (up to 34 units) may be substituted.")
+occ = {"program": {"total_units": {"min": 36, "max": 37}, "degree_total": {"min": 60, "max": 60},
+                   "ge_units": {"min": None, "max": None}, "ge_pattern": "OCC AS GE", "electives_fill_degree": True},
+       "blocks": []}
+check(S.degree_check(occ["program"], (60.0, 60.0), 36.0, 37.0, [], OCC_MGMT, "A.S. Degree")["status"] == "incomplete",
+      "Orange Coast Management as read: the 60 and the OCC AS GE pattern, no GE units")
+new, notes = RC.reconcile(occ, OCC_MGMT, "Orange Coast College", "A.S. Degree")
+deg = S.degree_check(new["program"], (60.0, 60.0), 36.0, 37.0, [], OCC_MGMT, "A.S. Degree")
+check([n["field"] for n in notes] == ["degree_total_minimum", "ge_units"]
+      and new["program"]["ge_units"] == {"min": None, "max": 21} and notes[0]["words"].endswith("GE60")
+      and deg["pass"] and deg.get("minimum") and deg["computed"] == [57.0, 58.0] and deg["fill"] == [2.0, 3.0],
+      "Orange Coast Management reconciled: the 60 is a minimum, GE up to 21, electives make up 2 to 3: %s"
+      % json.dumps(deg))
+bare = {"program": {}, "blocks": []}
+new, notes = RC.reconcile(bare, OCC_MGMT, "Orange Coast College", "A.S. Degree")
+check([n["field"] for n in notes] == ["total_units", "degree_total", "degree_total_minimum", "ge_units",
+                                      "electives_fill_degree"]
+      and new["program"]["total_units"] == {"min": 36, "max": 37} and new["program"]["degree_total"] == {"min": 60, "max": 60},
+      "Orange Coast, a record holding nothing: the major 36-37 and the 60 from the tab's totals")
+check(RC.reconcile(bare, OCC_MGMT.replace("up to 21", "up to 24"), "Orange Coast College", "A.S. Degree")[0]["program"]
+      .get("ge_units") is None,
+      "the GE step sets 21 only where the page prints 21")
+check(RC.reconcile(bare, OCC_MGMT, "Orange Coast College",
+                   "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units")[1] == [],
+      "Orange Coast's steps read associate degrees only")
+
+# Monterey Peninsula (S396): a local degree names MPC GE or Cal-GETC (read 38749721270, Horticulture A.S. 03599),
+# a transfer degree Cal-GETC (read 38843693844, Psychology AA-T); the GE page states 34 and eight 3-unit areas.
+MPC_HORT = ("HORT 51 Introduction to Horticulture I 3 HORT 52 Introduction to Horticulture II 3 Additional Requirements "
+            "39-42 Complete Competency Requirements, general education pattern (MPC General Education or Cal-GETC), and "
+            "electives, if needed, for a total of 60 degree-applicable units.")
+MPC_ADT = ("Minimum of 60 CSU-transferable semester units; Completion of a minimum of 18 semester units as detailed in the "
+           "Major Requirements; Certified completion of the California General Education Transfer Curriculum (Cal-GETC) "
+           "pattern. PSYC C1000 Introduction to Psychology 3")
+hort = {"program": {"total_units": {"min": 18, "max": 21}, "degree_total": {"min": 60, "max": 60},
+                    "ge_units": {"min": None, "max": None}, "ge_pattern": "MPC General Education or Cal-GETC",
+                    "electives_fill_degree": True}, "blocks": []}
+new, notes = RC.reconcile(hort, MPC_HORT, "Monterey Peninsula College", "A.S. Degree")
+deg = S.degree_check(new["program"], (60.0, 60.0), 18.0, 21.0, [], MPC_HORT, "A.S. Degree")
+check([n["field"] for n in notes] == ["ge_units"] and new["program"]["ge_units"] == {"min": 24, "max": 34}
+      and "catalog.mpc.edu" in notes[0]["words"] and deg["pass"] and deg["computed"] == [42.0, 55.0]
+      and deg["fill"] == [5.0, 18.0],
+      "Monterey Peninsula Horticulture: MPC GE or Cal-GETC is 24-34, an 18-21 major comes to 42-55, electives "
+      "make up the 60: %s" % json.dumps(deg))
+adt = {"program": {"total_units": {"min": 18, "max": 20}, "degree_total": {"min": 60, "max": 60},
+                   "ge_units": {"min": None, "max": None}, "ge_pattern": "Cal-GETC"}, "blocks": []}
+new, notes = RC.reconcile(adt, MPC_ADT, "Monterey Peninsula College", "A.A.-T Degree")
+check([n["field"] for n in notes] == ["ge_units"] and new["program"]["ge_units"] == {"min": 34, "max": 34},
+      "Monterey Peninsula's transfer degree: Cal-GETC's 34")
+check(RC.reconcile(hort, MPC_HORT + " " + MPC_ADT, "Monterey Peninsula College", "A.S. Degree")[0]["program"]["ge_units"]
+      == {"min": 24, "max": 34},
+      "a page naming both keeps the local pattern's span: the Cal-GETC step fills only an empty field")
 
 if failures:
     print("FAIL: %d" % len(failures))

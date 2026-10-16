@@ -126,7 +126,8 @@
     if (typeof T._requirements !== "function") return { intro: "", items: [] };
     const r = T._requirements() || {};
     return { intro: String(r.intro || ""), deadline: String(r.deadline || ""),
-             items: (r.items || []).map(function (t) { return String(t); }) };
+             items: (r.items || []).map(function (t) { return String(t); }),
+             kinds: (r.kinds || []).map(function (k) { return String(k || ""); }) };
   })();
 
   // The effective rate an UNBOUND college earns at, measured off the model rather
@@ -161,12 +162,26 @@
   const avgNc = shares.length ? Math.round(shares.reduce(function (s, a) {
     return s + (Number(a.nc_award) || 0); }, 0) / shares.length) : 0;
   const avgCr = avg - avgNc;
+  // Noncredit's portion of the total to institutions (2026-10-14): the
+  // curator's percentage (null = the teaching mix decides), what was reached,
+  // and the weight on noncredit FTES that reached it. An older engine emits
+  // none of it and the page says nothing about it.
+  const ncPortion = (function () {
+    const ep = T._effective().pool;
+    return { set: ep.nc_portion_set != null ? ep.nc_portion_set : null,
+             reached: ep.nc_portion_reached != null ? ep.nc_portion_reached : null,
+             natural: ep.nc_portion_natural != null ? ep.nc_portion_natural : null,
+             w: ep.nc_weight != null ? ep.nc_weight : 1 };
+  })();
    const payload = {
     model_version: modelVersion, scenario: scenarioName,
     pool: { one_time: pool("one_time_2026_27"), admin: pool("admin_cost"),
             scaling: pool("scaling_projects_tech"),
             floor: pool("floor_window"),
-            cap: pool("cap_window"), rate: pool("ftes_rate_2026_27") },
+            cap: pool("cap_window"), rate: pool("ftes_rate_2026_27"),
+            // The remaining 2025-26 balance, a separate distribution; a passage
+            // names it {2025-26 remaining} (2026-10-14).
+            remaining: pool("remaining_2025_26") },
     net_main: Math.round(T._netCollege()),
     // The noncredit DECOMPOSITION under one pool (2026-08-31). Emitted so the
     // page can STATE it rather than have a writer describe it — a hand-typed
@@ -189,6 +204,7 @@
         institutions: e.pool.institutions
       };
     })(),
+    ncPortion: ncPortion,
     model: { floor: model.floor, floorCount: model.floorCount, floorCost: Math.round(model.floorCost),
              cap: model.cap, cappedCount: model.cappedCount, capReleased: Math.round(model.capReleased) },
     median: totals[Math.floor(totals.length / 2)],
@@ -227,12 +243,17 @@
       const bySize = collegeRows.slice().sort(function (a, b) { return b[2] - a[2]; });
       const net = T._netCollege();
       if (!bySize.length || !basisTotal) return [];
+      // While noncredit's portion is set (2026-10-14) the model sizes on
+      // WEIGHTED FTES, so the share is the model's own; unset, the plain
+      // division above it is that same figure and stays as it was.
+      const weighted = ncPortion.set != null && typeof T._sizePct === "function";
       return [bySize[0], bySize[bySize.length - 1]].map(function (r, i) {
         const a = T._alloc(r[0]) || T._alloc(nameToKey[r[0]] || r[0]) || {};
+        const sp = weighted ? (T._sizePct(r[0]) || T._sizePct(nameToKey[r[0]] || r[0]) || 0) : r[2] / basisTotal;
         return { name: r[0], role: i === 0 ? "The largest college" : "The smallest college",
                  ftes: r[2],
-                 pct: +(r[2] / basisTotal * 100).toFixed(1),
-                 share: Math.round(r[2] / basisTotal * net),
+                 pct: +(sp * 100).toFixed(1),
+                 share: Math.round(sp * net),
                  offered: r[3], floored: !!r[4], capped: !!r[6] };
       });
     })(),

@@ -1,0 +1,3213 @@
+{
+ "college": "San Joaquin Delta College",
+ "catalog_url": "https://catalog.deltacollege.edu/",
+ "platform": "acalog",
+ "catalog_year": "2026-2027",
+ "programs": 251,
+ "with_closed_list": 233,
+ "started": "2026-10-14T20:24:45Z",
+ "acalog": {
+  "base": "https://catalog.deltacollege.edu",
+  "start_status": 200,
+  "catoid": 14,
+  "start_links": 139,
+  "catalog_menu": [
+   [
+    "14",
+    "Summer 2026 - Summer 2027 College Catalog",
+    true
+   ],
+   [
+    "12",
+    "2025-2026 San Joaquin Delta College Catalog [ARCHIVED CATALO",
+    false
+   ],
+   [
+    "11",
+    "2024-2025 San Joaquin Delta College Catalog [ARCHIVED CATALO",
+    false
+   ],
+   [
+    "10",
+    "2023-2024 San Joaquin Delta College Catalog [ARCHIVED CATALO",
+    false
+   ],
+   [
+    "9",
+    "2022-2023 San Joaquin Delta College Catalog [ARCHIVED CATALO",
+    false
+   ],
+   [
+    "8",
+    "2021-2022 San Joaquin Delta College Catalog [ARCHIVED CATALO",
+    false
+   ],
+   [
+    "6",
+    "2020-2021 San Joaquin Delta College Catalog [ARCHIVED CATALO",
+    false
+   ],
+   [
+    "5",
+    "2019-2020 San Joaquin Delta College Catalog [ARCHIVED CATALO",
+    false
+   ],
+   [
+    "2",
+    "2018-2019 San Joaquin Delta College Catalog [ARCHIVED CATALO",
+    false
+   ]
+  ],
+  "catalog_year_read": "2026-2027",
+  "catalog_year_from": "catalog menu",
+  "start_menu": [
+   [
+    "About Delta College",
+    "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1510"
+   ],
+   [
+    "Academic Calendar",
+    "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1511"
+   ],
+   [
+    "Admissions, Records, and Registration",
+    "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1507"
+   ],
+   [
+    "Student Resources and Support",
+    "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1512"
+   ],
+   [
+    "Graduation and Transfer Requirements",
+    "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1560"
+   ],
+   [
+    "Academic Transfer and Career Pathways (TrACs)",
+    "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1524"
+   ],
+   [
+    "Certificates and Degrees by Area",
+    "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1525"
+   ],
+   [
+    "Certificates and Degrees (A-Z)",
+    "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1514"
+   ],
+   [
+    "Course Information",
+    "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515"
+   ],
+   [
+    "Policies, Procedures, and Standards",
+    "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1513"
+   ],
+   [
+    "Faculty",
+    "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1528"
+   ],
+   [
+    "Archived Catalogs",
+    "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1529"
+   ],
+   [
+    "Archived Catalogs",
+    "https://catalog.deltacollege.edu/content.php?catoid=10&navoid=874"
+   ]
+  ],
+  "sitemap_status": 404,
+  "sitemap_access": "not_found",
+  "sitemap_programs": 0,
+  "program_navs": [
+   "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1524",
+   "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1525",
+   "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1514"
+  ],
+  "navs_read": 3,
+  "navs": [
+   {
+    "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1524",
+    "access": "ok",
+    "title": "Academic Transfer and Career Pathways (TrACs) - San Joaquin Delta College",
+    "links": 151,
+    "sample": [
+     [
+      "Skip to Content",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1524#select_catalog"
+     ],
+     [
+      "search",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1524#"
+     ],
+     [
+      "search",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1524#"
+     ],
+     [
+      "About Delta College",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1510"
+     ],
+     [
+      "Academic Calendar",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1511"
+     ],
+     [
+      "Admissions, Records, and Registration",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1507"
+     ],
+     [
+      "Student Resources and Support",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1512"
+     ],
+     [
+      "Graduation and Transfer Requirements",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1560"
+     ],
+     [
+      "Academic Transfer and Career Pathways (TrACs)",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1524"
+     ],
+     [
+      "Certificates and Degrees by Area",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1525"
+     ],
+     [
+      "Certificates and Degrees (A-Z)",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1514"
+     ],
+     [
+      "Course Information",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515"
+     ],
+     [
+      "Policies, Procedures, and Standards",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1513"
+     ],
+     [
+      "Faculty",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1528"
+     ],
+     [
+      "Archived Catalogs",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1529"
+     ],
+     [
+      "Facebook this Page (opens a new window)",
+      "http://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcatalog.deltacollege.edu%2Fcontent.php%3Fcatoid%3D14%26navoid%3D1524&t=I%20am%20looking%20at%20the%20Academic%20Transfer%20and%20Career%20Pathways%20(TrACs)%20page%20at%20San%20Joaquin%20Delta%20College"
+     ],
+     [
+      "Tweet this Page (opens a new window)",
+      "http://twitter.com/intent/tweet?u=u=http%3A%2F%2Fcatalog.deltacollege.edu%2Fcontent.php%3Fcatoid%3D14%26navoid%3D1524&t=Check%20out%20this%20page%20at%20San%20Joaquin%20Delta%20College"
+     ],
+     [
+      "Print (opens a new window)",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1524&print"
+     ],
+     [
+      "Go to information for Agriculture Transfer and Car",
+      "https://catalog.deltacollege.edu/preview_entity.php?catoid=14&ent_oid=1475&returnto=1524"
+     ],
+     [
+      "Go to information for Arts, Humanities, and Multim",
+      "https://catalog.deltacollege.edu/preview_entity.php?catoid=14&ent_oid=1400&returnto=1524"
+     ],
+     [
+      "Go to information for Business and Law Transfer an",
+      "https://catalog.deltacollege.edu/preview_entity.php?catoid=14&ent_oid=1476&returnto=1524"
+     ],
+     [
+      "Go to information for Communication and Languages ",
+      "https://catalog.deltacollege.edu/preview_entity.php?catoid=14&ent_oid=1404&returnto=1524"
+     ],
+     [
+      "Go to information for Counseling and Special Servi",
+      "https://catalog.deltacollege.edu/preview_entity.php?catoid=14&ent_oid=1401&returnto=1524"
+     ],
+     [
+      "Go to information for Health and Fitness Transfer ",
+      "https://catalog.deltacollege.edu/preview_entity.php?catoid=14&ent_oid=1402&returnto=1524"
+     ],
+     [
+      "Go to information for Science, Engineering, Comput",
+      "https://catalog.deltacollege.edu/preview_entity.php?catoid=14&ent_oid=1398&returnto=1524"
+     ]
+    ]
+   },
+   {
+    "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1525",
+    "access": "ok",
+    "title": "Certificates and Degrees by Area - San Joaquin Delta College",
+    "links": 401,
+    "sample": [
+     [
+      "Skip to Content",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1525#select_catalog"
+     ],
+     [
+      "search",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1525#"
+     ],
+     [
+      "search",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1525#"
+     ],
+     [
+      "About Delta College",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1510"
+     ],
+     [
+      "Academic Calendar",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1511"
+     ],
+     [
+      "Admissions, Records, and Registration",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1507"
+     ],
+     [
+      "Student Resources and Support",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1512"
+     ],
+     [
+      "Graduation and Transfer Requirements",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1560"
+     ],
+     [
+      "Academic Transfer and Career Pathways (TrACs)",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1524"
+     ],
+     [
+      "Certificates and Degrees by Area",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1525"
+     ],
+     [
+      "Certificates and Degrees (A-Z)",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1514"
+     ],
+     [
+      "Course Information",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515"
+     ],
+     [
+      "Policies, Procedures, and Standards",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1513"
+     ],
+     [
+      "Faculty",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1528"
+     ],
+     [
+      "Archived Catalogs",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1529"
+     ],
+     [
+      "Facebook this Page (opens a new window)",
+      "http://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcatalog.deltacollege.edu%2Fcontent.php%3Fcatoid%3D14%26navoid%3D1525&t=I%20am%20looking%20at%20the%20Certificates%20and%20Degrees%20by%20Area%20page%20at%20San%20Joaquin%20Delta%20College"
+     ],
+     [
+      "Tweet this Page (opens a new window)",
+      "http://twitter.com/intent/tweet?u=u=http%3A%2F%2Fcatalog.deltacollege.edu%2Fcontent.php%3Fcatoid%3D14%26navoid%3D1525&t=Check%20out%20this%20page%20at%20San%20Joaquin%20Delta%20College"
+     ],
+     [
+      "Print (opens a new window)",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1525&print"
+     ],
+     [
+      "Matrix of Certificates and Degrees",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1546"
+     ],
+     [
+      "Go to information for this department.",
+      "https://catalog.deltacollege.edu/preview_entity.php?catoid=14&ent_oid=1415&returnto=1525"
+     ],
+     [
+      "Accounting, AS",
+      "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3253&returnto=1525"
+     ],
+     [
+      "Accounting Certificate of Achievement",
+      "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3307&returnto=1525"
+     ],
+     [
+      "Accounting Clerk Certificate of Achievement",
+      "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3320&returnto=1525"
+     ],
+     [
+      "Tax Preparation Certificate of Achievement",
+      "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3268&returnto=1525"
+     ],
+     [
+      "Go to information for this department.",
+      "https://catalog.deltacollege.edu/preview_entity.php?catoid=14&ent_oid=1449&returnto=1525"
+     ]
+    ]
+   },
+   {
+    "url": "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1514",
+    "access": "ok",
+    "title": "Certificates and Degrees (A-Z) - San Joaquin Delta College",
+    "links": 388,
+    "sample": [
+     [
+      "Skip to Content",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1514#select_catalog"
+     ],
+     [
+      "search",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1514#"
+     ],
+     [
+      "search",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1514#"
+     ],
+     [
+      "About Delta College",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1510"
+     ],
+     [
+      "Academic Calendar",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1511"
+     ],
+     [
+      "Admissions, Records, and Registration",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1507"
+     ],
+     [
+      "Student Resources and Support",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1512"
+     ],
+     [
+      "Graduation and Transfer Requirements",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1560"
+     ],
+     [
+      "Academic Transfer and Career Pathways (TrACs)",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1524"
+     ],
+     [
+      "Certificates and Degrees by Area",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1525"
+     ],
+     [
+      "Certificates and Degrees (A-Z)",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1514"
+     ],
+     [
+      "Course Information",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1515"
+     ],
+     [
+      "Policies, Procedures, and Standards",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1513"
+     ],
+     [
+      "Faculty",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1528"
+     ],
+     [
+      "Archived Catalogs",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1529"
+     ],
+     [
+      "Facebook this Page (opens a new window)",
+      "http://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fcatalog.deltacollege.edu%2Fcontent.php%3Fcatoid%3D14%26navoid%3D1514&t=I%20am%20looking%20at%20the%20Certificates%20and%20Degrees%20(A-Z)%20page%20at%20San%20Joaquin%20Delta%20College"
+     ],
+     [
+      "Tweet this Page (opens a new window)",
+      "http://twitter.com/intent/tweet?u=u=http%3A%2F%2Fcatalog.deltacollege.edu%2Fcontent.php%3Fcatoid%3D14%26navoid%3D1514&t=Check%20out%20this%20page%20at%20San%20Joaquin%20Delta%20College"
+     ],
+     [
+      "Print (opens a new window)",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1514&print"
+     ],
+     [
+      "Matrix of Certificates and Degrees",
+      "https://catalog.deltacollege.edu/content.php?catoid=14&navoid=1546"
+     ],
+     [
+      "Accounting Certificate of Achievement",
+      "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3307&returnto=1514"
+     ],
+     [
+      "Accounting Clerk Certificate of Achievement",
+      "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3320&returnto=1514"
+     ],
+     [
+      "Accounting, AS",
+      "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3253&returnto=1514"
+     ],
+     [
+      "Administration of Justice, AS-T",
+      "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3196&returnto=1514"
+     ],
+     [
+      "Administrative Assistant I Certificate of Achievem",
+      "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3276&returnto=1514"
+     ],
+     [
+      "Administrative Assistant II Certificate of Achieve",
+      "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3308&returnto=1514"
+     ]
+    ]
+   }
+  ],
+  "program_pages": 245
+ },
+ "catalog_year_from": "catalog menu",
+ "pages_read": 245,
+ "banner_h1": null,
+ "loads": 250,
+ "seconds": 1500.2,
+ "found": 203,
+ "by_method": {
+  "no_closed_list": 18,
+  "not_found": 24,
+  "page_claimed": 6,
+  "sitemap_page": 203
+ },
+ "shared_pages": {
+  "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3324&print": [
+   "05602",
+   "22252"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "05584",
+   "title": "Accounting",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3253&print",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.3,
+    "body": 0.3,
+    "content": 0.1,
+    "net": 3,
+    "listed": 10,
+    "why": "coarse net: the page's code tokens name 3 of 10 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4167,
+     "content": 37951,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "07276",
+   "title": "Accounting Clerk",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3320&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.455,
+    "body": 0.455,
+    "content": 0.182,
+    "net": 5,
+    "listed": 11,
+    "why": "coverage 0.45 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 2229,
+     "content": 36065,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "07303",
+   "title": "Tax Preparation",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3268&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.222,
+    "body": 0.222,
+    "content": 0.111,
+    "net": 2,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 2 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1793,
+     "content": 35595,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "07445",
+   "title": "Substance Abuse Counselor",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3218&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.083,
+    "body": 0.083,
+    "content": 0.0,
+    "net": 1,
+    "listed": 12,
+    "why": "coarse net: the page's code tokens name 1 of 12 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2958,
+     "content": 36759,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "10257",
+   "title": "Psychiatric Technician",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3194&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 0 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3447,
+     "content": 37249,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "14594",
+   "title": "Industrial Technology: Maintenance Apprenticeship Option",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3285&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 22,
+    "why": "coarse net: the page's code tokens name 0 of 22 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2623,
+     "content": 36414,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "14595",
+   "title": "Electrical Technology: Apprenticeship Option",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3327&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 10,
+    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2187,
+     "content": 35991,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "14597",
+   "title": "Industrial Technology: Electrical Apprenticeship Option",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3286&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 18,
+    "why": "coarse net: the page's code tokens name 0 of 18 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2278,
+     "content": 36073,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "14598",
+   "title": "Industrial Technology: Mechanical Apprenticeship Option",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3284&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 17,
+    "why": "coarse net: the page's code tokens name 0 of 17 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2281,
+     "content": 36077,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "14599",
+   "title": "Industrial Technology: Operations Apprenticeship Option",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3283&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.941,
+    "body": 0.941,
+    "content": 0.0,
+    "net": 0,
+    "listed": 17,
+    "why": "coarse net: the page's code tokens name 0 of 17 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2255,
+     "content": 36051,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "14773",
+   "title": "Mental Health Specialist",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3217&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.444,
+    "body": 0.444,
+    "content": 0.056,
+    "net": 8,
+    "listed": 18,
+    "why": "coverage 0.44 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 2626,
+     "content": 36418,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "19694",
+   "title": "Real Estate",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3305&print",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.364,
+    "body": 0.364,
+    "content": 0.273,
+    "net": 4,
+    "listed": 11,
+    "why": "coarse net: the page's code tokens name 4 of 11 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4176,
+     "content": 37997,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "19742",
+   "title": "Psychology",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3208&print",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.25,
+    "body": 0.25,
+    "content": 0.083,
+    "net": 3,
+    "listed": 12,
+    "why": "coarse net: the page's code tokens name 3 of 12 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2575,
+     "content": 36372,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "22245",
+   "title": "Accounting",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3307&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.333,
+    "body": 0.333,
+    "content": 0.0,
+    "net": 2,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 2 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2180,
+     "content": 35982,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "32820",
+   "title": "Psychiatric Technology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3192&print",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 0 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3677,
+     "content": 37481,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "37611",
+   "title": "Electrical Technology: Apprenticeship",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3355&print",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 10,
+    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2888,
+     "content": 36690,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "42524",
+   "title": "Real Estate Broker",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3375&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.222,
+    "body": 0.222,
+    "content": 0.111,
+    "net": 2,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 2 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2827,
+     "content": 36629,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "43462",
+   "title": "Digital Media Content Entrepreneurship",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3377&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2160,
+     "content": 35974,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "43463",
+   "title": "Social Media Strategy",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3378&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2076,
+     "content": 35886,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "43492",
+   "title": "Digital Imaging",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3376&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1596,
+     "content": 35407,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45193",
+   "title": "Control Systems Technician",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3396&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1821,
+     "content": 35628,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45194",
+   "title": "Basic Electronics Technician",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3395&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1295,
+     "content": 35105,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45195",
+   "title": "Nurse Assistant and Home Health Aide",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3398&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1585,
+     "content": 35396,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45583",
+   "title": "Public Safety Dispatcher",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3402&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1651,
+     "content": 35461,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "05593",
+   "title": "Computer Operations",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3181&print",
+    "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3176&print",
+    "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3178&print",
+    "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3164&print"
+   ]
+  },
+  {
+   "control_number": "10139",
+   "title": "Computer Support - Technician",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3182&print",
+    "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3176&print",
+    "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3178&print",
+    "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3181&print",
+    "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3275&print"
+   ]
+  },
+  {
+   "control_number": "18025",
+   "title": "Computer Networking-Competence",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3176&print",
+    "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3181&print",
+    "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3182&print",
+    "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3178&print",
+    "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3164&print",
+    "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3345&print"
+   ]
+  },
+  {
+   "control_number": "18026",
+   "title": "Computer Programming-Competence",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3178&print",
+    "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3182&print",
+    "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3181&print",
+    "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3403&print",
+    "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3337&print"
+   ]
+  },
+  {
+   "control_number": "18336",
+   "title": "Computer Web Developer Technician",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3185&print",
+    "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3164&print",
+    "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3345&print"
+   ]
+  },
+  {
+   "control_number": "33123",
+   "title": "Spanish",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3403&print",
+    "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3357&print",
+    "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3337&print",
+    "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3346&print",
+    "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3363&print"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 20,
+  "0.8-1.0": 58,
+  "1.0": 125
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 203,
+  "list": [
+   {
+    "control_number": "05577",
+    "title": "Agriculture Business: Plant Science",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3173&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05579",
+    "title": "Agriculture Business",
+    "award": "A.S. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3162&print",
+    "coverage": 0.969,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05581",
+    "title": "Agriculture Mechanics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3309&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05586",
+    "title": "Supervision and Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3267&print",
+    "coverage": 0.867,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05587",
+    "title": "Merchandising",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3278&print",
+    "coverage": 0.882,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05588",
+    "title": "Logistics and Transportation Supervisor",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3281&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05589",
+    "title": "Real Estate",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3274&print",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05594",
+    "title": "Computer Programming",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3178&print",
+    "coverage": 0.85,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05597",
+    "title": "Engineering Fundamentals",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3332&print",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05599",
+    "title": "Electron Microscopy - Biological Concentration Advanced Sample Preparation",
+    "award": "Certificate of Achievement requiring 60+S/90+Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3329&print",
+    "coverage": 0.938,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05602",
+    "title": "Diesel Automotive Equipment Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3324&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05603",
+    "title": "Automotive Mechanics Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3318&print",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05604",
+    "title": "Auto Body Intermediate Repair and Restoration",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3313&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05612",
+    "title": "Industrial Technology - Level I",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3287&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05613",
+    "title": "Manual Machining",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3280&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05623",
+    "title": "Nursing R.N.",
+    "award": "A.S. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3191&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05628",
+    "title": "Interior Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3249&print",
+    "coverage": 0.625,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05629",
+    "title": "Fashion Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3246&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05630",
+    "title": "Early Childhood Education Teacher",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3214&print",
+    "coverage": 0.941,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05641",
+    "title": "Correctional Science",
+    "award": "A.S. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3198&print",
+    "coverage": 0.895,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05642",
+    "title": "Basic Peace Officer Academy",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3209&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07273",
+    "title": "Horticulture - Sustainable Landscape Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3187&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07274",
+    "title": "Agriculture Business: Animal Science",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3172&print",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07304",
+    "title": "Computer Science",
+    "award": "A.S. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3164&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07347",
+    "title": "Fluid Power & Automation Technology",
+    "award": "A.S. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3298&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07402",
+    "title": "Electrical Technology - Electrical Maintenance",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3326&print",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07403",
+    "title": "Electronics Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3331&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07407",
+    "title": "Administrative Office Executive",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3275&print",
+    "coverage": 0.727,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07408",
+    "title": "Administrative Office Assistant II",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3308&print",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07419",
+    "title": "Refrigeration",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3273&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07420",
+    "title": "Diesel Equipment Technician",
+    "award": "A.S. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3262&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07422",
+    "title": "Automotive Electric Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3315&print",
+    "coverage": 0.944,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07423",
+    "title": "Automotive Master Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3317&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07425",
+    "title": "Architectural Drafting",
+    "award": "A.S. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3254&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07426",
+    "title": "Welding Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3270&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07439",
+    "title": "Fashion Merchandising",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3247&print",
+    "coverage": 0.727,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07446",
+    "title": "Law Enforcement",
+    "award": "A.S. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3203&print",
+    "coverage": 0.538,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10140",
+    "title": "Electron Microscopy - Crystalline Materials Advanced Training",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3330&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10141",
+    "title": "Early Childhood Education Master Teacher",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3212&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10142",
+    "title": "Culinary Arts - Advanced",
+    "award": "A.S. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3229&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10258",
+    "title": "Computer Support",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3182&print",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11844",
+    "title": "Traffic Shipping & Receiving Technician",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3269&print",
+    "coverage": 0.769,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11968",
+    "title": "Engineering Technology",
+    "award": "A.S. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3297&print",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11969",
+    "title": "Engineering Computer-Aided Drafter",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3333&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11970",
+    "title": "Early Childhood Education Site Supervisor",
+    "award": "Certificate of Achievement requiring 60+S/90+Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3213&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11972",
+    "title": "Early Childhood Education Associate Teacher",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3211&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12300",
+    "title": "Speech Language Pathology Assistant (SLPA)",
+    "award": "A.S. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3193&print",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12327",
+    "title": "Retail Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3272&print",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12666",
+    "title": "Computer Web Developer",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3185&print",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "13259",
+    "title": "Computer Information Systems",
+    "award": "A.S. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3345&print",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "13497",
+    "title": "Municipal Clerk",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3277&print",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "13973",
+    "title": "Business",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3319&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "13976",
+    "title": "International Business",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3282&print",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "13977",
+    "title": "Medical Office Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3279&print",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "13994",
+    "title": "Horticulture - Nursery Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3188&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "14146",
+    "title": "Heavy Equipment Mechanic",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3289&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "14290",
+    "title": "Caterpillar Dealer Service Technician Apprenticeship",
+    "award": "A.S. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3259&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "14581",
+    "title": "Baking and Pastry",
+    "award": "A.S. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3227&print",
+    "coverage": 0.571,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "14763",
+    "title": "Graphic Arts",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3248&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "14777",
+    "title": "Fitness Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3215&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15050",
+    "title": "Computer Network Technician",
+    "award": "A.S. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3261&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16764",
+    "title": "Music",
+    "award": "A.A. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3236&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17506",
+    "title": "American Sign Language",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3223&print",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18586",
+    "title": "Interdisciplinary Studies - Arts, Humanities, and Social Sciences Option",
+    "award": "A.A. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3346&print",
+    "coverage": 0.761,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18815",
+    "title": "Interdisciplinary Studies - Mathematics and Science Option",
+    "award": "A.S. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3168&print",
+    "coverage": 0.904,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19688",
+    "title": "Horticulture",
+    "award": "A.S. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3167&print",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19728",
+    "title": "Engineering - Mechanical, Aeronautical, and Manufacturing",
+    "award": "A.S. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3295&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19730",
+    "title": "Engineering Computer-Aided Drafting",
+    "award": "A.S. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3296&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19731",
+    "title": "Radiologic Technology",
+    "award": "Certificate of Achievement requiring 60+S/90+Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3195&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19737",
+    "title": "Family and Consumer Sciences",
+    "award": "A.S. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3189&print",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19744",
+    "title": "History",
+    "award": "A.A. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3200&print",
+    "coverage": 0.867,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19746",
+    "title": "Art",
+    "award": "A.A. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3225&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19747",
+    "title": "Dance",
+    "award": "A.A. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3230&print",
+    "coverage": 0.941,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19748",
+    "title": "Photography",
+    "award": "A.A. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3238&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19749",
+    "title": "French Language",
+    "award": "A.A. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3220&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19752",
+    "title": "Spanish Language",
+    "award": "A.A. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3337&print",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19799",
+    "title": "Administrative Assistant I",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3276&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19950",
+    "title": "Apparel Design",
+    "award": "A.A. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3224&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19951",
+    "title": "Physical Education",
+    "award": "A.S. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3204&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19952",
+    "title": "Theatre Arts: Technical Theatre",
+    "award": "A.A. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3241&print",
+    "coverage": 0.65,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19953",
+    "title": "Theatre Arts - Acting",
+    "award": "A.A. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3240&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22243",
+    "title": "Agriculture Business",
+    "award": "Certificate of Achievement requiring 60+S/90+Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3171&print",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22244",
+    "title": "Architectural Drafting",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3310&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22246",
+    "title": "Administrative Executive Professional/Office Manager",
+    "award": "A.S. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3304&print",
+    "coverage": 0.722,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22247",
+    "title": "Computer Science",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3181&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22248",
+    "title": "Computer Networking Software",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3176&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22249",
+    "title": "Computer Network Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3322&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22250",
+    "title": "Fluid Power & Automation Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3291&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22251",
+    "title": "Heating and Air Conditioning",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3290&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22252",
+    "title": "Diesel Equipment Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3324&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22253",
+    "title": "Heavy Equipment Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3288&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22256",
+    "title": "Engineering Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3334&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22259",
+    "title": "Culinary Arts",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3245&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22260",
+    "title": "Baking and Pastry",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3244&print",
+    "coverage": 0.571,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22261",
+    "title": "Law Enforcement",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3216&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22262",
+    "title": "Correctional Science",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3210&print",
+    "coverage": 0.955,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30723",
+    "title": "Automotive Technology",
+    "award": "A.S. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3256&print",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30758",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3208&print",
+    "coverage": 0.625,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31651",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3170&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31655",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3169&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31685",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3348&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31692",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3239&print",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31866",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3166&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31879",
+    "title": "Horticulture - Irrigation Technician",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3186&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32297",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3201&print",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32302",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3242&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32341",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3219&print",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32386",
+    "title": "Auto Body Basic Repair and Restoration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3312&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32387",
+    "title": "Auto Body Advanced Repair and Restoration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3314&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32549",
+    "title": "Stagecraft",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3252&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32913",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3197&print",
+    "coverage": 0.818,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32914",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3196&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32942",
+    "title": "Elementary Teacher Education",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3199&print",
+    "coverage": 0.882,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32950",
+    "title": "Computer Numerical Control (CNC) Operator/Programmer",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3323&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33039",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3202&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33706",
+    "title": "Journalism",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3234&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33753",
+    "title": "Automotive Lubrication Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3316&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33754",
+    "title": "Computer Network Security Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3321&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33757",
+    "title": "Multimedia",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3250&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35050",
+    "title": "Automation Technology - Mechatronics",
+    "award": "A.S. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3255&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35051",
+    "title": "Computer Network Security Technician",
+    "award": "A.S. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3260&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35052",
+    "title": "Automation Technician - Mechatronics",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3311&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35059",
+    "title": "Electrical Technology",
+    "award": "A.S. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3263&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35066",
+    "title": "Machining Technology",
+    "award": "A.S. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3303&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35074",
+    "title": "Solar Photovoltaic Installation Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3266&print",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35077",
+    "title": "Police Science",
+    "award": "A.S. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3205&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35118",
+    "title": "Electron Microscopy - Biological Concentration",
+    "award": "A.S. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3264&print",
+    "coverage": 0.947,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35119",
+    "title": "Electron Microscopy - Materials",
+    "award": "A.S. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3265&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35178",
+    "title": "Health Science",
+    "award": "A.S. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3190&print",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35634",
+    "title": "Agriculture Business",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3163&print",
+    "coverage": 0.941,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35916",
+    "title": "Photography",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3251&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35920",
+    "title": "Engineering - Electrical",
+    "award": "A.S. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3294&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35932",
+    "title": "Multimedia",
+    "award": "A.A. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3235&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35939",
+    "title": "Engineering - Civil",
+    "award": "A.S. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3292&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35940",
+    "title": "Engineering - Computer",
+    "award": "A.S. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3293&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35974",
+    "title": "Apparel Industry Sewing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3243&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36005",
+    "title": "Small Business",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3271&print",
+    "coverage": 0.824,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36006",
+    "title": "Entrepreneurship",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3347&print",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36535",
+    "title": "Pre-Law Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3339&print",
+    "coverage": 0.733,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36595",
+    "title": "Gas Tungsten Arc Welding (GTAW)",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3342&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36597",
+    "title": "Oxy-Fuel Processes and Shielded Metal Arc Welding (SMAW)",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3343&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36607",
+    "title": "Speech Language Pathology Assistant Advanced Placement",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3344&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36608",
+    "title": "Gas Metal Arc Welding (GMAW)/Flux Core Arc Welding (FCAW)",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3341&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36609",
+    "title": "Caterpillar Dealer Engine Technician Apprenticeship",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3340&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36747",
+    "title": "Law, Public Policy, and Society",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3338&print",
+    "coverage": 0.837,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37532",
+    "title": "American Sign Language",
+    "award": "A.A. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3354&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37610",
+    "title": "Paralegal/Legal Assistant Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3359&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37612",
+    "title": "Paralegal/Legal Assistant",
+    "award": "A.S. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3356&print",
+    "coverage": 0.846,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37638",
+    "title": "Social Justice Studies",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3357&print",
+    "coverage": 0.898,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37666",
+    "title": "Agriculture Plant Science",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3353&print",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37670",
+    "title": "Industrial Technology - Level II - Mechanical",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3358&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37671",
+    "title": "Diesel Bus Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3351&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37675",
+    "title": "Agriculture Animal Science",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3352&print",
+    "coverage": 0.909,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39474",
+    "title": "Social Media",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3362&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40069",
+    "title": "ECE Administration and Adult Supervision Add On",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3360&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40070",
+    "title": "Paraprofessional Preparation",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3361&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40824",
+    "title": "World Languages and Global Studies",
+    "award": "A.A. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3363&print",
+    "coverage": 0.842,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40881",
+    "title": "Digital Media with Emphasis in Video",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3366&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40882",
+    "title": "Digital Media",
+    "award": "A.A. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3364&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40883",
+    "title": "Digital Media with Emphasis in Audio",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3365&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40884",
+    "title": "Hospitality Front of House Essentials",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3368&print",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40885",
+    "title": "Hospitality Front of House Service Operations",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3369&print",
+    "coverage": 0.909,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40902",
+    "title": "Winery Sales and Marketing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3372&print",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40903",
+    "title": "Winery Event Coordinator",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3370&print",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40904",
+    "title": "Winery Tasting Room Associate",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3371&print",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40905",
+    "title": "Horticulture, Landscape Arborist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3367&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42565",
+    "title": "Real Estate Salesperson",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3374&print",
+    "coverage": 0.64,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42855",
+    "title": "Graphic Arts - Print Production",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3373&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43281",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3258&print",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43308",
+    "title": "Power Performance and Data Collecting",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3379&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43785",
+    "title": "ESL Milestone for Multilingual Speakers: Pathway to Electrical Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3381&print",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43786",
+    "title": "ESL Milestone for Multilingual Speakers: Pathway to Business",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3380&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43787",
+    "title": "ESL Milestone for Multilingual Speakers: Pathway to Health Careers",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3382&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43791",
+    "title": "Public Relations",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3383&print",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44197",
+    "title": "Caterpillar Dealer Service Technician Apprenticeship",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3385&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44322",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3384&print",
+    "coverage": 0.625,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44708",
+    "title": "Noncredit ESL Milestone for Multilingual Speakers - Pathway to Health Careers",
+    "award": "Noncredit program",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3397&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44710",
+    "title": "Low-Intermediate ESL",
+    "award": "Noncredit program",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3401&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44711",
+    "title": "High-Intermediate ESL",
+    "award": "Noncredit program",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3400&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44712",
+    "title": "Advanced ESL",
+    "award": "Noncredit program",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3399&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44860",
+    "title": "Creative Writing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3390&print",
+    "coverage": 0.76,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44905",
+    "title": "Agriculture Engineering Production Plant - Level 1 Safety",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3387&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44906",
+    "title": "Agriculture Engineering Production Plant - Level 2 Mechanical",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3388&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44907",
+    "title": "Costume Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3389&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44908",
+    "title": "Scenic Artist",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3391&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44909",
+    "title": "Scenic Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3392&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44910",
+    "title": "Stage Electrician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3393&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44911",
+    "title": "Stage Makeup Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3394&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44912",
+    "title": "Modern Policing",
+    "award": "A.S. Degree",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3386&print",
+    "coverage": 0.909,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45621",
+    "title": "California General Education Transfer Curriculum (Cal-GETC)",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3403&print",
+    "coverage": 0.894,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46020",
+    "title": "Noncredit ESL Milestone for Multilingual Speakers - Pathway to Digital Media",
+    "award": "Noncredit program",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3419&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46025",
+    "title": "Noncredit ESL Milestone for Multilingual Speakers - Introduction to Health Careers",
+    "award": "Noncredit program",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3418&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46048",
+    "title": "Intercollegiate Athletics",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3417&print",
+    "coverage": 0.981,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46173",
+    "title": "Electron Microscopy - Crystalline Materials Basic Imaging",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3422&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46174",
+    "title": "Electron Microscopy - Field Service Technician Basic Training",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3423&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46175",
+    "title": "Electron Microscopy - Biological Concentration Basic Sample Preparation",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3421&print",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46176",
+    "title": "Electron Microscopy: Field Service Technician Advanced Training",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3424&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46287",
+    "title": "Spanish for Medical Professions",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3420&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46410",
+    "title": "Spanish for Medical Professions",
+    "award": "Noncredit program",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3425&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46499",
+    "title": "Electronics Technology - Manufacturing Associate",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3426&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46500",
+    "title": "Viticulture - Level 1",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3428&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46501",
+    "title": "Viticulture - Level 2",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3429&print",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46502",
+    "title": "Nurse Assistant and Home Health Aide",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3427&print",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "38631691511"
+}

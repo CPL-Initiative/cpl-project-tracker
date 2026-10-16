@@ -1,0 +1,216 @@
+{
+ "college": "San Joaquin Delta College",
+ "control_number": "13977",
+ "shape": "certificate",
+ "title": "Medical Office Assistant",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3279&print",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6270,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6270,
+    "output_tokens": 1292,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1292,
+  "output_tokens_details": {
+   "thinking_tokens": 260
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05092,
+ "ms": 10132,
+ "seconds": 10.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 7,
+   "share": 0.857,
+   "missing": [
+    "BUS10A"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "ACCT10A"
+   ],
+   "flagged": [
+    "ACCT10A"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.0,
+    20.0
+   ],
+   "stated": [
+    20.0,
+    20.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 7,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Medical Administrative Assistant Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 20
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate foundational ethical awareness and responsible application and use of data from Generative Artificial Intelligence (GenAI) powered applications. Students will identify, explain, and apply best practices for integrating GenAI data and information into administrative professional documents and workplace tasks.",
+    "Demonstrate ability to perform office tasks in a medical office, including scheduling appointments, maintaining medical records, bookkeeping, and managing patient information.",
+    "Demonstrate knowledge and use of keyboarding and/or computer applications used in the business segment of a medical office setting."
+   ],
+   "careers": [
+    "medical front-office positions",
+    "medical office bookkeeper",
+    "medical records file clerk",
+    "appointment clerk",
+    "insurance coordinator",
+    "billing clerk",
+    "medical office receptionist"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 20,
+     "max": 20
+    },
+    "courses": [
+     {
+      "code": "BIM 1A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIM 9",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIM 38",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIM 81",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 10A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CSA 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "H S 36",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BUS 10A",
+    "why": "not in the text; catalog lists ACCT 10A Bookkeeping instead (likely renumbered)"
+   }
+  ],
+  "notes": [
+   "Catalog page is titled 'Medical Administrative Assistant Certificate of Achievement' while the program name given is 'Medical Office Assistant'; the course list matches the closed list, so this appears to be the same program renamed.",
+   "ACCT 10A Bookkeeping appears in place of the closed list's BUS 10A Bookkeeping (same title and units); recorded as a catalog addition.",
+   "BIM 38 is printed at 4 units in the catalog; the state file stores 3.5 units.",
+   "Catalog states 'Complete 20 units' and 'Minimum Units Required: 20'; all courses require a grade of C or better.",
+   "'Medical front-office positions' recorded as a career field; the six listed job titles follow it in the description."
+  ]
+ },
+ "extracted_run": "38631691511"
+}

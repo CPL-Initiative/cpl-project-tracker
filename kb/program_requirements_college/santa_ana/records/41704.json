@@ -1,0 +1,269 @@
+{
+ "college": "Santa Ana College",
+ "control_number": "41704",
+ "shape": "certificate",
+ "title": "Expanded Learning and Recreation Program Leader",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36120/36355",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7050,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7050,
+    "output_tokens": 1390,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1390,
+  "output_tokens_details": {
+   "thinking_tokens": 377
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.056,
+ "ms": 10836,
+ "seconds": 11.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 16,
+   "listed": 17,
+   "share": 0.941,
+   "missing": [
+    "CDEV107"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "CDEVC1000"
+   ],
+   "flagged": [
+    "CDEVC1000"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    17.0,
+    17.0
+   ],
+   "stated": [
+    17.0,
+    17.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Expanded Learning and Recreation Program Leader: Certificate of Achievement (Transcripted)",
+   "measure": "units",
+   "total_units": {
+    "min": 17,
+    "max": 17
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate the advanced skills necessary to work with students in an expanded learning and recreation program that includes knowledge of academic support/enrichment and activity programming."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 17,
+     "max": 17
+    },
+    "courses": [
+     {
+      "code": "CNSL 114",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CDEV 114",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "EDUC 114",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "APED 114",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "APCD 107",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 157",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "APCD 110",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 205",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "EDUC 203",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "APCD 205",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 120A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "EDUC 120A",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 120B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "EDUC 120B",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "APED 120B",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CDEV 107",
+    "why": "not in the text; catalog lists CDEV C1000 Child Growth and Development in its place (likely common course numbering renumber)"
+   }
+  ],
+  "notes": [
+   "CDEV C1000 is not in the closed list and appears to replace CDEV 107 under California common course numbering; reviewer should confirm.",
+   "EDUC 120B and APED 120B are marked Historical in the catalog but still printed as alternatives to CDEV 120B.",
+   "No careers or job titles are named apart from the program title itself and its former title (After School Program Associate Teacher); careers left empty."
+  ]
+ },
+ "extracted_run": "38843461766"
+}

@@ -1,0 +1,156 @@
+{
+ "college": "Bakersfield College",
+ "control_number": "41350",
+ "shape": "noncredit",
+ "title": "Inclusive and Accessible Digital Content",
+ "award": "Noncredit program",
+ "source_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/inclusive-and-accessible-digital-content-certificate-of-completion-fall-2021",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5210,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5210,
+    "output_tokens": 1070,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1070,
+  "output_tokens_details": {
+   "thinking_tokens": 426
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04224,
+ "ms": 11360,
+ "seconds": 11.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    36.0,
+    36.0
+   ],
+   "stated": [
+    36.0,
+    36.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Inclusive and Accessible Digital Content Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 36,
+    "max": 36
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Upon successful completion of the program, the student will be able to create and modify a variety of accessible documents including spreadsheets, presentations, .pdfs, flyers, and forms using accessibility checkers.",
+    "Upon successful completion of the program, the student will be able to use accessibility practices to create and send accessible and readable online communications and information.",
+    "Upon successful completion of the program, the student will be able to create and modify video, audio, and web content to comply with current accessibility standards."
+   ],
+   "careers": [
+    "office settings",
+    "e-commerce",
+    "education",
+    "online-based industries"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Complete the following number of credits: 36",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 36,
+     "max": 36
+    },
+    "courses": [
+     {
+      "code": "EDUC B60NC",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EDUC B61NC",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints the codes without a space ('EDUCB60NC', 'EDUCB61NC'). They are recorded with the closed list's spacing as EDUC B60NC and EDUC B61NC.",
+   "The catalog states 'Credits listed are in hours (36 hours)'. The award is recorded in hours: 18 hours per course and 36 hours total. A stray '0' under the Unit(s) header was not used.",
+   "Completion requires a grade of 'P' in the required courses.",
+   "The careers are taken from 'may increase employability in office settings, e-commerce, education, and online-based industries'. These are fields of employment, not job titles."
+  ]
+ },
+ "extracted_run": "38414480070"
+}

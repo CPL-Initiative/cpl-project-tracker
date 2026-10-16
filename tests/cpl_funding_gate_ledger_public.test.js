@@ -297,9 +297,11 @@ function shareSumAll(T) {
   const leaked = CURATE.filter(function (a) { return !!doc.querySelector("[" + a + "]"); });
   check("U1: no curate/edit affordance survives in public mode (" + CURATE.length + " attrs swept)",
     leaked.length === 0);
+  // Step 1's chooser (Sam, 2026-10-15) picks which institution to read; it
+  // edits nothing, so it is the one select a public rendering carries.
   check("U1: no editable inputs at all (the anonymous what-if path is closed too)",
     doc.querySelectorAll("#cplFundingMount input:not([type=search]):not([type=checkbox]), " +
-      "#cplFundingMount textarea, #cplFundingMount select").length === 0);
+      "#cplFundingMount textarea, #cplFundingMount select:not(#cplFundOnePick)").length === 0);
 
   // The three chrome surfaces a college should not see.
   check("U2: no project/scenario control strip", !doc.querySelector("#cplFundProjSel, #cplFundScenSel"));

@@ -13,6 +13,8 @@
 //   4. The original discipline-overlay behavior is intact for disc rows.
 //
 // Run from repo root: `npm test` (or `node tests/uc_live_merge_overlay.test.js`).
+// The Verified chip, by its own text (S378 dropped its check glyph).
+function verifiedChip(row) { return Array.from(row.querySelectorAll(".uc-badge")).some((b) => b.textContent.trim() === "Verified"); }
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
 const src = fs.readFileSync("unified_courses.js", "utf8");
@@ -99,7 +101,7 @@ check("init does not throw", !threw);
   check("target members count reflects the merge (member + target = 2)", cell(tgt, 8) === "2");
   check("target carries the member's Students value (MAX carry, 500)", cell(tgt, 12) === "500");
   check("target carries the member's Eligible-units value (MAX carry, 1,200)", cell(tgt, 11).indexOf("1,200") === 0);
-  check("replayed merge does NOT auto-verify (merge ≠ verify)", tgt && tgt.textContent.indexOf("✔ Verified") < 0);
+  check("replayed merge does NOT auto-verify (merge ≠ verify)", tgt && !verifiedChip(tgt));
 
   // 2. pending-sync badge counts the merge edit + the disc edit (2 total)
   const sync = doc.getElementById("uc-sync");
@@ -116,7 +118,7 @@ check("init does not throw", !threw);
   check("live discipline overlay still applies (disc cell shows History)",
     discRow && cell(discRow, 4).indexOf("History") >= 0);
   check("live-disc row renders Verified (original overlay semantics)",
-    discRow && discRow.textContent.indexOf("✔ Verified") >= 0);
+    discRow && verifiedChip(discRow));
 
   let pass = 0;
   for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }

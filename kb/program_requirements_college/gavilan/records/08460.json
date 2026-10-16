@@ -1,0 +1,216 @@
+{
+ "college": "Gavilan College",
+ "control_number": "08460",
+ "shape": "degree",
+ "title": "Cosmetology",
+ "award": "A.S. Degree",
+ "source_url": "https://gavilan.curriqunet.com/catalog/iq/4089/4129/4201",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6393,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6393,
+    "output_tokens": 1436,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1436,
+  "output_tokens_details": {
+   "thinking_tokens": 538
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05429,
+ "ms": 12726,
+ "seconds": 13.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "COS202"
+   ],
+   "flagged": [
+    "COS202"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    36.0,
+    36.0
+   ],
+   "stated": [
+    30.0,
+    36.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 36.0-36.0; the catalog states 30.0-36.0"
+   ],
+   "degree": {
+    "pass": false,
+    "status": "unequal",
+    "computed": [
+     71.0,
+     75.0
+    ],
+    "stated": [
+     65.0,
+     75.0
+    ],
+    "against": "degree",
+    "ge": [
+     35.0,
+     39.0
+    ],
+    "why": [
+     "the blocks and general education come to 71.0-75.0, past the 65.0-75.0 the catalog prints for the degree"
+    ],
+    "fill": null
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 9,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Cosmetology - A.S. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 30,
+    "max": 36
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Gavilan College A.A./A.S. general education, the CSU-GE Breadth or the IGETC pattern",
+   "degree_total": {
+    "min": 65,
+    "max": 75
+   },
+   "ge_units": {
+    "min": 35,
+    "max": 39
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Complete the State Board of Barbering and Cosmetology Examination for licensure and employment.",
+    "Diagnose and apply the proper chemicals needed to perform hair restructuring services (e.g. perming, coloring, relaxing)",
+    "Analyze and treat nail irregularities and perform manicures and pedicures.",
+    "Diagnose skin condition and perform skin treatments while administering facial and other skin services."
+   ],
+   "careers": [
+    "cosmetologist",
+    "assistant stylist",
+    "manicurist",
+    "color specialist",
+    "esthetician",
+    "platform artist",
+    "educator",
+    "salon owner/manager",
+    "vocational instructor"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIREMENTS",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 30,
+     "max": 36
+    },
+    "courses": [
+     {
+      "code": "COS 200",
+      "units": 12,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COS 201",
+      "units": 12,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COS 202",
+      "units": 12,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The requirements block states 'Units: 30- 36', but the three listed courses total 36 units. The 30 lower bound is not explained by the text.",
+   "COS 202 Advanced Cosmetology is printed in the requirements but is not in the closed list, so it is recorded as a catalog addition.",
+   "The page prints 'Total: 65- 75' as the degree total and 'Units: 35- 39' for general education. It also says students complete GE 'plus sufficient electives to meet a 60 unit total', with no elective units printed. electives_fill_degree is set true on that basis, although the printed total already exceeds 60. Reviewer should check.",
+   "The GE pattern can be any of three options: Gavilan College A.A./A.S. GE, CSU-GE Breadth, or IGETC.",
+   "The program description mentions a 1000 hour course of instruction, but the catalog counts the courses in units, so the measure is units.",
+   "'vocational instructor' is included as a career. The text says students become eligible for this role after completing a supplemental teacher training course."
+  ]
+ },
+ "extracted_run": "38948144064"
+}

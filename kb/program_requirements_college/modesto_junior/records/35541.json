@@ -1,0 +1,308 @@
+{
+ "college": "Modesto Junior College",
+ "control_number": "35541",
+ "shape": "adt",
+ "title": "Agriculture Plant Science",
+ "award": "A.S. T Degree",
+ "source_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/agriculture-plant-science-for-transfer-degree-mjc-spring-2027",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6322,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6322,
+    "output_tokens": 2546,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2546,
+  "output_tokens_details": {
+   "thinking_tokens": 822
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07621,
+ "ms": 19806,
+ "seconds": 20.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 14,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "EHS201",
+    "EHS202"
+   ],
+   "flagged": [
+    "EHS201",
+    "EHS202"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.0,
+    32.0
+   ],
+   "stated": [
+    20.0,
+    32.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "AGRICULTURE PLANT SCIENCE, AS-T *",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 32
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "outcomes": [
+    "Demonstrate practical skills in plant science in the areas of management and production of crops and horticultural plants commonly grown in California.",
+    "Explain the role of government agencies in regulating and monitoring various factors associated with crop production.",
+    "Identify and explain the use of various types of irrigation systems used in California.",
+    "Identify major soil types and classes found in the primary growing areas of California and describe characteristics of these soil types.",
+    "Recognize crops produced in California and explain management techniques for each specific crop."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED CORE",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "NR200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLSC200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STATC1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "REQUIRED CORE - FOURTH COURSE",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "CHEM101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM143",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "REQUIRED CORE - FIFTH COURSE",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "AGEC210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECONC2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST A: SELECT ONE (3-5 UNITS)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "EHS235",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLSC235",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EHS201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "EHS202",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM112",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST B: SELECT 0-9 UNITS",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "AGEC200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGM215",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGM235",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLSC250",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The first three blocks sit under a wrapper heading 'REQUIRED CORE: 17-18 UNITS' (Total 17-18, 'Complete all of the following'); the wrapper itself holds no courses and is not recorded as a block.",
+   "The fourth-course, fifth-course and List A blocks say 'Complete the following number of credits'; read as choose one course from each (List A heading says 'SELECT ONE'). Recorded as choose_courses with minimum 1.",
+   "List B begins with a line 'ANY COURSE NOT ALREADY USED ABOVE. 3 - 5', read as allowing unused courses from the lists above to count toward List B; not recorded as open electives. List B minimum recorded as 0 per 'SELECT 0-9 UNITS'.",
+   "EHS235 and PLSC235 share the title 'Plant Propagation/Production' and appear to be cross-listed; recorded as separate entries as printed.",
+   "Course codes are printed without spaces (e.g. 'NR200', 'STATC1000') and recorded as printed.",
+   "A stray lead-in line 'Upon satisfactory completion of this award, the student should be prepared to:' appears before the section heading with no outcomes under it; the outcomes are taken from the Program Learning Outcomes heading.",
+   "The award instructions state 'A minimum of 18 semester ... units in the major' while the major total prints 20-32; total recorded as 20-32."
+  ]
+ },
+ "extracted_run": "38477845911"
+}

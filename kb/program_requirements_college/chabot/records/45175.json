@@ -1,0 +1,224 @@
+{
+ "college": "Chabot College",
+ "control_number": "45175",
+ "shape": "certificate",
+ "title": "Advanced Diagnosis",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6224",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7225,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7225,
+    "output_tokens": 1252,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1252,
+  "output_tokens_details": {
+   "thinking_tokens": 347
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05394,
+ "ms": 10198,
+ "seconds": 10.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 11,
+   "share": 0.545,
+   "missing": [
+    "APAU9725",
+    "APAU9727",
+    "APAU9741",
+    "APAU9748",
+    "APAU9754"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    22.5,
+    22.5
+   ],
+   "stated": [
+    22.5,
+    22.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Advanced Diagnosis - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 22.5,
+    "max": 22.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate advanced-level diagnosis skills that will help them improve employment and advancement opportunities in the automobile repair industry.",
+    "Document the expertise needed to perform advanced-level measurements and testing for diagnosing automotive mechanical, electrical, and electronic systems.",
+    "Prove the expertise needed to perform high-level technician functions related to a system’s fault diagnosis."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ATEC 6A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATEC 6B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATEC 8",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATEC 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATEC 94",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATEC 11",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "APAU 9725",
+    "why": "not in the text (noncredit counterpart of ATEC 6A)"
+   },
+   {
+    "code": "APAU 9727",
+    "why": "not in the text (noncredit counterpart of ATEC 8)"
+   },
+   {
+    "code": "APAU 9741",
+    "why": "not in the text (noncredit counterpart of ATEC 10)"
+   },
+   {
+    "code": "APAU 9748",
+    "why": "not in the text (noncredit counterpart of ATEC 6B)"
+   },
+   {
+    "code": "APAU 9754",
+    "why": "not in the text (noncredit counterpart of ATEC 94)"
+   }
+  ],
+  "notes": [
+   "The printed 'Total : 22.5' under the single requirements list is recorded as the certificate's total_units.",
+   "Instructor approval must be obtained prior to enrollment, per the description.",
+   "The first outcome was printed on the same line as the lead-in sentence; the lead-in was removed.",
+   "No careers are named; the description mentions technicians and the automobile repair industry only in passing, so none were recorded."
+  ]
+ },
+ "extracted_run": "38843479215"
+}

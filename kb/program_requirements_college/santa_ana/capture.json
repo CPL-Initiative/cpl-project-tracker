@@ -1,0 +1,3715 @@
+{
+ "college": "Santa Ana College",
+ "catalog_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/36562",
+ "platform": "curriqunet",
+ "catalog_year": "2026-2027",
+ "programs": 370,
+ "with_closed_list": 359,
+ "started": "2026-10-16T03:03:02Z",
+ "curriqunet": {
+  "catalog": 28,
+  "view_prefix": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/",
+  "errors": [
+   "https://sac.curriqunet.com/Catalog/_getPage?catalogId=28&id=35002: APIRequestContext.get: socket hang up (ECONNRESET)"
+  ],
+  "sections": [
+   "Degree & Certificate Types",
+   "Noncredit Certificates",
+   "Instructional Programs "
+  ],
+  "nodes_read": 70,
+  "calls": 141,
+  "entries": 374,
+  "stopped_at_cap": false,
+  "same_title_entries": 0,
+  "entries_read": 374
+ },
+ "pages_read": 374,
+ "banner_h1": null,
+ "loads": 1636,
+ "seconds": 7227.4,
+ "found": 347,
+ "by_method": {
+  "no_closed_list": 11,
+  "not_found": 4,
+  "page_claimed": 8,
+  "sitemap_page": 347
+ },
+ "shared_pages": {
+  "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36122/35925": [
+   "04238",
+   "32436"
+  ],
+  "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36148/36342": [
+   "04244",
+   "32989",
+   "46226"
+  ],
+  "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36108/36007": [
+   "04245",
+   "35021"
+  ],
+  "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36137/36346": [
+   "32062",
+   "46269"
+  ],
+  "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36115/36384": [
+   "46120",
+   "46121"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "04197",
+   "title": "Computer Science",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36111/36016",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2591,
+     "content": 2591,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "31594",
+   "title": "Adult High School Diploma",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36227/36178",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 138,
+    "why": "coarse net: the page's code tokens name 0 of 138 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1685,
+     "content": 1685,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "32750",
+   "title": "Automotive Fundamentals",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36251",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1636,
+     "content": 1636,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "43824",
+   "title": "Automotive Applied Skills",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "04195",
+   "title": "Digital Media",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36130/35926"
+   ]
+  },
+  {
+   "control_number": "04223",
+   "title": "Art: Digital Media Arts",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36103/36080",
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36103/36082"
+   ]
+  },
+  {
+   "control_number": "21759",
+   "title": "School Age Teacher",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36026",
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36027"
+   ]
+  },
+  {
+   "control_number": "32396",
+   "title": "Computer Science",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36108/36007"
+   ]
+  },
+  {
+   "control_number": "40487",
+   "title": "Automotive Manufacturer Exploration",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36063",
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36068",
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36072",
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36073",
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36067"
+   ]
+  },
+  {
+   "control_number": "41702",
+   "title": "After School Program Assistant",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36120/36355",
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36027"
+   ]
+  },
+  {
+   "control_number": "42006",
+   "title": "Public Health Science",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36461/36463",
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36142/35875",
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36283/36267",
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36283/36266",
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36142/35874"
+   ]
+  },
+  {
+   "control_number": "46057",
+   "title": "Early Childhood Education Apprenticeship Program",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36032",
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36030",
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36033",
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36025",
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36031",
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36026",
+    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36027"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 7,
+  "0.8-1.0": 74,
+  "1.0": 266
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 347,
+  "list": [
+   {
+    "control_number": "04185",
+    "title": "Biological Science",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36105/36038",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04187",
+    "title": "Accounting",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36100/36089",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04188",
+    "title": "Management",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36134/35904",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04189",
+    "title": "Office Management",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36056",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04190",
+    "title": "Marketing",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36136/35887",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04193",
+    "title": "Business Applications and Technology",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36048",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04194",
+    "title": "Journalism and Media Studies",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36130/35928",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04196",
+    "title": "Computer Information Systems",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36111/36012",
+    "coverage": 0.938,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04200",
+    "title": "Kinesiology",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36131/35919",
+    "coverage": 0.7,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04201",
+    "title": "Engineering",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36121/35958",
+    "coverage": 0.882,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04202",
+    "title": "Engineering Civil Technology",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36121/35964",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04203",
+    "title": "Engineering Mechanical Drafting and Design",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36121/35968",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04207",
+    "title": "Medium/Heavy Truck Technology",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36116/35995",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04209",
+    "title": "Automotive Technology",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36067",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04212",
+    "title": "Engineering Civil Drafting and Design",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36121/35962",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04213",
+    "title": "CNC Machine Set Up and Operation",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36135/35892",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04214",
+    "title": "Welding Technology",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36154/36206",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04218",
+    "title": "Art",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36103/36080",
+    "coverage": 0.958,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04219",
+    "title": "Music",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36140/35880",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04220",
+    "title": "Theatre Arts - Theatre Performance",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36153/36224",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04221",
+    "title": "Theatre Arts - Technical Theatre",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36153/36223",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04222",
+    "title": "Dance",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36115/35999",
+    "coverage": 0.907,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04224",
+    "title": "Photography",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36147/35862",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04225",
+    "title": "Modern Languages",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36139/35878",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04226",
+    "title": "Nursing-Registered Nursing",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36141/35877",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04227",
+    "title": "Medical Assistant - Administrative / Clinical",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36138/35882",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04230",
+    "title": "Pharmacy Technology",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36145/35864",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04235",
+    "title": "Child Development - Emphasis in Early Childhood Education Teacher Preparation",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36025",
+    "coverage": 0.974,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04236",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36142/35874",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04237",
+    "title": "Paralegal",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36144/35868",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04238",
+    "title": "English",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36122/35925",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04239",
+    "title": "Communication Studies",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36110/36010",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04240",
+    "title": "Philosophy",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36146/35859",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04241",
+    "title": "Library Technology",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36133/35909",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04242",
+    "title": "Mathematics",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36137/35884",
+    "coverage": 0.867,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04244",
+    "title": "Physics",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36148/36342",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04245",
+    "title": "Chemistry",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36108/36007",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04246",
+    "title": "Geology",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36128/35578",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04247",
+    "title": "Psychology",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36150/35854",
+    "coverage": 0.966,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04249",
+    "title": "Criminal Justice Option",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36113/36004",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04250",
+    "title": "Child Development - Emphasis in Expanded Learning and Recreation",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36027",
+    "coverage": 0.97,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04253",
+    "title": "Women's Studies",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36155/36176",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04255",
+    "title": "Ethnic Studies",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36124/35955",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04256",
+    "title": "Economics",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36119/35976",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04257",
+    "title": "History",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36129/35911",
+    "coverage": 0.852,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04258",
+    "title": "Geography",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36127/35922",
+    "coverage": 0.944,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04259",
+    "title": "Political Science",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36149/35856",
+    "coverage": 0.931,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04260",
+    "title": "Sociology",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36151/36212",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07485",
+    "title": "Occupational Therapy Assistant",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36143/35869",
+    "coverage": 0.968,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08692",
+    "title": "Entrepreneurship and Small Business",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36123/35956",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08708",
+    "title": "Digital Publishing",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36052",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08709",
+    "title": "Microsoft Office Professional",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36055",
+    "coverage": 0.947,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08710",
+    "title": "American Sign Language",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36101/36087",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08711",
+    "title": "Engineering Mechatronics",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36121/35969",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08712",
+    "title": "Electric Heavy-Duty Vehicles",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36116/35993",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08713",
+    "title": "Chassis Service Option",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36068",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08714",
+    "title": "Engine Performance and Electrical Option",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36071",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08715",
+    "title": "Engine Service Option",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36073",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08720",
+    "title": "Engineering CAD Drafting",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36121/35960",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08722",
+    "title": "Conventional Machining Option",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36135/35899",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08734",
+    "title": "Animation for Commercial Applications",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36117/35980",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08737",
+    "title": "Nursing Pre-Nursing for the Bachelor’s in Nursing",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36141/35876",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08739",
+    "title": "Fashion Design",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36125/35948",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08740",
+    "title": "Fashion Merchandising",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36125/35949",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08742",
+    "title": "Apparel Product Development and Technical Design",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36125/35943",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08743",
+    "title": "Child Development - Emphasis in Early Childhood and Elementary Teacher Preparation  (Pre-Professional)",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36026",
+    "coverage": 0.969,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08745",
+    "title": "Culinary Arts Foundation",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36142/35871",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08747",
+    "title": "Fire Administration Option",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36126/35935",
+    "coverage": 0.955,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08749",
+    "title": "Fire Prevention Officer",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36126/35937",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08752",
+    "title": "Public Fire Service Option",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36126/35941",
+    "coverage": 0.909,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08754",
+    "title": "Black Studies",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36124/35953",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08755",
+    "title": "Chicana/Chicano Studies",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36124/35954",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09209",
+    "title": "International Business",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36174/36164",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10549",
+    "title": "Administrative Fire Services Chief Officer",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36126/35934",
+    "coverage": 0.962,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10629",
+    "title": "Paralegal",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36144/35867",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10658",
+    "title": "Television Production",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36117/35991",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10659",
+    "title": "Broadcast Journalism",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36117/35981",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10660",
+    "title": "Screenwriting",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36117/35990",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10664",
+    "title": "CNC Programmer Mastercam",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36135/35896",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10665",
+    "title": "Graphic Design",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36103/36082",
+    "coverage": 0.84,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10667",
+    "title": "Dressmaking and Alterations Option",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36125/35945",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10668",
+    "title": "Hospitality Foundation",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36142/35872",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12242",
+    "title": "Speech-Language Pathology Assistant",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36152/36210",
+    "coverage": 0.941,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "13446",
+    "title": "QuickBooks Accounting",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36100/36097",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "13462",
+    "title": "Engine Performance Option",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36072",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15242",
+    "title": "Retail Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36134/35907",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16525",
+    "title": "Retail Management",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36134/35906",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16536",
+    "title": "Digital Music Production",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36140/35879",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16538",
+    "title": "Lighting Design and Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36153/36214",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16619",
+    "title": "CNC Lathe Set Up and Operation",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36135/35891",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16621",
+    "title": "CNC Milling Machine Set Up and Operation",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36135/35895",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16974",
+    "title": "Broadcast Journalism",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36130/35926",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17343",
+    "title": "Drive Train Service Option",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36069",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17350",
+    "title": "Fire Prevention Officer",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36126/35938",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17761",
+    "title": "Elementary Teacher Preparation (Pre-Professional)",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36120/35974",
+    "coverage": 0.912,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18580",
+    "title": "Liberal Arts American Studies Emphasis",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36283/36263",
+    "coverage": 0.969,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18581",
+    "title": "Liberal Arts Arts, Humanities and Communications Emphasis",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36283/36264",
+    "coverage": 0.954,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18582",
+    "title": "Liberal Arts Business and Technology Emphasis",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36283/36265",
+    "coverage": 0.886,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18583",
+    "title": "Liberal Arts Mathematics and Science Emphasis",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36283/36267",
+    "coverage": 0.897,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18584",
+    "title": "Liberal Arts Social and Behavioral Sciences Emphasis",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36283/36268",
+    "coverage": 0.951,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18780",
+    "title": "Pharmacy Technology Basic Option",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36145/35866",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19268",
+    "title": "Liberal Arts Kinesiology and Wellness Emphasis",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36283/36266",
+    "coverage": 0.984,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19391",
+    "title": "QuickBooks Bookkeeping",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36100/36098",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19447",
+    "title": "Medical Assistant - Administrative / Clinical",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36138/35883",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19448",
+    "title": "Welding Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36154/36209",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21748",
+    "title": "Accounting",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36100/36090",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21749",
+    "title": "Entrepreneurship and Small Business",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36123/36350",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21750",
+    "title": "International Business",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36174/36165",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21751",
+    "title": "Business Applications and Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36047",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21752",
+    "title": "Microsoft Office Professional",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36054",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21753",
+    "title": "Journalism and Media Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36130/35929",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21754",
+    "title": "Digital Media Arts - UX Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36117/35985",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21755",
+    "title": "Digital Publishing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36051",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21756",
+    "title": "Digital Media Arts - Production Artist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36117/35984",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21757",
+    "title": "Computer Information Systems",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36111/36013",
+    "coverage": 0.938,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21758",
+    "title": "Computer Science",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36111/36015",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21766",
+    "title": "Engineering Civil Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36121/35965",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21770",
+    "title": "Electric Heavy-Duty Vehicle Service",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36116/35992",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21772",
+    "title": "Medium/Heavy Truck Service",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36116/35994",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21773",
+    "title": "Engineering CAD Drafting",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36121/35961",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21774",
+    "title": "Engineering Mechanical Drafting and Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36121/35967",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21775",
+    "title": "Engineering Civil Drafting and Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36121/35963",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21776",
+    "title": "Engineering Mechatronics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36121/35970",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21778",
+    "title": "CNC Lathe Set Up & Operation",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36135/35890",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21779",
+    "title": "CNC Machine Set Up & Operation",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36135/35893",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21782",
+    "title": "CNC Milling Machine Set Up & Operation",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36135/35894",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21783",
+    "title": "CNC Programmer Mastercam",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36135/35897",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21784",
+    "title": "Conventional Machining",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36135/35898",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21786",
+    "title": "Dance",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36115/36000",
+    "coverage": 0.96,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21787",
+    "title": "Commercial Photography",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36147/35861",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21789",
+    "title": "Pharmacy Technology Advanced Option",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36145/35865",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21790",
+    "title": "Fashion Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36125/35947",
+    "coverage": 0.962,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21791",
+    "title": "Fashion Merchandising",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36125/35950",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21792",
+    "title": "Apparel Product Development and Technical Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36125/35944",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21793",
+    "title": "Early Childhood Education Teacher",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36032",
+    "coverage": 0.95,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21794",
+    "title": "Infant and Toddler Education and Development",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36033",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21795",
+    "title": "Library Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36133/35910",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21796",
+    "title": "Law Enforcement Option",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36113/36005",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21797",
+    "title": "Fire Administration Option",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36126/35936",
+    "coverage": 0.958,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21798",
+    "title": "Public Fire Service Option",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36126/35940",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24264",
+    "title": "Secondary Education (High School Equivalency Test Preparation)",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36227/36178",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24364",
+    "title": "Customer Service Representative",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36247",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24365",
+    "title": "General Office Clerk",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36249",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24384",
+    "title": "Introduction to Information Technology (IT)",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36252",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24390",
+    "title": "Secretary/Administrative Assistant",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36256",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30640",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36151/36211",
+    "coverage": 0.906,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30670",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36150/35853",
+    "coverage": 0.962,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30752",
+    "title": "Human Services",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36461/36478",
+    "coverage": 0.964,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31137",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36153/36222",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31859",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36149/35855",
+    "coverage": 0.846,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31887",
+    "title": "Elementary Teacher Education",
+    "award": "A.A- T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36120/36952",
+    "coverage": 0.914,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31980",
+    "title": "Earth Science",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36118/35978",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32050",
+    "title": "Music",
+    "award": "A.A- T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36140/35881",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32062",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36137/36346",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32063",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36031",
+    "coverage": 0.933,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32096",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36131/35920",
+    "coverage": 0.973,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32144",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36128/35577",
+    "coverage": 0.778,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32146",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36103/36081",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32148",
+    "title": "Journalism",
+    "award": "A.A- T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36130/35927",
+    "coverage": 0.944,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32255",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36113/36002",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32343",
+    "title": "Geography",
+    "award": "A.A- T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36127/35923",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32395",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36129/35912",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32436",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36122/35925",
+    "coverage": 0.926,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32533",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36175/36270",
+    "coverage": 0.93,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32538",
+    "title": "Welding Technology - Structural Steel",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36154/36208",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32681",
+    "title": "Vocational Construction Technology",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36243",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32959",
+    "title": "Biotechnology Laboratory Technician",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36105/36043",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32989",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36148/36342",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32998",
+    "title": "Biotechnology Biomanufacturing Technician",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36105/36041",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32999",
+    "title": "QC/QA Microbiology Technician",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36105/36044",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33057",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36102/36086",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33169",
+    "title": "Fitness Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36131/35918",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33187",
+    "title": "Adult Basic Education/Adult Secondary Education Writing Proficiency",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36225/36184",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33188",
+    "title": "Adult Basic Education/Adult Secondary Education Math Proficiency",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36225/36182",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33189",
+    "title": "Adult Basic Education",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36225/36181",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33220",
+    "title": "Philosophy",
+    "award": "A.A- T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36146/35860",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33333",
+    "title": "Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36134/35905",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33452",
+    "title": "Adult Basic Education/Adult Secondary Education Reading Proficiency",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36225/36183",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33690",
+    "title": "Biotechnology",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36105/36040",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33855",
+    "title": "Pathway to Law School",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36132/35917",
+    "coverage": 0.946,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33958",
+    "title": "Alternative Welding Processes",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36154/36204",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "34014",
+    "title": "Occupational Studies",
+    "award": "Baccalaureate of Science (B.S.) Degree.",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/35541/36502",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35021",
+    "title": "Chemistry",
+    "award": "A.S. T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36108/36007",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35134",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36105/36039",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35555",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36119/35977",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35672",
+    "title": "Commercial Art: Mural & Illustration",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36103/36408",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35673",
+    "title": "Legal Office Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36132/35916",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35674",
+    "title": "CPA - Accounting Subjects",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36100/36094",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35675",
+    "title": "CPA - Accounting Study & Ethics",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36100/36093",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35698",
+    "title": "Film, Television and Electronic Media",
+    "award": "A.S. T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36117/35987",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35703",
+    "title": "CPA - Business Subjects",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36100/36095",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35705",
+    "title": "Legal Office Interpreting Spanish",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36132/35914",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35983",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36142/35875",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36411",
+    "title": "Quality Control and Inspection",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36135/35901",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36454",
+    "title": "Medical Device Quality Assurance",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36135/36493",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36618",
+    "title": "ESL Core Beginning",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36226/36194",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36828",
+    "title": "ESL Core Intermediate",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36226/36196",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36829",
+    "title": "ESL Core Advanced",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36226/36193",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36835",
+    "title": "ESL Enhanced Writing Capstone",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36226/36200",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36880",
+    "title": "ESL Core Capstone",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36226/36195",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37093",
+    "title": "ESL Core Literacy",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36226/36197",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37094",
+    "title": "ESL Enhanced Speaking Capstone",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36226/36199",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37095",
+    "title": "ESL Enhanced Civics",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36226/36198",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37198",
+    "title": "English for Work",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36226/36190",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37200",
+    "title": "ESL Transition to Adult Secondary Education (ASE)",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36226/36202",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37238",
+    "title": "Enhanced English for Work",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36226/36191",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38160",
+    "title": "Screen Performance",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36153/36220",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38177",
+    "title": "Leadership Capstone",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36225/36186",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38621",
+    "title": "Personal Caregiver/Care Aide",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36230",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38623",
+    "title": "Spanish Literacy Core Capstone",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36225/36187",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38680",
+    "title": "Hospitality Services",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36229",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38684",
+    "title": "Introduction to Biotechnology",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36231",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38701",
+    "title": "Agency Film Production",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36117/35979",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38771",
+    "title": "Introduction to Pharmacy Technology",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36232",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39456",
+    "title": "Digital Literacy for Office and Administrative Support Worker",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36248",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39571",
+    "title": "Electric/Hybrid Vehicle Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36070",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39572",
+    "title": "Digital Literacy for Academic and Professional Success I",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36226/36188",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39573",
+    "title": "Digital Literacy for Academic and Professional Success II",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36226/36189",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39745",
+    "title": "Heating/Ventilation/Air Conditioning/Refrigeration (HVAC-R) Technology",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36242",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39746",
+    "title": "Line Cook",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36237",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39747",
+    "title": "Introduction to Machining",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36228",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39748",
+    "title": "Nursing Assistant",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36233",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39836",
+    "title": "IT Network and Security Operations",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36111/36021",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39839",
+    "title": "IT Support Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36111/36022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39840",
+    "title": "IT Desktop and Server Operations",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36111/36020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39987",
+    "title": "Law, Public Policy and Society",
+    "award": "A.A- T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36132/35913",
+    "coverage": 0.938,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40382",
+    "title": "Communication Studies",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36110/36009",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40412",
+    "title": "Advanced Culinary Arts",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36142/35870",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40473",
+    "title": "21st Century Leadership",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36225/36180",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40485",
+    "title": "Spanish / English Interpretation and Translation",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36059",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40490",
+    "title": "Drone Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36053",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40501",
+    "title": "Spanish / English Interpretation and Translation",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36060",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40502",
+    "title": "Vietnamese / English Interpretation and Translation",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36062",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40503",
+    "title": "Banking & Finance",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36100/36092",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40506",
+    "title": "Alternative Powertrain Technology",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36063",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40514",
+    "title": "QuickBooks - Tier 1",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36254",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40515",
+    "title": "QuickBooks - Tier 2",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36255",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40518",
+    "title": "Introduction to Automotive Technology",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36251",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40519",
+    "title": "Introduction to Welding Technology",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36244",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40520",
+    "title": "Introduction to Small Business and Entrepreneurship",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36253",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40527",
+    "title": "3D Fashion Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36125/35942",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40528",
+    "title": "Secondary Education (Pre-Professional)",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36120/36285",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40541",
+    "title": "Career & Professional Success",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36225/36185",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40542",
+    "title": "Introduction to Theatre Arts",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36238",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40653",
+    "title": "Hospitality Management",
+    "award": "A.S. T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36142/35873",
+    "coverage": 0.941,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40726",
+    "title": "Vietnamese / English Interpretation and Translation",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36061",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40732",
+    "title": "Adobe Applications for Business",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36045",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40783",
+    "title": "College Readiness",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36227/36177",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40815",
+    "title": "Basic Law Enforcement Academy",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36114/35998",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40917",
+    "title": "Adobe Web Projects for Business",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36046",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40937",
+    "title": "Office Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36057",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40949",
+    "title": "Introduction to Diesel",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36260",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41030",
+    "title": "Digital Design for Business",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36050",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41031",
+    "title": "Computer Fundamentals for Business",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36049",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41236",
+    "title": "Marketing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36136/35888",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41535",
+    "title": "Writing for Media",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36130/35933",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41536",
+    "title": "Public Relations",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36130/35932",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41537",
+    "title": "Musical Theatre Teaching - Music Emphasis",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36153/36218",
+    "coverage": 0.938,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41538",
+    "title": "Musical Theatre Teaching - Acting Emphasis",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36153/36216",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41539",
+    "title": "Media Theory",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36130/35930",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41540",
+    "title": "Engineering STEM Core",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36121/35971",
+    "coverage": 0.818,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41541",
+    "title": "Screendance",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36115/36001",
+    "coverage": 0.812,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41683",
+    "title": "Welding Technology - Pipe Welding",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36154/36207",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41686",
+    "title": "Data Analytics",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36111/36017",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41687",
+    "title": "Child Care Administration and Leadership",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36412",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41688",
+    "title": "Remote Technology for Virtual Professionals",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36058",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41697",
+    "title": "Leadership",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36134/35903",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41698",
+    "title": "Developmentally Appropriate Discipline & Behavior Guidance for Young Children",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36028",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41699",
+    "title": "Early Childhood Associate Teacher",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36030",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41700",
+    "title": "Trauma Informed Practices in Education",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36037",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41701",
+    "title": "STEAM (Science, Technology, Engineering, Arts, Math) for Early Childhood Educators",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36035",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41703",
+    "title": "Support for Students with Disabilities or Delays",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/36036",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41704",
+    "title": "Expanded Learning and Recreation Program Leader",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36120/36355",
+    "coverage": 0.941,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41746",
+    "title": "Drone Cinematography",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36117/35986",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41747",
+    "title": "Narrative Film Production",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36117/35989",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41816",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36106/36282",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41874",
+    "title": "Biotechnology Lab Assistant",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36105/36042",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41947",
+    "title": "ESL College Reading and Writing",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36226/36192",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41952",
+    "title": "ESL Writing and Developing a School Publication",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36226/36203",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41954",
+    "title": "Introduction to Baking & Pastry Tier 1",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36235",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41955",
+    "title": "Introduction to Baking & Pastry Tier 2",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36236",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41957",
+    "title": "ESL Grammar for Better Writing",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36226/36201",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42660",
+    "title": "Performance Emphasis",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36153/36219",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42661",
+    "title": "Technical Theatre",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36153/36221",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42733",
+    "title": "Costume Design and Technology",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36153/36213",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42818",
+    "title": "Introduction to ASL-English Interpreting",
+    "award": "A.A. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36101/36088",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42819",
+    "title": "Mopar Automotive Technician",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36075",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42830",
+    "title": "Mopar Service Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36079",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42831",
+    "title": "Mopar Mechanical Systems",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36078",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42832",
+    "title": "Mopar Fundamentals",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36077",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42833",
+    "title": "Mopar Drivability Systems",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36076",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42834",
+    "title": "Mopar Advanced Systems",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36074",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42840",
+    "title": "Gas Tungsten Arc Welding",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36154/36205",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42867",
+    "title": "Digital Marketing Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36136/35886",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42879",
+    "title": "Musical Theatre Teaching",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36153/36215",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42880",
+    "title": "Musical Theatre Teaching - Dance Emphasis",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36153/36217",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42941",
+    "title": "Introduction to Digital Media",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36240",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43224",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36110/36011",
+    "coverage": 0.96,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43234",
+    "title": "Introduction to Drone Pilot",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36241",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43235",
+    "title": "Introduction to Fashion Design & Merchandising",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36239",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43592",
+    "title": "Certified Global Business Professional (CGBP) Exam Preparation & Practice",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36245",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43593",
+    "title": "Introduction to Automotive Technology Systems & Engines",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36258",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43597",
+    "title": "Introduction to Automotive Technology Systems, Engines, & Transmissions",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36259",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43717",
+    "title": "Photojournalism",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36147/35863",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43721",
+    "title": "Multimedia Journalism",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36130/35931",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43764",
+    "title": "Information Technology (IT) Basics",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36250",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43816",
+    "title": "Automotive Essentials",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36065",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43991",
+    "title": "Legal Office Interpreting Vietnamese",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36132/35915",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44403",
+    "title": "Backend Engineering",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36111/35569",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44404",
+    "title": "Artificial Intelligence",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36111/35560",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44529",
+    "title": "Culinary Nutrition",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36142/35562",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44668",
+    "title": "Archives and Digital Collections",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36133/35575",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44679",
+    "title": "Python Programming",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36111/35563",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44680",
+    "title": "Java Programming",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36111/35564",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44682",
+    "title": "Introduction to Commercial Dance - Level II Series",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36115/35567",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44684",
+    "title": "Introduction to Commercial Dance - Level I Series",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36115/35566",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44691",
+    "title": "Modern Policing",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36114/36286",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44692",
+    "title": "Human Resources Management",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36134/35902",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44796",
+    "title": "Archives and Digital Collections",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36133/35576",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44923",
+    "title": "Survey of International Business",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36174/36166",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44965",
+    "title": "Fullstack Web Developer",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36111/35565",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44976",
+    "title": "Human Resources Management",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36134/35571",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45019",
+    "title": "Database Management Systems",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36111/35572",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45020",
+    "title": "Data Analytics",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36111/35573",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45021",
+    "title": "Machine Learning",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36111/35570",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45135",
+    "title": "Commercial Dance",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36115/35568",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45272",
+    "title": "Child and Adolescent Development",
+    "award": "A.A- T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36109/35574",
+    "coverage": 0.909,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45342",
+    "title": "Paralegal Studies",
+    "award": "Baccalaureate of Arts (B.A.) Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36144/35543",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45643",
+    "title": "Drone Technology",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36334",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45644",
+    "title": "Artificial Intelligence (AI) for Business",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36330",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45657",
+    "title": "Artificial Intelligence (AI) for Business",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36326",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45803",
+    "title": "Acute Care Nursing Assistant",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36359",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45888",
+    "title": "Introduction to Dance - Level II Series",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36115/36389",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45904",
+    "title": "Human Resources Assistant",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36364",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45907",
+    "title": "Sexuality, Gender, and LGBTQ+ Studies",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36151/36338",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46082",
+    "title": "Introduction to Electric and Hybrid Vehicles",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36376",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46084",
+    "title": "Mental Health and Wellness Career Pathways",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36380",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46111",
+    "title": "Foundation of Commercial Dance – Level 1",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36368",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46112",
+    "title": "Foundation of Commercial Dance – Level 2",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36372",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46120",
+    "title": "Introduction to Dance - Level I Series",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36115/36384",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46121",
+    "title": "Introduction to Dance - Level I Series",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36115/36384",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46132",
+    "title": "Elementary Teacher Education:  Integrated Programs",
+    "award": "A.A- T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36120/35975",
+    "coverage": 0.962,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46216",
+    "title": "Social Work and Human Services",
+    "award": "A.A- T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36461/36463",
+    "coverage": 0.891,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46226",
+    "title": "Physics 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36148/36342",
+    "coverage": 0.778,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46269",
+    "title": "Mathematics 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36137/36346",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46284",
+    "title": "Automotive Technology",
+    "award": "Baccalaureate of Science (B.S.) Degree.",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36104/36485",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46373",
+    "title": "Banking & Finance",
+    "award": "A.S. Degree",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36100/36318",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "38843461766"
+}

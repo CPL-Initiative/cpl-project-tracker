@@ -1,0 +1,6670 @@
+[
+ {
+  "control_number": "05223",
+  "title": "General Biology Track",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL210A",
+   "BIOL210B",
+   "CHEM200",
+   "CHEM200L",
+   "CHEM201",
+   "CHEM201L",
+   "MATH121",
+   "MATH122",
+   "MATH150"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15671",
+   "title": "General Biology Track - Associate of Science Degree: City",
+   "h1": "General Biology Track - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 13615
+ },
+ {
+  "control_number": "05224",
+  "title": "Business Administration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "ACCT116A",
+   "ACCT116B",
+   "BUSE119",
+   "ECON120",
+   "ECON121",
+   "ENGLC1000",
+   "MATH121",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15638",
+   "title": "Business Administration 2.0 - Associate in Science for Transfer Degree: City",
+   "h1": "Business Administration 2.0 - Associate in Science for Transfer Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "05225",
+  "title": "Accounting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT102",
+   "ACCT116A",
+   "ACCT116B",
+   "ACCT119",
+   "ACCT120",
+   "ACCT121",
+   "ACCT125",
+   "ACCT128A",
+   "ACCT128B",
+   "ACCT135",
+   "ACCT150",
+   "BUSE101",
+   "BUSE119",
+   "BUSE120",
+   "CBTE143"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15606",
+   "title": "Accounting - Associate of Science Degree: City",
+   "h1": "Accounting - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "05227",
+  "title": "Small Business Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT128A",
+   "ACCT128B",
+   "BUSE102",
+   "BUSE119",
+   "BUSE150",
+   "BUSE155",
+   "BUSE157",
+   "BUSE201",
+   "BUSE270",
+   "BUSE92",
+   "MARK100",
+   "MARK105",
+   "MARK130"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15735",
+   "title": "Small Business Management - Associate of Science Degree: City",
+   "h1": "Small Business Management - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 15441
+ },
+ {
+  "control_number": "05232",
+  "title": "Labor Studies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05236",
+  "title": "Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM200",
+   "CHEM200L",
+   "MATH150",
+   "MATH151",
+   "MATH252",
+   "PHYS195",
+   "PHYS196",
+   "PHYS197"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15656",
+   "title": "Engineering - Associate of Science Degree: City",
+   "h1": "Engineering - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 11997
+ },
+ {
+  "control_number": "05238",
+  "title": "Electronics",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05241",
+  "title": "Air Conditioning Refrigeration &Environmental Control Techn",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05248",
+  "title": "Drafting Option",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGE108",
+   "ENGE111",
+   "ENGLC1000",
+   "MATH96"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15908",
+   "title": "Drafting Option - Certificate of Achievement: City",
+   "h1": "Drafting Option - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 8810
+ },
+ {
+  "control_number": "05251",
+  "title": "Computer Aided Manufacturing (CAM) Option",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MACT140",
+   "MACT150",
+   "MACT160M",
+   "MACT161M",
+   "MACT162M",
+   "MACT170",
+   "MACT171",
+   "MACT172",
+   "MACT180M",
+   "MACT181M",
+   "MACT182M"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15778",
+   "title": "Computer Aided Manufacturing (CAM) Option - Associate of Science Degree: City",
+   "h1": "Computer Aided Manufacturing (CAM) Option - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 12923
+ },
+ {
+  "control_number": "05255",
+  "title": "Two-Dimensional Art",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTF104",
+   "ARTF150A",
+   "ARTF151",
+   "ARTF155A",
+   "ARTF155B",
+   "ARTF156A",
+   "ARTF165A",
+   "ARTF165B",
+   "ARTF165C",
+   "ARTF165D",
+   "ARTF198A",
+   "ARTF205A",
+   "ARTF206",
+   "ARTF210A",
+   "ARTF210B",
+   "ARTF210C",
+   "ARTF260",
+   "ARTHC1100",
+   "ARTHC1200",
+   "DSGN102"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15753",
+   "title": "Two-Dimensional Art - Associate of Arts Degree: City",
+   "h1": "Two-Dimensional Art - Associate of Arts Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "05257",
+  "title": "Theatre",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAM103",
+   "DRAM105",
+   "DRAM107",
+   "DRAM108",
+   "DRAM109",
+   "DRAM111",
+   "DRAM119",
+   "DRAM123",
+   "DRAM124",
+   "DRAM132",
+   "DRAM133",
+   "DRAM134",
+   "DRAM143",
+   "DRAM165",
+   "DRAM205"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15750",
+   "title": "Theatre - Associate of Arts Degree: City",
+   "h1": "Theatre - Associate of Arts Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "05260",
+  "title": "Photography",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHOT100",
+   "PHOT135",
+   "PHOT143",
+   "PHOT144",
+   "PHOT150",
+   "PHOT170",
+   "PHOT181",
+   "PHOT205",
+   "PHOT215",
+   "PHOT220",
+   "PHOT230",
+   "PHOT235",
+   "PHOT245",
+   "PHOT255",
+   "PHOT268"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15710",
+   "title": "Photography - Associate of Arts Degree: City",
+   "h1": "Photography - Associate of Arts Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "05262",
+  "title": "French",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FREN101",
+   "FREN102",
+   "FREN201",
+   "FREN202",
+   "FREN210",
+   "FREN211"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15669",
+   "title": "French - Associate of Arts Degree: City",
+   "h1": "French - Associate of Arts Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 8208
+ },
+ {
+  "control_number": "05263",
+  "title": "German",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 5,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05264",
+  "title": "Spanish",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHIC141A",
+   "CHIC141B",
+   "SPAN101",
+   "SPAN102",
+   "SPAN201",
+   "SPAN202",
+   "SPAN210",
+   "SPAN211",
+   "SPAN215",
+   "SPAN216"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15743",
+   "title": "Spanish - Associate of Arts Degree: City",
+   "h1": "Spanish - Associate of Arts Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 13392
+ },
+ {
+  "control_number": "05268",
+  "title": "Early Care and Education",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHIL100",
+   "CHIL101",
+   "CHIL120",
+   "CHIL130",
+   "CHIL133",
+   "CHIL135",
+   "CHIL141",
+   "CHIL150",
+   "CHIL163",
+   "CHIL180",
+   "CHIL193",
+   "CHIL270",
+   "CHIL291A",
+   "CHIL291B",
+   "CHIL291C",
+   "CHIL291D"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15639",
+   "title": "Early Care and Education - Associate of Science Degree: City",
+   "h1": "Early Care and Education - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "05271",
+  "title": "English",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL208",
+   "ENGL210",
+   "ENGL211",
+   "ENGL215",
+   "ENGL216",
+   "ENGL220",
+   "ENGL221",
+   "ENGL245A",
+   "ENGL247A",
+   "ENGL249A",
+   "ENGL252A",
+   "ENGLC1001"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15658",
+   "title": "English - Associate of Arts Degree: City",
+   "h1": "English - Associate of Arts Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "05272",
+  "title": "Communication Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMMC1000",
+   "COMS101",
+   "COMS104",
+   "COMS111",
+   "COMS135",
+   "COMS160",
+   "COMS170",
+   "COMS180",
+   "COMS201"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15767",
+   "title": "Communication Studies - Associate of Arts Degree: City",
+   "h1": "Communication Studies - Associate of Arts Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 12038
+ },
+ {
+  "control_number": "05273",
+  "title": "Mathematics",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CISC179",
+   "MATH150",
+   "MATH151",
+   "MATH245",
+   "MATH252",
+   "MATH254",
+   "MATH255",
+   "PHIL101",
+   "PHYS195",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15689",
+   "title": "Mathematics - Associate of Arts Degree: City",
+   "h1": "Mathematics - Associate of Arts Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 15029
+ },
+ {
+  "control_number": "05275",
+  "title": "Physics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM200",
+   "CHEM200L",
+   "CHEM201",
+   "CHEM201L",
+   "MATH150",
+   "MATH151",
+   "MATH252",
+   "PHYS195",
+   "PHYS196",
+   "PHYS197"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15713",
+   "title": "Physics - Associate of Science Degree: City",
+   "h1": "Physics - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 14861
+ },
+ {
+  "control_number": "05276",
+  "title": "Chemistry",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM200",
+   "CHEM200L",
+   "CHEM201",
+   "CHEM201L",
+   "CHEM231",
+   "CHEM231L",
+   "CHEM233",
+   "CHEM233L",
+   "CHEM251",
+   "MATH150",
+   "MATH151",
+   "MATH252",
+   "PHYS195",
+   "PHYS196"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15761",
+   "title": "Chemistry - Associate of Science Degree: City",
+   "h1": "Chemistry - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "05277",
+  "title": "Psychology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PSYC111",
+   "PSYC137",
+   "PSYC166",
+   "PSYC230",
+   "PSYC245",
+   "PSYC255",
+   "PSYC258",
+   "PSYC260",
+   "PSYC283",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15718",
+   "title": "Psychology - Associate of Arts Degree: City",
+   "h1": "Psychology - Associate of Arts Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 12294
+ },
+ {
+  "control_number": "05285",
+  "title": "Anthropology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH102",
+   "ANTH103",
+   "ANTH104",
+   "ANTH107",
+   "ANTH110",
+   "ANTH115",
+   "ANTH120",
+   "ANTH130",
+   "ANTH140",
+   "ANTH210"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15607",
+   "title": "Anthropology - Associate in Arts for Transfer Degree: City",
+   "h1": "Anthropology - Associate in Arts for Transfer Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "05286",
+  "title": "Black Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05287",
+  "title": "History",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05288",
+  "title": "Geography",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GEOG101",
+   "GEOG101L",
+   "GEOG102",
+   "GEOG104",
+   "GEOG135",
+   "GISG104",
+   "PSYC258",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15673",
+   "title": "Geography - Associate of Science Degree: City",
+   "h1": "Geography - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 12314
+ },
+ {
+  "control_number": "05289",
+  "title": "Political Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "POLI101",
+   "POLI103",
+   "POLI121",
+   "POLI140",
+   "POLI201",
+   "POLSC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15715",
+   "title": "Political Science - Associate of Arts Degree: City",
+   "h1": "Political Science - Associate of Arts Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 10573
+ },
+ {
+  "control_number": "05290",
+  "title": "Sociology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GEND101",
+   "PSYC258",
+   "SOCO101",
+   "SOCO110",
+   "SOCO125",
+   "SOCO145",
+   "SOCO150",
+   "SOCO201",
+   "SOCO220",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15739",
+   "title": "Sociology - Associate of Arts Degree: City",
+   "h1": "Sociology - Associate of Arts Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "05293",
+  "title": "Cosmetology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COSM50L",
+   "COSM60L",
+   "COSM70L",
+   "COSM80L"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15787",
+   "title": "Cosmetology - Associate of Science Degree: City",
+   "h1": "Cosmetology - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 9166
+ },
+ {
+  "control_number": "05295",
+  "title": "Liberal Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "07072",
+  "title": "Personal Trainer",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EXSC242B",
+   "EXSC270",
+   "EXSC280",
+   "EXSC281",
+   "EXSC282",
+   "EXSC283",
+   "EXSC285",
+   "EXSC286",
+   "EXSC288",
+   "NUTR170"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15707",
+   "title": "Personal Trainer - Certificate of Achievement: City",
+   "h1": "Personal Trainer - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 12788
+ },
+ {
+  "control_number": "09442",
+  "title": "Allied Health Track",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL107",
+   "BIOL205",
+   "BIOL230",
+   "BIOL235",
+   "CHEM100",
+   "CHEM100L"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15629",
+   "title": "Allied Health Track - Associate of Science Degree: City",
+   "h1": "Allied Health Track - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 9003
+ },
+ {
+  "control_number": "09443",
+  "title": "Applied Biology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "09449",
+  "title": "Radio and Podcast",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAM106",
+   "FJMP101",
+   "FJMP112",
+   "FJMP120",
+   "FJMP130",
+   "FJMP131",
+   "FJMP132",
+   "FJMP141",
+   "FJMP142",
+   "FJMP242A",
+   "FJMP242B"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15720",
+   "title": "Radio and Podcast - Associate of Science Degree: City",
+   "h1": "Radio and Podcast - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "09450",
+  "title": "Media Production",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAM106",
+   "FJMP101",
+   "FJMP110",
+   "FJMP111",
+   "FJMP112",
+   "FJMP120",
+   "FJMP122",
+   "FJMP123",
+   "FJMP124",
+   "FJMP130",
+   "FJMP131",
+   "FJMP132",
+   "FJMP133",
+   "FJMP134",
+   "FJMP141",
+   "FJMP142",
+   "FJMP143",
+   "FJMP144",
+   "FJMP145",
+   "FJMP146",
+   "FJMP211",
+   "FJMP222",
+   "FJMP232A",
+   "FJMP233A",
+   "FJMP242A"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15756",
+   "title": "Media Production - Associate of Science Degree: City",
+   "h1": "Media Production - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "09451",
+  "title": "Journalism",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FJMP101",
+   "FJMP102",
+   "FJMP130",
+   "FJMP131",
+   "FJMP132",
+   "FJMP133",
+   "FJMP134",
+   "FJMP142",
+   "FJMP143",
+   "FJMP144",
+   "FJMP232A",
+   "FJMP232B",
+   "FJMP233A",
+   "FJMP233B",
+   "PHOT215"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15622",
+   "title": "Journalism - Associate of Science Degree: City",
+   "h1": "Journalism - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "09455",
+  "title": "Electronic Communication Systems",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELDT123",
+   "ELDT123L",
+   "ELDT124",
+   "ELDT124L",
+   "ELDT125",
+   "ELDT125L",
+   "ELDT126",
+   "ELDT126L",
+   "ELDT143",
+   "ELDT143L",
+   "ELDT144",
+   "ELDT144L",
+   "ELDT227",
+   "ELDT227L",
+   "ELDT228",
+   "ELDT228L",
+   "ELDT229",
+   "ELDT229L"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15647",
+   "title": "Electronic Communication Systems - Associate of Science Degree: City",
+   "h1": "Electronic Communication Systems - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "09456",
+  "title": "Electronic Microprocessor/Microcontroller Design",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELDT123",
+   "ELDT123L",
+   "ELDT124",
+   "ELDT124L",
+   "ELDT125",
+   "ELDT125L",
+   "ELDT126",
+   "ELDT126L",
+   "ELDT143",
+   "ELDT143L",
+   "ELDT144",
+   "ELDT144L",
+   "ELDT225",
+   "ELDT225L",
+   "ELDT232",
+   "ELDT232L"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15649",
+   "title": "Electronic Microprocessor/Microcontroller Design - Associate of Science Degree: City",
+   "h1": "Electronic Microprocessor/Microcontroller Design - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "09457",
+  "title": "San Diego Gas and Electric Company Lineman Apprenticeship",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SDGE302",
+   "SDGE304",
+   "SDGE310",
+   "SDGE312",
+   "SDGE320",
+   "SDGE322"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15725",
+   "title": "San Diego Gas and Electric Company Lineman Apprenticeship - Associate of Science Degree: City",
+   "h1": "San Diego Gas and Electric Company Lineman Apprenticeship - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 11274
+ },
+ {
+  "control_number": "09459",
+  "title": "Electricity",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELCT111",
+   "ELCT111L",
+   "ELCT121",
+   "ELCT121L",
+   "ELCT131",
+   "ELCT131L",
+   "ELCT141",
+   "ELCT141L"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15644",
+   "title": "Electricity - Associate of Science Degree: City",
+   "h1": "Electricity - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 11203
+ },
+ {
+  "control_number": "09460",
+  "title": "Electrical Control Systems Option",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELCT111",
+   "ELCT111L",
+   "ELCT121",
+   "ELCT121L",
+   "ELCT131",
+   "ELCT131L",
+   "ELCT141",
+   "ELCT141L",
+   "ELCT200",
+   "ELCT200L"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15642",
+   "title": "Electrical Control Systems Option - Certificate of Achievement: City",
+   "h1": "Electrical Control Systems Option - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 13189
+ },
+ {
+  "control_number": "09461",
+  "title": "San Diego Trolley Inc Wayside Lineman Apprenticeship",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELCT111",
+   "ELCT111L",
+   "ELCT121",
+   "ELCT121L",
+   "ELCT131",
+   "ELCT131L",
+   "ELCT141",
+   "ELCT141L",
+   "ELDT123",
+   "ELDT123L",
+   "MATH98"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15733",
+   "title": "San Diego Trolley Inc Wayside Lineman Apprenticeship - Associate of Science Degree: City",
+   "h1": "San Diego Trolley Inc Wayside Lineman Apprenticeship - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "09462",
+  "title": "Heating, Ventilation, and Air Conditioning Systems Design",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.6,
+  "codes_found": [
+   "AIRE122",
+   "AIRE123",
+   "AIRE124",
+   "AIRE125",
+   "AIRE126",
+   "AIRE127"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15705",
+   "title": "Operating and Maintenance Engineers - Certificate of Achievement: City",
+   "h1": "Operating and Maintenance Engineers - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "09468",
+  "title": "Computer Numerical Control (CNC) Technology Option",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MACT140",
+   "MACT150",
+   "MACT160M",
+   "MACT170",
+   "MACT171",
+   "MACT172"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15781",
+   "title": "Computer Numerical Control (CNC) Technology Option - Certificate of Achievement: City",
+   "h1": "Computer Numerical Control (CNC) Technology Option - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 7173
+ },
+ {
+  "control_number": "09469",
+  "title": "Solar Turbines, Incorporated Apprenticeship",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM100",
+   "CHEM100L",
+   "COMMC1000",
+   "ENGE151",
+   "ENGLC1000",
+   "MACT150",
+   "MATH98",
+   "MFET105",
+   "MFET115",
+   "MFET120"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15740",
+   "title": "Solar Turbines, Incorporated Apprenticeship - Associate of Science Degree: City",
+   "h1": "Solar Turbines, Incorporated Apprenticeship - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "09470",
+  "title": "Three-Dimensional Art",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTF104",
+   "ARTF150A",
+   "ARTF151",
+   "ARTF155A",
+   "ARTF170A",
+   "ARTF170B",
+   "ARTF170C",
+   "ARTF175A",
+   "ARTF175B",
+   "ARTF175C",
+   "ARTF179A",
+   "ARTF195A",
+   "ARTF195B",
+   "ARTF195C",
+   "ARTF196",
+   "ARTF197A",
+   "ARTF197B",
+   "ARTF206",
+   "ARTF207A",
+   "ARTF207B",
+   "ARTF212",
+   "ARTF260",
+   "ARTHC1100",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15752",
+   "title": "Three-Dimensional Art - Associate of Arts Degree: City",
+   "h1": "Three-Dimensional Art - Associate of Arts Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "09471",
+  "title": "Musical Theatre",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DANC112A",
+   "DANC117A",
+   "DANC137A",
+   "DRAM105",
+   "DRAM123",
+   "DRAM132",
+   "DRAM133",
+   "DRAM134",
+   "DRAM143",
+   "DRAM165",
+   "DRAM205",
+   "MUSI134A"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15700",
+   "title": "Musical Theatre - Associate of Arts Degree: City",
+   "h1": "Musical Theatre - Associate of Arts Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 14186
+ },
+ {
+  "control_number": "09473",
+  "title": "Philosophy",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHIL100",
+   "PHIL101",
+   "PHIL102A",
+   "PHIL102B",
+   "PHIL103",
+   "PHIL104A",
+   "PHIL104B",
+   "PHIL106",
+   "PHIL107",
+   "PHIL109",
+   "PHIL110",
+   "PHIL111",
+   "PHIL125",
+   "PHIL126",
+   "PHIL130",
+   "PHIL131",
+   "PHIL205",
+   "PHIL290"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15709",
+   "title": "Philosophy - Associate of Arts Degree: City",
+   "h1": "Philosophy - Associate of Arts Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "09474",
+  "title": "Applied Mathematics",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CISC179",
+   "CISC190",
+   "CISC192",
+   "MATH150",
+   "MATH151",
+   "MATH245",
+   "MATH252",
+   "MATH254",
+   "MATH255",
+   "PHYS195",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15609",
+   "title": "Applied Mathematics - Associate of Arts Degree",
+   "h1": "Applied Mathematics - Associate of Arts Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "09475",
+  "title": "Astronomy",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASTR101",
+   "ASTR109",
+   "ASTR111",
+   "MATH150",
+   "MATH151",
+   "MATH252",
+   "PHYS195",
+   "PHYS196",
+   "PHYS197"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15614",
+   "title": "Astronomy - Associate of Science Degree: City",
+   "h1": "Astronomy - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 11754
+ },
+ {
+  "control_number": "09476",
+  "title": "Geology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "09486",
+  "title": "Alcohol and Other Drug Studies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AODS150",
+   "AODS153",
+   "AODS154",
+   "AODS155",
+   "AODS156",
+   "AODS157",
+   "AODS159",
+   "AODS160",
+   "AODS162",
+   "AODS164",
+   "AODS270",
+   "PSYC161",
+   "PSYCC1000",
+   "SOCO101"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15475",
+   "title": "Alcohol and Other Drug Studies - Associate of Science Degree: City",
+   "h1": "Alcohol and Other Drug Studies - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "09487",
+  "title": "Graphic Design",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DSGN100",
+   "DSGN102",
+   "DSGN104",
+   "DSGN106",
+   "DSGN120",
+   "DSGN122",
+   "DSGN124",
+   "DSGN143",
+   "DSGN153",
+   "DSGN202",
+   "DSGN203",
+   "DSGN206",
+   "DSGN210",
+   "DSGN213",
+   "DSGN216A",
+   "DSGN216B",
+   "DSGN216C",
+   "DSGN218",
+   "DSGN248",
+   "DSGN258"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15677",
+   "title": "Graphic Design - Associate of Arts Degree: City",
+   "h1": "Graphic Design - Associate of Arts Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "09488",
+  "title": "Italian",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ITAL101",
+   "ITAL102",
+   "ITAL201",
+   "ITAL210",
+   "ITAL211"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15803",
+   "title": "Italian - Associate of Arts Degree: City",
+   "h1": "Italian - Associate of Arts Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 6548
+ },
+ {
+  "control_number": "09493",
+  "title": "Chicana and Chicano Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHIC110A",
+   "CHIC110B",
+   "CHIC130",
+   "CHIC135",
+   "CHIC138",
+   "CHIC140",
+   "CHIC141A",
+   "CHIC141B",
+   "CHIC150",
+   "CHIC170",
+   "CHIC190",
+   "CHIC201",
+   "CHIC210",
+   "CHIC230",
+   "CHIC250"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15762",
+   "title": "Chicana and Chicano Studies - Associate of Arts Degree: City",
+   "h1": "Chicana and Chicano Studies - Associate of Arts Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "12091",
+  "title": "Child Development: Associate Teacher",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHIL100",
+   "CHIL101",
+   "CHIL130",
+   "CHIL133",
+   "CHIL135",
+   "CHIL141",
+   "CHIL163",
+   "CHIL180",
+   "CHIL270",
+   "CHIL291A",
+   "CHIL291B",
+   "CHIL291C",
+   "CHIL291D"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15763",
+   "title": "Child Development: Associate Teacher - Certificate of Achievement: City",
+   "h1": "Child Development: Associate Teacher - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "12092",
+  "title": "Child Development: Teacher",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHIL100",
+   "CHIL101",
+   "CHIL120",
+   "CHIL130",
+   "CHIL133",
+   "CHIL135",
+   "CHIL141",
+   "CHIL150",
+   "CHIL163",
+   "CHIL180",
+   "CHIL270"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15765",
+   "title": "Child Development: Teacher - Certificate of Achievement: City",
+   "h1": "Child Development: Teacher - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 14318
+ },
+ {
+  "control_number": "12093",
+  "title": "Child Development: Master Teacher",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHIL100",
+   "CHIL101",
+   "CHIL120",
+   "CHIL130",
+   "CHIL133",
+   "CHIL135",
+   "CHIL141",
+   "CHIL150",
+   "CHIL163",
+   "CHIL166",
+   "CHIL175",
+   "CHIL176",
+   "CHIL180",
+   "CHIL202",
+   "CHIL210",
+   "CHIL215",
+   "CHIL291A",
+   "CHIL291B",
+   "CHIL291C",
+   "CHIL291D",
+   "EXSC240",
+   "MATH210A",
+   "MATH210B",
+   "MATH212",
+   "MUSI110"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15764",
+   "title": "Child Development: Master Teacher - Certificate of Achievement: City",
+   "h1": "Child Development: Master Teacher - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "15405",
+  "title": "Communications Technician Apprenticeship",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 16,
+  "text_chars": 0
+ },
+ {
+  "control_number": "15818",
+  "title": "Honeywell Tool and Die Apprenticeship",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "16748",
+  "title": "Dance",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DANC111",
+   "DANC112A",
+   "DANC112B",
+   "DANC112C",
+   "DANC112D",
+   "DANC117A",
+   "DANC117B",
+   "DANC117C",
+   "DANC117D",
+   "DANC122A",
+   "DANC122B",
+   "DANC122C",
+   "DANC122D",
+   "DANC127",
+   "DANC130A",
+   "DANC137A",
+   "DANC137B",
+   "DANC137C",
+   "DANC137D",
+   "DANC142A",
+   "DANC142B",
+   "DANC142C",
+   "DANC142D",
+   "DANC150A",
+   "DANC151A",
+   "DANC152A",
+   "DANC153A",
+   "DANC160A",
+   "DANC160B",
+   "DANC176A",
+   "DANC176B",
+   "DANC178A",
+   "DANC178B",
+   "DANC179A",
+   "DANC179B",
+   "DANC180A",
+   "DANC180B",
+   "DANC181",
+   "DANC183",
+   "DANC253",
+   "DANC261A",
+   "DANC261B",
+   "DANC261C",
+   "DANC261D",
+   "DANC271A",
+   "DANC271B",
+   "DANC271C",
+   "DANC271D"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15822",
+   "title": "Dance - Associate of Arts Degree: City",
+   "h1": "Dance - Associate of Arts Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 48,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "16967",
+  "title": "Electronics Manufacturing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MFET101",
+   "MFET105",
+   "MFET107D",
+   "MFET107G",
+   "MFET107H",
+   "MFET110",
+   "MFET114",
+   "MFET115",
+   "MFET205",
+   "MFET210",
+   "MFET215",
+   "MFET215L",
+   "MFET230",
+   "MFET240"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15652",
+   "title": "Electronics Manufacturing - Certificate of Achievement: City",
+   "h1": "Electronics Manufacturing - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "16968",
+  "title": "Fabrication Manufacturing",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MACT150",
+   "MACT160M",
+   "MFET101",
+   "MFET105",
+   "MFET110",
+   "MFET114",
+   "MFET115",
+   "MFET120",
+   "MFET150",
+   "MFET230",
+   "MFET240"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15662",
+   "title": "Fabrication Manufacturing - Certificate of Achievement: City",
+   "h1": "Fabrication Manufacturing - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 15395
+ },
+ {
+  "control_number": "17972",
+  "title": "Manufacturing Engineering Technology - Option: Electronics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM100",
+   "CHEM100L",
+   "MFET101",
+   "MFET105",
+   "MFET107D",
+   "MFET107G",
+   "MFET107H",
+   "MFET110",
+   "MFET114",
+   "MFET115",
+   "MFET205",
+   "MFET210",
+   "MFET215",
+   "MFET215L",
+   "MFET230",
+   "MFET240",
+   "PHYS100"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15819",
+   "title": "Manufacturing Engineering Technology - Option: Electronics - Associate of Science Degree: City",
+   "h1": "Manufacturing Engineering Technology - Option: Electronics - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "17976",
+  "title": "Manufacturing Engineering Technology - Option: Fabrication",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM100",
+   "CHEM100L",
+   "MACT150",
+   "MACT160M",
+   "MFET101",
+   "MFET105",
+   "MFET110",
+   "MFET114",
+   "MFET115",
+   "MFET120",
+   "MFET150",
+   "MFET230",
+   "MFET240",
+   "PHYS100"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15820",
+   "title": "Manufacturing Engineering Technology - Option: Fabrication - Associate of Science Degree: City",
+   "h1": "Manufacturing Engineering Technology - Option: Fabrication - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "17996",
+  "title": "CSU General Education: Breadth",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "17997",
+  "title": "IGETC",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18099",
+  "title": "Liberal Arts and Sciences: Visual and Performing Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTF100",
+   "ARTF104",
+   "ARTF109",
+   "ARTF115",
+   "ARTF125",
+   "ARTF150A",
+   "ARTF151",
+   "ARTF155A",
+   "ARTF155B",
+   "ARTF156A",
+   "ARTF165A",
+   "ARTF165B",
+   "ARTF170A",
+   "ARTF170B",
+   "ARTF175A",
+   "ARTF175B",
+   "ARTF195A",
+   "ARTF195B",
+   "ARTF196",
+   "ARTF197A",
+   "ARTF197B",
+   "ARTF198A",
+   "ARTF205A",
+   "ARTF206",
+   "ARTF207A",
+   "ARTF207B",
+   "ARTF210A",
+   "ARTF210B",
+   "ARTF212",
+   "ARTHC1100",
+   "ARTHC1200",
+   "DANC111",
+   "DANC112A",
+   "DANC112B",
+   "DANC112C",
+   "DANC112D",
+   "DANC117A",
+   "DANC117B",
+   "DANC117C",
+   "DANC117D",
+   "DANC122A",
+   "DANC122B",
+   "DANC122C",
+   "DANC122D",
+   "DANC127",
+   "DANC130A",
+   "DANC137A",
+   "DANC137B",
+   "DANC137C",
+   "DANC137D",
+   "DANC142A",
+   "DANC142B",
+   "DANC142C",
+   "DANC142D",
+   "DANC145A",
+   "DANC145B",
+   "DANC150A",
+   "DANC151A",
+   "DANC152A",
+   "DANC153A",
+   "DANC176A",
+   "DANC176B",
+   "DANC178A",
+   "DANC178B",
+   "DANC179A",
+   "DANC179B",
+   "DANC180A",
+   "DANC180B",
+   "DANC181",
+   "DANC183",
+   "DANC253",
+   "DANC261A",
+   "DANC261B",
+   "DANC261C",
+   "DANC261D",
+   "DANC271A",
+   "DANC271B",
+   "DANC271C",
+   "DANC271D",
+   "DRAM103",
+   "DRAM105",
+   "DRAM107",
+   "DRAM108",
+   "DRAM109",
+   "DRAM123",
+   "DRAM124",
+   "DRAM126",
+   "DRAM132",
+   "DRAM133",
+   "DRAM134",
+   "DRAM136",
+   "DRAM137",
+   "DRAM143",
+   "DRAM165",
+   "DRAM240A",
+   "DRAM240B",
+   "DRAM242A",
+   "DRAM242B",
+   "MUSC104",
+   "MUSC118",
+   "MUSC160",
+   "MUSC162",
+   "MUSC170A",
+   "MUSC220A",
+   "MUSC252",
+   "MUSC260",
+   "MUSC262",
+   "MUSI108"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15813",
+   "title": "Liberal Arts and Sciences: Visual and Performing Arts - Associate of Arts Degree: City",
+   "h1": "Liberal Arts and Sciences: Visual and Performing Arts - Associate of Arts Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 108,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "18100",
+  "title": "Liberal Arts and Sciences: Language Arts and Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AMSL120",
+   "AMSL121",
+   "AMSL150",
+   "AMSL220",
+   "AMSL221",
+   "ARAB101",
+   "ARAB102",
+   "BLAS110",
+   "BLAS120",
+   "BLAS155",
+   "CHIC130",
+   "CHIC135",
+   "CHIC190",
+   "CHIC210",
+   "COMMC1000",
+   "COMS101",
+   "COMS104",
+   "COMS111",
+   "COMS135",
+   "COMS160",
+   "COMS170",
+   "COMS180",
+   "COMS201",
+   "ENGL105",
+   "ENGL202",
+   "ENGL208",
+   "ENGL209",
+   "ENGL210",
+   "ENGL211",
+   "ENGL215",
+   "ENGL216",
+   "ENGL220",
+   "ENGL221",
+   "ENGL237",
+   "ENGL238",
+   "ENGL240",
+   "ENGL245A",
+   "ENGL247A",
+   "ENGL249A",
+   "ENGL252A",
+   "ENGLC1000",
+   "ENGLC1001",
+   "FREN101",
+   "FREN102",
+   "FREN201",
+   "FREN202",
+   "HIST100",
+   "HIST101",
+   "HIST105",
+   "HIST106",
+   "HIST120",
+   "HIST121",
+   "HUMA101",
+   "HUMA102",
+   "HUMA103",
+   "HUMA106",
+   "HUMA201",
+   "ITAL101",
+   "ITAL102",
+   "ITAL201",
+   "PHIL100",
+   "PHIL101",
+   "PHIL102A",
+   "PHIL102B",
+   "PHIL104A",
+   "PHIL104B",
+   "PHIL105",
+   "PHIL106",
+   "PHIL107",
+   "PHIL108",
+   "PHIL111",
+   "PHIL125",
+   "PHIL126",
+   "PHIL130",
+   "SPAN101",
+   "SPAN102",
+   "SPAN201",
+   "SPAN202",
+   "SPAN215",
+   "SPAN216"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15809",
+   "title": "Liberal Arts and Sciences: Language Arts and Humanities - Associate of Arts Degree: City",
+   "h1": "Liberal Arts and Sciences: Language Arts and Humanities - Associate of Arts Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 80,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "18101",
+  "title": "Liberal Arts and Sciences: Scientific Studies in Biological Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL101",
+   "BIOL107",
+   "BIOL111",
+   "BIOL130",
+   "BIOL180",
+   "BIOL205",
+   "BIOL210A",
+   "BIOL210B",
+   "BIOL230",
+   "BIOL232",
+   "BIOL235",
+   "BUSE115",
+   "CHEM130",
+   "CHEM130L",
+   "CHEM200",
+   "CHEM200L",
+   "CHEM201",
+   "CHEM201L",
+   "CHEM231",
+   "CHEM231L",
+   "CHEM233",
+   "CHEM233L",
+   "MATH115",
+   "MATH121",
+   "MATH122",
+   "MATH150",
+   "MATH151",
+   "PHYS125",
+   "PHYS126",
+   "PHYS180A",
+   "PHYS180B",
+   "PHYS181A",
+   "PHYS181B",
+   "PHYS195",
+   "PHYS196",
+   "PHYS197",
+   "PSYC255",
+   "PSYC258",
+   "PSYC259",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15810",
+   "title": "Liberal Arts and Sciences: Scientific Studies in Biological Science - Associate of Arts Degree: City",
+   "h1": "Liberal Arts and Sciences: Scientific Studies in Biological Science - Associate of Arts Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 40,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "18102",
+  "title": "Liberal Arts and Sciences: Scientific Studies Mathematics and Pre-Engineering",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM200",
+   "CHEM200L",
+   "CHEM201",
+   "CHEM201L",
+   "CISC179",
+   "CISC181",
+   "CISC186",
+   "CISC187",
+   "CISC190",
+   "CISC192",
+   "CISC205",
+   "CISC220",
+   "ELCT111",
+   "ELCT111L",
+   "ELCT121",
+   "ELCT121L",
+   "ELDT123",
+   "ELDT123L",
+   "ELDT124",
+   "ELDT124L",
+   "ELDT125",
+   "ELDT125L",
+   "ELDT143",
+   "ELDT143L",
+   "ENGE101",
+   "ENGE108",
+   "ENGE111",
+   "ENGE116",
+   "ENGE151",
+   "ENGE152",
+   "ENGE200",
+   "ENGE210",
+   "ENGE240",
+   "ENGE250",
+   "ENGE260",
+   "MATH115",
+   "MATH121",
+   "MATH122",
+   "MATH141",
+   "MATH150",
+   "MATH151",
+   "MATH245",
+   "MATH252",
+   "MATH254",
+   "MATH255",
+   "MFET101",
+   "MFET110",
+   "MFET120",
+   "MFET210",
+   "PHYS180A",
+   "PHYS180B",
+   "PHYS181A",
+   "PHYS181B",
+   "PHYS195",
+   "PHYS196",
+   "PHYS197",
+   "PSYC258",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15811",
+   "title": "Liberal Arts and Sciences: Scientific Studies Mathematics and Pre-Engineering - Associate of Arts Degree: City",
+   "h1": "Liberal Arts and Sciences: Scientific Studies Mathematics and Pre-Engineering - Associate of Arts Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 58,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "18103",
+  "title": "Liberal Arts and Sciences: Scientific Studies Physical and Earth Sciences Specialization",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGRI100",
+   "ASTR101",
+   "ASTR109",
+   "ASTR111",
+   "CHEM100",
+   "CHEM100L",
+   "CHEM111",
+   "CHEM111L",
+   "CHEM130",
+   "CHEM130L",
+   "CHEM152",
+   "CHEM152L",
+   "CHEM200",
+   "CHEM200L",
+   "CHEM201",
+   "CHEM201L",
+   "CHEM231",
+   "CHEM231L",
+   "CHEM233",
+   "CHEM233L",
+   "CHEM251",
+   "CISC181",
+   "CISC190",
+   "CISC192",
+   "GEOG101",
+   "GEOG101L",
+   "GEOG102",
+   "GEOG104",
+   "GEOL100",
+   "GEOL101",
+   "GEOL104",
+   "GISG104",
+   "GISG110",
+   "MATH150",
+   "MATH151",
+   "MATH252",
+   "PHYN100",
+   "PHYN101",
+   "PHYS100",
+   "PHYS125",
+   "PHYS126",
+   "PHYS180A",
+   "PHYS180B",
+   "PHYS181A",
+   "PHYS181B",
+   "PHYS195",
+   "PHYS196",
+   "PHYS197",
+   "PSYC258",
+   "STATC1000",
+   "SUST101"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15972",
+   "title": "Liberal Arts and Sciences: Scientific Studies Physical and Earth Sciences Specialization - Associate of Arts Degree: City",
+   "h1": "Liberal Arts and Sciences: Scientific Studies Physical and Earth Sciences Specialization - Associate of Arts Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 51,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "18107",
+  "title": "Liberal Arts and Sciences: Social and Behavioral Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJU101",
+   "ADJU102",
+   "AMSL220",
+   "ANTH102",
+   "ANTH103",
+   "ANTH104",
+   "ANTH107",
+   "ANTH115",
+   "ANTH210",
+   "ARAB201A",
+   "BLAS100",
+   "BLAS104",
+   "BLAS115",
+   "BLAS116",
+   "BLAS120",
+   "BLAS130",
+   "BLAS135",
+   "BLAS140A",
+   "BLAS140B",
+   "BLAS145A",
+   "BLAS145B",
+   "BLAS150",
+   "BLAS155",
+   "BLAS165",
+   "CHIC110A",
+   "CHIC110B",
+   "CHIC130",
+   "CHIC135",
+   "CHIC138",
+   "CHIC141A",
+   "CHIC141B",
+   "CHIC150",
+   "CHIC170",
+   "CHIC190",
+   "CHIC201",
+   "CHIC210",
+   "CHIL101",
+   "CHIL133",
+   "CHIL135",
+   "CHIL141",
+   "CHIL151",
+   "CHIL161",
+   "CHIL175",
+   "CHIL176",
+   "CHIL180",
+   "CHIL202",
+   "CHIL210",
+   "CISC181",
+   "CISC190",
+   "FREN201",
+   "GEND101",
+   "GEOG102",
+   "GEOG104",
+   "GISG104",
+   "GISG110",
+   "HIST100",
+   "HIST101",
+   "HIST105",
+   "HIST106",
+   "HIST109",
+   "HIST110",
+   "HIST115A",
+   "HIST115B",
+   "HIST120",
+   "HIST121",
+   "HIST123",
+   "HUMS101",
+   "HUMS110",
+   "HUMS120",
+   "ITAL201",
+   "LIBS101",
+   "PEAC101",
+   "POLI101",
+   "POLI103",
+   "POLI121",
+   "POLI124",
+   "POLI140",
+   "POLI201",
+   "POLSC1000",
+   "PSYC135",
+   "PSYC137",
+   "PSYC161",
+   "PSYC166",
+   "PSYC230",
+   "PSYC245",
+   "PSYC255",
+   "PSYC258",
+   "PSYC260",
+   "PSYC283",
+   "PSYCC1000",
+   "SOCO101",
+   "SOCO110",
+   "SOCO125",
+   "SOCO145",
+   "SOCO150",
+   "SOCO201",
+   "SOCO220",
+   "SOCO223",
+   "SPAN201",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15812",
+   "title": "Liberal Arts and Sciences: Social and Behavioral Sciences - Associate of Arts Degree: City",
+   "h1": "Liberal Arts and Sciences: Social and Behavioral Sciences - Associate of Arts Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 100,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "18127",
+  "title": "Liberal Arts and Sciences: Elementary Multiple Subject Teaching Preparation",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 59,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19254",
+  "title": "San Diego Transit Electronic Technician Apprenticeship",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELDT123",
+   "ELDT123L",
+   "ELDT124",
+   "ELDT124L",
+   "ELDT125",
+   "ELDT125L",
+   "ELDT143",
+   "ELDT143L",
+   "ELDT144",
+   "ELDT144L",
+   "ELDT228",
+   "ELDT228L",
+   "MATH96"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15728",
+   "title": "San Diego Transit Electronic Technician Apprenticeship - Certificate of Achievement: City",
+   "h1": "San Diego Transit Electronic Technician Apprenticeship - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "19255",
+  "title": "San Diego Transit Electronic Technician Apprenticeship",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELDT123",
+   "ELDT123L",
+   "ELDT124",
+   "ELDT124L",
+   "ELDT125",
+   "ELDT125L",
+   "ELDT143",
+   "ELDT143L",
+   "ELDT144",
+   "ELDT144L",
+   "ELDT228",
+   "ELDT228L",
+   "MATH96"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15727",
+   "title": "San Diego Transit Electronic Technician Apprenticeship - Associate of Science Degree: City",
+   "h1": "San Diego Transit Electronic Technician Apprenticeship - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "19266",
+  "title": "Real Estate Broker",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19403",
+  "title": "HVAC/R Maintenance and Construction",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AIRE100",
+   "AIRE103",
+   "AIRE122",
+   "AIRE123",
+   "AIRE124",
+   "AIRE125",
+   "AIRE126",
+   "AIRE127",
+   "AIRE132",
+   "AIRE133",
+   "AIRE60"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15626",
+   "title": "HVAC/R Maintenance and Construction - Certificate of Achievement: City",
+   "h1": "HVAC/R Maintenance and Construction - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 14229
+ },
+ {
+  "control_number": "19710",
+  "title": "Real Estate",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 18,
+  "text_chars": 0
+ },
+ {
+  "control_number": "22324",
+  "title": "Small Business Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT128A",
+   "ACCT128B",
+   "BUSE102",
+   "BUSE119",
+   "BUSE150",
+   "BUSE155",
+   "BUSE157",
+   "BUSE201",
+   "BUSE270",
+   "BUSE92",
+   "MARK100",
+   "MARK105",
+   "MARK130"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15736",
+   "title": "Small Business Management - Certificate of Achievement: City",
+   "h1": "Small Business Management - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 15416
+ },
+ {
+  "control_number": "22326",
+  "title": "Labor Studies",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LABR100",
+   "LABR102",
+   "LABR107",
+   "LABR108"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15806",
+   "title": "Labor Studies - Certificate of Achievement: City",
+   "h1": "Labor Studies - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 7363
+ },
+ {
+  "control_number": "22328",
+  "title": "Electronic Microprocessor/Microcontroller Design",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELDT123",
+   "ELDT123L",
+   "ELDT124",
+   "ELDT124L",
+   "ELDT125",
+   "ELDT125L",
+   "ELDT126",
+   "ELDT126L",
+   "ELDT143",
+   "ELDT143L",
+   "ELDT144",
+   "ELDT144L",
+   "ELDT225",
+   "ELDT225L",
+   "ELDT232",
+   "ELDT232L"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15650",
+   "title": "Electronic Microprocessor/Microcontroller Design - Certificate of Achievement: City",
+   "h1": "Electronic Microprocessor/Microcontroller Design - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "22329",
+  "title": "Electronic Communication Systems",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELDT123",
+   "ELDT123L",
+   "ELDT124",
+   "ELDT124L",
+   "ELDT125",
+   "ELDT125L",
+   "ELDT126",
+   "ELDT126L",
+   "ELDT143",
+   "ELDT143L",
+   "ELDT144",
+   "ELDT144L",
+   "ELDT227",
+   "ELDT227L",
+   "ELDT228",
+   "ELDT228L",
+   "ELDT229",
+   "ELDT229L"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15648",
+   "title": "Electronic Communication Systems - Certificate of Achievement: City",
+   "h1": "Electronic Communication Systems - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "22331",
+  "title": "Electricity",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELCT111",
+   "ELCT111L",
+   "ELCT121",
+   "ELCT121L",
+   "ELCT131",
+   "ELCT131L",
+   "ELCT141",
+   "ELCT141L"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15645",
+   "title": "Electricity - Certificate of Achievement: City",
+   "h1": "Electricity - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 11110
+ },
+ {
+  "control_number": "22332",
+  "title": "Lineman",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SDGE90",
+   "SDGE91",
+   "SDGE92",
+   "SDGE93",
+   "SDGE94",
+   "SDGE95"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15816",
+   "title": "Lineman - Associate of Science Degree: City",
+   "h1": "Lineman - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 7926
+ },
+ {
+  "control_number": "22333",
+  "title": "Communications Technician Apprenticeship",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "ELDT123",
+   "ELDT123L",
+   "ELDT124",
+   "ELDT124L",
+   "ELDT143",
+   "ELDT143L",
+   "ELDT144",
+   "ELDT144L"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15651",
+   "title": "Electronics - Certificate of Achievement: City",
+   "h1": "Electronics - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 15230
+ },
+ {
+  "control_number": "22334",
+  "title": "San Diego Gas and Electric Company Lineman Apprenticeship",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SDGE302",
+   "SDGE304",
+   "SDGE310",
+   "SDGE312",
+   "SDGE320",
+   "SDGE322"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15726",
+   "title": "San Diego Gas and Electric Company Lineman Apprenticeship - Certificate of Achievement: City",
+   "h1": "San Diego Gas and Electric Company Lineman Apprenticeship - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 11181
+ },
+ {
+  "control_number": "22337",
+  "title": "San Diego Trolley Inc Wayside Lineman Apprenticeship",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELCT111",
+   "ELCT111L",
+   "ELCT121",
+   "ELCT121L",
+   "ELCT131",
+   "ELCT131L",
+   "ELCT141",
+   "ELCT141L",
+   "ELDT123",
+   "ELDT123L",
+   "MATH98"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15734",
+   "title": "San Diego Trolley Inc Wayside Lineman Apprenticeship - Certificate of Achievement: City",
+   "h1": "San Diego Trolley Inc Wayside Lineman Apprenticeship - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "22352",
+  "title": "Honeywell Tool and Die Apprenticeship",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "ENGE151",
+   "ENGLC1000",
+   "MFET105"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15821",
+   "title": "Manufacturing Fundamentals - Certificate of Performance: City",
+   "h1": "Manufacturing Fundamentals - Certificate of Performance: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 11743
+ },
+ {
+  "control_number": "22353",
+  "title": "Computer Aided Manufacturing (CAM) Option",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MACT140",
+   "MACT150",
+   "MACT161M",
+   "MACT162M",
+   "MACT170",
+   "MACT171",
+   "MACT172",
+   "MACT180M",
+   "MACT181M",
+   "MACT182M"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15779",
+   "title": "Computer Aided Manufacturing (CAM) Option - Certificate of Achievement: City",
+   "h1": "Computer Aided Manufacturing (CAM) Option - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 12760
+ },
+ {
+  "control_number": "22358",
+  "title": "Solar Turbines, Incorporated Apprenticeship",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM100",
+   "CHEM100L",
+   "COMMC1000",
+   "ENGE151",
+   "ENGLC1000",
+   "MACT150",
+   "MATH98",
+   "MFET105",
+   "MFET115",
+   "MFET120"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15741",
+   "title": "Solar Turbines, Incorporated Apprenticeship - Certificate of Achievement: City",
+   "h1": "Solar Turbines, Incorporated Apprenticeship - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "22360",
+  "title": "Photography",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHOT100",
+   "PHOT135",
+   "PHOT143",
+   "PHOT144",
+   "PHOT150",
+   "PHOT170",
+   "PHOT181",
+   "PHOT205",
+   "PHOT215",
+   "PHOT220",
+   "PHOT230",
+   "PHOT235",
+   "PHOT245",
+   "PHOT255",
+   "PHOT268"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15667",
+   "title": "Digital Photography - Certificate of Achievement: City",
+   "h1": "Digital Photography - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "22361",
+  "title": "Graphic Design",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DSGN100",
+   "DSGN102",
+   "DSGN104",
+   "DSGN106",
+   "DSGN120",
+   "DSGN122",
+   "DSGN124",
+   "DSGN143",
+   "DSGN153",
+   "DSGN202",
+   "DSGN203",
+   "DSGN206",
+   "DSGN210",
+   "DSGN213",
+   "DSGN216A",
+   "DSGN216B",
+   "DSGN216C",
+   "DSGN218",
+   "DSGN248",
+   "DSGN258"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15678",
+   "title": "Graphic Design - Certificate of Achievement: City",
+   "h1": "Graphic Design - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "22365",
+  "title": "Alcohol and Other Drug Studies",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AODS150",
+   "AODS153",
+   "AODS154",
+   "AODS155",
+   "AODS156",
+   "AODS157",
+   "AODS159",
+   "AODS160",
+   "AODS162",
+   "AODS164",
+   "AODS270",
+   "PSYC161",
+   "PSYCC1000",
+   "SOCO101"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15628",
+   "title": "Alcohol and Other Drug Studies - Certificate of Achievement: City",
+   "h1": "Alcohol and Other Drug Studies - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "22367",
+  "title": "Cosmetology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COSM50L",
+   "COSM60L",
+   "COSM70L",
+   "COSM80L"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15788",
+   "title": "Cosmetology - Certificate of Achievement: City",
+   "h1": "Cosmetology - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 8758
+ },
+ {
+  "control_number": "22951",
+  "title": "Advanced Air Conditioning & Direct Digital Control",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30213",
+  "title": "Esthetician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COSM55",
+   "COSM55L",
+   "COSM65",
+   "COSM65L"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15660",
+   "title": "Esthetician - Certificate of Achievement: City",
+   "h1": "Esthetician - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 8920
+ },
+ {
+  "control_number": "30657",
+  "title": "Urban Gardening",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "AGRI100",
+   "AGRI102",
+   "AGRI104",
+   "AGRI107",
+   "AGRI110",
+   "AGRI114",
+   "AGRI116",
+   "AGRI125",
+   "AGRI128"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15755",
+   "title": "Urban Gardening - Certificate of Achievement: City",
+   "h1": "Urban Gardening - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 11788
+ },
+ {
+  "control_number": "30694",
+  "title": "Sustainable Urban Agriculture",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGRI100",
+   "AGRI102",
+   "AGRI104",
+   "AGRI107",
+   "AGRI125",
+   "CHEM100",
+   "CHEM100L",
+   "SUST101"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15748",
+   "title": "Sustainable Urban Agriculture - Associate of Science Degree: City",
+   "h1": "Sustainable Urban Agriculture - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 11125
+ },
+ {
+  "control_number": "30704",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL107",
+   "BIOL210A",
+   "PSYC230",
+   "PSYC255",
+   "PSYC258",
+   "PSYC259",
+   "PSYC260",
+   "PSYC283",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15717",
+   "title": "Psychology - Associate in Arts for Transfer Degree: City",
+   "h1": "Psychology - Associate in Arts for Transfer Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 13829
+ },
+ {
+  "control_number": "30706",
+  "title": "Communication Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 32,
+  "text_chars": 0
+ },
+ {
+  "control_number": "31168",
+  "title": "Licensed Vocational Nurse to Registered Nurse",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "ANTH103",
+   "BIOL205",
+   "BIOL230",
+   "BIOL235",
+   "COMMC1000",
+   "COMS135",
+   "ENGLC1000",
+   "NRSE235",
+   "NRSE240",
+   "NRSE242",
+   "NRSE244",
+   "NRSE246",
+   "PSYCC1000",
+   "SOCO101",
+   "SOCO110"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15814",
+   "title": "Licensed Vocational Nurse to Registered Nurse (Advanced Placement) - Associate of Science Degree: City",
+   "h1": "Licensed Vocational Nurse to Registered Nurse (Advanced Placement) - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 2419
+ },
+ {
+  "control_number": "31169",
+  "title": "Registered Nurse: Generic",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.679,
+  "codes_found": [
+   "ANTH103",
+   "BIOL205",
+   "BIOL230",
+   "BIOL235",
+   "COMMC1000",
+   "COMS135",
+   "ENGLC1000",
+   "NRSE140",
+   "NRSE141",
+   "NRSE142",
+   "NRSE144",
+   "NRSE146",
+   "NRSE240",
+   "NRSE242",
+   "NRSE244",
+   "NRSE246",
+   "PSYCC1000",
+   "SOCO101",
+   "SOCO110"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15613",
+   "title": "Registered Nurse: Generic - Associate of Science Degree: City",
+   "h1": "Registered Nurse: Generic - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 28,
+  "text_chars": 2578
+ },
+ {
+  "control_number": "31309",
+  "title": "Information Technology Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSE119",
+   "CBTE180",
+   "INWT100",
+   "INWT111",
+   "INWT112",
+   "INWT120",
+   "INWT125",
+   "INWT140",
+   "INWT146"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15797",
+   "title": "Information Technology Management - Certificate of Achievement: City",
+   "h1": "Information Technology Management - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 11800
+ },
+ {
+  "control_number": "31310",
+  "title": "Information Technology Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSE119",
+   "CBTE180",
+   "INWT100",
+   "INWT111",
+   "INWT112",
+   "INWT120",
+   "INWT125",
+   "INWT140",
+   "INWT146"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15796",
+   "title": "Information Technology Management - Associate of Science Degree: City",
+   "h1": "Information Technology Management - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 11887
+ },
+ {
+  "control_number": "31506",
+  "title": "Mental Health Work",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "HUMS95",
+   "PSYC130",
+   "PSYC161",
+   "PSYC245",
+   "PSYC276",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15695",
+   "title": "Mental Health Work - Certificate of Achievement: City",
+   "h1": "Mental Health Work - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 8990
+ },
+ {
+  "control_number": "31606",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.615,
+  "codes_found": [
+   "CISC186",
+   "CISC190",
+   "MATH150",
+   "MATH151",
+   "MATH252",
+   "MATH254",
+   "MATH255",
+   "PHYS195"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/math2-adt",
+   "title": "Mathematics 2.0 - Associate in Science for Transfer Degree: City",
+   "h1": "Mathematics 2.0 - Associate in Science for Transfer Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 11919
+ },
+ {
+  "control_number": "31615",
+  "title": "Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH150",
+   "MATH151",
+   "MATH252",
+   "PHYS195",
+   "PHYS196",
+   "PHYS197"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/phys2-adt",
+   "title": "Physics 2.0 - Associate in Science for Transfer Degree: City",
+   "h1": "Physics 2.0 - Associate in Science for Transfer Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 13662
+ },
+ {
+  "control_number": "31652",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HIST100",
+   "HIST101",
+   "HIST105",
+   "HIST106",
+   "HIST109",
+   "HIST110",
+   "HIST115A",
+   "HIST115B",
+   "HIST120",
+   "HIST121",
+   "HIST123"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15684",
+   "title": "History - Associate in Arts for Transfer Degree: City",
+   "h1": "History - Associate in Arts for Transfer Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "31680",
+  "title": "Theatre Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAM105",
+   "DRAM123",
+   "DRAM124",
+   "DRAM132",
+   "DRAM133",
+   "DRAM136",
+   "DRAM143",
+   "DRAM242A"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15751",
+   "title": "Theatre Arts - Associate in Arts for Transfer Degree: City",
+   "h1": "Theatre Arts - Associate in Arts for Transfer Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 11590
+ },
+ {
+  "control_number": "31690",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "POLI103",
+   "POLI121",
+   "POLI124",
+   "POLI140",
+   "POLI201",
+   "POLSC1000",
+   "PSYC258"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15714",
+   "title": "Political Science - Associate in Arts for Transfer Degree: City",
+   "h1": "Political Science - Associate in Arts for Transfer Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 11048
+ },
+ {
+  "control_number": "31972",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.99,
+  "codes_found": [
+   "BIOL230",
+   "BIOL235",
+   "BUSE115",
+   "CHEM200",
+   "CHEM200L",
+   "DANC112A",
+   "DANC112B",
+   "DANC112C",
+   "DANC117A",
+   "DANC117B",
+   "DANC117C",
+   "DANC122A",
+   "DANC122B",
+   "DANC122C",
+   "DANC125A",
+   "DANC125B",
+   "DANC137A",
+   "DANC137B",
+   "DANC137C",
+   "DANC142A",
+   "DANC142B",
+   "DANC142C",
+   "DANC145A",
+   "DANC145B",
+   "DANC160A",
+   "DANC160B",
+   "EXSC122A",
+   "EXSC122B",
+   "EXSC124A",
+   "EXSC124B",
+   "EXSC124C",
+   "EXSC125A",
+   "EXSC125B",
+   "EXSC125C",
+   "EXSC126A",
+   "EXSC126B",
+   "EXSC126C",
+   "EXSC127A",
+   "EXSC127B",
+   "EXSC127C",
+   "EXSC129A",
+   "EXSC129B",
+   "EXSC129C",
+   "EXSC130A",
+   "EXSC130B",
+   "EXSC135A",
+   "EXSC135B",
+   "EXSC135C",
+   "EXSC139A",
+   "EXSC139B",
+   "EXSC139C",
+   "EXSC142",
+   "EXSC143A",
+   "EXSC143B",
+   "EXSC144A",
+   "EXSC145A",
+   "EXSC145B",
+   "EXSC145C",
+   "EXSC147A",
+   "EXSC147B",
+   "EXSC147C",
+   "EXSC148A",
+   "EXSC148B",
+   "EXSC148C",
+   "EXSC154A",
+   "EXSC154B",
+   "EXSC154C",
+   "EXSC156A",
+   "EXSC156B",
+   "EXSC156C",
+   "EXSC158A",
+   "EXSC158B",
+   "EXSC166A",
+   "EXSC166B",
+   "EXSC166C",
+   "EXSC174A",
+   "EXSC174B",
+   "EXSC174C",
+   "EXSC176A",
+   "EXSC176B",
+   "EXSC176C",
+   "EXSC178A",
+   "EXSC178B",
+   "EXSC178C",
+   "EXSC179A",
+   "EXSC179B",
+   "EXSC182A",
+   "EXSC182B",
+   "EXSC182C",
+   "EXSC183A",
+   "EXSC183B",
+   "EXSC241B",
+   "PHYS125",
+   "PHYS180A",
+   "PHYS181A",
+   "PHYS195",
+   "POLI201",
+   "PSYC258",
+   "PSYCC1000",
+   "SOCO101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15805",
+   "title": "Kinesiology - Associate in Arts for Transfer Degree: City",
+   "h1": "Kinesiology - Associate in Arts for Transfer Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 102,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "32577",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GEND101",
+   "PSYC258",
+   "SOCO101",
+   "SOCO110",
+   "SOCO125",
+   "SOCO145",
+   "SOCO150",
+   "SOCO201",
+   "SOCO220"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15738",
+   "title": "Sociology - Associate in Arts for Transfer Degree: City",
+   "h1": "Sociology - Associate in Arts for Transfer Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "32684",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL208",
+   "ENGL210",
+   "ENGL211",
+   "ENGL215",
+   "ENGL216",
+   "ENGL220",
+   "ENGL221",
+   "ENGL249A",
+   "ENGLC1001"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15657",
+   "title": "English - Associate in Arts for Transfer Degree: City",
+   "h1": "English - Associate in Arts for Transfer Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 15119
+ },
+ {
+  "control_number": "32685",
+  "title": "Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SPAN101",
+   "SPAN102",
+   "SPAN201",
+   "SPAN202",
+   "SPAN210",
+   "SPAN211"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15742",
+   "title": "Spanish - Associate in Arts for Transfer Degree: City",
+   "h1": "Spanish - Associate in Arts for Transfer Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 9542
+ },
+ {
+  "control_number": "32686",
+  "title": "Art History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTF125",
+   "ARTF150A",
+   "ARTF151",
+   "ARTF155A",
+   "ARTHC1100",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15611",
+   "title": "Art History - Associate in Arts for Transfer Degree: City",
+   "h1": "Art History - Associate in Arts for Transfer Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 9266
+ },
+ {
+  "control_number": "32691",
+  "title": "Business Administration",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "ACCT116A",
+   "ACCT116B",
+   "BUSE140",
+   "ECON120",
+   "ECON121",
+   "MATH121",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15638",
+   "title": "Business Administration 2.0 - Associate in Science for Transfer Degree: City",
+   "h1": "Business Administration 2.0 - Associate in Science for Transfer Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "32711",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTF150A",
+   "ARTF151",
+   "ARTF155A",
+   "ARTF155B",
+   "ARTF165A",
+   "ARTF170A",
+   "ARTF175A",
+   "ARTF195A",
+   "ARTF197A",
+   "ARTF210A",
+   "ARTHC1100",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15745",
+   "title": "Studio Arts - Associate in Arts for Transfer Degree: City",
+   "h1": "Studio Arts - Associate in Arts for Transfer Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 15927
+ },
+ {
+  "control_number": "32734",
+  "title": "Geography",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH103",
+   "GEOG101",
+   "GEOG101L",
+   "GEOG102",
+   "GEOG104",
+   "GEOG135",
+   "GEOL100",
+   "GEOL101",
+   "GISG104",
+   "GISG110"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15672",
+   "title": "Geography - Associate in Arts for Transfer Degree: City",
+   "h1": "Geography - Associate in Arts for Transfer Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "32735",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH102",
+   "ANTH103",
+   "ANTH104",
+   "ANTH107",
+   "ANTH110",
+   "ANTH115",
+   "ANTH120",
+   "ANTH130",
+   "ANTH140",
+   "ANTH210",
+   "ENGL202",
+   "SOCO220"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15607",
+   "title": "Anthropology - Associate in Arts for Transfer Degree: City",
+   "h1": "Anthropology - Associate in Arts for Transfer Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "33094",
+  "title": "Journalism",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "COMS160",
+   "FJMP101",
+   "FJMP130",
+   "FJMP131",
+   "FJMP132",
+   "FJMP232A"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15804",
+   "title": "Journalism - Associate in Arts for Transfer Degree: City",
+   "h1": "Journalism - Associate in Arts for Transfer Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 11622
+ },
+ {
+  "control_number": "33160",
+  "title": "Radio and Podcast",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAM106",
+   "FJMP112",
+   "FJMP120",
+   "FJMP130",
+   "FJMP131",
+   "FJMP132",
+   "FJMP141",
+   "FJMP142",
+   "FJMP242A",
+   "FJMP242B"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15721",
+   "title": "Radio and Podcast - Certificate of Achievement: City",
+   "h1": "Radio and Podcast - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 15299
+ },
+ {
+  "control_number": "33180",
+  "title": "Business Information Worker",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 9,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33250",
+  "title": "Media Production",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAM106",
+   "FJMP110",
+   "FJMP111",
+   "FJMP112",
+   "FJMP120",
+   "FJMP122",
+   "FJMP123",
+   "FJMP124",
+   "FJMP130",
+   "FJMP131",
+   "FJMP132",
+   "FJMP133",
+   "FJMP134",
+   "FJMP141",
+   "FJMP142",
+   "FJMP143",
+   "FJMP144",
+   "FJMP145",
+   "FJMP146",
+   "FJMP211",
+   "FJMP222",
+   "FJMP232A",
+   "FJMP233A",
+   "FJMP242A"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15757",
+   "title": "Media Production - Certificate of Achievement: City",
+   "h1": "Media Production - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "33312",
+  "title": "Urban Farming Professional",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGRI100",
+   "AGRI102",
+   "AGRI104",
+   "AGRI110",
+   "AGRI114",
+   "AGRI116",
+   "AGRI125",
+   "AGRI270",
+   "BUSE119",
+   "BUSE157"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15754",
+   "title": "Urban Farming Professional - Certificate of Achievement: City",
+   "h1": "Urban Farming Professional - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 12825
+ },
+ {
+  "control_number": "33313",
+  "title": "Conflict Resolution and Mediation",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH103",
+   "CRES101",
+   "CRES102",
+   "CRES276",
+   "PSYC166"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15785",
+   "title": "Conflict Resolution and Mediation - Certificate of Achievement: City",
+   "h1": "Conflict Resolution and Mediation - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 11077
+ },
+ {
+  "control_number": "33511",
+  "title": "Film Production",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAM119",
+   "FJMP100",
+   "FJMP101",
+   "FJMP110",
+   "FJMP111",
+   "FJMP112",
+   "FJMP120",
+   "FJMP121",
+   "FJMP122",
+   "FJMP123",
+   "FJMP124",
+   "FJMP145",
+   "FJMP146",
+   "FJMP211",
+   "FJMP221",
+   "FJMP222"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15663",
+   "title": "Film Production - Associate of Science Degree: City",
+   "h1": "Film Production - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "33591",
+  "title": "Geology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM200",
+   "CHEM200L",
+   "CHEM201",
+   "CHEM201L",
+   "GEOL100",
+   "GEOL101",
+   "GEOL111",
+   "MATH150",
+   "MATH151"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15674",
+   "title": "Geology - Associate in Science for Transfer Degree: City",
+   "h1": "Geology - Associate in Science for Transfer Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 14265
+ },
+ {
+  "control_number": "33592",
+  "title": "Philosophy",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHIL100",
+   "PHIL101",
+   "PHIL102A",
+   "PHIL102B",
+   "PHIL105",
+   "PHIL106",
+   "PHIL125",
+   "PHIL126",
+   "PHIL131",
+   "PHIL205"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15708",
+   "title": "Philosophy - Associate in Arts for Transfer Degree: City",
+   "h1": "Philosophy - Associate in Arts for Transfer Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 13432
+ },
+ {
+  "control_number": "33645",
+  "title": "Music Production Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSC104",
+   "MUSC118",
+   "MUSC160",
+   "MUSC162",
+   "MUSC170A",
+   "MUSC170C",
+   "MUSC220A",
+   "MUSC220B",
+   "MUSC252",
+   "MUSC260",
+   "MUSC262",
+   "MUSI108"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15699",
+   "title": "Music Production Technology - Associate of Science Degree: City",
+   "h1": "Music Production Technology - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "33649",
+  "title": "Elementary Teacher Education",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 26,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33677",
+  "title": "Audio Production Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSC104",
+   "MUSC160",
+   "MUSC162",
+   "MUSC252",
+   "MUSC260",
+   "MUSC262"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15615",
+   "title": "Audio Production Technology - Certificate of Achievement: City",
+   "h1": "Audio Production Technology - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 10468
+ },
+ {
+  "control_number": "33678",
+  "title": "Film Production",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAM119",
+   "FJMP110",
+   "FJMP111",
+   "FJMP112",
+   "FJMP120",
+   "FJMP121",
+   "FJMP122",
+   "FJMP123",
+   "FJMP124",
+   "FJMP145",
+   "FJMP146",
+   "FJMP211",
+   "FJMP221",
+   "FJMP222"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15664",
+   "title": "Film Production - Certificate of Achievement: City",
+   "h1": "Film Production - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "33761",
+  "title": "Multimedia Journalism",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FJMP130",
+   "FJMP131",
+   "FJMP132",
+   "FJMP133",
+   "FJMP134",
+   "FJMP142",
+   "FJMP143",
+   "FJMP144",
+   "FJMP232A",
+   "FJMP232B",
+   "FJMP233A",
+   "FJMP233B",
+   "PHOT215"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15623",
+   "title": "Multimedia Journalism - Certificate of Achievement: City",
+   "h1": "Multimedia Journalism - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "33825",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL210A",
+   "BIOL210B",
+   "CHEM200",
+   "CHEM200L",
+   "CHEM201",
+   "CHEM201L",
+   "CHEM231",
+   "CHEM231L",
+   "MATH121",
+   "MATH122",
+   "MATH150",
+   "MATH151",
+   "PHYS125",
+   "PHYS126",
+   "PHYS180A",
+   "PHYS180B",
+   "PHYS181A",
+   "PHYS181B",
+   "PHYS195",
+   "PHYS196"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15618",
+   "title": "Biology - Associate in Science for Transfer Degree: City",
+   "h1": "Biology - Associate in Science for Transfer Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "35521",
+  "title": "Gerontology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HUMS101",
+   "HUMS103",
+   "HUMS110",
+   "HUMS276",
+   "HUMS95",
+   "PSYC111",
+   "PSYC230"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15676",
+   "title": "Gerontology - Certificate of Achievement: City",
+   "h1": "Gerontology - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 8646
+ },
+ {
+  "control_number": "35589",
+  "title": "Desktop Support Technician II",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "INWT100",
+   "INWT111",
+   "INWT120",
+   "INWT140",
+   "INWT146"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15826",
+   "title": "Desktop Support Technician II - Certificate of Achievement: City",
+   "h1": "Desktop Support Technician II - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 7690
+ },
+ {
+  "control_number": "35976",
+  "title": "Agriculture Plant Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGRI107",
+   "AGRI114",
+   "AGRI125",
+   "CHEM100",
+   "CHEM100L",
+   "ECON121",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15625",
+   "title": "Agriculture Plant Science - Associate in Science for Transfer Degree: City",
+   "h1": "Agriculture Plant Science - Associate in Science for Transfer Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 13145
+ },
+ {
+  "control_number": "35977",
+  "title": "Film, Television, and Electronic Media",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAM105",
+   "DRAM107",
+   "FJMP100",
+   "FJMP101",
+   "FJMP111",
+   "FJMP112",
+   "FJMP120",
+   "FJMP144",
+   "MUSI100"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15666",
+   "title": "Film, Television, and Electronic Media - Associate in Science for Transfer Degree: City",
+   "h1": "Film, Television, and Electronic Media - Associate in Science for Transfer Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "36118",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT116A",
+   "ACCT116B",
+   "BUSE115",
+   "BUSE119",
+   "CISC181",
+   "ECON120",
+   "ECON121",
+   "MATH116",
+   "MATH121",
+   "MATH122",
+   "MATH150",
+   "MATH151",
+   "POLI201",
+   "PSYC258",
+   "PSYC259",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15640",
+   "title": "Economics - Associate in Arts for Transfer Degree: City",
+   "h1": "Economics - Associate in Arts for Transfer Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "36567",
+  "title": "Business Information Worker II",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 5,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36568",
+  "title": "Business Information Worker",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 15,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36754",
+  "title": "Cybersecurity",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CISC179",
+   "INWT100",
+   "INWT101",
+   "INWT120",
+   "INWT125",
+   "INWT140",
+   "INWT146",
+   "INWT170",
+   "INWT201"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15795",
+   "title": "Cybersecurity - Certificate of Achievement: City",
+   "h1": "Cybersecurity - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 13422
+ },
+ {
+  "control_number": "36915",
+  "title": "Cybersecurity",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSE115",
+   "CISC179",
+   "CISC246",
+   "INWT100",
+   "INWT101",
+   "INWT120",
+   "INWT125",
+   "INWT140",
+   "INWT146",
+   "INWT170",
+   "INWT201",
+   "MATH245",
+   "POLI201",
+   "PSYC258",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15794",
+   "title": "Cybersecurity - Associate of Science Degree: City",
+   "h1": "Cybersecurity - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "36933",
+  "title": "Social Work",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL107",
+   "ECON120",
+   "HUMS110",
+   "HUMS120",
+   "PSYC258",
+   "PSYCC1000",
+   "SOCO101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15737",
+   "title": "Social Work - Associate of Arts Degree: City",
+   "h1": "Social Work - Associate of Arts Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 15831
+ },
+ {
+  "control_number": "36934",
+  "title": "Sustainability",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGRI102",
+   "BIOL101",
+   "BUSE115",
+   "CHEM111",
+   "CHEM111L",
+   "ECON121",
+   "GEOG101",
+   "GEOL102",
+   "GISG104",
+   "PEAC101",
+   "PHIL101",
+   "PHIL131",
+   "PHYN114",
+   "POLI201",
+   "PSYC258",
+   "SOCO223",
+   "STATC1000",
+   "SUST101"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15747",
+   "title": "Sustainability - Associate of Arts Degree: City",
+   "h1": "Sustainability - Associate of Arts Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "37032",
+  "title": "Esthetician Business Administration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSE119",
+   "BUSE155",
+   "BUSE92",
+   "COSM55",
+   "COSM55L",
+   "COSM65",
+   "COSM65L",
+   "DRAM124"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15661",
+   "title": "Esthetician Business Administration - Associate of Science Degree: City",
+   "h1": "Esthetician Business Administration - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 14468
+ },
+ {
+  "control_number": "37036",
+  "title": "Community Health Work",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HUMS103",
+   "HUMS111",
+   "HUMS121",
+   "HUMS122",
+   "HUMS270"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15775",
+   "title": "Community Health Work - Certificate of Achievement: City",
+   "h1": "Community Health Work - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 8745
+ },
+ {
+  "control_number": "37387",
+  "title": "Special Effects (FX) Makeup",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37605",
+  "title": "Technical Theatre",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.545,
+  "codes_found": [
+   "DRAM123",
+   "DRAM124",
+   "DRAM126",
+   "DRAM129A",
+   "DRAM143",
+   "DRAM153"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15749",
+   "title": "Technical Theatre - Certificate of Achievement: City",
+   "h1": "Technical Theatre - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 9597
+ },
+ {
+  "control_number": "37617",
+  "title": "HVAC/R Systems Design and Control",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AIRE100",
+   "AIRE103",
+   "AIRE122",
+   "AIRE123",
+   "AIRE124",
+   "AIRE125",
+   "AIRE126",
+   "AIRE127",
+   "AIRE140",
+   "AIRE141",
+   "AIRE144",
+   "AIRE145",
+   "AIRE60"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15693",
+   "title": "HVAC/R Systems Design and Control - Associate of Science Degree: City",
+   "h1": "HVAC/R Systems Design and Control - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "37618",
+  "title": "HVAC/R Systems Design and Control",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AIRE100",
+   "AIRE103",
+   "AIRE122",
+   "AIRE123",
+   "AIRE124",
+   "AIRE125",
+   "AIRE126",
+   "AIRE127",
+   "AIRE140",
+   "AIRE141",
+   "AIRE144",
+   "AIRE145",
+   "AIRE60"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15694",
+   "title": "HVAC/R Systems Design and Control - Certificate of Achievement: City",
+   "h1": "HVAC/R Systems Design and Control - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "37619",
+  "title": "HVAC/R Service and Direct Digital Control",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AIRE100",
+   "AIRE103",
+   "AIRE124",
+   "AIRE125",
+   "AIRE132",
+   "AIRE133",
+   "AIRE144",
+   "AIRE145",
+   "AIRE60"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15691",
+   "title": "HVAC/R Service and Direct Digital Control - Associate of Science Degree: City",
+   "h1": "HVAC/R Service and Direct Digital Control - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 12643
+ },
+ {
+  "control_number": "37620",
+  "title": "HVAC/R Service and Direct Digital Control",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AIRE100",
+   "AIRE103",
+   "AIRE124",
+   "AIRE125",
+   "AIRE132",
+   "AIRE144",
+   "AIRE145",
+   "AIRE60"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15692",
+   "title": "HVAC/R Service and Direct Digital Control - Certificate of Achievement: City",
+   "h1": "HVAC/R Service and Direct Digital Control - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 12547
+ },
+ {
+  "control_number": "37621",
+  "title": "HVAC/R Mechanical Systems Installation and Repair",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.571,
+  "codes_found": [
+   "AIRE124",
+   "AIRE125",
+   "AIRE132",
+   "AIRE133"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15704",
+   "title": "Operating and Maintenance Engineers - Associate of Science Degree: City",
+   "h1": "Operating and Maintenance Engineers - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "37622",
+  "title": "HVAC/R Installation and Repair",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AIRE100",
+   "AIRE103",
+   "AIRE122",
+   "AIRE123",
+   "AIRE124",
+   "AIRE125",
+   "AIRE60"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15616",
+   "title": "HVAC/R Installation and Repair - Certificate of Achievement: City",
+   "h1": "HVAC/R Installation and Repair - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 9579
+ },
+ {
+  "control_number": "37623",
+  "title": "Advanced HVAC/R Mechanical Systems Installation and Repair",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.571,
+  "codes_found": [
+   "AIRE124",
+   "AIRE125",
+   "AIRE132",
+   "AIRE133"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15705",
+   "title": "Operating and Maintenance Engineers - Certificate of Achievement: City",
+   "h1": "Operating and Maintenance Engineers - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "37624",
+  "title": "Public Administration",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT116A",
+   "ECON120",
+   "ECON121",
+   "POLI201",
+   "POLSC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15719",
+   "title": "Public Administration - Certificate of Achievement: City",
+   "h1": "Public Administration - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 13260
+ },
+ {
+  "control_number": "37679",
+  "title": "Law, Public Policy, and Society",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH103",
+   "BUSE140",
+   "COMMC1000",
+   "COMS160",
+   "COMS170",
+   "COMS180",
+   "ECON120",
+   "ECON121",
+   "ENGLC1000",
+   "ENGLC1001",
+   "GEND101",
+   "HIST109",
+   "HIST110",
+   "PADM110",
+   "PADM200",
+   "PHIL102B",
+   "POLI101",
+   "POLI103",
+   "POLI124",
+   "POLI140",
+   "POLI201",
+   "PSYC258"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15807",
+   "title": "Law, Public Policy, and Society - Associate in Arts for Transfer Degree: City",
+   "h1": "Law, Public Policy, and Society - Associate in Arts for Transfer Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "38198",
+  "title": "Lineman",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SDGE90",
+   "SDGE91",
+   "SDGE92",
+   "SDGE93",
+   "SDGE94",
+   "SDGE95"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15817",
+   "title": "Lineman - Certificate of Achievement: City",
+   "h1": "Lineman - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 7832
+ },
+ {
+  "control_number": "38311",
+  "title": "San Diego Trolley Inc Light Rail Vehicle Lineman Apprenticeship",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AIRE100",
+   "AIRE103",
+   "ELDT123",
+   "ELDT123L",
+   "ELDT124",
+   "ELDT124L",
+   "ELDT125",
+   "ELDT125L",
+   "ELDT143",
+   "ELDT143L",
+   "ELDT144",
+   "ELDT144L",
+   "MATH98"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15730",
+   "title": "San Diego Trolley Inc Light Rail Vehicle Lineman Apprenticeship - Certificate of Achievement: City",
+   "h1": "San Diego Trolley Inc Light Rail Vehicle Lineman Apprenticeship - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "38313",
+  "title": "San Diego Trolley Inc Light Rail Vehicle Lineman Apprenticeship",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AIRE100",
+   "AIRE103",
+   "ELDT123",
+   "ELDT123L",
+   "ELDT124",
+   "ELDT124L",
+   "ELDT125",
+   "ELDT125L",
+   "ELDT143",
+   "ELDT143L",
+   "ELDT144",
+   "ELDT144L",
+   "MATH98"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15729",
+   "title": "San Diego Trolley Inc Light Rail Vehicle Lineman Apprenticeship - Associate of Science Degree: City",
+   "h1": "San Diego Trolley Inc Light Rail Vehicle Lineman Apprenticeship - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "38367",
+  "title": "San Diego Trolley Inc Revenue Maintainer Apprenticeship",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELCT111",
+   "ELCT111L",
+   "ELCT121",
+   "ELCT121L",
+   "ELCT131",
+   "ELCT131L",
+   "ELCT141",
+   "ELCT141L",
+   "INWT111",
+   "MATH98"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15732",
+   "title": "San Diego Trolley Inc Revenue Maintainer Apprenticeship - Certificate of Achievement: City",
+   "h1": "San Diego Trolley Inc Revenue Maintainer Apprenticeship - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "38369",
+  "title": "San Diego Trolley Inc Revenue Maintainer Apprenticeship",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELCT111",
+   "ELCT111L",
+   "ELCT121",
+   "ELCT121L",
+   "ELCT131",
+   "ELCT131L",
+   "ELCT141",
+   "ELCT141L",
+   "INWT111",
+   "INWT120",
+   "MATH98"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15731",
+   "title": "San Diego Trolley Inc Revenue Maintainer Apprenticeship - Associate of Science Degree: City",
+   "h1": "San Diego Trolley Inc Revenue Maintainer Apprenticeship - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "38511",
+  "title": "Dance",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DANC111",
+   "DANC112A",
+   "DANC112B",
+   "DANC112C",
+   "DANC112D",
+   "DANC117A",
+   "DANC117B",
+   "DANC117C",
+   "DANC117D",
+   "DANC122A",
+   "DANC122B",
+   "DANC122C",
+   "DANC122D",
+   "DANC127",
+   "DANC130A",
+   "DANC137A",
+   "DANC137B",
+   "DANC137C",
+   "DANC137D",
+   "DANC142A",
+   "DANC142B",
+   "DANC142C",
+   "DANC142D",
+   "DANC150A",
+   "DANC151A",
+   "DANC152A",
+   "DANC153A",
+   "DANC160A",
+   "DANC160B",
+   "DANC176A",
+   "DANC176B",
+   "DANC179A",
+   "DANC179B",
+   "DANC180A",
+   "DANC180B",
+   "DANC181",
+   "DANC183",
+   "DANC253",
+   "DANC261A",
+   "DANC261B",
+   "DANC261C",
+   "DANC261D",
+   "DANC271A",
+   "DANC271B",
+   "DANC271C",
+   "DANC271D"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15823",
+   "title": "Dance - Certificate of Achievement: City",
+   "h1": "Dance - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 46,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "38629",
+  "title": "Interaction Design",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DSGN100",
+   "DSGN102",
+   "DSGN104",
+   "DSGN106",
+   "DSGN120",
+   "DSGN122",
+   "DSGN124",
+   "DSGN143",
+   "DSGN153",
+   "DSGN202",
+   "DSGN203",
+   "DSGN206",
+   "DSGN210",
+   "DSGN213",
+   "DSGN216A",
+   "DSGN216B",
+   "DSGN216C",
+   "DSGN218",
+   "DSGN248",
+   "DSGN258"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15799",
+   "title": "Interaction Design - Certificate of Achievement: City",
+   "h1": "Interaction Design - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "38638",
+  "title": "Interaction Design",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DSGN102",
+   "DSGN104",
+   "DSGN106",
+   "DSGN120",
+   "DSGN122",
+   "DSGN124",
+   "DSGN143",
+   "DSGN153",
+   "DSGN202",
+   "DSGN203",
+   "DSGN206",
+   "DSGN210",
+   "DSGN213",
+   "DSGN216A",
+   "DSGN216B",
+   "DSGN216C",
+   "DSGN218",
+   "DSGN248",
+   "DSGN258"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15798",
+   "title": "Interaction Design - Associate of Arts Degree: City",
+   "h1": "Interaction Design - Associate of Arts Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "38668",
+  "title": "Digital Photography",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHOT143",
+   "PHOT144",
+   "PHOT150",
+   "PHOT170",
+   "PHOT181",
+   "PHOT205",
+   "PHOT215",
+   "PHOT220",
+   "PHOT230",
+   "PHOT245",
+   "PHOT255",
+   "PHOT268"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15667",
+   "title": "Digital Photography - Certificate of Achievement: City",
+   "h1": "Digital Photography - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "38732",
+  "title": "Certified Public Accountant (CPA) Preparatory Program",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.6,
+  "codes_found": [
+   "ACCT119",
+   "ACCT125",
+   "ACCT135"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15760",
+   "title": "Certified Public Accountant Preparatory Program - Certificate of Performance: City",
+   "h1": "Certified Public Accountant Preparatory Program - Certificate of Performance: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.8
+   }
+  },
+  "listed": 5,
+  "text_chars": 4748
+ },
+ {
+  "control_number": "38733",
+  "title": "Green Building Energy Professional",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38735",
+  "title": "Green Building Energy Professional",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39165",
+  "title": "Archaeology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH103",
+   "ANTH107",
+   "ANTH115",
+   "ANTH120",
+   "ANTH210"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15610",
+   "title": "Archaeology - Certificate of Achievement: City",
+   "h1": "Archaeology - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 7085
+ },
+ {
+  "control_number": "39358",
+  "title": "C++",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39387",
+  "title": "Energy Analysis and Consultation",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39388",
+  "title": "Energy Analysis and Consultation",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40495",
+  "title": "Graphic Design Fundamentals",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DSGN100",
+   "DSGN102",
+   "DSGN104",
+   "DSGN106"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15679",
+   "title": "Graphic Design Fundamentals - Certificate of Achievement: City",
+   "h1": "Graphic Design Fundamentals - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 5705
+ },
+ {
+  "control_number": "40589",
+  "title": "Computer Programming",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CISC179",
+   "CISC183",
+   "CISC187",
+   "CISC190",
+   "CISC192",
+   "CISC201",
+   "CISC205"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15784",
+   "title": "Computer Programming - Certificate of Achievement: City",
+   "h1": "Computer Programming - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 9620
+ },
+ {
+  "control_number": "40620",
+  "title": "Computer Programming",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CISC179",
+   "CISC183",
+   "CISC187",
+   "CISC190",
+   "CISC192",
+   "CISC201",
+   "CISC205"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15783",
+   "title": "Computer Programming - Associate of Science Degree: City",
+   "h1": "Computer Programming - Associate of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 9708
+ },
+ {
+  "control_number": "40714",
+  "title": "Network Security II",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "INWT120",
+   "INWT140",
+   "INWT146",
+   "INWT170",
+   "INWT201"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15703",
+   "title": "Network Security II - Certificate of Achievement: City",
+   "h1": "Network Security II - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 8430
+ },
+ {
+  "control_number": "41293",
+  "title": "Studio Arts Entrepreneurship",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTF165B",
+   "ARTF165C",
+   "ARTF170B",
+   "ARTF170C",
+   "ARTF175B",
+   "ARTF175C",
+   "ARTF195B",
+   "ARTF195C",
+   "ARTF196",
+   "ARTF202A",
+   "ARTF202B",
+   "ARTF205A",
+   "ARTF206",
+   "ARTF207A",
+   "ARTF207B",
+   "ARTF208A",
+   "ARTF208B",
+   "ARTF210B",
+   "ARTF210C",
+   "ARTF212",
+   "ARTF260",
+   "DSGN102",
+   "PHOT143"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15746",
+   "title": "Studio Arts Entrepreneurship - Certificate of Achievement: City",
+   "h1": "Studio Arts Entrepreneurship - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "41495",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT116A",
+   "ACCT116B",
+   "BUSE115",
+   "BUSE119",
+   "BUSE140",
+   "ECON120",
+   "ECON121",
+   "MATH121",
+   "MATH150",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15638",
+   "title": "Business Administration 2.0 - Associate in Science for Transfer Degree: City",
+   "h1": "Business Administration 2.0 - Associate in Science for Transfer Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "42598",
+  "title": "American Sign Language",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AMSL120",
+   "AMSL121",
+   "AMSL220",
+   "AMSL221"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15631",
+   "title": "American Sign Language - Certificate of Achievement: City",
+   "h1": "American Sign Language - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 7592
+ },
+ {
+  "control_number": "42599",
+  "title": "American Sign Language",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AMSL120",
+   "AMSL121",
+   "AMSL150",
+   "AMSL155",
+   "AMSL214",
+   "AMSL220",
+   "AMSL221",
+   "AMSL225"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15630",
+   "title": "American Sign Language - Associate of Arts Degree: City",
+   "h1": "American Sign Language - Associate of Arts Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 12032
+ },
+ {
+  "control_number": "42744",
+  "title": "General Atomics CNC Machine Technician Apprenticeship",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 20,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42745",
+  "title": "General Atomics Electrical Specialist Apprenticeship",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 22,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42746",
+  "title": "General Atomics HVAC-R Technician Apprenticeship",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 23,
+  "text_chars": 0
+ },
+ {
+  "control_number": "43041",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMMC1000",
+   "COMS104",
+   "COMS111",
+   "COMS135",
+   "COMS160",
+   "COMS170",
+   "COMS180",
+   "COMS201"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15769",
+   "title": "Communication Studies 2.0 - Associate in Arts for Transfer Degree: City",
+   "h1": "Communication Studies 2.0 - Associate in Arts for Transfer Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 15886
+ },
+ {
+  "control_number": "43523",
+  "title": "Cyber Defense and Analysis",
+  "award": "Baccalaureate of Science (B.S.) Degree.",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSE440",
+   "CISC450",
+   "CYDA400",
+   "CYDA410",
+   "CYDA420",
+   "CYDA430",
+   "CYDA440",
+   "CYDA450",
+   "CYDA460",
+   "CYDA500",
+   "CYDA510",
+   "CYDA520",
+   "CYDA530",
+   "CYDA540",
+   "CYDA550",
+   "CYDA560",
+   "CYDA570",
+   "ENGL402"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15792",
+   "title": "Cyber Defense and Analysis - Bachelor of Science Degree: City",
+   "h1": "Cyber Defense and Analysis - Bachelor of Science Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 3686
+ },
+ {
+  "control_number": "43656",
+  "title": "Economics",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT116A",
+   "ACCT116B",
+   "BUSE119",
+   "CISC181",
+   "ECON120",
+   "ECON121",
+   "MATH116",
+   "MATH121",
+   "MATH122",
+   "MATH150",
+   "MATH151",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15641",
+   "title": "Economics - Certificate of Achievement: City",
+   "h1": "Economics - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "43748",
+  "title": "Social Work",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL107",
+   "ECON120",
+   "HUMS110",
+   "HUMS120",
+   "PSYC161",
+   "PSYC230",
+   "PSYC245",
+   "PSYC258",
+   "PSYCC1000",
+   "SOCO101",
+   "SOCO110",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/17388",
+   "title": "Social Work - Certificate of Achievement: City",
+   "h1": "Social Work - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "43806",
+  "title": "Accounting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT102",
+   "ACCT116A",
+   "ACCT116B",
+   "ACCT119",
+   "ACCT120",
+   "ACCT121",
+   "ACCT125",
+   "ACCT128A",
+   "ACCT128B",
+   "ACCT135",
+   "ACCT150",
+   "BUSE101",
+   "BUSE119",
+   "BUSE120",
+   "CBTE143"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/17224",
+   "title": "Accounting - Certificate of Achievement: City",
+   "h1": "Accounting - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "43836",
+  "title": "Nutrition and Dietetics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL107",
+   "BIOL205",
+   "BIOL210A",
+   "BIOL210B",
+   "BIOL230",
+   "BIOL235",
+   "CHEM200",
+   "CHEM200L",
+   "CHEM201",
+   "CHEM201L",
+   "CHEM231",
+   "CHEM231L",
+   "CHEM233",
+   "CHEM233L",
+   "MATH116",
+   "MATH121",
+   "MATH150",
+   "NUTR150",
+   "NUTR153",
+   "PSYC258",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/17327",
+   "title": "Nutrition and Dietetics - Associate in Science for Transfer Degree: City",
+   "h1": "Nutrition and Dietetics - Associate in Science for Transfer Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "44062",
+  "title": "Manufacturing Fundamentals",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MFET101",
+   "MFET105",
+   "MFET107D",
+   "MFET107G",
+   "MFET107H",
+   "MFET114",
+   "MFET115",
+   "MFET120"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/17368",
+   "title": "Manufacturing Fundamentals - Certificate of Achievement: City",
+   "h1": "Manufacturing Fundamentals - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 11478
+ },
+ {
+  "control_number": "44068",
+  "title": "Sustainability",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL101",
+   "BUSE115",
+   "ECON121",
+   "GEOG101",
+   "PHIL101",
+   "PHYN114",
+   "POLI201",
+   "PSYC258",
+   "STATC1000",
+   "SUST101"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/17436",
+   "title": "Sustainability - Certificate of Achievement: City",
+   "h1": "Sustainability - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 15149
+ },
+ {
+  "control_number": "44385",
+  "title": "Office Administrative Assistant",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT150",
+   "BUSE101",
+   "BUSE102",
+   "BUSE119",
+   "CBTE140",
+   "CBTE143",
+   "CBTE164",
+   "CBTE180"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/17307",
+   "title": "Office Administrative Assistant - Certificate of Achievement: City",
+   "h1": "Office Administrative Assistant - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 10987
+ },
+ {
+  "control_number": "44738",
+  "title": "Cal-GETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "44867",
+  "title": "Computer Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL210A",
+   "CISC190",
+   "CISC191",
+   "CISC211",
+   "CISC246",
+   "MATH150",
+   "MATH151",
+   "PHYS196"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/17451",
+   "title": "Computer Science - Associate in Science for Transfer: City",
+   "h1": "Computer Science - Associate in Science for Transfer: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 13693
+ },
+ {
+  "control_number": "45539",
+  "title": "Exercise and Nutritional Sciences",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL107",
+   "EXSC124A",
+   "EXSC124B",
+   "EXSC124C",
+   "EXSC124D",
+   "EXSC125A",
+   "EXSC125B",
+   "EXSC125C",
+   "EXSC125D",
+   "EXSC126A",
+   "EXSC126B",
+   "EXSC126C",
+   "EXSC126D",
+   "EXSC127A",
+   "EXSC127B",
+   "EXSC127C",
+   "EXSC127D",
+   "EXSC130A",
+   "EXSC130B",
+   "EXSC130C",
+   "EXSC130D",
+   "EXSC135A",
+   "EXSC135B",
+   "EXSC135C",
+   "EXSC135D",
+   "EXSC136A",
+   "EXSC136B",
+   "EXSC139A",
+   "EXSC139B",
+   "EXSC139C",
+   "EXSC139D",
+   "EXSC141A",
+   "EXSC141B",
+   "EXSC141C",
+   "EXSC142",
+   "EXSC144A",
+   "EXSC144B",
+   "EXSC144C",
+   "EXSC144D",
+   "EXSC145A",
+   "EXSC145B",
+   "EXSC145C",
+   "EXSC145D",
+   "EXSC147A",
+   "EXSC147B",
+   "EXSC147C",
+   "EXSC147D",
+   "EXSC148A",
+   "EXSC148B",
+   "EXSC148C",
+   "EXSC148D",
+   "EXSC154A",
+   "EXSC154B",
+   "EXSC154C",
+   "EXSC154D",
+   "EXSC156A",
+   "EXSC156B",
+   "EXSC156C",
+   "EXSC156D",
+   "EXSC158A",
+   "EXSC158B",
+   "EXSC158C",
+   "EXSC158D",
+   "EXSC166A",
+   "EXSC166B",
+   "EXSC166C",
+   "EXSC166D",
+   "EXSC174A",
+   "EXSC174B",
+   "EXSC174C",
+   "EXSC174D",
+   "EXSC176A",
+   "EXSC176B",
+   "EXSC176C",
+   "EXSC176D",
+   "EXSC178A",
+   "EXSC178B",
+   "EXSC178C",
+   "EXSC178D",
+   "EXSC179A",
+   "EXSC179B",
+   "EXSC179C",
+   "EXSC179D",
+   "EXSC180A",
+   "EXSC180B",
+   "EXSC180C",
+   "EXSC180D",
+   "EXSC182A",
+   "EXSC182B",
+   "EXSC182C",
+   "EXSC182D",
+   "EXSC183A",
+   "EXSC183B",
+   "EXSC183C",
+   "EXSC183D",
+   "EXSC200",
+   "EXSC201",
+   "EXSC202",
+   "EXSC203",
+   "EXSC204",
+   "EXSC205",
+   "EXSC206",
+   "EXSC207",
+   "EXSC214",
+   "EXSC215",
+   "EXSC216",
+   "EXSC217",
+   "EXSC220",
+   "EXSC221",
+   "EXSC222",
+   "EXSC223",
+   "EXSC224",
+   "EXSC225",
+   "EXSC228A",
+   "EXSC228B",
+   "EXSC241B",
+   "HEAL101",
+   "NUTR150",
+   "NUTR170",
+   "PSYC258",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/22217",
+   "title": "Exercise and Nutritional Sciences - Associate of Science: City",
+   "h1": "Exercise and Nutritional Sciences - Associate of Science: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 121,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "45542",
+  "title": "Ceramics",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTF104",
+   "ARTF150A",
+   "ARTF151",
+   "ARTF179A",
+   "ARTF195A",
+   "ARTF195B",
+   "ARTF195C",
+   "ARTF196",
+   "ARTF197A",
+   "ARTF197B",
+   "ARTF207A",
+   "ARTF207B",
+   "ARTF208A",
+   "ARTF208B",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/22212",
+   "title": "Ceramics - Associate of Arts Degree: City",
+   "h1": "Ceramics - Associate of Arts Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "45664",
+  "title": "Sustainable Mining Practices",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH103",
+   "BIOL101",
+   "CHEM111",
+   "CHEM111L",
+   "GEOG135",
+   "GEOG175",
+   "GEOL100",
+   "GEOL101",
+   "GEOL102",
+   "GISG104",
+   "GISG110",
+   "NAIS220",
+   "OCEA101",
+   "SUST101"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/22237",
+   "title": "Sustainable Mining Practices - Certificate of Achievement: City",
+   "h1": "Sustainable Mining Practices - Certificate of Achievement: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "45665",
+  "title": "Sustainable Mining Practices",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AAPI124",
+   "BIOL101",
+   "BLAS116",
+   "CHEM111",
+   "CHEM111L",
+   "CHIC110A",
+   "CHIC110B",
+   "COMS180",
+   "COMS201",
+   "ECON120",
+   "GEOG102",
+   "GEOG104",
+   "GEOG135",
+   "GEOG175",
+   "GEOG290",
+   "GEOL100",
+   "GEOL101",
+   "GEOL102",
+   "GISG104",
+   "GISG110",
+   "INWT101",
+   "INWT140",
+   "INWT146",
+   "NAIS220",
+   "OCEA101",
+   "PADM200",
+   "PHIL131",
+   "POLI101",
+   "POLI140",
+   "SOCO150",
+   "SOCO223",
+   "SUST101"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/22236",
+   "title": "Sustainable Mining Practices - Associate of Science: City",
+   "h1": "Sustainable Mining Practices - Associate of Science: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 32,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "45721",
+  "title": "Native American and Indigenous Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NAIS100",
+   "NAIS150",
+   "NAIS200",
+   "NAIS220",
+   "NAIS240",
+   "NAIS260"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/22280",
+   "title": "Native American and Indigenous Studies - Associate of Arts Degree: City",
+   "h1": "Native American and Indigenous Studies - Associate of Arts Degree: City",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 9645
+ }
+]

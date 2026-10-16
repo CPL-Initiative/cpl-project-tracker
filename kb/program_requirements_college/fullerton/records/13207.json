@@ -1,0 +1,250 @@
+{
+ "college": "Fullerton College",
+ "control_number": "13207",
+ "shape": "degree",
+ "title": "Industrial Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/industrial-technology/industrial-technology-associate-arts-degree/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7291,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7291,
+    "output_tokens": 1578,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1578,
+  "output_tokens_details": {
+   "thinking_tokens": 404
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06072,
+ "ms": 12959,
+ "seconds": 13.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "AUTO100F",
+    "CSTR100F",
+    "PHOT101F"
+   ],
+   "flagged": [
+    "AUTO100F",
+    "CSTR100F",
+    "PHOT101F"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    21.5
+   ],
+   "stated": [
+    18.0,
+    21.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Industrial Technology Associate in Science Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 21.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Describe occupations typically found in each industry/technical area such as: manufacturing, automotive, photography, construction, welding, printing, and drafting.",
+    "Apply theories and principles to solve technical and management problems.",
+    "Design, test and analyze a system or process to meet desired needs.",
+    "Apply good written/oral communication and presentation skills.",
+    "Collect, interpret data to analyze and solve problems.",
+    "Select and use computer applications software."
+   ],
+   "careers": [
+    "Industrial Technologists",
+    "industrial and technology education teachers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses (18-21.5 units)",
+    "rule": "choose_units",
+    "minimum": 18,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 21.5
+    },
+    "courses": [
+     {
+      "code": "ACCT 100 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 100 F",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS 151 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CRTV 118 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSTR 100 F",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DRAF 171 F",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH 116 F",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 101 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PRNT 101 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TECH 127 F",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 100 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The block is headed 'Required Courses (18-21.5 units)' but its 11 listed courses total 32.5 units, so not all can be required to reach 18-21.5; the catalog prints no selection rule. Recorded as choose_units with minimum 18 (the low end of the printed total); reviewer should confirm the actual rule.",
+   "The narrative says 'This degree requires a total of 18-21 units', while the course table prints 'Total Units 18-21.5'. total_units records the table's 18-21.5.",
+   "No general education pattern or degree total (with GE) is printed; the text only mentions 'other graduation requirements'.",
+   "The source URL slug says 'associate-arts-degree' while the page heading and award are Associate in Science.",
+   "Outcomes were taken from the page's outcomes tab; the 'Outcome N:' labels were removed as list numbering.",
+   "AUTO 100 F, CSTR 100 F and PHOT 101 F are not in the closed list and are marked as catalog additions."
+  ]
+ },
+ "extracted_run": "38675136988"
+}

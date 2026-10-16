@@ -1,0 +1,216 @@
+{
+ "college": "San Diego Mesa College",
+ "control_number": "18270",
+ "shape": "degree",
+ "title": "Liberal Arts & Sciences: Math & Pre-Engineering-Engineering",
+ "award": "A.A. Degree",
+ "source_url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17660",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11199,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11199,
+    "output_tokens": 1544,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1544,
+  "output_tokens_details": {
+   "thinking_tokens": 473
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07568,
+ "ms": 13996,
+ "seconds": 14.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 19,
+   "share": 0.0,
+   "missing": [
+    "CHEM200",
+    "CHEM200L",
+    "CHEM201",
+    "CHEM201L",
+    "CISC190",
+    "ENGE116",
+    "ENGE200",
+    "ENGE210",
+    "ENGE250",
+    "ENGE260",
+    "MATH150",
+    "MATH151",
+    "MATH245",
+    "MATH252",
+    "MATH254",
+    "MATH255",
+    "PHYS195",
+    "PHYS196",
+    "PHYS197"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CHEM 200",
+    "why": "named only in the Science Studies-Chemistry section; this award's section not in the text"
+   },
+   {
+    "code": "CHEM 200L",
+    "why": "named only in the Science Studies-Chemistry section; this award's section not in the text"
+   },
+   {
+    "code": "CHEM 201",
+    "why": "named only in the Science Studies-Chemistry section; this award's section not in the text"
+   },
+   {
+    "code": "CHEM 201L",
+    "why": "named only in the Science Studies-Chemistry section; this award's section not in the text"
+   },
+   {
+    "code": "CISC 190",
+    "why": "named only in the Science Studies-Chemistry section; this award's section not in the text"
+   },
+   {
+    "code": "ENGE 116",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGE 200",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGE 210",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGE 250",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGE 260",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 150",
+    "why": "named only in the Science Studies-Chemistry section; this award's section not in the text"
+   },
+   {
+    "code": "MATH 151",
+    "why": "named only in the Science Studies-Chemistry section; this award's section not in the text"
+   },
+   {
+    "code": "MATH 245",
+    "why": "named only in the Science Studies-Chemistry section; this award's section not in the text"
+   },
+   {
+    "code": "MATH 252",
+    "why": "named only in the Science Studies-Chemistry section; this award's section not in the text"
+   },
+   {
+    "code": "MATH 254",
+    "why": "named only in the Science Studies-Chemistry section; this award's section not in the text"
+   },
+   {
+    "code": "MATH 255",
+    "why": "named only in the Science Studies-Chemistry section; this award's section not in the text"
+   },
+   {
+    "code": "PHYS 195",
+    "why": "named only in the Science Studies-Chemistry section; this award's section not in the text"
+   },
+   {
+    "code": "PHYS 196",
+    "why": "named only in the Science Studies-Chemistry section; this award's section not in the text"
+   },
+   {
+    "code": "PHYS 197",
+    "why": "named only in the Science Studies-Chemistry section; this award's section not in the text"
+   }
+  ],
+  "notes": [
+   "The catalog text provided is for 'Liberal Arts and Sciences: Science Studies-Chemistry - Associate of Arts Degree: Mesa', not for Liberal Arts & Sciences: Math & Pre-Engineering-Engineering. No section for the named award appears in the text, so no blocks, totals, outcomes or careers were recorded.",
+   "The Science Studies-Chemistry page lists CHEM 200/200L/201/201L as required (10 units) and a 'Select a minimum of 8 units' list (18 total units) with its own learning outcomes; these belong to a different program and were not used.",
+   "The source URL may point to the wrong program page; a reviewer should retrieve the Math & Pre-Engineering-Engineering A.A. page for 2026-2027.",
+   "The text is cut off mid-sentence in the CHEM 233L course description."
+  ]
+ },
+ "extracted_run": "38282023973"
+}

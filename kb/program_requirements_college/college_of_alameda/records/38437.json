@@ -1,0 +1,211 @@
+{
+ "college": "College of Alameda",
+ "control_number": "38437",
+ "shape": "noncredit",
+ "title": "Pathway to Academic English",
+ "award": "Noncredit program",
+ "source_url": "https://coa.curriqunet.com/catalog/iq/47221/47544/47547",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6502,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6502,
+    "output_tokens": 1294,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1294,
+  "output_tokens_details": {
+   "thinking_tokens": 545
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05189,
+ "ms": 11193,
+ "seconds": 11.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Pathway to Academic English - Certificate of Competency",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will gain reading and writing competencies to succeed in rigorous transfer-level courses."
+   ],
+   "careers": [
+    "Editing",
+    "copywriting",
+    "publishing",
+    "administration"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "LRNRE 503",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "English",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ENGL 540",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL 541",
+        "units": 0,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LRNRE",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "LRNRE 506",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "LRNRE 511",
+        "units": 0,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The award is a noncredit Certificate of Competency; the table's column is headed HOURS, so measure is 'hours'.",
+   "The catalog prints 0.00 hours beside every course and on each block header row (0.00 0.00). The course hours are recorded as printed (0). Block stated totals are left null because the 0.00 header values carry no real total. No total hours are stated for the certificate.",
+   "The description says students take LRNRE 503 plus two noncredit courses in ENGL or LRNRE. The table reads this as one of ENGL 540 or ENGL 541, plus one of LRNRE 506 or LRNRE 511.",
+   "ENGL 540 and ENGL 541 are marked '( Historical )' in the catalog table; a reviewer should check whether they are still offered."
+  ]
+ },
+ "extracted_run": "38935121852"
+}

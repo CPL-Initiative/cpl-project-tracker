@@ -1,0 +1,487 @@
+{
+ "college": "Golden West College",
+ "control_number": "11418",
+ "shape": "degree",
+ "title": "Business Administration",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.cccd.edu/golden-west/pathways/business/liberal-arts/emphasis-bus-pub-aa/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7563,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7563,
+    "output_tokens": 2579,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2579,
+  "output_tokens_details": {
+   "thinking_tokens": 507
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08183,
+ "ms": 19141,
+ "seconds": 19.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 16,
+   "share": 0.562,
+   "missing": [
+    "BUSG110",
+    "BUSG210",
+    "ECONG170",
+    "ECONG175",
+    "MGMTG115",
+    "MGMTG140",
+    "MGMTG155"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 24,
+   "codes": [
+    "ACCTG102",
+    "BUSG100",
+    "BUSG101",
+    "BUSG121",
+    "CJG137",
+    "CJG140",
+    "CMSTG180",
+    "CMSTG260",
+    "CSG130",
+    "ECONC2001",
+    "ECONC2002",
+    "ECONG110",
+    "ECONG115",
+    "ECONG130",
+    "ECONG135",
+    "ECONG160",
+    "MATHG140",
+    "MATHG140S",
+    "MATHG180",
+    "MATHG185",
+    "PSYCG140",
+    "SOCG125",
+    "STATC1000",
+    "STATC1000E"
+   ],
+   "flagged": [
+    "ACCTG102",
+    "BUSG100",
+    "BUSG101",
+    "BUSG121",
+    "CJG137",
+    "CJG140",
+    "CMSTG180",
+    "CMSTG260",
+    "CSG130",
+    "ECONC2001",
+    "ECONC2002",
+    "ECONG110",
+    "ECONG115",
+    "ECONG130",
+    "ECONG135",
+    "ECONG160",
+    "MATHG140",
+    "MATHG140S",
+    "MATHG180",
+    "MATHG185",
+    "PSYCG140",
+    "SOCG125",
+    "STATC1000",
+    "STATC1000E"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     42.0,
+     52.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     34.0
+    ],
+    "why": [],
+    "fill": [
+     8.0,
+     18.0
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Liberal Arts: Emphasis in Business and Public Administration, Associate in Arts Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local or Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 34
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Examine structures of business and technology within the global economy.",
+    "Apply ethical standards to business practices and decisions.",
+    "Develop skills to administer, manage, or lead organizations."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Select a minimum of 18 units from two or more disciplines of the following",
+    "rule": "choose_units",
+    "minimum": 18,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "ACCT G100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT G101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT G102",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS G100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS G101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS G108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS G121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS G130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS G139",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ G137",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CJ G140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CMST G180",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CMST G260",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CS G130",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON G110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON G115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON G130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON G135",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MGMT G110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MGMT G111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MGMT G130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MKTG G100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH G140",
+      "units": 4,
+      "units_max": 6,
+      "alternatives": [
+       {
+        "code": "MATH G140S",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": 6,
+      "alternatives": [
+       {
+        "code": "STAT C1000E",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "PSYC G140",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "SOC G125",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "ECON G160",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH G180",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH G185",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BUS G110",
+    "why": "not in the text"
+   },
+   {
+    "code": "BUS G210",
+    "why": "not in the text"
+   },
+   {
+    "code": "ECON G170",
+    "why": "not in the text; page lists ECON C2001 Principles of Microeconomics instead"
+   },
+   {
+    "code": "ECON G175",
+    "why": "not in the text; page lists ECON C2002 Principles of Macroeconomics instead"
+   },
+   {
+    "code": "MGMT G115",
+    "why": "not in the text"
+   },
+   {
+    "code": "MGMT G140",
+    "why": "not in the text"
+   },
+   {
+    "code": "MGMT G155",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The program is named 'Business Administration' A.A., but the source page is 'Liberal Arts: Emphasis in Business and Public Administration, Associate in Arts Degree' (Banner 2_AA_LABPA, Control Number 19436). Reviewer should confirm this is the intended award.",
+   "The block requires courses from two or more disciplines.",
+   "Units for 'or' alternatives (BUS G139, MATH G140S, STAT C1000E, PSYC G140, SOC G125, ECON G160) are not printed separately; the row unit value is on the first course. MATH G140 and STAT C1000 rows print 4-6.",
+   "ECON C2001/C2002 appear to be renumbered versions of closed-list ECON G170/G175; recorded as catalog additions.",
+   "Electives are 'as needed to reach 60 units'; no units printed for them.",
+   "Program learning outcomes are printed once for the program on the overview tab; recorded as applying to this award."
+  ]
+ },
+ "extracted_run": "38748828247"
+}

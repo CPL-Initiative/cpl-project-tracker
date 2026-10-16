@@ -1,0 +1,175 @@
+{
+ "college": "Citrus College",
+ "control_number": "45514",
+ "shape": "noncredit",
+ "title": "Drone Operations",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/drone-operations-certificate-competency/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7144,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7144,
+    "output_tokens": 1284,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1284,
+  "output_tokens_details": {
+   "thinking_tokens": 411
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05426,
+ "ms": 11237,
+ "seconds": 11.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    72.0,
+    72.0
+   ],
+   "stated": [
+    72.0,
+    72.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Drone Operations Certificate of Competency",
+   "measure": "hours",
+   "total_units": {
+    "min": 72,
+    "max": 72
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Acquire technical knowledge of the applications of drones for public safety, search and rescue, firefighting and law enforcement operations. Acquire hands-on skills in the use of thermal cameras, thermal image processing, obstacle course training in search and rescue drone operation, current UAS regulations, aerial photography, and media editing skills in preparation to work in the public safety industries.",
+    "Acquire technical knowledge of drone operations for autonomous operations, BVLOS regulations, drone delivery methods and mission planning. Various autonomous drone systems would be utilized to gain hands-on skills in autonomous mission planning and flight.",
+    "Develop an understanding of major global issues involving the environment and how drones can and have been used to address and potentially solve these issues. Acquire hands-on experience in drone flight using obstacle courses and scenario-based training to improve flight skills. Instruction of basic drone flight maneuvers, field data collection and performance in guided field training."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NC 110",
+      "units": 24,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NC 111",
+      "units": 24,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NC 112",
+      "units": 24,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints no explicit program heading in the extracted text; section_heading is taken from the outcomes heading text ('Drone Operations Certificate of Competency') and the URL. The catalog calls this a Certificate of Competency.",
+   "Noncredit program counted in hours: the 'Units' column holds hours (24 per course) and the page prints 'Total Hours 72'.",
+   "Outcomes are recorded as three entries, one per printed paragraph; each paragraph contains multiple sentences, so a reviewer may check whether the source list splits them differently.",
+   "A 'Career Information' tab is shown but its content is not in the extracted text; the description names no specific careers or job titles (only 'work with organizations, companies and industries' and advanced coursework fields), so careers is empty."
+  ]
+ },
+ "extracted_run": "38675245799"
+}

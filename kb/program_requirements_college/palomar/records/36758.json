@@ -1,0 +1,188 @@
+{
+ "college": "Palomar College",
+ "control_number": "36758",
+ "shape": "degree",
+ "title": "German",
+ "award": "A.A. Degree",
+ "source_url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/German-AA-CA",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6524,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6524,
+    "output_tokens": 1538,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1538,
+  "output_tokens_details": {
+   "thinking_tokens": 455
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05686,
+ "ms": 12894,
+ "seconds": 13.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.0,
+    20.0
+   ],
+   "stated": [
+    20.0,
+    20.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "World Languages  Department - German - A.A. Degree Major or Certificate of Achievement (18 units or more)",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 20
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Writing – Upon successful completion of this program, students will be able to write clear detailed text in German on a range of subjects passing on information or giving reasons in support of or against a particular point of view. Students will be able to write letters, essays or reports highlighting the personal significance of events and experiences and compare and contrast their own culture with that of the German speaking world.",
+    "Listening – Upon successful completion of the program, students will be able to understand the main points of standard speech and follow some complex lines of argument. Students will be able to understand the main points of German language radio, TV programs and film that address current affairs or topics of personal and professional interest. Students will be able to recognize the linguistic variations that exist within the German speaking world.",
+    "Speaking – Upon successful completion of the program, students will be able to interact with a degree of fluency and spontaneity that makes interaction with native German speakers possible. Students will be able to take an active part in discussions on familiar topics. Students will be able to present facts and opinions, compare and contrast cultural differences, explain a viewpoint on a topical issue and argue the advantages and disadvantages of various options.",
+    "Reading – Upon successful completion of the program, students will be able to comprehend materials written in German such as articles, reports and simple literary texts that address contemporary issues of the German speaking world. Students will be able to identify and evaluate the writers’ particular attitudes and viewpoints."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 20,
+     "max": 20
+    },
+    "courses": [
+     {
+      "code": "GERM 101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GERM 102",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GERM 201",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GERM 202",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog text is cut off at its start ('he Certificate of Achievement...'); the opening of the program description is missing.",
+   "The section is shared by the A.A. Degree major and the Certificate of Achievement; the requirements, total (20 units) and outcomes list apply to both, and were recorded for the A.A. Degree.",
+   "Outcomes were copied including their printed labels ('Writing –', 'Listening –', etc.); a reviewer may decide whether the labels belong in the entries.",
+   "No degree total or general education pattern is printed on the page.",
+   "The description says German is relevant to students specializing in arts and humanities, literature, theatre, history, art history, music, social and political sciences, education, business and international relations; these read as fields of study rather than named careers, so careers was left empty for review."
+  ]
+ },
+ "extracted_run": "38843467865"
+}

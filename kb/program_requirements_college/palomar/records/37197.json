@@ -1,0 +1,362 @@
+{
+ "college": "Palomar College",
+ "control_number": "37197",
+ "shape": "adt",
+ "title": "Film, Television, and Electronic Media",
+ "award": "A.S. T Degree",
+ "source_url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/FilmTelevisionElectronicMedia-AST",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7856,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7856,
+    "output_tokens": 3047,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3047,
+  "output_tokens_details": {
+   "thinking_tokens": 1219
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09236,
+ "ms": 23202,
+ "seconds": 23.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 21,
+   "listed": 22,
+   "share": 0.955,
+   "missing": [
+    "CINE170"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "CINE100",
+    "CINE103"
+   ],
+   "flagged": [
+    "CINE100",
+    "CINE103"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    16.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 16.0-18.0; the catalog states 18.0-18.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Media Studies  Department - Film, Television, and Electronic Media - AS-T Transfer Major (18 units or more)",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Interpret, evaluate, and analyze the historical context, cultural values and technological innovations of a variety of media forms while incorporating these norms into a multi-media production or presentation.",
+    "Write and produce scripts in a variety of formats for multi-media, film and broadcast products that adhere to professional standards",
+    "Student will be proficient in the operation of basic production equipment including cameras, sound recording equipment, lights, microphones and grip equipment.",
+    "Student will be proficient in the operation of post production equipment and software for the purposes of producing a variety of multi-media, film and broadcast products that adhere to professional standards"
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "COMM 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DBA 100",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DBA 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CINE 115",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "DBA 115",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CINE 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "LIST A: Select one course from each area (6 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "DBA 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DBA 230",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DBA 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DBA 225",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "CINE 225",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "CINE 125",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "DBA 125",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST B: Select one course from below or any course not already used above.",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "DBA 170",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CINE 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CINE 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHOT 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST C: Select one course from below or any course not already used above.",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "DBA 135A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DBA 240A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CINE 270",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DBA 270",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DBA 298",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CINE 170",
+    "why": "not in the text (only DBA 170 is listed)"
+   }
+  ],
+  "notes": [
+   "Required Core reads 'Select one course from two of the three areas (6 units)'; recorded as choose 2 courses, one entry per area (Communications & Media, Industry Writing, Cinema) with the area's 'OR' options as alternatives. A reviewer should confirm both picks must come from different areas.",
+   "LIST A requires one course from each of two areas (Area I: Audio; Area 2: Video or Film Production); recorded as an 'all' block with each area as one entry and its OR options as alternatives.",
+   "Cross-listed courses (CINE 115 / DBA 115, DBA 225 / CINE 225, CINE 125 / DBA 125, CINE 270 / DBA 270) recorded as alternatives of one entry.",
+   "LIST B and LIST C each also allow 'any course not already used above.'",
+   "DBA 170 is marked '( Historical )' in the catalog.",
+   "DBA 298 is printed as 1.0- 3.0 units.",
+   "The 60-unit completion sentence is the generic ADT requirement, not recorded as degree_total; no Cal-GETC unit figure is printed.",
+   "No careers are named in the text."
+  ]
+ },
+ "extracted_run": "38843467865"
+}

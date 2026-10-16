@@ -213,8 +213,11 @@ block("(4)", function () {
   const txt = root.textContent || "";
   check("(4) ⭐ the header no longer describes the assistant below it",
     !/Ask Sierra anything about CPL/.test(txt) && !root.querySelector(".cb-welcome-p"));
-  check("(4) …and the assistant still introduces herself, once",
-    /Ask her anything about credit for prior learning/.test(txt));
+  // Since S400 she introduces herself by name alone, as Sierra AI over a tab
+  // does, and the box's placeholder asks; the caution rides under the box.
+  check("(4) …and the assistant still names herself, once",
+    Array.prototype.filter.call(root.querySelectorAll("h1, h2, h3"), function (h) { return /Sierra AI/.test(h.textContent); }).length === 1
+      && !/Ask her anything/.test(txt), JSON.stringify(txt.slice(0, 160)));
   check("(4) the caution survived the yellow box being deleted",
     /development phase/.test(txt) && /questions are logged/.test(txt) && !/Beta — in development/.test(txt));
   check("(4) positive control: the header still names the college and its controls",
@@ -233,12 +236,12 @@ block("(5)", function () {
    * happens to contain the string it wants. Strip line comments first. */
   const CODE = CHAT.split("\n").filter(function (l) { return !/^\s*(\/\/|\*|\/\*)/.test(l); }).join("\n");
   check("(5) ⚠ the starter chips are removed by REFERENCE, not by a document id lookup",
-    !/getElementById\('cplchat-suggest'\)/.test(CODE) && /chipsEl\.remove\(\)/.test(CODE),
+    !/getElementById\('cplchat-suggest'\)/.test(CODE) && /\bb\.chips\.remove\(\)/.test(CODE),
     "two panes can hold a row at once; the id lookup clears whichever is earlier in the document");
-  check("(5) ⚠ the dedicated CPL Assistant pane clears any host-supplied list",
-    /hostSuggestions = null;[\s\S]{0,80}build\(host\);/.test(CODE),
-    "a college's questions must not follow the reader onto a pane that never named it");
-  check("(5) the widget still ships generic starters for that pane",
+  check("(5) ⚠ Sierra AI's own box (S398, the CPL Assistant pane's heir) takes no host-supplied list",
+    /build\(cobiHost, \{[^}]*\bsuggestions: null \}\)/.test(CODE),
+    "a college's questions must not follow the reader onto a box that never named it");
+  check("(5) the widget still ships generic starters for that box",
     /Does Riverside City College offer firefighter CPL\?/.test(CHAT));
 });
 

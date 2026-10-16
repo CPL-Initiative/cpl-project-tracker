@@ -1,0 +1,25 @@
+{
+ "_readme": "S382 SkyLarch, 2026-10-13. Read 38443044852 showed Coastline's program pages print only their Overview: Building Codes Inspector A.S. is 1,080 characters, its tab bar reads OVERVIEW · REQUIREMENTS, and no course code is on the page or in what its scripts fetched while it loaded. Information Technology A.S.'s page read at coverage 1.0 through the link search (run 38429656959). This read loads both and prints where each page's REQUIREMENTS tab points. Two loads, no model call.",
+ "college": "Coastline Community College",
+ "questions": {
+  "requirements_tab": "Where the REQUIREMENTS tab points (a fragment on the page, another address, a script call), and how Information Technology A.S.'s page differs."
+ },
+ "keywords": [
+  "REQUIREMENTS",
+  "[Rr]equirement",
+  "BCI\\s?C\\d+",
+  "CST\\s?C\\d+"
+ ],
+ "pages": [
+  {
+   "answers": ["requirements_tab"],
+   "url": "https://catalog.cccd.edu/coastline/pathways/law-safety/building-codes-inspector/building-codes-inspector-as/",
+   "links": "(?i)requirement|overview|tab|print|pdf"
+  },
+  {
+   "answers": ["requirements_tab"],
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/information-technology/information-technology-as/",
+   "links": "(?i)requirement|overview|tab|print|pdf"
+  }
+ ]
+}

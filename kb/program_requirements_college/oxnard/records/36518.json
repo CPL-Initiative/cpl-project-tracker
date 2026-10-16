@@ -1,0 +1,498 @@
+{
+ "college": "Oxnard College",
+ "control_number": "36518",
+ "shape": "adt",
+ "title": "Public Health Science",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.vcccd.edu/oxnard/programs-courses/public-health-science/public-health-ast/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8427,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8427,
+    "output_tokens": 3543,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3543,
+  "output_tokens_details": {
+   "thinking_tokens": 1285
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10457,
+ "ms": 28186,
+ "seconds": 28.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 19,
+   "listed": 34,
+   "share": 0.559,
+   "missing": [
+    "BIOLR120",
+    "BIOLR120L",
+    "BIOLR122",
+    "BIOLR122L",
+    "ECONC2001",
+    "ECONC2001H",
+    "ECONC2002",
+    "ECONC2002H",
+    "MATHC2210",
+    "MATHR106",
+    "MATHR115",
+    "PHYSR121",
+    "PHYSR122",
+    "PHYSR131",
+    "PHYSR132"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 9,
+   "codes": [
+    "HEDR101",
+    "HEDR115",
+    "HEDR116",
+    "HEDR121",
+    "HEDR122",
+    "MICRR100",
+    "MICRR100L",
+    "PSYR108",
+    "SOCR125"
+   ],
+   "flagged": [
+    "HEDR101",
+    "HEDR115",
+    "HEDR116",
+    "HEDR121",
+    "HEDR122",
+    "MICRR100",
+    "MICRR100L",
+    "PSYR108",
+    "SOCR125"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    23.0,
+    25.0
+   ],
+   "stated": [
+    23.0,
+    25.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     68.0,
+     78.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Public Health, Associate in Science for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 23,
+    "max": 25
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 11,
+    "max": 19
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate the ability to comprehend and apply the multidimensional approach of public health sciences.",
+    "Identify proactive factors for disease prevention and risk factors for disease and disability.",
+    "Demonstrate and apply behavior-changing techniques to maximize health and wellness.",
+    "Demonstrate the concepts of research, program planning, and evaluation strategies."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 13,
+     "max": 14
+    },
+    "courses": [
+     {
+      "code": "HED R104",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HED R113",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL C1001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL C1001H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL C1001L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSY R103",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC R125",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "CHEM R110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM R120",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANAT R101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHSO R101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MICR R100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MICR R100L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "List B",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "HED R115",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HED R122",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "List C",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "HED R116",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HED R121",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HED R103",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSY R110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HED R101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HED R114",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSY R108",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOCI C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOCI C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BIOL R120",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOL R120L",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOL R122",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOL R122L",
+    "why": "not in the text"
+   },
+   {
+    "code": "ECON C2001",
+    "why": "not in the text"
+   },
+   {
+    "code": "ECON C2001H",
+    "why": "not in the text"
+   },
+   {
+    "code": "ECON C2002",
+    "why": "not in the text"
+   },
+   {
+    "code": "ECON C2002H",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH C2210",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH R106",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH R115",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYS R121",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYS R122",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYS R131",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYS R132",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The catalog text prints no units beside individual courses, only block totals; course units are left null.",
+   "Core block: the biology requirement is one lecture (BIOL C1001 or honors BIOL C1001H) plus the lab BIOL C1001L; statistics is one of STAT C1000, STAT C1000H, PSY R103 or SOC R125, recorded as one entry with alternatives.",
+   "List A: MICR R100 & MICR R100L are printed as one combined option; together they count as the single course chosen.",
+   "Closed list stores SOCIC1000/SOCIC1000H without a space; catalog prints SOCI C1000/SOCI C1000H. Treated as the same courses (catalog_addition false).",
+   "Page prints Total Required Major Units 23-25, Cal-GETC 34, Double-Counted Units -10-16, Free Electives Required 11-19, Total Units Required for AS-T Degree 60. Free electives recorded in degree_elective_units.",
+   "Section heading taken from the navigation entry 'Public Health, Associate in Science for Transfer'; the page title itself is not in the extracted text.",
+   "The outcomes are printed in the page's program student learning outcomes tab for this program."
+  ]
+ },
+ "extracted_run": "38842203500"
+}

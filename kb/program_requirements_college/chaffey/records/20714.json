@@ -1,0 +1,187 @@
+{
+ "college": "Chaffey College",
+ "control_number": "20714",
+ "shape": "certificate",
+ "title": "CAD Drafting Technician: Architectural",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18962",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5464,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5464,
+    "output_tokens": 1178,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1178,
+  "output_tokens_details": {
+   "thinking_tokens": 329
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04542,
+ "ms": 10560,
+ "seconds": 11.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "DRAFT53"
+   ],
+   "flagged": [
+    "DRAFT53"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    21.0,
+    21.0
+   ],
+   "stated": [
+    21.0,
+    21.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "CAD Drafting Technician: Architectural - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 21,
+    "max": 21
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Effectively express information regarding drafting/design activities and topics through speaking, writing, producing drawings and diagrams, using digital media and other appropriate modes of communication/expression.",
+    "Demonstrate knowledge and technical competency in applied architectural drafting practice.",
+    "Demonstrate mastery of the application of modern CAD software tools in the production of technical documents that comply with current industry accepted drafting standards and practices.",
+    "Demonstrate an understanding of and a commitment to address professional and ethical responsibilities including a respect for diversity and work effectively in teams.",
+    "Demonstrate an understanding of the need for and an ability to engage in self-directed life-long learning, especially concerning maintenance and improvement of technical skills."
+   ],
+   "careers": [
+    "manufacturing",
+    "architectural industries"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Requirements for the Certificate of Achievement (CA):",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 21,
+     "max": 21
+    },
+    "courses": [
+     {
+      "code": "DRAFT 20",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DRAFT 21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DRAFT 50",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DRAFT 51",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DRAFT 53",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "EGTECH 10",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "DRAFT 53 (Architectural Applications of CAD, 4 units) is listed as required in the catalog but is not on the closed list; recorded as a catalog addition.",
+   "Careers read from the description phrase 'employment in the manufacturing and architectural industries'; split into two career fields — reviewer may prefer a single entry.",
+   "'Manufacturing, Industrial Design, and Transportation' under Other Information appears to be a pathway/area label, not a career; not recorded as a career."
+  ]
+ },
+ "extracted_run": "38242003226"
+}

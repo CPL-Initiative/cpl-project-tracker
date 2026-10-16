@@ -1,0 +1,4918 @@
+[
+ {
+  "control_number": "05072",
+  "title": "Business Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT102",
+   "ACCT116A",
+   "ACCT116B",
+   "ACCT150",
+   "BUSE100",
+   "BUSE101",
+   "BUSE102",
+   "BUSE115",
+   "BUSE119",
+   "BUSE120",
+   "BUSE129",
+   "BUSE150",
+   "BUSE155",
+   "BUSE201",
+   "CBTE120",
+   "CBTE122",
+   "CBTE127",
+   "CBTE140",
+   "CBTE143",
+   "CBTE152",
+   "CBTE180",
+   "CBTE210",
+   "ECON121",
+   "LIBS101",
+   "MARK100",
+   "MATH121",
+   "MATH150",
+   "PSYC258",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20005",
+   "title": "Business Management - Associate of Science Degree: Miramar",
+   "h1": "Business Management - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 29,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "05075",
+  "title": "Computer Programming",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CISC179",
+   "CISC181",
+   "CISC187",
+   "CISC190",
+   "CISC191",
+   "CISC192",
+   "CISC205",
+   "CISC211",
+   "CISC217",
+   "PSYC258",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20016",
+   "title": "Computer Programming - Associate of Science Degree: Miramar",
+   "h1": "Computer Programming - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "05078",
+  "title": "Heavy Duty Transportation Technology (HDTT)",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05087",
+  "title": "Child Development",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHIL111",
+   "CHIL121",
+   "CHIL131",
+   "CHIL141",
+   "CHIL151",
+   "CHIL160",
+   "CHIL161",
+   "CHIL165",
+   "CHIL175",
+   "CHIL180",
+   "CHIL270",
+   "CHIL275"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20008",
+   "title": "Child Development - Associate of Science Degree: Miramar",
+   "h1": "Child Development - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "05088",
+  "title": "Paralegal",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJU102",
+   "ADJU210",
+   "ADJU230",
+   "BUSE102",
+   "BUSE140",
+   "PARA100",
+   "PARA105",
+   "PARA110",
+   "PARA115",
+   "PARA120",
+   "PARA140",
+   "PARA145",
+   "PARA150",
+   "PARA155",
+   "PARA160",
+   "PARA165",
+   "PARA180",
+   "PARA270"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20093",
+   "title": "Paralegal - Associate of Science Degree: Miramar",
+   "h1": "Paralegal - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "05095",
+  "title": "Law Enforcement",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJU101",
+   "ADJU102",
+   "ADJU106",
+   "ADJU127A",
+   "ADJU128A",
+   "ADJU160",
+   "ADJU161",
+   "ADJU162",
+   "ADJU167",
+   "ADJU182",
+   "ADJU201",
+   "ADJU210",
+   "ADJU230",
+   "ADJU357A"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20075",
+   "title": "Law Enforcement - Associate of Science Degree: Miramar",
+   "h1": "Law Enforcement - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "05096",
+  "title": "Administration of Justice Correctional Technologies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJU101",
+   "ADJU102",
+   "ADJU161",
+   "ADJU162",
+   "ADJU167",
+   "ADJU201",
+   "ADJU323A"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20023",
+   "title": "Correctional Technologies - Associate of Science Degree: Miramar",
+   "h1": "Correctional Technologies - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.5
+   }
+  },
+  "listed": 7,
+  "text_chars": 9276
+ },
+ {
+  "control_number": "05098",
+  "title": "Law Enforcement Technologies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJU101",
+   "ADJU106",
+   "ADJU260",
+   "ADJU361R"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20078",
+   "title": "Law Enforcement Technologies - Certificate of Achievement: Miramar",
+   "h1": "Law Enforcement Technologies - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 7422
+ },
+ {
+  "control_number": "05100",
+  "title": "Fire Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMGM105A",
+   "EMGM106",
+   "FIPT101",
+   "FIPT102",
+   "FIPT103",
+   "FIPT104",
+   "FIPT105",
+   "FIPT120"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20043",
+   "title": "Fire Technology - Associate of Science Degree: Miramar",
+   "h1": "Fire Technology - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 5335
+ },
+ {
+  "control_number": "09710",
+  "title": "Biology for Allied Health",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.688,
+  "codes_found": [
+   "BIOL107",
+   "BIOL205",
+   "BIOL230",
+   "BIOL235",
+   "CHEM100",
+   "CHEM100L",
+   "CHEM103",
+   "CHEM130",
+   "CHEM130L",
+   "CHEM152",
+   "CHEM152L"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19998",
+   "title": "Biology for Allied Health - Associate of Science Degree: Miramar",
+   "h1": "Biology for Allied Health - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 13803
+ },
+ {
+  "control_number": "09711",
+  "title": "Biotechnology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL107",
+   "BIOL131",
+   "BIOL132",
+   "BIOL133",
+   "BIOL136",
+   "CBTE140",
+   "CHEM152",
+   "CHEM152L",
+   "COMMC1000",
+   "COMS135"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20000",
+   "title": "Biotechnology - Associate of Science Degree: Miramar",
+   "h1": "Biotechnology - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 15564
+ },
+ {
+  "control_number": "09712",
+  "title": "Financial Services",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT116A",
+   "ACCT120",
+   "ACCT121",
+   "BANK100",
+   "BANK102",
+   "BANK103",
+   "BANK200",
+   "BUSE101",
+   "BUSE102",
+   "BUSE119",
+   "BUSE120",
+   "BUSE155",
+   "BUSE201",
+   "MARK100",
+   "REAL101",
+   "REAL115",
+   "REAL120"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20049",
+   "title": "Financial Services - Associate of Science Degree: Miramar",
+   "h1": "Financial Services - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "09718",
+  "title": "Heavy Equipment Technology (HET) (Day Program)",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DIES100",
+   "DIES101",
+   "DIES102",
+   "DIES105",
+   "DIES121",
+   "DIES122",
+   "DIES123",
+   "DIES124",
+   "DIES138",
+   "DIES144",
+   "DIES160",
+   "DIES200",
+   "DIES202",
+   "DIES212",
+   "DIES222",
+   "DIES230",
+   "DIES240"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20061",
+   "title": "Heavy Equipment Technology (HET) (Day Program) - Associate of Science Degree: Miramar",
+   "h1": "Heavy Equipment Technology (HET) (Day Program) - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "09719",
+  "title": "Heavy Duty Diesel and Advanced Transportation Technology (HDDAT)",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "09720",
+  "title": "Automotive Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO156G",
+   "AUTO156T",
+   "AUTO161G",
+   "AUTO161T",
+   "AUTO162G",
+   "AUTO162T",
+   "AUTO165G",
+   "AUTO165T",
+   "AUTO167G",
+   "AUTO167T",
+   "AUTO169G",
+   "AUTO169T",
+   "AUTO172G",
+   "AUTO172T",
+   "AUTO174G",
+   "AUTO174T",
+   "AUTO176G",
+   "AUTO176T",
+   "AUTO178G",
+   "AUTO178T"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19985",
+   "title": "Automotive Technology - Associate of Science Degree: Miramar",
+   "h1": "Automotive Technology - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "09721",
+  "title": "Automotive Electrical",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO161G",
+   "AUTO161T",
+   "AUTO162G",
+   "AUTO162T",
+   "AUTO165G",
+   "AUTO165T",
+   "AUTO169G",
+   "AUTO169T"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19983",
+   "title": "Automotive Electrical - Certificate of Achievement: Miramar",
+   "h1": "Automotive Electrical - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 13028
+ },
+ {
+  "control_number": "09722",
+  "title": "Automotive Engine Performance",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO156G",
+   "AUTO156T",
+   "AUTO161G",
+   "AUTO161T",
+   "AUTO162G",
+   "AUTO162T",
+   "AUTO165G",
+   "AUTO165T",
+   "AUTO167G",
+   "AUTO167T"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19984",
+   "title": "Automotive Engine Performance - Certificate of Achievement: Miramar",
+   "h1": "Automotive Engine Performance - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 14905
+ },
+ {
+  "control_number": "09723",
+  "title": "Automotive Transmissions",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO161G",
+   "AUTO161T",
+   "AUTO162G",
+   "AUTO162T",
+   "AUTO165G",
+   "AUTO165T",
+   "AUTO172G",
+   "AUTO172T",
+   "AUTO174G",
+   "AUTO174T"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19986",
+   "title": "Automotive Transmissions - Certificate of Achievement: Miramar",
+   "h1": "Automotive Transmissions - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 15157
+ },
+ {
+  "control_number": "09724",
+  "title": "Automotive Chassis",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO161G",
+   "AUTO161T",
+   "AUTO162G",
+   "AUTO162T",
+   "AUTO176G",
+   "AUTO176T",
+   "AUTO178G",
+   "AUTO178T"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19982",
+   "title": "Automotive Chassis - Certificate of Achievement: Miramar",
+   "h1": "Automotive Chassis - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 12626
+ },
+ {
+  "control_number": "09725",
+  "title": "Aviation Maintenance Technology: Airframe",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AVIM101G",
+   "AVIM101H",
+   "AVIM102G",
+   "AVIM102H",
+   "AVIM109D",
+   "AVIM110A",
+   "AVIM120",
+   "AVIM121A"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19990",
+   "title": "Aviation Maintenance Technology - Airframe - Associate of Science Degree: Miramar",
+   "h1": "Aviation Maintenance Technology - Airframe - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2774
+ },
+ {
+  "control_number": "09726",
+  "title": "Aviation Maintenance Technology: Powerplant",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "09732",
+  "title": "Combined Drawing/Painting",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTF107",
+   "ARTF150A",
+   "ARTF155A",
+   "ARTF155B",
+   "ARTF165A",
+   "ARTF165B",
+   "ARTF170A",
+   "ARTF210A",
+   "ARTF210B",
+   "ARTHC1100"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20011",
+   "title": "Combined Drawing/Painting - Associate of Arts Degree: Miramar",
+   "h1": "Combined Drawing/Painting - Associate of Arts Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "11261",
+  "title": "Administration of Justice Investigations Specialization",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJU101",
+   "ADJU102",
+   "ADJU106",
+   "ADJU160",
+   "ADJU161",
+   "ADJU162",
+   "ADJU167",
+   "ADJU182",
+   "ADJU201",
+   "ADJU210",
+   "ADJU230"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20072",
+   "title": "Investigations Specialization - Associate of Science Degree: Miramar",
+   "h1": "Investigations Specialization - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.5
+   }
+  },
+  "listed": 11,
+  "text_chars": 15921
+ },
+ {
+  "control_number": "11263",
+  "title": "Contemporary Police Technologies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJU160",
+   "ADJU161",
+   "ADJU180",
+   "ADJU182",
+   "ADJU201",
+   "ADJU210",
+   "ADJU230",
+   "ADJU260"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20020",
+   "title": "Contemporary Police Technologies - Associate of Science Degree: Miramar",
+   "h1": "Contemporary Police Technologies - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 10922
+ },
+ {
+  "control_number": "11728",
+  "title": "Aviation Business Administration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "ACCT116A",
+   "ACCT116B",
+   "AVIA101",
+   "AVIA101L",
+   "AVIA105",
+   "AVIA115",
+   "AVIA125",
+   "AVIA128",
+   "AVIA133",
+   "AVIA228",
+   "AVIA270",
+   "BUSE119",
+   "BUSE140",
+   "BUSE201",
+   "CBTE180",
+   "CBTE210"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19987",
+   "title": "Aviation Business Administration - Associate of Science Degree: Miramar",
+   "h1": "Aviation Business Administration - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 4448
+ },
+ {
+  "control_number": "12103",
+  "title": "Child Development Associate Teacher",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "12104",
+  "title": "Child Development Teacher",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHIL111",
+   "CHIL121",
+   "CHIL131",
+   "CHIL141",
+   "CHIL151",
+   "CHIL160",
+   "CHIL161",
+   "CHIL165",
+   "CHIL175",
+   "CHIL180",
+   "CHIL270",
+   "CHIL275"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20081",
+   "title": "Child Development Master Teacher - Certificate of Achievement: Miramar",
+   "h1": "Child Development Master Teacher - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "12105",
+  "title": "Child Development Master Teacher",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHIL101",
+   "CHIL111",
+   "CHIL121",
+   "CHIL131",
+   "CHIL141",
+   "CHIL151",
+   "CHIL160",
+   "CHIL161",
+   "CHIL162",
+   "CHIL165",
+   "CHIL166",
+   "CHIL175",
+   "CHIL176",
+   "CHIL180",
+   "CHIL188",
+   "CHIL215",
+   "CHIL270",
+   "CHIL275"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20081",
+   "title": "Child Development Master Teacher - Certificate of Achievement: Miramar",
+   "h1": "Child Development Master Teacher - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "12648",
+  "title": "Equipment Mechanic Apprenticeship",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO156G",
+   "AUTO178G",
+   "DIES100",
+   "DIES135",
+   "DIES137",
+   "DIES138",
+   "DIES155",
+   "DIES160",
+   "DIES170"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20045",
+   "title": "Equipment Mechanic Apprenticeship - Associate of Science Degree: Miramar",
+   "h1": "Equipment Mechanic Apprenticeship - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 11887
+ },
+ {
+  "control_number": "16566",
+  "title": "Business Administration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT116A",
+   "ACCT116B",
+   "BUSE119",
+   "ECON120",
+   "ECON121",
+   "MARK100",
+   "MATH121",
+   "MATH150",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20002",
+   "title": "Business Administration - Associate of Science Degree: Miramar",
+   "h1": "Business Administration - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "16593",
+  "title": "Studio Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTF100",
+   "ARTF109",
+   "ARTF150A",
+   "ARTF151",
+   "ARTF155A",
+   "ARTF165A",
+   "ARTF195A",
+   "ARTF210A",
+   "ARTHC1100",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20117",
+   "title": "Studio Arts - Associate of Arts Degree: Miramar",
+   "h1": "Studio Arts - Associate of Arts Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 12322
+ },
+ {
+  "control_number": "16594",
+  "title": "Craft Skills",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTF107",
+   "ARTF109",
+   "ARTF113",
+   "ARTF125",
+   "ARTF150A",
+   "ARTF151",
+   "ARTF155A",
+   "ARTF155B",
+   "ARTF165A",
+   "ARTF170A",
+   "ARTF170B",
+   "ARTF170C",
+   "ARTF195A",
+   "ARTF195B",
+   "ARTF195C",
+   "ARTF210A",
+   "ARTHC1100",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20025",
+   "title": "Craft Skills - Associate of Arts Degree: Miramar",
+   "h1": "Craft Skills - Associate of Arts Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "16629",
+  "title": "Child Development Site Supervisor",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHIL101",
+   "CHIL111",
+   "CHIL121",
+   "CHIL131",
+   "CHIL141",
+   "CHIL151",
+   "CHIL180",
+   "CHIL202",
+   "CHIL210",
+   "CHIL215",
+   "CHIL270",
+   "CHIL275"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20112",
+   "title": "Child Development Site Supervisor - Associate of Science Degree: Miramar",
+   "h1": "Child Development Site Supervisor - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "16665",
+  "title": "Technical Achievement for Field Training Officers",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJU260",
+   "ADJU330A"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20122",
+   "title": "Technical Achievement for Field Training Officers - Certificate of Achievement: Miramar",
+   "h1": "Technical Achievement for Field Training Officers - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 4561
+ },
+ {
+  "control_number": "16668",
+  "title": "Fire Prevention",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGLC1000",
+   "FIPT101",
+   "FIPT102",
+   "FIPT103",
+   "FIPT105",
+   "FIPT125",
+   "FIPT323A",
+   "FIPT323B",
+   "FIPT351A",
+   "FIPT351B",
+   "FIPT351C",
+   "FIPT351D"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20051",
+   "title": "Fire Prevention - Associate of Science Degree: Miramar",
+   "h1": "Fire Prevention - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 6229
+ },
+ {
+  "control_number": "16669",
+  "title": "Company Officer Certification",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMGM105A",
+   "FIPT324D",
+   "FIPT340",
+   "FIPT341",
+   "FIPT342",
+   "FIPT344",
+   "FIPT381F",
+   "FIPT381G",
+   "FIPT381S"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20014",
+   "title": "Company Officer Certification - Associate of Science Degree: Miramar",
+   "h1": "Company Officer Certification - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 6198
+ },
+ {
+  "control_number": "16700",
+  "title": "Diesel Technology: Engine Overhaul, Caterpillar",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "16701",
+  "title": "Diesel Technology: Engine Repair, Caterpillar",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "16702",
+  "title": "Diesel Technology: Engine Overhaul, Detroit Diesel",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "16703",
+  "title": "Diesel Technology: Engine Repair, Detroit Diesel",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "16731",
+  "title": "Aviation General Studies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AVIM101G",
+   "AVIM101H",
+   "AVIM102G",
+   "AVIM102H",
+   "AVIM109D",
+   "AVIM110A",
+   "AVIM120",
+   "AVIM121A"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19988",
+   "title": "Aviation General Studies - Associate of Science Degree: Miramar",
+   "h1": "Aviation General Studies - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3035
+ },
+ {
+  "control_number": "16732",
+  "title": "Aviation Maintenance Technology: Airframe & Powerplant",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "16739",
+  "title": "Law Enforcement Supervision",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJU260",
+   "ADJU312A"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20077",
+   "title": "Law Enforcement Supervision - Certificate of Achievement: Miramar",
+   "h1": "Law Enforcement Supervision - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 4292
+ },
+ {
+  "control_number": "16743",
+  "title": "Advanced Traffic Accident Investigation",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJU260",
+   "ADJU304A",
+   "ADJU305A",
+   "ADJU322A",
+   "ADJU332A",
+   "ADJU366"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20947",
+   "title": "Advanced Traffic Accident Investigation - Certificate of Achievement: Miramar",
+   "h1": "Advanced Traffic Accident Investigation - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 9082
+ },
+ {
+  "control_number": "16746",
+  "title": "Open Water Lifeguard",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.696,
+  "codes_found": [
+   "ADJU102",
+   "ADJU106",
+   "ADJU160",
+   "ADJU167",
+   "ADJU210",
+   "ADJU230",
+   "ADJU357A",
+   "EMGM105A",
+   "EMGM106",
+   "FIPT322B",
+   "FIPT324C",
+   "FIPT332A",
+   "LFGD101",
+   "LFGD101A",
+   "LFGD330",
+   "LFGD335"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20090",
+   "title": "Open Water Lifeguard - Associate of Science Degree: Miramar",
+   "h1": "Open Water Lifeguard - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "16779",
+  "title": "Professional Aeronautics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.963,
+  "codes_found": [
+   "ACCT116A",
+   "AVIA101",
+   "AVIA101L",
+   "AVIA105",
+   "AVIA115",
+   "AVIA125",
+   "AVIA128",
+   "AVIA151",
+   "AVIA161",
+   "AVIA161L",
+   "AVIA195",
+   "AVIA195L",
+   "AVIA196L",
+   "AVIA201",
+   "AVIA211",
+   "AVIA211L",
+   "AVIA215L",
+   "AVIA216L",
+   "AVIA228",
+   "AVIA270",
+   "BUSE201",
+   "GEOG101",
+   "GEOL104",
+   "PHYS125",
+   "PHYS180A",
+   "PHYS195"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20103",
+   "title": "Professional Aeronautics - Associate of Science Degree: Miramar",
+   "h1": "Professional Aeronautics - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 27,
+  "text_chars": 4765
+ },
+ {
+  "control_number": "16780",
+  "title": "Diesel Technology: Engine Overhaul, Cummins",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "16781",
+  "title": "Diesel Technology: Engine Repair, Cummins",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "16973",
+  "title": "Pilot Studies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AVIM101G",
+   "AVIM101H"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20098",
+   "title": "Pilot Studies - Associate of Science Degree: Miramar",
+   "h1": "Pilot Studies - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1696
+ },
+ {
+  "control_number": "17037",
+  "title": "Personal Training",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL230",
+   "EXSC241B",
+   "EXSC251",
+   "EXSC270",
+   "EXSC281",
+   "EXSC282",
+   "EXSC283",
+   "EXSC284",
+   "EXSC286",
+   "NUTR170"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20095",
+   "title": "Personal Training - Certificate of Achievement: Miramar",
+   "h1": "Personal Training - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 12468
+ },
+ {
+  "control_number": "18022",
+  "title": "CSU General Education - Breadth",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18023",
+  "title": "Intersegmental General Education Transfr (IGETC)",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18172",
+  "title": "Art Visual Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTF100",
+   "ARTF107",
+   "ARTF109",
+   "ARTF113",
+   "ARTF125",
+   "ARTF150A",
+   "ARTF151",
+   "ARTF155A",
+   "ARTF155B",
+   "ARTF165A",
+   "ARTF165B",
+   "ARTF170A",
+   "ARTF170B",
+   "ARTF195A",
+   "ARTF195B",
+   "ARTF210A",
+   "ARTF210B",
+   "ARTHC1100",
+   "ARTHC1200",
+   "CHIL101",
+   "CHIL103",
+   "ENGL209",
+   "GEOG102",
+   "PSYC230",
+   "PSYCC1000",
+   "SOCO101"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19977",
+   "title": "Art/Visual Studies - Associate of Arts Degree: Miramar",
+   "h1": "Art/Visual Studies - Associate of Arts Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "18173",
+  "title": "Biology Studies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT116A",
+   "ACCT116B",
+   "BIOL115",
+   "BIOL205",
+   "BIOL210A",
+   "BIOL210B",
+   "BIOL230",
+   "BIOL235",
+   "CHEM200",
+   "CHEM200L",
+   "CHEM201",
+   "CHEM201L",
+   "CISC190",
+   "CISC192",
+   "MATH116",
+   "MATH121",
+   "MATH122",
+   "MATH150",
+   "MATH151",
+   "PHYS125",
+   "PHYS126",
+   "PHYS195",
+   "PHYS196",
+   "PHYS197",
+   "PSYC258",
+   "PSYCC1000",
+   "SOCO101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19999",
+   "title": "Biology Studies - Associate of Science Degree: Miramar",
+   "h1": "Biology Studies - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 28,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "18174",
+  "title": "Chemistry Studies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18176",
+  "title": "Earth Science Studies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH102",
+   "ANTH104",
+   "ASTR101",
+   "ASTR111",
+   "AVIA115",
+   "BIOL100",
+   "BIOL107",
+   "BIOL115",
+   "BIOL130",
+   "BIOL180",
+   "BUSE115",
+   "CHEM111",
+   "CHEM152",
+   "CHEM152L",
+   "CHEM200",
+   "CHEM200L",
+   "CHEM201",
+   "CHEM201L",
+   "GEOG101",
+   "GEOG101L",
+   "GEOL100",
+   "GEOL104",
+   "GEOL111",
+   "MATH116",
+   "MATH121",
+   "MATH122",
+   "MATH141",
+   "MATH150",
+   "MATH151",
+   "MATH252",
+   "OCEA101",
+   "PHYN100",
+   "PHYN114",
+   "PHYS125",
+   "PHYS180A",
+   "PHYS195",
+   "PSYC258",
+   "PSYC260",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20030",
+   "title": "Earth Science Studies - Associate of Science Degree: Miramar",
+   "h1": "Earth Science Studies - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 39,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "18178",
+  "title": "English/Literature Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BLAS140A",
+   "COMMC1000",
+   "ENGL105",
+   "ENGL208",
+   "ENGL210",
+   "ENGL211",
+   "ENGL215",
+   "ENGL216",
+   "ENGL220",
+   "ENGL221",
+   "ENGL230",
+   "ENGL237",
+   "ENGL249A",
+   "ENGLC1000",
+   "ENGLC1001",
+   "HIST109",
+   "HIST141",
+   "HUMA201",
+   "POLSC1000",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20040",
+   "title": "English/Literature Studies - Associate of Arts Degree: Miramar",
+   "h1": "English/Literature Studies - Associate of Arts Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "18179",
+  "title": "Exercise and Nutritional Sciences",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL107",
+   "BIOL130",
+   "BIOL160",
+   "BIOL205",
+   "BIOL210A",
+   "BIOL210B",
+   "BIOL230",
+   "BIOL235",
+   "CHEM100",
+   "CHEM100L",
+   "CHEM103",
+   "CHEM130",
+   "CHEM130L",
+   "CHEM200",
+   "CHEM200L",
+   "CHEM201",
+   "CHEM201L",
+   "EXSC113A",
+   "EXSC113B",
+   "EXSC113C",
+   "EXSC113D",
+   "EXSC114A",
+   "EXSC114B",
+   "EXSC114C",
+   "EXSC114D",
+   "EXSC115A",
+   "EXSC115B",
+   "EXSC115C",
+   "EXSC115D",
+   "EXSC124A",
+   "EXSC124B",
+   "EXSC124C",
+   "EXSC124D",
+   "EXSC126A",
+   "EXSC126B",
+   "EXSC126C",
+   "EXSC126D",
+   "EXSC135A",
+   "EXSC135B",
+   "EXSC135C",
+   "EXSC135D",
+   "EXSC136A",
+   "EXSC136B",
+   "EXSC139A",
+   "EXSC139B",
+   "EXSC139C",
+   "EXSC139D",
+   "EXSC145A",
+   "EXSC145B",
+   "EXSC145C",
+   "EXSC145D",
+   "EXSC154A",
+   "EXSC154B",
+   "EXSC154C",
+   "EXSC154D",
+   "EXSC158A",
+   "EXSC158B",
+   "EXSC158C",
+   "EXSC158D",
+   "EXSC174A",
+   "EXSC174B",
+   "EXSC174C",
+   "EXSC174D",
+   "EXSC176A",
+   "EXSC176B",
+   "EXSC176C",
+   "EXSC176D",
+   "EXSC178A",
+   "EXSC178B",
+   "EXSC178C",
+   "EXSC178D",
+   "EXSC182A",
+   "EXSC182B",
+   "EXSC182C",
+   "EXSC182D",
+   "EXSC184A",
+   "EXSC184B",
+   "EXSC184C",
+   "EXSC184D",
+   "EXSC204",
+   "EXSC205",
+   "EXSC214",
+   "EXSC215",
+   "EXSC216",
+   "EXSC220",
+   "EXSC221",
+   "EXSC226",
+   "EXSC227",
+   "EXSC241B",
+   "EXSC242B",
+   "HEAL101",
+   "MATH116",
+   "MATH121",
+   "MATH150",
+   "NUTR150",
+   "NUTR153",
+   "NUTR155",
+   "NUTR170",
+   "PHYS125",
+   "PSYC258",
+   "PSYC260",
+   "PSYCC1000",
+   "SOCO101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20047",
+   "title": "Exercise and Nutritional Sciences - Associate of Science Degree: Miramar",
+   "h1": "Exercise and Nutritional Sciences - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 104,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "18180",
+  "title": "Human Development Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH103",
+   "BIOL107",
+   "BIOL130",
+   "BIOL210A",
+   "BIOL210B",
+   "BIOL235",
+   "BLAS140A",
+   "BLAS140B",
+   "CHIL103",
+   "CHIL111",
+   "CHIL121",
+   "CHIL131",
+   "CHIL141",
+   "CHIL151",
+   "CHIL160",
+   "CHIL175",
+   "CHIL180",
+   "CISC190",
+   "MATH121",
+   "MATH150",
+   "NUTR150",
+   "PHIL101",
+   "PSYC258",
+   "PSYC260",
+   "PSYCC1000",
+   "SOCO101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20067",
+   "title": "Human Development Studies - Associate of Arts Degree: Miramar",
+   "h1": "Human Development Studies - Associate of Arts Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 27,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "18181",
+  "title": "Humanities Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18182",
+  "title": "Mathematics Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GEOL101"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20083",
+   "title": "Mathematics Studies - Associate of Arts Degree: Miramar",
+   "h1": "Mathematics Studies - Associate of Arts Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 1,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "18183",
+  "title": "Music Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH103",
+   "ARTF113",
+   "ARTF125",
+   "ARTHC1100",
+   "ENGLC1001",
+   "HUMA101",
+   "HUMA102",
+   "HUMA106",
+   "MUSI100",
+   "MUSI103",
+   "MUSI108",
+   "MUSI109",
+   "MUSI111",
+   "MUSI124A",
+   "MUSI124B",
+   "MUSI132A",
+   "MUSI132B",
+   "MUSI148A",
+   "MUSI148B",
+   "MUSI150A",
+   "MUSI190",
+   "MUSI201",
+   "MUSI202",
+   "MUSI224A",
+   "MUSI224B",
+   "MUSI261A",
+   "MUSI261B",
+   "MUSI261C",
+   "MUSI261D",
+   "MUSI268A",
+   "MUSI268B",
+   "PHIL102A",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20087",
+   "title": "Music Studies - Associate of Arts Degree: Miramar",
+   "h1": "Music Studies - Associate of Arts Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 33,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "18184",
+  "title": "Occupational/Technical Studies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT120",
+   "ACCT150",
+   "ADJU101",
+   "ADJU102",
+   "ADJU106",
+   "ADJU160",
+   "ADJU161",
+   "ADJU162",
+   "ADJU167",
+   "ADJU201",
+   "ADJU210",
+   "AVIA101",
+   "AVIA105",
+   "AVIA125",
+   "AVIA128",
+   "AVIA133",
+   "AVIA151",
+   "AVIA161",
+   "AVIA228",
+   "AVIM101G",
+   "AVIM101H",
+   "AVIM102G",
+   "AVIM102H",
+   "AVIM103B",
+   "AVIM103D",
+   "AVIM104B",
+   "AVIM104D",
+   "AVIM105A",
+   "AVIM106A",
+   "AVIM107B",
+   "AVIM108B",
+   "AVIM109A",
+   "AVIM109B",
+   "AVIM109D",
+   "AVIM110A",
+   "AVIM111C",
+   "AVIM111D",
+   "AVIM112C",
+   "AVIM112D",
+   "AVIM120",
+   "AVIM121A",
+   "AVIM249",
+   "BANK100",
+   "BANK102",
+   "BANK103",
+   "BIOL131",
+   "BIOL132",
+   "BIOL133",
+   "BIOL134",
+   "BUSE100",
+   "BUSE101",
+   "BUSE119",
+   "BUSE120",
+   "BUSE129",
+   "BUSE150",
+   "BUSE155",
+   "BUSE157",
+   "BUSE201",
+   "CBTE114",
+   "CBTE120",
+   "CBTE122",
+   "CBTE127",
+   "CBTE140",
+   "CBTE143",
+   "CBTE152",
+   "CBTE180",
+   "DIES100",
+   "DIES121",
+   "DIES122",
+   "DIES124",
+   "DIES135",
+   "DIES144",
+   "DIES160",
+   "DIES170",
+   "EMGM105A",
+   "EMGM106",
+   "FIPT101",
+   "FIPT102",
+   "FIPT103",
+   "FIPT104",
+   "FIPT105",
+   "FIPT107",
+   "FIPT109",
+   "LFGD101",
+   "MARK100",
+   "MLTT210",
+   "MLTT211",
+   "PADM200",
+   "PARA100",
+   "PARA105",
+   "PARA110",
+   "PARA115",
+   "PARA120",
+   "PARA180",
+   "PERG130",
+   "REAL101",
+   "REAL115"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20089",
+   "title": "Occupational/Technical Studies - Associate of Science Degree: Miramar",
+   "h1": "Occupational/Technical Studies - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 97,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "18186",
+  "title": "Pre-Engineering Studies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18188",
+  "title": "Social and Behavioral Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT116A",
+   "ADJU101",
+   "ADJU102",
+   "ADJU106",
+   "ADJU162",
+   "ADJU210",
+   "ADJU230",
+   "ANTH102",
+   "ANTH103",
+   "ANTH104",
+   "ANTH107",
+   "BIOL107",
+   "BLAS140A",
+   "BLAS140B",
+   "BUSE115",
+   "CBTE120",
+   "CBTE127",
+   "CBTE140",
+   "CHEM100",
+   "CHEM100L",
+   "CISC186",
+   "CISC190",
+   "ECON120",
+   "ECON121",
+   "ENGL105",
+   "ENGL237",
+   "ENGLC1001",
+   "FILI100",
+   "GEOG101",
+   "GEOG101L",
+   "GEOG102",
+   "GEOG104",
+   "HIST100",
+   "HIST101",
+   "HIST105",
+   "HIST106",
+   "HIST109",
+   "HIST110",
+   "HIST115A",
+   "HIST115B",
+   "HIST120",
+   "HIST121",
+   "HIST141",
+   "HIST142",
+   "HUMA106",
+   "LIBS101",
+   "MATH121",
+   "MATH150",
+   "PHIL100",
+   "PHIL101",
+   "PHIL102B",
+   "PHIL205",
+   "PHYN100",
+   "POLI101",
+   "POLI103",
+   "POLI140",
+   "POLSC1000",
+   "PSYC133",
+   "PSYC135",
+   "PSYC166",
+   "PSYC258",
+   "PSYCC1000",
+   "SOCO101",
+   "SOCO110",
+   "SOCO201",
+   "SOCO223",
+   "STATC1000",
+   "SUST101"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20113",
+   "title": "Social and Behavioral Sciences - Associate of Arts Degree: Miramar",
+   "h1": "Social and Behavioral Sciences - Associate of Arts Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 68,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "18207",
+  "title": "Fire Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMGM105A",
+   "EMGM106",
+   "FIPT101",
+   "FIPT102",
+   "FIPT103",
+   "FIPT104",
+   "FIPT105",
+   "FIPT120"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20044",
+   "title": "Fire Technology - Certificate of Achievement: Miramar",
+   "h1": "Fire Technology - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 5334
+ },
+ {
+  "control_number": "18208",
+  "title": "Fire Prevention",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGLC1000",
+   "FIPT101",
+   "FIPT102",
+   "FIPT103",
+   "FIPT105",
+   "FIPT125",
+   "FIPT323A",
+   "FIPT323B",
+   "FIPT351A",
+   "FIPT351B",
+   "FIPT351C",
+   "FIPT351D"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20052",
+   "title": "Fire Prevention - Certificate of Achievement: Miramar",
+   "h1": "Fire Prevention - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 6136
+ },
+ {
+  "control_number": "18209",
+  "title": "Company Officer Certification",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMGM105A",
+   "FIPT324D",
+   "FIPT340",
+   "FIPT341",
+   "FIPT342",
+   "FIPT344",
+   "FIPT381F",
+   "FIPT381G",
+   "FIPT381S"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20015",
+   "title": "Company Officer Certification - Certificate of Achievement: Miramar",
+   "h1": "Company Officer Certification - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 6104
+ },
+ {
+  "control_number": "18232",
+  "title": "World Language Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH103",
+   "ECON120",
+   "ECON121",
+   "ENGL208",
+   "ENGL220",
+   "ENGL221",
+   "ENGL230",
+   "FILI100",
+   "GEOG102",
+   "HIST100",
+   "HIST101",
+   "HIST105",
+   "HIST106",
+   "HIST120",
+   "HIST121",
+   "POLI101",
+   "POLI103",
+   "SPAN101",
+   "SPAN102",
+   "SPAN201",
+   "SPAN202",
+   "SPAN210",
+   "SPAN211",
+   "TAGA102",
+   "TAGA201"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20129",
+   "title": "World Language Studies - Associate of Arts Degree: Miramar",
+   "h1": "World Language Studies - Associate of Arts Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "19252",
+  "title": "San Diego Transit General Mechanic Apprenticeship",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DIES100",
+   "DIES101",
+   "DIES102",
+   "DIES105",
+   "DIES131",
+   "DIES135",
+   "DIES138",
+   "DIES144",
+   "DIES155"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20110",
+   "title": "San Diego Transit General Mechanic Apprenticeship - Certificate of Achievement: Miramar",
+   "h1": "San Diego Transit General Mechanic Apprenticeship - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 10940
+ },
+ {
+  "control_number": "19253",
+  "title": "San Diego Transit General Mechanic Apprenticeship",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DIES100",
+   "DIES101",
+   "DIES102",
+   "DIES105",
+   "DIES131",
+   "DIES135",
+   "DIES138",
+   "DIES144",
+   "DIES155"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20109",
+   "title": "San Diego Transit General Mechanic Apprenticeship - Associate of Science Degree: Miramar",
+   "h1": "San Diego Transit General Mechanic Apprenticeship - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 11033
+ },
+ {
+  "control_number": "20764",
+  "title": "Administrative Assistant",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSE119",
+   "BUSE120",
+   "CBTE114",
+   "CBTE120",
+   "CBTE127",
+   "CBTE140",
+   "CBTE152",
+   "CBTE210"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20943",
+   "title": "Administrative Assistant - Certificate of Achievement: Miramar",
+   "h1": "Administrative Assistant - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 9419
+ },
+ {
+  "control_number": "22266",
+  "title": "Business Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT102",
+   "ACCT116A",
+   "ACCT116B",
+   "ACCT150",
+   "BUSE100",
+   "BUSE101",
+   "BUSE102",
+   "BUSE115",
+   "BUSE119",
+   "BUSE120",
+   "BUSE129",
+   "BUSE140",
+   "BUSE150",
+   "BUSE155",
+   "BUSE201",
+   "CBTE120",
+   "CBTE122",
+   "CBTE127",
+   "CBTE140",
+   "CBTE143",
+   "CBTE152",
+   "CBTE180",
+   "CBTE210",
+   "CISC181",
+   "ECON121",
+   "LIBS101",
+   "MARK100",
+   "MATH121",
+   "PADM200",
+   "PSYC258",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20006",
+   "title": "Business Management - Certificate of Achievement: Miramar",
+   "h1": "Business Management - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 31,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "22268",
+  "title": "Computer Programming",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CISC179",
+   "CISC181",
+   "CISC187",
+   "CISC190",
+   "CISC191",
+   "CISC192",
+   "CISC205",
+   "CISC211",
+   "CISC217",
+   "PSYC258",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20017",
+   "title": "Computer Programming - Certificate of Achievement: Miramar",
+   "h1": "Computer Programming - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "22269",
+  "title": "Financial Services",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT116A",
+   "BANK100",
+   "BANK102",
+   "BANK103",
+   "BUSE101",
+   "BUSE102",
+   "BUSE120"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20050",
+   "title": "Financial Services - Certificate of Achievement: Miramar",
+   "h1": "Financial Services - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 9633
+ },
+ {
+  "control_number": "22272",
+  "title": "Business Administration",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT116A",
+   "ACCT116B",
+   "BUSE119",
+   "ECON120",
+   "ECON121",
+   "MARK100",
+   "MATH121",
+   "MATH150",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20003",
+   "title": "Business Administration - Certificate of Achievement: Miramar",
+   "h1": "Business Administration - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "22273",
+  "title": "Professional Piloting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "22274",
+  "title": "Aviation Operations Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AVIA101",
+   "AVIA105",
+   "AVIA125",
+   "AVIA128",
+   "AVIA133",
+   "BUSE119",
+   "BUSE201"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19996",
+   "title": "Aviation Operations Management - Certificate of Achievement: Miramar",
+   "h1": "Aviation Operations Management - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2374
+ },
+ {
+  "control_number": "22275",
+  "title": "Open Water Lifeguard",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.696,
+  "codes_found": [
+   "ADJU102",
+   "ADJU106",
+   "ADJU160",
+   "ADJU167",
+   "ADJU210",
+   "ADJU230",
+   "ADJU357A",
+   "EMGM105A",
+   "EMGM106",
+   "FIPT322B",
+   "FIPT324C",
+   "FIPT332A",
+   "LFGD101",
+   "LFGD101A",
+   "LFGD330",
+   "LFGD335"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20091",
+   "title": "Open Water Lifeguard - Certificate of Achievement: Miramar",
+   "h1": "Open Water Lifeguard - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "22276",
+  "title": "Administration of Justice Investigations Specialization",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJU101",
+   "ADJU102",
+   "ADJU106",
+   "ADJU160",
+   "ADJU161",
+   "ADJU162",
+   "ADJU167",
+   "ADJU182",
+   "ADJU201",
+   "ADJU210",
+   "ADJU230"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20073",
+   "title": "Investigations Specialization - Certificate of Achievement: Miramar",
+   "h1": "Investigations Specialization - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.5
+   }
+  },
+  "listed": 11,
+  "text_chars": 15828
+ },
+ {
+  "control_number": "22277",
+  "title": "Administration of Justice Correctional Technologies",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJU101",
+   "ADJU102",
+   "ADJU161",
+   "ADJU167",
+   "ADJU201",
+   "ADJU323A"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20024",
+   "title": "Correctional Technologies - Certificate of Achievement: Miramar",
+   "h1": "Correctional Technologies - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.5
+   }
+  },
+  "listed": 6,
+  "text_chars": 9183
+ },
+ {
+  "control_number": "22278",
+  "title": "Law Enforcement",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJU101",
+   "ADJU102",
+   "ADJU106",
+   "ADJU127A",
+   "ADJU128A",
+   "ADJU160",
+   "ADJU161",
+   "ADJU162",
+   "ADJU167",
+   "ADJU182",
+   "ADJU201",
+   "ADJU210",
+   "ADJU230",
+   "ADJU357A"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20076",
+   "title": "Law Enforcement - Certificate of Achievement: Miramar",
+   "h1": "Law Enforcement - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "22279",
+  "title": "Contemporary Police Technologies",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJU160",
+   "ADJU161",
+   "ADJU180",
+   "ADJU182",
+   "ADJU201",
+   "ADJU210",
+   "ADJU230",
+   "ADJU260"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20021",
+   "title": "Contemporary Police Technologies - Certificate of Achievement: Miramar",
+   "h1": "Contemporary Police Technologies - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 10829
+ },
+ {
+  "control_number": "22280",
+  "title": "Paralegal",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJU102",
+   "ADJU210",
+   "ADJU230",
+   "BUSE102",
+   "BUSE140",
+   "PARA100",
+   "PARA105",
+   "PARA110",
+   "PARA115",
+   "PARA120",
+   "PARA140",
+   "PARA145",
+   "PARA150",
+   "PARA155",
+   "PARA180",
+   "PARA225",
+   "PARA230",
+   "PARA270"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20094",
+   "title": "Paralegal - Certificate of Achievement: Miramar",
+   "h1": "Paralegal - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "22281",
+  "title": "Aviation Maintenance Technology-Powerplant",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "22282",
+  "title": "Aviation Maintenance Technology: Airframe",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AVIM101G",
+   "AVIM101H",
+   "AVIM102G",
+   "AVIM102H",
+   "AVIM109D",
+   "AVIM110A",
+   "AVIM120",
+   "AVIM121A"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19991",
+   "title": "Aviation Maintenance Technology - Airframe - Certificate of Achievement: Miramar",
+   "h1": "Aviation Maintenance Technology - Airframe - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2681
+ },
+ {
+  "control_number": "22283",
+  "title": "Pilot Studies",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "AVIM101G",
+   "AVIM101H"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20099",
+   "title": "Pilot Studies - Certificate of Achievement: Miramar",
+   "h1": "Pilot Studies - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1603
+ },
+ {
+  "control_number": "22284",
+  "title": "Aviation General Studies",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AVIM101G",
+   "AVIM101H",
+   "AVIM102G",
+   "AVIM102H",
+   "AVIM109D",
+   "AVIM110A",
+   "AVIM120",
+   "AVIM121A"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19989",
+   "title": "Aviation General Studies - Certificate of Achievement: Miramar",
+   "h1": "Aviation General Studies - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3034
+ },
+ {
+  "control_number": "22285",
+  "title": "Aviation Maintenance Technology: Airframe & Powerplant",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AVIM101G",
+   "AVIM101H",
+   "AVIM102G",
+   "AVIM102H",
+   "AVIM109D",
+   "AVIM110A",
+   "AVIM120",
+   "AVIM121A"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19993",
+   "title": "Aviation Maintenance Technology - Airframe & Powerplant - Certificate of Achievement: Miramar",
+   "h1": "Aviation Maintenance Technology - Airframe & Powerplant - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2971
+ },
+ {
+  "control_number": "22286",
+  "title": "Equipment Mechanic Apprenticeship",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO156G",
+   "AUTO178G",
+   "DIES100",
+   "DIES135",
+   "DIES137",
+   "DIES138",
+   "DIES155",
+   "DIES160",
+   "DIES170"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20046",
+   "title": "Equipment Mechanic Apprenticeship - Certificate of Achievement: Miramar",
+   "h1": "Equipment Mechanic Apprenticeship - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 11795
+ },
+ {
+  "control_number": "22287",
+  "title": "Heavy Duty Transportation Technology (HDTT)",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "22288",
+  "title": "Heavy Equipment Technology (HET) (Day Program)",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DIES100",
+   "DIES101",
+   "DIES102",
+   "DIES105",
+   "DIES121",
+   "DIES122",
+   "DIES123",
+   "DIES124",
+   "DIES138",
+   "DIES144",
+   "DIES160",
+   "DIES200",
+   "DIES202",
+   "DIES212",
+   "DIES222",
+   "DIES230",
+   "DIES240"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20062",
+   "title": "Heavy Equipment Technology (HET) (Day Program) - Certificate of Achievement: Miramar",
+   "h1": "Heavy Equipment Technology (HET) (Day Program) - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "30051",
+  "title": "Medical Laboratory Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MLTT210",
+   "MLTT211",
+   "MLTT61",
+   "MLTT62",
+   "MLTT63",
+   "MLTT64"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20084",
+   "title": "Medical Laboratory Technology - Associate of Science Degree: Miramar",
+   "h1": "Medical Laboratory Technology - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2124
+ },
+ {
+  "control_number": "30052",
+  "title": "Medical Laboratory Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MLTT210",
+   "MLTT211",
+   "MLTT61",
+   "MLTT62",
+   "MLTT63",
+   "MLTT64"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20085",
+   "title": "Medical Laboratory Technology - Certificate of Achievement: Miramar",
+   "h1": "Medical Laboratory Technology - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2123
+ },
+ {
+  "control_number": "30512",
+  "title": "Graphics",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 7,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30532",
+  "title": "Graphics",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 7,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30599",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH103",
+   "ENGLC1001",
+   "GEOG102",
+   "PHIL100",
+   "PSYC166",
+   "PSYC258",
+   "PSYCC1000",
+   "SOCO101",
+   "SOCO110",
+   "SOCO201",
+   "SOCO220",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20114",
+   "title": "Sociology - Associate in Arts for Transfer Degree: Miramar",
+   "h1": "Sociology - Associate in Arts for Transfer Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "30637",
+  "title": "Communication Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 15,
+  "text_chars": 0
+ },
+ {
+  "control_number": "31263",
+  "title": "Accountancy",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT116A",
+   "ACCT116B",
+   "ACCT120",
+   "ACCT121",
+   "ACCT150",
+   "ACCT201A",
+   "BUSE119",
+   "ECON120",
+   "ECON121"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20883",
+   "title": "Accountancy - Associate of Science Degree: Miramar",
+   "h1": "Accountancy - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "31276",
+  "title": "Accountancy",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT116A",
+   "ACCT116B",
+   "ACCT120",
+   "ACCT121",
+   "ACCT150",
+   "ACCT201A"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20884",
+   "title": "Accountancy - Certificate of Achievement: Miramar",
+   "h1": "Accountancy - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 9186
+ },
+ {
+  "control_number": "31605",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJU101",
+   "ADJU102",
+   "ADJU161",
+   "ADJU162",
+   "ADJU201",
+   "ADJU210",
+   "ADJU220",
+   "POLSC1000",
+   "PSYC258",
+   "SOCO101",
+   "SOCO110",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/AdministrationofJusticeADT",
+   "title": "Administration of Justice - Associate in Science for Transfer Degree: Miramar",
+   "h1": "Administration of Justice - Associate in Science for Transfer Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "31616",
+  "title": "Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "31653",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH103",
+   "ARTF107",
+   "ARTHC1100",
+   "ARTHC1200",
+   "GEOG102",
+   "GEOG104",
+   "HIST100",
+   "HIST101",
+   "HIST105",
+   "HIST106",
+   "HIST109",
+   "HIST110",
+   "HIST120",
+   "HIST121",
+   "MUSI103",
+   "MUSI111",
+   "POLI101",
+   "PSYCC1000",
+   "SOCO101",
+   "SPAN101",
+   "SPAN102",
+   "SPAN201",
+   "SPAN202"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20065",
+   "title": "History - Associate in Arts for Transfer Degree: Miramar",
+   "h1": "History - Associate in Arts for Transfer Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "31691",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "31925",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH102",
+   "ANTH103",
+   "ANTH104",
+   "ANTH107",
+   "BIOL230",
+   "BLAS140A",
+   "BLAS140B",
+   "COMS180",
+   "FILI100",
+   "GEOG102",
+   "GEOG104",
+   "GEOL100",
+   "GEOL101",
+   "HIST120",
+   "HIST121",
+   "HUMA106",
+   "MUSI109",
+   "PSYC258",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19974",
+   "title": "Anthropology - Associate in Arts for Transfer Degree: Miramar",
+   "h1": "Anthropology - Associate in Arts for Transfer Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "31926",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL230",
+   "BIOL235",
+   "CHEM130",
+   "CHEM130L",
+   "CHEM200",
+   "CHEM200L",
+   "EXSC113A",
+   "EXSC113B",
+   "EXSC113C",
+   "EXSC114A",
+   "EXSC114B",
+   "EXSC114C",
+   "EXSC124A",
+   "EXSC124B",
+   "EXSC124C",
+   "EXSC126A",
+   "EXSC126B",
+   "EXSC126C",
+   "EXSC135A",
+   "EXSC135B",
+   "EXSC135C",
+   "EXSC139A",
+   "EXSC139B",
+   "EXSC139C",
+   "EXSC140A",
+   "EXSC140B",
+   "EXSC144A",
+   "EXSC145A",
+   "EXSC145B",
+   "EXSC145C",
+   "EXSC154A",
+   "EXSC154B",
+   "EXSC154C",
+   "EXSC158A",
+   "EXSC158B",
+   "EXSC158C",
+   "EXSC174A",
+   "EXSC174B",
+   "EXSC174C",
+   "EXSC178A",
+   "EXSC178B",
+   "EXSC178C",
+   "EXSC182A",
+   "EXSC182B",
+   "EXSC182C",
+   "EXSC184A",
+   "EXSC184B",
+   "EXSC184C",
+   "EXSC241B",
+   "PHYS125",
+   "PHYS195",
+   "PSYC258",
+   "PSYC259",
+   "PSYCC1000",
+   "SOCO101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20074",
+   "title": "Kinesiology - Associate in Arts for Transfer Degree: Miramar",
+   "h1": "Kinesiology - Associate in Arts for Transfer Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 56,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "32568",
+  "title": "Business Administration",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT116A",
+   "ACCT116B",
+   "BUSE119",
+   "ECON120",
+   "ECON121",
+   "MATH121",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20004",
+   "title": "Business Administration 2.0 - Associate in Science for Transfer Degree: Miramar",
+   "h1": "Business Administration 2.0 - Associate in Science for Transfer Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "32663",
+  "title": "Art History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTF107",
+   "ARTF109",
+   "ARTF113",
+   "ARTF125",
+   "ARTF150A",
+   "ARTF155A",
+   "ARTHC1100",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19976",
+   "title": "Art History - Associate in Arts for Transfer Degree: Miramar",
+   "h1": "Art History - Associate in Arts for Transfer Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 11342
+ },
+ {
+  "control_number": "32664",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL105",
+   "ENGL208",
+   "ENGL209",
+   "ENGL210",
+   "ENGL211",
+   "ENGL215",
+   "ENGL216",
+   "ENGL220",
+   "ENGL221",
+   "ENGL230",
+   "ENGL237",
+   "ENGL249A",
+   "ENGLC1000",
+   "ENGLC1001"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20039",
+   "title": "English - Associate in Arts for Transfer Degree: Miramar",
+   "h1": "English - Associate in Arts for Transfer Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "32665",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTF150A",
+   "ARTF151",
+   "ARTF155A",
+   "ARTF155B",
+   "ARTF165A",
+   "ARTF165B",
+   "ARTF210A",
+   "ARTF210B",
+   "ARTHC1100",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20118",
+   "title": "Studio Arts for Transfer - Associate in Arts for Transfer Degree: Miramar",
+   "h1": "Studio Arts for Transfer - Associate in Arts for Transfer Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 14100
+ },
+ {
+  "control_number": "32666",
+  "title": "Philosophy",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL209",
+   "ENGL220",
+   "ENGL221",
+   "ENGL230",
+   "ENGL237",
+   "HIST105",
+   "HIST106",
+   "HIST120",
+   "HIST121",
+   "HUMA101",
+   "HUMA102",
+   "HUMA106",
+   "HUMA201",
+   "PHIL100",
+   "PHIL101",
+   "PHIL102A",
+   "PHIL102B",
+   "PHIL107",
+   "PHIL205",
+   "SPAN101",
+   "SPAN102",
+   "SPAN201",
+   "TAGA101",
+   "TAGA102",
+   "TAGA201"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20096",
+   "title": "Philosophy - Associate in Arts for Transfer Degree: Miramar",
+   "h1": "Philosophy - Associate in Arts for Transfer Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "32683",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT116A",
+   "ANTH103",
+   "COMS135",
+   "ECON120",
+   "ECON121",
+   "GEOG102",
+   "HIST100",
+   "HIST101",
+   "HIST105",
+   "HIST106",
+   "HIST109",
+   "HIST110",
+   "HIST120",
+   "HIST121",
+   "HIST141",
+   "HIST142",
+   "POLI101",
+   "POLI103",
+   "POLI140",
+   "POLSC1000",
+   "PSYC258",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20100",
+   "title": "Political Science - Associate in Arts for Transfer Degree: Miramar",
+   "h1": "Political Science - Associate in Arts for Transfer Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "32709",
+  "title": "Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SPAN101",
+   "SPAN102",
+   "SPAN201",
+   "SPAN202",
+   "SPAN210",
+   "SPAN211"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20115",
+   "title": "Spanish - Associate in Arts for Transfer Degree: Miramar",
+   "h1": "Spanish - Associate in Arts for Transfer Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 9465
+ },
+ {
+  "control_number": "32836",
+  "title": "Biotechnology",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL107",
+   "BIOL131",
+   "BIOL132",
+   "BIOL133"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20001",
+   "title": "Biotechnology - Certificate of Achievement: Miramar",
+   "h1": "Biotechnology - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 6352
+ },
+ {
+  "control_number": "33374",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT116A",
+   "ACCT116B",
+   "BUSE115",
+   "BUSE119",
+   "BUSE140",
+   "CISC181",
+   "COMS160",
+   "ECON120",
+   "ECON121",
+   "ENGL105",
+   "ENGLC1001",
+   "MATH116",
+   "MATH121",
+   "MATH122",
+   "MATH150",
+   "MATH151",
+   "MATH252",
+   "MATH255",
+   "PHIL205",
+   "PSYC258",
+   "SOCO101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20031",
+   "title": "Economics - Associate in Arts for Transfer Degree: Miramar",
+   "h1": "Economics - Associate in Arts for Transfer Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "33878",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL210A",
+   "BIOL210B",
+   "CHEM200",
+   "CHEM200L",
+   "CHEM201",
+   "CHEM201L",
+   "CHEM231",
+   "CHEM231L",
+   "MATH121",
+   "MATH122",
+   "MATH150",
+   "PHYS125",
+   "PHYS126",
+   "PHYS180A",
+   "PHYS180B",
+   "PHYS181A",
+   "PHYS181B",
+   "PHYS195",
+   "PHYS196"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19997",
+   "title": "Biology - Associate in Science for Transfer Degree: Miramar",
+   "h1": "Biology - Associate in Science for Transfer Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "33898",
+  "title": "Child Development Assistant Teacher",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHIL101",
+   "CHIL111",
+   "CHIL121",
+   "CHIL131",
+   "CHIL141"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19978",
+   "title": "Child Development Assistant Teacher - Certificate of Achievement: Miramar",
+   "h1": "Child Development Assistant Teacher - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 6525
+ },
+ {
+  "control_number": "35017",
+  "title": "Entrepreneurship",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT102",
+   "ACCT150",
+   "AUTO151T",
+   "AUTO153G",
+   "AUTO156G",
+   "AUTO156T",
+   "AVIA101",
+   "AVIA105",
+   "AVIM101G",
+   "BUSE100",
+   "BUSE119",
+   "BUSE120",
+   "BUSE129",
+   "BUSE140",
+   "BUSE155",
+   "BUSE157",
+   "BUSE201",
+   "BUSE229A",
+   "BUSE229B",
+   "BUSE229C",
+   "BUSE229D",
+   "BUSE270",
+   "BUSE290",
+   "CBTE165",
+   "CBTE180",
+   "CBTE210",
+   "CHIL101",
+   "CISC181",
+   "DIES100",
+   "DIES105",
+   "EXSC242B",
+   "EXSC292A",
+   "MARK100",
+   "MUSI190",
+   "REAL101",
+   "WORK272"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20042",
+   "title": "Entrepreneurship - Certificate of Achievement: Miramar",
+   "h1": "Entrepreneurship - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 36,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "35030",
+  "title": "Entrepreneurship",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT102",
+   "ACCT150",
+   "AUTO151T",
+   "AUTO153G",
+   "AUTO156G",
+   "AUTO156T",
+   "AVIA101",
+   "AVIA105",
+   "AVIM101G",
+   "BUSE100",
+   "BUSE101",
+   "BUSE102",
+   "BUSE119",
+   "BUSE120",
+   "BUSE129",
+   "BUSE140",
+   "BUSE150",
+   "BUSE155",
+   "BUSE157",
+   "BUSE201",
+   "BUSE229A",
+   "BUSE229B",
+   "BUSE229C",
+   "BUSE229D",
+   "BUSE270",
+   "BUSE290",
+   "CBTE165",
+   "CBTE180",
+   "CBTE210",
+   "CHIL101",
+   "CISC181",
+   "DIES100",
+   "DIES105",
+   "EXSC242B",
+   "EXSC292A",
+   "MARK100",
+   "MUSI190",
+   "REAL101",
+   "WORK272"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20041",
+   "title": "Entrepreneurship - Associate of Science Degree: Miramar",
+   "h1": "Entrepreneurship - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 39,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "35204",
+  "title": "Audio Production and Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUDI201",
+   "AUDI204",
+   "MUSI108",
+   "MUSI190",
+   "MUSI201",
+   "MUSI202",
+   "MUSI205A",
+   "MUSI205B"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19979",
+   "title": "Audio Production and Engineering - Associate of Science Degree: Miramar",
+   "h1": "Audio Production and Engineering - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 10320
+ },
+ {
+  "control_number": "35288",
+  "title": "Audio Production and Engineering",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUDI201",
+   "AUDI204",
+   "MUSI108",
+   "MUSI190",
+   "MUSI201",
+   "MUSI202",
+   "MUSI205A",
+   "MUSI205B"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19980",
+   "title": "Audio Production and Engineering - Certificate of Achievement: Miramar",
+   "h1": "Audio Production and Engineering - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 10226
+ },
+ {
+  "control_number": "35571",
+  "title": "Nutrition and Dietetics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL107",
+   "BIOL205",
+   "BIOL210A",
+   "BIOL210B",
+   "BIOL230",
+   "BIOL235",
+   "BUSE115",
+   "CHEM130",
+   "CHEM130L",
+   "CHEM152",
+   "CHEM152L",
+   "CHEM160",
+   "CHEM200",
+   "CHEM200L",
+   "CHEM201",
+   "CHEM201L",
+   "CHEM231",
+   "CHEM231L",
+   "EXSC241B",
+   "MATH116",
+   "NUTR150",
+   "NUTR153",
+   "NUTR155",
+   "PSYC258",
+   "PSYCC1000",
+   "SOCO101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20088",
+   "title": "Nutrition and Dietetics - Associate in Science for Transfer Degree: Miramar",
+   "h1": "Nutrition and Dietetics - Associate in Science for Transfer Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 27,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "35573",
+  "title": "Geology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM200",
+   "CHEM200L",
+   "CHEM201",
+   "CHEM201L",
+   "GEOL100",
+   "GEOL101",
+   "GEOL111",
+   "MATH150",
+   "MATH151"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20054",
+   "title": "Geology - Associate in Science for Transfer Degree: Miramar",
+   "h1": "Geology - Associate in Science for Transfer Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 14320
+ },
+ {
+  "control_number": "36254",
+  "title": "Accountancy for Enrolled Agents",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36487",
+  "title": "Administrative Assistant",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSE101",
+   "BUSE119",
+   "CBTE114",
+   "CBTE122",
+   "CBTE143",
+   "CBTE152",
+   "CBTE165",
+   "CBTE180",
+   "CBTE210"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20942",
+   "title": "Administrative Assistant - Associate of Science Degree: Miramar",
+   "h1": "Administrative Assistant - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 10555
+ },
+ {
+  "control_number": "37418",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL107",
+   "BIOL210A",
+   "CHEM100",
+   "CHEM100L",
+   "CHEM130",
+   "CHEM130L",
+   "ENGL105",
+   "ENGLC1000",
+   "ENGLC1001",
+   "MATH150",
+   "PHIL205",
+   "PSYC133",
+   "PSYC135",
+   "PSYC137",
+   "PSYC161",
+   "PSYC166",
+   "PSYC201",
+   "PSYC211",
+   "PSYC230",
+   "PSYC245",
+   "PSYC255",
+   "PSYC258",
+   "PSYC259",
+   "PSYC260",
+   "PSYC283",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20105",
+   "title": "Psychology - Associate in Arts for Transfer Degree: Miramar",
+   "h1": "Psychology - Associate in Arts for Transfer Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 27,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "37455",
+  "title": "Public Safety Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJU101",
+   "ADJU102",
+   "ADJU106",
+   "ADJU201",
+   "ADJU270",
+   "BUSE119",
+   "BUSE150",
+   "BUSE201",
+   "CBTE180",
+   "CBTE210",
+   "COMMC1000",
+   "HSEC100",
+   "HSEC110",
+   "PADM270"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20106",
+   "title": "Public Safety Management - Associate of Science Degree: Miramar",
+   "h1": "Public Safety Management - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "37456",
+  "title": "Public Safety Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJU101",
+   "ADJU102",
+   "ADJU106",
+   "ADJU201",
+   "ADJU270",
+   "BUSE119",
+   "BUSE150",
+   "BUSE201",
+   "CBTE180",
+   "CBTE210",
+   "COMMC1000",
+   "HSEC100",
+   "HSEC110",
+   "PADM270"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20107",
+   "title": "Public Safety Management - Certificate of Achievement: Miramar",
+   "h1": "Public Safety Management - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "37626",
+  "title": "Law, Public Policy, and Society",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJU101",
+   "ADJU102",
+   "ADJU201",
+   "BUSE115",
+   "COMMC1000",
+   "COMS160",
+   "ECON120",
+   "ECON121",
+   "ENGLC1000",
+   "ENGLC1001",
+   "HIST109",
+   "HIST110",
+   "PHIL102B",
+   "POLSC1000",
+   "PSYC258",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20079",
+   "title": "Law, Public Policy, and Society - Associate in Arts for Transfer Degree: Miramar",
+   "h1": "Law, Public Policy, and Society - Associate in Arts for Transfer Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "37726",
+  "title": "Computer Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL210A",
+   "CHEM200",
+   "CHEM200L",
+   "CISC187",
+   "CISC190",
+   "CISC191",
+   "CISC211",
+   "CISC246",
+   "MATH150",
+   "MATH151",
+   "PHYS195",
+   "PHYS196"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20019",
+   "title": "Computer Science - Associate in Science for Transfer Degree: Miramar",
+   "h1": "Computer Science - Associate in Science for Transfer Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "39433",
+  "title": "300-Hour Registered Yoga Teacher",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "BUSE129",
+   "BUSE155",
+   "BUSE157",
+   "EXSC145A",
+   "EXSC145B",
+   "EXSC145C",
+   "EXSC145D"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20070",
+   "title": "Independent Business Ownership - Certificate of Performance: Miramar",
+   "h1": "Independent Business Ownership - Certificate of Performance: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "40608",
+  "title": "Honors Global Competencies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJU101",
+   "ADJU106",
+   "ANTH102",
+   "ANTH103",
+   "ANTH104",
+   "ANTH107",
+   "ARTF100",
+   "ARTF107",
+   "ARTF109",
+   "ARTF125",
+   "ARTHC1100",
+   "ARTHC1200",
+   "AVIA101",
+   "AVIA105",
+   "AVIA115",
+   "AVIA128",
+   "AVIA133",
+   "BIOL100",
+   "BIOL115",
+   "BIOL130",
+   "BIOL131",
+   "BIOL132",
+   "BIOL133",
+   "BIOL135",
+   "BLAS140A",
+   "BLAS140B",
+   "BUSE100",
+   "BUSE115",
+   "BUSE119",
+   "BUSE120",
+   "BUSE129",
+   "BUSE140",
+   "BUSE150",
+   "BUSE155",
+   "BUSE157",
+   "BUSE201",
+   "CHEM111",
+   "CHIL101",
+   "CHIL103",
+   "CHIL141",
+   "CISC181",
+   "COMS135",
+   "COMS180",
+   "ENGL208",
+   "ENGL209",
+   "ENGL220",
+   "ENGL221",
+   "ENGL230",
+   "ENGLC1001",
+   "FIPT101",
+   "GEOG102",
+   "GEOG104",
+   "GEOL100",
+   "GEOL104",
+   "HEAL101",
+   "HIST100",
+   "HIST101",
+   "HIST115A",
+   "HIST115B",
+   "HIST120",
+   "HIST121",
+   "HIST141",
+   "HIST142",
+   "HUMA101",
+   "HUMA102",
+   "HUMA106",
+   "HUMA201",
+   "JOUR202",
+   "MARK100",
+   "MUSI100",
+   "MUSI109",
+   "NUTR153",
+   "OCEA101",
+   "PARA100",
+   "PARA105",
+   "PARA110",
+   "PARA115",
+   "PARA120",
+   "PARA140",
+   "PARA180",
+   "PARA210",
+   "PHIL100",
+   "PHIL101",
+   "PHIL104A",
+   "PHIL107",
+   "PHIL205",
+   "POLI101",
+   "POLI103",
+   "POLI140",
+   "PSYC133",
+   "PSYC135",
+   "PSYC137",
+   "PSYC166",
+   "PSYC230",
+   "PSYC245",
+   "PSYC258",
+   "PSYCC1000",
+   "SOCO101",
+   "SOCO110",
+   "SOCO201",
+   "SOCO223",
+   "SPAN101",
+   "SPAN102",
+   "SPAN201",
+   "SPAN202",
+   "STATC1000",
+   "TAGA101",
+   "TAGA102",
+   "TAGA201"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20066",
+   "title": "Honors Global Competencies - Certificate of Achievement: Miramar",
+   "h1": "Honors Global Competencies - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 109,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "40765",
+  "title": "Hybrid/Electric Vehicles",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO161T",
+   "AUTO162T",
+   "AUTO165T",
+   "AUTO167T",
+   "AUTO169T",
+   "AUTO180T"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20069",
+   "title": "Hybrid / Electric Vehicles - Certificate of Achievement: Miramar",
+   "h1": "Hybrid / Electric Vehicles - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 10383
+ },
+ {
+  "control_number": "41496",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT116A",
+   "ACCT116B",
+   "BUSE115",
+   "BUSE119",
+   "BUSE140",
+   "ECON120",
+   "ECON121",
+   "MATH121",
+   "MATH150",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20004",
+   "title": "Business Administration 2.0 - Associate in Science for Transfer Degree: Miramar",
+   "h1": "Business Administration 2.0 - Associate in Science for Transfer Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "42671",
+  "title": "Sustainability",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH103",
+   "AVIA115",
+   "BIOL101",
+   "BUSE115",
+   "ECON121",
+   "GEOG101",
+   "GEOG102",
+   "PADM200",
+   "PHIL131",
+   "PHYN114",
+   "POLI101",
+   "POLI121",
+   "POLSC1000",
+   "PSYC258",
+   "SERV277C",
+   "SERV277D",
+   "SERV277E",
+   "SOCO101",
+   "SOCO110",
+   "SOCO223",
+   "STATC1000",
+   "SUST101"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20119",
+   "title": "Sustainability - Associate of Arts Degree: Miramar",
+   "h1": "Sustainability - Associate of Arts Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "43052",
+  "title": "Hawthorne Technician Apprenticeship (HTAP)",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DIES100",
+   "DIES101",
+   "DIES102",
+   "DIES105",
+   "DIES122",
+   "DIES137",
+   "DIES138",
+   "DIES144",
+   "DIES200",
+   "DIES202",
+   "DIES212",
+   "DIES222"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20056",
+   "title": "Hawthorne Technician Apprenticeship (HTAP) - Associate of Science Degree: Miramar",
+   "h1": "Hawthorne Technician Apprenticeship (HTAP) - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 14339
+ },
+ {
+  "control_number": "43118",
+  "title": "Early Education Entrepreneurship",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT102",
+   "BUSE100",
+   "BUSE102",
+   "BUSE129",
+   "BUSE140",
+   "BUSE150",
+   "BUSE155",
+   "BUSE157",
+   "BUSE201",
+   "BUSE229A",
+   "BUSE229B",
+   "BUSE229C",
+   "BUSE229D",
+   "BUSE270",
+   "CHIL101",
+   "CHIL111",
+   "CHIL121",
+   "CHIL131",
+   "CHIL141",
+   "CHIL165",
+   "CHIL166",
+   "CHIL176",
+   "CHIL180",
+   "CHIL202",
+   "CISC181"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20029",
+   "title": "Early Education Entrepreneurship - Certificate of Achievement: Miramar",
+   "h1": "Early Education Entrepreneurship - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "43120",
+  "title": "Early Education Entrepreneurship",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT102",
+   "BUSE100",
+   "BUSE102",
+   "BUSE129",
+   "BUSE140",
+   "BUSE150",
+   "BUSE155",
+   "BUSE157",
+   "BUSE201",
+   "BUSE229A",
+   "BUSE229B",
+   "BUSE229C",
+   "BUSE229D",
+   "BUSE270",
+   "CHIL101",
+   "CHIL141",
+   "CHIL202",
+   "CISC181"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20028",
+   "title": "Early Education Entrepreneurship - Associate of Science Degree: Miramar",
+   "h1": "Early Education Entrepreneurship - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "43221",
+  "title": "Hawthorne Technician Apprenticeship (HTAP)",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DIES100",
+   "DIES101",
+   "DIES102",
+   "DIES105",
+   "DIES122",
+   "DIES137",
+   "DIES138",
+   "DIES144",
+   "DIES200",
+   "DIES202",
+   "DIES212",
+   "DIES222"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20055",
+   "title": "Hawthorne Technician Apprenticeship  (HTAP) - Certificate of Achievement: Miramar",
+   "h1": "Hawthorne Technician Apprenticeship  (HTAP) - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 14247
+ },
+ {
+  "control_number": "43654",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMMC1000",
+   "COMS104",
+   "COMS135",
+   "COMS160",
+   "COMS170",
+   "COMS180",
+   "COMS201"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20013",
+   "title": "Communication Studies 2.0 - Associate in Arts for Transfer Degree: Miramar",
+   "h1": "Communication Studies 2.0 - Associate in Arts for Transfer Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "44515",
+  "title": "Public Safety Management",
+  "award": "Baccalaureate of Science (B.S.) Degree.",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL402",
+   "PADM420",
+   "PSMA401",
+   "PSMA405",
+   "PSMA410",
+   "PSMA415",
+   "PSMA420",
+   "PSMA425",
+   "PSMA430",
+   "PSMA435",
+   "PSMA440",
+   "PSMA445",
+   "PSMA450",
+   "PSMA455",
+   "PSMA460",
+   "PSMA465",
+   "PSMA470",
+   "PSMA475",
+   "PSMA480",
+   "PSMA485",
+   "PSMA490",
+   "SOCO410"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/21070",
+   "title": "Public Safety Management - Bachelor of Science: Miramar",
+   "h1": "Public Safety Management - Bachelor of Science: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 3403
+ },
+ {
+  "control_number": "44740",
+  "title": "Cal-GETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45023",
+  "title": "200-Hour Registered Yoga Teacher",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EXSC145A",
+   "EXSC145B",
+   "EXSC145C",
+   "EXSC145D",
+   "EXSC292A",
+   "EXSC292B",
+   "EXSC393A"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20881",
+   "title": "200-Hour Registered Yoga Teacher - Certificate of Achievement: Miramar",
+   "h1": "200-Hour Registered Yoga Teacher - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 10564
+ },
+ {
+  "control_number": "45980",
+  "title": "Modern Policing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJU101",
+   "ADJU102",
+   "ADJU106",
+   "ADJU161",
+   "ADJU162",
+   "ADJU201",
+   "ADJU210",
+   "ARTF113",
+   "BUSE115",
+   "CHIL141",
+   "COMMC1000",
+   "COMS180",
+   "ENGLC1000",
+   "ENGLC1001",
+   "PHIL102B",
+   "PHIL131",
+   "PSYC166",
+   "PSYC258",
+   "PSYC259",
+   "SOCO110",
+   "SOCO207",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/22285",
+   "title": "Modern Policing - Associate of Science Degree: Miramar",
+   "h1": "Modern Policing - Associate of Science Degree: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "46180",
+  "title": "Fire Fighter 1 Academy",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FACD100D",
+   "FACD100F",
+   "FACD170",
+   "FACD171",
+   "FACD172",
+   "FACD173",
+   "FACD174"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/22305",
+   "title": "Fire Fighter 1 Academy - Certificate of Achievement: Miramar",
+   "h1": "Fire Fighter 1 Academy - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 13403
+ },
+ {
+  "control_number": "46222",
+  "title": "Government/Nonprofit Accounting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT116A",
+   "ACCT116B",
+   "ACCT125",
+   "CBTE140",
+   "CBTE143",
+   "CBTE180",
+   "PADM200"
+  ],
+  "source": {
+   "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/22299",
+   "title": "Government/Nonprofit Accounting - Certificate of Achievement: Miramar",
+   "h1": "Government/Nonprofit Accounting - Certificate of Achievement: Miramar",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 9018
+ }
+]

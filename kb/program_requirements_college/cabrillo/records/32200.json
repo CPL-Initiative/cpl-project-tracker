@@ -1,0 +1,485 @@
+{
+ "college": "Cabrillo College",
+ "control_number": "32200",
+ "shape": "adt",
+ "title": "English",
+ "award": "A.A- T Degree",
+ "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/english-associate-in-arts-for-transfer-a-a-t-fall-2026",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 13682,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 13682,
+    "output_tokens": 4297,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4297,
+  "output_tokens_details": {
+   "thinking_tokens": 1578
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.14067,
+ "ms": 49202,
+ "seconds": 49.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 34,
+   "listed": 37,
+   "share": 0.919,
+   "missing": [
+    "ENGL1BH",
+    "ENGL2MC",
+    "ENGL2MCH"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ENGL27AN",
+    "ENGLC1002H"
+   ],
+   "flagged": [
+    "ENGL27AN",
+    "ENGLC1002H"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    66.0,
+    68.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    34.0,
+    34.0
+   ],
+   "why": [],
+   "overlap": true,
+   "rescored": "Open Asks Sheet 82"
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 10,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "English Associate in Arts for Transfer (A.A.-T)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": 14,
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Write with a persuasive and knowledgeable grasp of one's subject and message, and with a demonstrated awareness of diverse audiences and contexts, as well as a variety of rhetorical strategies for different academic, creative, and professional writing tasks, including researched argumentative essays.",
+    "Develop research projects that locate, evaluate, organize, and integrate information cohesively in support of one's purpose and audience.",
+    "Compose in creative writing genres with respect to their distinctive elements and stylistic techniques.",
+    "Present analyses, based on original and secondary texts, that critically engage various genres, works, and authors with an awareness that literature and its interpretation are influenced by history, culture, gender, sexuality, race, ethnicity, and socioeconomics, among other factors."
+   ],
+   "careers": [
+    "teaching",
+    "journalism",
+    "publishing and editing",
+    "technical writing",
+    "public relations",
+    "advertising",
+    "law",
+    "communications",
+    "government",
+    "a variety of business environments"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Major Requirements - Core",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ENGLC1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGLC1002H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL1BMC",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Major Requirements - Core",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ENGLC1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGLC1001H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Major Requirements - List A",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ENGL30A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL30B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL46A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL46B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Major Requirements - List B",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ENGL12A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL12B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL12F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL14A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL14B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL27AN",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST27AN",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ETHN27AN",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL27BN",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST27BN",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ETHN27BN",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL34",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL39",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL40",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL41A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL45",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Major Requirements - List C",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "BUS52",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL12C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL14C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL14E",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL23A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL24A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL24B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL49A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL49B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOURN23A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TA9",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ENGL 1BH",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL 2MC",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL 2MCH",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The catalog text begins mid-sentence; the program description is cut off at the start.",
+   "The page prints no major total; 'Complete the following number of credits: 60' is recorded as degree_total and Cal-GETC 34 as ge_units.",
+   "General Electives: 'Complete the following number of credits: 14' of any transferable course (rows printed as 2 and 3 units); recorded as open_elective_units 14, no block.",
+   "The Program Outcomes are printed once for the program page; recorded for this A.A.-T.",
+   "List B also allows 'any LIST A course not already used' (3 units); List C also allows 'any foreign language course that fulfills Cal-GETC Area 3B' (3-5 units) or 'any LIST A or LIST B course not already used' (3 units). These are not codes and are not recorded as courses.",
+   "In List B the cross-listed ENGL/HIST/ETHN 27AN and 27BN rows are recorded as alternatives of one choice. ENGL27AN is not in the closed list (closed list has ENGL 27BN only), so it is marked catalog_addition.",
+   "In List C, ENGL23A and JOURN23A share a title (Reporting for the News Media) and appear to be cross-listed, but they are printed as separate rows and are kept as separate entries.",
+   "ENGLC1002H (Honors) is not in the closed list and is marked as a catalog addition.",
+   "The Program Map at the end lists the GE and major courses by term. It is a suggested sequence, not a requirement, and its GE courses are not placed in blocks."
+  ]
+ },
+ "extracted_run": "38565227455"
+}

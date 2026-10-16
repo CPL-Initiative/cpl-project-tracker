@@ -1,0 +1,266 @@
+{
+ "college": "Saddleback College",
+ "control_number": "42480",
+ "shape": "certificate",
+ "title": "Human Resources",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_hr_ca",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9674,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9674,
+    "output_tokens": 1864,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1864,
+  "output_tokens_details": {
+   "thinking_tokens": 631
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07598,
+ "ms": 14144,
+ "seconds": 14.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 13,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    22.0,
+    24.0
+   ],
+   "stated": [
+    22.0,
+    24.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 25,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "HUMAN RESOURCES - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 22,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply an understanding of the influence of individual values, attitudes, perceptions, emotions, and emotional intelligence on individual and organizational effectiveness.",
+    "Explain and give examples of the importance and value of diversity in the organization.",
+    "Analyze human resource needs and identify the financial, legal, social, compensation, and ethical factors involved in managing personnel and enforcing policies, rules, and procedures."
+   ],
+   "careers": [
+    "human resource management",
+    "compensation",
+    "recruitment",
+    "benefits",
+    "training and development",
+    "staffing",
+    "strategic HR management",
+    "risk management",
+    "labor relations",
+    "talent manager or officer",
+    "recruiter",
+    "recruitment and retention specialist",
+    "staffing specialist",
+    "trainer",
+    "employee development specialist",
+    "leadership development specialist",
+    "organizational development (OD) specialist",
+    "compensation and administrative services specialist",
+    "benefits analyst",
+    "compensation specialist",
+    "performance management specialist",
+    "employee advocate and labor relations specialist",
+    "safety officer",
+    "risk management specialist",
+    "OSHA specialist"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 22,
+     "max": 24
+    },
+    "courses": [
+     {
+      "code": "BUS 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 1H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 13H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1000",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1000H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 196",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 180WE",
+        "units": 2,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 223",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 227",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Each 'Select one' row in the Required Core (BUS 1/1H; BUS 13/13H; BUS 103/ENGL C1000/ENGL C1000H; BUS 196/BUS 180WE) is recorded as one entry with alternatives. The catalog prints sub-totals of 3.0, 3.0, 3.0-4.0 and 1.0-2.0 for these selections.",
+   "BUS 180WE is printed at 2.0 units in the requirement list; its course description lists 2.0-4.0 units.",
+   "The asterisks on BUS 104, ENGL C1000 and ENGL C1000H mark prerequisites and were dropped from the codes.",
+   "The page prints one outcomes list headed 'Learning Outcome(s):' for this certificate; it is recorded as program outcomes."
+  ]
+ },
+ "extracted_run": "38843470509"
+}

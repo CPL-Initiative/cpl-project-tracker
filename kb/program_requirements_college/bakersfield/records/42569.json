@@ -1,0 +1,224 @@
+{
+ "college": "Bakersfield College",
+ "control_number": "42569",
+ "shape": "degree",
+ "title": "Environmental Resource Management",
+ "award": "A.S. Degree",
+ "source_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/environmental-resource-management-associate-of-science-fall-2026",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5555,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5555,
+    "output_tokens": 1449,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1449,
+  "output_tokens_details": {
+   "thinking_tokens": 340
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0512,
+ "ms": 12101,
+ "seconds": 12.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "FOREB11",
+    "FOREB48WE"
+   ],
+   "flagged": [
+    "FOREB11",
+    "FOREB48WE"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    31.0,
+    44.0
+   ],
+   "stated": [
+    31.0,
+    44.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Environmental Resource Management Associate of Science",
+   "measure": "units",
+   "total_units": {
+    "min": 31,
+    "max": 44
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "At the conclusion of this program, the student should be able to demonstrate critical-thinking problem-solving skills in conservation, sustainability, and management of the environment.",
+    "At the conclusion of this program, the student should be able to effectively communicate scientific and technical knowledge in a professional manner.",
+    "At the conclusion of this program, the student should be able to demonstrate scientific and technical knowledge of the environment.",
+    "At the conclusion of this program, the student should be able to demonstrate proficiency in quantitative skills and information management of environmental resources specific to their chosen field.",
+    "At the conclusion of this program, the student should be able to evaluate their professional and ethical responsibilities as leaders in their chosen field and stewards of the environment."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 31,
+     "max": 44
+    },
+    "courses": [
+     {
+      "code": "AGRIB5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ERSCB10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FOREB6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FOREB7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FOREB8",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FOREB11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FOREB48WE",
+      "units": 1,
+      "units_max": 14,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOGB1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOLB10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MCAGB5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOILB1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints codes without a space between subject and number (e.g., 'AGRIB5'); they were recorded as printed and matched to the closed list (AGRIB5 = AGRI B5, etc.).",
+   "FOREB11 (Geographic Information Systems in Natural Resources) and FOREB48WE (Work Experience Education, 1-14 units) are not in the closed list and are marked as catalog additions.",
+   "The 31-44 unit total range comes from the variable 1-14 units of FOREB48WE; the total is printed both for the program and for the Core Courses block.",
+   "The program description says completers are eligible for an 'Associate of Arts degree' although the program is titled Associate of Science; a reviewer should check this inconsistency.",
+   "No general education pattern is named in the text.",
+   "No careers are named in the text."
+  ]
+ },
+ "extracted_run": "38414480070"
+}

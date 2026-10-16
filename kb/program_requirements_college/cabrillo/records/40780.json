@@ -1,0 +1,157 @@
+{
+ "college": "Cabrillo College",
+ "control_number": "40780",
+ "shape": "noncredit",
+ "title": "Community Health Worker",
+ "award": "Noncredit program",
+ "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/community-health-worker-certificate-of-completion-spring-2021",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5165,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5165,
+    "output_tokens": 974,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 974,
+  "output_tokens_details": {
+   "thinking_tokens": 453
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04014,
+ "ms": 9149,
+ "seconds": 9.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 1,
+   "listed": 1,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "HS430"
+   ],
+   "flagged": [
+    "HS430"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    144.0,
+    144.0
+   ],
+   "stated": [
+    144.0,
+    144.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Community Health Worker Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 144,
+    "max": 144
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Identify basic health needs and evaluate health and human service resources within the community.",
+    "Demonstrate Community Health Worker Professional skills and job readiness in the core competencies identified by the Community Health Care Worker Core Consensus Project (C3) and the needs of the local community."
+   ],
+   "careers": [
+    "Community Health Workers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 144,
+     "max": 144
+    },
+    "courses": [
+     {
+      "code": "HS430",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HS431",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit certificate counted in hours (144 Hours); units fields hold hours.",
+   "HS430 (Introduction to Community Health Work) is not in the closed list; recorded as a catalog addition.",
+   "HS431 printed without a space; matches closed-list HS 431.",
+   "The description says the certificate introduces students to the fields of public health, health care, health education, and social services; these were read as fields of study rather than named careers and were not recorded in careers. A reviewer may wish to add them.",
+   "Program Map (Fall Start) repeats the same two courses at 72 hours each."
+  ]
+ },
+ "extracted_run": "38442109713"
+}

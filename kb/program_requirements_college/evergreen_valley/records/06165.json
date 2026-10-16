@@ -1,0 +1,274 @@
+{
+ "college": "Evergreen Valley College",
+ "control_number": "06165",
+ "shape": "degree",
+ "title": "Nursing",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.evc.edu/degrees-certificates/nursing/nursing-associate-in-science/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7770,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7770,
+    "output_tokens": 2583,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2583,
+  "output_tokens_details": {
+   "thinking_tokens": 1034
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08274,
+ "ms": 22129,
+ "seconds": 23.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    84.0,
+    84.0
+   ],
+   "stated": [
+    75.0,
+    75.0
+   ],
+   "against": "degree",
+   "ge": [
+    27.0,
+    27.0
+   ],
+   "why": [
+    "the blocks and general education sum to 84.0-84.0; the catalog prints 75.0-75.0 for the degree"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "NURSING - ASSOCIATE IN SCIENCE",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": 75,
+    "max": 75
+   },
+   "ge_units": {
+    "min": 27,
+    "max": 27
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Safe and Effective Care Environment-Provide safe and effective care consistent with professional standards and best practices.",
+    "Health Promotion and maintenance- Promote optimal health outcomes for individuals, families, communities, and populations in a variety of practice settings",
+    "Physiological integrity- Optimize nursing care utlizing clinical judgement based upon knowledge of biological sciences, pathophysiology, nutrition, pharmacology and growth and development to achieve maximum physiological integrity, and reduce the risk potential for the clients.",
+    "Psychosocial integrity- Utilize therapeutic communication and cultural sensitivity to implement caring behaviors that support spiritual, mental, and social well-being of the client throughout the lifespan",
+    "Professional Role of the Nurse- Function as a professional and competent nurse generalist while integrating ethical and legal principles."
+   ],
+   "careers": [
+    "registered nurse"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Pre-Nursing Course Prerequisites",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "BIOL 071",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 072",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 074",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Course supportive of the Major (required for graduation and licensure)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Major Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 36,
+     "max": 36
+    },
+    "courses": [
+     {
+      "code": "NURS 010",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 011A",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 011B",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 012",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 013",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 014A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 014B",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints BIOL 071, BIOL 072, BIOL 074, NURS 010, NURS 012 with leading zeros; treated as the closed-list courses BIOL 71, BIOL 72, BIOL 74, NURS 10, NURS 12 (not catalog additions).",
+   "Summary table prints Nursing Major Courses 36, Pre-requisite Courses 18, Course Supportive of the Major 3, General Education 27, Total Units 75. The parts sum to 84; footnote says some GE courses may be double counted within the major. 75 recorded as degree_total and 27 as ge_units; block stated values taken from the summary rows.",
+   "total_units left null: the page prints 36 for the nursing major courses only, while the award also requires 18 units of prerequisites and 3 supportive units; reviewer may consider 36 as the major total.",
+   "The GE pattern is printed only as 'General Education' (unnamed local GE), so ge_pattern is null.",
+   "Footnote: 4.0 semester units each for anatomy, physiology, and microbiology may be accepted for equivalent courses from a regionally accredited institution; international coursework not accepted for prerequisites.",
+   "Program has a separate application process; prerequisites must be completed with a C or better before applying."
+  ]
+ },
+ "extracted_run": "38748875071"
+}

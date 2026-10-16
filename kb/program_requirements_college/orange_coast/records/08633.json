@@ -1,0 +1,246 @@
+{
+ "college": "Orange Coast College",
+ "control_number": "08633",
+ "shape": "degree",
+ "title": "Tooling",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/manufacturing-technology/tooling-associate-science-degree/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7432,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7432,
+    "output_tokens": 2195,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2195,
+  "output_tokens_details": {
+   "thinking_tokens": 963
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07363,
+ "ms": 18323,
+ "seconds": 18.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    38.5,
+    38.5
+   ],
+   "stated": [
+    60.0,
+    61.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the OCC AS GE pattern, but no units for it"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Tooling, Associate in Science Degree",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "OCC AS GE",
+   "degree_total": {
+    "min": 60,
+    "max": 61
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Manufacture precision tooling for Dies, Molds, and Prototype tooling."
+   ],
+   "careers": [
+    "entry-level tool maker",
+    "die maker",
+    "mold maker"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Program Sequence (major courses)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MACH A100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH A105",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH A120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH A121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH A110",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH A130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH A200",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH A115",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH A125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH A190",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH A175",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD A101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The REQUIREMENTS tab content is not in the supplied text; the overview says to complete the Tooling Certificate of Achievement plus A.S. graduation requirements. The single block is read from the Program Sequence plan of study grid (a curriculum map), listing the non-GE courses in plan order; reviewer should verify against the certificate's requirements list.",
+   "No major total is printed; total_units left null (the listed major courses sum to 38.5 units, not recorded as a total).",
+   "degree_total 60-61 is the 'Total Units' printed at the bottom of the Program Sequence grid, which includes GE areas and a degree-applicable elective.",
+   "The plan includes 'ELECTIVE (DEGREE APPLICABLE) .5-1.5' with footnote 'VARIES TO REACH MINIMUM 60 DEGREE APPLICABLE UNITS'; a unit range is printed, so electives_fill_degree is false, and open_elective_units left null because the field takes a single number (range .5-1.5).",
+   "GE pattern recorded as 'OCC AS GE' (Orange Coast College A.S. general education areas 1A, 1B, 2, 3, 4, 5, 6 at 3 units each in the plan); no GE unit total is printed.",
+   "The program learning outcome is printed on the A.S. page; it may be shared with the Tooling certificate.",
+   "Course titles in the catalog differ slightly from the state file (e.g., MACH A120 'Measurement and Blueprint Reading')."
+  ]
+ },
+ "extracted_run": "38670927724"
+}

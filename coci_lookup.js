@@ -39,12 +39,14 @@
     ".cplcoci-head .sub { color: var(--text-muted); font-size:.8rem; }",
     ".cplcoci-toolbar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:0 0 10px; }",
     ".cplcoci-toolbar input, .cplcoci-toolbar select { padding:7px 10px; border:1px solid var(--border-strong); border-radius:6px; font-size:.84rem; background: var(--surface-opaque); color: var(--text-body); }",
-    ".cplcoci-toolbar input:focus, .cplcoci-toolbar select:focus { outline:none; border-color: var(--seal-blue); }",
+    ".cplcoci-toolbar input:focus, .cplcoci-toolbar select:focus { border-color: var(--cobalt); }",
+    ".cplcoci-toolbar input:focus-visible, .cplcoci-toolbar select:focus-visible { outline:2px solid var(--cobalt); outline-offset:1px; }",
     ".cplcoci-q { flex:1 1 230px; min-width:170px; }",
     ".cplcoci-count { font-size:.78rem; color: var(--text-muted); margin-left:auto; }",
-    ".cplcoci-btn { background: var(--seal-blue); color: var(--surface-opaque); border:none; border-radius:6px; padding:7px 13px; font-weight:600; font-size:.8rem; cursor:pointer; }",
-    ".cplcoci-btn:hover { opacity:.92; }",
-    ".cplcoci-btn.ghost { background: var(--surface-subtle); color: var(--text-body); border:1px solid var(--border-strong); }",
+    // Controls are underlined words (Sam, 2026-10-09; S389 UI pass): no border, no fill, 24px tall.
+    ".cplcoci-btn { border:0; background:none; color: var(--cobalt); font-weight:600; font-size:.8rem; padding:2px 0; min-height:24px; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; cursor:pointer; white-space:nowrap; }",
+    ".cplcoci-btn:hover { text-decoration-thickness:2px; }",
+    ".cplcoci-btn:focus-visible { outline:2px solid var(--cobalt); outline-offset:2px; }",
     ".cplcoci-wrap { border:1px solid var(--border); border-radius:8px; background: var(--surface-opaque); overflow-x:auto; }",
     ".cplcoci-table { width:100%; border-collapse:collapse; font-size:.82rem; }",
     ".cplcoci-table th { position:relative; background: var(--seal-blue); color:#fff; text-align:left; padding:7px 9px; font-size:.76rem; cursor:pointer; user-select:none; white-space:nowrap; }",
@@ -53,13 +55,18 @@
     ".cplcoci-table td { padding:5px 9px; border-top:1px solid var(--border); vertical-align:top; overflow:hidden; text-overflow:ellipsis; }",
     ".cplcoci-table tr.cplcoci-row:hover td { background: var(--surface-subtle); }",
     ".cplcoci-caret { cursor:pointer; color: var(--text-muted); width:18px; }",
-    ".cplcoci-chip { display:inline-block; padding:1px 7px; margin:1px 3px 1px 0; border-radius:8px; font-size:.7rem; font-weight:600; border:1px solid var(--border-strong); background: rgba(255,255,255,.5); white-space:nowrap; }",
+    ".cplcoci-chip { display:inline-block; padding:1px 7px; margin:1px 3px 1px 0; border-radius:8px; font-size:.7rem; font-weight:600; border:1px solid var(--border-strong); background: transparent; white-space:nowrap; }",
     ".cplcoci-chip.mid { color:var(--seal-blue-text,#002F6D); }",
     ".cplcoci-chip.cid { color: var(--hunter, #1d4d33); border-color: var(--hunter, #1d4d33); }",
     ".cplcoci-chip.ccn { color: var(--violet, #5b3d8f); border-color: var(--violet, #5b3d8f); }",
     ".cplcoci-desc td { background: var(--surface-subtle); font-size:.8rem; color: var(--text-body); padding:9px 12px 11px; }",
     ".cplcoci-desc .lbl { font-weight:600; color: var(--navy-primary); margin-right:6px; }",
     ".cplcoci-desc .muted { color: var(--text-muted); font-style:italic; }",
+    ".cplcoci-outs { margin-top:8px; }",
+    ".cplcoci-outs ol { margin:4px 0 4px; padding-left:1.4em; }",
+    ".cplcoci-outs p { margin:4px 0; }",
+    ".cplcoci-outs .maps, .cplcoci-outs .src { display:block; }",
+    ".cplcoci-outs a { color: var(--cobalt); }",
     ".cplcoci-more { text-align:center; padding:10px; }",
     ".cplcoci-empty { padding:26px; text-align:center; color: var(--text-muted); }",
     ".cplcoci-viewseg { display:inline-flex; border:1px solid var(--border-strong); border-radius:8px; overflow:hidden; margin:0 0 10px; }",
@@ -313,7 +320,7 @@
     wrap.appendChild(table);
 
     if (idxs.length > state.limit) {
-      var more = el("button", { class: "cplcoci-btn ghost" },
+      var more = el("button", { class: "cplcoci-btn" },
         ["Show " + Math.min(PAGE, idxs.length - state.limit).toLocaleString()
          + " more (" + (idxs.length - state.limit).toLocaleString() + " remaining)"]);
       more.onclick = function () { state.limit += PAGE; renderTable(); };
@@ -348,18 +355,90 @@
     return tr;
   }
 
+  /* ── a course's learning outcomes (Sam, 2026-10-14) ──
+   * "Where can I view the SLOs we've pulled so far? Seems like there should be a link to them on
+   * each course listing." course_outcomes (public read) holds each course's SLOs as its outline
+   * or catalog prints them; the newest read_run is current. A row asks once, on expand, under
+   * the spellings a college prints its code in (ENGL 300, ENGL300, ENGL-300). A failed read
+   * says so; it never passes for none. */
+  var REST = (window.CPL_SUPABASE_URL || "https://hvuwhnbuahrtptokpqfh.supabase.co") + "/rest/v1";
+  var SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM";
+  var OUTCOME_SOURCE = { course_outline: "the course outline of record", catalog: "the catalog's course page" };
+  var outcomeCache = {};
+  function withOutcomes(college, subj, num, cb) {
+    var codes = [subj + " " + num, subj + num, subj + "-" + num];
+    var key = college + "|" + codes[0];
+    if (!outcomeCache[key]) {
+      var url = REST + "/course_outcomes?select=course_code,heading,lead,outcomes,maps_to,shape,fingerprint," +
+        "source_url,source_kind,source_system,read_run,loaded_at&college=eq." + encodeURIComponent(college) +
+        "&course_code=in.(" + codes.map(function (c) { return encodeURIComponent('"' + c.replace(/"/g, "") + '"'); }).join(",") + ")" +
+        "&order=read_run.desc,id.desc";
+      outcomeCache[key] = Promise.resolve().then(function () {
+        return fetch(url, { headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON } });
+      }).then(function (res) {
+        if (!res.ok) throw new Error("course_outcomes answered " + res.status);
+        return res.json();
+      }).then(function (rows) {
+        var top = (rows || []).reduce(function (m, o) { return Math.max(m, Number(o.read_run) || 0); }, 0), seen = {};
+        return (rows || []).filter(function (o) {
+          if ((Number(o.read_run) || 0) !== top || seen[o.fingerprint]) return false;
+          seen[o.fingerprint] = true;
+          return true;
+        });
+      });
+      outcomeCache[key].catch(function () { delete outcomeCache[key]; });
+    }
+    outcomeCache[key].then(function (rows) { cb(null, rows); }, function (err) { cb(err, null); });
+  }
+  function outcomesNode(err, rows) {
+    var box = el("div", { class: "cplcoci-outs" });
+    if (err) {
+      box.appendChild(el("span", { class: "lbl" }, ["Learning outcomes"]));
+      box.appendChild(el("span", { class: "muted" }, ["could not be read (" + err.message + ")."]));
+      return box;
+    }
+    if (!rows.length) {
+      box.appendChild(el("span", { class: "lbl" }, ["Learning outcomes"]));
+      box.appendChild(el("span", { class: "muted" }, ["none read from this college's outline or catalog yet."]));
+      return box;
+    }
+    rows.forEach(function (o) {
+      var maps = o.maps_to || [];
+      box.appendChild(el("span", { class: "lbl" }, [(o.heading || "Learning outcomes") + " (" + o.outcomes.length + ")"]));
+      if (o.lead) box.appendChild(document.createTextNode(o.lead));
+      box.appendChild(o.shape === "paragraph" && o.outcomes.length === 1 ? el("p", {}, [o.outcomes[0]])
+        : el("ol", {}, o.outcomes.map(function (t, i) {
+          var li = el("li", {}, [t]);
+          if (maps[i] && maps[i].length) li.appendChild(el("span", { class: "muted maps" }, ["Maps to: " + maps[i].join("; ")]));
+          return li;
+        })));
+      var a = el("a", { href: o.source_url, target: "_blank", rel: "noopener" }, [OUTCOME_SOURCE[o.source_kind] || "the college's page"]);
+      box.appendChild(el("span", { class: "muted src" }, ["As printed in ", a,
+        (o.source_system ? " (" + o.source_system + ")" : "") + ", read " + String(o.loaded_at || "").slice(0, 10) + "."]));
+    });
+    return box;
+  }
+
   function buildDescRow(idx, r) {
     var tr = el("tr", { class: "cplcoci-desc", "data-desc-idx": String(idx) });
     var td = el("td", { colspan: String(COLS.length) },
       [el("span", { class: "lbl" }, ["Catalog description"]),
        el("span", { class: "muted" }, ["loading…"])]);
     tr.appendChild(td);
+    var outs = el("div", { class: "cplcoci-outs" }, [el("span", { class: "lbl" }, ["Learning outcomes"]),
+      el("span", { class: "muted" }, ["loading…"])]);
     withDesc(r[ROW.SUBJ], r[ROW.CTRL], function (desc) {
       clearNode(td);
       td.appendChild(el("span", { class: "lbl" }, ["Catalog description"]));
       if (desc) td.appendChild(document.createTextNode(desc));
       else td.appendChild(el("span", { class: "muted" },
         ["No catalog description in the COCI extract for this course."]));
+      td.appendChild(outs);
+    });
+    withOutcomes(state.data.colleges[r[ROW.COLLEGE]], r[ROW.SUBJ], r[ROW.NUM], function (err, rows) {
+      var next = outcomesNode(err, rows);
+      if (outs.parentNode) outs.parentNode.replaceChild(next, outs);
+      outs = next;
     });
     return tr;
   }
@@ -482,7 +561,7 @@
       [["all", "Credit: any"], ["C", "Credit"], ["E", "Noncredit Enhanced"], ["N", "Noncredit"]],
       state.credit, function (v) { state.credit = v; invalidate(); }));
 
-    var csv = el("button", { class: "cplcoci-btn", id: "cplcoci-csv", title: "Download the current filtered set as CSV" }, ["⬇ CSV"]);
+    var csv = el("button", { class: "cplcoci-btn", id: "cplcoci-csv", title: "Download the current filtered set as CSV" }, ["Download CSV"]);
     csv.onclick = exportCsv;
     tb.appendChild(csv);
     tb.appendChild(el("span", { class: "cplcoci-count", id: "cplcoci-count" }, [""]));
@@ -574,7 +653,7 @@
     P.statuses.slice().forEach(function (s) { if (s) statusOpts.push([s, s]); });
     tb.appendChild(mkSelect("cplcoci-pstatus", "Program status", statusOpts, state.pstatus, function (v) { state.pstatus = v; pInvalidate(); }));
 
-    var csv = el("button", { class: "cplcoci-btn", title: "Download the current filtered programs as CSV" }, ["⬇ CSV"]);
+    var csv = el("button", { class: "cplcoci-btn", title: "Download the current filtered programs as CSV" }, ["Download CSV"]);
     csv.onclick = exportProgCsv;
     tb.appendChild(csv);
     tb.appendChild(el("span", { class: "cplcoci-count", id: "cplcoci-pcount" }, [""]));
@@ -650,7 +729,7 @@
     table.appendChild(tbody);
     wrap.appendChild(table);
     if (idxs.length > state.plimit) {
-      var more = el("button", { class: "cplcoci-btn ghost" },
+      var more = el("button", { class: "cplcoci-btn" },
         ["Show " + Math.min(PAGE, idxs.length - state.plimit).toLocaleString() + " more ("
          + (idxs.length - state.plimit).toLocaleString() + " remaining)"]);
       more.onclick = function () { state.plimit += PAGE; renderProgTable(); };

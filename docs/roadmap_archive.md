@@ -10,6 +10,25 @@ status: archive
 
 # Roadmap Archive — Completed Work & Session Narratives
 
+## INDEX update-history entries rotated out (2026-10-16)
+
+- 2026-10-14 (S392 SkyTamarack): Sheet 81 carried out (#2127); the summary-row highlight (#2128); record shape 6 and the Major only gap (#2129); El Camino and San Joaquin Delta (#2131); the reconcile pass (#2130); Sheet 82; handoff 393 (SkySycamore).
+- 2026-10-14 (S391 SkyJuniper): handoff 392; Sheets 80 and 81; San Joaquin Delta's catalog year (#2125); the Program Requirements UI pass (#2124).
+
+## INDEX update-history entries rotated out (2026-10-14)
+- 2026-10-13 S378 SkyHemlock (scheduled): #2063 already merged and run 586 green; Move to the team phrase held by the permission check (Open Asks Sheet 73); the Common Course Reference UI pass (list view measured by new a11y targets ccr-list and ccr-list-dark, 0 findings in both themes); handoff 379.
+- 2026-10-13 S377 SkySequoia: S375's checkpoint (#2058) and vault note (#327) merged; Refresh summaries shipped (#2059, `activity_summaries.js`, published by run 583; the activity header's Update link retired, its link row wraps at 390px); the Move control (#2056) green after its dialog led with Cancel, still held for its function; apply_migration down (nothing newer than 23:19Z in schema_migrations); KB note playbook-when-apply-migration-times-out-read-the-migrations-table; handoff 378.
+- 2026-10-13 S375 SkyTally: Annual Goals PR A merged (#2051, the add flow's hidden insert made literal), the UI pass (#2054, published by run 582), `project_add.js` retired (#2055), the Add dialog's checkbox targets (#2057), the Move control built and held for its function (#2056; apply_migration down); S374's stranded checkpoint #2052 brought up to main; KB note playbook-test-a-database-function-locally-with-pglite; Open Asks Sheet 72; handoff 377.
+- 2026-10-12 SkyLedger (parallel session; its receipts say s372): new lane `workplan-annual-goals`, `workplan_annual_goals_lessons.md`, KB note `methodology-an-option-list-read-from-the-page-dies-with-the-renderer`; handoff 375.
+- 2026-10-12 S374 SkyJuniper: S373's #2046, #2047 and #2048 merged; the SLO read at RCCD (#2049: the outline's SLO area, not the objectives before it; run 38318152644 reading 1,605 outlines; `course_outcomes` written, not applied: apply_migration timed out); Mesa's nine health programs traced to a four-tab cap (#2050); KB note methodology-a-lead-in-sentence-is-not-a-section-heading.
+- 2026-10-12 S373 SkyCypress: San Diego Mesa read, loaded and displayed (#2044, 166 records, build da4f44a160ca); Sheet 70 answered: the registry's course outline fields (#2045) filled on 118 rows (#2047); the course outline census merged (#2042, run 5: 32 outlines, 18 with SLOs); the RCCD course index (#2046, 1,605 of 1,648 courses with a public outline); KB note methodology-a-sign-in-form-is-no-proof-of-a-closed-system.
+- **2026-10-12 (S371 SkyMaple)**: San Diego City displayed (#2034); College Identity UI pass (#2035); MAP Users sign-in wording (#2036); Mesa registry receipt (#2037, held) and the painting gallery (#2038, step 1); new KB note `methodology-same-context-size-means-the-model-varied`; handoff 372 (SkyRedwood).
+
+## INDEX update-history entries rotated out (2026-10-12)
+- 2026-10-12 (S368 SkyWillow): UI passes on Admin (#2019) and MAP Team Queue (#2020), each with a seeded sweep of the gated view; every program record public, each unchecked one marked Not yet confirmed (#2021, Sam's Sheet 67 card 1; the policy waits on his paste); Long Beach City's re-read filed (311 pass) and its load dispatched; Chaffey and San Diego City captured, both 0 (the curriQunet reader misses them); handoff 369.
+- 2026-10-12 (S367 SkyAspen): CPL Pathways reads its catalog records from `program_requirement_records` (#2015) and its UI pass (#2016); Vision 2030 shows one set of goal figures in the tab and the annual report, TBA until set (#2017, Sheet 66 card 1); Long Beach City's re-read dispatched (run 38185403454); Sam's Sheet 65 card 2 sheet answer (every record, marked) differs from his chat answer and is asked on Open Asks Sheet 67; handoff 368.
+- 2026-10-11 (S366 SkyHazel): UI passes on Governance (#2007; the shell placeholder left on the root, a Docs panel blank after a repaint, #2011 its load race) and Team Phrases (#2010); the three `sierra_feedback` readers filter CI rows on the server (#2008); Long Beach City's 74 reframed (#2009) and both causes fixed (#2012: the hidden index chose pages and text); Sam answered Sheet 65 card 2 in chat (read from the table); handoff 367.
+
 ## INDEX update-history entries rotated out (2026-10-09)
 
 - **2026-10-08 (S345 SkyLantern):** map sources read at sixteen colleges, every Program Mapper refused and Mt. San Antonio's own Guided Pathways pages publish a sequence per program; 19 of 118 colleges hold a procedure; the Progress view links each of Sam's calls to its sheet card (#1908); Open Asks Sheet 50 answered, its card 5 built (settled maps). Handoff 346.
@@ -5924,3 +5943,52 @@ Older bullets from the `## Update history` section of `docs/INDEX.md`, moved ver
 - 2026-10-10 S357 SkyCanopy: curriQunet catalogs read as data (KB note `methodology-a-javascript-catalog-is-data-read-what-it-fetches`); district catalogs scoped; Open Asks Sheets 58 and 59; handoff 358.
 
 - 2026-10-11 (S359 SkyMoss): RCCD's Liberal Arts emphasis read (#1965-#1967), Sheet 60's eight rows removed (#1968), Sam's Mt. San Antonio reading rules; KB note `methodology-a-missing-course-may-be-a-retired-version`; handoff 360.
+
+## INDEX update history, moved 2026-10-12 (S371)
+
+- 2026-10-11 (S364 SkyJuniper): Sam kept hours / 16 on Open Asks Sheet 63 (#1990); the Implementation Funding and Contracts UI passes with seeded sweeps (#1991, #1997); Budget's and Annual Workplan Goals' editors read mid-save in both themes, controls as words (#1992, #1994); a second S364 session ran Long Beach City and the Program Requirements speed fix (#1993); KB notes `methodology-a-sweep-sees-only-the-states-its-seed-reaches` and `methodology-a-fill-that-does-not-flip-needs-ink-that-does-not-either` gained sections; handoff 365.
+- 2026-10-11 (S363 SkyCedar): Long Beach City's Requirements tab sits inside `<nav id="tabs">`, found by a runner probe; the reader counts a tab bar's own tabs (#1986); trial 2 read 11 of 12 from the tab and the full read runs; Long Beach City in the display builder's dated reads; Open Asks Sheet 63 (where a half unit starts); the Budget tab's UI pass (#1988); KB note `methodology-test-a-reader-fix-on-the-page-it-failed-on`; handoff 364 (SkyJuniper).
+- 2026-10-11 (S361 SkyBirch): rules 4 and 5 merged and deployed with Sierra (#1974), COCI status chips (#1972), Riverside City 39120 removed by Sam's own paste, Long Beach City's read started, the extraction push guard (#1976), the Workplan Goals UI pass (#1977), the two-call extraction built (#1978); S360's lessons section and S327-S333 moved to the archive; KB note `methodology-a-path-filter-compares-pushes-not-branches`; handoff 362 (SkyAlder).
+
+## INDEX update history, moved S373
+
+- 2026-10-11 (S365 SkyRowan): UI passes on Vision 2030 (#2001; the actions now the CPL Workplan's words), Military Partnerships (#2004) and Noncredit & Learning Partners (#2005), and Team & RACI's two leftovers (#2003); Open Asks Sheet 65 (the Vision 2030 goal figures; which records CPL Pathways shows, measured at 18.2 MB and past the checked gate); KB note `methodology-a-published-file-carries-past-the-tables-read-gate`; handoff 366.
+- 2026-10-11 (S364, second session): Long Beach City read, loaded and displayed, 305 of 379 (#1999; display build `344441813b01`, 1,515 rows); Program records builds on first open (#1993); Sam's retired-version ruling (#1995); the read job may run 360 minutes; handoff 365 and queue status corrected (#2000).
+
+### INDEX update history moved 2026-10-13 (S377)
+
+- 2026-10-12 S369 SkyLaurel: Long Beach City displayed (05811159eeee), the read policy live, curriQunet reader fixes for Chaffey and San Diego City, smoke 7s; handoff 370 (SkyHolly).
+
+### INDEX update history, moved 2026-10-13 (S380)
+
+- 2026-10-12 S372 SkyRedwood: Miramar displayed (#2041), Mesa's row applied (#2037), Sierra v91 7c precedent (#2040), the painting gallery (#2038), the course outline census (#2042 draft, Sheet 70); KB note methodology-a-course-title-reads-as-its-level.
+- 2026-10-12 S370 SkyHolly: Long Beach City 38542 removed (Sheet 68 card 2, #2028); Chaffey read, loaded and displayed (#2027, build 496f2a71470a, 1,745 rows); San Diego City extracting; My College UI pass and the public contact measure (#2030); smoke 7s verb shape (#2031); Sierra 7c opening fix (#2032, A/B then deploy); handoff 371 (SkyMaple).
+
+### INDEX update history, moved 2026-10-14 (S387)
+
+- 2026-10-13 S376 SkyLinden: the Requirements-tab re-reads loaded and displayed (Mesa #2064, San Diego City #2068, Miramar #2070; build `98becf9fafc7`, 2,203 rows); SDCCD's outline index (#2065) and SLOs by college group (#2066, draft, on #2049); the trigger-file gate (#2069); KB note `methodology-a-trigger-file-must-differ-from-main`; handoff 380 (SkyAlder).
+
+<!-- INDEX update history moved at S389 -->
+- 2026-10-13 S380 SkyAlder: course_outcomes live (Sam's paste) and loaded at RCCD (#2049) and SDCCD (#2066), 4,894 rows; Chaffey's outcomes not public (#2073); the eLumen reader (#2072, fast publish/content read) and Coastline's CourseLeaf fixes (#2074, index.html pages, no course listings), both colleges extracting; KB note methodology-read-a-catalog-through-its-own-content-call; handoff 381.
+
+## INDEX update history moved at the S392 checkpoint (2026-10-14)
+
+- 2026-10-13 S384 SkyPoplar: #2083-#2086 merged and the build queue deployed; Program Requirements read in pages (#2088), once when signed in (#2089), and by college with a light index (#2090, open); the identity guard race fixed (#2087); Modesto and Palo Verde captures read; Open Asks Sheet 77; the pagination note updated.
+- 2026-10-13 (S383 SkySpruce): Cabrillo displayed (#2078), Sheet 75 answered and carried out (#2082, #2083), the whole-harvest measure (#2084), the eLumen hub reader (#2085); handoff 384 (SkyPoplar).
+- 2026-10-13 S382 SkyLarch: Coastline read (hidden Requirements tab), loaded and displayed; Cabrillo loaded; #2076 migrate runner and #2080 Annual Goals Under list merged; handoff 383.
+- 2026-10-13 S381 SkyRowan: Bakersfield loaded and displayed (eLumen), the Progress view's counts open their lists, Coastline's near misses and Cabrillo's department menu; handoff 382 (SkyLarch).
+
+## INDEX update history moved at the funding checkpoint (2026-10-14, beside S392)
+
+- **2026-10-14 (S385 SkyHazel):** Sheet 77 cards 2, 3 and 5 built and merged (#2092 reviewer-only Table/Archive, #2093 the college's items on one line and in the MAP team queue, #2094 Modesto Junior and Palo Verde displayed); #2090 merged with clean first live reads; the migrate runner's first two applies; CLAUDE.md and the harvest lane back under budget. Handoff 386.
+
+## INDEX update history, moved S395 (verbatim)
+
+- **2026-10-14 (S388 SkyBuckeye):** course SLOs loaded at Cabrillo, Modesto Junior (#2103) and Coastline (#2105), nine colleges and 20,891 SLOs live; the addenda reading agent `program_source_addenda_read()` and the eight reads filed (#2107); Common CR Reference UI pass (#2108); handoff 389 (SkyPersimmon).
+- **2026-10-14 (S387 SkyMagnolia):** course SLOs from catalog pages: eLumen (#2103, Cabrillo reading) and the Coast district outlines (#2105, Coastline reading); the seven colleges probed (#2101); the eight addenda read (#2102); Palo Verde's 2026-27 catalog picked by the census (#2104, two dry runs); KB note methodology-a-green-check-you-did-not-scope-is-not-evidence gains the fifth green; handoff 388 (SkyBuckeye).
+- **2026-10-14 (S386 SkyElm):** Palo Verde's noncredit and no-total pages read (the catalog names courses under other subjects; pages print the degree total with general education), Modesto and Palo Verde procedure records (#2096); My College reads `program_record_college_items` (#2097); Southwestern and Fresno City captured, Open Asks Sheet 78 (#2098, CPLBrain #338); harvest lane compacted under budget; KB note `methodology-a-green-check-you-did-not-scope-is-not-evidence` gains the stand-in section; handoff 387 (SkyMagnolia).
+
+## INDEX update history, moved 2026-10-16 (S397)
+
+- **2026-10-14 (S390 SkySaguaro):** Southwestern merged with its procedure record (#2115); Fresno City loaded, displayed (build `04872c826890`) and its procedure record (#2120); the SLO links on Program records and COCI Lookup (#2116); the tabled line's email fixed at the generator (#2117); CIP Codes UI pass (#2118); the Acalog reader merged with San Joaquin Delta's capture (#2112); the Records view's District, College, SWP Region and CIP Sector dropdowns, Progress first, no Sierra (#2121); handoff 391 (SkyJuniper).
+- **2026-10-14 (S389 SkyPersimmon):** record shape 5, the degree total a page prints (#2110, Sam's Sheet 78 card 2); the re-read path (#2111); Palo Verde's 19 (#2114) and Cabrillo's 55 re-read and replaced, Southwestern loaded and displayed (#2115); an Acalog reader, El Camino captured (#2112); COCI Lookup UI pass (#2113); Open Asks Sheet 79; lessons doc compacted (S353-S359 to the archive); handoff 390 (SkySaguaro).

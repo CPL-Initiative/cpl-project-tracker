@@ -168,11 +168,20 @@ jobs:
       # grants. Pure-stdlib python; same non-required check.
       - name: Supabase table-grant lint (new and recreated tables carry grants)
         run: python3 tests/supabase_table_grants_test.py
+      # The runner-applied migration (Sam, Open Asks Sheet 74 card 2, 2026-10-13):
+      # only a committed .sql under chatbox/, kb/ or supabase/, a migration name the
+      # ledger accepts, and a receipt naming the file's sha256. Pure-stdlib python.
+      - name: Supabase migrate runner (committed file, name, receipt)
+        run: python3 tests/supabase_migrate_test.py
       # The Program records view's one write (Sheet 51 card 1, S347): the session's
       # email, the reviewer gate first, the fingerprint refused when stale, an
       # append-only log, and the same machine checks in SQL and in the tab.
       - name: Program record verdicts (the tab's one write)
         run: python3 tests/program_record_verdicts_sql_test.py
+      # The addenda reading agent's write (S388): service_role only, a person's
+      # correction never touched, and each filing's changes say scope and kind.
+      - name: Program source addenda read (the reading agent's write)
+        run: python3 tests/program_source_addenda_read_test.py
       # The Library filer (scripts/library_file.py): version names, resumable
       # upload, the two-folder fence, receipts guarded on the Drive file id, and
       # no delete anywhere. Pure-stdlib python with a fake Drive; same non-required check.
@@ -197,6 +206,11 @@ jobs:
       # a thousand rows. Pure-stdlib python; same non-required check.
       - name: Program requirements, one college (sitemap, matching, shards)
         run: python3 tests/program_requirements_college_test.py
+      # The course outline census (S372, Sam 2026-10-12): which system each
+      # college's course outlines open in, public or sign-in, and whether they
+      # print SLOs. Reads pages only and writes no table. Pure-stdlib python.
+      - name: Course outline census (systems, sign-in, curriculum links)
+        run: python3 tests/course_outline_census_test.py
       # The display apply (S356): the college workflow's display job writes a
       # display build's receipt from a runner, exactly as reviewed, and files
       # each row's prior build as the rollback. Pure-stdlib python.
@@ -830,6 +844,26 @@ jobs:
       # failure mode #1541 was itself written about. Pure-stdlib python.
       - name: KPI history has no date gaps (Rule 3)
         run: python3 tests/kpi_history_no_gaps_test.py
+      # The registry's course outline fields (S373; Sam, Open Asks Sheet 70): the
+      # receipt that fills program_source_registry's cor_* columns from a course
+      # outline census, guarded and reversible. Pure-stdlib python.
+      - name: Course outline registry fill (receipt, guard, rollback)
+        run: python3 tests/course_outline_registry_fill_test.py
+      # The course outline index (S373; Sam, Open Asks Sheet 70 card 3): one
+      # spelling per course code, and the courses the loaded records name.
+      # Reads pages only and writes no table. Pure-stdlib python.
+      - name: Course outline index (course codes, the loaded records)
+        run: python3 tests/course_outline_index_test.py
+      # The course outcomes read (S374; Sam, Open Asks Sheet 70 card 3): each
+      # course's SLOs as printed, every wanted course in one slice, no table write.
+      # Pure-stdlib python.
+      - name: Course outcomes read (outcomes as printed, slices, pages only)
+        run: python3 tests/course_outcomes_read_test.py
+      # The course outcomes load (S374): one row per college the outline names, the
+      # fingerprint checked, a receipt that rolls back, and the insert-only function
+      # as the only write. Pure-stdlib python.
+      - name: Course outcomes load (rows, fingerprint, receipt, insert-only)
+        run: python3 tests/course_outcomes_load_test.py
 
   test:
     # The one check the merge doctrine polls (CLAUDE.md branch policy). It

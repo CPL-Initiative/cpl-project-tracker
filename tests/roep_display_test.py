@@ -49,8 +49,8 @@ def sql_displays(path):
                      r"r\.program_title, r\.measure, r\.record, r\.checks, '(.*)'::jsonb from public\.program_requirement_records r "
                      r"where r\.college = '(.*)' and r\.control_number = '(.*)' on conflict \(college, control_number\) "
                      r"do update set display = excluded\.display;$")
-    for line in open(path, encoding="utf-8"):
-        m = pat.match(line.rstrip("\n"))
+    for line in b.read_receipt(path).splitlines():
+        m = pat.match(line)
         if m:
             out[(m.group(2).replace("''", "'"), m.group(3))] = json.loads(m.group(1).replace("''", "'"))
     return out
@@ -202,6 +202,55 @@ gk = b.gaps_for("X College", "courseleaf", "A.S. Degree", "units", filed_k, None
 named = sorted((g.get("coci") or [{}])[0].get("code") for g in gk if g["kind"] == "Catalog and state file differ")
 check(named == ["CC 3", "DD 4"], "gaps: no flag for a course the program lists through an older version (got %s)" % named)
 
+# 2d2. An associate degree whose record holds the major alone (Sam, 2026-10-14, Cabrillo Biology
+# 06328, Needs a fix: the page prints the degree's 60, GE 24 and 6 units of electives). The failure
+# this guards: a person reading every such record to find a gap the record itself shows.
+major = {"record": {"program": {"total_units": {"min": 30, "max": 30}}, "blocks": []},
+         "score": {"arithmetic": {"status": "equal", "against": "program", "computed": [30, 30]}}}
+gm = b.gaps_for("X College", "elumen", "A.S. Degree", "units", major, None, {"min": 30, "max": 30}, None, lambda c: None)
+check([g["owner"] for g in gm if g["kind"] == "Major only"] == ["procedure"],
+      "gaps: an associate degree holding the major only is the reading procedure's gap (got %s)" % gm)
+gm = b.gaps_for("X College", "elumen", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+                "units", major, None, {"min": 30, "max": 30}, None, lambda c: None)
+check(not any(g["kind"] == "Major only" for g in gm), "gaps: a certificate has no degree to read")
+read = {"record": {"program": {"total_units": {"min": 30, "max": 30}, "degree_total": {"min": 60, "max": 60},
+                               "ge_units": {"min": 24, "max": 24}}, "blocks": []},
+        "score": {"arithmetic": {"status": "equal", "against": "program", "computed": [30, 30]}}}
+gm = b.gaps_for("X College", "elumen", "A.S. Degree", "units", read, None, {"min": 30, "max": 30}, None, lambda c: None)
+check(not any(g["kind"] == "Major only" for g in gm), "gaps: a record that reads the degree raises no Major only gap")
+
+# 2d3. The units chip (Sam, 2026-10-11 and 2026-10-14: "Highlight the mismatches in units in the
+# summary row"): a major total and a degree total each get one, and an equal sum gets none.
+ud = b.units_differ({"status": "unequal", "against": "program", "computed": [33, 36]}, {"min": 30, "max": 30})
+check(ud == {"blocks": [33, 36], "printed": [30, 30]}, "units chip: the blocks beside the major's total (got %s)" % ud)
+ud = b.units_differ({"status": "unequal", "computed": [33, 36]}, {"min": 30, "max": None})
+check(ud == {"blocks": [33, 36], "printed": [30, 30]}, "units chip: a score from before record shape 5 still gets one")
+ud = b.units_differ({"status": "unequal", "against": "degree", "computed": [54, 54], "stated": [60, 60]}, {"min": None})
+check(ud == {"blocks": [54, 54], "printed": [60, 60], "against": "degree"},
+      "units chip: a degree total the blocks and general education miss (got %s)" % ud)
+check(b.units_differ({"status": "equal", "against": "degree", "computed": [60, 60], "stated": [60, 60]}, {"min": None}) is None,
+      "units chip: none where the units add up")
+
+# 2e. Record shape 5 (Sam, Open Asks Sheet 78 card 2, "Record both figures"): a page that prints the
+# degree total with general education and no major total. The failure this guards: the gaps saying
+# "The catalog prints no program total" for a page that prints one for the degree.
+def deg_gaps(arith):
+    fd = {"record": {"program": {"degree_total": {"min": 64, "max": 68}, "ge_units": {"min": 34, "max": 38}},
+                     "blocks": []}, "score": {"arithmetic": arith}}
+    return b.gaps_for("X College", "elumen", "A.S. Degree", "units", fd, None, {"min": None}, None, lambda code: None)
+gd = deg_gaps({"status": "equal", "against": "degree", "computed": [64, 68]})
+check(not any(g["kind"] in ("No printed total", "Check not met") for g in gd),
+      "gaps: blocks and general education that make the printed degree total raise no gap (got %s)" % gd)
+gd = deg_gaps({"status": "unequal", "against": "degree", "computed": [60, 64]})
+check(any(g["kind"] == "Check not met" and g["text"] == "The blocks and general education add to 60-64 units; "
+          "the catalog prints 64-68 units for the degree." for g in gd)
+      and not any("no program total" in g["text"] for g in gd),
+      "gaps: a degree total the blocks and general education miss names both figures (got %s)" % gd)
+gd = deg_gaps({"status": "incomplete", "against": "degree", "computed": [30, 30],
+               "why": ["the record names the degree total and the CalGETC pattern, but no units for it"]})
+check(any(g["kind"] == "Check not met" and g["text"].startswith("The catalog prints 64-68 units for the degree") for g in gd),
+      "gaps: a degree total the check could not add to says why (got %s)" % gd)
+
 # 2d. A receipt never names a word the Supabase connector holds, even when a record's text
 # does (Long Beach City 37305, 2026-10-11: a careers note says "a reviewer may choose to drop
 # it", and the guard refused the whole build). The failures this guard: a stalling word in the
@@ -316,7 +365,7 @@ check(bool(iv) and iv[0]["display"]["figure"]["up_to"] == 3.0 and iv[0]["display
 # Sam loaded both on open-asks sheet 47 card 8 (2026-10-07): every record is filed in records/,
 # so the receipt names none waiting.
 check(all(p["filed"] == "records" for p in progs) and "are filed in records_maps/" not in
-      (open(receipt).read() if os.path.exists(receipt) else ""),
+      (b.read_receipt(receipt) if os.path.exists(receipt) else ""),
       "every record is filed in records/ and the receipt names none waiting")
 
 # 4. the figure the approved mock-up shows for the hand-built map
@@ -421,7 +470,7 @@ check("equivalent_units" not in chat and "equivalent units" not in chat.lower(),
 names = field_names(read, set()) | field_names(data, set()) | field_names(list(sql.values()), set())
 check(not [n for n in names if re.search(r"student|learner_id|ssn|emplid", n, re.I)],
       "no student field in the read or either output")
-check(not b.STALL.search(open(receipt).read()) if os.path.exists(receipt) else False,
+check(not b.STALL.search(b.read_receipt(receipt)) if os.path.exists(receipt) else False,
       "the receipt names no word the Supabase connector holds")
 
 print("\n%d failure(s)" % len(fails))

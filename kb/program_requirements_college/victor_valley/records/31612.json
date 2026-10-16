@@ -1,0 +1,374 @@
+{
+ "college": "Victor Valley College",
+ "control_number": "31612",
+ "shape": "adt",
+ "title": "Communication Studies",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.vvc.edu//degrees-certificates/communication-studies/communication-studies-2-aat/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7354,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7354,
+    "output_tokens": 2682,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2682,
+  "output_tokens_details": {
+   "thinking_tokens": 981
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08306,
+ "ms": 21273,
+ "seconds": 21.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 8,
+   "share": 0.75,
+   "missing": [
+    "COMMC1004",
+    "SOCIC1000"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 16,
+   "codes": [
+    "CMST104",
+    "CMST106",
+    "CMST107",
+    "CMST110",
+    "CMST160",
+    "CMST180",
+    "CMST181",
+    "CMST184",
+    "CMST188",
+    "CMST282",
+    "ENGLC1001",
+    "ENGLC1001H",
+    "ENGLC1002H",
+    "JOUR108",
+    "SOC101",
+    "TA104"
+   ],
+   "flagged": [
+    "CMST104",
+    "CMST106",
+    "CMST107",
+    "CMST110",
+    "CMST160",
+    "CMST180",
+    "CMST181",
+    "CMST184",
+    "CMST188",
+    "CMST282",
+    "ENGLC1001",
+    "ENGLC1001H",
+    "ENGLC1002H",
+    "JOUR108",
+    "SOC101",
+    "TA104"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    19.0
+   ],
+   "stated": [
+    18.0,
+    19.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "REQUIREMENTS",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "COMM C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMST 106",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "CMST 104",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CMST 108",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMST 105",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMST 110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "TA 104",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "List B",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ANTH 102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL C1002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1002H",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "ENGL C1001",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "ENGL C1001H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOUR 108",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CMST 188",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "CMST 107",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CMST 160",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CMST 180",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CMST 181",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CMST 184",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CMST 282",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COMM C1004",
+    "why": "not in the text; catalog prints CMST 106 Interpersonal Communication in the Required Core instead"
+   },
+   {
+    "code": "SOCIC1000",
+    "why": "not in the text; catalog prints SOC 101 Introduction to Sociology in List B instead"
+   }
+  ],
+  "notes": [
+   "No program heading is printed in the extracted text beyond the REQUIREMENTS tab; the section read is the A.A-T Course List.",
+   "The catalog prints no units beside individual courses; only block totals (Required Core 6.0, List A 9.0, List B 3.0-4.0) and Total Units 18-19.",
+   "CMST 110 and TA 104 are printed on consecutive lines over the single title 'Oral Interpretation of Literature'; recorded as one choice with TA 104 as an alternative (likely cross-listed).",
+   "ENGL C1002 is printed with 'or ENGL C1001'; footnote 1 says ENGL C1002H and ENGL C1001H are acceptable alternatives, so all are recorded as alternatives of one entry.",
+   "List B also allows any List A course not already used, or any CSU transferable Communication Studies course; these open options are not recorded as courses.",
+   "The graduation requirements list '60 CSU transferable units' and the Cal-GETC pattern as general graduation requirements; no degree total or GE units are printed as this award's figure, so degree_total and ge_units are null. Reviewer may check.",
+   "Closed-list COMM C1004 (Interpersonal Communication) and SOCIC1000 (Introduction to Sociology) appear to correspond to catalog codes CMST 106 and SOC 101 respectively; codes recorded as printed.",
+   "No program learning outcomes or careers are printed in the text."
+  ]
+ },
+ "extracted_run": "38675237912"
+}

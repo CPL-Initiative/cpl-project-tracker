@@ -1,0 +1,173 @@
+Discipline: Electricity
+Cross-listed Discipline: Electronics
+RIVERSIDE COMMUNITY COLLEGE DISTRICT
+INTEGRATED COURSE OUTLINE OF RECORD
+ELECTRICITY 11
+ELC-11 : DC Electronics	
+College: 
+NOR
+Lecture Hours: 63.000
+Lecture Units: 3.500
+Lab Hours: 27.000
+Lab Units: 0.500
+Outside-of-Class Hours: 126.000
+Total Student Learning Hours: 216.000
+Total Units: 4.00
+Grading Methods: Pass/No Pass
+Letter Grade
+
+Course Description
+Prerequisite: None
+Course Credit Recommendation: Degree Credit
+
+
+Basic electrical theory including Ohm’s Law, the Power Law, the Current and Voltage Laws of Kirchhoff, Direct Current (DC) theory, time constants, multimeter measurements, magnetism, electromagnetism, resistors, capacitors, coils, transient analysis and DC Motors, voltage, current, resistance, power, series, parallel and complex series/parallel circuits. (Same as ELE-11.)
+Entrance Skills:
+Before entering the course, students should be able to demonstrate the following skills:
+
+Course Objectives:
+Upon successful completion of the course, students should be able to demonstrate the following activities:
+
+Apply Ohm's Law, Kirchhoff's Voltage and Current Laws, and other foundational electrical principles in the analysis of circuits.
+Master the fundamentals of voltage, current, resistance, and power in DC circuits.
+Utilize network theorems like Thevenin’s and Norton’s for simplifying and solving circuits.
+Conduct experiments and interpret results with standard electrical measurement tools to verify theoretical predictions.
+
+Student Learning Outcomes:
+Upon successful completion of the course, students should be able to demonstrate the following skills:
+
+Solve basic, direct current, electronic problems involving resistance, current, voltage, and power, as applied to both simple and complex combinations of series and/or parallel circuit components, comprised of resistors, capacitors and coils, in a given network configuration.
+Critical Thinking
+Diagram and discuss the relationship between electricity and magnetism as related to a DC permanent magnet motor, a solenoid or an electromechanical relay.
+Describe and contrast the construction, operation, and purpose of resistors, potentiometers, switches, fuses, relays, and batteries.
+Course Content:
+Direct Current Electrical Theory
+Sub-Atomic Particles
+Electrons
+Protons
+Neutrons
+Attraction, Replusion, and Mass
+Elements, compounds, and their characteristics
+Valences vs. Conductivity
+Conductors
+Semiconductors
+Insulators
+Terminology, Schematic Symbols & Relationships
+Series Sources & Loads
+Parallel Sources & Loads
+Combination Circuits
+Current
+Electron-Flow
+Coulombs of Charge
+Amperes
+Series vs. Parallel
+Voltage
+Electrical Pressure
+Electro-Motive-Force (EMF)
+Series vs. Parallel
+Rises vs. Drops
+Resistance
+Opposition to Electron-Flow
+Resistor sizing
+Series vs. Parallel
+Power
+Wattage in Series & Parallel
+Surface Area vs. Heat Dissipation
+Ohm’s Law
+Voltage Calculations
+Current Calculations
+Resistance Calculations
+Power Law
+Wattage Calculations
+Voltage Derivations
+Current Derivations
+Resistance Derivations
+The Laws of Kirchhoff
+The Voltage Law
+The Current Law
+DC Network Theorums
+Superposition
+Thevenin
+Norton
+Magnetism & Electromagnetism
+Attractive Poles
+Repulsive Poles
+Magnetic Flux and Density
+Permanent Magnetism    
+Temporary Magnetism
+Current-Flow through Coils
+Electrical Measurements
+Voltage
+Current
+Resistance
+Instrumentation
+Digital Multimeters
+Oscilloscopes    
+Capacitive Circuits
+Series R-C
+Parallel R-C
+RC Time-Constants
+Time-Delay Circuits
+Inductive Devices
+Coils
+Solenoids
+Relays
+Back-EMF
+Surge Suppression Techniques
+Induction
+Generators
+Alternators
+Motors
+Transformers & Applications
+Chopper Circuits
+Step-Up
+Step-Down
+Transient Response
+R-C Circuits
+R-L Circuits
+Differentiated Waveforms
+Integrated Waveforms
+Applications
+Methods of Instruction:
+Methods of instruction used to achieve student learning outcomes may include, but are not limited to, the following activities:
+
+Class lectures and discussions on direct current theory, devices and circuits to help students gain an understanding of relevant course content, as applied to DC electronics.
+Writing assignments for situations and problems that involve DC electronics theory, symbols, circuit configurations and related formulas.
+Interactive problem solving tasks and activities where students reinforce their electronics vocabulary and circuit drawing skills.
+Videos, films, PowerPoint presentations and on-line media content that focus upon industrial uses of DC electronic circuits, devices and calculations.
+Pair and small group activities, discussions, and exercises that promote discovery and enhance DC circuit solutions and problem solving skills.
+Guest speakers, who bring industry experience directly into the classroom and help students to appreciate how active professionals use electronics technology in their daily jobs.
+Methods of Evaluation:
+Students will be evaluated for progress in and/or mastery of student learning outcomes using methods of evaluation which may include, but are not limited to, the following activities:
+
+Individual and group assignments, in both lecture and lab settings, designed to prove successful understanding and application of basic, DC circuit concepts and device definitions related to electronics.
+Oral question and answer sessions about DC electronics theory, devices, circuits, and applications, test students’ understanding of the course content.
+Quizzes/examinations designed to assess students’ ability to recall, critically analyze and apply key concepts of DC electronics.
+Active participation by students ensures their progress in mastering the DC electronics content of the course, as well as fruitful, collaborative learning projects.
+Final examination designed to assess students’ mastery of DC electronics theory, devices, circuits, networks, formulas and calculations.
+Sample Assignments:
+Outside-of-Class Reading Assignments
+
+According to the reading schedule, handed out in class, students will read and prepare for a weekly reading quiz.  The reading will also prepare students for lectures, discussions, and laboratory experiments that involve DC electronic circuits, devices and calculations.
+Outside-of-Class Writing Assignments
+
+Weekly written problems from the book, due back within one week of the given assignment date, focus on direct current applications.  Assignemts require students to prove a working understanding of the devices and circuit applications involved.
+Other Outside-of-Class Assignments
+
+Perform internet research, as directed in class, in preparation for labs and lectures.  Then, students turn in printouts for credit, or send them electronically.
+Course Materials:
+All materials used in this course will be periodically reviewed to ensure that they are appropriate for college level instruction. Possible texts include the following:
+
+Floyd, T.L., & Buchla, D.M.. Electronics Fundamentals: Circuits, Devices & Applications. 9/E Pearson/Prentice-Hall, 2022.
+Buchla, D.M.. Lab Manual for Electronics Fundamentals and Electronic Circuits Fundamentals, Electronics Fundamentals: Circuits, Devices & Applications. Pearson/Prentice-Hall. 2022.
+Codes/Dates:
+CB03 TOP Code: 0934.00* - Electronics and Electric Technology
+CB05 MOV Transfer Status: N/A (not in college inventory) (D)
+CB05 NOR Transfer Status: Transfers to CSU Only (B)
+CB05 RIV Transfer Status: N/A (not in college inventory) (D)
+
+Board of Trustees Approval Date: 11/19/2024
+COR Rev Date: 11/19/2024
+GE Learning Outcomes:
+Critical Thinking Students will be able to demonstrate higher order thinking skills about issues, explanations, and problems for which multiple solutions exist, and, where possible, solve them. Students will be able to construct sound arguments and develop, test, and evaluate rival hypotheses.
+Generated on: 10/12/2026 3:37:22 PM

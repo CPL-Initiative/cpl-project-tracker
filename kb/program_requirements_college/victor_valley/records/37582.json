@@ -1,0 +1,251 @@
+{
+ "college": "Victor Valley College",
+ "control_number": "37582",
+ "shape": "adt",
+ "title": "Business Administration",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.vvc.edu//degrees-certificates/business-administration/business-administration-2-ast/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7082,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7082,
+    "output_tokens": 1408,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1408,
+  "output_tokens_details": {
+   "thinking_tokens": 457
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05649,
+ "ms": 12615,
+ "seconds": 13.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "BADM144",
+    "MATH105H",
+    "MATH120H",
+    "STATC1000E"
+   ],
+   "flagged": [
+    "BADM144",
+    "MATH105H",
+    "MATH120H",
+    "STATC1000E"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    26.0,
+    26.0
+   ],
+   "stated": [
+    26.0,
+    28.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 26.0-26.0; the catalog states 26.0-28.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "REQUIREMENTS",
+   "measure": "units",
+   "total_units": {
+    "min": 26,
+    "max": 28
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 26,
+     "max": 28
+    },
+    "courses": [
+     {
+      "code": "BADM 103",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BADM 104",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BADM 118",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BADM 117",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 105",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 105H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000E",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "MATH 120H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BADM 100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BADM 144",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The extracted text prints no page title for the award; section_heading uses the REQUIREMENTS tab heading. The URL indicates the Business Administration 2.0 A.S.-T (program code BUAD2.CALGETC.AS-T).",
+   "The catalog prints no units beside individual courses; only the Required Core block total (26.0-28.0) and Total Units 26-28 are printed.",
+   "The graduation requirements list '60 CSU transferable units' as a general A.S.-T requirement; not recorded as degree_total since no total for this award including GE is printed. Cal-GETC units are not printed.",
+   "The overview names business degree options (accounting, finance, entrepreneurship, human resource management, international business, management, operations management, public administration, real estate, marketing) as bachelor's degree options, not careers; careers left empty. Reviewer may check.",
+   "No program learning outcomes appear in the extracted text."
+  ]
+ },
+ "extracted_run": "38675237912"
+}

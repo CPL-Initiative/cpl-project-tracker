@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "chatbox/supabase_program_requirement_records_rescore_2026_10_14_s393.sql",
+ "name": "program_requirement_records_rescore_2026_10_14_s393",
+ "version": "20261014231656",
+ "sha256": "76bd4d43709f242baccff6f287129a07b3702bb171885ed05875e9d6bec5761d",
+ "run": "38652994360",
+ "status": 201,
+ "response": "[{\"college\":\"Cabrillo College\",\"control_number\":\"31987\"},{\"college\":\"Cabrillo College\",\"control_number\":\"32200\"},{\"college\":\"Cabrillo College\",\"control_number\":\"33667\"},{\"college\":\"Cabrillo College\",\"control_number\":\"33673\"},{\"college\":\"Cabrillo College\",\"control_number\":\"35130\"},{\"college\":\"Cabrillo College\",\"control_number\":\"37915\"},{\"college\":\"Cabrillo College\",\"control_number\":\"41374\"},{\"college\":\"Cabrillo College\",\"control_number\":\"46340\"},{\"college\":\"Palo Verde College\",\"control_number\":\"40017\"},{\"college\":\"Palo Verde College\",\"control_number\":\"43196\"}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

@@ -1,0 +1,441 @@
+{
+ "college": "College of the Sequoias",
+ "control_number": "06748",
+ "shape": "degree",
+ "title": "Registered Nursing",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.cos.edu//areas-study/nursing/associate-science-registered-nursing-not-for-transfer-as/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8724,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8724,
+    "output_tokens": 4283,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4283,
+  "output_tokens_details": {
+   "thinking_tokens": 1805
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.12056,
+ "ms": 34377,
+ "seconds": 35.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 16,
+   "listed": 17,
+   "share": 0.941,
+   "missing": [
+    "SOCIC1000"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 7,
+   "codes": [
+    "BIOL30",
+    "BIOL31",
+    "BIOL40",
+    "CHEM20",
+    "ENGLC1000",
+    "SOC1",
+    "STATC1000"
+   ],
+   "flagged": [
+    "BIOL30",
+    "BIOL31",
+    "BIOL40",
+    "CHEM20",
+    "ENGLC1000",
+    "SOC1",
+    "STATC1000"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    72.0,
+    87.0
+   ],
+   "stated": [
+    60.0,
+    75.0
+   ],
+   "against": "degree",
+   "ge": [
+    22.0,
+    22.0
+   ],
+   "why": [
+    "the blocks and general education sum to 72.0-87.0; the catalog prints 60.0-75.0 for the degree"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Program Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "College of the Sequoias Associate Degree General Education (COS-GE)",
+   "degree_total": {
+    "min": 60,
+    "max": 75
+   },
+   "ge_units": {
+    "min": 22,
+    "max": 22
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Provide safe, quality, compassionate, evidence-based, patient-centered nursing care to diverse patients across the lifespan in a variety of healthcare settings.",
+    "Engage in clinical judgment when making patient-centered care and other nursing decisions.",
+    "Participate in quality improvement processes to improve patient care outcomes.",
+    "Participate in teamwork and collaboration with all members of the healthcare team including the patient.",
+    "Employ information management systems and patient care technology to communicate, manage knowledge, mitigate error, and support clinical judgment.",
+    "Use leadership, management, legal, and ethical principles to guide practice as a Registered Nurse."
+   ],
+   "careers": [
+    "care provider",
+    "managers of care",
+    "staff nurse"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "RN PROGRAM PREREQUISITES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "BIOL 030",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 031",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 040",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "CO-REQUISITE COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM C1004",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 008",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH 010",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "NURS 106",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Traditional RN Students Requirements - REQUIRED MAJOR COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "RN track",
+    "stated": {
+     "min": 40,
+     "max": 40
+    },
+    "courses": [
+     {
+      "code": "NURS 121",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 123",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 124",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 133",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 134",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 135",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 143",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 144",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 174",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 175",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LVN to RN Advanced Placement Requirements - REQUIRED MAJOR COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "RN track",
+    "stated": {
+     "min": 25,
+     "max": 25
+    },
+    "courses": [
+     {
+      "code": "NURS 123",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 133",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 134",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 144",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 174",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 175",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Recommended for BSN (strongly encouraged)",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHEM 020",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "STAT C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "SOCIC1000",
+    "why": "Not in the text under this code; catalog prints SOC 001 Introduction to Sociology, likely the same course under an older code"
+   }
+  ],
+  "notes": [
+   "The page heading was cut off at the top of the text; section_heading uses the 'Program Requirements' heading printed on the page (URL indicates Associate in Science Registered Nursing (Not for Transfer) A.S.).",
+   "degree_total 60-75 reflects two printed totals that include COS-GE: 'TOTAL (TRADITIONAL RN PROGRAM REQUIREMENTS) 75' and 'TOTAL (LVN TO RN PROGRAM REQUIREMENTS) 60'. The page also says the program requires '62 units or more for traditional student and 60 units or more for LVN to RN students', which conflicts with the 75 figure (likely due to 12 units that may double count in COS-GE). Reviewer should check.",
+   "Footnote: courses marked * meet General Education requirements and 12 units may double count in COS-GE.",
+   "Co-requisite courses are printed with 'Recommended for completion prior to entering RN Program' (timing recommendation); they are counted in the 9-unit requirement, so recorded as required.",
+   "TEAS Exam score of 62% or higher is a prerequisite but not a course; not recorded in a block.",
+   "Alternatives' units are not printed beside them in the catalog, so recorded as null.",
+   "COMM 008 and ANTH 010 treated as matching closed-list COMM 8 and ANTH 10 (leading zeros only).",
+   "Year-Round RN Program requires the same coursework as the Traditional program; no separate block.",
+   "Traditional and LVN to RN tracks recorded as one block each (semester subheadings merged) in option_group 'RN track'.",
+   "Footnote ** requires one of NURS 106, PSYC C1000, or SOC 001 for COS-GE Area 7."
+  ]
+ },
+ "extracted_run": "38748848139"
+}

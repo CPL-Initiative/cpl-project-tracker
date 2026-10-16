@@ -51,6 +51,7 @@
     "PEX112"
    ],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -70,7 +71,31 @@
     28.0,
     28.0
    ],
-   "why": []
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     52.0,
+     56.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     28.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     4.0,
+     8.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
@@ -85,6 +110,14 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
   },
   "pass": true
  },
@@ -108,7 +141,17 @@
     "Employ skills to work independently in the fitness industry with the ability to lead individuals or groups in exercise programs and identify the business aspects of the fitness industry.",
     "Students identify the major muscles in the body and state the actions of these muscles. Determine appropriate movements to condition these major muscles.",
     "Communicate the importance of eating a healthy diet and living an active lifestyle to others."
-   ]
+   ],
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "degree_total_minimum": true,
+   "ge_units": {
+    "min": 24,
+    "max": 28
+   },
+   "electives_fill_degree": true
   },
   "blocks": [
    {
@@ -317,5 +360,38 @@
    "Total Units 28 is the major total (Department Requirements subtotal 25 plus 3 PEX units)."
   ]
  },
- "extracted_run": "37961137169"
+ "extracted_run": 38656800189,
+ "reconciled": [
+  {
+   "field": "degree_total",
+   "was": null,
+   "now": {
+    "min": 60,
+    "max": 60
+   },
+   "words": "Complete a minimum of 60 units to include (1) the above major requirements"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Complete a minimum of 60 units to include (1) the above major requirements"
+  },
+  {
+   "field": "ge_units",
+   "was": null,
+   "now": {
+    "min": 24,
+    "max": 28
+   },
+   "words": "(2) the General Education requirements (https://cerritos-public.courseleaf.com/policies-and-resources/graduation-and-transfer-requirements/cgec/: CGEC, which is 24-28 units, is intended to meet the GE requirements.)"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": null,
+   "now": true,
+   "words": "(3) electives as needed"
+  }
+ ],
+ "read_run": "37961137169"
 }

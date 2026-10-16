@@ -1,7 +1,7 @@
 ---
 title: A green check you did not scope is not evidence
 created: 2026-08-23
-updated: 2026-08-23
+updated: 2026-10-14
 tags: [methodology, testing, ci, verification, process]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -53,6 +53,36 @@ exhibit the bug.**
 
 That is the same error in miniature: a green signal chosen without asking what
 it is capable of showing.
+
+## A fourth green: the stand-in that stopped matching (2026-10-14)
+
+The a11y sweep seeds each COBI view by replacing `window.fetch` with stand-ins
+keyed on the URL a read makes. When My College moved its drafts read from
+`program_requirement_records` to the view `program_record_college_items`
+(#2097), the seed's stand-in no longer matched any request. The section simply
+did not paint, and the sweep measured the rest of the page and passed. Nothing
+failed, because nothing that was checked contained the change.
+
+The fix scopes the green: the seed now waits for the element its stand-in feeds
+(`ul.cb-dr li`), so a stand-in that stops matching fails the seed instead of
+thinning the page. Proved both ways: pointed back at the old table, the seed
+times out. Any stand-in keyed on a URL deserves the same wait for the element it
+exists to paint.
+
+## A fifth green: the fixture that left out what decided the case (2026-10-14)
+
+The census picked Palo Verde's 2025-26 eLumen catalog over its 2026-27 one. The first fix
+came with a test that reproduced the wrong pick on the old code and passed on the new.
+A dry run of the census against every college's live page then showed Palo Verde
+unchanged. The live catalog page links eLumen in its own HTML, so the census reads the
+page itself as eLumen, and the fix only applied to a plain page; the test's fake page
+carried no HTML at all. The fixture had left out the one property that decided which
+branch ran. The second fix was tested on both page forms, and the dry run moved Palo
+Verde and no other college.
+
+When a check can be run against the live input before merge (a dry run, a read-only
+pass), run it: a test proves the code does what the fixture says, and only the live
+read proves the fixture says what the page does.
 
 ## The check
 

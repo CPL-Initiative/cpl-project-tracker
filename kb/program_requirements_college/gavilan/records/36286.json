@@ -1,0 +1,207 @@
+{
+ "college": "Gavilan College",
+ "control_number": "36286",
+ "shape": "noncredit",
+ "title": "Computer Applications for ESL Students",
+ "award": "Noncredit program",
+ "source_url": "https://gavilan.curriqunet.com/catalog/iq/4089/4132/4349",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6221,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6221,
+    "output_tokens": 1202,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1202,
+  "output_tokens_details": {
+   "thinking_tokens": 411
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04892,
+ "ms": 10290,
+ "seconds": 10.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ESL707",
+    "ESL709"
+   ],
+   "flagged": [
+    "ESL707",
+    "ESL709"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    0.0,
+    2.0
+   ],
+   "stated": [
+    0.0,
+    2.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Computer Applications for ESL Students - Noncredit Certificate of Completion",
+   "measure": "units",
+   "total_units": {
+    "min": 0,
+    "max": 2
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Utilize basic keyboarding, internet, presentation, spreadsheet, and word processing skills at work and in their personal lives."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "CORE Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ESL 707",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ESL 709",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ESL 710",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "ELECTIVE Courses (Choose 1 of the following courses)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ESL 705",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL 706",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit certificate, but the catalog prints units (0, and 2 for ESL 705) rather than hours, so measure is recorded as units; no hours are stated in the text.",
+   "ESL 705 is printed with 2 units beside it although it is a noncredit course and the state file stores 0; recorded as printed. Reviewer should check.",
+   "The text prints 'Units: 0' just before the CORE Courses heading; it is unclear whether this is the core block's total or a program-level figure, so it was not recorded as a block total. 'Total: 0- 2' recorded as total_units.",
+   "Closed-list codes ESL706 and ESL710 are printed in the catalog as 'ESL 706' and 'ESL 710' and were matched to them.",
+   "ESL 707 and ESL 709 are not in the closed list and are recorded as catalog additions."
+  ]
+ },
+ "extracted_run": "38948144064"
+}

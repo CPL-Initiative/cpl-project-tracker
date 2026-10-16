@@ -264,3 +264,18 @@ in a repeated card by the card's heading and its own word (`aria-labelledby` on 
 warning was a full mustard fill on every visit; muted by default, it is now a quiet ground and a mustard rule. Wiring:
 Sierra Training reads `team_access` only as a one-row reviewer probe, so there is no shared figure to compare. Guard:
 `tests/team_phrases_ui_pass.test.js` (14 of 15 fail on the old file).
+
+## S391 SkyJuniper (2026-10-14): Program Requirements
+
+- **Clean before the change, clean after.** All six seeded targets (Progress, Records signed in, exhibits; light and dark) and the
+  tab's route in the `cobi` sweeps passed at 390 to 1440 px. The pass was about controls: the view switch, the verdict's three
+  actions, a record's toggles and Expand/Collapse were boxed or filled. As underlined words they measure 24 to 30 px tall with no
+  border and no fill (#2124). A switch in a set marks the view in use with weight, a darker color and a thicker underline.
+- **A target that names a state must be shown to reach it.** The new `program-requirements-filter` target opens the first filter
+  dropdown. Its pass meant nothing until a browser probe (serve the repo, run the target's `seed`, query the DOM) showed the
+  College list open with its checkbox. The sweep aborts the district, region and CIP reads, so only the filters that need no
+  read render.
+- **The daily painting's greeting covers every screenshot**, and it does not void the measurement. Only the focus check skips an
+  inert subtree; contrast and target sizes are read from every element.
+- **`cobi` and `cobi-dark` still fail on six other tabs** (Memory, MAP Export, CPL News, Credential Reference, Pipeline, Our
+  Process). Those failures were there before #2124, and the ledger reaches each tab in turn. Next due: GR Priorities.

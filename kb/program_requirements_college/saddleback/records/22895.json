@@ -1,0 +1,289 @@
+{
+ "college": "Saddleback College",
+ "control_number": "22895",
+ "shape": "certificate",
+ "title": "SCHOOL AGE CARE AND RECREATION",
+ "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+ "source_url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm-calgetc-ca",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 18072,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 18072,
+    "output_tokens": 2334,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2334,
+  "output_tokens_details": {
+   "thinking_tokens": 689
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.11897,
+ "ms": 19186,
+ "seconds": 19.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 30,
+   "share": 0.0,
+   "missing": [
+    "ANTH1",
+    "ANTH1H",
+    "ANTH2",
+    "ANTH2H",
+    "ARTH20",
+    "CDE111",
+    "CDE120",
+    "CDE15",
+    "DANC64",
+    "ENGLC1000",
+    "ENGLC1000H",
+    "ENV18",
+    "GEOG1",
+    "GEOG1H",
+    "GEOG2",
+    "GEOG2H",
+    "GEOL1",
+    "GEOL20",
+    "HORT20",
+    "ID110",
+    "MATH103",
+    "MATH14",
+    "MUS1",
+    "MUS20",
+    "POLSC1000",
+    "POLSC1000H",
+    "PSYC44",
+    "SOC10",
+    "SOC30",
+    "STATC1000"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Cal-GETC - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANTH 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "ANTH 1H",
+    "why": "not in the text"
+   },
+   {
+    "code": "ANTH 2",
+    "why": "appears only in the Cal-GETC certificate's GE list, not in a School Age Care and Recreation section"
+   },
+   {
+    "code": "ANTH 2H",
+    "why": "appears only in the Cal-GETC certificate's GE list, not in a School Age Care and Recreation section"
+   },
+   {
+    "code": "ARTH 20",
+    "why": "appears only in the Cal-GETC certificate's GE list, not in a School Age Care and Recreation section"
+   },
+   {
+    "code": "CDE 111",
+    "why": "not in the text"
+   },
+   {
+    "code": "CDE 120",
+    "why": "not in the text"
+   },
+   {
+    "code": "CDE 15",
+    "why": "appears only in the Cal-GETC certificate's GE list, not in a School Age Care and Recreation section"
+   },
+   {
+    "code": "DANC 64",
+    "why": "appears only in the Cal-GETC certificate's GE list, not in a School Age Care and Recreation section"
+   },
+   {
+    "code": "ENGL C1000",
+    "why": "appears only in the Cal-GETC certificate's GE list, not in a School Age Care and Recreation section"
+   },
+   {
+    "code": "ENGL C1000H",
+    "why": "appears only in the Cal-GETC certificate's GE list, not in a School Age Care and Recreation section"
+   },
+   {
+    "code": "ENV 18",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOG 1",
+    "why": "appears only in the Cal-GETC certificate's GE list, not in a School Age Care and Recreation section"
+   },
+   {
+    "code": "GEOG 1H",
+    "why": "appears only in the Cal-GETC certificate's GE list, not in a School Age Care and Recreation section"
+   },
+   {
+    "code": "GEOG 2",
+    "why": "appears only in the Cal-GETC certificate's GE list, not in a School Age Care and Recreation section"
+   },
+   {
+    "code": "GEOG 2H",
+    "why": "appears only in the Cal-GETC certificate's GE list, not in a School Age Care and Recreation section"
+   },
+   {
+    "code": "GEOL 1",
+    "why": "appears only in the Cal-GETC certificate's GE list, not in a School Age Care and Recreation section"
+   },
+   {
+    "code": "GEOL 20",
+    "why": "appears only in the Cal-GETC certificate's GE list, not in a School Age Care and Recreation section"
+   },
+   {
+    "code": "HORT 20",
+    "why": "not in the text"
+   },
+   {
+    "code": "ID 110",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 103",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 14",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "MUS 20",
+    "why": "appears only in the Cal-GETC certificate's GE list, not in a School Age Care and Recreation section"
+   },
+   {
+    "code": "POLS C1000",
+    "why": "appears only in the Cal-GETC certificate's GE list, not in a School Age Care and Recreation section"
+   },
+   {
+    "code": "POLS C1000H",
+    "why": "appears only in the Cal-GETC certificate's GE list, not in a School Age Care and Recreation section"
+   },
+   {
+    "code": "PSYC 44",
+    "why": "appears only in the Cal-GETC certificate's GE list, not in a School Age Care and Recreation section"
+   },
+   {
+    "code": "SOC 10",
+    "why": "appears only in the Cal-GETC certificate's GE list, not in a School Age Care and Recreation section"
+   },
+   {
+    "code": "SOC 30",
+    "why": "appears only in the Cal-GETC certificate's GE list, not in a School Age Care and Recreation section"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "appears only in the Cal-GETC certificate's GE list, not in a School Age Care and Recreation section"
+   }
+  ],
+  "notes": [
+   "The catalog text supplied is the Cal-GETC Certificate of Achievement page (source URL ends in pgrm-calgetc-ca), not the School Age Care and Recreation Certificate of Achievement. No section for the named award appears in the text, so no blocks, totals, outcomes or careers were recorded.",
+   "The Cal-GETC page lists general education areas only; GE courses are never recorded as blocks, and they are not this program's requirements.",
+   "The text is also cut off mid-list in Area 5B (ends at 'B'), confirming it is an incomplete extract of a different page.",
+   "Reviewer should retrieve the correct Saddleback College catalog page for School Age Care and Recreation (2026-2027) and re-extract; closed-list courses CDE 15, CDE 111 and CDE 120 suggest the actual major."
+  ]
+ },
+ "extracted_run": "38843470509"
+}

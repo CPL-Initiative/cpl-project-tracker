@@ -1,0 +1,291 @@
+{
+ "college": "Fresno City College",
+ "control_number": "35383",
+ "shape": "certificate",
+ "title": "Special Education Paraprofessional",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Education-Programs/6638",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6394,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6394,
+    "output_tokens": 2627,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2627,
+  "output_tokens_details": {
+   "thinking_tokens": 1017
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07812,
+ "ms": 20943,
+ "seconds": 21.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "CDEVC1000",
+    "EDUC19",
+    "PSYC39"
+   ],
+   "flagged": [
+    "CDEVC1000",
+    "EDUC19",
+    "PSYC39"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    46.0,
+    48.0
+   ],
+   "stated": [
+    48.0,
+    48.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 46.0-48.0; the catalog states 48.0-48.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Special Education Paraprofessional, Certificate of Achievement - Major #5913",
+   "measure": "units",
+   "total_units": {
+    "min": 48,
+    "max": 48
+   },
+   "open_elective_units": 24,
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate introductory subject matter competency required for working in special education classrooms in Transitional Kindergarten to grade 12 settings.",
+    "Demonstrate knowledge of social, cultural, environmental, and aesthetic perspectives necessary for working in special education classrooms in Transitional Kindergarten to grade 12.",
+    "Discuss historical influences and current trends in education, as well as teaching strategies and approaches appropriate for students of diverse, needs, abilities and backgrounds."
+   ],
+   "careers": [
+    "paraprofessionals in special education classrooms"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CDEV C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 39",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EDUC 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EDUC 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Core Courses: EDUC 10 (option 1 of 3.0-4.0 unit choice)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "EDUC 10 or EDUC 19 and EDUC 30",
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "EDUC 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Core Courses: EDUC 19 AND EDUC 30 (option 2 of 3.0-4.0 unit choice)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "EDUC 10 or EDUC 19 and EDUC 30",
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "EDUC 19",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "EDUC 30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Core Courses: ENGL C1000 or ENGL C1000H",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ENGL C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1000H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Core Courses: MATH 10A or MATH 103",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "MATH 10A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 103",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The 'Required Core Courses' heading prints '48.0 48', which matches the 'Total : 48' at the end; recorded 48 as total_units.",
+   "The catalog states 'Required additional 24-26 units of transfer level courses to total 48 units.' open_elective_units is recorded as 24, the low end of the printed 24-26 range; the high end is 26.",
+   "EDUC 10 (3 units) OR (EDUC 19 1 unit AND EDUC 30 3 units, printed as 4.0) is a choice within the core printed as 3.0-4.0; recorded as two option blocks sharing an option_group.",
+   "CDEV C1000 is printed as 'same as PSYC 39'; PSYC 39 is recorded as a cross-listed alternative. Neither CDEV C1000 nor PSYC 39 is in the closed list.",
+   "EDUC 19 (Work Experience Education) is not in the closed list.",
+   "Several courses are marked '( Historical )' in the catalog (COMM C1000, ENGL C1000, ENGL C1000H, MATH 10A); a reviewer may want to confirm their status for 2026-2027.",
+   "The description mentions federal No Child Left Behind requirements, which may be outdated text."
+  ]
+ },
+ "extracted_run": "38563582873"
+}

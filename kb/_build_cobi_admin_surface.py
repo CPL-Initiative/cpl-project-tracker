@@ -114,8 +114,11 @@ def eager_modules(html: str) -> "list":
 # convention OR listed here is reported as NOT MEASURED — never as "reads
 # nothing".
 MODULE_ALIASES = {
-    # The CPL Assistant pane mounts the Sierra widget; cpl_chat.js is its module.
-    "chatbot": ["cpl_chat.js"],
+    # My College docks the Sierra widget in its own box (cpl_chat.js mountInto),
+    # so its questions and ratings go out from this tab. The CPL Assistant tab
+    # that held the alias before retired 2026-10-16 (S398); the same page-level
+    # module now also opens Sierra AI over any tab, which no single tab owns.
+    "college-briefing": ["cpl_chat.js"],
     # Vision 2030 renders through the statewide interactive exhibit module.
     "vision-2030": ["statewide_interactive.js"],
 }

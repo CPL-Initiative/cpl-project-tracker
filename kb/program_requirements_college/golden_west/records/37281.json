@@ -1,0 +1,172 @@
+{
+ "college": "Golden West College",
+ "control_number": "37281",
+ "shape": "noncredit",
+ "title": "Vehicle Maintenance Specialist",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.cccd.edu/golden-west/adult-education-noncredit/automotive-technology/vehicle-maintenance-specialist-cert-completion/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6617,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6617,
+    "output_tokens": 982,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 982,
+  "output_tokens_details": {
+   "thinking_tokens": 308
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04611,
+ "ms": 8739,
+ "seconds": 9.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Vehicle Maintenance Specialist, Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Perform conversions between various units of automotive measurements based on manufacturers specifications.",
+    "Demonstrate safe lifting practices outlined by manufacturer’s service information.",
+    "Demonstrate component replacement procedures within industry specified labor times.",
+    "Analyze vehicle concerns and demonstrate proper written record keeping practices (repair order documentation)."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AUTO G002N",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO G003N",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO G004N",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The REQUIREMENTS tab content (course table with hours and total hours) was not captured in the text; only the OVERVIEW tab is present.",
+   "The three courses are placed in a single 'all' block based on the overview sentence 'This certificate combines AUTO G002N..., AUTO G003N..., and AUTO G004N...'. The block name 'Requirements' is taken from the tab label, not a printed block heading.",
+   "Measure set to hours because this is a noncredit certificate of completion, but no hours are printed for courses or for the total; all hour fields are null.",
+   "The description mentions working 'at an automotive repair shop that focuses on vehicle maintenance and tire service' but names no specific job title or career field, so careers is empty."
+  ]
+ },
+ "extracted_run": "38748828247"
+}

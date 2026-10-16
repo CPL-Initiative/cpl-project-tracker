@@ -1,0 +1,572 @@
+{
+ "college": "Orange Coast College",
+ "control_number": "32202",
+ "shape": "adt",
+ "title": "Elementary Teacher  Education",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/child-development-education/elementary-teacher-education-integrated-programs-aat/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8941,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8941,
+    "output_tokens": 4522,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4522,
+  "output_tokens_details": {
+   "thinking_tokens": 1808
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.1262,
+ "ms": 35583,
+ "seconds": 35.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 27,
+   "share": 0.444,
+   "missing": [
+    "ARTA100",
+    "ARTA100H",
+    "CMSTA220",
+    "ENGLC1001",
+    "ENGLC1001H",
+    "GEOGA100",
+    "GEOGA100H",
+    "GEOLA105",
+    "GEOLA105H",
+    "GEOLA105L",
+    "GEOLA105M",
+    "HISTA170",
+    "HISTA170H",
+    "PHILA150",
+    "PHYSA111"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 24,
+   "codes": [
+    "ARTA103",
+    "ARTA115",
+    "ARTHC1100",
+    "ARTHC1100H",
+    "BIOLA100H",
+    "CDEA175",
+    "CDEA180",
+    "CHEMA130",
+    "DANCA200",
+    "ENGLA143",
+    "ENGLA143H",
+    "ENGLC1000",
+    "ENGLC1002",
+    "ENGLC1002H",
+    "ENGLC1003",
+    "ENGLC1003H",
+    "ESLA100",
+    "GEOLA106",
+    "HISTC1001",
+    "HISTC1001H",
+    "HUMA101H",
+    "MUSA105",
+    "PHYSA112",
+    "THEAA101"
+   ],
+   "flagged": [
+    "ARTA103",
+    "ARTA115",
+    "ARTHC1100",
+    "ARTHC1100H",
+    "BIOLA100H",
+    "CDEA175",
+    "CDEA180",
+    "CHEMA130",
+    "DANCA200",
+    "ENGLA143",
+    "ENGLA143H",
+    "ENGLC1000",
+    "ENGLC1002",
+    "ENGLC1002H",
+    "ENGLC1003",
+    "ENGLC1003H",
+    "ESLA100",
+    "GEOLA106",
+    "HISTC1001",
+    "HISTC1001H",
+    "HUMA101H",
+    "MUSA105",
+    "PHYSA112",
+    "THEAA101"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    35.0,
+    40.0
+   ],
+   "stated": [
+    35.0,
+    39.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 35.0-40.0; the catalog states 35.0-39.0"
+   ],
+   "degree": {
+    "pass": false,
+    "status": "incomplete",
+    "computed": [
+     35.0,
+     40.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": null,
+    "why": [
+     "the record names the degree total and the Cal-GETC pattern, but no units for it"
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Elementary Teacher Education: Integrated Programs AA-T (Requirements tab)",
+   "measure": "units",
+   "total_units": {
+    "min": 35,
+    "max": 39
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Completion of degree will provide a streamlined pathway for transfer to a CSU campus with a Liberal Studies or similar major eventually leading to a credential to teach in elementary classrooms."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL A100",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL A100H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDE A175",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDE A180",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 3,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "ESL A100",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL C1003",
+      "units": 3,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "ENGL C1003H",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "ENGL C1002",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "ENGL C1002H",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "ENGL A143",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "ENGL A143H",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "HIST A161",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST A161H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST C1001H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLS C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A - Select one course from the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "GEOL A106",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS A112",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM A110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM A130",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS A110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B - Select one course from the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ARTH C1100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARTH C1100H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ART A103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ART A115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DANC A200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS A100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS A105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "THEA A100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA A101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "List C - Select one course from the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "MATH A104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM A100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUM A101H",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ART A100",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART A100H",
+    "why": "not in the text"
+   },
+   {
+    "code": "CMST A220",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL C1001H",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLC1001",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOG A100",
+    "why": "named only in the program sequence (plan of study), not in requirements"
+   },
+   {
+    "code": "GEOG A100H",
+    "why": "named only in the program sequence (plan of study), not in requirements"
+   },
+   {
+    "code": "GEOL A105",
+    "why": "named only in the program sequence (plan of study), not in requirements"
+   },
+   {
+    "code": "GEOL A105H",
+    "why": "named only in the program sequence (plan of study), not in requirements"
+   },
+   {
+    "code": "GEOL A105L",
+    "why": "named only in the program sequence as A105L, not in requirements"
+   },
+   {
+    "code": "GEOL A105M",
+    "why": "named only in the program sequence (plan of study), not in requirements"
+   },
+   {
+    "code": "HIST A170",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST A170H",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHIL A150",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYS A111",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "Section heading not printed as such; the page is the Elementary Teacher Education: Integrated Programs AA-T page; requirements read from the REQUIREMENTS tab.",
+   "List A offers paired options: 'CHEM A110 & PHYS A110' (8 units printed for the pair) and 'CHEM A130 & PHYS A110' (7 units printed for the pair). These are recorded as separate entries CHEM A110, CHEM A130 and PHYS A110 with units null; a reviewer should note that a CHEM course must be taken together with PHYS A110 as one choice. List A stated total is printed as 4-7 although the CHEM A110 & PHYS A110 pair is printed as 8.",
+   "List C also allows 'Any course not selected above' (from Lists A/B), in addition to MATH A104, HUM A100, HUM A101H.",
+   "The ENGL C1003 requirement lists HIST A161 and HIST A161H as 'or' alternatives alongside literature courses; recorded as printed, may be a formatting artifact.",
+   "Cal-GETC is printed as 'up to 34' units; ge_units left null because no exact figure is printed.",
+   "Degree total printed as 60 ('Total Degree Units 60'); transferable electives 'as needed to satisfy unit requirement' printed as 'Varies'. Plan of study totals 60-63.",
+   "Program Learning Outcomes heading prints a single statement for the degree; recorded as the outcome.",
+   "Plan of study includes GEOG A100/A100H and GEOL A105 & A105L / A105H & A105M / GEOL A106 options not shown in the requirements list."
+  ]
+ },
+ "extracted_run": "38670927724"
+}

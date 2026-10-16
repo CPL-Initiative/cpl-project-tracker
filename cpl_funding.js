@@ -98,6 +98,9 @@
     // 6px off the text column above it (margin audit, 2026-09-30).
     ".cplfund-actions .cplfund-optbtn, .cplfund-toolbar .cplfund-optbtn { margin-left: 0; }",
     ".cplfund-viewlab { font-size: .7rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--text-muted); margin-left: 6px; }",
+    // The Public page view (call 1): the page in a frame the height of its page.
+    ".cplfund-pv-frame { display: block; width: 100%; min-height: 70vh; border: 1px solid var(--border-strong); border-radius: 6px; background: var(--surface-opaque); }",
+    ".cplfund-pv-note { margin: 4px 0 10px; font-size: .85rem; color: var(--text-muted); max-width: var(--cpl-measure, none); }",
     '.cplfund-actions [data-viewmode][aria-pressed="true"] { background: var(--seal-blue); color: var(--white); border-color: var(--seal-blue); }',
     ".cplfund h3 { color: var(--navy-primary); margin: 22px 0 10px; font-size: 1.15rem; }",
     ".cplfund-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }",
@@ -324,6 +327,8 @@
     ".cplfund-bounds .cplfund-card .l { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; text-align: left; font-size: .9rem; margin-top: 4px; }",
     ".cplfund-bounds .cplfund-card .l .cplfund-pool-label-input { text-align: left; width: auto; min-width: 16ch; }",
     ".cplfund-bounds .cplfund-card .cplfund-card-note { flex-basis: 100%; }",
+    ".cplfund-bounds .cplfund-card .v .cplfund-ed-pct { width: 6ch; }",
+    ".cplfund-pct-sign { font-size: 1.3rem; }",
     // ── the two context figures, in the formula section ──
     ".cplfund-context { margin-top: 14px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }",
     ".cplfund-context .cplfund-card { text-align: left; }",
@@ -449,6 +454,44 @@
     ".cplfund-prio-title-input:focus { border-bottom-color: var(--gold-accent); background: var(--surface-subtle); }",
     // Recommended-strategies list per priority box.
     ".cplfund-strat { margin-top: 8px; border-top: 1px dashed var(--border-strong); padding-top: 6px; font-size: .8rem; }",
+    // Step 1: the chooser, first (Sam, 2026-10-15). A light card, the select
+    // large and outlined in the seal blue, the step named in words.
+    ".cplfund-step1 { display: grid; grid-template-columns: auto minmax(0,1fr); align-items: center; column-gap: 20px; row-gap: 6px; padding: 16px 18px; margin: 0 0 14px; background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; }",
+    ".cplfund-step1-k { grid-row: 1 / span 3; margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.05rem, .9rem + .6vw, 1.35rem); color: var(--seal-blue-text, var(--cobalt)); white-space: nowrap; padding-right: 20px; border-right: 1px solid var(--border-strong); align-self: stretch; display: flex; align-items: center; }",
+    ".cplfund-step1-l { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.15rem, 1rem + .6vw, 1.45rem); color: var(--text-strong); font-weight: 600; line-height: 1.25; }",
+    ".cplfund-step1-sel { font: inherit; font-size: 1.05rem; color: var(--text-strong); background: var(--surface-opaque); border: 2px solid var(--seal-blue-text, var(--cobalt)); border-radius: 4px; min-height: 48px; padding: 8px 12px; width: min(100%, 30rem); }",
+    ".cplfund-step1-sel:focus-visible { outline: 3px solid var(--gold-accent); outline-offset: 2px; }",
+    ".cplfund-step1-s { margin: 0; font-size: .92rem; color: var(--text-muted); max-width: var(--cpl-measure, none); }",
+    ".cplfund-step1-clear { margin-left: 6px; }",
+    "@media (max-width: 560px) { .cplfund-step1 { grid-template-columns: 1fr; } .cplfund-step1-k { grid-row: auto; border-right: 0; padding-right: 0; } }",
+    // The PDF prompt (Sam, 2026-10-15): a dialog, words for every control.
+    ".cplfund-pdfask { border: 1px solid var(--border-strong); border-radius: 8px; padding: 0; max-width: min(92vw, 560px); background: var(--surface-opaque); color: var(--text-body); }",
+    ".cplfund-pdfask-in { padding: 20px 22px; display: grid; gap: 12px; }",
+    ".cplfund-pdfask h2 { margin: 0; font-size: 1.3rem; color: var(--text-strong); }",
+    ".cplfund-pdfask p { margin: 0; }",
+    ".cplfund-pdfask select { font: inherit; font-size: 1rem; min-height: 44px; border: 2px solid var(--seal-blue-text, var(--cobalt)); border-radius: 4px; padding: 6px 10px; width: min(100%, 26rem); background: var(--surface-opaque); color: var(--text-strong); }",
+    ".cplfund-pdfask-row { display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: center; }",
+    ".cplfund-pdfask-go { font: inherit; font-weight: 700; color: var(--surface-opaque); background: var(--seal-blue-text, var(--cobalt)); border: 0; border-radius: 4px; min-height: 44px; padding: 8px 18px; cursor: pointer; }",
+    ".cplfund-pdfask-go[disabled] { background: var(--surface-muted); color: var(--text-body); cursor: not-allowed; }",
+    ".cplfund-pdfask button:focus-visible, .cplfund-pdfask select:focus-visible { outline: 3px solid var(--gold-accent); outline-offset: 2px; }",
+    // How to meet it (Sam, 2026-10-15, call 5): underlined words after each
+    // condition, and the dialog they open, drawn like the PDF prompt.
+    ".cplfund-howto-w { font: inherit; font-size: .92em; font-weight: 600; color: var(--seal-blue-text, var(--cobalt)); background: none; border: 0; padding: 0 2px; margin-left: .35em; min-height: 24px; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }",
+    ".cplfund-howto-w:focus-visible { outline: 3px solid var(--gold-accent); outline-offset: 2px; border-radius: 2px; }",
+    ".cplfund-howto { border: 1px solid var(--border-strong); border-radius: 8px; padding: 0; width: min(92vw, 680px); max-width: min(92vw, 680px); background: var(--surface-opaque); color: var(--text-body); }",
+    ".cplfund-howto-in { padding: 20px 22px; display: grid; gap: 12px; }",
+    ".cplfund-howto h2 { margin: 0; font-size: 1.3rem; color: var(--text-strong); }",
+    ".cplfund-howto h2:focus { outline: none; }",
+    ".cplfund-howto-who { display: block; margin-top: 2px; font-size: .95rem; font-weight: 600; color: var(--text-muted); }",
+    ".cplfund-howto-body { font-size: 1rem; line-height: 1.6; }",
+    ".cplfund-howto-body p { margin: 0 0 .7em; max-width: none; }",
+    ".cplfund-howto-body ol, .cplfund-howto-body ul { margin: 0 0 .8em; padding-left: 1.4em; }",
+    ".cplfund-howto-body li { margin: .25em 0; }",
+    ".cplfund-howto-body a { color: var(--seal-blue-text, var(--cobalt)); }",
+    ".cplfund-howto-row { display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: center; }",
+    ".cplfund-howto-also { margin: 0; font-size: .9rem; color: var(--text-muted); }",
+    ".cplfund-howto-go { display: inline-flex; align-items: center; font: inherit; font-weight: 700; color: var(--surface-opaque); background: var(--seal-blue-text, var(--cobalt)); border: 0; border-radius: 4px; min-height: 44px; padding: 8px 18px; cursor: pointer; text-decoration: none; }",
+    ".cplfund-howto button:focus-visible, .cplfund-howto a:focus-visible { outline: 3px solid var(--gold-accent); outline-offset: 2px; }",
     // The strategies are a FOLD (Sam, 2026-08-31): the summary IS the block
     // header — a word affordance ("— show them"), no marker glyph.
     ".cplfund-strat-h { font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; color: var(--text-muted); font-weight: 700; margin-bottom: 4px; cursor: pointer; list-style: none; }",
@@ -2068,29 +2111,69 @@
   // its 1,000-FTES stand-in until a verified MIS figure — N3 a).
   // Falls back to headcount if a row has no FTES (fail-safe: a missing figure
   // must never zero an institution's allocation).
-  function sizeOf(c) {
+  //
+  // `w` is the NONCREDIT WEIGHT (below): each noncredit FTES counts as w. At
+  // w = 1, the default, this is the plain combined FTES the model has always
+  // used. sizeOf() is the size the allocation divides by; plainFtesOf() is the
+  // teaching a reader is told about, which the weight never changes.
+  function sizeOfW(c, w) {
     if (!c) return 0;
-    if (c.nco) return usesFtes() ? (Number(c.ftes) || 0) : (c.headcount || Number(c.ftes) || 0);
+    if (c.nco) return usesFtes() ? (Number(c.ftes) || 0) * w : (c.headcount || Number(c.ftes) || 0);
     if (usesFtes() && c.credit_ftes != null) {
-      return (c.credit_ftes || 0) + (Number(c.noncredit_ftes) || 0);
+      return (c.credit_ftes || 0) + (Number(c.noncredit_ftes) || 0) * w;
     }
     return c.headcount || 0;
   }
+  function sizeOf(c) { return sizeOfW(c, ncWeight()); }
+  function plainFtesOf(c) { return sizeOfW(c, 1); }
   // The DECOMPOSITION of an award into its credit and noncredit shares is by
   // FTES share, ALWAYS (ruled 2026-08-31: "every award decomposes on its face
   // into a credit share and a noncredit share, by each lane's share of the
   // institution's FTES") — never by the display basis. The noncredit share is
   // restricted to the noncredit measures; the credit program cannot draw it.
-  function laneShareOf(c) {
+  // The noncredit weight enters here too, the same w as the size: an award
+  // sized on weighted noncredit FTES must split on them, or the added funding
+  // would land in the credit share of the institution it was sized for.
+  function laneShareOfW(c, w) {
     if (!c) return { cr: 1, nc: 0 };
     if (c.nco) return { cr: 0, nc: 1 };
-    var cr = Number(c.credit_ftes) || 0, nc = Number(c.noncredit_ftes) || 0;
+    var cr = Number(c.credit_ftes) || 0, nc = (Number(c.noncredit_ftes) || 0) * w;
     var t = cr + nc;
     if (!(t > 0)) return { cr: 1, nc: 0 };
     return { cr: cr / t, nc: nc / t };
   }
+  function laneShareOf(c) { return laneShareOfW(c, ncWeight()); }
+  // ── NONCREDIT'S PORTION (Sam, 2026-10-14: "I think I want to give noncredit
+  //    a bigger portion (percentage) of the total available for the colleges")
+  // Unset, noncredit's portion is whatever the institutions' teaching mix adds
+  // up to (about 7% under the 2026-10-14 config). Set, the curator names the
+  // percentage of the total to institutions that supports noncredit, and the
+  // model finds the one weight on noncredit FTES that reaches it: in the size
+  // of every award and in its credit/noncredit split alike. Still one total,
+  // one solve, one base award and cap on the combined award. The added
+  // noncredit funding goes where the noncredit teaching is, in proportion to
+  // it, and the institutions that teach little or no noncredit give up the
+  // difference. A percentage the base award and cap cannot reach is reported
+  // on the dial's card (allocModel().ncPortion), never silently missed.
+  function ncPortionSet() {
+    var v = Number(poolField("nc_portion_pct"));
+    return (isFinite(v) && v > 0 && v < 100) ? v : null;
+  }
+  function ncWeight() {
+    if (ncPortionSet() == null) return 1;
+    return allocModel().ncW;
+  }
   function totalSize() {
     return oneRoster().reduce(function (s, c) { return s + sizeOf(c); }, 0);
+  }
+  function totalPlainFtes() {
+    return oneRoster().reduce(function (s, c) { return s + plainFtesOf(c); }, 0);
+  }
+  // What a figure sized on the allocation basis must say when the noncredit
+  // weight is set, so a weighted size never reads as plain FTES. Empty at 1.
+  function ncWeightWords() {
+    var w = ncWeight();
+    return Math.abs(w - 1) < 1e-9 ? "" : ", noncredit FTES counted at " + w.toFixed(2);
   }
   // ── the ONE-POOL roster (Sam, adopted 2026-08-31) ─────────────────────
   // Every institution once: the 115 college rows PLUS the noncredit-only
@@ -2163,8 +2246,8 @@
       // review item 3): the combined figure and the statewide total it is a
       // share of, at the precision the expand printed.
       ? fmtInt(c.credit_ftes) + " credit FTES (" + ftesVintage() + "). With its noncredit FTES, " +
-        fmtInt(sizeOf(c)) + " FTES in all: " + fmtPct(c.size_pct, 3) + " of the statewide " +
-        fmtInt(totalSize()) + ", the allocation basis. Headcount: " + fmtInt(c.headcount) +
+        fmtInt(plainFtesOf(c)) + " FTES in all: " + fmtPct(c.size_pct, 3) + " of the statewide " +
+        fmtInt(totalSize()) + ", the allocation basis" + ncWeightWords() + ". Headcount: " + fmtInt(c.headcount) +
         " (" + (c.hc_vintage || "n/a") + "), context only."
       : fmtInt(c.headcount) + " headcount (" + (c.hc_vintage || "n/a") + ") — " + pct +
         " of statewide, the allocation basis. Credit FTES: " + fmtInt(c.credit_ftes) +
@@ -3256,15 +3339,52 @@
   // paragraph, and nobody can type markup into a page every visitor reads.
   // The eligibility introduction moved in here from its own always-open
   // textarea; its legacy `eligIntro` key still resolves so nothing saved is lost.
+  // `marks` (Sam, 2026-10-15: "Let me edit the My College text blocks the way I
+  // edit the explainer's passages"): Bold and Italic, **two** and *one*
+  // asterisks, on top of the plain text each block already took.
   var TEXT_BLOCKS = {
-    about:         { label: "the introduction", rows: 9 },
-    reading:       { label: "Reading the funding", rows: 5 },
-    elig_intro:    { label: "the eligibility introduction", rows: 3 },
-    nc_rules:      { label: "the noncredit funding rules", rows: 7 },
-    college_intro: { label: "the institution table introduction", rows: 4 },
-    timing_note:   { label: "the timeline note", rows: 2 },
-    faq:           { label: "the frequently asked questions", rows: 24 }
+    about:         { label: "the introduction", rows: 9, marks: true },
+    reading:       { label: "Reading the funding", rows: 5, marks: true },
+    elig_intro:    { label: "the eligibility introduction", rows: 3, marks: true },
+    nc_rules:      { label: "the noncredit funding rules", rows: 7, marks: true },
+    college_intro: { label: "the institution table introduction", rows: 4, marks: true },
+    timing_note:   { label: "the timeline note", rows: 2, marks: true },
+    faq:           { label: "the frequently asked questions", rows: 24, marks: true },
+    // ── THE PUBLIC PAGE'S OWN COPIES (Sam, 2026-10-15, call 2: "Separate all
+    // four") ── funding-model/ borrowed these from the Internal view, so an edit
+    // made for one reached the other. Each starts from what colleges read that
+    // day (the published scenario held no override for the first three, read
+    // 2026-10-15, config 4134dde0), so a college saw no change. `x_about` is
+    // the page's Introduction (call 3: "Add both"), see pageTextDefaultPlain().
+    x_table_intro: { label: "the public page's institution table introduction", rows: 4, marks: true, page: "institutions" },
+    x_timing_note: { label: "the public page's Timeline note", rows: 2, marks: true, page: "timeline" },
+    x_faq:         { label: "the public page's frequently asked questions", rows: 24, marks: true, page: "questions" },
+    x_about:       { label: "the public page's Introduction", rows: 9, marks: true, page: "intro" }
   };
+  function isPageCopy(key) { return !!(TEXT_BLOCKS[key] && TEXT_BLOCKS[key].page); }
+  // ⚠️ THE INTRODUCTION FOLLOWS THE TAB'S UNTIL IT IS SAVED HERE. The published
+  // scenario holds Sam's own Introduction as an override of `about`, and the
+  // copy is seeded from it by reading it, not by writing a second copy into the
+  // shared config: no data write, nothing to roll back, and a college reads his
+  // words from the first day. The first save on the page makes the copy its own;
+  // Restore the default text returns it to following the tab's. The page's
+  // editor says so beside the passage.
+  function pageTextDefaultPlain(key) {
+    if (key === "x_about") return textPlain("about");
+    if (key === "x_faq") return plainNormalize(FAQ_DEFAULT_PLAIN);
+    return null;
+  }
+  function hasMarks(key) { return !!(TEXT_BLOCKS[key] && (TEXT_BLOCKS[key].marks || TEXT_BLOCKS[key].rich)); }
+  // **bold** and *italic* inside ESCAPED text, never across a tag or a line.
+  function markInline(h) {
+    return String(h).replace(/\*\*([^*<>\n]+?)\*\*/g, "<strong>$1</strong>")
+      .replace(/(^|[^*\w])\*([^*\s<>](?:[^*<>\n]*?[^*\s<>])?)\*(?![*\w])/g, "$1<em>$2</em>");
+  }
+  // A house text's own bold and italic survive into the edit box as marks.
+  function htmlToMarkedPlain(html) {
+    return htmlToPlain(String(html || "").replace(/<(strong|b)\b[^>]*>([\s\S]*?)<\/\1>/gi, "**$2**")
+      .replace(/<(em|i)\b[^>]*>([\s\S]*?)<\/\1>/gi, "*$2*"));
+  }
   // FREQUENTLY ASKED QUESTIONS (Sam, 2026-09-24: "Add an FAQ section to the
   // tab that I can edit by adding and revising questions and answers").
   // One editable prose block, so a curator's edit saves for everyone and
@@ -3329,10 +3449,10 @@
   }
   function faqHtml(plain) {
     var f = faqPairs(plain);
-    var para = function (t) { return "<p>" + linkify(esc(t)).replace(/\n/g, "<br>") + "</p>"; };
+    var para = function (t) { return "<p>" + markInline(linkify(esc(t))).replace(/\n/g, "<br>") + "</p>"; };
     return '<div class="cplfund-faq">' + f.lead.map(para).join("") +
       f.items.map(function (it) {
-        return '<details class="cplfund-faq-item"><summary>' + esc(it.q) + "</summary>" +
+        return '<details class="cplfund-faq-item"><summary>' + markInline(esc(it.q)) + "</summary>" +
           it.a.map(para).join("") + "</details>";
       }).join("") + "</div>";
   }
@@ -3403,8 +3523,6 @@
     "statewide. The receiving college counts the same CPL under its own measures &mdash; the same " +
     "CPL credits both institutions by design (ruled 2026-08-31).</li>" +
     "</ul>";
-  // The My CPL Funding view's introduction, Sam's sentence (2026-10-01).
-  var ONE_VIEW_INTRO = "My CPL Funding is a summary view of CPL funding and expected outcomes.";
   // Sam's College Dashboard intro (mockup rounds, 2026-09-28). The pie has no
   // column header to name it any more, so the intro names it once.
   var COLLEGE_INTRO_DEFAULT_HTML =
@@ -3419,9 +3537,10 @@
     if (key === "about") return ABOUT_DEFAULT_HTML;
     if (key === "reading") return READING_DEFAULT_HTML;
     if (key === "nc_rules") return NC_RULES_DEFAULT_HTML;
-    if (key === "college_intro") return COLLEGE_INTRO_DEFAULT_HTML;
-    if (key === "timing_note") return TIMING_NOTE_DEFAULT_HTML;
-    if (key === "faq") return plainToHtml(FAQ_DEFAULT_PLAIN);
+    if (key === "college_intro" || key === "x_table_intro") return COLLEGE_INTRO_DEFAULT_HTML;
+    if (key === "timing_note" || key === "x_timing_note") return TIMING_NOTE_DEFAULT_HTML;
+    if (key === "faq" || key === "x_faq") return plainToHtml(FAQ_DEFAULT_PLAIN);
+    if (key === "x_about") return textHtml("about");
     if (key === "elig_intro") {
       var v = base().elig_intro;
       return "<p>" + esc(v == null ? DEFAULT_ELIG_INTRO : v) + "</p>";
@@ -3488,18 +3607,33 @@
     return (v == null || !String(v).trim()) ? null : String(v);
   }
   function textIsCustom(key) { return textOverride(key) != null; }
+  function textDefaultPlain(key) {
+    if (isRich(key)) return richDefaultPlain(key);
+    var pd = pageTextDefaultPlain(key);
+    if (pd != null) return pd;
+    return (hasMarks(key) ? htmlToMarkedPlain : htmlToPlain)(textDefaultHtml(key));
+  }
   function textPlain(key) { var o = textOverride(key);
     if (o == null && isRich(key)) return richDefaultPlain(key);
-    if (key === "faq" && o == null) return plainNormalize(FAQ_DEFAULT_PLAIN); return o != null ? plainNormalize(o) : htmlToPlain(textDefaultHtml(key)); }
+    if (key === "faq" && o == null) return plainNormalize(FAQ_DEFAULT_PLAIN);
+    if (o == null && isPageCopy(key)) return textDefaultPlain(key);
+    return o != null ? plainNormalize(o) : (hasMarks(key) ? htmlToMarkedPlain : htmlToPlain)(textDefaultHtml(key)); }
+  // A link written [words](https://…) renders in every passage that takes
+  // marks (Sam, 2026-10-15, call 5), escaped, http and https only.
+  function linkMarks(h) {
+    return String(h).replace(MD_LINK, function (m, words, url) {
+      return '<a href="' + url + '" target="_blank" rel="noopener">' + words + "</a>";
+    });
+  }
   function textHtml(key) {
     if (isRich(key)) return richPlainToHtml(textPlain(key), "tab");
-    var o = textOverride(key); return o != null ? plainToHtml(o) : textDefaultHtml(key);
+    var o = textOverride(key); return o != null ? (hasMarks(key) ? markInline(linkMarks(plainToHtml(o))) : plainToHtml(o)) : textDefaultHtml(key);
   }
   function setText(key, v) {
     var ov = activeOverride();
     var clean = plainNormalize(v);
     ov.text = isPlainObj(ov.text) ? ov.text : {};
-    if (!clean || clean === (isRich(key) ? richDefaultPlain(key) : htmlToPlain(textDefaultHtml(key)))) delete ov.text[key];
+    if (!clean || clean === textDefaultPlain(key)) delete ov.text[key];
     else ov.text[key] = clean;
     if (!Object.keys(ov.text).length) delete ov.text;
     if (key === "elig_intro") delete ov.eligIntro;   // the legacy key this block replaced
@@ -3533,6 +3667,13 @@
     ["priority count", "l-nprio", "how many priorities, as a word"],
     ["to institutions", "f-main", "the total allocated to institutions"],
     ["noncredit total", "f-nc", "the noncredit shares of the awards"],
+    ["credit total", "f-cr", "the credit shares of the awards"],
+    ["noncredit portion", "f-ncpct", "noncredit's percentage of the total to institutions"],
+    ["noncredit weight", "f-ncw", "what one noncredit FTES counts as when noncredit's portion is set (1.00 when it is not)"],
+    // The remaining 2025-26 balance (Sam, 2026-10-14: "an amount $9.04M in this
+    // explainer text is just text. Is there a field I can reference?"). The same
+    // pool field the $15M Distributions view and the Budget ledger carry.
+    ["2025-26 remaining", "f-rem2526", "the remaining 2025-26 balance, a separate distribution"],
     ["noncredit awards", "l-nc-count", "how many awards carry a noncredit share"],
     ["institutions", "l-basis-n", "how many institutions"],
     ["median award", "f-med", "the median award"],
@@ -3547,9 +3688,10 @@
   ];
   var FIG_ID = {}, FIG_NAME = {};
   FIG_TOKENS.forEach(function (t) { FIG_ID[t[0].toLowerCase()] = t[1]; FIG_NAME[t[1]] = t[0]; });
-  // The page's typed markup paints three figures under a second id as well;
-  // each reads back as the one name.
-  var FIG_ID_ALIAS = { "l-floor": "f-floorv", "l-cap": "f-capv", "l-avg-n": "l-basis-n" };
+  // The page's typed markup paints four figures under a second id as well;
+  // each reads back as the one name. (f-nc2: the noncredit total's copy under
+  // the three boxes, since the institutions box carries the first, 2026-10-14.)
+  var FIG_ID_ALIAS = { "l-floor": "f-floorv", "l-cap": "f-capv", "l-avg-n": "l-basis-n", "f-nc2": "f-nc" };
   // In page order. `sec` is the explainer section's data-fsec and `title` its
   // heading; `where` places the passage inside it for the curator.
   var EXPLAINER_BLOCKS = [
@@ -3577,7 +3719,20 @@
         "institution\u2019s own MAP data, against {priority count} priorities. An institution meets the " +
         "baseline requirements to take part; from that point the funding follows the outcomes."
     ].join("\n\n") },
-    { key: "x_lede_figs", sec: "lede", title: "Overview", where: "Beneath the two figures", rows: 6, plain: [
+    // The three boxes' words (Sam, 2026-10-14: "I'd like to be able to edit the
+    // text on the 3 funding boxes"). The figure each box leads with is the
+    // model's and is not text; the words under it are.
+    { key: "x_fig_total", sec: "lede", title: "Overview", where: "The appropriation box, under its figure", rows: 2, plain: [
+      "one-time 2026-27 appropriation for CPL implementation"
+    ].join("\n\n") },
+    { key: "x_fig_inst", sec: "lede", title: "Overview", where: "The institutions box, under its figure", rows: 3, plain: [
+      "allocated to the {institutions} institutions, on their CPL outcomes",
+      "**{credit total}** credit and **{noncredit total}** noncredit"
+    ].join("\n\n") },
+    { key: "x_fig_proj", sec: "lede", title: "Overview", where: "The statewide box, under its figure", rows: 3, plain: [
+      "statewide CPL projects and technology, and two Chancellor\u2019s Office posts supporting colleges across the two years"
+    ].join("\n\n") },
+    { key: "x_lede_figs", sec: "lede", title: "Overview", where: "Beneath the three boxes", rows: 6, plain: [
       "Those two lines account for the whole appropriation. The **{to institutions}** to institutions " +
         "is **one funding total**, shared among all 118 in proportion to combined credit + noncredit size " +
         "within the base award and the cap. Every award then splits into a credit share and a " +
@@ -3633,7 +3788,7 @@
         "on considerably less. That is the intended trade: the rate per FTES is not uniform across " +
         "institutions, and the smallest institutions are the ones it favors."
     ].join("\n\n") },
-    { key: "x_timing", sec: "timing", title: "Disbursement and the funding window", where: "The whole section", rows: 10, plain: [
+    { key: "x_timing", sec: "timeline", title: "Timeline", where: "Under How the funding arrives", rows: 10, plain: [
       "Two timing settings are in effect. Neither changes the amount an institution can qualify for.",
       "- **The full two-year amount is made available in year one.** The capacity this work requires \u2014 " +
         "staff time, faculty review of credit recommendations, and local process design \u2014 is concentrated " +
@@ -3653,14 +3808,143 @@
     EXPLAINER_BY_KEY[b.key] = b;
     TEXT_BLOCKS[b.key] = { label: b.title + ": " + b.where.toLowerCase(), rows: b.rows, rich: true };
   });
+  // ── MY CPL FUNDING'S TEXT (Sam, 2026-10-15, call 8: "Let me edit the My
+  //    College text blocks the way I edit the explainer's passages") ────────
+  // The sentences every My CPL Funding view prints (college_briefing.js
+  // fundingBlockHtml: My College, the tab's Public view, the explainer), moved
+  // out of code into the saved text. Same editor as the explainer's passages;
+  // a name in braces is a figure filled in for each institution
+  // (mcTextHtml), so an edit never freezes one college's number into all.
+  // The house text is Sam's approved wording of 2026-10-01 (#1798).
+  var MC_FIGS = [["base award", "the base award"], ["cap", "the cap"],
+    ["condition count", "how many minimum conditions there are, in words"],
+    ["noncredit portion", "the institution's noncredit portion of its max award"],
+    ["deadline", "the confirmation deadline, spelled out (How to meet it)"],
+    ["JST status", "where the institution stands on the veteran JST condition (How to meet it)"]];
+  var MC_BLOCKS = [
+    { key: "mc_intro", where: "Above the chooser, on the tab and the explainer",
+      plain: "My CPL Funding is a summary view of CPL funding and expected outcomes." },
+    { key: "mc_seed", where: "The seed funding box, under the amount",
+      plain: "Based on the guidance provided in memo ESS 25-82, the college received this funding through " +
+        "apportionment with a commitment to achieve the three priority outcomes measured by CPL data in the MAP platform." },
+    { key: "mc_seed_declined", where: "The seed funding box, for a college that declined it",
+      plain: "The college declined this grant pending further review." },
+    { key: "mc_impl", where: "The implementation funding box, under the max award",
+      plain: "Potential (max) funding available for the two-year period 2026-28 is allocated based on priority " +
+        "outcomes measured in full-time equivalent students (FTES) in MAP. Achievement of the following priority " +
+        "outcomes determines funding." },
+    { key: "mc_base", where: "A college at the base award",
+      plain: "The college qualifies for {base award} base funding to implement the CPL policies and procedures " +
+        "needed to achieve the priority outcomes." },
+    { key: "mc_cap", where: "A college at the cap",
+      plain: "The college's proportional share of the funding exceeds the {cap} cap, so its funding stops at the cap " +
+        "and the difference is redirected to the other colleges. Its targets scale to the cap, so it qualifies for " +
+        "funding at the same rate as every college above the base." },
+    { key: "mc_conds", where: "Above the minimum conditions",
+      plain: "CPL funding requires the following {condition count} minimum conditions:" },
+    { key: "mc_nc", where: "A college with noncredit FTES",
+      plain: "Noncredit portion of the max funding is {noncredit portion}, which is based on CPL FTES that originate " +
+        "from the college or district's noncredit program." },
+    { key: "mc_progress", where: "Under the priority outcomes",
+      plain: "Progress toward each priority goal is measured in FTES and funded up to the cap." },
+    { key: "mc_close", where: "The closing line on the tab and the explainer",
+      plain: "CPL funding follows the same procedure for every institution under All institutions." },
+    { key: "mc_close_mc", where: "The closing line on My College",
+      plain: "CPL funding follows the same procedure for every institution. The Implementation Funding tab shows " +
+        "the full derivation and the year split." },
+    // HOW TO MEET IT (Sam, 2026-10-15, call 5: "Add all four"; call 4: one
+    // text, so they join this list). The steps behind each minimum condition,
+    // opened from the words How to meet it after the condition in the college
+    // panel and in the explainer's Eligibility requirements (howToOpen). The
+    // house text is SkyMeridian's draft for Sam to curate, written without
+    // access to MAP, so it names what to enter rather than the menus to open.
+    // A paragraph of "1. " lines is a numbered list; [words](https://…) a link.
+    { key: "mc_how_coord", how: "coord", title: "Name your CPL Coordinator in MAP", rows: 10,
+      where: "How to meet it: the CPL Coordinator condition",
+      plain: "This condition has three parts, and MAP holds all three. The college's MAP administrator completes " +
+        "them in MAP:\n\n" +
+        "1. Enter the CPL Coordinator's name and email in the college's contacts.\n" +
+        "2. Enter the primary CPL contact's name and email. One person may hold both roles.\n" +
+        "3. Configure the college's CPL Landing Page, with the email address that receives students' CPL " +
+        "requests, and link to it from the college website.\n\n" +
+        "This page reads MAP's contacts each day, so the condition shows as met the day after the change. The MAP " +
+        "team helps colleges with these steps during its [office hours](https://map.rccd.edu/get-involved/)." },
+    { key: "mc_how_part", how: "part", title: "Confirm your college's participation", rows: 8,
+      where: "How to meet it: the confirmation condition",
+      plain: "A senior administrator confirms for the college: the vice president of academic affairs, the vice " +
+        "president of student services, the president, or another senior administrator.\n\n" +
+        "1. Press Confirm now, below.\n" +
+        "2. Enter your name, title and college email, and press Confirm participation.\n\n" +
+        "The confirmation counts from the day you submit it. The Chancellor's Office keeps your name and email on " +
+        "file and does not show them on this page. Confirm by {deadline}." },
+    { key: "mc_how_vet", how: "vetstar", title: "Upload JSTs for your enrolled veterans", rows: 10,
+      where: "How to meet it: the veteran JST condition",
+      plain: "MAP compares the Joint Services Transcripts (JSTs) uploaded for the college with the number of " +
+        "enrolled veterans the college reports to the Chancellor's Office. The condition is met at 75%.\n\n" +
+        "1. Ask each enrolled veteran for a JST. A veteran requests one at no cost at " +
+        "[jst.doded.mil](https://jst.doded.mil).\n" +
+        "2. Upload each JST to MAP, one at a time or in a batch. MAP builds a Student CPL Plan from each one.\n" +
+        "3. Process each plan in MAP: record the credit the veteran accepts and the credit the college transcribes.\n\n" +
+        "{JST status}" },
+    { key: "mc_how_exhibits", how: "exhibits", title: "Post noncredit certificates as exhibits in MAP", rows: 8,
+      where: "How to meet it: the noncredit exhibits condition",
+      plain: "At the three noncredit-only institutions this condition takes the place of the veteran JST condition. " +
+        "It is met once MAP identifies students eligible for CPL against the institution's exhibits.\n\n" +
+        "1. Post each noncredit certificate the institution awards as an exhibit in MAP.\n" +
+        "2. Invite the credit colleges in the district to articulate the exhibits.\n\n" +
+        "The MAP team helps institutions post exhibits during its [office hours](https://map.rccd.edu/get-involved/)." }
+  ];
+  var MC_BY_KEY = {}, HOW_BY_KIND = {};
+  MC_BLOCKS.forEach(function (b) {
+    MC_BY_KEY[b.key] = b;
+    if (b.how) HOW_BY_KIND[b.how] = b;
+    TEXT_BLOCKS[b.key] = { label: "My CPL Funding: " + b.where.toLowerCase(), rows: b.rows || 3, rich: true };
+  });
+  // The How to meet it passages, rendered as blocks: paragraphs, numbered and
+  // bulleted lists, links, bold and italic, and this institution's figures.
+  function mcBlockHtml(key, figs) {
+    if (!MC_BY_KEY[key]) return null;
+    var low = {};
+    Object.keys(figs || {}).forEach(function (k) { low[String(k).trim().toLowerCase()] = figs[k]; });
+    // A figure with nothing to say (a feed still loading) leaves no empty paragraph.
+    return richPlainToHtml(textPlain(key), "mc", low).replace(/<p><\/p>/g, "");
+  }
+  // One passage for one institution: its figures by name, then bold and italic.
+  // Inline HTML; a blank line in the passage becomes a line break.
+  function mcTextHtml(key, figs) {
+    if (!MC_BY_KEY[key]) return null;
+    figs = figs || {};
+    return plainNormalize(textPlain(key)).split(/\n\n/).map(function (para) {
+      return markInline(esc(para).replace(MD_LINK, function (m, words, url) {
+        return '<a href="' + url + '" target="_blank" rel="noopener">' + words + "</a>";
+      }).replace(/\{([^{}]+)\}/g, function (m, name) {
+        var v = figs[String(name).trim().toLowerCase()];
+        return v == null ? m : esc(String(v));
+      })).replace(/\n/g, "<br>");
+    }).join("<br><br>");
+  }
   function isRich(key) { return !!(TEXT_BLOCKS[key] && TEXT_BLOCKS[key].rich); }
-  function richDefaultPlain(key) { return plainNormalize(EXPLAINER_BY_KEY[key] ? EXPLAINER_BY_KEY[key].plain : ""); }
+  function richDefaultPlain(key) {
+    var b = EXPLAINER_BY_KEY[key] || MC_BY_KEY[key];
+    return plainNormalize(b ? b.plain : "");
+  }
   // One line of rich text. `mode` "page" paints a figure as the span the
   // explainer's painter fills (seeded with the figure already on the page, so
   // nothing blinks empty between the two paints); "tab" shows the name, since
   // the tab does not build the explainer's payload.
+  // `mode` "mc" fills a name from `seeds`, this institution's figures by name.
+  // A link is [words](https://…), written by an author on any passage (Sam,
+  // 2026-10-15, call 5): the words and the address are escaped, only http and
+  // https qualify, and it opens in a new tab.
+  var MD_LINK = /\[([^\]\n]+)\]\((https?:\/\/[^\s)<>"]+)\)/g;
   function richInline(line, mode, seeds) {
-    var h = esc(line).replace(/\{([^{}]+)\}/g, function (m, name) {
+    var h = esc(line).replace(MD_LINK, function (m, words, url) {
+      return '<a href="' + url + '" target="_blank" rel="noopener">' + words + "</a>";
+    }).replace(/\{([^{}]+)\}/g, function (m, name) {
+      if (mode === "mc") {
+        var v = seeds && seeds[String(name).trim().toLowerCase()];
+        return v == null ? m : esc(String(v));
+      }
       var id = FIG_ID[String(name).trim().toLowerCase()];
       if (!id) return m;
       if (mode === "page") {
@@ -3672,13 +3956,17 @@
       .replace(/(^|[^*\w])\*([^*\s](?:[^*]*?[^*\s])?)\*(?![*\w])/g, "$1<em>$2</em>");
   }
   var BULLET_LINE = /^[-•][ \t]+/;
+  // A paragraph whose every line opens "1. " is a numbered list (call 5).
+  var NUMBER_LINE = /^\d{1,2}\.[ \t]+/;
   function richPlainToHtml(t, mode, seeds) {
     return plainNormalize(t).split(/\n\n/).map(function (para) {
       var lines = para.split("\n");
-      if (lines.every(function (ln) { return BULLET_LINE.test(ln); })) {
-        return "<ul>" + lines.map(function (ln) {
-          return "<li>" + richInline(ln.replace(BULLET_LINE, ""), mode, seeds) + "</li>";
-        }).join("") + "</ul>";
+      var list = lines.every(function (ln) { return BULLET_LINE.test(ln); }) ? ["ul", BULLET_LINE]
+        : lines.every(function (ln) { return NUMBER_LINE.test(ln); }) ? ["ol", NUMBER_LINE] : null;
+      if (list) {
+        return "<" + list[0] + ">" + lines.map(function (ln) {
+          return "<li>" + richInline(ln.replace(list[1], ""), mode, seeds) + "</li>";
+        }).join("") + "</" + list[0] + ">";
       }
       var quoted = isQuoteBlock(para);
       var body = lines.map(function (ln) {
@@ -3705,6 +3993,32 @@
       .replace(/\s*<\/li>/gi, "");
     return plainNormalize(htmlToPlain(t).split("\n").map(function (ln) { return ln.trim(); }).join("\n"));
   }
+  // The Bold / Italic buttons' edit, a pure function of the text and the
+  // selection so a test can drive it. `ta`, when given, gets the new selection.
+  function wrapMark(text, a, b, mk, ta) {
+    text = String(text || ""); a = Math.max(0, a | 0); b = Math.max(a, b | 0);
+    while (a < b && /\s/.test(text.charAt(a))) a++;
+    while (b > a && /\s/.test(text.charAt(b - 1))) b--;
+    var n = mk.length, out, s0, s1;
+    var before = text.slice(Math.max(0, a - n), a), after = text.slice(b, b + n);
+    // Unwrap when this mark (and, for italic, not a bold mark) surrounds it.
+    var bold = function (i) { return text.slice(i, i + 2) === "**"; };
+    if (before === mk && after === mk && (n === 2 || (!bold(a - 2) && !bold(b)))) {
+      out = text.slice(0, a - n) + text.slice(a, b) + text.slice(b + n);
+      s0 = a - n; s1 = b - n;
+    } else if (a === b) {
+      out = text.slice(0, a) + mk + mk + text.slice(a);
+      s0 = s1 = a + n;
+    } else {
+      out = text.slice(0, a) + mk + text.slice(a, b) + mk + text.slice(b);
+      s0 = a + n; s1 = b + n;
+    }
+    if (ta && typeof ta.setSelectionRange === "function") {
+      ta.value = out;
+      try { ta.setSelectionRange(s0, s1); } catch (e) { /* a detached field */ }
+    }
+    return out;
+  }
   function explainerTextHtml(key, seeds) {
     if (!EXPLAINER_BY_KEY[key]) return "";
     return richPlainToHtml(textPlain(key), "page", seeds);
@@ -3723,9 +4037,18 @@
     EXPLAINER_BLOCKS.forEach(function (b) {
       if (b.sec !== last) {
         last = b.sec;
-        body += '<h4 class="cplfund-xtext-h">' + esc(titleOverride(b.sec) || b.title) + "</h4>";
+        body += '<h4 class="cplfund-xtext-h">' + esc(pubTitleOverride(b.sec) || b.title) + "</h4>";
       }
       body += '<p class="cplfund-xtext-k">' + esc(b.where) + "</p>" + proseBlockHtml(b.key, "cplfund-xtext");
+    });
+    // The page's own copies of what it once borrowed (Sam, 2026-10-15, call
+    // 2), editable here too, so this list stays every word the page carries.
+    body += '<h4 class="cplfund-xtext-h">The page&rsquo;s own copies</h4>';
+    Object.keys(TEXT_BLOCKS).filter(isPageCopy).forEach(function (k) {
+      var m = TEXT_BLOCKS[k];
+      body += '<p class="cplfund-xtext-k">' + esc(m.label.charAt(0).toUpperCase() + m.label.slice(1)) +
+        (k === "x_about" && !textIsCustom(k) ? ", which shows this tab&rsquo;s Introduction until it is saved" : "") +
+        "</p>" + proseBlockHtml(k, "cplfund-xtext");
     });
     body += '<details class="cplfund-xtext-figs"><summary>The figures a passage can name</summary><ul>' +
       FIG_TOKENS.map(function (t) {
@@ -3735,6 +4058,23 @@
     // Hide (cpl_funding_section_titles excludes it by this mark alone).
     return '<details class="cplfund-sec" data-sec="explainer_text" data-curator-only="1"' + (sectionOpen("explainer_text") ? " open" : "") + ">" +
       '<summary class="cplfund-sec-sum"><h3>The explainer&rsquo;s text</h3>' +
+      '<span class="cplfund-sec-flag">Curator only</span>' +
+      '<span class="cplfund-sec-word" aria-hidden="true"></span></summary>' +
+      '<div class="cplfund-sec-body">' + body + "</div></details>";
+  }
+  function mcTextSectionHtml() {
+    if (!unlocked() || publicMode()) return "";
+    var body = '<p class="cplfund-xtext-lead">The sentences every My CPL Funding view prints: My College, this ' +
+      "tab&rsquo;s Public view and the explainer. Save an edit here and all three show it; Refresh everything " +
+      "reaches windows already open. A name in braces is a figure filled in for each institution.</p>";
+    MC_BLOCKS.forEach(function (b) {
+      body += '<p class="cplfund-xtext-k">' + esc(b.where) + "</p>" + proseBlockHtml(b.key, "cplfund-xtext");
+    });
+    body += '<details class="cplfund-xtext-figs"><summary>The figures a passage can name</summary><ul>' +
+      MC_FIGS.map(function (t) { return "<li><code>{" + esc(t[0]) + "}</code> " + esc(t[1]) + "</li>"; }).join("") +
+      "</ul></details>";
+    return '<details class="cplfund-sec" data-sec="mc_text" data-curator-only="1"' + (sectionOpen("mc_text") ? " open" : "") + ">" +
+      '<summary class="cplfund-sec-sum"><h3>My CPL Funding&rsquo;s text</h3>' +
       '<span class="cplfund-sec-flag">Curator only</span>' +
       '<span class="cplfund-sec-word" aria-hidden="true"></span></summary>' +
       '<div class="cplfund-sec-body">' + body + "</div></details>";
@@ -3772,6 +4112,25 @@
     if (!clean || clean === titleDefaultPlain(id)) delete ov.titles[id];
     else ov.titles[id] = clean;
     if (!Object.keys(ov.titles).length) delete ov.titles;
+    persistActive();
+  }
+  // THE PUBLIC PAGE'S OWN TITLES (Sam, 2026-10-15, call 2). A block on
+  // funding-model/ is renamed under `pubTitles`, never `titles`, so a rename on
+  // either view stays on that view. Plain text, escaped by the page
+  // (textContent). The house title is the page's own markup, which this file
+  // cannot read, so the page passes it in: an unchanged title stores nothing.
+  function pubTitleOverride(id) {
+    var v = firstDefined(SCENARIO.pubTitles && SCENARIO.pubTitles[id], SHARED.pubTitles && SHARED.pubTitles[id]);
+    return (v == null || !String(v).trim()) ? null : String(v);
+  }
+  function setPubTitle(id, v, housePlain) {
+    if (!PUBLIC_BY_ID[id] || PUBLIC_BY_ID[id].fixedTitle) return;
+    var ov = activeOverride();
+    var clean = oneLine(v);
+    ov.pubTitles = isPlainObj(ov.pubTitles) ? ov.pubTitles : {};
+    if (!clean || clean === oneLine(housePlain)) delete ov.pubTitles[id];
+    else ov.pubTitles[id] = clean;
+    if (!Object.keys(ov.pubTitles).length) delete ov.pubTitles;
     persistActive();
   }
   function secHidden(id) {
@@ -3820,9 +4179,11 @@
   // nobody could see from either. So each public section curates under its OWN
   // id; only the machinery is shared.
   //
-  // `timing` is the ONE id in both sets, and that collision is deliberate and
-  // pre-existing: one subject, one switch. The chip says so, because a curator
-  // is otherwise looking at two controls that are secretly one.
+  // ⚠️ NO ID IS SHARED ANY MORE (Sam, 2026-10-15, call 2: the page keeps its
+  // own order, titles, hidden blocks and text). `timing` was the one id in both
+  // sets, so the tab's Timing title and its Hide reached the page's Timeline;
+  // the page's block takes its own id, `timeline`, and the tab's `timing` keeps
+  // the tab's. funding_model_page.test.js asserts the two sets are disjoint.
   //
   // ⚠️ This list is a SECOND COPY of the page's data-fsec attributes — the thing
   // this file avoids elsewhere — and it is here because cpl_funding.js cannot
@@ -3831,14 +4192,21 @@
   // that was missing: the old test wrote its own id into the shared map and then
   // read it back, so it proved the resolver worked and could never notice that
   // NO CONTROL ANYWHERE emitted six of the seven ids.
+  // ORDER (Sam, 2026-10-15, his My College mockup): the institutions first,
+  // the Overview folded after them, the outcomes, then the Timeline, which now
+  // leads with the dates. The page's markup follows this list. The Contents
+  // moves with the blocks, first (the one-page mockup, call 2), and Step 1,
+  // above them all, never moves. `fixedTitle`: a block the page never renames.
   var PUBLIC_SECTIONS = [
-    { id: "lede",         label: "Introduction and the headline figures" },
+    { id: "contents",     label: "Contents", fixedTitle: true },
     { id: "institutions", label: "Max award by institution" },
-    // The priorities and the milestones, together and unfolded (Sam,
-    // 2026-09-15: "a brief integration of the priorities and timeline"). They
-    // were one fold apart before — the three things that count sat inside Step
-    // three and the dates inside Step four, so a reader who opened neither
-    // learned neither. The mechanics stay in those steps.
+    // The Introduction, Sam's on the tab (call 3: "Add both"), folded,
+    // before the Overview it overlaps. Its text is the page's own (x_about).
+    { id: "intro",        label: "Introduction" },
+    { id: "lede",         label: "Overview and the headline figures" },
+    // The priorities, together and unfolded (Sam, 2026-09-15: "a brief
+    // integration of the priorities and timeline"); the dates moved on to the
+    // Timeline on 2026-10-15, so the label is the outcomes alone.
     //
     // ⚠️ THE ID IS `outcomes`, NOT `priorities`, AND THAT IS NOT A PREFERENCE.
     // It shipped as `priorities` for one commit and collided with the TAB's own
@@ -3847,18 +4215,19 @@
     // was silently replaced by the tab's, and hiding the tab's priorities
     // section hid this one too. Reproduced with the stored value before the
     // rename. `timing` remains the ONE deliberate collision.
-    { id: "outcomes",     label: "Funding outcomes and milestones" },
+    { id: "outcomes",     label: "Funding outcomes" },
+    { id: "timeline",     label: "Timeline" },
     { id: "allocation",   label: "How an allocation is computed" },
     { id: "qualify",      label: "Eligibility requirements" },
     { id: "earning",      label: "How outcomes count toward funding" },
-    { id: "timing",       label: "Disbursement and the funding window" },
     { id: "choices",      label: "What is a choice, and what is a given" },
-    // The tab's FAQ, read-only (Sam, 2026-10-01: the explainer is likely the
-    // main view for colleges, so it carries what the Public view gives them).
-    // `questions`, not `faq`: the tab's own FAQ section keeps its id, and only
-    // `timing` is shared on purpose.
+    // The FAQ (Sam, 2026-10-01: the explainer is likely the main view for
+    // colleges). `questions`, not `faq`: the tab's own FAQ section keeps its id,
+    // and since call 2 the page keeps its own copy of the text (x_faq).
     { id: "questions",    label: "Frequently asked questions" }
   ];
+  var PUBLIC_BY_ID = {};
+  PUBLIC_SECTIONS.forEach(function (x) { PUBLIC_BY_ID[x.id] = x; });
   function publicHouseOrder() {
     return PUBLIC_SECTIONS.map(function (x) { return x.id; });
   }
@@ -3934,82 +4303,12 @@
       esc(titlePlain(id)) + ' section, of ' + o.length + '">' + opts + "</select></label>";
   }
 
-  // The curator's controls on the PUBLIC PREVIEW. Sam asked for them there
-  // (2026-09-11) and the reason the ask arrived is that the preview carried
-  // none: sectionCtlHtml() returned "" for every public rendering, the
-  // preview included, so the one view that shows what a college sees was the
-  // one view with no way to act on it.
-  //
-  // Narrower than the internal set on purpose — exclude and position, not
-  // Rename — because those are the two questions that view asks. Renaming is
-  // an editing act and belongs where the other editing lives.
-  function secPreviewCtlHtml(id) {
-    if (sectionOrder().indexOf(id) < 0) return "";
-    return '<div class="cplfund-sec-pv">' +
-      '<span class="cplfund-sec-pvlab">Curator only</span>' +
-      (secHidden(id)
-        ? '<button type="button" class="cplfund-pvchip" data-secpvshow="' + esc(id) +
-          '">Include on the public page</button>'
-        : '<button type="button" class="cplfund-pvchip" data-secpvhide="' + esc(id) +
-          '">Exclude from the public page</button>') +
-      secPvMoveHtml(id) + "</div>";
-  }
-  function secPvMoveHtml(id) {
-    var o = sectionOrder(), i = o.indexOf(id);
-    var opts = o.map(function (_, j) {
-      return '<option value="' + j + '"' + (j === i ? " selected" : "") + ">" + (j + 1) + "</option>";
-    }).join("");
-    return '<label class="cplfund-posl">Position ' +
-      '<select class="cplfund-pos" data-secpvpos="' + esc(id) + '" aria-label="Position of the ' +
-      esc(titlePlain(id)) + ' section, of ' + o.length + '">' + opts + "</select></label>";
-  }
-
-  // The public explainer's OWN sections, curated from here. It renders on the
-  // public preview, which is where the question "should colleges see this?"
-  // actually occurs — and it names the page it governs, because the preview
-  // around it is the TAB's rendering, not the explainer's layout. Saying which
-  // page each control reaches is the whole job of this block.
-  function publicSectionsCtlHtml() {
-    if (!publicPreview()) return "";
-    var order = publicSectionOrder();
-    var byId = {};
-    PUBLIC_SECTIONS.forEach(function (x) { byId[x.id] = x; });
-    var rows = order.map(function (id, i) {
-      var meta = byId[id] || { id: id, label: id };
-      var opts = order.map(function (_, j) {
-        return '<option value="' + j + '"' + (j === i ? " selected" : "") + ">" + (j + 1) + "</option>";
-      }).join("");
-      return '<div class="cplfund-pubsec-row' + (secHidden(id) ? " is-out" : "") + '">' +
-        '<span class="cplfund-pubsec-name">' + esc(meta.label) + "</span>" +
-        (id === "timing"
-          ? ' <span class="dk">&mdash; one switch with this tab&rsquo;s Timing section</span>'
-          : "") +
-        '<span class="cplfund-pubsec-ctl">' +
-        '<label class="cplfund-posl">Position ' +
-        '<select class="cplfund-pos" data-pubsecpos="' + esc(id) + '" aria-label="Position of the ' +
-        esc(meta.label) + ' section on the public explainer, of ' + order.length + '">' + opts + "</select></label>" +
-        (secHidden(id)
-          ? '<button type="button" class="cplfund-pvchip" data-pubsecshow="' + esc(id) +
-            '">Include on the public page</button>'
-          : '<button type="button" class="cplfund-pvchip" data-pubsechide="' + esc(id) +
-            '">Exclude from the public page</button>') +
-        "</span></div>";
-    }).join("");
-    return '<div class="cplfund-pubsec">' +
-      '<div class="cplfund-pubsec-h"><span class="cplfund-sec-pvlab">Curator only</span> ' +
-      "The public explainer&rsquo;s own sections &mdash; " +
-      '<a href="funding-model/" target="_blank" rel="noopener">funding-model/</a>, the page colleges read. ' +
-      "Excluding one here removes it from that page; the arrangement below is the order it appears in." +
-      "</div>" + rows +
-      (pubOrderIsCustom()
-        ? '<button type="button" class="cplfund-optbtn" id="cplFundPubOrderReset" ' +
-          'title="Put the public explainer\u2019s sections back in the order the page ships with">' +
-          "Restore the default order</button>"
-        : "") + "</div>";
-  }
-
+  // ⚠️ THE PUBLIC PREVIEW'S OWN CONTROLS RETIRED (Sam, 2026-10-15, call 1).
+  // The tab's Public view drew the tab's sections for colleges, with Exclude
+  // and Position chips on each and a list of the explainer's sections above
+  // them. The Public page view now shows funding-model/ itself, and a curator
+  // arranges and edits it there with Edit this page (funding-model/edit_page.js).
   function sectionCtlHtml(id) {
-    if (publicPreview()) return secPreviewCtlHtml(id);
     if (!unlocked() || publicMode()) return "";
     var custom = titleIsCustom(id);
     if (state.titleEditing === id) {
@@ -4024,9 +4323,6 @@
     }
     return '<div class="cplfund-sec-ctl">' +
       '<button type="button" class="cplfund-textbtn" data-secrename="' + esc(id) + '">Rename</button>' +
-      (secHidden(id)
-        ? '<button type="button" class="cplfund-textbtn" data-secshow="' + esc(id) + '">Show on the public page</button>'
-        : '<button type="button" class="cplfund-textbtn" data-sechide="' + esc(id) + '">Hide on the public page</button>') +
       secMoveHtml(id) +
       (custom ? '<span class="dk">Renamed.</span>' : "") + "</div>";
   }
@@ -4046,14 +4342,25 @@
       html += '<textarea class="cplfund-prose-ta" data-textarea="' + esc(key) + '" rows="' + meta.rows +
         '" aria-label="Edit ' + esc(meta.label) + '">' + esc(draft) + "</textarea>" +
         '<div class="cplfund-prose-ctl">' +
+        // Bold and Italic (Sam, 2026-10-14: "How do I change a bold font in the
+        // text when editing?"). The passages always took **bold** and *italic*;
+        // these put the marks around the selected words so nobody has to know.
+        (hasMarks(key)
+          ? '<button type="button" class="cplfund-textbtn" data-textwrap="**" data-textfor="' + esc(key) + '">Bold</button>' +
+            '<button type="button" class="cplfund-textbtn" data-textwrap="*" data-textfor="' + esc(key) + '">Italic</button>'
+          : "") +
         '<button type="button" class="cplfund-textbtn primary" data-textsave="' + esc(key) + '">Save</button>' +
         '<button type="button" class="cplfund-textbtn" data-textcancel="' + esc(key) + '">Cancel</button>' +
         (custom ? '<button type="button" class="cplfund-textbtn" data-textreset="' + esc(key) + '">Restore the default text</button>' : "") +
         (key === "faq" ? '<span class="dk">Start each question on its own line with Q: and put its answer in the paragraphs below it.</span>' : "") +
         (TEXT_BLOCKS[key] && TEXT_BLOCKS[key].rich
-          ? '<span class="dk">Plain text. A blank line starts a new paragraph. **Two asterisks** on each side make words bold and ' +
-            '*one* makes them italic; a paragraph whose every line starts with - is a bulleted list. A name in braces, such as ' +
-            '{base award}, is a figure the explainer fills in from the model. Saves for everyone.</span></div>'
+          ? '<span class="dk">Plain text. Select words and press Bold or Italic, or type **two asterisks** on each side for bold ' +
+            'and *one* for italic. A blank line starts a new paragraph; a paragraph whose every line starts with - is a bulleted ' +
+            'list. A name in braces, such as {base award}, is a figure the explainer fills in from the model. Saves for everyone.</span></div>'
+          : hasMarks(key)
+          ? '<span class="dk">Plain text. Select words and press Bold or Italic, or type **two asterisks** on each side for bold ' +
+            'and *one* for italic. A blank line starts a new paragraph; start every line with &gt; to set a passage as a ' +
+            "quotation. Saves for everyone.</span></div>"
           : '<span class="dk">Plain text. A blank line starts a new paragraph; start every line with &gt; to set a passage as a quotation. Saves for everyone.</span></div>');
     } else {
       html += key === "faq" ? faqHtml(textPlain(key)) : textHtml(key);
@@ -4080,9 +4387,15 @@
   // tab to the public rendering without signing out — the View control in the
   // actions row. The typeof guard matters: publicMode() must be safe to call
   // before the state literal further down has executed.
+  //
+  // ⚠️ THE TAB'S PUBLIC VIEW IS THE PUBLIC PAGE (Sam, 2026-10-15, call 1: "Show
+  // and edit in the tab"). previewPublic once flipped this rendering to the
+  // college-audience one, the tab's own sections drawn for colleges beside
+  // funding-model/, so colleges met two renderings with their own orders and
+  // titles. It now shows funding-model/ itself, in a frame (pagePreview), and
+  // this rendering is public only on a public page.
   function publicMode() {
-    if (window.CPL_FUNDING_PUBLIC || embedMode()) return true;
-    return typeof state === "object" && !!state && !!state.previewPublic;
+    return !!(window.CPL_FUNDING_PUBLIC || embedMode());
   }
   // EMBED MODE (2026-09-02): the public explainer (funding-model/index.html)
   // hosts the institution table INSIDE its own narrative page — the same
@@ -4093,17 +4406,11 @@
   function embedMode() {
     return window.CPL_FUNDING_EMBED === "college";
   }
-  // The curator PREVIEWING the public page from inside the tab — not the public
-  // page itself. The distinction did not need a name until Sam asked for the
-  // exclude control to live on that view (2026-09-11); publicMode() answers
-  // "does this rendering hide the dials", which is true for the preview and for
-  // both real public surfaces alike, and that is the wrong question for a
-  // control only a signed-in curator may see.
-  function publicPreview() {
+  // The Public page view: the tab shows the public page itself, framed, in
+  // place of its sections (call 1). Never on the public page.
+  function pagePreview() {
     if (window.CPL_FUNDING_PUBLIC || embedMode()) return false;
-    // "As colleges see it" drops every curator control from the preview, so
-    // the curator reads exactly what a college reads.
-    return typeof state === "object" && !!state && !!state.previewPublic && !state.publicEye && unlocked();
+    return typeof state === "object" && !!state && !!state.previewPublic;
   }
   // Every curate/edit affordance, as ONE registry. Public mode sweeps these out
   // of the DOM after each render rather than relying on each emitter to check
@@ -4116,7 +4423,7 @@
     "data-pooladd", "data-pooldel", "data-poolhide", "data-poolshow", "data-poolkind",
     "data-textedit", "data-textsave", "data-textcancel", "data-textreset", "data-textarea",
     "data-secrename", "data-sectitle", "data-sectitlesave", "data-sectitlecancel", "data-cardrename",
-    "data-sectitlereset", "data-sechide", "data-secshow",
+    "data-sectitlereset",
     "data-projsel", "data-projadd", "data-projrelease", "data-priogoal", "data-priosrc",
     "data-rcgoal", "data-rcdel", "data-rstratadd", "data-rstratdel",
     // The card controls of 2026-09-23: one numbering, show-on-rows, delete,
@@ -4126,31 +4433,20 @@
     "data-priorestore", "data-measedit", "data-measreset",
     // 2026-09-25: the Serves boxes and the strategy drag rows.
     "data-priogoalmulti", "data-stratlist",
-    // 2026-09-28: the CO's opt-in controls. Their emitters already skip the
-    // public preview; the sweep is the backstop, so a curator previewing
-    // Public sees no Reject or Revoke a college would never see.
+    // 2026-09-28: the CO's opt-in controls. Their emitters already skip a
+    // public rendering; the sweep is the backstop.
     "data-optinconfirm", "data-optinrevoke", "data-optinremove"];
-  // PREVIEW-ONLY affordances, swept everywhere the curator is not previewing.
-  // Kept OUT of CURATE_ATTRS rather than conditioned inside it, so the registry
-  // above keeps meaning exactly one thing: every attribute in it leaves the DOM
-  // in public mode, no exceptions to read past. These three are emitted only by
-  // publicPreview(), which is false on both real public surfaces, so the sweep
-  // is still what stands between a public reader and a control — it just stops
-  // removing the controls a curator asked to have in their own preview.
-  var PREVIEW_ATTRS = ["data-secpvhide", "data-secpvshow", "data-secpvpos",
-                       "data-pubsechide", "data-pubsecshow", "data-pubsecpos"];
-  var PREVIEW_IDS = ["cplFundSecOrderReset", "cplFundPubOrderReset"];
   var CURATE_IDS = ["cplFundReqAdd", "cplFundTimingAdd", "cplFundReset",
     "cplFundPromote", "cplFundProjSel", "cplFundProjAdd", "cplFundProjArea",
     "cplFundProjCancel", "cplFundProjCreate", "cplFundProjName",
     "cplFundScenSel", "cplFundScenNew", "cplFundScenDel", "cplFundScenPublish",
-    "cplFundOrderReset", "cplFundMirror", "cplFundCopyYear1", "cplFundAddPrio"];
+    "cplFundOrderReset", "cplFundMirror", "cplFundCopyYear1", "cplFundAddPrio", "cplFundSecOrderReset"];
   function stripCurateAffordances(root) {
     if (!root) return;
-    CURATE_ATTRS.concat(publicPreview() ? [] : PREVIEW_ATTRS).forEach(function (a) {
+    CURATE_ATTRS.forEach(function (a) {
       root.querySelectorAll("[" + a + "]").forEach(function (el) { el.remove(); });
     });
-    CURATE_IDS.concat(publicPreview() ? [] : PREVIEW_IDS).forEach(function (id) {
+    CURATE_IDS.forEach(function (id) {
       var el = root.querySelector("#" + id);
       if (el) el.remove();
     });
@@ -5393,7 +5689,8 @@
       el.textContent = "";   // seg buttons already removed; drop the empty shell
       if (el.parentNode) el.parentNode.removeChild(el);
     });
-    var css = "body{font-family:'Segoe UI',Arial,sans-serif;color:#1C1C1A;margin:24px;font-size:12px;}" +
+    var css = "@page{size:letter landscape;margin:.45in}" +   // landscape (Sam, 2026-10-15)
+      "body{font-family:'Segoe UI',Arial,sans-serif;color:#1C1C1A;margin:24px;font-size:12px;}" +
       "h2,h3{color:#002F6D;margin:16px 0 6px;}" +
       "table{border-collapse:collapse;width:100%;font-size:9.5px;margin:6px 0;}" +
       "th{background:#002F6D;color:#fff;padding:3px 5px;text-align:right;white-space:nowrap;}" +
@@ -6866,6 +7163,46 @@
     // maximum) was retired with one-pool adoption (R4–R5, 2026-08-31): one
     // window — the base and cap above — per institution, combined.
 
+    // NONCREDIT'S PORTION (Sam, 2026-10-14), beside the base award and cap
+    // because it is the same kind of statement: a rule for dividing the total
+    // to institutions. The Budget tab holds the amounts; this tab divides them.
+    // Blank is the default and means the teaching mix decides.
+    (function () {
+      var m = allocModel(), np = m.ncPortion || {};
+      var net = netCollege(), ncTot = 0;
+      oneRoster().forEach(function (c) { ncTot += instSplit(c).nc; });
+      var crTot = net - ncTot;
+      var setPct = ncPortionSet();
+      var shown = setPct == null ? "" : String(parseFloat(setPct.toFixed(2)));
+      var input = (publicMode() || !unlocked())
+        ? esc(fmtPctTrim(net > 0 ? ncTot / net : 0))
+        : '<input type="text" inputmode="decimal" class="cplfund-ed cplfund-ed-pct" data-edit="ncportion" value="' +
+          esc(shown) + '" aria-label="Noncredit portion of the total to institutions, as a percentage. Leave blank to follow each institution’s teaching mix.">' +
+          '<span class="cplfund-pct-sign">%</span>';
+      var split = fmtMoney(crTot) + " credit and " + fmtMoney(ncTot) + " noncredit";
+      var note;
+      if (setPct == null) {
+        note = "Blank: noncredit&rsquo;s portion follows each institution&rsquo;s own credit and noncredit FTES, " +
+          "<strong>" + esc(fmtPct(np.natural || 0, 1)) + "</strong> today (" + split + "). Type a percentage to set it. " +
+          "The model then counts each noncredit FTES at the weight that reaches it, in the size of every award and in its split, " +
+          "so the added noncredit funding goes to the institutions with noncredit programs, in proportion to them, " +
+          "and the base award and cap still hold.";
+      } else {
+        note = "<strong>" + split + "</strong> of " + fmtMoney(net) + ". To reach " + esc(fmtPctTrim(setPct / 100)) +
+          ", the model counts each noncredit FTES as <strong>" + esc(m.ncW.toFixed(2)) + "</strong> credit FTES, " +
+          "in the size of every award and in its split, so the added noncredit funding goes to the institutions with " +
+          "noncredit programs, in proportion to them. The teaching mix alone gives " + esc(fmtPct(np.natural || 0, 1)) +
+          "; clear the box to return to it.";
+        if (np.unreachable) {
+          note += ' <strong class="cplfund-capwarn">' + esc(fmtPctTrim(setPct / 100)) + " cannot be reached under this base award and cap: the model stops at " +
+            esc(fmtPct(np.reached || 0, 1)) + ". The base award holds a credit share for every institution without noncredit, and the cap holds the largest noncredit programs, so the portion runs from " +
+            esc(fmtPct(np.min || 0, 1)) + " to " + esc(fmtPct(np.max || 0, 1)) + ".</strong>";
+        }
+      }
+      bounds.push(card({ cls: " ncportion", v: input,
+        l: "Noncredit portion of the total to institutions", note: note }));
+    })();
+
     // ── Who moves — renders ONLY while a what-if overlay is changing awards.
     // The comparison the Budget Balance mock proved out (Sam, 2026-08-31):
     // each institution's combined credit + noncredit award under the dials as
@@ -6923,9 +7260,16 @@
     // The BOUND is a heading + a figure pair + its note, with its folds under
     // it — the same shape as the ledger's own detail folds, so "click into the
     // detail" works identically wherever a reader is on this section.
-    var boundsBlock = bounds.length
-      ? '<div class="cplfund-bounds"><h4>Funding base and cap</h4>' + bounds.join("") + "</div>"
+    // The noncredit portion is a second rule of the same kind, under its own
+    // heading so "base and cap" keeps naming only the pair it names.
+    var ncCard = bounds.filter(function (h) { return /cplfund-card ncportion/.test(h); });
+    var bcCards = bounds.filter(function (h) { return !/cplfund-card ncportion/.test(h); });
+    var boundsBlock = bcCards.length
+      ? '<div class="cplfund-bounds"><h4>Funding base and cap</h4>' + bcCards.join("") + "</div>"
       : "";
+    if (ncCard.length) {
+      boundsBlock += '<div class="cplfund-bounds cplfund-ncportion"><h4>Credit and noncredit</h4>' + ncCard.join("") + "</div>";
+    }
     return '<div class="cplfund-cards cplfund-ledger">' + out.join("") + "</div>" +
       boundsBlock + extras.join("") + pubNote + restore + add;
   }
@@ -7205,7 +7549,7 @@
       bits.push("<li><strong>" + esc(x.label) + "</strong> &mdash; " + fmtMoney(x.amount) +
         ' <span class="dk">allocated to statewide work</span></li>');
     });
-    if (f.projects.length) {
+    if (f.projects.length && !publicMode()) {   // the register is internal (Sam, 2026-10-15)
       bits.push("<li><strong>" + f.projects.length + " tagged " +
         (f.projects.length === 1 ? "project" : "projects") + "</strong> in the Activities register &mdash; " +
         f.projects.slice(0, 6).map(function (p) { return esc(p.name); }).join(", ") +
@@ -7253,7 +7597,7 @@
         "</td></tr>";
     }).join("");
 
-    var regNote = reg.length
+    var regNote = reg.length && !publicMode()
       ? '<p class="cplfund-goal-regnote"><strong>The Activities register carries ' + fmtInt(reg.length) +
         " named projects</strong>, which is what goal (D) asks the chancellor&rsquo;s office to show. " +
         (untagged
@@ -7743,15 +8087,18 @@
           strategiesCount(slot, i)
             ? fmtInt(strategiesCount(slot, i)) + " for Year " + esc(slot)
             : "Awaiting",
-          strategiesHtml(slot, i), false, "cplfund-strat") +
+          strategiesHtml(slot, i), publicMode(), "cplfund-strat") +
         // OPEN by default: his 2026-09-13 ruling put the picker always visible.
         // Collapsible and collapsed are different asks, and only the first was
         // made on 2026-09-14.
+        // A public rendering shows the list only when it has names in it (Sam,
+        // 2026-10-15: the project register is internal for now).
+        (publicMode() && !designatedCount(gres.keys) ? "" :
         cardSectionHtml("Designated activities",
           designatedCount(gres.keys)
             ? fmtInt(designatedCount(gres.keys)) + ""
             : "Awaiting",
-          cardDesignateHtml(gres.keys), true) +
+          cardDesignateHtml(gres.keys), true)) +
         "</div>";
     });
     return outcomeGridHtml(slot, ps, cards);
@@ -8141,13 +8488,14 @@
       (asReport && !reportedStrategies(gkey).length && (publicMode() || !unlocked()) ? "" :
       cardSectionHtml("Recommended strategies",
         reportedStrategies(gkey).length ? fmtInt(reportedStrategies(gkey).length) + "" : "Awaiting",
-        reportedStrategiesHtml(gkey), false, "cplfund-strat")) +
+        reportedStrategiesHtml(gkey), publicMode(), "cplfund-strat")) +
+      (publicMode() && !ids.length ? "" :
       cardSectionHtml("Designated activities",
         ids.length ? fmtInt(ids.length) + "" : "Awaiting",
         designatedListHtml(gkey, true) +
           (publicMode() || !unlocked() ? ""
             : '<span class="cplfund-sec-pvlab">Curator only</span>' + projectDesignateHtml(gkey)),
-        true) + "</div>";
+        true)) + "</div>";
   }
 
   // The designation control: one register project, onto one goal. It lists only
@@ -8215,7 +8563,10 @@
         ? ' <span class="cplfund-rprio-drift">The register now calls this &ldquo;' + esc(live.name) +
           '&rdquo;; the public page still reads &ldquo;' + esc(stored) + '&rdquo;.</span>'
         : "";
-      var outcome = live
+      // ⚠️ NAMES ONLY ON A PUBLIC RENDERING (Sam, 2026-10-15: "The CPL project
+      // dashboard is internal team information for now"). The status and the
+      // percent complete are the project register's; the Internal view keeps them.
+      var outcome = pub ? "" : live
         ? '<span class="cplfund-rprio-state">' + esc(live.status || "no status") + "</span>" +
           (live.pct != null && live.pct !== "" ? ' <span class="dk">' + fmtInt(live.pct) + "% complete</span>" : "")
         : '<span class="dk">Outcomes are reported in the Activities register.</span>';
@@ -9291,7 +9642,7 @@
     // relabels them instead of leaving one of the two lying.
     var basisTotal = totalSize();
     out.push(card({ v: fmtInt(basisTotal),
-      l: "Institution " + basisLabel() + " (allocation basis), summed over all " + oneRoster().length +
+      l: "Institution " + basisLabel() + " (allocation basis" + ncWeightWords() + "), summed over all " + oneRoster().length +
         " institutions",
       note: basisTotal > 0
         ? fmtRate(per / basisTotal) + " of the " + fmtMoney(per) + " annual tranche per " +
@@ -9598,7 +9949,6 @@
     // AS COLLEGES SEE IT (Sam, 2026-09-30): "a button to the Public View that
     // allows curators to see the public view as they see it (without the
     // curator choices showing)", flipping back to edit. Session-only.
-    publicEye: false,
     docType: "memo",    // memo | letter | report | brief
     textEditing: null,  // key of the prose block a signed-in reviewer is editing, else null
     cardRenaming: null, // card id whose custom-title field Rename opened (2026-09-24), else null
@@ -9625,35 +9975,26 @@
   var SEC_STORE_RETIRED = "cplfund_sections_v2";
   var SECTION_DEFAULT_OPEN = { about: true, college: true };
   var SEC_STATE = {};
+  var _lastRenderPublic = null;   // the view the last redraw drew (see render)
   try { localStorage.removeItem(SEC_STORE_RETIRED); } catch (e) {}
   function sectionOpen(id) {
     if (Object.prototype.hasOwnProperty.call(SEC_STATE, id)) return SEC_STATE[id] !== false;   // honor a toggle made this visit
+    // A public rendering folds the introduction (Sam, 2026-10-15: it repeats the
+    // explainer); the Internal view keeps it open.
+    if (id === "about" && publicMode()) return false;
     return !!SECTION_DEFAULT_OPEN[id];   // default: the introduction and the institution table
   }
   function saveSectionState(id, open) { SEC_STATE[id] = !!open; }
   function sectionShell(id, titleHtml, bodyHtml) {
     SEC_TITLE_DEFAULT[id] = titleHtml;              // the house title, for Restore and for the rename seed
     var head = titleIsCustom(id) ? esc(titleOverride(id)) : titleHtml;
-    if (publicMode() && secHidden(id)) {
-      // Excluded. A real public rendering drops the section entirely; the
-      // curator's own preview keeps a STUB — the title, the state, and the way
-      // back. A section excluded from the preview with nothing left behind
-      // could only be restored from the internal view, and not having to go
-      // there is the whole point of acting here. The stub carries no body, so
-      // the preview stays an honest account of what a college reads.
-      if (!publicPreview()) return "";
-      return '<div class="cplfund-sec cplfund-sec-stub" data-secstub="' + esc(id) + '">' +
-        '<div class="cplfund-sec-sum"><h3>' + head + "</h3>" +
-        '<span class="cplfund-sec-flag">Excluded from the public page</span></div>' +
-        secPreviewCtlHtml(id) + "</div>";
-    }
-    // The state word is a SPAN, not a control: a curator has to see that a
-    // section is held back without opening it, and nothing interactive may
-    // nest inside the summary.
-    var flag = (unlocked() && !publicMode() && secHidden(id))
-      ? '<span class="cplfund-sec-flag">Hidden on the public page</span>' : "";
+    // A public rendering of the tab's own sections drops one a curator hid.
+    // Since 2026-10-15 (call 1) no shipped page draws that rendering: the one
+    // public page is funding-model/, with its own hidden blocks, and the tab's
+    // sections carry no Hide of their own.
+    if (publicMode() && secHidden(id)) return "";
     return '<details class="cplfund-sec" data-sec="' + esc(id) + '"' + (sectionOpen(id) ? " open" : "") + ">" +
-      '<summary class="cplfund-sec-sum"><h3>' + head + '</h3>' + flag +
+      '<summary class="cplfund-sec-sum"><h3>' + head + '</h3>' +
       '<span class="cplfund-sec-word" aria-hidden="true"></span></summary>' +
       '<div class="cplfund-sec-body">' + sectionCtlHtml(id) + bodyHtml + "</div></details>";
   }
@@ -9910,20 +10251,58 @@
   // twice: once for real, once with the ceiling OFF, which is what makes the
   // "released" figure the money the ceiling actually moved rather than a proxy
   // for it.
-  function solveAlloc(cap) {
+  // `w` is the noncredit weight. It is passed, never read from ncWeight():
+  // allocModel() is where that weight is solved, so a solve that asked for it
+  // would ask itself.
+  function solveAlloc(cap, w) {
     return solveBounded({
       rows: oneRoster(),
       keyOf: function (c) { return c.college; },
-      sizeOf: sizeOf,
+      sizeOf: function (c) { return sizeOfW(c, w); },
       net: netCollege(),
       floor: floorWindow(),
       cap: cap
     });
   }
+  // The noncredit shares of every award, summed, under weight w.
+  function ncTotalAt(cap, w) {
+    var r = solveAlloc(cap, w), t = 0;
+    oneRoster().forEach(function (c) { t += (r.W[c.college] || 0) * laneShareOfW(c, w).nc; });
+    return t;
+  }
+  // The weight that brings noncredit's portion to the curator's percentage.
+  // The noncredit total rises with the weight (a heavier noncredit FTES both
+  // enlarges the awards that carry noncredit and moves more of each into its
+  // noncredit share), so a geometric bisection finds it. Between 1/10,000 and
+  // 10,000 lies every portion the base award and cap allow; outside that band
+  // the percentage cannot be reached, and the result says which side.
+  var NC_W_LO = 1e-4, NC_W_HI = 1e4;
+  function solveNcWeight(cap) {
+    var net = netCollege();
+    var natural = net > 0 ? ncTotalAt(cap, 1) / net : 0;
+    var pct = ncPortionSet();
+    var out = { set: pct, w: 1, natural: natural, reached: natural, unreachable: null };
+    if (pct == null || !(net > 0)) return out;
+    var goal = net * pct / 100;
+    var atLo = ncTotalAt(cap, NC_W_LO), atHi = ncTotalAt(cap, NC_W_HI);
+    out.min = atLo / net; out.max = atHi / net;
+    if (goal <= atLo) { out.w = NC_W_LO; out.reached = out.min; out.unreachable = "low"; return out; }
+    if (goal >= atHi) { out.w = NC_W_HI; out.reached = out.max; out.unreachable = "high"; return out; }
+    var lo = NC_W_LO, hi = NC_W_HI;
+    for (var i = 0; i < 64; i++) {
+      var mid = Math.sqrt(lo * hi);
+      if (ncTotalAt(cap, mid) < goal) lo = mid; else hi = mid;
+    }
+    out.w = Math.sqrt(lo * hi);
+    out.reached = ncTotalAt(cap, out.w) / net;
+    return out;
+  }
   function allocModel() {
     if (_allocCache) return _allocCache;
     var cap = capWindow();
-    var r = solveAlloc(cap);
+    var ncp = solveNcWeight(cap);
+    var w = ncp.w;
+    var r = solveAlloc(cap, w);
     var cols = oneRoster();
     // What the FLOOR costs the pool: the top-up vs a pure proportional split.
     // Every row is measured against the same floor now — the reduced-floor case
@@ -9931,7 +10310,7 @@
     var cost = 0;
     cols.forEach(function (c) {
       if (r.floored[c.college] && r.totSize > 0) {
-        cost += Math.max(0, r.floorFor(c) - sizeOf(c) / r.totSize * r.net);
+        cost += Math.max(0, r.floorFor(c) - sizeOfW(c, w) / r.totSize * r.net);
       }
     });
     // What the CEILING releases: measured against THIS SAME MODEL with the
@@ -9940,7 +10319,7 @@
     // roster, and only the first one is money that actually changed hands.
     var released = 0;
     if (cap > 0 && Object.keys(r.capped).length) {
-      var openW = solveAlloc(0).W;
+      var openW = solveAlloc(0, w).W;
       cols.forEach(function (c) {
         if (r.capped[c.college]) released += Math.max(0, (openW[c.college] || 0) - (r.W[c.college] || 0));
       });
@@ -9954,7 +10333,10 @@
       // A ceiling set below the floor is a curator typo, not a policy: capFor()
       // clamps it away so nobody is paid under the minimum, and this flag says
       // so on screen rather than leaving the two boxes silently contradicting.
-      capBelowFloor: cap > 0 && r.floor > 0 && cap < r.floor
+      capBelowFloor: cap > 0 && r.floor > 0 && cap < r.floor,
+      // The noncredit weight this solve used, and what it reached (fractions
+      // of the total to institutions): `natural` is the teaching mix alone.
+      ncW: w, ncPortion: ncp
     };
     return _allocCache;
   }
@@ -11000,7 +11382,7 @@
     return '<tr class="cplfund-detail"><td colspan="' + ncols + '">' +
       '<div class="cplfund-detail-grid">' +
       '<div><span class="dk">' + (usesFtes() ? "FTES:" : "Headcount:") + "</span> " +
-      fmtInt(totalSize()) + " statewide " + basisLabel() + " across " +
+      fmtInt(totalPlainFtes()) + " statewide " + basisLabel() + " across " +
       fmtInt(oneRoster().length) + " institutions</div>" +
       prio +
       "</div></td></tr>" +
@@ -11428,10 +11810,10 @@
   function requirementsList() {
     var list = [];
     if (coordShown()) {
-      list.push({ text: coordLabel(),
+      list.push({ text: coordLabel(), kind: "coord",
         note: ELIG.coordOk ? (ELIG.coordN + " of " + eligColleges().length + " colleges currently have one on file in MAP") : "" });
     }
-    if (partShown()) list.push({ text: partReqText() });
+    if (partShown()) list.push({ text: partReqText(), kind: "part" });
     extraReqs().forEach(function (t) { if (String(t).trim()) list.push({ text: String(t).trim() }); });
     return list;
   }
@@ -12277,26 +12659,264 @@
     v = String(v || "");
     return v.indexOf(ONE_DISTRICT) === 0 ? districtShort(v.slice(ONE_DISTRICT.length)) : dispName(v);
   }
-  function oneCollegeHtml() {
+  function oneOptionsHtml(selected) {
     var opts = base().colleges.slice().sort(function (a, b) {
       return dispName(a.college).localeCompare(dispName(b.college));
     }).map(function (c) {
-      return '<option value="' + esc(c.college) + '"' + (c.college === state.oneCollege ? " selected" : "") + ">" +
+      return '<option value="' + esc(c.college) + '"' + (c.college === selected ? " selected" : "") + ">" +
         esc(dispName(c.college)) + "</option>";
     }).join("");
     var dopts = multiDistricts().map(function (d) {
       var v = ONE_DISTRICT + d;
-      return '<option value="' + esc(v) + '"' + (v === state.oneCollege ? " selected" : "") + ">" +
+      return '<option value="' + esc(v) + '"' + (v === selected ? " selected" : "") + ">" +
         esc(districtShort(d)) + "</option>";
     }).join("");
-    return '<div class="cplfund-toolbar"><label for="cplFundOnePick">Institution or district</label> ' +
-      '<select id="cplFundOnePick"><option value="">Choose an institution or district</option>' +
+    return '<option value="">Choose your college or district</option>' +
       '<optgroup label="Institutions">' + opts + "</optgroup>" +
-      (dopts ? '<optgroup label="Districts">' + dopts + "</optgroup>" : "") + "</select>" +
+      (dopts ? '<optgroup label="Districts">' + dopts + "</optgroup>" : "");
+  }
+  function oneChoiceValid(v) {
+    v = String(v || "");
+    if (!v) return false;
+    if (v.indexOf(ONE_DISTRICT) === 0) return multiDistricts().indexOf(v.slice(ONE_DISTRICT.length)) >= 0;
+    return base().colleges.some(function (c) { return c.college === v; });
+  }
+  // ── STEP 1: CHOOSE YOUR COLLEGE (Sam, 2026-10-15, his mockup) ───────────
+  // "Make the College selector more prominent so folks see that it is an
+  // important first step." One chooser, first: at the top of the College
+  // Dashboard on the tab's Public view, and above the Contents on the explainer,
+  // which gives it a mount (#cplFundStep1Mount) outside the embedded section.
+  // The id stays cplFundOnePick, so every reader of the old chooser still finds it.
+  function stepOneExternal() {
+    return embedMode() && !!document.getElementById("cplFundStep1Mount");
+  }
+  function stepOneChosen() { return oneCollegeView() && state.oneCollege ? state.oneCollege : ""; }
+  function stepOneLineHtml(chosen) {
+    return chosen
+      ? "Showing " + esc(oneChoiceName(chosen)) + ". Its funding, minimum conditions, targets and suggested " +
+        'steps lead the page. <button type="button" class="cplfund-textbtn cplfund-step1-clear" id="cplFundOneClear">' +
+        "Choose another college</button>"
+      : "Your college&rsquo;s funding, minimum conditions, targets and suggested steps then lead the page.";
+  }
+  function stepOneHtml() {
+    if (!publicMode()) return "";
+    var chosen = stepOneChosen();
+    return '<div class="cplfund-step1" data-step1="1">' +
+      '<p class="cplfund-step1-k">Step 1</p>' +
+      '<label class="cplfund-step1-l" for="cplFundOnePick">Choose your college or district</label>' +
+      '<select id="cplFundOnePick" class="cplfund-step1-sel">' + oneOptionsHtml(chosen) + "</select>" +
+      '<p class="cplfund-step1-s">' + stepOneLineHtml(chosen) + "</p></div>";
+  }
+  // ⚠ THE LIST STAYS PUT ACROSS REDRAWS (Sam, 2026-10-15, call 7: the black
+  // box). Every render() rebuilt #cplFundOnePick, five times while the page
+  // loaded, and a list a reader had open closed under the pointer. A redraw now
+  // patches the list already on the page: its options only when they change,
+  // its value, and the line under it. On the explainer the list has its own
+  // mount outside the table and is never removed; inside the table's mount the
+  // same element is put back where the rewrite drew a fresh one.
+  function patchStepOne(sel) {
+    var chosen = stepOneChosen(), opts = oneOptionsHtml("");
+    if (sel._cplOpts !== opts) { sel.innerHTML = opts; sel._cplOpts = opts; }
+    if (sel.value !== chosen) sel.value = chosen;
+    var box = sel.closest ? sel.closest(".cplfund-step1") : null;
+    var line = box && box.querySelector(".cplfund-step1-s");
+    var html = stepOneLineHtml(chosen);
+    if (line && line._cplHtml !== html) { line.innerHTML = html; line._cplHtml = html; }
+  }
+  function paintStepOneMount(host) {
+    var sel = host.querySelector("#cplFundOnePick");
+    if (!sel || !publicMode()) { host.innerHTML = stepOneHtml(); return; }
+    patchStepOne(sel);
+  }
+  function keepStepOne(kept, scope) {
+    var fresh = scope.querySelector("#cplFundOnePick");
+    if (!kept || !fresh || kept === fresh) return;
+    fresh.parentNode.replaceChild(kept, fresh);
+    patchStepOne(kept);
+  }
+  // The reader's choice, remembered in their own browser (Sam, 2026-10-15,
+  // call 9: "Remember it"), so a college that returns sees its own funding
+  // first. A per-viewer convenience: it never leaves the browser.
+  var ONE_STORE = "cplfund_one_choice_v1";
+  function chooseOne(v) {
+    v = oneChoiceValid(v) ? String(v) : "";
+    state.oneCollege = v;
+    if (v) state.collegeView = "one";
+    try { if (v) localStorage.setItem(ONE_STORE, v); else localStorage.removeItem(ONE_STORE); } catch (e) {}
+    render();
+    try { document.dispatchEvent(new CustomEvent("cplfund:onechoice", { detail: { value: v } })); } catch (e) {}
+  }
+  var _oneRestored = false;
+  function restoreOneChoice() {
+    if (_oneRestored || !publicMode()) return;
+    _oneRestored = true;
+    if (state.oneCollege) return;
+    var v = null;
+    try { v = localStorage.getItem(ONE_STORE); } catch (e) {}
+    if (v && oneChoiceValid(v)) { state.oneCollege = v; state.collegeView = "one"; }
+  }
+  // ── THE PDF ASKS FOR A COLLEGE FIRST (Sam, 2026-10-15, call 5) ──────────
+  // On a public rendering with no college chosen, PDF asks for one, with the
+  // statewide page as the second choice. `go` prints: window.print() on the
+  // explainer, the print window on the tab.
+  function pdfGate(go) {
+    if (!publicMode() || (oneCollegeView() && state.oneCollege)) { go(); return; }
+    var dlg = document.getElementById("cplFundPdfAsk");
+    if (!dlg) {
+      dlg = document.createElement("dialog");
+      dlg.id = "cplFundPdfAsk";
+      dlg.className = "cplfund-pdfask";
+      dlg.setAttribute("aria-labelledby", "cplFundPdfAskH");
+      document.body.appendChild(dlg);
+    }
+    dlg.innerHTML = '<div class="cplfund-pdfask-in"><h2 id="cplFundPdfAskH">Choose a college first</h2>' +
+      "<p>The PDF prints your college&rsquo;s funding first, then the rest of the page.</p>" +
+      '<label for="cplFundPdfAskPick">College or district</label>' +
+      '<select id="cplFundPdfAskPick">' + oneOptionsHtml("") + "</select>" +
+      '<div class="cplfund-pdfask-row">' +
+      '<button type="button" class="cplfund-pdfask-go" id="cplFundPdfAskGo" disabled>Continue to PDF</button>' +
+      '<button type="button" class="cplfund-textbtn" id="cplFundPdfAskState">Print the statewide page instead</button>' +
+      '<button type="button" class="cplfund-textbtn" id="cplFundPdfAskCancel">Cancel</button></div></div>';
+    var close = function () {
+      if (typeof dlg.close === "function") { try { dlg.close(); } catch (e) {} }
+      dlg.removeAttribute("open");
+    };
+    var pick = dlg.querySelector("#cplFundPdfAskPick"), goBtn = dlg.querySelector("#cplFundPdfAskGo");
+    pick.addEventListener("change", function () { goBtn.disabled = !pick.value; });
+    goBtn.addEventListener("click", function () {
+      var v = pick.value;
+      close();
+      chooseOne(v);
+      setTimeout(go, 400);   // the chosen college's block paints first
+    });
+    dlg.querySelector("#cplFundPdfAskState").addEventListener("click", function () { close(); go(); });
+    dlg.querySelector("#cplFundPdfAskCancel").addEventListener("click", close);
+    if (typeof dlg.showModal === "function") { try { dlg.showModal(); } catch (e) { dlg.setAttribute("open", ""); } }
+    else dlg.setAttribute("open", "");
+    try { pick.focus(); } catch (e) {}
+    return dlg;
+  }
+  // ── HOW TO MEET IT (Sam, 2026-10-15, calls 4 and 5) ────────────────────
+  // The words How to meet it after each minimum condition open one dialog
+  // holding that condition's passage (mc_how_*), with this institution's
+  // figures in it: the confirmation deadline, and where it stands on the
+  // veteran JSTs. The college panel (college_briefing.js conditionsHtml, on My
+  // College, this tab and the explainer) and the explainer's Eligibility
+  // requirements open it here, so every surface reads one text. Focus moves
+  // into the dialog, Escape closes it, and focus returns to the words.
+  //
+  // The JST line follows the counts ADR: a masked count gives no percent.
+  function howToFigs(college) {
+    var figs = { deadline: deadlineSpelled(), "JST status": "" };
+    var c = college ? rosterRow(college) : null;
+    if (!c) return figs;
+    var pf = perf(), vs = vetStar();
+    if (!pf || !vs) return figs;   // still loading: the line waits rather than guessing
+    if (vs[c.college]) { figs["JST status"] = dispName(c.college) + " meets this condition today."; return figs; }
+    var v = pf.vet_jst && pf.vet_jst[c.college];
+    if (!v) figs["JST status"] = "The Chancellor’s Office records no enrolled veterans for " + dispName(c.college) + ".";
+    else if (v.vets_suppressed || v.jst_suppressed) {
+      figs["JST status"] = "MAP holds fewer than " + suppressFloor() + " JSTs or enrolled veterans for " +
+        dispName(c.college) + ", so the counts are not shown.";
+    } else {
+      figs["JST status"] = "MAP holds " + fmtInt(v.jst || 0) + " JSTs for " + fmtInt(v.vets || 0) + " enrolled veterans at " +
+        dispName(c.college) + (v.pct != null ? " (" + Math.round(v.pct * 100) + "%)" : "") + ".";
+    }
+    return figs;
+  }
+  // Confirm now, on a page that carries the institution table: the table, the
+  // college's row open and its confirmation form focused, the flow the row's
+  // own Confirm chip runs (data-optinjump). With no college chosen, the table
+  // and its search box, where the reader finds their row.
+  function confirmJump(college) {
+    var c = college ? baseCollege(college) : null;
+    state.collegeView = "all";
+    saveSectionState("college", true);
+    var host = document.getElementById("cplFundingMount");
+    var fold = host && host.closest ? host.closest("details") : null;
+    if (fold && !fold.open) fold.open = true;   // the explainer's institutions fold
+    if (c) {
+      state.q = "";
+      state.open["c:" + c.college] = true;
+      OPTIN_UI[c.college] = { open: true };
+      _optinFocusCollege = c.college;
+    }
+    render();
+    if (!c) {
+      var s = document.getElementById("cplFundSearch");
+      if (s) { try { s.focus(); } catch (e) {} }
+    }
+  }
+  // opts.surface "mycollege": My College, where Confirm now is a link to the
+  // college's row on the public funding page; anywhere else it opens the row.
+  function howToOpen(kind, college, opts) {
+    opts = opts || {};
+    var c = college ? rosterRow(college) : null;
+    // A noncredit-only institution meets the veteran condition with exhibits.
+    if (kind === "vetstar" && c && isNcOnlyName(c.college)) kind = "exhibits";
+    var b = HOW_BY_KIND[kind];
+    if (!b) return null;
+    var opener = opts.opener || document.activeElement;
+    var dlg = document.getElementById("cplFundHowTo");
+    if (!dlg) {
+      dlg = document.createElement("dialog");
+      dlg.id = "cplFundHowTo";
+      dlg.className = "cplfund-howto";
+      dlg.setAttribute("aria-labelledby", "cplFundHowToH");
+      document.body.appendChild(dlg);
+    }
+    ensureCss();
+    var act = "";
+    if (kind === "part") {
+      act = opts.surface === "mycollege"
+        ? '<a class="cplfund-howto-go" href="funding-model/?college=' + encodeURIComponent(c ? c.college : "") +
+          '&amp;confirm=1#institutions" target="_blank" rel="noopener">Confirm now</a>'
+        : '<button type="button" class="cplfund-howto-go" data-howtoconfirm="1">Confirm now</button>';
+    }
+    // On the statewide list the veteran condition names its noncredit twin.
+    var also = (kind === "vetstar" && !c && HOW_BY_KIND.exhibits)
+      ? '<p class="cplfund-howto-also">A noncredit-only institution meets this condition another way: ' +
+        '<button type="button" class="cplfund-howto-w" data-howtokind="exhibits">its steps</button>.</p>' : "";
+    dlg.innerHTML = '<div class="cplfund-howto-in">' +
+      '<h2 id="cplFundHowToH" tabindex="-1">' + esc(b.title) + (c ? '<span class="cplfund-howto-who">' +
+        esc(dispName(c.college)) + "</span>" : "") + "</h2>" +
+      '<div class="cplfund-howto-body" data-howtokey="' + esc(b.key) + '">' + mcBlockHtml(b.key, howToFigs(college)) + "</div>" +
+      (act ? '<div class="cplfund-howto-row">' + act + "</div>" : "") + also +
+      '<div class="cplfund-howto-row"><button type="button" class="cplfund-howto-w" data-howtoclose="1">Close</button></div></div>';
+    var closed = false;
+    var close = function (back) {
+      if (closed) return;
+      closed = true;
+      if (typeof dlg.close === "function") { try { dlg.close(); } catch (e) {} }
+      dlg.removeAttribute("open");
+      if (back === false) return;
+      var to = opener && opener.isConnected ? opener : document.querySelector('[data-howto="' + kind + '"]');
+      if (to && typeof to.focus === "function") { try { to.focus(); } catch (e) {} }
+    };
+    dlg.onkeydown = function (e) { if (e.key === "Escape" || e.key === "Esc") { e.preventDefault(); close(); } };
+    dlg.oncancel = function (e) { e.preventDefault(); close(); };
+    dlg.onclick = function (e) {
+      var t = e.target;
+      if (t === dlg) { close(); return; }   // a click on the backdrop
+      if (!t || !t.closest) return;
+      if (t.closest("[data-howtoclose]")) close();
+      else if (t.closest("[data-howtoconfirm]")) { close(false); confirmJump(c ? c.college : ""); }
+      else if (t.closest("[data-howtokind]")) { close(false); howToOpen(t.closest("[data-howtokind]").getAttribute("data-howtokind"), college, { surface: opts.surface, opener: opener }); }
+    };
+    if (typeof dlg.showModal === "function") { try { dlg.showModal(); } catch (e) { dlg.setAttribute("open", ""); } }
+    else dlg.setAttribute("open", "");
+    var h = dlg.querySelector("#cplFundHowToH");
+    if (h) { try { h.focus(); } catch (e) {} }
+    return dlg;
+  }
+  function oneCollegeHtml() {
+    return (embedMode() ? "" :
       // A PDF of what the view shows (Sam, 2026-09-30: "add a pdf button on
-      // all the My CPL Funding views").
-      '<button type="button" class="cplfund-optbtn" id="cplFundOnePdf"' + (state.oneCollege ? "" : " disabled") +
-      ' title="Open a print-ready copy of this funding view, then choose Save as PDF">Save as PDF</button></div>' +
+      // all the My CPL Funding views"). The explainer prints the whole page
+      // from its own PDF control, which asks for a college first (2026-10-15).
+      '<div class="cplfund-toolbar"><button type="button" class="cplfund-optbtn" id="cplFundOnePdf"' +
+      (state.oneCollege ? "" : " disabled") +
+      ' title="Open a print-ready copy of this funding view, then choose Save as PDF">Save as PDF</button></div>') +
       '<div id="cplFundOnePanel" class="cplfund-onepanel" aria-live="polite">' +
       '<p class="dk">' + (state.oneCollege ? "Loading this funding view&hellip;" : "Choose an institution or district to see its funding.") + "</p></div>";
   }
@@ -12464,7 +13084,11 @@
     var out = [];
     var mount = document.getElementById("cplFundingMount");
     if (embedMode()) {
-      out.push({ surface: "Funding explainer", detail: "every figure and the institution table, " + scenarioWords() });
+      // The three boxes and their words, the credit and noncredit split and the
+      // noncredit portion (2026-10-14) are named because a curator edits them
+      // on the tab and presses Refresh to see them land.
+      out.push({ surface: "Funding explainer", detail: "every figure, the three boxes and their words, the credit and noncredit split " +
+        "and the noncredit portion, every passage, and the institution table, " + scenarioWords() });
     } else if (mount && mount.querySelector(".cplfund")) {
       out.push({ surface: "Implementation Funding, " + (state.previewPublic ? "Public view" : "Internal view"),
         detail: "every section and the College Dashboard, " + scenarioWords() });
@@ -12610,34 +13234,23 @@
     for (var i = 0; i < ids.length; i++) if (sectionOpen(ids[i])) return true;
     return false;
   }
+  // The View control: Internal, and the Public page (Sam, 2026-10-15, call 1),
+  // which is funding-model/ itself, framed in the tab.
+  function viewControlHtml() {
+    if (window.CPL_FUNDING_PUBLIC) return "";
+    return '<span class="cplfund-viewlab">View</span>' +
+      '<button type="button" class="cplfund-optbtn" data-viewmode="internal" aria-pressed="' + (!state.previewPublic) +
+      '" title="The MAP-team rendering: dials, diagnostics, and the Report sub-view.">Internal</button>' +
+      '<button type="button" class="cplfund-optbtn" data-viewmode="public" aria-pressed="' + (!!state.previewPublic) +
+      '" title="The one public page, funding-model/, as colleges read it. Signed in, Edit this page on it arranges and edits it.">Public page</button>';
+  }
   function actionsRowHtml() {
-    var view = "";
-    if (!window.CPL_FUNDING_PUBLIC) {
-      view = '<span class="cplfund-viewlab">View</span>' +
-        '<button type="button" class="cplfund-optbtn" data-viewmode="internal" aria-pressed="' + (!state.previewPublic) +
-        '" title="The MAP-team rendering — dials, diagnostics, and the Report sub-view.">Internal</button>' +
-        '<button type="button" class="cplfund-optbtn" data-viewmode="public" aria-pressed="' + (!!state.previewPublic) +
-        '" title="Preview what colleges see — the reviewer-only controls drop out; everyone else sees the page as it is.">Public</button>';
-      // In the Public view a curator still sees the curator-only choices
-      // (Exclude, Position, the explainer's section list). This flips them off
-      // and back, so an edit can be checked the way a college reads it.
-      if (state.previewPublic && unlocked()) {
-        view += '<button type="button" class="cplfund-optbtn" id="cplFundPublicEye" aria-pressed="' + (!!state.publicEye) +
-          '" title="' + (state.publicEye
-            ? "Showing the page exactly as colleges see it. Press again to bring back the curator choices."
-            : "Hide the curator choices and show the page exactly as colleges see it.") +
-          '">As colleges see it</button>';
-      }
-    }
+    var view = viewControlHtml();
     return '<div class="cplfund-actions" role="toolbar" aria-label="Page actions">' +
       '<button type="button" class="cplfund-optbtn" id="cplFundXall">' +
         (anySectionOpenNow() ? "Collapse all sections" : "Expand all sections") + "</button>" +
       (publicMode() ? "" :
         '<button type="button" class="cplfund-optbtn" id="cplFundDraftMemo" title="Open the draft memo — the Report sub-view, carrying this allocation.">Draft memo</button>') +
-      // My CPL Funding at the top of the Public view (Sam, 2026-09-30); the
-      // explainer carries its own in its header.
-      (publicMode() ? '<button type="button" class="cplfund-optbtn" id="cplFundMyFundingTop" ' +
-        'title="Choose your college or district and see its funding">My CPL Funding</button>' : "") +
       '<button type="button" class="cplfund-optbtn" id="cplFundPdfTop" title="Open a print-ready view of the whole tab, then use your browser&#39;s Print and choose Save as PDF">Save as PDF</button>' +
       // Refresh (Sam, 2026-09-30): the Internal view alone, where the edits
       // are made. It re-reads the saved model here and in every other open
@@ -12654,6 +13267,65 @@
           'title="Put the sections back in the order this page ships with">Restore the default section order</button>'
         : "") +
       view + "</div>";
+  }
+
+  // ── THE PUBLIC PAGE, IN THE TAB (Sam, 2026-10-15, call 1) ──────────────
+  // The Public page view frames funding-model/, the page colleges read, in
+  // place of the tab's sections, so the tab shows the one public rendering
+  // there is. Same origin, so a signed-in curator is signed in inside it, and
+  // its Edit this page arranges and edits it there. The frame takes the
+  // height of the page it holds (a ResizeObserver on its document), so the
+  // tab scrolls once and the frame never scrolls inside it.
+  //
+  // The scenario: a curator working on a scenario other than the published
+  // one sees the page for that scenario (?scenario=, which the page names in
+  // words), as the old preview showed the scenario being edited.
+  //
+  // ⚠️ THE FRAME IS NEVER REDRAWN WITH THE CHROME. render() runs on every
+  // remote load, and an <iframe> taken out of the document reloads when put
+  // back, so only the chrome above it is rewritten while its address holds.
+  function pageFrameSrc() {
+    var pub = publishedScenario();
+    return "funding-model/" + (activeScenario && activeScenario !== pub
+      ? "?scenario=" + encodeURIComponent(activeScenario) : "");
+  }
+  function pagePreviewChromeHtml() {
+    return controlStripHtml() +
+      '<div class="cplfund-actions" role="toolbar" aria-label="Page actions">' + viewControlHtml() +
+      '<a class="cplfund-optbtn cplfund-pv-open" href="' + esc(pageFrameSrc()) + '" target="_blank" rel="noopener">' +
+      "Open the page in its own window</a></div>" +
+      '<p class="cplfund-pv-note">The page colleges read' + (activeScenario !== publishedScenario()
+        ? ", for " + esc(activeScenario) + ", which is not yet published" : "") +
+      ". Signed in, Edit this page at its top arranges its blocks and edits its text.</p>";
+  }
+  function renderPagePreview(mount) {
+    var src = pageFrameSrc();
+    var host = mount.querySelector("#cplFundPvFrameHost");
+    var frame = host && host.querySelector("iframe");
+    if (!frame || frame.getAttribute("src") !== src) {
+      mount.innerHTML = '<div class="cplfund cplfund-pagepv"><div id="cplFundPvChrome"></div>' +
+        '<div id="cplFundPvFrameHost"><iframe class="cplfund-pv-frame" src="' + esc(src) + '" ' +
+        'title="The public funding page, as colleges read it"></iframe></div></div>';
+      frame = mount.querySelector("#cplFundPvFrameHost iframe");
+      frame.addEventListener("load", function () { sizePageFrame(frame); });
+    }
+    mount.querySelector("#cplFundPvChrome").innerHTML = pagePreviewChromeHtml();
+    wire();
+  }
+  function sizePageFrame(frame) {
+    var doc = null;
+    try { doc = frame.contentDocument; } catch (e) { doc = null; }
+    if (!doc || !doc.documentElement) return;
+    var fit = function () {
+      var h = Math.max(doc.documentElement.scrollHeight, doc.body ? doc.body.scrollHeight : 0);
+      if (h > 0) frame.style.height = h + "px";
+    };
+    fit();
+    var RO = frame.contentWindow && frame.contentWindow.ResizeObserver || window.ResizeObserver;
+    if (RO && !frame._cplObserved) {
+      frame._cplObserved = true;
+      try { new RO(fit).observe(doc.body || doc.documentElement); } catch (e) {}
+    }
   }
 
   // Build every section, then emit them in the stored order. The builder runs
@@ -12758,9 +13430,17 @@
     // SEC_STATE that had not heard of the click, and the Introduction, open by
     // default, came back open. Measured in Chromium: reopened, and stayed open
     // on the next redraw. So every redraw first reads what is on the screen.
+    // ...except across a switch between the Internal and Public views: each
+    // view opens on its own introduction default (folded on a public rendering,
+    // Sam 2026-10-15), whatever the other view's screen showed.
+    var pubNow = publicMode();
+    var viewSwitched = _lastRenderPublic !== null && _lastRenderPublic !== pubNow;
     mount.querySelectorAll("details.cplfund-sec[data-sec]").forEach(function (dt) {
-      saveSectionState(dt.getAttribute("data-sec"), dt.open);
+      var sid = dt.getAttribute("data-sec");
+      if (sid === "about" && viewSwitched) { delete SEC_STATE.about; return; }
+      saveSectionState(sid, dt.open);
     });
+    _lastRenderPublic = pubNow;
     ensureCss();
     ensureDraftChip();
     paintTitleLink();
@@ -12770,6 +13450,7 @@
       mount.innerHTML = '<div class="cplfund-empty">The CPL funding figures did not load. Reload the page.</div>';
       return;
     }
+    if (pagePreview()) { renderPagePreview(mount); return; }
     // Clamp the view slot to the number of selected years.
     if (Number(state.viewSlot) > nYears()) state.viewSlot = "1";
     // Report sub-view (Sam, 2026-07-23) — the editable memo replaces the model body;
@@ -12795,13 +13476,17 @@
     // 2026-07-27). The college section body (toolbar + table) is built first so
     // its IDs (#cplFundSearch/#cplFundCount/#cplFundTable) live inside the fold.
     // Section titles are Sam's (renamed live, 2026-08-31).
+    restoreOneChoice();
     var oneView = oneCollegeView();
     var collegeBody =
+      (stepOneExternal() ? "" : stepOneHtml()) +
       // My CPL Funding carries its own one-line introduction (Sam, 2026-10-01,
       // mockup card 1, his words); the table's introduction describes columns
       // and a pie this view does not show.
       (oneView ? '<div class="cplfund-prose dk cplfund-college-intro" data-textblock="college_intro_one"><p>' +
-        ONE_VIEW_INTRO + "</p></div>" : proseBlockHtml("college_intro", "dk cplfund-college-intro")) +
+        mcTextHtml("mc_intro", {}) + "</p></div>" :
+        // The public page's own copy of the table's introduction (call 2).
+        proseBlockHtml(publicSurface() ? "x_table_intro" : "college_intro", "dk cplfund-college-intro")) +
       collegeViewSwitchHtml() +
       (oneView ? oneCollegeHtml() :
       '<div class="cplfund-toolbar">' +
@@ -12817,8 +13502,12 @@
     var collegeSection = collegeBody + (oneView ? "" : footHtml(d));
     // EMBED (the public explainer, 2026-09-02): only the institution table and
     // its footnote render — the host page carries its own chrome and story.
+    var keptPick = mount.querySelector("#cplFundOnePick");
     if (embedMode()) {
       mount.innerHTML = '<div class="cplfund cplfund-embed">' + collegeSection + "</div>";
+      keepStepOne(keptPick, mount);
+      var stepMount = document.getElementById("cplFundStep1Mount");
+      if (stepMount) paintStepOneMount(stepMount);
       updateCount();
       wire();
       scrollToDeepLink();
@@ -12833,7 +13522,6 @@
       '<div class="cplfund-src">Version as of ' + esc(String(d.model_version).replace(/\.\d+$/, "")) + "</div>" +
       actionsRowHtml() +
       authbarHtml() +
-      publicSectionsCtlHtml() +
       // ONE id-keyed map, emitted in the curator's stored order (Sam,
       // 2026-09-11). Every section is BUILT here in house order — the order of
       // these assignments is what SECTION_HOUSE_ORDER names, and the two have
@@ -12879,8 +13567,9 @@
       }) +
       // The explainer's own passages, last and closed: a curator's tool, never
       // one of the sections a college reads (Sam, 2026-10-09).
-      explainerTextSectionHtml() +
+      explainerTextSectionHtml() + mcTextSectionHtml() +
       "</div>";
+    keepStepOne(keptPick, mount);
     updateCount();
     wire();
     scrollToDeepLink();
@@ -13194,6 +13883,20 @@
       setFtesRate(fr);   // persistActive()/saveShared() re-render; don't double up
       return;
     }
+    // Noncredit's portion, a percentage. Blank (or 0) clears it, which returns
+    // the split to the teaching mix; anything outside (0, 100) bounces.
+    if (edit === "ncportion") {
+      var ov = activeOverride();
+      if (!String(raw).trim() || parseNum(raw) === 0) {
+        if (ov.pool) delete ov.pool.nc_portion_pct;
+        persistActive();
+        return;
+      }
+      var np = parseNum(raw);
+      if (np == null || !(np > 0 && np < 100)) { render(); return; }
+      setPool("nc_portion_pct", Math.round(np * 100) / 100);
+      return;
+    }
     if (edit === "pool-label") { setPoolLabel(el.getAttribute("data-field"), raw); return; }
     if (edit === "pool-custom-amt") {
       var ci = Number(idx), clist = customPool();
@@ -13417,16 +14120,19 @@
       state.collegeView = v;
       render();
     });
+    // Handlers by property: the list and its line survive redraws (call 7), so
+    // a listener added on every wire() would stack one deep per redraw.
     var onePick = document.getElementById("cplFundOnePick");
-    if (onePick) onePick.addEventListener("change", function () {
-      state.oneCollege = onePick.value || "";
-      render();
-    });
+    if (onePick) onePick.onchange = function () { chooseOne(onePick.value || ""); };
+    var oneClear = document.getElementById("cplFundOneClear");
+    if (oneClear) oneClear.onclick = function () {
+      chooseOne("");
+      var p2 = document.getElementById("cplFundOnePick");
+      if (p2) p2.focus();
+    };
     paintOnePanel();
     var onePdf = document.getElementById("cplFundOnePdf");
     if (onePdf) onePdf.addEventListener("click", printOne);
-    var myTop = document.getElementById("cplFundMyFundingTop");
-    if (myTop) myTop.addEventListener("click", showMyFunding);
     wireSeg("cplFundYear", function (v) { state.viewSlot = v; render(); });
     // The Lane seg control is retired (R1, 2026-08-31); the Allocation basis
     // control with it (2026-09-15) — its writer would have nothing to write to
@@ -13488,7 +14194,7 @@
     var pdfBtn = document.getElementById("cplFundPdf");
     if (pdfBtn) pdfBtn.addEventListener("click", openPdf);
     var pdfTop = document.getElementById("cplFundPdfTop");
-    if (pdfTop) pdfTop.addEventListener("click", openPdf);
+    if (pdfTop) pdfTop.addEventListener("click", function () { pdfGate(openPdf); });
     var refreshBtn = document.getElementById("cplFundRefresh");
     if (refreshBtn) refreshBtn.addEventListener("click", function () { if (!publicMode()) refreshAll(); });
     var memoTop = document.getElementById("cplFundDraftMemo");
@@ -13510,13 +14216,6 @@
         if (!!state.previewPublic === pub) return;
         state.previewPublic = pub; render();
       });
-    });
-    var eyeBtn = document.getElementById("cplFundPublicEye");
-    if (eyeBtn) eyeBtn.addEventListener("click", function () {
-      state.publicEye = !state.publicEye;
-      render();
-      var again = document.getElementById("cplFundPublicEye");
-      if (again) again.focus();
     });
 
     // Column show/hide checkboxes — toggle, persist, refresh the table only (the
@@ -13610,6 +14309,18 @@
         setText(key, ta ? ta.value : "");
       });
     });
+    // Bold / Italic: wrap the selection in the mark, or unwrap it when the mark
+    // already surrounds it. Spaces at either edge of a selection stay outside
+    // the marks, because "**word **" does not read as bold.
+    document.querySelectorAll("#cplFundingMount [data-textwrap]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var key = b.getAttribute("data-textfor"), mk = b.getAttribute("data-textwrap");
+        var ta = document.querySelector('#cplFundingMount [data-textarea="' + key + '"]');
+        if (!ta) return;
+        state.textDraft[key] = ta.value = wrapMark(ta.value, ta.selectionStart, ta.selectionEnd, mk, ta);
+        ta.focus();
+      });
+    });
     document.querySelectorAll("#cplFundingMount [data-textcancel]").forEach(function (b) {
       b.addEventListener("click", function () {
         var key = b.getAttribute("data-textcancel");
@@ -13668,34 +14379,14 @@
         setSecTitle(id, "");
       });
     });
-    document.querySelectorAll("#cplFundingMount [data-sechide]").forEach(function (b) {
-      b.addEventListener("click", function () { savingState = ""; setSecHidden(b.getAttribute("data-sechide"), true); });
-    });
-    document.querySelectorAll("#cplFundingMount [data-secshow]").forEach(function (b) {
-      b.addEventListener("click", function () { savingState = ""; setSecHidden(b.getAttribute("data-secshow"), false); });
-    });
-    // ── section reorder + the public-preview chips (Sam, 2026-09-11) ──
-    // Both position pickers land on moveSection(), which is pure over the id
-    // list, so the tests drive the reordering directly. The preview chips are
-    // the same two writes the internal buttons make — one setter, so the two
-    // views can never disagree about what "excluded" means.
+    // ── section reorder (Sam, 2026-09-11) ──
+    // The position picker lands on moveSection(), which is pure over the id
+    // list, so the tests drive the reordering directly.
     document.querySelectorAll("#cplFundingMount [data-secpos]").forEach(function (sel) {
       sel.addEventListener("change", function () {
         savingState = "";
         moveSection(sectionOrder().indexOf(sel.getAttribute("data-secpos")), Number(sel.value));
       });
-    });
-    document.querySelectorAll("#cplFundingMount [data-secpvpos]").forEach(function (sel) {
-      sel.addEventListener("change", function () {
-        savingState = "";
-        moveSection(sectionOrder().indexOf(sel.getAttribute("data-secpvpos")), Number(sel.value));
-      });
-    });
-    document.querySelectorAll("#cplFundingMount [data-secpvhide]").forEach(function (b) {
-      b.addEventListener("click", function () { savingState = ""; setSecHidden(b.getAttribute("data-secpvhide"), true); });
-    });
-    document.querySelectorAll("#cplFundingMount [data-secpvshow]").forEach(function (b) {
-      b.addEventListener("click", function () { savingState = ""; setSecHidden(b.getAttribute("data-secpvshow"), false); });
     });
     // ── project designation against a statutory goal (Sam, 2026-09-11) ──
     // The name is read off the register HERE, at designation time, and stored
@@ -13747,23 +14438,6 @@
         savingState = "";
         setProjectGoal(b.getAttribute("data-projrelease"), b.getAttribute("data-projgoal"), false);
       });
-    });
-    document.querySelectorAll("#cplFundingMount [data-pubsecpos]").forEach(function (sel) {
-      sel.addEventListener("change", function () {
-        savingState = "";
-        movePublicSection(publicSectionOrder().indexOf(sel.getAttribute("data-pubsecpos")), Number(sel.value));
-      });
-    });
-    document.querySelectorAll("#cplFundingMount [data-pubsechide]").forEach(function (b) {
-      b.addEventListener("click", function () { savingState = ""; setSecHidden(b.getAttribute("data-pubsechide"), true); });
-    });
-    document.querySelectorAll("#cplFundingMount [data-pubsecshow]").forEach(function (b) {
-      b.addEventListener("click", function () { savingState = ""; setSecHidden(b.getAttribute("data-pubsecshow"), false); });
-    });
-    var pubOrderReset = document.getElementById("cplFundPubOrderReset");
-    if (pubOrderReset) pubOrderReset.addEventListener("click", function () {
-      savingState = "";
-      resetPublicSectionOrder();
     });
     var secOrderReset = document.getElementById("cplFundSecOrderReset");
     if (secOrderReset) secOrderReset.addEventListener("click", function () {
@@ -14248,6 +14922,14 @@
     state.q = "";
     _deepLinkCollege = hit.college;
     _deepLinkPending = true;
+    // A link names a row of the table, so the table shows, whatever choice the
+    // reader's browser remembers. `confirm=1` (My College's Confirm now, Sam
+    // 2026-10-15, call 5) also opens the row's confirmation form.
+    state.collegeView = "all";
+    _oneRestored = true;
+    var conf = "";
+    try { conf = new URLSearchParams(window.location.search).get("confirm") || ""; } catch (e) {}
+    if (conf === "1") { OPTIN_UI[hit.college] = { open: true }; _optinFocusCollege = hit.college; }
   }
   var _deepLinkCollege = null;   // persistent — drives the row highlight
   var _deepLinkPending = false;  // one-shot — drives the scroll
@@ -14288,6 +14970,27 @@
     boot: boot, render: render, _state: state,
     // The explainer's header button and the tab's top button open My CPL Funding.
     showMyFunding: showMyFunding,
+    // My CPL Funding's text, for college_briefing.js (Sam, 2026-10-15)
+    mcTextHtml: mcTextHtml,
+    mcBlockHtml: mcBlockHtml,
+    // How to meet it, for the college panel and the explainer (call 5)
+    howToOpen: howToOpen,
+    howToKinds: function () { return Object.keys(HOW_BY_KIND); },
+    // The page's own editor (Sam, 2026-10-15, call 1: Edit this page on
+    // funding-model/). Every write goes through the layers the tab's editors
+    // use, so the database's RLS decides what a save may do.
+    canCurate: function () { return unlocked(); },
+    setText: setText, textPlain: textPlain, textIsCustom: textIsCustom,
+    setSecHidden: setSecHidden, secHidden: secHidden,
+    movePublicSection: movePublicSection, resetPublicSectionOrder: resetPublicSectionOrder,
+    pubOrderIsCustom: function () { return pubOrderIsCustom(); },
+    wrapMark: wrapMark,
+    // The last save's state, for the page's editor to say in words.
+    saveState: function () { return savingState; },
+    // Step 1 and the PDF prompt, for the explainer (Sam, 2026-10-15)
+    oneChoice: function () { return oneCollegeView() && state.oneCollege ? state.oneCollege : ""; },
+    chooseOne: chooseOne,
+    pdfGate: pdfGate,
     // The Reporting box's categories and its "newest report per year counts"
     // rule, for My College's read-only view of a college's own reports.
     reports: { cats: REPORT_CATS, mark: markReports, total: reportTotal },
@@ -14322,9 +15025,12 @@
     // alone: a rename applied on the tab and not the explainer reads as a
     // stale page, and a section hidden on one public rendering and visible on
     // the other shows a college what the CO decided to withhold.
+    // Since call 2 a public id reads the page's own titles (pubTitles).
     sectionCuration: function (id) {
-      return { title: titleOverride(id), hidden: secHidden(id) };
+      return { title: PUBLIC_BY_ID[id] ? pubTitleOverride(id) : titleOverride(id), hidden: secHidden(id) };
     },
+    setPubTitle: setPubTitle,
+    publicSections: function () { return PUBLIC_SECTIONS.map(function (x) { return { id: x.id, label: x.label, fixedTitle: !!x.fixedTitle }; }); },
     // The order the public explainer's own sections should appear in. Exposed
     // beside sectionCuration() for the same reason: the page paints its own
     // markup, and a second copy of the resolution would drift from this one.
@@ -14334,7 +15040,17 @@
     // The FAQ as the tab renders it, for the explainer's own section: Sam's
     // editable block (TEXT_BLOCKS.faq), so his edit reaches both pages. The
     // markup is faqHtml()'s, which escapes every question and answer.
-    publicFaqHtml: function () { return faqHtml(textPlain("faq")); },
+    // The page's own copy since call 2 (x_faq), seeded with the tab's house FAQ.
+    publicFaqHtml: function () { return faqHtml(textPlain("x_faq")); },
+    // The page's own passages that are not explainer passages: its
+    // Introduction and its Timeline note (call 3), as the page paints them.
+    pageTextHtml: function (key) { return isPageCopy(key) ? textHtml(key) : ""; },
+    pageTextKeys: function () { return Object.keys(TEXT_BLOCKS).filter(isPageCopy); },
+    textMeta: function (key) {
+      var m = TEXT_BLOCKS[key];
+      return m ? { label: m.label, rows: m.rows || 4, rich: !!m.rich, marks: hasMarks(key), faq: key === "faq" || key === "x_faq",
+                   followsTab: key === "x_about" && !textIsCustom("x_about") } : null;
+    },
     // The explainer's own passages (Sam, 2026-10-09), each a rich prose block
     // edited on the tab. `seeds` maps a figure's id to the text the page shows
     // now, so a repaint never blanks a number before the painter refills it.
@@ -14342,6 +15058,11 @@
     // Every id a passage's figure can carry, for the page to seed and to give
     // the first copy of each its id (the painter and a deep link read by id).
     explainerFigIds: function () { return FIG_TOKENS.map(function (t) { return t[1]; }); },
+    _wrapMark: function (text, a, b, mk) { return wrapMark(text, a, b, mk); },
+    // An institution's share of the allocation basis, the noncredit weight
+    // included: what the explainer's illustration cards divide by when
+    // noncredit's portion is set (2026-10-14).
+    _sizePct: function (name) { var c = rosterRow(name); return c ? sizePct(c) : null; },
     _explainerBlocks: function () { return EXPLAINER_BLOCKS.slice(); },
     _explainerHtmlToPlain: richHtmlToPlain,
     _richPlainToHtml: richPlainToHtml,
@@ -14446,7 +15167,15 @@
           at_floor: m.floorCount, at_cap: m.cappedCount,
           unspent: m.unspent,
           floor_infeasible: !!m.floorInfeasible, cap_below_floor: !!m.capBelowFloor,
-          nc_college_shares: ncFace, nc_only_held_by_origination: trioHeld
+          nc_college_shares: ncFace, nc_only_held_by_origination: trioHeld,
+          // Noncredit's portion (2026-10-14): the curator's percentage (null =
+          // the teaching mix decides), the weight the model solved for it,
+          // what the teaching mix alone gives, and what was reached.
+          nc_portion_set: m.ncPortion ? m.ncPortion.set : null,
+          nc_weight: m.ncW,
+          nc_portion_natural: m.ncPortion ? m.ncPortion.natural : null,
+          nc_portion_reached: m.ncPortion ? m.ncPortion.reached : null,
+          nc_portion_unreachable: m.ncPortion ? m.ncPortion.unreachable : null
         },
         years: slots
       };
@@ -14532,7 +15261,11 @@
                // "1 Nov 2026" against a model holding 2026-11-01.
                deadline: participationDeadline(),
                items: requirementsList().map(function (r) { return String(r.text || ""); })
-                        .filter(function (t) { return t.trim(); }) };
+                        .filter(function (t) { return t.trim(); }),
+               // Which condition each item is, in the same order, so the page
+               // offers How to meet it on the ones a passage covers (call 5).
+               kinds: requirementsList().filter(function (r) { return String(r.text || "").trim(); })
+                        .map(function (r) { return r.kind || (isVetJstReq(r.text) ? "vetstar" : ""); }) };
     },
     // THE PUBLIC VIEW'S PROGRESS LINES, for the explainer (Sam, sheet 14 card
     // 6, 2026-10-01: "port" them, so colleges read one page). The same figures

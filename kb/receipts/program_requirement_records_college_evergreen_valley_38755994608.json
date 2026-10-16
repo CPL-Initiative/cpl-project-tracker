@@ -1,0 +1,144 @@
+{
+ "college": "Evergreen Valley College",
+ "load_run": "38755994608",
+ "function": "program_requirement_records_college_load",
+ "at": "2026-10-15T14:57:47Z",
+ "records": 86,
+ "posted": 74,
+ "batches": 3,
+ "inserted": 74,
+ "kept": 0,
+ "skipped": [
+  {
+   "control_number": "06175",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "07516",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21189",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "30351",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "30919",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "40843",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "44496",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46137",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46171",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46218",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46219",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46262",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "extracted_runs": [
+  "38748875071"
+ ],
+ "machine_pass": 54,
+ "inserted_keys": [
+  "06154",
+  "06155",
+  "06159",
+  "06160",
+  "06165",
+  "06181",
+  "10051",
+  "10385",
+  "10387",
+  "12133",
+  "13549",
+  "13684",
+  "14149",
+  "18692",
+  "18693",
+  "18695",
+  "18696",
+  "18991",
+  "19957",
+  "21185",
+  "21190",
+  "21191",
+  "30571",
+  "30668",
+  "30854",
+  "30946",
+  "30980",
+  "31559",
+  "31718",
+  "32715",
+  "33062",
+  "35478",
+  "35621",
+  "35854",
+  "35890",
+  "36067",
+  "36204",
+  "36932",
+  "36954",
+  "38331",
+  "38958",
+  "39129",
+  "39155",
+  "39157",
+  "39402",
+  "39416",
+  "39432",
+  "40027",
+  "40038",
+  "40354",
+  "40373",
+  "40692",
+  "40755",
+  "40874",
+  "41063",
+  "41146",
+  "41627",
+  "42282",
+  "43161",
+  "43162",
+  "43163",
+  "43641",
+  "43678",
+  "43796",
+  "43797",
+  "45025",
+  "45225",
+  "45226",
+  "45227",
+  "45231",
+  "45232",
+  "45233",
+  "45496",
+  "46457"
+ ],
+ "kept_keys": [],
+ "rollback": "delete from public.program_requirement_records where college = 'Evergreen Valley College' and checked = false and control_number in ('06154', '06155', '06159', '06160', '06165', '06181', '10051', '10385', '10387', '12133', '13549', '13684', '14149', '18692', '18693', '18695', '18696', '18991', '19957', '21185', '21190', '21191', '30571', '30668', '30854', '30946', '30980', '31559', '31718', '32715', '33062', '35478', '35621', '35854', '35890', '36067', '36204', '36932', '36954', '38331', '38958', '39129', '39155', '39157', '39402', '39416', '39432', '40027', '40038', '40354', '40373', '40692', '40755', '40874', '41063', '41146', '41627', '42282', '43161', '43162', '43163', '43641', '43678', '43796', '43797', '45025', '45225', '45226', '45227', '45231', '45232', '45233', '45496', '46457');"
+}

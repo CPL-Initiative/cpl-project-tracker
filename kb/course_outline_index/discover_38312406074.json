@@ -1,0 +1,738 @@
+{
+ "run": "38312406074",
+ "at": "2026-10-12T21:44:47Z",
+ "loads": 2,
+ "wanted": {
+  "riverside_city": 1230,
+  "moreno_valley": 1080,
+  "norco": 1148
+ },
+ "wanted_union": 1648,
+ "sample_rows_with_code": 0,
+ "discover": {
+  "url": "https://rccd.curriqunet.com/",
+  "final_url": "https://rccd.curriqunet.com/",
+  "status": 200,
+  "title": "Dashboard",
+  "access": "ok",
+  "rows_at_load": {
+   "count": 50,
+   "rows": [
+    {
+     "href": "https://rccd.curriqunet.com/#",
+     "text": "Reports",
+     "row": "Reports"
+    },
+    {
+     "href": "https://rccd.curriqunet.com/Report/Course/GetReport/1?reportId=97",
+     "text": "Course Outline",
+     "row": "Course Outline"
+    },
+    {
+     "href": "https://rccd.curriqunet.com/#",
+     "text": "Reports",
+     "row": "Reports"
+    },
+    {
+     "href": "https://rccd.curriqunet.com/Report/Course/GetReport/3794?reportId=97",
+     "text": "Course Outline",
+     "row": "Course Outline"
+    },
+    {
+     "href": "https://rccd.curriqunet.com/#",
+     "text": "Reports",
+     "row": "Reports"
+    },
+    {
+     "href": "https://rccd.curriqunet.com/Report/Course/GetReport/5132?reportId=97",
+     "text": "Course Outline",
+     "row": "Course Outline"
+    },
+    {
+     "href": "https://rccd.curriqunet.com/#",
+     "text": "Reports",
+     "row": "Reports"
+    },
+    {
+     "href": "https://rccd.curriqunet.com/Report/Course/GetReport/6392?reportId=97",
+     "text": "Course Outline",
+     "row": "Course Outline"
+    },
+    {
+     "href": "https://rccd.curriqunet.com/#",
+     "text": "Reports",
+     "row": "Reports"
+    },
+    {
+     "href": "https://rccd.curriqunet.com/Report/Course/GetReport/8246?reportId=97",
+     "text": "Course Outline",
+     "row": "Course Outline"
+    },
+    {
+     "href": "https://rccd.curriqunet.com/#",
+     "text": "Reports",
+     "row": "Reports"
+    },
+    {
+     "href": "https://rccd.curriqunet.com/Report/Course/GetReport/14774?reportId=97",
+     "text": "Course Outline",
+     "row": "Course Outline"
+    },
+    {
+     "href": "https://rccd.curriqunet.com/#",
+     "text": "Reports",
+     "row": "Reports"
+    },
+    {
+     "href": "https://rccd.curriqunet.com/Report/Course/GetReport/16513?reportId=97",
+     "text": "Course Outline",
+     "row": "Course Outline"
+    },
+    {
+     "href": "https://rccd.curriqunet.com/#",
+     "text": "Reports",
+     "row": "Reports"
+    },
+    {
+     "href": "https://rccd.curriqunet.com/Report/Course/GetReport/8590?reportId=111",
+     "text": "Distance Ed Outline",
+     "row": "Distance Ed Outline"
+    },
+    {
+     "href": "https://rccd.curriqunet.com/#",
+     "text": "Reports",
+     "row": "Reports"
+    },
+    {
+     "href": "https://rccd.curriqunet.com/Report/Course/GetReport/8248?reportId=97",
+     "text": "Course Outline",
+     "row": "Course Outline"
+    },
+    {
+     "href": "https://rccd.curriqunet.com/#",
+     "text": "Reports",
+     "row": "Reports"
+    },
+    {
+     "href": "https://rccd.curriqunet.com/Report/Course/GetReport/5778?reportId=97",
+     "text": "Course Outline",
+     "row": "Course Outline"
+    },
+    {
+     "href": "https://rccd.curriqunet.com/#",
+     "text": "Reports",
+     "row": "Reports"
+    },
+    {
+     "href": "https://rccd.curriqunet.com/Report/Course/GetReport/5133?reportId=97",
+     "text": "Course Outline",
+     "row": "Course Outline"
+    },
+    {
+     "href": "https://rccd.curriqunet.com/#",
+     "text": "Reports",
+     "row": "Reports"
+    },
+    {
+     "href": "https://rccd.curriqunet.com/Report/Course/GetReport/3795?reportId=97",
+     "text": "Course Outline",
+     "row": "Course Outline"
+    },
+    {
+     "href": "https://rccd.curriqunet.com/#",
+     "text": "Reports",
+     "row": "Reports"
+    },
+    {
+     "href": "https://rccd.curriqunet.com/Report/Course/GetReport/2?reportId=97",
+     "text": "Course Outline",
+     "row": "Course Outline"
+    },
+    {
+     "href": "https://rccd.curriqunet.com/#",
+     "text": "Reports",
+     "row": "Reports"
+    },
+    {
+     "href": "https://rccd.curriqunet.com/Report/Course/GetReport/16514?reportId=97",
+     "text": "Course Outline",
+     "row": "Course Outline"
+    },
+    {
+     "href": "https://rccd.curriqunet.com/#",
+     "text": "Reports",
+     "row": "Reports"
+    },
+    {
+     "href": "https://rccd.curriqunet.com/Report/Course/GetReport/14775?reportId=97",
+     "text": "Course Outline",
+     "row": "Course Outline"
+    },
+    {
+     "href": "https://rccd.curriqunet.com/#",
+     "text": "Reports",
+     "row": "Reports"
+    },
+    {
+     "href": "https://rccd.curriqunet.com/Report/Course/GetReport/8591?reportId=111",
+     "text": "Distance Ed Outline",
+     "row": "Distance Ed Outline"
+    },
+    {
+     "href": "https://rccd.curriqunet.com/#",
+     "text": "Reports",
+     "row": "Reports"
+    },
+    {
+     "href": "https://rccd.curriqunet.com/Report/Course/GetReport/14017?reportId=97",
+     "text": "Course Outline",
+     "row": "Course Outline"
+    },
+    {
+     "href": "https://rccd.curriqunet.com/#",
+     "text": "Reports",
+     "row": "Reports"
+    },
+    {
+     "href": "https://rccd.curriqunet.com/Report/Course/GetReport/15881?reportId=97",
+     "text": "Course Outline",
+     "row": "Course Outline"
+    },
+    {
+     "href": "https://rccd.curriqunet.com/#",
+     "text": "Reports",
+     "row": "Reports"
+    },
+    {
+     "href": "https://rccd.curriqunet.com/Report/Course/GetReport/14541?reportId=111",
+     "text": "Distance Ed Outline",
+     "row": "Distance Ed Outline"
+    },
+    {
+     "href": "https://rccd.curriqunet.com/#",
+     "text": "Reports",
+     "row": "Reports"
+    },
+    {
+     "href": "https://rccd.curriqunet.com/Report/Course/GetReport/14023?reportId=97",
+     "text": "Course Outline",
+     "row": "Course Outline"
+    }
+   ]
+  },
+  "structure": {
+   "headers": [],
+   "tables": [
+    {
+     "rows": 0,
+     "id": "table",
+     "cls": ""
+    }
+   ],
+   "controls": [
+    {
+     "tag": "SPAN",
+     "text": "1",
+     "cls": "badge bg-danger ms-2",
+     "href": null
+    },
+    {
+     "tag": "SPAN",
+     "text": "5",
+     "cls": "badge bg-primary ms-2",
+     "href": null
+    },
+    {
+     "tag": "SPAN",
+     "text": "3",
+     "cls": "badge bg-primary ms-2",
+     "href": null
+    },
+    {
+     "tag": "SPAN",
+     "text": "2",
+     "cls": "badge bg-primary ms-2",
+     "href": null
+    },
+    {
+     "tag": "LI",
+     "text": "",
+     "cls": "page-item",
+     "href": null
+    },
+    {
+     "tag": "A",
+     "text": "Previous",
+     "cls": "page-link disabled",
+     "href": "https://rccd.curriqunet.com/#"
+    },
+    {
+     "tag": "LI",
+     "text": "1",
+     "cls": "page-item active",
+     "href": null
+    },
+    {
+     "tag": "A",
+     "text": "1",
+     "cls": "page-link",
+     "href": "https://rccd.curriqunet.com/#"
+    },
+    {
+     "tag": "LI",
+     "text": "2",
+     "cls": "page-item",
+     "href": null
+    },
+    {
+     "tag": "A",
+     "text": "2",
+     "cls": "page-link",
+     "href": "https://rccd.curriqunet.com/#"
+    },
+    {
+     "tag": "LI",
+     "text": "3",
+     "cls": "page-item",
+     "href": null
+    },
+    {
+     "tag": "A",
+     "text": "3",
+     "cls": "page-link",
+     "href": "https://rccd.curriqunet.com/#"
+    },
+    {
+     "tag": "LI",
+     "text": "4",
+     "cls": "page-item",
+     "href": null
+    },
+    {
+     "tag": "A",
+     "text": "4",
+     "cls": "page-link",
+     "href": "https://rccd.curriqunet.com/#"
+    },
+    {
+     "tag": "LI",
+     "text": "5",
+     "cls": "page-item",
+     "href": null
+    },
+    {
+     "tag": "A",
+     "text": "5",
+     "cls": "page-link",
+     "href": "https://rccd.curriqunet.com/#"
+    },
+    {
+     "tag": "LI",
+     "text": "",
+     "cls": "page-item",
+     "href": null
+    },
+    {
+     "tag": "A",
+     "text": "Next",
+     "cls": "page-link",
+     "href": "https://rccd.curriqunet.com/#"
+    }
+   ],
+   "inputs": [
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "iq-search-client-item-1",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "iq-search-campus-item-1",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "iq-search-campus-item-2",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "iq-search-campus-item-3",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "search",
+     "name": null,
+     "id": null,
+     "placeholder": "Keyword Search",
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-0",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-1",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-2",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-3",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-4",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-5",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-6",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-7",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-8",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-9",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-10",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-11",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-12",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-13",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-14",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-15",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-16",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-17",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-18",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-19",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-20",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-21",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-22",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-23",
+     "placeholder": null,
+     "options": null
+    },
+    {
+     "tag": "INPUT",
+     "type": "checkbox",
+     "name": null,
+     "id": "root-subject-24",
+     "placeholder": null,
+     "options": null
+    }
+   ],
+   "forms": [
+    {
+     "action": "https://rccd.curriqunet.com/",
+     "method": "get",
+     "id": ""
+    },
+    {
+     "action": "https://rccd.curriqunet.com/Account/Logon",
+     "method": "post",
+     "id": "form-login"
+    },
+    {
+     "action": "https://rccd.curriqunet.com/Account/RequestAccess",
+     "method": "post",
+     "id": "form-request-access"
+    },
+    {
+     "action": "https://rccd.curriqunet.com/Account/RequestToResetPassword",
+     "method": "post",
+     "id": "form-requestToResetPassword"
+    },
+    {
+     "action": "https://rccd.curriqunet.com/DynamicReports/AllFieldsComparisonReportByEntity",
+     "method": "get",
+     "id": "ref: <Node>"
+    }
+   ],
+   "scripts": [
+    "https://challenges.cloudflare.com/turnstile/v0/api.js",
+    "https://rccd.curriqunet.com/bundles/modernizr?v=2twPtszsTL39hTiKwvPlVlNga_BJ8EIzShIX0ej7LAo1",
+    "https://cdnjs.cloudflare.com/ajax/libs/bowser/2.11.0/bundled.js",
+    "https://code.jquery.com/jquery-3.6.0.js",
+    "https://code.jquery.com/ui/1.13.1/jquery-ui.js",
+    "https://kit.fontawesome.com/bc028f3168.js",
+    "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js",
+    "https://rccd.curriqunet.com/bundles/ckeditor?v=_InKorEytW7MN9wJB38-ckDLe_tF_xsnkHqlwPQ_J-Q1",
+    "https://cdnjs.cloudflare.com/ajax/libs/dot/1.1.3/doT.min.js",
+    "https://cdnjs.cloudflare.com/ajax/libs/jquery-extendext/1.0.0/jquery-extendext.js",
+    "https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js",
+    "https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js",
+    "https://unpkg.com/bootstrap-table@1.21.2/dist/bootstrap-table.min.js",
+    "https://rccd.curriqunet.com/bundles/curriqunet?v=M34Y_YMxwNQ2F2AXZ50jWh8FdbG5_-DB1cmVmxiMzsM1",
+    "https://rccd.curriqunet.com/bundles/dashboard?v=k1ozuum88wLlyv7BteWhIUbc-hlC0jidR-2jgv77GQg1"
+   ]
+  },
+  "rows_after_scroll": 50,
+  "calls_at_load": [
+   {
+    "method": "GET",
+    "url": "https://ka-p.fontawesome.com/releases/v6.7.2/css/pro-v4-shims.min.css?token=bc028f3168",
+    "status": 200,
+    "content_type": "text/css",
+    "post": "",
+    "head": "/*!\n * Font Awesome Pro 6.7.2 by @fontawesome - https://fontawesome.com\n * License - https://fontawesome.com/license (Commercial License)\n * Copyright 2024 Fonticons, Inc.\n */.fa.fa-glass{--fa:\"\\f000\"}.fa.fa-envelope-o{--fa:\"\\f0e0\"}.fa.fa-envelope-o,.fa.fa-star-o{font-family:\"Font Awesome 6 Pro\";font-weight:400}.fa.fa-star-o{--fa:\"\\f005\"}.fa.fa-close,.fa.fa-remove{--fa:\"\\f00d\"}.fa.fa-gear{--fa:\"\\f013\"}.fa.fa-trash-o{font-family:\"Font Awesome 6 Pro\";font-weight:400;--fa:\"\\f2ed\"}.fa.fa-home{--fa:\"\\f015\"}.fa.fa-file-o{--fa:\"\\f15b\"}.fa.fa-clock-o,.fa.fa-file-o{font-family:\"Font Awesome 6 Pro\";font-weight:400}.fa.fa-clock-o{--fa:\"\\f017\"}.fa.fa-arrow-circle-o-down{--fa:\"\\f358\"}.fa.fa-arrow-circle-o-down,.fa.fa-arrow-circle-o-up{font-family:\"Font Awesome 6 Pro\";font-weight:400}.fa.fa-arrow-circle-o-up{--fa:\"\\f35b\"}.fa.fa-play-circle-o{font-family:\"Font Awesome 6 Pro\";font-weight:400;--fa:\"\\f144\"}.fa.fa-repeat,.fa.fa-rotate-right{--fa:\"\\f01e\"}.fa.fa-refresh{--fa:\"\\f021\"}.fa.fa-list-alt{font-family:\"Font Awesome 6 Pro\";font-weight:400;--fa:\"\\f022\"}.fa.fa-dedent{--fa:\"\\f03b\"}.fa.fa-video-camera{--fa:\"\\f03d\"}.fa.fa-picture-o{--fa:\"\\f03e\"}.fa.fa-photo,.fa.fa-picture-o{font-family:\"Font Awesome 6 Pro\";font-weight:400}.fa.fa-photo{--fa:\"\\f03e\"}.fa.fa-image{font-family:\"Font Awesome 6 Pro\";font-weight:400;--fa:\"\\f03e\"}.fa.fa-map-marker{--fa:\"\\f3c5\"}.fa.fa-pencil-square-o{--fa:\"\\f044\"}.fa.fa-edit,.fa.fa-pencil-square-o{font-family:\"Font Awesome 6 Pro\";font-weight:400}.fa.fa-edit{--fa:\"\\f044\""
+   },
+   {
+    "method": "GET",
+    "url": "https://ka-p.fontawesome.com/releases/v6.7.2/css/pro-v4-font-face.min.css?token=bc028f3168",
+    "status": 200,
+    "content_type": "text/css",
+    "post": "",
+    "head": "/*!\n * Font Awesome Pro 6.7.2 by @fontawesome - https://fontawesome.com\n * License - https://fontawesome.com/license (Commercial License)\n * Copyright 2024 Fonticons, Inc.\n */@font-face{font-family:\"FontAwesome\";font-display:block;src:url(../webfonts/pro-fa-solid-900-0.woff2) format(\"woff2\"),url(../webfonts/pro-fa-solid-900-0.ttf) format(\"truetype\");unicode-range:u+f001,u+f004-f005,u+f007-f008,u+f00c,u+f011-f012,u+f015,u+f018-f019,u+f01c,u+f023-f025,u+f02a,u+f02c-f031,u+f03a,u+f03d,u+f04a-f04e,u+f05b,u+f060-f064,u+f067-f068,u+f06b-f06d,u+f072,u+f075,u+f077-f078,u+f07b,u+f084,u+f086,u+f091,u+f093,u+f095,u+f09c,u+f0a3,u+f0ad,u+f0b0-f0b1,u+f0c0-f0c2,u+f0c6,u+f0c8,u+f128,u+f12a,u+f155,u+f283,u+f292,u+f295}@font-face{font-family:\"FontAwesome\";font-display:block;src:url(../webfonts/pro-fa-solid-900-1.woff2) format(\"woff2\"),url(../webfonts/pro-fa-solid-900-1.ttf) format(\"truetype\");unicode-range:u+f040,u+f0c9,u+f0cc,u+f0ce,u+f0d1,u+f0d7,u+f0dc,u+f0e0,u+f0e7-f0e8,u+f0f3,u+f106,u+f108-f109,u+f10e,u+f110-f112,u+f11e,u+f121,u+f126,u+f129,u+f12c-f12e,u+f130-f132,u+f135,u+f13d,u+f140,u+f145,u+f15b,u+f164,u+f188,u+f1ab,u+f1ad-f1ae,u+f1b2,u+f1b8,u+f1bb,u+f1c0,u+f1ce,u+f1d8,u+f1dc,u+f1e4-f1e6,u+f1eb-f1ec,u+f205,u+f217,u+f21a-f21d,u+f22d,u+f233-f234,u+f238,u+f246,u+f251,u+f275,u+f29e,u+f2a0,u+f2a7,u+f2bb,u+f2cc-f2cd,u+f2db}@font-face{font-family:\"FontAwesome\";font-display:block;src:url(../webfonts/pro-fa-solid-900-3.woff2) format(\"woff2\"),url(../webfonts/pro-fa-solid-900-3.ttf) format(\"truety"
+   },
+   {
+    "method": "GET",
+    "url": "https://ka-p.fontawesome.com/assets/bc028f3168/83253378/custom-icons.css?token=bc028f3168",
+    "status": 200,
+    "content_type": "text/css",
+    "post": "",
+    "head": "@charset \"utf-8\";.fak.fa-regular-ballot-check-gear:before,.fa-kit.fa-regular-ballot-check-gear:before{content:\"\u00ee\u20ac\u009d\"}.fak.fa-regular-circle-slash:before,.fa-kit.fa-regular-circle-slash:before{content:\"\u00ee\u20ac\u2039\"}.fak.fa-regular-list-tree-circle-arrow-down:before,.fa-kit.fa-regular-list-tree-circle-arrow-down:before{content:\"\u00ee\u20ac\u0090\"}.fak.fa-regular-list-tree-circle-arrow-up:before,.fa-kit.fa-regular-list-tree-circle-arrow-up:before{content:\"\u00ee\u20ac\u2018\"}.fak.fa-regular-sliders-magnifying-glass:before,.fa-kit.fa-regular-sliders-magnifying-glass:before{content:\"\u00ee\u20ac\u201c\"}.fak.fa-regular-table-list-pen:before,.fa-kit.fa-regular-table-list-pen:before{content:\"\u00ee\u20ac\u0178\"}.fak.fa-regular-user-headset-at:before,.fa-kit.fa-regular-user-headset-at:before{content:\"\u00ee\u20ac\u201d\"}.fak.fa-sharp-light-diagram-cells-circle-arrow-down:before,.fa-kit.fa-sharp-light-diagram-cells-circle-arrow-down:before{content:\"\u00ee\u20ac\u017d\"}.fak.fa-sharp-light-window-maximize-circle-arrow-up:before,.fa-kit.fa-sharp-light-window-maximize-circle-arrow-up:before{content:\"\u00ee\u20ac\u008f\"}.fak.fa-solid-arrow-right-to-arc-lock:before,.fa-kit.fa-solid-arrow-right-to-arc-lock:before{content:\"\u00ee\u20ac\u0161\"}.fak.fa-solid-bell-exclamation-user:before,.fa-kit.fa-solid-bell-exclamation-user:before{content:\"\u00ee\u20ac\u2013\"}.fak.fa-solid-bread-slice-circle-exclamation:before,.fa-kit.fa-solid-bread-slice-circle-exclamation:before{content:\"\u00ee\u20ac\u0192\"}.fak.fa-solid-copy-pen:before,.fa-kit.fa-solid-copy-pen:before{content:\"\u00ee\u20ac\u2019\"}.fak.fa-solid-file-circle-plus:before,.fa-kit.fa-solid-file-circle-plus:before{con"
+   },
+   {
+    "method": "GET",
+    "url": "https://ka-p.fontawesome.com/releases/v6.7.2/css/pro.min.css?token=bc028f3168",
+    "status": 200,
+    "content_type": "text/css",
+    "post": "",
+    "head": "/*!\n * Font Awesome Pro 6.7.2 by @fontawesome - https://fontawesome.com\n * License - https://fontawesome.com/license (Commercial License)\n * Copyright 2024 Fonticons, Inc.\n */.fa{font-family:var(--fa-style-family,\"Font Awesome 6 Pro\");font-weight:var(--fa-style,900)}.fa,.fa-brands,.fa-classic,.fa-duotone,.fa-light,.fa-regular,.fa-sharp,.fa-sharp-duotone,.fa-solid,.fa-thin,.fab,.fad,.fadl,.fadr,.fadt,.fal,.far,.fas,.fasdl,.fasdr,.fasds,.fasdt,.fasl,.fasr,.fass,.fast,.fat{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:var(--fa-display,inline-block);font-style:normal;font-variant:normal;line-height:1;text-rendering:auto}.fa-brands:before,.fa-classic:before,.fa-duotone:before,.fa-light:before,.fa-regular:before,.fa-sharp-duotone:before,.fa-sharp:before,.fa-solid:before,.fa-thin:before,.fa:before,.fab:before,.fad:before,.fadl:before,.fadr:before,.fadt:before,.fal:before,.far:before,.fas:before,.fasdl:before,.fasdr:before,.fasds:before,.fasdt:before,.fasl:before,.fasr:before,.fass:before,.fast:before,.fat:before{content:var(--fa)}.fa-duotone.fa-light:after,.fa-duotone.fa-regular:after,.fa-duotone.fa-solid:after,.fa-duotone.fa-thin:after,.fa-duotone:after,.fa-sharp-duotone.fa-light:after,.fa-sharp-duotone.fa-regular:after,.fa-sharp-duotone.fa-solid:after,.fa-sharp-duotone.fa-thin:after,.fa-sharp-duotone:after,.fad:after,.fadl:after,.fadr:after,.fadt:after,.fasdl:after,.fasdr:after,.fasds:after,.fasdt:after{content:var(--fa--fa)}.fa-classic.fa-duotone{fo"
+   },
+   {
+    "method": "GET",
+    "url": "https://ka-p.fontawesome.com/releases/v6.7.2/css/pro-v5-font-face.min.css?token=bc028f3168",
+    "status": 200,
+    "content_type": "text/css",
+    "post": "",
+    "head": "/*!\n * Font Awesome Pro 6.7.2 by @fontawesome - https://fontawesome.com\n * License - https://fontawesome.com/license (Commercial License)\n * Copyright 2024 Fonticons, Inc.\n */@font-face{font-family:\"Font Awesome 5 Brands\";font-display:block;font-weight:400;src:url(../webfonts/pro-fa-brands-400-0.woff2) format(\"woff2\"),url(../webfonts/pro-fa-brands-400-0.ttf) format(\"truetype\");unicode-range:u+e007,u+e013,u+e01a,u+e01e,u+e049,u+e052,u+e055-e057,u+e077-e084,u+e087-e088,u+f081-f082,u+f08c,u+f092,u+f099-f09b,u+f0d2-f0d5,u+f0e1,u+f113,u+f136,u+f13b-f13c,u+f15a,u+f167-f169,u+f16b-f16e,u+f170-f171,u+f173-f174,u+f179-f17e,u+f180-f181,u+f184,u+f189-f18d,u+f194,u+f198,u+f19a-f19b,u+f19e,u+f1a0-f1a4,u+f1b4,u+f1bc,u+f1be,u+f1e8,u+f1ed,u+f1f0-f1f1,u+f20e,u+f210,u+f213-f214,u+f232,u+f23a,u+f26b,u+f270,u+f288,u+f299,u+f2a6,u+f2b0,u+f2c5-f2c6,u+f2e0,u+f368,u+f379,u+f392-f393,u+f39f,u+f3a9,u+f3ab-f3ac,u+f3c0,u+f3c7,u+f3ca,u+f3e2,u+f3eb-f3ec,u+f3ef,u+f3f8,u+f3fe,u+f419,u+f41b,u+f4d5,u+f4e4,u+f4f8-f4f9,u+f514,u+f5b5,u+f6c9,u+f731,u+f77b,u+f7af,u+f7e1,u+f83b}@font-face{font-family:\"Font Awesome 5 Brands\";font-display:block;font-weight:400;src:url(../webfonts/pro-fa-brands-400-1.woff2) format(\"woff2\"),url(../webfonts/pro-fa-brands-400-1.ttf) format(\"truetype\");unicode-range:u+f1a5-f1aa,u+f1b5-f1b7,u+f1bd,u+f1ca-f1cc,u+f1d0-f1d7,u+f1e7,u+f1e9,u+f1ee,u+f1f2-f1f5,u+f202-f203,u+f208-f209,u+f20d,u+f211-f212,u+f215-f216,u+f231,u+f237,u+f23b-f23e,u+f24b-f24c,u+f25e,u+f260-f261,u+f263-f26a,u+f26d-f26e,u+"
+   },
+   {
+    "method": "POST",
+    "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/fo/158029444:1791839119:NTOvyetlHjzf8zorjWByt_bA7SGAIlGfcAGCDtXkNkg/a499494aca30a36f/U_U95g4amrLnsEE3VqdF3RgD9nLUGn7LGk7TlcU9TvQ-1791841471-1.2.1.1-TW2dqgqtlcxpMkx8th7fZQcLG_YHZt3H8RSEX9XGs1AtMasbXXjZcDdR6zjnGMZF",
+    "status": 200,
+    "content_type": "text/plain; charset=UTF-8",
+    "post": "1bRdgkHR9eM2HdAQe3RdXXGR7xL7O2WkKpE8FpSIsivWPYA4cur6a9LSzIXdnROopoOMqSXByOk7wPLG4J6Dx2-n$iV0ky+o+I3Qx2IGL5Gk+L5I0$wJ2wYESsLHKG9VYgTKXXShE5sQhgWRQX2BbwL2tki24kHvZP2nvEgaPfHORagbi2Ws-NzSW1RrbKlwkbchG+AlnE5typ+u4JUbv5t2o$x$dkzrFH2XNRil7cRWo$k4RWngp1yPfgh9i5fHXIE7WinPKRTg$w3Tqzhve+1vI68HYTgcnKCIuPcBEqKxYIBEQNDqd+GNvS5D9BUr9t6Rp-0D+Z$8PE8isb6zqEo6uprwx+EQtdwub8XOGxdhiU65NJIfvSKDC2xStuja6ZYdJCASs+FcNIDnMsOUuExsQR5HGznLARkSplFjPceyBqGVVAWuS67fgaIQEz9GLr+kzc6eH-3$0KqOV83B7+0bL+ZIMhsKvdx3l8CgjZ8D4yHgMvWc",
+    "head": "gnmvebFxjbi6eqOcnLO7t8CrmJe8p6HMprKKnrapsJTW1tCpqre5qp2uur213eXS3MO9tqrH5MHpzcrl5e7u4ezT78a5zdLz0NoD2Pjf99LEy8Tiy+EO/QkL4OTuBPIF5dnw/RLp9hftHP7+5AT3FxgECivlDhEaJSAw/vITLSjy+Dc+GxUwHB36HhNDPEolG00uSzpRRSgzPisMLCtHO1dMGxcwSjorUho8Wlk6UTgmWU0mZyInT1M+NWAzeFlvTVVzZ05JPG9TVD1ER1aBXWNERI5OkYF8YH9rUZeHZXOVjG50d3xvknecnKWRh3t+jGKpgYuafmxsj3JvlqWoj22KpX2cr7Wrmpyet6Kyxod9uX+30JicwqOdyZ/Mqaqzt7mvlK2br7/M3LLF5sOy3sSl16rn78Pnzb/pte/K9unR+N3TAPbc2uvg2vzd+9bi5gHd5Ofs2cTnDQ0WAvfr8hPVENf79O7c4PEB+wnnIQotIwYBGfkmHPEF/gomLu8MKvc8B/r8GQ4YPiIXFSQdSScZKTkHRB8sMERBHzYRWVpSOktSX1IgLBokWTBhW0E5QldjQyYxRj1hbnZDNUxvalJvV3Fva0xYTU6EYWRmV2WKaUxrjIZcgnGWZ39PV4x3e5ifbll0WV+kj6ddYad7Yal9iaWsnXpxjYOAg7aKrISLho+YnJ6SmqKmtLyxwZeqm4m6m8atoLzEwsakz8rOmtSv28623cK4ztnB5djTueHo4LvHr6rCyczRwOjM7bTL9PnKu9b00QW29vjUBvLBxNvdD+LtBf307ggS+Abk0dv2GPrz6/YMA90QIPoq/h/4BAnn6Cb5MQfsMSQZOTQ4HSoJ9QAbPB8YEBswJwI0RB9OHRxOPU4cDDFURExROxMnO1JIVz05N0IyW2AoJllqZUdnXUk8c2NkZj5Sa1ZEWElFUkdLT4FUXWFjb0BhWVOHd3ZcZGNRhUt2lYFRloR7mFuKWWiZkW1cmIKUoaGLY3eLopinjX+pfHWho4d2soWnlXa2tH6fjKyNnaabuICVusKqpLiywcSxk5GwysaZpbmTzdW6vb+wwsK7orTV37XbyLjc673GyLLK7/e2+sLO783H2cn21N7zzuLR5L/69uTFCez67Qbg7fIS7OIa9w8ZFOoh2Av43wPuAhDnKvwcJugKKSX8HPLsCvIPNSQ4CzoZQBAgPzU1FRgkEjg3Sx4dICBGRy4FEB4uMRgmWxk4TC5MMS1CUTleH0ZkV0ZDNGNjZV49XWdpSl9hQXhsUjxcTnVfYko6WGNmVHJqVmFYQ4p5UHJli5GBcpVvd5Bsh2WVbVZZipF9Y5Cdg4aJonllpa+oqH6bkLGspYmCtZuKsH6RmJCqv32ij5exnsrDxpWcl6jHzqzQ06SgqMvVxpe2m9jfrt6gu6/avb/I2L3Hwdzaxe+8wsbBrtS10uTZ8srwtdzyAfr19r7C0vvWA9TNCdvxEgLo8QIJ9crl5NUK1Q4NGOoe"
+   },
+   {
+    "method": "POST",
+    "url": "https://rccd.curriqunet.com/Search/_getSearchModel",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "post": "",
+    "head": "{\"EntityType\":0,\"PageTitle\":null,\"ClientEntityTypeName\":null,\"IsDistrict\":false,\"ClientEntityTypeId\":0,\"ClientList\":[{\"Id\":1,\"Title\":\"Riverside Community College District\",\"Address1\":null,\"Address2\":null,\"City\":null,\"State\":null,\"Zip\":null,\"ContactTitle\":null,\"ContactPhone\":null,\"ContactFax\":null,\"ContactEmail\":null,\"Active\":false,\"Code\":null,\"MetadataCached\":null,\"ClientSetting\":null,\"CacheIdentifier\":\"00000000-0000-0000-0000-000000000000\",\"DistrictId\":0,\"TimeZone\":null,\"IsDistrictClient\":false,\"IsInDistrict\":false,\"IsCurrentSite\":false,\"AaCodes\":[],\"Agreements\":[],\"ArticulationTypes\":[],\"AssessmentMethods\":[],\"AssignmentTypes\":[],\"AwardTypes\":[],\"BasicSkills\":[],\"CaClassCodes\":[],\"CanCodes\":[],\"CompairableTypes\":[],\"ContactTypes\":[],\"ContentReviewTypes\":[],\"ContractEdCodes\":[],\"CoopEdCodes\":[],\"CsuCodes\":[],\"DeliveryMethods\":[],\"EvaluationMethods\":[],\"FaCodes\":[],\"IgetcCodes\":[],\"InstructionTypes\":[],\"MajorRestrictionCodes\":[],\"MaterialTypes\":[],\"MatricAdviseCodes\":[],\"MatricPlacementCodes\":[],\"MatricSvcsCodes\":[],\"NonCreditCodes\":[],\"ObjectiveTypes\":[],\"OesCodes\":[],\"OfferCodes\":[],\"PreCoRequisiteTypes\":[],\"PripCodes\":[],\"ProgramCodes\":[],\"ProgramOesCodes\":[],\"ProgramRequisiteTypes\":[],\"ProgramTypes\":[],\"ReportTypes\":[],\"RequirementTypes\":[],\"RequisiteTypes\":[],\"RevisionTypes\":[],\"SamCodes\":[],\"SpecialClassCodes\":[],\"StudentAssessCodes\":[],\"WorkBasedCodes\":[],\"MetaSelectedSections\":[],\"Courses\":[],\"InstitutionPrograms\":[],\"InstitutionUsers\":[],\"InstutionCourseLinkers\":[],\""
+   },
+   {
+    "method": "GET",
+    "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/pat/a499494aca30a36f/1791841471415/ea6264d6cfa2ecb25415a1a4a851037c907b0dd80be5f940f9eaba2e1bd021b2/7Q1s_HBjyf2rVPF_mP4w9ARvoBWf851gJP5MJl7Tgmk-1791841471-1.3.1.1-09UQDgOq7K1YBTYrIKqy542502bTM5WmRDvKHPEljDk5U5MQss9dNd5R9O.FPc19lRxd6wiiHkquon2bDuOWk8hE4OQluRPsyk7.H7v7uW.3f0.qX3rce6Ci_DHbR.grGI3C5rM6lSZgM8ZudDM99zFFvYMasGQ9oyRxh9LkCJW_FjiM61Nc_iw0vQfbSIkZ9WwhHSken21pEalbMKXR4J_MyfySrNTWmd9QwnCMtQUtoBToQhxGvRRlnSoZUOfNhpMuRm7tcjGAT3m9UJsbd6kn.8QoiPNYQvWzXAFjDQP3SJOFUU75OgSHjCVRioCEErJ022PMSWLSCAQckZJuKhCTay0Ck1siCASiHxdu7yYskejbZpEsJxU5NkZ_hrExvVNeh6PD9MeCTmKOtzruq6Mt8xw0y6L5kgD_I9WNQvXOYSD2IntDbL5ENPy.iPy5KkwNoJbQY2NTMBTDwNYwiacubtRTqHML9p6yJt8pLw8JM_4QXOSZ_C8a.MqbwxZavm_XntPhFAJyxsE9M72PPPuiRp7_GD.DNbXUSVp.Ky.KR.FToW3KQo31vBrQHGcHC2KZM_aeep.NT0oPzbXF5kEHkNvcfviGJbIcR2lu2mZWG0RpSZM0OJg207YUWcUXlc0rInxlNrJRygq6a7KRznrFnSfrpnnyZxBVBmMdt7mpsONVsRXp2AwXHAtpPJ3.hyB9SshuhCbgts9QATyQR2pxPyaj_jDsRBBruhb6ieW3II4xKmLjBiHFjWex2ZvQ5.ewzRsxU2SduxjE9cNuAcbwNF2dqBs8DWz0MoJLoUdhLSJpD_Pj7AlAECg5ExEp",
+    "status": 401,
+    "content_type": "text/plain; charset=utf-8",
+    "post": "",
+    "head": ""
+   },
+   {
+    "method": "POST",
+    "url": "https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/fo/158029444:1791839119:NTOvyetlHjzf8zorjWByt_bA7SGAIlGfcAGCDtXkNkg/a499494aca30a36f/U_U95g4amrLnsEE3VqdF3RgD9nLUGn7LGk7TlcU9TvQ-1791841471-1.2.1.1-TW2dqgqtlcxpMkx8th7fZQcLG_YHZt3H8RSEX9XGs1AtMasbXXjZcDdR6zjnGMZF",
+    "status": 200,
+    "content_type": "text/plain; charset=UTF-8",
+    "post": "1bRdgkHR9eM2HdAQe3RdXXGR7xL7O2WkKpE8FpSIsivWPYA4cur6a9LSzIXdnROopoOMqSXByOk7wPLG4J6Dx2-n$iV0ky+o+I3Qx2IGL5Gk+L5I0$wJ2wYESsLHKG9VYgTKXXShE5sQhgWRQX2BbwL2tki24kHvZP2nvEgaPfHXlxt6U41DpUyf+ws+tJh6yeAUk9NXlKDwAKU3HlcBZi5iMZLXxEIZAhhrqoB+9v0gH+8KVMqFiCQfrLXD81ICZGUsPJViFZwVKdkx0gzg5qLPQxUNOSe64eBNZ2W92Y7Iorjh1lsVQo2zXGhxnlrIZwr+3hyNJuIz+-CXgp$ljsUgqhYKc47Fq6PgzYjYC+zyCONKper3Pt5yyAD2PV5grQR8fM-$YY4EcHa9C9Iz01+4TsAbYJFVy$tfQXUYO0yVhcHR2bTFn2$RJw7QZaj1MrJrCndG2knazq2VIKyglbAQbZboU1pW8UsH6GEIep6hT68wxwAB",
+    "head": "gnmvebFxjbi6eqOcnLO7t8Cqi6a7vaXJj8ew1MOWpcmTz6rPrc2529SyvLO33rjCs7e72uu72ODE3d3S6M/Jwrbj57ywAOzt0NTU8/jf+9LF4OXfxuENAAXrBN7RAtD07Rbu9ufW7xEgHhz+7uP3JQMX7OftGhApLC0pD/PuCCguMTkTLjMSFRwQIwMwHR07IEANCCUwDUFREyg/Nlc0KDA4FSZRYWExIhZNPl5eUlkrXUtnLUkxQnMsdmpIaGNxSWt3aE5vM1dvOl5+eVl7QF+JYUmEWXBtj2iLb2OBcYp2jmpnlmtzmo2DcqaRdqV+np98d5pnqWuGdIJttZOqrpCRiZ+zwXiOo3t/mXnFvoC/i8uWisCZs8G11bCztaa0k7HTm6+untHAoK264sKb6sSpq+Cu4e+u8Mbl77LT8u7G5vXKts70zevP/N/j1dL61v7a1ufb4wv98+IX8gLlFRv56OcL4PHcHdvj3f4iCyAo+OwQJOIy+g7vB+w4GRAPBBMUGj5CFPoODiJHBxVJFwYiHygsLiNHQkYpR0JBJzonSRlTWDtPYjZGRmAmWl88bUQkSjhmLzJjS2YzM1RxR11NXUdxWVptUHhTYGR+aWpfdluNhm5/jnJpUm5QZ2ltiIx3d3aLl3daZaBxlWeqd2mAo52GaIuho4mAmICSuJWYmouZi5SKk3Z+g7alx6DGiJuowsnNvb2Rs66T1avK1Je419OrwLPVo7XbsKW84cTIxMvfu+O/u+vQx/L4y/Pq0tj12L+3+L/N7r/H3tIL3/zF7+7u7Qrm8vQV1+/1HOjn5SD92OEY9SXkKAkYBeHrKf4tBPrxHBPtIDAL8Rk5+xQaQA0MCkQi/AY8GkkJSks3HUg+PC8nIxFOS0MxElJQGjsqYS5RRCEbUl1SUSFjJzlGLmhnaHFAMVNPa1JSRkRFfXlaXV9QYnN2aGhzWVl7aFdNTH1PZ2pqj1FmbJZVl5twlXicg4BzYmObk4FioqBqi3iYeYmSk6Ror6aulpCknrqymJ+wjnzFgbTGv5uDl6vCr7CJvoWgtqWNoMzHlsSp0ay5vt+7086x5ubfxuvH1+vH2uHz27PxtfXCtdTD2OvfAPK82uDM+N3C/eXf9Nns2+Dp7e/77u7yFhoDE+Tw/gsL8usMAN0j+hgfItz36ekd6OYHDgoS8ywLOPfyCD0L/PsRPB03HTwm/TkjIEs1BRpNTSovIFIpSlAkREsrXTczYFs7QERmYlM9QiZjK2xMRDBoc1EuPWBYQjVPZW9sNldVTE93TWRUYFN4YUpZXG56SWxlS2hgTo9ieHJtdpJrl3BhlZh2cV6EZYKVhGWifY+QjKmydGuOoJaCsZOze3SnlLKywLzGx7HAwpKUupmMnMnGvq+cr6eqt8Wmx9THtMC20uDa1daeorLbvrne7srF3/HhyNHh6NbG7cLL0NXOvtLhvcPwzf3Q59Te3t3e+Abr7vEL4RPR8vPx9RfX1/YJ/uoZ"
+   },
+   {
+    "method": "POST",
+    "url": "https://rccd.curriqunet.com/Search/GetPublicSavedSearch",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "post": "clientIds%5B%5D=1&entityTypeId=1&clientEntityTypeId=1",
+    "head": "[{\"Id\":0,\"SearchName\":null,\"SearchConfig\":\"{\\\"rules\\\":null,\\\"displayColumns\\\":[{\\\"id\\\":\\\"field-check-field-873-10135\\\",\\\"location\\\":\\\"1\\\"},{\\\"id\\\":\\\"field-check-field-888-10140\\\",\\\"location\\\":\\\"1\\\"},{\\\"id\\\":\\\"field-check-field-872-10134\\\",\\\"location\\\":\\\"1\\\"},{\\\"id\\\":\\\"field-check-field-ProposalType-1\\\",\\\"location\\\":\\\"1\\\"},{\\\"id\\\":\\\"field-check-field-status-1\\\",\\\"location\\\":\\\"1\\\"}],\\\"filterByUser\\\":false,\\\"keyword\\\":\\\"\\\",\\\"searchName\\\":\\\"\\\",\\\"userId\\\":920,\\\"clientEntityTypeId\\\":1,\\\"clientEntitySubTypeId\\\":null,\\\"clientIds\\\":[1],\\\"entityId\\\":1,\\\"sortOptions\\\":[],\\\"sortAscendingFlag\\\":\\\"1\\\",\\\"isDefaultSearchForClientEntityType\\\":false,\\\"isPublicSearchForClientEntityType\\\":true,\\\"publicSearchClientId\\\":1,\\\"campusIds\\\":[],\\\"mode\\\":\\\"basic\\\"}\",\"IsPublic\":false}]"
+   },
+   {
+    "method": "POST",
+    "url": "https://rccd.curriqunet.com/Search/GetSearchFields",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "post": "cetId=1&entityTypeId=1&clientIds%5B%5D=1&filterScope=0",
+    "head": "{\"fields\":[{\"id\":\"field-872-10134\",\"tabname\":\"Cover\",\"tabId\":29,\"label\":\"Course Title\",\"precision\":\"0\",\"scale\":\"0\",\"datatype\":\"nvarchar\",\"canfilter\":1,\"EntityTypeId\":\"1\",\"IsSubject\":false,\"IsCourseNumber\":false,\"IsCourseTitle\":true,\"IsProposalType\":false,\"IsStatus\":false,\"IsAwardType\":false,\"IsProgramTitle\":false,\"IsDepartment\":false,\"IsApprovalSubject\":false,\"IsApprovalDepartment\":false,\"IsApprovalProposalType\":false,\"IsApprovalPosition\":false,\"IsCourseSemester\":false,\"IsProgramSemester\":false,\"IsPackageTitle\":false,\"IsModuleTitle\":false,\"IsModuleSemester\":false,\"IsModuleSubject\":false,\"IsDivision\":false,\"IsTier3\":false,\"ClientEntityTypeId\":null,\"IsPackageSubject\":false,\"clientId\":1,\"RootMultiLevelDetailSectionId\":0,\"RootMultiLevelDetailSection\":null,\"RootMultiLevelDetailSectionMBSId\":0,\"IsMultiLevelDetail\":false,\"HardCodedLongLookupList\":false},{\"id\":\"field-873-10135\",\"tabname\":\"Cover\",\"tabId\":29,\"label\":\"Discipline\",\"precision\":\"10\",\"scale\":\"0\",\"datatype\":\"int\",\"canfilter\":1,\"EntityTypeId\":\"1\",\"IsSubject\":true,\"IsCourseNumber\":false,\"IsCourseTitle\":false,\"IsProposalType\":false,\"IsStatus\":false,\"IsAwardType\":false,\"IsProgramTitle\":false,\"IsDepartment\":false,\"IsApprovalSubject\":false,\"IsApprovalDepartment\":false,\"IsApprovalProposalType\":false,\"IsApprovalPosition\":false,\"IsCourseSemester\":false,\"IsProgramSemester\":false,\"IsPackageTitle\":false,\"IsModuleTitle\":false,\"IsModuleSemester\":false,\"IsModuleSubject\":false,\"IsDivision\":false,\"IsTier3\":false,\"ClientEntityTypeId\":null,\"Is"
+   },
+   {
+    "method": "POST",
+    "url": "https://rccd.curriqunet.com/Search/NewSearch",
+    "status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "post": "options%5Bpagesize%5D=25&options%5Bpage%5D=0&options%5BtitleFilter%5D=&options%5BentityTypeId%5D=1&options%5BfilterScope%5D=0&options%5BsortDirection%5D=1&options%5BclientEntityTypeId%5D=1&options%5BclientEntitySubTypeId%5D=&options%5Bfilters%5D%5Bsql%5D=&options%5BDisplayColumns%5D%5B0%5D%5Bid%5D=field-check-field-873-10135&options%5BDisplayColumns%5D%5B0%5D%5Blocation%5D=1&options%5BDisplayColumns%5D%5B1%5D%5Bid%5D=field-check-field-888-10140&options%5BDisplayColumns%5D%5B1%5D%5Blocation%5D=1&",
+    "head": "{\"TotalRows\":14292,\"Rows\":25,\"results\":[{\"RowNumber\":1,\"TotalRows\":14292,\"CourseId\":1,\"BaseId\":1,\"MetaTemplateId\":2,\"ClientId\":1,\"StatusAliasId\":6,\"StatusBaseId\":5,\"StatusTitle\":\"Historical\",\"Editable\":0,\"ProposalTitle\":\"ACC-1A - Principles of Accounting I\",\"SubjectCode\":\"ACC\",\"CourseNumber\":\"1A\",\"Title\":\"Principles of Accounting I\",\"PublicEntityTitle\":null,\"CreatedOn\":\"\\/Date(1203663600000)\\/\",\"LaunchDate\":\"\\/Date(1592333433380)\\/\",\"ImplementDate\":\"\\/Date(1592333433380)\\/\",\"LastModified\":null,\"Active\":true,\"ProposalId\":5957,\"MetaTemplateTypeId\":1,\"ProcessActionTypeId\":1,\"ClientEntityTypeId\":1,\"ClientEntitySubTypeId\":null,\"EntityTypeId\":1,\"ProposalTypeId\":1,\"ProposalTypeTitle\":\"New Course\",\"AllowNonAdminReactivation\":false,\"AllowReactivation\":false,\"IsOriginator\":0,\"IsCoContributor\":0,\"ClientTitle\":\"Riverside Community College District\",\"Code\":\"RCCD\",\"CloneSourceImplementDate\":null,\"HasDraftInFamily\":0,\"HasReviewInFamily\":0,\"HasApprovedInFamily\":0,\"HeadOfFamily\":16513,\"CanOriginate\":false,\"FamilyHeadByStatusEntityId\":16513,\"FamilyHeadIsDeactivation\":false,\"ClientAllowMultipleApproved\":true,\"PTAllowMultipleApproved\":false,\"CrossListingNonSource\":true,\"LastUpdated\":\"\\/Date(1736273431457)\\/\",\"HasModifyProposalTypes\":false,\"HasDeactivateProposalTypes\":false,\"872-10134\":\"Principles of Accounting I\",\"873-10135\":1,\"888-10140\":\"1A\",\"ProposalType-1\":\"New Course\",\"status-1\":\"Historical\",\"MetaReports\":[{\"Id\":97,\"Title\":\"Course Outline\",\"MetaReportTypeId\":1,\"ProcessActionTypeId\":1,\"MetaT"
+   }
+  ],
+  "calls_after_scroll": [],
+  "body_head": "Login\nSearch\nSearch\nColleges\nCourses\nSearch\nReset\nSubject \nStatus \nOutput Fields 5\nAdvanced Filters\nDiscipline\nCourse Number\nCourse Title\nProposal Type\nStatus\nACC\n1A\nPrinciples of Accounting I\nNew Course\nHistorical\nReports\nACC\n1A\nPrinciples of Accounting I\nCourse Major Modification\nHistorical\nReports\nACC\n1A\nPrinciples of Accounting I\nCourse Minor Modification\nHistorical\nReports\nACC\n1A\nPrinciples of Accounting I\nCourse Major Modification\nHistorical\nReports\nACC\n1A\nPrinciples of Accounting I\nCourse Major Modification\nHistorical\nReports\nACC\n1A\nPrinciples of Accounting I\nCourse Major Modification\nHistorical\nReports\nACC\n1A\nPrinciples of Accounting I\nCourse Minor Modification\nActive\nReports\nACC\n1ADE\nPrinciples of Accounting I\nDistance Education Proposal\nActive\nReports\nACC\n1B\nPrinciples of Accounting II\nCourse Major Modification\nHistorical\nReports\nACC\n1B\nPrinciples of Accounting II\nCourse Minor Modification\nHistorical\nReports\nACC\n1B\nPrinciples of Accounting II\nCourse Minor Modification\nHistorical\nReports\nACC\n1B\nPrinciples of Accounting II\nCourse Major Modification\nHistorical\nReports\nACC\n1B\nPrinciples of Accounting II\nNew Course\nHistorical\nReports\nACC\n1B\nPrinciples of Accounting II\nCourse Minor Modification\nActive\nReports\nACC\n1B\nPrinciples of Accounting II\nCourse Major Modification\nHistorical\nReports\nACC\n1BDE\nPrinciples of Accounting II\nDistance Education Proposal\nActive\nReports\nACC\n19\nVolunteer Income Tax Assistance Training\nNew Course\nHistorical\nReports\nACC\n19\nVolunteer Income Tax Assistance Training\nCourse Minor Modification\nActive\nReports\nACC\n19DE\nVolunteer Income Tax Assistance Tax Training\nDistance Education Proposal\nActive\nReports\nACC\n19L\nVolunteer Income Tax Assistance Tax Preparation\nNew Course\nHistorical\nReports\nACC\n19L\nVolunteer Income Tax Assistance Tax Preparation\nCourse Major Modification\nActive\nReports\nACC\n19LDE\nVolunteer Income Tax Assistance Tax Preparation Lab\nDistance Education Proposal\nActive\nReports\nACC\n38\nManagerial Accounting\nCourse Deletion\nHistorical\nReports\nACC\n38\nManagerial Accounting\nNew Course\nHistorical\nReports\nACC\n38DE\nManagerial Accounting\nDistance Education Proposal\nHistorical\nReports\n1\n2\n3\n4\n5\n1-25 of 14292\nWelcome to CurrIQ\u016bnet!\n\nLooking for a Course Outline of Record?\nYou can view any active course outlines without logging in; simply click the Search button on the top right of the screen.\n\nA tutorial for using the public search can be found at\u00a0https://youtu.be/0PcfAXGadKM?si=0ttjYLyd54TOfUM",
+  "report_sample": {
+   "url": "https://rccd.curriqunet.com/Report/Course/GetReport/1?reportId=97",
+   "status": 200,
+   "title": "Course Outline: Riverside Community College District",
+   "head": "Discipline: Accounting\nRIVERSIDE COMMUNITY COLLEGE DISTRICT\nINTEGRATED COURSE OUTLINE OF RECORD\nACCOUNTING 1A\nACC-1A : Principles of Accounting I\t\nCollege: \nRIV\nMOV\nNOR\nLecture Hours: 54.000\nTotal Student Learning Hours: 54.000\nTotal Units: 3.00\nGrading Methods: Letter Grade\n\nCourse Description\nPrerequisite: None\nAdvisory: BUS-20\nCourse Credit Recommendation: Degree Credit\n\n\nAn introduction to accounting principles and practice, as a manual and/or computerized information system that provides and interprets economic data for economic units within a global society. Includes recording, analyzing, and summarizing procedures used in preparing financial statements. 54 hours lecture.\nEntrance Skills:\nBefore entering the course, students should be able to demonstrate the following skills:\n\nDevelop speed and accuracy in analyzing the fundamental process of mathematics commonly used in making business calculations.\nAnalyze, explain, apply principles, and solve problems within the subject matter.\nDevelop a better understanding of mathematical skills required in other business subject such as accounting, management, marketing and computer operations.\nStudent Learning Outcomes:\nUpon successful completion of the course, students should be able to demonstrate the following skills:\n\nAnalyze, explain, solve problems and apply the principles offinancial accounting to varied economic units within a businessentity.\nIdentify relevant economic data used in manual and computerizedaccounting information systems and interpret financial statements.\nEvaluate corporate organization, equity rights and structure.\nDemonstrate the ability to continue in a university program ofaccounting and acquire the required background in any field ofbusiness administration.\nCourse Content:\nIntroduction: Accounting Concepts and Principles\nAnalyzing Transactions\nMatching Concept and the Adjustment Process\nCompleting the Accounting Cycle\nAccounting for Merchandising Enterpriss\nAccounting Systems and Cash\nReceivables and Temporary Investments\nInventories\nPlant Assets and Intangible Assets\nLiabilities and Bonds\nCorporate Equity\nMethods of Instruction:\nMethods of instruction used to achieve student learning outcomes may include, but are not limited to, the following activities:\n\nPresent lectures to describe the essentials of business concepts and their applications to society.\u00a0 The lectures will present financial accounting principles to varied economic units with a within a business entity.\nDevelop and a",
+   "code": "ACC 1A"
+  }
+ }
+}

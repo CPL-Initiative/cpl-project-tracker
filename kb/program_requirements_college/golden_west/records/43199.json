@@ -1,0 +1,189 @@
+{
+ "college": "Golden West College",
+ "control_number": "43199",
+ "shape": "certificate",
+ "title": "Comprehensive Automotive Technician",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.cccd.edu/golden-west/pathways/career-education/automotive-technology/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12083,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12083,
+    "output_tokens": 1125,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1125,
+  "output_tokens_details": {
+   "thinking_tokens": 260
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07083,
+ "ms": 10161,
+ "seconds": 10.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 10,
+   "share": 0.0,
+   "missing": [
+    "AUTOG110",
+    "AUTOG120",
+    "AUTOG130",
+    "AUTOG131",
+    "AUTOG140",
+    "AUTOG141",
+    "AUTOG150",
+    "AUTOG151",
+    "AUTOG160",
+    "AUTOG181"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Comprehensive Automotive Technician, Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AUTO G110",
+    "why": "Requirements section not in text; only its course description names this program"
+   },
+   {
+    "code": "AUTO G120",
+    "why": "Requirements section not in text; only its course description names this program"
+   },
+   {
+    "code": "AUTO G130",
+    "why": "Requirements section not in text; only its course description names this program"
+   },
+   {
+    "code": "AUTO G131",
+    "why": "Requirements section not in text; only its course description names this program"
+   },
+   {
+    "code": "AUTO G140",
+    "why": "Requirements section not in text; only its course description names this program"
+   },
+   {
+    "code": "AUTO G141",
+    "why": "Requirements section not in text; only its course description names this program"
+   },
+   {
+    "code": "AUTO G150",
+    "why": "Requirements section not in text; only its course description names this program"
+   },
+   {
+    "code": "AUTO G151",
+    "why": "Requirements section not in text; only its course description names this program"
+   },
+   {
+    "code": "AUTO G160",
+    "why": "Requirements section not in text; only its course description names this program"
+   },
+   {
+    "code": "AUTO G181",
+    "why": "Requirements section not in text; only its course description names this program"
+   }
+  ],
+  "notes": [
+   "The catalog text holds only the Automotive Technology landing page (a list of degree and certificate links) and the Courses tab. The program's own requirements section is not in the text. The heading recorded is the link title in the Degrees and Certificates list.",
+   "No blocks, totals, outcomes or careers are recorded because the text states no requirement rules, units total or outcomes for this certificate.",
+   "The 'Catalog Program Pages Referencing' lists under the course descriptions name this certificate for AUTO G110, G120, G121, G130, G131, G140, G141, G145, G150, G151, G160, G170 and G181. That suggests these courses appear in the program. AUTO G121 (5 units), AUTO G145 (5 units) and AUTO G170 (3 units) are not in the closed list. How the courses count (required or elective) cannot be read from this text.",
+   "A reviewer should fetch the program page itself (Comprehensive Automotive Technician, Certificate of Achievement) to record its blocks and total.",
+   "The catalog prints AUTO G160's title as 'Heating and Air Conditioning'; the closed list stores it as 'Heating And Air Conditioning'."
+  ]
+ },
+ "extracted_run": "38748828247"
+}

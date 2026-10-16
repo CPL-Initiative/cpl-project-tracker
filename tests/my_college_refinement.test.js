@@ -106,10 +106,12 @@ block("(1a)", function () {
     !Array.prototype.some.call(heads, function (h) { return /CPL Assistant/.test(h.textContent); }),
     "Sam: change the CPL Assistant title to Sierra AI");
 
-  // Exactly one description too — two paragraphs saying the same thing was
-  // half the redundancy, and a heading count alone would not catch it.
-  check("(1a) the box describes her once, not twice",
-    (box.textContent.match(/Ask her anything/g) || []).length === 1);
+  // Two paragraphs saying the same thing was half the redundancy, and a
+  // heading count alone would not catch it. Since S400 the box carries no
+  // description at all (Sierra AI's format: name, role row, starters, box; the
+  // placeholder asks), so neither copy may come back.
+  check("(1a) the box carries no description of her above the role row (S400)",
+    !/Ask her anything|Ask Sierra anything/.test(box.textContent) && !box.querySelector(".cplchat-intro p"));
 });
 
 // ── (1b) reading order: title → what she is → pickers → chat ───────────────
@@ -249,14 +251,29 @@ block("(3)", function () {
 });
 
 // ── (4) the log grows, and the page follows it ─────────────────────────────
+// The base rules moved from the retired CPL Assistant pane's <style> in both
+// HTMLs into the widget's own injected sheet (S398), so that is where they are
+// read: what a loaded tab actually carries.
+function injectedChatCss() {
+  const { w } = loadTab();
+  const st = w.document.getElementById("cplchat-aud-css");
+  return st ? st.textContent : "";
+}
 block("(4)", function () {
+  // One owner: a .cplchat-log rule creeping back into either HTML would fight
+  // the widget's own (and only one of them would be mirrored, Rule 4).
   [["CPL_Dashboard.html", CPL_HTML], ["index.html", IDX_HTML]].forEach(function (pair) {
-    const rule = (pair[1].match(/\.cplchat-log \{[^}]*\}/) || [""])[0];
-    check("(4) " + pair[0] + ": the log no longer has a FIXED height",
-      !!rule && !/[^-]height: ?460px/.test(rule), rule.slice(0, 160));
-    check("(4) " + pair[0] + ": it grows between a floor and a cap",
-      /min-height:/.test(rule) && /max-height:/.test(rule), rule.slice(0, 160));
+    check("(4) " + pair[0] + ": carries no .cplchat-log rule — the widget's sheet owns it",
+      !/\.cplchat-log \{/.test(pair[1]));
   });
+  const css = injectedChatCss();
+  const rule = (css.match(/(^|\n)\.cplchat-log \{[^}]*\}/) || [""])[0];
+  check("(4) the widget's sheet: the log no longer has a FIXED height",
+    !!rule && !/[^-]height: ?460px/.test(rule), rule.slice(0, 160));
+  // The floor went in S400: docked, it painted an empty 240px panel under the
+  // starters, the old format Sam pointed at. A one-line answer now takes one line.
+  check("(4) the widget's sheet: it grows to a cap, with no floor (S400)",
+    /max-height:/.test(rule) && !/min-height: ?[1-9]/.test(rule), rule.slice(0, 160));
 });
 
 // Async: scrollDown() defers a frame (requestAnimationFrame), so every drive
@@ -304,13 +321,16 @@ async function scrollFollowChecks() {
 block("(5)", function () {
   check("(5) Rule 4: the two HTMLs are identical", CPL_HTML === IDX_HTML);
   [["CPL_Dashboard.html", CPL_HTML], ["index.html", IDX_HTML]].forEach(function (pair) {
-    const rule = (pair[1].match(/\n\s*\.cplchat \{[^}]*\}/) || [""])[0];
-    check("(5) " + pair[0] + ": the 880px cap is gone", !!rule && !/max-width: ?880px/.test(rule), rule.trim());
-    // Mobile gets MORE of the screen, not less — a phone has none to waste.
-    const mob = (pair[1].match(/@media \(max-width: ?600px\) \{[\s\S]{0,700}?\n\s*\}\n/) || [""])[0];
-    check("(5) " + pair[0] + ": the mobile block sizes the log too",
-      /\.cplchat-log \{[^}]*max-height/.test(mob), mob.slice(0, 200));
+    check("(5) " + pair[0] + ": carries no .cplchat rule at all now — the widget owns its CSS (S398)",
+      !/\.cplchat[\w-]* \{/.test(pair[1]));
   });
+  const css = injectedChatCss();
+  const rule = (css.match(/(^|\n)\.cplchat \{[^}]*\}/) || [""])[0];
+  check("(5) the widget's sheet: the 880px cap is gone", !!rule && !/max-width: ?880px/.test(rule), rule.trim());
+  // Mobile gets MORE of the screen, not less — a phone has none to waste.
+  const mob = (css.match(/@media \(max-width: ?600px\) \{[^\n]*/) || [""])[0];
+  check("(5) the widget's sheet: the mobile block sizes the log too",
+    /\.cplchat-log \{[^}]*max-height/.test(mob), mob.slice(0, 200));
 });
 
 block("(5b)", function () {

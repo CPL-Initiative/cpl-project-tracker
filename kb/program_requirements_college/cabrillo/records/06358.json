@@ -1,0 +1,408 @@
+{
+ "college": "Cabrillo College",
+ "control_number": "06358",
+ "shape": "degree",
+ "title": "Spanish",
+ "award": "A.A. Degree",
+ "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/spanish-associate-in-arts-a-a-fall-2026",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6572,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6572,
+    "output_tokens": 3549,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3549,
+  "output_tokens_details": {
+   "thinking_tokens": 1508
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.09727,
+ "ms": 28583,
+ "seconds": 29.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 21,
+   "listed": 22,
+   "share": 0.955,
+   "missing": [
+    "SPAN16"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "SPAN3S"
+   ],
+   "flagged": [
+    "SPAN3S"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    34.0,
+    38.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 34.0-38.0; the catalog states 18.0-18.0"
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     58.0,
+     62.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     24.0
+    ],
+    "why": [],
+    "within": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 13,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Spanish - Associate in Arts (A.A.)",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cabrillo College General Education",
+   "outcomes": [
+    "Effectively communicate in spoken and written Spanish in many real-world settings.",
+    "Interpret and analyze journalistic and literary texts of the Spanish-speaking world.",
+    "Analyze elements of society and culture in the Spanish-speaking world.",
+    "Evaluate personal strengths and weaknesses in Spanish communication skills and utilize resources for improvement when needed."
+   ],
+   "careers": [
+    "educación",
+    "servicios diplomáticos",
+    "antropología",
+    "economía",
+    "ciencias políticas",
+    "literatura",
+    "sociología",
+    "trabajo social",
+    "traducción",
+    "estudios legales",
+    "negocios",
+    "turismo",
+    "lingüística"
+   ],
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 24
+   }
+  },
+  "blocks": [
+   {
+    "name": "Recommended Major Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "SPAN1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Recommended Major Requirements",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "SPAN3",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN3S",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Recommended Major Requirements",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "SPAN4",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN17",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Recommended Major Electives",
+    "rule": "choose_units",
+    "minimum": 16,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "SPAN5A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN6A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN6B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN10A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN10B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN26",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN30B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN21A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHN21AH",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN21B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHN21BH",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST21A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST21AH",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST21B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST21BH",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "SPAN 16",
+    "why": "not in the text; catalog lists SPAN3S - Spanish for Spanish Speakers I in its place"
+   }
+  ],
+  "notes": [
+   "Cabrillo labels every requirement block 'Recommended Major Requirements'/'Recommended Major Electives', each with 'Complete the following number of credits'; these were read as the award's requirements rather than non-required recommendations. Reviewer should confirm.",
+   "total_units recorded as min 18 from the note 'overall unit requirement for the major (minimum of 18 units)' and the description's 'por lo menos 18 unidades'; no maximum stated. The 60 credits is the degree total. Printed block totals (10, 4-5, 4-5, 16-18) sum to more than 18, which conflicts with the stated minimum.",
+   "The note states students who begin beyond SPAN1 substitute units from the recommended major electives list; that note line is printed with 0 units.",
+   "The electives list ends 'or any transferable or degree applicable course', so the 16-18 elective units may be satisfied by any transferable/degree-applicable course; open_elective_units left null because no specific open-elective unit count is named.",
+   "The two 4-5 credit blocks were read as choosing one course of the pair (SPAN3 or SPAN3S; SPAN4 or SPAN17).",
+   "Honors twins (ETHN21AH, ETHN21BH, HIST21AH, HIST21BH) recorded as alternatives of their non-honors courses; ETHN and HIST Chicano History courses share titles (likely cross-listed) but are printed as separate entries.",
+   "SPAN3S is not in the closed list (catalog_addition true); it may be a renumbering of SPAN 16 Elementary Spanish for Spanish Speakers I.",
+   "Catalog text begins mid-sentence in the Spanish-language description; codes recorded as printed without spaces (e.g., SPAN1).",
+   "Program Outcomes are printed for the program as a whole on this A.A. page and recorded for this award."
+  ]
+ },
+ "extracted_run": 38639316727,
+ "reconciled": [
+  {
+   "field": "degree_total",
+   "was": null,
+   "now": {
+    "min": 60,
+    "max": 60
+   },
+   "words": "Program Requirements\nSpanish - Associate in Arts (A.A.)\nComplete the following number of credits: 60"
+  },
+  {
+   "field": "ge_units",
+   "was": null,
+   "now": {
+    "min": 24,
+    "max": 24
+   },
+   "words": "Cabrillo College General Education\n24"
+  }
+ ],
+ "read_run": "38442109713"
+}

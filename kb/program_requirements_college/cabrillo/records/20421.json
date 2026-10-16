@@ -1,0 +1,384 @@
+{
+ "college": "Cabrillo College",
+ "control_number": "20421",
+ "shape": "certificate",
+ "title": "Human Services",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/human-services-certificate-of-achievement-fall-2025",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6996,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6996,
+    "output_tokens": 3273,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3273,
+  "output_tokens_details": {
+   "thinking_tokens": 1329
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.09344,
+ "ms": 26156,
+ "seconds": 26.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 19,
+   "listed": 21,
+   "share": 0.905,
+   "missing": [
+    "ENGL1AMC",
+    "ENGL1AMCH"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "HSERV53"
+   ],
+   "flagged": [
+    "HSERV53"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    31.0,
+    33.0
+   ],
+   "stated": [
+    31.0,
+    33.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 19,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Human Services Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 31,
+    "max": 33
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate competency in client engagement, counseling, problem solving, and case management including multicultural awareness for employment in the human services, mental health, and drug and alcohol services.",
+    "Analyze social science research to assess the impact of poverty, discrimination, social injustice, addiction, and mental illness on human functioning.",
+    "Facilitate groups, meetings, classes, and community organizing efforts utilizing group process theory.",
+    "Plan, manage, and complete projects utilizing effective oral, written, and project management skills."
+   ],
+   "careers": [
+    "social work",
+    "social welfare",
+    "substance abuse treatment",
+    "criminal justice",
+    "counseling",
+    "social work assistants",
+    "community advocates for children, adults, or families at risk",
+    "domestic abuse counselors",
+    "case managers",
+    "general counselors",
+    "alcohol and drug abuse counselors",
+    "eligibility and outreach workers",
+    "community health outreach workers",
+    "job training specialists",
+    "legal aid paraprofessionals",
+    "residential counselors",
+    "mental health technicians",
+    "gerontology aides",
+    "probation officers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 17,
+     "max": 17
+    },
+    "courses": [
+     {
+      "code": "HSERV50",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSERV51",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSERV52",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSERV53",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 1,
+     "max": 2
+    },
+    "courses": [
+     {
+      "code": "HSERV56A",
+      "units": 1,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSERV55A",
+      "units": 1,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 1,
+     "max": 2
+    },
+    "courses": [
+     {
+      "code": "HSERV55B",
+      "units": 1,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSERV56B",
+      "units": 1,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "SOC1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC1H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "PSYCC1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYCH1H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "PSYCH31",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYCH33",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "English Requirement",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CABT157",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLC1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGLC1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL1A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ENGL 1AMC",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL 1AMCH",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The catalog prints codes without a space between subject and number (e.g., HSERV50, PSYCC1000); these were matched to the closed-list codes (HSERV 50, PSYC C1000, etc.) and not flagged as additions.",
+   "HSERV53 (Techniques of Group Counseling in the Human Services, 2 units) is required but not on the closed list; recorded as a catalog addition.",
+   "Practicum blocks state 'Complete the following number of credits: 1-2'; the Program Map says 'Take one of the following', so they are recorded as choose one course (1-2 units each).",
+   "SOC1/SOC1H, PSYCC1000/PSYCH1H and ENGLC1000/ENGLC1000H are recorded as honors-twin alternatives; PSYCH31/PSYCH33 and the English Requirement are read as choose one course per the Program Map.",
+   "The catalog counts the award in 'Credits'; recorded as units. ENGL 1AMC/1AMCH appear on the closed list but not in this catalog year's English Requirement."
+  ]
+ },
+ "extracted_run": "38442109713"
+}

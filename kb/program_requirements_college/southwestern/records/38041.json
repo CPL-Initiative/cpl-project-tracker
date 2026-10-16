@@ -1,0 +1,310 @@
+{
+ "college": "Southwestern College",
+ "control_number": "38041",
+ "shape": "certificate",
+ "title": "Leadership and Supervision---Intermediate",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/leadership-supervision/leadership-supervision-intermediate-certificate/",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7492,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7492,
+    "output_tokens": 2412,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2412,
+  "output_tokens_details": {
+   "thinking_tokens": 750
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07821,
+ "ms": 32820,
+ "seconds": 33.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 16,
+   "listed": 23,
+   "share": 0.696,
+   "missing": [
+    "LDR150",
+    "LDR151",
+    "LDR152",
+    "LDR153",
+    "LDR154",
+    "LDR155",
+    "LDR156"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    19.0,
+    23.0
+   ],
+   "stated": [
+    32.0,
+    39.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 19.0-23.0; the catalog states 32.0-39.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Leadership and Supervision---Intermediate",
+   "measure": "units",
+   "total_units": {
+    "min": 32,
+    "max": 39
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Student will communicate with co-workers, supervisors and subordinates in an appropriate manner with clarity and organization within the context of a business organization.",
+    "Student will work effectively as a member of a team by providing input to the team, actively listening to the input of others, and discussing and integrating this shared input into new ideas.",
+    "Student will work with people of various cultures and backgrounds in an effective and productive manner."
+   ],
+   "careers": [
+    "first line supervisors and managers for food service",
+    "first line supervisors and managers for retail and hospitality",
+    "supervisors and managers within governmental departments and non-profits"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ACCT 7",
+      "units": 3,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "ACCT 101",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 134",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 142",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 174",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 121",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 211",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 212",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CL 120",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "CIS 101",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "BUS 290",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 291",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 292",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 293",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "LDR 150",
+    "why": "not in the text; presumably part of the referenced Leadership and Supervision---Basic certificate"
+   },
+   {
+    "code": "LDR 151",
+    "why": "not in the text; presumably part of the referenced Leadership and Supervision---Basic certificate"
+   },
+   {
+    "code": "LDR 152",
+    "why": "not in the text; presumably part of the referenced Leadership and Supervision---Basic certificate"
+   },
+   {
+    "code": "LDR 153",
+    "why": "not in the text; presumably part of the referenced Leadership and Supervision---Basic certificate"
+   },
+   {
+    "code": "LDR 154",
+    "why": "not in the text; presumably part of the referenced Leadership and Supervision---Basic certificate"
+   },
+   {
+    "code": "LDR 155",
+    "why": "not in the text; presumably part of the referenced Leadership and Supervision---Basic certificate"
+   },
+   {
+    "code": "LDR 156",
+    "why": "not in the text; presumably part of the referenced Leadership and Supervision---Basic certificate"
+   }
+  ],
+  "notes": [
+   "The requirement 'Complete courses required for Leadership and Supervision---Basic certificate 13-14' names no courses on this page; the Basic certificate's courses (likely the LDR courses) must be read from that certificate's page. Its 13-14 units are part of the 32-39 total but no block was created for it.",
+   "Unit ranges (ACCT 7 3-4, CL 120 1-4) are printed beside the first course of an 'or' pair and appear to span both options; alternatives' units are not printed on the page and left null. Single units printed beside BUS 120, BUS 174, BUS 211 rows apply to the pair.",
+   "Units for BUS 290-293 are not printed individually; the block prints 2-4.",
+   "Note on page recommends completing the Basic certificate plus half of the Intermediate courses before enrolling in BUS 290-BUS 293 (advisory sequencing, not a requirement).",
+   "Program Student Learning Outcomes are printed for the program page and recorded as this award's outcomes."
+  ]
+ },
+ "extracted_run": "38563578596"
+}

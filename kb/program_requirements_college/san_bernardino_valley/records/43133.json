@@ -1,0 +1,552 @@
+{
+ "college": "San Bernardino Valley College",
+ "control_number": "43133",
+ "shape": "adt",
+ "title": "Social Work and Human Services",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/human-services/social-work-human-services-aat-degree/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9519,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9519,
+    "output_tokens": 4130,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4130,
+  "output_tokens_details": {
+   "thinking_tokens": 1285
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.12068,
+ "ms": 32265,
+ "seconds": 32.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 35,
+   "listed": 43,
+   "share": 0.814,
+   "missing": [
+    "ANTHRO102",
+    "ANTHRO102H",
+    "CD126",
+    "HIST100",
+    "SOC110",
+    "SOC110H",
+    "SOC141",
+    "SOC141H"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 8,
+   "codes": [
+    "ANTH102",
+    "ANTH102H",
+    "CDEV126",
+    "HISTC1001",
+    "SOCI110",
+    "SOCI110H",
+    "SOCI141",
+    "SOCI141H"
+   ],
+   "flagged": [
+    "ANTH102",
+    "ANTH102H",
+    "CDEV126",
+    "HISTC1001",
+    "SOCI110",
+    "SOCI110H",
+    "SOCI141",
+    "SOCI141H"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    29.0,
+    34.0
+   ],
+   "stated": [
+    29.0,
+    33.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 29.0-34.0; the catalog states 29.0-33.0"
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     75.0,
+     84.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Social Work and Human Services Associate in Arts for Transfer Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 29,
+    "max": 33
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 12,
+    "max": 16
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Describe social work and human services, outlining the evolution of social welfare and human services in the U.S.",
+    "Identify the legal, ethical, and professional responsibilities associated with social welfare delivery and explain the current service delivery system in which social work and human service clients’ needs are met.",
+    "Recognize and understand the systems of oppression and privilege using critical thinking skills to envision ways to collaborate, negotiate, and advocate with and within social welfare institutions and organizations."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HUMSV 170",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUMSV 195A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUMSV 198C",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOCI C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON 208",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 105",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2001H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON C2002",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON C2002H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "One course from the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": "Biology",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 260",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 261",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "or completion of BIOL 250 and BIOL 251",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Biology",
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "BIOL 250",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 251",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A - Two courses from the following",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ADJUS 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH 102H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CDEV C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV 126",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 174",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1001H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST C1001H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST C1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST C1002H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUMSV 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 137",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOCI 110H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOCI 141",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOCI 141H",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "ETHS 141",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ETHS 141H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANTHRO 102",
+    "why": "catalog prints it as ANTH 102 (subject renamed); recorded under that code"
+   },
+   {
+    "code": "ANTHRO 102H",
+    "why": "catalog prints it as ANTH 102H (subject renamed); recorded under that code"
+   },
+   {
+    "code": "CD 126",
+    "why": "catalog prints CDEV 126 (likely same course, renamed subject)"
+   },
+   {
+    "code": "HIST 100",
+    "why": "not in the text; catalog lists HIST C1001 (likely its replacement)"
+   },
+   {
+    "code": "SOC 110",
+    "why": "catalog prints it as SOCI 110 (subject renamed)"
+   },
+   {
+    "code": "SOC 110H",
+    "why": "catalog prints it as SOCI 110H (subject renamed)"
+   },
+   {
+    "code": "SOC 141",
+    "why": "catalog prints it as SOCI 141 (subject renamed)"
+   },
+   {
+    "code": "SOC 141H",
+    "why": "catalog prints it as SOCI 141H (subject renamed)"
+   }
+  ],
+  "notes": [
+   "Closed-list codes SOCIC1000/SOCIC1000H and CDEVC1000/CDEVC1000H differ from the catalog's SOCI C1000/CDEV C1000 only by spacing; treated as matches (catalog_addition false).",
+   "ANTH, CDEV 126 and SOCI codes are marked catalog_addition true because the closed list stores them under ANTHRO, CD and SOC subjects; reviewer should confirm these are the same courses.",
+   "Biology requirement: 'One course from the following or completion of BIOL 250 and BIOL 251' recorded as two blocks in option group 'Biology'. The catalog prints 8 units for the BIOL 250 & BIOL 251 pair combined, not per course; BIOL 260 and BIOL 261 have no units printed beside them.",
+   "Units for 'or' alternatives are not printed beside them in the catalog and are left null.",
+   "Catalog also prints 'Total Double-Counted Units 19'; Electives Units 12-16 recorded as degree_elective_units.",
+   "Program Learning Outcomes are printed on the page's outcomes tab for this program; recorded as this award's outcomes.",
+   "Footnote 1 on HUMSV 195A and HUMSV 198C: students must find and select an agency for fieldwork hours before registering."
+  ]
+ },
+ "extracted_run": "38748858322"
+}

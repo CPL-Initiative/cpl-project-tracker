@@ -1,0 +1,343 @@
+{
+ "college": "Gavilan College",
+ "control_number": "19378",
+ "shape": "certificate",
+ "title": "Child Development and Educational Studies",
+ "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+ "source_url": "https://gavilan.curriqunet.com/catalog/iq/4089/4099/4122",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7245,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7245,
+    "output_tokens": 2133,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2133,
+  "output_tokens_details": {
+   "thinking_tokens": 499
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07164,
+ "ms": 16738,
+ "seconds": 17.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 19,
+   "listed": 19,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "CD1",
+    "CD22"
+   ],
+   "flagged": [
+    "CD1",
+    "CD22"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    24.0,
+    24.0
+   ],
+   "stated": [
+    14.0,
+    24.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 24.0-24.0; the catalog states 14.0-24.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Child Development and Education Studies - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 14,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "be eligible to apply for the Assistant Teacher Permit and the Associate Teacher Permit on the California Child Development Permit Matrix.",
+    "function within the scope of approved state and nationally accredited early childhood and childcare competencies.",
+    "practice within professional and legal standards, ethical principles, and demonstrate a sensitivity to language and cultural differences of the children, families, and staff where they will be working or completing their cooperative work experiences.",
+    "apply principles of written and verbal communication, and research to communicate relevant, accurate and complete information.",
+    "apply child development principles and sensitivity to theory and applications of working with families of children with special needs."
+   ],
+   "careers": [
+    "teacher",
+    "master teacher",
+    "site supervisor",
+    "child development",
+    "elementary and secondary education"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 14,
+     "max": 14
+    },
+    "courses": [
+     {
+      "code": "CD 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CD 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CD 40",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CD 7",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD 9",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD 19",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Electives",
+    "rule": "choose_units",
+    "minimum": 10,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "CD 4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CD 7",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD 13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD 15",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD 16",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD 17",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD 18",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD 22",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CD 23",
+      "units": 1,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD 32",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD 97",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD 98",
+      "units": 0.5,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The printed total is 'Total: 14- 24', recorded as printed; the two blocks (14 + 10) sum to 24, so the low end of 14 looks inconsistent and should be checked.",
+   "The Learning Outcome(s) list sits under a program summary that describes the CDES program as a whole, including its A.A. degrees; this certificate appears to share it.",
+   "Careers are taken from the program summary, which describes the degree paths (teacher, master teacher, site supervisor; careers in child development and elementary and secondary education) rather than the certificate specifically.",
+   "CD 5 / CD 7 appear both in Required Core and in Required Electives; presumably a student uses the one not taken in the core as an elective. Check this.",
+   "CD 22 is marked (Historical) in the catalog; it is not on the closed list.",
+   "CD 1 is required in the core but is not on the closed list."
+  ]
+ },
+ "extracted_run": "38948144064"
+}

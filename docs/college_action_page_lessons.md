@@ -1,7 +1,7 @@
 ---
 title: College action page & MAP-team queue — lessons
 created: 2026-08-09
-updated: 2026-08-21
+updated: 2026-10-14
 tags: [lessons, college-action-page, map-team-queue, governance, contacts, measurement]
 artifacts:
   - map_team_queue.js
@@ -1635,3 +1635,43 @@ final map rebuild hid a real regression: `sources()` puts the table name behind 
 variable, `REST_CONCAT_RE` needs it to follow `REST + "`, and college-briefing's
 read set lost four tables and gained none. Fixed with a SEED pinned to
 `function sources\(\)`.
+
+## 2026-10-12 — SkyHolly S370: the UI pass reached a college's page, and the public had been told every college had no contact
+
+**The sweep had never seen the page.** The cobi target opens My College on its scope question, so
+the checks passed on a screen with five buttons. `my-college-page` and `-dark` (#2030) stand in each
+Supabase read with the table's own columns and invented figures (the tracker is public, so no real
+contact or count), pick the college through the page's own controls and open every section.
+
+**The public contact measure read a column the public row does not have.** A signed-out reader
+reads `map_college_contacts_pub` (coordinator, counselor, landing page). The contact strategy read
+`primary_contact_email`, absent there, so every college read "No contact listed in MAP ... has
+nowhere to land" in high emphasis, beside a contacts table on the same page listing its coordinator
+("2 of 2 roles filled"). Since the page opened to the public on 2026-09-17. A public reader now
+measures the coordinator, else the counselor, the roles the strategy names; signed in, MAP's
+primary contact as before. Guard `tests/my_college_public_contact.test.js` (3 of 8 fail on the old
+file). The finding came from reading the seeded page's text, not from the a11y checks: a sweep
+measures paint, and a contradiction between two sections paints cleanly.
+
+**Two harness lessons, now in `/a11y-pass` step 7.** A seed that clicks with the mouse turns off
+`:focus-visible` for the focus the sweep moves later, so all 65 controls read as ringless; seed with
+`element.click()` and a `change` event. And a fallback hex is only as safe as the token in front of
+it: `--link` and `--warn` exist in neither `:root`, so `var(--link,#0b5cad)` painted raw blue on the
+dark ground at 2.47:1.
+
+**The rest of the pass:** 29px of sideways scroll at 320px (a 300px grid floor; every floor is now
+`min(Npx,100%)`), section titles as h3 so the items' h4 no longer skip a level, and the controls
+converted to underlined words (Sam, 2026-10-09). Clean light and dark at 320, 390 and 1440.
+
+## S386 SkyElm (2026-10-14): My College reads the college's items from the view (#2097)
+
+- **The drafts section read every record's display to keep a few gaps.** At Cerritos that was about 4 MB for 577
+  items. It now reads `program_record_college_items` (the view #2093 built for the MAP team queue), one row an item,
+  grouped by control number in the view's order (`order=control_number,n`). The page's text is unchanged.
+- **A paged read is the guard, not the row count.** Cerritos is under PostgREST's 1,000-row cap today; `jgetAll`
+  pages anyway, and a failed page is a failed read (the section stays off), never a short list.
+- **The a11y seed stands in for each read the page makes by URL.** Pointing My College at the view left the seed's
+  `program_requirement_records` stand-in unmatched, so the sweep would have measured a page without the drafts
+  section and passed. The seed now waits for `ul.cb-dr li`: a stand-in that stops matching fails the seed.
+- **Prove a test guards the change:** the new drafts test against main's `college_briefing.js` dies on a TypeError,
+  and the a11y seed pointed back at the table times out.

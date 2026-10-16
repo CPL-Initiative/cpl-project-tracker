@@ -1,0 +1,582 @@
+{
+ "college": "Mt. San Jacinto College",
+ "control_number": "04413",
+ "shape": "degree",
+ "title": "Nursing",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.msjc.edu/instructional-programs/nursing-registered-nursing/nursing-as/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10314,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10314,
+    "output_tokens": 4441,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4441,
+  "output_tokens_details": {
+   "thinking_tokens": 1463
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.13008,
+ "ms": 34887,
+ "seconds": 35.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 28,
+   "share": 0.5,
+   "missing": [
+    "NURS194",
+    "NURS212",
+    "NURS214",
+    "NURS222",
+    "NURS224",
+    "NURS226",
+    "NURS234",
+    "NURS236",
+    "NURS238",
+    "NURS244",
+    "NURS248",
+    "NURS572",
+    "NURS573",
+    "NURS574"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 20,
+   "codes": [
+    "COMM106",
+    "ENGLC1000",
+    "ENGLC1000H",
+    "ENGLC1001",
+    "ENGLC1001H",
+    "HISTC1001",
+    "HISTC1001H",
+    "HISTC1002",
+    "HISTC1002H",
+    "NURS501",
+    "NURS502",
+    "NURS503",
+    "NURS504",
+    "NURS505",
+    "NURS506",
+    "NURS507",
+    "NURS508",
+    "NURS509",
+    "PSYC103",
+    "PSYC103H"
+   ],
+   "flagged": [
+    "COMM106",
+    "ENGLC1000",
+    "ENGLC1000H",
+    "ENGLC1001",
+    "ENGLC1001H",
+    "HISTC1001",
+    "HISTC1001H",
+    "HISTC1002",
+    "HISTC1002H",
+    "NURS501",
+    "NURS502",
+    "NURS503",
+    "NURS504",
+    "NURS505",
+    "NURS506",
+    "NURS507",
+    "NURS508",
+    "NURS509",
+    "PSYC103",
+    "PSYC103H"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    65.0,
+    66.0
+   ],
+   "stated": [
+    53.0,
+    53.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 65.0-66.0; the catalog states 53.0-53.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Requirements (Associate in Science in Nursing, generic Degree Candidate path)",
+   "measure": "units",
+   "total_units": {
+    "min": 53,
+    "max": 53
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "MSJC Local General Education",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Prerequisites",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 19
+    },
+    "courses": [
+     {
+      "code": "ANAT-101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANAT-102",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL-125",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL-125H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL-C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL-C1000H",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "ENGL-C1001",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "ENGL-C1001H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "STAT-C1000",
+      "units": 3,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Semester One",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NURS-501",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NURS-502",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NURS-503",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NURS-571",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Semester Two",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NURS-504",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NURS-505",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Semester Three",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NURS-506",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NURS-507",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Semester Four",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NURS-508",
+      "units": 6.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NURS-509",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Additional Associate Degree and Requirements: Select one of the following (Psychology)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "PSYC-C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC-C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC-103",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC-103H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Additional Associate Degree and Requirements: Select one of the following (Political Science/History)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "POLS-C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLS-C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST-C1001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST-C1001H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST-C1002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST-C1002H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Additional Associate Degree and Requirements: Select one of the following (Communication)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "COMM-C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM-C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM-C1004",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM-C1004H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM-106",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "NURS 194",
+    "why": "not in the text; catalog uses renumbered NURS-501 to NURS-510 courses"
+   },
+   {
+    "code": "NURS 212",
+    "why": "not in the text; catalog lists NURS-502 Foundations of Nursing instead"
+   },
+   {
+    "code": "NURS 214",
+    "why": "not in the text; catalog lists NURS-503 instead"
+   },
+   {
+    "code": "NURS 222",
+    "why": "not in the text; catalog lists NURS-509 instead"
+   },
+   {
+    "code": "NURS 224",
+    "why": "not in the text; catalog lists NURS-504 instead"
+   },
+   {
+    "code": "NURS 226",
+    "why": "not in the text; catalog lists NURS-507 instead"
+   },
+   {
+    "code": "NURS 234",
+    "why": "not in the text; catalog lists NURS-506 instead"
+   },
+   {
+    "code": "NURS 236",
+    "why": "not in the text; catalog lists NURS-505 instead"
+   },
+   {
+    "code": "NURS 238",
+    "why": "not in the text"
+   },
+   {
+    "code": "NURS 244",
+    "why": "not in the text; catalog lists NURS-508 instead"
+   },
+   {
+    "code": "NURS 248",
+    "why": "not in the text"
+   },
+   {
+    "code": "NURS 572",
+    "why": "named only in the LVN to RN Transition path and 30 Unit Non-Degree Option, not in the generic degree path recorded"
+   },
+   {
+    "code": "NURS 573",
+    "why": "not in the text"
+   },
+   {
+    "code": "NURS 574",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "Recorded the generic A.S. Degree Candidate path (Total Units 53 = nursing Subtotal 38 + Additional Associate Degree Requirements Subtotal 15). The printed 53 excludes the Prerequisites list (Total Units 18-19), which is recorded as its own block with stated 18-19; reviewer should decide whether prerequisites belong in the award's blocks.",
+   "The Additional Associate Degree Requirements subtotal of 15 includes 'Humanities Area C on MSJC Local GE' (3) and 'Diversity Area F on MSJC Local GE' (3); these are general education areas with no listed courses and were not recorded as blocks, so blocks sum to 47 of the 53 nursing+additional units.",
+   "STAT-C1000 (3-4) may be replaced by 'any College Level Math numbered 100 or higher'; not recorded as an alternative code.",
+   "Honors twins and alternatives in the choice lists have no units printed beside them; each choice block prints 3 units.",
+   "The same page prints an LVN to RN Transition Degree Candidate path to the A.S. (Preparatory Coursework NURS-505, NURS-510, NURS-572; 3rd and 4th semester NURS-506 to NURS-509; Subtotal 26.5; same additional requirements 15; Total Units 41.5) and a 30 Unit Non-Degree Option (Total Units 26.5, not a degree). These were not recorded as blocks.",
+   "The page states an overall 60 degree applicable units for any associate degree; treated as the generic degree rule, not a printed degree total for this award.",
+   "Catalog NURS course numbers (NURS-501 to NURS-510) differ from the closed list's NURS 194/212-248 numbering; the closed list appears to reflect an older curriculum.",
+   "No program learning outcomes or careers are printed in the provided text."
+  ]
+ },
+ "extracted_run": "38748837644"
+}

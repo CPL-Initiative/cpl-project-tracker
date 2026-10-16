@@ -1,0 +1,598 @@
+{
+ "college": "Foothill College",
+ "control_number": "06090",
+ "shape": "degree",
+ "title": "Psychology",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.foothill.edu/degrees-certificates/psychology/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7792,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7792,
+    "output_tokens": 3096,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3096,
+  "output_tokens_details": {
+   "thinking_tokens": 638
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.09309,
+ "ms": 22971,
+ "seconds": 23.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 1,
+   "listed": 1,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 47,
+   "codes": [
+    "ANTH22",
+    "ANTH2A",
+    "ANTH2AH",
+    "ANTH4",
+    "ANTH6",
+    "ANTH6H",
+    "BIOL14",
+    "ETHN1",
+    "HUMN4",
+    "HUMN4H",
+    "HUMN8",
+    "PHOT8",
+    "PHOT8H",
+    "PSYC10",
+    "PSYC14",
+    "PSYC2",
+    "PSYC21",
+    "PSYC22",
+    "PSYC25",
+    "PSYC25H",
+    "PSYC30",
+    "PSYC33",
+    "PSYC39",
+    "PSYC4",
+    "PSYC40",
+    "PSYC45",
+    "PSYC49",
+    "PSYC51",
+    "PSYC53",
+    "PSYC54H",
+    "PSYC7",
+    "PSYC71R",
+    "PSYC72R",
+    "PSYC73R",
+    "PSYC9",
+    "PSYCC1000",
+    "PSYCC1000H",
+    "SOC1",
+    "SOC10",
+    "SOC1H",
+    "SOC23",
+    "SOC28",
+    "SOC30",
+    "SOC40",
+    "SOC7",
+    "STATC1000",
+    "WMN21"
+   ],
+   "flagged": [
+    "ANTH22",
+    "ANTH2A",
+    "ANTH2AH",
+    "ANTH4",
+    "ANTH6",
+    "ANTH6H",
+    "BIOL14",
+    "ETHN1",
+    "HUMN4",
+    "HUMN4H",
+    "HUMN8",
+    "PHOT8",
+    "PHOT8H",
+    "PSYC10",
+    "PSYC14",
+    "PSYC2",
+    "PSYC21",
+    "PSYC22",
+    "PSYC25",
+    "PSYC25H",
+    "PSYC30",
+    "PSYC33",
+    "PSYC39",
+    "PSYC4",
+    "PSYC40",
+    "PSYC45",
+    "PSYC49",
+    "PSYC51",
+    "PSYC53",
+    "PSYC54H",
+    "PSYC7",
+    "PSYC71R",
+    "PSYC72R",
+    "PSYC73R",
+    "PSYC9",
+    "PSYCC1000",
+    "PSYCC1000H",
+    "SOC1",
+    "SOC10",
+    "SOC1H",
+    "SOC23",
+    "SOC28",
+    "SOC30",
+    "SOC40",
+    "SOC7",
+    "STATC1000",
+    "WMN21"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    35.0,
+    35.0
+   ],
+   "stated": [
+    35.0,
+    35.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Arts Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 35,
+    "max": 35
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Foothill College General Education or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PSYC C1000",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC C1000H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 7",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 7",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "STAT C1000",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 10",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 10",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Support Courses: Select 12 units from the following",
+    "rule": "choose_units",
+    "minimum": 12,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "PSYC 2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 9",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 14",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 21",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "WMN 21",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 22",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 25",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 25H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 30",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 30",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 33",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 39",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 40",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 45",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 49",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Support Courses: And eight units from the following",
+    "rule": "choose_units",
+    "minimum": 8,
+    "option_group": null,
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "PSYC 51",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 53",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 54H",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 70R",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 71R",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 72R",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 73R",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 2A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH 2AH",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 6",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH 6H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH 22",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 14",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETHN 1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HUMN 4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HUMN 4H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HUMN 8",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHOT 8",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHOT 8H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC 1",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 1H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC 23",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC 28",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC 40",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The section heading is cut off at the start of the text ('te in Arts Degree'); recorded as 'Associate in Arts Degree'.",
+   "Catalog PSYC 70R is matched to closed-list PSYC 070R (same title, leading zero formatting difference); marked catalog_addition false.",
+   "Major total 35 units (Units Required Major: 35; Total Units 35). The page states 'A minimum of 90 units is required to complete the associate degree' (quarter units) as a general associate degree minimum; not recorded as degree_total. It also says additional elective course work 'may be necessary' to reach 90 units; electives_fill_degree left false since no degree total for this award is recorded.",
+   "Footnote: courses in the first support-course list may also be used to fulfill the second (8-unit) support-course requirement.",
+   "Units for support courses are not printed beside each course; only block totals (12 and 8) are printed.",
+   "No program learning outcomes or careers printed in the text."
+  ]
+ },
+ "extracted_run": "38675242638"
+}

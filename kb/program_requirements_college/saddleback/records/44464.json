@@ -1,0 +1,245 @@
+{
+ "college": "Saddleback College",
+ "control_number": "44464",
+ "shape": "noncredit",
+ "title": "Community Health Worker",
+ "award": "Noncredit program",
+ "source_url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_comm_health_NC",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9269,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9269,
+    "output_tokens": 1637,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1637,
+  "output_tokens_details": {
+   "thinking_tokens": 426
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06982,
+ "ms": 13774,
+ "seconds": 14.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    415.0,
+    415.0
+   ],
+   "stated": [
+    415.0,
+    415.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 11,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "COMMUNITY HEALTH WORKER - Certificate of Completion (Noncredit)",
+   "measure": "hours",
+   "total_units": {
+    "min": 415,
+    "max": 415
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Describe the U.S. healthcare system in terms of social, psychological, and physiological impact on health and the services offered by each component.",
+    "Describe how education, socioeconomic status, racism, and gender shape health outcomes.",
+    "Facilitate access to resources and increase the clients’ ability to navigate the health care system.",
+    "Describe the concept of public health as it relates to community health workers."
+   ],
+   "careers": [
+    "Community Health Worker",
+    "Health Advocates",
+    "Contact Tracers",
+    "Community Liaisons",
+    "Health Navigators",
+    "Community Navigators",
+    "Community Health Advisors",
+    "Outreach Educators",
+    "Community Health Representatives",
+    "Peer Health Promoters",
+    "Promotores"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PH 401NC",
+      "units": 49.8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HLTH 401NC",
+      "units": 49.8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PH 410NC",
+      "units": 49.8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PH 406NC",
+      "units": 49.8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PH 403NC",
+      "units": 49.8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PH 405NC",
+      "units": 116.2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 49.8,
+     "max": 49.8
+    },
+    "courses": [
+     {
+      "code": "PH 435NC",
+      "units": 49.8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 425NC",
+      "units": 49.8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HS 476NC",
+      "units": 49.8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Award is counted in hours; all values are hours as printed (e.g., 49.80, 116.20). Total 415.00 hours.",
+   "The 'Required Core: Hours 415.00' figure appears to cover the whole certificate (six core courses totaling 365.20 hours plus the 'Select one' choice of 49.80 hours), so it is recorded as total_units rather than as the Required Core block's stated total.",
+   "The 'Select one' list is printed inside the Required Core section; recorded as its own choose-one block.",
+   "Summary text says students choose a capstone/experiential specialty 'in either aging or co-occurring disorders'; the three Select-one courses (PH 435NC, SOC 425NC, HS 476NC) reflect this.",
+   "Course list shows weekly contact hours (e.g., 3.00 hours Lecture); the requirement table's per-course hours (49.80, 116.20) are used.",
+   "Work settings named in the summary (healthcare clinics, mental health facilities, etc.) are settings, not occupations, and are not recorded as careers."
+  ]
+ },
+ "extracted_run": "38843470509"
+}

@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/supabase_project_lifecycle.sql",
+ "name": "project_lifecycle_reviewer_only_2026_10_13_s385",
+ "version": "20261013224742",
+ "sha256": "25e86b8414e164ccf9bbe1142d41e962df69fa471e3a3a1d4943f63ee00c3928",
+ "run": "38480012281",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

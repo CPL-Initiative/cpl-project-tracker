@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -68,7 +69,31 @@
     24.0,
     24.0
    ],
-   "why": []
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     48.0,
+     52.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     28.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     8.0,
+     12.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
@@ -83,6 +108,14 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
   },
   "pass": true
  },
@@ -103,7 +136,17 @@
     "Students maintain and clean-up professional printmaking facilities and use relevant tools, equipment and chemicals safely, including hand- tools exposure unit printing press, etchant, grounds, and photosensitive chemicals.",
     "Students present a portfolio of print work that represents their knowledge of various printmaking techniques and defines their individual approach to communicating with imagery.",
     "Students will demonstrate a basic understanding of Intaglio, relief printing and silkscreen techniques and apply it to their original print work."
-   ]
+   ],
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "degree_total_minimum": true,
+   "ge_units": {
+    "min": 24,
+    "max": 28
+   },
+   "electives_fill_degree": true
   },
   "blocks": [
    {
@@ -197,5 +240,38 @@
    "The printed outcomes are copied as shown, including 'in terms content and form' and 'hand- tools exposure unit printing press'."
   ]
  },
- "extracted_run": "37961137169"
+ "extracted_run": 38656800189,
+ "reconciled": [
+  {
+   "field": "degree_total",
+   "was": null,
+   "now": {
+    "min": 60,
+    "max": 60
+   },
+   "words": "Complete a minimum of 60 units to include (1) the above major requirements"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Complete a minimum of 60 units to include (1) the above major requirements"
+  },
+  {
+   "field": "ge_units",
+   "was": null,
+   "now": {
+    "min": 24,
+    "max": 28
+   },
+   "words": "(2) the General Education requirements (https://cerritos-public.courseleaf.com/policies-and-resources/graduation-and-transfer-requirements/cgec/: CGEC, which is 24-28 units, is intended to meet the GE requirements.)"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": null,
+   "now": true,
+   "words": "(3) electives as needed"
+  }
+ ],
+ "read_run": "37961137169"
 }

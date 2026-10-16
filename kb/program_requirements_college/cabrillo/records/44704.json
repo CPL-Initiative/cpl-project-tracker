@@ -1,0 +1,153 @@
+{
+ "college": "Cabrillo College",
+ "control_number": "44704",
+ "shape": "noncredit",
+ "title": "Photography Technician",
+ "award": "Noncredit program",
+ "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/photography-technician-certificate-of-completion-fall-2025",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5193,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5193,
+    "output_tokens": 655,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 655,
+  "output_tokens_details": {
+   "thinking_tokens": 158
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.03387,
+ "ms": 5697,
+ "seconds": 6.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    234.0,
+    234.0
+   ],
+   "stated": [
+    234.0,
+    234.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Photography Technician Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 234,
+    "max": 234
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate technical competency in traditional, digital, and alternative photographic processes and techniques for mixed media.",
+    "Produce images that incorporate traditional, digital, and alternative imaging methods and principles of design for effective 2D visual communication."
+   ],
+   "careers": [
+    "photographic lab technicians",
+    "production design assistants",
+    "commercial photographic pre- and post-production assistants"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 234,
+     "max": 234
+    },
+    "courses": [
+     {
+      "code": "AP432A",
+      "units": 108,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AP442",
+      "units": 126,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints codes without a space (AP432A, AP442). They match the closed-list entries AP 432A and AP 442, so they are not marked as catalog additions.",
+   "The award is counted in hours: 234 total hours, with 108 hours for AP432A and 126 hours for AP442.",
+   "The Program Map (Summer Start and Spring Start) shows only the sequencing of the same two required courses. It was not recorded as separate blocks."
+  ]
+ },
+ "extracted_run": "38442109713"
+}

@@ -285,6 +285,8 @@ Also open: **printing while in dark mode** — consumer-JS dark rules still appl
 to a print, so it comes out dark-on-dark in places. That wants `@media screen`
 scoping on every dark rule and is its own pass.
 
+Also open: **the CIP Codes tab's palette and boxed controls** (UI pass S390, #2118; the ledger names them).
+
 ## ✅ RULED AND LANDED (Sam, open-asks sheet items 11-13, 2026-09-22)
 
 All three changed the LIGHT theme, which is why none had been swept.

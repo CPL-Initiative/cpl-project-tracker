@@ -1,0 +1,581 @@
+{
+ "college": "Cabrillo College",
+ "control_number": "09602",
+ "shape": "degree",
+ "title": "General Science",
+ "award": "A.S. Degree",
+ "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/english-associate-in-arts-for-transfer-a-a-t-fall-2026",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10239,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10239,
+    "output_tokens": 4386,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4386,
+  "output_tokens_details": {
+   "thinking_tokens": 673
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.12868,
+ "ms": 30861,
+ "seconds": 31.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 92,
+   "share": 0.0,
+   "missing": [
+    "ANTHR1",
+    "ANTHR1H",
+    "ANTHR1L",
+    "ASTRO3",
+    "ASTRO4",
+    "ASTRO5",
+    "ASTRO7",
+    "ASTRO8A",
+    "BIO11A",
+    "BIO11B",
+    "BIO11C",
+    "BIO13A",
+    "BIO13AL",
+    "BIO31",
+    "BIO4",
+    "BIO5",
+    "BIO6",
+    "BIO9A",
+    "BIO9B",
+    "CHEM10",
+    "CHEM12A",
+    "CHEM12AL",
+    "CHEM12B",
+    "CHEM12BL",
+    "CHEM1A",
+    "CHEM1B",
+    "CHEM3",
+    "CHEM30A",
+    "CHEM30B",
+    "CHEM32",
+    "CHEM3L",
+    "CHEM5",
+    "CS1",
+    "CS11",
+    "CS11M",
+    "CS12J",
+    "CS12P",
+    "CS19",
+    "CS1L",
+    "CS20J",
+    "CS20P",
+    "CS21",
+    "CS24",
+    "ENGR10",
+    "ENGR12",
+    "ENGR25",
+    "ENGR26",
+    "ENGR3",
+    "ENGR30",
+    "ENGR35",
+    "ENGR36",
+    "ENGR40",
+    "ENGR45",
+    "ENGR5",
+    "ES10",
+    "ES10L",
+    "ES15",
+    "GEOG1",
+    "GEOG1L",
+    "GEOG3",
+    "GEOG3L",
+    "GEOL10",
+    "GEOL15",
+    "GEOL20",
+    "GEOL25",
+    "HORT1A",
+    "HORT1B",
+    "MATH13",
+    "MATH14",
+    "MATH15",
+    "MATH18",
+    "MATH23",
+    "MATH4",
+    "MATH5A",
+    "MATH5B",
+    "MATH5C",
+    "MATH6",
+    "MATH7",
+    "OCEAN10",
+    "PHYS10",
+    "PHYS10L",
+    "PHYS11",
+    "PHYS12",
+    "PHYS2A",
+    "PHYS2B",
+    "PHYS4A",
+    "PHYS4B",
+    "PHYS4C",
+    "PHYS4D",
+    "PSYCH4",
+    "PSYCH4L",
+    "STATC1000"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "No General Science A.S. section in the text; the page is the English Associate in Arts for Transfer (A.A.-T) program map (Fall 2026)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANTHR 1",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "ANTHR 1H",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "ANTHR 1L",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "ASTRO 3",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "ASTRO 4",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "ASTRO 5",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "ASTRO 7",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "ASTRO 8A",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "BIO 11A",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "BIO 11B",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "BIO 11C",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "BIO 13A",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "BIO 13AL",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "BIO 31",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "BIO 4",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "BIO 5",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "BIO 6",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "BIO 9A",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "BIO 9B",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "CHEM 10",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "CHEM 12A",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "CHEM 12AL",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "CHEM 12B",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "CHEM 12BL",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "CHEM 1A",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "CHEM 1B",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "CHEM 3",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "CHEM 30A",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "CHEM 30B",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "CHEM 32",
+    "why": "Not in the text"
+   },
+   {
+    "code": "CHEM 3L",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "CHEM 5",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "CS 11",
+    "why": "Not in the text"
+   },
+   {
+    "code": "CS 11M",
+    "why": "Not in the text"
+   },
+   {
+    "code": "CS 12P",
+    "why": "Not in the text"
+   },
+   {
+    "code": "CS 20J",
+    "why": "Not in the text"
+   },
+   {
+    "code": "CS 20P",
+    "why": "Not in the text"
+   },
+   {
+    "code": "CS1",
+    "why": "Not in the text"
+   },
+   {
+    "code": "CS12J",
+    "why": "Not in the text"
+   },
+   {
+    "code": "CS19",
+    "why": "Not in the text"
+   },
+   {
+    "code": "CS1L",
+    "why": "Not in the text"
+   },
+   {
+    "code": "CS21",
+    "why": "Not in the text"
+   },
+   {
+    "code": "CS24",
+    "why": "Not in the text"
+   },
+   {
+    "code": "ENGR 10",
+    "why": "Not in the text"
+   },
+   {
+    "code": "ENGR 12",
+    "why": "Not in the text"
+   },
+   {
+    "code": "ENGR 25",
+    "why": "Not in the text"
+   },
+   {
+    "code": "ENGR 26",
+    "why": "Not in the text"
+   },
+   {
+    "code": "ENGR 3",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "ENGR 30",
+    "why": "Not in the text"
+   },
+   {
+    "code": "ENGR 35",
+    "why": "Not in the text"
+   },
+   {
+    "code": "ENGR 36",
+    "why": "Not in the text"
+   },
+   {
+    "code": "ENGR 40",
+    "why": "Not in the text"
+   },
+   {
+    "code": "ENGR 45",
+    "why": "Not in the text"
+   },
+   {
+    "code": "ENGR 5",
+    "why": "Not in the text"
+   },
+   {
+    "code": "ES 10",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "ES 10L",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "ES 15",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "GEOG 1",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "GEOG 1L",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "GEOG 3",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "GEOG 3L",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "GEOL 10",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "GEOL 15",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "GEOL 20",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "GEOL 25",
+    "why": "Not in the text"
+   },
+   {
+    "code": "HORT 1A",
+    "why": "Not in the text"
+   },
+   {
+    "code": "HORT 1B",
+    "why": "Not in the text"
+   },
+   {
+    "code": "MATH 13",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "MATH 14",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "MATH 15",
+    "why": "Not in the text"
+   },
+   {
+    "code": "MATH 18",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "MATH 23",
+    "why": "Not in the text"
+   },
+   {
+    "code": "MATH 4",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "MATH 5A",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "MATH 5B",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "MATH 5C",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "MATH 6",
+    "why": "Not in the text"
+   },
+   {
+    "code": "MATH 7",
+    "why": "Not in the text"
+   },
+   {
+    "code": "OCEAN 10",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "PHYS 10",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "PHYS 10L",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "PHYS 11",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "PHYS 12",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "PHYS 2A",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "PHYS 2B",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "PHYS 4A",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "PHYS 4B",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "PHYS 4C",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "PHYS 4D",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "PSYCH 4",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "PSYCH 4L",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "Named only as a Cal-GETC GE option in the English A.A.-T map"
+   }
+  ],
+  "notes": [
+   "The source URL and catalog text belong to the English Associate in Arts for Transfer (A.A.-T), Fall 2026 program map, not to the General Science A.S. Degree. The text contains no General Science section, so no blocks, totals, outcomes or careers were recorded.",
+   "Many closed-list science and math courses appear in the text only as Cal-GETC general education options (Areas 2, 5A, 5B, 5C) within the English A.A.-T map. GE courses are never placed in blocks, and they are not General Science major requirements.",
+   "The excerpt is cut off at both ends: it starts mid-word ('thods in Psychology') and ends mid-entry ('ENGL24B - Native American Prose and P').",
+   "A reviewer should retrieve the correct Cabrillo College 2026-2027 General Science A.S. catalog page and re-extract the requirements."
+  ]
+ },
+ "extracted_run": "38442109713"
+}

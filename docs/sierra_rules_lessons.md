@@ -168,3 +168,36 @@ returned nothing (a timeout swallowed as `rows=0`) in one run and passed in the 
 after: 47 ms direct, 122 ms in PostgREST's call shape, 2.1 s mean over 218 PostgREST calls with a
 7.9 s maximum. Dispatch a verifying smoke only after the push-triggered run finishes; read which
 version each mode ran against when a deploy lands mid-run.
+
+## S370 (SkyHolly, 2026-10-12): a verb before the articulation, and an opening that corrected itself
+
+**Smoke 7s, a fourth shape of an articulation absence.** Run 38251043198 failed 7s on a right
+answer: "No college in the San Gabriel Valley (or statewide) has yet set up a formal CPL
+articulation specifically matching a CNA into LVN coursework", after Pasadena NURS 102, Rio Hondo
+VN 61 and Citrus VNRS 150. The helper set aside "has yet articulated", "has an articulation" and a
+pronoun for one, not a verb between "has yet" and the articulation. #2031 adds set up, established,
+created, built, put in place, approved and adopted. Each new shape so far has come from a real
+answer, and each fix keeps "has set up an LVN program" failing.
+
+**Smoke 7c caught a real defect.** Run 38255175428 opened: "Start by asking Santa Ana College's CPL
+coordinator to review your CNA training against VN 220 ... at Long Beach City College — wait, let
+me give you the right starting point". The place block says treat the place as home, and the
+request bullet said "the CPL coordinator at <college>" without saying which college, so the model
+paired a college in the place with the nearest course outside it, then printed its own correction.
+#2032 says the request goes to the college that teaches the course, even outside the place, and
+asks for the course and its college to be chosen before the first word. The rule states the right
+form only: on 2026-10-02 a quoted bad sentence was reproduced word for word.
+
+**A push-triggered smoke measures production, not the branch.** The smoke on #2032's head ran the
+old deployed prompt and failed 7c, as it had to. The branch's own evidence is the A/B
+(`cpl-chat-preview-ab.yml` on the branch), and the merge-then-deploy waits on that grid.
+
+## S371 SkyMaple, 2026-10-12: 7c's opening holds; its precedent miss is the model
+
+The deployed v90 opens 7c on the course's own college. Smoke 38269835553 then failed 7c's precedent check: the answer said
+no CNA-to-LVN precedent existed. A retrieval gap was the first suspicion and was wrong: the failing and passing turns carry
+the same `context_chars` (70,554) and uncached input (26,369) in `chat_interactions.timings`, and 13 of 15 turns on the
+question in 30 hours cite NURVN 414. The probes reach Acute Care Nursing Assistant through *vocational nursing*, and
+`pickHeldTitles` keeps it among the four held titles. Note that `fetchCredentialRecs` turns an RPC error into an empty map,
+which `buildPrecedentLines` renders as "none ... the request would be a first": a timeout there would produce the same
+sentence, so check the timings before reading either cause into it. Whether to tune the precedent line is Sam's call.

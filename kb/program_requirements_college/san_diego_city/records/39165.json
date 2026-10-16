@@ -1,0 +1,180 @@
+{
+ "college": "San Diego City College",
+ "control_number": "39165",
+ "shape": "certificate",
+ "title": "Archaeology",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15610",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7346,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7346,
+    "output_tokens": 1264,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1264,
+  "output_tokens_details": {
+   "thinking_tokens": 307
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05466,
+ "ms": 10981,
+ "seconds": 11.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    16.0,
+    16.0
+   ],
+   "stated": [
+    16.0,
+    16.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Archaeology - Certificate of Achievement: City",
+   "measure": "units",
+   "total_units": {
+    "min": 16,
+    "max": 16
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Define Anthropology, identify and discuss its various subfields including: Cultural Anthropology, Biological Anthropology, Comparative Linguistics, Archaeology, and Applied Anthropology.",
+    "Identify and discuss Anthropological methods of inquiry.",
+    "Identify, discuss, compare, contrast, and critically analyze the various theoretical orientations used in the different subfields of Anthropology.",
+    "Discuss and critically evaluate the Anthropological Perspective including its global emphasis and cross-cultural and comparative approach to understanding the various ways in which people organize themselves, meet their various needs, and have adapted to their environments.",
+    "Identify, describe, and discuss different cultural systems ranging from band societies to the state.",
+    "Identify, critically evaluate, and discuss the contributions Anthropology has made to describing and understanding the human condition including human physical and cultural diversity.",
+    "Identify and critically evaluate Anthropology’s contributions to other disciplines of study in the Social Sciences, Behavioral Sciences, and the Humanities."
+   ],
+   "careers": [
+    "archaeological field work",
+    "laboratory work",
+    "museum work"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "COURSES REQUIRED FOR THE MAJOR",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "ANTH 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 115",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The first outcome follows the lead-in 'Students who complete the Archaeology Program will be able to:' on the same line; the lead-in was omitted.",
+   "The printed outcomes read as general Anthropology outcomes rather than archaeology-specific ones; recorded as printed for this certificate.",
+   "Careers taken from the summary phrase 'entry-level employment in archaeological field work, laboratory work or museum work' (printed with the typo 'entryl-evel'). Career mentions in course descriptions (e.g., CRM) were not used.",
+   "Course units in the requirements list agree with the course descriptions and the stated total of 16.0 units."
+  ]
+ },
+ "extracted_run": "38252422845"
+}

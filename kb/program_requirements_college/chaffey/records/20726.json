@@ -1,0 +1,259 @@
+{
+ "college": "Chaffey College",
+ "control_number": "20726",
+ "shape": "certificate",
+ "title": "Interior Design",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19082",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5924,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5924,
+    "output_tokens": 1791,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1791,
+  "output_tokens_details": {
+   "thinking_tokens": 506
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05952,
+ "ms": 15299,
+ "seconds": 15.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 16,
+   "listed": 16,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "ID27"
+   ],
+   "flagged": [
+    "ID27"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    40.0,
+    43.0
+   ],
+   "stated": [
+    40.0,
+    43.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Interior Design - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 40,
+    "max": 43
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Develop creative and functional solutions using design theory and art principles to satisfy clients' design needs for residential and commercial projects.",
+    "Demonstrate knowledge of historical styles of architecture, interiors and decorative arts of both western and non-western cultures.",
+    "Generate design drawings (by hand and computer) and color boards (showing styles, materials) in a professional manner.",
+    "Demonstrate an understanding of business practices, work ethics, professionalism and consumer marketing principles related to the field’s products and services.",
+    "Communicate and justify, through written and oral presentations and portfolio development, the details, inspiration, problems, solutions, and the vision of their designs.",
+    "Understand the social, economic, cultural, organizational, and technological systems that are integral parts of the interior design industry around the world."
+   ],
+   "careers": [
+    "interior design"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Requirements for the Certificate of Achievement (CA)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 40,
+     "max": 43
+    },
+    "courses": [
+     {
+      "code": "ID 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ID 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ID 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ID 14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ID 15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ID 16",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ID 17",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ID 21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ID 22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ID 27",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ID 30",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ID 45",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ID 426",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ID 482A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ID 482B",
+        "units": 2,
+        "catalog_addition": false
+       },
+       {
+        "code": "ID 482C",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ID 482D",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints the internship as a single row 'ID 482ABCD Internships in Interior Design 1.00 - 4.00'. It is recorded as ID 482A with alternatives ID 482B, ID 482C and ID 482D (one internship section of 1-4 units). The individual units for B, C and D come from the closed list and match the printed 1-4 range; the catalog does not print them separately.",
+   "ID 27 Computer Drafting & Design for Interiors is required by the catalog but is not in the closed list, so it is flagged as a catalog addition.",
+   "Career field 'interior design' is taken from the description: 'intermediate-level employment opportunities in interior design and related fields'."
+  ]
+ },
+ "extracted_run": "38242003226"
+}

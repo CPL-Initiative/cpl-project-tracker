@@ -1,0 +1,183 @@
+{
+ "college": "Citrus College",
+ "control_number": "42009",
+ "shape": "noncredit",
+ "title": "Human Resources Management",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.citruscollege.edu/disciplines/noncredit-community-education/human-resources-management-certificate-competency/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7160,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7160,
+    "output_tokens": 1250,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1250,
+  "output_tokens_details": {
+   "thinking_tokens": 310
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05364,
+ "ms": 10702,
+ "seconds": 11.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    126.0,
+    126.0
+   ],
+   "stated": [
+    126.0,
+    126.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Competency in Human Resources Management",
+   "measure": "hours",
+   "total_units": {
+    "min": 126,
+    "max": 126
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate ability to understand important HR issues and concepts. Develop skills to effectively communicate both in writing and orally; build positive rapport with employees/customers; interview and hire new employees; make decisions under pressure; understand pay for performance; thrive in a union environment; navigate through uncertainty in competitive HR environments; and maintain positive professional relationships with employees, suppliers, and other business partners.",
+    "Demonstrate ability to understand and utilize business mathematics to start and run a business and manage individual finances. Navigate competitive environments through understanding and utilizing business mathematics.",
+    "Understand the necessity for clear, concise, and effective written and oral communications at the workplace and the basic strategies used in writing business-related communications. Prepare various forms of written communications used in the workplace.",
+    "Analyze the legal forms of business ownership in the United States and compare their respective characteristics to identify their advantages and disadvantages. Identify and understand the need for ethical behavior and social responsibility in business to better appreciate their importance in organizations and impact on society."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NC 660",
+      "units": 30,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NC 661",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NC 664",
+      "units": 20,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NC 665",
+      "units": 40,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit program counted in hours: the course table's 'Units' column holds hours (30, 36, 20, 40), totaled as 'Total Hours 126'.",
+   "The page heading itself is not in the extracted text; section_heading is taken from the navigation entry 'Certificate of Competency in Human Resources Management', which matches the source URL.",
+   "The catalog text is cut off in the outcomes list: a fifth outcome begins 'Understand the basic “4 P' and is truncated. It was not recorded, to avoid completing it; a reviewer should check the full page.",
+   "A 'Career Information' tab appears but its content is not in the text, so no careers were recorded. The description mentions 'today’s HR professionals' as course content, not as a career for the program."
+  ]
+ },
+ "extracted_run": "38675245799"
+}

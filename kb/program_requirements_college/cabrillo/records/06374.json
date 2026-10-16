@@ -1,0 +1,335 @@
+{
+ "college": "Cabrillo College",
+ "control_number": "06374",
+ "shape": "degree",
+ "title": "Philosophy",
+ "award": "A.A. Degree",
+ "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/philosophy-associate-in-arts-a-a-fall-2025",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7210,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7210,
+    "output_tokens": 3509,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3509,
+  "output_tokens_details": {
+   "thinking_tokens": 1504
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.09902,
+ "ms": 29420,
+ "seconds": 29.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 16,
+   "listed": 16,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    54.0,
+    60.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    24.0,
+    24.0
+   ],
+   "why": [],
+   "within": true,
+   "rescored": "Open Asks Sheet 81"
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Philosophy - Associate in Arts (A.A.)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": 9,
+   "ge_pattern": "Cabrillo College General Education",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 24
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate critical reasoning skills, a comprehension of complex concepts, and a clear and cogent articulation of ideas through essays and discussion.",
+    "Evaluate key philosophical theories and principles, and apply such theories and principles to real-world problems and issues through essays and discussion.",
+    "Analyze and evaluate major philosophical theories and issues in core areas of contemporary and historical philosophical thought, including ethics, metaphysics, and epistemology.",
+    "Produce research-based critical analyses and argumentative essays.",
+    "Solve formal (sentential and predicate) logic problems and carry out proofs within these symbolic formal systems.",
+    "Assess potential confirmation biases, rigorously and fairly evaluate conflicting positions, and moderate or defend one’s own position through oral or written argument."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Focus 1",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Focus",
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "PHILO10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHILO10H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILO4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILO12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Focus 2",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Focus",
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "PHILO10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHILO10H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILO6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILO7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILO12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Recommended Major Electives",
+    "rule": "choose_units",
+    "minimum": 12,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "PHILO4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILO6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILO7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILO8",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILO9",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILO14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILO15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILO16",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILO17",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILO18",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILO19",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILO23",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILO49",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page labels all major courses 'Recommended Major Requirements' / 'Recommended Major Electives' and says they are 'courses recommended by the department that can be used to meet major requirements'. Because they carry printed credit counts that make up the 60-unit degree, they are recorded as choose/all blocks rather than 'recommended'; a reviewer should confirm this reading.",
+   "Recommended Major Requirements prints 'Complete the following number of credits: 9-12' with a choice of Focus 1 (9) or Focus 2 (12); recorded as two blocks in option_group 'Focus'. Within each focus the catalog prints a 3-credit sub-block (PHILO10 or PHILO10H) and a 6- or 9-credit sub-block; these are merged into one block per focus, with PHILO10H as the alternative to PHILO10.",
+   "No total for the major alone is printed; total_units left null. Degree total 60 and Cabrillo College General Education 24 recorded as printed.",
+   "General electives ('any transferable or degree applicable course') are printed as a range 9 - 15; open_elective_units records the low end, 9.",
+   "Note printed: PHILO4, PHILO6, and PHILO7 may be taken as electives if not taken as a recommended course.",
+   "Codes are written as printed without a space (e.g., PHILO10); they match closed-list codes such as PHILO 10.",
+   "The Program Outcomes list appears to merge two versions: it prints items numbered 1, 2, 1, 2, 2, 3, 3, 4, 4, with outcomes 2-4 of the second set duplicated verbatim. Each distinct outcome is recorded once; reviewer should check which set is current."
+  ]
+ },
+ "extracted_run": "38565227455"
+}

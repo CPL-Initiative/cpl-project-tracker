@@ -1,0 +1,51 @@
+{
+ "college": "Chaffey College",
+ "programs": 202,
+ "with_closed_list": 199,
+ "found": 193,
+ "extracted": 193,
+ "errors": 0,
+ "passed_machine_checks": 181,
+ "failed": {
+  "coverage": 3,
+  "invented": 1,
+  "arithmetic": 11,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 10.48,
+ "cost_per_program": 0.0543,
+ "not_found": [
+  {
+   "control_number": "15535",
+   "title": "Network Specialist",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "20697",
+   "title": "Computer Information Systems",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+  },
+  {
+   "control_number": "36629",
+   "title": "Physical Education",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "36771",
+   "title": "Computer Support Technician (A+ Certification Preparation)",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"
+  },
+  {
+   "control_number": "36856",
+   "title": "Social Media Support Specialist",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"
+  },
+  {
+   "control_number": "46302",
+   "title": "Electric Vehicle and Alternative Propulsion Technician",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"
+  }
+ ],
+ "run": "38242003226"
+}

@@ -5,7 +5,8 @@
  "catalog_year": "2026-2027",
  "programs": 325,
  "with_closed_list": 321,
- "started": "2026-10-10T15:36:43Z",
+ "started": "2026-10-14T23:54:27Z",
+ "scope": null,
  "sitemap": {
   "url": "https://cerritos-public.courseleaf.com/sitemap.xml",
   "status": 200,
@@ -15,14 +16,16 @@
   "refused": null,
   "errors": null
  },
- "pages_read": 364,
+ "pages_read": 365,
+ "child_pages": 1,
+ "banner_h1": "Academic Catalog",
  "loads": 367,
- "seconds": 1760.1,
- "found": 305,
+ "seconds": 1767.0,
+ "found": 304,
  "by_method": {
-  "link_search": 2,
+  "link_search": 1,
   "no_closed_list": 4,
-  "not_found": 5,
+  "not_found": 6,
   "page_claimed": 11,
   "sitemap_page": 303
  },
@@ -44,27 +47,158 @@
   {
    "control_number": "02243",
    "title": "Dental Hygienist",
-   "award": "A.A. Degree"
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/dental-assisting-certificate-achievement/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 26,
+    "why": "coarse net: the page's code tokens name 0 of 26 listed courses",
+    "error": null,
+    "chars": {
+     "body": 34153,
+     "content": 36476,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "14565",
+   "title": "Administration of Justice",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/business-administration-aa/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 20,
+    "why": "coarse net: the page's code tokens name 0 of 20 listed courses",
+    "error": null,
+    "chars": {
+     "body": 15562,
+     "content": 17298,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
   },
   {
    "control_number": "19162",
    "title": "Liberal Arts and Sciences: Art and Culture",
-   "award": "A.A. Degree"
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/liberal-arts-sciences/",
+    "label": {
+     "award": 0,
+     "title": 0.6
+    },
+    "field": "innerText",
+    "coverage": 0.05,
+    "body": 0.05,
+    "content": 0.0,
+    "net": 1,
+    "listed": 20,
+    "why": "coarse net: the page's code tokens name 1 of 20 listed courses",
+    "error": null,
+    "chars": {
+     "body": 26962,
+     "content": 27999,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
   },
   {
    "control_number": "19174",
    "title": "Liberal Arts and Sciences: Media Studies",
-   "award": "A.A. Degree"
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/liberal-arts-sciences/",
+    "label": {
+     "award": 0,
+     "title": 0.6
+    },
+    "field": "innerText",
+    "coverage": 0.077,
+    "body": 0.077,
+    "content": 0.0,
+    "net": 1,
+    "listed": 13,
+    "why": "coarse net: the page's code tokens name 1 of 13 listed courses",
+    "error": null,
+    "chars": {
+     "body": 26962,
+     "content": 27999,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
   },
   {
    "control_number": "19180",
    "title": "Liberal Arts and Sciences: Visual Communication",
-   "award": "A.A. Degree"
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/liberal-arts-sciences/",
+    "label": {
+     "award": 0,
+     "title": 0.6
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 27,
+    "why": "coarse net: the page's code tokens name 0 of 27 listed courses",
+    "error": null,
+    "chars": {
+     "body": 26962,
+     "content": 27999,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
   },
   {
    "control_number": "32485",
    "title": "Political Science",
-   "award": "A.A- T Degree"
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/political-science-aa-t/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.375,
+    "body": 0.375,
+    "content": 0.312,
+    "net": 6,
+    "listed": 16,
+    "why": "coarse net: the page's code tokens name 6 of 16 listed courses",
+    "error": null,
+    "chars": {
+     "body": 16882,
+     "content": 18592,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
   }
  ],
  "page_claimed": [
@@ -174,9 +308,26 @@
   }
  ],
  "coverage_bands": {
-  "0.5-0.8": 15,
+  "0.5-0.8": 14,
   "0.8-1.0": 74,
   "1.0": 216
  },
- "run": "38064252862"
+ "would_extract": {
+  "against": "kb/program_requirements_college/cerritos",
+  "kept": 303,
+  "programs": 1,
+  "list": [
+   {
+    "control_number": "20495",
+    "title": "Exercise Science: Fitness Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/fitness-specialist-certificate-achievement/",
+    "coverage": 0.846,
+    "was_url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/fitness-specialist-certificate-achievement/",
+    "was_coverage": 0.692,
+    "was_method": "sitemap_page"
+   }
+  ]
+ },
+ "run": "38656800189"
 }

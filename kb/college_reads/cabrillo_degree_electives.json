@@ -1,0 +1,18 @@
+{
+ "_readme": "S392 SkyTamarack, 2026-10-14. The first reconcile run (38639316727) read Cabrillo's Theatre Arts/Drama A.A. (06350) at 42 and Physics A.S. (06378) at 54 against the 60 their pages print: the degree total and GE 24 were read, and no electives line matched Biology's words. This read prints how each page names its electives. Two loads, no model call.",
+ "college": "Cabrillo College",
+ "questions": {
+  "elective_line": "The words and figure each page prints for the degree's electives."
+ },
+ "keywords": [
+  "[Ee]lective[^<\"]{0,140}",
+  "[Cc]omplete the following[^<\"]{0,80}",
+  "General Education[^<\"]{0,40}"
+ ],
+ "pages": [
+  {"answers": ["elective_line"],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,theatre-arts-drama-associate-in-arts-a-a-fall-2025?tenant=cabrillo.elumenapp.com"},
+  {"answers": ["elective_line"],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,physics-associate-in-science-a-s-fall-2025?tenant=cabrillo.elumenapp.com"}
+ ]
+}

@@ -1,0 +1,460 @@
+All Fields
+MUSI 100 - Introduction to Music
+Cover
+Course Number
+100
+Subject
+MUSI
+Course Title
+Introduction to Music
+Short Title
+Introduction to Music
+Effective Semester
+2020 Fall
+CB04: Credit Status
+D - Credit - Degree Applicable
+CB05: Transfer Status
+A - Transferable to both UC and CSU.
+CB08: Basic Skills
+N - Not Basic Skills
+Main
+CB11 Classification Y - Credit Course
+CB22 Non-Credit Category Y - Not Applicable, Credit course
+Grading Method
+Grade Options Letter Grade or Pass/No Pass
+Catalog Description
+This course is designed to develop aural and analytical musical skills. Emphasis is placed on conceptual, contextual, and stylistic elements of music from various periods and cultures, and encompassing a range of genres and styles. This course is designed to support students in all majors who are interested in satisfying the general education requirements for Arts and Humanities.
+Short Desc (100 Characters or Less)
+Development of aural and analytical musical skills.
+Originating Campus MESA - Mesa
+Colleges
+City
+Mesa
+Miramar
+CCC Missions
+Transfer
+Course Equivalency No
+Equivalency Text
+Repeatability
+This course is repeatable No
+Number of Repeats Allowed
+Justification for Repeatability
+Proposal Information
+Reason For Proposed Action
+Six year review
+Costs
+none
+Field Trips May be required
+Active Participatory Course (family required)
+This is an active participatory course related in content: applies to exercise science, visual arts, and performing arts courses. Yes
+Family NONE
+This is a CTE Course No
+Codes
+CB03: TOP Code 100400 - Music
+CIP Code
+CB09: SAM Code E - Non-Occupational
+Student Learning Outcomes
+Learning Outcomes
+Group Title
+Mesa
+Outcome Text
+Students will evaluate the music elements that define the major styles of music from various cultures and historical periods.
+This SLO maps to the following Institutional Learning Outcomes (ILOs), please check all that apply:
+Outcome Text
+Students will demonstrate the vocabulary, terms and definitions used to discuss music and its characteristics.
+This SLO maps to the following Institutional Learning Outcomes (ILOs), please check all that apply:
+Group Title
+Miramar
+Outcome Text
+Identify Music Concepts: Identify verbally (in words) and recognize aurally (in sound) the various elements and structures of music (such as rhythm, pitch, melody, harmony, timbre, and form)
+This SLO maps to the following Institutional Learning Outcomes (ILOs), please check all that apply:
+Student Learning Objectives
+Upon successful completion of the course the student will be able to:
+Objective Text
+Use appropriate vocabulary to describe the basic concepts of music.
+Objective Text
+Recognize aurally and identify the basic elements of music.
+Objective Text
+Compare and contrast stylistic differences, including basic music elements and structural characteristics, of music forms and genres from various cultures and eras.
+Objective Text
+Recognize aurally and identify  the distinguishing characteristics of specific genres of music.
+Objective Text
+Analyze musical styles and genres in relation to their cultural, historical, political, socio-economic  or other contexts.
+Disciplines
+Minimum Qualification
+Minimum Qualification Music (Masters Required)
+Additional Required Qualifications
+Condition
+Hours/Units
+Override No
+Variable Units No
+Lecture
+Min Lecture Units 3.000
+Max Lecture Units 0.000
+Min Lecture Hours - Override 0.000
+Max Lecture Hours - Override 0.000
+Min Lecture Hours: 48.000
+Max Lecture Hours: 54.000
+Lab
+Min Lab Units 0.000
+Max Lab Units 0.000
+Min Lab Hours - Override 0.000
+Max Lab Hours - Override 0.000
+Min Lab Hours: 0.000
+Max Lab Hours: 0.000
+Other
+Min Other Units 0.000
+Max Other Units 0.000
+Min Other Hours - Override 0.000
+Max Other Hours - Override 0.000
+Min Other Hours: 0
+Max Other Hours: 0
+Total Units
+Min Units 3.000
+Max Units 0.000
+Total Hours
+Min Contact Hours: 48
+Max Contact Hours: 54
+Min Outside-of-Class Hours: 96
+Max Outside-of-Class Hours: 108
+Min Total Student Learning Hours: 144
+Max Total Student Learning Hours: 162
+FTEF
+Total FTEF Min: 0.2
+Additional Information
+Content
+Course Lecture Content (Use outline format)
+Definitions of basic music concepts
+Form
+Harmony
+Melody
+Timbre
+Aural perception of music
+Pitch
+Texture
+Dynamics
+Beat and rhythm
+Music analysis
+Characteristics of music forms
+Characteristics of music genres
+Characteristics of music styles
+Characteristics of music historical periods
+Aural recogintion
+Aural recognition/identification of specific music forms
+Aural recognition/identification of specific music genres
+Aural recognition/identification of specific music styles
+Aural recognition/identification of specific music historical periods
+ Understanding music in context
+Cultural
+Historical
+Other contexts
+Course Lab/Activity Content
+Assignments
+Reading Assignments
+Optional Text
+Assignments
+Assigned textbook related to music appreciation.
+Musical reviews from newspapers, magazines and/or online sources.
+Concert program notes.
+Writing Assignments
+Optional Text
+Assignments
+Essays relating emotinal responses to musical stimulae.
+Summaries of historical musical figures.
+Concert reviews critiquing performance.
+Brief reports on recordings identifying various basic musical elements.
+Appropriate Outside Assignments
+Optional Text
+Assignments
+Listening to musical recordings.
+Researching musically relevant historical figures.
+Attending concerts.
+Reviewing concerts attended.
+Preparing a presentation on a piece of music.
+Preparing essays and reports.
+Appropriate Assignments that Demonstrate Critical Thinking
+Optional Text
+Assignments
+Analyzing live performances.
+Analyzing specific musical compositions.
+Analyzing and explaining one's own taste in music using musical terminology.
+Methods of Evaluation
+Evaluation Method
+Other
+If you selected "Other", please provide details.
+Quizzes and exams. Writing assignments. In-class presentations. Class participation.
+Methods of Instruction
+Check all that apply:
+Lecture
+Computer Assisted Instruction
+Lecture Discussion
+Audio-Visual
+If you selected "Other", please provide details.
+Credit for Prior Learning
+Eligible for Credit by Examination:
+Yes No
+Offered at:
+Industry Certification:
+Other Industry Certification:
+Standardized Exams:
+Credit by Portfolio Review:
+Yes No
+Portfolio Review Offered at:
+Military Training:
+Yes No
+I have completed this page.
+Distance Ed
+Does this course have a DE component? Yes
+Colleges
+Campus City
+Delivery Methods
+Fully Online
+Other Methods
+Techniques used to ensure quality
+Timed On-line quizzes and tests. Class participation through chats and threaded discussions. Written assignments analyzing a variety of video posts related to music.
+Evaluation Method
+Performance on timed-online quizzes and tests. Performance on class participation through threaded discussions. Performance on written assignments.
+Additional Resources
+Provide text alternatives for any non-text content; Make it easier for users to see and hear content including separating foreground from background; Make text content readable and understandable.
+Contact Types
+Chat Rooms
+Frequency
+Once or twice a week
+Participant/s
+Faculty to Student/s No
+Among Students No
+Field Trips
+Frequency
+May be required
+Participant/s
+Faculty to Student/s No
+Among Students No
+Telephone Contact
+Frequency
+Once or twice a week
+Participant/s
+Faculty to Student/s No
+Among Students No
+Campus Mesa
+Delivery Methods
+Fully Online
+Other Methods
+Techniques used to ensure quality
+Timed On-line quizzes and tests. Class participation through chats and threaded discussions. Written assignments analyzing a variety of video posts related to music.
+Evaluation Method
+Performance on timed-online quizzes and tests. Performance on class participation through threaded discussions. Performance on written assignments.
+Additional Resources
+Resources/Materials/Information: Provide text alternatives for any non-text content; Make it easier for users to see and hear content including separating foreground from background; Make text content readable and understandable.
+Contact Types
+Chat Rooms
+Frequency
+Once or twice a week
+Participant/s
+Faculty to Student/s No
+Among Students No
+Field Trips
+Frequency
+May be required
+Participant/s
+Faculty to Student/s No
+Among Students No
+Telephone Contact
+Frequency
+Once or twice a week
+Participant/s
+Faculty to Student/s No
+Among Students No
+Campus Miramar
+Delivery Methods
+Fully Online
+Other Methods
+Techniques used to ensure quality
+Timed On-line quizzes and tests. Class participation through chats and threaded discussions. Written assignments analyzing a variety of video posts related to music.
+Evaluation Method
+Performance on timed-online quizzes and tests. Performance on class participation through threaded discussions. Performance on written assignments.
+Additional Resources
+Provide text alternatives for any non-text content; Make it easier for users to see and hear content including separating foreground from background; Make text content readable and understandable.
+Contact Types
+Chat Rooms
+Frequency
+Once or twice a week
+Participant/s
+Faculty to Student/s No
+Among Students No
+Field Trips
+Frequency
+May be required
+Participant/s
+Faculty to Student/s No
+Among Students No
+Textbooks/Resources
+Is there a Zero Textbook Cost listed for this course?
+Please explain why a Zero Cost textbook option is not included in the resource list
+Does your department have a commitment to using free, or low cost resources in all offerings of this course?
+Describe any additional strategies the department is using to lower the cost of resources students need when they enroll in this course.
+Zero Cost Textbook(s)/Open Educational Resource(s)
+Textbooks
+Text\Supplemental
+Author(s) Forney, Kristine and Joseph Machlis
+Title The Enjoyment of Music
+Edition 13th
+Publisher W.W. Norton & Company
+Year 2018
+Is this a classic textbook? No
+ISBN # 9780393639032
+Additional Textbook Information
+Text\Supplemental
+Author(s) Kamien, Roger
+Title Music: An Appreciation
+Edition 12th
+Publisher McGraw-Hill Education
+Year 2019
+Is this a classic textbook? No
+ISBN # 9781259892707
+Additional Textbook Information
+Periodicals
+Manual
+Author(s) Svoboda, George
+Title Music 100 Study Guide
+Edition
+ISBN-13
+Publisher Haynach Music San Diego
+Year 2013
+Rationale for older manual
+Or Equivalent No
+Software
+Other Learning Materials
+I have entered at least one resource
+Supplies (Instructional Materials)
+Enrollment Conditions
+Course has additional instructional materials fees No
+Explanation
+Supplies (Instructional Materials)
+Requisites
+Course Requisites
+Conditions of Enrollment Catalog View
+Use Legacy V2 Course Requisites in COR No
+Legacy V2 Course Requisites
+Content Review
+Is there a Course Requisite?
+Content Review
+Entry Skills
+Library
+Description
+No new resources required
+General Education/Transfer (Proposed)
+District General Education Yes
+District Multicultural Requirements No
+Exercise Science Activity Requirement No
+Health Education Requirement No
+American Institutions/California Government Requirement No
+CSU General Education Yes
+Cal-GETC Yes
+IGETC Yes
+UC Transfer Course Yes
+3 Arts and Humanities
+C1 Area C. Arts and Humanities - Art, Cinema, Dance, Music, Theater
+3A: Arts
+Area 3. Arts and Humanities - 3A: Arts
+General Education/Transfer (Approved)
+District General Education Yes
+District Multicultural Requirements No
+Exercise Science Activity Requirement No
+Health Education Requirement No
+American Institutions/California Government Requirement No
+CSU General Education No
+Cal-GETC Yes
+IGETC No
+UC Transfer Course No
+3 Arts and Humanities
+3A: Arts
+Attachments
+Attached File
+Tech Review
+Please review for
+Compliance with District policy/procedures and state regulations,
+Course and/or Program alignment,
+Duplication of content,
+Feasibility (resources are adequate, e.g., classrooms, labs, equipment, and faculty load),
+Scheduling impact, and
+Impact on other disciplines and/or Programs.
+Similar Learning Objectives
+CB10: Work Experience
+CB11: Course Classification Status Y - Credit Course
+CB13: Special Class Status
+Course Prior to College Level (CB21) Y - Not applicable
+Funding Agency Category (CB23) Y - Not Applicable (funding not used to develop course)
+Course Program Status (CB24)
+City
+CB24: Program Status 1 - Program Applicable
+Mesa
+CB24: Program Status 1 - Program Applicable
+Miramar
+CB24: Program Status 1 - Program Applicable
+Course Gen Education Status (CB25)
+Course Support Course Status (CB26)
+CB27: Upper Division Status
+Major Restriction Code
+NONE -
+Lecture Hours
+Min: 48.000
+Max: 54.000
+Lab Hours
+Min: 0.000
+Max: 0.000
+Units
+Min: 3.000
+Max: 0.000
+FTEF
+Total FTEF Min: 0.200
+Comments
+ASSIST
+Queue for Assist No
+Last Request From Queue
+Last Direct Request
+ASSIST Preview
+Prefix MUSI
+Course Number 100
+Content The following topics are included in the framework of the course but are not intended as limits on content. The order of presentation and relative emphasis will vary with each instructor.
+Definitions of basic music concepts
+Form
+Harmony
+Melody
+Timbre
+Aural perception of music
+Pitch
+Texture
+Dynamics
+Beat and rhythm
+Music analysis
+Characteristics of music forms
+Characteristics of music genres
+Characteristics of music styles
+Characteristics of music historical periods
+Aural recogintion
+Aural recognition/identification of specific music forms
+Aural recognition/identification of specific music genres
+Aural recognition/identification of specific music styles
+Aural recognition/identification of specific music historical periods
+ Understanding music in context
+Cultural
+Historical
+Other contexts
+Lab Content
+Course Description
+This course is designed to develop aural and analytical musical skills. Emphasis is placed on conceptual, contextual, and stylistic elements of music from various periods and cultures, and encompassing a range of genres and styles. This course is designed to support students in all majors who are interested in satisfying the general education requirements for Arts and Humanities.
+Is Honors
+Lecture Hours
+Lab Hours
+Outline Approval Date
+Outline Effective Date
+Prerequisites
+Corequisites
+Advisories
+Enrollment Limitations
+Objectives
+Instruction Methods
+Evaluation Methods
+Other Texts
+Assignments
+Other Information

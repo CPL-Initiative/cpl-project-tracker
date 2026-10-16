@@ -1,0 +1,216 @@
+{
+ "college": "Southwestern College",
+ "control_number": "36634",
+ "shape": "adt",
+ "title": "Psychology",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/intersegmental-general-education-transfer-curriculum-igetc/",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 16727,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 16727,
+    "output_tokens": 1477,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1477,
+  "output_tokens_details": {
+   "thinking_tokens": 406
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.09645,
+ "ms": 13343,
+ "seconds": 13.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 17,
+   "share": 0.0,
+   "missing": [
+    "BIOL100",
+    "BIOL211",
+    "PSYC106",
+    "PSYC109",
+    "PSYC116",
+    "PSYC201",
+    "PSYC211",
+    "PSYC230",
+    "PSYC250",
+    "PSYC260",
+    "PSYC270",
+    "PSYC271",
+    "PSYCC1000",
+    "SOC116",
+    "SOC270",
+    "SOC271",
+    "STATC1000"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Cal-GETC Areas and Units",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BIOL 100",
+    "why": "appears only as a Cal-GETC Area 5B general education course, not in a Psychology A.A.-T requirements section"
+   },
+   {
+    "code": "BIOL 211",
+    "why": "appears only as a Cal-GETC Area 5B/5C general education course, not in a Psychology A.A.-T requirements section"
+   },
+   {
+    "code": "PSYC 106",
+    "why": "appears only as a Cal-GETC Area 4 general education course"
+   },
+   {
+    "code": "PSYC 109",
+    "why": "appears only as a Cal-GETC Area 4 general education course"
+   },
+   {
+    "code": "PSYC 116",
+    "why": "appears only as a Cal-GETC Area 4 general education course (PSYC/SOC 116)"
+   },
+   {
+    "code": "PSYC 201",
+    "why": "not in the text"
+   },
+   {
+    "code": "PSYC 211",
+    "why": "appears only as a Cal-GETC Area 4 general education course"
+   },
+   {
+    "code": "PSYC 230",
+    "why": "appears only as a Cal-GETC Area 4 general education course"
+   },
+   {
+    "code": "PSYC 250",
+    "why": "appears only as a Cal-GETC Area 4 general education course"
+   },
+   {
+    "code": "PSYC 260",
+    "why": "appears only as a Cal-GETC Area 4 general education course"
+   },
+   {
+    "code": "PSYC 270",
+    "why": "appears only as a Cal-GETC Area 2 general education course (PSYC/SOC 270)"
+   },
+   {
+    "code": "PSYC 271",
+    "why": "not in the text"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "appears only as a Cal-GETC Area 4 general education course"
+   },
+   {
+    "code": "SOC 116",
+    "why": "appears only as a Cal-GETC Area 4 general education course (SOC/PSYC 116)"
+   },
+   {
+    "code": "SOC 270",
+    "why": "appears only as a Cal-GETC Area 2 general education course (SOC/PSYC 270)"
+   },
+   {
+    "code": "SOC 271",
+    "why": "not in the text"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "appears only as a Cal-GETC Area 2 general education course"
+   }
+  ],
+  "notes": [
+   "The supplied text is Southwestern College's Cal-GETC general education pattern page (Areas 1-6), not the Psychology A.A.-T program section. No major requirements, totals, outcomes or careers for the Psychology A.A.-T are printed, so no blocks were recorded.",
+   "The text is cut off at the start (mid-sentence) and at the end (Area 6: Ethnic Studies), so the Cal-GETC list is incomplete.",
+   "General education courses are never placed in blocks; closed-list courses appearing in the Cal-GETC areas are listed in missing_explained.",
+   "ge_pattern left null because the text does not state which GE pattern applies to this award; a reviewer should locate the actual Psychology A.A.-T catalog page."
+  ]
+ },
+ "extracted_run": "38563578596"
+}

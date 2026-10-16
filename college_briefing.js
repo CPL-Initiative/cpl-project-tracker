@@ -282,6 +282,15 @@
    * gate, and the page SAYS SO rather than rendering a row of blanks: an
    * unexplained gap reads as a college with no staff. */
   var PUBLIC_CONTACT_ROLES = ["cpl_coordinator", "cpl_counselor"];
+  /* The address the contact strategy measures ("Ensure a CPL Coordinator and/or Counselor is listed
+   * and responsive"). A signed-in reader reads MAP's primary contact, where a student's request is
+   * routed. The public row carries no primary contact, so a public reader reads the two roles it does
+   * carry, the ones the strategy names. Until S370 the public page read the absent column and told
+   * every college "No contact listed in MAP" beside a contacts table listing its coordinator. */
+  function measuredContactEmail(r, pub) {
+    if (!r) return null;
+    return (pub ? (r.cpl_coordinator_email || r.cpl_counselor_email) : r.primary_contact_email) || null;
+  }
 
   function sources() {
     var pub = !signedIn();
@@ -627,11 +636,11 @@
       ".cb-flag{display:inline-block;font-size:.68rem;padding:1px 7px;border-radius:10px;border:1px solid var(--border-strong);color:var(--text-muted);margin-left:6px;vertical-align:middle;}",
       ".cb-bfrac{height:5px;border-radius:3px;background:var(--border);margin-top:6px;overflow:hidden;max-width:320px;}",
       ".cb-bfrac>i{display:block;height:100%;background:var(--brand,var(--cobalt));}",
-      ".cb-warn{border:1px solid var(--warn,#b45309);border-radius:8px;padding:12px 14px;margin:14px 0;font-size:.83rem;}",
+      ".cb-warn{border:1px solid var(--mustard-text);border-radius:8px;padding:12px 14px;margin:14px 0;font-size:.83rem;}",
       ".cb-note{font-size:.78rem;color:var(--text-muted);margin-top:18px;line-height:1.5;}",
       // ── Rework 2026-08-11: steps first, then data, advice last ──
       ".cb-h{margin:26px 0 10px;font-size:1.02rem;color:var(--text-strong);}",
-      ".cb-stand{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;}",
+      ".cb-stand{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr));gap:12px;}",
       ".cb-box{border:1px solid var(--border);border-radius:9px;padding:14px 15px;background:var(--surface);display:flex;flex-direction:column;gap:7px;}",
       ".cb-box.lead{border-color:var(--mustard-fill,#E3B341);border-width:1.5px;}",
       ".cb-big{font-size:1.45rem;font-weight:700;color:var(--text-strong);line-height:1.1;}",
@@ -640,7 +649,7 @@
       ".cb-box .cb-bar{height:6px;border-radius:3px;background:var(--surface-muted,#ECE9E2);overflow:hidden;padding:0;border:0;min-width:0;}",
       ".cb-box .cb-bar i{display:block;height:100%;background:var(--mustard-fill,#E3B341);border-radius:3px;}",
       ".cb-floor{margin-top:0;margin-bottom:12px;border-left:3px solid var(--crimson,#920000);padding-left:10px;}",
-      ".cb-types{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;}",
+      ".cb-types{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr));gap:12px;}",
       ".cb-type{border:1px solid var(--border);border-radius:9px;padding:14px 15px;background:var(--surface);display:flex;flex-direction:column;gap:9px;}",
       ".cb-type header{display:flex;justify-content:space-between;align-items:baseline;gap:8px;}",
       ".cb-type h4{margin:0;font-size:.94rem;color:var(--text-strong);}",
@@ -675,24 +684,44 @@
       ".cb-prios{margin-top:12px;border-top:1px solid var(--border);padding-top:11px;}",
       ".cb-prow{padding:8px 0;border-top:1px solid var(--border);}",
       ".cb-prow:first-of-type{border-top:0;padding-top:0;}",
-      ".cb-prow .cb-whead{font-size:.85rem;}",
-      ".cb-prow .cb-whead .v{font-weight:700;color:var(--text-strong);font-size:.85rem;}",
+      // Each priority's award beside its title, a step larger (Sam, 2026-10-15, call 6).
+      ".cb-prow .cb-whead{justify-content:flex-start;flex-wrap:wrap;gap:.2em .55em;font-size:1.05rem;}",
+      ".cb-prow .cb-whead b{color:var(--text-strong);}",
+      ".cb-prow .cb-whead .v{font-weight:600;color:var(--text-strong);font-size:1.05rem;}",
       ".cb-ptarget{font-size:.76rem;color:var(--text-muted);margin-top:3px;line-height:1.45;}",
       ".cb-next{border:1px solid var(--border-strong);border-left:4px solid var(--brand,var(--cobalt));border-radius:8px;padding:13px 15px;margin-top:14px;background:var(--surface-subtle);}",
       ".cb-next ul{margin:0;padding-left:18px;font-size:.84rem;line-height:1.55;}",
       ".cb-next li{margin-bottom:5px;}",
       ".cb-next li:last-child{margin-bottom:0;}",
       // Resources — mirrors the public CPL fact sheet's §resources.
-      ".cb-res{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px;}",
+      ".cb-res{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:10px;}",
       ".cb-resi{border:1px solid var(--border);border-radius:8px;padding:11px 13px;background:var(--surface);}",
       // 24px tall (WCAG 2.2 SC 2.5.8): each link stands alone in its card, so
       // the inline-text exception does not cover it (the S308 sweep of My
       // College's seeded view measured them at 15px).
-      ".cb-resi a{display:inline-block;min-height:24px;padding:4px 0;box-sizing:border-box;font-size:.86rem;font-weight:600;color:var(--link,#0b5cad);text-decoration:none;}",
+      ".cb-resi a{display:inline-block;min-height:24px;padding:4px 0;box-sizing:border-box;font-size:.86rem;font-weight:600;color:var(--accent-link,var(--cobalt));text-decoration:underline;text-underline-offset:2px;}",
       ".cb-resi a:hover{text-decoration:underline;}",
       ".cb-resi div{font-size:.76rem;color:var(--text-muted);margin-top:3px;line-height:1.45;}",
       // ── Funding, district roster, Sierra asks (2026-08-11) ──
-      ".cb-fund{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;}",
+      // The two funding boxes stack, and the priorities sit side by side with
+      // their steps beneath (Sam, 2026-10-15, call 7): side by side, the open
+      // steps left the seed box beside a tall empty column.
+      ".cb-fund{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;}",
+      // A wrapping row, not a grid: the label spans the row, and a grid's empty
+      // third track could never collapse beneath it.
+      ".cb-fund .cb-prios{display:flex;flex-wrap:wrap;column-gap:28px;}",
+      ".cb-fund .cb-prios > .cb-prow{flex:1 1 320px;min-width:0;}",
+      ".cb-fund .cb-prios > .cb-plab{flex:0 0 100%;}",
+      // The boxes' tags read as plain words, and the noncredit line carries no
+      // red rule: red marks a state to act on (Sam, 2026-10-15, call 7).
+      ".cb-tagword{font-size:.82rem;font-weight:400;color:var(--text-muted);}",
+      // 24px tall (WCAG 2.2 SC 2.5.8): each link stands alone in its tag, as the resources' do.
+      ".cb-tagword a{display:inline-block;min-height:24px;padding:4px 0;box-sizing:border-box;color:var(--accent-link,var(--cobalt));text-decoration:underline;text-underline-offset:2px;}",
+      ".cb-fbig-k{font-size:.92rem;font-weight:600;color:var(--text-muted);margin-left:.25em;letter-spacing:.01em;}",
+      // How to meet it: underlined words, 24px tall (Sam, 2026-10-09: controls are underlined words).
+      ".cb-howto{font:inherit;font-size:.95em;font-weight:600;color:var(--accent-link,var(--cobalt));background:none;border:0;padding:0 2px;margin-left:.3em;min-height:24px;box-sizing:border-box;text-decoration:underline;text-underline-offset:3px;cursor:pointer;}",
+      ".cb-howto:focus-visible{outline:3px solid var(--gold-accent,var(--cobalt));outline-offset:2px;border-radius:2px;}",
+      ".cb-ncline{margin:10px 0 12px;}",
       ".cb-fbox{border:1px solid var(--border);border-radius:9px;padding:14px 15px;background:var(--surface);}",
       ".cb-fbox header{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:8px;}",
       // The block also renders on the funding explainer (fundingPanel, 2026-09-30),
@@ -733,8 +762,11 @@
       ".cb-rep tbody th{text-align:left;font-size:.85rem;font-weight:400;color:var(--text-body);padding:7px 8px;border-bottom:1px solid var(--border);white-space:normal;}",
       ".cb-rep .cb-rep-tot th,.cb-rep .cb-rep-tot td{font-weight:700;color:var(--text-strong);border-bottom:1px solid var(--border-strong);}",
       ".cb-reports-signin{margin:8px 0 4px;}",
-      ".cb-pick{background:none;border:0;padding:0;font:inherit;color:var(--link,#0b5cad);cursor:pointer;text-align:left;}",
-      ".cb-pick:hover{text-decoration:underline;}",
+      ".cb-pick{background:none;border:0;padding:2px 0;min-height:24px;box-sizing:border-box;font:inherit;color:var(--accent-link,var(--cobalt));text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;cursor:pointer;text-align:left;}",
+      ".cb-pick:hover{text-decoration-thickness:2px;}",
+      // The landing page link sits in a sentence; the 24px floor (2.5.8) and a long address
+      // that wraps rather than pushing a phone page sideways (S370 UI pass).
+      ".cb-land{display:inline-block;min-height:24px;padding:3px 0;box-sizing:border-box;overflow-wrap:anywhere;color:var(--accent-link,var(--cobalt));}",
       ".cb-roster tr.lead td{font-weight:600;color:var(--text-strong);}",
       // Sierra AI box — first on the tab, holds the pickers and the embedded chat.
       ".cb-assist{border:1px solid var(--border-strong);border-radius:11px;background:var(--surface);padding:16px 18px;margin-bottom:20px;}",
@@ -744,9 +776,9 @@
       ".cb-assist .cb-bar{margin-bottom:0;padding-bottom:12px;border-bottom:1px solid var(--border);}",
       ".cb-assist .cb-asks{margin-top:12px;}",
       ".cb-assist-mount{margin-top:12px;}",
-      ".cb-asks{display:flex;flex-wrap:wrap;gap:8px;}",
-      ".cb-ask{font:inherit;font-size:.82rem;text-align:left;padding:9px 12px;border:1px solid var(--border-strong);border-radius:999px;background:var(--surface);color:var(--text,var(--text-strong));cursor:pointer;}",
-      ".cb-ask:hover{border-color:var(--brand,var(--cobalt));color:var(--brand,var(--cobalt));}",
+      ".cb-asks{display:flex;flex-wrap:wrap;gap:8px 18px;}",
+      ".cb-ask{font:inherit;font-size:.82rem;text-align:left;padding:2px 0;min-height:24px;box-sizing:border-box;border:0;background:none;color:var(--cobalt);cursor:pointer;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;}",
+      ".cb-ask:hover{text-decoration-thickness:2px;}",
       // ── Sierra AI leads the tab (Sam, 2026-08-12) ──────────────────────
       // The team's read was that she is the useful part, so she gets the
       // weight: a heavier frame, real breathing room, and a stated purpose.
@@ -760,7 +792,6 @@
       // intro carries its own margins; this only has to stop the first heading
       // pushing an extra 16px down from the top of the box.
       ".cb-assist-head .cplchat-intro h2{margin-top:0;}",
-      ".cb-assist-head .cplchat-intro p:last-child{margin-bottom:12px;}",
       // The fallback title, shown only if cpl_chat.js never mounted.
       ".cb-assist-fallback{margin:0 0 12px;font-size:1.3rem;letter-spacing:-.01em;color:var(--text-strong);}",
       // Visually hidden, still announced — the "(opens in a new tab)" cue that
@@ -782,47 +813,71 @@
       ".cb-scope-again{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:0 0 16px;"
         + "padding-bottom:14px;border-bottom:1px solid var(--border,#d8dde6);}",
       ".cb-scope-again-l{font-size:.78rem;color:var(--text-muted);}",
-      ".cb-scope-opts{display:flex;flex-direction:column;gap:8px;}",
+      /* Controls are underlined words (Sam, 2026-10-09; S370 UI pass): no border, no fill, 24px tall. */
+      ".cb-scope-opts{display:flex;flex-direction:column;gap:10px;}",
       ".cb-scope-b{display:flex;align-items:baseline;justify-content:space-between;gap:12px;width:100%;"
-        + "text-align:left;padding:13px 16px;border:1px solid var(--border,#d8dde6);border-radius:10px;"
-        + "background:var(--surface-opaque,#fff);color:inherit;font:inherit;cursor:pointer;}",
-      ".cb-scope-b:hover:not([disabled]){border-color:var(--cobalt,#0047AB);background:var(--surface-subtle,#eef3fa);}",
+        + "text-align:left;padding:2px 0;min-height:24px;box-sizing:border-box;border:0;background:none;"
+        + "color:var(--cobalt);font:inherit;cursor:pointer;}",
+      ".cb-scope-b:not([disabled]) .cb-scope-l{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;}",
+      ".cb-scope-b:hover:not([disabled]) .cb-scope-l{text-decoration-thickness:2px;}",
       ".cb-scope-b:focus-visible{outline:2px solid var(--focus-ring,var(--brand,var(--cobalt)));outline-offset:2px;}",
       /* A disabled option stays READABLE. Greying it to the point of being hard
          to read hides the one thing it is there to say — that it exists and why
          it is off — so only the affordance is dimmed, not the sentence. */
-      ".cb-scope-b[disabled]{cursor:not-allowed;background:var(--surface-subtle,#f6f8fb);border-style:dashed;}",
+      ".cb-scope-b[disabled]{cursor:not-allowed;color:var(--text-muted);}",
       ".cb-scope-b[disabled] .cb-scope-l{color:var(--text-muted);}",
       ".cb-scope-l{font-size:1rem;font-weight:600;}",
       ".cb-scope-soon{font-size:.76rem;color:var(--text-muted);white-space:nowrap;}",
       ".cb-scope-note{margin:14px 0 0;font-size:.8rem;color:var(--text-muted);line-height:1.5;}",
-      ".cb-back{background:none;border:0;padding:0 0 10px;font:inherit;font-size:.82rem;"
-        + "color:var(--accent-link,var(--brand,var(--cobalt)));cursor:pointer;}",
-      ".cb-back:hover{text-decoration:underline;}",
-      ".cb-ent{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px;}",
-      ".cb-ent-b{display:flex;flex-direction:column;gap:2px;text-align:left;padding:11px 14px;"
-        + "border:1px solid var(--border,#d8dde6);border-radius:10px;background:var(--surface-opaque,#fff);"
-        + "color:inherit;font:inherit;cursor:pointer;}",
-      ".cb-ent-b:hover{border-color:var(--cobalt,#0047AB);background:var(--surface-subtle,#eef3fa);}",
-      ".cb-ent-n{font-size:.76rem;color:var(--text-muted);}",
+      ".cb-back{background:none;border:0;padding:2px 0;margin:0 0 8px;min-height:24px;box-sizing:border-box;"
+        + "font:inherit;font-size:.82rem;font-weight:600;color:var(--accent-link,var(--cobalt));cursor:pointer;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;}",
+      ".cb-back:hover{text-decoration-thickness:2px;}",
+      ".cb-welcome-acts .cb-back{margin:0;}",
+      ".cb-ent{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(230px,100%),1fr));gap:10px 18px;}",
+      ".cb-ent-b{display:flex;flex-direction:column;gap:2px;text-align:left;padding:2px 0;min-height:24px;"
+        + "box-sizing:border-box;border:0;background:none;color:var(--cobalt);font:inherit;font-weight:600;cursor:pointer;}",
+      ".cb-ent-l{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;}",
+      ".cb-ent-b:hover .cb-ent-l{text-decoration-thickness:2px;}",
+      ".cb-ent-n{font-size:.76rem;font-weight:400;color:var(--text-muted);}",
 
       /* ── The welcome header, which only exists after a choice ───────────── */
       ".cb-welcome{margin:2px 0 14px;}",
       ".cb-welcome-row{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap;}",
       ".cb-welcome-t{margin:0;font-size:1.45rem;letter-spacing:-.015em;color:var(--text-strong);font-weight:650;}",
-      ".cb-welcome-acts{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}",
-      ".cb-act{padding:6px 13px;border:1px solid var(--border,#d8dde6);border-radius:999px;"
-        + "background:var(--surface-opaque,#fff);color:inherit;font:inherit;font-size:.8rem;cursor:pointer;"
-        + "white-space:nowrap;}",
-      ".cb-act:hover{border-color:var(--cobalt,#0047AB);background:var(--surface-subtle,#eef3fa);}",
+      ".cb-welcome-acts{display:flex;align-items:center;gap:8px 18px;flex-wrap:wrap;}",
+      ".cb-act{padding:2px 0;min-height:24px;box-sizing:border-box;border:0;background:none;color:var(--cobalt);"
+        + "font:inherit;font-size:.82rem;font-weight:600;cursor:pointer;white-space:nowrap;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;}",
+      ".cb-act:hover{text-decoration-thickness:2px;}",
+      ".cb-act:focus-visible,.cb-back:focus-visible,.cb-ent-b:focus-visible,.cb-pick:focus-visible,.cb-ask:focus-visible"
+        + "{outline:2px solid var(--focus-ring,var(--cobalt));outline-offset:2px;border-radius:3px;}",
       ".cb-pdfrow{display:flex;justify-content:flex-end;margin:0 0 8px;}",
-      ".cb-act-q{font-size:.76rem;padding:4px 11px;}",
-      ".cb-allctl{display:flex;gap:8px;margin:12px 0 0;}",
+      ".cb-act-q{font-size:.78rem;}",
+      ".cb-allctl{display:flex;gap:18px;margin:12px 0 0;}",
 
       /* Sierra is a section now, but she is the PRIMARY one — the summary reads
          at heading scale rather than at the muted scale the others use. */
       ".cb-assist-d>.cb-sum h2{margin:0;font-size:1.15rem;}",
       ".cb-assist-body{padding-top:4px;}",
+      /* ── Sierra AI's format, in her seat (S400; Sam, 2026-10-16: My College
+         "still has the old format") ───────────────────────────────────────
+         Sierra AI over a tab is one column: her name and one control on a
+         ruled bar, the role row, the starters, the box, the caution under it.
+         Here she sat in three nested cards (.cb-assist, then the <details>
+         drawn as a .cb-sec card, then the log's own frame). The .cb-assist
+         frame stays, the heavier one that leads the tab (Sam, 2026-08-12);
+         the <details> inside it draws none, and its summary becomes the bar.
+         (0,3,0) selectors, because the .cb-sec rules sit later in this sheet. */
+      ".cb-assist>.cb-assist-d.cb-sec{border:0;border-radius:0;background:transparent;margin:0;position:relative;}",
+      ".cb-assist>.cb-assist-d>.cb-sum{padding:0 8.5rem 10px 0;border-radius:0;min-height:34px;box-sizing:border-box;align-items:center;}",
+      ".cb-assist>.cb-assist-d[open]>.cb-sum{border-bottom:1px solid var(--border);margin-bottom:10px;}",
+      ".cb-assist .cb-assist-body{padding-top:0;}",
+      ".cb-assist .cb-assist-mount{margin-top:0;}",
+      /* The one control, Full screen, at the bar's right end where Sierra AI
+         puts Back to the tab. cpl_chat.js keeps it a direct child of her box
+         (it travels with her to full screen, where her own bar takes it), so it
+         is placed here rather than moved: the <details> is its containing block,
+         and the control is gone with the section when Collapse all shuts it. */
+      ".cb-assist-d .cplchat:not(.cplchat-full)>.cplchat-dockbar{position:absolute;top:0;right:0;margin:0;}",
 
       /* ── The roll-up (district / statewide) ─────────────────────────────── */
       ".cb-roll{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 14px;}",
@@ -866,7 +921,7 @@
       ".cb-sum::-webkit-details-marker{display:none;}",
       ".cb-sum:hover .cb-sum-t{color:var(--brand,var(--cobalt));}",
       ".cb-sum:focus-visible{outline:2px solid var(--focus-ring,var(--brand,var(--cobalt)));outline-offset:-2px;}",
-      ".cb-sum-t{font-size:.97rem;font-weight:600;color:var(--text-strong);display:flex;align-items:baseline;gap:8px;}",
+      ".cb-sum-t{margin:0;font-size:.97rem;font-weight:600;color:var(--text-strong);display:flex;align-items:baseline;gap:8px;}",
       ".cb-sum-t::before{content:'▸';font-size:.8em;color:var(--text-muted);transition:transform .12s ease;display:inline-block;}",
       ".cb-sec[open] .cb-sum-t::before{transform:rotate(90deg);}",
       ".cb-sum-v{font-size:.82rem;color:var(--text-muted);text-align:right;font-variant-numeric:tabular-nums;}",
@@ -933,7 +988,7 @@
       ".cb-opp-t.p1{background:var(--brand,var(--cobalt));color:var(--on-accent,#fff);border-color:transparent;}",
       ".cb-opp-fit{font-size:.72rem;padding:2px 8px;border-radius:4px;white-space:nowrap;border:1px solid var(--border-strong);color:var(--text-body);}",
       ".cb-opp-soc{font-size:.72rem;color:var(--text-muted);white-space:nowrap;}",
-      ".cb-opp-b{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px 18px;}",
+      ".cb-opp-b{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(210px,100%),1fr));gap:12px 18px;}",
       ".cb-opp-b .lbl{font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);font-weight:700;margin:0 0 5px;}",
       ".cb-opp-b .lbl:not(:first-child){margin-top:11px;}",
       ".cb-chip{display:inline-block;font-size:.76rem;padding:2px 8px;margin:0 4px 4px 0;border-radius:4px;background:var(--surface-subtle);border:1px solid var(--border);color:var(--text-body);}",
@@ -1468,7 +1523,7 @@
         + '<div class="cb-ent">'
         + districts.map(function (d) {
             return '<button type="button" class="cb-ent-b" data-district="' + esc(d) + '">'
-              + esc(d.replace(/ Community College District$/, " CCD"))
+              + '<span class="cb-ent-l">' + esc(d.replace(/ Community College District$/, " CCD")) + "</span>"
               + '<span class="cb-ent-n">' + dIdx[d].length + " colleges</span></button>";
           }).join("")
         + "</div></div>";
@@ -1492,7 +1547,7 @@
         + '<div class="cb-ent">'
         + codes.map(function (c) {
             return '<button type="button" class="cb-ent-b" data-swp="' + esc(c) + '">'
-              + esc(R[c].name)
+              + '<span class="cb-ent-l">' + esc(R[c].name) + "</span>"
               + '<span class="cb-ent-n">' + R[c].colleges.length + " colleges</span></button>";
           }).join("")
         + "</div></div>";
@@ -1613,7 +1668,7 @@
   function sec(id, title, summary, body) {
     if (!body) return "";
     return '<details class="cb-sec" data-sec="' + esc(id) + '"' + (state.open[id] ? " open" : "") + ">"
-      + '<summary class="cb-sum"><span class="cb-sum-t">' + esc(title) + "</span>"
+      + '<summary class="cb-sum"><h3 class="cb-sum-t">' + esc(title) + "</h3>"
       + (summary ? '<span class="cb-sum-v">' + summary + "</span>" : "")
       + "</summary>"
       + '<div class="cb-sec-b">' + body + "</div></details>";
@@ -1705,12 +1760,13 @@
     return cap ? w.charAt(0).toUpperCase() + w.slice(1) : w;
   }
 
-  function stratHtml(items, label) {
+  function stratHtml(items, label, open) {
     if (!items || !items.length) return "";
     var n = items.length;
     // Sam, 2026-10-01 (mockup card 10): the steps name who suggests them; a
-    // college reader does not know "the team".
-    return '<details class="cb-strat"><summary>' + numWord(n, true) + " " + (n === 1 ? "step" : "steps")
+    // college reader does not know "the team". `open`: the funding block's
+    // steps arrive open (Sam, 2026-10-15, call 4: "Open one copy").
+    return '<details class="cb-strat"' + (open ? " open" : "") + '><summary>' + numWord(n, true) + " " + (n === 1 ? "step" : "steps")
       + " the CPL Initiative suggests" + (label ? " for " + esc(label) : "") + "</summary><ol>"
       + items.map(function (i) {
           var s = "<li>" + esc(i.text);
@@ -1777,12 +1833,15 @@
       // Drafts for the college (Sam, sheet 42 card 3). The harvest keys its
       // program records by the catalog-data name, so the registry turns this
       // college_id into that name first. A college the harvest has not read
-      // has no registry match or no records: an empty list, never an error.
+      // has no registry match or no items: an empty list, never an error.
+      // The items come from program_record_college_items, one row an item the
+      // college owns (S386): Cerritos's 577 rows, where every record's display
+      // was about 4 MB.
       jget(REST + "/program_source_registry?college_id=eq." + id + "&select=college").then(function (rows) {
         if (!rows) return null;
         if (!rows.length) return [];
-        return jget(REST + "/program_requirement_records?college=eq." + encodeURIComponent(rows[0].college)
-          + "&select=program_title,control_number,award,catalog_year,checked,display&order=control_number");
+        return jgetAll(REST + "/program_record_college_items?college=eq." + encodeURIComponent(rows[0].college)
+          + "&select=program_title,control_number,award,catalog_year,checked,n,kind,text&order=control_number,n");
       })
     ]).then(function (r) {
       state.detail = { rollup: r[0] || [], adopted: r[1] || [], potential: r[2] || [],
@@ -1804,17 +1863,21 @@
    * (2026-10-05 20:58Z) he chose "Show them now": a college reads its drafts
    * here, marked for review, while the MAP team decides when to send each one.
    * The facts are the display build's, word for word; this page adds no
-   * judgment of its own. PURE. */
-  function collegeDrafts(records) {
-    var out = [];
-    (records || []).forEach(function (p) {
-      var items = ((p && p.display && p.display.gaps) || []).filter(function (g) {
-        return g && g.owner === "college" && g.text;
-      });
-      if (!items.length) return;
-      out.push({ program: p.program_title || "", award: p.award || "", control_number: p.control_number || "",
-                 catalog_year: p.catalog_year || "", checked: !!p.checked,
-                 items: items.map(function (g) { return { kind: g.kind || "", text: g.text }; }) });
+   * judgment of its own. The rows are program_record_college_items', one an
+   * item, and that view keeps only the gaps the college owns: a gap the reading
+   * procedure owns is the MAP team's work and never reaches this page. PURE. */
+  function collegeDrafts(rows) {
+    var out = [], at = {};
+    (rows || []).forEach(function (r) {
+      if (!r || !r.text) return;
+      var key = r.control_number || "";
+      var d = at[key];
+      if (!d) {
+        d = at[key] = { program: r.program_title || "", award: r.award || "", control_number: key,
+                        catalog_year: r.catalog_year || "", checked: !!r.checked, items: [] };
+        out.push(d);
+      }
+      d.items.push({ kind: r.kind || "", text: r.text });
     });
     return out;
   }
@@ -2639,6 +2702,11 @@
    * apportionment" (his words, card 2: the mechanism the ESS 25-82 funds used;
    * the implementation funding is still "allocated").
    * Dates read the CO style guide's way: "Nov. 1, 2026", "June 30, 2028". */
+  // The memo and the statute the funding boxes name (Sam, 2026-10-15, call 6).
+  // The memo answered 200 as a PDF on 2026-10-15; the statute link is the one
+  // the explainer already uses.
+  var ESS_MEMO_URL = "https://www.cccco.edu/-/media/CCCCO-Website/docs/memo/ess-25-82-credit-for-prior-learning-funding-a11y.pdf";
+  var STATUTE_URL = "https://california.public.law/codes/education_code_section_78093.2";
   var AP_MONTHS = ["Jan.", "Feb.", "March", "April", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."];
   function apDate(v) {
     var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(String(v || ""));
@@ -2670,12 +2738,22 @@
   function conditionsHtml(cond) {
     if (!cond || !cond.items || !cond.items.length) return "";
     var n = cond.items.length;
-    var h = '<div class="cb-lab cb-flagp">CPL funding requires the following ' + numWord(n)
-      + " minimum condition" + (n === 1 ? "" : "s") + ":</div>";
+    // The editable passage speaks of conditions in the plural; one condition
+    // keeps the house sentence's singular.
+    var h = '<div class="cb-lab cb-flagp">' + (n === 1
+      ? "CPL funding requires the following " + numWord(n) + " minimum condition:"
+      : mcText("mc_conds", { "condition count": numWord(n) }, "CPL funding requires the following " + numWord(n)
+        + " minimum conditions:")) + "</div>";
     h += '<ol class="cb-ess-list cb-conds">';
+    // How to meet it after each condition (Sam, 2026-10-15, call 5): the
+    // funding module opens its steps, one text on every surface.
+    var T = window.CPL_FUNDING_TAB;
+    var kinds = T && typeof T.howToKinds === "function" ? T.howToKinds() : [];
     cond.items.forEach(function (it, i) {
       var st = it.pending ? "pending" : it.met ? "met" : "not";
-      h += "<li>" + essMark({ state: st }) + "<div>" + (i + 1) + ". " + esc(condText(it, cond)) + "</div></li>";
+      h += "<li>" + essMark({ state: st }) + "<div>" + (i + 1) + ". " + esc(condText(it, cond))
+        + (kinds.indexOf(it.kind) >= 0 ? ' <button type="button" class="cb-howto" data-howto="' + esc(it.kind)
+          + '" aria-haspopup="dialog">How to meet it</button>' : "") + "</div></li>";
     });
     h += "</ol>";
     if (cond.pending) return h + '<div class="cb-lab cb-flagp">The minimum conditions are still loading.</div>';
@@ -2717,6 +2795,15 @@
    * drift. ctx: { funding, college, f, detail, b, implProg, stratsInline,
    * standalone }. Every figure is the funding module's; nothing here derives
    * one. */
+  /* A sentence of the block, from My CPL Funding's text on the funding tab
+   * (Sam, 2026-10-15, call 8: editable like the explainer's passages), with
+   * this institution's figures filled in. The house wording below is the
+   * fallback for a page the funding module has not reached. */
+  function mcText(key, figs, fallback) {
+    var T = window.CPL_FUNDING_TAB;
+    var h = T && typeof T.mcTextHtml === "function" ? T.mcTextHtml(key, figs || {}) : null;
+    return h != null ? h : fallback;
+  }
   function fundingBlockHtml(ctx) {
     var f = ctx.f, implProg = ctx.implProg, stratsInline = ctx.stratsInline;
     var fundBody = "";
@@ -2739,14 +2826,17 @@
       fundBody += '<div class="cb-fund">';
       // The tag keeps the distribution date: Sam's opening (card 2) carries
       // the memo and the commitment, not the date.
-      fundBody += '<div class="cb-fbox"><header><h4>2025&ndash;2026 $50K Seed Funding</h4><span class="cb-tag">ESS 25-82, distributed spring 2026</span></header>';
+      // ESS 25-82 links the memo itself (Sam, 2026-10-15, call 6).
+      fundBody += '<div class="cb-fbox"><header><h4>2025&ndash;2026 $50K Seed Funding</h4><span class="cb-tagword">'
+        + '<a href="' + ESS_MEMO_URL + '" target="_blank" rel="noopener">ESS 25-82</a>, distributed spring 2026</span></header>';
       if (f.grant.declined) {
-        fundBody += '<div class="cb-fbig">Declined</div><div class="cb-lab">The college declined this grant pending further review.</div>';
+        fundBody += '<div class="cb-fbig">Declined</div><div class="cb-lab">' +
+          mcText("mc_seed_declined", {}, "The college declined this grant pending further review.") + "</div>";
       } else {
         fundBody += '<div class="cb-fbig">' + money(f.grant.amount) + "</div>"
-          + '<div class="cb-lab">Based on the guidance provided in memo ESS 25-82, the college received this funding '
-          + "through apportionment with a commitment to achieve the three priority outcomes measured by CPL data in "
-          + "the MAP platform.</div>";
+          + '<div class="cb-lab">' + mcText("mc_seed", {}, "Based on the guidance provided in memo ESS 25-82, the "
+          + "college received this funding through apportionment with a commitment to achieve the three priority "
+          + "outcomes measured by CPL data in the MAP platform.") + "</div>";
       }
       var ess = essProgress(f, ctx.detail, window.CPL_FUNDING_ESS, accessPriorityTitle(f.prios));
       if (ess) {
@@ -2775,26 +2865,30 @@
       // with the session, not a label a college would recognize. The tag is
       // the dashboard's own term for the figure (Sam's max award, 2026-09-01);
       // "cap" names the $400,000 ceiling.
-      fundBody += '<div class="cb-fbox"><header><h4>2026&ndash;2028 College Implementation Funding</h4><span class="cb-tag">max award</span></header>';
+      // The tag names the statute and links it; "max award" follows the amount
+      // it names (Sam, 2026-10-15, call 6).
+      fundBody += '<div class="cb-fbox"><header><h4>2026&ndash;2028 College Implementation Funding</h4><span class="cb-tagword">'
+        + '<a href="' + STATUTE_URL + '" target="_blank" rel="noopener">Ed. Code &sect;78093.2</a></span></header>';
       if (!f.alloc) {
         fundBody += '<div class="cb-lab">CPL funding lists no allocation for this college.</div>';
       } else {
-        fundBody += '<div class="cb-fbig">' + money(f.alloc.total) + "</div>";
-        fundBody += '<div class="cb-lab">Potential (max) funding available for the two-year period 2026-28 is allocated '
-          + "based on priority outcomes measured in full-time equivalent students (FTES) in MAP. Achievement of the "
-          + "following priority outcomes determines funding.</div>";
+        fundBody += '<div class="cb-fbig">' + money(f.alloc.total) + ' <span class="cb-fbig-k">max award</span></div>';
+        fundBody += '<div class="cb-lab">' + mcText("mc_impl", {}, "Potential (max) funding available for the "
+          + "two-year period 2026-28 is allocated based on priority outcomes measured in full-time equivalent students "
+          + "(FTES) in MAP. Achievement of the following priority outcomes determines funding.") + "</div>";
         if (f.alloc.floored) {
-          fundBody += '<div class="cb-lab cb-flagp">The college qualifies for ' + money(f.floor) + " base funding to "
-            + "implement the CPL policies and procedures needed to achieve the priority outcomes.</div>";
+          fundBody += '<div class="cb-lab cb-flagp">' + mcText("mc_base", { "base award": money(f.floor) },
+            "The college qualifies for " + money(f.floor) + " base funding to implement the CPL policies and "
+            + "procedures needed to achieve the priority outcomes.") + "</div>";
         }
         // The floor's mirror image. Say where the difference WENT, not just
         // that the college lost it — the same reason the funding explainer
         // names the beneficiary of every amount it shows.
         if (f.alloc.capped && f.cap) {
-          fundBody += "<div class=\"cb-lab cb-flagp\">The college's proportional share of the funding exceeds the "
-            + money(f.cap) + " cap, so its funding stops at the cap and the difference is redirected to the other "
-            + "colleges. Its targets scale to the cap, so it qualifies for funding at the same rate as every college "
-            + "above the base.</div>";
+          fundBody += '<div class="cb-lab cb-flagp">' + mcText("mc_cap", { cap: money(f.cap) },
+            "The college's proportional share of the funding exceeds the " + money(f.cap) + " cap, so its funding "
+            + "stops at the cap and the difference is redirected to the other colleges. Its targets scale to the cap, "
+            + "so it qualifies for funding at the same rate as every college above the base.") + "</div>";
         }
         fundBody += conditionsHtml(f.cond);
 
@@ -2804,8 +2898,9 @@
         // visible as noncredit funding — and it is the noncredit dean who
         // needs to see it. The share is INSIDE the combined figure above.
         if (f.nc != null && f.nc > 0) {
-          fundBody += '<div class="cb-note cb-floor">Noncredit portion of the max funding is ' + money(f.nc)
-            + ", which is based on CPL FTES that originate from the college or district's noncredit program.</div>";
+          fundBody += '<div class="cb-note cb-ncline">' + mcText("mc_nc", { "noncredit portion": money(f.nc) },
+            "Noncredit portion of the max funding is " + money(f.nc) + ", which is based on CPL FTES that originate "
+            + "from the college or district's noncredit program.") + "</div>";
         }
 
         // ── What the max award is FOR — the priorities, each with this
@@ -2826,12 +2921,12 @@
             // intimidating audit; six to ten attached to a priority read as
             // advice about that priority.
             var progPrio = stratsInline ? programPriorityFor(implProg, p, i) : null;
-            if (progPrio) fundBody += stratHtml(progPrio.items, null);
+            if (progPrio) fundBody += stratHtml(progPrio.items, null, true);
             fundBody += "</div>";
           });
           fundBody += "</div>";
-          fundBody += '<div class="cb-lab" style="margin-top:8px;">Progress toward each priority goal is measured in FTES '
-            + "and funded up to the cap.</div>";
+          fundBody += '<div class="cb-lab" style="margin-top:8px;">' + mcText("mc_progress", {},
+            "Progress toward each priority goal is measured in FTES and funded up to the cap.") + "</div>";
         }
       }
       fundBody += "</div></div>";
@@ -2862,9 +2957,10 @@
       // 2026-09-30): the block sits beside the institution table it was drawn
       // from, so it points there rather than at a tab the reader cannot see.
       fundBody += ctx.standalone
-        ? '<div class="cb-note">CPL funding follows the same procedure for every institution under All institutions.</div>'
-        : '<div class="cb-note">CPL funding follows the same procedure for every institution. The Implementation '
-          + "Funding tab shows the full derivation and the year split.</div>";
+        ? '<div class="cb-note">' + mcText("mc_close", {},
+            "CPL funding follows the same procedure for every institution under All institutions.") + "</div>"
+        : '<div class="cb-note">' + mcText("mc_close_mc", {}, "CPL funding follows the same procedure for every "
+          + "institution. The Implementation Funding tab shows the full derivation and the year split.") + "</div>";
     }
     return fundBody;
   }
@@ -3277,7 +3373,7 @@
           + "should reach, and leaves the rest to staff who sign in.</div>";
       }
       if (roster.landing) {
-        contactBody += '<div class="cb-note">Your CPL landing page: <a href="' + esc(roster.landing)
+        contactBody += '<div class="cb-note">Your CPL landing page: <a class="cb-land" href="' + esc(roster.landing)
           + '" target="_blank" rel="noopener">' + esc(roster.landing) + "</a></div>";
       }
       var nFilled = roster.filled.length, nAll = nFilled + roster.blank.length;
@@ -3748,6 +3844,9 @@
     });
     var rep = root.querySelector("#cb-report");
     if (rep) rep.onclick = function () { buildBriefingReport(root); };
+    // The roster's spelling, which the funding module keys on (MAP says
+    // "Laney College"; the roster, "Laney").
+    wireHowTo(root, state.college ? rosterKey(state.college) : null, "mycollege");
 
     var c = root.querySelector("#cb-college"), d = root.querySelector("#cb-district");
     if (c) c.onchange = function () { selectCollege(c.value, root); };
@@ -3975,7 +4074,37 @@
     var stratsInline = implProg && f && prioritiesAlign(f.prios, implProg);
     el.innerHTML = '<div class="cb-panel">' + fundingBlockHtml({ funding: "ready", college: key, f: f, detail: null,
       b: b, implProg: implProg, stratsInline: stratsInline, standalone: true }) + "</div>";
+    wireHowTo(el, key, "funding");
     return true;
+  }
+  /* How to meet it, wired by property: a redraw rebuilds the buttons, and the
+   * funding module owns the dialog and its text. */
+  function wireHowTo(scope, college, surface) {
+    var T = window.CPL_FUNDING_TAB;
+    if (!T || typeof T.howToOpen !== "function") return;
+    Array.prototype.forEach.call(scope.querySelectorAll("[data-howto]"), function (b) {
+      b.onclick = function () { T.howToOpen(b.getAttribute("data-howto"), college, { surface: surface, opener: b }); };
+    });
+  }
+
+  /* A list the reader is using: the focused element is a <select> in this tab.
+   * A redraw would replace it, and a replaced list closes in the reader's hand. */
+  function selectInUse(root) {
+    var ae = root && root.ownerDocument ? root.ownerDocument.activeElement : null;
+    return !!(ae && ae.tagName === "SELECT" && root.contains(ae));
+  }
+  /* The model update's redraw, held until that list loses focus. A choice made
+   * on the list redraws the tab by itself and reads the model as it stands, so
+   * a list no longer on the page has nothing left to redraw. */
+  function holdRedrawForSelect(root) {
+    var sel = root.ownerDocument.activeElement;
+    if (!sel || sel._cbRedrawHeld) return;
+    sel._cbRedrawHeld = true;
+    sel.addEventListener("blur", function () {
+      sel._cbRedrawHeld = false;
+      if (!sel.isConnected || !root.contains(sel)) return;
+      if (state.funding === "ready" && scopeReady()) render(root);
+    }, { once: true });
   }
 
   function loadFunding(root) {
@@ -3988,6 +4117,16 @@
         M.onModelChange(function () {
           if (state.funding !== "ready" || !root) return;
           adoptModelConfig();
+          // ⚠ THE COLLEGE LIST STAYS PUT (Sam, 2026-10-15, call 7: the black
+          // box). render() rewrites the whole tab, so a redraw on every model
+          // update replaced #cb-college about seven times in the eight seconds
+          // after Choose another college, and a list the reader had open
+          // vanished under the pointer. The pickers carry nothing the model
+          // decides, so a model update redraws only a page that shows the
+          // model (scopeReady), and never under a list the reader is using:
+          // that redraw waits for the list to lose focus.
+          if (!scopeReady()) return;
+          if (selectInUse(root)) { holdRedrawForSelect(root); return; }
           render(root);
         }, describeFunding);
       }
@@ -4064,15 +4203,16 @@
     });
   }
 
-  /* ── The CPL Assistant, embedded ──────────────────────────────────────────
+  /* ── Sierra AI, embedded ──────────────────────────────────────────────────
    * Sam, 2026-08-11: "embed the functionality right on the page… so they can
    * type their question there and not leave the tab." This mounts the SAME
-   * assistant cpl_chat.js owns — one instance in a second place — so the
-   * audience rules, feedback path and conversation history stay in one file
-   * and cannot drift. Clicking a suggested question PREFILLS without sending,
-   * so the person can edit it first.
+   * assistant cpl_chat.js owns — a box of its own, with this tab's scope,
+   * surface and questions — so the audience rules, feedback path and
+   * conversation history stay in one file and cannot drift.
    *
-   * Falls back to the deep link if the chat module has not loaded. */
+   * Without a box here, askSierra() opens Sierra AI over the tab instead
+   * (CPL_CHAT.open); the CPL Assistant tab it used to send the reader to
+   * retired 2026-10-16 (S398). */
   var SIERRA_Q_KEY = "cplSierraTestQ.v1";
   function chatModule() {
     var C = window.CPL_CHAT;
@@ -4179,9 +4319,10 @@
    * don't have to take 2 steps and get lost."
    *
    * ask() is preferred; prefill() is the fallback for an older chat module and
-   * deliberately does NOT send (the Sierra Training tab replays a logged
-   * question through it and the reviewer edits first). If neither is
-   * available the question is stashed and we navigate to the full tab. */
+   * deliberately does NOT send (a reviewer edits a logged question first). If
+   * neither has a box to fill, Sierra AI opens over this tab and asks
+   * (CPL_CHAT.open). Without even that, the question is stashed under the
+   * hand-off key and the #chatbot link carries it to her. */
   function askSierra(question) {
     /* ⚠ SIERRA MAY BE COLLAPSED. Since 2026-08-17 she is a <details>, and
      * Collapse all closes her along with everything else. Prefilling a widget
@@ -4198,13 +4339,11 @@
     var C = chatModule();
     if (C && typeof C.ask === "function" && C.ask(question)) return;          // fills + sends
     if (C && typeof C.prefill === "function" && C.prefill(question)) return;  // stays on the tab
+    var S = window.CPL_CHAT;                                                    // over the tab, and asks
+    if (S && typeof S.open === "function" && S.open({ question: String(question || "").slice(0, 1000), send: true })) return;
     try { sessionStorage.setItem(SIERRA_Q_KEY, String(question || "").slice(0, 1000)); }
     catch (e) { /* storage unavailable — the chat still opens, just unprefilled */ }
-    if (window.CPL_TABS && typeof window.CPL_TABS.navigate === "function") {
-      window.CPL_TABS.navigate("chatbot");
-    } else {
-      location.hash = "#chatbot";
-    }
+    location.hash = "#chatbot";   // the retired tab's address opens Sierra AI and fills her box
   }
 
   /* PURE. The questions worth asking about THIS college — computed from its own
@@ -4417,6 +4556,25 @@
       return r.json();
     }).catch(function () { return null; });
   }
+  /* Every row of a read, a page at a time, so PostgREST's 1,000-row cap never
+   * passes a short list off as the whole one. null when any page fails. */
+  var PAGE = 1000;
+  function jgetAll(url) {
+    var out = [];
+    function page(i) {
+      var h = authHeaders();
+      h["Range-Unit"] = "items";
+      h.Range = (i * PAGE) + "-" + ((i + 1) * PAGE - 1);
+      return fetch(url, { headers: h }).then(function (r) {
+        if (!r.ok) throw new Error(String(r.status));
+        return r.json();
+      }).then(function (rows) {
+        out = out.concat(rows || []);
+        return (rows || []).length < PAGE ? out : page(i + 1);
+      });
+    }
+    return page(0).catch(function () { return null; });
+  }
 
   function recompute() {
     if (!state.data) return;
@@ -4555,7 +4713,7 @@
       summary.forEach(function (r) { summaryById[r.college_id] = r; });
       var contactByName = {}, contactRowByName = {};
       contacts.forEach(function (r) {
-        contactByName[r.college] = r.primary_contact_email || null;
+        contactByName[r.college] = measuredContactEmail(r, SRC.pub);
         contactRowByName[r.college] = r;
         /* ⭐ AND UNDER EVERY VARIANT OF THAT NAME.
          *
@@ -4575,7 +4733,7 @@
          * trailing-space spellings are IN it, verified). */
         var canon = variantToCanon[r.college];
         if (canon && canon !== r.college) {
-          if (!(canon in contactByName)) contactByName[canon] = r.primary_contact_email || null;
+          if (!(canon in contactByName)) contactByName[canon] = measuredContactEmail(r, SRC.pub);
           if (!(canon in contactRowByName)) contactRowByName[canon] = r;
         }
       });
@@ -4632,6 +4790,7 @@
     // Pure. The drafts for the college, for review (Sam, sheet 42 card 3).
     _collegeDrafts: collegeDrafts,
     _draftsSection: draftsSection,
+    _jgetAll: jgetAll,
     // Pure. Exposed because the three-way split (filled / blank / held back) is
     // the difference between telling a college its VP is missing and telling it
     // we did not ask.
@@ -4705,6 +4864,7 @@
     _standing: standing,
     _standSection: standSection,
     _measureFor: measureFor,
+    _measuredContactEmail: measuredContactEmail,
     // Funding / district / Sierra — pure, and the join is the risky one: it
     // decides which college's money is shown, so it is tested against the
     // real rosters rather than a fixture.

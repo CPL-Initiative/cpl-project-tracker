@@ -156,7 +156,7 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
   const ta = doc.querySelector('[data-textarea="x_alloc"]');
   check("Edit opens the passage as rich plain text: bold marks, bullets, figure names",
     !!ta && /\*\*The base award, \{base award\}\*\*/.test(ta.value) && /\n- \*\*The cap, \{cap\}\*\*/.test(ta.value));
-  check("...with the rich hint beside it", !!sec && /Two asterisks/.test(doc.querySelector('[data-sec="explainer_text"]').textContent));
+  check("...with the rich hint beside it", !!sec && /two asterisks/.test(doc.querySelector('[data-sec="explainer_text"]').textContent));
   ta.value = ta.value.replace("two adjustments", "two changes");
   const save = doc.querySelector('[data-textsave="x_alloc"]');
   if (save) click(window, save);

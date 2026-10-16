@@ -1,0 +1,43 @@
+{
+ "_readme": "S369 SkyLaurel, 2026-10-12. Chaffey's capture (run 38197183697) found catalog 718 and its sections Student Classifications and Programs and Degrees and Certificates, read 40 nodes in 80 calls and listed no program entry (cq_index stopped at its call cap). Sam chose Chaffey next (2026-10-12, \"Chaffee next\"). This read loads the registry's catalog address with \"network\": true and the catalog's top navigation as JSON, to see how Chaffey's outline holds its programs and how their index titles are written. No model call; two page loads and the data calls the browser makes for the first. Read 2 (S369): the first read (run 38202133197) shows the outline's sections: Degrees and Certificates is node 19210, and _getAliasPathsForCatalog names program views under it by school (19210/bth/busadmin2) and a program index (19210/program_index). This read loads that section's page and its children as JSON, the catalog's alias paths whole, and one program view with \"network\": true.",
+ "college": "Chaffey College",
+ "questions": {
+  "outline_source": "Which addresses the catalog's scripts fetch its outline from, and the ids of its sections.",
+  "program_section": "Under Degrees and Certificates: what each list holds, and how a program entry is titled."
+ },
+ "keywords": [
+  "[Cc]ertificate",
+  "A\\.S\\.",
+  "A\\.A\\.",
+  "[Aa]ssociate",
+  "[Dd]egree",
+  "[Pp]rogram"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "program_section"
+   ],
+   "url": "https://chaffey.curriqunet.com/Catalog/_getPage?catalogId=718&id=19210"
+  },
+  {
+   "answers": [
+    "program_section"
+   ],
+   "url": "https://chaffey.curriqunet.com/Catalog/_getNavigation?id=718&parentId=19210"
+  },
+  {
+   "answers": [
+    "outline_source"
+   ],
+   "url": "https://chaffey.curriqunet.com/Catalog/_getAliasPathsForCatalog?id=718"
+  },
+  {
+   "answers": [
+    "program_section"
+   ],
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/bth/busadmin2",
+   "network": true
+  }
+ ]
+}

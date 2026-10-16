@@ -1,0 +1,288 @@
+{
+ "college": "Napa Valley College",
+ "control_number": "03670",
+ "shape": "degree",
+ "title": "Accounting",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.napavalley.edu//areas-of-study/accounting/accounting-as/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7210,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7210,
+    "output_tokens": 1993,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1993,
+  "output_tokens_details": {
+   "thinking_tokens": 762
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0687,
+ "ms": 15580,
+ "seconds": 16.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 13,
+   "share": 0.615,
+   "missing": [
+    "COMM126",
+    "COMS101",
+    "ECON100",
+    "ECON101",
+    "MATH106"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "BUSI105",
+    "BUSI148",
+    "ECONC2001",
+    "ECONC2002"
+   ],
+   "flagged": [
+    "BUSI105",
+    "BUSI148",
+    "ECONC2001",
+    "ECONC2002"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    40.0,
+    40.0
+   ],
+   "stated": [
+    40.0,
+    40.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 9,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "ACCOUNTING: AS DEGREE",
+   "measure": "units",
+   "total_units": {
+    "min": 40,
+    "max": 40
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "NVC General Education",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply knowledge of generally accepted accounting principles.",
+    "Record accounting transactions using a software package and explain various accounting reports."
+   ],
+   "careers": [
+    "Accounting",
+    "Accounting Clerk",
+    "Bookkeeper",
+    "Payroll Clerk",
+    "entry-level Accountant",
+    "Accounting clerks",
+    "Bookkeepers",
+    "Payroll clerks",
+    "Entry-level Accountants"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ACCT-120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT-122",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT-125",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT-126",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT-127",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSI-100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSI-103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSI-105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUSI-148",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMS-165",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON-C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON-C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COMM 126",
+    "why": "not in the text"
+   },
+   {
+    "code": "COMS 101",
+    "why": "not in the text"
+   },
+   {
+    "code": "ECON 100",
+    "why": "not in the text; catalog lists ECON-C2002 Principles of Macroeconomics instead (likely common course renumbering)"
+   },
+   {
+    "code": "ECON 101",
+    "why": "not in the text; catalog lists ECON-C2001 Principles of Microeconomics instead (likely common course renumbering)"
+   },
+   {
+    "code": "MATH 106",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The 'Total Units 40' printed under the single Required Core Courses list is recorded as total_units (it equals the sum of the listed courses).",
+   "'Each degree must total at least 60 units' and the 60-unit associate degree sentence are generic statements, not recorded as degree_total.",
+   "ECON-C2001 and ECON-C2002 appear to be Common Course Numbering replacements for closed-list ECON 101 and ECON 100; marked as catalog additions since the codes differ.",
+   "ACCT-127 is titled 'Introduction to Accounting with Quickbooks' in the catalog vs 'Computer Accounting' in the state file.",
+   "BUSI-105 and BUSI-148 are required in the catalog but absent from the closed list."
+  ]
+ },
+ "extracted_run": "38748853261"
+}

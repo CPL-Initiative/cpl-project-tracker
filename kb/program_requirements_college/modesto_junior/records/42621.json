@@ -1,0 +1,180 @@
+{
+ "college": "Modesto Junior College",
+ "control_number": "42621",
+ "shape": "noncredit",
+ "title": "Tutoring",
+ "award": "Noncredit program",
+ "source_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/tutoring-mjc-spring-2024",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5374,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5374,
+    "output_tokens": 1399,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1399,
+  "output_tokens_details": {
+   "thinking_tokens": 529
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04948,
+ "ms": 12238,
+ "seconds": 12.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    36.0,
+    36.0
+   ],
+   "stated": [
+    36.0,
+    36.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Tutoring Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 36,
+    "max": 36
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Identify adult learning theories and tutoring strategies and develop various skills to promote active, independent learning.",
+    "Identify and address tutor's personal biases to promote an equitable learning environment based on understanding, acceptance, and respect."
+   ],
+   "careers": [
+    "education careers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 36,
+     "max": 36
+    },
+    "courses": [
+     {
+      "code": "TUTOR900",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "ELECTIVES--COMPLETE ONE OF THE FOLLOWING COURSES",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "TUTOR910",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TUTOR915",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TUTOR920",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit CDCP certificate counted in hours: program total printed as 'Tutoring (Total 36)'; the page also prints 'Unit Requirements: 0.0 Units' and 'Total Units: 0.0 Units'.",
+   "Catalog prints codes without a space (TUTOR900 etc.); these match closed-list TUTOR 900, 910, 915, 920.",
+   "The REQUIRED COURSES heading prints 'Total 36' though it lists only TUTOR900 (18 hours); likely the eLumen layout nests the electives block under it. Recorded the printed 36 as stated.",
+   "Electives block heading says complete one course, while its rule line says 'Complete the following number of hours: 18'; each course is 18 hours, so both readings coincide. Recorded as choose 1 course.",
+   "Award Instructions confirm: TUTOR 900 plus one of TUTOR 910, 915, or 920.",
+   "A stray lead-in 'Upon satisfactory completion of this award, the student should be prepared to:' followed by 'TUTORING *' appears before the Program Learning Outcomes heading with no outcomes under it."
+  ]
+ },
+ "extracted_run": "38477845911"
+}

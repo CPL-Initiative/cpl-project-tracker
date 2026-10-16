@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-540 document(s).
+552 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -72,6 +72,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A count gate cannot see a reorder](../kb-notes/methodology-a-count-gate-cannot-see-a-reorder.md) | methodology | published | 2026-08-20 | 2026-08-20 |
 | [A count-based guard passes when its subject disappears](../kb-notes/methodology-a-count-based-guard-passes-when-its-subject-disappears.md) | methodology | published | 2026-09-09 | 2026-09-09 |
 | [A course missing from a program's state list may be on it in a retired version](../kb-notes/methodology-a-missing-course-may-be-a-retired-version.md) | methodology | published | 2026-10-11 | 2026-10-11 |
+| [A course title reads as its level, so name the course's program beside it](../kb-notes/methodology-a-course-title-reads-as-its-level.md) | methodology | published | 2026-10-12 | 2026-10-12 |
 | [A coverage line takes both numbers from one universe](../kb-notes/methodology-a-coverage-line-takes-both-numbers-from-one-universe.md) | methodology | published | 2026-09-07 | 2026-09-07 |
 | [A crosswalk's value is the lint, not the mapping](../kb-notes/methodology-a-crosswalks-value-is-the-lint-not-the-mapping.md) | methodology | published | 2026-08-21 | 2026-08-21 |
 | [A curation table that cannot store a reason will never build a reason KB](../kb-notes/methodology-a-curation-table-that-cannot-store-a-reason.md) | methodology | published | 2026-09-20 | 2026-09-20 |
@@ -109,7 +110,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A generator does not know what a comment is](../kb-notes/methodology-a-generator-does-not-know-what-a-comment-is.md) | methodology | published | 2026-09-18 | 2026-09-18 |
 | [A globe shows a hemisphere: real estate on a screen is the zoom range, not the surface](../kb-notes/methodology-a-globe-shows-a-hemisphere-real-estate-is-the-zoom-range.md) | methodology | published | 2026-09-07 | 2026-09-07 |
 | [A grain-invariant measure can still be the wrong one](../kb-notes/methodology-a-grain-invariant-measure-can-still-be-the-wrong-one.md) | methodology | published | 2026-08-10 | 2026-08-10 |
-| [A green check you did not scope is not evidence](../kb-notes/methodology-a-green-check-you-did-not-scope-is-not-evidence.md) | methodology | published | 2026-08-23 | 2026-08-23 |
+| [A green check you did not scope is not evidence](../kb-notes/methodology-a-green-check-you-did-not-scope-is-not-evidence.md) | methodology | published | 2026-08-23 | 2026-10-14 |
 | [A grid past a few hundred thousand cells needs a window, not chunks](../kb-notes/methodology-a-grid-past-a-few-hundred-thousand-cells-needs-a-window-not-chunks.md) | methodology | internal | 2026-09-24 | 2026-09-24 |
 | [A grouping key must come from the authoritative set, not from the rows being grouped](../kb-notes/methodology-a-grouping-key-must-come-from-the-authoritative-set.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [A guard on generated output cannot see a regression staged in its source](../kb-notes/methodology-a-guard-on-generated-output-cannot-see-its-source.md) | methodology | published | 2026-09-10 | 2026-09-10 |
@@ -129,6 +130,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A lane file is a summary of a measurement, not the measurement](../kb-notes/methodology-a-lane-file-is-a-summary-of-a-measurement.md) | methodology | published | 2026-09-13 | 2026-09-13 |
 | [A lapsed custom name is not a refusal](../kb-notes/methodology-a-lapsed-name-is-not-a-refusal.md) | methodology | published | 2026-10-08 | 2026-10-08 |
 | [A layout that cannot shrink does not wrap — it overflows and paints over its neighbour](../kb-notes/methodology-a-grid-item-sized-to-its-content-overflows-its-track.md) | methodology | published | 2026-09-04 | 2026-09-04 |
+| [A lead-in sentence is not a section heading](../kb-notes/methodology-a-lead-in-sentence-is-not-a-section-heading.md) | methodology | published | 2026-10-12 | 2026-10-12 |
 | [A limit nobody can see eats work, and a limit enforced twice drifts](../kb-notes/methodology-a-silent-cap-eats-work-and-a-paired-cap-drifts.md) | methodology | published | 2026-08-12 | 2026-08-12 |
 | [A limit that bounds one side of a union lets the other side drown it](../kb-notes/methodology-bound-both-sides-of-a-union.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [A live rename must be order-proof, because the database and the deploy cannot be simultaneous](../kb-notes/methodology-a-live-rename-must-be-order-proof.md) | methodology | published | 2026-08-15 | 2026-08-15 |
@@ -177,10 +179,12 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A reader fix moves rows it was not aimed at, so compare each full read row by row](../kb-notes/methodology-a-reader-fix-moves-rows-it-was-not-aimed-at.md) | methodology | published | 2026-10-03 | 2026-10-03 |
 | [A receipt measures a worklist once; a lane recomputes it every build](../kb-notes/methodology-a-receipt-measures-a-worklist-once-a-lane-recomputes-it-live.md) | methodology | published | 2026-09-04 | 2026-09-04 |
 | [A receipt too large for the connector applies from the runner](../kb-notes/methodology-a-receipt-too-large-for-the-connector-applies-from-the-runner.md) | methodology | published | 2026-10-10 | 2026-10-10 |
+| [A red merge ref can be main's, and every open PR inherits it](../kb-notes/methodology-a-red-merge-ref-can-be-mains.md) | methodology | published | 2026-10-14 | 2026-10-14 |
 | [A remembered toggle hides the default from its author](../kb-notes/methodology-a-remembered-toggle-hides-the-default-from-its-author.md) | methodology | published | 2026-09-02 | 2026-09-02 |
 | [A report must read the screen, not recompute it](../kb-notes/methodology-a-report-must-read-the-screen-not-recompute-it.md) | methodology | published | 2026-08-17 | 2026-08-17 |
 | [A retrieval miss and a data gap look identical from the answer](../kb-notes/methodology-a-retrieval-miss-and-a-data-gap-look-identical.md) | methodology | published | 2026-08-11 | 2026-08-11 |
 | [A retrieval route costs what the synonym table decides, and the batch waits for the slowest route](../kb-notes/methodology-a-retrieval-route-costs-what-the-synonym-table-decides.md) | methodology | published | 2026-09-17 | 2026-09-17 |
+| [A reviewer's confirm is a probe for procedure gaps, and it retires as they close](../kb-notes/methodology-a-reviewer-confirm-is-a-probe-for-procedure-gaps.md) | methodology | published | 2026-10-14 | 2026-10-14 |
 | [A revoke must name every role the grant named — on this Supabase project a new function is callable by anon by name, not only through PUBLIC](../kb-notes/methodology-a-revoke-must-name-every-role-the-grant-named.md) | methodology | published | 2026-09-30 | 2026-10-03 |
 | [A rotating credential cannot be cached](../kb-notes/methodology-a-rotating-credential-cannot-be-cached.md) | methodology | published | 2026-08-15 | 2026-08-15 |
 | [A rule that is right for reading can be wrong for writing](../kb-notes/methodology-a-rule-that-is-right-for-reading-can-be-wrong-for-writing.md) | methodology | published | 2026-09-07 | 2026-09-07 |
@@ -199,7 +203,9 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A self-contained injected component must paint its own canvas, not just its text](../kb-notes/methodology-self-contained-injected-component-styling.md) | methodology | published | 2026-06-02 | 2026-06-02 |
 | [A settled ruling does not enforce itself — the consumer has to change](../kb-notes/methodology-a-settled-ruling-does-not-enforce-itself.md) | methodology | published | 2026-08-13 | 2026-09-27 |
 | [A share is not a fact until you have measured the whole](../kb-notes/methodology-a-share-is-not-a-fact-until-you-have-measured-the-whole.md) | methodology | published | 2026-09-11 | 2026-09-11 |
+| [A share target inside a bounded allocation is reached by solving one weight](../kb-notes/methodology-a-share-target-inside-a-bounded-allocation-is-a-solved-weight.md) | methodology | published | 2026-10-14 | 2026-10-14 |
 | [A shared credential can only scope to a surface that is exclusive to its group](../kb-notes/methodology-a-shared-credential-can-only-scope-to-an-exclusive-surface.md) | methodology | published | 2026-08-12 | 2026-08-12 |
+| [A sign-in form is no proof of a closed system, and a catalog host is no proof of a public outline](../kb-notes/methodology-a-sign-in-form-is-no-proof-of-a-closed-system.md) | methodology | published | 2026-10-12 | 2026-10-12 |
 | [A silent input cap is a content swap, and the model fills the vacuum with its own instructions](../kb-notes/methodology-a-silent-input-cap-is-a-content-swap.md) | methodology | published | 2026-08-24 | 2026-08-24 |
 | [A similarity threshold can't bridge a zero-overlap synonym — use a curated synonym map](../kb-notes/methodology-synonym-map-vs-similarity-threshold.md) | methodology | published | 2026-06-16 | 2026-06-18 |
 | [A single-decider guard is only as wide as the files it reads](../kb-notes/methodology-a-single-decider-guard-is-only-as-wide-as-the-files-it-reads.md) | methodology | published | 2026-09-19 | 2026-09-19 |
@@ -239,6 +245,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A token with two jobs cannot be themed — count a token's uses by ROLE before you give it a dark value](../kb-notes/methodology-a-token-with-two-jobs-cannot-be-themed.md) | methodology | published | 2026-09-08 | 2026-09-08 |
 | [A tool the sandbox lacks is usually one install away, and a boot test is cheaper than a preview deploy](../kb-notes/methodology-a-missing-tool-is-usually-a-missing-install.md) | methodology | published | 2026-09-17 | 2026-09-17 |
 | [A total that balances is not a total that is right](../kb-notes/methodology-a-total-that-balances-is-not-a-total-that-is-right.md) | methodology | published | 2026-08-23 | 2026-08-23 |
+| [A trigger file must differ from main's before its workflow runs](../kb-notes/methodology-a-trigger-file-must-differ-from-main.md) | methodology | published | 2026-10-13 | 2026-10-13 |
 | [A typed answer is not a boolean, and reading it as one fails silently](../kb-notes/methodology-a-typed-answer-is-not-a-boolean.md) | methodology | published | 2026-09-20 | 2026-09-20 |
 | [A value can exist in the repo and never reach the payload — two minting paths, one inference pipeline](../kb-notes/methodology-a-discipline-can-exist-in-the-repo-and-never-reach-the-payload.md) | methodology | published | 2026-09-08 | 2026-09-08 |
 | [A verdict covers the reading it saw](../kb-notes/methodology-a-verdict-covers-the-reading-it-saw.md) | methodology | published | 2026-10-05 | 2026-10-05 |
@@ -249,7 +256,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A word in a request may have no referent yet](../kb-notes/methodology-a-word-in-a-request-may-have-no-referent-yet.md) | methodology | published | 2026-08-25 | 2026-08-25 |
 | [A write key must name exactly one thing, and you have to check](../kb-notes/methodology-a-write-key-must-name-exactly-one-thing.md) | methodology | published | 2026-08-25 | 2026-08-25 |
 | [A written backlog decays silently — measure it instead](../kb-notes/methodology-a-written-backlog-decays-silently.md) | methodology | published | 2026-08-09 | 2026-08-09 |
-| [A wrong column is worse than a missing one](../kb-notes/methodology-a-wrong-column-is-worse-than-a-missing-one.md) | methodology | published | 2026-08-07 | 2026-08-07 |
+| [A wrong column is worse than a missing one](../kb-notes/methodology-a-wrong-column-is-worse-than-a-missing-one.md) | methodology | published | 2026-08-07 | 2026-10-12 |
 | [Achievement-based funding — the cap-and-earn model](../kb-notes/methodology-achievement-based-funding-cap-and-earn.md) | methodology | published | 2026-07-24 |  |
 | [Adding a curation surface with a synthesized kb_curation namespace (zero schema migration)](../kb-notes/methodology-kb-curation-synthesized-namespace.md) | methodology | published | 2026-06-02 | 2026-06-02 |
 | [Adversarially verify an id crosswalk before a live PK renumber](../kb-notes/methodology-adversarial-verify-crosswalk-before-live-rekey.md) | methodology | published | 2026-07-21 | 2026-07-21 |
@@ -273,6 +280,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [An inside term leaks through the context, never through the prose rules](../kb-notes/methodology-an-inside-term-leaks-through-the-context-not-the-prose.md) | methodology | published | 2026-09-18 | 2026-09-18 |
 | [An instruction that names another surface is a dependency nothing enforces](../kb-notes/methodology-an-instruction-naming-another-surface-is-an-unenforced-dependency.md) | methodology | published | 2026-08-14 | 2026-08-14 |
 | [An opportunity figure must be what peers ACHIEVED, not what the record allows](../kb-notes/methodology-an-opportunity-figure-must-be-what-peers-achieved.md) | methodology | published | 2026-08-17 | 2026-08-17 |
+| [An option list read from the page dies with the renderer that printed it](../kb-notes/methodology-an-option-list-read-from-the-page-dies-with-the-renderer.md) | methodology | published | 2026-10-12 | 2026-10-12 |
 | [An RLS-filtered read is not an error — it is an empty answer](../kb-notes/methodology-an-rls-filtered-read-is-not-an-error.md) | methodology | published | 2026-08-17 | 2026-08-17 |
 | [An unadopted item is a shelf, not an absence — and it needs its own band](../kb-notes/methodology-an-unadopted-item-is-a-shelf-not-an-absence.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [An undefined CSS custom property fails to an invisible state, and no jsdom test can see it](../kb-notes/methodology-an-undefined-css-token-fails-to-an-invisible-state.md) | methodology | published | 2026-09-06 | 2026-10-09 |
@@ -389,7 +397,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [One dependency derivation, many projections](../kb-notes/methodology-one-dependency-derivation-many-projections.md) | methodology | published | 2026-08-30 | 2026-08-30 |
 | [One symptom, two causes — and fixing the obvious one changes nothing](../kb-notes/methodology-one-symptom-two-causes-and-the-obvious-fix-changes-nothing.md) | methodology | published | 2026-09-09 | 2026-09-09 |
 | [Overlay live data onto generated cards via a stamped data-key hook](../kb-notes/methodology-live-overlay-onto-generated-cards.md) | methodology | published | 2026-06-26 | 2026-06-26 |
-| [Paginate every PostgREST read that can outgrow 1,000 rows](../kb-notes/methodology-paginate-postgrest-reads.md) | methodology | published | 2026-07-08 |  |
+| [Paginate every PostgREST read that can outgrow 1,000 rows](../kb-notes/methodology-paginate-postgrest-reads.md) | methodology | published | 2026-07-08 | 2026-10-13 |
 | [Parse PDF column grids positionally (x/y anchors), never from linearized text — the MQ Index mis-bins](../kb-notes/methodology-positional-pdf-column-grids.md) | methodology | published | 2026-07-11 |  |
 | [Populate-on-file-drop seam for grounded reference data](../kb-notes/methodology-populate-on-file-drop-seam-for-grounded-reference-data.md) | methodology | published | 2026-07-29 | 2026-07-29 |
 | [Probe the class before calling a refusal local](../kb-notes/methodology-probe-the-class-before-calling-a-refusal-local.md) | methodology | published | 2026-10-04 | 2026-10-04 |
@@ -404,6 +412,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Re-key every id-keyed artifact — a re-mint isn't done until the side manifests move](../kb-notes/methodology-rekey-every-id-keyed-artifact.md) | methodology | published | 2026-06-11 | 2026-07-27 |
 | [Re-mint applies — recompute through the dry-run's own allocator, gate on byte-fidelity to the reviewed plan](../kb-notes/methodology-apply-equals-spec-via-shared-allocator.md) | methodology | published | 2026-06-12 |  |
 | [Re-mint split invariants — id↔SUBJ4, control-number atomicity, dry-run↔apply cross-check](../kb-notes/methodology-remint-split-invariants.md) | methodology | published | 2026-05-29 | 2026-05-29 |
+| [Read a single-page catalog through its own content call, not by rendering](../kb-notes/methodology-read-a-catalog-through-its-own-content-call.md) | methodology | published | 2026-10-13 | 2026-10-13 |
 | [Rebuild a jsonb value from its receipts and check its md5](../kb-notes/methodology-rebuild-a-jsonb-from-receipts-and-check-its-md5.md) | methodology | published | 2026-10-02 | 2026-10-10 |
 | [Recompute a source's own summary statistics from its line items](../kb-notes/methodology-recompute-a-sources-own-summary-statistics.md) | methodology | published | 2026-07-30 |  |
 | [Recover a music bed from a mixed video by subtracting the clean voice stem](../kb-notes/methodology-recover-music-bed-by-voice-stem-subtraction.md) | methodology | published | 2026-07-23 | 2026-07-23 |
@@ -421,6 +430,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Reuse the model, not its formula — a derivation can be wrong for cases its special case never touches](../kb-notes/methodology-reuse-the-model-not-its-formula.md) | methodology | published | 2026-08-11 | 2026-08-22 |
 | [Revoking from anon does not remove the PUBLIC grant](../kb-notes/methodology-revoking-from-anon-does-not-remove-the-public-grant.md) | methodology | published | 2026-08-19 | 2026-08-19 |
 | [RLS is not a gate in front of a service-role edge function](../kb-notes/methodology-rls-is-not-a-gate-in-front-of-a-service-role-function.md) | methodology | published | 2026-08-09 | 2026-08-09 |
+| [Same context size, different answer, means the model varied](../kb-notes/methodology-same-context-size-means-the-model-varied.md) | methodology | published | 2026-10-12 | 2026-10-12 |
 | [Search the awarding body, not just the credential's name](../kb-notes/methodology-search-the-awarding-body-not-just-the-name.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [Separate affordance visibility from action eligibility](../kb-notes/methodology-affordance-visibility-vs-action-eligibility.md) | methodology | published | 2026-06-28 | 2026-06-28 |
 | [Shared grid columns must share one unit](../kb-notes/methodology-shared-grid-columns-must-share-one-unit.md) | methodology | published | 2026-09-01 | 2026-09-01 |
@@ -514,6 +524,8 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Runner-as-proxy for an external API the agent sandbox can't reach](../kb-notes/playbook-runner-as-external-api-proxy.md) | playbook | published | 2026-06-19 | 2026-06-28 |
 | [Ship a new table before its privilege close, when the database tool holds the close](../kb-notes/playbook-ship-a-table-before-its-privilege-close.md) | playbook | published | 2026-10-04 | 2026-10-04 |
 | [Soft-delete a daily-generated entity via an overlay table + collapsed section](../kb-notes/playbook-soft-delete-generated-entity-via-overlay.md) | playbook | published | 2026-06-29 | 2026-06-29 |
+| [Test a database function locally with PGlite before it goes live](../kb-notes/playbook-test-a-database-function-locally-with-pglite.md) | playbook | published | 2026-10-13 | 2026-10-13 |
+| [When apply_migration times out, read the migrations table before retrying](../kb-notes/playbook-when-apply-migration-times-out-read-the-migrations-table.md) | playbook | published | 2026-10-13 | 2026-10-13 |
 | [A System One model earns its place where a hit is cheap to verify — Jev, use case by use case, against this repo's lanes](../kb-notes/reference-system-one-model-fit-by-lane.md) | reference | internal | 2026-09-20 | 2026-09-20 |
 | [ADT acceptance & course-substitution rules (ASCCC C-ID guidance + STAR Act)](../kb-notes/reference-adt-acceptance-rules.md) | reference | published | 2026-06-20 |  |
 | [Authority-anchored credential naming — CareerOneStop / O*NET / COOL / Credential Engine for the CER](../kb-notes/reference-authority-anchored-credential-naming.md) | reference | published | 2026-07-07 | 2026-07-07 |

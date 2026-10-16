@@ -1,0 +1,6819 @@
+[
+ {
+  "control_number": "06637",
+  "title": "Agriculture Science - Communications",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.789,
+  "codes_found": [
+   "AG249",
+   "AG259A",
+   "AG259B",
+   "AG259C",
+   "AG259D",
+   "AGEC200",
+   "AGEC210",
+   "AGM200",
+   "ANSC200",
+   "ANSC201",
+   "ANSC202",
+   "ANSC203",
+   "ANSC220",
+   "NR200",
+   "PLSC200"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/agriculture-science-communications-mjc-fall-2025",
+   "title": "Agriculture Science - Communications",
+   "h1": "Agriculture Science - Communications",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 3415
+ },
+ {
+  "control_number": "06638",
+  "title": "Landscape and Park Maintenance",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.625,
+  "codes_found": [
+   "EHS276",
+   "EHS278",
+   "NR200",
+   "NR222",
+   "PLSC200"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/landscape-and-park-maintenance-mjc-fall-2025",
+   "title": "Landscape and Park Maintenance",
+   "h1": "Landscape and Park Maintenance",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2085
+ },
+ {
+  "control_number": "06639",
+  "title": "Agriculture Business",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG101",
+   "AG249",
+   "AG305",
+   "AGEC200",
+   "AGEC210",
+   "AGEC220",
+   "AGEC225",
+   "AGEC280",
+   "AGM200",
+   "AGM215",
+   "AGM235",
+   "ANSC201",
+   "ANSC202",
+   "ANSC203",
+   "ANSC207",
+   "ANSC214",
+   "ANSC220",
+   "ANSC230",
+   "EHS280",
+   "PLSC205",
+   "PLSC215",
+   "PLSC230",
+   "PLSC250"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/agriculture-business-mjc-fall-2024",
+   "title": "Agriculture Business",
+   "h1": "Agriculture Business",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 3734
+ },
+ {
+  "control_number": "06640",
+  "title": "Animal Artificial Insemination Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGEC200",
+   "AGEC280",
+   "ANSC201",
+   "ANSC214",
+   "ANSC217",
+   "ANSC220",
+   "ANSC226"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/animal-artificial-insemination-technician-mjc-fall-2023",
+   "title": "Animal Artificial Insemination Technician",
+   "h1": "Animal Artificial Insemination Technician",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1840
+ },
+ {
+  "control_number": "06642",
+  "title": "Agriculture Mechanics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG115",
+   "AG120",
+   "AG130",
+   "AGEC200",
+   "AGEC210",
+   "AGEC225",
+   "AGM200",
+   "AGM210",
+   "AGM211",
+   "AGM212",
+   "AGM213",
+   "AGM215",
+   "AGM216",
+   "AGM235",
+   "AGM237",
+   "AGM238",
+   "AGM239",
+   "AGM240",
+   "AGM241",
+   "AGM242",
+   "AGM243",
+   "AGM245",
+   "AGM251",
+   "AGM262",
+   "AGM280",
+   "AGM289",
+   "ANSC200",
+   "NR200",
+   "PLSC200"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/agriculture-mechanics-mjc-fall-2023",
+   "title": "Agriculture Mechanics",
+   "h1": "Agriculture Mechanics",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 29,
+  "text_chars": 4742
+ },
+ {
+  "control_number": "06644",
+  "title": "Business",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIT250",
+   "BIT260",
+   "BIT261",
+   "BIT270",
+   "BIT280",
+   "BIT316",
+   "BUSAD201",
+   "BUSAD202",
+   "BUSAD203",
+   "BUSAD210",
+   "BUSAD218",
+   "BUSAD235",
+   "BUSAD238",
+   "BUSAD240",
+   "BUSAD245",
+   "BUSAD248",
+   "BUSAD264",
+   "BUSAD274",
+   "BUSAD377",
+   "ECONC2001",
+   "ECONC2002"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/business-mjc-fall-2026",
+   "title": "Business",
+   "h1": "Business",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 2986
+ },
+ {
+  "control_number": "06645",
+  "title": "Accounting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIT250",
+   "BIT260",
+   "BIT261",
+   "BIT262",
+   "BIT270",
+   "BIT280",
+   "BIT317",
+   "BIT330",
+   "BIT375",
+   "BUSAD200",
+   "BUSAD201",
+   "BUSAD202",
+   "BUSAD203",
+   "BUSAD210",
+   "BUSAD305",
+   "BUSAD310",
+   "BUSAD319",
+   "BUSAD336",
+   "BUSAD350"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/accounting-mjc-fall-2025",
+   "title": "Accounting",
+   "h1": "Accounting",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 3648
+ },
+ {
+  "control_number": "06647",
+  "title": "Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIT250",
+   "BIT260",
+   "BIT261",
+   "BIT270",
+   "BIT280",
+   "BIT316",
+   "BUSAD201",
+   "BUSAD202",
+   "BUSAD210",
+   "BUSAD218",
+   "BUSAD230",
+   "BUSAD235",
+   "BUSAD238",
+   "BUSAD240",
+   "BUSAD245",
+   "BUSAD248",
+   "BUSAD264",
+   "BUSAD274",
+   "BUSAD310",
+   "BUSAD377"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/management-mjc-fall-2025",
+   "title": "Management",
+   "h1": "Management",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 2719
+ },
+ {
+  "control_number": "06649",
+  "title": "Marketing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIT250",
+   "BIT260",
+   "BIT261",
+   "BIT270",
+   "BIT280",
+   "BIT316",
+   "BUSAD201",
+   "BUSAD210",
+   "BUSAD218",
+   "BUSAD235",
+   "BUSAD238",
+   "BUSAD240",
+   "BUSAD245",
+   "BUSAD248",
+   "BUSAD264",
+   "BUSAD274",
+   "BUSAD377",
+   "CMPGR266",
+   "COMM132"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/marketing-mjc-fall-2025",
+   "title": "Marketing",
+   "h1": "Marketing",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 2538
+ },
+ {
+  "control_number": "06650",
+  "title": "Real Estate",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSAD201",
+   "BUSAD218",
+   "RLES380",
+   "RLES381",
+   "RLES382",
+   "RLES384",
+   "RLES385",
+   "RLES392"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/real-estate-mjc-summer-2020",
+   "title": "Real Estate",
+   "h1": "Real Estate",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2096
+ },
+ {
+  "control_number": "06655",
+  "title": "Computer Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI204",
+   "CSCI211",
+   "CSCI213",
+   "CSCI220",
+   "CSCI221",
+   "CSCI222",
+   "CSCI223",
+   "CSCI224",
+   "CSCI232",
+   "CSCI240",
+   "CSCI242",
+   "CSCI252",
+   "CSCI253",
+   "CSCI270",
+   "CSCI272",
+   "CSCI274"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/computer-science-mjc-fall-2026",
+   "title": "Computer Science",
+   "h1": "Computer Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 4738
+ },
+ {
+  "control_number": "06656",
+  "title": "Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM101",
+   "CHEM102",
+   "ENGR127",
+   "ENGR130",
+   "ENGR135",
+   "ENGR141",
+   "MATH171",
+   "MATH172",
+   "MATH173",
+   "MATH191",
+   "MATH193",
+   "PHYS101",
+   "PHYS102",
+   "PHYS103"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/engineering-mjc-fall-2025",
+   "title": "Engineering",
+   "h1": "Engineering",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3252
+ },
+ {
+  "control_number": "06661",
+  "title": "Machine Tool Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MACH200D",
+   "MACH200E",
+   "MACH201",
+   "MACH202",
+   "MACH205",
+   "MACH206",
+   "MACH208",
+   "MACH209",
+   "MACH357",
+   "MACH395",
+   "WELD200",
+   "WELD206"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/machine-tool-technology-mjc-fall-2026",
+   "title": "Machine Tool Technology",
+   "h1": "Machine Tool Technology",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2196
+ },
+ {
+  "control_number": "06662",
+  "title": "Automotive Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTEC200",
+   "AUTEC211",
+   "AUTEC311",
+   "AUTEC317",
+   "AUTEC319",
+   "AUTEC320",
+   "AUTEC321",
+   "AUTEC322",
+   "AUTEC368",
+   "AUTEC369",
+   "ELTEC208"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/automotive-technician-mjc-summer-2020",
+   "title": "Automotive Technician",
+   "h1": "Automotive Technician",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 1951
+ },
+ {
+  "control_number": "06668",
+  "title": "Welding",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGM211",
+   "MACH200D",
+   "MACH200E",
+   "SM331",
+   "WELD200",
+   "WELD204",
+   "WELD206",
+   "WELD300",
+   "WELD325",
+   "WELD340"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/welding-mjc-summer-2020",
+   "title": "Welding",
+   "h1": "Welding",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2337
+ },
+ {
+  "control_number": "06670",
+  "title": "Art",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART108",
+   "ART120",
+   "ART121",
+   "ART123",
+   "ART124",
+   "ART125",
+   "ART140",
+   "ART147",
+   "ART148",
+   "ART151",
+   "ART162",
+   "ART163",
+   "ART168",
+   "ART169",
+   "ART170",
+   "ART173",
+   "ARTHC1100",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/art-mjc-spring-2027",
+   "title": "Art",
+   "h1": "Art",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 3228
+ },
+ {
+  "control_number": "06671",
+  "title": "Music",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSE155",
+   "MUSE156",
+   "MUSE161",
+   "MUSE165",
+   "MUSE175",
+   "MUSE181",
+   "MUSP151",
+   "MUSP153",
+   "MUST101",
+   "MUST121",
+   "MUST122",
+   "MUST123",
+   "MUST131",
+   "MUST132",
+   "MUST133"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/music-mjc-fall-2025",
+   "title": "Music",
+   "h1": "Music",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 4444
+ },
+ {
+  "control_number": "06672",
+  "title": "Theatre",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DANCE111",
+   "DANCE121",
+   "DANCE131",
+   "DANCE141",
+   "DANCE151",
+   "THETR100",
+   "THETR114",
+   "THETR133",
+   "THETR134",
+   "THETR159",
+   "THETR160",
+   "THETR161",
+   "THETR164",
+   "THETR174"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/theatre-mjc-summer-2020",
+   "title": "Theatre",
+   "h1": "Theatre",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 2828
+ },
+ {
+  "control_number": "06673",
+  "title": "Photography",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART102",
+   "ART124",
+   "ART163",
+   "ART168",
+   "ART169",
+   "ART170",
+   "ART172",
+   "ART173",
+   "ART175",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/photography-mjc-spring-2027",
+   "title": "Photography",
+   "h1": "Photography",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2333
+ },
+ {
+  "control_number": "06678",
+  "title": "Nursing: ADN Program (RN)",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NURSE270",
+   "NURSE271",
+   "NURSE272",
+   "NURSE273",
+   "NURSE274",
+   "NURSE275",
+   "NURSE278"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/nursing-adn-program-rn-mjc-spring-2026",
+   "title": "Nursing: ADN Program (RN)",
+   "h1": "Nursing: ADN Program (RN)",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "06681",
+  "title": "Medical Assisting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANAT125",
+   "AP50",
+   "COMM102",
+   "COMM130",
+   "COMMC1000",
+   "MDAST320",
+   "MDAST321",
+   "MDAST322",
+   "MDAST323",
+   "MDAST324",
+   "MDAST325",
+   "MDAST326",
+   "PSYCC1000",
+   "PSYCH141"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/medical-assisting-mjc-spring-2026",
+   "title": "Medical Assisting",
+   "h1": "Medical Assisting",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 8468
+ },
+ {
+  "control_number": "06683",
+  "title": "Respiratory Care",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANAT125",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "MICRO101",
+   "PHYSO101",
+   "PSYCC1000",
+   "PSYCH141",
+   "RSCR220",
+   "RSCR222",
+   "RSCR224",
+   "RSCR230",
+   "RSCR232",
+   "RSCR240",
+   "RSCR242",
+   "RSCR244",
+   "RSCR246",
+   "RSCR250",
+   "RSCR251",
+   "RSCR252",
+   "RSCR255",
+   "RSCR257"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/respiratory-care-mjc-fall-2026v2",
+   "title": "Respiratory Care",
+   "h1": "Respiratory Care",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 4302
+ },
+ {
+  "control_number": "06688",
+  "title": "Child Development",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CLDDV101",
+   "CLDDV103",
+   "CLDDV107",
+   "CLDDV109",
+   "CLDDV111",
+   "CLDDV121",
+   "CLDDV125",
+   "CLDDV127",
+   "CLDDV128",
+   "CLDDV163",
+   "CLDDV167",
+   "CLDDV262"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/child-development-mjc-summer-2020",
+   "title": "Child Development",
+   "h1": "Child Development",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3152
+ },
+ {
+  "control_number": "06692",
+  "title": "Communication Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "06700",
+  "title": "Human Services",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.947,
+  "codes_found": [
+   "ADJU243",
+   "CLDDV262",
+   "FAMLF131",
+   "POLSC120",
+   "PSYCC1000",
+   "PSYCH104",
+   "PSYCH141",
+   "SOCIO101",
+   "SOCIO102",
+   "SOCIO125",
+   "SOCIO150",
+   "SWHS101",
+   "SWHS110",
+   "SWHS113",
+   "SWHS114",
+   "SWHS116",
+   "SWHS119",
+   "SWHS120"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/human-services-mjc-spring-2027",
+   "title": "Human Services",
+   "h1": "Human Services",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 2460
+ },
+ {
+  "control_number": "06701",
+  "title": "Administration of Justice",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJU201",
+   "ADJU202",
+   "ADJU203",
+   "ADJU204",
+   "ADJU205",
+   "ADJU212",
+   "ADJU213",
+   "ADJU215",
+   "ADJU216",
+   "ADJU217",
+   "ADJU222",
+   "ADJU232",
+   "ADJU234",
+   "ADJU235",
+   "ADJU243",
+   "ADJU310"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/administration-of-justice-mjc-fall-2023",
+   "title": "Administration of Justice",
+   "h1": "Administration of Justice",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 2940
+ },
+ {
+  "control_number": "06704",
+  "title": "Fire Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.933,
+  "codes_found": [
+   "FTECH301",
+   "FTECH302",
+   "FTECH303",
+   "FTECH304",
+   "FTECH305",
+   "FTECH306",
+   "FTECH307",
+   "FTECH308",
+   "FTECH317",
+   "FTECH318",
+   "FTECH319",
+   "FTECH331",
+   "FTECH341",
+   "FTECH342"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/fire-science-mjc-fall-2025v2",
+   "title": "Fire Science",
+   "h1": "Fire Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3275
+ },
+ {
+  "control_number": "08017",
+  "title": "Animal Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 48,
+  "text_chars": 0
+ },
+ {
+  "control_number": "08018",
+  "title": "Poultry Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG115",
+   "AG249",
+   "AG259A",
+   "AG259B",
+   "AG259C",
+   "AG259D",
+   "AGEC200",
+   "AGEC210",
+   "AGEC220",
+   "AGEC225",
+   "ANSC200",
+   "ANSC214",
+   "ANSC215",
+   "ANSC230",
+   "ANSC232",
+   "ANSC235",
+   "ANSC236",
+   "NR200",
+   "PLSC200"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/poultry-science-mjc-fall-2025",
+   "title": "Poultry Science",
+   "h1": "Poultry Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 3010
+ },
+ {
+  "control_number": "08103",
+  "title": "Crop Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG115",
+   "AG249",
+   "AG259A",
+   "AG259B",
+   "AG259C",
+   "AG259D",
+   "AGEC200",
+   "AGEC210",
+   "AGEC225",
+   "AGM200",
+   "AGM235",
+   "ANSC200",
+   "NR200",
+   "PLSC200",
+   "PLSC205",
+   "PLSC215",
+   "PLSC250",
+   "PLSC255",
+   "PLSC260",
+   "PLSC280",
+   "PLSC285"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/crop-science-mjc-summer-2020",
+   "title": "Crop Science",
+   "h1": "Crop Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 3662
+ },
+ {
+  "control_number": "08104",
+  "title": "Fruit Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.95,
+  "codes_found": [
+   "AG115",
+   "AG249",
+   "AG259B",
+   "AGEC200",
+   "AGEC210",
+   "AGEC225",
+   "AGM200",
+   "AGM235",
+   "ANSC200",
+   "NR200",
+   "PLSC200",
+   "PLSC230",
+   "PLSC235",
+   "PLSC241",
+   "PLSC250",
+   "PLSC255",
+   "PLSC260",
+   "PLSC280",
+   "PLSC285"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/fruit-science-mjc-summer-2020",
+   "title": "Fruit Science",
+   "h1": "Fruit Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 3710
+ },
+ {
+  "control_number": "08105",
+  "title": "Environmental Horticultural Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG115",
+   "AG249",
+   "AG259B",
+   "AGEC200",
+   "AGM200",
+   "AGM235",
+   "ANSC200",
+   "EHS235",
+   "EHS278",
+   "EHS280",
+   "NR200",
+   "NR222"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/environmental-horticultural-science-mjc-summer-2020",
+   "title": "Environmental Horticultural Science",
+   "h1": "Environmental Horticultural Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3818
+ },
+ {
+  "control_number": "08107",
+  "title": "Plant Nursery Production",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EHS235",
+   "NR200"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/plant-nursery-production-mjc-fall-2025",
+   "title": "Plant Nursery Production",
+   "h1": "Plant Nursery Production",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1544
+ },
+ {
+  "control_number": "08108",
+  "title": "Commercial Floristry Technician",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGEC280",
+   "EHS280",
+   "EHS281",
+   "PLSC200"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/commercial-floristry-technician-mjc-fall-2025",
+   "title": "Commercial Floristry Technician",
+   "h1": "Commercial Floristry Technician",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1794
+ },
+ {
+  "control_number": "08109",
+  "title": "Agriculture: Sales, Service",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG115",
+   "AG249",
+   "AG259A",
+   "AG259B",
+   "AG259C",
+   "AG259D",
+   "AG285",
+   "AGEC200",
+   "AGEC210",
+   "AGEC215",
+   "AGEC220",
+   "AGEC225",
+   "AGEC280",
+   "AGM200",
+   "AGM235",
+   "ANSC200",
+   "NR200",
+   "PLSC200"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/agriculture-sales-service-mjc-fall-2025",
+   "title": "Agriculture: Sales, Service",
+   "h1": "Agriculture: Sales, Service",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 3229
+ },
+ {
+  "control_number": "08111",
+  "title": "Dairy Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG115",
+   "AG249",
+   "AG259A",
+   "AG259B",
+   "AG259C",
+   "AG259D",
+   "AGEC200",
+   "AGEC210",
+   "AGEC225",
+   "AGM200",
+   "AGM235",
+   "ANSC215",
+   "ANSC217",
+   "ANSC220",
+   "ANSC221",
+   "ANSC222",
+   "ANSC226",
+   "ANSC227",
+   "ANSC228",
+   "NR200",
+   "PLSC200"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/dairy-science-mjc-fall-2023",
+   "title": "Dairy Science",
+   "h1": "Dairy Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 3387
+ },
+ {
+  "control_number": "08124",
+  "title": "Computer Information Systems",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSAD201",
+   "BUSAD202",
+   "CSCI220",
+   "CSCI232"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/computer-information-systems-mjc-summer-2020",
+   "title": "Computer Information Systems",
+   "h1": "Computer Information Systems",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2085
+ },
+ {
+  "control_number": "08125",
+  "title": "Physical Education",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "HE101",
+   "HE110",
+   "HE118",
+   "KIN100",
+   "KIN102",
+   "KIN103",
+   "KIN104",
+   "KIN106",
+   "KIN117",
+   "KIN118",
+   "KIN120",
+   "KIN121",
+   "KIN122",
+   "KIN123",
+   "KIN125",
+   "KIN127",
+   "PEA104",
+   "PEA106",
+   "PEA107",
+   "PEA108",
+   "PEA116",
+   "PEA119",
+   "PEA141",
+   "PEC102",
+   "PEC106",
+   "PEC108",
+   "PEC115",
+   "PEC119",
+   "PEC128",
+   "PEC131",
+   "PEC140",
+   "PEC143",
+   "PEC144",
+   "PEC145",
+   "PEC148",
+   "PEC151",
+   "PEC152",
+   "PEC153",
+   "PEC157",
+   "PEC158",
+   "PEC161",
+   "PEC162",
+   "PEC163",
+   "PEC164",
+   "PEC165",
+   "PEC168",
+   "PEC170",
+   "PEC171",
+   "PEC175",
+   "PEC176",
+   "PEC182",
+   "PEC183",
+   "PEC184",
+   "PEC186",
+   "PEC187",
+   "PEC191",
+   "PEC192",
+   "PEC195",
+   "PEC197",
+   "PEM108",
+   "PEM112",
+   "PEM113",
+   "PEM114",
+   "PEM140",
+   "PEM141",
+   "PEM162",
+   "PEM163",
+   "PEVM100",
+   "PEVM105",
+   "PEVM106",
+   "PEVM110",
+   "PEVM115",
+   "PEVM120",
+   "PEVM122",
+   "PEVM125",
+   "PEVM130",
+   "PEVM135",
+   "PEVM140",
+   "PEVM145",
+   "PEVM146",
+   "PEVW100",
+   "PEVW101",
+   "PEVW103",
+   "PEVW104",
+   "PEVW115",
+   "PEVW120",
+   "PEVW121",
+   "PEVW123",
+   "PEVW125",
+   "PEVW130",
+   "PEVW135",
+   "PEVW140",
+   "PEVW141",
+   "PEVW145",
+   "PEVW147",
+   "PEW166",
+   "PEW192",
+   "REC100",
+   "REC110"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/physical-education-mjc-fall-2026",
+   "title": "Physical Education",
+   "h1": "Physical Education",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 108,
+  "text_chars": 6130
+ },
+ {
+  "control_number": "08129",
+  "title": "Industrial Electronics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELTEC208",
+   "ELTEC212",
+   "ELTEC221",
+   "ELTEC223",
+   "ELTEC226",
+   "ELTEC229",
+   "ELTEC232",
+   "ELTEC234",
+   "ELTEC236",
+   "ELTEC265",
+   "ELTEC320",
+   "ELTEC322"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/industrial-electronics-mjc-fall-2025",
+   "title": "Industrial Electronics",
+   "h1": "Industrial Electronics",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2076
+ },
+ {
+  "control_number": "08131",
+  "title": "Maintenance Machinist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MACH200E",
+   "MACH201",
+   "MACH202",
+   "MACH205",
+   "MACH357",
+   "WELD200"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/maintenance-machinist-mjc-fall-2026",
+   "title": "Maintenance Machinist",
+   "h1": "Maintenance Machinist",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1494
+ },
+ {
+  "control_number": "08134",
+  "title": "Autobody/Collision Repair",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUBDY301",
+   "AUBDY302",
+   "AUBDY303",
+   "AUBDY321",
+   "AUBDY322",
+   "AUTEC200"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/autobody-collision-repair-mjc-summer-2020",
+   "title": "Autobody/Collision Repair",
+   "h1": "Autobody/Collision Repair",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1463
+ },
+ {
+  "control_number": "08136",
+  "title": "Computer Graphics Applications",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART120",
+   "ART124",
+   "CMPGR213",
+   "CMPGR217",
+   "CMPGR219",
+   "CMPGR225",
+   "CMPGR226",
+   "CMPGR235",
+   "CMPGR236",
+   "CMPGR252",
+   "CMPGR263",
+   "CMPGR266",
+   "CMPGR267",
+   "CMPGR271",
+   "CMPGR274",
+   "CMPGR278",
+   "CMPGR279",
+   "CMPGR284"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/computer-graphics-applications-mjc-fall-2025",
+   "title": "Computer Graphics Applications",
+   "h1": "Computer Graphics Applications",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 2514
+ },
+ {
+  "control_number": "08154",
+  "title": "Addiction Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "SOCIO150",
+   "SWHS101",
+   "SWHS110",
+   "SWHS112",
+   "SWHS113",
+   "SWHS115",
+   "SWHS116",
+   "SWHS117",
+   "SWHS118",
+   "SWHS119",
+   "SWHS120",
+   "SWHS142",
+   "SWHS148"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/addiction-studies-mjc-spring-2027",
+   "title": "Addiction Studies",
+   "h1": "Addiction Studies",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 2799
+ },
+ {
+  "control_number": "10602",
+  "title": "Soil Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.933,
+  "codes_found": [
+   "AG115",
+   "AG249",
+   "AG259B",
+   "AGEC200",
+   "AGEC210",
+   "AGEC225",
+   "AGGE146",
+   "AGM200",
+   "AGM235",
+   "ANSC200",
+   "NR200",
+   "PLSC200",
+   "PLSC255",
+   "PLSC260"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/soil-science-mjc-summer-2020",
+   "title": "Soil Science",
+   "h1": "Soil Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 4000
+ },
+ {
+  "control_number": "12228",
+  "title": "Athletic Training/Sports Medicine",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANAT125",
+   "CHEM143",
+   "HE101",
+   "HE110",
+   "KIN106",
+   "KIN107",
+   "KIN108",
+   "PHYSO101",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/athletic-training-sports-medicine-mjc-fall-2025",
+   "title": "Athletic Training/Sports Medicine",
+   "h1": "Athletic Training/Sports Medicine",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2177
+ },
+ {
+  "control_number": "13826",
+  "title": "Machine Tool Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "MACH200D",
+   "MACH200E",
+   "MACH201",
+   "MACH202",
+   "MACH205",
+   "MACH206",
+   "MACH208",
+   "MACH209",
+   "MACH357",
+   "WELD200",
+   "WELD206"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/machine-tool-technology-mjc-fall-2026v2",
+   "title": "Machine Tool Technology",
+   "h1": "Machine Tool Technology",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2098
+ },
+ {
+  "control_number": "14885",
+  "title": "Associate Teacher",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CLDDV101",
+   "CLDDV103",
+   "CLDDV107",
+   "CLDDV109"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/associate-teacher-mjc-summer-2020",
+   "title": "Associate Teacher",
+   "h1": "Associate Teacher",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1777
+ },
+ {
+  "control_number": "14886",
+  "title": "Teacher",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CLDDV101",
+   "CLDDV103",
+   "CLDDV107",
+   "CLDDV109",
+   "CLDDV111",
+   "CLDDV121",
+   "CLDDV125",
+   "CLDDV126",
+   "CLDDV127",
+   "CLDDV128",
+   "CLDDV163",
+   "CLDDV167",
+   "CLDDV262"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/teacher-mjc-fall-2023",
+   "title": "Teacher",
+   "h1": "Teacher",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2982
+ },
+ {
+  "control_number": "14887",
+  "title": "Master Teacher",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CLDDV101",
+   "CLDDV103",
+   "CLDDV107",
+   "CLDDV109",
+   "CLDDV111",
+   "CLDDV121",
+   "CLDDV122",
+   "CLDDV125",
+   "CLDDV126",
+   "CLDDV127",
+   "CLDDV128",
+   "CLDDV154",
+   "CLDDV160",
+   "CLDDV163",
+   "CLDDV167",
+   "CLDDV262"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/master-teacher-mjc-fall-2023",
+   "title": "Master Teacher",
+   "h1": "Master Teacher",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 4403
+ },
+ {
+  "control_number": "14888",
+  "title": "Site Supervisor",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CLDDV101",
+   "CLDDV103",
+   "CLDDV107",
+   "CLDDV109",
+   "CLDDV111",
+   "CLDDV121",
+   "CLDDV125",
+   "CLDDV126",
+   "CLDDV127",
+   "CLDDV128",
+   "CLDDV150",
+   "CLDDV151",
+   "CLDDV154",
+   "CLDDV160",
+   "CLDDV163",
+   "CLDDV167",
+   "CLDDV262"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/site-supervisor-mjc-fall-2023",
+   "title": "Site Supervisor",
+   "h1": "Site Supervisor",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3279
+ },
+ {
+  "control_number": "14890",
+  "title": "Early Interventionist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CLDDV103",
+   "CLDDV109",
+   "CLDDV121",
+   "CLDDV125",
+   "CLDDV126",
+   "CLDDV127",
+   "CLDDV128",
+   "CLDDV160",
+   "CLDDV163",
+   "CLDDV167"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/early-interventionist-mjc-fall-2023",
+   "title": "Early Interventionist",
+   "h1": "Early Interventionist",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2530
+ },
+ {
+  "control_number": "16278",
+  "title": "Computer Applications Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CMPGR263",
+   "CSCI200",
+   "CSCI201",
+   "CSCI220",
+   "CSCI223"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/computer-applications-specialist-mjc-summer-2020",
+   "title": "Computer Applications Specialist",
+   "h1": "Computer Applications Specialist",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1638
+ },
+ {
+  "control_number": "16279",
+  "title": "Computer Programming Specialist",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI221",
+   "CSCI222",
+   "CSCI252",
+   "CSCI270",
+   "CSCI272",
+   "CSCI274"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/computer-programming-specialist-mjc-fall-2026",
+   "title": "Computer Programming Specialist",
+   "h1": "Computer Programming Specialist",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1852
+ },
+ {
+  "control_number": "16280",
+  "title": "Small Animal Veterinary Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 7,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18378",
+  "title": "CSU General Education",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 231,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18379",
+  "title": "IGETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 196,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18545",
+  "title": "Agriculture",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.885,
+  "codes_found": [
+   "AGEC200",
+   "AGEC210",
+   "AGEC225",
+   "AGEC280",
+   "AGM200",
+   "AGM215",
+   "ANSC200",
+   "ANSC201",
+   "ANSC202",
+   "ANSC203",
+   "ANSC214",
+   "ANSC215",
+   "ANSC220",
+   "ECONC2002",
+   "EHS276",
+   "NR200",
+   "NR222",
+   "PLSC200",
+   "PLSC205",
+   "PLSC215",
+   "PLSC230",
+   "PLSC250",
+   "PLSC260"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/agriculture-mjc-fall-2026",
+   "title": "Agriculture",
+   "h1": "Agriculture",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 2300
+ },
+ {
+  "control_number": "18547",
+  "title": "Biological Sciences",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO101",
+   "BOT101",
+   "CHEM101",
+   "CHEM102",
+   "MATH171",
+   "MATH172",
+   "PHYS142",
+   "PHYS143",
+   "STATC1000",
+   "ZOOL101"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/biological-sciences-mjc-spring-2026",
+   "title": "Biological Sciences",
+   "h1": "Biological Sciences",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2945
+ },
+ {
+  "control_number": "18548",
+  "title": "Chemistry",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO101",
+   "BIO111",
+   "CHEM101",
+   "CHEM102",
+   "CHEM112",
+   "CHEM113",
+   "MATH171",
+   "MATH172",
+   "MATH173",
+   "PHYS101",
+   "PHYS102",
+   "PHYS103"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/chemistry-mjc-fall-2025",
+   "title": "Chemistry",
+   "h1": "Chemistry",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3002
+ },
+ {
+  "control_number": "18553",
+  "title": "Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHR102",
+   "ART151",
+   "ART162",
+   "ART169",
+   "ARTHC1100",
+   "ARTHC1200",
+   "COMM123",
+   "DANCE102",
+   "ENGL116",
+   "ENGL131",
+   "ENGL132",
+   "ENGL135",
+   "ENGL136",
+   "ENGL137",
+   "ENGL138",
+   "FREN101",
+   "GERM101",
+   "HIST104",
+   "HIST105",
+   "HUMAN101",
+   "HUMAN105",
+   "HUMAN106",
+   "HUMAN110",
+   "HUMAN130",
+   "HUMAN140",
+   "HUMAN196",
+   "HUMAN197",
+   "HUMAN198",
+   "ITAL101",
+   "MUSG102",
+   "PHILO111",
+   "PHILO120",
+   "PHILO121",
+   "PHILO123",
+   "SPAN101",
+   "THETR100"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/humanities-mjc-spring-2027",
+   "title": "Humanities",
+   "h1": "Humanities",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 36,
+  "text_chars": 4151
+ },
+ {
+  "control_number": "18599",
+  "title": "General Studies: Natural Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.926,
+  "codes_found": [
+   "ANAT125",
+   "ANSC200",
+   "ANTHC1001",
+   "AP50",
+   "ASTRO160",
+   "BIO101",
+   "BIO111",
+   "BIO114",
+   "BIO115",
+   "BIO116",
+   "BIO140",
+   "BIO145",
+   "BOT101",
+   "CHEM101",
+   "CHEM102",
+   "CHEM122",
+   "CHEM123",
+   "CHEM142",
+   "CHEM143",
+   "CHEM144",
+   "CHEM150",
+   "CHEM164",
+   "EASCI161",
+   "ELTEC208",
+   "ENSCI108",
+   "FDNTR219",
+   "GEOG101",
+   "GEOG111",
+   "GEOL161",
+   "GEOL165",
+   "GEOL166",
+   "KIN100",
+   "MICRO101",
+   "MICRO111",
+   "NR200",
+   "PHSCI152",
+   "PHSCI180",
+   "PHYS101",
+   "PHYS102",
+   "PHYS103",
+   "PHYS142",
+   "PHYS143",
+   "PHYS160",
+   "PHYS165",
+   "PHYS180",
+   "PHYSO101",
+   "PLSC200",
+   "PLSC230",
+   "PSYCH103",
+   "ZOOL101"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/general-studies-natural-sciences-mjc-spring-2027",
+   "title": "General Studies: Natural Sciences",
+   "h1": "General Studies: Natural Sciences",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 54,
+  "text_chars": 5981
+ },
+ {
+  "control_number": "18600",
+  "title": "General Studies: Language and Rationality",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.972,
+  "codes_found": [
+   "AGEC225",
+   "COMM102",
+   "COMM104",
+   "COMM106",
+   "COMM107",
+   "COMM132",
+   "COMM133",
+   "COMMC1000",
+   "CSCI201",
+   "CSCI203",
+   "CSCI204",
+   "CSCI253",
+   "CSCI270",
+   "CSCI272",
+   "ELIC100",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "ENGLC1001",
+   "LIBR100",
+   "MATH101",
+   "MATH105",
+   "MATH106",
+   "MATH111",
+   "MATH130",
+   "MATH138",
+   "MATH161",
+   "MATH162",
+   "MATH171",
+   "MATH172",
+   "MATH173",
+   "PHILO103",
+   "PHILO105",
+   "PHILO107",
+   "READ184",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/general-studies-language-and-rationality-mjc-spring-2027",
+   "title": "General Studies: Language and Rationality",
+   "h1": "General Studies: Language and Rationality",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 36,
+  "text_chars": 4161
+ },
+ {
+  "control_number": "18601",
+  "title": "General Studies: Social & Behavioral Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.973,
+  "codes_found": [
+   "ADJU201",
+   "ADJU202",
+   "ADJU203",
+   "ADJU217",
+   "ADJU234",
+   "ADJU235",
+   "AGEC210",
+   "AGGE146",
+   "ANTHC1001",
+   "ANTHR102",
+   "ANTHR104",
+   "ANTHR130",
+   "ANTHR140",
+   "ANTHR150",
+   "BUSAD240",
+   "BUSAD377",
+   "CLDDV103",
+   "CLDDV109",
+   "CLDDV160",
+   "CLDDV262",
+   "COMM103",
+   "COMM130",
+   "ECON115",
+   "ECONC2001",
+   "ECONC2002",
+   "EDUC111",
+   "FAMLF131",
+   "GEOG102",
+   "GEOG104",
+   "GEOG105",
+   "GEOG106",
+   "GEOG107",
+   "GEOG110",
+   "HE114",
+   "HE115",
+   "HIST104",
+   "HIST105",
+   "HIST106",
+   "HIST107",
+   "HIST115",
+   "HIST116",
+   "HIST125",
+   "HIST129",
+   "HIST145",
+   "HIST154",
+   "HIST155",
+   "KIN103",
+   "PHILO130",
+   "POLSC1000",
+   "POLSC102",
+   "POLSC110",
+   "POLSC120",
+   "POLSC130",
+   "POLSC140",
+   "POLSC165",
+   "POLSC180",
+   "PSYCC1000",
+   "PSYCH104",
+   "PSYCH105",
+   "PSYCH111",
+   "PSYCH122",
+   "SJS120",
+   "SJS130",
+   "SOCIO101",
+   "SOCIO102",
+   "SOCIO125",
+   "SOCIO150",
+   "SOCIO154",
+   "SOCIO156",
+   "SWHS101",
+   "SWHS114",
+   "SWHS142",
+   "SWHS143"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/general-studies-social-behavioral-sciences-mjc-spring-2027",
+   "title": "General Studies: Social & Behavioral Sciences",
+   "h1": "General Studies: Social & Behavioral Sciences",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 75,
+  "text_chars": 5909
+ },
+ {
+  "control_number": "18602",
+  "title": "General Studies: Arts and Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.989,
+  "codes_found": [
+   "ANTHR104",
+   "ART102",
+   "ART120",
+   "ART124",
+   "ART140",
+   "ART151",
+   "ART160",
+   "ART162",
+   "ART163",
+   "ART168",
+   "ART170",
+   "ARTHC1100",
+   "ARTHC1200",
+   "CMPGR202",
+   "COMM120",
+   "COMM123",
+   "COMM132",
+   "DANCE102",
+   "ENGL105",
+   "ENGL106",
+   "ENGL111",
+   "ENGL112",
+   "ENGL114",
+   "ENGL116",
+   "ENGL131",
+   "ENGL132",
+   "ENGL135",
+   "ENGL136",
+   "ENGL137",
+   "ENGL138",
+   "ENGL151",
+   "ENGL161",
+   "ENGL162",
+   "ENGL163",
+   "ENGL168",
+   "ENGL169",
+   "ENGL171",
+   "ENGL172",
+   "ENGL173",
+   "ENGL174",
+   "ENGL175",
+   "ENGL179",
+   "FREN101",
+   "FREN102",
+   "GERM101",
+   "GERM102",
+   "HIST104",
+   "HIST105",
+   "HIST106",
+   "HIST107",
+   "HUMAN101",
+   "HUMAN105",
+   "HUMAN106",
+   "HUMAN110",
+   "HUMAN130",
+   "HUMAN140",
+   "ITAL101",
+   "MUSG101",
+   "MUSG102",
+   "MUSG111",
+   "MUST101",
+   "MUST121",
+   "MUST122",
+   "MUST123",
+   "MUST124",
+   "PHILO101",
+   "PHILO111",
+   "PHILO113",
+   "PHILO115",
+   "PHILO120",
+   "PHILO121",
+   "PHILO123",
+   "PHILO130",
+   "PHILO135",
+   "PHILO140",
+   "SIGN125",
+   "SIGN126",
+   "SIGN127",
+   "SJS120",
+   "SJS154",
+   "SPAN101",
+   "SPAN102",
+   "SPAN103",
+   "SPAN109",
+   "SPAN110",
+   "SPAN112",
+   "SPAN173",
+   "SPAN51",
+   "THETR100",
+   "THETR114",
+   "THETR160",
+   "THETR161"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/general-studies-arts-and-humanities-mjc-spring-2027",
+   "title": "General Studies: Arts and Humanities",
+   "h1": "General Studies: Arts and Humanities",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 93,
+  "text_chars": 6509
+ },
+ {
+  "control_number": "18646",
+  "title": "Language Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.947,
+  "codes_found": [
+   "COMM130",
+   "ENGL131",
+   "ENGL132",
+   "ENGL172",
+   "ENGL175",
+   "ENGL179",
+   "FREN101",
+   "FREN102",
+   "GERM101",
+   "ITAL101",
+   "SIGN125",
+   "SIGN126",
+   "SPAN101",
+   "SPAN102",
+   "SPAN109",
+   "SPAN110",
+   "SPAN112",
+   "SPAN173"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/language-studies-mjc-fall-2026",
+   "title": "Language Studies",
+   "h1": "Language Studies",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 3485
+ },
+ {
+  "control_number": "18762",
+  "title": "Computer Network Administration",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI213",
+   "CSCI232",
+   "CSCI242"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/computer-network-administration-mjc-fall-2026",
+   "title": "Computer Network Administration",
+   "h1": "Computer Network Administration",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2061
+ },
+ {
+  "control_number": "18763",
+  "title": "Computer Network Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19348",
+  "title": "Advanced Heavy Equipment Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG259A",
+   "AGM215",
+   "AGM221",
+   "AGM240",
+   "AGM242",
+   "AGM245"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/advanced-heavy-equipment-technician-mjc-fall-2025",
+   "title": "Advanced Heavy Equipment Technician",
+   "h1": "Advanced Heavy Equipment Technician",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1720
+ },
+ {
+  "control_number": "19372",
+  "title": "Heavy Machinery Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGEC200",
+   "AGEC220",
+   "AGM200",
+   "AGM214",
+   "AGM215"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/heavy-machinery-management-mjc-summer-2020",
+   "title": "Heavy Machinery Management",
+   "h1": "Heavy Machinery Management",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1728
+ },
+ {
+  "control_number": "20283",
+  "title": "Agriculture: Sales, Service Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG115",
+   "AG259B",
+   "AG285",
+   "AGEC200",
+   "AGEC210",
+   "AGEC215",
+   "AGEC225",
+   "AGEC280",
+   "AGM200",
+   "AGM235",
+   "ANSC200",
+   "NR200",
+   "PLSC200"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/agriculture-sales-service-technician-mjc-fall-2025",
+   "title": "Agriculture: Sales, Service Technician",
+   "h1": "Agriculture: Sales, Service Technician",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2481
+ },
+ {
+  "control_number": "20295",
+  "title": "Accounting: Full-Charge Bookkeeper",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIT261",
+   "BIT262",
+   "BUSAD200",
+   "BUSAD201",
+   "BUSAD203",
+   "BUSAD310",
+   "BUSAD319",
+   "BUSAD320",
+   "BUSAD336",
+   "BUSAD350"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/accounting-full-charge-bookkeeper-mjc-fall-2025",
+   "title": "Accounting: Full-Charge Bookkeeper",
+   "h1": "Accounting: Full-Charge Bookkeeper",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2203
+ },
+ {
+  "control_number": "20298",
+  "title": "Accounting: Entry-Level Bookkeeper",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIT260",
+   "BIT375",
+   "BUSAD200",
+   "BUSAD203",
+   "BUSAD310",
+   "BUSAD320",
+   "BUSAD350"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/accounting-entry-level-bookkeeper-mjc-fall-2025",
+   "title": "Accounting: Entry-Level Bookkeeper",
+   "h1": "Accounting: Entry-Level Bookkeeper",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2031
+ },
+ {
+  "control_number": "20299",
+  "title": "Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIT250",
+   "BIT260",
+   "BIT261",
+   "BIT270",
+   "BIT280",
+   "BIT316",
+   "BUSAD201",
+   "BUSAD210",
+   "BUSAD240",
+   "BUSAD245",
+   "BUSAD248",
+   "BUSAD264",
+   "BUSAD274",
+   "BUSAD310",
+   "BUSAD377"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/management-mjc-fall-2025v2",
+   "title": "Management",
+   "h1": "Management",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2732
+ },
+ {
+  "control_number": "20303",
+  "title": "Real Estate Broker",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSAD201",
+   "RLES380",
+   "RLES381",
+   "RLES382",
+   "RLES384",
+   "RLES385",
+   "RLES392"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/real-estate-broker-mjc-summer-2020",
+   "title": "Real Estate Broker",
+   "h1": "Real Estate Broker",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1659
+ },
+ {
+  "control_number": "20308",
+  "title": "Computer Graphics Advanced",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART120",
+   "ART124",
+   "CMPGR202",
+   "CMPGR213",
+   "CMPGR217",
+   "CMPGR219",
+   "CMPGR225",
+   "CMPGR226",
+   "CMPGR235",
+   "CMPGR236",
+   "CMPGR252",
+   "CMPGR263",
+   "CMPGR266",
+   "CMPGR267",
+   "CMPGR278",
+   "CMPGR279"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/computer-graphics-advanced-mjc-fall-2025",
+   "title": "Computer Graphics Advanced",
+   "h1": "Computer Graphics Advanced",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 2386
+ },
+ {
+  "control_number": "20310",
+  "title": "Industrial Electronics",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELTEC208",
+   "ELTEC212",
+   "ELTEC221",
+   "ELTEC223",
+   "ELTEC226",
+   "ELTEC229",
+   "ELTEC232",
+   "ELTEC234",
+   "ELTEC236",
+   "ELTEC265",
+   "ELTEC320",
+   "ELTEC322"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/industrial-electronics-mjc-fall-2025v2",
+   "title": "Industrial Electronics",
+   "h1": "Industrial Electronics",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 1922
+ },
+ {
+  "control_number": "20320",
+  "title": "Autobody/Collision Repair Technician",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUBDY301",
+   "AUBDY302",
+   "AUBDY303"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/autobody-collision-repair-technician-mjc-summer-2020",
+   "title": "Autobody/Collision Repair Technician",
+   "h1": "Autobody/Collision Repair Technician",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1395
+ },
+ {
+  "control_number": "20325",
+  "title": "Medical Assisting",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANAT125",
+   "AP50",
+   "COMM102",
+   "COMM130",
+   "COMMC1000",
+   "MDAST320",
+   "MDAST321",
+   "MDAST322",
+   "MDAST323",
+   "MDAST324",
+   "MDAST325",
+   "MDAST326",
+   "PSYCC1000",
+   "PSYCH141"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/medical-assisting-mjc-spring-2026v2",
+   "title": "Medical Assisting",
+   "h1": "Medical Assisting",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 8206
+ },
+ {
+  "control_number": "20329",
+  "title": "Human Services",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.95,
+  "codes_found": [
+   "ADJU243",
+   "CLDDV262",
+   "POLSC120",
+   "PSYCC1000",
+   "PSYCH104",
+   "PSYCH141",
+   "SOCIO101",
+   "SOCIO102",
+   "SOCIO125",
+   "SOCIO150",
+   "SWHS101",
+   "SWHS110",
+   "SWHS113",
+   "SWHS114",
+   "SWHS116",
+   "SWHS119",
+   "SWHS120",
+   "SWHS142",
+   "SWHS143"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/human-services-mjc-spring-2027v2",
+   "title": "Human Services",
+   "h1": "Human Services",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 2350
+ },
+ {
+  "control_number": "20330",
+  "title": "Fire Science",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.737,
+  "codes_found": [
+   "FTECH301",
+   "FTECH302",
+   "FTECH303",
+   "FTECH304",
+   "FTECH305",
+   "FTECH306",
+   "FTECH307",
+   "FTECH308",
+   "FTECH317",
+   "FTECH318",
+   "FTECH319",
+   "FTECH331",
+   "FTECH341",
+   "FTECH342"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/fire-science-mjc-fall-2025",
+   "title": "Fire Science",
+   "h1": "Fire Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 3091
+ },
+ {
+  "control_number": "30509",
+  "title": "Mechanized Agriculture Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG115",
+   "AG249",
+   "AG259B",
+   "AG285",
+   "AGEC280",
+   "AGM200",
+   "AGM211",
+   "AGM214",
+   "AGM215",
+   "AGM235",
+   "AGM241",
+   "AGM262",
+   "AGM289"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/mechanized-agriculture-technician-mjc-summer-2020",
+   "title": "Mechanized Agriculture Technician",
+   "h1": "Mechanized Agriculture Technician",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2600
+ },
+ {
+  "control_number": "30643",
+  "title": "Communication Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM102",
+   "COMM103",
+   "COMM104",
+   "COMM105",
+   "COMM106",
+   "COMM107",
+   "COMM120",
+   "COMM123",
+   "COMM130",
+   "COMM132",
+   "COMM133",
+   "COMMC1000"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/communication-studies-for-transfer-degree-2-0-mjc-spring-2026",
+   "title": "Communication Studies for Transfer Degree 2.0",
+   "h1": "Communication Studies for Transfer Degree 2.0",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3485
+ },
+ {
+  "control_number": "30675",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH171",
+   "MATH172",
+   "MATH173",
+   "MATH191",
+   "MATH193",
+   "PHYS101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/mathematics-for-transfer-degree-mjc-spring-2026",
+   "title": "Mathematics for Transfer Degree",
+   "h1": "Mathematics for Transfer Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3176
+ },
+ {
+  "control_number": "31722",
+  "title": "Music",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSA121",
+   "MUSA122",
+   "MUSA123",
+   "MUSA124",
+   "MUSA145",
+   "MUSA153",
+   "MUSA154",
+   "MUSA163",
+   "MUSA164",
+   "MUSA173",
+   "MUSA183",
+   "MUSE155",
+   "MUSE161",
+   "MUSE175",
+   "MUST121",
+   "MUST122",
+   "MUST123",
+   "MUST131",
+   "MUST132",
+   "MUST133"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/music-for-transfer-degree-mjc-fall-2025",
+   "title": "Music for Transfer Degree",
+   "h1": "Music for Transfer Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 6381
+ },
+ {
+  "control_number": "31756",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJU201",
+   "ADJU202",
+   "ADJU203",
+   "ADJU204",
+   "ADJU205",
+   "ADJU212",
+   "ADJU213",
+   "ADJU215",
+   "ADJU216",
+   "ADJU217",
+   "ADJU222",
+   "ADJU232",
+   "ADJU234",
+   "ADJU235",
+   "ADJU243",
+   "PSYCC1000",
+   "SOCIO101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/administration-of-justice-for-transfer-degree-mjc-spring-2026",
+   "title": "Administration of Justice for Transfer Degree",
+   "h1": "Administration of Justice for Transfer Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 3600
+ },
+ {
+  "control_number": "31763",
+  "title": "Art History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART108",
+   "ART120",
+   "ART123",
+   "ART124",
+   "ART125",
+   "ART140",
+   "ART147",
+   "ART148",
+   "ART151",
+   "ART162",
+   "ART163",
+   "ART168",
+   "ART169",
+   "ART170",
+   "ART173",
+   "ARTHC1100",
+   "ARTHC1200",
+   "FREN101",
+   "GERM101",
+   "ITAL101",
+   "SPAN101"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/art-history-for-transfer-degree-mjc-spring-2027",
+   "title": "Art History for Transfer Degree",
+   "h1": "Art History for Transfer Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 3600
+ },
+ {
+  "control_number": "31774",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART102",
+   "ART108",
+   "ART120",
+   "ART121",
+   "ART123",
+   "ART124",
+   "ART125",
+   "ART140",
+   "ART147",
+   "ART148",
+   "ART151",
+   "ART163",
+   "ART169",
+   "ART170",
+   "ART173",
+   "ARTHC1100",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/studio-arts-for-transfer-degree-mjc-spring-2027",
+   "title": "Studio Arts for Transfer Degree",
+   "h1": "Studio Arts for Transfer Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3429
+ },
+ {
+  "control_number": "31800",
+  "title": "Theatre Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "THETR100",
+   "THETR114",
+   "THETR133",
+   "THETR134",
+   "THETR135",
+   "THETR136",
+   "THETR159",
+   "THETR160",
+   "THETR161",
+   "THETR174"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/theatre-arts-for-transfer-degree-mjc-fall-2025",
+   "title": "Theatre Arts for Transfer Degree",
+   "h1": "Theatre Arts for Transfer Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3721
+ },
+ {
+  "control_number": "31852",
+  "title": "Geology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM101",
+   "CHEM102",
+   "GEOL161",
+   "GEOL166",
+   "MATH171",
+   "MATH172"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/geology-for-transfer-degree-mjc-fall-2025",
+   "title": "Geology for Transfer Degree",
+   "h1": "Geology for Transfer Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2728
+ },
+ {
+  "control_number": "31989",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM101",
+   "CHEM143",
+   "HE100",
+   "HE101",
+   "HE110",
+   "KIN100",
+   "PEC102",
+   "PEC106",
+   "PEC108",
+   "PEC115",
+   "PEC128",
+   "PEC140",
+   "PEC143",
+   "PEC148",
+   "PEC164",
+   "PEC165",
+   "PEC166",
+   "PEC168",
+   "PEC171",
+   "PEC175",
+   "PEC176",
+   "PEC183",
+   "PEC184",
+   "PEC186",
+   "PEC187",
+   "PEC195",
+   "PEM162",
+   "PEM163"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/kinesiology-for-transfer-degree-mjc-spring-2026",
+   "title": "Kinesiology for Transfer Degree",
+   "h1": "Kinesiology for Transfer Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 28,
+  "text_chars": 4542
+ },
+ {
+  "control_number": "32038",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHR102",
+   "PSYCH104",
+   "SJS120",
+   "SOCIO101",
+   "SOCIO102",
+   "SOCIO125",
+   "SOCIO150",
+   "SOCIO154",
+   "SOCIO156",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/sociology-for-transfer-degree-mjc-spring-2026",
+   "title": "Sociology for Transfer Degree",
+   "h1": "Sociology for Transfer Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3359
+ },
+ {
+  "control_number": "32226",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.905,
+  "codes_found": [
+   "ANTHR102",
+   "ANTHR150",
+   "GEOG102",
+   "GEOG110",
+   "HIST104",
+   "HIST105",
+   "HIST106",
+   "HIST107",
+   "HIST115",
+   "HIST116",
+   "HIST125",
+   "HIST129",
+   "HIST145",
+   "HIST154",
+   "HIST155",
+   "PHILO101",
+   "PHILO120",
+   "PHILO121",
+   "SJS120"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/history-for-transfer-degree-mjc-fall-2026",
+   "title": "History for Transfer Degree",
+   "h1": "History for Transfer Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 4116
+ },
+ {
+  "control_number": "32227",
+  "title": "Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH171",
+   "MATH172",
+   "MATH173",
+   "PHYS101",
+   "PHYS102",
+   "PHYS103"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/physics-for-transfer-degree-mjc-fall-2025",
+   "title": "Physics for Transfer Degree",
+   "h1": "Physics for Transfer Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2809
+ },
+ {
+  "control_number": "32241",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.95,
+  "codes_found": [
+   "ANAT125",
+   "ANTHC1001",
+   "ANTHR102",
+   "ANTHR104",
+   "ANTHR107",
+   "ANTHR130",
+   "ANTHR140",
+   "ANTHR150",
+   "ANTHR190",
+   "ANTHR191",
+   "ANTHR192",
+   "EASCI161",
+   "GEOG102",
+   "GEOL161",
+   "HIST145",
+   "MUSG102",
+   "PHILO107",
+   "PSYCH122",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/anthropology-for-transfer-degree-mjc-fall-2027",
+   "title": "Anthropology for Transfer Degree",
+   "h1": "Anthropology for Transfer Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 4154
+ },
+ {
+  "control_number": "32249",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.963,
+  "codes_found": [
+   "ENGL105",
+   "ENGL106",
+   "ENGL111",
+   "ENGL112",
+   "ENGL114",
+   "ENGL116",
+   "ENGL131",
+   "ENGL132",
+   "ENGL135",
+   "ENGL136",
+   "ENGL137",
+   "ENGL138",
+   "ENGL151",
+   "ENGL155",
+   "ENGL161",
+   "ENGL162",
+   "ENGL163",
+   "ENGL168",
+   "ENGL169",
+   "ENGL171",
+   "ENGL172",
+   "ENGL173",
+   "ENGL174",
+   "ENGL175",
+   "ENGL179",
+   "ENGLC1001"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/english-for-transfer-degree-mjc-fall-2026",
+   "title": "English for Transfer Degree",
+   "h1": "English for Transfer Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 27,
+  "text_chars": 4071
+ },
+ {
+  "control_number": "32433",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO101",
+   "BIO111",
+   "PSYCC1000",
+   "PSYCH103",
+   "PSYCH104",
+   "PSYCH105",
+   "PSYCH110",
+   "PSYCH118",
+   "PSYCH121",
+   "PSYCH122",
+   "PSYCH130",
+   "PSYCH141",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/psychology-for-transfer-degree-mjc-fall-2026",
+   "title": "Psychology for Transfer Degree",
+   "h1": "Psychology for Transfer Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3659
+ },
+ {
+  "control_number": "32590",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "POLSC1000",
+   "POLSC102",
+   "POLSC110",
+   "POLSC120",
+   "POLSC130",
+   "POLSC140",
+   "POLSC165",
+   "POLSC180"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/political-science-for-transfer-degree-mjc-fall-2026",
+   "title": "Political Science for Transfer Degree",
+   "h1": "Political Science for Transfer Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3090
+ },
+ {
+  "control_number": "32674",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CLDDV101",
+   "CLDDV103",
+   "CLDDV107",
+   "CLDDV109",
+   "CLDDV111",
+   "CLDDV127",
+   "CLDDV128",
+   "CLDDV167",
+   "CLDDV262"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/early-childhood-education-for-transfer-degree-mjc-fall-2025",
+   "title": "Early Childhood Education for Transfer Degree",
+   "h1": "Early Childhood Education for Transfer Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2985
+ },
+ {
+  "control_number": "32679",
+  "title": "Automotive Engines and Transmissions",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTEC200",
+   "AUTEC311",
+   "AUTEC315",
+   "AUTEC323",
+   "AUTEC324",
+   "AUTEC368"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/automotive-engines-and-transmissions-mjc-summer-2020",
+   "title": "Automotive Engines and Transmissions",
+   "h1": "Automotive Engines and Transmissions",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1661
+ },
+ {
+  "control_number": "32705",
+  "title": "Philosophy",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HIST104",
+   "HIST105",
+   "PHILO101",
+   "PHILO103",
+   "PHILO105",
+   "PHILO107",
+   "PHILO111",
+   "PHILO113",
+   "PHILO115",
+   "PHILO120",
+   "PHILO121",
+   "PHILO123",
+   "PHILO130",
+   "PHILO135",
+   "PHILO140"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/philosophy-for-transfer-degree-mjc-fall-2025",
+   "title": "Philosophy for Transfer Degree",
+   "h1": "Philosophy for Transfer Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3591
+ },
+ {
+  "control_number": "32773",
+  "title": "Communication Studies",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "32782",
+  "title": "Geography",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHR102",
+   "ECONC2002",
+   "GEOG101",
+   "GEOG102",
+   "GEOG104",
+   "GEOG105",
+   "GEOG106",
+   "GEOG107",
+   "GEOG110",
+   "GEOG111",
+   "GEOG130",
+   "GEOL161"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/geography-for-transfer-degree-mjc-fall-2026",
+   "title": "Geography for Transfer Degree",
+   "h1": "Geography for Transfer Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3367
+ },
+ {
+  "control_number": "33149",
+  "title": "Automotive Diagnosis",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTEC211",
+   "AUTEC311",
+   "AUTEC319",
+   "AUTEC320",
+   "AUTEC368",
+   "AUTEC369",
+   "AUTEC373"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/automotive-diagnosis-mjc-summer-2020",
+   "title": "Automotive Diagnosis",
+   "h1": "Automotive Diagnosis",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1628
+ },
+ {
+  "control_number": "33152",
+  "title": "Automotive Brakes and Suspension",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTEC200",
+   "AUTEC311",
+   "AUTEC321",
+   "AUTEC322",
+   "AUTEC368"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/automotive-brakes-and-suspension-mjc-summer-2020",
+   "title": "Automotive Brakes and Suspension",
+   "h1": "Automotive Brakes and Suspension",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1602
+ },
+ {
+  "control_number": "33158",
+  "title": "Automotive Service",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTEC200",
+   "AUTEC311",
+   "AUTEC315",
+   "AUTEC317",
+   "AUTEC321",
+   "AUTEC322",
+   "AUTEC323",
+   "AUTEC324",
+   "AUTEC368",
+   "AUTEC369"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/automotive-service-mjc-summer-2020",
+   "title": "Automotive Service",
+   "h1": "Automotive Service",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1914
+ },
+ {
+  "control_number": "33171",
+  "title": "Equine Science",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANSC200",
+   "ANSC207",
+   "ANSC209",
+   "ANSC214",
+   "ANSC215",
+   "ANSC243",
+   "ANSC258",
+   "ANSC265"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/equine-science-mjc-summer-2020v2",
+   "title": "Equine Science",
+   "h1": "Equine Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2026
+ },
+ {
+  "control_number": "33221",
+  "title": "Manufacturing Technology (Interdisciplinary)",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGM262",
+   "ELTEC208",
+   "ELTEC229",
+   "MACH200D",
+   "MACH200E",
+   "MACH201",
+   "WELD200",
+   "WELD204",
+   "WELD206"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/manufacturing-technology-interdisciplinary-mjc-fall-2026",
+   "title": "Manufacturing Technology (Interdisciplinary)",
+   "h1": "Manufacturing Technology (Interdisciplinary)",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2365
+ },
+ {
+  "control_number": "33672",
+  "title": "Computer Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO101",
+   "CHEM101",
+   "CSCI204",
+   "CSCI272",
+   "MATH171",
+   "MATH172",
+   "PHYS103"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/computer-science-for-transfer-degree-mjc-fall-2025",
+   "title": "Computer Science for Transfer Degree",
+   "h1": "Computer Science for Transfer Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3046
+ },
+ {
+  "control_number": "33803",
+  "title": "Dance",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DANCE102",
+   "DANCE111",
+   "DANCE112",
+   "DANCE113",
+   "DANCE114",
+   "DANCE121",
+   "DANCE122",
+   "DANCE123",
+   "DANCE124",
+   "DANCE131",
+   "DANCE132",
+   "DANCE133",
+   "DANCE134",
+   "DANCE141",
+   "DANCE142",
+   "DANCE143",
+   "DANCE144",
+   "DANCE151",
+   "DANCE155",
+   "DANCE181",
+   "DANCE182",
+   "DANCE183",
+   "DANCE184",
+   "DANCE187",
+   "DANCE188",
+   "DANCE189"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/dance-mjc-summer-2020",
+   "title": "Dance",
+   "h1": "Dance",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 3557
+ },
+ {
+  "control_number": "33809",
+  "title": "Addiction Studies",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "PSYCC1000",
+   "SOCIO150",
+   "SWHS101",
+   "SWHS110",
+   "SWHS112",
+   "SWHS113",
+   "SWHS115",
+   "SWHS116",
+   "SWHS117",
+   "SWHS118",
+   "SWHS119",
+   "SWHS120",
+   "SWHS148"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/addiction-studies-mjc-spring-2027v2",
+   "title": "Addiction Studies",
+   "h1": "Addiction Studies",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 2777
+ },
+ {
+  "control_number": "33844",
+  "title": "Irrigation Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGEC225",
+   "AGM235",
+   "AGM236",
+   "AGM237",
+   "AGM238",
+   "ENGTC300"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/irrigation-design-mjc-fall-2026",
+   "title": "Irrigation Design",
+   "h1": "Irrigation Design",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1594
+ },
+ {
+  "control_number": "33845",
+  "title": "Irrigation Construction and Installation",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG259A",
+   "AGM210",
+   "AGM216",
+   "AGM235",
+   "AGM237",
+   "AGM239"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/irrigation-construction-and-installation-mjc-fall-2026",
+   "title": "Irrigation Construction and Installation",
+   "h1": "Irrigation Construction and Installation",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1644
+ },
+ {
+  "control_number": "33935",
+  "title": "Irrigation Management",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGEC225",
+   "AGM235",
+   "AGM236",
+   "NR200",
+   "PLSC200"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/irrigation-management-mjc-summer-2020",
+   "title": "Irrigation Management",
+   "h1": "Irrigation Management",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1492
+ },
+ {
+  "control_number": "33944",
+  "title": "Irrigation Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG115",
+   "AG249",
+   "AG259B",
+   "AGEC200",
+   "AGEC210",
+   "AGEC225",
+   "AGM200",
+   "AGM235",
+   "AGM236",
+   "AGM237",
+   "AGM238",
+   "AGM239",
+   "ANSC200",
+   "NR200",
+   "PLSC200"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/irrigation-technology-mjc-summer-2020",
+   "title": "Irrigation Technology",
+   "h1": "Irrigation Technology",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3281
+ },
+ {
+  "control_number": "33945",
+  "title": "Irrigation Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG115",
+   "AG249",
+   "AG259B",
+   "AGEC200",
+   "AGEC210",
+   "AGEC225",
+   "AGM235",
+   "AGM236",
+   "AGM237",
+   "AGM238",
+   "AGM239",
+   "ANSC200",
+   "NR200",
+   "PLSC200"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/irrigation-technology-mjc-summer-2020v2",
+   "title": "Irrigation Technology",
+   "h1": "Irrigation Technology",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3468
+ },
+ {
+  "control_number": "33946",
+  "title": "Large Animal Veterinary Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35011",
+  "title": "Veterinary Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.647,
+  "codes_found": [
+   "AG115",
+   "AG249",
+   "AG259A",
+   "AGEC200",
+   "AGEC210",
+   "AGEC225",
+   "AGM200",
+   "AGM235",
+   "ANSC200",
+   "NR200",
+   "PLSC200"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/animal-science-mjc-fall-2025",
+   "title": "Animal Science",
+   "h1": "Animal Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3617
+ },
+ {
+  "control_number": "35012",
+  "title": "Logistics and Supply Chain Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIT250",
+   "BIT260",
+   "BIT270",
+   "BIT280",
+   "BIT313",
+   "BUSAD201",
+   "BUSAD202",
+   "BUSAD218",
+   "BUSAD248",
+   "ECONC2001",
+   "ECONC2002",
+   "LOGST201",
+   "LOGST202",
+   "LOGST203",
+   "LOGST205",
+   "LOGST206",
+   "LOGST207",
+   "LOGST299"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/logistics-and-supply-chain-management-mjc-fall-2026",
+   "title": "Logistics and Supply Chain Management",
+   "h1": "Logistics and Supply Chain Management",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 2614
+ },
+ {
+  "control_number": "35013",
+  "title": "Logistics and Supply Chain Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIT250",
+   "BIT260",
+   "BIT270",
+   "BIT280",
+   "BIT313",
+   "BUSAD201",
+   "BUSAD202",
+   "BUSAD218",
+   "BUSAD248",
+   "LOGST201",
+   "LOGST202",
+   "LOGST203",
+   "LOGST205",
+   "LOGST206",
+   "LOGST207",
+   "LOGST299"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/logistics-and-supply-chain-management-mjc-fall-2025",
+   "title": "Logistics and Supply Chain Management",
+   "h1": "Logistics and Supply Chain Management",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3095
+ },
+ {
+  "control_number": "35084",
+  "title": "Electrician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELTEC208",
+   "ELTEC221",
+   "ELTEC223",
+   "ELTEC225",
+   "ELTEC226",
+   "ELTEC229",
+   "ELTEC230",
+   "ELTEC232",
+   "ELTEC235",
+   "ELTEC265",
+   "ELTEC320",
+   "ELTEC322"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/electrician-mjc-fall-2025",
+   "title": "Electrician",
+   "h1": "Electrician",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 1797
+ },
+ {
+  "control_number": "35127",
+  "title": "Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL172",
+   "ENGL173",
+   "HIST125",
+   "HIST145",
+   "SOCIO156",
+   "SPAN101",
+   "SPAN102",
+   "SPAN103",
+   "SPAN109",
+   "SPAN110",
+   "SPAN112",
+   "SPAN173"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/spanish-for-transfer-degree-mjc-fall-2025",
+   "title": "Spanish for Transfer Degree",
+   "h1": "Spanish for Transfer Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 4824
+ },
+ {
+  "control_number": "35237",
+  "title": "Electro-Mechanic",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGM262",
+   "ELTEC208",
+   "ELTEC223",
+   "ELTEC226",
+   "ELTEC229",
+   "ELTEC232",
+   "ELTEC265",
+   "ELTEC320",
+   "ELTEC322",
+   "MACH200D",
+   "WELD200",
+   "WELD206"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/electro-mechanic-mjc-fall-2025",
+   "title": "Electro-Mechanic",
+   "h1": "Electro-Mechanic",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 1897
+ },
+ {
+  "control_number": "35276",
+  "title": "Agricultural Environmental Science",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG115",
+   "AG249",
+   "AG259A",
+   "AG259B",
+   "AG259C",
+   "AG259D",
+   "AGEC225",
+   "AGGE150",
+   "AGM200",
+   "AGM215",
+   "AGM235",
+   "EHS276",
+   "ENSCI108",
+   "NR200",
+   "NR222",
+   "PLSC200"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/agricultural-environmental-science-mjc-fall-2023v2",
+   "title": "Agricultural Environmental Science",
+   "h1": "Agricultural Environmental Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3131
+ },
+ {
+  "control_number": "35277",
+  "title": "Agricultural Environmental Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG249",
+   "AG259A",
+   "AG259B",
+   "AG259C",
+   "AG259D",
+   "AGEC200",
+   "AGEC210",
+   "AGEC225",
+   "AGGE146",
+   "AGM200",
+   "AGM235",
+   "ENSCI108",
+   "NR200",
+   "NR222",
+   "PLSC200"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/agricultural-environmental-science-mjc-fall-2023",
+   "title": "Agricultural Environmental Science",
+   "h1": "Agricultural Environmental Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3387
+ },
+ {
+  "control_number": "35537",
+  "title": "Agriculture Business",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGEC200",
+   "AGEC210",
+   "AGEC280",
+   "AGM235",
+   "ANSC200",
+   "ANSC220",
+   "BUSAD218",
+   "CHEM101",
+   "CHEM143",
+   "NR200",
+   "PLSC200",
+   "PLSC230",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/agriculture-business-for-transfer-degree-mjc-fall-2026",
+   "title": "Agriculture Business for Transfer Degree",
+   "h1": "Agriculture Business for Transfer Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3599
+ },
+ {
+  "control_number": "35538",
+  "title": "Agriculture Animal Sciences",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGEC200",
+   "AGM235",
+   "ANSC200",
+   "ANSC201",
+   "ANSC207",
+   "ANSC214",
+   "ANSC215",
+   "ANSC220",
+   "ANSC230",
+   "CHEM101",
+   "CHEM112",
+   "ECONC2001",
+   "PLSC205"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/agriculture-animal-sciences-for-transfer-degree-mjc-spring-2027",
+   "title": "Agriculture Animal Sciences for Transfer Degree",
+   "h1": "Agriculture Animal Sciences for Transfer Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3768
+ },
+ {
+  "control_number": "35541",
+  "title": "Agriculture Plant Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGEC200",
+   "AGEC210",
+   "AGM215",
+   "AGM235",
+   "CHEM101",
+   "CHEM112",
+   "CHEM143",
+   "ECONC2001",
+   "EHS235",
+   "NR200",
+   "PLSC200",
+   "PLSC235",
+   "PLSC250",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/agriculture-plant-science-for-transfer-degree-mjc-spring-2027",
+   "title": "Agriculture Plant Science for Transfer Degree",
+   "h1": "Agriculture Plant Science for Transfer Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3550
+ },
+ {
+  "control_number": "35789",
+  "title": "English for Life and Work: Elementary",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELW901",
+   "ELW902"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/english-for-life-and-work-elementary-mjc-fall-2025",
+   "title": "English for Life and Work: Elementary",
+   "h1": "English for Life and Work: Elementary",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1897
+ },
+ {
+  "control_number": "35790",
+  "title": "English for Life and Work: Proficient",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELW905",
+   "ELW906"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/english-for-life-and-work-proficient-mjc-fall-2025",
+   "title": "English for Life and Work: Proficient",
+   "h1": "English for Life and Work: Proficient",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1996
+ },
+ {
+  "control_number": "35830",
+  "title": "Public Health Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 10,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36013",
+  "title": "Basic Heavy Equipment Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGM210",
+   "AGM216",
+   "AGM241",
+   "AGM243",
+   "AGM280",
+   "AGM289"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/basic-heavy-equipment-technician-mjc-summer-2020",
+   "title": "Basic Heavy Equipment Technician",
+   "h1": "Basic Heavy Equipment Technician",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1635
+ },
+ {
+  "control_number": "36583",
+  "title": "English Language Instruction for College: Academic Language Skills for Success",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELIC910",
+   "ELIC911",
+   "ELIC912",
+   "ELIC913"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/english-language-instruction-for-college-academic-language-skills-for-success-mjc-summer-2020",
+   "title": "English Language Instruction for College: Academic Language Skills for Success",
+   "h1": "English Language Instruction for College: Academic Language Skills for Success",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1836
+ },
+ {
+  "control_number": "37300",
+  "title": "Agriculture Science",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG115",
+   "AG249",
+   "AG259A",
+   "AG259B",
+   "AG259C",
+   "AG259D",
+   "AGEC200",
+   "AGEC210",
+   "AGEC225",
+   "AGM200",
+   "AGM235",
+   "NR200",
+   "PLSC200"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/agriculture-science-mjc-summer-2020",
+   "title": "Agriculture Science",
+   "h1": "Agriculture Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2839
+ },
+ {
+  "control_number": "37500",
+  "title": "Microsoft Computer Applications",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIT231",
+   "BIT260",
+   "BIT261",
+   "BIT270",
+   "BIT280",
+   "BIT316",
+   "BIT330"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/microsoft-computer-applications-mjc-fall-2023",
+   "title": "Microsoft Computer Applications",
+   "h1": "Microsoft Computer Applications",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1682
+ },
+ {
+  "control_number": "37753",
+  "title": "Agriculture Welding Fabrication",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGM200",
+   "AGM210",
+   "AGM251",
+   "WELD204",
+   "WELD206"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/agriculture-welding-fabrication-mjc-summer-2020",
+   "title": "Agriculture Welding Fabrication",
+   "h1": "Agriculture Welding Fabrication",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1300
+ },
+ {
+  "control_number": "37754",
+  "title": "Agriculture Welding Repair",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGM200",
+   "AGM210",
+   "AGM211",
+   "AGM251"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/agriculture-welding-repair-mjc-summer-2020",
+   "title": "Agriculture Welding Repair",
+   "h1": "Agriculture Welding Repair",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1259
+ },
+ {
+  "control_number": "38065",
+  "title": "Autobody/Collision Refinishing Technician",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUBDY301",
+   "AUBDY321",
+   "AUBDY322"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/autobody-collision-refinishing-technician-mjc-summer-2020",
+   "title": "Autobody/Collision Refinishing Technician",
+   "h1": "Autobody/Collision Refinishing Technician",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1382
+ },
+ {
+  "control_number": "38067",
+  "title": "Equine Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG115",
+   "AG259A",
+   "AG259B",
+   "AG259C",
+   "AG259D",
+   "AGEC200",
+   "AGEC210",
+   "AGEC225",
+   "AGM200",
+   "AGM235",
+   "ANSC207",
+   "ANSC209",
+   "ANSC243",
+   "ANSC258",
+   "ANSC265",
+   "NR200",
+   "PLSC200"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/equine-science-mjc-summer-2020",
+   "title": "Equine Science",
+   "h1": "Equine Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3938
+ },
+ {
+  "control_number": "38763",
+  "title": "Recording Arts",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSA121",
+   "MUSC111",
+   "MUSC112",
+   "MUSC121",
+   "MUSC122",
+   "MUSC126",
+   "MUSG101",
+   "MUSG111",
+   "MUST101"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/recording-arts-mjc-fall-2023",
+   "title": "Recording Arts",
+   "h1": "Recording Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2192
+ },
+ {
+  "control_number": "38764",
+  "title": "Design & Technical Theatre",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSC111",
+   "THETR105",
+   "THETR174",
+   "THETR175",
+   "THETR182",
+   "THETR190",
+   "THETR196"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/design-technical-theatre-mjc-summer-2020",
+   "title": "Design & Technical Theatre",
+   "h1": "Design & Technical Theatre",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2160
+ },
+ {
+  "control_number": "38773",
+  "title": "Learning Strategies: Academic Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "IIS902",
+   "IIS903"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/learning-strategies-academic-skills-mjc-fall-2024",
+   "title": "Learning Strategies: Academic Skills",
+   "h1": "Learning Strategies: Academic Skills",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1490
+ },
+ {
+  "control_number": "38776",
+  "title": "English for Citizenship",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELW911"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/english-for-citizenship-mjc-summer-2020",
+   "title": "English for Citizenship",
+   "h1": "English for Citizenship",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 1,
+  "text_chars": 1740
+ },
+ {
+  "control_number": "38869",
+  "title": "Entrepreneurship",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIT250",
+   "BIT260",
+   "BIT270",
+   "BIT280",
+   "BIT316",
+   "BUSAD203",
+   "BUSAD210",
+   "BUSAD230",
+   "BUSAD235",
+   "BUSAD238",
+   "BUSAD240",
+   "BUSAD245",
+   "BUSAD248",
+   "BUSAD264",
+   "BUSAD274",
+   "BUSAD377"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/entrepreneurship-mjc-fall-2025",
+   "title": "Entrepreneurship",
+   "h1": "Entrepreneurship",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 2632
+ },
+ {
+  "control_number": "38989",
+  "title": "English Language Instruction for College: Academic Reading and Writing Skills For Success",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELIC914",
+   "ELIC915"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/english-language-instruction-for-college-academic-reading-and-writing-skills-for-success-mjc-summer-2020",
+   "title": "English Language Instruction for College: Academic Reading and Writing Skills For Success",
+   "h1": "English Language Instruction for College: Academic Reading and Writing Skills For Success",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1628
+ },
+ {
+  "control_number": "39094",
+  "title": "Emergency Medical Technician",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMS350",
+   "EMS389",
+   "EMS390"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/emergency-medical-technician-mjc-fall-2026",
+   "title": "Emergency Medical Technician",
+   "h1": "Emergency Medical Technician",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2411
+ },
+ {
+  "control_number": "39095",
+  "title": "Fire Academy",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FTECH318",
+   "FTECH319"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/fire-academy-mjc-summer-2020",
+   "title": "Fire Academy",
+   "h1": "Fire Academy",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1468
+ },
+ {
+  "control_number": "39471",
+  "title": "Photography",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART170",
+   "ART172",
+   "ART173",
+   "ART175",
+   "ART193"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/photography-mjc-fall-2023v2",
+   "title": "Photography",
+   "h1": "Photography",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1736
+ },
+ {
+  "control_number": "41588",
+  "title": "Accelerated Access in English to Early Childhood Education",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELW920",
+   "ELW921"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/accelerated-access-in-english-to-early-childhood-education-mjc-summer-2022",
+   "title": "Accelerated Access in English to Early Childhood Education",
+   "h1": "Accelerated Access in English to Early Childhood Education",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2335
+ },
+ {
+  "control_number": "42278",
+  "title": "Purchasing/Customer Service Assistant",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LOGST202",
+   "LOGST206",
+   "LOGST207"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/purchasing-customer-service-assistant-mjc-fall-2023",
+   "title": "Purchasing/Customer Service Assistant",
+   "h1": "Purchasing/Customer Service Assistant",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1377
+ },
+ {
+  "control_number": "42279",
+  "title": "Warehousing and Distribution Assistant",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LOGST202",
+   "LOGST203",
+   "LOGST205",
+   "LOGST301"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/warehousing-and-distribution-assistant-mjc-fall-2023",
+   "title": "Warehousing and Distribution Assistant",
+   "h1": "Warehousing and Distribution Assistant",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1527
+ },
+ {
+  "control_number": "42280",
+  "title": "Production Scheduling Assistant",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LOGST201",
+   "LOGST202",
+   "LOGST206"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/production-scheduling-assistant-mjc-fall-2023",
+   "title": "Production Scheduling Assistant",
+   "h1": "Production Scheduling Assistant",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1305
+ },
+ {
+  "control_number": "42281",
+  "title": "Import/Export Assistant",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LOGST202",
+   "LOGST203"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/import-export-assistant-mjc-fall-2025",
+   "title": "Import/Export Assistant",
+   "h1": "Import/Export Assistant",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1276
+ },
+ {
+  "control_number": "42302",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSAD201",
+   "BUSAD202",
+   "BUSAD218",
+   "BUSAD228",
+   "BUSAD248",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH128",
+   "MATH130",
+   "MATH138",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/business-administration-for-transfer-degree-2-0-mjc-spring-2027",
+   "title": "Business Administration for Transfer Degree 2.0",
+   "h1": "Business Administration for Transfer Degree 2.0",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 4418
+ },
+ {
+  "control_number": "42579",
+  "title": "Business Information Technology Level 1",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIT231",
+   "BIT261",
+   "BIT270",
+   "BIT302",
+   "BIT303",
+   "BIT313",
+   "BIT317",
+   "BIT330",
+   "BIT375",
+   "BUSAD310",
+   "BUSAD350"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/business-information-technology-level-1-mjc-fall-2023",
+   "title": "Business Information Technology Level 1",
+   "h1": "Business Information Technology Level 1",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2272
+ },
+ {
+  "control_number": "42580",
+  "title": "Business Information Technology Quick Start",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIT250",
+   "BIT260",
+   "BIT280",
+   "BIT301",
+   "BIT302",
+   "BIT313",
+   "BIT316",
+   "BIT353",
+   "BUSAD350"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/business-information-technology-quick-start-mjc-fall-2023",
+   "title": "Business Information Technology Quick Start",
+   "h1": "Business Information Technology Quick Start",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 1900
+ },
+ {
+  "control_number": "42581",
+  "title": "Business Information Technology Level 2",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIT231",
+   "BIT261",
+   "BIT262",
+   "BIT270",
+   "BIT280",
+   "BIT303",
+   "BIT313",
+   "BIT314",
+   "BIT315",
+   "BIT316",
+   "BIT317",
+   "BUSAD310",
+   "BUSAD350"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/business-information-technology-level-2-mjc-fall-2023v2",
+   "title": "Business Information Technology Level 2",
+   "h1": "Business Information Technology Level 2",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2717
+ },
+ {
+  "control_number": "42582",
+  "title": "Business Information Technology Level 2",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIT231",
+   "BIT261",
+   "BIT262",
+   "BIT270",
+   "BIT280",
+   "BIT303",
+   "BIT313",
+   "BIT314",
+   "BIT315",
+   "BIT316",
+   "BIT317",
+   "BUSAD310",
+   "BUSAD350"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/business-information-technology-level-2-mjc-fall-2023",
+   "title": "Business Information Technology Level 2",
+   "h1": "Business Information Technology Level 2",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2759
+ },
+ {
+  "control_number": "42597",
+  "title": "English Language Instruction for College",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELIC100"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/english-language-instruction-for-college-mjc-fall-2023",
+   "title": "English Language Instruction for College",
+   "h1": "English Language Instruction for College",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 1,
+  "text_chars": 1778
+ },
+ {
+  "control_number": "42621",
+  "title": "Tutoring",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "TUTOR900",
+   "TUTOR910",
+   "TUTOR915",
+   "TUTOR920"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/tutoring-mjc-spring-2024",
+   "title": "Tutoring",
+   "h1": "Tutoring",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2065
+ },
+ {
+  "control_number": "42664",
+  "title": "Law, Public Policy, and Society",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.942,
+  "codes_found": [
+   "ADJU201",
+   "ADJU202",
+   "ADJU203",
+   "ADJU204",
+   "ADJU205",
+   "ADJU232",
+   "ADJU234",
+   "ADJU235",
+   "ANTHR102",
+   "BUSAD218",
+   "BUSAD228",
+   "COLSK100",
+   "COMM104",
+   "COMM106",
+   "COMM107",
+   "COMM134",
+   "COMMC1000",
+   "ECONC2001",
+   "ECONC2002",
+   "ELIC100",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "ENGLC1001",
+   "GEOG102",
+   "GEOG105",
+   "GEOG106",
+   "GEOG107",
+   "HE114",
+   "HE115",
+   "HIST116",
+   "HIST154",
+   "HIST155",
+   "MATH128",
+   "PHILO111",
+   "POLSC1000",
+   "POLSC102",
+   "POLSC110",
+   "POLSC130",
+   "POLSC140",
+   "POLSC165",
+   "POLSC195",
+   "POLSC196",
+   "SJS120",
+   "SJS130",
+   "SOCIO102",
+   "SOCIO150",
+   "SOCIO154",
+   "SOCIO156",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/law-public-policy-and-society-for-transfer-degree-mjc-fall-2026",
+   "title": "Law, Public Policy, and Society for Transfer Degree",
+   "h1": "Law, Public Policy, and Society for Transfer Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 52,
+  "text_chars": 6720
+ },
+ {
+  "control_number": "42673",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGEC210",
+   "BUSAD201",
+   "BUSAD202",
+   "BUSAD210",
+   "BUSAD248",
+   "CSCI204",
+   "ECON115",
+   "ECONC2001",
+   "ECONC2002",
+   "GEOG105",
+   "MATH111",
+   "MATH130",
+   "MATH138",
+   "MATH171",
+   "MATH172",
+   "MATH173",
+   "MATH191",
+   "POLSC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/economics-for-transfer-degree-mjc-spring-2027",
+   "title": "Economics for Transfer Degree",
+   "h1": "Economics for Transfer Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 3758
+ },
+ {
+  "control_number": "42686",
+  "title": "Film, Television, & Electronic Media",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CMPGR284",
+   "COMM132",
+   "FTVE110",
+   "FTVE122",
+   "FTVE130",
+   "FTVE150",
+   "MUSC111"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/film-television-electronic-media-mjc-fall-2025",
+   "title": "Film, Television, & Electronic Media",
+   "h1": "Film, Television, & Electronic Media",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1944
+ },
+ {
+  "control_number": "42918",
+  "title": "Calibration and Instrumentation Technician Apprentice",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELTEC208",
+   "ELTEC221",
+   "ELTEC223",
+   "ELTEC226",
+   "ELTEC229",
+   "ELTEC230",
+   "ELTEC232",
+   "ELTEC234",
+   "ELTEC235",
+   "ELTEC265",
+   "ELTEC320",
+   "ELTEC322"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/calibration-and-instrumentation-technician-apprentice-mjc-fall-2025",
+   "title": "Calibration and Instrumentation Technician Apprentice",
+   "h1": "Calibration and Instrumentation Technician Apprentice",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2243
+ },
+ {
+  "control_number": "42919",
+  "title": "Electro-Mechanical Technician Apprentice",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGM212",
+   "AGM262",
+   "ELTEC208",
+   "ELTEC212",
+   "ELTEC221",
+   "ELTEC223",
+   "ELTEC226",
+   "ELTEC229",
+   "ELTEC230",
+   "ELTEC232",
+   "ELTEC234",
+   "ELTEC236",
+   "ELTEC265",
+   "ELTEC320",
+   "ELTEC322",
+   "MACH200D",
+   "MACH200E",
+   "MACH201",
+   "WELD200",
+   "WELD204",
+   "WELD206"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/electro-mechanical-technician-apprentice-mjc-fall-2026",
+   "title": "Electro-Mechanical Technician Apprentice",
+   "h1": "Electro-Mechanical Technician Apprentice",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 2675
+ },
+ {
+  "control_number": "42920",
+  "title": "Machinist Apprentice",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELTEC320",
+   "ELTEC322",
+   "MACH200D",
+   "MACH200E",
+   "MACH201",
+   "MACH202",
+   "MACH205",
+   "MACH206",
+   "MACH207",
+   "MACH208",
+   "MACH357",
+   "MATH161",
+   "PHYS165",
+   "WELD200",
+   "WELD206"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/machinist-apprentice-mjc-fall-2026",
+   "title": "Machinist Apprentice",
+   "h1": "Machinist Apprentice",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2051
+ },
+ {
+  "control_number": "42921",
+  "title": "Machinery Maintenance Apprentice",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGM262",
+   "ELTEC225",
+   "ELTEC226",
+   "ELTEC320",
+   "ELTEC322",
+   "MACH200D",
+   "MACH200E",
+   "MACH357",
+   "WELD200",
+   "WELD204",
+   "WELD206"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/machinery-maintenance-apprentice-mjc-fall-2023",
+   "title": "Machinery Maintenance Apprentice",
+   "h1": "Machinery Maintenance Apprentice",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2228
+ },
+ {
+  "control_number": "43164",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM102",
+   "COMM103",
+   "COMM104",
+   "COMM105",
+   "COMM106",
+   "COMM107",
+   "COMM120",
+   "COMM123",
+   "COMM130",
+   "COMM132",
+   "COMM133",
+   "COMM134",
+   "COMMC1000"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/communication-studies-for-transfer-degree-2-0-mjc-spring-2026",
+   "title": "Communication Studies for Transfer Degree 2.0",
+   "h1": "Communication Studies for Transfer Degree 2.0",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3485
+ },
+ {
+  "control_number": "43195",
+  "title": "Electrician Maintenance Apprentice",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELTEC208",
+   "ELTEC212",
+   "ELTEC221",
+   "ELTEC223",
+   "ELTEC226",
+   "ELTEC229",
+   "ELTEC230",
+   "ELTEC232",
+   "ELTEC265",
+   "ELTEC320",
+   "ELTEC322"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/electrician-maintenance-apprentice-mjc-fall-2025",
+   "title": "Electrician Maintenance Apprentice",
+   "h1": "Electrician Maintenance Apprentice",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2143
+ },
+ {
+  "control_number": "43448",
+  "title": "English Language Instruction for College: Integrated Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELIC920",
+   "ELIC922",
+   "ELIC923",
+   "ELIC931",
+   "ELIC932",
+   "ELIC933",
+   "ELIC942"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/english-language-instruction-for-college-integrated-skills-mjc-fall-2023",
+   "title": "English Language Instruction for College: Integrated Skills",
+   "h1": "English Language Instruction for College: Integrated Skills",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2333
+ },
+ {
+  "control_number": "43472",
+  "title": "Packaging Technician Apprentice",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGM262",
+   "ELTEC208",
+   "ELTEC232",
+   "ELTEC320",
+   "ELTEC322",
+   "MACH200D",
+   "MACH200E",
+   "MACH357",
+   "SM331",
+   "WELD200",
+   "WELD204"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/packaging-technician-apprentice-mjc-fall-2023",
+   "title": "Packaging Technician Apprentice",
+   "h1": "Packaging Technician Apprentice",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2265
+ },
+ {
+  "control_number": "43651",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO101",
+   "BOT101",
+   "CHEM101",
+   "CHEM102",
+   "MATH171",
+   "PHYS101",
+   "PHYS103",
+   "PHYS142",
+   "PHYS143",
+   "ZOOL101"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/biology-for-transfer-degree-mjc-fall-2025",
+   "title": "Biology for Transfer Degree",
+   "h1": "Biology for Transfer Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3214
+ },
+ {
+  "control_number": "43664",
+  "title": "Electric Vehicle",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTEC311",
+   "AUTEC368",
+   "AUTEC369",
+   "AUTEC376",
+   "AUTEC377"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/electric-vehicle-mjc-fall-2024",
+   "title": "Electric Vehicle",
+   "h1": "Electric Vehicle",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2209
+ },
+ {
+  "control_number": "44503",
+  "title": "Public Health",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "ANAT125",
+   "BIO116",
+   "CHEM101",
+   "CHEM143",
+   "HE109",
+   "HE110",
+   "HE112",
+   "HE114",
+   "HE115",
+   "PHYSO101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/public-health-for-transfer-degree-mjc-fall-2026",
+   "title": "Public Health for Transfer Degree",
+   "h1": "Public Health for Transfer Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3425
+ },
+ {
+  "control_number": "44588",
+  "title": "English for Life and Work: Intermediate",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELW903",
+   "ELW904"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/english-for-life-and-work-intermediate-mjc-fall-2025",
+   "title": "English for Life and Work: Intermediate",
+   "h1": "English for Life and Work: Intermediate",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1945
+ },
+ {
+  "control_number": "44748",
+  "title": "Social Work and Human Services",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.897,
+  "codes_found": [
+   "ADJU201",
+   "ANAT125",
+   "ANTHC1001",
+   "ANTHR102",
+   "BIO101",
+   "CLDDV103",
+   "CLDDV109",
+   "COMM130",
+   "ECONC2002",
+   "ENGLC1001",
+   "HE115",
+   "PHYSO101",
+   "PSYCC1000",
+   "PSYCH105",
+   "PSYCH121",
+   "PSYCH141",
+   "SOCIO101",
+   "SOCIO102",
+   "SOCIO150",
+   "STATC1000",
+   "SWHS101",
+   "SWHS110",
+   "SWHS112",
+   "SWHS115",
+   "SWHS120",
+   "SWHS148"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/social-work-and-human-services-for-transfer-degree-mjc-spring-2027",
+   "title": "Social Work and Human Services for Transfer Degree",
+   "h1": "Social Work and Human Services for Transfer Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 29,
+  "text_chars": 4211
+ },
+ {
+  "control_number": "44760",
+  "title": "Basic Automation Training",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELTEC212",
+   "ELTEC221",
+   "ELTEC232"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/basic-automation-training-mjc-fall-2025",
+   "title": "Basic Automation Training",
+   "h1": "Basic Automation Training",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2036
+ },
+ {
+  "control_number": "44761",
+  "title": "Residential Electrical Installer",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELTEC208",
+   "ELTEC225",
+   "ELTEC230",
+   "ELTEC320"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/residential-electrical-installer-mjc-fall-2025",
+   "title": "Residential Electrical Installer",
+   "h1": "Residential Electrical Installer",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1801
+ },
+ {
+  "control_number": "44799",
+  "title": "Applied Electrical Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGM262",
+   "ELTEC208",
+   "ELTEC221",
+   "ELTEC223",
+   "ELTEC225",
+   "ELTEC226",
+   "ELTEC229",
+   "ELTEC230",
+   "ELTEC232",
+   "ELTEC265",
+   "ELTEC320",
+   "ELTEC322",
+   "MACH200D",
+   "WELD200",
+   "WELD206"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/applied-electrical-technology-mjc-spring-2026",
+   "title": "Applied Electrical Technology",
+   "h1": "Applied Electrical Technology",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2897
+ },
+ {
+  "control_number": "44822",
+  "title": "Pharmacy Technician",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHARM800",
+   "PHARM801",
+   "PHARM802",
+   "PHARM803",
+   "PHARM804"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/pharmacy-technician-mjc-fall-2025",
+   "title": "Pharmacy Technician",
+   "h1": "Pharmacy Technician",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2771
+ },
+ {
+  "control_number": "44877",
+  "title": "Cal-GETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 189,
+  "text_chars": 0
+ },
+ {
+  "control_number": "44892",
+  "title": "Vocational Nurse",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCNR301",
+   "VOCNR302",
+   "VOCNR303",
+   "VOCNR304",
+   "VOCNR305",
+   "VOCNR306",
+   "VOCNR307",
+   "VOCNR308",
+   "VOCNR309",
+   "VOCNR310",
+   "VOCNR311",
+   "VOCNR312",
+   "VOCNR313",
+   "VOCNR314",
+   "VOCNR315",
+   "VOCNR316",
+   "VOCNR317",
+   "VOCNR318"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/vocational-nurse-mjc-fall-2025",
+   "title": "Vocational Nurse",
+   "h1": "Vocational Nurse",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 13710
+ },
+ {
+  "control_number": "44916",
+  "title": "Community Health Worker",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HE109",
+   "HE110",
+   "HE112",
+   "HE114",
+   "HE115",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/community-health-worker-mjc-spring-2026",
+   "title": "Community Health Worker",
+   "h1": "Community Health Worker",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3078
+ },
+ {
+  "control_number": "44985",
+  "title": "American Sign Language Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SIGN119",
+   "SIGN125",
+   "SIGN126",
+   "SIGN127",
+   "SIGN129"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/american-sign-language-studies-mjc-fall-2026",
+   "title": "American Sign Language Studies",
+   "h1": "American Sign Language Studies",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1860
+ },
+ {
+  "control_number": "45102",
+  "title": "Computer Graphics Foundations",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART120",
+   "ART124",
+   "CMPGR202",
+   "CMPGR213",
+   "CMPGR219",
+   "CMPGR235"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/computer-graphics-foundations-mjc-fall-2025",
+   "title": "Computer Graphics Foundations",
+   "h1": "Computer Graphics Foundations",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1725
+ },
+ {
+  "control_number": "45105",
+  "title": "Fitness Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HE100",
+   "HE101",
+   "HE110",
+   "KIN100",
+   "KIN102",
+   "KIN103",
+   "KIN105",
+   "KIN106",
+   "KIN114",
+   "KIN115",
+   "KIN205",
+   "PEC115",
+   "PEC128",
+   "PEC138",
+   "PEC140",
+   "PEC148",
+   "PEC155",
+   "PEC187",
+   "PEC195",
+   "PEW192"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/fitness-specialist-mjc-fall-2026",
+   "title": "Fitness Specialist",
+   "h1": "Fitness Specialist",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 3168
+ },
+ {
+  "control_number": "45106",
+  "title": "Automation Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI240",
+   "ELTEC212",
+   "ELTEC221",
+   "ELTEC232",
+   "ELTEC234",
+   "ELTEC236"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/automation-technician-mjc-fall-2025",
+   "title": "Automation Technician",
+   "h1": "Automation Technician",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1546
+ },
+ {
+  "control_number": "45107",
+  "title": "Electrical Business Entrepreneurship",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSAD218",
+   "BUSAD235",
+   "BUSAD305",
+   "ELTEC208",
+   "ELTEC225",
+   "ELTEC229",
+   "ELTEC230",
+   "ELTEC235",
+   "ELTEC320"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/electrical-business-entrepreneurship-mjc-fall-2025",
+   "title": "Electrical Business Entrepreneurship",
+   "h1": "Electrical Business Entrepreneurship",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2360
+ },
+ {
+  "control_number": "45119",
+  "title": "Electrical Installer",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELTEC208",
+   "ELTEC225",
+   "ELTEC229",
+   "ELTEC230",
+   "ELTEC235",
+   "ELTEC320"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/electrical-installer-mjc-fall-2025",
+   "title": "Electrical Installer",
+   "h1": "Electrical Installer",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2091
+ },
+ {
+  "control_number": "45120",
+  "title": "Electrical Maintenance Assistant",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELTEC208",
+   "ELTEC212",
+   "ELTEC223",
+   "ELTEC225",
+   "ELTEC226",
+   "ELTEC265",
+   "ELTEC320",
+   "ELTEC322",
+   "MACH200D",
+   "WELD200"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/electrical-maintenance-assistant-mjc-fall-2025",
+   "title": "Electrical Maintenance Assistant",
+   "h1": "Electrical Maintenance Assistant",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2881
+ },
+ {
+  "control_number": "45121",
+  "title": "Electro-Mechanical Technical Assistant",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGM262",
+   "ELTEC208",
+   "ELTEC223",
+   "ELTEC226",
+   "ELTEC229",
+   "ELTEC265",
+   "ELTEC320",
+   "ELTEC322",
+   "MACH200D",
+   "WELD200",
+   "WELD206"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/electro-mechanical-technical-assistant-mjc-fall-2025",
+   "title": "Electro-Mechanical Technical Assistant",
+   "h1": "Electro-Mechanical Technical Assistant",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2162
+ },
+ {
+  "control_number": "45122",
+  "title": "Electrotechnical Assistant",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELTEC208",
+   "ELTEC212",
+   "ELTEC221",
+   "ELTEC223",
+   "ELTEC225",
+   "ELTEC229",
+   "ELTEC230",
+   "ELTEC232",
+   "ELTEC265",
+   "ELTEC320",
+   "ELTEC322"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/electrotechnical-assistant-mjc-fall-2025",
+   "title": "Electrotechnical Assistant",
+   "h1": "Electrotechnical Assistant",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2257
+ },
+ {
+  "control_number": "45134",
+  "title": "Basic Electrical Training",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELTEC223",
+   "ELTEC265",
+   "ELTEC320",
+   "ELTEC322"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/basic-electrical-training-mjc-fall-2025",
+   "title": "Basic Electrical Training",
+   "h1": "Basic Electrical Training",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2121
+ },
+ {
+  "control_number": "45518",
+  "title": "Analytical Chemistry Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM142",
+   "CHEM150",
+   "CHEM164",
+   "CHEMT305",
+   "CHEMT310",
+   "CHEMT315"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/analytical-chemistry-technician-mjc-fall-2026",
+   "title": "Analytical Chemistry Technician",
+   "h1": "Analytical Chemistry Technician",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2220
+ },
+ {
+  "control_number": "45771",
+  "title": "Professional Practices in Music II",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSAD245",
+   "CLDDV101",
+   "CLDDV103",
+   "CMPGR215",
+   "MUSA121",
+   "MUSA122",
+   "MUSA123",
+   "MUSA124",
+   "MUSA141",
+   "MUSA142",
+   "MUSA143",
+   "MUSA144",
+   "MUSA145",
+   "MUSA151",
+   "MUSA152",
+   "MUSA153",
+   "MUSA154",
+   "MUSA155",
+   "MUSA161",
+   "MUSA162",
+   "MUSA163",
+   "MUSA164",
+   "MUSA173",
+   "MUSA183",
+   "MUSC111",
+   "MUST122",
+   "MUST123",
+   "MUST132",
+   "MUST133",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/professional-practices-in-music-ii-mjc-fall-2026",
+   "title": "Professional Practices in Music II",
+   "h1": "Professional Practices in Music II",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 30,
+  "text_chars": 3036
+ },
+ {
+  "control_number": "45787",
+  "title": "Professional Practices in Music I",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSAD245",
+   "CLDDV101",
+   "CLDDV103",
+   "CMPGR215",
+   "MUSA121",
+   "MUSA122",
+   "MUSA123",
+   "MUSA124",
+   "MUSA141",
+   "MUSA142",
+   "MUSA143",
+   "MUSA144",
+   "MUSA145",
+   "MUSA151",
+   "MUSA152",
+   "MUSA153",
+   "MUSA154",
+   "MUSA155",
+   "MUSA161",
+   "MUSA162",
+   "MUSA163",
+   "MUSA164",
+   "MUSA173",
+   "MUSA183",
+   "MUSC111",
+   "MUST101",
+   "MUST121",
+   "MUST131",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/professional-practices-in-music-i-mjc-fall-2026",
+   "title": "Professional Practices in Music I",
+   "h1": "Professional Practices in Music I",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 29,
+  "text_chars": 2995
+ },
+ {
+  "control_number": "45979",
+  "title": "Environmental Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO101",
+   "BOT101",
+   "BUSAD228",
+   "CHEM101",
+   "ECONC2001",
+   "ENSCI108",
+   "GEOG101",
+   "GEOG111",
+   "GEOL161",
+   "MATH128",
+   "MATH138",
+   "MATH171",
+   "PHYS101",
+   "PHYS103",
+   "PHYS142",
+   "PHYS143",
+   "PSYCH121",
+   "STATC1000",
+   "ZOOL101"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/environmental-science-for-transfer-degree-mjc-fall-2026",
+   "title": "Environmental Science for Transfer Degree",
+   "h1": "Environmental Science for Transfer Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 4034
+ },
+ {
+  "control_number": "45982",
+  "title": "Registered Veterinary Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.931,
+  "codes_found": [
+   "AG115",
+   "AGEC210",
+   "ANSC200",
+   "ANSC55",
+   "CHEM101",
+   "CHEM143",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "MATH112",
+   "MATH166",
+   "MATH171",
+   "STATC1000",
+   "VETT200",
+   "VETT201",
+   "VETT202",
+   "VETT204",
+   "VETT205",
+   "VETT206",
+   "VETT208",
+   "VETT209",
+   "VETT210",
+   "VETT212",
+   "VETT213",
+   "VETT214",
+   "VETT215",
+   "VETT216",
+   "VETT217"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/veterinary-technician-mjc-spring-2027",
+   "title": "Veterinary Technician",
+   "h1": "Veterinary Technician",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.667
+   }
+  },
+  "listed": 29,
+  "text_chars": 3754
+ },
+ {
+  "control_number": "45983",
+  "title": "Veterinary Assistant & Animal Care",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG259A",
+   "ANSC200",
+   "ANSC201",
+   "ANSC202",
+   "ANSC203",
+   "ANSC207",
+   "ANSC215",
+   "ANSC220",
+   "ANSC230",
+   "ANSC246",
+   "ANSC55"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/veterinary-assistant-animal-care-mjc-fall-2026",
+   "title": "Veterinary Assistant & Animal Care",
+   "h1": "Veterinary Assistant & Animal Care",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 1833
+ },
+ {
+  "control_number": "46148",
+  "title": "Modern Policing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJU201",
+   "ADJU202",
+   "ADJU203",
+   "ADJU204",
+   "ADJU205",
+   "ADJU212",
+   "ADJU232",
+   "ADJU234",
+   "ART143",
+   "BUSAD228",
+   "CLDDV109",
+   "COMM130",
+   "COMM134",
+   "COMMC1000",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "ENGLC1001",
+   "ETHS101",
+   "MATH128",
+   "MUSG102",
+   "PHILO111",
+   "PSYCH104",
+   "PSYCH121",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/modern-policing-mjc-fall-2026",
+   "title": "Modern Policing",
+   "h1": "Modern Policing",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 4159
+ }
+]

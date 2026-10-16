@@ -1,8 +1,8 @@
 {
   "_source": "https://map-collegelanding-pages-bkh3ffghf4cqd7fu.westus-01.azurewebsites.net/api/mapcollegelanding/GetData",
-  "_scraped_at": "2026-09-29T22:07:28+00:00",
+  "_scraped_at": "2026-10-12T22:13:50+00:00",
   "_note": "Landing links from the MAP College Landing Page API, base rewritten to cpldashboardcccco/<code>. INTERIM — superseded by the MAP Custom Report when it carries landing URLs.",
-  "_count": 120,
+  "_count": 121,
   "_flagged_page_errors": [
     "Cerritos College",
     "East Los Angeles College"
@@ -43,6 +43,10 @@
     {
       "college": "Calbright College Non-Credit",
       "url": "https://cpldashboardcccco.azurewebsites.net/CALC"
+    },
+    {
+      "college": "California State University Los Angeles",
+      "url": "https://cpldashboardcccco.azurewebsites.net/CSULA"
     },
     {
       "college": "Cañada College",
@@ -490,10 +494,15 @@
     }
   ],
   "reconciliation": {
-    "profile_rows": 127,
+    "profile_rows": 128,
     "would_update": 0,
     "would_insert": 0
   },
   "updates": [],
-  "inserts": []
+  "inserts": [],
+  "_applied": {
+    "updated": 0,
+    "inserted": 0,
+    "at": "2026-10-12T22:13:51+00:00"
+  }
 }

@@ -12,6 +12,7 @@ Run from repo root: python3 tests/queue_status_test.py
 import copy
 import json
 import os
+import re
 import sys
 import tempfile
 
@@ -66,6 +67,10 @@ cases = [
     # which takes the college and the control number, so a record missing either fails.
     ("a call's record with no control number", lambda q: q["calls"].append({"title": "t", "text": "x", "records": [{"college": "Cerritos College"}]}), "records[0].control_number"),
     ("a call naming an empty list of records", lambda q: q["calls"].append({"title": "t", "text": "x", "records": []}), "non-empty"),
+    # Where Sam answers it (Sam, 2026-10-13): S380's three calls carried no link, so on his
+    # phone each card named a question with nowhere to tap.
+    ("a call with nowhere to answer it", lambda q: q["calls"].append({"title": "t", "text": "x"}), "needs a place to answer it"),
+    ("a call placed on a part the view does not have", lambda q: q["calls"].append({"title": "t", "text": "x", "link": "https://claude.ai/artifact/x", "part": "funding"}), "part names no part"),
     # The headline's history (Sam, 2026-10-08): the pair needs a trend, so a checkpoint
     # that drops the list, repeats a day or writes a count as text fails here.
     ("the headline history left out", lambda q: q.pop("headline"), "headline must be a list"),
@@ -80,6 +85,11 @@ check("accepts a call with its sheet link, its words, and a tab to view the item
 q = copy.deepcopy(Q)
 q["calls"].append({"title": "t", "text": "x", "records": [{"college": "Cerritos College", "control_number": "02201", "label": "Architectural Technology A.A."}]})
 check("accepts a call naming the records it asks about", not M.faults(q), M.faults(q))
+q = copy.deepcopy(Q)
+q["calls"].append({"title": "t", "text": "x", "link": "https://claude.ai/artifact/x", "part": "checks"})
+check("accepts a call placed on one of the view's parts", not M.faults(q), M.faults(q))
+check("every call in the committed file says where Sam answers it",
+      all(c.get("link") or c.get("view") or c.get("records") for c in Q.get("calls") or []), Q.get("calls"))
 for name, mut, frag in cases:
     hit, out = faulted(mut, frag)
     check("refuses " + name, hit, out)
@@ -108,6 +118,41 @@ with tempfile.TemporaryDirectory() as d:
           and len(s["headline"]) in (before, before + 1), s["headline"])
     check("--headline keeps the earlier days, oldest first",
           s["headline"][0]["day"] == "2026-10-08" and [e["day"] for e in s["headline"]] == sorted(e["day"] for e in s["headline"]), s["headline"])
+
+# ── 4. the whole-harvest block (Sam, 2026-10-13: "an overall measure ... how far we are
+#       through the whole harvest process", the confirm step left out) ────────────────
+ROW = {"colleges": 118, "catalog_links": 118, "cms_links": 118, "ppm_links": 112, "active_programs": 20282,
+       "roep_programs": 2568, "coci_compared": 2568, "plo_read": 2568, "careers_read": 1518,
+       "program_courses": 89192, "slo_courses": 4123}
+hb = M.harvest_block(ROW, "2026-10-13", 308)
+check("the harvest block holds the five parts the view draws, each a [have, of] pair",
+      set(hb["parts"]) == {"links", "roep", "coci", "outcomes", "careers"} and hb["parts"]["links"]["ppm"] == [112, 118]
+      and hb["parts"]["outcomes"] == {"slo": [4123, 89192], "plo": [2568, 20282]} and hb["parts"]["careers"] == [1518, 20282], hb)
+check("filed gaps count toward ROEP data (a program accounted for), never past the active programs",
+      hb["parts"]["roep"] == [2876, 20282] and M.harvest_block(ROW, "2026-10-13", 99999)["parts"]["roep"] == [20282, 20282], hb["parts"]["roep"])
+check("a sound harvest block passes", M.harvest_faults(hb) == [], M.harvest_faults(hb))
+bad = copy.deepcopy(hb)
+bad["parts"]["coci"] = [30000, 20282]
+bad["parts"].pop("careers")
+fs = M.harvest_faults(bad)
+check("have past of, and a missing part, are named", any("coci" in f for f in fs) and any("careers" in f for f in fs), fs)
+check("the query reads every key the block needs, and the active programs from COCI",
+      all(k in M.HARVEST_SQL for k in M.HARVEST_KEYS) and "status = 'Active'" in M.HARVEST_SQL, M.HARVEST_SQL[:80])
+check("the view draws the same five parts the block holds",
+      set(re.findall(r'\{ id: "([a-z]+)", title: "[^"]+", note:', open(os.path.join(ROOT, "program_requirements.js"), encoding="utf-8").read()))
+      == set(M.WHOLE_PARTS), sorted(M.WHOLE_PARTS))
+with tempfile.TemporaryDirectory() as d:
+    p = os.path.join(d, "q.json")
+    q = copy.deepcopy(Q)
+    q["written_at"] = "2000-01-01T00:00:00Z"
+    with open(p, "w", encoding="utf-8") as f:
+        json.dump(q, f)
+    rc = M.main(["--harvest", json.dumps([ROW]), "--path", p])
+    with open(p, encoding="utf-8") as f:
+        s = json.load(f)
+    check("--harvest writes the block from the query's row and never moves written_at",
+          rc == 0 and s["written_at"] == "2000-01-01T00:00:00Z" and s["harvest"]["parts"]["coci"] == [2568, 20282]
+          and isinstance(s["harvest"]["gaps"], int), (rc, s.get("written_at"), s.get("harvest")))
 
 pass_n = sum(1 for r in results if r[1])
 for name, ok, why in results:

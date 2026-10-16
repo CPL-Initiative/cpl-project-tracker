@@ -1,0 +1,7541 @@
+[
+ {
+  "control_number": "01987",
+  "title": "Plant Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "01988",
+  "title": "Environmental Horticulture",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "ORNHB1",
+   "ORNHB8"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/environmental-horticulture-associate-of-science-spring-2019",
+   "title": "Environmental Horticulture Associate of Science",
+   "h1": "Environmental Horticulture Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2501
+ },
+ {
+  "control_number": "01992",
+  "title": "Architecture/Architectural Drafting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCHB1",
+   "ARCHB11",
+   "ARCHB12",
+   "ARCHB16",
+   "ARCHB21",
+   "ARCHB22",
+   "ARCHB30",
+   "ARCHB33",
+   "ARCHB6",
+   "INDRB12",
+   "MATHB1A",
+   "MATHB6A",
+   "PHYSB2A"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/architecture-architectural-drafting-associate-of-science-summer-2019",
+   "title": "Architecture/Architectural Drafting Associate of Science",
+   "h1": "Architecture/Architectural Drafting Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2477
+ },
+ {
+  "control_number": "01997",
+  "title": "Accounting",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSADB1",
+   "BSADB18",
+   "BSADB20",
+   "BSADB40",
+   "BSADB5",
+   "BSADB51",
+   "BSADB54",
+   "BSADB55",
+   "BSADB6",
+   "BSADB64"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/accounting-associate-of-arts-fall-2026",
+   "title": "Accounting Associate of Arts",
+   "h1": "Accounting Associate of Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2405
+ },
+ {
+  "control_number": "02004",
+  "title": "Administrative Office Assistant",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSADB20",
+   "BSADB48WE",
+   "BSADB53A",
+   "BSADB61",
+   "BSADB64",
+   "BSADB66A",
+   "BSADB66B",
+   "BSADB66C",
+   "BSADB67A",
+   "BSADB67B",
+   "BSADB67C",
+   "BSADB68",
+   "BSADB69",
+   "BSADB85",
+   "BSADB88",
+   "COMPB5"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/administrative-office-assistant-associate-of-arts-fall-2025",
+   "title": "Administrative Office Assistant Associate of Arts",
+   "h1": "Administrative Office Assistant Associate of Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 2539
+ },
+ {
+  "control_number": "02010",
+  "title": "American Sign Language",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASLB1",
+   "ASLB2",
+   "ASLB3",
+   "ASLB4",
+   "ASLB6",
+   "ASLB7"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/american-sign-language-associate-of-arts-fall-2025",
+   "title": "American Sign Language Associate of Arts",
+   "h1": "American Sign Language Associate of Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2299
+ },
+ {
+  "control_number": "02014",
+  "title": "Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEMB1A",
+   "CHEMB1B",
+   "COMPB11",
+   "COMPB13",
+   "COMPB14",
+   "ENGRB17",
+   "ENGRB18",
+   "ENGRB19C",
+   "ENGRB20",
+   "ENGRB24",
+   "ENGRB25",
+   "ENGRB36",
+   "ENGRB37",
+   "ENGRB38",
+   "ENGRB40",
+   "ENGRB45",
+   "ENGRB47",
+   "MATHB6A",
+   "MATHB6B",
+   "MATHB6C",
+   "MATHB6D",
+   "MATHB6E",
+   "PHYSB4A",
+   "PHYSB4B",
+   "PHYSB4C"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/engineering-associate-of-science-summer-2025",
+   "title": "Engineering Associate of Science",
+   "h1": "Engineering Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 3246
+ },
+ {
+  "control_number": "02015",
+  "title": "Industrial Technology: Electronics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELETB1A",
+   "ELETB1B",
+   "ELETB3",
+   "ELETB4",
+   "ELETB55A",
+   "ELETB56",
+   "ELETB58",
+   "ELETB61",
+   "ELETB62",
+   "ELETB63",
+   "ELETB70",
+   "INDTB10"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/electronics-associate-of-science-summer-2019",
+   "title": "Electronics Associate of Science",
+   "h1": "Electronics Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.333
+   }
+  },
+  "listed": 12,
+  "text_chars": 2499
+ },
+ {
+  "control_number": "02023",
+  "title": "Electrician Apprenticeship",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "02027",
+  "title": "Industrial Technology: Industrial Drawing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "INDRB40"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/industrial-drawing-associate-of-science-summer-2019",
+   "title": "Industrial Drawing Associate of Science",
+   "h1": "Industrial Drawing Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.75
+   }
+  },
+  "listed": 1,
+  "text_chars": 2967
+ },
+ {
+  "control_number": "02029",
+  "title": "Manufacturing Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "INDRB12",
+   "INDRB20A",
+   "INDRB40",
+   "INDTB10",
+   "MATHB1A",
+   "MATHB1AL",
+   "MFGTB1AB",
+   "MFGTB2",
+   "MFGTB3",
+   "MFGTB55",
+   "OSRMB10",
+   "TECMB40",
+   "WELDB1A",
+   "WELDB1B",
+   "WELDB54A",
+   "WELDB74A",
+   "WELDB74B"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/manufacturing-technology-associate-of-science-fall-2025",
+   "title": "Manufacturing Technology Associate of Science",
+   "h1": "Manufacturing Technology Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 2618
+ },
+ {
+  "control_number": "02031",
+  "title": "Welding",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "INDRB12",
+   "INDTB10",
+   "MFGTB1AB",
+   "OSRMB10",
+   "WELDB1A",
+   "WELDB1B",
+   "WELDB53A",
+   "WELDB53B",
+   "WELDB54A",
+   "WELDB54B",
+   "WELDB55A",
+   "WELDB55B",
+   "WELDB55C",
+   "WELDB55D",
+   "WELDB65AB",
+   "WELDB71",
+   "WELDB74A",
+   "WELDB74B"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/welding-associate-of-science-fall-2025",
+   "title": "Welding Associate of Science",
+   "h1": "Welding Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 2389
+ },
+ {
+  "control_number": "02044",
+  "title": "Registered Nursing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NURSB40",
+   "NURSB41",
+   "NURSB42",
+   "NURSB43",
+   "NURSB44",
+   "NURSB46",
+   "NURSB47",
+   "NURSB48",
+   "NURSB49"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/registered-nursing-associate-of-science-fall-2025",
+   "title": "Registered Nursing Associate of Science",
+   "h1": "Registered Nursing Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3033
+ },
+ {
+  "control_number": "02045",
+  "title": "Vocational Nursing",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "VNRSB67",
+   "VNRSB68",
+   "VNRSB69",
+   "VNRSB69L",
+   "VNRSB79",
+   "VNRSB79L",
+   "VNRSB83",
+   "VNRSB84",
+   "VNRSB88",
+   "VNRSB88L",
+   "VNRSB89",
+   "VNRSB89L"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/vocational-nursing-program-certificate-of-achievement-summer-2019",
+   "title": "Vocational Nursing Program Certificate of Achievement",
+   "h1": "Vocational Nursing Program Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3127
+ },
+ {
+  "control_number": "02048",
+  "title": "Radiologic Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "RADTB1A",
+   "RADTB2C",
+   "RADTB4A",
+   "RADTB7"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/radiologic-technology-associate-of-science-summer-2019",
+   "title": "Radiologic Technology Associate of Science",
+   "h1": "Radiologic Technology Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3250
+ },
+ {
+  "control_number": "02068",
+  "title": "Criminal Justice",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CRIMB1",
+   "CRIMB10",
+   "CRIMB12",
+   "CRIMB2",
+   "CRIMB24",
+   "CRIMB3",
+   "CRIMB4",
+   "CRIMB5",
+   "CRIMB50",
+   "CRIMB6",
+   "CRIMB7",
+   "CRIMB8",
+   "CRIMB9"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/criminal-justice-associate-of-arts-fall-2025",
+   "title": "Criminal Justice Associate of Arts",
+   "h1": "Criminal Justice Associate of Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2680
+ },
+ {
+  "control_number": "02069",
+  "title": "Correctional Administration",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "CRIMB12",
+   "CRIMB2",
+   "CRIMB23",
+   "CRIMB24",
+   "CRIMB5",
+   "CRIMB50",
+   "CRIMB60",
+   "CRIMB8",
+   "CRIMB9"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/correctional-administration-associate-of-arts-fall-2025",
+   "title": "Correctional Administration Associate of Arts",
+   "h1": "Correctional Administration Associate of Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2258
+ },
+ {
+  "control_number": "02081",
+  "title": "Culinary Arts",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CULNB10",
+   "CULNB11",
+   "CULNB12",
+   "CULNB20",
+   "CULNB21",
+   "CULNB22",
+   "CULNB23A",
+   "CULNB30",
+   "CULNB48WE",
+   "CULNB9"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/culinary-arts-associate-of-science-fall-2026",
+   "title": "Culinary Arts Associate of Science",
+   "h1": "Culinary Arts Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3010
+ },
+ {
+  "control_number": "02090",
+  "title": "Liberal Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 179,
+  "text_chars": 0
+ },
+ {
+  "control_number": "09237",
+  "title": "Animal Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "ANSCB84",
+   "ANSCB85",
+   "ANSCB86",
+   "ANSCB88",
+   "ANSCB90",
+   "ANSCB92",
+   "ANSCB94",
+   "ANSCB96"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/registered-veterinary-technicians-job-skills-certificate-summer-2019",
+   "title": "Registered Veterinary Technicians Job Skills Certificate",
+   "h1": "Registered Veterinary Technicians Job Skills Certificate",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 2365
+ },
+ {
+  "control_number": "09241",
+  "title": "Bookkeeping",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSADB20",
+   "BSADB5",
+   "BSADB51",
+   "BSADB53A",
+   "BSADB53B",
+   "BSADB54",
+   "BSADB55",
+   "BSADB64",
+   "BSADB66A",
+   "COMPB5"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/bookkeeping-certificate-of-achievement-spring-2021",
+   "title": "Bookkeeping Certificate of Achievement",
+   "h1": "Bookkeeping Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1899
+ },
+ {
+  "control_number": "09243",
+  "title": "Engineering Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.861,
+  "codes_found": [
+   "ARCHB30",
+   "ARCHB33",
+   "ARCHB55",
+   "ARCHB56",
+   "ARCHB6",
+   "CHEMB1A",
+   "CHEMB2A",
+   "CNSTB2",
+   "ELETB1A",
+   "ELETB1B",
+   "ELETB3",
+   "ELETB56",
+   "ENGRB20",
+   "ENGRB24",
+   "ENGRB47",
+   "INDRB12",
+   "INDRB20A",
+   "INDRB40",
+   "INDRB42",
+   "INDRB51",
+   "INDRB52",
+   "MATHB6A",
+   "OSRMB10",
+   "OSRMB12",
+   "OSRMB16",
+   "OSRMB18",
+   "OSRMB20",
+   "PHYSB2A",
+   "PHYSB2B",
+   "PHYSB4A",
+   "PHYSB4B"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/engineering-technology-associate-of-science-spring-2020",
+   "title": "Engineering Technology Associate of Science",
+   "h1": "Engineering Technology Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 36,
+  "text_chars": 5450
+ },
+ {
+  "control_number": "09244",
+  "title": "Woodworking / Cabinetmaking",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNSTB1",
+   "INDRB12",
+   "INDRB20A",
+   "INDTB10",
+   "WOODB5",
+   "WOODB50"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/woodworking-cabinetmaking-associate-of-science-spring-2019",
+   "title": "Woodworking/ Cabinetmaking Associate of Science",
+   "h1": "Woodworking/ Cabinetmaking Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1498
+ },
+ {
+  "control_number": "09247",
+  "title": "Sheetmetal Apprencticeship",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "09248",
+  "title": "Industrial Technology (General)",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "09258",
+  "title": "Child Development Teacher",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDVB20",
+   "CHDVB21",
+   "CHDVB22",
+   "CHDVB32",
+   "CHDVB36",
+   "CHDVB40",
+   "CHDVB41",
+   "CHDVB42",
+   "CHDVB49"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/child-development-master-teacher-infant-toddler-certificate-of-achievement-summer-2019",
+   "title": "Child Development Master Teacher: Infant Toddler Certificate of Achievement",
+   "h1": "Child Development Master Teacher: Infant Toddler Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 1821
+ },
+ {
+  "control_number": "09259",
+  "title": "Dietetic Services Supervisor Program",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "FDSVB50",
+   "FDSVB52",
+   "FDSVB55A",
+   "FDSVB55C",
+   "FDSVB59",
+   "NUTRB10",
+   "NUTRB50"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/dietetic-services-supervisor-program-certificate-of-achievement-spring-2025",
+   "title": "Dietetic Services Supervisor Program Certificate of Achievement",
+   "h1": "Dietetic Services Supervisor Program Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2888
+ },
+ {
+  "control_number": "09260",
+  "title": "Food Service Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSADB53A",
+   "CULNB10",
+   "CULNB11",
+   "CULNB12",
+   "CULNB20",
+   "CULNB21",
+   "CULNB22",
+   "CULNB23A",
+   "CULNB23B",
+   "CULNB24",
+   "CULNB30",
+   "CULNB9",
+   "HOSPB10",
+   "HOSPB20",
+   "NUTRB10"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/food-service-management-associate-of-science-fall-2026",
+   "title": "Food Service Management Associate of Science",
+   "h1": "Food Service Management Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3427
+ },
+ {
+  "control_number": "09966",
+  "title": "Fire Technology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMTCB50",
+   "FIREB1",
+   "FIREB2",
+   "FIREB25A",
+   "FIREB25B",
+   "FIREB25C",
+   "FIREB25D",
+   "FIREB25E",
+   "FIREB27B",
+   "FIREB27C",
+   "FIREB3",
+   "FIREB4",
+   "FIREB5",
+   "FIREB52A",
+   "FIREB52B",
+   "FIREB52C",
+   "FIREB52D",
+   "FIREB52E",
+   "FIREB6",
+   "FIREB62",
+   "FIREB63",
+   "FIREB64",
+   "FIREB69",
+   "FIREB7"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/fire-technology-associate-of-arts-fall-2025",
+   "title": "Fire Technology Associate of Arts",
+   "h1": "Fire Technology Associate of Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 3209
+ },
+ {
+  "control_number": "09968",
+  "title": "Human Services",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDVB21",
+   "HMSVB40",
+   "HMSVB5A",
+   "HMSVB5B",
+   "PSYCB40",
+   "PSYCC1000",
+   "SOCIB1",
+   "SOCIB45"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/human-services-associate-of-arts-summer-2026",
+   "title": "Human Services Associate of Arts",
+   "h1": "Human Services Associate of Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2986
+ },
+ {
+  "control_number": "11276",
+  "title": "Office Assistant",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSADB20",
+   "BSADB5",
+   "BSADB53A",
+   "BSADB64",
+   "BSADB66A",
+   "BSADB66B",
+   "BSADB66C",
+   "BSADB67A",
+   "BSADB67B",
+   "BSADB67C",
+   "BSADB85",
+   "BSADB88",
+   "COMPB5"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/office-assistant-certificate-of-achievement-spring-2021",
+   "title": "Office Assistant Certificate of Achievement",
+   "h1": "Office Assistant Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2663
+ },
+ {
+  "control_number": "11281",
+  "title": "LVN to Registered Nursing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NURSB44",
+   "NURSB46",
+   "NURSB49",
+   "NURSB51"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/lvn-to-registered-nursing-associate-of-science-fall-2025",
+   "title": "LVN to Registered Nursing Associate of Science",
+   "h1": "LVN to Registered Nursing Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2829
+ },
+ {
+  "control_number": "11282",
+  "title": "Child Development Master Teacher: Infant Toddler",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "CHDVB13C",
+   "CHDVB20",
+   "CHDVB21",
+   "CHDVB22",
+   "CHDVB32",
+   "CHDVB36",
+   "CHDVB40",
+   "CHDVB41",
+   "CHDVB42",
+   "CHDVB49"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/child-development-master-teacher-infant-toddler-certificate-of-achievement-summer-2019",
+   "title": "Child Development Master Teacher: Infant Toddler Certificate of Achievement",
+   "h1": "Child Development Master Teacher: Infant Toddler Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 1821
+ },
+ {
+  "control_number": "16988",
+  "title": "Wildland Firefighting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FIREB25A",
+   "FIREB25B",
+   "FIREB25C",
+   "FIREB25D",
+   "FIREB25E",
+   "FIREB26A",
+   "FIREB26D",
+   "FIREB26E",
+   "FIREB26G",
+   "FIREB26K",
+   "FIREB26M",
+   "FIREB27B",
+   "FIREB28B"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/wildland-firefighting-associate-of-science-fall-2025",
+   "title": "Wildland Firefighting Associate of Science",
+   "h1": "Wildland Firefighting Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3305
+ },
+ {
+  "control_number": "20235",
+  "title": "Animal Science",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.562,
+  "codes_found": [
+   "AGRIB1",
+   "ANSCB22",
+   "ANSCB3",
+   "ANSCB4",
+   "ANSCB6",
+   "ANSCB7",
+   "ANSCB83",
+   "CRPSB2",
+   "NRESB1"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/animal-science-certificate-of-achievement-summer-2019",
+   "title": "Animal Science Certificate of Achievement",
+   "h1": "Animal Science Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3213
+ },
+ {
+  "control_number": "20238",
+  "title": "Environmental Horticulture",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ORNHB1",
+   "ORNHB2",
+   "ORNHB4",
+   "ORNHB6",
+   "ORNHB7",
+   "ORNHB8"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/environmental-horticulture-certificate-of-achievement-summer-2019",
+   "title": "Environmental Horticulture Certificate of Achievement",
+   "h1": "Environmental Horticulture Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2186
+ },
+ {
+  "control_number": "20239",
+  "title": "Agriculture Business",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGBSB2",
+   "AGBSB3",
+   "AGBSB5",
+   "AGBSB6",
+   "AGRIB1",
+   "AGRIB5",
+   "ANSCB1",
+   "ANSCB83",
+   "CRPSB1",
+   "CRPSB16",
+   "CRPSB3",
+   "CRPSB4",
+   "FDSTB1",
+   "FOREB1",
+   "MCAGB2",
+   "ORNHB1",
+   "SOILB1"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/agriculture-business-certificate-of-achievement-summer-2023",
+   "title": "Agriculture Business Certificate of Achievement",
+   "h1": "Agriculture Business Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3000
+ },
+ {
+  "control_number": "20251",
+  "title": "Electronics Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "ELETB1A",
+   "ELETB1B",
+   "ELETB3",
+   "ELETB4",
+   "ELETB56",
+   "ELETB61",
+   "ELETB62",
+   "ELETB70",
+   "INDTB10"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/electronics-technology-certificate-of-achievement-summer-2019",
+   "title": "Electronics Technology Certificate of Achievement",
+   "h1": "Electronics Technology Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3225
+ },
+ {
+  "control_number": "20253",
+  "title": "Construction Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCHB55",
+   "ARCHB56",
+   "ARCHB6",
+   "CNSTB1",
+   "CNSTB2",
+   "INDRB12",
+   "INDTB10"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/construction-technology-certificate-of-achievement-summer-2019",
+   "title": "Construction Technology Certificate of Achievement",
+   "h1": "Construction Technology Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2620
+ },
+ {
+  "control_number": "20259",
+  "title": "Woodworking / Cabinetmaking",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNSTB1",
+   "INDRB12",
+   "INDRB20A",
+   "INDTB10",
+   "WOODB5",
+   "WOODB50"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/woodworking-cabinetmaking-certificate-of-achievement-summer-2019",
+   "title": "Woodworking/ Cabinetmaking Certificate of Achievement",
+   "h1": "Woodworking/ Cabinetmaking Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1475
+ },
+ {
+  "control_number": "20262",
+  "title": "Manufacturing Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "INDRB12",
+   "INDRB20A",
+   "INDRB40",
+   "INDTB10",
+   "MATHB1A",
+   "MATHB1AL",
+   "MFGTB1AB",
+   "MFGTB2",
+   "MFGTB3",
+   "TECMB40",
+   "WELDB1A",
+   "WELDB1B",
+   "WELDB54A",
+   "WELDB74A",
+   "WELDB74B"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/manufacturing-technology-certificate-of-achievement-summer-2026",
+   "title": "Manufacturing Technology Certificate of Achievement",
+   "h1": "Manufacturing Technology Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2536
+ },
+ {
+  "control_number": "20265",
+  "title": "Welding",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20268",
+  "title": "Culinary Arts",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CULNB10",
+   "CULNB11",
+   "CULNB12",
+   "CULNB20",
+   "CULNB21",
+   "CULNB22",
+   "CULNB23A",
+   "CULNB30",
+   "CULNB48WE",
+   "CULNB9",
+   "NUTRB10"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/culinary-arts-certificate-of-achievement-fall-2026",
+   "title": "Culinary Arts Certificate of Achievement",
+   "h1": "Culinary Arts Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3010
+ },
+ {
+  "control_number": "20269",
+  "title": "Fire Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMMB2",
+   "COMMB4",
+   "COMMB8",
+   "COMMC1000",
+   "EMTCB50",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "FIREB1",
+   "FIREB2",
+   "FIREB3",
+   "FIREB4",
+   "FIREB48WE",
+   "FIREB5",
+   "FIREB52A",
+   "FIREB52B",
+   "FIREB52C",
+   "FIREB52D",
+   "FIREB52E",
+   "FIREB52P",
+   "FIREB52Q",
+   "FIREB52R",
+   "FIREB6",
+   "FIREB62",
+   "FIREB64",
+   "FIREB7",
+   "SOCIB1"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/fire-technology-certificate-of-achievement-summer-2026",
+   "title": "Fire Technology Certificate of Achievement",
+   "h1": "Fire Technology Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 3687
+ },
+ {
+  "control_number": "30593",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLB11",
+   "PSYCB1B",
+   "PSYCB20",
+   "PSYCB26",
+   "PSYCB3",
+   "PSYCB30",
+   "PSYCB33",
+   "PSYCB40",
+   "PSYCB46",
+   "PSYCB5",
+   "PSYCB6",
+   "PSYCC1000",
+   "SOCIB20",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/psychology-associate-in-arts-for-transfer-fall-2025",
+   "title": "Psychology Associate in Arts for Transfer",
+   "h1": "Psychology Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3802
+ },
+ {
+  "control_number": "30628",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CRIMB1",
+   "PSYCB20",
+   "PSYCB5",
+   "SOCIB1",
+   "SOCIB12",
+   "SOCIB2",
+   "SOCIB20",
+   "SOCIB28",
+   "SOCIB36",
+   "SOCIB45",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/sociology-associate-in-arts-for-transfer-fall-2025",
+   "title": "Sociology Associate in Arts for Transfer",
+   "h1": "Sociology Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3611
+ },
+ {
+  "control_number": "30711",
+  "title": "Communication",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 14,
+  "text_chars": 0
+ },
+ {
+  "control_number": "31667",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTB10",
+   "ARTB11",
+   "ARTB13",
+   "ARTB14",
+   "ARTB15",
+   "ARTB16",
+   "ARTB17",
+   "ARTB2",
+   "ARTB20",
+   "ARTB25",
+   "ARTB26",
+   "ARTB3",
+   "ARTB37",
+   "ARTB38",
+   "ARTB4",
+   "ARTB40",
+   "ARTB42",
+   "ARTB43",
+   "ARTB44",
+   "ARTB5",
+   "ARTB6",
+   "ARTB7",
+   "ARTB8",
+   "ARTB9",
+   "ARTHC1100",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/studio-arts-associate-in-arts-for-transfer-fall-2026",
+   "title": "Studio Arts Associate in Arts for Transfer",
+   "h1": "Studio Arts Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 3103
+ },
+ {
+  "control_number": "32459",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHB1",
+   "ANTHB1L",
+   "ANTHB2",
+   "ANTHB3",
+   "ANTHB4",
+   "ANTHB5",
+   "ANTHB6",
+   "ANTHB7",
+   "ARTB37",
+   "ARTB38",
+   "ENGLB21",
+   "ENGLB28",
+   "ERSCB10",
+   "ERSCB10L",
+   "GEOLB10",
+   "GEOLB10L",
+   "HISTB15",
+   "HISTB18",
+   "HISTB33",
+   "MUSCB24",
+   "SOCIB28"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/anthropology-associate-in-arts-for-transfer-fall-2025",
+   "title": "Anthropology Associate in Arts for Transfer",
+   "h1": "Anthropology Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 4088
+ },
+ {
+  "control_number": "32460",
+  "title": "Geology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GEOLB10L",
+   "GEOLB11L",
+   "MATHB6A",
+   "MATHB6B"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/geology-associate-in-science-for-transfer-fall-2025",
+   "title": "Geology Associate in Science for Transfer",
+   "h1": "Geology Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2820
+ },
+ {
+  "control_number": "32461",
+  "title": "Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATHB6A",
+   "MATHB6B",
+   "MATHB6C",
+   "PHYSB4A",
+   "PHYSB4B",
+   "PHYSB4C"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/physics-associate-in-science-for-transfer-fall-2025",
+   "title": "Physics Associate in Science for Transfer",
+   "h1": "Physics Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2746
+ },
+ {
+  "control_number": "32557",
+  "title": "MATH",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATHB6A",
+   "MATHB6B",
+   "MATHB6C",
+   "MATHB6D",
+   "MATHB6E"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/mathematics-associate-in-science-for-transfer-fall-2025",
+   "title": "Mathematics Associate in Science for Transfer",
+   "h1": "Mathematics Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2463
+ },
+ {
+  "control_number": "32724",
+  "title": "Music",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSCB10A",
+   "MUSCB11",
+   "MUSCB12A",
+   "MUSCB13A",
+   "MUSCB14A",
+   "MUSCB15",
+   "MUSCB15A",
+   "MUSCB15B",
+   "MUSCB15C",
+   "MUSCB2",
+   "MUSCB4A",
+   "MUSCB4B",
+   "MUSCB4C",
+   "MUSCB7"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/music-associate-in-arts-for-transfer-fall-2025",
+   "title": "Music Associate in Arts for Transfer",
+   "h1": "Music Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3453
+ },
+ {
+  "control_number": "32769",
+  "title": "Theatre Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEAB1",
+   "THEAB14",
+   "THEAB16",
+   "THEAB18",
+   "THEAB20",
+   "THEAB28",
+   "THEAB2A"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/theatre-arts-associate-in-arts-for-transfer-fall-2025",
+   "title": "Theatre Arts Associate in Arts for Transfer",
+   "h1": "Theatre Arts Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3304
+ },
+ {
+  "control_number": "32781",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHB2",
+   "ANTHB5",
+   "ECONC2002",
+   "GEOGB2",
+   "HISTB1",
+   "HISTB15",
+   "HISTB18",
+   "HISTB2",
+   "HISTB20A",
+   "HISTB20B",
+   "HISTB25",
+   "HISTB30A",
+   "HISTB30B",
+   "HISTB33",
+   "HISTB36",
+   "HISTB4A",
+   "HISTB4B",
+   "HISTB9",
+   "HISTC1001",
+   "HISTC1002",
+   "MUSCB27",
+   "PHILB18",
+   "PHILB37",
+   "POLSB3",
+   "POLSC1000",
+   "SOCIB2"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/history-associate-in-arts-for-transfer-fall-2026",
+   "title": "History Associate in Arts for Transfer",
+   "h1": "History Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 4678
+ },
+ {
+  "control_number": "32783",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECONC2002",
+   "HISTB18",
+   "HISTB4A",
+   "HISTB4B",
+   "HISTC1001",
+   "HISTC1002",
+   "POLSB12",
+   "POLSB16",
+   "POLSB2",
+   "POLSB3",
+   "POLSB4",
+   "POLSC1000",
+   "PSYCB5",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/political-science-associate-in-arts-for-transfer-fall-2026",
+   "title": "Political Science Associate in Arts for Transfer",
+   "h1": "Political Science Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3624
+ },
+ {
+  "control_number": "32786",
+  "title": "Journalism",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMMB15",
+   "COMMB5",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1001",
+   "JRNLB1",
+   "JRNLB15",
+   "JRNLB16",
+   "JRNLB2",
+   "JRNLB25",
+   "JRNLB26",
+   "JRNLB5",
+   "PHILB7",
+   "PHILB8",
+   "POLSB2",
+   "POLSC1000",
+   "PSYCB5",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/journalism-associate-in-arts-for-transfer-fall-2026",
+   "title": "Journalism Associate in Arts for Transfer",
+   "h1": "Journalism Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 4131
+ },
+ {
+  "control_number": "32796",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGLB10",
+   "ENGLB20A",
+   "ENGLB21",
+   "ENGLB22",
+   "ENGLB24",
+   "ENGLB25B",
+   "ENGLB27",
+   "ENGLB28",
+   "ENGLB30A",
+   "ENGLB30B",
+   "ENGLB33",
+   "ENGLB41A",
+   "ENGLB5A",
+   "ENGLB5B",
+   "ENGLC1001",
+   "ENGLC1002",
+   "ENGLC1003"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/english-associate-in-art-for-transfer-fall-2026",
+   "title": "English Associate in Art for Transfer",
+   "h1": "English Associate in Art for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 4329
+ },
+ {
+  "control_number": "32797",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CRIMB1",
+   "CRIMB12",
+   "CRIMB2",
+   "CRIMB21",
+   "CRIMB3",
+   "CRIMB4",
+   "CRIMB5",
+   "CRIMB6",
+   "CRIMB8",
+   "CRIMB9"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/administration-of-justice-associate-in-science-for-transfer-fall-2025",
+   "title": "Administration of Justice Associate in Science for Transfer",
+   "h1": "Administration of Justice Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3230
+ },
+ {
+  "control_number": "32800",
+  "title": "Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTB37",
+   "ENGLB24",
+   "HISTB30A",
+   "HISTB30B",
+   "HISTB33",
+   "SOCIB36",
+   "SOCIB45",
+   "SPANB3",
+   "SPANB35",
+   "SPANB36",
+   "SPANB4"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/spanish-associate-in-arts-for-transfer-fall-2025",
+   "title": "Spanish Associate in Arts for Transfer",
+   "h1": "Spanish Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3464
+ },
+ {
+  "control_number": "32826",
+  "title": "Computer Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMPB12",
+   "COMPB13",
+   "MATHB6A",
+   "MATHB6B",
+   "PHYSB4A",
+   "PHYSB4B"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/computer-science-associate-in-science-for-transfer-fall-2025",
+   "title": "Computer Science Associate in Science for Transfer",
+   "h1": "Computer Science Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3013
+ },
+ {
+  "control_number": "32897",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDVB20",
+   "CHDVB21",
+   "CHDVB49"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/early-childhood-education-associate-in-science-for-transfer-fall-2025",
+   "title": "Early Childhood Education Associate in Science for Transfer",
+   "h1": "Early Childhood Education Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2951
+ },
+ {
+  "control_number": "32967",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSADB1",
+   "BSADB2",
+   "ECONC2001",
+   "ECONC2002",
+   "MATHB2",
+   "MATHB23",
+   "MATHB6A",
+   "MATHB6B",
+   "MATHB6C",
+   "MATHB6E",
+   "PSYCB5",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/economics-associate-in-arts-for-transfer-fall-2026",
+   "title": "Economics Associate in Arts for Transfer",
+   "h1": "Economics Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3727
+ },
+ {
+  "control_number": "33173",
+  "title": "Elementary Teacher Education",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.84,
+  "codes_found": [
+   "ARTB1",
+   "BIOLB11",
+   "CHDVB21",
+   "COMMC1000",
+   "COMPB2",
+   "EDUCB10",
+   "EDUCB24",
+   "EDUCB8",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "ENGLC1002",
+   "ERSCB10",
+   "ERSCB10L",
+   "HISTB1",
+   "HISTB18",
+   "HISTC1001",
+   "MATHB4A",
+   "MUSCB22",
+   "PHSCB12",
+   "POLSC1000",
+   "THEAB20"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/elementary-teacher-education-integrated-programs-associate-in-arts-for-transfer-fall-2026",
+   "title": "Elementary Teacher Education: Integrated Programs Associate in Arts for Transfer",
+   "h1": "Elementary Teacher Education: Integrated Programs Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 4203
+ },
+ {
+  "control_number": "33247",
+  "title": "Photography",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTB15",
+   "ARTB16",
+   "ARTB17",
+   "ARTB26",
+   "ARTB46",
+   "ARTB47",
+   "ARTB48",
+   "ARTB48WE"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/photography-certificate-of-achievement-summer-2025",
+   "title": "Photography Certificate of Achievement",
+   "h1": "Photography Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2277
+ },
+ {
+  "control_number": "33262",
+  "title": "Philosophy",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HISTB4A",
+   "HISTB4B",
+   "PHILB10",
+   "PHILB12",
+   "PHILB16",
+   "PHILB18",
+   "PHILB19",
+   "PHILB35",
+   "PHILB37",
+   "PHILB6A",
+   "PHILB7",
+   "PHILB8",
+   "PHILB9"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/philosophy-associate-in-arts-in-for-transfer-fall-2025",
+   "title": "Philosophy Associate in Arts for Transfer",
+   "h1": "Philosophy Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3920
+ },
+ {
+  "control_number": "33328",
+  "title": "Fire Fighter I Academy",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMTCB50",
+   "FIREB62",
+   "FIREB64"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/fire-fighter-i-academy-certificate-of-achievement-summer-2026",
+   "title": "Fire Fighter I Academy Certificate of Achievement",
+   "h1": "Fire Fighter I Academy Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2701
+ },
+ {
+  "control_number": "33781",
+  "title": "Paramedic Program",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMTCB10",
+   "EMTCB12",
+   "EMTCB13",
+   "EMTCB14",
+   "EMTCB15",
+   "EMTCB16",
+   "EMTCB17"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/paramedic-program-associate-of-science-summer-2019",
+   "title": "Paramedic Program Associate of Science",
+   "h1": "Paramedic Program Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2774
+ },
+ {
+  "control_number": "33787",
+  "title": "Paramedic",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMTCB10",
+   "EMTCB11",
+   "EMTCB12",
+   "EMTCB13",
+   "EMTCB14",
+   "EMTCB15",
+   "EMTCB16",
+   "EMTCB17"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/paramedic-certificate-of-achievement-summer-2019",
+   "title": "Paramedic Certificate of Achievement",
+   "h1": "Paramedic Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2774
+ },
+ {
+  "control_number": "33894",
+  "title": "CompTIA",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMPB2",
+   "COMPB21",
+   "COMPB31",
+   "COMPB32",
+   "COMPB33",
+   "COMPB34"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/comptia-certificate-of-achievement-fall-2019",
+   "title": "CompTIA Certificate of Achievement",
+   "h1": "CompTIA Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2907
+ },
+ {
+  "control_number": "34006",
+  "title": "Industrial Automation",
+  "award": "Baccalaureate of Science (B.S.) Degree.",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEMB1A",
+   "CHEMB2A",
+   "COMPB31",
+   "COMPB33",
+   "COMPB34",
+   "ELETB1A",
+   "ELETB3",
+   "ELETB4",
+   "ELETB55A",
+   "ELETB56",
+   "ELETB58",
+   "ELETB61",
+   "ELETB70",
+   "ENGLB100",
+   "ENGRB18",
+   "ENGRB19C",
+   "ENGRB25",
+   "FDSTB5",
+   "HVACB52",
+   "HVACB54",
+   "INDAB100",
+   "INDAB105",
+   "INDAB110",
+   "INDAB114",
+   "INDAB120",
+   "INDAB122",
+   "INDAB125",
+   "INDAB135",
+   "INDAB140",
+   "INDAB143",
+   "INDAB144",
+   "INDRB12",
+   "MATHB1A",
+   "MATHB1AL",
+   "MATHB1B",
+   "MATHB2",
+   "MATHB6A",
+   "MCAGB13",
+   "MCAGB14",
+   "MCAGB5",
+   "PHILB100",
+   "PHSCB12",
+   "PSYCB100"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/industrial-automation-bachelor-of-science-spring-2024",
+   "title": "Industrial Automation Bachelor of Science",
+   "h1": "Industrial Automation Bachelor of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 43,
+  "text_chars": 5825
+ },
+ {
+  "control_number": "35045",
+  "title": "Commercial Music",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35102",
+  "title": "Executive Chief Fire Officer",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FIREB52A",
+   "FIREB52B",
+   "FIREB52C",
+   "FIREB52D",
+   "FIREB52E",
+   "FIREB52F",
+   "FIREB52G",
+   "FIREB52H",
+   "FIREB52I",
+   "FIREB52J",
+   "FIREB52K",
+   "FIREB52L",
+   "FIREB52M",
+   "FIREB52N",
+   "FIREB52O"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/executive-chief-fire-officer-certificate-of-achievement-summer-2026",
+   "title": "Executive Chief Fire Officer Certificate of Achievement",
+   "h1": "Executive Chief Fire Officer Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2472
+ },
+ {
+  "control_number": "35113",
+  "title": "Media Arts",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTB15",
+   "ARTB16",
+   "ARTB26",
+   "ARTB43",
+   "ARTB44",
+   "ARTB45",
+   "ARTB48WE"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/media-arts-certificate-of-achievement-fall-2026",
+   "title": "Media Arts Certificate of Achievement",
+   "h1": "Media Arts Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2165
+ },
+ {
+  "control_number": "35302",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLB3B",
+   "MATHB6A",
+   "PHYSB2A",
+   "PHYSB2B",
+   "PHYSB4A",
+   "PHYSB4B"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/biology-associate-in-science-for-transfer-fall-2025",
+   "title": "Biology Associate in Science for Transfer",
+   "h1": "Biology Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3355
+ },
+ {
+  "control_number": "35389",
+  "title": "Chemistry",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEMB30A",
+   "CHEMB30B",
+   "MATHB6A",
+   "MATHB6B",
+   "PHYSB4A",
+   "PHYSB4B"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/chemistry-associate-in-science-for-transfer-summer-2019",
+   "title": "Chemistry Associate in Science for Transfer",
+   "h1": "Chemistry Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2852
+ },
+ {
+  "control_number": "35469",
+  "title": "Automotive Heating and Air Conditioning",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "AUTOB11",
+   "AUTOB30",
+   "AUTOB49"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/automotive-heating-and-air-conditioning-certificate-of-achievement-summer-2018",
+   "title": "Automotive Heating and Air Conditioning Certificate of Achievement",
+   "h1": "Automotive Heating and Air Conditioning Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1931
+ },
+ {
+  "control_number": "35471",
+  "title": "Automatic Transmissions",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTOB11",
+   "AUTOB30"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/automatic-transmissions-certificate-of-achievement-summer-2018",
+   "title": "Automatic Transmissions Certificate of Achievement",
+   "h1": "Automatic Transmissions Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1738
+ },
+ {
+  "control_number": "35480",
+  "title": "Public Health Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.643,
+  "codes_found": [
+   "BIOLB11",
+   "BIOLB32",
+   "BIOLB33",
+   "CHEMB1A",
+   "CHEMB2A",
+   "NUTRB10",
+   "PSYCB30",
+   "PSYCB5",
+   "SOCIB1"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/public-health-science-associate-in-science-for-transfer-summer-2021",
+   "title": "Public Health Science Associate in Science for Transfer",
+   "h1": "Public Health Science Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3658
+ },
+ {
+  "control_number": "35625",
+  "title": "Agriculture Plant Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGBSB2",
+   "CHEMB1A",
+   "CHEMB2A",
+   "CRPSB1",
+   "CRPSB2",
+   "CRPSB4",
+   "CRPSB5",
+   "ECONC2001",
+   "MCAGB10",
+   "ORNHB14",
+   "ORNHB4",
+   "PSYCB5",
+   "SOILB1",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/agriculture-plant-science-associate-in-science-for-transfer-fall-2026",
+   "title": "Agriculture Plant Science Associate in Science for Transfer",
+   "h1": "Agriculture Plant Science Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3724
+ },
+ {
+  "control_number": "35695",
+  "title": "Engine Overhaul and Repair",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTOB20",
+   "AUTOB21",
+   "AUTOB23"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/engine-overhaul-and-repair-certificate-of-achievement-summer-2018",
+   "title": "Engine Overhaul and Repair Certificate of Achievement",
+   "h1": "Engine Overhaul and Repair Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2704
+ },
+ {
+  "control_number": "35696",
+  "title": "Light Duty Diesel Performance",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTOB20",
+   "AUTOB30",
+   "AUTOB33",
+   "AUTOB36"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/light-duty-diesel-performance-certificate-of-achievement-summer-2026",
+   "title": "Light Duty Diesel Performance Certificate of Achievement",
+   "h1": "Light Duty Diesel Performance Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2352
+ },
+ {
+  "control_number": "35697",
+  "title": "Manual Drive Train and Axles",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTOB30"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/manual-drive-train-and-axles-certificate-of-achievement-summer-2018",
+   "title": "Manual Drive Train and Axles Certificate of Achievement",
+   "h1": "Manual Drive Train and Axles Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 1,
+  "text_chars": 2345
+ },
+ {
+  "control_number": "35725",
+  "title": "Brake Systems",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTOB30",
+   "AUTOB43"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/brake-systems-certificate-of-achievement-summer-2018",
+   "title": "Brake Systems Certificate of Achievement",
+   "h1": "Brake Systems Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2214
+ },
+ {
+  "control_number": "35726",
+  "title": "Engine Performance",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTOB20",
+   "AUTOB30",
+   "AUTOB33",
+   "AUTOB34"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/engine-performance-certificate-of-achievement-summer-2025",
+   "title": "Engine Performance Certificate of Achievement",
+   "h1": "Engine Performance Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2507
+ },
+ {
+  "control_number": "35727",
+  "title": "Suspension and Steering",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTOB11",
+   "AUTOB30",
+   "AUTOB40"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/suspension-and-steering-certificate-of-achievement-summer-2018",
+   "title": "Suspension and Steering Certificate of Achievement",
+   "h1": "Suspension and Steering Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2310
+ },
+ {
+  "control_number": "35728",
+  "title": "Automotive Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTOB20",
+   "AUTOB21",
+   "AUTOB30",
+   "AUTOB33",
+   "AUTOB36",
+   "AUTOB39",
+   "AUTOB40",
+   "AUTOB43",
+   "AUTOB49"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/automotive-technology-associate-of-science-fall-2018",
+   "title": "Automotive Technology Associate of Science",
+   "h1": "Automotive Technology Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2875
+ },
+ {
+  "control_number": "35729",
+  "title": "Electrical and Electronic Systems",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTOB11",
+   "AUTOB30"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/electrical-and-electronic-systems-certificate-of-achievement-summer-2018",
+   "title": "Electrical and Electronic Systems Certificate of Achievement",
+   "h1": "Electrical and Electronic Systems Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1906
+ },
+ {
+  "control_number": "35807",
+  "title": "Agriculture Business",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGBSB2",
+   "AGBSB3",
+   "AGBSB5",
+   "AGBSB6",
+   "AGBSB7",
+   "AGRIB1",
+   "BSADB1",
+   "BSADB2",
+   "ECONC2002",
+   "SOILB1",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/agriculture-business-associate-in-science-for-transfer-fall-2026",
+   "title": "Agriculture Business Associate in Science for Transfer",
+   "h1": "Agriculture Business Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3451
+ },
+ {
+  "control_number": "35826",
+  "title": "Agriculture Animal Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGBSB2",
+   "ANSCB1",
+   "ANSCB10",
+   "ANSCB11",
+   "ANSCB2",
+   "ANSCB3",
+   "ANSCB4",
+   "ANSCB5",
+   "ANSCB6",
+   "ANSCB7",
+   "CHEMB1A",
+   "CHEMB2A",
+   "PSYCB5",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/agriculture-animal-science-associate-in-science-for-transfer-fall-2025",
+   "title": "Agriculture Animal Science Associate in Science for Transfer",
+   "h1": "Agriculture Animal Science Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3859
+ },
+ {
+  "control_number": "35984",
+  "title": "Health Information Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "COMPB5",
+   "HEITB10",
+   "HEITB11",
+   "HEITB12",
+   "HEITB13",
+   "HEITB15",
+   "HEITB16",
+   "HEITB20",
+   "HEITB21",
+   "HEITB22",
+   "HEITB23",
+   "HEITB24",
+   "HEITB25",
+   "HEITB26",
+   "HEITB30",
+   "MEDSB37"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/health-information-technology-associate-of-science-summer-2022",
+   "title": "Health Information Technology Associate of Science",
+   "h1": "Health Information Technology Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 4094
+ },
+ {
+  "control_number": "36024",
+  "title": "Occupational Safety and Risk Management, Agriculture",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGRIB1",
+   "ANSCB1",
+   "BIOLB18",
+   "BIOLB8",
+   "BSADB49A",
+   "BSADB49B",
+   "CHEMB10",
+   "CHEMB2A",
+   "CRPSB1",
+   "CRPSB3",
+   "ELETB70",
+   "MCAGB4",
+   "OSRMB10",
+   "OSRMB12",
+   "OSRMB16",
+   "OSRMB18",
+   "OSRMB20",
+   "OSRMB26",
+   "OSRMB4",
+   "PHSCB12",
+   "SOILB1",
+   "WTRTB53"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/occupational-safety-and-risk-management-agriculture-associate-of-science-fall-2025",
+   "title": "Occupational Safety and Risk Management, Agriculture Associate of Science",
+   "h1": "Occupational Safety and Risk Management, Agriculture Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 3768
+ },
+ {
+  "control_number": "36037",
+  "title": "Occupational Safety and Risk Management, Industrial Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLB18",
+   "BIOLB8",
+   "BSADB49A",
+   "BSADB49B",
+   "CHEMB10",
+   "CHEMB2A",
+   "CRPSB3",
+   "ELETB70",
+   "FIREB6",
+   "MCAGB4",
+   "OSRMB10",
+   "OSRMB12",
+   "OSRMB16",
+   "OSRMB18",
+   "OSRMB20",
+   "OSRMB26",
+   "OSRMB4",
+   "PHSCB12",
+   "WTRTB53"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/occupational-safety-and-risk-management-industrial-technology-associate-of-science-fall-2025",
+   "title": "Occupational Safety and Risk Management, Industrial Technology Associate of Science",
+   "h1": "Occupational Safety and Risk Management, Industrial Technology Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 3468
+ },
+ {
+  "control_number": "36485",
+  "title": "Industrial Drawing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "INDRB12",
+   "INDRB20A",
+   "INDRB40",
+   "INDRB51",
+   "INDRB52"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/industrial-drawing-certificate-of-achievement-fall-2018",
+   "title": "Industrial Drawing Certificate of Achievement",
+   "h1": "Industrial Drawing Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2296
+ },
+ {
+  "control_number": "36488",
+  "title": "Occupational Safety and Risk Management, Business",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLB18",
+   "BSADB18",
+   "BSADB20",
+   "BSADB49A",
+   "BSADB49B",
+   "BSADB49C",
+   "BSADB49D",
+   "BSADB49E",
+   "BSADB5",
+   "BSADB61",
+   "BSADB65",
+   "CHEMB10",
+   "MATHB23",
+   "OSRMB10",
+   "OSRMB12",
+   "OSRMB16",
+   "OSRMB18",
+   "OSRMB20",
+   "OSRMB26",
+   "OSRMB4",
+   "PHSCB12",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/occupational-safety-and-risk-management-business-associate-of-science-fall-2025",
+   "title": "Occupational Safety and Risk Management, Business Associate of Science",
+   "h1": "Occupational Safety and Risk Management, Business Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 3613
+ },
+ {
+  "control_number": "36489",
+  "title": "Occupational Safety and Risk Management, Health Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLB18",
+   "BIOLB8",
+   "CHEMB10",
+   "CHEMB2A",
+   "NUTRB10",
+   "OSRMB10",
+   "OSRMB12",
+   "OSRMB16",
+   "OSRMB18",
+   "OSRMB20",
+   "OSRMB26",
+   "OSRMB4",
+   "PBHSB20",
+   "PBHSB22",
+   "PBHSB23",
+   "PHSCB12"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/occupational-safety-and-risk-management-health-science-associate-of-science-fall-2025",
+   "title": "Occupational Safety and Risk Management, Health Science Associate of Science",
+   "h1": "Occupational Safety and Risk Management, Health Science Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3184
+ },
+ {
+  "control_number": "36571",
+  "title": "Art History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "ANTHB3",
+   "ANTHB4",
+   "ANTHB7",
+   "ARTB10",
+   "ARTB13",
+   "ARTB15",
+   "ARTB16",
+   "ARTB17",
+   "ARTB2",
+   "ARTB20",
+   "ARTB37",
+   "ARTB38",
+   "ARTB4",
+   "ARTB5",
+   "ARTB6",
+   "ARTB8",
+   "HISTB1",
+   "HISTB18",
+   "HISTB20A",
+   "HISTB25",
+   "HISTB30B",
+   "HISTB4B",
+   "PHILB12",
+   "PHILB18",
+   "PHILB35",
+   "PHILB37",
+   "SPANB3",
+   "SPANB36"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/art-history-associate-in-arts-for-transfer-fall-2025",
+   "title": "Art History Associate in Arts for Transfer",
+   "h1": "Art History Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 32,
+  "text_chars": 3703
+ },
+ {
+  "control_number": "36579",
+  "title": "Industrial Automation",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEMB1A",
+   "CHEMB2A",
+   "ELETB1A",
+   "ELETB1B",
+   "ELETB3",
+   "ELETB4",
+   "ELETB55A",
+   "ELETB56",
+   "ELETB58",
+   "ELETB61",
+   "ELETB70",
+   "INDRB12",
+   "PHSCB12"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/industrial-automation-associate-of-science-fall-2023",
+   "title": "Industrial Automation Associate of Science",
+   "h1": "Industrial Automation Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2719
+ },
+ {
+  "control_number": "36590",
+  "title": "Heavy Equipment Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MCAGB10",
+   "MCAGB11",
+   "MCAGB12",
+   "MCAGB13",
+   "MCAGB14",
+   "MCAGB15",
+   "MCAGB16",
+   "MCAGB3",
+   "MCAGB48WE",
+   "MCAGB9"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/heavy-equipment-technician-certificate-of-achievement-fall-2026",
+   "title": "Heavy Equipment Technician Certificate of Achievement",
+   "h1": "Heavy Equipment Technician Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2228
+ },
+ {
+  "control_number": "36640",
+  "title": "Construction Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCHB55",
+   "ARCHB56",
+   "BSADB61",
+   "CNSTB1",
+   "CNSTB2",
+   "CNSTB3",
+   "CNSTB5",
+   "CNSTB6",
+   "CNSTB7",
+   "CNSTB9"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/construction-management-associate-of-science-summer-2018",
+   "title": "Construction Management Associate of Science",
+   "h1": "Construction Management Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1691
+ },
+ {
+  "control_number": "36703",
+  "title": "ASL Interpreter Training Program",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36716",
+  "title": "California State University General Education Breadth",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 152,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36745",
+  "title": "Intersegmental General Education (IGETC) for STEM",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 123,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36746",
+  "title": "Intersegmental General Education (IGETC)",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 123,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36772",
+  "title": "Manufacturing Metal Fabrication Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "INDRB12",
+   "INDTB10",
+   "MFGTB1AB",
+   "MFGTB54",
+   "MFGTB56",
+   "OSRMB10",
+   "WELDB1B",
+   "WELDB54A",
+   "WELDB54B",
+   "WELDB65AB"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/manufacturing-metal-fabrication-technology-associate-of-science-summer-2018",
+   "title": "Manufacturing Metal Fabrication Technology Associate of Science",
+   "h1": "Manufacturing Metal Fabrication Technology Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1688
+ },
+ {
+  "control_number": "36773",
+  "title": "Environmental Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "BIOLB3A",
+   "BIOLB3B",
+   "BIOLB8",
+   "CHEMB1A",
+   "GEOLB10",
+   "GEOLB10L",
+   "MATHB2",
+   "MATHB6A",
+   "PHYSB2A",
+   "PHYSB2B",
+   "PHYSB4A",
+   "PHYSB4B"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/environmental-science-associate-in-science-for-transfer-fall-2019",
+   "title": "Environmental Science Associate in Science for Transfer",
+   "h1": "Environmental Science Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3545
+ },
+ {
+  "control_number": "36778",
+  "title": "Health Navigator",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMMB9",
+   "HEITB25",
+   "MEDSB35",
+   "PBHSB24",
+   "PBHSB25"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/health-navigator-certificate-of-achievement-fall-2021",
+   "title": "Health Navigator Certificate of Achievement",
+   "h1": "Health Navigator Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3224
+ },
+ {
+  "control_number": "36781",
+  "title": "Child Development Master Teacher: Special Education",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDVB20",
+   "CHDVB21",
+   "CHDVB22",
+   "CHDVB32",
+   "CHDVB33",
+   "CHDVB34",
+   "CHDVB36",
+   "CHDVB40",
+   "CHDVB41",
+   "CHDVB42",
+   "CHDVB49",
+   "CHDVB53A"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/child-development-master-teacher-special-education-certificate-of-achievement-fall-2026",
+   "title": "Child Development Master Teacher: Special Education Certificate of Achievement",
+   "h1": "Child Development Master Teacher: Special Education Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2246
+ },
+ {
+  "control_number": "37018",
+  "title": "HVAC Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELETB3",
+   "HVACB50",
+   "HVACB52",
+   "HVACB54",
+   "HVACB55",
+   "HVACB60",
+   "INDTB10"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/hvac-technology-certificate-of-achievement-fall-2026",
+   "title": "HVAC Technology Certificate of Achievement",
+   "h1": "HVAC Technology Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2007
+ },
+ {
+  "control_number": "37055",
+  "title": "Industrial Automation",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELETB1A",
+   "ELETB3",
+   "ELETB4",
+   "ELETB58"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/industrial-automation-certificate-of-achievement-fall-2018",
+   "title": "Industrial Automation Certificate of Achievement",
+   "h1": "Industrial Automation Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1719
+ },
+ {
+  "control_number": "37068",
+  "title": "Information Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "COMPB2",
+   "COMPB22",
+   "COMPB31",
+   "COMPB33",
+   "COMPB35",
+   "COMPB36",
+   "MATHB2",
+   "MATHB23",
+   "MATHB6A"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/information-technology-certificate-of-achievement-spring-2019",
+   "title": "Information Technology Certificate of Achievement",
+   "h1": "Information Technology Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3333
+ },
+ {
+  "control_number": "37147",
+  "title": "HVAC Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELETB3",
+   "HVACB50",
+   "HVACB52",
+   "HVACB54",
+   "HVACB55",
+   "HVACB60",
+   "INDTB10"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/hvac-technology-associate-of-science-fall-2025",
+   "title": "HVAC Technology Associate of Science",
+   "h1": "HVAC Technology Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2080
+ },
+ {
+  "control_number": "37178",
+  "title": "Process Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMPB5",
+   "ELETB1A",
+   "ELETB1B",
+   "ELETB3",
+   "ELETB56",
+   "ELETB70",
+   "OSRMB10",
+   "OSRMB20"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/process-technology-certificate-of-achievement-summer-2019",
+   "title": "Process Technology Certificate of Achievement",
+   "h1": "Process Technology Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2282
+ },
+ {
+  "control_number": "37319",
+  "title": "Process Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMPB5",
+   "ELETB1A",
+   "ELETB1B",
+   "ELETB3",
+   "ELETB4",
+   "ELETB55A",
+   "ELETB56",
+   "ELETB58",
+   "ELETB70",
+   "INDRB12",
+   "OSRMB10",
+   "OSRMB20"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/process-technology-associate-of-science-summer-2020",
+   "title": "Process Technology Associate of Science",
+   "h1": "Process Technology Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2730
+ },
+ {
+  "control_number": "37368",
+  "title": "Mechanized Agriculture",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGRIB1",
+   "ELETB3",
+   "MCAGB10",
+   "MCAGB11",
+   "MCAGB12",
+   "MCAGB13",
+   "MCAGB14",
+   "MCAGB15",
+   "MCAGB16",
+   "MCAGB2",
+   "MCAGB3",
+   "MCAGB4",
+   "MCAGB48WE",
+   "MCAGB5",
+   "MCAGB9",
+   "WELDB53A"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/mechanized-agriculture-associate-of-science-fall-2026",
+   "title": "Mechanized Agriculture Associate of Science",
+   "h1": "Mechanized Agriculture Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 2827
+ },
+ {
+  "control_number": "37394",
+  "title": "Engineering Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "CHEMB1A",
+   "ENGRB20",
+   "ENGRB24",
+   "ENGRB47",
+   "MATHB6A",
+   "PHYSB2A",
+   "PHYSB2B",
+   "PHYSB4A",
+   "PHYSB4B"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/engineering-technology-certificate-of-achievement-summer-2019",
+   "title": "Engineering Technology Certificate of Achievement",
+   "h1": "Engineering Technology Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2714
+ },
+ {
+  "control_number": "37843",
+  "title": "Transitional Kindergarten",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDVB21",
+   "CHDVB22",
+   "CHDVB23",
+   "CHDVB24",
+   "CHDVB25",
+   "CHDVB26",
+   "CHDVB27",
+   "CHDVB36"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/transitional-kindergarten-certificate-of-achievement-spring-2022",
+   "title": "Transitional Kindergarten Certificate of Achievement",
+   "h1": "Transitional Kindergarten Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 1957
+ },
+ {
+  "control_number": "37903",
+  "title": "Web Design and Development",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTB15",
+   "ARTB20",
+   "COMPB10",
+   "COMPB21",
+   "COMPB31",
+   "COMPB32",
+   "COMPB33",
+   "COMPB41",
+   "COMPB42"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/web-design-and-development-certificate-of-achievement-fall-2024",
+   "title": "Web Design and Development Certificate of Achievement",
+   "h1": "Web Design and Development Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2352
+ },
+ {
+  "control_number": "38523",
+  "title": "Japanese",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHB2",
+   "ARTB38",
+   "ASLB1",
+   "ASLB2",
+   "COMMB6",
+   "HISTB2",
+   "JAPNB1",
+   "JAPNB2",
+   "JAPNB3",
+   "JAPNB4",
+   "PHILB37",
+   "PHILB7",
+   "POLSB3",
+   "SOCIB45",
+   "SPANB1",
+   "SPANB2"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/japanese-associate-of-arts-fall-2025",
+   "title": "Japanese Associate of Arts",
+   "h1": "Japanese Associate of Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 2980
+ },
+ {
+  "control_number": "38832",
+  "title": "Paraprofessional Level I",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EDUCB10",
+   "EDUCB3",
+   "EDUCB9"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/paraprofessional-level-i-certificate-of-achievement-spring-2020",
+   "title": "Paraprofessional Level I Certificate of Achievement",
+   "h1": "Paraprofessional Level I Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1478
+ },
+ {
+  "control_number": "38841",
+  "title": "Paraprofessional Level III",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDVB21",
+   "COMMB8",
+   "COMMC1000",
+   "EDUCB10",
+   "EDUCB24",
+   "EDUCB3",
+   "EDUCB5",
+   "EDUCB9",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "MATHB4A",
+   "PSYCB5",
+   "STATC1000",
+   "STATC1000E",
+   "TECMB40"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/paraprofessional-level-iii-certificate-of-achievement-summer-2026",
+   "title": "Paraprofessional Level III Certificate of Achievement",
+   "h1": "Paraprofessional Level III Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2741
+ },
+ {
+  "control_number": "38842",
+  "title": "Paraprofessional Level II",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "CHDVB21",
+   "COMMB8",
+   "EDUCB10",
+   "EDUCB3",
+   "EDUCB5",
+   "EDUCB9"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/paraprofessional-level-ii-certificate-of-achievement-summer-2020",
+   "title": "Paraprofessional Level II Certificate of Achievement",
+   "h1": "Paraprofessional Level II Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2011
+ },
+ {
+  "control_number": "39473",
+  "title": "UCTP Chemistry",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEMB1A",
+   "CHEMB1B",
+   "CHEMB30A",
+   "CHEMB30B",
+   "MATHB6A",
+   "MATHB6B",
+   "MATHB6C",
+   "MATHB6D",
+   "PHYSB4A",
+   "PHYSB4B",
+   "PHYSB4C"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/uctp-chemistry-fall-2025",
+   "title": "UCTP Chemistry",
+   "h1": "UCTP Chemistry",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2451
+ },
+ {
+  "control_number": "39516",
+  "title": "Human Biology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLB16",
+   "BIOLB32",
+   "BIOLB33",
+   "CHEMB11",
+   "CHEMB1A",
+   "CHEMB1B",
+   "CHEMB2A",
+   "MEDSB37"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/human-biology-associate-of-science-summer-2025",
+   "title": "Human Biology Associate of Science",
+   "h1": "Human Biology Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2728
+ },
+ {
+  "control_number": "39541",
+  "title": "English for Multilingual Students Intermediate",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMLSB60NC",
+   "EMLSB61NC",
+   "EMLSB62NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/english-for-multilingual-students-intermediate-certificate-of-competency-summer-2020",
+   "title": "English for Multilingual Students Intermediate Certificate of Competency",
+   "h1": "English for Multilingual Students Intermediate Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1331
+ },
+ {
+  "control_number": "39542",
+  "title": "English for Multilingual Students Listening/Speaking",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMLSB52NC",
+   "EMLSB62NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/english-for-multilingual-students-listening-speaking-certificate-of-competency-summer-2020",
+   "title": "English for Multilingual Students Listening/Speaking Certificate of Competency",
+   "h1": "English for Multilingual Students Listening/Speaking Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1315
+ },
+ {
+  "control_number": "39543",
+  "title": "English for Multilingual Students Reading",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMLSB51NC",
+   "EMLSB61NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/english-for-multilingual-students-reading-certificate-of-competency-summer-2020",
+   "title": "English for Multilingual Students Reading Certificate of Competency",
+   "h1": "English for Multilingual Students Reading Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1288
+ },
+ {
+  "control_number": "39544",
+  "title": "English for Multilingual Students Writing",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMLSB50NC",
+   "EMLSB60NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/english-for-multilingual-students-writing-certificate-of-competency-summer-2020",
+   "title": "English for Multilingual Students Writing Certificate of Competency",
+   "h1": "English for Multilingual Students Writing Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1437
+ },
+ {
+  "control_number": "39545",
+  "title": "Sales Techniques",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "OFFTB56NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/sales-techniques-certificate-of-completion-fall-2020",
+   "title": "Sales Techniques Certificate of Completion",
+   "h1": "Sales Techniques Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 1,
+  "text_chars": 1224
+ },
+ {
+  "control_number": "39547",
+  "title": "Food Science and Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGBSB3",
+   "ANSCB6",
+   "CRPSB16",
+   "CRPSB4",
+   "FDSTB1",
+   "FDSTB10",
+   "FDSTB2",
+   "FDSTB3",
+   "FDSTB4",
+   "FDSTB5",
+   "NUTRB10"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/food-science-and-technology-associate-of-science-fall-2025",
+   "title": "Food Science and Technology Associate of Science",
+   "h1": "Food Science and Technology Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2807
+ },
+ {
+  "control_number": "39549",
+  "title": "Introduction to Early Care and Education",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDVB70NC",
+   "CHDVB71NC",
+   "CHDVB72NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/introduction-to-early-care-and-education-certificate-of-completion-spring-2020",
+   "title": "Introduction to Early Care and Education Certificate of Completion",
+   "h1": "Introduction to Early Care and Education Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2638
+ },
+ {
+  "control_number": "39550",
+  "title": "Basic Internet Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "OFFTB88NC",
+   "OFFTB89NC",
+   "OFFTB91NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/basic-internet-skills-certificate-of-completion-fall-2020",
+   "title": "Basic Internet Skills Certificate of Completion",
+   "h1": "Basic Internet Skills Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1364
+ },
+ {
+  "control_number": "39551",
+  "title": "Basic Office Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "OFFTB50NC",
+   "OFFTB51NC",
+   "OFFTB55NC",
+   "OFFTB86NC",
+   "OFFTB90NC",
+   "OFFTB92NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/basic-office-skills-certificate-of-completion-spring-2020",
+   "title": "Basic Office Skills Certificate of Completion",
+   "h1": "Basic Office Skills Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2042
+ },
+ {
+  "control_number": "39552",
+  "title": "Basic Office Software Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "OFFTB92NC",
+   "OFFTB93NC",
+   "OFFTB94NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/basic-office-software-skills-certificate-of-completion-spring-2020",
+   "title": "Basic Office Software Skills Certificate of Completion",
+   "h1": "Basic Office Software Skills Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1551
+ },
+ {
+  "control_number": "39553",
+  "title": "Beginning Computer Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "OFFTB86NC",
+   "OFFTB87NC",
+   "OFFTB90NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/beginning-computer-skills-certificate-of-completion-fall-2020",
+   "title": "Beginning Computer Skills Certificate of Completion",
+   "h1": "Beginning Computer Skills Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1291
+ },
+ {
+  "control_number": "39554",
+  "title": "Customer Relations",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "OFFTB53NC",
+   "OFFTB54NC",
+   "OFFTB55NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/customer-relations-certificate-of-completion-fall-2020",
+   "title": "Customer Relations Certificate of Completion",
+   "h1": "Customer Relations Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1474
+ },
+ {
+  "control_number": "39555",
+  "title": "Entrepreneurship",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "OFFTB67NC",
+   "OFFTB70NC",
+   "OFFTB71NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/entrepreneurship-certificate-of-completion-fall-2020",
+   "title": "Entrepreneurship Certificate of Completion",
+   "h1": "Entrepreneurship Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1590
+ },
+ {
+  "control_number": "39556",
+  "title": "Digital Marketing for Small Business",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "OFFTB81NC",
+   "OFFTB82NC",
+   "OFFTB83NC",
+   "OFFTB84NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/digital-marketing-for-small-business-certificate-of-completion-fall-2020",
+   "title": "Digital Marketing for Small Business Certificate of Completion",
+   "h1": "Digital Marketing for Small Business Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1316
+ },
+ {
+  "control_number": "39557",
+  "title": "Powerful Presentation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "OFFTB93NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/powerful-presentation-certificate-of-completion-fall-2020",
+   "title": "Powerful Presentation Certificate of Completion",
+   "h1": "Powerful Presentation Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 1,
+  "text_chars": 1333
+ },
+ {
+  "control_number": "39558",
+  "title": "QuickBooks Basics for Small Business",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "OFFTB72NC",
+   "OFFTB73NC",
+   "OFFTB74NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/quickbooks-basics-for-small-business-certificate-of-completion-spring-2020",
+   "title": "QuickBooks Basics for Small Business Certificate of Completion",
+   "h1": "QuickBooks Basics for Small Business Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1353
+ },
+ {
+  "control_number": "39559",
+  "title": "Recruiting and Managing Employees",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39560",
+  "title": "UCTP Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "MATHB6A",
+   "MATHB6B",
+   "MATHB6C",
+   "MATHB6D",
+   "MATHB6E",
+   "PHYSB4A",
+   "PHYSB4B",
+   "PHYSB4C"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/physics-2-0-associate-in-science-for-transfer-fall-2026",
+   "title": "Physics 2.0 Associate in Science for Transfer",
+   "h1": "Physics 2.0 Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.5
+   }
+  },
+  "listed": 10,
+  "text_chars": 2787
+ },
+ {
+  "control_number": "39686",
+  "title": "Occupational Safety and Risk Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLB18",
+   "OSRMB10",
+   "OSRMB12",
+   "OSRMB16",
+   "OSRMB18",
+   "OSRMB20",
+   "OSRMB26",
+   "PHSCB12"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/occupational-safety-and-risk-management-certificate-of-achievement-fall-2020",
+   "title": "Occupational Safety and Risk Management Certificate of Achievement",
+   "h1": "Occupational Safety and Risk Management Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2242
+ },
+ {
+  "control_number": "39687",
+  "title": "English for Multilingual Students Advanced",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMLSB50NC",
+   "EMLSB51NC",
+   "EMLSB52NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/english-for-multilingual-students-advanced-certificate-of-competency-summer-2020",
+   "title": "English for Multilingual Students Advanced Certificate of Competency",
+   "h1": "English for Multilingual Students Advanced Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1388
+ },
+ {
+  "control_number": "39688",
+  "title": "English for Multilingual Students Introduction",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMLSB70NC",
+   "EMLSB71NC",
+   "EMLSB72NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/english-for-multilingual-students-introduction-certificate-of-competency-summer-2020",
+   "title": "English for Multilingual Students Introduction Certificate of Competency",
+   "h1": "English for Multilingual Students Introduction Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1258
+ },
+ {
+  "control_number": "40073",
+  "title": "Nutrition and Dietetics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLB16",
+   "BIOLB32",
+   "BIOLB33",
+   "CHEMB1A",
+   "CHEMB1B",
+   "NUTRB10",
+   "NUTRB11",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/nutrition-and-dietetics-associate-in-science-for-transfer-fall-2026",
+   "title": "nutrition and dietetics associate in science for transfer fall 2026",
+   "h1": "nutrition and dietetics associate in science for transfer fall 2026",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3009
+ },
+ {
+  "control_number": "40258",
+  "title": "Application of Transformational Policing",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJB61NC",
+   "ADMJB62NC",
+   "ADMJB63NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/application-of-transformational-policing-certificate-of-completion-spring-2021",
+   "title": "Application of Transformational Policing Certificate of Completion",
+   "h1": "Application of Transformational Policing Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1408
+ },
+ {
+  "control_number": "40259",
+  "title": "Online Teaching",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EDUCB30NC",
+   "EDUCB31NC",
+   "EDUCB32NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/online-teaching-certificate-of-completion-spring-2021",
+   "title": "Online Teaching Certificate of Completion",
+   "h1": "Online Teaching Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1882
+ },
+ {
+  "control_number": "40334",
+  "title": "Food Science and Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FDSTB1",
+   "FDSTB2",
+   "FDSTB3",
+   "FDSTB4"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/food-science-and-technology-certificate-of-achievement-summer-2021",
+   "title": "Food Science and Technology Certificate of Achievement",
+   "h1": "Food Science and Technology Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2389
+ },
+ {
+  "control_number": "40359",
+  "title": "Electrical Safety",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "OSRMB58NC",
+   "OSRMB63NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/advanced-electrical-safety-and-arc-flash-certificate-of-completion-summer-2021",
+   "title": "Advanced Electrical Safety and Arc Flash Certificate of Completion",
+   "h1": "Advanced Electrical Safety and Arc Flash Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1841
+ },
+ {
+  "control_number": "40393",
+  "title": "Advanced Electrical Safety and Arc Flash",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "OSRMB58NC",
+   "OSRMB63NC",
+   "OSRMB70NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/advanced-electrical-safety-and-arc-flash-certificate-of-completion-summer-2021",
+   "title": "Advanced Electrical Safety and Arc Flash Certificate of Completion",
+   "h1": "Advanced Electrical Safety and Arc Flash Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1841
+ },
+ {
+  "control_number": "40685",
+  "title": "Paraprofessional Level IV",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "ANTHB3",
+   "ASTRB1",
+   "ASTRB2",
+   "ASTRB3",
+   "BIOLB11",
+   "BIOLB18",
+   "BIOLB8",
+   "CHDVB21",
+   "CHDVB49",
+   "CHEMB10",
+   "COMMB15",
+   "COMMB5",
+   "COMMB8",
+   "CRPSB5",
+   "EDUCB10",
+   "EDUCB11",
+   "EDUCB13",
+   "EDUCB24",
+   "EDUCB3",
+   "EDUCB5",
+   "EDUCB8",
+   "EDUCB9",
+   "EMLSB1A",
+   "EMLSB1AL",
+   "ERSCB10",
+   "HISTB9",
+   "HLEDB1",
+   "KINSB2A",
+   "MATHB4A",
+   "PHILB7",
+   "PHILB9",
+   "PHSCB12",
+   "PSYCB1B",
+   "PSYCB5",
+   "SOILB1",
+   "TECMB40"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/paraprofessional-level-iv-certificate-of-achievement-fall-2023",
+   "title": "Paraprofessional Level IV Certificate of Achievement",
+   "h1": "Paraprofessional Level IV Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 42,
+  "text_chars": 4774
+ },
+ {
+  "control_number": "40686",
+  "title": "Online Teaching Level II",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMMB11",
+   "COMPB2",
+   "COMPB42",
+   "EDUCB10",
+   "EDUCB30",
+   "EDUCB31",
+   "EDUCB32",
+   "EDUCB5",
+   "EDUCB9"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/online-teaching-level-ii-certificate-of-achievement-summer-2021",
+   "title": "Online Teaching Level II Certificate of Achievement",
+   "h1": "Online Teaching Level II Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2875
+ },
+ {
+  "control_number": "40749",
+  "title": "Education Studies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDVB20",
+   "CHDVB21",
+   "CHDVB36",
+   "CHDVB48WE",
+   "EDUCB10",
+   "EDUCB11",
+   "EDUCB13",
+   "EDUCB24",
+   "EDUCB3",
+   "EDUCB30",
+   "EDUCB48WE",
+   "EDUCB5",
+   "EDUCB8",
+   "EDUCB9"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/education-studies-associate-of-science-fall-2025",
+   "title": "Education Studies Associate of Science",
+   "h1": "Education Studies Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3059
+ },
+ {
+  "control_number": "40880",
+  "title": "Physical Therapist Assistant",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLB32",
+   "BIOLB33",
+   "PHTAB50",
+   "PHTAB51",
+   "PHTAB52",
+   "PHTAB60",
+   "PHTAB61",
+   "PHTAB62",
+   "PHTAB63",
+   "PHTAB64",
+   "PHTAB70",
+   "PHTAB71",
+   "PHTAB72",
+   "PHTAB80",
+   "PHTAB81",
+   "PHTAB82",
+   "PHTAB90A",
+   "PHTAB90B",
+   "PHTAB90C"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/physical-therapist-assistant-associate-of-science-fall-2025",
+   "title": "Physical Therapist Assistant Associate of Science",
+   "h1": "Physical Therapist Assistant Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 6235
+ },
+ {
+  "control_number": "41001",
+  "title": "Social Justice Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHB5",
+   "ARTB37",
+   "ARTB38",
+   "COMMB6",
+   "EDUCB8",
+   "ENGLB20A",
+   "ENGLB21",
+   "ENGLB22",
+   "ENGLB24",
+   "ENGLB25B",
+   "HISTB15",
+   "HISTB20A",
+   "HISTB20B",
+   "HISTB25",
+   "HISTB30A",
+   "HISTB30B",
+   "HISTB33",
+   "HISTB36",
+   "MUSCB23",
+   "MUSCB24",
+   "PHILB37",
+   "PSYCB5",
+   "PSYCB6",
+   "SOCIB28",
+   "SOCIB36",
+   "SOCIB45",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/social-justice-studies-associate-in-arts-for-transfer-fall-2025",
+   "title": "Social Justice Studies Associate in Arts for Transfer",
+   "h1": "Social Justice Studies Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 28,
+  "text_chars": 5124
+ },
+ {
+  "control_number": "41348",
+  "title": "Logistics Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSADB20",
+   "BSADB49A",
+   "BSADB49B",
+   "BSADB49C",
+   "BSADB49D",
+   "BSADB49E",
+   "BSADB51",
+   "COMPB5"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/logistics-management-associate-of-science-summer-2025",
+   "title": "Logistics Management Associate of Science",
+   "h1": "Logistics Management Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2293
+ },
+ {
+  "control_number": "41349",
+  "title": "Logistics Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSADB49A",
+   "BSADB49B",
+   "BSADB49C",
+   "BSADB49D",
+   "BSADB49E",
+   "COMPB5"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/logistics-management-certificate-of-achievement-fall-2021",
+   "title": "Logistics Management Certificate of Achievement",
+   "h1": "Logistics Management Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1939
+ },
+ {
+  "control_number": "41350",
+  "title": "Inclusive and Accessible Digital Content",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EDUCB60NC",
+   "EDUCB61NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/inclusive-and-accessible-digital-content-certificate-of-completion-fall-2021",
+   "title": "Inclusive and Accessible Digital Content Certificate of Completion",
+   "h1": "Inclusive and Accessible Digital Content Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1805
+ },
+ {
+  "control_number": "41351",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSADB1",
+   "BSADB18",
+   "BSADB2",
+   "BSADB20",
+   "ECONC2001",
+   "ECONC2002",
+   "MATHB2",
+   "MATHB23",
+   "MATHB6A",
+   "PSYCB5",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/business-administration-2-0-associate-in-science-for-transfer-fall-2026",
+   "title": "Business Administration 2.0 Associate in Science for Transfer",
+   "h1": "Business Administration 2.0 Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3291
+ },
+ {
+  "control_number": "41352",
+  "title": "Applied Leadership",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EDUCB20NC",
+   "EDUCB21NC",
+   "EDUCB22NC",
+   "EDUCB23NC",
+   "EDUCB26NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/applied-leadership-certificate-of-completion-fall-2021",
+   "title": "Applied Leadership Certificate of Completion",
+   "h1": "Applied Leadership Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2275
+ },
+ {
+  "control_number": "41548",
+  "title": "Public Health for Non Health Professionals",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PBHSB50NC",
+   "PBHSB51NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/public-health-for-non-health-professionals-certificate-of-completion-summer-2021",
+   "title": "Public Health for Non Health Professionals Certificate of Completion",
+   "h1": "Public Health for Non Health Professionals Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1696
+ },
+ {
+  "control_number": "41549",
+  "title": "Kitchen Techniques for New Culinarians  (NC)",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FDSVB74NC",
+   "FDSVB75NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/kitchen-techniques-for-new-culinarians-certificate-of-completion-summer-2021",
+   "title": "Kitchen Techniques for New Culinarians Certificate of Completion",
+   "h1": "Kitchen Techniques for New Culinarians Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.8
+   }
+  },
+  "listed": 2,
+  "text_chars": 1863
+ },
+ {
+  "control_number": "41550",
+  "title": "School Food Service",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FDSVB71NC",
+   "FDSVB72NC",
+   "FDSVB73NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/school-food-service-certificate-of-completion-summer-2021",
+   "title": "School Food Service Certificate of Completion",
+   "h1": "School Food Service Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1701
+ },
+ {
+  "control_number": "41574",
+  "title": "Introduction to Welding Processes",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WELDB1BNC",
+   "WELDB53BN"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/introduction-to-welding-processes-certificate-of-completion-summer-2022",
+   "title": "Introduction to Welding Processes Certificate of Completion",
+   "h1": "Introduction to Welding Processes Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1444
+ },
+ {
+  "control_number": "41894",
+  "title": "Mammography Program",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "RADTB55AN",
+   "RADTB55BN"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/mammography-program-certificate-of-completion-spring-2022",
+   "title": "Mammography Program Certificate of Completion",
+   "h1": "Mammography Program Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1773
+ },
+ {
+  "control_number": "42034",
+  "title": "College and Academic Writing Success",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACDVB55NC",
+   "ENGLB99NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/college-and-academic-writing-success-certificate-of-competency-summer-2022",
+   "title": "College and Academic Writing Success Certificate of Competency",
+   "h1": "College and Academic Writing Success Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2042
+ },
+ {
+  "control_number": "42035",
+  "title": "English for Multilingual Students Basic",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMLSB90NC",
+   "EMLSB91NC",
+   "EMLSB92NC",
+   "EMLSB93NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/english-for-multilingual-students-basic-certificate-of-competency-summer-2022",
+   "title": "English for Multilingual Students Basic Certificate of Competency",
+   "h1": "English for Multilingual Students Basic Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1375
+ },
+ {
+  "control_number": "42036",
+  "title": "Study Skills for College Success",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACDVB70AN",
+   "ACDVB70BN",
+   "ACDVB70CN",
+   "ACDVB70DN",
+   "ACDVB70EN",
+   "ACDVB70FN"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/study-skills-for-college-success-certificate-of-competency-summer-2022",
+   "title": "Study Skills for College Success Certificate of Competency",
+   "h1": "Study Skills for College Success Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1993
+ },
+ {
+  "control_number": "42069",
+  "title": "Basic Industrial and Construction Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNSTB71AN",
+   "CNSTB71BN"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/basic-industrial-and-construction-skills-certificate-of-completion-summer-2022",
+   "title": "Basic Industrial and Construction Skills Certificate of Completion",
+   "h1": "Basic Industrial and Construction Skills Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1523
+ },
+ {
+  "control_number": "42070",
+  "title": "Industrial Safety",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "OSRMB50NC",
+   "OSRMB52NC",
+   "OSRMB53NC",
+   "OSRMB54NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/industrial-safety-certificate-of-completion-summer-2023",
+   "title": "Industrial Safety Certificate of Completion",
+   "h1": "Industrial Safety Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2368
+ },
+ {
+  "control_number": "42071",
+  "title": "Student Success",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACDVB55NC",
+   "EDUCB68NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/student-success-certificate-of-competency-summer-2022",
+   "title": "Student Success Certificate of Competency",
+   "h1": "Student Success Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1838
+ },
+ {
+  "control_number": "42072",
+  "title": "Teaching and Learning",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EDUCB15NC",
+   "EDUCB20NC",
+   "EDUCB30NC",
+   "EDUCB90NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/teaching-and-learning-certificate-of-completion-fall-2022",
+   "title": "Teaching and Learning Certificate of Completion",
+   "h1": "Teaching and Learning Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2650
+ },
+ {
+  "control_number": "42073",
+  "title": "Warehousing",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSADB93NC",
+   "BSADB94NC",
+   "BSADB95NC",
+   "BSADB96NC",
+   "BSADB97NC",
+   "OSRMB56NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/warehousing-certificate-of-completion-spring-2022",
+   "title": "Warehousing Certificate of Completion",
+   "h1": "Warehousing Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1853
+ },
+ {
+  "control_number": "42074",
+  "title": "Modern Energy",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENERB52NC",
+   "ENERB53NC",
+   "ENERB54NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/modern-energy-certificate-of-completion-summer-2022",
+   "title": "Modern Energy Certificate of Completion",
+   "h1": "Modern Energy Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1416
+ },
+ {
+  "control_number": "42075",
+  "title": "Small Business Development",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42076",
+  "title": "Small Business Execution",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "OFFTB81NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/small-business-execution-certificate-of-completion-summer-2022",
+   "title": "Small Business Execution Certificate of Completion",
+   "h1": "Small Business Execution Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 1,
+  "text_chars": 1543
+ },
+ {
+  "control_number": "42077",
+  "title": "Small Business Funding",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "OFFTB77NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/small-business-funding-certificate-of-completion-summer-2022",
+   "title": "Small Business Funding Certificate of Completion",
+   "h1": "Small Business Funding Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 1,
+  "text_chars": 1397
+ },
+ {
+  "control_number": "42226",
+  "title": "Law, Public Policy, and Society",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.933,
+  "codes_found": [
+   "ADMJB40",
+   "ANTHB2",
+   "BSADB18",
+   "COMMB15",
+   "COMMB4",
+   "COMMB5",
+   "COMMB6",
+   "COMMB8",
+   "COMMC1000",
+   "CRIMB1",
+   "CRIMB2",
+   "CRIMB21",
+   "CRIMB3",
+   "CRIMB4",
+   "CRIMB5",
+   "CRIMB6",
+   "CRIMB9",
+   "ECONC2001",
+   "ECONC2002",
+   "EMLSB1A",
+   "EMLSB1AL",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "ENGLC1003",
+   "GEOGB2",
+   "HISTC1001",
+   "HISTC1002",
+   "JRNLB5",
+   "PBHSB22",
+   "PBHSB23",
+   "PHILB10",
+   "PHILB7",
+   "PHILB8",
+   "POLSB2",
+   "POLSB3",
+   "POLSB4",
+   "POLSC1000",
+   "PSYCB5",
+   "SOCIB1",
+   "SOCIB28",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/law-public-policy-and-society-associate-in-arts-for-transfer-fall-2026",
+   "title": "Law, Public Policy, and Society Associate of Arts for Transfer",
+   "h1": "Law, Public Policy, and Society Associate of Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 45,
+  "text_chars": 6478
+ },
+ {
+  "control_number": "42307",
+  "title": "Edible Education Garden",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ORNHB70NC",
+   "ORNHB71NC",
+   "ORNHB72NC",
+   "ORNHB73NC",
+   "ORNHB74NC",
+   "ORNHB75NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/edible-education-garden-certificate-of-completion-summer-2022",
+   "title": "Edible Education Garden Certificate of Completion",
+   "h1": "Edible Education Garden Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1934
+ },
+ {
+  "control_number": "42310",
+  "title": "Child and Adolescent Development",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHB2",
+   "BIOLB11",
+   "CHDVB20",
+   "CHDVB21",
+   "CHDVB22",
+   "CHDVB32",
+   "CHDVB36",
+   "CHDVB42",
+   "CHDVB49",
+   "MEDSB35",
+   "PSYCB40",
+   "PSYCB5",
+   "PSYCC1000",
+   "SOCIB1",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/child-and-adolescent-development-associate-in-arts-for-transfer-fall-2025",
+   "title": "Child and Adolescent Development Associate in Arts for Transfer",
+   "h1": "Child and Adolescent Development Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 4099
+ },
+ {
+  "control_number": "42508",
+  "title": "Natural Resource Management",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGRIB5",
+   "FOREB3",
+   "FOREB6",
+   "FOREB7",
+   "FOREB8",
+   "MCAGB5",
+   "NRESB1",
+   "SOILB1"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/natural-resource-management-certificate-of-achievement-summer-2023",
+   "title": "Natural Resource Management Certificate of Achievement",
+   "h1": "Natural Resource Management Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2444
+ },
+ {
+  "control_number": "42523",
+  "title": "Research Laboratory Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLB16",
+   "BIOLB3A",
+   "BIOLB3B",
+   "BIOLB8",
+   "CHEMB1A",
+   "CHEMB1B",
+   "CHEMB2A",
+   "ENERB22",
+   "FDSTB3",
+   "GEOLB10",
+   "GEOLB10L",
+   "MATHB1A",
+   "MATHB1AL",
+   "MATHB1B",
+   "OSRMB12",
+   "OSRMB20",
+   "PHYSB2A",
+   "PHYSB4A",
+   "SOILB1",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/research-laboratory-technology-associate-of-science-summer-2025",
+   "title": "Research Laboratory Technology Associate of Science",
+   "h1": "Research Laboratory Technology Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 3559
+ },
+ {
+  "control_number": "42536",
+  "title": "Natural Resource Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGRIB5",
+   "FOREB3",
+   "FOREB48WE",
+   "FOREB6",
+   "FOREB7",
+   "FOREB8",
+   "MCAGB5",
+   "NRESB1",
+   "NRESB2",
+   "SOILB1"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/natural-resource-management-associate-of-science-fall-2026",
+   "title": "Natural Resource Management Associate of Science",
+   "h1": "Natural Resource Management Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2293
+ },
+ {
+  "control_number": "42569",
+  "title": "Environmental Resource Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGRIB5",
+   "ERSCB10",
+   "FOREB6",
+   "FOREB7",
+   "FOREB8",
+   "GEOGB1",
+   "GEOLB10",
+   "MCAGB5",
+   "SOILB1"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/environmental-resource-management-associate-of-science-fall-2026",
+   "title": "Environmental Resource Management Associate of Science",
+   "h1": "Environmental Resource Management Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2346
+ },
+ {
+  "control_number": "42570",
+  "title": "Environmental Resource Management",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGRIB5",
+   "ERSCB10",
+   "FOREB6",
+   "FOREB7",
+   "FOREB8",
+   "GEOGB1",
+   "GEOLB10",
+   "MCAGB5",
+   "SOILB1"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/environmental-resource-management-certificate-of-achievement-summer-2023",
+   "title": "Environmental Resource Management Certificate of Achievement",
+   "h1": "Environmental Resource Management Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2456
+ },
+ {
+  "control_number": "42766",
+  "title": "Cesar E. Chavez Leadership",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HISTB98NC",
+   "HISTB99NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/cesar-e-chavez-leadership-certificate-of-completion-fall-2022",
+   "title": "César E. Chávez Leadership Certificate of Completion",
+   "h1": "César E. Chávez Leadership Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2359
+ },
+ {
+  "control_number": "42934",
+  "title": "Social-Emotional and Cognitive Development",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EDUCB70NC",
+   "EDUCB71NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/social-emotional-and-cognitive-development-certificate-of-completion-fall-2022",
+   "title": "Social-Emotional and Cognitive Development Certificate of Completion",
+   "h1": "Social-Emotional and Cognitive Development Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2060
+ },
+ {
+  "control_number": "43011",
+  "title": "Police Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.947,
+  "codes_found": [
+   "COMMB10",
+   "COMMB15",
+   "COMMB2",
+   "COMMB4",
+   "COMMB6",
+   "COMMB7",
+   "COMMC1000",
+   "CRIMB1",
+   "CRIMB12",
+   "CRIMB2",
+   "CRIMB3",
+   "CRIMB4",
+   "CRIMB5",
+   "CRIMB6",
+   "CRIMB7",
+   "CRIMB8",
+   "HISTB1",
+   "HISTB15",
+   "HISTB18",
+   "HISTB2",
+   "HISTB20A",
+   "HISTB20B",
+   "HISTB25",
+   "HISTB30A",
+   "HISTB30B",
+   "HISTB33",
+   "HISTB36",
+   "HISTB4A",
+   "HISTB4B",
+   "HISTB9",
+   "PSYCB1B",
+   "PSYCB20",
+   "PSYCB30",
+   "PSYCB33",
+   "PSYCB40",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/police-science-associate-of-science-fall-2025",
+   "title": "Police Science Associate of Science",
+   "h1": "Police Science Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 38,
+  "text_chars": 3719
+ },
+ {
+  "control_number": "43012",
+  "title": "Pest Control Adviser Preparation",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CRPSB1",
+   "CRPSB2",
+   "CRPSB3",
+   "CRPSB4",
+   "CRPSB5",
+   "CRPSB6",
+   "FOREB1",
+   "MCAGB5",
+   "NRESB1",
+   "ORNHB1",
+   "ORNHB10",
+   "ORNHB12",
+   "ORNHB6",
+   "ORNHB7",
+   "ORNHB9"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/pest-control-adviser-preparation-certificate-of-achievement-spring-2023",
+   "title": "Pest Control Adviser Preparation Certificate of Achievement",
+   "h1": "Pest Control Adviser Preparation Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3476
+ },
+ {
+  "control_number": "43022",
+  "title": "Agricultural Engineering Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.938,
+  "codes_found": [
+   "AGBSB2",
+   "AGBSB7",
+   "AGRIB1",
+   "BSADB1",
+   "CHEMB1A",
+   "CHEMB2A",
+   "ENGRB24",
+   "ENGRB47",
+   "MATHB1B",
+   "MATHB2",
+   "MATHB6A",
+   "MFGTB1AB",
+   "PHYSB2A",
+   "SOILB1",
+   "WELDB1B"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/agricultural-engineering-technology-associate-of-science-fall-2025",
+   "title": "Agricultural Engineering Technology Associate of Science",
+   "h1": "Agricultural Engineering Technology Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3730
+ },
+ {
+  "control_number": "43157",
+  "title": "Mechanical Engineering Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEMB1A",
+   "CHEMB2A",
+   "ELETB1A",
+   "ELETB1B",
+   "ENGRB19C",
+   "ENGRB20",
+   "ENGRB24",
+   "ENGRB25",
+   "ENGRB47",
+   "INDRB12",
+   "MATHB6A",
+   "MFGTB1AB",
+   "PHYSB2A",
+   "PHYSB2B",
+   "WELDB1A",
+   "WELDB1B"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/mechanical-engineering-technology-associate-of-science-fall-2025",
+   "title": "Mechanical Engineering Technology Associate of Science",
+   "h1": "Mechanical Engineering Technology Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3449
+ },
+ {
+  "control_number": "43184",
+  "title": "Automotive Detailing",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTOB60AN",
+   "AUTOB60BN"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/automotive-detailing-certificate-of-completion-fall-2022",
+   "title": "Automotive Detailing Certificate of Completion",
+   "h1": "Automotive Detailing Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1900
+ },
+ {
+  "control_number": "43190",
+  "title": "Electronic Systems Engineering Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELETB1A",
+   "ELETB1B",
+   "ELETB3",
+   "ENGRB18",
+   "ENGRB19C",
+   "ENGRB25",
+   "ENGRB47",
+   "INDRB12",
+   "MATHB6A",
+   "MATHB6B",
+   "PHYSB2A",
+   "PHYSB2B"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/electronic-systems-engineering-technology-associate-of-science-fall-2025",
+   "title": "Electronic Systems Engineering Technology Associate of Science",
+   "h1": "Electronic Systems Engineering Technology Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2721
+ },
+ {
+  "control_number": "43264",
+  "title": "Diesel Engine Systems",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MCAGB50NC",
+   "MCAGB51NC",
+   "MCAGB52NC",
+   "MCAGB53NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/diesel-engine-systems-certificate-of-completion-summer-2023",
+   "title": "Diesel Engine Systems Certificate of Completion",
+   "h1": "Diesel Engine Systems Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1819
+ },
+ {
+  "control_number": "43265",
+  "title": "Mobile Equipment Electrical Systems",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MCAGB60NC",
+   "MCAGB61NC",
+   "MCAGB62NC",
+   "MCAGB63NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/mobile-equipment-electrical-systems-certificate-of-completion-summer-2023",
+   "title": "Mobile Equipment Electrical Systems Certificate of Completion",
+   "h1": "Mobile Equipment Electrical Systems Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2051
+ },
+ {
+  "control_number": "43266",
+  "title": "Mobile Equipment Hydraulic Systems",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MCAGB70NC",
+   "MCAGB71NC",
+   "MCAGB72NC",
+   "MCAGB73NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/mobile-equipment-hydraulic-systems-certificate-of-completion-summer-2023",
+   "title": "Mobile Equipment Hydraulic Systems Certificate of Completion",
+   "h1": "Mobile Equipment Hydraulic Systems Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1832
+ },
+ {
+  "control_number": "43267",
+  "title": "Equipment Technician Level 1",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MCAGB50NC",
+   "MCAGB51NC",
+   "MCAGB52NC",
+   "MCAGB53NC",
+   "MCAGB60NC",
+   "MCAGB61NC",
+   "MCAGB62NC",
+   "MCAGB63NC",
+   "MCAGB70NC",
+   "MCAGB71NC",
+   "MCAGB72NC",
+   "MCAGB73NC",
+   "MCAGB80NC",
+   "MCAGB81NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/equipment-technician-level-1-certificate-of-completion-summer-2023",
+   "title": "Equipment Technician Level 1 Certificate of Completion",
+   "h1": "Equipment Technician Level 1 Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 2699
+ },
+ {
+  "control_number": "43268",
+  "title": "Academic Research Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LIBRB60NC",
+   "LIBRB61NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/academic-research-skills-certificate-of-competency-summer-2023",
+   "title": "Academic Research Skills Certificate of Competency",
+   "h1": "Academic Research Skills Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1570
+ },
+ {
+  "control_number": "43269",
+  "title": "College and Math Skill Building Success",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACDVB55NC",
+   "MATHB99NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/college-and-math-skill-building-success-certificate-of-competency-fall-2023",
+   "title": "College and Math Skill Building Success Certificate of Competency",
+   "h1": "College and Math Skill Building Success Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1966
+ },
+ {
+  "control_number": "43270",
+  "title": "Sports Medicine",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "KINSB1A",
+   "KINSB2A",
+   "KINSB3A",
+   "KINSB3B"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/sports-medicine-certificate-of-achievement-summer-2024",
+   "title": "Sports Medicine Certificate of Achievement",
+   "h1": "Sports Medicine Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2883
+ },
+ {
+  "control_number": "43364",
+  "title": "Sheet Metal Apprenticeship",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 10,
+  "text_chars": 0
+ },
+ {
+  "control_number": "43365",
+  "title": "Electrician Apprenticeship",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 10,
+  "text_chars": 0
+ },
+ {
+  "control_number": "43434",
+  "title": "Hospitality Management",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSADB1",
+   "BSADB18",
+   "CULNB10",
+   "CULNB30",
+   "CULNB49",
+   "ECONC2001",
+   "HOSPB10",
+   "HOSPB20",
+   "HOSPB30",
+   "HOSPB40",
+   "PSYCB5",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/hospitality-management-associate-in-science-for-transfer-fall-2026",
+   "title": "Hospitality Management Associate in Science for Transfer",
+   "h1": "Hospitality Management Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3554
+ },
+ {
+  "control_number": "43499",
+  "title": "Research Laboratory Technology",
+  "award": "Baccalaureate of Science (B.S.) Degree.",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.556,
+  "codes_found": [
+   "BIOLB8",
+   "CHEMB1A",
+   "CHEMB1B",
+   "CHEMB30A",
+   "ENERB22",
+   "INDAB114",
+   "INDAB125",
+   "INDAB132",
+   "INDAB135",
+   "INDAB140",
+   "INDAB143",
+   "INDAB144",
+   "MATHB6A",
+   "OSRMB12",
+   "OSRMB20",
+   "RTECB101",
+   "RTECB102",
+   "RTECB103",
+   "RTECB110",
+   "RTECB140"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/research-laboratory-technology-bachelor-of-science-fall-2023",
+   "title": "Research Laboratory Technology Bachelor of Science",
+   "h1": "Research Laboratory Technology Bachelor of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 36,
+  "text_chars": 3358
+ },
+ {
+  "control_number": "43531",
+  "title": "Forest Resource Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGRIB5",
+   "FOREB1",
+   "FOREB48WE",
+   "FOREB6",
+   "FOREB7",
+   "FOREB8",
+   "MCAGB5",
+   "ORNHB14",
+   "ORNHB9",
+   "SOILB1"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/forest-resource-management-associate-of-science-summer-2025",
+   "title": "Forest Resource Management Associate of Science",
+   "h1": "Forest Resource Management Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2397
+ },
+ {
+  "control_number": "43532",
+  "title": "Forest Resource Management",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGRIB5",
+   "FOREB1",
+   "FOREB6",
+   "FOREB7",
+   "FOREB8",
+   "MCAGB5",
+   "ORNHB14",
+   "ORNHB9",
+   "SOILB1"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/forest-resource-management-certificate-of-achievement-summer-2025",
+   "title": "Forest Resource Management Certificate of Achievement",
+   "h1": "Forest Resource Management Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2233
+ },
+ {
+  "control_number": "43602",
+  "title": "Civil Engineering Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "ARCHB1",
+   "ARCHB30",
+   "ARCHB6",
+   "BSADB1",
+   "BSADB18",
+   "ENGRB25",
+   "ENGRB47",
+   "INDRB12",
+   "MATHB6A",
+   "PHYSB2A",
+   "PHYSB2B",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/civil-engineering-technology-associate-of-science-fall-2025",
+   "title": "Civil Engineering Technology Associate of Science",
+   "h1": "Civil Engineering Technology Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3544
+ },
+ {
+  "control_number": "43639",
+  "title": "Data Analyst Apprenticeship",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APPRB72A",
+   "APPRB72B",
+   "APPRB72C",
+   "APPRB72D",
+   "APPRB72E",
+   "APPRB72F",
+   "APPRB72G"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/data-analyst-apprenticeship-certificate-of-achievement-summer-2023",
+   "title": "Data Analyst Apprenticeship Certificate of Achievement",
+   "h1": "Data Analyst Apprenticeship Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1751
+ },
+ {
+  "control_number": "43643",
+  "title": "Help Desk Support Technician Apprenticeship",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APPRB71A",
+   "APPRB71B",
+   "APPRB71C",
+   "APPRB71D",
+   "APPRB71E",
+   "APPRB71F",
+   "APPRB71G"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/help-desk-support-technician-apprenticeship-certificate-of-achievement-summer-2023",
+   "title": "Help Desk Support Technician Apprenticeship Certificate of Achievement",
+   "h1": "Help Desk Support Technician Apprenticeship Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1831
+ },
+ {
+  "control_number": "43829",
+  "title": "Civil Engineering Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.538,
+  "codes_found": [
+   "BSADB1",
+   "BSADB18",
+   "ENGRB40",
+   "ENGRB47",
+   "MATHB6A",
+   "PHYSB2A",
+   "PHYSB2B"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/civil-engineering-technology-certificate-of-achievement-summer-2024",
+   "title": "Civil Engineering Technology Certificate of Achievement",
+   "h1": "Civil Engineering Technology Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3040
+ },
+ {
+  "control_number": "43830",
+  "title": "General Engineering",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEMB1A",
+   "COMPB11",
+   "ENGRB19C",
+   "ENGRB20",
+   "ENGRB45",
+   "ENGRB47",
+   "MATHB6A",
+   "MATHB6B",
+   "PHYSB4A",
+   "PHYSB4B"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/general-engineering-certificate-of-achievement-summer-2026",
+   "title": "General Engineering Certificate of Achievement",
+   "h1": "General Engineering Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2586
+ },
+ {
+  "control_number": "43850",
+  "title": "Sustainable Landscape",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ORNHB1",
+   "ORNHB10",
+   "ORNHB11",
+   "ORNHB12",
+   "ORNHB6",
+   "ORNHB7"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/sustainable-landscape-certificate-of-achievement-summer-2022",
+   "title": "Sustainable Landscape Certificate of Achievement",
+   "h1": "Sustainable Landscape Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3072
+ },
+ {
+  "control_number": "43851",
+  "title": "Ornamental Horticulture",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CRPSB3",
+   "ORNHB1",
+   "ORNHB10",
+   "ORNHB11",
+   "ORNHB12",
+   "ORNHB2",
+   "ORNHB4",
+   "ORNHB6",
+   "ORNHB7",
+   "ORNHB8",
+   "ORNHB9"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/ornamental-horticulture-certificate-of-achievement-summer-2022",
+   "title": "Ornamental Horticulture Certificate of Achievement",
+   "h1": "Ornamental Horticulture Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3144
+ },
+ {
+  "control_number": "43873",
+  "title": "Ornamental Horticulture",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGBSB5",
+   "AGRIB5",
+   "CRPSB3",
+   "CRPSB5",
+   "ORNHB1",
+   "ORNHB10",
+   "ORNHB11",
+   "ORNHB12",
+   "ORNHB14",
+   "ORNHB36",
+   "ORNHB4",
+   "ORNHB9",
+   "SOILB1"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/ornamental-horticulture-associate-of-science-spring-2024",
+   "title": "Ornamental Horticulture Associate of Science",
+   "h1": "Ornamental Horticulture Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3091
+ },
+ {
+  "control_number": "43877",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMMB10",
+   "COMMB11",
+   "COMMB15",
+   "COMMB2",
+   "COMMB21",
+   "COMMB4",
+   "COMMB5",
+   "COMMB6",
+   "COMMB7",
+   "COMMB8",
+   "COMMB9",
+   "COMMC1000",
+   "JRNLB1",
+   "JRNLB2",
+   "PSYCC1000",
+   "SOCIB1"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/communication-studies-2-0-associate-in-arts-for-transfer-fall-2025",
+   "title": "Communication Studies 2.0 Associate in Arts for Transfer",
+   "h1": "Communication Studies 2.0 Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3331
+ },
+ {
+  "control_number": "43985",
+  "title": "Coaching",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "KINSB1A",
+   "KINSB2A",
+   "KINSB42",
+   "KINSB4BB",
+   "KINSB4BS",
+   "KINSB4ES",
+   "KINSB4FB",
+   "KINSB4G",
+   "KINSB4S",
+   "KINSB4T",
+   "KINSB4TF",
+   "KINSB4VB",
+   "KINSB4W",
+   "KINSB5A",
+   "KINSB6"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/coaching-certificate-of-achievement-summer-2024",
+   "title": "Coaching Certificate of Achievement",
+   "h1": "Coaching Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2651
+ },
+ {
+  "control_number": "44031",
+  "title": "Emerging Media Literacy",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACTCB68NC",
+   "LIBRB69NC",
+   "LIBRB70NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/emerging-media-literacy-certificate-of-competency-summer-2024",
+   "title": "Emerging Media Literacy Certificate of Competency",
+   "h1": "Emerging Media Literacy Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1394
+ },
+ {
+  "control_number": "44282",
+  "title": "Public Health Informatics II",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMPB5",
+   "PBHSB20",
+   "PBHSB23",
+   "PBHSB26",
+   "PSYCB5"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/public-health-informatics-ii-certificate-of-achievement-fall-2024",
+   "title": "Public Health Informatics II Certificate of Achievement",
+   "h1": "Public Health Informatics II Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2724
+ },
+ {
+  "control_number": "44284",
+  "title": "Intercollegiate Athletics",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.969,
+  "codes_found": [
+   "COMMB2",
+   "COMMB8",
+   "KINSB10BB",
+   "KINSB10FB",
+   "KINSB10G",
+   "KINSB10S",
+   "KINSB10W",
+   "KINSB11BB",
+   "KINSB11G",
+   "KINSB11S",
+   "KINSB11SB",
+   "KINSB11VB",
+   "KINSB11W",
+   "KINSB12C",
+   "KINSB12SW",
+   "KINSB12T",
+   "KINSB12TF",
+   "KINSB12XC",
+   "KINSB13C",
+   "KINSB13S",
+   "KINSB13WT",
+   "KINSB4BB",
+   "KINSB4BS",
+   "KINSB4ES",
+   "KINSB4FB",
+   "KINSB4G",
+   "KINSB4S",
+   "KINSB4T",
+   "KINSB4TF",
+   "KINSB4VB",
+   "KINSB4W"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/intercollegiate-athletics-certificate-of-achievement-summer-2025",
+   "title": "Intercollegiate Athletics Certificate of Achievement",
+   "h1": "Intercollegiate Athletics Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 32,
+  "text_chars": 3871
+ },
+ {
+  "control_number": "44372",
+  "title": "Fitness Trainer",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "KINSB13WT",
+   "KINSB1A",
+   "KINSB21OL",
+   "KINSB21WT",
+   "KINSB2A",
+   "KINSB31",
+   "KINSB41",
+   "KINSB4B"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/fitness-trainer-certificate-of-achievement-summer-2025",
+   "title": "Fitness Trainer Certificate of Achievement",
+   "h1": "Fitness Trainer Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2379
+ },
+ {
+  "control_number": "44380",
+  "title": "Graphic Design - Level I",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTB15",
+   "ARTB16",
+   "ARTB17",
+   "ARTB2",
+   "ARTB20",
+   "ARTB25",
+   "ARTB26",
+   "ARTB27",
+   "ARTB4"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/graphic-design-level-i-certificate-of-achievement-summer-2025",
+   "title": "Graphic Design - Level I Certificate of Achievement",
+   "h1": "Graphic Design - Level I Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2927
+ },
+ {
+  "control_number": "44440",
+  "title": "Digital Marketer Apprenticeship",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "APPRB73B",
+   "APPRB73C",
+   "APPRB73D",
+   "APPRB73E",
+   "APPRB73F",
+   "APPRB73G"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/digital-marketer-apprenticeship-certificate-of-achievement-summer-2024",
+   "title": "Digital Marketer Apprenticeship Certificate of Achievement",
+   "h1": "Digital Marketer Apprenticeship Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1825
+ },
+ {
+  "control_number": "44441",
+  "title": "Plant Science",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGRIB1",
+   "CRPSB1",
+   "CRPSB16",
+   "CRPSB2",
+   "CRPSB3",
+   "CRPSB4",
+   "CRPSB5",
+   "CRPSB6",
+   "NRESB1",
+   "ORNHB4",
+   "SOILB1"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/plant-science-certificate-of-achievement-summer-2025",
+   "title": "Plant Science Certificate of Achievement",
+   "h1": "Plant Science Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2515
+ },
+ {
+  "control_number": "44442",
+  "title": "Automotive Management",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTOB10",
+   "AUTOB11",
+   "COMPB5"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/automotive-management-certificate-of-achievement-summer-2025",
+   "title": "Automotive Management Certificate of Achievement",
+   "h1": "Automotive Management Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1969
+ },
+ {
+  "control_number": "44544",
+  "title": "Community Health Worker  II",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMMB9",
+   "PBHSB20",
+   "PBHSB21",
+   "PBHSB22",
+   "PBHSB23",
+   "PBHSB48WE"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/community-health-worker-ii-certificate-of-achievement-fall-2024",
+   "title": "Community Health Worker II Certificate of Achievement",
+   "h1": "Community Health Worker II Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2355
+ },
+ {
+  "control_number": "44746",
+  "title": "Public Health",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLB11",
+   "BIOLB16",
+   "CHEMB1A",
+   "CHEMB2A",
+   "PBHSB20",
+   "PBHSB21",
+   "PBHSB22",
+   "PBHSB23",
+   "PSYCB30",
+   "PSYCB5",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/public-health-associate-in-science-for-transfer-fall-2025",
+   "title": "Public Health Associate in Science for Transfer",
+   "h1": "Public Health Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3498
+ },
+ {
+  "control_number": "44836",
+  "title": "Building a Canvas Course",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACTCB60AN",
+   "ACTCB60BN"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/building-a-canvas-course-certificate-of-completion-summer-2025",
+   "title": "Building a Canvas Course Certificate of Completion",
+   "h1": "Building a Canvas Course Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1566
+ },
+ {
+  "control_number": "44837",
+  "title": "Teaching with AI: Today and Tomorrow",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACTCB68AN",
+   "ACTCB68BN"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/teaching-with-ai-today-and-tomorrow-certificate-of-completion-summer-2025",
+   "title": "Teaching with AI: Today and Tomorrow Certificate of Completion",
+   "h1": "Teaching with AI: Today and Tomorrow Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1856
+ },
+ {
+  "control_number": "44859",
+  "title": "Energy Management and Auditing",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HVACB56NC",
+   "HVACB57NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/energy-management-and-auditing-certificate-of-completion-summer-2025",
+   "title": "Energy Management and Auditing Certificate of Completion",
+   "h1": "Energy Management and Auditing Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1528
+ },
+ {
+  "control_number": "44895",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLB32",
+   "BIOLB33",
+   "CHEMB11",
+   "CHEMB1A",
+   "CHEMB2A",
+   "HLEDB1",
+   "KINSB1A",
+   "KINSB21A",
+   "KINSB21BB",
+   "KINSB21BV",
+   "KINSB21DB",
+   "KINSB21FC",
+   "KINSB21G",
+   "KINSB21S",
+   "KINSB21SF",
+   "KINSB21SW",
+   "KINSB21T",
+   "KINSB21VB",
+   "KINSB21WJ",
+   "KINSB21WT",
+   "KINSB21Y",
+   "KINSB22SW",
+   "KINSB2A",
+   "PBHSB21",
+   "PHYSB2A",
+   "PHYSB4A",
+   "PSYCB5",
+   "PSYCC1000",
+   "SOCIB1",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/kinesiology-associate-in-arts-for-transfer-fall-2025",
+   "title": "Kinesiology Associate in Arts for Transfer",
+   "h1": "Kinesiology Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 31,
+  "text_chars": 5559
+ },
+ {
+  "control_number": "44917",
+  "title": "Plant Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGBSB6",
+   "AGRIB1",
+   "CRPSB1",
+   "CRPSB16",
+   "CRPSB2",
+   "CRPSB3",
+   "CRPSB4",
+   "CRPSB48WE",
+   "CRPSB5",
+   "CRPSB6",
+   "MCAGB2",
+   "MCAGB5",
+   "ORNHB4",
+   "SOILB1"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/plant-science-associate-of-science-summer-2025",
+   "title": "Plant Science Associate of Science",
+   "h1": "Plant Science Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 2338
+ },
+ {
+  "control_number": "44952",
+  "title": "Recreation, Parks, and Tourism Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HLEDB2",
+   "KINSB2A",
+   "KINSB31",
+   "KINSB42",
+   "KINSB48WE",
+   "KINSB4BB",
+   "KINSB4BS",
+   "KINSB4ES",
+   "KINSB4FB",
+   "KINSB4G",
+   "KINSB4S",
+   "KINSB4T",
+   "KINSB4TF",
+   "KINSB4VB",
+   "KINSB4W",
+   "KINSB6"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/recreation-parks-and-tourism-management-certificate-of-achievement-summer-2025",
+   "title": "Recreation, Parks, and Tourism Management Certificate of Achievement",
+   "h1": "Recreation, Parks, and Tourism Management Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 2791
+ },
+ {
+  "control_number": "44953",
+  "title": "Clinical Medical Assistant",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLB18",
+   "MEDSB37",
+   "MEDSB56",
+   "MEDSB57",
+   "MEDSB58",
+   "MEDSB59"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/clinical-medical-assistant-certificate-of-achievement-summer-2025",
+   "title": "Clinical Medical Assistant Certificate of Achievement",
+   "h1": "Clinical Medical Assistant Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2809
+ },
+ {
+  "control_number": "45086",
+  "title": "Artificial Intelligence (AI) Proficiency for College and Career",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACTCB68NC",
+   "LIBRB62NC"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/artificial-intelligence-ai-proficiency-for-college-and-career-certificate-of-competency-summer-2026",
+   "title": "Artificial Intelligence (AI) Proficiency for College and Career Certificate of Competency",
+   "h1": "Artificial Intelligence (AI) Proficiency for College and Career Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1600
+ },
+ {
+  "control_number": "45142",
+  "title": "Respiratory Therapy",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "RSPTB1A",
+   "RSPTB1C",
+   "RSPTB1T",
+   "RSPTB2C",
+   "RSPTB2T",
+   "RSPTB3C",
+   "RSPTB3T",
+   "RSPTB4C",
+   "RSPTB4T",
+   "RSPTB51L",
+   "RSPTB52L",
+   "RSPTB53L",
+   "RSPTB54L",
+   "RSPTB61",
+   "RSPTB62",
+   "RSPTB63",
+   "RSPTB64"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/respiratory-therapy-associate-of-science-summer-2025",
+   "title": "Respiratory Therapy Associate of Science",
+   "h1": "Respiratory Therapy Associate of Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3462
+ },
+ {
+  "control_number": "45197",
+  "title": "Logic, Argumentation, and Critical Thinking",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.941,
+  "codes_found": [
+   "ENGLC1000",
+   "ENGLC1000E",
+   "ENGLC1001",
+   "HISTB9",
+   "PHILB10",
+   "PHILB12",
+   "PHILB16",
+   "PHILB18",
+   "PHILB19",
+   "PHILB35",
+   "PHILB6A",
+   "PHILB7",
+   "PHILB8",
+   "PHILB9",
+   "POLSB16",
+   "SOCIB2"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/logic-argumentation-and-critical-thinking-certificate-of-achievement-summer-2026",
+   "title": "Logic, Argumentation, and Critical Thinking Certificate of Achievement",
+   "h1": "Logic, Argumentation, and Critical Thinking Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3376
+ },
+ {
+  "control_number": "45404",
+  "title": "Graphic Design - Level II",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTB15",
+   "ARTB16",
+   "ARTB17",
+   "ARTB2",
+   "ARTB20",
+   "ARTB25",
+   "ARTB26",
+   "ARTB27",
+   "ARTB4",
+   "ARTB40",
+   "ARTB41",
+   "ARTB42",
+   "ARTB55"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/graphic-design-level-ii-certificate-of-achievement-summer-2025",
+   "title": "Graphic Design - Level II Certificate of Achievement",
+   "h1": "Graphic Design - Level II Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2679
+ },
+ {
+  "control_number": "45618",
+  "title": "Elementary Teacher Education: Integrated Programs",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTB1",
+   "BIOLB11",
+   "CHDVB21",
+   "COMMC1000",
+   "COMPB2",
+   "EDUCB10",
+   "EDUCB24",
+   "EDUCB5",
+   "EDUCB8",
+   "EDUCB9",
+   "EMLSB1A",
+   "EMLSB1AL",
+   "ENGLB33",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "ENGLC1002",
+   "ERSCB10",
+   "ERSCB10L",
+   "HISTB1",
+   "HISTB18",
+   "HISTC1001",
+   "MATHB4A",
+   "MUSCB22",
+   "PHSCB12",
+   "POLSC1000",
+   "THEAB20"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/elementary-teacher-education-integrated-programs-associate-in-arts-for-transfer-fall-2026",
+   "title": "Elementary Teacher Education: Integrated Programs Associate in Arts for Transfer",
+   "h1": "Elementary Teacher Education: Integrated Programs Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 4203
+ },
+ {
+  "control_number": "45809",
+  "title": "California General Education Transfer Curriculum (Cal-GETC)",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 180,
+  "text_chars": 0
+ },
+ {
+  "control_number": "46070",
+  "title": "Registered Veterinary Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANSCB83",
+   "ANSCB84",
+   "ANSCB85",
+   "ANSCB86",
+   "ANSCB87",
+   "ANSCB88",
+   "ANSCB90",
+   "ANSCB92",
+   "ANSCB94",
+   "ANSCB96"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/registered-veterinary-technician-certificate-of-achievement-fall-2026",
+   "title": "Registered Veterinary Technician Certificate of Achievement",
+   "h1": "Registered Veterinary Technician Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2086
+ },
+ {
+  "control_number": "46087",
+  "title": "Medical Coding Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HEITB12",
+   "HEITB13",
+   "HEITB20",
+   "HEITB21",
+   "HEITB22",
+   "HEITB25",
+   "HEITB31",
+   "HEITB60",
+   "MEDSB37"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/medical-coding-specialist-certificate-of-achievement-fall-2026v2",
+   "title": "Medical Coding Specialist Certificate of Achievement",
+   "h1": "Medical Coding Specialist Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2958
+ },
+ {
+  "control_number": "46164",
+  "title": "Adult and Juvenile Correctional and Probation Officer",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CADMB54",
+   "CADMB59"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/adult-and-juvenile-correctional-and-probation-officer-certificate-of-achievement-fall-2026",
+   "title": "Adult and Juvenile Correctional and Probation Officer Certificate of Achievement",
+   "h1": "Adult and Juvenile Correctional and Probation Officer Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2004
+ },
+ {
+  "control_number": "46263",
+  "title": "Basic First Aid and CPR",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "46495",
+  "title": "Culinary Fundamentals",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CULNB10",
+   "CULNB11",
+   "CULNB12",
+   "CULNB20",
+   "CULNB23A",
+   "CULNB9"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/culinary-fundamentals-certificate-of-achievement-fall-2026",
+   "title": "Culinary Fundamentals Certificate of Achievement",
+   "h1": "Culinary Fundamentals Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2334
+ },
+ {
+  "control_number": "46496",
+  "title": "Food Service Management",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CULNB10",
+   "CULNB11",
+   "CULNB12",
+   "CULNB20",
+   "CULNB21",
+   "CULNB22",
+   "CULNB23A",
+   "CULNB30",
+   "CULNB9",
+   "HOSPB10",
+   "NUTRB10"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/food-service-management-certificate-of-achievement-fall-2026",
+   "title": "Food Service Management Certificate of Achievement",
+   "h1": "Food Service Management Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3427
+ },
+ {
+  "control_number": "46497",
+  "title": "Institutional Food Service Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CULNB10",
+   "CULNB11",
+   "CULNB12",
+   "CULNB21",
+   "CULNB30",
+   "CULNB48WE",
+   "CULNB9"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/institutional-food-service-management-certificate-of-achievement-fall-2026",
+   "title": "Institutional Food Service Management Certificate of Achievement",
+   "h1": "Institutional Food Service Management Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2737
+ },
+ {
+  "control_number": "46572",
+  "title": "Health Information Technology Assistant",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSADB6",
+   "HEITB10",
+   "HEITB23",
+   "MEDSB37",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/health-information-technology-assistant-certificate-of-achievement-fall-2026",
+   "title": "Health Information Technology Assistant Certificate of Achievement",
+   "h1": "Health Information Technology Assistant Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2953
+ },
+ {
+  "control_number": "46573",
+  "title": "Human Resource Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSADB18",
+   "BSADB20",
+   "BSADB6",
+   "BSADB61",
+   "BSADB62",
+   "BSADB63",
+   "BSADB88"
+  ],
+  "source": {
+   "url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/human-resource-management-certificate-of-achievement-fall-2026",
+   "title": "Human Resource Management Certificates of Achievement",
+   "h1": "Human Resource Management Certificates of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2499
+ }
+]

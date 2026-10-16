@@ -2942,38 +2942,12 @@
   "title": "Administration of Justice",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "link_search",
-  "coverage": 0.95,
-  "codes_found": [
-   "AJ101",
-   "AJ102",
-   "AJ103",
-   "AJ104",
-   "AJ105",
-   "AJ107",
-   "AJ110",
-   "AJ113",
-   "AJ202",
-   "AJ220",
-   "AJ221",
-   "AJ222",
-   "BCOT131",
-   "LAW100",
-   "LAW101",
-   "LAW103",
-   "PSYCC1000",
-   "SOCIC1000",
-   "SPAN223"
-  ],
-  "source": {
-   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/administration-justice-aa/",
-   "title": "Cerritos College Academic Catalog",
-   "h1": "Academic Catalog",
-   "text_from": "innerText",
-   "label": null
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 20,
-  "text_chars": 3800
+  "text_chars": 0
  },
  {
   "control_number": "14667",
@@ -4669,13 +4643,15 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.692,
+  "coverage": 0.846,
   "codes_found": [
    "BA100",
    "HED110",
+   "HED200",
    "KIN102",
    "KIN104",
    "KIN110",
+   "KIN201",
    "KIN202",
    "KIN203",
    "KIN205",
@@ -4692,7 +4668,7 @@
    }
   },
   "listed": 13,
-  "text_chars": 2938
+  "text_chars": 3047
  },
  {
   "control_number": "20500",

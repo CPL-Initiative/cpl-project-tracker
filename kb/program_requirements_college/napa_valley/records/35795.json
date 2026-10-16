@@ -1,0 +1,268 @@
+{
+ "college": "Napa Valley College",
+ "control_number": "35795",
+ "shape": "adt",
+ "title": "Physics",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.napavalley.edu//areas-of-study/physics/physics-2.0-as-t/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7271,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7271,
+    "output_tokens": 1946,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1946,
+  "output_tokens_details": {
+   "thinking_tokens": 827
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.068,
+ "ms": 17030,
+ "seconds": 17.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 6,
+   "share": 0.667,
+   "missing": [
+    "MATH120",
+    "MATH121"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 6,
+   "codes": [
+    "COMS120",
+    "COMS215",
+    "MATH220",
+    "MATH222",
+    "MATHC2210",
+    "MATHC2220"
+   ],
+   "flagged": [
+    "COMS120",
+    "COMS215",
+    "MATH220",
+    "MATH222",
+    "MATHC2210",
+    "MATHC2220"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    36.0,
+    36.0
+   ],
+   "stated": [
+    36.0,
+    36.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 14,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "DEGREE REQUIREMENTS",
+   "measure": "units",
+   "total_units": {
+    "min": 36,
+    "max": 36
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Solve qualitative problems using physics principles.",
+    "Solve quantitative physics problems correctly using mathematics from the calculus sequence.",
+    "Successfully execute physics experiments."
+   ],
+   "careers": [
+    "Research",
+    "Development and Design",
+    "Teaching",
+    "research administration",
+    "university administration",
+    "science reporting",
+    "technical management and marketing",
+    "metallurgy",
+    "electronics",
+    "food processing and packaging",
+    "health and radiation safety",
+    "pollution control",
+    "computer technology",
+    "financial services"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHYS-140",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS-240",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS-241",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH-C2210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH-C2220",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH-220",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH-221",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH-222",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMS-120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMS-215",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MATH 120",
+    "why": "not in the text; the page lists MATH-C2210 Calculus I: Early Transcendentals instead (likely common course numbering replacement)"
+   },
+   {
+    "code": "MATH 121",
+    "why": "not in the text; the page lists MATH-C2220 Calculus II: Early Transcendentals instead (likely common course numbering replacement)"
+   }
+  ],
+  "notes": [
+   "The catalog text begins mid-sentence; the program's own heading (likely 'Physics 2.0 AS-T') is cut off, so section_heading uses the printed 'DEGREE REQUIREMENTS' heading.",
+   "Total Units 36 is printed for the whole course list and recorded as total_units; the block's stated is left null to avoid duplicating it.",
+   "No units printed beside COMS-215 (alternative to COMS-120).",
+   "Degree total not recorded: the page says the degree totals 'no more than 66' units and gives the generic ADT 60-unit requirement, neither printed as this award's total.",
+   "Career entries are taken from the CAREER OPPORTUNITIES section headings and the named areas/fields; reviewer may want to check whether the area headings (Research, Development and Design, Teaching) should count as careers."
+  ]
+ },
+ "extracted_run": "38748853261"
+}

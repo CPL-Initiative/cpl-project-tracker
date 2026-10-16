@@ -1,8 +1,8 @@
 {
   "_about": "Daily-cached snapshot of public.projects. Written by kb/_load_projects.py after a successful Supabase fetch. Falls back to this file on Supabase outage so the dashboard regen continues without manual intervention.",
-  "_fetched_at": "2026-10-11",
+  "_fetched_at": "2026-10-16",
   "_source_table": "public.projects",
-  "row_count": 32,
+  "row_count": 34,
   "rows": [
     {
       "id": "1.1",
@@ -25,12 +25,13 @@
       "kpi_metric": "8",
       "kpi_unit": "Cumulative MAP features added and significantly enhanced",
       "wp_notes": "Progress made across eight feature areas with 50+ development tickets completed. Key enhancements include Student Portal, AI-assisted JST parsing, credential matching, and dashboard improvements.",
-      "kpi_order": null
+      "kpi_order": null,
+      "count_note": "A feature is counted toward the annual goal when significant design or development work is put into production."
     },
     {
       "id": "1.1.1",
       "name": "AI Certification-to-Course Matching",
-      "description": "AI-assisted matching of 117 industry certifications to CCC courses across priority sectors; Phase 2 beta expanding pool",
+      "description": "The initiative used artificial intelligence to identify potential alignments between industry-recognized certifications and California Community College courses. AI-generated recommendations were subsequently reviewed by faculty participants, whose expertise helped validate, refine, and strengthen the resulting recommendations.\n\nThe work is intended to accelerate CPL exploration while preserving local curriculum, policy, and faculty decision-making.",
       "workplan_activity": "Activity 1: AI-Enhanced CPL Infrastructure",
       "vision_2030_action": "Action 1a; Action 5",
       "cpl_goal": "Goal 2",
@@ -48,30 +49,8 @@
       "kpi_metric": "117",
       "kpi_unit": "industry certifications matched",
       "wp_notes": "AI cert-to-course matching Phase 1 complete covering 117 industry certifications in priority sectors. Phase 2 beta expanding certification pool. Production release planned June 2026.",
-      "kpi_order": null
-    },
-    {
-      "id": "1.1.2",
-      "name": "AI Apprenticeship CPL Tools",
-      "description": "AI tools for apprenticeship/journey worker CPL, degree-progress reports, and outreach; pilot with construction/electrician trades",
-      "workplan_activity": "Activity 1: AI-Enhanced CPL Infrastructure",
-      "vision_2030_action": "Action 1a; Action 5",
-      "cpl_goal": "Goal 1; Goal 2",
-      "budget_source": "MAP Addendum - N2N Lightleap AI + $54,764 pilot",
-      "budget": "$1,400,000",
-      "lead": "Terence Nelson",
-      "team": "Santiago Canyon College, Norco College, Trade Partners",
-      "status": "In Progress",
-      "percent_complete": 30.0,
-      "start_date": "2025-01-01",
-      "end_date": "2026-12-31",
-      "milestones": "Phase 1: Construction and electrician trades at SCC and Norco; Phase 2: Scale statewide with trade partners",
-      "latest_update": "Phase 1 in progress; proof-of-concept pilot funded ($54,764); $1.35M project funding from $6M appropriation",
-      "update_date": "2026-04-07",
-      "kpi_metric": "",
-      "kpi_unit": "",
-      "wp_notes": "AI apprenticeship CPL tools Phase 1 in progress with construction and electrician trades at Santiago Canyon College and Norco College. Proof-of-concept pilot funded ($54,764). Phase 2 will scale statewide.",
-      "kpi_order": null
+      "kpi_order": null,
+      "count_note": null
     },
     {
       "id": "1.1.3",
@@ -94,7 +73,8 @@
       "kpi_metric": "6",
       "kpi_unit": "workstreams active",
       "wp_notes": "WestEd CPL Scope of Work: 6 workstreams active (Credential ID, Course Alignment, NFN Use Case, Student Experience, System Design, Strategic Planning). Skills taxonomy/CTDL work progressing.",
-      "kpi_order": null
+      "kpi_order": null,
+      "count_note": null
     },
     {
       "id": "1.2",
@@ -117,7 +97,8 @@
       "kpi_metric": "1",
       "kpi_unit": "Cumulative integrations established",
       "wp_notes": "Credential Engine integration established supporting competency-level alignment with CTDL. Interoperability with eTranscript, Career Passport, and CCCApply is in planning/development phases.",
-      "kpi_order": null
+      "kpi_order": null,
+      "count_note": null
     },
     {
       "id": "1.3",
@@ -140,7 +121,8 @@
       "kpi_metric": "0",
       "kpi_unit": "Cumulative student portal usage",
       "wp_notes": "Full AI-enabled Student Portal scheduled for May 2026 production release. Phase 2 (Dec 2026) will integrate Program Pathways Mapper, CVC course search, and resume builder.",
-      "kpi_order": null
+      "kpi_order": null,
+      "count_note": null
     },
     {
       "id": "1.4",
@@ -163,7 +145,8 @@
       "kpi_metric": "0",
       "kpi_unit": "Cumulative credentials published",
       "wp_notes": "No credentials published in registry this period. Full launch not targeted until 2026-27. Standardized credential data schema incorporating TOP and CIP codes is in preparation for the registry pipeline.",
-      "kpi_order": null
+      "kpi_order": null,
+      "count_note": null
     },
     {
       "id": "2.1",
@@ -186,7 +169,8 @@
       "kpi_metric": "288",
       "kpi_unit": "Cumulative credit recommendations",
       "wp_notes": "288 cumulative statewide credit recommendations with 281 adopted this academic year. 230 currently in progress through college review and adoption workflows. Spanning military, apprenticeship, industry certification, and professional licensure fields.",
-      "kpi_order": null
+      "kpi_order": null,
+      "count_note": null
     },
     {
       "id": "2.2",
@@ -209,7 +193,8 @@
       "kpi_metric": "11",
       "kpi_unit": "Cumulative discipline faculty workgroups active",
       "wp_notes": "11 of 25 target statewide faculty workgroups convened, recommending CPL for credentials and military training across high-demand disciplines. 40 disciplines planned by 2030.",
-      "kpi_order": null
+      "kpi_order": null,
+      "count_note": null
     },
     {
       "id": "2.3",
@@ -232,7 +217,8 @@
       "kpi_metric": "0",
       "kpi_unit": "Cumulative validated crosswalks created",
       "wp_notes": "No validated crosswalks completed yet. Development underway via three parallel approaches (Electrical, Carpentry Apprenticeship, and AI-assisted). Dependent on MAP Exhibit module releasing April 2026.",
-      "kpi_order": null
+      "kpi_order": null,
+      "count_note": null
     },
     {
       "id": "2.4",
@@ -255,7 +241,8 @@
       "kpi_metric": "0",
       "kpi_unit": "Cumulative validated skills catalogued",
       "wp_notes": "Functionality enabling creation of common course crosswalks is a component of the MAP Exhibit module scheduled for April 2026. Development underway but dependent on that release.",
-      "kpi_order": null
+      "kpi_order": null,
+      "count_note": null
     },
     {
       "id": "3.1",
@@ -278,7 +265,8 @@
       "kpi_metric": "43,630",
       "kpi_unit": "cumulative Californians served with CPL awards",
       "wp_notes": "43630 cumulative students offered some form of CPL as of 4/7/2026 per the CPL Dashboard. Exceeds the 2025-26 annual target of 40,000.",
-      "kpi_order": null
+      "kpi_order": null,
+      "count_note": null
     },
     {
       "id": "3.1.1",
@@ -301,7 +289,8 @@
       "kpi_metric": "21,552",
       "kpi_unit": "cumulative working adults and others served with CPL",
       "wp_notes": "22149 cumulative working adults and others offered some form of CPL as of 4/7/2026 per the CPL Dashboard. Exceeds the 2025-26 annual target of 95,000.",
-      "kpi_order": null
+      "kpi_order": null,
+      "count_note": null
     },
     {
       "id": "3.1.2",
@@ -324,7 +313,8 @@
       "kpi_metric": "22,149",
       "kpi_unit": "cumulative veterans and service members served with CPL",
       "wp_notes": "21552 cumulative veterans and service members offered some form of CPL as of 4/7/2026 per the CPL Dashboard. Short of the ambitious Veteran Sprint Goal of 30,000 but on track to achieve the target by June 30, 2026.",
-      "kpi_order": null
+      "kpi_order": null,
+      "count_note": null
     },
     {
       "id": "3.1.3",
@@ -347,7 +337,8 @@
       "kpi_metric": "700",
       "kpi_unit": "cumulative apprentices and journey workers served with CPL",
       "wp_notes": "700 cumulative apprentices and journey workers offered some form of CPL as of 4/7/2026 per the CPL Dashboard. Exceeds the 2025-26 annual target of 500.",
-      "kpi_order": null
+      "kpi_order": null,
+      "count_note": null
     },
     {
       "id": "3.1.4",
@@ -370,7 +361,8 @@
       "kpi_metric": null,
       "kpi_unit": null,
       "wp_notes": null,
-      "kpi_order": null
+      "kpi_order": null,
+      "count_note": null
     },
     {
       "id": "3.2",
@@ -393,7 +385,8 @@
       "kpi_metric": "96,449",
       "kpi_unit": "transcripted CPL units",
       "wp_notes": "96,449 transcripted CPL units recorded. Exceeds the 2025-26 annual target of 85,000. Includes military (12,000), non-military (82,000), and apprentice (6,000) units.",
-      "kpi_order": null
+      "kpi_order": null,
+      "count_note": null
     },
     {
       "id": "3.3",
@@ -416,7 +409,8 @@
       "kpi_metric": "84",
       "kpi_unit": "colleges at active participation threshold",
       "wp_notes": "84 colleges meet the active threshold (10+ students and 5+ articulations). 114 of 115 credit colleges and 4 noncredit campuses received $50,000 CPL implementation funding. 53 at implementation stage, 13 showing growth.",
-      "kpi_order": null
+      "kpi_order": null,
+      "count_note": null
     },
     {
       "id": "3.4",
@@ -439,7 +433,8 @@
       "kpi_metric": "",
       "kpi_unit": "student impact responses",
       "wp_notes": "Survey tool is not yet deployed. Data collection infrastructure is still under development. The CPL Student Portal launching April 2026 will include the embedded student impact survey for first-ever systematic collection.",
-      "kpi_order": null
+      "kpi_order": null,
+      "count_note": null
     },
     {
       "id": "3.5",
@@ -462,7 +457,8 @@
       "kpi_metric": "32",
       "kpi_unit": "student stories published",
       "wp_notes": "32 student stories published on the My CPL Story section of the MAP website. AI-assisted student story capture tool is in development for June 2026 production release.",
-      "kpi_order": null
+      "kpi_order": null,
+      "count_note": null
     },
     {
       "id": "3.6",
@@ -485,7 +481,8 @@
       "kpi_metric": "3",
       "kpi_unit": "colleges, agencies, and personnel recognized for contributions and progress",
       "wp_notes": "3 institutions recognized as MAP College of the Year: 2023 Moreno Valley College, 2024 San Bernardino Valley College, 2025 Miramar College. CPL Dashboard provides public tracking and recognition data.",
-      "kpi_order": null
+      "kpi_order": null,
+      "count_note": null
     },
     {
       "id": "3.7",
@@ -508,7 +505,8 @@
       "kpi_metric": "1",
       "kpi_unit": "survey completed",
       "wp_notes": "Systemwide CPL implementation survey completed 2025. Results informing implementation strategy and targeted assistance.",
-      "kpi_order": null
+      "kpi_order": null,
+      "count_note": null
     },
     {
       "id": "3.8",
@@ -531,7 +529,8 @@
       "kpi_metric": "",
       "kpi_unit": "",
       "wp_notes": "MIS and MAP reconciliation procedures and tools to support data integrity and interoperability, scheduled for release at end of 2026. MIS Data Element Dictionary SY domain was revised this academic year.",
-      "kpi_order": null
+      "kpi_order": null,
+      "count_note": null
     },
     {
       "id": "4.1",
@@ -554,7 +553,8 @@
       "kpi_metric": "2",
       "kpi_unit": "Count of sprint goal progress achieved",
       "wp_notes": "Veteran Sprint: 20,991 JSTs uploaded (62% of ~34,000 target). 75 colleges awarding basic training credit (up from ~15% baseline). 679 unique ACE credit recommendations covered. $163M estimated savings.",
-      "kpi_order": null
+      "kpi_order": null,
+      "count_note": null
     },
     {
       "id": "4.1.1",
@@ -577,7 +577,8 @@
       "kpi_metric": "0",
       "kpi_unit": "MOS pathways developed",
       "wp_notes": "29 Palms Demo: New demonstration project launched. Developing CPL pathways for 42 Military Occupational Specialties (MOS) trained at MCAGCC. Coordinated outreach with Cal VET and military education center underway.",
-      "kpi_order": null
+      "kpi_order": null,
+      "count_note": null
     },
     {
       "id": "4.2",
@@ -600,7 +601,32 @@
       "kpi_metric": "1",
       "kpi_unit": "Count of sprint goal progress achieved",
       "wp_notes": "Apprenticeship Sprint: 678 apprentice students documented with 6,000 CPL units. DAS partnership active. Cal-JAC early partner for 14,000 first responder trainees. ~1,000 LAUNCH Network records expected Spring 2026.",
-      "kpi_order": null
+      "kpi_order": null,
+      "count_note": null
+    },
+    {
+      "id": "4.2.1",
+      "name": "AI Apprenticeship CPL Tools",
+      "description": "AI tools for apprenticeship/journey worker CPL, degree-progress reports, and outreach; pilot with construction/electrician trades",
+      "workplan_activity": "Activity 4: Sprints, Projects & Partnerships",
+      "vision_2030_action": "Action 1a; Action 5",
+      "cpl_goal": "Goal 1; Goal 2",
+      "budget_source": "MAP Addendum - N2N Lightleap AI + $54,764 pilot",
+      "budget": "$1,400,000",
+      "lead": "Terence Nelson",
+      "team": "Santiago Canyon College, Norco College, Trade Partners",
+      "status": "In Progress",
+      "percent_complete": 30.0,
+      "start_date": "2025-01-01",
+      "end_date": "2026-12-31",
+      "milestones": "Phase 1: Construction and electrician trades at SCC and Norco; Phase 2: Scale statewide with trade partners",
+      "latest_update": "Phase 1 in progress; proof-of-concept pilot funded ($54,764); $1.35M project funding from $6M appropriation",
+      "update_date": "2026-04-07",
+      "kpi_metric": "",
+      "kpi_unit": "",
+      "wp_notes": "AI apprenticeship CPL tools Phase 1 in progress with construction and electrician trades at Santiago Canyon College and Norco College. Proof-of-concept pilot funded ($54,764). Phase 2 will scale statewide.",
+      "kpi_order": null,
+      "count_note": "Outcomes are identified in the project contract and counted when accomplished."
     },
     {
       "id": "4.3",
@@ -623,7 +649,8 @@
       "kpi_metric": "20",
       "kpi_unit": "strategic partnerships active",
       "wp_notes": "20+ partners actively working with the CPL Initiative including DAS, CDE, ASCCC, Credential Engine, WestEd, Cal-JAC, CCCF, Futuro Health, Public Works Alliance EMS Corps, and Iron Workers union.",
-      "kpi_order": null
+      "kpi_order": null,
+      "count_note": null
     },
     {
       "id": "4.4",
@@ -646,12 +673,13 @@
       "kpi_metric": "25",
       "kpi_unit": "trainings delivered",
       "wp_notes": "25 trainings delivered including the 6th Annual CPL Summit and 4 CPL Regional Training Workshops. Over 1,000 staff, faculty, and administrators trained. Individual technical assistance and office hours ongoing.",
-      "kpi_order": null
+      "kpi_order": null,
+      "count_note": null
     },
     {
       "id": "4.4.1",
       "name": "VRC CPL Module Revision",
-      "description": "Rewrite and expand Virtual Resource Center CPL training modules with CCCF/Success Center",
+      "description": "Vision Resource Center technical assistance modules focused on CPL policy, procedure, resources, tools, integrations, opportunities for all constituents.",
       "workplan_activity": "Activity 4: Sprints, Projects & Partnerships",
       "vision_2030_action": "Action 1a; Action 5",
       "cpl_goal": "Goal 3",
@@ -669,7 +697,8 @@
       "kpi_metric": "",
       "kpi_unit": "",
       "wp_notes": "VRC CPL Module revision: Review and gap analysis complete. Content development phase underway. Final packaging targeted May-June 2026.",
-      "kpi_order": null
+      "kpi_order": null,
+      "count_note": "Each training module in production is counted"
     },
     {
       "id": "4.5",
@@ -692,7 +721,8 @@
       "kpi_metric": "4",
       "kpi_unit": "policy actions",
       "wp_notes": "AB 123 chaptered establishing first-ever ongoing CPL state funding ($5M ongoing + $15M one-time). Title 5 regulatory updates advanced to reduce residency and access barriers. Draft trailer bill for additional $2M ongoing + $35M one-time under review.",
-      "kpi_order": null
+      "kpi_order": null,
+      "count_note": "Each legislative bill enacted or regulation revised or guidance memo to the field is counted."
     },
     {
       "id": "4.5.1",
@@ -715,7 +745,8 @@
       "kpi_metric": "",
       "kpi_unit": "",
       "wp_notes": "Governor's 2026 budget includes proposed $2M ongoing + $35M one-time. Legislative session runs through September 2026. Monitoring and providing evidence to support advancement.",
-      "kpi_order": null
+      "kpi_order": null,
+      "count_note": null
     },
     {
       "id": "4.6",
@@ -738,7 +769,56 @@
       "kpi_metric": "3",
       "kpi_unit": "distributed to colleges ($)",
       "wp_notes": "$50,000 distributed to 114 of 115 credit colleges and 4 noncredit campuses for CPL implementation. $6M one-time fully allocated. 2026 advocacy active for $2M ongoing + $35M one-time appropriation.",
-      "kpi_order": null
+      "kpi_order": null,
+      "count_note": null
+    },
+    {
+      "id": "4.7",
+      "name": "EMS Corps",
+      "description": null,
+      "workplan_activity": "Activity 4: Coordinate CPL Sprints, Targeted Projects, Professional Learning, and Strategic Partnerships",
+      "vision_2030_action": null,
+      "cpl_goal": null,
+      "budget_source": null,
+      "budget": null,
+      "lead": null,
+      "team": null,
+      "status": "Not Started",
+      "percent_complete": 0,
+      "start_date": null,
+      "end_date": null,
+      "milestones": null,
+      "latest_update": null,
+      "update_date": null,
+      "kpi_metric": null,
+      "kpi_unit": "CPL Procedures Developed to Support Outreach and Articulation",
+      "wp_notes": null,
+      "kpi_order": null,
+      "count_note": "Self-reported descriptive data on the improvements made"
+    },
+    {
+      "id": "4.8",
+      "name": "Futuro Behavioral Healthcare Project",
+      "description": null,
+      "workplan_activity": "Activity 4: Sprints, Projects & Partnerships",
+      "vision_2030_action": null,
+      "cpl_goal": null,
+      "budget_source": null,
+      "budget": null,
+      "lead": null,
+      "team": null,
+      "status": "Not Started",
+      "percent_complete": 0,
+      "start_date": null,
+      "end_date": null,
+      "milestones": null,
+      "latest_update": null,
+      "update_date": null,
+      "kpi_metric": null,
+      "kpi_unit": null,
+      "wp_notes": null,
+      "kpi_order": null,
+      "count_note": null
     }
   ]
 }

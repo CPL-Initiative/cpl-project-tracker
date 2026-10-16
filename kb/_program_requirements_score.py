@@ -79,6 +79,44 @@ to read. requirements_md5() fingerprints everything but the outcomes, so a
 person's reading follows the requirements it read
 (kb/program_requirements_pilot/reviewed_readings.json).
 
+Version 5 (S389; Sam, Open Asks Sheet 78 card 2, 2026-10-14, "Record both
+figures") reads a page that prints the degree total with general education and
+no total for the major (Palo Verde's Automotive Technology A.S.: Total 64 - 68 =
+a 24-unit core, 6 units of electives and CalGETC 34 - 38; Cabrillo's
+"Complete the following number of credits: 60"). Before it, 79 records at the
+two colleges failed arithmetic as "incomplete" though their pages add up:
+  program.degree_total   the total the page prints for the whole award with
+                         general education in it, as printed, never computed.
+  program.ge_units       the units the page prints for its general education
+                         pattern (CalGETC 34 - 38, Cabrillo College General
+                         Education 24).
+  program.electives_fill_degree
+                         true when the page says electives make up the rest of
+                         the degree total and prints no figure for them
+                         (Psychology AA-T: "Total 60" = a 19-21-unit major,
+                         CalGETC 34-38 and transferable electives).
+When the record carries no major total and does carry a degree total, the check
+adds the blocks, the open electives and the general education units against
+the degree total (arithmetic "against": "degree"). With electives filling the
+rest, it passes when every end of that sum fits under the degree total, and
+"fill" names the units the electives make up. A major total, when printed, is
+still the one checked ("against": "program").
+
+Sam's Open Asks Sheet 81 (2026-10-14, both his own call) counts two more such
+records as adding up, each "equal" with a field that says how:
+  card 1, "Count it"   the degree total sits inside the span the blocks, open
+                       electives and general education allow (Cabrillo prints
+                       general electives as a range that takes up the rest of
+                       60; the record keeps them as one number, so the sum reads
+                       57-60 against 60): "within": true.
+  card 2, "adt"        an associate degree for transfer whose page prints its
+                       total and no electives: 60 units by statute (Ed. Code
+                       66746(a)), with transferable electives making up what the
+                       major and general education leave, so every end of the
+                       sum must fit under the total: "transfer": true and "fill".
+degree_verdict() holds both, and kb/_program_requirements_rescore.py applies it
+to the records already filed.
+
 When the catalog prints no figure at all (Mt. San Antonio's Vocational Nursing
 names no hours, no units and no total), there is nothing to add. Arithmetic is
 then "unstated", and it passes only when all three hold: the record carries no
@@ -242,7 +280,8 @@ def has_figure(record: dict) -> bool:
     """Whether the record carries any number to add: a total, a block total,
     or a course's units."""
     prog = record.get("program") or {}
-    if _span(prog.get("total_units")) or _num(prog.get("open_elective_units")):
+    if (_span(prog.get("total_units")) or _num(prog.get("open_elective_units"))
+            or _span(prog.get("degree_total")) or _span(prog.get("ge_units"))):
         return True
     for b in record.get("blocks") or []:
         if _span(b.get("stated")) or (b.get("rule") == "choose_units" and _num(b.get("minimum"))):
@@ -368,9 +407,97 @@ def places_none(score: dict | None) -> bool:
     return bool(cov.get("listed")) and cov.get("placed") == 0
 
 
-def score(record: dict, closed: list[dict], text: str | None = None) -> dict:
+ELECTIVE = re.compile(r"\belectives?\b", re.I)
+# An associate degree for transfer, by the state file's award ("A.A- T Degree",
+# "A.S. T Degree") or the page's heading ("AA-T in Sociology for Transfer").
+TRANSFER = re.compile(r"\bA\.?\s?[AS]\.?[-\s]*T\b|\bfor transfer\b", re.I)
+
+
+# An associate degree by the state file's award ("A.S. Degree", "A.A- T Degree").
+ASSOCIATE = re.compile(r"\bA\.?\s?[AS]\b\.?|\bassociate\b", re.I)
+
+
+def degree_reading(record: dict, award: str | None) -> dict:
+    """Whether an associate degree's record reads the degree or the major alone.
+    Sam, 2026-10-14 (Cabrillo Biology 06328, Needs a fix): the record held the
+    30-unit major, and the page prints the degree's 60, its general education 24
+    and 6 units of electives. An associate degree carries at least 60 units
+    (Title 5 section 55063), so a record naming no degree total and no general
+    education units holds the major only; the display names it as the reading
+    procedure's gap, with no person reading the record to find it."""
+    if not ASSOCIATE.search(award or "") or re.search(r"baccalaureate|certificate", award or "", re.I):
+        return {"status": "n/a"}
+    prog = record.get("program") or {}
+    if _span(prog.get("degree_total")) or _span(prog.get("ge_units")):
+        return {"status": "read"}
+    return {"status": "major only",
+            "why": ["the record names no degree total and no general education units"]}
+
+
+def transfer_degree(award: str | None, prog: dict) -> bool:
+    return bool(TRANSFER.search(award or "") or TRANSFER.search(prog.get("section_heading") or ""))
+
+
+def degree_verdict(prog: dict, degree: tuple[float, float], lo: float, hi: float,
+                   award: str | None = None) -> dict:
+    """How a sum of the blocks, open electives and general education (lo-hi)
+    meets the degree total the page prints: pass, status, and how it passed."""
+    if transfer_degree(award, prog) and lo > degree[0] + TOL and hi > degree[1] + TOL:
+        # Sheet 82 card 2 ("overlap", Sam, 2026-10-14): a course counts toward the major and
+        # Cal-GETC both, so a transfer degree's sum runs past the total it prints.
+        return {"pass": True, "status": "equal", "overlap": True, "why": []}
+    if prog.get("degree_total_minimum") and (prog.get("electives_fill_degree") or lo >= degree[0] - TOL):
+        # The page prints the degree total as a floor (Cerritos: "Complete a minimum of 60 units to
+        # include (1) the above major requirements, (2) the General Education requirements, and (3)
+        # electives as needed"): electives make up a sum short of it, and a sum past it meets it.
+        short = [round(max(0.0, degree[0] - hi), 2), round(max(0.0, degree[0] - lo), 2)]
+        return {"pass": True, "status": "equal", "minimum": True, "fill": short if short[1] > 0 else None, "why": []}
+    fits = lo <= degree[0] + TOL and hi <= degree[1] + TOL
+    fill = [round(max(0.0, degree[0] - hi), 2), round(max(0.0, degree[1] - lo), 2)]
+    if prog.get("electives_fill_degree"):
+        return {"pass": fits, "status": "equal" if fits else "unequal", "fill": fill if fits else None,
+                "why": [] if fits else ["the blocks and general education come to %s-%s, past the %s-%s the "
+                                        "catalog prints for the degree" % (lo, hi, degree[0], degree[1])]}
+    if abs(lo - degree[0]) <= TOL and abs(hi - degree[1]) <= TOL:
+        return {"pass": True, "status": "equal", "why": []}
+    if lo <= degree[0] + TOL and degree[1] <= hi + TOL:
+        # Sheet 81 card 1: the printed total is one the requirements allow.
+        return {"pass": True, "status": "equal", "within": True, "why": []}
+    if fits and transfer_degree(award, prog) and not _num(prog.get("open_elective_units")):
+        # Sheet 81 card 2: transferable electives make up a transfer degree's 60.
+        return {"pass": True, "status": "equal", "transfer": True, "fill": fill, "why": []}
+    return {"pass": False, "status": "unequal",
+            "why": ["the blocks and general education sum to %s-%s; the catalog prints %s-%s "
+                    "for the degree" % (lo, hi, degree[0], degree[1])]}
+
+
+def degree_check(prog: dict, degree: tuple[float, float], lo: float, hi: float,
+                 reasons: list[str], text: str | None, award: str | None = None) -> dict:
+    """The blocks, the open electives and the general education units against
+    the degree total the page prints (record shape 5). A degree that names a
+    general education pattern and no units for it cannot be added up."""
+    ge = _span(prog.get("ge_units"))
+    out = {"pass": False, "status": "incomplete", "computed": [round(lo, 2), round(hi, 2)],
+           "stated": list(degree), "against": "degree", "ge": list(ge) if ge else None, "why": list(reasons)}
+    if ge is None and prog.get("ge_pattern"):
+        out["why"].append("the record names the degree total and the %s pattern, but no units for it"
+                          % prog["ge_pattern"])
+    if out["why"]:
+        return out
+    g = ge or (0.0, 0.0)
+    lo, hi = round(lo + g[0], 2), round(hi + g[1], 2)
+    out["computed"] = [lo, hi]
+    if prog.get("electives_fill_degree") and text is not None and not ELECTIVE.search(text):
+        out["why"] = ["the record says electives fill the degree total, but the catalog text names no electives"]
+        return out
+    out.update(degree_verdict(prog, degree, lo, hi, award))
+    return out
+
+
+def score(record: dict, closed: list[dict], text: str | None = None, award: str | None = None) -> dict:
     """The automatic bars. text is the catalog text the record was read
-    from; without it a record that states no figure cannot pass."""
+    from; without it a record that states no figure cannot pass. award is the
+    state file's award, which names an associate degree for transfer."""
     listed = {}
     for c in closed:
         k = norm_code(c.get("code"))
@@ -390,29 +517,39 @@ def score(record: dict, closed: list[dict], text: str | None = None) -> dict:
     unflagged = [k for k in invented if k not in flagged]
 
     (lo, hi), reasons = program_units(record, listed)
-    oe = _num((record.get("program") or {}).get("open_elective_units")) or 0.0
+    prog = record.get("program") or {}
+    oe = _num(prog.get("open_elective_units")) or 0.0
     lo, hi = lo + oe, hi + oe
-    stated = _span((record.get("program") or {}).get("total_units"))
-    if stated is None and not has_figure(record) and not any(listed.values()):
+    stated = _span(prog.get("total_units"))
+    degree = _span(prog.get("degree_total"))
+    de = _span(prog.get("degree_elective_units")) or (0.0, 0.0)
+    if stated is None and degree is not None:
+        arith = degree_check(prog, degree, lo + de[0], hi + de[1], reasons, text, award)
+    elif stated is None and not has_figure(record) and not any(listed.values()):
         figures = [m.group(0) for m in FIGURE.finditer(text or "")]
         ok = text is not None and not figures
-        arith = {"pass": ok, "status": "unstated", "computed": None, "stated": None,
+        arith = {"pass": ok, "status": "unstated", "computed": None, "stated": None, "against": None,
                  "why": ["the catalog prints no total, no hours and no units"] if ok else
                         ["the record states no figure, but the catalog text names %s"
                          % ", ".join(figures[:4])] if figures else
                         ["the record states no figure, and no catalog text came to check it against"]}
     elif stated is None:
         arith = {"pass": False, "status": "incomplete", "computed": [lo, hi], "stated": None,
-                 "why": reasons + ["the record names no total"]}
+                 "against": None, "why": reasons + ["the record names no total"]}
     elif reasons:
         arith = {"pass": False, "status": "incomplete", "computed": [lo, hi],
-                 "stated": list(stated), "why": reasons}
+                 "stated": list(stated), "against": "program", "why": reasons}
     else:
         ok = abs(lo - stated[0]) <= TOL and abs(hi - stated[1]) <= TOL
         arith = {"pass": ok, "status": "equal" if ok else "unequal",
-                 "computed": [round(lo, 2), round(hi, 2)], "stated": list(stated),
+                 "computed": [round(lo, 2), round(hi, 2)], "stated": list(stated), "against": "program",
                  "why": [] if ok else ["the blocks sum to %s-%s; the catalog states %s-%s"
                                        % (round(lo, 2), round(hi, 2), stated[0], stated[1])]}
+        if degree is not None:
+            # Record shape 6: a page printing the major's total and the degree's checks both,
+            # and the record names the one it misses (the major first).
+            deg = degree_check(prog, degree, lo + de[0], hi + de[1], [], text, award)
+            arith = dict(arith, degree=deg) if not ok or deg["pass"] else dict(deg, major=arith)
 
     rep_codes = repeated(record)
     outs = outcomes_check(record, text)
@@ -436,6 +573,7 @@ def score(record: dict, closed: list[dict], text: str | None = None) -> dict:
         "repeated": {"codes": rep_codes, "pass": not rep_codes},
         "outcomes": outs,
         "careers": careers_check(record, text),
+        "degree": degree_reading(record, award),
         "pass": (cov_ok and not unflagged and arith["pass"] and not rep_codes
                  and outs["pass"]),
     }

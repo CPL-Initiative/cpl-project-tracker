@@ -1,0 +1,176 @@
+{
+ "college": "Coastline Community College",
+ "control_number": "36800",
+ "shape": "noncredit",
+ "title": "Porter",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/special-education/porter-certificate-completion/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5567,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5567,
+    "output_tokens": 1119,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1119,
+  "output_tokens_details": {
+   "thinking_tokens": 355
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04465,
+ "ms": 9074,
+ "seconds": 9.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    200.0,
+    200.0
+   ],
+   "stated": [
+    200.0,
+    200.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Porter, Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 200,
+    "max": 200
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate skills and experience required to take part in basic groundskeeping and custodial activities in both residential and commercial settings.",
+    "Independently recall and perform best practices in light maintenance/custodial duties while participating in work activities independently or with faculty, managers, customers, fellow work staff and students."
+   ],
+   "careers": [
+    "maintenance of residential or commercial properties",
+    "groundskeeping",
+    "custodial work"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "SPED C076N",
+      "units": 40,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPED C001N",
+      "units": 40,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPED C085N",
+      "units": 40,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPED C002N",
+      "units": 40,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPED C061N",
+      "units": 40,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The award is counted in hours ('Course List Hours', 'Total Hours 200'); all units fields hold hours.",
+   "The Required Core is printed under 'Complete the following:' with sub-headings Semester 1 (SPED C076N, SPED C001N) and Semester 2 (SPED C085N, SPED C002N, SPED C061N); recorded as one 'all' block in catalog order.",
+   "The overview mentions a required externship, but no externship course appears in the requirements list.",
+   "The catalog prints the SPED C002N title as 'Problem-Solving in the Workplace'; the closed list has 'Problem-Solving in the Work Place'. Same code, treated as the same course.",
+   "Careers were taken from the overview sentence on occupational settings: 'maintenance of residential or commercial properties, groundskeeping and custodial work'."
+  ]
+ },
+ "extracted_run": "38445051060"
+}

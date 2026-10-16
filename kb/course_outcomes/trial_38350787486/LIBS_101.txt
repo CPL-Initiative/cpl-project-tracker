@@ -1,0 +1,674 @@
+All Fields
+LIBS 101 - Information Literacy and Research Skills
+Cover
+Course Number
+101
+Subject
+LIBS
+Course Title
+Information Literacy and Research Skills
+Short Title
+Info Literacy & Resrch Skills
+Effective Semester
+2024 Fall
+CB04: Credit Status
+D - Credit - Degree Applicable
+CB05: Transfer Status
+A - Transferable to both UC and CSU.
+CB08: Basic Skills
+N - Not Basic Skills
+Main
+CB11 Classification
+CB22 Non-Credit Category
+Grading Method
+Grade Options Letter Grade or Pass/No Pass
+Catalog Description
+This course provides an overview of information resources and the skills required to use them effectively. Emphasis is placed on locating, navigating, and evaluating various information resources and the applicability of research skills in both personal life and future academic endeavors. Topics include examining library resources such as print and electronic indexes, books, and periodicals; electronic databases; online and in-person library services; effective internet searching; and developing research strategies. This course is intended for students who wish to acquire research skills for academic, career, or personal use.
+Short Desc (100 Characters or Less)
+How to find, evaluate, and use library and other paper and electronic information resources.
+Originating Campus CITY - City
+Colleges
+City
+Mesa
+Miramar
+CCC Missions
+Transfer
+Course Equivalency No
+Equivalency Text
+Repeatability
+This course is repeatable No
+Number of Repeats Allowed
+Justification for Repeatability
+Proposal Information
+Reason For Proposed Action
+Six year review; update textbooks; course integration; update course description; update DE language; remove ENGL 47A, ENGL 48, and ENGL 49 advisories; add ENGL 101 advisory.
+Costs
+None
+Field Trips May be required
+Active Participatory Course (family required)
+This is an active participatory course related in content: applies to exercise science, visual arts, and performing arts courses. No
+Family
+This is a CTE Course No
+Codes
+CB03: TOP Code 160100 - Library Science, General
+CIP Code
+CB09: SAM Code E - Non-Occupational
+Student Learning Outcomes
+Learning Outcomes
+Group Title
+Mesa
+Outcome Text
+Find a variety of credible and relevant information sources, including primary research studies, on a topic.
+This SLO maps to the following Institutional Learning Outcomes (ILOs), please check all that apply:
+Outcome Text
+Critically examine the usefulness and reliability of the information sources they find.
+This SLO maps to the following Institutional Learning Outcomes (ILOs), please check all that apply:
+Outcome Text
+Assessment method for both outcomes: Students will complete an annotated bibliography for a research question that they developed. Outcomes will be assessed using this rubric.
+This SLO maps to the following Institutional Learning Outcomes (ILOs), please check all that apply:
+Group Title
+Miramar
+Outcome Text
+Nested Boolean Operators: Students will use nested Boolean operators to refine search results.
+This SLO maps to the following Institutional Learning Outcomes (ILOs), please check all that apply:
+Outcome Text
+Evaluate Resource Criteria: Students will evaluate resource criteria using particular "indicators" to determine reliability.
+This SLO maps to the following Institutional Learning Outcomes (ILOs), please check all that apply:
+Outcome Text
+Library catalog accessStudents will use the library catalog to access journal articles, streaming videos, and ebooks.
+This SLO maps to the following Institutional Learning Outcomes (ILOs), please check all that apply:
+Student Learning Objectives
+Upon successful completion of the course the student will be able to:
+Objective Text
+Describe information services available in a library.
+Objective Text
+Develop search strategies in order to effectively locate information.
+Objective Text
+Compare and contrast different search methodologies (i.e., free text versus controlled vocabulary searches).
+Objective Text
+Evaluate retrieved information in order to determine the most appropriate material to use.
+Objective Text
+Document utilized information in order to communicate where the information was found.
+Objective Text
+Search appropriate research tools in order to locate relevant information.
+Disciplines
+Minimum Qualification
+Minimum Qualification Library Science (Masters Required)
+Additional Required Qualifications
+Condition
+Hours/Units
+Override No
+Variable Units No
+Lecture
+Min Lecture Units 1.000
+Max Lecture Units 0.000
+Min Lecture Hours - Override 0.000
+Max Lecture Hours - Override 0.000
+Min Lecture Hours: 16.000
+Max Lecture Hours: 18.000
+Lab
+Min Lab Units 0.000
+Max Lab Units 0.000
+Min Lab Hours - Override 0.000
+Max Lab Hours - Override 0.000
+Min Lab Hours: 0.000
+Max Lab Hours: 0.000
+Other
+Min Other Units 0.000
+Max Other Units 0.000
+Min Other Hours - Override 0.000
+Max Other Hours - Override 0.000
+Min Other Hours: 0
+Max Other Hours: 0
+Total Units
+Min Units 1.000
+Max Units 0.000
+Total Hours
+Min Contact Hours: 16
+Max Contact Hours: 18
+Min Outside-of-Class Hours: 32
+Max Outside-of-Class Hours: 36
+Min Total Student Learning Hours: 48
+Max Total Student Learning Hours: 54
+FTEF
+Total FTEF Min: 0.067
+Additional Information
+Content
+Course Lecture Content (Use outline format)
+General overview of information services in a library 
+Circulation services
+Circulating books 
+Print
+Electronic
+Reserve materials
+Periodicals collection
+Interlibrary loan
+Reference services
+Reference librarian
+Online catalog
+Electronic databases
+Reference books
+Periodicals services
+Types 
+Magazines
+Journals
+Newspapers
+Formats
+Indexes
+Internet services, including remote access
+Audiovisual services
+Special equipment, including Americans with Disabilities Act (ADA) access
+Additional services
+General research strategies
+How to determine where to start your research
+Search methodologies
+General subject searching techniques
+Controlled vocabulary searching
+Free text/keyword searching
+Boolean searching
+Limiting search results
+Evaluating retrieved information
+Using tables of contents and book indexes
+Documenting retrieved information
+Printed material
+Electronic resources
+Searching online catalogs to find information in books
+San Diego Community College District (SDCCD) online catalog
+Title searches
+Author searches
+Subject searches
+Reserve collection searching
+Advanced searching
+Library of Congress Classification System
+Other library online catalogs
+Searching general reference books for information
+Encyclopedias
+Almanacs
+Atlases
+Other resources
+Searching specialized reference books for information
+Business resources
+Medical resources
+Financial aid resources
+Career resources
+Biographical resources
+Statistical resources
+Other resources
+Searching electronic databases
+Periodical indexes/databases
+Basic searching
+Advanced searching
+Controlled vocabulary searches
+Free text searches
+Specialized reference databases
+Searching for information on the Internet
+Resources on the Internet
+Basic Internet terminology
+How the Internet works
+Types of informational resources
+Using a browser
+Internet research strategies
+Search tools
+Keyword search engines
+Subject directories
+Metasearch engines
+Searching for information in other libraries
+Academic libraries
+Public libraries
+Specialized libraries
+Other libraries
+Course Lab/Activity Content
+Assignments
+Reading Assignments
+Optional Text
+Assignments
+Required textbook(s)
+Articles from various periodicals, such as American Libraries, Library Journal, or Wired
+Writing Assignments
+Optional Text
+Assignments
+A paper which details a student-designed search strategy to find information on a specific topic
+Critiques of different reference books, electronic databases/indexes, or other library resources
+Summaries of information found as part of library research exercises
+Appropriate Outside Assignments
+Optional Text
+Assignments
+Studying course readings
+Preparing search strategies
+Researching topics in the library
+Preparing summaries or critiques of information resources
+Completing workbook or other exercises
+Appropriate Assignments that Demonstrate Critical Thinking
+Optional Text
+Assignments
+Comparing different information resources to determine relevancy and usefulness
+Evaluating retrieved information
+Assessing the best search strategies to use to locate information
+Critiquing and summarizing assigned materials
+Considering inclusion, diversity, equity, and/or accessibility when evaluating resources
+Methods of Evaluation
+Evaluation Method
+Other
+If you selected "Other", please provide details.
+Written library research exercises Group assignments Presentations Class participation Tests and quizzes
+Methods of Instruction
+Check all that apply:
+Lecture
+Computer Assisted Instruction
+Lecture Discussion
+Audio-Visual
+Collaborative Learning
+Other
+If you selected "Other", please provide details.
+A. Hands-on computer practice B. Computer demonstrations of Internet and reference databases
+Credit for Prior Learning
+Eligible for Credit by Examination:
+Yes No
+Offered at:
+Industry Certification:
+Other Industry Certification:
+Standardized Exams:
+Credit by Portfolio Review:
+Yes No
+Portfolio Review Offered at:
+Military Training:
+Yes No
+I have completed this page.
+Distance Ed
+Does this course have a DE component? Yes
+Colleges
+Campus Mesa
+Delivery Methods
+Fully Online
+Other Methods
+Techniques used to ensure quality
+Graded online homework/quiz assessments for each module with immediate feedback for correct and incorrect responses. 2) Online examinations to insure that the learning objective of LIBS 101 are met. 3) Frequent instructor-student interaction through the class discussion board and chat rooms for guidance of the student in the learning process. These interactions constitute the class participation portion of the final grade. 4) Email for individual student-student and instructor-student communication.
+Evaluation Method
+Same as 1-4 above. Homework, quiz, and examination content will cover the learning outcomes as specified in the student learning outcomes for LIBS 101. Student performance on these assignments will be evaluated and scored accordingly. Students with disabilities will be referred to the Adaptive Technology Specialist.
+Additional Resources
+Instructor prepared lecture notes are posted online for each module. The notes both complement and supplement the textbook in an accessible and easy to read format. Students with disabilities will be referred to the Adaptive Technology Specialist.
+Contact Types
+Chat Rooms
+Frequency
+weekly
+Participant/s
+Faculty to Student/s No
+Among Students No
+Individual Meetings
+Frequency
+as needed
+Participant/s
+Faculty to Student/s No
+Among Students No
+Telephone Contact
+Frequency
+as needed
+Participant/s
+Faculty to Student/s No
+Among Students No
+Campus Miramar
+Delivery Methods
+Fully Online
+Other Methods
+Mixed-media, which may include CD-ROM and DVD for demonstration purposes.
+Techniques used to ensure quality
+Course will use the latest version of course management software and adhere to SDCCD Online guidelines of good practice. Syllabus and course outline from the traditional LIBS 101 course will be followed as closely as possible, utilizing the same readings, quizzes, and written assignment. Lectures will be text-based, with audio and graphics enhancement whenever possible for demonstration purposes.
+Evaluation Method
+WRITTEN ASSIGNMENTS: Most Modules in this course require a written Assignment, to be e-mailed to the instructor as an attachment using Word. The Research project is the focus of the course, and each Assignment contributes to its completion. The purpose of the project is to follow a topic through the research process, up to the point of writing a paper. 
+
+QUIZZES: The Syllabus Quiz covers items explained in the syllabus. The Midterm Quiz covers terms and concepts covered in lectures and in assigned readings. 
+
+ACTIVE PARTICIPATION: is expected during class discussions. Students are expected to post to the discussion board each time required by a Module. 
+
+EVALUATION: will be based on student performance on the tests, active participation in the discussion boards, and the research project.
+Additional Resources
+The instructor may use the Internet to post materials that students can access for relevant reading.
+Contact Types
+Campus City
+Delivery Methods
+Fully Online
+Other Methods
+Techniques used to ensure quality
+Students engage in regular and effective interaction with each other and the instructor in ways that mirror the traditional classroom; only the delivery system is altered. These methods include one-on-one communication with the instructor and with other students via e-mail, the announcement system, the discussion board, or other tools. Students also demonstrate an understanding and integration of course concepts via research assignments, problem sets, group projects, asynchronous class discussion, and/or other assignments.
+Evaluation Method
+Multiple measures are used to assess student learning objectives. These include performance on objective examinations administered via the assessment tool, writing assignments, and/or group or individual projects posted to the discussion board or other online collaboration tool.
+Additional Resources
+Materials posted online are consistent with those required for campus based class. SDCCD and DSPS personnel provide all needed accommodations. DSPS provide a student in an online classroom with the same level of support as an on-campus student.
+Contact Types
+Announcements
+Frequency
+weekly
+Participant/s
+Faculty to Student/s Yes
+Among Students No
+Collaborative Web Documents
+Frequency
+as assigned
+Participant/s
+Faculty to Student/s Yes
+Among Students Yes
+Conferencing
+Frequency
+as assigned
+Participant/s
+Faculty to Student/s Yes
+Among Students No
+Discussion Board
+Frequency
+at least two times during the term
+Participant/s
+Faculty to Student/s No
+Among Students Yes
+Email/Message System
+Frequency
+as needed
+Participant/s
+Faculty to Student/s Yes
+Among Students Yes
+Field Trips
+Frequency
+as assigned
+Participant/s
+Faculty to Student/s Yes
+Among Students Yes
+Group Meetings
+Frequency
+as assigned
+Participant/s
+Faculty to Student/s Yes
+Among Students Yes
+Individual Meetings
+Frequency
+as needed
+Participant/s
+Faculty to Student/s Yes
+Among Students No
+Individualized Assignment Feedback
+Frequency
+as needed
+Participant/s
+Faculty to Student/s Yes
+Among Students Yes
+Synchronous or Asynchronous Video
+Frequency
+as assigned
+Participant/s
+Faculty to Student/s Yes
+Among Students Yes
+Telephone Contact
+Frequency
+as needed
+Participant/s
+Faculty to Student/s Yes
+Among Students No
+Textbooks/Resources
+Is there a Zero Textbook Cost listed for this course?
+Please explain why a Zero Cost textbook option is not included in the resource list
+Does your department have a commitment to using free, or low cost resources in all offerings of this course?
+Describe any additional strategies the department is using to lower the cost of resources students need when they enroll in this course.
+Zero Cost Textbook(s)/Open Educational Resource(s)
+Textbooks
+Text\Supplemental
+Author(s) Badke, William B
+Title Research Strategies: Finding Your Way Through the Information Fog
+Edition 5th
+Publisher iUniverse
+Year 2014
+Is this a classic textbook? No
+ISBN # 9781491722336
+Additional Textbook Information
+Text\Supplemental
+Author(s) Withers, Carol, Bruce Johnson, and Nathan Martin
+Title Information Literacy: Basic Research Skills
+Edition
+Publisher https://library.sdcity.edu/ld.php?content_id=46991579
+Year 2019
+Is this a classic textbook? No
+ISBN # 0000000000000
+Additional Textbook Information
+Text\Supplemental
+Author(s) Ohio State University Libraries
+Title Choosing and Using Sources: A Guide to Academic Research.
+Edition
+Publisher https://ohiostate.pressbooks.pub/choosingsources/
+Year 2018
+Is this a classic textbook? No
+ISBN # 0000000000000
+Additional Textbook Information
+Text\Supplemental
+Author(s) Butler, William D., Aloha Sargent, and Kelsey Smith
+Title Introduction to College Research
+Edition
+Publisher https://pressbooks.pub/introtocollegeresearch/
+Year 2021
+Is this a classic textbook? No
+ISBN # 0000000000000
+Additional Textbook Information
+Periodicals
+Manual
+Software
+Other Learning Materials
+I have entered at least one resource
+Supplies (Instructional Materials)
+Enrollment Conditions
+Course has additional instructional materials fees No
+Explanation
+Supplies (Instructional Materials)
+Requisites
+Course Requisites
+Requisite Type Advisory: Completion of or concurrent enrollment in
+Subject ENGL - English
+Course # and Title ENGL C1000 - Academic Reading and Writing (Active)
+Purpose of Pre/Corequisite
+Required Statute
+Same pre/corequisite
+Comment
+Enrollment Limitation
+Requirement Type Course
+Conditions of Enrollment Catalog View
+Use Legacy V2 Course Requisites in COR No
+Legacy V2 Course Requisites
+Advisory: Completion of or concurrent enrollment in:
+ENGL 101 with a grade of "C" or better, or equivalent
+Content Review
+Is there a Course Requisite?
+Content Review
+Entry Skills
+Opt Heading
+Entry Skill
+Ability to select and narrow a research topic, formulate a thesis to prepare for writing, and provide evidence as support.
+Course Objectives
+Requisite Course Objective
+Select a variety of research strategies using appropriate documentation.
+Requisite Course Objective
+Apply critical thinking in reading, writing, and class discussion.
+Opt Heading
+Entry Skill
+Ability to read and write at the college level.
+Course Objectives
+Requisite Course Objective
+Apply critical thinking in reading, writing, and class discussion.
+Opt Heading
+Entry Skill
+Analyze and critically evaluate college-level reading materials, both orally and in writing.
+Course Objectives
+Requisite Course Objective
+Read, analyze, discuss, and evaluate a variety of texts.
+Opt Heading
+Entry Skill
+Apply critical thinking skills to reading, writing and class discussion on academic as well as personal topics.
+Course Objectives
+Requisite Course Objective
+Apply critical thinking in reading, writing, and class discussion.
+Library
+Description
+Library’s classroom; computers for students and instructors; internet access including access to library resources; access to the library collection.
+General Education/Transfer (Proposed)
+District General Education No
+District Multicultural Requirements No
+Exercise Science Activity Requirement No
+Health Education Requirement No
+American Institutions/California Government Requirement No
+CSU General Education No
+Cal-GETC No
+IGETC No
+UC Transfer Course Yes
+General Education/Transfer (Approved)
+District General Education No
+District Multicultural Requirements No
+Exercise Science Activity Requirement No
+Health Education Requirement No
+American Institutions/California Government Requirement No
+CSU General Education No
+Cal-GETC No
+IGETC No
+UC Transfer Course No
+Attachments
+Attached File
+Tech Review
+Please review for
+Compliance with District policy/procedures and state regulations,
+Course and/or Program alignment,
+Duplication of content,
+Feasibility (resources are adequate, e.g., classrooms, labs, equipment, and faculty load),
+Scheduling impact, and
+Impact on other disciplines and/or Programs.
+Similar Learning Objectives
+CB10: Work Experience
+CB11: Course Classification Status
+CB13: Special Class Status
+Course Prior to College Level (CB21) Y - Not applicable
+Funding Agency Category (CB23) Y - Not Applicable (funding not used to develop course)
+Course Program Status (CB24)
+City
+CB24: Program Status 2 - Not Program Applicable
+Mesa
+CB24: Program Status 2 - Not Program Applicable
+Miramar
+CB24: Program Status 2 - Not Program Applicable
+Course Gen Education Status (CB25)
+Not Applicable
+Course Support Course Status (CB26) N - Course is not a support course
+CB27: Upper Division Status
+Major Restriction Code
+NONE -
+Lecture Hours
+Min: 16.000
+Max: 18.000
+Lab Hours
+Min: 0.000
+Max: 0.000
+Units
+Min: 1.000
+Max: 0.000
+FTEF
+Total FTEF Min: 0.067
+Comments
+ASSIST
+Queue for Assist No
+Last Request From Queue
+Last Direct Request
+ASSIST Preview
+Prefix LIBS
+Course Number 101
+Content The following topics are included in the framework of the course but are not intended as limits on content. The order of presentation and relative emphasis will vary with each instructor.
+General overview of information services in a library 
+Circulation services
+Circulating books 
+Print
+Electronic
+Reserve materials
+Periodicals collection
+Interlibrary loan
+Reference services
+Reference librarian
+Online catalog
+Electronic databases
+Reference books
+Periodicals services
+Types 
+Magazines
+Journals
+Newspapers
+Formats
+Indexes
+Internet services, including remote access
+Audiovisual services
+Special equipment, including Americans with Disabilities Act (ADA) access
+Additional services
+General research strategies
+How to determine where to start your research
+Search methodologies
+General subject searching techniques
+Controlled vocabulary searching
+Free text/keyword searching
+Boolean searching
+Limiting search results
+Evaluating retrieved information
+Using tables of contents and book indexes
+Documenting retrieved information
+Printed material
+Electronic resources
+Searching online catalogs to find information in books
+San Diego Community College District (SDCCD) online catalog
+Title searches
+Author searches
+Subject searches
+Reserve collection searching
+Advanced searching
+Library of Congress Classification System
+Other library online catalogs
+Searching general reference books for information
+Encyclopedias
+Almanacs
+Atlases
+Other resources
+Searching specialized reference books for information
+Business resources
+Medical resources
+Financial aid resources
+Career resources
+Biographical resources
+Statistical resources
+Other resources
+Searching electronic databases
+Periodical indexes/databases
+Basic searching
+Advanced searching
+Controlled vocabulary searches
+Free text searches
+Specialized reference databases
+Searching for information on the Internet
+Resources on the Internet
+Basic Internet terminology
+How the Internet works
+Types of informational resources
+Using a browser
+Internet research strategies
+Search tools
+Keyword search engines
+Subject directories
+Metasearch engines
+Searching for information in other libraries
+Academic libraries
+Public libraries
+Specialized libraries
+Other libraries
+Lab Content
+Course Description
+This course provides an overview of information resources and the skills required to use them effectively. Emphasis is placed on locating, navigating, and evaluating various information resources and the applicability of research skills in both personal life and future academic endeavors. Topics include examining library resources such as print and electronic indexes, books, and periodicals; electronic databases; online and in-person library services; effective internet searching; and developing research strategies. This course is intended for students who wish to acquire research skills for academic, career, or personal use.
+Is Honors
+Lecture Hours
+Lab Hours
+Outline Approval Date
+Outline Effective Date
+Prerequisites
+Corequisites
+Advisories
+Enrollment Limitations
+Objectives
+Instruction Methods
+Evaluation Methods
+Other Texts
+Assignments
+Other Information

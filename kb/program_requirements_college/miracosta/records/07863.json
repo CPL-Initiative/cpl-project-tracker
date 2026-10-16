@@ -1,0 +1,186 @@
+{
+ "college": "MiraCosta College",
+ "control_number": "07863",
+ "shape": "degree",
+ "title": "Architectural Design",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.miracosta.edu/disciplines/design/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11544,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11544,
+    "output_tokens": 1312,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1312,
+  "output_tokens_details": {
+   "thinking_tokens": 426
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07242,
+ "ms": 11691,
+ "seconds": 12.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 9,
+   "share": 0.0,
+   "missing": [
+    "BUS133",
+    "DESN101",
+    "DESN102",
+    "DESN103",
+    "DESN105",
+    "DESN107",
+    "DESN204",
+    "HORT127",
+    "MAT110"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not found: the text holds only the Certificates tab; no Architectural Design A.A. Degree section is printed",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BUS 133",
+    "why": "A.A. section not in the text; named only in the certificate sections"
+   },
+   {
+    "code": "DESN 101",
+    "why": "A.A. section not in the text; named only in the certificate sections"
+   },
+   {
+    "code": "DESN 102",
+    "why": "A.A. section not in the text; named only in the certificate sections"
+   },
+   {
+    "code": "DESN 103",
+    "why": "A.A. section not in the text; named only in the Architectural Design Certificate of Achievement section"
+   },
+   {
+    "code": "DESN 105",
+    "why": "A.A. section not in the text; named only in the certificate sections"
+   },
+   {
+    "code": "DESN 107",
+    "why": "A.A. section not in the text; named only in the certificate sections"
+   },
+   {
+    "code": "DESN 204",
+    "why": "A.A. section not in the text; named only in the certificate sections"
+   },
+   {
+    "code": "HORT 127",
+    "why": "A.A. section not in the text; named only in the certificate sections"
+   },
+   {
+    "code": "MAT 110",
+    "why": "A.A. section not in the text; named only in the Architectural Design Certificate of Achievement section"
+   }
+  ],
+  "notes": [
+   "The supplied text is the Certificates tab of the Design discipline page. It contains no Architectural Design A.A. Degree section, so no blocks, totals, outcomes or careers were recorded for the degree. The degree is probably on a separate Degrees tab that was not captured.",
+   "The Certificate of Achievement in Architectural Design is printed. It has required courses DESN 100, 101, 102, 103, 105, 200, 201 and 207, plus DESN 290 or DESN 292 or DESN 299. It also requires at least 6 elective units from BUS 133, DESN 107, DESN 108, DESN 204, HORT 127 and MAT 110, for 32 Total Units. The degree may mirror this certificate; a reviewer should check the degree tab.",
+   "The certificate's Program Student Learning Outcome is 'Upon completion of this program, the student will be able to design and create graphical representations of the built environment based on industry standards.' It was not recorded because it is printed for the certificate, not the A.A. degree.",
+   "The certificate also names entry-level positions in detailing, revisions, design update, and general office practice. These were not recorded as careers for the A.A. degree."
+  ]
+ },
+ "extracted_run": "38748842603"
+}

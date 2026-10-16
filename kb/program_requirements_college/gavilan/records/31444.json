@@ -1,0 +1,239 @@
+{
+ "college": "Gavilan College",
+ "control_number": "31444",
+ "shape": "adt",
+ "title": "Mathematics",
+ "award": "A.S. T Degree",
+ "source_url": "https://gavilan.curriqunet.com/catalog/iq/4089/4139/4395",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6733,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6733,
+    "output_tokens": 1653,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1653,
+  "output_tokens_details": {
+   "thinking_tokens": 513
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05999,
+ "ms": 15185,
+ "seconds": 15.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "CSIS24",
+    "CSIS45",
+    "PHYS4A"
+   ],
+   "flagged": [
+    "CSIS24",
+    "CSIS45",
+    "PHYS4A"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    66.0,
+    67.0
+   ],
+   "stated": [
+    59.0,
+    59.0
+   ],
+   "against": "degree",
+   "ge": [
+    34.0,
+    34.0
+   ],
+   "why": [],
+   "overlap": true
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Mathematics 2.0 - A.S.-T Degree",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": 11,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 59,
+    "max": 59
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify and utilize appropriate mathematical operations in the simplification of expressions and solution of equations.",
+    "Compare and contrast various mathematical models and then apply the appropriate model to real world problems.",
+    "Describe, compare and contrast various mathematical functions using everyday language.",
+    "Describe, compare and contrast various mathematical properties and operations for real and imaginary numbers using everyday-language."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Students complete all Required Core courses:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "MATH 1A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 1B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 1C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 2C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Complete one of these courses:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "CSIS 24",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CSIS 45",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS 4A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints no total for the major itself; only block totals (18 and 3-4) and a degree 'Total: 59'. total_units left null.",
+   "Degree total printed as 59, which differs from the 60-unit requirement stated in the ADT requirements text; the computation includes 'Double-Counted Units: -7' (7 major units counted toward Cal-GETC). Reviewer should check.",
+   "Elective (CSU/UC Transferable) Units printed as a range 11-12; open_elective_units is a single number so the low end 11 was recorded. The page also says students complete Cal-GETC 'plus sufficient electives to meet a 60 unit total', but since it prints units for electives, electives_fill_degree is false.",
+   "The Learning Outcome(s) list appears generic for mathematics and may be shared with the program as a whole; recorded as printed for this award.",
+   "No specific careers named; the description mentions 'a wide range of careers' and areas of additional study (actuarial science, applied mathematics, computer science (programming), statistics, theoretical mathematics), which are fields of transfer study rather than careers, so careers left empty.",
+   "Section title is 'Mathematics 2.0 - A.S.-T Degree'."
+  ]
+ },
+ "extracted_run": "38948144064"
+}

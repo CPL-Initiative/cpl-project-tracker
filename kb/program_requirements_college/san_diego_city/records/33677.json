@@ -1,0 +1,195 @@
+{
+ "college": "San Diego City College",
+ "control_number": "33677",
+ "shape": "certificate",
+ "title": "Audio Production Technology",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15615",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8241,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8241,
+    "output_tokens": 2171,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2171,
+  "output_tokens_details": {
+   "thinking_tokens": 721
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07638,
+ "ms": 17286,
+ "seconds": 17.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 19,
+   "courses": 0,
+   "count": 19,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "COURSES REQUIRED FOR THE MAJOR:",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Analyze the media’s impact on the public;",
+    "Operate audio software and hardware equipment;",
+    "Compose original music;",
+    "Record and produce all forms of audio in digital media content;",
+    "Participate in the local and global music community; and",
+    "Perform at or facilitate live events.",
+    "Demonstrate an understanding of the physics of sound, sound isolation, and room acoustics as it pertains to studio recording and audio production.",
+    "Demonstrate proficiency with industry standard notation and third party extension audio processing plug-in software including Sibelius and iZotope.",
+    "Demonstrate proficiency with sound design and post production audio techniques for TV, film, video, gaming, and multimedia formats.",
+    "Produce and perform in concerts and music events that incorporate new technologies and media.",
+    "Demonstrate proficiency with industry standard DAW (Digital Audio Workstations) software including Avid Pro Tools, Ableton Live, Propellerhead Reason, Cycling ’74 Max, and Apple Logic Pro X.",
+    "Utilize and demonstrate proficiency with music fundamentals, sound design principles in the creation of successful original music compositions in various formats.",
+    "Demonstrate an understanding of the history and development of music technology.",
+    "Demonstrate an understanding of music business elements including music publishing, copyrights, licensing, management, marketing, music contracts, self promotion.",
+    "To prepare students for entry-level positions in the commercial music industry.",
+    "Recognize and incorporate music technology elements such as mixing, editing, mastering, sequencing, synthesis, signal flow, controller mapping, signal processing, elastic audio, automation, and quantization in the creation of original compositions.",
+    "Produce a professional quality portfolio in preparation for academic transfer or for sharing with potential clients and employers.",
+    "Demonstrate an understanding of the role of and opportunities with music technology in today’s modern multi-cultural society.",
+    "Demonstrate competent operation of and familiarity with common hardware equipment used in a professional level commercial recording studio environment including mixing consoles, pre-amps, microphones, patch bays, signal processors, and audio interfaces."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "COURSES REQUIRED FOR THE MAJOR:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "MUSC 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 162",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 252",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 260",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 262",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The text begins mid-sentence ('ccessful completion of the Certificate of Achievement in Audio Production, students should be able to:'); the program description and any award heading above it appear cut off, so careers or other content may be missing.",
+   "Two outcome lists are printed: six outcomes for the 'Certificate of Achievement in Audio Production' and a 'Learning Outcome(s)' list for the 'Audio Production Technology Program' as a whole; both recorded, the second as shared program-level outcomes. Trailing punctuation ('; and') kept as printed.",
+   "The program-level outcome list includes 'To prepare students for entry-level positions in the commercial music industry', which reads as a goal rather than an outcome; recorded as printed. It was not copied into careers because it is an outcome, not a description or careers heading; reviewer may wish to treat 'commercial music industry' as a career field.",
+   "Total 18.0 semester units stated ('Semester Units: 18.0' and 'Total Units: 18.0')."
+  ]
+ },
+ "extracted_run": "38252422845"
+}

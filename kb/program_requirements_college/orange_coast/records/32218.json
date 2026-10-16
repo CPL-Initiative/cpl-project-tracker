@@ -1,0 +1,400 @@
+{
+ "college": "Orange Coast College",
+ "control_number": "32218",
+ "shape": "adt",
+ "title": "History",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/social-science-humanities/history/history-associate-arts-degree-transfer-aat/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8477,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8477,
+    "output_tokens": 2934,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2934,
+  "output_tokens_details": {
+   "thinking_tokens": 1046
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.09259,
+ "ms": 23640,
+ "seconds": 24.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 19,
+   "listed": 23,
+   "share": 0.826,
+   "missing": [
+    "HISTA170",
+    "HISTA170H",
+    "HISTA175",
+    "HISTA175H"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "HISTC1001",
+    "HISTC1001H",
+    "HISTC1002",
+    "HISTC1002H"
+   ],
+   "flagged": [
+    "HISTC1001",
+    "HISTC1001H",
+    "HISTC1002",
+    "HISTC1002H"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     52.0,
+     52.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "fill": [
+     8.0,
+     8.0
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate Degree for Transfer Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Students will be eligible and prepared for admission (SB 1440 and Education Code 66746) to California State University system schools.",
+    "Students will demonstrate through historically-based research essays the ability to comprehend, analyze, and synthesize information from a variety of primary and secondary sources"
+   ],
+   "careers": [
+    "the museum field",
+    "data analysis",
+    "the criminial justice system",
+    "public service",
+    "business"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HIST C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST C1001H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST C1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST C1002H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "List A - Six (6) units",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "HIST A161",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST A161H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST A180",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST A180H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST A162",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST A162H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST A185",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST A185H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B (Area 1) - Complete one (1) course from the following (or any course not yet taken from List A)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "HIST A101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST A144",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST A145",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST A150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHS A150",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST A176",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST A187",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GNDR A187",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B (Area 2) - Complete one (1) course from the following (or any course not yet taken from List A or List B area 1)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "HIST A140",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST A195",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST A198",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "HIST A170",
+    "why": "not in the text; requirement now printed as HIST C1001"
+   },
+   {
+    "code": "HIST A170H",
+    "why": "not in the text; requirement now printed as HIST C1001H"
+   },
+   {
+    "code": "HIST A175",
+    "why": "not in the text; requirement now printed as HIST C1002"
+   },
+   {
+    "code": "HIST A175H",
+    "why": "not in the text; requirement now printed as HIST C1002H"
+   }
+  ],
+  "notes": [
+   "HIST C1001/C1001H and HIST C1002/C1002H (common course numbering) are not in the closed list; they appear to replace HIST A170/A170H and HIST A175/A175H.",
+   "List A requires 6 units: one course from World History 1/Western Civilization 1 (A161, A161H, A180, A180H) and one from World History 2/Western Civilization 2 (A162, A162H, A185, A185H); recorded as two entries with alternatives.",
+   "List B Area 1 may also be satisfied by any List A course not yet taken; List B Area 2 by any course not yet taken from List A or List B Area 1.",
+   "Units are printed only beside the required-course rows and list totals; individual list courses have no printed units, so units are null.",
+   "Cal-GETC is printed as 'up to 34' units; recorded as 34.",
+   "Transferable electives 'as needed to satisfy unit requirement' with units 'Varies'; electives_fill_degree set true.",
+   "The Program Sequence tab's POLS C1000/C1000H is a Cal-GETC Area 4 / American Institutions course, not part of the major; not placed in a block.",
+   "Program Learning Outcomes are printed for the History program page and recorded for this AA-T."
+  ]
+ },
+ "extracted_run": "38670927724"
+}

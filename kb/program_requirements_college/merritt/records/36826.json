@@ -1,0 +1,182 @@
+{
+ "college": "Merritt College",
+ "control_number": "36826",
+ "shape": "noncredit",
+ "title": "Bridge to Credit ESOL",
+ "award": "Noncredit program",
+ "source_url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48793",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7416,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7416,
+    "output_tokens": 1273,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1273,
+  "output_tokens_details": {
+   "thinking_tokens": 504
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05512,
+ "ms": 11594,
+ "seconds": 12.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    134.0,
+    385.0
+   ],
+   "stated": [
+    134.0,
+    385.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Program Requirements",
+   "measure": "hours",
+   "total_units": {
+    "min": 134,
+    "max": 385
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Noncredit Courses:",
+    "rule": "choose_units",
+    "minimum": 134,
+    "option_group": null,
+    "stated": {
+     "min": 134,
+     "max": 385
+    },
+    "courses": [
+     {
+      "code": "ESOL 541A",
+      "units": 50,
+      "units_max": 96.25,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESOL 541B",
+      "units": 50,
+      "units_max": 96.25,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESOL 541C",
+      "units": 50,
+      "units_max": 96.25,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESOL 541D",
+      "units": 50,
+      "units_max": 96.25,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Measured in hours: each course prints 50-96.25 hours; total hours printed 134-385.",
+   "The block is headed 'Required Noncredit Courses' but also says 'Students must complete a minimum of 134 class hours.' Recorded as choose_units with minimum 134 hours; the heading might instead mean all four courses are required (all four together give 200-385 hours, not the printed minimum of 134). Reviewer should check.",
+   "Closed list stores ESOL541B and ESOL541D without a space; the catalog prints ESOL 541B and ESOL 541D. Treated as the same courses (catalog_addition false).",
+   "The Learning Outcome(s) section is cut off mid-sentence ('Synthesize written information and technological skills to register for cred'). The outcome was not recorded because it is incomplete; the reviewer should check the source for the full outcome(s).",
+   "Competency Requirement: instructor or department determines whether the student has met the program competencies.",
+   "The Career Opportunities text mentions preparation for vocational programs and job advancement, but it names no specific careers, so careers is empty.",
+   "The program description calls the award the Bridge to Credit ESOL Certificate of Competency."
+  ]
+ },
+ "extracted_run": "38935152199"
+}

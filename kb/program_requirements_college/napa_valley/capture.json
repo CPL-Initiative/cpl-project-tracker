@@ -1,0 +1,1228 @@
+{
+ "college": "Napa Valley College",
+ "catalog_url": "https://catalog.napavalley.edu/",
+ "platform": "courseleaf",
+ "catalog_year": "2026-2027",
+ "programs": 127,
+ "with_closed_list": 111,
+ "started": "2026-10-15T14:10:14Z",
+ "scope": null,
+ "sitemap": {
+  "url": "https://catalog.napavalley.edu/sitemap.xml",
+  "status": 200,
+  "listed": 265,
+  "nested": 0,
+  "program_pages": 173,
+  "refused": null,
+  "errors": null
+ },
+ "pages_read": 173,
+ "child_pages": 0,
+ "banner_h1": null,
+ "loads": 188,
+ "seconds": 872.2,
+ "found": 98,
+ "by_method": {
+  "no_closed_list": 16,
+  "not_found": 5,
+  "page_claimed": 8,
+  "sitemap_page": 98
+ },
+ "shared_pages": {
+  "https://catalog.napavalley.edu//areas-of-study/mathematics/mathematics-2.0-as-t/": [
+   "30819",
+   "46488"
+  ],
+  "https://catalog.napavalley.edu//areas-of-study/communication-studies/communication-studies-2.0-aa-t/": [
+   "31467",
+   "44508"
+  ],
+  "https://catalog.napavalley.edu//areas-of-study/digital-art-and-design/graphic-design-aa/": [
+   "36312",
+   "44506"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "03685",
+   "title": "Digital Design Graphics Technology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.napavalley.edu//areas-of-study/digital-design-graphics-technology/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2404,
+     "content": 5905,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Curriculum",
+      49
+     ],
+     [
+      "Contact Information",
+      508
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "19942",
+   "title": "Digital Design Graphics Technology",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.napavalley.edu//areas-of-study/digital-design-graphics-technology/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 0 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2404,
+     "content": 5905,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Curriculum",
+      49
+     ],
+     [
+      "Contact Information",
+      508
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "36505",
+   "title": "Entrepreneurship",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.napavalley.edu//areas-of-study/business-and-entrepreneurship/business-marketing-coa/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.062,
+    "body": 0.062,
+    "content": 0.0,
+    "net": 1,
+    "listed": 16,
+    "why": "coarse net: the page's code tokens name 1 of 16 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2748,
+     "content": 4267,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "37927",
+   "title": "Mechanical Drafting and Design",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "37928",
+   "title": "Architectural Drafting and Design",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "19126",
+   "title": "Studio Arts-Painting and Drawing Emphasis",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.napavalley.edu//areas-of-study/arts/studio-arts-aa/",
+    "https://catalog.napavalley.edu//areas-of-study/digital-art-and-design/digital-art-aa/",
+    "https://catalog.napavalley.edu//areas-of-study/digital-art-and-design/graphic-design-aa/",
+    "https://catalog.napavalley.edu//areas-of-study/arts/studio-arts-aa-t/",
+    "https://catalog.napavalley.edu//getting-your-degree/c-id/"
+   ]
+  },
+  {
+   "control_number": "19946",
+   "title": "Vocational Nursing",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://catalog.napavalley.edu//areas-of-study/nursing/",
+    "https://catalog.napavalley.edu//areas-of-study/nursing/nursing-as/",
+    "https://catalog.napavalley.edu//getting-your-degree/c-id/",
+    "https://catalog.napavalley.edu//getting-your-degree/general-education/"
+   ]
+  },
+  {
+   "control_number": "31158",
+   "title": "911 Dispatcher",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://catalog.napavalley.edu//getting-your-degree/c-id/"
+   ]
+  },
+  {
+   "control_number": "32313",
+   "title": "Administration of Justice",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://catalog.napavalley.edu//getting-your-degree/c-id/"
+   ]
+  },
+  {
+   "control_number": "36528",
+   "title": "Dance",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.napavalley.edu//areas-of-study/kinesiology/kinesiology-aa-t/"
+   ]
+  },
+  {
+   "control_number": "42592",
+   "title": "Law Enforcement-Mental Health and Addiction",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.napavalley.edu//areas-of-study/human-services/human-services-certificate-of-achievement/",
+    "https://catalog.napavalley.edu//areas-of-study/human-services/human-services-as/",
+    "https://catalog.napavalley.edu//getting-your-degree/c-id/"
+   ]
+  },
+  {
+   "control_number": "43353",
+   "title": "Law Enforcement-Crime Scene Investigation",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.napavalley.edu//getting-your-degree/c-id/"
+   ]
+  },
+  {
+   "control_number": "43354",
+   "title": "Law Enforcement-Career Preparation",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://catalog.napavalley.edu//getting-your-degree/c-id/",
+    "https://catalog.napavalley.edu//areas-of-study/sociology/sociology-aa-t/"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 16,
+  "0.8-1.0": 22,
+  "1.0": 60
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 98,
+  "list": [
+   {
+    "control_number": "03666",
+    "title": "Viticulture",
+    "award": "A.S. Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/vineyard-and-winery-technology/viticulture-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03670",
+    "title": "Accounting",
+    "award": "A.S. Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/accounting/accounting-as/",
+    "coverage": 0.615,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03687",
+    "title": "Welding Technology",
+    "award": "A.S. Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/welding-technology/welding-technology-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03695",
+    "title": "Nursing",
+    "award": "A.S. Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/nursing/nursing-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03696",
+    "title": "Vocational Nursing",
+    "award": "A.S. Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/nursing/",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03697",
+    "title": "Respiratory Care",
+    "award": "A.S. Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/respiratory-care/respiratory-care-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "03708",
+    "title": "Child and Family Studies",
+    "award": "A.S. Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/child-and-family-studies-and-education/child-and-family-studies-as/",
+    "coverage": 0.789,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11482",
+    "title": "Winemaking",
+    "award": "A.S. Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/vineyard-and-winery-technology/winemaking-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11483",
+    "title": "Wine Marketing & Sales",
+    "award": "A.S. Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/vineyard-and-winery-technology/wine-marketing-and-sales-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12318",
+    "title": "Human Services",
+    "award": "A.S. Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/human-services/human-services-as/",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19036",
+    "title": "Hospitality Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.napavalley.edu//areas-of-study/hospitality-culinary-and-tourism-management/hospitality-management-certificate-of-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19114",
+    "title": "Music-Instrumental Emphasis",
+    "award": "A.A. Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/music/music-instrumental-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19115",
+    "title": "Music-Vocal Emphasis",
+    "award": "A.A. Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/music/music-vocal-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19117",
+    "title": "Musical Theater",
+    "award": "A.A. Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/music/musical-theater-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19123",
+    "title": "Spanish for Non-Heritage Speakers Emphasis",
+    "award": "A.A. Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/spanish/spanish-for-non-heritage-speakers-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19125",
+    "title": "Spanish for Heritage Speakers",
+    "award": "A.A. Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/spanish/spanish-for-heritage-speakers-aa/",
+    "coverage": 0.938,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19127",
+    "title": "Studio Arts-Ceramics Emphasis",
+    "award": "A.A. Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/arts/studio-arts-aa/",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19128",
+    "title": "Theater Arts-Acting",
+    "award": "A.A. Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/theater-arts/theater-arts-acting-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19129",
+    "title": "Theater Arts-Technical Theater",
+    "award": "A.A. Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/theater-arts/theater-arts-technical-theater-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19937",
+    "title": "Viticulture and Enology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.napavalley.edu//areas-of-study/vineyard-and-winery-technology/viticulture-and-enology-certificate-of-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19938",
+    "title": "Wine Marketing & Sales",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.napavalley.edu//areas-of-study/vineyard-and-winery-technology/wine-marketing-and-sales-certificate-of-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19939",
+    "title": "Accounting: Bookkeeping",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.napavalley.edu//areas-of-study/accounting/accounting-bookkeeping-certificate-of-achievement/",
+    "coverage": 0.778,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19944",
+    "title": "Welding Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.napavalley.edu//areas-of-study/welding-technology/welding-technology-certificate-of-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19948",
+    "title": "Child and Family Studies",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.napavalley.edu//areas-of-study/child-and-family-studies-and-education/child-and-family-studies-certificate-of-achievement/",
+    "coverage": 0.853,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19949",
+    "title": "Human Services",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.napavalley.edu//areas-of-study/human-services/human-services-certificate-of-achievement/",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22827",
+    "title": "Art History",
+    "award": "A.A. Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/art-history/art-history-aa/",
+    "coverage": 0.818,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30819",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/mathematics/mathematics-2.0-as-t/",
+    "coverage": 0.625,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31019",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/child-and-family-studies-and-education/early-childhood-education-as-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31467",
+    "title": "Communication Studies",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/communication-studies/communication-studies-2.0-aa-t/",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31468",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/sociology/sociology-aa-t/",
+    "coverage": 0.93,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31676",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/art-history/art-history-aa-t/",
+    "coverage": 0.85,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31686",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/arts/studio-arts-aa-t/",
+    "coverage": 0.867,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31745",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/kinesiology/kinesiology-aa-t/",
+    "coverage": 0.897,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32314",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/psychology/psychology-aa-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32315",
+    "title": "Music",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/music/music-aa-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32329",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/spanish/spanish-aa-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32351",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/anthropology/anthropology-aa-t/",
+    "coverage": 0.964,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32409",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/english/english-aa-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32822",
+    "title": "Business Administration",
+    "award": "A.S. Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/business-and-entrepreneurship/business-administration-as/",
+    "coverage": 0.692,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32965",
+    "title": "LGBT Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.napavalley.edu//areas-of-study/lgbt-education/lgbt-studies-certificate-of-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33287",
+    "title": "Theater Arts",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/theater-arts/theater-arts-aa-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33722",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/history/history-aa-t/",
+    "coverage": 0.926,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35795",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/physics/physics-2.0-as-t/",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36251",
+    "title": "Natural Science",
+    "award": "A.S. Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/biology/natural-science-as/",
+    "coverage": 0.944,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36312",
+    "title": "Digital Art and Graphic Design",
+    "award": "A.A. Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/digital-art-and-design/graphic-design-aa/",
+    "coverage": 0.867,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36313",
+    "title": "Entrepreneurship",
+    "award": "A.S. Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/business-and-entrepreneurship/entrepreneurship-as/",
+    "coverage": 0.714,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36453",
+    "title": "Pre-Health Science",
+    "award": "A.S. Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/biology/pre-health-science-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36501",
+    "title": "Combination Welding Technician",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://catalog.napavalley.edu//areas-of-study/welding-technology/combination-welding-technician-certificate-of-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36504",
+    "title": "Addiction Studies",
+    "award": "A.S. Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/addiction-studies/addiction-studies-as/",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36507",
+    "title": "Welding Technician Basic",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.napavalley.edu//areas-of-study/welding-technology/welding-technician-basic-certificate-of-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36509",
+    "title": "Early Childhood Early Intervention",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://catalog.napavalley.edu//areas-of-study/child-and-family-studies-and-education/early-childhood-intervention-certificate-of-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36865",
+    "title": "Ethnic Studies",
+    "award": "A.A. Degree",
+    "url": "https://catalog.napavalley.edu//getting-your-degree/general-education/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36866",
+    "title": "Addiction Studies",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.napavalley.edu//areas-of-study/addiction-studies/addiction-studies-certificate-of-achievement/",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36867",
+    "title": "Content Marketing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.napavalley.edu//areas-of-study/business-and-entrepreneurship/content-marketing-certificate-of-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37330",
+    "title": "Child and Family Studies Associate Teacher",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "url": "https://catalog.napavalley.edu//areas-of-study/child-and-family-studies-and-education/child-and-family-studies-associate-teacher-certificate-of-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37331",
+    "title": "Child and Family Studies Associate Teacher with Administration",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "url": "https://catalog.napavalley.edu//areas-of-study/child-and-family-studies-and-education/child-and-family-studies-associate-teacher-with-administration-certificate-of-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37677",
+    "title": "Social Justice Studies: Ethnic Studies",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/ethnic-studies/social-justice-studies-ethnic-studies-aa-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37678",
+    "title": "LGBT Education",
+    "award": "A.S. Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/lgbt-education/lgbt-education-as/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38071",
+    "title": "Hospitality Management",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/hospitality-culinary-and-tourism-management/hospitality-management-as-t/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38383",
+    "title": "LGBTQ Community Awareness",
+    "award": "Noncredit program",
+    "url": "https://catalog.napavalley.edu//areas-of-study/lgbt-education/lgbtq-community-awareness-noncredit-certificate-of-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39586",
+    "title": "LGBT Education for Educators",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.napavalley.edu//areas-of-study/lgbt-education/lgbt-education-educators-certificate-of-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39587",
+    "title": "LGBT Education for Healthcare Professionals",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.napavalley.edu//areas-of-study/lgbt-education/lgbt-education-health-care-certificate-of-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40867",
+    "title": "Film, Television and Electronic Media",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/film-studies/film-television-and-electronic-media-as-t/",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40869",
+    "title": "Social Work and Human Services",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/human-services/social-work-and-human-services-aa-t/",
+    "coverage": 0.769,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41177",
+    "title": "ESL: Low-Advanced Academic",
+    "award": "Noncredit program",
+    "url": "https://catalog.napavalley.edu//areas-of-study/english-second-language/esl-low-advanced-academic-certificate-of-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41178",
+    "title": "ESL: High-Intermediate Academic",
+    "award": "Noncredit program",
+    "url": "https://catalog.napavalley.edu//areas-of-study/english-second-language/esl-high-intermediate-academic-certificate-of-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41179",
+    "title": "ESL: Low-Intermediate Academic",
+    "award": "Noncredit program",
+    "url": "https://catalog.napavalley.edu//areas-of-study/english-second-language/esl-low-intermediate-academic-certificate-of-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41180",
+    "title": "ESL: Pre-Intermediate Academic",
+    "award": "Noncredit program",
+    "url": "https://catalog.napavalley.edu//areas-of-study/english-second-language/esl-pre-intermediate-academic-certificate-of-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41366",
+    "title": "Culinary Arts-Professional",
+    "award": "A.A. Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/hospitality-culinary-and-tourism-management/culinary-arts-professional-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41498",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/computer-science/computer-science-as-t/",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42588",
+    "title": "Culinary Arts-Advanced",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.napavalley.edu//areas-of-study/hospitality-culinary-and-tourism-management/culinary-arts-advanced-certificate-of-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42589",
+    "title": "Wine Production",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.napavalley.edu//areas-of-study/vineyard-and-winery-technology/wine-production-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42590",
+    "title": "Law Enforcement-Community Policing",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.napavalley.edu//areas-of-study/ethnic-studies/ethnic-studies-aa/",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42591",
+    "title": "Law Enforcement-Juvenile Justice",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.napavalley.edu//getting-your-degree/c-id/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42609",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/business-and-entrepreneurship/business-administration-as-t-2.0/",
+    "coverage": 0.545,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43712",
+    "title": "Environmental Science",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/environmental-sciences/environmental-science-as-t/",
+    "coverage": 0.769,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43716",
+    "title": "Geographic Information Systems",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.napavalley.edu//areas-of-study/geography/geographic-information-systems-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43889",
+    "title": "Social Justice Studies-Gender Studies",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/sociology/sjs-gender-studies-aa-t/",
+    "coverage": 0.92,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43939",
+    "title": "Photography",
+    "award": "A.A. Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/photography/photography-aa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43940",
+    "title": "Photography",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.napavalley.edu//areas-of-study/photography/photography-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44506",
+    "title": "Graphic Design",
+    "award": "A.A. Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/digital-art-and-design/graphic-design-aa/",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44507",
+    "title": "Digital Art",
+    "award": "A.A. Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/digital-art-and-design/digital-art-aa/",
+    "coverage": 0.909,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44508",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/communication-studies/communication-studies-2.0-aa-t/",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44535",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/economics/economics-aa-t/",
+    "coverage": 0.792,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44536",
+    "title": "Social Justice Studies-LGBTQ Studies",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/sociology/sjs-lgbtq-studies-aa-t/",
+    "coverage": 0.966,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45173",
+    "title": "Music-Mariachi",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.napavalley.edu//areas-of-study/music/music-mariachi-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45176",
+    "title": "Theater Arts - Acting",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.napavalley.edu//areas-of-study/theater-arts/theater-arts-acting-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45206",
+    "title": "Career Communications",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.napavalley.edu//areas-of-study/communication-studies/career-communications-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45337",
+    "title": "Community Health Worker",
+    "award": "Noncredit program",
+    "url": "https://catalog.napavalley.edu//areas-of-study/non-credit/community-health-worker-certificate-of-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45338",
+    "title": "Fire Resilient Landscaping",
+    "award": "Noncredit program",
+    "url": "https://catalog.napavalley.edu//areas-of-study/non-credit/fire-resilient-landscaping-certificate-of-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45339",
+    "title": "21st Century Employability Skills",
+    "award": "Noncredit program",
+    "url": "https://catalog.napavalley.edu//areas-of-study/non-credit/21st-century-employability-skills-certificate-of-completion/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45391",
+    "title": "Business-Marketing",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.napavalley.edu//areas-of-study/business-and-entrepreneurship/business-marketing-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45487",
+    "title": "Child and Family Studies-Trauma Informed Early Care and Education",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.napavalley.edu//areas-of-study/child-and-family-studies-and-education/cfs-trauma-informed-early-care-and-education-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45798",
+    "title": "Business Start-Up",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.napavalley.edu//areas-of-study/business-and-entrepreneurship/business-start-up-certificate-of-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46378",
+    "title": "Machine Tool Technology-One Year",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.napavalley.edu//areas-of-study/machine-tool-technology/machine-tool-technology-one-year-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46379",
+    "title": "Welder's Assistant",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.napavalley.edu//areas-of-study/welding-technology/welders-assistant-coa/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46488",
+    "title": "Mathematics 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.napavalley.edu//areas-of-study/mathematics/mathematics-2.0-as-t/",
+    "coverage": 0.778,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46582",
+    "title": "Respiratory Care",
+    "award": "Baccalaureate of Science (B.S.) Degree.",
+    "url": "https://catalog.napavalley.edu//areas-of-study/respiratory-care/respiratory-care-bs/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "38748853261"
+}

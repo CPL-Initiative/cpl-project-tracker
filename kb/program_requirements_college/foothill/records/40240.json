@@ -1,0 +1,183 @@
+{
+ "college": "Foothill College",
+ "control_number": "40240",
+ "shape": "certificate",
+ "title": "Communication Studies II",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.foothill.edu/degree-certificate-requirements/general-education-graduation-requirements/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 16389,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 16389,
+    "output_tokens": 774,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 774,
+  "output_tokens_details": {
+   "thinking_tokens": 269
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08104,
+ "ms": 7729,
+ "seconds": 8.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 10,
+   "share": 0.0,
+   "missing": [
+    "COMM10",
+    "COMM12",
+    "COMM1B",
+    "COMM2",
+    "COMM3",
+    "COMM4",
+    "COMM5",
+    "COMM55",
+    "COMMC1000",
+    "COMMC1000H"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Foothill College General Education & Graduation Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COMM 001B",
+    "why": "text has no Communication Studies II section; printed as COMM 1B only in the GE Area 1B list"
+   },
+   {
+    "code": "COMM 10",
+    "why": "not in the text"
+   },
+   {
+    "code": "COMM 12",
+    "why": "not in the text"
+   },
+   {
+    "code": "COMM 2",
+    "why": "appears only in the GE Area 1B list, not as a certificate requirement"
+   },
+   {
+    "code": "COMM 3",
+    "why": "appears only in the GE Area 1B list, not as a certificate requirement"
+   },
+   {
+    "code": "COMM 4",
+    "why": "appears only in the GE Area 1B list, not as a certificate requirement"
+   },
+   {
+    "code": "COMM 5",
+    "why": "not in the text"
+   },
+   {
+    "code": "COMM 55",
+    "why": "appears only in the GE Area 1B list, not as a certificate requirement"
+   },
+   {
+    "code": "COMM C1000",
+    "why": "appears only in the GE Area 1B list, not as a certificate requirement"
+   },
+   {
+    "code": "COMM C1000H",
+    "why": "appears only as an honors alternative in the GE Area 1B list, not as a certificate requirement"
+   }
+  ],
+  "notes": []
+ },
+ "extracted_run": "38675242638"
+}

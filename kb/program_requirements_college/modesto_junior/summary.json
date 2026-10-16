@@ -1,0 +1,97 @@
+{
+ "college": "Modesto Junior College",
+ "programs": 199,
+ "with_closed_list": 196,
+ "found": 189,
+ "extracted": 189,
+ "errors": 0,
+ "passed_machine_checks": 159,
+ "failed": {
+  "coverage": 5,
+  "invented": 1,
+  "arithmetic": 30,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 12.03,
+ "cost_per_program": 0.0637,
+ "not_found": [
+  {
+   "control_number": "08017",
+   "title": "Animal Science",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/animal-science-mjc-fall-2025",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.458,
+    "body": 0.458,
+    "content": 0.458,
+    "net": 22,
+    "listed": 48,
+    "why": "coverage 0.46 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 3617,
+     "content": 3617,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "16280",
+   "title": "Small Animal Veterinary Technician",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/animal-artificial-insemination-technician-mjc-fall-2023",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1840,
+     "content": 1840,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "18378",
+   "title": "CSU General Education",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "18379",
+   "title": "IGETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "44877",
+   "title": "Cal-GETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "run": "38477845911"
+}

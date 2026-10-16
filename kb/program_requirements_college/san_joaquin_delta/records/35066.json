@@ -1,0 +1,264 @@
+{
+ "college": "San Joaquin Delta College",
+ "control_number": "35066",
+ "shape": "degree",
+ "title": "Machining Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3303&print",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7007,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7007,
+    "output_tokens": 2523,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2523,
+  "output_tokens_details": {
+   "thinking_tokens": 878
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07849,
+ "ms": 20145,
+ "seconds": 20.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 11,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "ETECH12"
+   ],
+   "flagged": [
+    "ETECH12"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    34.0,
+    34.0
+   ],
+   "stated": [
+    34.0,
+    34.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 8,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Machining Technology A.S. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 34,
+    "max": 34
+   },
+   "open_elective_units": null,
+   "ge_pattern": "San Joaquin Delta College Associate Degree General Education Pattern or Cal-GETC",
+   "degree_total": {
+    "min": 61,
+    "max": 61
+   },
+   "ge_units": {
+    "min": 27,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Transform information given from a mechanical drawing (print) into a Computer Numerically Controlled (CNC) program used to fabricate metal parts. The part will have these features: hole patterns, contours, and pockets.",
+    "Create a metal part by developing a Computer Numerically Controlled (CNC) program. The overall project will consist of four components: tooling selection, spindle speed and feed rate calculations, CNC program, and dimensional accuracy of the part.",
+    "Properly use inspection tools to dimensionally inspect fabricated metal parts.",
+    "Apply mathematics concepts to solve machining problems such as calculating machining feed rates and spindle speeds.",
+    "Machine a metal part using a milling machine and standard tooling. The part will have these features: a bolt hole pattern with drilled, reamed or tapped holes, a slot, and a pocket.",
+    "Machine a metal part using a lathe and standard tooling. The part will have these features: three diameters, a drilled hole, a taper, and a thread.",
+    "Demonstrate the application of engineering drafting standards for a variety of projects dealing primarily with orthographic projection and visualization.",
+    "Prepare engineering drawings consistent with industry standards."
+   ],
+   "careers": [
+    "Advanced Manufacturing industries",
+    "machine shops",
+    "metal fabrication shops",
+    "tool and die shops",
+    "mold making shops",
+    "research and development laboratories",
+    "industrial maintenance",
+    "millwright positions"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Major Requirements - Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 30,
+     "max": 30
+    },
+    "courses": [
+     {
+      "code": "E TECH 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "E TECH 22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH 70A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH 70B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH 73A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH 73B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH 74A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH 74B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH 76A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH 76B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Major Requirements - Restricted Electives",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "WELDING 10",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELDING 98",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog text begins mid-sentence ('he Machining Technology Associate in Science degree...'); no section heading is printed, so the heading recorded is constructed from the program title and award.",
+   "ge_units records the two printed GE pattern totals as a range: San Joaquin Delta College Associate Degree GE Pattern 27 units, Cal-GETC 34 units; the student completes one.",
+   "Minimum Major Units Required: 34 recorded as total_units; Minimum Degree Units Required: 61 recorded as degree_total.",
+   "MACH 74A and MACH 74B are titled 'Computer Numerical Controlled Machining - Mill' and '- Lathe' in the catalog, versus 'Computer Numerical Controlled Machining I/II' in the state file; codes match.",
+   "E TECH 12 Computer-Aided Drafting is in the core but not in the closed list; marked catalog_addition.",
+   "Careers recorded from the description's list of Advanced Manufacturing settings for entry-level positions; 'apprenticeships in these fields' not recorded as a career. Reviewer may wish to confirm which listed workplaces count as career fields.",
+   "All courses must be completed with a grade of 'C' or better."
+  ]
+ },
+ "extracted_run": "38631691511"
+}

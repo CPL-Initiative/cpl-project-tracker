@@ -1,0 +1,339 @@
+{
+ "college": "Fullerton College",
+ "programs": 332,
+ "with_closed_list": 326,
+ "found": 313,
+ "extracted": 313,
+ "errors": 0,
+ "passed_machine_checks": 260,
+ "failed": {
+  "coverage": 16,
+  "invented": 12,
+  "arithmetic": 41,
+  "repeated": 1,
+  "outcomes": 0
+ },
+ "cost_usd": 22.21,
+ "cost_per_program": 0.071,
+ "not_found": [
+  {
+   "control_number": "03876",
+   "title": "Administration of Justice",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/business/business-administration-associate-arts-degree/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 15,
+    "why": "coarse net: the page's code tokens name 0 of 15 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5512,
+     "content": 8640,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Program Student Learning Outcomes",
+      600
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "36483",
+   "title": "IGETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "41372",
+   "title": "Autonomous Systems Technician",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/technology/autonomous-systems-technician-certificate/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.4,
+    "body": 0.4,
+    "content": 0.0,
+    "net": 10,
+    "listed": 10,
+    "why": "coverage 0.40 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 3848,
+     "content": 6923,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Program Student Learning Outcomes",
+      550
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "42402",
+   "title": "Uncrewed Aerial Systems Piloting",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/technology/uncrewed-aerial-systems-piloting-certificate/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.333,
+    "body": 0.333,
+    "content": 0.0,
+    "net": 6,
+    "listed": 6,
+    "why": "coverage 0.33 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 3651,
+     "content": 6503,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Program Student Learning Outcomes",
+      318
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "44110",
+   "title": "Drone and Autonomous Systems",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/journalism/drone-and-autonomous-associate-in-science-degree/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.448,
+    "body": 0.448,
+    "content": 0.0,
+    "net": 25,
+    "listed": 29,
+    "why": "coverage 0.45 in innerText+tabs, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 4793,
+     "content": 7697,
+     "tabs": 482
+    },
+    "tab_panels": [
+     [
+      "Program Student Learning Outcomes",
+      441
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "45832",
+   "title": "Cal-GETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/fullerton-college/general-education-breadth-requirements-college-university/california-general-education-transfer-curriculum/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "textContent",
+    "coverage": 0.272,
+    "body": 0.0,
+    "content": 0.272,
+    "net": 88,
+    "listed": 323,
+    "why": "coarse net: the page's code tokens name 88 of 323 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2998,
+     "content": 33344,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Requirements",
+      28604
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "46098",
+   "title": "Drone and Autonomous Systems",
+   "award": "Baccalaureate of Science (B.S.) Degree.",
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/journalism/drone-and-autonomous-bachelors-of-science-degree/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.459,
+    "body": 0.459,
+    "content": 0.0,
+    "net": 37,
+    "listed": 37,
+    "why": "coverage 0.46 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 5725,
+     "content": 8977,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Program Student Learning Outcomes",
+      802
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "46115",
+   "title": "Autonomous Industrial Inspection",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/machine-technology/autonomous-industrial-inspection-certificate/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.25,
+    "body": 0.25,
+    "content": 0.0,
+    "net": 4,
+    "listed": 4,
+    "why": "coverage 0.25 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 3990,
+     "content": 7029,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Program Student Learning Outcomes",
+      477
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "46119",
+   "title": "Drone Maintenance and Repair Technician",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/machine-technology/drone-maintenance-and-repair-technician-certificate/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.286,
+    "body": 0.286,
+    "content": 0.0,
+    "net": 7,
+    "listed": 7,
+    "why": "coverage 0.29 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 3923,
+     "content": 6850,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Program Student Learning Outcomes",
+      371
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "46122",
+   "title": "Drone and Precision Agriculture Technician",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/machine-technology/drone-and-precision-agriculture-technician-certificate/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.417,
+    "body": 0.417,
+    "content": 0.0,
+    "net": 12,
+    "listed": 12,
+    "why": "coverage 0.42 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 4385,
+     "content": 7343,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Program Student Learning Outcomes",
+      427
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "46124",
+   "title": "Solar Panel Inspection Technician",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/technology/solar-panel-inspection-technician-certificate/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.4,
+    "body": 0.4,
+    "content": 0.0,
+    "net": 5,
+    "listed": 5,
+    "why": "coverage 0.40 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 3763,
+     "content": 6716,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Program Student Learning Outcomes",
+      418
+     ]
+    ]
+   }
+  }
+ ],
+ "run": "38675136988"
+}

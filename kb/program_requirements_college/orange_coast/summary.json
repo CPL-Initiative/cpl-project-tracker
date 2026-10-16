@@ -1,0 +1,801 @@
+{
+ "college": "Orange Coast College",
+ "programs": 328,
+ "with_closed_list": 301,
+ "found": 242,
+ "extracted": 242,
+ "errors": 0,
+ "passed_machine_checks": 138,
+ "failed": {
+  "coverage": 40,
+  "invented": 3,
+  "arithmetic": 91,
+  "repeated": 0,
+  "outcomes": 7
+ },
+ "cost_usd": 17.26,
+ "cost_per_program": 0.0713,
+ "not_found": [
+  {
+   "control_number": "03967",
+   "title": "Film & Television",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/film-television/film-television-associate-arts-degree/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.2,
+    "body": 0.0,
+    "content": 0.244,
+    "net": 12,
+    "listed": 45,
+    "why": "coarse net: the page's code tokens name 12 of 45 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2310,
+     "content": 9193,
+     "tabs": 2098
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      2346
+     ],
+     [
+      "PROGRAM SEQUENCE",
+      2074
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "03974",
+   "title": "Engineering",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/astronomy/astronomy-associate-science-degree/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.211,
+    "body": 0.132,
+    "content": 0.184,
+    "net": 8,
+    "listed": 38,
+    "why": "coarse net: the page's code tokens name 8 of 38 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2761,
+     "content": 8025,
+     "tabs": 1618
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      1178
+     ],
+     [
+      "PROGRAM SEQUENCE",
+      1594
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "08661",
+   "title": "Early Childhood Administration",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/child-development-education/early-childhood-education-ast/",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3464,
+     "content": 9921,
+     "tabs": 2454
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      1506
+     ],
+     [
+      "PROGRAM SEQUENCE - CAL-GETC",
+      2419
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "18205",
+   "title": "World Dance Instructor",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/dance/world-dance-certificate-achievement/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "textContent",
+    "coverage": 0.171,
+    "body": 0.0,
+    "content": 0.171,
+    "net": 6,
+    "listed": 35,
+    "why": "coarse net: the page's code tokens name 6 of 35 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2959,
+     "content": 7991,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      1404
+     ],
+     [
+      "PROGRAM SEQUENCE",
+      1172
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "22383",
+   "title": "Film & Television",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/film-television/film-television-certificate-achievement/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "textContent",
+    "coverage": 0.239,
+    "body": 0.0,
+    "content": 0.239,
+    "net": 11,
+    "listed": 46,
+    "why": "coarse net: the page's code tokens name 11 of 46 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2144,
+     "content": 7625,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      1962
+     ],
+     [
+      "PROGRAM SEQUENCE",
+      1070
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "22424",
+   "title": "Early Childhood Administration",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/teaching-education/child-development-education/early-childhood-education-ast/",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3464,
+     "content": 9921,
+     "tabs": 2454
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      1506
+     ],
+     [
+      "PROGRAM SEQUENCE - CAL-GETC",
+      2419
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "35945",
+   "title": "Lifeguard Training, Professional Rescue",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/kinesiology/lifeguard-training-professional-rescue-certificate-completion/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2374,
+     "content": 5543,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      642
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "36374",
+   "title": "Yoga Instructor Training",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/kinesiology/yoga-instructor-training-certificate-completion/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2835,
+     "content": 5714,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      351
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "36847",
+   "title": "Customer Service for the Retail Industry",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/consumer-health-sciences/customer-service-retail-industry-certificate-completion/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2023,
+     "content": 4956,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      405
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "36913",
+   "title": "Emergent English Language Skills",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/english-language-learning/emergent-english-language-skills,certificate-competency/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "textContent",
+    "coverage": 0.25,
+    "body": 0.0,
+    "content": 0.25,
+    "net": 1,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 1 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2655,
+     "content": 5868,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      644
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "36917",
+   "title": "Tutoring Skills and Strategies",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/tutoring/tutoring-skills-strategies-certificate-completion/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2311,
+     "content": 5206,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      373
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "37986",
+   "title": "Academic Preparation in English",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/english/academic-preparation-english-certificate-competency/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 0 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2489,
+     "content": 5733,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      730
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "38181",
+   "title": "Speaking about Reading",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "38209",
+   "title": "Unmanned Aircraft Systems",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-science/unmanned-aircraft-systems-certificate-achievement/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2412,
+     "content": 6172,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      578
+     ],
+     [
+      "PROGRAM SEQUENCE",
+      730
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "38242",
+   "title": "Meeting and Event Management",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "38321",
+   "title": "Skills Enhancement for Consumer and Health Science Students",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/allied-health/skills-enhancement-consumer-health-sciences-certificate-completion/",
+    "label": {
+     "award": 1,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2389,
+     "content": 5666,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      743
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "38420",
+   "title": "Animation",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/digital-media-arts-design/animation-certificate-achievement/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "textContent",
+    "coverage": 0.391,
+    "body": 0.0,
+    "content": 0.391,
+    "net": 9,
+    "listed": 23,
+    "why": "coarse net: the page's code tokens name 9 of 23 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2817,
+     "content": 7754,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      1310
+     ],
+     [
+      "PROGRAM SEQUENCE",
+      1149
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "38587",
+   "title": "Integrative Health Coach",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "38598",
+   "title": "Integrative Health Coach",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "38663",
+   "title": "Animation",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/digital-media-arts-design/animation-associate-science-degree/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.435,
+    "body": 0.0,
+    "content": 0.391,
+    "net": 10,
+    "listed": 23,
+    "why": "coverage 0.43 in innerText+tabs, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 2915,
+     "content": 8634,
+     "tabs": 1748
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      1500
+     ],
+     [
+      "PROGRAM SEQUENCE",
+      1724
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "38798",
+   "title": "English Language Learning--Advanced",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/english-language-learning/advanced-english-language-skills-certificate-competency/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "textContent",
+    "coverage": 0.4,
+    "body": 0.0,
+    "content": 0.4,
+    "net": 2,
+    "listed": 5,
+    "why": "coverage 0.40 in textContent, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 3060,
+     "content": 6215,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      585
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "41824",
+   "title": "Marine Mammal Field Studies and Conservation",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/marine-science/marine-mammal-field-studies-and-conservation-certificate-achievement/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "textContent",
+    "coverage": 0.167,
+    "body": 0.0,
+    "content": 0.167,
+    "net": 2,
+    "listed": 12,
+    "why": "coarse net: the page's code tokens name 2 of 12 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2604,
+     "content": 5906,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      827
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "41928",
+   "title": "Applied Ocean Science and Technology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/marine-science/applied-ocean-science-and-technology-associate-science-degree/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.421,
+    "body": 0.0,
+    "content": 0.474,
+    "net": 9,
+    "listed": 19,
+    "why": "coverage 0.42 in innerText+tabs, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 3433,
+     "content": 8941,
+     "tabs": 1538
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      1493
+     ],
+     [
+      "PROGRAM SEQUENCE",
+      1514
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "41964",
+   "title": "Hospitality and Tourism",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/consumer-health-sciences/hospitality-and-tourism-certificate-completion/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2382,
+     "content": 5303,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      393
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "44036",
+   "title": "Math Skills for College Success",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/mathematics/math-skills-for-college-success-certificate-competency/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 0 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2151,
+     "content": 5376,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      712
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "45181",
+   "title": "MESA (Math, Engineering, Science Achievement) Program",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/mesa/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1622,
+     "content": 2800,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45349",
+   "title": "Pharmacy Technician",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/allied-health/pharmacy-technician-noncredit-certificate-completion/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2978,
+     "content": 6193,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      696
+     ]
+    ]
+   }
+  }
+ ],
+ "run": "38843379313"
+}

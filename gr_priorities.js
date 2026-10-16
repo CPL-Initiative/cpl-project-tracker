@@ -342,8 +342,10 @@
       ".grx{--gx-ink:var(--text-strong,#1C1C1A);--gx-muted:var(--text-muted,#5C5C55);",
       "--gx-border:var(--border,rgba(28,28,26,.14));--gx-bstrong:var(--border-strong,rgba(28,28,26,.30));",
       "--gx-surface:var(--surface-opaque,#fff);--gx-card:var(--surface-subtle,#faf9f6);",
-      "--gx-accent:var(--seal-blue,#002F6D);--gx-g:var(--hunter,#2C601A);--gx-y:var(--mustard-text,#8B6800);",
-      "--gx-r:var(--crimson,#920000);font-family:'Source Sans 3',Arial,sans-serif;color:var(--gx-ink);}",
+      "--gx-accent:var(--seal-blue-text,#002F6D);--gx-g:var(--hunter,#2C601A);--gx-y:var(--mustard-text,#8B6800);",
+      "--gx-r:var(--crimson,#920000);font-family:'Source Sans 3',Arial,sans-serif;color:var(--gx-ink);text-align:left;}",
+      // The register reads left to right; the root's placeholder style centers text, and only the head keeps it.
+      ".grx .gx-head{text-align:center;}",
       ".grx h2,.grx h3,.grx h4{font-family:Georgia,'Playfair Display',serif;margin:0;}",
       // head
       ".grx .gx-head{border-bottom:2px solid var(--gx-accent);padding-bottom:12px;margin-bottom:16px;}",
@@ -361,14 +363,14 @@
       ".grx .gx-why{font-size:12.6px;line-height:1.5;color:var(--gx-ink);margin:0 0 7px!important;}",
       ".grx .gx-why b{color:var(--gx-muted);font-weight:700;}",
       ".grx .gx-vprog{margin:7px 0 0!important;font-size:11.6px;font-weight:700;color:var(--gx-y);}",
-      ".grx .gx-rowctl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:9px;",
+      ".grx .gx-rowctl{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;margin-top:9px;",
       "border-top:1px dotted var(--gx-border);padding-top:8px;}",
       ".grx .gx-rowmsg{font-size:11px;color:var(--gx-muted);}",
       ".grx .gx-rowmsg.err{color:var(--gx-r);}.grx .gx-rowmsg.ok{color:var(--gx-g);}",
       ".grx .gx-corr{margin:0;padding-left:18px;}",
       ".grx .gx-corr li{font-size:12.4px;line-height:1.45;color:var(--gx-muted);margin:5px 0;}",
       ".grx .gx-samp{display:inline-block;margin-left:8px;padding:1px 7px;border-radius:3px;font-size:10.5px;",
-      "font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:var(--mustard-fill,#E3B341);color:var(--gx-accent);}",
+      "font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:var(--mustard-fill,#E3B341);color:var(--seal-blue,#002F6D);}",
       // area bar
       ".grx .gx-areabar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:14px;}",
       ".grx .gx-areabar label{font-size:12px;font-weight:700;color:var(--gx-muted);}",
@@ -380,13 +382,13 @@
       ".grx .gx-edit{margin:0;}",
       ".grx .gx-pathset{display:inline-flex;gap:12px;flex-wrap:wrap;align-items:center;}",
       ".grx .gx-pathopt{display:inline-flex;align-items:center;gap:4px;font-size:.84rem;cursor:pointer;}",
-      ".grx .gx-analysis{border:1px solid var(--gx-b);border-radius:8px;padding:10px 12px;background:var(--gx-soft,#f7f6f2);}",
-      ".grx .gx-analysis h5{margin:0 0 7px;font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;color:var(--gx-mut);}",
-      ".grx .gx-fnd{display:flex;gap:8px;align-items:baseline;padding:5px 0;border-top:1px solid var(--gx-b);font-size:.86rem;line-height:1.45;}",
+      ".grx .gx-analysis{border:1px solid var(--gx-border);border-radius:8px;padding:10px 12px;background:var(--gx-card);}",
+      ".grx .gx-analysis h5{margin:0 0 7px;font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;color:var(--gx-muted);}",
+      ".grx .gx-fnd{display:flex;gap:8px;align-items:baseline;padding:5px 0;border-top:1px solid var(--gx-border);font-size:.86rem;line-height:1.45;}",
       ".grx .gx-fnd:first-of-type{border-top:none;}",
       // The kind is a WORD; the tint only reinforces it.
-      ".grx .gx-fnd-k{flex:none;font-size:.66rem;font-weight:700;letter-spacing:.05em;color:var(--gx-mut);min-width:3.4em;}",
-      ".grx .gx-fnd.warn .gx-fnd-k{color:#8a1f11;}",
+      ".grx .gx-fnd-k{flex:none;font-size:.66rem;font-weight:700;letter-spacing:.05em;color:var(--gx-muted);min-width:3.4em;}",
+      ".grx .gx-fnd.warn .gx-fnd-k{color:var(--gx-r);}",
       // Lane B. The deep box carries the accent edge so it reads as a different
       // instrument from the deterministic pass sitting in the same host, and the
       // reasoning gets the emphasis its job deserves: it is the field that makes
@@ -396,22 +398,23 @@
       ".grx .gx-fnd.gx-why .gx-fnd-k{color:var(--gx-accent);}",
       ".grx .gx-fnd.gx-why .gx-fnd-t{font-style:italic;color:var(--gx-ink);}",
       ".grx .gx-fnd-t{flex:1 1 auto;min-width:0;}",
-      ".grx .gx-chip.primary{background:var(--gx-ink,#0b3d61);color:#fff;border-color:var(--gx-ink,#0b3d61);}",
+      
       // toolbar
-      ".grx .gx-tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:10px 12px;border:1px solid var(--gx-border);",
+      ".grx .gx-tools{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;padding:10px 12px;border:1px solid var(--gx-border);",
       "border-radius:7px;background:var(--gx-card);margin-bottom:14px;}",
       ".grx .gx-tools .sp{flex:1 1 auto;}",
       ".grx .gx-search{min-width:210px;}",
-      ".grx .gx-chip{border:1px solid var(--gx-bstrong);background:var(--gx-surface);color:var(--gx-muted);",
-      "border-radius:20px;padding:4px 11px;font:600 11.7px inherit;cursor:pointer;display:inline-flex;align-items:center;gap:5px;}",
-      ".grx .gx-chip[aria-pressed=true]{background:var(--gx-accent);border-color:var(--gx-accent);color:#fff;}",
+      // Controls are underlined words (Sam, 2026-10-09): no border, no fill, 24px tall,
+      // words 18px apart. A filter in use reads heavier and darker (aria-pressed).
+      ".grx .gx-chip,.grx .gx-btn{border:0;background:none;color:var(--cobalt,#0047AB);padding:2px 0;min-height:24px;min-width:24px;",
+      "font:600 12.4px inherit;cursor:pointer;display:inline-flex;align-items:center;gap:5px;",
+      "text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;}",
+      ".grx .gx-chip:hover,.grx .gx-btn:hover{text-decoration-thickness:2px;}",
+      ".grx .gx-chip[aria-pressed=true]{color:var(--gx-ink);font-weight:700;text-decoration-thickness:2px;}",
       ".grx .gx-chip .sw{width:8px;height:8px;border-radius:50%;display:inline-block;}",
       ".grx .gx-chip.fg .sw{background:var(--gx-g);}.grx .gx-chip.fy .sw{background:var(--gx-y);}",
       ".grx .gx-chip.fr .sw{background:var(--gx-r);}",
       ".grx .gx-count{font-size:12px;color:var(--gx-muted);}",
-      ".grx .gx-btn{border:1px solid var(--gx-accent);background:var(--gx-accent);color:#fff;border-radius:5px;",
-      "padding:6px 12px;font:600 12.4px inherit;cursor:pointer;}",
-      ".grx .gx-btn.ghost{background:var(--gx-surface);color:var(--gx-accent);}",
       ".grx .gx-btn:disabled{opacity:.55;cursor:default;}",
       // rows
       ".grx .gx-grp{margin:16px 0 4px;}",
@@ -438,6 +441,7 @@
       ".grx .gx-arts{margin-top:26px;border-top:1px solid var(--gx-border);padding-top:14px;}",
       ".grx .gx-art{border:1px solid var(--gx-border);border-radius:6px;background:var(--gx-surface);padding:9px 12px;margin:6px 0;}",
       ".grx .gx-art .t{font-weight:600;font-size:13px;}",
+      ".grx .gx-art .t a{display:inline-block;min-height:24px;line-height:24px;}",
       ".grx .gx-art .m{font-size:11px;color:var(--gx-muted);margin-top:2px;}",
       ".grx .gx-art .w{font-size:12.3px;color:var(--gx-muted);margin-top:5px;line-height:1.45;}",
       ".grx .gx-kind{font-size:9.6px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;",
@@ -459,18 +463,19 @@
       ".grx .gx-msec{border-top:1px solid var(--gx-border);padding-top:9px;margin-top:10px;}",
       ".grx .gx-msec h4{font-size:13.2px;margin:0 0 5px;}",
       ".grx .gx-unread{color:var(--gx-y)!important;border-color:var(--gx-y)!important;}",
-      ".grx .gx-empty .row{display:flex;gap:8px;justify-content:center;margin-top:11px;}",
+      ".grx .gx-empty .row{display:flex;gap:18px;justify-content:center;margin-top:11px;}",
       ".grx .gx-empty{padding:22px;text-align:center;color:var(--gx-muted);font-size:13px;",
       "border:1px dashed var(--gx-bstrong);border-radius:7px;}",
       // lock card
       ".grx .gx-lock{max-width:460px;margin:36px auto;border:1px solid var(--gx-border);border-radius:8px;background:var(--gx-surface);padding:24px 26px;text-align:left;}",
       ".grx .gx-lock .lk{font-family:Georgia,serif;font-size:17px;font-weight:600;margin:0 0 6px;}",
       ".grx .gx-lock p{color:var(--gx-muted);font-size:12.8px;line-height:1.5;margin:0 0 14px;}",
-      ".grx .gx-lock .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;}",
+      ".grx .gx-lock .row{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;}",
       ".grx .gx-lock input{padding:7px 10px;border:1px solid var(--gx-bstrong);border-radius:5px;font:13px inherit;",
       "background:var(--gx-card);color:var(--gx-ink);min-width:180px;}",
-      ".grx .gx-lock button{padding:7px 14px;border:1px solid var(--gx-accent);border-radius:5px;background:var(--gx-accent);",
-      "color:#fff;font:600 12.5px inherit;cursor:pointer;}",
+      ".grx .gx-lock button{border:0;background:none;color:var(--cobalt,#0047AB);padding:2px 0;min-height:24px;",
+      "font:600 12.5px inherit;cursor:pointer;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;}",
+      ".grx .gx-lock button:hover{text-decoration-thickness:2px;}",
       ".grx .gx-lock button:disabled{opacity:.6;cursor:default;}",
       ".grx .gx-lock .err{color:var(--gx-r);font-size:11.5px;margin:9px 0 0;min-height:1em;}"
     ].join("");
@@ -622,7 +627,7 @@
       appendRich(wy, r.blast_why);
       desc.appendChild(wy);
     }
-    if (r.summary) appendRich(desc, r.summary);
+    if (r.summary) desc.appendChild(richP(r.summary));
     if (r.consideration) {
       var c = el("p");
       c.appendChild(el("b", { text: "Consideration: " }));

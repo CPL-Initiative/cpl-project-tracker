@@ -1,15 +1,15 @@
 window.CPL_PATHWAYS_ROEP = {
  "_generated_by": "kb/_build_roep_display.py",
  "_note": "Each harvested program's catalog record and its display facts: CPL in three kinds per course, the up-to figure, the gaps and the map's status. The same facts sit in program_requirement_records.display, where Sierra reads them; both carry this build stamp. Do not edit; rerun the builder.",
- "build": "05811159eeee",
- "built": "2026-10-11",
+ "build": "9237d2cbf931",
+ "built": "2026-10-16",
  "inputs": {
-  "records": 1554,
-  "map_read_at": "2026-10-11",
-  "registry_read_at": "2026-10-11",
+  "records": 8772,
+  "map_read_at": "2026-10-16",
+  "registry_read_at": "2026-10-16",
   "articulations": "2026-09-03T20:19:16Z",
-  "memberships": "2026-10-11 21:16",
-  "cer": "2026-10-11T21:16:52+00:00"
+  "memberships": "2026-10-16 16:48",
+  "cer": "2026-10-16T16:49:23+00:00"
  },
  "definitions": {
   "here": "Articulated here: the college has articulated CPL to this course. MAP holds a credit recommendation for it at this college (military, industry or exam credit), or MAP's articulated-exhibit feed names the course at this college.",
@@ -262,8 +262,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "05811159eeee",
-    "built": "2026-10-11"
+    "build": "9237d2cbf931",
+    "built": "2026-10-16"
    }
   },
   {
@@ -757,8 +757,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "05811159eeee",
-    "built": "2026-10-11"
+    "build": "9237d2cbf931",
+    "built": "2026-10-16"
    }
   },
   {
@@ -1734,6 +1734,12 @@ window.CPL_PATHWAYS_ROEP = {
     },
     "gaps": [
      {
+      "kind": "Major only",
+      "owner": "procedure",
+      "where": "Cerritos College's CourseLeaf reading procedure",
+      "text": "The record holds the major's requirements. The degree's general education and electives, which bring an associate degree to at least 60 units, are not in it."
+     },
+     {
       "kind": "Reader's note",
       "owner": "procedure",
       "where": "Cerritos College's CourseLeaf reading procedure",
@@ -1781,8 +1787,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "05811159eeee",
-    "built": "2026-10-11"
+    "build": "9237d2cbf931",
+    "built": "2026-10-16"
    }
   },
   {
@@ -2603,6 +2609,12 @@ window.CPL_PATHWAYS_ROEP = {
     },
     "gaps": [
      {
+      "kind": "Major only",
+      "owner": "procedure",
+      "where": "Cerritos College's CourseLeaf reading procedure",
+      "text": "The record holds the major's requirements. The degree's general education and electives, which bring an associate degree to at least 60 units, are not in it."
+     },
+     {
       "kind": "Reader's note",
       "owner": "procedure",
       "where": "Cerritos College's CourseLeaf reading procedure",
@@ -2650,8 +2662,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "05811159eeee",
-    "built": "2026-10-11"
+    "build": "9237d2cbf931",
+    "built": "2026-10-16"
    }
   },
   {
@@ -3463,6 +3475,12 @@ window.CPL_PATHWAYS_ROEP = {
       "text": "The catalog prints ARTH 4, ARTH 25, ARTH 26 for this program; the state's Program Course File does not list them."
      },
      {
+      "kind": "Major only",
+      "owner": "procedure",
+      "where": "Irvine Valley College's CurriQunet META reading procedure",
+      "text": "The record holds the major's requirements. The degree's general education and electives, which bring an associate degree to at least 60 units, are not in it."
+     },
+     {
       "kind": "Reader's note",
       "owner": "procedure",
       "where": "Irvine Valley College's CurriQunet META reading procedure",
@@ -3715,8 +3733,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": null
     },
-    "build": "05811159eeee",
-    "built": "2026-10-11"
+    "build": "9237d2cbf931",
+    "built": "2026-10-16"
    }
   },
   {
@@ -4483,6 +4501,12 @@ window.CPL_PATHWAYS_ROEP = {
     },
     "gaps": [
      {
+      "kind": "Major only",
+      "owner": "procedure",
+      "where": "San Diego Miramar College's CurriQunet META reading procedure",
+      "text": "The record holds the major's requirements. The degree's general education and electives, which bring an associate degree to at least 60 units, are not in it."
+     },
+     {
       "kind": "Reader's note",
       "owner": "procedure",
       "where": "San Diego Miramar College's CurriQunet META reading procedure",
@@ -4512,8 +4536,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "05811159eeee",
-    "built": "2026-10-11"
+    "build": "9237d2cbf931",
+    "built": "2026-10-16"
    }
   },
   {
@@ -5315,8 +5339,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "05811159eeee",
-    "built": "2026-10-11"
+    "build": "9237d2cbf931",
+    "built": "2026-10-16"
    }
   },
   {
@@ -6803,6 +6827,12 @@ window.CPL_PATHWAYS_ROEP = {
       "text": "MAP lists AUTO 156G Engine and Related Systems on the Fire Apparatus Driver/Operator 1B articulation (0.3 hours in Driver Operator - Pumping) beside FIPT 321P, the course the recommendation names."
      },
      {
+      "kind": "Major only",
+      "owner": "procedure",
+      "where": "San Diego Miramar College's CurriQunet META reading procedure",
+      "text": "The record holds the major's requirements. The degree's general education and electives, which bring an associate degree to at least 60 units, are not in it."
+     },
+     {
       "kind": "Reader's note",
       "owner": "procedure",
       "where": "San Diego Miramar College's CurriQunet META reading procedure",
@@ -6862,8 +6892,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "05811159eeee",
-    "built": "2026-10-11"
+    "build": "9237d2cbf931",
+    "built": "2026-10-16"
    }
   },
   {
@@ -7363,6 +7393,12 @@ window.CPL_PATHWAYS_ROEP = {
       "text": "The catalog prints ECON C2002, ECON C2001 for this program; the state's Program Course File does not list them."
      },
      {
+      "kind": "Major only",
+      "owner": "procedure",
+      "where": "San Diego Miramar College's CurriQunet META reading procedure",
+      "text": "The record holds the major's requirements. The degree's general education and electives, which bring an associate degree to at least 60 units, are not in it."
+     },
+     {
       "kind": "Reader's note",
       "owner": "procedure",
       "where": "San Diego Miramar College's CurriQunet META reading procedure",
@@ -7398,8 +7434,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "05811159eeee",
-    "built": "2026-10-11"
+    "build": "9237d2cbf931",
+    "built": "2026-10-16"
    }
   },
   {
@@ -8582,8 +8618,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "fix"
     },
-    "build": "05811159eeee",
-    "built": "2026-10-11"
+    "build": "9237d2cbf931",
+    "built": "2026-10-16"
    }
   },
   {
@@ -9739,6 +9775,12 @@ window.CPL_PATHWAYS_ROEP = {
       ]
      },
      {
+      "kind": "Major only",
+      "owner": "procedure",
+      "where": "Mt. San Antonio College's CourseLeaf reading procedure",
+      "text": "The record holds the major's requirements. The degree's general education and electives, which bring an associate degree to at least 60 units, are not in it."
+     },
+     {
       "kind": "Fixed by a rerun",
       "owner": "procedure",
       "where": "Mt. San Antonio College's CourseLeaf reading procedure",
@@ -9810,8 +9852,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "fix"
     },
-    "build": "05811159eeee",
-    "built": "2026-10-11"
+    "build": "9237d2cbf931",
+    "built": "2026-10-16"
    }
   },
   {
@@ -10248,6 +10290,12 @@ window.CPL_PATHWAYS_ROEP = {
     },
     "gaps": [
      {
+      "kind": "Major only",
+      "owner": "procedure",
+      "where": "Mt. San Antonio College's CourseLeaf reading procedure",
+      "text": "The record holds the major's requirements. The degree's general education and electives, which bring an associate degree to at least 60 units, are not in it."
+     },
+     {
       "kind": "Reader's note",
       "owner": "procedure",
       "where": "Mt. San Antonio College's CourseLeaf reading procedure",
@@ -10525,8 +10573,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "05811159eeee",
-    "built": "2026-10-11"
+    "build": "9237d2cbf931",
+    "built": "2026-10-16"
    }
   },
   {
@@ -10878,8 +10926,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "unstated",
      "reviewer": "ok"
     },
-    "build": "05811159eeee",
-    "built": "2026-10-11"
+    "build": "9237d2cbf931",
+    "built": "2026-10-16"
    }
   },
   {
@@ -11219,8 +11267,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "05811159eeee",
-    "built": "2026-10-11"
+    "build": "9237d2cbf931",
+    "built": "2026-10-16"
    }
   },
   {
@@ -11606,7 +11654,7 @@ window.CPL_PATHWAYS_ROEP = {
       "consider": [
        {
         "credential": "POST Basic Academy",
-        "credit": "3 hours in Community Relations",
+        "credit": "3 hours in Intro to Administration of Justice",
         "cid": "AJ 110",
         "colleges_n": 32
        }
@@ -11684,7 +11732,7 @@ window.CPL_PATHWAYS_ROEP = {
       "consider": [
        {
         "credential": "POST Basic Academy",
-        "credit": "3 hours in Community Relations",
+        "credit": "3 hours in Intro to Administration of Justice",
         "cid": "AJ 110",
         "colleges_n": 32
        }
@@ -13016,6 +13064,12 @@ window.CPL_PATHWAYS_ROEP = {
       ]
      },
      {
+      "kind": "Major only",
+      "owner": "procedure",
+      "where": "Riverside City College's CurriQunet META reading procedure",
+      "text": "The record holds the major's requirements. The degree's general education and electives, which bring an associate degree to at least 60 units, are not in it."
+     },
+     {
       "kind": "Reader's note",
       "owner": "procedure",
       "where": "Riverside City College's CurriQunet META reading procedure",
@@ -13063,8 +13117,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "05811159eeee",
-    "built": "2026-10-11"
+    "build": "9237d2cbf931",
+    "built": "2026-10-16"
    }
   },
   {
@@ -13414,8 +13468,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "05811159eeee",
-    "built": "2026-10-11"
+    "build": "9237d2cbf931",
+    "built": "2026-10-16"
    }
   },
   {
@@ -14096,6 +14150,12 @@ window.CPL_PATHWAYS_ROEP = {
     },
     "gaps": [
      {
+      "kind": "Major only",
+      "owner": "procedure",
+      "where": "Riverside City College's CurriQunet META reading procedure",
+      "text": "The record holds the major's requirements. The degree's general education and electives, which bring an associate degree to at least 60 units, are not in it."
+     },
+     {
       "kind": "Reader's note",
       "owner": "procedure",
       "where": "Riverside City College's CurriQunet META reading procedure",
@@ -14137,8 +14197,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "05811159eeee",
-    "built": "2026-10-11"
+    "build": "9237d2cbf931",
+    "built": "2026-10-16"
    }
   },
   {
@@ -15407,6 +15467,12 @@ window.CPL_PATHWAYS_ROEP = {
       "text": "The blocks add to 25.5 units; the catalog prints 26.5 units."
      },
      {
+      "kind": "Major only",
+      "owner": "procedure",
+      "where": "Santa Monica College's college's own catalog pages reading procedure",
+      "text": "The record holds the major's requirements. The degree's general education and electives, which bring an associate degree to at least 60 units, are not in it."
+     },
+     {
       "kind": "Reader's note",
       "owner": "procedure",
       "where": "Santa Monica College's college's own catalog pages reading procedure",
@@ -15774,8 +15840,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "incomplete",
      "reviewer": null
     },
-    "build": "05811159eeee",
-    "built": "2026-10-11"
+    "build": "9237d2cbf931",
+    "built": "2026-10-16"
    }
   },
   {
@@ -16542,6 +16608,12 @@ window.CPL_PATHWAYS_ROEP = {
       "text": "The catalog prints CIS 104, CIS 106, CIS 107, CS 125 for this program; the state's Program Course File does not list them."
      },
      {
+      "kind": "Major only",
+      "owner": "procedure",
+      "where": "West Los Angeles College's PDF catalog reading procedure",
+      "text": "The record holds the major's requirements. The degree's general education and electives, which bring an associate degree to at least 60 units, are not in it."
+     },
+     {
       "kind": "Reader's note",
       "owner": "procedure",
       "where": "West Los Angeles College's PDF catalog reading procedure",
@@ -16577,8 +16649,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "05811159eeee",
-    "built": "2026-10-11"
+    "build": "9237d2cbf931",
+    "built": "2026-10-16"
    }
   },
   {
@@ -17508,6 +17580,12 @@ window.CPL_PATHWAYS_ROEP = {
       "text": "The catalog prints KIN 250 for this program; the state's Program Course File does not list it."
      },
      {
+      "kind": "Major only",
+      "owner": "procedure",
+      "where": "West Los Angeles College's PDF catalog reading procedure",
+      "text": "The record holds the major's requirements. The degree's general education and electives, which bring an associate degree to at least 60 units, are not in it."
+     },
+     {
       "kind": "Reader's note",
       "owner": "procedure",
       "where": "West Los Angeles College's PDF catalog reading procedure",
@@ -17561,8 +17639,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "05811159eeee",
-    "built": "2026-10-11"
+    "build": "9237d2cbf931",
+    "built": "2026-10-16"
    }
   },
   {
@@ -18339,8 +18417,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "05811159eeee",
-    "built": "2026-10-11"
+    "build": "9237d2cbf931",
+    "built": "2026-10-16"
    }
   },
   {
@@ -18507,8 +18585,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "05811159eeee",
-    "built": "2026-10-11"
+    "build": "9237d2cbf931",
+    "built": "2026-10-16"
    }
   }
  ]

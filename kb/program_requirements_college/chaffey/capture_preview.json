@@ -1,0 +1,2014 @@
+{
+ "college": "Chaffey College",
+ "catalog_url": "https://chaffey.curriqunet.com/catalog/iq/18783",
+ "platform": "curriqunet",
+ "catalog_year": "2026-2027",
+ "programs": 202,
+ "with_closed_list": 199,
+ "started": "2026-10-12T04:20:51Z",
+ "curriqunet": {
+  "catalog": 718,
+  "view_prefix": "https://chaffey.curriqunet.com/catalog/iq/",
+  "errors": [],
+  "sections": [
+   "Degrees and Certificates",
+   "Student Classifications and Programs"
+  ],
+  "nodes_read": 9,
+  "calls": 19,
+  "entries": 401,
+  "stopped_at_cap": false,
+  "entries_read": 401
+ },
+ "pages_read": 401,
+ "loads": 1226,
+ "seconds": 5469.8,
+ "found": 193,
+ "by_method": {
+  "no_closed_list": 3,
+  "not_found": 6,
+  "sitemap_page": 193
+ },
+ "shared_pages": {
+  "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18882": [
+   "30702",
+   "44105"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "15535",
+   "title": "Network Specialist",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "20697",
+   "title": "Computer Information Systems",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+  },
+  {
+   "control_number": "36629",
+   "title": "Physical Education",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "36771",
+   "title": "Computer Support Technician (A+ Certification Preparation)",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"
+  },
+  {
+   "control_number": "36856",
+   "title": "Social Media Support Specialist",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"
+  },
+  {
+   "control_number": "46302",
+   "title": "Electric Vehicle and Alternative Propulsion Technician",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"
+  }
+ ],
+ "page_claimed": [],
+ "coverage_bands": {
+  "0.5-0.8": 13,
+  "0.8-1.0": 28,
+  "1.0": 152
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 193,
+  "list": [
+   {
+    "control_number": "04755",
+    "title": "Biological Sciences",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18952",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04756",
+    "title": "Accounting",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18868",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04757",
+    "title": "Business",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19052",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04758",
+    "title": "Management",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20347",
+    "coverage": 0.95,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04759",
+    "title": "Retail Management",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19178",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04761",
+    "title": "Professional Administrative Management",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19158",
+    "coverage": 0.941,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04763",
+    "title": "Journalism",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19092",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04764",
+    "title": "Broadcasting and Cinema",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18956",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04765",
+    "title": "Information Technology and Information Systems",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20597",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04768",
+    "title": "Engineering",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04770",
+    "title": "Master Automotive Technician",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19102",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04772",
+    "title": "Airframe and Powerplant",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18950",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04774",
+    "title": "CAD Drafting Technician: Architectural",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19018",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04779",
+    "title": "Commercial Music",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/musind",
+    "coverage": 0.583,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04780",
+    "title": "Theatre: Acting Emphasis",
+    "award": "A.A. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20437",
+    "coverage": 0.556,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04783",
+    "title": "Photography",
+    "award": "A.A. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19146",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04788",
+    "title": "Nursing: ADN",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19126",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04789",
+    "title": "Nursing: Vocational",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19130",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04792",
+    "title": "Radiologic Technology",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19168",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04794",
+    "title": "Interior Design",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19084",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04795",
+    "title": "Fashion Design",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19034",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04797",
+    "title": "Child Development",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18972",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04798",
+    "title": "Gerontology",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/geron",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04799",
+    "title": "Hospitality Management: Food Service",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19066",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04811",
+    "title": "Correctional Science",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18996",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04815",
+    "title": "Political Economics",
+    "award": "A.A. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19152",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04822",
+    "title": "Fashion Merchandising",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19038",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07371",
+    "title": "Small Business Entrepreneur",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19184",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07378",
+    "title": "Industrial Electrical Technology",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19072",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07382",
+    "title": "CAD Drafting Technician: Mechanical",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18964",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07384",
+    "title": "Nursing VN to RN",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19122",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07389",
+    "title": "Dietetic Service Supervisor (DSS)/Certified Dietary Manager (CDM)",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19016",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07398",
+    "title": "Culinary Arts",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19002",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12211",
+    "title": "Graphic Design for Digital Media",
+    "award": "A.A. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18876",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "14400",
+    "title": "Real Estate",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19170",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "14401",
+    "title": "Supervision",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19192",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15317",
+    "title": "Industrial Electrical Technology Level II",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19076",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15318",
+    "title": "Microsoft Office",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19112",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15528",
+    "title": "General Automotive Service Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19048",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15674",
+    "title": "Fire Technology: Professional Firefighter",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19046",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16802",
+    "title": "Supply Chain Management",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19194",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17631",
+    "title": "Paralegal Studies",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19138",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18435",
+    "title": "Physical Science",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/calgetcca",
+    "coverage": 0.846,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20675",
+    "title": "Accounting",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18870",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20677",
+    "title": "Business",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20351",
+    "coverage": 0.947,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20678",
+    "title": "Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19094",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20681",
+    "title": "Small Business Entrepreneur",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19186",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20682",
+    "title": "Retail Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19180",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20683",
+    "title": "Supply Chain Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19196",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20684",
+    "title": "Real Estate",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19172",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20690",
+    "title": "Professional Administrative Management",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19156",
+    "coverage": 0.941,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20691",
+    "title": "Graphic Design for Digital Media",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18878",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20700",
+    "title": "Industrial Electrical Technology Level III",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19078",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20708",
+    "title": "Master Automotive Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19100",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20711",
+    "title": "Airframe",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18948",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20714",
+    "title": "CAD Drafting Technician: Architectural",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18962",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20715",
+    "title": "CAD Drafting Technician: Mechanical",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18966",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20716",
+    "title": "Photography",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20705",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20722",
+    "title": "Nursing: Vocational",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19128",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20726",
+    "title": "Interior Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19082",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20729",
+    "title": "Fashion Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19036",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20730",
+    "title": "Fashion Merchandising",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19040",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20732",
+    "title": "Nutrition and Food",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19132",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20733",
+    "title": "Hospitality Management: Food Service",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19064",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20735",
+    "title": "Hospitality Management: Hotel Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19070",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20736",
+    "title": "Gerontology",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19056",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20737",
+    "title": "Criminal Justice",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18998",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20738",
+    "title": "Correctional Science",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18994",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20739",
+    "title": "Fire Technology: Professional Firefighter",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19044",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30544",
+    "title": "American Sign Language Studies",
+    "award": "A.A. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20422",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30658",
+    "title": "General Automotive Service Technician",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19050",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30702",
+    "title": "Communication Studies",
+    "award": "A.A- T Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18882",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30717",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/math",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30941",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18928",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31115",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18904",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31204",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18908",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31248",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18916",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31337",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18914",
+    "coverage": 0.556,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31657",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18888",
+    "coverage": 0.96,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31873",
+    "title": "Engineering Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19030",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31876",
+    "title": "Engineering Technology",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19028",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31877",
+    "title": "Chinese Studies",
+    "award": "A.A. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18974",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31891",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18892",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31999",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18922",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32073",
+    "title": "Geography",
+    "award": "A.A- T Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18890",
+    "coverage": 0.55,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32166",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20313",
+    "coverage": 0.944,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32183",
+    "title": "Philosophy",
+    "award": "A.A- T Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18900",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32344",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18880",
+    "coverage": 0.867,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32347",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/physics",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32504",
+    "title": "Journalism",
+    "award": "A.A- T Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18894",
+    "coverage": 0.867,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32748",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18920",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32996",
+    "title": "Airframe and Powerplant Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18946",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33193",
+    "title": "Television and Video Picture Production",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19200",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33194",
+    "title": "Post Production Editing",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19154",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33195",
+    "title": "Motion Picture Production",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19116",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33201",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18884",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33226",
+    "title": "Screenwriting",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19182",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33227",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18910",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33231",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18896",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33233",
+    "title": "Music",
+    "award": "A.A- T Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/music",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33239",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18912",
+    "coverage": 0.905,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33737",
+    "title": "On-Air Radio Production",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19134",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35060",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20327",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35069",
+    "title": "Professional Office Skills",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19164",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35466",
+    "title": "Emergency Medical Provider",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35467",
+    "title": "Business Information Worker (BIW) Stage One",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18958",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35468",
+    "title": "Fire Prevention Inspector",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19042",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35760",
+    "title": "Microsoft Excel",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19110",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35762",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/nutr",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35816",
+    "title": "Business Information Worker (BIW) Stage Two",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18960",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35819",
+    "title": "Global Business",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19088",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35827",
+    "title": "Social Justice Studies, General",
+    "award": "A.A- T Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18906",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35949",
+    "title": "Pathway to Law School",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19140",
+    "coverage": 0.867,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35999",
+    "title": "Programming Foundations",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19166",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36000",
+    "title": "Facilities Management",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19032",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36090",
+    "title": "Global Business",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20343",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36201",
+    "title": "Film, Television and Electronic Media",
+    "award": "A.S. T Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18926",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36238",
+    "title": "Paralegal Studies",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19136",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36239",
+    "title": "Hospitality Management: Hotel Management",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19068",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36339",
+    "title": "Computer Game Development",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18986",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36340",
+    "title": "Professional Baking and Patisserie",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19162",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36354",
+    "title": "Culinary Arts",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19000",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36474",
+    "title": "Facilities Management",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20339",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36475",
+    "title": "Community Caregiver",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18980",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36493",
+    "title": "Microsoft Word",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19114",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36531",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18902",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36678",
+    "title": "Heating, Ventilation, Air Conditioning and Refrigeration Level 1",
+    "award": "Noncredit program",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19058",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36885",
+    "title": "Aircraft Electrical and Avionics Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18874",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36903",
+    "title": "Technical Theatre",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19198",
+    "coverage": 0.556,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37118",
+    "title": "Dental Assisting",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19014",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37119",
+    "title": "Dental Assisting",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19012",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37201",
+    "title": "Mechatronics Level I",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19106",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37203",
+    "title": "Mechatronics Level II",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19108",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37216",
+    "title": "Mechatronics",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19104",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37263",
+    "title": "Heating, Ventilation, Air Conditioning and Refrigeration Level 2",
+    "award": "Noncredit program",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19060",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37426",
+    "title": "Industrial Electrical Technology Level I",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19074",
+    "coverage": 0.636,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37427",
+    "title": "Athletic Trainer Aide",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18942",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37436",
+    "title": "Recording Arts Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19176",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37518",
+    "title": "Chemistry",
+    "award": "A.S. T Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18918",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37640",
+    "title": "Cybersecurity Defender",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19008",
+    "coverage": 0.933,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37641",
+    "title": "Cybersecurity Analyst",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19006",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37643",
+    "title": "Cybersecurity Professional",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19010",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37647",
+    "title": "Interior Design Visual Communication",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19086",
+    "coverage": 0.556,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37985",
+    "title": "Caregiving Essentials",
+    "award": "Noncredit program",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18970",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38434",
+    "title": "Real Estate Salesperson",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19174",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38854",
+    "title": "Hospitality Management",
+    "award": "A.S. T Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18930",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39317",
+    "title": "UCTP: Chemistry",
+    "award": "A.S. T Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19202",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39410",
+    "title": "Professional Baking and Patisserie",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19160",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39562",
+    "title": "UCTP: Physics",
+    "award": "A.S. T Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19204",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39855",
+    "title": "Environmental Science",
+    "award": "A.S. T Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18924",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40107",
+    "title": "Law, Public Policy, and Society",
+    "award": "A.A- T Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/lpps",
+    "coverage": 0.793,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40588",
+    "title": "Community Health Worker",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18982",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40594",
+    "title": "Marketing",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19096",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40595",
+    "title": "Marketing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19098",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40969",
+    "title": "Nursing Assistant",
+    "award": "Noncredit program",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19120",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41393",
+    "title": "American Sign Language (ASL)",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19921",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41434",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20331",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41467",
+    "title": "English as a Second Language",
+    "award": "Noncredit program",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19922",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42084",
+    "title": "Bookkeeping",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/bookkeeping",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42180",
+    "title": "CAD/CAM Operator",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/cadcam",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42181",
+    "title": "Accounting for Government and Not-For-Profit Organizations",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/accounting",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42183",
+    "title": "Electromechanical Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/electromechanical",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42185",
+    "title": "Payroll and Income Tax Preparer",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/payroll",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42623",
+    "title": "Real Estate Property Management",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/recert",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42630",
+    "title": "Real Estate Property Management",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/redegree",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42684",
+    "title": "Cloud Solutions Architecting",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20581",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42942",
+    "title": "Automotive Electrical Systems",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18944",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42987",
+    "title": "Physical Therapist Assistant",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/pta",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43062",
+    "title": "Phlebotomy Technician",
+    "award": "Noncredit program",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20404",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44104",
+    "title": "Supervision",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/supervision",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44105",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18882",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44353",
+    "title": "Cloud Solutions Architecting",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/csa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45398",
+    "title": "Hospitality Management: Food and Beverage Fundamentals",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20670",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45400",
+    "title": "Hospitality Management: Hotel Fundamentals",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20678",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46063",
+    "title": "Information Technology and Information Systems Core",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20598",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46090",
+    "title": "Earth Science",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20654",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46091",
+    "title": "Geological Sciences",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20662",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46142",
+    "title": "Data Science",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20615",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46143",
+    "title": "Development Operations",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20638",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46144",
+    "title": "Development Operations",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20639",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46151",
+    "title": "Data Analytics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20614",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46152",
+    "title": "Networking Specialist (CCNA)",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20689",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46153",
+    "title": "Networking Specialist (CCNA)",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20690",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46154",
+    "title": "Web Development and Social Media",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20746",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46155",
+    "title": "Web Development and Social Media",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20745",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46156",
+    "title": "Technology and Innovation",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20730",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46157",
+    "title": "Artificial Intelligence",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20564",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46158",
+    "title": "Computer Game Development",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20589",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46159",
+    "title": "Technology and Innovation",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20729",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46160",
+    "title": "Programmer",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20714",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46161",
+    "title": "Programmer",
+    "award": "A.S. Degree",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20713",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46283",
+    "title": "Orthodontic Assisting Permit",
+    "award": "Noncredit program",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20770",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46299",
+    "title": "Personal Training",
+    "award": "Noncredit program",
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20778",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "38203335820"
+}

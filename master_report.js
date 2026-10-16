@@ -524,6 +524,8 @@
         }));
         // Progress notes (live update first — overlaid upstream — then workplan notes)
         var noteItems = [];
+        // How the goal numbers are counted (projects.count_note, Sam 2026-10-12).
+        if (p.count_note) noteItems.push('How it is counted: ' + p.count_note);
         if (p.update) noteItems.push(p.update + (p.update_date ? ' (' + p.update_date + ')' : ''));
         if (p.workplan_notes && p.workplan_notes !== p.update) noteItems.push(p.workplan_notes);
         if (noteItems.length) {

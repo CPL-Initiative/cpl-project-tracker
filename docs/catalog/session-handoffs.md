@@ -15,10 +15,40 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-341 document(s).
+371 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 400 | [Session 400 handoff: wave 5's display apply, the three rereads and Merritt, the next build](../session_400_handoff.md) | 2026-10-16 |
+| 399 | [Session 399 handoff: Sierra's statewide catalog to A/B and deploy, the next sweep wave](../session_399_handoff.md) | 2026-10-16 |
+| 398 | [Session 398 handoff: merge wave 4's display build, the three curriQunet stragglers, Sheet 84](../session_398_handoff.md) | 2026-10-16 |
+| 397 | [Session 397 handoff: wave 4's last four reads, one display build, Monterey Peninsula's reread, Sheet 84](../session_397_handoff.md) | 2026-10-16 |
+| 396 | [Session 396 handoff: Santa Ana's extraction, Ventura and Oxnard, curriQunet, and the first reconcile steps of the sweep](../session_396_handoff.md) | 2026-10-15 |
+| 395 | [Session 395 handoff: the catalog sweep, wave 3, Santa Ana's load, and the readers the sweep parked](../session_395_handoff.md) | 2026-10-15 |
+| 394 | [Session 394 handoff: merge Cerritos's reconcile steps, read Cabrillo under extraction v9, the overnight sweep](../session_394_handoff.md) | 2026-10-15 |
+| 393 | [Session 393 handoff: Sheet 82, the reconcile pass beyond Cabrillo, a display build for Cabrillo's re-read](../session_393_handoff.md) | 2026-10-14 |
+| 392 | [Session 392 handoff: Sheet 81, San Joaquin Delta's extraction, Palo Verde's 2026-27 read after Sunday](../session_392_handoff.md) | 2026-10-14 |
+| 391 | [Session 391 handoff: Sheet 79, Fresno City and the Records filters to merge, Delta's catalog year](../session_391_handoff.md) | 2026-10-14 |
+| 390 | [Session 390 handoff: Sheet 79's replies, Fresno City's load, the Acalog reader](../session_390_handoff.md) | 2026-10-14 |
+| 389 | [Palo Verde's Acalog catalog after Sunday's census; the addenda reader widens](../session_389_handoff.md) | 2026-10-14 |
+| 388 | [course outcomes from catalog pages; Palo Verde's catalog year](../session_388_handoff.md) | 2026-10-14 |
+| 387 | [Sheet 78 waits; Southwestern and Fresno City captured](../session_387_handoff.md) | 2026-10-14 |
+| 386 | [Sheet 77 built, Modesto and Palo Verde displayed](../session_386_handoff.md) | 2026-10-14 |
+| 385 | [the college filter's first live reads, and Sam's Sheet 77](../session_385_handoff.md) | 2026-10-13 |
+| 384 | [the whole-harvest measure, the build queue, the eLumen hubs, and Sam's Sheet 76](../session_384_handoff.md) | 2026-10-13 |
+| 383 | [Cabrillo's display, #2074's merge, the eLumen hub reader, and Sam's Annual Goals asks](../session_383_handoff.md) | 2026-10-13 |
+| 382 | [Coastline's near misses, Cabrillo's capture and extraction go, then the next college](../session_382_handoff.md) | 2026-10-13 |
+| 381 | [load Bakersfield and Coastline, merge the eLumen and Coastline readers, then the next college](../session_381_handoff.md) | 2026-10-13 |
+| 380 | [load the course outcomes, finish SDCCD's SLO read, then the next college](../session_380_handoff.md) | 2026-10-13 |
+| 379 | [Annual Goals: Move to the phrase held on Sheet 73; read the first Refresh and the first Move](../session_379_handoff.md) | 2026-10-13 |
+| 378 | [Annual Goals: the Move control is live; read the first Refresh and the first Move](../session_378_handoff.md) | 2026-10-13 |
+| 377 | [Annual Goals: read Sheet 72, land the Move control, then Refresh summaries](../session_377_handoff.md) | 2026-10-13 |
+| 376 | [load the course outcomes, then re-read Mesa](../session_376_handoff.md) | 2026-10-12 |
+| 375 | [Annual Goals: land PR A, then B, C, D](../session_375_handoff.md) | 2026-10-12 |
+| 374 | [the SLO read on RCCD's outlines, after the course outline fields and the index](../session_374_handoff.md) | 2026-10-12 |
+| 373 | [Mesa's load, the course outline census, the gallery picks](../session_373_handoff.md) | 2026-10-12 |
+| 372 | [load Miramar, finish the painting gallery, Mesa's registry row](../session_372_handoff.md) | 2026-10-12 |
+| 371 | [deploy the Sierra 7c fix, load and display San Diego City, College Identity's UI pass](../session_371_handoff.md) | 2026-10-12 |
 | 370 | [load and display Chaffey, read San Diego City, Sheet 68 card 2, the My College UI pass](../session_370_handoff.md) | 2026-10-12 |
 | 369 | [load and display Long Beach City, fix the curriQunet reader for Chaffey, the policy paste](../session_369_handoff.md) | 2026-10-12 |
 | 368 | [load Long Beach City's re-read, Open Asks Sheet 67, CPL Pathways reads the table](../session_368_handoff.md) | 2026-10-12 |

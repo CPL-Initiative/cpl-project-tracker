@@ -1,0 +1,222 @@
+{
+ "college": "Gavilan College",
+ "control_number": "30204",
+ "shape": "certificate",
+ "title": "Aviation Maintenance Technology: Powerplant",
+ "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+ "source_url": "https://gavilan.curriqunet.com/catalog/iq/4089/4095/4111",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6753,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6753,
+    "output_tokens": 1449,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1449,
+  "output_tokens_details": {
+   "thinking_tokens": 410
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05599,
+ "ms": 11259,
+ "seconds": 11.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "AMT190"
+   ],
+   "flagged": [
+    "AMT190"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    45.0,
+    45.0
+   ],
+   "stated": [
+    45.0,
+    45.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 14,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Aviation Maintenance Technology: Powerplant -  Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 45,
+    "max": 45
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Successfully demonstrate the ability to pass the Federal Aviation Administration (FAA) knowledge, oral, practical and written examinations in Powerplant subjects. Leading to obtaining FAA powerplant mechanic certification.",
+    "Demonstrate a working knowledge and mechanical ability to inspect, maintain, service and repair reciprocating and turbine aircraft engines, and associated systems as specified by Federal Aviation Regulation Part 147",
+    "Demonstrate the ability to research and determine applicability of maintenance and regulatory data as it relates to aircraft powerplants and their airworthiness.",
+    "Communicate both in writing and verbally about aircraft powerplant maintenance concepts and processes using technical terms, to both professional and administrative audiences.",
+    "Demonstrate the ability to display and apply proper behavior reflecting satisfactory safe work habits and ethics to fulfill program requirements and confidence to prepare for employment."
+   ],
+   "careers": [
+    "Aviation mechanic",
+    "aircraft serviceperson",
+    "repair or sales of aircraft accessories",
+    "powerplant specialist",
+    "aircraft manufacturing",
+    "electronics",
+    "hydraulics",
+    "welding",
+    "sheet metal",
+    "electrical systems",
+    "pneumatics",
+    "fuel systems",
+    "automotive repair",
+    "civil and military defense"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 45,
+     "max": 45
+    },
+    "courses": [
+     {
+      "code": "AMT 100",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT 101",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT 120",
+      "units": 13.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT 121",
+      "units": 13.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Recommended Electives",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "AMT 190",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "AMT 190 is marked (Historical) in the catalog and is listed only as a recommended elective with 'Units: 0' for the block; it is not in the closed list.",
+   "Careers include both the listed occupations and the employment fields named in the program summary ('fields such as ...').",
+   "The first outcome includes the trailing sentence fragment 'Leading to obtaining FAA powerplant mechanic certification.' printed on the same line; recorded as one outcome."
+  ]
+ },
+ "extracted_run": "38948144064"
+}

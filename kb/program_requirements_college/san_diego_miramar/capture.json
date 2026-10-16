@@ -1,0 +1,198 @@
+{
+ "college": "San Diego Miramar College",
+ "catalog_url": "https://sdccd.curriqunet.com/catalog/alias/miramar26-27",
+ "platform": "curriqunet",
+ "catalog_year": "2026-2027",
+ "programs": 146,
+ "with_closed_list": 124,
+ "started": "2026-10-13T06:17:41Z",
+ "curriqunet": {
+  "catalog": 71,
+  "view_prefix": "https://sdccd.curriqunet.com/catalog/iq/",
+  "errors": [
+   "https://sdccd.curriqunet.com/Catalog/_getPage?catalogId=71&id=20882: APIRequestContext.get: socket hang up",
+   "https://sdccd.curriqunet.com/Catalog/_getPage?catalogId=71&id=20502: APIRequestContext.get: socket hang up",
+   "https://sdccd.curriqunet.com/Catalog/_getPage?catalogId=71&id=21987: APIRequestContext.get: socket hang up"
+  ],
+  "catalog_from": "_getCatalogs",
+  "sections": [
+   "Degree Curricula and Certificate Programs"
+  ],
+  "nodes_read": 4,
+  "calls": 9,
+  "entries": 171,
+  "stopped_at_cap": false,
+  "same_title_entries": 0,
+  "entries_read": 171
+ },
+ "pages_read": 170,
+ "loads": 893,
+ "seconds": 4118.8,
+ "found": 120,
+ "by_method": {
+  "no_closed_list": 22,
+  "not_found": 3,
+  "page_claimed": 1,
+  "sitemap_page": 120
+ },
+ "shared_pages": {
+  "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20081": [
+   "12104",
+   "12105"
+  ],
+  "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20004": [
+   "32568",
+   "41496"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "30512",
+   "title": "Graphics",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u"
+  },
+  {
+   "control_number": "30532",
+   "title": "Graphics",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "36254",
+   "title": "Accountancy for Enrolled Agents",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "30637",
+   "title": "Communication Studies",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20066"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 5,
+  "0.8-1.0": 2,
+  "1.0": 113
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/san_diego_miramar",
+  "kept": 109,
+  "programs": 11,
+  "list": [
+   {
+    "control_number": "09725",
+    "title": "Aviation Maintenance Technology: Airframe",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19990",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "11728",
+    "title": "Aviation Business Administration",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19987",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "16731",
+    "title": "Aviation General Studies",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19988",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "16779",
+    "title": "Professional Aeronautics",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20103",
+    "coverage": 0.963,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "16973",
+    "title": "Pilot Studies",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20098",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "22274",
+    "title": "Aviation Operations Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19996",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "22282",
+    "title": "Aviation Maintenance Technology: Airframe",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19991",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "22283",
+    "title": "Pilot Studies",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20099",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "22284",
+    "title": "Aviation General Studies",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19989",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "22285",
+    "title": "Aviation Maintenance Technology: Airframe & Powerplant",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/19993",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "39433",
+    "title": "300-Hour Registered Yoga Teacher",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20070",
+    "coverage": 0.5,
+    "was_url": "https://sdccd.curriqunet.com/catalog/iq/20879/20988/20882",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   }
+  ]
+ },
+ "run": "38355780721"
+}

@@ -1,8 +1,8 @@
 {
   "_about": "Daily-cached snapshot of public.workplan_goals + public.workplan_activity_associations. Written by kb/_load_workplan_goals.py after a successful Supabase fetch. Falls back to this file on Supabase outage so the dashboard regen continues without manual intervention.",
-  "_fetched_at": "2026-10-11",
+  "_fetched_at": "2026-10-16",
   "_source_table": "public.workplan_goals",
-  "row_count": 56,
+  "row_count": 80,
   "rows": [
     {
       "activity_id": "1.1",
@@ -593,6 +593,34 @@
       "total": 0
     },
     {
+      "activity_id": "4.7",
+      "name": "EMS Corps",
+      "description": null,
+      "row_type": "GOAL",
+      "kind": "project",
+      "current": null,
+      "yr_2025_26": 0,
+      "yr_2026_27": 2,
+      "yr_2027_28": 2,
+      "yr_2028_29": 2,
+      "yr_2029_30": 2,
+      "total": 8
+    },
+    {
+      "activity_id": "4.7",
+      "name": "EMS Corps",
+      "description": null,
+      "row_type": "STRETCH",
+      "kind": "project",
+      "current": null,
+      "yr_2025_26": 0,
+      "yr_2026_27": 4,
+      "yr_2027_28": 4,
+      "yr_2028_29": 4,
+      "yr_2029_30": 4,
+      "total": 16
+    },
+    {
       "activity_id": "4",
       "name": "Activity 4: Coordinate CPL Sprints, Targeted Projects, Professional Learning, and Strategic Partnerships",
       "description": "Scale CPL through sprints, partnerships, training, policy, and sustainable funding",
@@ -787,6 +815,314 @@
       "yr_2028_29": 30000.0,
       "yr_2029_30": 40000.0,
       "total": 91000.0
+    },
+    {
+      "activity_id": "4.8",
+      "name": "Futuro Behavioral Healthcare Project",
+      "description": null,
+      "row_type": "GOAL",
+      "kind": "project",
+      "current": null,
+      "yr_2025_26": 0,
+      "yr_2026_27": 2,
+      "yr_2027_28": 4,
+      "yr_2028_29": 4,
+      "yr_2029_30": 4,
+      "total": 14
+    },
+    {
+      "activity_id": "4.8",
+      "name": "Futuro Behavioral Healthcare Project",
+      "description": null,
+      "row_type": "STRETCH",
+      "kind": "project",
+      "current": null,
+      "yr_2025_26": 0,
+      "yr_2026_27": 4,
+      "yr_2027_28": 8,
+      "yr_2028_29": 8,
+      "yr_2029_30": 8,
+      "total": 28
+    },
+    {
+      "activity_id": "1.1.1",
+      "name": "AI Certification-to-Course Matching",
+      "description": null,
+      "row_type": "GOAL",
+      "kind": "project",
+      "current": null,
+      "yr_2025_26": 117,
+      "yr_2026_27": 0,
+      "yr_2027_28": 0,
+      "yr_2028_29": 0,
+      "yr_2029_30": 0,
+      "total": 117
+    },
+    {
+      "activity_id": "1.1.1",
+      "name": "AI Certification-to-Course Matching",
+      "description": null,
+      "row_type": "STRETCH",
+      "kind": "project",
+      "current": null,
+      "yr_2025_26": 117,
+      "yr_2026_27": 0,
+      "yr_2027_28": 0,
+      "yr_2028_29": 0,
+      "yr_2029_30": 0,
+      "total": 117
+    },
+    {
+      "activity_id": "1.1.1",
+      "name": "AI Certification-to-Course Matching",
+      "description": null,
+      "row_type": "GOAL",
+      "kind": "project",
+      "current": null,
+      "yr_2025_26": 117,
+      "yr_2026_27": 0,
+      "yr_2027_28": 0,
+      "yr_2028_29": 0,
+      "yr_2029_30": 0,
+      "total": 117
+    },
+    {
+      "activity_id": "1.1.1",
+      "name": "AI Certification-to-Course Matching",
+      "description": null,
+      "row_type": "STRETCH",
+      "kind": "project",
+      "current": null,
+      "yr_2025_26": 117,
+      "yr_2026_27": 0,
+      "yr_2027_28": 0,
+      "yr_2028_29": 0,
+      "yr_2029_30": 0,
+      "total": 117
+    },
+    {
+      "activity_id": "1.1.1",
+      "name": "AI Certification-to-Course Matching",
+      "description": null,
+      "row_type": "GOAL",
+      "kind": "project",
+      "current": null,
+      "yr_2025_26": 117,
+      "yr_2026_27": 0,
+      "yr_2027_28": 0,
+      "yr_2028_29": 0,
+      "yr_2029_30": 0,
+      "total": 117
+    },
+    {
+      "activity_id": "1.1.1",
+      "name": "AI Certification-to-Course Matching",
+      "description": null,
+      "row_type": "STRETCH",
+      "kind": "project",
+      "current": null,
+      "yr_2025_26": 117,
+      "yr_2026_27": 0,
+      "yr_2027_28": 0,
+      "yr_2028_29": 0,
+      "yr_2029_30": 0,
+      "total": 117
+    },
+    {
+      "activity_id": "1.1.1",
+      "name": "AI Certification-to-Course Matching",
+      "description": null,
+      "row_type": "GOAL",
+      "kind": "project",
+      "current": null,
+      "yr_2025_26": 117,
+      "yr_2026_27": 0,
+      "yr_2027_28": 0,
+      "yr_2028_29": 0,
+      "yr_2029_30": 0,
+      "total": 117
+    },
+    {
+      "activity_id": "1.1.1",
+      "name": "AI Certification-to-Course Matching",
+      "description": null,
+      "row_type": "STRETCH",
+      "kind": "project",
+      "current": null,
+      "yr_2025_26": 117,
+      "yr_2026_27": 0,
+      "yr_2027_28": 0,
+      "yr_2028_29": 0,
+      "yr_2029_30": 0,
+      "total": 117
+    },
+    {
+      "activity_id": "1.1.3",
+      "name": "WestEd CPL Scope of Work",
+      "description": null,
+      "row_type": "GOAL",
+      "kind": "project",
+      "current": null,
+      "yr_2025_26": 4,
+      "yr_2026_27": 4,
+      "yr_2027_28": 0,
+      "yr_2028_29": 0,
+      "yr_2029_30": 0,
+      "total": 8
+    },
+    {
+      "activity_id": "1.1.3",
+      "name": "WestEd CPL Scope of Work",
+      "description": null,
+      "row_type": "STRETCH",
+      "kind": "project",
+      "current": null,
+      "yr_2025_26": 4,
+      "yr_2026_27": 4,
+      "yr_2027_28": 0,
+      "yr_2028_29": 0,
+      "yr_2029_30": 0,
+      "total": 8
+    },
+    {
+      "activity_id": "1.1.3",
+      "name": "WestEd CPL Scope of Work",
+      "description": null,
+      "row_type": "GOAL",
+      "kind": "project",
+      "current": null,
+      "yr_2025_26": 4,
+      "yr_2026_27": 4,
+      "yr_2027_28": 0,
+      "yr_2028_29": 0,
+      "yr_2029_30": 0,
+      "total": 8
+    },
+    {
+      "activity_id": "1.1.3",
+      "name": "WestEd CPL Scope of Work",
+      "description": null,
+      "row_type": "STRETCH",
+      "kind": "project",
+      "current": null,
+      "yr_2025_26": 4,
+      "yr_2026_27": 4,
+      "yr_2027_28": 0,
+      "yr_2028_29": 0,
+      "yr_2029_30": 0,
+      "total": 8
+    },
+    {
+      "activity_id": "4.2.1",
+      "name": "AI Apprenticeship CPL Tools",
+      "description": null,
+      "row_type": "GOAL",
+      "kind": "project",
+      "current": null,
+      "yr_2025_26": 2,
+      "yr_2026_27": 4,
+      "yr_2027_28": 0,
+      "yr_2028_29": 0,
+      "yr_2029_30": 0,
+      "total": 6
+    },
+    {
+      "activity_id": "4.2.1",
+      "name": "AI Apprenticeship CPL Tools",
+      "description": null,
+      "row_type": "STRETCH",
+      "kind": "project",
+      "current": null,
+      "yr_2025_26": 2,
+      "yr_2026_27": 4,
+      "yr_2027_28": 0,
+      "yr_2028_29": 0,
+      "yr_2029_30": 0,
+      "total": 6
+    },
+    {
+      "activity_id": "4.2.1",
+      "name": "AI Apprenticeship CPL Tools",
+      "description": null,
+      "row_type": "GOAL",
+      "kind": "project",
+      "current": null,
+      "yr_2025_26": 2,
+      "yr_2026_27": 4,
+      "yr_2027_28": 0,
+      "yr_2028_29": 0,
+      "yr_2029_30": 0,
+      "total": 6
+    },
+    {
+      "activity_id": "4.2.1",
+      "name": "AI Apprenticeship CPL Tools",
+      "description": null,
+      "row_type": "STRETCH",
+      "kind": "project",
+      "current": null,
+      "yr_2025_26": 2,
+      "yr_2026_27": 4,
+      "yr_2027_28": 0,
+      "yr_2028_29": 0,
+      "yr_2029_30": 0,
+      "total": 6
+    },
+    {
+      "activity_id": "4.4.1",
+      "name": "VRC CPL Module Revision",
+      "description": null,
+      "row_type": "GOAL",
+      "kind": "project",
+      "current": null,
+      "yr_2025_26": 0,
+      "yr_2026_27": 6,
+      "yr_2027_28": 4,
+      "yr_2028_29": 4,
+      "yr_2029_30": 4,
+      "total": 18
+    },
+    {
+      "activity_id": "4.4.1",
+      "name": "VRC CPL Module Revision",
+      "description": null,
+      "row_type": "STRETCH",
+      "kind": "project",
+      "current": null,
+      "yr_2025_26": 0,
+      "yr_2026_27": 12,
+      "yr_2027_28": 8,
+      "yr_2028_29": 8,
+      "yr_2029_30": 8,
+      "total": 36
+    },
+    {
+      "activity_id": "4.4.1",
+      "name": "VRC CPL Module Revision",
+      "description": null,
+      "row_type": "GOAL",
+      "kind": "project",
+      "current": null,
+      "yr_2025_26": 0,
+      "yr_2026_27": 6,
+      "yr_2027_28": 4,
+      "yr_2028_29": 4,
+      "yr_2029_30": 4,
+      "total": 18
+    },
+    {
+      "activity_id": "4.4.1",
+      "name": "VRC CPL Module Revision",
+      "description": null,
+      "row_type": "STRETCH",
+      "kind": "project",
+      "current": null,
+      "yr_2025_26": 0,
+      "yr_2026_27": 12,
+      "yr_2027_28": 8,
+      "yr_2028_29": 8,
+      "yr_2029_30": 8,
+      "total": 36
     }
   ],
   "associations": [
@@ -794,6 +1130,41 @@
       "project_id": "4.5.1",
       "activity_id": "4",
       "is_primary": true
+    },
+    {
+      "project_id": "1.1.1",
+      "activity_id": "3",
+      "is_primary": false
+    },
+    {
+      "project_id": "1.1.3",
+      "activity_id": "3",
+      "is_primary": false
+    },
+    {
+      "project_id": "3.1",
+      "activity_id": "1",
+      "is_primary": false
+    },
+    {
+      "project_id": "4.2.1",
+      "activity_id": "4",
+      "is_primary": true
+    },
+    {
+      "project_id": "4.2.1",
+      "activity_id": "1",
+      "is_primary": false
+    },
+    {
+      "project_id": "4.7",
+      "activity_id": "4",
+      "is_primary": true
+    },
+    {
+      "project_id": "3.7",
+      "activity_id": "4",
+      "is_primary": false
     },
     {
       "project_id": "1.1",
@@ -851,6 +1222,11 @@
       "is_primary": true
     },
     {
+      "project_id": "4.8",
+      "activity_id": "3",
+      "is_primary": false
+    },
+    {
       "project_id": "3.2",
       "activity_id": "3",
       "is_primary": true
@@ -882,6 +1258,11 @@
     },
     {
       "project_id": "4.1.1",
+      "activity_id": "4",
+      "is_primary": true
+    },
+    {
+      "project_id": "4.8",
       "activity_id": "4",
       "is_primary": true
     },
@@ -1053,11 +1434,6 @@
     {
       "project_id": "4.6",
       "activity_id": "4",
-      "is_primary": true
-    },
-    {
-      "project_id": "1.1.2",
-      "activity_id": "1",
       "is_primary": true
     },
     {

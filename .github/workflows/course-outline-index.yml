@@ -1,0 +1,83 @@
+name: Course outline index
+# From a course code to its public course outline, host by host (Sam, Open Asks
+# Sheet 70 card 3, 2026-10-12: "Every course in the loaded records"; then "start
+# the Riverside course index"). kb/_course_outline_index.py reads pages only and
+# writes no table; it files kb/course_outline_index/<step>_<run>.json, which this
+# job commits back to the branch that ran it. Runs when a claude/** push changes
+# kb/course_outline_index/.run to something main does not hold (the gate job),
+# never on a merge commit (a merge of main carries that file's change too).
+on:
+  push:
+    branches: ['claude/**']
+    paths:
+      - 'kb/course_outline_index/.run'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: course-outline-index-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  gate:
+    # Runs the job only when the pushed trigger file differs from main's. A merge of
+    # main carries every trigger file main holds, and a push after it (not only the
+    # merge commit) starts this workflow (S376: a display push on a branch that had
+    # merged main re-ran the SDCCD index). To run the same file again, change a
+    # field in it (run=).
+    if: github.actor != 'github-actions[bot]' && !startsWith(github.event.head_commit.message, 'Merge')
+    runs-on: ubuntu-latest
+    outputs:
+      go: ${{ steps.diff.outputs.go }}
+    steps:
+      - uses: actions/checkout@v7
+      - id: diff
+        run: |
+          git fetch -q --depth=1 origin main
+          if git diff --quiet FETCH_HEAD -- kb/course_outline_index/.run; then
+            echo "go=0" >> "$GITHUB_OUTPUT"; echo "kb/course_outline_index/.run matches main's: nothing to run."
+          else
+            echo "go=1" >> "$GITHUB_OUTPUT"
+          fi
+
+  index:
+    needs: gate
+    if: needs.gate.outputs.go == '1'
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Install Playwright + Chromium
+        run: |
+          pip install --quiet playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Index
+        env:
+          CENSUS_DELAY_MS: '3000'
+        run: |
+          args=()
+          discover=$(sed -n 's/^discover=//p' kb/course_outline_index/.run)
+          slugs=$(sed -n 's/^slugs=//p' kb/course_outline_index/.run)
+          index=$(sed -n 's/^index=//p' kb/course_outline_index/.run)
+          report=$(sed -n 's/^report=//p' kb/course_outline_index/.run)
+          [ -n "$discover" ] && args+=(--discover "$discover")
+          [ -n "$index" ] && args+=(--index "$index")
+          [ -n "$slugs" ] && args+=(--slugs "$slugs")
+          [ -n "$report" ] && args+=(--report "$report")
+          python3 kb/_course_outline_index.py "${args[@]}"
+
+      - name: Commit the result to this branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add kb/course_outline_index/
+          if git diff --cached --quiet; then echo "Nothing new."; exit 0; fi
+          git commit -m "Course outline index (run ${{ github.run_id }})"
+          git push origin HEAD:${{ github.ref_name }}

@@ -1,0 +1,213 @@
+{
+ "college": "Laney College",
+ "control_number": "43831",
+ "shape": "certificate",
+ "title": "Joyful Movement Life Skills: Reformer Training",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://lan.curriqunet.com/catalog/view/iq/44166/44188/44519",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7004,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7004,
+    "output_tokens": 1607,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1607,
+  "output_tokens_details": {
+   "thinking_tokens": 536
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06016,
+ "ms": 13196,
+ "seconds": 13.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    10.5,
+    10.5
+   ],
+   "stated": [
+    10.5,
+    10.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 8,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Movement Life Skills: Reformer Training - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 10.5,
+    "max": 10.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Select the appropriate design and implementation for physical and wellness-based training and mind-body awareness from an anatomical approach for general conditioning, back and joint pain, fall prevention for seniors, pre/post-natal exercise, with a mindful understanding of how to work with various body types.",
+    "Reformer Training: Successful students will demonstrate, synthesize, and evaluate proper Pilates Reformer exercises and their application to train and modify for intergenerational populations with diverse body types and fitness levels."
+   ],
+   "careers": [
+    "fitness centers",
+    "health and wellness centers",
+    "privately owned studios",
+    "personal training",
+    "sports medicine",
+    "physical and dance movement therapy",
+    "Reformer Training instructors",
+    "Gym or community center instructors"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Courses:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10.5,
+     "max": 10.5
+    },
+    "courses": [
+     {
+      "code": "DANCFOLK 009",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCFOLK 099",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCFOLK 105",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCFOLK 115",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCFOLK 120",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCFOLK 124",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCFOLK 125",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The section heading appears truncated at the start of the text ('Movement Life Skills...' rather than 'Joyful Movement Life Skills...'); recorded as printed.",
+   "Catalog prints DANCFOLK 009 and DANCFOLK 099 with leading zeros; treated as the closed-list DANCFOLK 9 and DANCFOLK 99, not catalog additions.",
+   "The second outcome is printed with the label 'Reformer Training:' at its start; it was kept as printed.",
+   "Total of 10.50 units is below the award's 8S/12Q-16S/24Q bracket minimum? No — 10.5 falls within 8 to fewer than 16 semester units; consistent.",
+   "Careers include workplaces named in the description ('careers in fitness centers, health and wellness centers, or privately owned studios') and job titles from Career Opportunities; activities such as 'partner with schools' and 'develop their own clientele' were not recorded as careers."
+  ]
+ },
+ "extracted_run": "38935141023"
+}

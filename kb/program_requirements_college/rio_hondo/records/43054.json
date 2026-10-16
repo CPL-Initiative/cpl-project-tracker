@@ -1,0 +1,398 @@
+{
+ "college": "Rio Hondo College",
+ "control_number": "43054",
+ "shape": "adt",
+ "title": "Communication Studies 2.0",
+ "award": "A.A- T Degree",
+ "source_url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24543",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11834,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11834,
+    "output_tokens": 2445,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2445,
+  "output_tokens_details": {
+   "thinking_tokens": 602
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09624,
+ "ms": 18356,
+ "seconds": 18.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 21,
+   "share": 0.714,
+   "missing": [
+    "LIT102",
+    "LIT102H",
+    "SOC101",
+    "SOC101H",
+    "SPCH100",
+    "SPCH100H"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 6,
+   "codes": [
+    "COMMC1004",
+    "COMMC1004H",
+    "ENGLC1002",
+    "ENGLC1002H",
+    "SOCIC1000",
+    "SOCIC1000H"
+   ],
+   "flagged": [
+    "COMMC1004",
+    "COMMC1004H",
+    "ENGLC1002",
+    "ENGLC1002H",
+    "SOCIC1000",
+    "SOCIC1000H"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    17.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 17.0-18.0; the catalog states 18.0-18.0"
+   ],
+   "degree": {
+    "pass": false,
+    "status": "incomplete",
+    "computed": [
+     17.0,
+     18.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": null,
+    "why": [
+     "the record names the degree total and the Cal-GETC pattern, but no units for it"
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 14,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "COMMUNICATION STUDIES 2.0 - Associate in Arts for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [],
+   "careers": [
+    "administration",
+    "advertising",
+    "broadcasting",
+    "business communications",
+    "consulting",
+    "government services",
+    "journalism",
+    "law",
+    "marketing",
+    "performance",
+    "politics",
+    "public relations",
+    "sales",
+    "teaching"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses (6 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "COMM C1004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM C1004H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Select three courses (9 units) from List A below (a maximum of 3 units in Forensics)",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "SPCH 110",
+      "units": 2,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPCH 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPCH 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPCH 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPCH 150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MSCM 128",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B: Select one course (3 units). Choose from List B below or one course not yet taken from List A",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ANTH 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH 102H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOUR 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1002H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOCI C1000H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "SPCH 132",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPCH 240",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "SPCH 100",
+    "why": "not in the text; catalog lists COMM C1004 (formerly SPCH 100)"
+   },
+   {
+    "code": "SPCH 100H",
+    "why": "not in the text; catalog lists COMM C1004H (formerly SPCH 100H)"
+   },
+   {
+    "code": "LIT 102",
+    "why": "not in the text; catalog lists ENGL C1002 (formerly LIT 102)"
+   },
+   {
+    "code": "LIT 102H",
+    "why": "not in the text; catalog lists ENGL C1002H (formerly LIT 102H)"
+   },
+   {
+    "code": "SOC 101",
+    "why": "not in the text; catalog lists SOCI C1000 (formerly SOC 101)"
+   },
+   {
+    "code": "SOC 101H",
+    "why": "not in the text; catalog lists SOCI C1000H (formerly SOC 101H)"
+   }
+  ],
+  "notes": [
+   "Major total 'Total : 18.0' recorded as total_units; 'DEGREE TOTAL 60 units' recorded as degree_total. Cal-GETC units printed as 'units will vary', so ge_units is null.",
+   "Transferable electives 'as needed to reach 60 transferable units' with no units printed: electives_fill_degree true.",
+   "List B may alternatively be satisfied by one course not yet taken from List A; List A courses are not repeated in the List B block.",
+   "List A allows a maximum of 3 units in Forensics (SPCH 110, printed 2.0-3.0 units).",
+   "Several closed-list codes appear in the catalog under new common-course numbers (COMM C1004/C1004H, ENGL C1002/C1002H, SOCI C1000/C1000H), recorded as catalog additions; the old codes are listed in missing_explained.",
+   "No program learning outcomes are printed in the text; the catalog text is cut off mid-way through the course descriptions (SOCI C1000H)."
+  ]
+ },
+ "extracted_run": "38843465712"
+}

@@ -258,7 +258,8 @@ nobody finds; `unreferenced_offload` flags any that stop being.
    check `service_role` holds an explicit grant (`has_function_privilege`),
    or the revoke breaks the cron. (c) The
    sandbox cannot reach `*.supabase.co` — all Supabase access goes through the
-   MCP tools. Worked examples:
+   MCP tools; when `apply_migration` times out, a committed file goes through
+   `supabase-migrate.yml` (`kb/migrations/.apply`; Sam, Sheet 74). Worked examples:
    `docs/kb-notes/playbook-trail-crew-method-magic-audit.md`.
 
 ## Naming & terminology (Sam's conventions — honor in all output)
@@ -679,9 +680,8 @@ https://cpl-initiative.github.io/cpl-project-tracker/
 
 **Moved to [`docs/reference/obsidian_vault_wiring.md`](docs/reference/obsidian_vault_wiring.md)**.
 
-Read it before: vault-sync or vault-path work, Obsidian exclusion, or the
-sparse-checkout fix. It holds the vault root, `scripts/sync-vault-clones.ps1`,
-and why exclusion is a relevance filter rather than a performance one.
+Read it before vault-sync or vault-path work, Obsidian exclusion, or the
+sparse-checkout fix (the vault root, `scripts/sync-vault-clones.ps1`).
 
 Three doc lanes by lifecycle — KB notes, lessons, session handoffs. Which is
 which, the per-lane contract, and the KB-notes lane's author-at-final-quality
@@ -715,11 +715,8 @@ EACR identity (§9); C-ID/CCN conventions (§10). Contents: 1 Architecture ·
 
 **Moved to [`docs/reference/kb_build_status.md`](docs/reference/kb_build_status.md)**.
 
-Read it before: KB/unified-courses curation work, the CCR worklists, or citing
-build-phase history. It holds the phase-by-phase build narrative, counts, and
-artifact locations. Current-phase quick state: the §11 pointer table below
-names each lane's state; its detail is in `docs/reference/lanes/`
-+ the latest `docs/session_<N>_handoff.md`.
+Read it before KB/unified-courses curation work, the CCR worklists, or citing
+build-phase history (the phase narrative, counts, artifact locations).
 
 ## 11. M-ID Lifecycle, Model Curriculum (MC), and the CID/CIDx Pathway
 
@@ -755,7 +752,7 @@ stays here.
 > time (four occasions). [`lanes/README.md`](docs/reference/lanes/README.md).
 
 > **Anything waiting on Sam is a card on the standing sheet**
-> ([NYWeDqDAVgTNEc4Ds5SHSy](https://claude.ai/artifact/NYWeDqDAVgTNEc4Ds5SHSy), sheet 68). Answering
+> ([sheet 85](https://claude.ai/artifact/5q9urLR8X9y6vokcppgDFk), answered; none open). Answering
 > one changes its lane's marker in the same PR (`CPLBrain/decision-sheets/decision_sheets.md`).
 
 | Phase | What | Status |
@@ -795,7 +792,8 @@ stays here.
 | **Title 5 §55050 → Ed. Code Article 9** | A regulation that does not implement the statute it operates under — and the amendment package that fixes it. | ✅ live · open work — [lane state](docs/reference/lanes/t5-55050-article-9.md) |
 | **COBI dark mode / the one theme control** | One header control setting the theme for every tab and window, and the token layer under it. Carries the a11y remediation pass. | ✅ live · open work — [lane state](docs/reference/lanes/cobi-dark-mode.md) |
 | **Memory tab / Autogenerate + the Briefing** | Drafting a memory row from a typed topic, reading the entries back, and curating them. | ✅ live · open work — [lane state](docs/reference/lanes/memory-tab.md) |
-| **Program requirements harvest** | Each program's required, list-choice and elective courses at 115 colleges, so CPL units saved can be shown. | 🔨 in progress · Phase 2: six colleges loaded — [lane state](docs/reference/lanes/program-requirements-harvest.md) |
+| **Annual Workplan Goals / add, move, count** | The one editor of the workplan's structure: add a sub-activity, move it, set targets, say what each number counts — wired to the Activities tab and reports. | 🔨 in progress · open work — [lane state](docs/reference/lanes/workplan-annual-goals.md) |
+| **Program requirements harvest** | Each program's required, list-choice and elective courses at 115 colleges, so CPL units saved can be shown. | 🔨 in progress · 53 colleges loaded; the catalog sweep — [lane state](docs/reference/lanes/program-requirements-harvest.md) |
 | 2 | Articulations by Unified Course — interactive view + curation | parked |
 | 4 | SLO ingestion + the rest of the MC slot fields | parked (unlocks MC-readiness scoring) |
 | 5 | CTE classifier (TOP code → COCI CTE field) | parked (unlocks CIDx lane) |
@@ -808,7 +806,7 @@ from one readiness tier to the next.
 
 ## Troubleshooting
 
-**Moved to [`docs/reference/troubleshooting.md`](docs/reference/troubleshooting.md)** (2026-08-19 pare-down — symptom-triggered reference only a broken run reads).
+**Moved to [`docs/reference/troubleshooting.md`](docs/reference/troubleshooting.md)**.
 
 Go there when: the **dashboard is not updating** · a **Pages deploy failed** or
 the site is stale after a merge (dispatch a fresh `pages.yml` run — never
@@ -818,7 +816,5 @@ the date moved · **duplicate sections / HTML growing** on every run ·
 404** (the lockfile is gitignored, so every range resolves live — pin exactly) ·
 **docx library errors**.
 
-**The stop-hook nags** are covered there too (a squash-merged branch still
-nagging: `python3 scripts/check_hooks_live.py --fix`) — including the "Unverified
-`noreply@github.com`" false positive, where the fix is to do nothing (amending
-rewrites `main`, Rule 5).
+**The stop-hook nags** too (`python3 scripts/check_hooks_live.py --fix`); on the
+"Unverified `noreply@github.com`" one, do nothing: amending rewrites `main` (Rule 5).

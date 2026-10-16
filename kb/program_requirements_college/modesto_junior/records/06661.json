@@ -1,0 +1,182 @@
+{
+ "college": "Modesto Junior College",
+ "control_number": "06661",
+ "shape": "degree",
+ "title": "Machine Tool Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/machine-tool-technology-mjc-fall-2026",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5726,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5726,
+    "output_tokens": 1394,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1394,
+  "output_tokens_details": {
+   "thinking_tokens": 471
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05078,
+ "ms": 11814,
+ "seconds": 12.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 12,
+   "share": 0.0,
+   "missing": [
+    "MACH200D",
+    "MACH200E",
+    "MACH201",
+    "MACH202",
+    "MACH205",
+    "MACH206",
+    "MACH208",
+    "MACH209",
+    "MACH357",
+    "MACH395",
+    "WELD200",
+    "WELD206"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Machine Tool Technology",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MACH 200D",
+    "why": "named only in the Certificate of Achievement section; text has no A.S. section"
+   },
+   {
+    "code": "MACH 200E",
+    "why": "named only in the Certificate of Achievement section; text has no A.S. section"
+   },
+   {
+    "code": "MACH 201",
+    "why": "named only in the Certificate of Achievement section; text has no A.S. section"
+   },
+   {
+    "code": "MACH 202",
+    "why": "named only in the Certificate of Achievement section; text has no A.S. section"
+   },
+   {
+    "code": "MACH 205",
+    "why": "named only in the Certificate of Achievement section; text has no A.S. section"
+   },
+   {
+    "code": "MACH 206",
+    "why": "named only in the Certificate of Achievement section; text has no A.S. section"
+   },
+   {
+    "code": "MACH 208",
+    "why": "named only in the Certificate of Achievement section; text has no A.S. section"
+   },
+   {
+    "code": "MACH 209",
+    "why": "named only in the Certificate of Achievement section; text has no A.S. section"
+   },
+   {
+    "code": "MACH 357",
+    "why": "named only in the Certificate of Achievement section; text has no A.S. section"
+   },
+   {
+    "code": "MACH 395",
+    "why": "named only in the Certificate of Achievement section; text has no A.S. section"
+   },
+   {
+    "code": "WELD 200",
+    "why": "named only in the Certificate of Achievement section; text has no A.S. section"
+   },
+   {
+    "code": "WELD 206",
+    "why": "named only in the Certificate of Achievement section; text has no A.S. section"
+   }
+  ],
+  "notes": [
+   "The requested award is the A.S. Degree, but the catalog text prints only the Machine Tool Technology Certificate of Achievement (29.0-30.0 units). No A.S. Degree section, requirements, total, or GE pattern appear, so no blocks were recorded.",
+   "The program learning outcomes printed on the page are introduced as applying to 'this award' under the certificate heading ('MACHINE TOOL TECHNOLOGY, CERTIFICATE'); they were not recorded for the A.S. Degree. A reviewer should check whether the A.S. shares them.",
+   "The certificate section lists MACH207 (CNC Mill Programming, 3 units), which is not in the closed list; it would be a catalog addition if the A.S. uses the same requirements.",
+   "Certificate section shows internal inconsistency: 'Award Instructions' says 29-33 required units while the totals print 29.0-30.0 units.",
+   "A reviewer should locate the separate A.S. Degree page for Machine Tool Technology in the 2026-2027 catalog."
+  ]
+ },
+ "extracted_run": "38477845911"
+}

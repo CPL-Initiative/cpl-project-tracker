@@ -1,0 +1,29 @@
+{
+ "college": "Foothill College",
+ "programs": 209,
+ "with_closed_list": 190,
+ "found": 116,
+ "extracted": 116,
+ "errors": 0,
+ "passed_machine_checks": 73,
+ "failed": {
+  "coverage": 23,
+  "invented": 0,
+  "arithmetic": 41,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 9.5,
+ "cost_per_program": 0.0819,
+ "not_found": [
+  {
+   "control_number": "36414",
+   "title": "Interventional Pulmonology Assistant",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "run": "38675242638"
+}

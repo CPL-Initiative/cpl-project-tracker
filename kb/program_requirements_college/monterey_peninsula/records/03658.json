@@ -1,0 +1,398 @@
+{
+ "college": "Monterey Peninsula College",
+ "control_number": "03658",
+ "shape": "degree",
+ "title": "Ethnic Studies",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.mpc.edu/programs-study/ethnic-studies/ethnic-studies-aa/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7902,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7902,
+    "output_tokens": 2731,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2731,
+  "output_tokens_details": {
+   "thinking_tokens": 801
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08623,
+ "ms": 20692,
+ "seconds": 21.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 19,
+   "listed": 22,
+   "share": 0.864,
+   "missing": [
+    "ANTH20",
+    "ETNC14",
+    "SOCI22"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     42.0,
+     52.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     34.0
+    ],
+    "why": [],
+    "fill": [
+     8.0,
+     18.0
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 9,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "ETHNIC STUDIES, ASSOCIATE IN ARTS",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "MPC General Education or Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 34
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Define and use key concepts, terminology, and theoretical frameworks central to the interdisciplinary field of Ethnic Studies.",
+    "Analyze and discuss the social, economic, and cultural experiences of ethnic minorities relative to the social sciences and the humanities by engaging in critical thinking, communication, and research.",
+    "Identify and discuss interconnections of ethnicity, gender, race, class, sexuality, ability, and other categories of identity in various spheres of human experience ranging from the individual to the collective.",
+    "Illustrate cultural competence by learning about people, cultures, and societies different from themselves and being able to effectively interact with people from diverse cultures."
+   ],
+   "careers": [
+    "social work",
+    "teaching",
+    "law",
+    "advocacy",
+    "politics",
+    "community services",
+    "cultural arts",
+    "museums",
+    "local, state, and federal governmental agencies"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Select one Introductory course from the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ETNC 10",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETNC 13",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOCI 13",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one Humanities course from the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ETNC 4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETNC 5",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETNC 6",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one Historical Settings course from the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ETNC 23",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 23",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETNC 24",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 24",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETNC 25",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 25",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 12",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GWOS 12",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one Political Institutions course from the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ETNC 16",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETNC 18",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select any two courses listed above not already used, or choose from the following:",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ETNC 20",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETNC 22",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI 14",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANTH 20",
+    "why": "not in the text"
+   },
+   {
+    "code": "ETNC 14",
+    "why": "not in the text; catalog prints only SOCI 14"
+   },
+   {
+    "code": "SOCI 22",
+    "why": "not in the text; catalog prints only ETNC 22"
+   }
+  ],
+  "notes": [
+   "The catalog prints no units beside individual courses, only block totals (3 per single-course block, 6 for the two-course block); course units left null.",
+   "Cross-listed codes printed as 'ETNC/SOCI 13' and 'ETNC/HIST 23/24/25' are recorded as the ETNC course with the SOCI/HIST twin as an alternative.",
+   "ETNC 23 matched to closed-list entry 'ETNC23' (no space, units not stored); catalog title is 'Chicana/o History: 1848-Present, A Survey'.",
+   "The last block also allows any two unused courses from the four blocks above, not only ETNC 20, ETNC 22 and SOCI 14; those earlier courses are not repeated in it.",
+   "'Additional Requirements 42' covers competency, GE (MPC General Education or Cal-GETC) and electives together, so it was not recorded as ge_units.",
+   "Degree total 60 is printed as 'Total Units 60'; electives are 'if needed' to reach 60, so electives_fill_degree is true.",
+   "The learning outcomes are printed on this A.A. degree page and recorded for this award."
+  ]
+ },
+ "extracted_run": 38844053281,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 24,
+    "max": 34
+   },
+   "words": "general education pattern (MPC General Education or Cal-GETC) (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: MPC GE: Area 1A ENGL C1000 3; Areas 1B, 2, 3, 4, 5, 6 and 7, each \"Select three units from the following.\" Cal-GETC: \"satisfies the 34 units of lower-division general education requirements\")"
+  }
+ ],
+ "read_run": "38675240344"
+}

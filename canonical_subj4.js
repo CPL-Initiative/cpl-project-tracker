@@ -681,7 +681,13 @@
       // desktop widths (standing rule).
       "#tab-canonical-subj4 .cs-table td.cs-cte{white-space:nowrap;}" +
       "#tab-canonical-subj4 .cs-table td.cs-cte .cs-badge{white-space:nowrap;}" +
-      "#tab-canonical-subj4 .cs-table textarea.cs-notes{width:26ch;}"
+      "#tab-canonical-subj4 .cs-table textarea.cs-notes{width:26ch;}" +
+      // WCAG 2.2 target size (UI pass, S386): every control at least 24px tall. These set
+      // properties the HTML rules leave unset, so the head-injected sheet applies though the
+      // tab's own <style> sits later, in the body.
+      "#tab-canonical-subj4 .cs-check-btn,#tab-canonical-subj4 .cs-var-show,#tab-canonical-subj4 input.cs-canon{min-height:24px;}" +
+      "#tab-canonical-subj4 label.cs-flag-toggle{min-height:24px;display:inline-flex;align-items:center;gap:4px;}" +
+      "#tab-canonical-subj4 a.cs-auth-link{display:inline-block;min-height:24px;line-height:24px;}"
     ]));
   }
 
@@ -1758,7 +1764,7 @@
     // CIP placeholder column — sits next to TOP (paired taxonomy block).
     // CCCCO is transitioning from TOP to CIP; column will populate when the
     // mapping finalizes. Always blank today.
-    tr.appendChild(el("td", { class: "cs-mono", style: "color:#9ca3af", title: "CIP code — placeholder. The CCCCO is transitioning from TOP to CIP; column will populate when the mapping finalizes." }, ["—"]));
+    tr.appendChild(el("td", { class: "cs-mono", style: "color:var(--text-muted)", title: "CIP code — placeholder. The CCCCO is transitioning from TOP to CIP; column will populate when the mapping finalizes." }, ["—"]));
 
     // CTE cell — show the flag as a badge with color reflecting the share.
     // .cs-cte rides ensureCsrUiCss(): the badge ("Y (90%)") stays on ONE
@@ -1817,7 +1823,7 @@
       // Two-line: validator (top) + reviewer (bottom) when both exist.
       rev.innerHTML = "✓ <strong>" + (entry.validated_by || "").split("@")[0] + "</strong> · " + entry.validated_at.slice(0, 10);
       if (entry.reviewed_by && entry.reviewed_at) {
-        rev.innerHTML += "<br><span style='color:#9ca3af;font-size:.7rem'>rev. " +
+        rev.innerHTML += "<br><span style='color:var(--text-muted);font-size:.7rem'>rev. " +
           (entry.reviewed_by || "").split("@")[0] + " · " + entry.reviewed_at.slice(0, 10) + "</span>";
       }
     } else if (entry.reviewed_at && entry.reviewed_by) {

@@ -51,8 +51,14 @@ MIN_COVERAGE = 0.5      # a fixture whose page named fewer listed codes was not 
 # (S334, Sam's sheet 33 card 4): program and course outcomes as printed, which
 # the scorer checks word for word against the catalog text. Shape 4 (S360, Sam's
 # rules 4 and 5, Open Asks Sheet 61 card 1): a block of rule "recommended" for
-# courses the catalog recommends, and program.careers as printed.
-RECORD_SHAPE = 4
+# courses the catalog recommends, and program.careers as printed. Shape 5 (S389,
+# Sam's Open Asks Sheet 78 card 2, "Record both figures"): program.degree_total,
+# program.ge_units and program.electives_fill_degree, so a page that prints the
+# degree total with general education and no major total is checked against it.
+# Shape 6 (S392; Sam, 2026-10-14, Cabrillo Biology 06328 Needs a fix):
+# program.degree_elective_units beside a major total the page also prints, and a
+# major-minimum sentence is no major total; the scorer checks the major and the degree.
+RECORD_SHAPE = 6
 
 # A program read in parts (S361; Sam, 2026-10-11: "go with splitting the program
 # into two calls"). A record holds about 54 output tokens per course: 215 listed

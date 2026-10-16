@@ -1,0 +1,155 @@
+{
+ "college": "Monterey Peninsula College",
+ "catalog_url": "https://catalog.mpc.edu/",
+ "platform": "courseleaf",
+ "catalog_year": "2026-2027",
+ "programs": 206,
+ "with_closed_list": 205,
+ "started": "2026-10-16T03:46:26Z",
+ "scope": null,
+ "sitemap": {
+  "url": "https://catalog.mpc.edu/sitemap.xml",
+  "status": 200,
+  "listed": 460,
+  "nested": 0,
+  "program_pages": 307,
+  "refused": null,
+  "errors": null
+ },
+ "pages_read": 307,
+ "child_pages": 0,
+ "banner_h1": "2026-2027\nCollege Catalog",
+ "loads": 313,
+ "seconds": 1585.7,
+ "found": 199,
+ "by_method": {
+  "no_closed_list": 1,
+  "not_found": 4,
+  "page_claimed": 2,
+  "sitemap_page": 199
+ },
+ "shared_pages": {
+  "https://catalog.mpc.edu/programs-study/ceramics/ceramics-glass-coa/": [
+   "22072",
+   "39294"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "03653",
+   "title": "Administration of Justice: Law Enforcement",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.mpc.edu/programs-study/law-enforcement-training-program/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.333,
+    "body": 0.0,
+    "content": 0.267,
+    "net": 5,
+    "listed": 15,
+    "why": "coarse net: the page's code tokens name 5 of 15 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3997,
+     "content": 149656,
+     "tabs": 60027
+    },
+    "tab_panels": [
+     [
+      "Course Descriptions",
+      60000
+     ],
+     [
+      "Print Options",
+      419
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "22098",
+   "title": "Administration of Justice: Law Enforcement",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.mpc.edu/programs-study/law-enforcement-training-program/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.333,
+    "body": 0.0,
+    "content": 0.267,
+    "net": 5,
+    "listed": 15,
+    "why": "coarse net: the page's code tokens name 5 of 15 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3997,
+     "content": 149656,
+     "tabs": 60027
+    },
+    "tab_panels": [
+     [
+      "Course Descriptions",
+      60000
+     ],
+     [
+      "Print Options",
+      419
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "39356",
+   "title": "Administration of Justice - Level II Corrections",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "39361",
+   "title": "Administration of Justice - Level I Policing",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "32361",
+   "title": "Administration of Justice",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://catalog.mpc.edu/programs-study/political-science/law-public-policy-society-aa-t/"
+   ]
+  },
+  {
+   "control_number": "45482",
+   "title": "Modern Policing",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.mpc.edu/programs-study/political-science/law-public-policy-society-aa-t/"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 12,
+  "0.8-1.0": 56,
+  "1.0": 131
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/monterey_peninsula",
+  "kept": 199,
+  "programs": 0,
+  "list": []
+ },
+ "run": "38844053281"
+}

@@ -1,0 +1,191 @@
+{
+ "college": "Ventura College",
+ "control_number": "40809",
+ "shape": "certificate",
+ "title": "Food Safety",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/agriculture/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11853,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11853,
+    "output_tokens": 909,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 909,
+  "output_tokens_details": {
+   "thinking_tokens": 261
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06559,
+ "ms": 9811,
+ "seconds": 10.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 11,
+   "share": 0.0,
+   "missing": [
+    "AGV10",
+    "AGV13",
+    "AGV31",
+    "AGV32",
+    "AGV33",
+    "AGV34",
+    "AGV36",
+    "AGV37",
+    "AGV38",
+    "AGV39",
+    "AGV96"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "No Food Safety section in the text (Agriculture course descriptions only)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AG V10",
+    "why": "appears only in course descriptions; no program requirements in the text"
+   },
+   {
+    "code": "AG V13",
+    "why": "appears only in course descriptions; no program requirements in the text"
+   },
+   {
+    "code": "AG V31",
+    "why": "appears only in course descriptions; no program requirements in the text"
+   },
+   {
+    "code": "AG V32",
+    "why": "appears only in course descriptions; no program requirements in the text"
+   },
+   {
+    "code": "AG V33",
+    "why": "appears only in course descriptions; no program requirements in the text"
+   },
+   {
+    "code": "AG V34",
+    "why": "appears only in course descriptions; no program requirements in the text"
+   },
+   {
+    "code": "AG V36",
+    "why": "appears only in course descriptions; no program requirements in the text"
+   },
+   {
+    "code": "AG V37",
+    "why": "appears only in course descriptions; no program requirements in the text"
+   },
+   {
+    "code": "AG V38",
+    "why": "appears only in a course description cut off mid-text; no program requirements in the text"
+   },
+   {
+    "code": "AG V39",
+    "why": "not in the text"
+   },
+   {
+    "code": "AG V96",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied text contains only Agriculture course descriptions (starting mid-description and ending cut off within AG V38). The Food Safety Certificate of Achievement requirements section is not included, so no blocks, total, outcomes or careers could be recorded. A reviewer should check the program requirements section of the source page.",
+   "The program description is not in the text either, so no careers were recorded. The phrase 'food safety related careers' appears only in the AG V36 course description, not in a program section."
+  ]
+ },
+ "extracted_run": "38756014587"
+}

@@ -1,0 +1,310 @@
+{
+ "college": "Citrus College",
+ "control_number": "11242",
+ "shape": "certificate",
+ "title": "Child Development Master Teacher",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.citruscollege.edu/disciplines/child-development/child-development-master-teacher-early-intervention-certificate-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7991,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7991,
+    "output_tokens": 2073,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2073,
+  "output_tokens_details": {
+   "thinking_tokens": 574
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07342,
+ "ms": 16718,
+ "seconds": 17.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 20,
+   "share": 0.65,
+   "missing": [
+    "CHLD116",
+    "CHLD121",
+    "CHLD122",
+    "CHLD123",
+    "CHLD124",
+    "CHLD134",
+    "CHLD144"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "CHLD168",
+    "CHLD169"
+   ],
+   "flagged": [
+    "CHLD168",
+    "CHLD169"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    50.0,
+    50.0
+   ],
+   "stated": [
+    50.0,
+    50.0
+   ],
+   "against": "degree",
+   "ge": [
+    16.0,
+    16.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Child Development Master Teacher – Early Intervention Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "General Education (GE): one course minimum in each of English/language arts, math or science, social sciences, humanities and/or fine arts, and any general education elective excluding kinesiology (KIN)",
+   "degree_total": {
+    "min": 50,
+    "max": 50
+   },
+   "ge_units": {
+    "min": 16,
+    "max": 16
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply ethical standards and professional behaviors that demonstrate understanding, knowledge, and a deepening commitment to the child development profession and early childhood education.",
+    "Design, implement and evaluate environments and activities that support positive, developmental play and learning outcomes for children.",
+    "Demonstrate the ability to identify, analyze, and apply theories of early childhood education and child development.",
+    "Apply effective guidance and teaching strategies that will support social growth, learning, identity development and promote self-confidence."
+   ],
+   "careers": [
+    "child development master teacher"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHLD 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSY 206",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 114",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 154",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 156",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 156L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 160",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 164",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 166",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLD 168",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHLD 169",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHLD 194",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CHLD 116",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHLD 121",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHLD 122",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHLD 123",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHLD 124",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHLD 134",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHLD 144",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The page is titled Child Development Master Teacher – Early Intervention Certificate of Achievement (from the source URL and outcomes heading); the program record is named Child Development Master Teacher. Reviewer should confirm this is the intended award.",
+   "Printed 'Total Units 50' includes the 16 units of required General Education (listed courses sum to 34 units + 16 GE = 50), so it is recorded as degree_total (whole-award total with GE) and total_units is left null; the page prints no separate total for the courses alone.",
+   "PSY 206 is printed as an alternative to CHLD 110 with no units beside it.",
+   "CHLD 168 and CHLD 169 are not in the closed list and are recorded as catalog additions.",
+   "The 'Recommended' note concerns 100 hours of work experience in a special education setting, not courses; no recommended block recorded.",
+   "The Career Information tab content was not present in the text; the only career named is 'child development master teacher' from the description."
+  ]
+ },
+ "extracted_run": "38675245799"
+}

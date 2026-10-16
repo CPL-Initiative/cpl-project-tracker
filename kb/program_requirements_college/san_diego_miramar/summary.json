@@ -1,0 +1,36 @@
+{
+ "college": "San Diego Miramar College",
+ "programs": 146,
+ "with_closed_list": 124,
+ "found": 120,
+ "extracted": 120,
+ "errors": 0,
+ "passed_machine_checks": 114,
+ "failed": {
+  "coverage": 1,
+  "invented": 0,
+  "arithmetic": 6,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 9.65,
+ "cost_per_program": 0.0804,
+ "not_found": [
+  {
+   "control_number": "30512",
+   "title": "Graphics",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u"
+  },
+  {
+   "control_number": "30532",
+   "title": "Graphics",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "36254",
+   "title": "Accountancy for Enrolled Agents",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"
+  }
+ ],
+ "run": "38355780721"
+}

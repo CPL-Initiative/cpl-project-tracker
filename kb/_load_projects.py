@@ -55,7 +55,7 @@ SELECT_COLUMNS = (
     "id,name,description,workplan_activity,vision_2030_action,cpl_goal,"
     "budget_source,budget,lead,team,status,percent_complete,"
     "start_date,end_date,milestones,latest_update,update_date,"
-    "kpi_metric,kpi_unit,wp_notes,kpi_order"
+    "kpi_metric,kpi_unit,wp_notes,kpi_order,count_note"
 )
 
 
@@ -217,7 +217,7 @@ def _read_lifecycle_ledger() -> list[dict]:
 # show. Anon-key fallback: item_updates has a public SELECT policy (the same
 # anon key is committed in card_updates.js), so the fold also works for local
 # runs without the service key. Never raises — {} on any failure.
-_ITEM_UPDATES_COLUMNS = "item_type,item_id,body,author,created_at,edited_at"
+_ITEM_UPDATES_COLUMNS = "item_type,item_id,body,created_at,edited_at"
 _SUPABASE_ANON = (
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9."
     "eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6"
@@ -227,11 +227,14 @@ _SUPABASE_ANON = (
 
 
 def load_item_updates() -> dict[str, dict]:
-    """Return {"project:1.1": {body, author, created_at, date}, "activity:2": …}
+    """Return {"project:1.1": {body, created_at, date}, "activity:2": …}
     — the NEWEST item_updates row per item (mirrors card_updates.js
     latestByKey). `date` is the created_at date part (YYYY-MM-DD), matching the
     update_date format the project rows carry. Never raises; {} on any failure
     (sandbox egress-block, outage) so the regen keeps creation-era updates.
+    The map ships in the public CPL_Data.js, so it carries no author: a note's
+    author is a staff email (pii_guard, 2026-10-15), and the pages that show
+    authorship read it from Supabase signed in.
     """
     key = SUPABASE_KEY or _SUPABASE_ANON
     endpoint = (
@@ -266,7 +269,6 @@ def load_item_updates() -> dict[str, dict]:
         created = str(r.get("created_at") or "")
         out[k] = {
             "body": r.get("body") or "",
-            "author": r.get("author") or "",
             "created_at": created,
             "date": created[:10],
         }

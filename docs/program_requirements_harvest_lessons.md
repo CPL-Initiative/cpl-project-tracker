@@ -1,7 +1,7 @@
 ---
 title: Program requirements harvest — Decisions & Lessons
 date: 2026-10-03
-prs: [2012, 2015, 2016, 1836, 1838, 1839, 1841, 1844, 1845, 1858, 1859, 1860, 1861, 1862, 1863, 1864, 1865, 1866, 1868, 1874, 1876, 1877, 1878, 1894]
+prs: [2101, 2102, 2103, 2104, 2105, 2049, 2050, 2012, 2015, 2016, 1836, 1838, 1839, 1841, 1844, 1845, 1858, 1859, 1860, 1861, 1862, 1863, 1864, 1865, 1866, 1868, 1874, 1876, 1877, 1878, 1894]
 tags: [program-requirements, catalog-harvest, census, supabase, playwright, governance, lessons]
 artifacts:
   - kb/_program_source_census.py
@@ -20,986 +20,758 @@ The lane's current state lives in
 [`docs/reference/lanes/program-requirements-harvest.md`](reference/lanes/program-requirements-harvest.md).
 This doc keeps what each session learned, once, in order.
 
-Sessions S320-S333 (Phase 0, the census, the pilot's first records, the addenda table, the first display build and the Ironworker proof) are in
+Sessions S320-S347 (Phase 0, the census, the pilot's first records, the addenda table, the first display build, the Ironworker proof, the maps and the Progress view) are in
 [`program_requirements_harvest_lessons_archive.md`](program_requirements_harvest_lessons_archive.md), moved verbatim.
 
-## S334 SkyAnchor, 2026-10-05: record shape 3 (outcomes as printed), the catalog record on CPL Pathways
-
-**What shipped.** The extraction function's version 4 keeps program and course outcomes as printed (record shape 3, Sam's sheet 33 card 4); the scorer's `outcomes` check fails a reworded or empty one. Run 37345734457 re-read the 20 pilot programs (20 of 20 passed, $1.31, $0.065 a program). `kb/_program_requirements_file.py` filed the outcomes onto the records Sam read. CPL Pathways lists every catalog record and opens each By requirement or By term (PR CPL-Initiative/cpl-project-tracker#1870). The live rows wait on sheet 40 card 1.
-
-**Lessons.**
-1. **A rerun relabels what it does not change.** Fourteen of 20 records came back with the requirements Sam read, byte for byte; six differed only in words the model chooses afresh each run: a section heading, a block name's trailing colon, an option group's name (`anatomy_physiology_sequence` against `Anatomy/Physiology sequence`), and on one record the alternatives' units filled in. Any of them would end a person's verdict under a fingerprint, and none changes what a student must take.
-2. **So a person's verdict is held to the requirements it read, and a rerun adds rather than replaces.** `reviewed_readings.json` fingerprints each read record (`requirements_md5`, outcomes left out); the loader counts a verdict only while the fingerprint matches. The filer keeps a read record's blocks, notes and reasons and takes only the new fields a machine check proves (outcomes, word for word against the same page). The display build stayed at 799bfb9a7dbf, so Sierra's facts did not move.
-3. **A count by heading undercounts.** S327 measured 13 of 20 pages printing outcomes with `(program|student) learning outcomes`. Miramar prints *Learning Outcome(s):*, so the true count is 16 (Miramar's four); the heading pattern takes the form now. Mt. San Antonio prints an Outcomes tab label and the capture reads none of the four programs' outcomes: the gap is the reading procedure's.
-4. **A verbatim check needs folding, and only of glyphs.** PDF text breaks lines mid-outcome and hyphenates at line ends, and catalogs mix curly and straight apostrophes. The scorer folds whitespace, a line-end hyphen and quote and dash glyphs on both sides; words and capitals must match. A blank outcome fails, since an empty string is in every text.
-5. **An unchanged build must keep its receipt.** `_build_roep_display.py` rewrote the 799bfb9a7dbf receipt when only the records' outcomes changed, and the rewrite dropped the line naming its rollback (the prior build's receipt). It now leaves an unchanged build's receipt as written.
-6a. **Then the reader opened the tab: 19 of 20.** The capture (#1871) now appends any panel whose id names outcomes, or that a tab labeled Outcomes, SLO or PLO opens, read one line per item when hidden. Mt. San Antonio's panel is `#outcomestextcontainer`; Vocational Nursing's came through a toggle (`#tgl0`). Its first run filed nothing: an escape written into the Python source of the in-page script became a real newline inside a JavaScript regex, the script threw on every page, and the run fell back to plain text that differed from the filed fixtures. The pilot guard now fails a tab or control character in the script and runs `node --check` on it; a mock CourseLeaf page in Chromium proved the fix before the next read. Each fixture took the new text only where everything before the appended tab matched the filed text byte for byte.
-6. **Prove a write in Postgres before anyone approves it.** The outcomes write is one guarded insert ... select per row (md5 of the record before). A read-only `select md5(jsonb_set(...)::text)` on one row returned the after md5 the loader computed, so the receipt's after state is shown before Sam's go.
-
-## S335 SkyKeel, 2026-10-05: drafts for the college, and Miramar's AUTO 156G traced to its source
-
-**What shipped.** Sam's sheet 32 card 2 (as proposed) collected the college's own differences as drafts on its harvest-tab row; the harvest-tab half is built. Program records gathers each college's college-owned gaps under its heading as *Drafts for the college*, with a composed draft to copy; Catalogs counts them and filters to colleges that have some; a record's own notes list only what the procedure owns (`tests/program_requirements.test.js` block 6c). The display builder gained `second_courses()`, a college-owned gap for a MAP articulation that names a course its recommendation does not; build `1cb75672ba6c` adds Miramar's two and nothing else (receipt `..._2026-10-05_1cb75672ba6c_delta.sql`, waiting on sheet 42 card 2). Sheet 42 card 3 asks when drafts show on My College, the college's own page.
-
-**Lessons.**
-1. **Trace a data finding to the row before raising it with a college.** Eight handoffs carried "raise Miramar's AUTO 156G articulations (EMT, Driver Operator 1B)". MAP's student-grain table (`map_college_cr_unit`) puts both exhibits on EMGM-106 and FIPT-321P at 0.25 hours, the versions students received. The AUTO 156G link sits in MAP's articulated-exhibit view on the 0.3-hour versions only, each listing AUTO 156G beside the right course; `_seed_coci_articulations.py` reads one course per view row, so the link is MAP's, and no credit flowed through it. The draft says exactly that, which a college can check in a minute; "AUTO 156G carries EMT credit" would have sent them looking for awards that do not exist.
-2. **A word-overlap test needs a subject test beside it.** Over the whole feed, "the recommendation shares no word with the course title, and another course at the college does" found 18 rows at 7 colleges, mostly right: NCCER's *Printreading and Welding Symbols* on Blueprint Reading, FAA airframe courses carrying each other's titles. Requiring the stray course to sit in another subject than the matching one left Miramar's two and one San Bernardino Valley row. Records shared by several colleges are skipped: a merged record carries other colleges' course codes (the 2026-09-29 memory row), which is where `chatbox_peer_articulations` reads noisy too.
-3. **Isolate a builder change by building without it.** With `second_courses` stubbed to empty, the build reproduced the live stamp `799bfb9a7dbf` exactly, so the new stamp's only cause is the new gaps; a path diff of the two builds confirmed two paths (`build` on 20 rows, `gaps` on one).
-4. **A college-facing surface and a team decision can pull apart inside one ruling.** Sheet 32 card 2 put drafts on My College *and* said nothing goes to a college on its own. My College is the college's page, so the two halves conflict there; the harvest tab half was built and the other went back to Sam as a card instead of being guessed.
-5. **A new kind of record meets every reader of the old kinds.** `display.gaps` has three readers: the harvest tab, CPL Pathways and Sierra. Sierra's `displayLines` labeled every college-owned gap "Catalog and state file differ", so Miramar's two would have reached her answers misnamed. She now labels each by its kind (`tests/sierra_program_courses.test.js` holds both), and sheet 42 card 2 deploys that line before the write. `grep` the field across `*.js` and `*.ts`, then ship the reader before the data.
-
-## S336 SkyCourier, 2026-10-05: the first two maps a reader could open
-
-**What shipped (#1876).** The registry recorded two sequence sources as open, Irvine Valley's All Program Maps and Santa Monica's Program Maps, and the queue had carried "Irvine Valley's and Santa Monica's maps" since S332. College page read run 37372136739 read both index pages and three of Santa Monica's program pages. `kb/_program_map_parse.py` turns what the run printed into terms, and the first two sequence records (shape `sequence 1`) sit in `kb/program_requirements_pilot/sequences/` with their source text, run, address and the state's list: Santa Monica's Barbering A.S. (43767) and Irvine Valley's Art A.A. (10265). Sam's sheet 23 call 4 had taken the pilot's sequencing only from Miramar's mapper, which refuses the reader; these two colleges are outside the 20-program sample, so adding their records to what Sam checks is a card, and nothing reached Supabase.
-
-**Lessons.**
-1. **Pick the program by the CPL it carries, after reading what the college publishes.** Santa Monica's Barbering A.S. names 24 of its 25 listed courses on its map, and every COSM course in the first year carries CPL at the college through one exhibit, *Barbering License (California)*: a licensed barber's first year is credit already held, with COUNS 20 and ENGL C1000 left. Irvine Valley's MAP rows (1,127) carry one local course, ART 85 Life Drawing I (165 students), and its Art A.A. places it in Semester 3. The CPL count chose the programs; the index read confirmed both had maps before anything was built.
-2. **Two map shapes, one parser.** Irvine Valley prints every map whole on one paginated page (seven pages, about 200 maps) as tab-separated tables under each term; Santa Monica gives each of about 150 programs a pathway page listing CODE, TITLE and units, with open slots by title. The college page reader folds runs of short lines with " · ", so the parser splits on newlines and on that separator alike, and both shapes come out as the same terms of kinded items (course, choice, list, ge, elective).
-3. **A map that names the core and leaves list slots is a correct map.** Irvine Valley's Art A.A. names 5 of its 23 listed courses (the required core) and leaves four slots "from List A or B". The pilot's half-the-list rule would refuse it. Acceptance is two terms or more and no course in the program's own subjects off the state's list; coverage is reported beside it and never gates.
-4. **An open slot can resolve by title.** Santa Monica's "Salon Experience · 1-4 units" names no code; its title matches the four Salon Experience courses (COSM 95A-95D, 1 to 4 units) on the state's list, so it reads as that choice.
-5. **The catalog's units and the state file's can differ inside a map.** Santa Monica's map prints COSM 50R at 1 unit; the state's Program Course File lists 1.5. The map record keeps what the college prints.
-
-**Sheet 42, carried out (2026-10-05).** Sam answered at 20:58Z, each card his own call: card 1 go, card 2 go, card 3 *Show them now*. S335 applied card 1's outcomes receipt (20 of 20 read after) and dispatched the cpl-chat deploy; S336 ran the rest. The deploy waited 10 minutes in GitHub's queue and landed byte-verified at 21:21Z; the smoke dispatched on `main` passed (run 37376149996); a fresh guard read showed all 20 rows on build 799bfb9a7dbf; migration `program_requirement_records_display_1cb75672ba6c_s336` applied the delta receipt and `--verify-sql` read 20 of 20 match. My College lists each college's drafts now (#1878). Sheet 44 carries the one open ask.
-
-6. **Two sessions acted on one sheet, and the guard made the second write a no-op.** S335 signed off at 20:23Z still watching sheet 42; Sam opened S336 at 20:25Z. His Complete woke both. Each card's receipt is guarded on the row's md5, so a duplicate apply would have changed nothing, and the two sessions settled one writer by message within four minutes. The rule that keeps it from recurring is in `docs/reference/scheduled_sessions.md` (*A signed-off session lets go*, #1879).
-7. **A smoke assertion about the model's wording is a sample of one.** The same `cpl-chat` version passed 7c (the Chaffey NURVN 414 CNA-to-LVN precedent) on `main` at 21:29Z and missed it on a PR's push three minutes later, saying no college had done it. That variance belongs to the Sierra lane; the display write rested on the `main` run, the one card 2 named.
-8. **Read the deploy and the smoke before a write that a model's answer depends on.** Card 2 ordered deploy, smoke, then the display write, because Sierra reads `display.gaps` by kind. The order held even with GitHub's queue stretching each step to ten minutes.
-
-**Moved from the lane (S336 compaction), verbatim.**
-
-✅ **[Sheet 38](https://claude.ai/artifact/K51Fac1Tm2NvmF9gZaw9yS) (Sam):** writes go; IWAP 41.09 later (*"I assume Cerritos teaches osha 30 imbedded in their class"*); *Ext & Review* renamed (applied S333, old title kept as alias); Fire Inspector 1C titles kept (*"I think these are different though they sound the same"*). ✅ **[Sheet 39](https://claude.ai/artifact/UcBESBRpoLZJKgZZG5NtXr) (Sam):** display go; OSHA has one name as issuer, *U.S. Occupational Safety and Health Administration (OSHA)*, CTCNC is trainer on OSHA 10-hour Construction (`kb/cer_decisions_out/2026-10-05-2`). ✅ **The outcomes are on the 20 live rows (Sam, sheet 42 card 1, go, 2026-10-05 20:58Z).** S335 applied `kb/receipts/program_requirement_records_outcomes_2026-10-05.sql` (migration `program_requirement_records_outcomes_2026_10_05_s335`, about 21:10Z) after a fresh read of 20 before; the verify query reads 20 of 20 after (S335, and S336 at 21:15Z).
-
-**CSU LA (Sam, opening note):** *"We'll figure out a procedure for them as well."* No registry row (the registry seeds from `coci_college_programs`). ✅ **Later (Sam, sheet 33 card 3, 2026-10-04):** *"I want to get our CCC process nailed down before getting into partners"*. No CSU registry row until the CCC procedure is settled; when it starts, a CSU has no state Program Course File, so its closed list is the catalog's own inventory.
-
-**Moved from the lane (S335 compaction), verbatim.**
-
-**Sam's calls, ruled (sheet 23, 2026-10-03 15:05Z, "As proposed", his own pick):** the catalog of the
-academic year wins on disagreement (CMS and COCI values kept and shown); pilot at Cerritos, Mt. San Antonio,
-Miramar, Riverside City and a census-picked PDF-catalog college; a named MAP team member checks the 20-program
-sample, with articulation officers invited; sequencing in the pilot only from Miramar's PPM map; yes to reading
-college websites from GitHub runners on a slow schedule that names the CPL Initiative; model calls through a
-Supabase Edge Function; nothing public until a college's records pass all four checks, first public use through
-Governance; the Tech Center asked for ROE field definitions when convenient. Sheets 25 and 26 named the rest:
-Riverside City's Culinary Arts certificate, Sam checks the sample himself, and Sam asks the Tech Center.
-
-**Moved from the lane (S334 compaction), verbatim.**
-
-**The census** (`kb/_program_source_census.py`,
-`.github/workflows/program-source-census.yml`): Playwright Chromium on a runner
-reads each homepage, scores catalog links (a library catalog, an old year, an
-archive or an addendum lose), follows one hop to an Academics page or a vendor or
-`catalog.*` link, probes `catalog.<domain>`, prefers this college's own link on a
-district page, fingerprints the platform (URL, then assets, then text) and dates
-the catalog (title, h1, a vendor's edition banner, address, link words). A read
-that finds no catalog keeps the registry's address. Each rule, with the run that
-earned it, is in the module and its guard; the evidence names where each year
-came from.
-robots.txt first for every host; 4 s between loads; at most 6 pages a college;
-the user agent names `CPLInitiativeCatalogCensus` and the dashboard URL.
-- A branch push is a dry run (job log only). Apply runs only on `main`: weekly
-  (Sundays 10:29 UTC) or a hand dispatch with mode apply. A newer run queues
-  behind a running pass.
-- Governance: the cadence is dismissed in `kb/governance_surface_map.json`
-  with its reason until Phase 1 names the person who owns the outcome.
-- Guard: `tests/program_source_census_test.py` (pure half, no browser).
-
-**Measured (2026-10-03):**
-- The Data Mart Program Course File (2026-07-16) has 11 columns. None marks a
-  course required, places it in a block, orders it by term, or gives a unit
-  total. It names every course a program lists (313,710 rows, 20,451 of 22,335
-  programs), which gives every harvest a closed list to check against.
-- 115 colleges award active credit programs (118 with noncredit-only).
-- Active programs: 8,343 Certificates of Achievement, 3,730 A.S., 2,448 A.A.,
-  2,573 noncredit, 2,959 ADTs, 35 baccalaureates. ADT structure comes from the
-  TMC templates (`tmc_templates.js`).
-- The session container reaches no college site (the egress proxy rejects
-  every one); runners do.
-
-## S337 SkyCompass, 2026-10-06: a second capture list, Irvine Valley's Art record, Santa Monica's hub
-
-- **A second list keeps Sam's 20 pinned.** `kb/program_requirements_maps_sample.json` and `--sample pilot|maps|all`. A push reads only the maps list, because rereading the checked 20 spends college reads for nothing. The guard's verdict checks now cover the 20 alone; an extra record carries no verdict and CPL Pathways marks it unchecked.
-- **Irvine Valley Art A.A. 10265:** the curriQunet click-through reached the program view and its PDF export (21 of 23 listed codes). Extraction PASSES at 27 units. The catalog still prints ARTH 25 and 26, and the state file lists the common-numbered ARTH C1100 and C1200. That is a gap for the college, never a misread.
-- **Santa Monica 43767:** the catalog's front page names its program index *Academic and Career Paths*, now a hub word. Run 37488858548 printed every link naming the program on any host (`title_links`), and none of the five catalog pages named it. Link-following has nothing left to follow there. The next attempt is a per-college procedure record naming the full catalog PDF.
-- **Filing from the job log:** the proxy refuses the log's blob host, so the source was transcribed from the MCP's copy and checked by recomputing coverage locally (21 codes, as the runner printed). The record was checked the same way: the local scorer gives PASS, equal and 0.913.
-- **A new record reaches the live load's receipt.** `tests/sierra_program_courses.test.js` fails when `records/` and the committed load receipt disagree. In CI the shard runner exited mid-stream and hid the line; a local `node tests/run.js --shard 4/4` named it. The permission check held regenerating the receipt (a shared-resource write), so an unchecked record waits in `records_maps/` until Sam's go.
-
-## S339 SkyReel, 2026-10-06: a procedure record names where the catalog starts
-
-- **The procedure record can carry a catalog step.** `procedure.catalog = {start, follow, format, timeout_s}`: the
-  capture opens the start page, follows the link by its text (an exact match first, then a containing one; http
-  only) and reads the PDF through the existing page picker. A link the page does not carry is reported with the
-  page's first 40 links, and the capture reads the registry's address instead (`procedure_catalog`, `follow_link`
-  in `kb/_program_requirements_pilot.py`; three checks in the pilot test, 259 in all).
-- **Santa Monica's first procedure record** (v1, through `program_source_procedure_set`, guarded `none`, md5
-  060d7b66; receipt `kb/receipts/program_source_procedure_smc_2026-10-06_s339.sql`, rollback from the history row).
-- **A whole catalog is slow.** Run 37543985175 found `catalog.smc.edu/current/catalog.pdf` and timed out at the
-  reader's 180 s. The catalog step now waits 600 s by default and sends a HEAD first, so the log shows size and type
-  (14,509,754 bytes, `application/pdf`). Run 37545459181 read it in 99 s: 472 pages, Barbering A.S. on 121-122,
-  coverage 1.0.
-- **The catalog text carries two college gaps** (drafts for the college once the record files): Level 4 prints
-  *COSM 11C, Salon Management (2)* (COSM 11C is Hair Coloring 1; Salon Management is COSM 64), and the Salon
-  Experience list stops at 95C where the Program Course File lists 95D.
-- **A push of the capture script is the maps dispatch.** The workflow reads `--sample maps` on a push, so the
-  pushed fix ran the read itself; no separate dispatch was needed.
-
-## S340 SkyLedger, 2026-10-07: Santa Monica's record, a read map placed by term, a course counts once
-
-- **Santa Monica Barbering A.S. 43767 has a record** in `records_maps/`, unchecked. Source: capture run 37545459181
-  (job 112548269296), transcribed from the MCP's copy of the log; the pilot test recomputes the 25 codes. Extraction
-  run 37548804006: 23 of 25 placed (COSM 64 and 95D in `missing_explained`), 4 program outcomes verbatim, invented 0,
-  arithmetic `incomplete` (25.5 against 26.5 printed: *Salon Experience Courses* prints "any combination" and no
-  minimum), $0.09989. A local `score()` of the filed record equals the run's score key for key, which proves the
-  transcription.
-- **The display builder reads both folders; the load reads one.** `loader.rows(folder)` (default `records`) feeds the
-  load receipt, so it stays at 20 records; `RECORD_FOLDERS` feeds the page and the display receipt. Each program names
-  its folder (`filed`), and the receipt says which of its statements select no row until the load adds them.
-- **A read map rides the display.** `term_map()` copies an accepted sequence record's terms into `display.map`
-  (`status: "read"`, `placed` = code to term index, `not_placed`), and `roepReadMap` in `cpl_pathways.js` draws one
-  box per term from it: the record's courses by code (CPL here in words), the map's other courses and its GE and
-  elective slots as printed, a choice as one line. Santa Monica: 24 of 25 placed, COSM 49R alone off the map.
-  Irvine Valley: 5 placed, the rest in the tray beside the map's four list slots. The page matches nothing itself.
-- **`plan()` counted a course twice when a program names it in two blocks.** Irvine Valley's Art A.A. requires
-  ART 85 and lists it again among the electives, so the figure read 6 units from one 3-unit course; Santa Monica's
-  COSM 11C (Level 1, and the Level 4 misprint) did the same. A course now counts once, and a choice never picks a
-  course already taken. None of the 20 pilot figures moved; Irvine Valley reads 3, Santa Monica 21.5 of 26.5.
-- **A dated read can be refreshed without re-copying it.** The MCP's output has to be transcribed by hand, so a
-  per-course md5 computed in SQL and again locally over the stored file proved the pilot's five colleges unchanged
-  except four courses (Riverside MAG 51; West LA AVIATEK 002, 005, 017: one exhibit title each, and one credit
-  recommendation fewer on AVIATEK 002). Only those four, and the two new colleges, were read in full; every college's
-  fingerprint then matched the live read. Santa Monica holds a *Barbering license* MAP articulation on 22 of the
-  program's courses.
-- **Sierra skips a map status she does not know.** `MAP_STATUS_LINE` gains `read`; deploy cpl-chat before the
-  display receipt reaches the table, or she says nothing about a read map.
-- **`pkill -f` killed its own shell again** (exit 144) when the pattern sat in the same command line. Kill by PID.
-
-## S341 SkyTerrace, 2026-10-07: what a read map says next, and the choice it leaves open
-
-- **Measure the rule before asking for it.** Handoff 341 held the figure along a map until Sam sets a rule for a
-  choice the map leaves open. Measured over the two read maps, the rule moves one number. Irvine Valley's map leaves
-  its Art lists as open places (*Art Major Course from List A*), and no list course carries CPL here, so every rule
-  reads 3. Santa Monica's map prints Salon Experience as a choice of COSM 95A-95D, *1-4 units*, and MAP's Barbering
-  license articulation covers all three courses the catalog lists there.
-- **A choice with no printed minimum counts nothing, even when every course in it carries CPL.** `plan()` takes a
-  choose-units block's `minimum`, or its stated minimum, and Santa Monica prints neither (*Any combination of Salon
-  classes is acceptable*), so the up-to figure reads 21.5 of 26.5 and leaves Salon Experience out. Two signals put the
-  least at 1 unit: the catalog's total less the other blocks (26.5 - 25.5), and the map's *1-4 units*. Whether a figure
-  may take the map's least is a definition, so it went to Sam (sheet 47 card 9) and nothing was rebuilt.
-- **A read map names a pick only on its own line.** The map's pick inside a choice is a course it prints as a single
-  item where the catalog offers a choice (a choose block, one option of several, an *or*). A course a required block
-  holds is no pick where an elective list repeats it (Irvine Valley's ART 85), and a choice the map prints whole is
-  none (Salon Experience). Neither read map names a pick, so the By requirement mark renders nothing today; the guard
-  proves it on fixture maps.
-- **Sierra's term rides the same deploy as the read-map line.** Each course line on a read map carries
-  `{the college's map: <term>}`. It is inert until a read-map program reaches the live table (sheet 47 card 8).
-
-- **Sam's sheet 47 (S341, 2026-10-07):** card 8 *Load both* and card 9 *As proposed*. The load went in as a two-row
-  delta of the 67 KB load receipt (one migration carries about 40 KB), proven by md5 of each jsonb against the
-  receipt's own literal: a record file and the receipt's record differ in shape, so hash the receipt, never the file.
-  `map_hints()` reads a read map's picks and the least it prints for a choice; Santa Monica reads 22.5 and 22.5.
-  The display receipt is 185 KB and goes in parts after the cpl-chat deploy (handoff 342).
-
-### Moved from the lane (S340 compaction)
-
-**OSHA 30 (S332):** Cerritos credits IWAP 41.09 OSHA 30/Extension Review (1.5 units) by its own exam (MAP exhibit `MAPCXA-E&R-1-001`, *Ext & Review* in the CER). Its catalog (read 13, run 37271979880) and COCI print AED 41.09 Welding III's outline for it, so the CCR files it alone (`WELD M10CA`), apart from the eight OSHA 30 Construction courses in `CNST M1001`. ✅ **Issuer (Sam, chat, S333):** *"they would not be the issuing agency, osha would."* The exhibit is credit by exam, so his issuer for it (California Community Colleges) stands.
-
-## S342 SkyBeacon, 2026-10-07: the display applied as a delta, and a Progress view for the harvest
-
-**Card 8 finished.** #1896 (S341: the two-row load, card 9's rule, display build 8292780f6cd5) and #1897 (Sierra's NOCE
-fix) merged; one preview A/B on `main` (run 37670895667) covered both: candidate all modes OK, production 5 failing, no
-regression. #1896's own A/B had failed 7c's quick-list table; its change touches only `displayLines`, which no live row
-reaches while every `figure.path` is null, so the miss was the model's wording. cpl-chat deployed 19:23Z (run 37673955257);
-the production smoke (37674213394) passed.
-
-**Card 9's rule, kept here from the lane.** A choice whose catalog prints no minimum takes the least the college's map
-prints for it, through a CPL course (`map_hints`); along the map, a course the map names inside a choice counts in place of
-the CPL course, and a choice it leaves open counts as up-to does (`figure.path`). Santa Monica reads up to 22.5 of 26.5 and
-22.5 along its map; Irvine Valley 3 and 3; no pilot figure moved.
-
-**A 185 KB receipt applied as 33 KB.** The 20 live rows on build 1cb75672ba6c differed from 8292780f6cd5 in three
-top-level keys only (`figure`, `build`, `built`; 4.7 KB in all), measured by parsing both receipts. Each took
-`display = display || '{...}'` guarded on `display->>'build' = '1cb75672ba6c'`; the two rows with no display took the
-receipt's own statements. Migrations `program_requirement_records_display_8292780f6cd5_s342_part1`/`_part2`; receipt
-`kb/receipts/program_requirement_records_display_2026-10-07_8292780f6cd5_s342_delta.sql`; the builder's `--verify-sql`
-read 22 of 22 `match`, which is the proof a top-level merge cannot fake (it hashes the whole jsonb). **Measure the diff
-between the live build and the new one before splitting a receipt into parts.**
-
-**The Progress view.** Sam, after #1897: *"Once this lands I want to pivot over to the Catalog ROEP work and the new COBI
-tab needed to monitor the work. I'm thinking it would be good to add a workflow dashboard to monitor the progress like the
-attached."* (a screenshot of a project map: milestones with "you are here", a parts grid, next step, needs your call,
-changed overnight). Then: *"Note that I set up a Routine for this work called CPL Queue"* and *"Yes start mock"*. The
-mock-up (artifact 6Pco7R1NVB5S45evjjfJsr, `prototype/roep_progress_mockup.html`) maps it onto this harvest: five
-milestones (every catalog 118/118 · the pilot 20 checked · program maps 2 of 26 published, here · a procedure per college
-2/118 · every program, 20,282 active), eight parts, the next step (procedures for the five pilot colleges with none), one
-call (check Irvine Valley 10265 and Santa Monica 43767), and the day's changes. First Light, statuses as words, crimson only
-on the call. The tab's other views already read the tables live, so the view adds no data source; the run header needs one
-file the checkpoint writes, since the browser cannot read the Routine's run history.
-
-## S343 SkyGantry (2026-10-07): the Progress view built; Sierra's NOCE answer fixed
-
-**The view, as built (#1900).** Sam: *"The mockup looks good to go:)"*, then mid-build *"Make sure it's AA and mobile
-friendly and dark mode looks good when used"* and *"make sure every section is collapsible and the tab has a
-collapse/expand all button."* Progress is the first of five views. `MILESTONES` and `PARTS` at the top of the view are
-definitions: a milestone's words, its measure, and what is left before it (`[count, one, many]` items). *You are here* is
-the first milestone with anything left; a left item whose count is null (its read failed) keeps the milestone open and is
-named "(could not be read)", never zero. The reads: the registry and the checked records (the tab's core read), plus
-`program_source_addenda`, COCI's active count (`Content-Range` with `Prefer: count=exact`) and `kb/queue_status.json`,
-each failing on its own. "You" in the mock-up became "Sam" (name the actor; the team reads the tab too). The view uses
-`--cobalt` for where the harvest is and `--crimson` only on what waits on Sam; tints are `color-mix()` of those tokens.
-Measured by two seeded a11y targets (`program-requirements-progress`, `-dark`) at 390 to 1440, and screenshots read by eye.
-
-**The status file is option (b) of handoff 343.** anon reads checked records only and has no grant on
-`program_source_registry_history`, so the unchecked records, the run, the routine's next firing, the next step, the calls
-and the changes come from the file the checkpoint writes (`.claude/commands/checkpoint.md` step 12). `--stamp` owns the
-clock; the session writes the prose. The browser rolls the routine's `next_run.at` forward by `every_hours` when the file
-is older than the firing. Guard `tests/queue_status_test.py` (16; reads the part ids out of the view so the two cannot drift).
-
-**Every section collapses.** My College's pattern: each section is a `<details data-sec>` whose summary carries the
-heading and a line that reads shut; Expand all and Collapse all in the header act on every section, Sierra included; the
-choice is one map in `localStorage` keyed `<view>:<section>`, with `*` holding the last all-control so it carries to views
-not on screen. The disclosure marker is drawn in CSS (no glyph).
-
-**Two bugs found by building the view.** (1) The Sequences view counted `sequence_access = 'ok'`, which the column's check
-never allows (`open | refused | unreached | not_read`), so it read 0 maps read; it counts `open` now (2). (2) Sierra's
-widget had no dark rules at all: the base CSS in both HTMLs carries raw light values, so dark mode showed a light log with
-dark-theme muted text on it (2.19:1). `cpl_chat.js` now injects token-only dark rules on `cpl_theme.js`'s contract; light
-is untouched.
-
-**Sierra's NOCE answer (#1901, deployed).** The course list spells NOCE and SDCCE twice (`... Credit`), and in
-`coci_college_offerings` the Credit rows repeat the college's own courses (111 for NOCE, 85 for SDCCE; BMGR 455, BUSN 218,
-OTEC 100 under both names). `foldCreditSpelling()` folds them into the college, one row per TOP program, the larger count
-kept (a sum would double it); Calbright College Credit, its only name, stays. The program block now names a certification
-only where a program or course title does (NOCE's own ELEC 101 *A+ Certification Preparation* still may be named). Smoke 7v's
-two negatives key on the claim shapes the model produced (`lead-in`, `aimed`), proved against both flawed answers and a
-correct ELEC 101 sentence. A/B 37693477855: preview all modes OK, production 1 failing, no regression. The PR's
-push-triggered smoke (production) failed 7c twice, on different assertions, the second with a statement timeout on 7p's
-control: production wording and the database, not the undeployed change.
-
-**A negative assertion needs word boundaries.** The post-deploy smoke (37696012819) failed 7v's certification negative on
-a correct answer: `aimed` matched inside "unclaimed" ("CompTIA Linux+ is also unclaimed by NOCE"). Proving the pattern
-against both bad answers and one good sentence missed it because the good sentence had no word containing either trigger.
-Bound the trigger words (`\b(lead-in|aimed)\b`), and prove a negative against the real answers the change produces.
-
-
-
-## S344 SkyWaypoint, 2026-10-08: a procedure for every pilot college, and three map searches
-
-**What shipped (#1906; a scheduled run of the CPL Queue routine).** Irvine Valley, San Diego Miramar, Mt. San Antonio,
-Riverside City and West Los Angeles each got a first procedure record, written from what the pilot's reads had settled:
-the lessons above (S323-S342), the filed sources and records, and `registry_read.json`. Seven of 118 colleges hold one.
-None names a catalog step, so `procedure_catalog()` returns nothing for them and capture reads each college as before.
-Then the records' open map questions got two college page reads (runs 37799874023, 37800558615), and three records went
-to v2. Receipts: `program_source_procedure_pilot5_…`, `_wlac_v2_…`, `_rcc_mtsac_v2_2026-10-08_s344.sql`.
-
-1. **A procedure first written from memory must carry only what a read proved.** Every host note, step and nuance in the
-   five v1 records cites a run or a lessons item. One draft line ("the catalog PDF prints no sequence") had no read behind
-   it and came out before the write. The record's job is to keep the next read from re-learning; a guess there sends the
-   next read the wrong way.
-2. **West Los Angeles's mapper answers 403**, like every Program Mapper host so far (lesson 33). Its own mapper page says
-   each degree shows "a planned sequence of required and elective classes", so the sequence exists and only the mapper
-   service holds it. The registry's `sequence_access` for the college still reads `not_read`: the procedure is ahead of
-   the census row until the census or a person's correction catches up.
-3. **"See Program Maps" can lead to pages with no map.** Riverside City's links go to the Program Finder, whose program
-   pages print major units and a typical time to completion. Its Academic Senate packet (2026-05-04) says RCC joined
-   Program Mapper in fall 2025 and is launching 2.0 maps. Mt. San Antonio's Schedule of Classes says the Catalog shows
-   "the suggested order of classes to take", and neither the program pages nor the Degrees and Certificates page (24
-   sections opened) prints one. Both records keep the question open with the next read named.
-4. **Web search first, then a plan.** Both colleges' map pages were found by search (lesson 34 again); guessing paths
-   would have spent loads on 404s.
-
-**Sierra.** The smoke dispatched on `main` (run 37799026127) passed every mode, 7c and 7v included. The post-#1902 push
-smoke (37699162911) had failed only mode 5, on a search timeout in production; 7c and 7v passed there too.
-
-## S345 SkyLantern, 2026-10-08: sixteen colleges' map sources read, and Sam's calls given a sheet and links
-
-**What shipped (#1908; vault #273; a Sam-driven session).** Handoff 345's first priority, read the maps nobody had read, in
-four college page read runs (37810652946, 37810862182, 37811253611, 37812133411), each plan found by web search first:
-Bakersfield, Los Angeles Harbor, Merced, Los Angeles Mission and Los Angeles Valley (mappers, 403 each); Mt. San Antonio
-(its own Guided Pathways pages publish a sequence per program); the four Los Rios colleges (404); Palo Verde (its one lead
-does not resolve); College of the Canyons and Las Positas (workarounds tried). The registry's map columns for twelve
-colleges went in as one guarded migration (17:00:03Z, first try) and twelve v1 procedures through
-`program_source_procedure_set` (17:03:10Z): **19 of 118** colleges hold a procedure. `kb/_program_map_parse.py` reads
-Mt. San Antonio's page shape. Sam, on the Progress view at 17:0xZ: *"want to check the 2 items pending for me (screenshot)
-but don't see how to view them and respond..."*; then *"If you can embed the links on the tab, it would be fantastic."*
-[Open Asks Sheet 50](https://claude.ai/artifact/95hhDzp9aZ4E5jybe4AxAr) carries five cards, and each call on the view now
-links its sheet card and the tab where the item is seen.
-
-1. **Every Program Mapper host read today refused, so the count is the whole product, not a college.** Five more mapper
-   hosts answered 403 to one load each (programmapper.com, .ws and the colleges' own `programmap.` names alike): 24 of the
-   32 published map sources sit behind it. Lesson 33's call holds: the refusal is the mapper service's, and it goes on each
-   college's record (Sam, sheet 29 card 3). The milestone that counts only maps read cannot finish while that holds, which
-   is sheet 50 card 5.
-2. **A college's own pages can publish what its mapper hides.** Mt. San Antonio's Guided Pathways list
-   (`www.mtsac.edu/guided-pathways/filter_listings_mtsac_all.php`, 455 programs) links a "Guided Pathways for Success"
-   suggested sequence per program, keyed by the local program code (`pathway-results.html?pthwyvar=<code>`). The census
-   never scored these pages (its sequence source reads none found), and the Schedule of Classes' "suggested order of
-   classes" line in read 1 pointed at them only through a web search. The view now counts a map a read found
-   (`sequence_host`) as published.
-3. **Match a published sequence to a program by the code the catalog prints, never by the title.** The catalog's
-   program titles carry the local code: Fire Technology (Certificate N0486) is the state's 03086, Early Childhood
-   Education (AS-T Degree S0401) is 33876, and the LVN-to-RN (AS Degree S0957) is 08086. The Guided Pathways list offers
-   "Licensed Vocational Nurse to RN, AS S1201", whose sequence names NURS 4 to 11, ENGL 1A and SPCH 1A where the 2026-27
-   catalog lists NURS 114 to 212, ENGL C1000 and COMM C1000: an older program under a similar title. Matched by title it
-   would have placed eleven wrong courses on a checked program.
-4. **A map can recommend courses the program does not list.** The Fire Technology certificate's sequence names KINF 51A,
-   51B (agility test preparation) and 52A (fitness and conditioning) beside the eight listed courses it places. S336's
-   acceptance refuses a map naming a course in the program's own subjects off its list, so the record is filed and not
-   accepted, and the display build is unchanged (sheet 50 card 4). Read 4's Early Childhood Education AS-T page places all
-   12 of the degree's listed CHLD courses across seven terms with nothing off the list; it is not yet filed, because
-   filing an accepted map changes a checked program's display.
-5. **A page search engines index can answer the reader 404.** The four Los Rios colleges' program maps pages (found by
-   search, with maps as PDFs on `mapmaker.losrios.edu`) answered the reader 404, as their homepages answer the census
-   (lesson 13). The procedures mark each host `unreached`, which the reader skips. The next try is one mapmaker PDF
-   address, a different host.
-6. **"Recommended course sequence documents" can be links into the refused mapper.** College of the Canyons' department
-   pages promise them; every link points into `canyons.programmapper.ws`. Las Positas's "Program Map website" is the
-   faculty's revision process, with no map linked on six pages. Read the link targets before counting a workaround.
-7. **A call shown on a view needs a place to answer it.** S344 listed two calls on the Progress view and published no
-   sheet, because no lane carried a NEEDS SAM. Sam could see the calls and could not open the records or reply. A call in
-   `kb/queue_status.json` now carries `link` (the sheet card), `link_text` and `view` (a COBI tab's bare hash or an https
-   page); `scripts/queue_status.py` checks both. The rule that follows: a call on the view is a card on a sheet, and the
-   lane carries the NEEDS SAM that makes the builder ask it.
-8. **`apply_migration` timed out on `cpl_library` a fourth time and on nothing else.** The registry migration minutes
-   earlier applied first try; the library update (one guarded UPDATE) timed out at 60 s and wrote nothing. The cause is
-   the table's, not the tool's. The update goes to Sam as a paste (sheet 50 card 3), now carrying sheet 50 as current.
-9. **`bash scripts/check_generated.sh | tail` hides the exit status.** A pipe reports tail's status, so a stale dependency
-   map reached one push. Run the check without a pipe, or with `set -o pipefail`.
-
-**Decisions Sam made this run (2026-10-08, in chat):** the tab should link each call (*"If you can embed the links on the
-tab, it would be fantastic"*); he floated keeping decision sheets in the repo so the tab can link them, then agreed to
-keep the sources in the vault and link the published sheet (*"No, your plan sounds good to me"*).
-
-**Sheet 50 answered (17:15-17:18Z, all his own call).** Cards 1-2 follow up: *"Would it be more clear to add a note or
-flag to the items where there is a question or mismatch and a way to confirm or curate from the tab?"* (a mock-up of the
-Program records view first; both records stay unchecked). Card 3 pasted; the Library record reads version 50. Card 4 as
-proposed (to build). Card 5 as proposed, built in the checkpoint: the maps milestone counts a map read, or refused or
-unreached with routes tried in the college's procedure. Then, in chat: CPL Pathways needs a college-first selector
-(*"we'll want to first select a college and then the pathways they offer"*).
-
-
-### Moved from the lane (S346 compaction)
-
-Verbatim from `docs/reference/lanes/program-requirements-harvest.md`, which had reached 21,561 bytes against its 20,000 limit.
-
-**The display build is live (S327).** `kb/_build_roep_display.py` writes each checked program's facts once, under one build stamp, to `program_requirement_records.display` (Sierra) and `cpl_pathways_roep_data.js` (the page): CPL in three kinds per course (here: MAP credit recommendations by course, `kb/program_requirements_pilot/map_cr_by_course.json`, plus the articulated-exhibit feed; could adopt: a peer articulated the credential to a course of the same identity, never a `cross_disciplinary` one; for consideration: a statewide recommendation naming the course's C-ID), the `plan()` figure, the gaps by owner and the map status. **Identity is the live CCR (S332):** it reads `unified_courses_members.js` and `_index.js` (the multi-member file left 140 of 289 entries with none): 285 named, could adopt 133 entries, for consideration 15; Ironworker A.S. up to 31.5 of 34-38. "Here" matches unified titles too. Receipts carry the build in their name and cite the one each replaces. All 20 live rows hold `799bfb9a7dbf`, the rename's label (sheet 39 card 1; md5-proven). Guard `tests/roep_display_test.py`; Sierra reads the facts (smoke 7t). **A MAP articulation that names a second course is a draft for the college (S335, `second_courses()`).** Miramar's 0.3-hour EMT Certification and Driver Operator 1B rows in MAP's articulated-exhibit view list AUTO 156G beside EMGM 106 and FIPT 321P; students received both at 0.25 hours on those two courses only. ✅ **All 20 live rows hold build `1cb75672ba6c` (Sam, sheet 42 card 2, go, 2026-10-05 20:58Z):** cpl-chat deployed first (run 37374184173, byte-verified 21:21Z; Sierra names each college gap by its kind), the smoke passed on `main` (run 37376149996), then S336 applied `..._display_2026-10-05_1cb75672ba6c_delta.sql` (migration `program_requirement_records_display_1cb75672ba6c_s336`, after a fresh guard read of 20) and `--verify-sql` reads 20 of 20 match. Evidence: the lessons doc, S335.
-
-**The proof of concept: Cerritos Ironworker, high school to career (Sam, 18:23Z, vault braindump 18:23)** is on CPL Pathways as the ladder (S328): seven steps in `cpl_pathways_data.js`, each line *In our data* or *To confirm*. **Exhaust the agent before any request (Sam, sheet 33 card 5):** *"You draft the request only after we have exhausted all our efforts at having the agent harvest needed data... I think we will need to have agents configured for each college as they will have nuances we want to note in our rules governing the behavior of the agents."* **The reader** (`kb/_college_page_read.py`, `college-page-read.yml`; a push reads only the plans its last commit adds or changes): a plan (`kb/college_reads/<plan>.json`) names a college's pages and the line each answers; the docstring has the steps. **Cerritos, after twelve reads (S329-S331, 71 loads):** every ladder line it could settle is *In our data*. The high school list: every public route is closed (procedure record v4 names each); the archive's 2016 list holds 57 agreements, none for welding (`kb/program_requirements_pilot/cerritos_hs_agreements_2016.json`). Columbus High, a CCAP partner, runs a welding pathway (OSHA 10 and 30) that names Cerritos and reads as articulation, unconfirmed. Still *To confirm*: the current list and that route, and whether the approved B.S. keeps the 2024 list (the addenda will show it). Detail: lessons S329-S331. ✅ **One procedure record per college (Sam, sheet 34 card 2; "apply the procedure record", S329):** `procedure`, `procedure_by`, `procedure_at` on `program_source_registry` (the history trigger names `procedure_by`); the reader loads it before each run. **Written through `program_source_procedure_set(college, record, by, expect_md5)`** (Sam: "go ahead on writing the function"), called with a SELECT; it refuses a stale md5 (`none` for no record) or a malformed record; service_role only; receipt `kb/receipts/program_source_procedure_set_2026-10-04_s330.sql`. Cerritos is at v4 (S331, reads 7-12). ✅ **Sheet 37, hold (Sam):** *"Don’t worry about this for now until I investigate later."* The request stays held while he investigates; the draft stays in the sheet's builder. OSHA 30 on IWAP 41.09 and its issuer (S332-S333): the lessons doc, *Moved from the lane (S340 compaction)*.
-
-## S346 SkyCairn, 2026-10-08: card 4, the flags mock-up, a college selector, and every refused map settled
-
-**What shipped (#1910 merged; #1911 open; vault #274 merged; Sam-driven).** Sheet 50 card 4 (a map is accepted when its listed courses outnumber its off-list ones, each off-list course marked), Mt. San Antonio's Early Childhood Education map filed, display build 2360b83e8100 on the page (live write waits on Sheet 51 card 2), a College select on CPL Pathways, the flags mock-up for the Program records view (Sheet 51 card 1), and procedure records for the 28 colleges whose map host refuses or never reaches the reader: 31 of 32 published maps settled, 34 of 118 colleges with a procedure.
-
-1. **A search of a college's own site needs the search tool's domain filter.** `site:` inside a WebSearch query is ignored: 17 of the first round's 24 "none found" answers were searches that returned other colleges' pages. Restricted with `allowed_domains`, the same query found Canyons's department maps, Miramar's 2021 sequences and Moorpark's PACE maps.
-2. **Where a college adopted the mapper, its own site keeps only strays.** Every map a pathway page lists (Las Positas, LA Mission's 21, Ventura's B.S.) links into the refused host. Off it: department PDFs (Canyons, Diagnostic Medical Sonography 2025-26; Las Positas Automotive 2020; Miramar Mathematics 2020-21) and single-program cohort schedules (nursing at Compton, Napa Valley, LA Harbor; accounting at Cypress).
-3. **The Los Rios map host answers the reader 404, as its college pages do.** `mapmaker.losrios.edu/Maps/6996/PublishedPdf`, found by search, gave 404 to run 37825341320.
-4. **A map can print both options of one choice.** Mt. San Antonio's ECE page places both practicum sequences (CHLD 67 and 67L, CHLD 86 and 87) in one term; marking each course the map names on its own line as "the college's pick" marked a course in each option. A pick now needs the map to name one option only (`roepGroupSplit`).
-5. **A vault check that reads the tracker's `main` fails until the tracker PR lands.** Sheet 51's premises (the mock-up file, the new build) arrived with #1910; vault #274's coverage check failed, then passed on one re-run after the merge. Merge the tracker PR first.
-6. **A procedure write need not transcribe the record.** `r.procedure || jsonb_build_object(...)` appends server-side under the md5 read just before; the 15 first records were proved byte for byte by reproducing jsonb's text form locally (keys ordered by length, then bytes).
-7. **The college's draft listed an off-list course once per block** (Irvine Valley's ARTH 4, 25, 26 twice); `gaps_for()` names each once.
-8. **Sam's headline ask (in chat, 18:5xZ):** the count of COCI's active programs beside the count with complete harvested ROEP data, for the Chancellor. Mock-up proposed; complete means the four checks; outcomes and maps beneath.
-
-## S347 SkyTrellis, 2026-10-08: the Chancellor's headline, Palo Verde read, and a UI pass in place of the To-Do
-
-**What shipped (#1913, #1914, #1915 merged; #1916 open; vault #276; Sam-driven).** The headline band on the Progress view (COCI's 20,282 active programs beside the 20 checked at 5 colleges), its history in `kb/queue_status.json`, Palo Verde's map read and procedure v2, the To-Do retired for a per-checkpoint UI pass, and the Sierra redesign's mock-up with self-hosted First Light paintings.
-
-1. **A lapsed custom name is not a refusal.** S345 recorded `guides.paloverde.edu` as gone (no DNS). A search restricted to `libguides.com` found the same guide at the platform's own address, `paloverde.libguides.com/pathways`, which answered the census reader 200 on three loads (run 37835928900). Two vocational pages print two-year maps; the guide's last change is 2023-10-25, so a map is checked against the catalog before it places a course. KB note `methodology-a-lapsed-name-is-not-a-refusal`.
-2. **A domain-restricted search can surface a second catalog.** The same search listed `catalog.paloverde.edu`, an Acalog catalog, where the census reads the eLumen 2025-26 one. Recorded as an open question on the procedure for the census to settle.
-3. **`apply_migration` can time out on a table it served an hour earlier.** Five 60-second timeouts on one registry UPDATE (S345 applied one there first try), each read back with nothing written and no lock on the table or `schema_migrations`. The procedure function through `execute_sql` worked at once. The write went to Sam (Sheet 52 card 3); his ruling to let UPDATE through the guard was refused by auto mode's classifier, so it waits on a mode switch.
-4. **The guard strips dollar-quoted bodies before it looks for verbs.** Rewording "Last Updated" out of a JSON payload was unnecessary; `$a$...$a$` is replaced as a literal (`_lex`).
-5. **A full local `npm test` outruns a 15-minute timeout.** Run the changed tests and the guards that read the changed files, then let CI's four shards gate the merge.
-6. **After the checkpoint, Sam answered Sheet 51 in chat** (*"Sheet 51: 1 Build it, 2 Go."*), matching the sheet's store
-   (20:35Z). Card 2 went live the same hour: the 22 rows on 8292780f6cd5 differed from 2360b83e8100 in `build` alone,
-   except Irvine Valley 10265 (`gaps`) and Mt. San Antonio 03086 and 33876 (`figure`, `map`), measured by parsing both
-   receipts. The 22-statement delta (14 KB) timed out in `apply_migration` with nothing written; one statement for the 19
-   stamp-only rows and one per content row landed at once, and `--verify-sql` read 22 of 22 match. Receipt
-   `kb/receipts/program_requirement_records_display_2026-10-08_2360b83e8100_s347_delta.sql`.
-7. **The same tool then took Palo Verde's statement 1 on the first try**, the UPDATE that had timed out five times
-   earlier in the day (migration `program_source_registry_pvc_map_read_s347`; read back open, `paloverde.libguides.com`,
-   run 37835928900). The timeouts are intermittent and not explained by size alone; when one lands nothing, split the
-   migration and retry before handing the SQL to Sam.
-8. **The connector took a privilege removal today.** The records table's SQL says the connector holds any statement
-   naming one for a confirmation a remote session cannot answer. A probe re-ran an existing close
-   (`program_source_procedure_set_reclose_probe_s347`, no change) and it landed, so the verdict surface's revokes went
-   in its own migrations. Probe once before routing a revoke to a paste.
-9. **A self-test that rolls itself back proves a write path without leaving a row.** The guard denies `do` through
-   `execute_sql`, so the test ran as a migration whose last statement raises with its results: ten cases (refusals,
-   confirm, a reload, a changed block, Needs a fix, a failing record), then a read-back showed nothing kept and no
-   migration recorded.
-10. **A write surface reaches past its table.** Confirm sets `checked`, and the loader's upsert sets `checked` from the
-   repo's files, so a reload would have undone a person's reading. A trigger now applies the latest verdict while its
-   fingerprint matches the row. Ask what else writes the column before shipping a person's write to it.
-
-
-### Moved from the lane (S353 compaction)
-
-Verbatim from `docs/reference/lanes/program-requirements-harvest.md`, at 19,977 bytes against its 20,000 limit before Phase 2's paragraph.
-
-**[Sheet 50](https://claude.ai/artifact/95hhDzp9aZ4E5jybe4AxAr) (Sam, Oct 8):** cards 1-2 follow up with a mock-up, card 4 as proposed, card 5 as proposed. ✅ **Card 4 built and merged (S346, #1910):** `accepts()` takes a map whose listed courses outnumber its off-list ones; each off-list course rides its item (`off_list`) to CPL Pathways as *Recommended by the college outside the program*; a map naming two options of one choice marks no pick. Mt. San Antonio's Fire Technology map (03086) is accepted and its Early Childhood Education AS-T map (33876) filed. ✅ **Display build 2360b83e8100 is on the page and on all 22 live rows** (Sam, Sheet 51 card 2, *go*, 20:35Z, confirmed in chat; S347): a delta receipt guarded on the live build, applied in four migrations after the 22-statement one timed out, and `--verify-sql` reads 22 of 22 match. Mock-up for cards 1-2: [Program Records Review](https://claude.ai/artifact/2JofNdHZvVTtz9bKQTsa4g). ✅ **Maps settled (S346, #1911):** one search restricted to each refused college's own domain (the search tool ignores `site:` in a query; only its domain filter restricts), seven reads of the leads, and procedure records for 28 colleges: **34 of 118 colleges hold a procedure**. **Palo Verde is read (S347, #1915):** its Guided Pathways guide's custom name `guides.paloverde.edu` lapsed; the guide answers at `paloverde.libguides.com/pathways` (run 37835928900), and its CIS A.S. and Building Construction Technology A.S. pages print a two-year map (last changed 2023-10-25, so check each against the catalog). Procedure v2 is live (md5 3879b5d0); the registry's map columns landed (statement 1 of `kb/receipts/program_source_pvc_map_read_2026-10-08_s347.sql`, Sam's receipt option; migration `program_source_registry_pvc_map_read_s347`, read back): **32 of 32 published maps are settled**. Its search also lists an Acalog catalog at `catalog.paloverde.edu` beside the census's eLumen 2025-26 (open on the procedure). Own-site sequences exist only as department PDFs (Canyons, Las Positas 2020, Miramar 2020-21) or single programs. ✅ **The headline for the Chancellor (S347, #1913; Sam's yes):** the Progress view's head pairs COCI's active programs (20,282 at 118 colleges, read live) with the checked records (20 at 5 colleges; complete means the four checks), a bar, and a line beneath (19 with outcomes, 0 with a map); the Every program milestone reads *20 of 20,282*. Each checkpoint records the pair in `kb/queue_status.json` `headline[]` (`queue_status.py --stamp --headline`), and the band shows *Up from N on <day>* once the count passes the first entry. Later, SkyView as the hub.
-
-## S353 SkyHearth, 2026-10-09: Phase 2 opens at Cerritos, and a page goes to one program
-
-**What shipped (PR #1941 open; Sam's "Cerritos first", as proposed).** `kb/_program_requirements_college.py` and
-`program-requirements-college.yml`: one job reads a college's sitemap, its program pages once each, matches programs to
-pages, extracts six calls at a time, and commits the run's account and records to its own branch. Run 37961137169: the
-sitemap listed 520 addresses, 364 of them program pages, read in 29 minutes; 283 of 288 programs got a page (196 at full
-coverage); all 283 extracted for $15.80 ($0.056 a program), 235 pass the three machine checks (46 arithmetic, 6
-coverage, 2 invented). The load function (`chatbox/supabase_program_requirement_records_college_load.sql`) is written
-and not applied.
-
-1. **Turn the search around for a whole college.** The pilot followed links per program (up to eight loads each); a
-   sitemap read once and every program page read once costs one load a program, and the coverage test picks the page.
-2. **A tie-break that only ranks cannot reject.** The label score chose between pages that passed the coverage test,
-   so a program whose own page does not exist still took a sibling's: the Anthropology A.A. took the A.A.-T page,
-   Culinary Arts: Professional Cooking took Culinary Arts Management's. 22 pages went to two or more programs.
-   `assign()` now gives a page only to the programs whose award its address names and whose title it names most
-   fully; a loser moves to its next page or reads none (`page_claimed`). Two state records the page names equally
-   (Public Health and Public Health Science, both A.S.-T) still share it.
-3. **Read the award from the address as it stands.** Turning hyphens into spaces before matching read no award from
-   `anthropology-aa-t`. The catalog's own spelling counts too (`medical-assistant-certifciate-achievement`).
-4. **A one- or two-course list names its courses on many pages.** Below three listed courses the page must also name
-   half the program's title.
-5. **A marker a workflow reads in a commit message must be anchored.** `contains(message, '[extract]')` fired on the
-   commit that described the marker, and the run spent $15.80 before the matching was read. `startsWith` now; the spend
-   stayed inside Sam's approved $19. KB note `methodology-anchor-a-marker-a-workflow-reads`.
-6. **Pay only for what moved.** A re-run keeps each record read from the same page naming the same courses; a
-   capture-only run files `capture_preview.json` beside the read it did not replace.
-7. **A college's records do not fit the connector.** About 1 MB of record JSON for 283 programs, against migrations
-   that time out near 40 KB: the load runs on the runner through one insert-only function, unchecked, keyed by run id.
-
-## S354 SkyFurrow, 2026-10-09: Cerritos loaded, and the reading made possible from a phone
-
-- **The load is its own job, reading committed records.** The `[load]` job posts what the branch holds, so what loads is what a reviewer can diff; the receipt names every inserted key, and those keys still unchecked are the rollback. 270 inserted, the four checked pilot rows kept (run 37970640026).
-- **A function closed by its grant is closed twice when its body checks the role.** `auth.role() <> 'service_role'` raises before any write, so the function was safe between the create and the revoke (the revoke applied this time; S318's timeout did not recur). A call from the connector without the role is refused, which proves it.
-- **A capture is free in dollars and costly in page loads.** Any push to the script ran ~360 Cerritos page loads; the read job now needs `[read]` or `[extract]`. A bot's push (the filing and receipt commits) triggers no CI, so a PR whose head is the bot's commit needs a session push before `test` runs on it.
-- **Keep each record's own extraction run.** A re-run keeps records read from the same page; stamping the load's run on them would have lied about provenance. Rollback goes by the receipt's keys instead.
-- **Show what the scorer measured before the display build reaches a college.** Phase 2 rows carried no `display`, so every card read "Not measured" although coverage had run; the loader now writes `placed`/`listed` into `checks`, and the view falls back to them. A passing record can still read "11 of 40 placed" (02226): coverage accepts explained absences, and the explanation stays in the repo's copy.
-- **Sam reads on his phone, so the reading has to come to him** (2026-10-09): 274 cards with no search defeated him; Find a record (#1946) and answers on the Progress call card (#1947) followed within the hour. A call that names records is answerable where it is read, through the same verdict RPC.
-
-## S355 SkyBramble, 2026-10-09/10: the reading made comfortable, the sample held, and the blocks given their numbers
-
-**What Sam asked, in order.** A button to his to-dos at the front of the tab; a side by side view; then, after confirming
-the Cerritos sample: the catalog window "closes when I click on the program requirements side", a check mark on a finished
-call, side by side by default; then titles, every C-ID/CCN/M-ID with a hover title, and the CPL count as exhibits with a
-drill-down. All built: #1950, #1951, #1952, #1953.
-
-**The sample held.** Sam confirmed all 12 records on the two calls (10 Cerritos, Irvine Valley 10265, Santa Monica 43767);
-seven are checked. The five he confirmed whose machine checks fail stay unchecked, so those checks flag the catalog against
-the state file, not a misread.
-
-**Framing is a property of the host, and it is measurable only from a runner.** The session container reaches no college
-site. `scripts/catalog_framing.py` (read-only, `catalog-framing.yml`) loads one page per host and the same page framed under
-COBI's origin: 64 of 108 hosts frame, 42 refuse (Cerritos's courseleaf host among them), 2 unknown. A refusal is honored,
-never proxied around. A PDF host is judged by its headers (headless Chromium draws no PDF in a frame), read with HEAD: a GET
-downloaded Santa Monica's whole catalog for 16 minutes and timed the job out (run 38009803753).
-
-**Two windows that overlap are not side by side.** The first version opened a refusing host's catalog on the left half and
-kept the record in COBI's full-screen window, so any click on the record raised COBI over the catalog. The reading room puts
-the record in a COBI window of its own on the right half (`?prh_split=`), the catalog in a named window on the left half;
-Next waiting record moves both on one click. A browser lets one click open one window, so the first record takes two.
-
-**The blocks were blank because no display build reached the full-college records.** The build now reads
-`program_requirements_college/*/records/` too, with state lists assembled by `chatbox/build_program_courses.py` (imported),
-and carries `ids` and `here.exhibits`. Build `5be53871ebf4`: Cerritos 3,599 of 3,680 courses titled, 3,572 numbered, 38
-with CPL here (MAP holds few articulations there). MAP's untitled "Default Credit" rows are the feed's named exhibits more
-often than not; they count only past the feed's. CPL Pathways keeps the pilot's 22 until its file splits per college. The
-receipt waits on Sam's go.
-
-**COCI's Approved status (Sam's question).** The course lists already keep Approved courses; the harvest reads only Active*
-programs, so 1,423 Approved programs statewide (33 Cerritos, 84 Mt. San Antonio) go unread. Of Cerritos's 246 catalog-only
-course placements, 135 are active at Cerritos but tied to other programs, 44 are Inactive on this program (the loader drops
-Inactive), 43 are absent from the state file, 13 are a code form (COS 102E printed, COS 102 loaded), 2 involve an Approved
-program. Whether to read Approved programs waits on Sam.
-
-**Moved from the lane (S355 compaction).** The Show the blocks fix: a class's `display:grid` beats `[hidden]`, so the toggle
-changed only its label; `.prh-body[hidden] { display:none; }` fixed it.
-
-## S356 SkyThicket, 2026-10-10: the display applied from the runner, Mt. San Antonio loaded, Approved programs read
-
-**What Sam ruled, in order.** "Yes build" (apply display build `5be53871ebf4`, Cerritos 270 and the pilot 22); "go on call 2"
-(read COCI Approved programs too); "Go" to a standing go: each display build that follows a college load applies without a
-new ask, the checked programs among it included, because every apply files its own rollback. All three are `cpl_memory`
-rows with Sam in `verified_by`.
-
-**A large data write rides the runner that holds the key.** The 22-program receipt (185 KB) had already timed out through
-`apply_migration`; Cerritos made it 2.2 MB and Mt. San Antonio 4.5 MB. Passing that through a session costs hundreds of
-thousands of tokens and the connector's patience. The database has no `pg_net` or `http` extension (enabling one is not a
-session's call), and the service role holds UPDATE on `program_requirement_records.display`. So the college workflow
-gained a `display` job (dispatch `step=display`): `kb/_program_requirements_display_apply.py` parses the committed receipt
-(a doubled quote is a quote; any line of another shape stops the parse), refuses a page that mixes builds or a receipt whose
-statements carry another build, reads each row's build, PATCHes `display` alone, and commits
-`<receipt>.applied_<run>.json` with every prior build: the rollback (null back to null, an older build by its own receipt).
-The new job lives in the existing workflow so it dispatches from a branch before merge (a new workflow file dispatches only
-once it is on the default branch).
-
-**Verify a megabyte write with one hash, not a megabyte query.** The builder's `--verify-sql` prints 44 KB of SQL for 605
-rows. Instead: `md5(string_agg(college||'|'||control_number||'|'||md5(display::text), ',' order by college collate "C",
-control_number collate "C"))` in the database, and the same over the receipt's displays through `_build_roep_display.jsonb_text`
-in Python. Both builds matched exactly: `5be53871ebf4` on 292 (a57878388c658c9bda439024c9226809), `153ead0ce992` on 605
-(ea203a054800313b80804d3a08c8c53b). The `collate "C"` makes both sides sort by bytes, so the two strings are built in the same order.
-
-**The verdict trigger is safe for a display write.** `program_requirement_records_follow_verdict` (BEFORE INSERT OR UPDATE)
-re-applies the latest verdict from `record` and `checks`; a display write changes neither, and the checked count held at 27
-through both applies.
-
-**A college's filing changes the page's build for every row.** The builder hashes its data, so filing Mt. San Antonio made it
-differ from the committed receipt on all 292 rows, and `tests/roep_display_test.py` (the receipt must write every filed
-program) turned `lints` red, which turns `test` red. Rebuild in the same PR as the filing.
-
-**Mt. San Antonio, the second full college.** Run 38059865531: 385 programs, 344 with a state list, 741 sitemap addresses, 564
-program pages read in 46 min (572 loads); 301 matched by the sitemap, 16 by the link search, 20 not found, 7 page claimed;
-317 extracted for $17.27 ($0.0545 each); 291 pass the three machine checks (25 fail arithmetic, 1 extraction error). Load run
-38064248268: 313 inserted unchecked, 3 kept (the pilot rows), 1 skipped (the error). The filing landed on S355's branch, which
-GitHub had deleted at #1954's merge and the workflow recreated off the run's checkout; a cherry-pick carried it here.
-
-**Approved programs.** `STATUS_FILTER = "or=(status.like.Active*,status.eq.Approved)"`. All 117 Approved programs at the two
-colleges carry a state course list (33 Cerritos, 84 Mt. San Antonio). An Approved program competes for pages in `assign()` like
-any other, which is right: the page goes to the program it names most fully. Re-reads run on sibling branches, because the
-workflow's concurrency group allows one running and one pending run per branch and a third dispatch replaces the pending one.
-
-**A commit the workflow pushes runs no CI.** The display job's applied-record commit is pushed with the workflow token, so the
-PR head it creates carries no checks and `test` cannot pass on it. Merge the base (or push the next real change) on top.
-
-**The Approved re-reads (S356, later the same day).** Cerritos (run 38064252862) filed 305 records, 265 passing, and
-extracted 37 for $2.42; Mt. San Antonio (run 38064250199) filed 382, 346 passing, and extracted 71 for $4.47: $6.89 against
-Sam's $6.50. ⚠️ A college's `summary.json` reports `cost_usd` over every record it files, so a re-read that keeps earlier
-records reports the running total ($16.78 at Cerritos); count `extracted_run` in the records for this run's spend. The loads
-inserted 33 and 70. Eight records dropped out of the filing (Cerritos 19170, 19172; Mt. San Antonio 31598, 32892, 38942,
-43373, 43777, 43999): five lost their page to a program it names more fully (`page_claimed`), and three found no page
-(`not_found`; S357 read the filed sources). The filing drops them, the insert-only load leaves their live rows,
-and those rows keep the previous display build (`153ead0ce992`) while 700 hold `ee814befc65d` (combined md5
-977aaaebe1171b9af65db321cfc125cc). Whether a row the filing no longer carries keeps its old display or is marked is open.
-The two sibling branches merged into one cleanly except the generated dependency map, which was regenerated.
-
-### Moved from the lane (S356 compaction)
-
-✅ **Flags and a person's reading are built (S347; Sam, Sheet 51 card 1, *build*, 20:35Z, confirmed in chat).** The Records view places each question the reading raised on the block whose courses it names, as a numbered flag that says who fixes it (the college or the reading procedure); a row printing a flagged course carries the number; reader's notes stay notes. A reviewer signed in with the magic link also reads the unchecked records, and each record ends with Confirm and Needs a fix: one write, `program_record_verdict_add` (`chatbox/supabase_program_record_verdicts.sql`), into the append-only log `program_record_verdicts`, holding the fingerprint of the requirements the page showed (`requirements_fp`). Confirm checks a record only while that fingerprint matches and its three machine checks pass; Needs a fix files the note on the college's procedure (`open`) through `program_source_procedure_set`. A trigger keeps a person's reading across a reload of the same requirements. Live (receipt `kb/receipts/program_record_verdicts_2026-10-08_s347.sql`; a rolled-back self-test passed ten cases); governance dismisses both surfaces with the reason; guards `tests/program_record_verdicts_sql_test.py` and the tab test's blocks 11-12.
-
-## S357 SkyCanopy, 2026-10-10: the next college asked, district catalogs scoped, and a curriQunet catalog read as data
-
-**The next college is a card (Open Asks Sheet 58 card 1).** The read lists program pages from a CourseLeaf sitemap only.
-Long Beach City is the one Leading-tier CourseLeaf college unread (825 CPL students, 391 programs; the registry holds
-www.lbcc.edu/college-catalog, a page that names CourseLeaf, so one runner read finds the catalog's own address first).
-RCCD's three colleges are all Leading (Moreno Valley 2,557, Norco 907, Riverside City 900; 578 programs) and sit on one
-curriQunet host. Card 2 asks about the eight rows the Approved re-reads dropped (five `page_claimed`, three `not_found`).
-
-**A district catalog's college reads only its own path (#1959).** Coast, North Orange, Grossmont-Cuyamaca and Ventura each
-publish one CourseLeaf host for several colleges, and the read kept every page on the host. `district_scope()` gives a
-college the first segment of its own address when another registry address shares the host; a host no other college
-shares has no scope.
-
-**A curriQunet catalog is data (#1960).** The college page read gained `"network": true`: a plan page prints each fetch or
-XHR its own scripts made to its own host while it loaded. Two reads at Riverside City (runs 38075620248, 38076194967, four
-page loads, no model call) found the catalog's calls:
-
-- `_getNavigation?id=<catalog>&parentId=<node>` lists a section. Riverside City is catalog 124; Degrees and Certificates
-  (5852) holds a tablist (6313) whose Degrees and Certificates Index (6117) holds one linklist (6323) of 229 entries. Each
-  entry carries its node id and a title naming its awards and local codes: *Acting - Associate of Arts Degree and
-  Certificate of Achievement - AA1050/AA1050C/CE1050*.
-- `_getPage?catalogId=<catalog>&id=<node>` returns one page as JSON. A program's page carries curriculum blocks
-  (`catalogblocktypeid` 4, `EntityTypeId` 2, `curriculumCriteria` naming curriQunet's program id, `catalogblockheader` naming
-  the award) whose HTML holds the whole of the requirements: the required courses, *Select one of the following*,
-  *Complete 9 units from the following*, and the total. The view makes no other content call.
-- Calls that need a sign-in answer 302, and nothing the read needs sits behind them.
-
-So the curriQunet listing is one navigation call per section plus one page call per program, read as JSON with no
-rendering and no PDF export. What it still needs: each college's catalog id (Moreno Valley and Norco are other modules on
-the same host), a walk from the catalog's top navigation to its program index, and a match from a page's award blocks to
-COCI's programs (one page serves the A.A. and the certificate of one discipline). Memory row
-`roep-curriqunet-catalog-json-2026-10-10`.
-
-**The curriQunet read, first run (#1961; run 38077405309, Riverside City, capture only, no model calls).** The start page's
-scripts named catalog 124; the walk read one section (Degrees and Certificates), five nodes and eleven calls, and listed
-435 program entries; 447 loads in 36 minutes, no errors. 228 of the 262 programs with a state course list found a page
-(165 at full coverage, 51 at 0.8 to 1.0, 12 at 0.5 to 0.8); 48 pages serve two programs each, an A.A. and its
-certificate, as designed. 34 found none: seven Liberal Arts emphasis degrees (their state lists run to 33 courses), the
-Cosmetology, Barbering and Esthetician Concepts awards, nine Baking and Pastry awards credit and noncredit, Anesthesia
-Technology, and the History and Kinesiology ADTs. One cause was the read's own: the code net (`CODE_TOKEN`) read no code
-in a number ending in letters and digits (COS 60A1), so those pages never reached the exact test, which reads them; fixed
-in the same pull request, for CourseLeaf catalogs too. The rest wait for a look at their pages. Card 1 moved to Open Asks
-Sheet 59 with the read built. Sam answered it in chat the same evening ("RCCD go!", ~19:45Z, as proposed); card 2, the eight
-dropped rows, moved to Open Asks Sheet 60. S358 dispatched the three reads on sibling branches at 20:15Z: Riverside City
-with extraction (run 38082999076), Moreno Valley (run 38083001418) and Norco (run 38083003673) capture only.
-
-## S358 SkyFern, 2026-10-10: RCCD's three colleges read, loaded and displayed
-
-**What Sam ruled.** "RCCD go!" (Open Asks Sheet 59 card 1, in chat ~19:45Z, as proposed; recorded by S357): Riverside City
-extracted, Moreno Valley and Norco captured first and extracted where the capture finds a page for 85% of their programs.
-His standing go of the same day (S356) covered the display build that followed the loads.
-
-**The curriQunet read held at two more colleges.** Each catalog's start page named its own id (Riverside City 124, Moreno
-Valley 115, Norco 116), and each walk read one section (Degrees and Certificates) in five nodes and eleven calls, no errors.
-Captures, free: Moreno Valley 132 of 144 programs found a page (91.7%; run 38083001418, 21 min), Norco 141 of 150 (94.0%;
-run 38083003673, 24 min). Both cleared the bar, so both were extracted the same evening.
-
-| College | Found | Extracted | Pass the three checks | Spend | Read run | Load run |
-|---|---|---|---|---|---|---|
-| Riverside City | 237 of 262 | 237 | 216 | $13.30 | 38082999076 | 38086677164: 233 inserted, 4 checked pilot rows kept |
-| Moreno Valley | 132 of 144 | 132 | 126 | $7.77 | 38085493318 | 38088125780: 132 inserted |
-| Norco | 141 of 150 | 141 | 121 | $8.44 | 38085495452 | 38088127500: 141 inserted |
-
-$29.51 in all against the $29 put to Sam; each spend is the run's own (every filed record carries that run's
-`extracted_run`). Riverside City found nine more programs than S357's capture (237 against 228): the `CODE_TOKEN` fix for
-COS 60A1 let the Cosmetology, Barbering, Esthetician and Hairstyling Concepts awards reach the exact test. Norco's 18
-arithmetic failures are the most at any college so far; read a sample before trusting its totals.
-
-**The same programs miss at all three colleges.** Of the 46 programs with no page, 21 are the district's seven Liberal
-Arts emphasis degrees, seven at each college (Administration & Information Systems; Communication, Media & Languages; Fine & Applied Arts; Humanities,
-Philosophy & Arts; Kinesiology, Health and Wellness; Math & Sciences; Social and Behavioral Studies), and American Studies
-misses at two. The catalogs list them under a shared Liberal Arts entry whose title names the emphases differently, so one
-read fix should recover 21 programs across the three. Riverside City's other misses: Baking and Pastry (credit
-and noncredit), Anesthesia Technology, Building Inspection Technology, Zero Net Energy, Dance, Pilates, Mathematics
-Readiness, and the History and Kinesiology ADTs.
-
-**One branch for a district.** The three reads ran on sibling branches (the workflow serializes per branch); their filings
-merged into one branch beside the refreshed dated reads, and the loads and the display ran from it, so the display build
-saw every filed program at once. The dated reads must name a college before its display is built: a college missing from
-`map_cr_by_course.json` reads as no CPL here. Moreno Valley (106 course codes) and Norco (82) were added; Riverside City
-re-read equal to the 2026-10-06 read on all 34 codes.
-
-**Display build `3746c15d32ba`** wrote 1,206 rows (the 700 live rows re-stamped, 506 new) through the display job (run
-38088220168, 7.5 minutes). The live combined md5 over the 1,206 rows equals the receipt's, e0aeb4d25ac7bab83f71c753278fe163;
-the checked count held at 27; no row is left without a display; the eight rows the Approved re-reads dropped keep
-`153ead0ce992`. Memory rows: `roep-rccd-three-read-loaded-displayed-2026-10-10`,
-`roep-district-liberal-arts-emphases-miss-2026-10-10`, `a11y-signed-out-sweep-hides-gated-views-2026-10-10`,
-`on-accent-is-dark-on-seal-blue-2026-10-10`.
-
-### Moved from the lane (S358 compaction)
-
-🔨 **Phase 2, a college at a time (Sam, 2026-10-09, "Cerritos first"): Cerritos is read, loaded and sampled (Sam confirmed 12 of 12); Mt. San Antonio is read and loaded; both are being re-read for their Approved programs.** `kb/_program_requirements_college.py` on `program-requirements-college.yml` (#1941) reads the sitemap once and each program page once; `assign()` gives a page to the programs whose award its address names and whose title it names most fully, and a loser reads none (`page_claimed`). A push reads only on `[read]`/`[extract]` and loads on `[load]` (or a dispatch); the load posts the committed records through `program_requirement_records_college_load()` (insert-only, unchecked, each row keeps its extraction run, service role by grant and a body check) and commits a receipt naming every inserted key, which is the rollback. **Read** (runs 37961137169, 37966828676; $16.64): 274 of 288 programs, 238 pass the three machine checks; 14 found no page of their own. **Loaded** (run 37970640026): 270 unchecked beside the four checked pilot rows. **Reading** (Sam, 2026-10-09, on his phone): Program records has Find a record (search, Waiting on your reading, college; #1946), and a Progress call that names records answers each on its card through the verdict RPC (#1947). Under the tab's title, **Sam's to-dos (N)** goes to the open calls; a finished call reads **Answered** with a check. Opening a record on a call starts **Side by side**: the record beside its catalog page in a sandboxed frame, or, for a host `kb/catalog_framing.json` records as refusing (42 of 108, Cerritos among them), the reading room: the record in a COBI window on the right half, the catalog on the left, Next waiting record moving both (rerun `catalog-framing.yml` for a new host). Each course shows its titles, its C-ID/CCN/M-ID numbers and its CPL count (opens the exhibits view), from the display build. **The sample held (Sam, 2026-10-10 ~01:50Z):** he confirmed all 12; seven are checked, and the five failing a machine check (Cerritos 32563, 44153, 15512, 02235; Santa Monica 43767) stay unchecked though he read each as printed: those checks flag the catalog against the state file. **Mt. San Antonio** (Sam: "Go on Mt SAC!", 2026-10-10): run 38059865531 read 317 of 344 programs from their own pages, $17.27, 291 passing the three machine checks (25 fail arithmetic, 1 extraction error); load run 38064248268 inserted 313 unchecked beside the 3 checked pilot rows (receipt `kb/receipts/program_requirement_records_college_mt_san_antonio_38064248268.json`). A ten-record sample is on the Progress call. **Approved programs too** (Sam, 2026-10-10, "go on call 2"): `STATUS_FILTER` takes Active, Active - Teachout Only and Approved; all 117 Approved at the two colleges carry a state course list. Re-read and loaded the same day: Cerritos 305 records (265 passing; 33 inserted; 37 extracted, $2.42; 19170 and 19172 lost their pages to Approved programs), Mt. San Antonio 382 (346 passing; 70 inserted; 71 extracted, $4.47; six lost pages). Those 8 live rows stay on build `153ead0ce992`; 700 hold `ee814befc65d` (md5 verified). **Display** (Sam, 2026-10-10, "Yes build"): each build applies by the college workflow's **display job** (dispatch `step=display`; `kb/_program_requirements_display_apply.py` applies the full receipt of the build the page carries, one PATCH a program, and commits `<receipt>.applied_<run>.json` with each row's prior build, the rollback). Verified by combined md5 against the receipt. **NEXT:** ② Rebuild the display after each load and dispatch `step=display`: **Sam's standing go (2026-10-10, "Go")** covers every display build that follows a college load, checked programs included. ③ Sam reads the Mt. San Antonio sample. ④ CPL Pathways' display file splits per college. ⑤ The curriQunet read is built (#1961): the start page names the catalog id, `cq_index` walks the degree and certificate sections, and each program's `_getPage` is one page for `assign()`. Riverside City, capture only: 228 of 262 programs found a page (lessons, S357); 27 colleges use curriQunet.
-
-**Sam's ruling (Sheet 59 card 1, in chat ~19:45Z 2026-10-10, "RCCD go!", as proposed):** RCCD's three colleges read next: Riverside City extracted (its capture found 228 of 262), Moreno Valley and Norco captured first and extracted where the capture finds a page for 85% of their programs; Long Beach City after them. Memory row `sam-rccd-go-sheet-59-card-1-2026-10-10`.
-
-## S359 SkyMoss, 2026-10-10/11: the Liberal Arts emphases, duplicate index entries, and Sam's Mt. San Antonio rules
-
-**A curriQunet subject list prints bare numbers.** RCCD's seven Liberal Arts emphasis degrees are ordinary index entries
-(Riverside City 6290 Math and Science AS493; run 38092150229), but their pages print "Mathematics (MATH): C2210, 5, 9"
-and "Biology (BIO) 1, 1H, 4" (run 38092480434), so the read matched almost none of 110 listed courses.
-`cq_subject_lists()` (#1965) reads each number with its subject; a number may lead with any letter (#1966: Kinesiology's
-A03, V01; Dance's D10). Coverage on the real pages: Math and Science 0.955, Administration and Information Systems 0.939,
-Kinesiology, Health and Wellness 1.0 (0.009 as printed). Re-captures recovered 20 of the 21 plus American Studies at two
-colleges; nothing else moved. Humanities, Philosophy & Arts (316 listed courses) runs past the extraction's max_tokens at
-all three colleges and loads no record.
-
-**One program under two index entries is one page.** Norco lists Kinesiology, Health & Wellness A.A. as 5545 and 5552
-(both NAA498/C); Riverside City repeats three emphasis entries in a second list (6232-6234). Read as separate pages, the
-Kinesiology A.A.-T, Dance and Pilates each took an emphasis page and extracted empty (coverage 0.0). `cq_group()` (#1967)
-groups claims by the local award codes an index title ends with, so `page_winners()` keeps the page for the program whose
-award it names. Measured first: of 526 RCCD programs with a page, four sat on a page naming another award, and only the
-A.A.-T was wrong, so a blanket award rule would have dropped good pages.
-
-**A capture now names what an extraction would pay for** (`would_extract` in `capture_preview.json`, against the filed
-read by `unchanged()`), so an extraction go can name its programs and cost first. Moreno Valley's recovered programs cost
-$1.69, Norco's $1.78, Riverside City's $1.86.
-
-**Sam's Mt. San Antonio sample (2026-10-10 23:55Z to 00:10Z).** Four confirmed, six marked Needs a fix, with five rules
-(memory row `sam-mtsac-sample-reading-rules-2026-10-11`, vault braindump 2026-10-11 00:10). Measured at once: the five
-catalog additions (EMS 80, AGAG 1, KIN 24, CISP 71, ID 12) sit in the full Program Course File on the same programs as
-**Inactive** under an older control number, and COCI's course list carries the active version (EMS 80: CCC000584685 on
-the program, CCC000616276 current). `coci_program_courses` and the display build keep Active, Approved and Teachout only
-(`KEEP_STATUS` in `chatbox/build_program_courses.py`), so no reading saw them. Neither COCI's course list nor the MIS
-Master Course File holds noncredit hours (both give VOC BS36 and BM61 0 units).
-
-**Long Beach City's registry row named the college's page about its catalog.** www.lbcc.edu/college-catalog links
-"This Year's Catalog" to https://lbcc-public.courseleaf.com/ (run 38092181470); corrected with `corrected_by` so the
-census keeps it. Its capture ran more than two hours.
-
-**Sheet 60 answered:** "remove" (23:52:04Z); the eight rows are deleted, each guarded by its md5 against the live read
-(#1968). A data UPDATE or DELETE goes through `apply_migration` with a committed receipt because `execute_sql`'s guard
-refuses it; an insert into `cpl_memory` that timed out twice landed on the third, shorter try.
-
-## S360 SkyLichen, 2026-10-11: COCI's status on every mismatched course, rules 4 and 5, and a delete the connector would not run
-
-*Written by S361 SkyBirch from S360's PRs and memory rows; S360 checkpointed at the context warning (Rule 9a) and left
-this section unwritten.*
-
-**The reading flow (#1970).** Sam: *"Have the split screen open automatically when I click in to review. When I choose
-Confirm or Save Note close the screens and bring me to the next item to confirm."* The reading room opens the catalog's
-window by itself; a verdict in side by side opens the next waiting record in place, catalog with it; with none left, the
-screens close. The home-tab flash came from the panes painting before `tabs.js` routed: a guard in the `<head>` of both
-HTMLs hides them until it does, and lifts itself after 15 seconds if the script never comes.
-
-**RCCD's recovered programs (#1971, display `f571b009992c`).** Riverside City's re-run with #1967 added 7, Moreno Valley 7,
-Norco 6. The re-read no longer files Riverside City 39120 (Building Energy Systems Professional in HVAC Technology,
-A.S.), whose page was HVAC Commercial Technology's (AS946, the page 39105 reads; the reader's note said TITLE MISMATCH).
-
-**Most catalog additions are on their own program in COCI, under another status (#1972, display `195fe0c35a2d`).**
-Reading the Program Course File under every status, 1,025 of 1,610 catalog-addition entries sit on their program: 715
-Inactive, 159 Active, 128 Approved, 23 Deleted. The raw export keeps every status; `assemble()` keeps three, which is why
-no reading saw them. Sam's rules 1 to 3 from the Mt. San Antonio sample are built: a chip names the COCI status, COCI's
-units fill in where the catalog prints none (labeled *(COCI)*), and a unit difference between the blocks' sum and the
-printed total stays on the record (79 programs). Sam also noted (01:40Z): *"RCCD and others publish catalog agenda to
-correct errors and late approved courses"*, so an addendum may settle a mismatch before it is the college's to fix.
-
-**Rules 4 and 5 (#1974, record shape 4, extraction v5).** A `recommended` block (minimum null, counts toward nothing) and
-`program.careers`, word for word. The scorer adds nothing for a recommended block and reports careers missing from the
-text without holding a record back. Careers stay out of the requirements fingerprint, on the server too
-(`program_record_fp`; all 1,226 live fingerprints unchanged). Sierra's `ruleOf` had read any unknown rule as "all
-required", so a recommended block would have been read to a student as required: her fix ships with the rules, and her
-deploy must come before any record with a recommended block is checked.
-
-**Sheet 61 answered, both his own call (01:26Z):** card 1 "rules" (Long Beach City's 379 programs extract once rules 4
-and 5 ship), card 2 "remove" (39120). In chat: *"Go Long Beach and remove stale"*, then *"retry and deploy Sierra"*.
-
-**A destructive statement has no working path from a session.** The guarded delete of 39120 timed out three times in
-`apply_migration`, the third with Sam's approval given, no migration recorded and nothing in `pg_stat_activity`, while
-inserts and updates the same hour applied at once. `execute_sql` refuses it at the repo's Supabase guard. S359's eight
-removals went through `apply_migration`; today the same call does not return. The receipt (`kb/receipts/
-program_requirement_records_rcc_39120_removed_2026-10-11_s360.sql`) is the paste for Sam's SQL editor.
-
-**A push that touches the extraction script starts the pilot extraction** on the live function, against whatever
-version is deployed. Both pushes of the rules branch started one (runs 38103589673 and, after S361's rebase,
-38104914021); each was canceled.
-
-## S361 SkyBirch, 2026-10-11: rules 4 and 5 live, 39120 removed, Long Beach City reading, and a program read in two calls
-
-**Shipped.** #1972 (COCI's status, units and unit differences) and #1974 (rules 4 and 5) merged; Sierra (`cpl-chat`,
-run 38105455751) and `program-requirements-extract` v5 (run 38105512705) deployed from main, both byte-verified. The
-five-program sample (run 38105588567, $0.39) kept every prior block, labels, rules and course counts alike, and added only
-what the rules ask: recommended blocks at Cerritos 41982, Irvine Valley 10265 and Mt. San Antonio 42916 (where VOC HEP and
-VOC NCLXP moved out of missing_explained), careers where the page prints them. Santa Monica 43767 fails the arithmetic as
-it did before (the salon block prints no minimum). Long Beach City's read with extraction started from `claude/s361-lbcc`
-(run 38105864413), the card 1 plan: show a sample, then read once.
-
-**39120 is gone, by Sam's hand.** The repo's Supabase guard refuses a `delete` through `execute_sql`, and `apply_migration`
-had timed out three times. Sam ran the receipt's guarded delete in the SQL editor as a one-statement paste (a CTE returning
-the removed count); the session read back 0 rows, 1,225 live, every row on display build `195fe0c35a2d`. A destructive
-data write the session cannot run goes to Sam as that paste, with the read-back the session makes after.
-
-**A path filter compares pushes, not branches.** `program-requirements-extract.yml` runs on a `claude/**` push that
-touches its script. Merging main into the checkpoint branch after #1974 carried the script's change in, and the next push
-ran the full 22-program pilot ($1.59, run 38105582450, nothing written; it did serve as a full-pilot check of v5: 21 of 22
-pass, Santa Monica as before). S360 had canceled two such runs. #1976 adds a guard step: on a push, skip unless the
-branch's script differs from main's; its own push proved it (setup and extraction skipped, run 38106437059). KB note:
-`methodology-a-path-filter-compares-pushes-not-branches`.
-
-**The smoke's NOCE read failed for ten minutes, not because of the deploy.** Three smoke runs between 02:31Z and 02:43Z
-read `college_program_courses` for NOCE as empty (7v); the function answered as anon in 448 ms at 02:45Z, and the smoke
-dispatched at 02:47Z passed in full (run 38106291463). One branch run also caught Sierra saying "COCI" after the user's
-follow-up used the word; the main run passed that check.
-
-**One reply cannot hold a 316-course record.** Measured over 1,219 filed records: about 54 output tokens per course
-(Fine & Applied Arts, 215 courses, 11,200 tokens in 78 s), so Humanities, Philosophy & Arts (316) stops at the 16,000 cap
-at all three RCCD colleges (110 s). The gateway ends a request that sends nothing back for 150 s (Mt. San Antonio 24171),
-so a larger cap or streaming cannot hold it either. Sam: *"go with splitting the program into two calls"*. #1978
-(extraction v6): a program over 240 listed courses, or a single call that runs past the cap or the idle limit, is read in
-parts sent at once; each part holds the courses the text names first in its half, every block the section prints, and the
-whole closed list (so catalog_addition keeps its meaning); `merge_parts()` aligns blocks by name and rule, drops an entry
-whose first code the block already places, orders entries by where the block prints them, and keeps disagreements in
-notes. A filed row with no record is no longer kept, so the next read retries it. Not yet deployed.
-
-**The UI pass took Annual Workplan Goals** (#1977): four grey labels below AA in light, the primary chip and the
-subsidiary marker unreadable in dark, the table's scroller unreachable by keyboard at 390 px; all pass after, measured on
-the HTML the generator writes. The curator-only editing tints and the add form's boxed buttons wait for a later pass.
-
-**The two-call read on real records (S361, after #1978 deployed).** Riverside City 18111 (run 38108461470) and Moreno
-Valley 30169 (run 38111056537) each went to the model alone, the rest of the college kept from the same page: two parts,
-75 s, $0.50 each. Coverage 295 of 313 and 289 of 296 with every missing course explained, catalog additions all flagged
-(the catalog prints HIST where the state file says HIS), no repeated code, and the parts read the same two blocks with no
-disagreement to report. The arithmetic stays incomplete: the catalog states the studio allowance in prose ("up to three
-units may be from a studio course"), so the block has no minimum, as at Santa Monica 43767.
-
-## S362 SkyAlder, 2026-10-11: Long Beach City's hidden index, 18 wrong-page records removed, noncredit equivalent units
-
-**Long Beach City's first read gave the model the wrong text.** Run 38105864413 ($22.66): 12 of 379 records carry any
-block. Every page hides an A-Z course index naming every course and keeps Program Requirements in a hidden tab, so
-`best_text()`'s "whichever names more" chose `textContent` for 378 of 379 programs (none at the five colleges before),
-and the window opened in the index. 89 empty records passed the machine checks by explaining every course away. Not
-loaded. #1980: the visible text at half the courses, else the visible text plus each hidden tab panel read cell by cell
-(`innerText+tabs`), `textContent` last; `unchanged()` compares the text a source came from; the scorer fails a record
-placing none of its courses. Checked in Chromium on a page built like Long Beach City's before any spend; a 12-program
-trial runs first (Sam: *"go ahead with the full Long Beach read after the trial"*). The run's artifact was out of
-reach (the proxy refuses the blob host), so the diagnosis came from the records' own notes and `sources.json`. KB note:
-`methodology-a-page-can-hide-text-that-names-every-course`.
-
-**RCCD's three Humanities, Philosophy & Arts programs loaded and displayed** (Norco 30109 read in two calls like the
-other two: 305 of 316 placed, the studio rule in prose), display build `f1de75baa344` (#1981).
-
-**Sheet 62: 18 records that read another program's page, removed** (Sam: *"remove them"*). Each placed none of its
-listed courses (Cerritos 3, Mt. San Antonio 13, Moreno Valley 1, Norco 1; 3 passed as scored). The receipt holds each row
-as `to_jsonb(r)::text`: read as JSON, the connector rewrote `0.0` as `0` and the md5 guard would have refused the row.
-`apply_migration` ran the guarded delete (S360's had timed out); 1,210 rows live. `places_none` keeps such a record out
-of every later load and display build (#1983).
-
-**Noncredit hours as estimated equivalent units.** No state file holds hours: COCI's course list carries UnitValue only
-(0 for all but 2 of 11,435 noncredit courses; 847 descriptions name hours in mixed forms), the Program Course File no
-units, MIS CB units only. The catalogs print hours for 331 of 395 course entries in the loaded noncredit programs. Sam
-chose the lecture rate (*"handy when comparing mirrored courses ... and for funding based on equivalent FTES"*), for
-estimating only, and never in Sierra (*"misconstrued as real units"*): hours / 16 rounded down to the half unit keeps his
-bands whole (48-54 h = 3.0); the first half unit falls at 56 h where his note said 63. Put to him on Open Asks Sheet 63,
-he kept it (*Keep hours / 16*, 16:11Z): one rule at every size. Both pages show it;
-Sierra reads named display fields only and a test fails if she names it (#1984, build `2a73f45c9c84`).
-
-## S363 SkyCedar, 2026-10-11: Long Beach City's tab bar sits in a nav, and the full read runs
-
-**The trial that checked the fix found the fix had never fired.** S362's reader (#1980) read a hidden Requirements tab
-cell by cell, tested on a page built to look like Long Beach City's. The 12-program trial (run 38139252216, $0.85)
-read `textContent` for all 12 programs and 11 records came back empty again, the model reading the course index. The
-filed `sources.json` named the field it used for each program, which is what showed it.
-
-**The real page, probed in the runner.** The sandbox cannot reach the college (the proxy refuses the host), so a probe
-on its own branch (`claude/s363-lbcc-probe`, run 38146508042, no model calls) loaded four pages through the census
-Reader and filed each page's HTML with an account of every tab link and its panel. Every page keeps its tab bar in
-`<nav id="tabs">`; the Program Requirements link is a `role=tab` inside it, pointing at a hidden
-`#programrequirementstextcontainer` outside the menus. PAGE_JS dropped every link inside a `nav` as a site menu, so
-`tabPanels` held only the page's search dialog (a `Close this window` button outside the menus). The course index is
-a separate hidden menu, `nav#cl-menu`, naming courses in 120 subjects.
-
-**The fix (#1986, merged on `test`):** a tab of the page's own tab bar (`role=tab`, or a link inside
-`[role=tablist]`, `#tabs`, `ul.tabs`) counts wherever it sits; a hidden panel naming no course is left out. Checked in
-Chromium against the four pages' own HTML with the probe's hidden elements hidden again: coverage 1.00, 1.00, 1.00,
-0.97 on `innerText+tabs` (0.00 on the visible text alone), no index in the model's window. The repo already had a page
-reader for exactly this (`kb/_college_page_read.py`, plans in `kb/college_reads/`, `college-page-read.yml`); the probe
-script written instead stays on its branch and is not merged.
-
-**Trial 2 (run 38147472758, $0.85):** 11 of 12 programs `innerText+tabs`, all 11 with blocks, 9 passing the machine
-checks (trial 1: 1). Architectural Design and Biological Sciences fail arithmetic (a course pair printed with one unit
-figure; an area-of-emphasis choice). Engineering A.S. was given the Engineering Technology page, whose tab names none
-of its courses, so it fell back to `textContent` and placed none; `places_none` keeps it out of the load and display.
-Any program with no page of its own can still win a page through the index this way, at about $0.07 an extraction.
-
-**The full read** (run 38152016534 from `claude/s363-lbcc`, 15:37Z) runs on Sam's go; the trial's 12 records are
-kept. The display builder's dated reads gained Long Beach City first: 33 course codes in `map_cr_by_course.json`
-(per-course fingerprint 5c7d3a90393e710daa4f686a2f56c917, equal in SQL and over the filed rows) and its registry row.
-The display dry run already counts KINPP 23 and five more Kinesiology courses as CPL here.
-
-**Pushes that wake workflows.** A change to `kb/_program_requirements_pilot.py` runs the pilot capture
-(`program-requirements-pilot.yml`, page loads only, read-only); a new branch cut from an older branch compares its
-paths with the default branch. Check `push.paths` of every workflow before pushing a branch that touches the readers.
-
-**Sign-off at the context warning.** S363 reached 104,467 tokens left before the full read landed, so the load and
-display pass to the next session (handoff 364): Sam's go stands, the dated reads are in place, and the read branch
-needs `origin/main` merged in first. Sam moved the CPL Queue routine to 05:05Z (10:05 PM PDT) so it fires after the
-day's sessions; S363 let go of its check-in, PR watches and the Sheet 63 watch in the sign-off turn.
-
-Memory rows: `sam-full-lbcc-read-if-trial-2-passes-2026-10-11`, `sam-load-display-lbcc-after-full-read-2026-10-11`,
-`roep-lbcc-tab-bar-inside-nav-2026-10-11`.
-
-### Moved from the lane (S363 compaction)
-
-**Sam's ruling (Sheet 59 card 1, in chat ~19:45Z 2026-10-10, "RCCD go!", as proposed):** carried out by S358; Long Beach City follows. Memory row `sam-rccd-go-sheet-59-card-1-2026-10-10`.
-
-**Sam's ruling (Sheet 60 card 1, 2026-10-10T23:52Z, "remove"):** the eight rows the Approved re-reads no longer carried are removed (S359, #1968); full rows and the rollback in `kb/receipts/program_requirement_records_eight_dropped_removed_2026-10-10_s359.json`.
-
-## S364 SkyJuniper, 2026-10-11: Long Beach City loaded and displayed, retired-version pointers, and a word in a record's own text
-
-- **The tab reader is slower.** Long Beach City's full read (run 38152016534) captured for 3 h 33 m (S362's reader: 2 h 15 m), extracted in 11.5 minutes, and filed at 19:22Z, 15 minutes inside the old 240-minute limit. The read job now runs up to 360 (Sam: *"go ahead and raise the timeout and re-run if needed"*). Both 12-program trials spent about 55 minutes in capture, so roughly 50 minutes of it does not depend on how many programs are read.
-- **What the read gave.** 379 of 391 programs, $20.64, 274 passing the three machine checks; 302 read from `innerText+tabs`. 74 records place none of their listed courses, 73 of them read from `textContent` (no visible requirements and no tab the reader opens); the load left them out (`places_none`). Load run 38168152744 inserted 305, unchecked.
-- **A record's own text can block a receipt.** The display build refused its receipt because Long Beach City 37305's careers note says "a reviewer may choose to drop it", and STALL guards the receipt against words the Supabase connector holds. `unstalled()` writes the last letter of such a word as a JSON `\u` escape: jsonb and `json.loads` read it back, so the display and its md5 are unchanged (checked in Postgres). The display job applies over REST, so the guard now only keeps a pasted receipt safe.
-- **Retired-version pointers (#1995).** A program in the Program Course File that points at a retired version of a course the college still offers lists that course: placed, no flag, chip kept. The current version is offered when the file gives it a kept status or, on no program there, the Fall 2025 course basic report carries it. 538 course entries in build `344441813b01`.
-- **Program records was slow for a signed-in reader (#1993).** Every card and every course table, hidden, was built on each draw (294,000 elements, 3.7 s for 1,210 records); blocks and closed colleges now build on first open.
-- **Close-out (#2000).** The S365 handoff and `kb/queue_status.json` were written while the read still ran; the second session corrected both after #1999 (1,486 unchecked, the next step the 74 left out). A test shard that stops mid-run with no ✗ FAILED line and no summary is the runner, not the PR: `suite (4)` did so on #2000 after 71 of 103 files and passed locally in full.
-
-## S365 SkyRowan, 2026-10-11: the per-college split, measured before it was built
-
-The lane's NEXT ④ was to split `cpl_pathways_roep_data.js` per college so CPL Pathways shows every harvested program,
-not the pilot's 22. S365 measured the plan on display build `344441813b01` before writing any of it:
-
-- **Size.** All 1,515 records come to 18.2 MB of compact JSON (25.9 MB as the builder writes it, `indent=1`): 2.4 to
-  4.0 MB for each large college, about 16 KB a program. Course facts are half of it (8.9 MB), the gaps 16%, the
-  catalog record 27%.
-- **A shared course table per college saves a third** (18.2 to 12.3 MB), and 1,779 course entries differ between two
-  programs at one college, so the facts are not purely per course.
-- **Churn.** Every record carries the build stamp, so each display build would rewrite every byte.
-- **The gate.** `program_requirement_records` lets anon and authenticated read checked records only
-  (`program_requirement_records_read`, `using (checked)`); an allowed reviewer reads all. 29 of 1,515 are checked, at
-  six colleges. A file per college on Pages would publish the 1,486 unchecked records past that gate. The pilot's
-  file already carries two unchecked of its 22.
-
-The plan was a session's (S353, *"366 KB for 22 records"*), written before the harvest reached 1,515 records; Sam had not
-ruled on it. It went to him as Open Asks Sheet 65 card 2, proposing that the tab read a record from the table when a
-reader opens it, as the Program Requirements tab already does. The measurement script is a few lines over
-`kb/_build_roep_display.py`'s `build()`; the lane file names the card.
-
-## S366 SkyHazel, 2026-10-11: Long Beach City's 74 mostly read another program's page
-
-The lane named the 74 records that place none as waiting on Long Beach City's reading procedure. Read from the
-committed `sources.json` and records (no new read), most of them were never on their own page.
-
-- **Why.** `candidates()` admits a page that names enough of a program's listed codes, and Long Beach City's hidden A-Z
-  course index puts every code in every page's `textContent` (S362). Every page clears the net at coverage 1.0.
-  `page_winners()` then keeps a page for every claimant tied at the top title score, and when the page names none of
-  their titles that top is 0: Photography A.A. went to Fashion Design, Film, Floral Design, Fashion Merchandising,
-  Administration of Justice, Physical Sciences A.A. and Fashion Design: Assistant Designer; Dance A.A. to five;
-  General Education Patterns to five.
-- **What the 74 are, by eye.** 11 read their own page and placed none: the reading procedure proper (Physical
-  Sciences A.S., the five noncredit Office certificates, CISCO, Automation Technician, SMAW, Athletic Coaching, and
-  IGETC on the GE Patterns page). 4 ESL Level 2 and 3 programs read the Level 1 page. About 10 read a page that may be
-  the program renamed or a sibling (Engineering on Engineering Technology, Economics on Business Economics). About 49
-  read a plainly different program's page.
-- **The live data is clean.** `places_none` kept all 74 out of the load. Of the 305 loaded, 301 read
-  `innerText+tabs` and one page names under half its program's title (CSU GE-Breadth on LBCC-GE, the right page).
-- **The title score is weak where the heading carries the award.** "Computer Science" scores 1.0 on *Computer Aided
-  Design - Mechanical - Associate in Science*: *science* comes from the award. A fix in `assign()` should take a page
-  reached only through hidden text only when its heading names the program with the award words set aside.
-- **What it cannot settle from here.** Whether each of the ~49 has any page in the 2026-27 catalog: the sitemap lists
-  2,503 addresses (626 program pages), but the capture keeps only counts, and the sandbox's proxy refuses
-  `lbcc-public.courseleaf.com`. A sitemap-only read on the workflow would list the programs COCI calls Active that the
-  catalog does not print, which is the college's to settle (its addendum first, Sam's rule).
-
-
-### S366, later the same day: the second cause, and both fixes (#2012)
-
-- **The own pages hold their requirements in a tab that names under half of COCI's list.** Two page reads with no
-  model call (`kb/college_reads/lbcc_own_pages_placed_none.json`, runs 38183849639 and 38184044746). The first read
-  opened nothing, because the Program Requirements panel sits behind a `role=tab` link in a `<nav>` outside `<main>`;
-  the reader's `expand` now clicks a page's own tabs. The second read printed each panel. Physical Sciences A.S. names
-  about 13 of COCI's 35 courses and describes its math and computer choices in words; Microsoft Excel prints COSA 601
-  and COSA 618 (90 hours) where COCI lists COSA 615-617; CISCO prints CISCO 250-253 (8 units) of COCI's 13; Athletic
-  Coaching prints four KINPP courses on a local Certificate of Accomplishment page against 23. Under the 50% share,
-  `best_text()` took whichever text named more, and on this host that is always the hidden index.
-- **Fixes (#2012).** `best_text()` reads a page with tab panels from its tabs, whatever share they name; only Long
-  Beach City's pages carry tab panels (every other college's 1,219 sources read `innerText`), so no other record
-  moves. `candidates()` takes a hidden-text page only when its heading names the program: half the title's words and
-  60% of the heading's own words, award words set aside, never a different level; on the 74 it keeps the 10 own
-  pages and 6 renamed or sibling pages and turns away 58.
-- **What is left is the college's.** Excel's mismatch (catalog COSA 601, 618; COCI 615-617) is a COCI record the
-  college has not updated, or a catalog change COCI has not caught: addendum first (Sam's rule), then the college.
-- **The sandbox cannot read run artifacts.** The proxy refuses the artifact store's host
-  (`productionresultssa5.blob.core.windows.net`), so a page's full captured text is out of reach here; a page read on
-  the runner was the workaround. Sam can allow the host in the environment's network settings.
-
-## S367 SkyAspen, 2026-10-11/12: CPL Pathways reads the table, its UI pass, and two answers to one card
-
-**Shipped.** #2015: CPL Pathways lists its catalog records from `program_requirement_records` and reads one record, by college and control number, when a reader opens it (Sam's chat answer to Sheet 65 card 2, *Read from the table*). The table's read policy decides who sees what: the public 29 checked records, a signed-in reviewer all 1,515, unchecked marked; the row's own `checked` wins over the display build's copy. The pilot file is the offline tier and a ladder's source. #2016: the tab's UI pass (controls as underlined words, the Student/College toggle gains `aria-pressed`, four decorative emoji out, the provenance line's doubled word, two sweep seeds for the table states). #2012 (S366's fixes for Long Beach City's 74) merged and the re-read was dispatched (run 38185403454).
-
-**Lessons.**
-- **The tab must never wait on the table.** The first build joined the list read before rendering; an existing test that mocks `fetch` and reads the DOM synchronously failed. The shipped shape renders from the file at once and swaps in the table's list when it lands, keeping the reader's pick by identity (`roep:<college>|<control>`), so a slow or failed read costs nothing but the swap.
-- **A pick token must move on every pick, not only on record picks.** A slow record read that resolved after the reader switched to a featured map overwrote it; `show()` now bumps the token for every kind. The guard fails without the bump.
-- **The sweep aborts every off-origin read, so the table's states are never measured unless seeded.** `cpl-pathways-table` and `-dark` hand the tab a list through its own landing path (`_roepIndexLanded`) and open an unchecked record or a record whose read fails.
-- **Reading Long Beach City's records through the table surfaced a label bug the pilot never showed:** the `custom_html` platform label said "college's own catalog pages", so the line read "Long Beach City College's college's ...".
-- **A gate fixture must carry every table a tab reads.** `admin_tab.test.js` classified CPL Pathways as "not checked" once the tab read two tables its fixture lacked; the fix was the tables' live gates (`checked | is_allowed_reviewer()`, `true`), not a code change.
-- **The check-run listing can stay stale for 15 minutes.** `get_check_runs` showed three shards in progress long after they passed; `get_check_run` by id and `list_workflow_jobs` with `filter: latest` read fresh.
-
-**Two answers to one card.** Sheet 65 card 2 was answered in chat at ~23:16Z (*Read from the table*) and on the sheet at 23:46Z (*Every record, marked*, after eight versions, note: "I want every record to show marked not yet confirmed"). The later answer is his deliberate words but contradicts a direct chat answer, so it is asked on Open Asks Sheet 67 before anything is built; #2015 stands meanwhile. Opening the table's public read would reach College Briefing and Program Requirements' public view too (Sierra filters `checked` itself).
-
-## S368 SkyWillow, 2026-10-12: every record public, Long Beach City's re-read, and two curriQunet misses
-
-**Every record is public (Sam, Open Asks Sheet 67 card 1, *Every record, from the table*; "Apply it" in session).** #2021
-marks an unchecked record *Not yet confirmed* on CPL Pathways, Program Requirements and My College (the card's words, his
-Sheet 65 words; CPL Pathways had said *Not yet checked*). Sierra filters `checked` herself, so
-`tests/sierra_program_courses.test.js` now names her filter as the gate. The policy (`using (true)`) did not apply:
-`apply_migration` timed out twice and wrote nothing, so it went to Sam as a paste. The page marks shipped first, so the
-public never sees an unmarked draft.
-
-**Long Beach City's re-read (run 38185403454, #2012's fixes):** 367 of 391 found (was 379), 311 pass the machine checks (was
-274), coverage failures 25 (was 76), none invented (was 2), $19.13. Four have no page: GED/HiSET Preparation 39500, its
-Spanish twin 39497, Barbering 43258 (noncredit, Approved) and 43837 (Active); no addendum on file. Load dispatched as run
-38200167207 (305 rows before it).
-
-**Chaffey and San Diego City: both captures found 0 (Sam: *both, capture now*; then *Chaffee next*).** Chaffey (run
-38197183697): the walk found catalog 718 and the section Degrees and Certificates, read 40 nodes in 80 calls, listed no
-program entry and stopped at its node cap. Its program index nests differently from Riverside City's tablist and linklist.
-San Diego City (run 38197175054): the registry's address is a district alias (`/catalog/alias/city26-27/iq/15489`), and the
-start page's scripts named no catalog id. Both readers need a runner probe of the catalog's own calls before any
-extraction. The capture-first rule saved about $21 of model calls on two reads that would have extracted nothing.
-
-**Pattern:** a capture-only dispatch per college, on its own branch, costs no model calls and answers whether the reader
-reaches the catalog. Make it the first step for every new platform variant, not only every new platform.
-
-## S369 SkyLaurel, 2026-10-12: Long Beach City displayed, the policy live, and the curriQunet reader for Chaffey and San Diego City
-
-- **The policy is live.** Sam pasted the read policy (Open Asks Sheet 68 card 1, 11:18Z); read as anon, the public sees all 1,555 rows, 29 checked. `apply_migration` had timed out twice in S368; a paste card with the SQL and one read-back closed it.
-- **A re-read can lose a good record, and insert-only keeps it.** Long Beach City's re-read gave Trauma Studies 43802 the department page (places none of nine) and found no page for 46290; the load kept both live rows from run 38152016534. The filing had replaced and deleted their files, so the display build dropped them. Putting the files back makes the repo's copy match the rows; the display test (`every program the page or a college folder files is in the receipt`) then needs a rebuild, so restore before building, not after. Build `05811159eeee` covers 1,554 rows; 38542 (the SMAW page, now 38540's) waits on Sheet 68 card 2.
-- **Chaffey's curriQunet differs from Riverside City's three ways** (probes 38202133197, 38202752228): an entry ("Business Administration 2.0 for Transfer - AS-T Degree") holds a *Requirements* child where the curriculum is, beside a blank node kept out of the web view; the award pattern missed "degree", AS-T, and A.S. before a space (a dot then a space is no word boundary); and the walk spent its 80 calls on every program as a section and on Student Classifications and Programs. Fixed: entries may hold children (read up to four visible ones), degree sections first, 400 calls. Capture 38203335820: 193 of 199 found, 152 at full coverage, 9 nodes and 19 calls.
-- **The same program twice.** Chaffey lists each program in its index and under its school, two ids, one title: 401 entries, 1,226 loads in 91 minutes. `cq_distinct` reads each title once.
-- **San Diego City's start page names no catalog.** The district alias view (and the plain view) draw an empty "Active Catalogs" shell in a headless browser and fetch nothing. The host's `_getCatalogs` lists City 2026-2027 = 69, Mesa 70, Miramar 71; `cq_catalog_from_list` takes the one whose title's words are all in the college's name, in the registry's year. Its programs sit under *Degree Curricula and Certificate Programs* (15604).
-- **Smoke 7s** (#2023): a pronoun for the articulation its own sentence names ("no San Gabriel Valley college has set this up yet") is set aside; 7c and 7s share one helper, so S368's "7c handles it" was wrong for both.
-- **A worker restart cost six hours of wall clock** (04:35Z to 11:16Z); the 05:05Z routine stood down because this session held the queue. Long runs on a runner kept going and filed on their own.
+## S353-S359: moved to the archive (S389 compaction)
+
+The sections for S353 SkyHearth through S359 SkyMoss moved verbatim to `docs/program_requirements_harvest_lessons_archive.md`.
+
+## S360-S371: moved to the archive (S394 compaction)
+
+Verbatim in [`program_requirements_harvest_lessons_archive_2.md`](program_requirements_harvest_lessons_archive_2.md): rules 4 and 5, Long Beach City's hidden index and full read, the per-college split, every record public, the curriQunet reader for Chaffey and San Diego City, and the SDCCD host.
+
+## Moved from the lane (S372)
+
+The outcomes paragraph's run detail, verbatim:
+
+**Outcomes (Sam, 2026-10-04 18:03Z):** grab published course and program outcomes, and compare harvested credential skills with course outcomes. ✅ **Record shape 3 is built (S334, sheet 33 card 4 as proposed):** the extraction function (version 4) keeps each outcome exactly as printed in `program.outcomes` and `course_outcomes`; the scorer's `outcomes` check fails a reworded or empty one. Run 37345734457 (20 of 20 passed, $1.31) and, for Mt. San Antonio, 37350789203 after the capture learned to open a hidden Outcomes tab (#1871): **19 of 20 carry outcomes**, 1 to 11 each. Miramar prints *Learning Outcome(s):*, which S327's count missed; Mt. San Antonio's ECE transfer degree links to an outcomes page instead. `kb/_program_requirements_file.py` files a run: a record a person read keeps its requirements and takes only the outcomes (six of the 20 came back with relabeled blocks), and `reviewed_readings.json` holds each verdict to the requirements it read. The skills comparison waits for the skills file (`kb/reference/industry_credential_skills.json`, not started).
+
+The pilot paragraph, verbatim:
+
+**The pilot (Phase 1): all 20 records pass all four checks.** Five colleges by four shapes (`kb/program_requirements_pilot_sample.json`): an ADT, an A.S./A.A. with a choose block, a certificate with an electives block, a noncredit certificate; each college's use case fills one slot (Cerritos Ironworker A.S. 42158, Mt. San Antonio LVN-to-RN A.S. 08086, Riverside City Culinary Arts 22804, West LA Real Estate Salesperson 37839, Miramar Fire Technology A.S. 05100). **Capture** (`kb/_program_requirements_pilot.py`): accepts a page naming half the courses the Program Course File lists; curriQunet program views fall back to their own PDF export; sources filed under `kb/program_requirements_pilot/sources/`. **Extraction** (the `program-requirements-extract` Edge Function, version 2, structured output, record shape version 2); records under `.../records/`, about $0.05 a program. **Scorer** (`kb/_program_requirements_score.py`): coverage, no unflagged invented course, unit arithmetic (`equal`, `unequal`, `incomplete`, `unstated`). **Sam's reading (10:22Z):** 18 match; both fixes went into the procedure and rerun 37195340082 passed them. Guard `tests/program_requirements_pilot_test.py`. Run-level history: the lessons doc, S323-S324.
+
+## S372 SkyRedwood (2026-10-12): Miramar displayed, Mesa's row applied, the course outline census
+
+- **Miramar** read 38275241459: 146 programs, 124 with a closed list, 110 found and extracted, 105 pass, $9.00 (curriQunet catalog 71 on the SDCCD host, capture 74 minutes). Load 38285338937 inserted 106 and kept the 4 checked pilot records. Display build `427f93eaf03d` read back on all 2,015 rows (31 checked). Not found: 16779, 30512, 30532, 36254.
+- **A display job applies in batches.** A read-back 7 minutes in showed 1,911 rows on the new build and 104 Miramar rows with none; the job was still running. Read the build back after the job's own applied-record commit lands.
+- **Mesa's registry row** applied 17:06Z as migration `program_source_registry_mesa_catalog_s371` (Sam, Sheet 69 item 1). S371's two attempts had timed out in the tool call; S372 found no lock on the table, read the row back unchanged, and the third apply took. A timeout in the tool call is not proof of a lock: read `pg_locks` before waiting on another job.
+- **The course outline census sample** (run 38289193564, 12 colleges, 30 loads) found the catalog hosts it already knew (curriQunet and eLumen catalogs) and one outline system, Cabrillo's Coursedog, behind a sign-in. Six colleges found nothing: homepages seldom link the curriculum committee. The pass now reads each college's sitemap for curriculum pages. A catalog host is not proof of a public outline: a course's outline and its SLOs need a per-platform reader next.
+- **A merge of main carries every path-filtered trigger file that changed on main.** Merging main into `claude/s371-miramar-read` re-ran the gallery thumbnail job there (its `.thumbs-run` arrived in the merge's diff). The course outline census workflow skips merge commits for that reason.
+
+## S373 SkyCypress (2026-10-12): Mesa displayed, the course outline fields, and what the outlines show
+
+- **Mesa:** read 38282023973 found 168 of 184 with a list, 162 pass, $14.82; load 38300979155 inserted 166 (18270 and 31695 place none); display build `da4f44a160ca` on all 2,181 rows (#2044). Its nine health programs are missing from the one section the reader walked; find where the catalog lists them before a re-read. Mesa was the first non-pilot college added to the builder's dated reads since S369; the merge of main re-ran the gallery thumbnail job on the branch again (restore main's `tools/first_light_gallery/index.json`).
+- **The course outline census, moved from the lane:** **The census** (`kb/_course_outline_census.py`, `course-outline-census.yml`, #2042; pages only, no table write) opens one course's outline on every system host and records `cor_outline` (outline_with_slos, slos, outline, list_only, sign_in, refused, unreached). Run 2 (all 118) met 59 hosts (curriQunet 33, eLumen 20, CourseLeaf CIM 3, CurricUNET 2, Coursedog 1), mostly catalogs. Probe runs 38302465625 and 38303973743: **curriQunet dashboards list public outline reports** (RCCD `Report/Course/GetReport/<id>?reportId=97`; SDCCD, Chaffey, Cuesta `DynamicReports/AllFieldsReportByEntity/<id>?entityType=Course`); RCCD's, SDCCD's and Cuesta's print SLOs, Chaffey's print none; Los Medanos's eLumen catalog course pages print each course's SLOs. RCCD, SDCCD and Chaffey hold seven of the ten loaded colleges. A curriQunet dashboard carries a sign-in form beside the public list, so run 2 read it as sign-in; the census no longer does. Run 5 (all 118, an outline read per host) runs on #2042.
+- **A catalog host is no proof of an outline, and a sign-in form is no proof of a closed system.** Run 2 recorded the catalog for most colleges and flagged SLOs on menu items ("Cal Poly SLO" at Cuesta). The probe went one link further and found curriQunet's public outline reports behind the dashboard run 2 had called sign-in. An SLO heading counts only when it starts its own line and has text under it, and the probe reads the whole page (the Reader keeps 6,000 characters).
+- **The loaded list, moved from the lane (S373 compaction):** **Loaded:** Cerritos 305, Mt. San Antonio 382, Riverside City 244, Moreno Valley 139, Norco 147, Long Beach City 344 (S364, re-read S368; Advanced Arc Welding 38542 removed on Sam's Open Asks Sheet 68 card 2, *Remove it*, receipt `kb/receipts/program_requirement_records_lbcc_38542_removed_2026-10-12_s370.*`), Chaffey 191 (S370, #2027: 193 of 199 found, six with no page), San Diego City 164 (S370-S371: read 38252422845 found 168 of 191 with a list, $12.67; load 38265697602; 22333, 22352, 22367 and 38732 place none and stay out), San Diego Miramar 110 (S372: read 38275241459 found 110 of 124 with a list, 105 pass, $9.00; load 38285338937 inserted 106 and kept the 4 checked pilot records; not found 16779, 30512, 30532, 36254), San Diego Mesa 166 (S373: read 38282023973 found 168 of 184 with a list, 162 pass, $14.82; load 38300979155 inserted 166; 18270 and 31695 place none and stay out; its nine health programs were not found: 05301, 05344, 05347, 05348, 05349, 22313, 22314, 38642, 38643).
+- **Miramar and Mesa, moved from the lane (S373 compaction):** San Diego Miramar and San Diego Mesa (Sam, 2026-10-12: *"go ahead with Miramar and Mesa extraction"*). Both are Leading and on the SDCCD curriQunet host, whose `_getCatalogs` names City 69, Mesa 70, Miramar 71. Both are read, loaded and displayed: Miramar S372, Mesa S373 (its registry row on Sam's Open Asks Sheet 69 item 1, *Apply as a migration*, #2037). Mesa's nine missing programs are all health sciences, and none is among the 199 entries of the one section the reader walked (*Degree Curricula and Certificate Programs*): find where the catalog lists them and file it in Mesa's procedure record before a re-read.
+- **Census run 5 (38305389870, all 118, 629 loads), an outline read per host:** outline_with_slos 18 (curriQunet 14: Allan Hancock, Crafton Hills, Cuesta, Feather River, Las Positas, Moreno Valley, Norco, Palomar, Riverside City, the four SDCCD colleges; eLumen 3: Redwoods, Los Medanos, Palo Verde; CurricUNET 1: Chabot); outline with no SLO heading 14 (curriQunet 12, among them Chaffey; eLumen 2: Bakersfield, Columbia); list_only 17 (eLumen 14, curriQunet 2, Hartnell's Coursedog); sign_in 6 (curriQunet: Berkeley City, Butte, Gavilan, Reedley; CourseLeaf CIM: Citrus, Pasadena City); refused 3 (Copper Mountain, Napa Valley, Ohlone); unreached 1 (San Jose City); no system 59.
+- **The registry fill (#2047):** `kb/_course_outline_registry_fill.py` writes one UPDATE over a VALUES row a college, guarded on `cor_checked_run is null`, with the note, the SLO flag and the SLO source derived in SQL from the same templates as `fields()`. The repo's Supabase guard refuses an UPDATE through `execute_sql`; the receipt went in through `apply_migration` (the path Sam named on card 1), and an md5 over the eight stored fields equaled the script's. A 33 KB receipt is too large to paste reliably: derive repeated text in SQL and keep each row to its facts. SQLite can test the receipt once the alias and the VALUES column list are rewritten for it (the guard test does this).
+- **The RCCD course index (#2046):** discovery run 38312406074 found the dashboard is a public search backed by JSON (`POST /Search/NewSearch`, 25 rows a page, every proposal in every status; a Cloudflare check on the page). The index replays the page's own request from inside the page, 200 rows a page: run 38313849383 read 14,292 rows in 72 pages, kept 2,160 active outlines (no historical proposal, no distance education addendum), and found an outline for 1,605 of the 1,648 courses the three colleges' records name. The 43 without one are mostly codes the district retired (HIS, ECO). A course code needs one spelling before any match: "ADJ B1B" read twice as "ADJ B 1B" until the two-word subject group went, and the guard test caught it.
+
+
+## S374 SkyJuniper (2026-10-12): the SLO read at RCCD, and why Mesa lost nine programs
+
+- **An outline prints objectives and SLOs under one lead-in.** RCCD's integrated outline (report 97) prints *Course Objectives: Upon successful completion of the course, students should be able to demonstrate the following activities:* and then *Student Learning Outcomes: Upon successful completion of the course, students should be able to demonstrate the following skills:*. The census's line-start rule (`SLO_HEADING`) accepts the lead-in as a heading, so the first text parser read the objectives on all twelve pages of trial 38317539422. `kb/_course_outcomes_read.py` now reads the HTML: the area whose `subTitle` reads Student (or Course) Learning Outcomes, each top-level `<li>` as printed. The text parser stays as the fallback for a host with no such area and takes the SLO heading proper before the lead-in. Test against filed pages, not a fixture you wrote: the trial filed each page's text and HTML (`kb/course_outcomes/trial_38317539422/`), `--reparse` reads them again, and the guard test runs on them.
+- **RCCD nests institutional outcomes under an SLO** (*Critical Thinking*, *Communication Skills*, *Information Competency & Technology Literacy*) as a list inside the `<li>`. They are kept as `maps_to`, one list per SLO; the text reader cannot tell them from an SLO.
+- **The outline names who offers the course:** *College:* then RIV, MOV, NOR one to a line. The load keeps a row for each college the outline names, and falls back to the colleges whose records name the course.
+- **Slice 1 of run 38318152644:** 402 outlines, all 200, all parsed from the HTML, 1,367 SLOs (one to ten a course, median three; 28 courses print one). The longest are the ethnic studies outcomes (ETS 1, ETS 2); the shortest are CAT 844's *Build tables.* and *Create forms.*
+- **A merge of main makes a runner's pull slow.** The read workflow's commit step ran `git pull --rebase` on a one-commit checkout; after the branch took a merge of main, the pull fetched main's history and the step ran five minutes. The step now fetches the tip one commit deep, lays the slice's new files on it and pushes, and an artifact keeps the slice if every push fails. The dependency map reads a workflow's push target: write it unquoted (`HEAD:${{ github.ref_name }}`) or the map loses the edge and CI calls it stale.
+- **A new table carries its own grants.** `supabase_table_grants_test` failed `course_outcomes` until its SQL granted select to `service_role` (new public tables lose the default grants on 2026-10-30).
+- **`apply_migration` timed out six times** (22:45Z to 23:17Z) with nothing reaching the database: no table, no ledger row, no lock, no open transaction, the project healthy, `execute_sql` answering. The DDL waits in `chatbox/supabase_course_outcomes.sql`; the guard refuses DDL through `execute_sql`, so there is no second path from a session.
+- **Mesa's nine (#2050).** Seven page reads (`kb/college_reads/mesa_health_programs.json`, runs 38318250175 to 38321027873) walked catalog 70 from the top: 21 sections, programs only under 17540, one tab (All Programs, 18644), one link list (17541) of 200 entries, and all nine in it (17589, 17590, 17626, 17687, 17688, 17700, 17708, 17709, 17727). Each special-admission entry shows six tabs (Summary, Accreditation, Directed Clinical Practice Requirement, Admission Criteria, Requirements, Courses); `cq_children` read the first four visible ones, so the Requirements tab, fifth, was never read and each program scored 0.0. A tab titled Requirements is now read first. The S373 guess (another catalog section) was wrong: walk the tree before assuming where a thing is listed, and read the coverage number a record was filed with (0.0 says no page named a course, which points at the page, not the index).
+- **Moved from the lane (S374 compaction):** **Reading** (#1946-#1952): Program records finds a record and Side by side opens it beside its catalog page (`kb/catalog_framing.json`). Sam confirmed the Cerritos sample, 12 of 12. ④ CPL Pathways' UI pass done (#2016). Sheets 38, 39 and 42's rulings (writes, the OSHA issuer name, the outcomes on the 20 live rows) are under *Moved from the lane (S336 compaction)*. The Progress view: every section of the tab collapses (Expand all, Collapse all).
+
+## Moved from the lane (S376 compaction)
+
+The outcomes paragraph's settled parts, verbatim:
+
+✅ **Record shape 3 (S334):** extraction v4 keeps each outcome exactly as printed in `program.outcomes` and `course_outcomes`; the scorer fails a reworded or empty one; 19 of the 20 pilot records carry them. `kb/_program_requirements_file.py` keeps a read record's requirements and takes only outcomes; `reviewed_readings.json` holds each verdict to the requirements it read.
+
+**Sam's Open Asks Sheet 70 (20:40-20:42Z, `sam-sheet-70-rulings-2026-10-12`):** card 1 *Apply as a migration*; card 2 *Record and move on*, note *"And look for other repositories for the outcomes data and record the link and data in prog reqs"*; card 3 *Every course in the loaded records*.
+
+✅ **The registry fields (S373):** migration `program_source_registry_course_outline_2026_10_12` added the eight `cor_*` columns (`cor_slo_source_url` is Sam's other repositories); the weekly census never writes them. Filled on all 118 rows from census run 5 (#2047): public 49, sign_in 6, refused 3, unreached 1, not_found 59; 18 print SLOs.
+
+**The census** (#2042) opens one outline per host; curriQunet dashboards list public outline reports. ✅ **The course index (#2046):** RCCD's dashboard is a public JSON search; 1,605 of the 1,648 courses the RCCD records name have an outline.
+
+## S376 SkyLinden (2026-10-13): three re-reads, SDCCD's SLOs by college, and a trigger file a merge carries
+
+- **The Requirements-tab fix (#2050) paid at all three SDCCD colleges.** Mesa found its nine health programs
+  (`not_found` empty), San Diego City three of its 19 (the two nursing degrees, Cyber Defense B.S.), Miramar
+  ten aviation programs (Airframe, Powerplant, Pilot Studies and the rest; only 16779 had been counted as not
+  found, the other nine were page-claimed). Each loaded unchecked and displayed: build `98becf9fafc7` on
+  2,203 rows.
+- **A re-read can move a good record to a wrong page.** Miramar 39433 (300-Hour Registered Yoga Teacher) went
+  from page 20882 (14 of 14 placed) to 20070 (none). `git diff --name-status` between the base and the
+  filing showed one `M` among ten `A`s; the filed record went back before the load and the build. Read the
+  diff of every re-read's records, not only its summary.
+- **The report titled for the outline is not always the one that prints SLOs.** SDCCD's Course Outline
+  Report (493) prints Student Learning Objectives only; its All Fields report (4) prints a Student Learning
+  Outcomes section with one entry per college (Group Title City, Mesa, Miramar), each with its own Outcome
+  Text list. A college may reuse an objective's words as an SLO (Miramar's HUMA 101), so where a sentence
+  prints decides, not its wording. The index reads the report a `.run` names; the reader keeps one block per
+  group; the load writes one row per group for the college its title names.
+- **A comparison report is titled for the outline too.** SDCCD's Course Outline Comparison Report (43) sat
+  ahead of 493 on 1,978 revision rows; the dashboard's own links named only 493. The index lists every
+  report by id and title, so the next host's choice is visible in its run.
+- **Learn the link form from the host's own page.** SDCCD links reports as
+  `DynamicReports/AllFieldsReportByEntity/<CourseId>`, RCCD as `Report/Course/GetReport/<CourseId>`.
+- **A merge of main carries trigger files.** Merging main into the San Diego City branch carried #2065's
+  index `.run`; the display push after it re-ran the SDCCD index there. The merge-commit check only covers a
+  merge at the head. The census, index, outcomes read and load now run only when the pushed trigger file
+  differs from main's (#2069, #2066). KB note `methodology-a-trigger-file-must-differ-from-main`.
+- **Chaffey's course outcomes are on section syllabi** (its outcomes site); program outcomes are in the
+  catalog and CurriQunet. No public course SLO list turned up from a web search.
+- **`apply_migration` timed out a seventh time** (04:31Z) with nothing landing; Sam chose to paste the table.
+
+## Moved from the lane (S380 compaction)
+
+The outcomes paragraph's settled parts:
+
+- **RCCD (#2049, S374):** the reader takes the outline's *Student Learning Outcomes* area from the HTML, never the
+  Course Objectives RCCD prints first under the same lead-in (trial 38317539422); a nested institutional outcome
+  (*Critical Thinking*) is `maps_to`; the *College:* line names RIV, MOV, NOR. Run 38318152644 read all 1,605 in four
+  slices: every page 200, all parsed from the HTML. Load run 38392934576 inserted 2,665 rows (one per college the
+  outline names), none kept or skipped.
+- **SDCCD (#2065, #2066, S376):** the index learns each host's link form from its own dashboard and reads the report
+  its `.run` names. SDCCD's *Course Outline Report* (493) prints Student Learning *Objectives* only (trial
+  38350133448); its *All Fields* report (4) prints each college's SLOs under its own *Group Title* (trial
+  38350787486), so the index reads All Fields: 1,641 of the 1,660 courses City, Mesa and Miramar's records name. A
+  comparison report is never read. Read 38351637385 (four slices, checked S380): every page 200, all parsed from the
+  HTML, 1,506 courses with outcomes, groups City, Mesa, Miramar only. Load run 38397577646 wrote one row per group:
+  2,229 inserted, 135 courses skipped (none printed). The read filed 2,230 groups: one course printed the same
+  college's block twice, and the load's key (college, course, report, fingerprint) kept it once.
+- **Chaffey (#2073, S380):** its outcomes FAQ (chaffey.edu/outcomes/faq.php) says current course learning outcomes
+  are kept in META CurriQunet and printed on each course's syllabus. Its dashboard links two public reports per
+  course, *Course Outline* (225) and *Course Outline - PDF* (1225), and no All Fields report (discovery
+  38392162605); the PDF prints Course Objectives and no outcomes (read 38394075773). The registry note
+  (`kb/receipts/program_source_registry_chaffey_cor_note_2026-10-13_s380.sql`) keeps `cor_slo_source_url` null.
+- **The table:** `apply_migration` timed out eight times on `chatbox/supabase_course_outcomes.sql` (S374 to S380)
+  with nothing landing; Sam pasted it (Open Asks Sheet 72 card 1). A paste card is the route while the connector is
+  down.
+
+## S380 SkyAlder (2026-10-13): course outcomes loaded at six colleges, the eLumen read, and two CourseLeaf misses
+
+- **The table landed by paste.** `apply_migration` timed out an eighth and a ninth time with nothing landing (no
+  migration since 23:19Z on 2026-10-12); Sam pasted `chatbox/supabase_course_outcomes.sql`. RCCD loaded (#2049,
+  2,665 rows) and SDCCD by college group (#2066, 2,229 rows): 4,894 rows, 16,626 SLOs. Sam asked how to stop
+  pasting; the runner-applied migration path (an access token secret, optional approval tap) waits on his answer.
+- **Merging main brought a guard the branch predated.** #2049's two outcomes workflows failed #2069's trigger-file
+  check after the merge; the gate was ported from #2066. A stacked PR's newer files win an add/add conflict once the
+  base's own commits never touched them (check `git log <fork>..<base> -- <files>` first).
+- **Chaffey's course outcomes are not public** (#2073): two dashboard reports (225, 1225), both objectives only; the
+  FAQ keeps CLOs in META CurriQunet and on syllabi. The registry note waits as a paste.
+- **eLumen is a single-page app read through its own calls.** Every view loads one ~4.5 MB publish call (styles, the
+  whole side menu, the page) and then settles; the rendered capture ran past 2.5 hours and was canceled. The menu's
+  own links load a page through `publish/content/<catalog>,<path>?tenant=<host>`, ~2 KB of HTML with the program's
+  heading, learning outcomes and requirements (reads 38392014238, 38413232841, 38413852584). Bakersfield prints
+  `AGRIB5`; `code_pattern` already matches the state's `AGRI B5`. Course pages print SLOs where the college shows
+  them (Palo Verde yes, Bakersfield no).
+- **Coastline found 29 of 159 programs, for two reasons that apply to every CourseLeaf college.** Its program pages
+  are addressed `.../business-as/index.html`, and `NOT_PROGRAM_PATH` dropped every `/index.html`, so only subject
+  pages were read (their Courses tab lists the subject's courses); and the link-search fallback accepted course
+  listings (`course-descriptions/credit-courses/re/`) at coverage 1.0. `dir_form()` and `link_page_ok()` fix both
+  (#2074). Earlier CourseLeaf colleges (Cerritos, Mt. San Antonio, Long Beach City) passed through the same link
+  search: their link-search records are worth one check for a course-listing source.
+- **Next college by tier:** no Leading college is left on a platform the reader handles except eLumen; among
+  Advancing CourseLeaf/curriQunet colleges Coastline (984 CPL students) leads, then Southwestern, Fresno City, Cypress.
+
+## S381 SkyRowan (2026-10-13): Bakersfield end to end, Coastline's second miss, Cabrillo's department menu, and the Progress cards
+
+- **Bakersfield, the first eLumen college, read to display in one session.** Read 38414480070 (S380): 231 of 241
+  with a list, 207 pass, $13.38. Load 38428412859 inserted 229 (09237 Animal Science A.S. and 09968 Human Services
+  A.A. place none of their courses). The builder's two dated reads gained Bakersfield and Coastline (Coastline ahead
+  of its load, so two branches would not both edit them); the per-college md5 over code|recs|exhibits|untitled
+  matched in SQL and over the filed rows. Display 38430743762 applied build `2121fcc84f86` to all 2,432 rows. Its
+  24 arithmetic failures are mostly transfer degrees whose blocks sum above the stated total (Psychology 30593,
+  Theatre Arts 32769): the mark of a choose-from-a-list block read as required. Filed on its procedure record v3.
+- **A fix that clears the visible failure is not the fix (Coastline).** S380's `dir_form()` left 24 of 159.
+  Every Coastline page's h1 is the banner "ACADEMIC CATALOGS", so the hidden-text heading rule refused every
+  program page whose requirements sit in a hidden tab; `drop_banner_h1()` reads the title instead (an h1 on half
+  the pages read, at least ten). That and `child_pages()` raised it to 32. Read 38437346167 then showed the sitemap
+  does list the program pages: the main pass reads them and still refuses most, while the link search takes the same
+  page at coverage 1.0. **The capture filed nothing about a refused page**, so each guess cost a 27-minute run;
+  `near_miss()` now files, for every not-found program, the page that names it best and the gate that refused it.
+  Read a capture's near misses before writing the next fix.
+- **A page read is the cheapest test of a theory.** Two loads, no model call, about two minutes on a runner: Cabrillo
+  (menu, then one department) and Coastline (the sitemap searched for known program addresses) each answered in one
+  read what a capture could not.
+- **eLumen menus differ.** Bakersfield's menu links programs (`<catalog>/program/<slug>`); Cabrillo's links
+  departments (`2026-2027/department/<slug>`), and each department's content call links its programs at the same
+  `program/<slug>` path. `el_department_slugs()` reads them when the menu names no program (#2078). Report keys
+  are overwritten by the rendered fallback when the fast read finds nothing: read the job log, not only the report.
+- **No course-listing record is live** at the earlier CourseLeaf colleges: Mt. San Antonio's six from
+  `adult-continuing-coursesaz/` were removed by S362 on Sheet 62 (handoff 381 priority 4, answered).
+- **A stash check can unstage a commit's code.** `git stash` then `git stash pop` without `--index` left the reader
+  unstaged, and the commit carried only the dependency map; the run dispatched on it was canceled and the code
+  pushed in a second commit. Pop with `--index`, and read `git show --stat HEAD` before dispatching a run on it.
+- **The Progress view's counts open their lists** (Sam, 2026-10-13, on his phone; #2077). A call with no answer link
+  named a question with nowhere to tap: `scripts/queue_status.py` now refuses one.
+
+## S382 SkyLarch (2026-10-13): Coastline's hidden tab, Cabrillo's totals, and the next eLumen menus
+
+- **A pre-filter must read the text its exact test reads.** Coastline's capture-only run 38438077425 filed a near miss for
+  each of 106 not-found programs: 98 were refused by the coarse net, most on their own page. The net read innerText and
+  textContent; the program's courses sit in a hidden Requirements tab, and textContent runs each code into the cell before
+  it ("Units3BCI C100Introduction"), so no code token had a word boundary. The exact test reads the hidden tab cell by cell
+  (`hidden_tabs_text`), which is why the link search, with no net, took Information Technology A.S. at coverage 1.0.
+  `page_net()` gives the net the same tab text (f3d8969).
+- **A filter that drops "panels naming no course" must know the college's course numbers.** `SUBJECT_TOKEN` wanted digits
+  right after the subject, so the Coast district's C-numbered courses (BCI C100) read as no course and the Requirements
+  panel was dropped. `C?` added. The next read found 154 of 159 (was 32), 124 pass, $8.52.
+- **A page read prints the rendered page, not the capture's view.** Read 38443044852 showed the Overview alone and its
+  link list folded the tab link (a fragment) into the page's own address. The near miss now files the capture's own view
+  (script error, text sizes, tab panels), so the next miss answers itself.
+- **An arithmetic failure can be the catalog's layout.** Cabrillo: 88 of 271 fail arithmetic, 58 with no stated total.
+  General Business prints a 60-credit degree total with general education, a 25-credit core and electives of 9-10 (read
+  38449079970), and no major total; the record leaves the total blank under the prompt's own rule (never compute one).
+  Loaded as read (268; 3 place none).
+- **eLumen menus take a third and fourth shape.** Modesto's menu links a Programs A-Z hub; Palo Verde's links award
+  categories (adt, associate-of-arts-degrees, certificate-of-achievements); both hubs link `<catalog>/program/<slug>`.
+  Santiago Canyon's listing names departments and awards in text with no links (reads 38445240921, 38446053107,
+  38447593113). Excerpt keywords that match menu years spend all 24 excerpts; ask for links with `links`.
+- **Coastline:** load 38449045399 inserted 140 (14 place none: wrong pages); build `14e436537733`, display run
+  38449957832; procedure record v1 (md5 804419067ba6). **Cabrillo:** load 38450067209 inserted 268; display not built.
+
+## S383 SkySpruce (2026-10-13): Cabrillo displayed, the eLumen hubs, and the whole-harvest measure
+
+- **A display build waits for the college before it in the queue.** The builder rewrites every row, so Cabrillo's
+  build had to follow Coastline's merge: built on #2074's records, `dc7d157aff73` covers all 2,840 rows (run
+  38456098516; procedure v1, md5 442d35fb). Merging main into the Cabrillo branch kept both sides' new test blocks.
+- **Hand-filed dated reads are proved twice:** the md5 over `code|recs|exhibits|untitled` (C order) and over each
+  code's titles in the read's own order. A re-sort by the shell's collation gave a false mismatch; the read's order
+  matched (51b48854..., d71fa73b..., 112 codes).
+- **eLumen's fourth menu shape is hubs.** Modesto links Programs A-Z and by Type, Palo Verde its award categories;
+  `el_hub_slugs()` reads single-segment pages whose slug names a program list (#2085, 146 checks). Capture-only reads
+  of both were dispatched on its branch.
+- **The whole harvest, measured (Sam, 2026-10-13; #2084).** Five parts count equally: links 98%, ROEP data 14%
+  (2,568 active programs with figures plus 308 filed gaps), COCI comparison 13%, SLOs and PLOs 9% (course SLOs 4,123
+  of 89,192 courses on active programs), careers 7% (1,518; records read before the careers field lack it, so
+  re-extraction is the lever). About 28%. Records include Approved programs, so the query counts only records that
+  are an Active program's. Anon reads checked records only; the checkpoint stamps the block.
+- **A `| tail` hides a check's exit code.** `check_generated.sh ... | tail -1 && git commit` committed a stale
+  dependency map; read the last line, then commit.
+
+## S384 SkyPoplar (2026-10-13): the 1,000-row cap, the 34 MB read, and loading by college
+
+- **A one-shot PostgREST read stops at 1,000 rows, silently.** The Records view and CPL Pathways' index read
+  `program_requirement_records` in one request; with 2,840 rows the response carried `Content-Range: 0-999/*`, so the
+  colleges after record 1,000 (ordered by college, control number) never reached either page. Paginate any read that
+  can pass 1,000 rows (`docs/kb-notes/methodology-paginate-postgrest-reads.md`, updated this run).
+- **The 500 Sam saw was the anon role's 3 s statement_timeout** (`pg_roles.rolconfig`: anon 3 s, authenticated 8 s).
+  `postgres_logs` named it: "canceling statement due to statement timeout". The cost was the body, not the query:
+  1,000 records are 11.3 MB of JSON (125 ms of DB time as anon, warm), all 2,840 are 34 MB, and a signed-in page read
+  everything twice (public read plus reviewer read). Six 3 MB statements at once still timed out after paging.
+- **Fix in three steps:** #2088 pages (250 a page, `Prefer: count=exact` on the first, the rest in parallel; a failed
+  page fails the read, naming the table); #2089 one read when signed in (the reviewer read is a superset) and one
+  retry of a 5xx page; #2090 a light index for every college (about 0.6 MB) and full records by college pick or by
+  key (Sam: *"we don't have to load all the colleges and programs at once if we add a multi-select college/district
+  drop down filter"*, provided the attention links work without it; his default: open empty, remember the pick).
+  Edge logs show each request's `response.headers.content_range`, `response.origin_time` and role: read them after a
+  deploy that changes a read.
+- **A test that writes into the tree races the suite.** `college_identity_lint_guard.test.js` rebuilt the crosswalk
+  into `kb/college_identity/<today>/`, the newest dated directory, which `funding/_build_funding_performance.py`
+  reads; `cpl_funding_applied.test.js` read it half-written (JSONDecodeError at char 0) on #2084 twice and #2081 once.
+  #2087 sends the rebuild to a temp dir and checks no dated directory appears.
+- **Modesto and Palo Verde (capture-only, #2085):** Modesto 189 of 199 found, 163 full coverage; Palo Verde 54 of
+  69, 32 full, five noncredit programs at 0 coverage. Extraction waits on Sam (Sheet 77 card 5).
+- **The catalog and state file boxes, re-measured for Sheet 77 card 3:** 3,341 boxes on 942 of 2,840 records
+  (median 2 a record, 194 records with five or more, one with 97). 1,808 name a course the state file lists and the
+  catalog does not print (168 of them a local number beside the course's common course number, e.g. Bakersfield's
+  HISTB17A beside HIST C1001); 972 a printed course the file carries under another status; 561 printed courses the
+  file does not list. Procedure flags: 214 check not met, 148 no printed total, 76 possible misread.
+
+### Moved from the lane (S384 compaction, verbatim)
+
+✅ **Coastline (#2074, merged S383):** its courses sit in a hidden Requirements tab, numbered with a C; `page_net()`
+reads the tab and `SUBJECT_TOKEN` takes the C (154 of 159, 124 pass, $8.52); 140 loaded; procedure v1. ✅ **Cabrillo
+(#2078, merged S383):** its menu lists departments, `el_department_slugs()` follows them (271 of 281, 183 pass,
+$18.17); 268 loaded; procedure v1 (md5 442d35fb). 88 fail arithmetic, 58 with no stated major total: the page prints
+a degree total, a core and electives (lessons S382).
+
+## S385 SkyHazel (2026-10-13): Modesto and Palo Verde end to end, the college's items on one line, and the migrate runner's first two applies
+
+- **Modesto Junior and Palo Verde, read to display.** Extraction (Sam, Sheet 77 card 5): Modesto 189 of 199 found, 159
+  pass, $12.03 (run 38477845911); Palo Verde 54 of 69, 29 pass, $4.40 (38477849603), 25 of its 54 failing arithmetic.
+  Dated reads gained both (162 and 58 course codes; md5 over code|recs|exhibits|untitled and over titles equal in SQL
+  and over the filed rows). Loads 38482987850 (185; 4 place none) and 38482990981 (52; 2 place none). Build
+  `2d812b8ce768` on all 3,077 rows, display run 38486049156.
+- **A display dispatch applies the build the page file carries, not a new one.** The first dispatch (38484189531)
+  re-applied `dc7d157aff73` to the 2,840 older rows and left the 237 new ones empty: no session had run the builder.
+  Run `kb/_build_roep_display.py`, commit `cpl_pathways_roep_data.js` and its receipt, then dispatch `step=display`.
+  A re-apply of the same build is harmless (its applied record files the same build as "before").
+- **A dated-read diff can look like a rewrite.** Inserting a college before others made git's default diff show
+  2,981 deletions; `--diff-algorithm=histogram` showed 3,653 additions and the two header lines. Read the diff that
+  way before believing an existing row changed.
+- **The college's items left the numbered boxes (Sheet 77 card 3, #2093).** 3,353 items on 947 records at 16
+  colleges (3,341 *Catalog and state file differ*, 12 *MAP names a second course*) against 438 procedure boxes. The
+  view `program_record_college_items` (one row an item, `security_invoker`) counts them in about 70 ms; the MAP team
+  queue reads it in pages and opens each college's list on demand.
+- **The migrate runner works without a wait** (`supabase-migrate.yml`, #2076): its first two applies (the
+  lifecycle policies, #2092; the view, #2093) ran in under a minute each, wrote the ledger row and committed a
+  receipt. The receipt commit is the bot's, so CI does not run on it: push a commit of your own on top before
+  waiting on `test`.
+- **#2090's first live reads were clean:** the light index paged `0-249/2840` then 250-row pages, 106-403 ms each,
+  no 400. The first college pick (`college=in.(...)`) waits on a visitor.
+
+### Moved from the lane (S385 compaction, verbatim)
+
+✅ **eLumen (#2072, merged S381):** `el_pages_fast()`: one publish call for the menu, one `publish/content` call a program. Bakersfield loaded 229 (S381; lessons S381). ✅ **Coastline (#2074) and Cabrillo (#2078), merged S383:** 140 and 268 loaded, procedures v1; how each reader was fixed, and Cabrillo's 88 arithmetic failures: lessons S382-S383. ✅ **eLumen hubs (#2085, merged S384):** a menu naming neither programs nor departments links hubs (Modesto `programs`/`bytype`/`adt`; Palo Verde's award categories); `el_hub_slugs()` reads them. Capture-only reads (S384): Modesto 189 of 199 found (163 full coverage; misses Animal Science, Small Animal Vet Tech, three GE patterns), run 38461105673; Palo Verde 54 of 69 (32 full; misses five noncredit programs at 0 coverage, Vocational Nursing, Cal-GETC, Umoja, Cross-Cultural), run 38461110935. ✅ **Sam's go, both (Sheet 77 card 5, 22:26Z):** extraction reads dispatched on `claude/s384-modesto-palo-verde`.
+
+The one-shot record read stopped at PostgREST's 1,000-row cap (Content-Range 0-999/*) and, as anon (statement_timeout 3 s), answered 500; all 2,840 records are 34 MB (`records-view-1000-row-cap-and-anon-timeout-2026-10-13`). #2088 pages every read (CPL Pathways' index too); #2089 reads once when signed in and retries a 5xx page.
+
+## S386 SkyElm (2026-10-14): Palo Verde's noncredit programs, and courses printed under another subject
+
+- **The reader was right; the catalog names the courses differently.** One college page read (run 38491285062, three
+  loads) of the noncredit hub and the two pages the titles named. High School Equivalency 43203 prints NBE031-NBE034,
+  144 hours each, total 576 (its header says 288.0 Units); the Program Course File lists GED031-GED034, the same
+  numbers and titles, and neither set is in COCI's course list. Developing Capable Youth 45472's page is a 2021-22
+  credit Certificate of Career Preparation (CHD120, 2 units; CHD227, 1 unit); the file lists the noncredit mirrors NBE
+  120 and NBE 227 (0 units, in COCI). Child Care 45471 and Arts - Early Childhood Education 45473 have no page: the
+  noncredit hub lists two ESL certificates and High School Equivalency. Each difference is the college's.
+- **The run's page text cannot reach a session.** The extraction run's artifact holds every page, but its download
+  host (`*.blob.core.windows.net`) is refused by the container's proxy; a college page read on a runner is the way to
+  see a page.
+- **Same number, another subject: measured, not built.** On loaded records, 257 pairs pair a listed course missing
+  from the text with a printed course off the list of the same number. COCI's course list titles both for 128 of them:
+  32 agree (Riverside City HIS→HIST, and three more colleges), 5 are near, 91 differ (Long Beach's GE lists: ANAT 1
+  against ASL 1). For the other 129 one code has no COCI title (Norco's HIST 1), so a title test needs the catalog's
+  printed title, which a record does not carry. Each such course reaches the college as two items today; only Palo
+  Verde's 43203 lost its record over it.
+- **21 of Palo Verde's 25 arithmetic failures name no total;** the other 4 sum to another figure (three Fire Science
+  certificates, Child Development-Teacher). No page has been read for the 21 yet.
+- **Modesto and Palo Verde had no procedure record for their catalog reads.** S386 wrote Modesto v1 and Palo Verde
+  v3 (v2's maps kept byte for byte by composing on the stored record in SQL); receipts
+  `kb/receipts/program_source_procedure_modesto_junior_v1_2026-10-14_s386.sql` and `..._palo_verde_v3_...`.
+- **Palo Verde prints the degree total with general education, as Cabrillo does** (college page read 38497793717, two
+  pages). Automotive Technology A.S.: header *64.0 - 68.0 Units*, *Total 64 - 68* = core 24 + electives 6 + *CalGETC
+  34 - 38*. Psychology AA-T: *Total 60* = major 19-21 + CalGETC 34-38, the rest transferable electives. No major total
+  is printed, so the extraction leaves it blank and 79 records at the two colleges fail arithmetic. The display's
+  *"The catalog prints no program total"* (and Sierra's and CPL Pathways' same words) is wrong for these pages; the
+  wording waits on how the record carries the figure (Open Asks Sheet 78).
+- **Southwestern and Fresno City capture cleanly.** Southwestern (CourseLeaf sitemap, 451 loads, 36 min): 220 of 233
+  found, 167 full coverage, 10 no page (two Administration of Justice options, Forensic Studies, three environmental
+  and safety programs, Kinesiology AA-T at 21 of 60 codes, Yoga Teacher Training, a noncredit Family Child Care). Fresno
+  City (curriQunet JSON, 474 loads, 38 min): 237 of 251, 199 full coverage, 6 no page (five noncredit). Both above
+  Sheet 59's 85% bar; extraction waits on Sam (Sheet 78).
+
+### Moved from the lane (S386 compaction, verbatim)
+
+**A refusal is on the college's record (Sam, sheet 29 card 3, 2026-10-04 11:59Z):**
+*"Note this in the record for the college. Rather than ask permission, we will
+make the agent aware of the limitation and to continue to look for solutions or
+workarounds."* So no access request goes to Miramar or the mapper's operator.
+`program_source_registry` carries four columns the census never writes
+(`sequence_host`, `sequence_access` open/refused/unreached/not_read,
+`sequence_note`, `sequence_checked_run`), filled S326 for 25 colleges from the two
+runs' evidence: **18 refused** (Miramar's mapper and the probe's 17), **5 not read**
+(Bakersfield, LA Harbor, Merced and West LA link to a mapper not yet read; Palo
+Verde's address is a homepage `#`), **2 open** (Irvine Valley's and Santa Monica's
+own maps pages; Santa Monica timed out in the morning probe and answered in run
+37209313523, filed by `..._2026-10-04b_s326.sql`). Receipt:
+`kb/receipts/program_source_registry_sequence_access_2026-10-04_s326.sql`. The reader reads them: it never
+requests a host on record as refused, follows the college's own links to the
+program's map, pathway, roadmap or sequence (a page or a PDF), and the probe asks
+each recorded host's front page once a run, flagging `CHANGED: file it` when a refused host or an unreached page now
+answers. ⚠️ **"Workaround" means another public source, never the same refused
+host under another name:** the reader keeps the census user agent that names the
+CPL Initiative (Sam's call 5 on sheet 23), so it never retries a refusal in
+disguise. The program read still needs the dispatch input `read: 1`.
+
+**Sam's sheet 32 (2026-10-04 17:33Z, both his own calls, as proposed):** (1) a
+program shows "up to" (the CPL course taken in every choice, the option with more
+CPL) plus the recommended path's figure where a map is read, and *"continue to
+include any CPL that the college might adopt for the courses on the pathway. And
+think about how we can include any certs we know of that haven't yet been
+articulated in the system for consideration. This is the reason we're adding all
+those potential certs to the CER and ECRA"*: each course carries CPL in three
+kinds, articulated here, could adopt (the same course articulated elsewhere), and
+for consideration (a CER/EACR cert whose recommendation points at the course,
+not yet articulated); (2) catalog-and-state-file differences collect as drafts
+on the college's harvest-tab row and My College to-dos; the MAP team sends.
+✅ **The harvest-tab half is built (S335):** Program records lists each college's own gaps under its heading as *Drafts for the college*, with a draft to copy; Catalogs counts and filters them. 28 live at the five pilot colleges (Miramar's two second-course drafts since 2026-10-05 21:45Z). ✅ **The My College half (Sam, sheet 42 card 3, 2026-10-05 20:58Z, his own call: *Show them now*):** My College lists each college's drafts now, under *Your program records, for review*, marked *For review* and *Beta draft*, right after *Start here* (S336, #1878). It reads the registry by `college_id`, then the college's records; a gap the reading procedure owns never reaches the college's page. The MAP team still decides when to send each one.
+- **Two colleges capture at once on two branches.** A capture-only read is a dispatch of
+  `program-requirements-college.yml` (`extract 0`, `step read`) on a branch cut from main; the concurrency group is
+  per ref and the hosts differ, so Southwestern and Fresno City read side by side in about 37 minutes and each filed
+  `capture_preview.json` to its own branch. Extraction then runs on the same branch after Sam's go.
+
+## S387 SkyMagnolia (2026-10-14): course SLOs from catalog pages, the eight addenda, and Palo Verde's catalog year
+
+- **eLumen prints each course's SLOs on its catalog course page** (college page read 38504338656): the program read's
+  `publish/content` call at `<catalog>,course,<code in lower case, no space>` (Cabrillo `astro3`, Modesto `ag115`, Palo
+  Verde `acc101`), the address a program page links. Each college has its own template inside the Learning Outcomes
+  accordion: Modesto a label `SLO:` over an `<ol>`; Cabrillo a lead-in label over a table, one outcome a row, numbered in
+  its text. The text reader read none of Modesto's and took Cabrillo's next *Toggle* as an outcome; the box parser reads
+  24 of 24 trial pages exactly (trials 38505894485, 38506174617). eLumen rows load as `source_kind = catalog` (#2103).
+- **The Coast district serves outlines of record by code** (`catalog.cccd.edu/courses/acct-c116/`): an `<h3>Course Level
+  Student Learning Outcome(s)</h3>` then the list, then Course Objectives. Nine of 12 trial pages parse exactly (trial
+  38508460207); the three common course numbers (ARTH C1100, HIST C1001, POLS C1000) answer 404 there. Filed under
+  `cccd`; `catalog=<slug>` in `.run` reads either form (#2105).
+- **CourseLeaf course entries print no SLOs** at Cerritos, Long Beach City and Mt. San Antonio; `/search/` is disallowed by
+  robots.txt at all four loaded CourseLeaf hosts (#2101). Course pages: Cerritos
+  `/degrees-certificates-courses/course-descriptions/<subj>/`, Long Beach `/course-descriptions/<subj>/`, Mt. SAC
+  `/programs/coursesaz/<subj>/`.
+- **An online catalog's addendum is a changelog of edits its pages already carry** (read 38504437775, #2102). eLumen
+  dates each change and flags the page; Cerritos, Norco and Moreno Valley list new and revised programs and courses. Two
+  checked against loaded records were already in the pages read: Norco's Successful Career Transitions (PDS-809 out of the
+  required block, 33 hours to 21) and Cerritos's EDT 110 (2 units to 3). Miramar's "addendum" is the whole 549-page
+  2025-26 catalog with an errata table on page 2.
+- **Palo Verde's catalog of record was a year behind** (read 38506078868): its catalog page lists *2026-2027 Catalog* at
+  `catalog.paloverde.edu` (Acalog) above *2025-2026 Catalog* on eLumen. `vendor_catalog_link` gives a vendor host two
+  points, more than a newer year's margin. The first fix passed its test and failed the dry run (38506794465): the live
+  page links eLumen in its own HTML, so it reads as eLumen, and the guard required a plain page; the fixture had no HTML.
+  The second follows the newest catalog a yearless page lists whatever the page's platform (dry run 38508144436: Palo
+  Verde alone moves; #2104). Its 52 loaded records stay 2025-26 until an Acalog reader re-reads them.
+- **A census push runs its own full dry run**: a hand dispatch on the same branch queues a duplicate (cancel it).
+
+### Moved from the lane (S387 compaction, verbatim)
+
+✅ **Sheet 77 card 3, built and merged (S385, #2093; Sam, *Build it*, 22:25Z):** numbered boxes are the reading procedure's alone. A record's college items (*Catalog and state file differ*, *MAP names a second course*) sit on one line in its head, *For the college*, that opens to the list; course rows carry no number for them (the quiet COCI chip and *Printed in the catalog* stay). The MAP team queue gains *Program record items for the colleges to correct*: a count a college, each a closed line that reads its list when opened, from the view `program_record_college_items` (`chatbox/supabase_program_record_college_items.sql`). My College's list is unchanged (it reads the same gaps from the table). Counts: lessons S385. ✅ Applied by `supabase-migrate.yml` run 38482375985 and read back (lessons S385). ✅ **My College reads the view too (S386, #2097):** one row an item, read a page at a time (Cerritos 577 rows, where every record's display was about 4 MB).
+
+## S388 SkyBuckeye (2026-10-14, the CPL Queue routine): three colleges' course SLOs loaded, the addenda reading agent, the Common CR Reference UI pass
+
+- **Course outcomes at nine colleges** (live read: 7,450 courses, 20,891 SLOs). Cabrillo 1,124 (read 38507187621, load
+  38515664600), Modesto Junior 910 (read 38515689944, load 38521527453) and Coastline 522 (read 38508963773, load
+  38523415414). Every eLumen page answered 200; the 16 and 14 courses with no outcomes print none. Coastline's 28 misses
+  are common course numbers the district's outline host answers 404 for. #2103 merged; #2105 merges on its `test`.
+- **A handoff's trigger line can name a key the branch does not read.** Handoff 388 said `catalog=modesto_junior`; the
+  `catalog=` key lives on #2105, and #2103's workflow reads `elumen=`. The first push would have read nothing; it was
+  canceled and re-pushed. Read the branch's workflow before pushing a trigger file it parses.
+- **A stacked branch's conflicts resolve by ancestry.** #2105 carried #2103's parser commit (f827ece), and `main`'s
+  copies of the three code files equaled that commit's, so #2105's side was a strict superset: take it for code and
+  `.run`, regenerate the dependency map, never pick sides on a generated file.
+- **A receipt at a PR's head leaves `test` unreported.** `js-tests.yml` runs on `pull_request` and `main` pushes; the
+  bot's receipt commit gets `action_required` runs. Put a real commit of yours on top (a merge of `main`, or the lane
+  edit the PR's state calls for), then read `test` on that head.
+- **The addenda reading agent (#2107):** `program_source_addenda_read(run_id, rows)` moves an addendum from listed to
+  read and files `programs_changed`, `published_on` and `effective_term`; service_role only, never a corrected row,
+  history under the run id. Applied by `supabase-migrate.yml` run 38516806015. The eight S387 reads are filed from
+  `kb/addenda_reads/read_38504437775.json`: 42 program and 20 course changes, each with scope, kind, change and date;
+  COCI control numbers where the program is in the snapshot (new ones are not). Receipt
+  `kb/receipts/program_source_addenda_read_2026-10-14_s388.sql` (8 read, 0 skipped). Cabrillo's addendum prints none.
+  Palo Verde's 2026-27 addendum changes four courses and no program; its 2025-26 one prints five programs in full.
+- **Common CR Reference UI pass (#2108):** CSV control 19px tall, rank 3.55:1; every control now an underlined cobalt
+  word, the rank on `--text-muted`; clean in light and dark (light failures 7 to 6 across 40 routes).
+- **Local `main` can be a week stale in a fresh container:** a `git pull -q` on `main` failed silently and the first UI
+  pass measured 2026-10-07 code. Branch from `origin/main` after a fetch.
+
+**NEXT.** The Acalog reader once Sunday's census apply moves Palo Verde's registry row; then Palo Verde's records re-read
+from 2026-27 and its course outcomes. The other 71 listed addenda wait for the reader to reach their colleges.
+
+## S389 SkyPersimmon (2026-10-14): record shape 5, the re-read path, Southwestern loaded, and an Acalog reader
+
+**Sam's rulings this run.** Open Asks Sheet 78 (11:18Z): card 1 *Extract both* (Southwestern and Fresno City), card 2 *Record both figures*. In chat (~12:55Z): *"go ahead with Palo Verde's 19 now too"*. The greeting named S388, which the CPL Queue routine had already run; this session took S389 from handoff 389.
+
+- **Record shape 5 (#2110).** `program.degree_total`, `program.ge_units` and `program.electives_fill_degree`, each as printed. With no major total, the scorer adds blocks, open electives and general education against the degree total (`against: "degree"`); with electives filling the rest, both ends must fit under the total and `fill` names their units. Extraction function v7 and Sierra deployed from main (runs 38563081939, 38563093048).
+- **The re-read path (#2111).** `program_requirement_records_college_reread()` replaces a row only while unchecked, unread by a person and from an earlier run; the receipt holds every before-value. Applied by supabase-migrate (run 38560296996). `force=incomplete` re-extracts the incomplete records that place a course; `step=reread` posts the newest run's records.
+- **Palo Verde's 19 (#2114):** run 38567765687, $1.47, the same pages; replaced by run 38569469816. 11 equal against the degree total; 8 unequal: five transfer degrees print *Total 60* and no elective line (the major and CalGETC come to 52-59), two sum past 60 (courses counted for both the major and CalGETC), and Automotive 04436 recorded a 34-35 major total its 37-38 blocks miss.
+- **Cabrillo's 55 (#2115):** run 38565227455, $6.13, the same pages; replaced by run 38570011602. 13 equal, 42 unequal. Most of the 42 read 57-60 against 60: a major whose choices run (18-21) with general electives printed as a range that takes up the rest; the record keeps `open_elective_units` as one number. The page adds up; the record lost the electives' range. Two questions for Sam (Sheet 79): count a degree total inside the computed span as adding up, and count a transfer degree's 60 as filled by the electives the statute provides when the page prints none.
+- **Southwestern (#2115):** run 38563578596, 220 extracted, $13.77, 162 pass; load 38570038760 inserted 190 (30 place none). Dated reads gain Southwestern (3 MAP codes) and Fresno City (2). Display build `361c9f120c6f`. Fresno City's run 38563582873 was still extracting at the checkpoint.
+- **An Acalog reader (#2112, open).** El Camino: catoid 13, no site map, six program menus; 124 of 135 programs with a list found a page, 94 at full coverage (run 38565658064). Two fixes on the way: read the catalog over the scheme its own links use (El Camino serves http only; an https load of every menu was *unreachable*), and report each menu's title, links and a sample. San Joaquin Delta's capture dispatched.
+- **COCI Lookup UI pass (#2113).** Dark mode failed three ways (CSV control 1.29:1, chips 1.2:1, six filters with no focus ring); controls became underlined words, chips paint no fill.
+
+**What went wrong.**
+- **The pilot extraction ran on a push.** #2110 changed `kb/_program_requirements_extract.py`, the S361 guard (the script differs from main's) let the whole pilot run against function v6: 20 programs, about $1.6 nobody asked for (run 38560251804; it wrote nothing). A push now also needs a commit message starting with `[extract]`.
+- **Card 2 cost $7.60 against Sam's "about $6".** Cabrillo's pages are long: $0.11 a program, not $0.07.
+- **A generated file goes stale after any code commit,** not only the first: #2112's lints went red on the second Acalog commit. Run `scripts/check_generated.sh` before every push.
+- **Restacking a branch:** `git rebase onto` replays the old base commit; use `git rebase --onto <new> <old>`.
+
+**Patterns that worked.** Verify a re-read by diffing each record's `source_url`, coverage and arithmetic against main before posting it. One display build after several loads. A capture-only run with diagnostics in the report (each menu's title, links and a sample) turned two failed Acalog runs into fixes without a page-read plan.
+
+## S390 SkySaguaro (2026-10-14): San Joaquin Delta's Acalog capture
+
+- **San Joaquin Delta captures through the Acalog reader** (run 38569401921, capture only, 250 loads, 25 min): catoid 14,
+  no site map (404), three program menus. 203 of 233 programs with a list found a page, 125 at full coverage, 58 at
+  0.8-1.0, 20 at 0.5-0.8; 24 found none and 6 lost their page to a fuller program. On 15 of the 24 the best page
+  names none of the listed courses: six apprenticeship options, the two psychiatric technician programs, three
+  digital media certificates and four newer programs (45193-45195, 45583). Above Sheet 59's 85% bar.
+- **Its registry row names no catalog year, and the reader reads none from the page.** Extraction stamps
+  `catalog_year` from the registry, so Delta's records would carry none. Read the year from the catalog's own page into
+  the capture report before Delta extracts. El Camino's row names 2026-2027.
+
+## S390 SkySaguaro (2026-10-14): Southwestern and Fresno City to display, the SLO links, the Records filters
+
+**Sam's rulings this run.** In chat: the harvested SLOs need *"a link to them on each course listing"*; *"no scrub needed"* and
+*"my email is fine to have public"* (the tabled line); and the Program requirements tab loses its Sierra window, opens on
+Progress, and filters Records with dropdowns, adding CIP Sectors and SWP Regions (`cpl_memory` rows of 2026-10-14).
+
+- **#2115 merged:** Southwestern's procedure record v1 (receipt `program_source_procedure_southwestern_v1_2026-10-14_s390.sql`).
+- **Fresno City (#2120):** load 38584860918 inserted 211 (26 place none); display build `04872c826890` applied to all 3,478 rows
+  (run 38591098013); procedure record v1. A `step=display` dispatch applies the build the page already carries and builds
+  nothing: build with `kb/_build_roep_display.py` first. A canceled re-apply of the old build wrote identical values.
+- **SLO links (#2116):** the records print codes without a space (`PSYCH35`) and the outlines with one (`PSYCH 35`); joined on
+  a key without spaces or hyphens, 7,018 of 8,352 record courses find outcomes, against 4,141 on the exact code.
+- **The Records filters (#2121):** every record's control number is in `coci_college_programs`; 3,306 of 3,478 carry a CIP.
+  `map_colleges.swp_region` names nine regions. A full re-render on a late read wipes the view's status line; add the late
+  filter in place instead.
+- **Main went red on PII (#2117):** the 14:38Z daily run baked a reviewer's email into the tabled line; `pii_guard` failed
+  every PR's merge ref. The generator and the live render now print the date only.
+- **A test that reports on a fixed timer under-counts on a loaded runner** (`nav_groups_overlay`, 30 of 31): report on
+  `Promise.all` of its blocks (in #2116).
+
+**NEXT.** El Camino's extraction waits on Sheet 79 card 3; San Joaquin Delta needs its catalog year read before it extracts.
+
+## S391 SkyJuniper (2026-10-14): San Joaquin Delta's catalog year
+
+- **An Acalog page names its catalog in a menu, and the year is in that option's words.** Every Acalog page carries a select of
+  the college's catalogs, current and archived, each option's value its catoid. Run 38615275825 read Delta's: nine catalogs, the
+  current one (catoid 14) *Summer 2026 - Summer 2027 College Catalog*, the rest *2025-2026 San Joaquin Delta College Catalog
+  [ARCHIVED CATALOG]* and older. Read the option for the catoid being read, never the newest year the menu lists.
+- **The census's year reader takes adjacent pairs only** (*2026-2027*, *2026-27*). A catalog named by its terms reads as nothing
+  there, so the first run filed no year. The Acalog picker also reads two years a word or two apart, the second the first plus one;
+  the census reader is unchanged. Re-run 38619208635 filed 2026-2027.
+- **The registry row still names no year.** The capture fills it in memory where the registry names none, so the records and the
+  capture report carry it; a registry year that differs from the page's is reported, never overwritten.
+- **Delta's page is out of the session's reach** (the proxy refuses `catalog.deltacollege.edu`), and a run's artifact downloads from
+  a host the proxy also refuses. Read a page through a capture-only dispatch and the report it files on the branch.
+
+**Moved from the lane (S391 compaction),** verbatim: The re-read path (S389): `program_requirement_records_college_reread()` replaces a row only while it is unchecked, no person has read it and an earlier run read it, and returns the before-values the receipt files (`kb/receipts/program_requirement_records_college_reread_<slug>_<run>.json`, the rollback); a read dispatched with `force=incomplete` extracts those records again though their pages are unchanged, and `step=reread` posts the newest run's records.
+
+**NEXT.** San Joaquin Delta's extraction is an ask (about $12 to $22 for 203 programs); El Camino's is Sheet 79 card 3, carried.
+
+## Moved from the lane (S392 compaction)
+
+Verbatim from `docs/reference/lanes/program-requirements-harvest.md`, Phase 2 paragraph:
+
+✅ **Sheet 78 (Sam, 2026-10-14 11:18Z) carried out:** Southwestern (#2115) and Fresno City (#2120) extracted, loaded unchecked and displayed; the 79 re-read under record shape 5. 🔨 **Record shape 5 (S389):** `program.degree_total` and `program.ge_units` keep what a page prints for the degree and its general education, `program.electives_fill_degree` says electives make up the rest with no figure; with no major total the scorer adds the blocks, open electives and general education against the degree total (`against: "degree"`; with electives filling, every end must fit and `fill` names their units). The display, CPL Pathways and Sierra name the degree total instead of saying the catalog prints none. Extraction function version 7 deploys from `main`. The re-read path (S389, #2111): a newer read replaces a record only while unchecked and unread by a person, with before-values in its receipt (lessons S389; `force=incomplete`, `step=reread`). ✅ **Palo Verde's 19 re-read (S389; Sam, ~12:55Z: *"go ahead with Palo Verde's 19 now too"*):** run 38567765687 ($1.47, the same pages, coverage unchanged), replaced by run 38569469816 (19 of 19; receipt `kb/receipts/program_requirement_records_college_reread_palo_verde_38569469816.json`). 11 now equal against the degree total; 8 unequal (why: lessons S389). The 2026-27 Acalog read replaces all 52 rows the same way. ✅ **Cabrillo's 55 re-read and replaced (S389):** read 38565227455 ($6.13, the same pages), re-read 38570011602 (55 of 55, receipt beside Palo Verde's). 13 equal against the degree total; 42 unequal (mostly 57-60 against 60: open electives printed as a range, kept as one number; lessons S389). ✅ **Southwestern loaded (S389, card 1):** run 38563578596 ($13.77, 220 extracted, 162 pass), load 38570038760 inserted 190 (30 place none). Five of the 79 place none of their courses and stay out. Santiago Canyon's listing has no links.
+
+## S392 SkyTamarack (2026-10-14): Sheet 81 carried out, the degree check, the reconcile pass, El Camino and San Joaquin Delta
+
+**Sam's rulings and words this run.** Open Asks Sheet 81 (20:22Z, all his own call): count, adt, extract, public, extract. In
+session, after confirming Cabrillo Astronomy (06326) and marking Biology (06328) Needs a fix: the confirm step is a probe for
+procedure gaps that retires as they close; a reconcile pass searches the catalog text again after the harvest; each catalog's
+procedure carries its own steps; and "Highlight the mismatches in units in the summary row" (`cpl_memory` rows of 2026-10-14).
+
+- **Sheet 81 cards 1 and 2 (#2127).** `degree_verdict()`: a degree total inside the computed span adds up (`within`); a transfer
+  degree with no electives on its record is filled by transferable electives (`transfer`, `fill`; Ed. Code 66746(a)).
+  `kb/_program_requirements_rescore.py` re-reads only how the filed sum meets the printed total, because the closed list and page
+  text stay with the run. 35 rescored (one more than the sheet counted: Cabrillo AS-T 35651). The live `checks` moved through
+  `supabase-migrate.yml`: the repo's Supabase guard blocks a session's UPDATE, and the committed-file runner is the reviewed path.
+- **A runner's commit starts no CI.** The migrate job's receipt commit left #2127's head with no `test` run; a real follow-up
+  commit (the receipt's applied block) started it.
+- **The degree check (#2129, record shape 6, extraction v8).** About 1,560 associate degrees, 77 with a degree total: most records
+  were read before v7. Every Cabrillo degree page says "at least 30 units in the major", and the reading took it for the major
+  total. A page printing both totals now checks both; `degree_elective_units` keeps a degree's own electives; the **Major only**
+  gap marks 1,487 records. El Camino's v7 records read the degree total on 52 of 53 degrees, so v7's wording works.
+- **The summary row (#2128).** A units mismatch is a red word chip for either total, never the bare status; the For the college
+  summary takes the alert color; an equal degree check names "60 units for the degree" (it printed "Equal,  units").
+- **The reconcile pass (#2130).** Cabrillo's requirements tree prints "Complete the following number of credits: 60 · Cabrillo
+  College General Education 24", the major, and "General electives: any transferable or degree applicable course. 6" (page reads
+  38633618089, 38642988914). The first run (38639316727) changed 36 records: 7 now add up; 4 that passed against the major now
+  miss the degree (two transfer degrees whose major and Cal-GETC overlap past 60, Sheet 82 card 2; Theatre Arts and Physics,
+  whose reading dropped a Recommended Major Electives block). Re-read 38643400229 posted 35, none held.
+- **The re-read held every row a person had read**, while the Records view promised a rerun would fix it. It now holds a checked
+  row only (migrate 38639286293).
+- **El Camino and San Joaquin Delta (#2131):** 117 and 202 loaded unchecked; display build `0a22233cf694`, 3,797 rows.
+
+**What went wrong.** An amend after a push that had in fact landed forked the Delta branch (`check_generated.sh` prints its
+regenerate hint without failing, so a `&&` chain does not stop). A test fixture for "never overwrites" had a genuinely empty
+field. The first count of degree chips searched the receipt's JSON in the wrong key order (it sorts keys).
+
+**Patterns that worked.** Measure the blast radius live before answering a question about one record. Read the page on a runner
+before writing a reconcile pattern. Diff every reconciled record's check against main before posting it.
+
+## S393 SkySycamore (2026-10-14): Sheet 82 carried out, Cerritos's reconcile steps, an overnight schedule and a $40 go
+
+**Sam's rulings and words this run.** Sheet 82 (22:14Z, both his own call): *carry* and *overlap*. In session (~23:03Z),
+on the CPL Queue routine: *"set it and limit is $40 per college"* (`cpl_memory` `sam-extraction-standing-go-40-per-college-2026-10-14`):
+a college's extraction runs with no card up to $40, and the overnight schedule (hourly 10:12 PM to 6:12 AM Pacific) is his to
+set in the Routines form, because the platform refuses an agent's edit to a routine it did not create. And (~23:20Z, an idea
+for later): a weekly routine per district to keep the data fresh (`sam-weekly-refresh-per-district-idea-2026-10-14`; S393
+recommended a page fingerprint in the census instead, so only changed colleges are re-read).
+
+- **Card 2, overlap (#2136).** `degree_verdict()` passes a transfer degree whose sum runs past its printed total (`overlap`).
+  The rescore found exactly the ten the card counted (Cabrillo 8, Palo Verde 2); the live rows moved through
+  `supabase-migrate.yml` (run 38652994360; receipt `kb/receipts/program_requirement_records_rescore_2026-10-14_s393.json`).
+- **Card 1, carry (#2136).** The re-read function carries a confirm when the row's latest verdict is a confirm of the record
+  it replaces and the new record has the same `program_record_carry_basis` (every block and every other program field, as
+  jsonb). The basis leaves out the totals and the degree's figures, which are every field a reconcile step writes; a test
+  reads `kb/program_requirements_reconcile.json` and fails when a step writes a field the basis keeps. The carried row is a
+  confirm in the reviewer's name naming the verdict it carries; the receipt's rollback restores the row unchecked and
+  deletes the carried rows. Astronomy 06326 (replaced before the carry existed) was carried once by a guarded file (verdict
+  35); it reads checked.
+- **Astronomy needed the major total in the basis's exclusions.** Its rerun changed `degree_total` and `ge_units` and cleared
+  `total_units` (the misread "at least 30 units in the major"). "Only the degree's figures" read literally would not have
+  carried the card's own case. Proceeded on the recommendation; Sheet 83 asks Sam to keep or narrow it.
+- **A local Postgres proved the SQL before the live apply.** The container has Postgres 16 (`/usr/lib/postgresql/16/bin`;
+  initdb as the postgres user in a directory it owns, not the scratchpad, whose permissions reset). Stubs for `auth.role()`,
+  the roles and the two tables, then both chatbox files load as written. Seven carry cases, the rollback, and Astronomy's
+  one-time file against its real records (it carries once; a second apply refuses). The md5 of `jsonb::text` reads `3` and
+  `3.0` as different values; jsonb equality reads them as one, so the basis compares jsonb.
+- **Display build b87c61607e71** after the rescore, applied from `main` (Sam's standing go of 2026-10-10).
+- **Cerritos (the most Major only records, 148 of 148).** Its degree pages print the major's own total and *"Complete a
+  minimum of 60 units to include (1) the above major requirements, (2) the General Education requirements, and (3) electives
+  as needed"* (college-page-read 38654411937). The GE units are on the catalog's CGEC page (*"CGEC, which is 24-28 units, is
+  intended to meet the GE requirements"*; site map read 38655666139, page read 38656043692): Areas 1 to 7 carry 24 units,
+  Area 8 three and Area 9 one, and a major of 32 units or more skips Areas 8 and 9. New: a `set` reconcile step (a figure the
+  catalog prints once for every degree on its own page, cited from both pages) and `degree_total_minimum` (the 60 is a floor:
+  a sum past it meets it, electives make up a sum short of it). Without the floor, every large Cerritos major (Automotive 42-43
+  + GE 24-28 = 66-71) would trade Major only for a false Check not met.
+
+- **Extraction v8 failed every call (#2138, v9 deployed).** The API refuses a schema with more than 16 union-typed parameters (*"Schemas contains too many parameters with union types (17 ...)"*); v8's `degree_elective_units` took v7's 15 to 17, so no extraction succeeded after its deploy. Found re-extracting Cabrillo 06350 and 06378 (run 38656003434, both filed with record null; that branch stays unmerged). v9 makes each span one nullable object and returns a null span as `{min: null, max: null}`; `tests/program_requirements_extract_schema_test.py` counts the unions from the source (v8: 17).
+- **Cerritos reconciled (#2139).** Reconcile 38656800189 (no model call) changed 93 records: Major only 148 to 56 (34 transfer degrees, 22 AA/AS left); no record moved from pass to fail. Re-read 38661017876 replaced 89, held 3 checked rows (02201, 02203, 02213 keep their earlier live record), and carried one confirm (02235 Photography, unchecked: another check fails), the carry's first live run. Display build `45fdd29240cb`.
+
+**What went wrong.** A `&&` chain after `check_generated.sh` pushed a stale catalog once more; read its output before pushing.
+(S394 correction: the script exits 1 when anything is stale. A pipe through `tail` hides that exit, as S383 found.) The builder of the open-asks sheet rewrites the current sheet's file when run with any argument,
+`--help` included; restore it with `git checkout`.
+
+**Patterns that worked.** Measure the class before building for one record (Major only per college, then the page). Read the
+page, then its catalog's site map, then the page the site map names: three runner reads, no model call. Test SQL on a local
+Postgres before the migrate job.
+
+## S394 SkyMadrone (2026-10-15): extraction v10, the catalog sweep's first two waves, and two reader fixes
+
+**Sam's words this run.** None new: Sheet 83's store held no reply, so its cards 2 and 3 stand as S393 proceeded.
+
+- **Extraction v10 (#2141, deployed run 38670811265).** Under v9 Cabrillo's Theatre Arts 06350 and Physics 06378 read
+  their Recommended Major Electives block and also put its units in `open_elective_units`, because the block's list ends
+  "or any transferable or degree applicable course" (18 + 18 + 18 + 24 = 78 against 60). Units a block holds never go in
+  `open_elective_units` too. Re-extract 38670925488 ($0.17): both read 60 of 60; re-read 38674737585 replaced both.
+- **The catalog sweep (#2143, #2144), Sam's standing go of up to $40 a college.** Eight colleges loaded unchecked:
+  Santa Barbara City 242, Orange Coast 206, Foothill 97, Sierra 25, Fullerton 311, Citrus 144, Victor Valley 169,
+  Monterey Peninsula 197 (extraction $103.83 in all; Fullerton the most, $23.09 over two reads; Cabrillo's two records $0.17). Display builds
+  `ad2f574f892c` (4,367 rows) and `99dcfd1eed24` (5,188), each applied from `main` after merge, one after the other.
+- **One branch per college, one PR per batch.** Each college reads on its own `claude/s394-<college>` branch, so the
+  runs go in parallel (the workflow's concurrency group is per ref); never two on one catalog host at once. A wave branch
+  merges the loaded colleges, adds the dated reads, and carries one display build. A display build rewrites every row,
+  so the second waits for the first's apply.
+- **NOCCCD's campus letter (#2144).** Fullerton found 13 of 326 programs. Its pages and the state's file both write
+  `HORT 001 F`, the campus letter its own word (college-page-read 38674811444); the net read `HORT 001` and
+  `code_pattern()` fell to the letters `HORTF`. Both now read the letter as the code's suffix, spaced or joined. Only
+  Fullerton (4,993) and Cypress (4,099) write codes this way. The re-read found 313. The leading-letter shape at De Anza
+  and others is a two-letter subject (`C S 1A`), not a campus prefix: left alone.
+- **curriQunet walk cap 400 to 1200 (#2144).** Santa Ana nests programs under department pages; its walk stopped at the
+  cap with 27 of 359 reached. Re-capture 38674963853 runs at the new cap; not loaded this run.
+- **Diablo Valley is parked.** Four reads (38670917323, 38672223676, 38672391389): its eLumen catalog names no program
+  anywhere; it points to www.dvc.edu/programs. It needs a program list from eLumen's data or the college's site.
+- **Read before extracting where the reader is new.** A free capture-only read showed DVC's 0 and Santa Ana's 27 before
+  any spend. On a CourseLeaf host the readers already handle, read and extract together: a miss costs only the pages
+  found (Fullerton's first $0.88).
+- **The dated reads, verified.** Each college's MAP read is checked by the two md5s (counts in C order, titles in the
+  read's order) computed in SQL against the filed rows; Fullerton 057fed7f/11d31a76, Monterey Peninsula eb85fce8/1794bde6.
+- **The UI pass, GR Priorities (#2142).** The gated tab had only ever been measured as its lock. A seeded target
+  (`gr-priorities-gr`, `-dark`, synthetic rows) found the accent as `--seal-blue` (a fill that stays dark: 1.2-1.3:1 in
+  dark), boxed controls, sub-24px links and centered prose.
+
+**What went wrong.** `check_generated.sh | tail -4 && git commit` pushed a stale dependency map once more (#2141); the
+fix-up commit followed. A push that changes `kb/_program_requirements_pilot.py` also starts the pilot's capture
+(read-only, free, no commit), so it costs runner time only.
+
+**Patterns that worked.** Read the page the reader missed, on a runner, before touching the reader. Measure a code shape
+across the state's file before changing the shared normalizer. Batch colleges per PR, display builds in sequence.
+
+## S395 SkyHawthorn (2026-10-15): the catalog sweep's wave 3, wave 2's procedure records, Santa Ana's titles, and staff email off the public page
+
+**Sam's words this run.** None: Open Asks Sheet 83's store held no reply, so its cards stand.
+
+- **Wave 3 (#2149):** eleven CourseLeaf colleges read and extracted in parallel, one branch and one host each ($92.92); ten
+  loaded unchecked, 1,132 records (Cypress 251, San Bernardino Valley 200, Cuyamaca 179, Sequoias 118, Mt. San Jacinto 94,
+  Napa Valley 94, Evergreen Valley 74, Moorpark 54, Golden West 50, MiraCosta 18). San Jose City found 8 of 90 and none
+  passed: read, not loaded. Display build `515c9d71e086` (6,320 rows), applied from `main` (run 38761398479).
+- **Dated reads, filed by hand and checked:** MAP's course codes for six colleges, each college's rows matched to SQL by an md5
+  of the counts and an md5 of the titles (Cypress f23dc34b/09bded16, San Bernardino Valley f18f1313/4e38c8e4, Napa Valley
+  46024a39/1cb28039). The md5 check caught nothing this time; it is what makes a hand transcription of 158 rows safe.
+- **The procedure-record generator (#2146).** S394's eight records came from code never committed. `kb/_program_source_procedure_v1.py`
+  builds a record from each read's `capture.json` and `summary.json` at the run's own filing commit, so a college read twice
+  (Fullerton: 13 found, then 313 after the campus-letter fix) shows both reads. Run on the same files it reproduced S394's
+  Orange Coast and Sierra records exactly. A row that already holds a record (Cypress, Moorpark, Napa Valley: S346's program-map
+  records) gets a v2 merged in SQL (`procedure || jsonb_build_object(...)`), so nothing of v1 is retyped.
+- **Santa Ana (#2148).** At the 1,200-call cap the walk finished (837 calls) and still found 27 entries. Page read 38749570529:
+  Instructional Programs > department > entry, entries titled "Accounting: A.S. Degree". `cq_is_program` wanted " - " before
+  the award, so those were walked as departments. It now also reads an award after the last colon.
+- **Staff email on the public dashboard (#2147).** The 2026-10-15 daily run shipped two progress notes Sam wrote from
+  his cccco.edu account, address and all, into `CPL_Data.js`; `pii_guard.test.js` then failed on `main` and every PR. Nothing read the public map's
+  `author` (the reports and RACI read Supabase), so `load_item_updates()` no longer selects or ships it. Ported into each open
+  PR rather than waiting on the fix to merge.
+- **Reconcile, what the pages say.** Monterey Peninsula: degree pages print "Additional Requirements 39-42" (GE and electives
+  together) and no GE units; the GE page's Cal-GETC tab says "satisfies the 34 units", its MPC GE tab lists areas (9, 3, 6, 6,
+  7 ...) with no total. Orange Coast: the REQUIREMENTS tab prints "Total Major Units 35", "OCC AS General Education Up to 21"
+  and "Total Minimum Degree Units - OCC AS GE 60"; 27 of its 35 "no total" records hold no blocks and stayed out of the load.
+  Victor Valley: AUTO 82.0 prints with no title and no units, and each page's Total Units agrees without it (a catalog gap;
+  correcting it needs a step that touches course units, not yet a reconcile kind). Reads 38749721270, 38752570705,
+  38756364740, 38759288106.
+
+**What went wrong.** An unfiltered `list_workflow_runs` returned eleven runs' full commit messages (about 10,000 tokens):
+filter by branch and `perPage` 1. Three reads in a row to reach MPC's GE units: open tabs (`"expand": true`) on the first read
+of a CourseLeaf page.
+
+**Patterns that worked.** One branch per college let eleven reads run at once with no host read twice. Port a CI fix into every
+open PR the moment it exists. Merge in SQL rather than retype a record the database already holds.
+
+## S396 SkyJacaranda (2026-10-16): wave 4 read and partly loaded, Orange Coast and Monterey Peninsula's reconcile steps, Santa Ana's reader merged
+
+**Sam's words this run.** One, near the end: the CPL Queue routine fires around 10 PM Pacific, "so hoping it can start after you finish up". The session checkpointed then and handed the runs still in flight to the next.
+
+- **#2151 and #2148 merged.** #2148's head was the bot's filing commit, which runs no `test`; a merge of `main` on top gave it one (green), and the three dashboard artifacts took `main`'s copies, since the branch's only change to them was #2147's author removal.
+- **Wave 4, nine colleges at once, one branch and one host each** (about $175 under the $40 go). Loaded unchecked: Ventura 101 of 131 (30 placed none of their courses), Oxnard 64 of 94, Reedley 36, Palomar 220 of 224, Chabot (233 read, 201 passing; load dispatched). curriQunet did well where its index was whole: Palomar 224 of 331 found and 196 passing, Chabot 233 of 244 and 201. Reedley's index held 40 entries in 2 sections, so it found 36 of 200: parked for a page read.
+- **The dated reads went in ahead of the loads, all nine at once.** Registry columns matched by one md5 over ten columns (8cad0f35); MAP's course codes by three md5s a college (counts, titles, exhibits by source): Santa Ana 83, Reedley 24, Ventura 4, Allan Hancock 3, Oxnard 2; Rio Hondo, Palomar, Saddleback and Chabot name none. Writing the rows in the read's own pipe form and parsing them made the 83-row check exact on the first pass.
+- **Orange Coast's steps.** The Requirements tab's textContent prints "Total Major Units36 - 37 OCC AS General Education 1,2up to 21 Transferable electives as needed to satisfy unit requirementsvaries Total Minimum Degree Units - OCC AS GE60" (read 38752570705; the filed text carries tabs between label and figure). Five steps; GE is `{min: null, max: 21}`, which the scorer reads as 21. Reconcile 38843379313 changed 11 of the 41 records that lacked GE units (six now pass), and reread 38847265701 replaced them. The other thirty keep the gap: their captured text is the page's visible text, which lacks the hidden tab.
+- **Monterey Peninsula's steps.** Read 5 (38843693844) opened a transfer degree page: "Certified completion of the California General Education Transfer Curriculum (Cal-GETC) pattern". A local degree's GE is 24 to 34 (the GE page's eight areas, each "Select three units", and Cal-GETC's 34); a transfer degree's 34. The 24 is a sum the catalog does not print, so it is a card. Its reconcile run was still capturing at sign-off.
+- **Victor Valley's AUTO 82.0** prints with no units on two certificates whose totals agree without it; a card, since the fix is a new step kind for two records.
+
+**What went wrong.** Job logs cost the run about a third of its context: the college page reads print whole pages, and a log tail of 75 to 120 lines ran 15,000 to 40,000 tokens. Read a page read's answer from its excerpts by asking a narrower plan, and poll runs with `git ls-remote` (a filing or receipt commit is the signal), never `list_workflow_runs`, whose rows carry each commit's whole message. A worker restart mid-run cost nothing: the state was all on branches.
+
+**Patterns that worked.** Dispatching every independent read in one turn, then working the reconcile steps while they ran. A reread waits behind a reconcile on the same branch (the workflow queues per branch); the filing step rebases when the branch moved, so pushing during a run is safe.
+
+## S397 SkyCatalpa (2026-10-16): Allan Hancock loaded, Monterey Peninsula reread, wave 4's display build, Sheet 84
+
+**Sam's words this run.** None: the CPL Queue routine started the session at 05:12Z, and Open Asks Sheet 83's store held no reply.
+
+- **Allan Hancock's read** (38843474519): 156 of 226 programs found, 136 passing, $12.41. Loaded unchecked, 153 of 156 (run 38854805185).
+- **Monterey Peninsula's reconcile** (38844053281) filed after S396 signed off: 52 records changed, arithmetic failures 117 to 89. Reread 38854802315 replaced the unchecked rows.
+- **Wave 4's display build `66b50c86891e`** on PR #2157, which carries all of #2156 (closed as superseded) plus Chabot, Allan Hancock and both rereads. The builder needs `openpyxl` (`chatbox/build_program_courses.py`); install it with `python3 -m pip`, since a bare `pip` may install for another interpreter.
+- **Open Asks Sheet 84** built from S396's cards and published (https://claude.ai/artifact/AqQsUUEmSKRWkLntcbAhFz).
+
+**What went wrong.** One unfiltered `list_workflow_runs` returned a page of whole commit messages again, the cost S395 and S396 both recorded: filter by branch with `perPage` 1, or poll `git ls-remote`. A branch made from a wave branch lacks `main`'s latest checkpoint; merge `main` before writing the next.
+
+**Patterns that worked.** Taking the wave branch onto the session's own branch and opening one PR let the display build ship while three reads ran on; the stragglers get their own build.
+
+## Moved from the lane (S394 compaction)
+
+Verbatim from `docs/reference/lanes/program-requirements-harvest.md`:
+
+**The sequence pass (S325, PR #1847):** `kb/_program_sequence_ppm.py` on its own
+workflow (`program-sequence-ppm.yml`, so a change never reruns the capture's 20
+reads) enters a college's Program Mapper from the college's own pages, follows
+the link into the mapper, and accepts a page naming half the program's listed
+courses and at least two terms. **Run 1 (37197332656):** Miramar's own mapper page links `san-diego-miramar.programmapper.com`, which answered all seven requests **403 Forbidden**. None of the 20 captured catalog pages prints a
+term sequence.
+
+**Catalog addenda (Sam, 2026-10-04: *"We need to track this in our schema and have our agents aware."*).** The census records each addendum, supplement or errata link for the current or prior catalog year in `census_evidence -> 'addenda'` and writes `program_source_addenda` after the registry on apply (one row per college and url; status listed, read, applied, gone, not an addendum; `programs_changed` for the reading agent; public read, writes through a security-invoker function). Only a complete read marks an addendum gone. **79 listed at 52 colleges** (apply of 2026-10-11). ✅ **The eight amending loaded colleges read (S387, #2102):** an online catalog's addendum is a changelog of edits its pages already carry (Norco's PDS-809 and Cerritos's EDT 110 already read as changed), so it explains a catalog-and-COCI mismatch rather than correcting the record; Miramar's "addendum" is the whole 2025-26 catalog. ✅ **The reading agent files them (S388, #2107):** `program_source_addenda_read()` (service_role only, never a corrected row, history under the run id) moved the eight to `read` with `programs_changed` (42 program and 20 course changes, each with scope, kind and date) from `kb/addenda_reads/`. **NEXT:** the other 71 as the reader reaches their colleges. Detail: lessons S325-S327, S388.
+
+## Moved from the lane (S393 compaction)
+
+Verbatim from `docs/reference/lanes/program-requirements-harvest.md`:
+
+✅ **San Joaquin Delta's catalog year (S391):** read from its catalog menu where the registry names none; run 38619208635 filed 2026-2027. Extracted, loaded and displayed (Sam, Sheet 81 card 5; S392).
+
+## Moved from the lane (S398 compaction)
+
+Verbatim from `docs/reference/lanes/program-requirements-harvest.md`, Phase 2, when the lane passed its 20,000-byte budget.
+
+- Build `0a22233cf694` holds all 3,797 rows (display run 38639117185, S392; its applied record is the rollback): 1,487 associate degrees holding the major only carry the **Major only** gap (#2129), 14 degree-total misses the units chip with the degree's figures (#2128).
+
+- ⚠️ **Palo Verde's records are a year behind (S387):** its catalog page lists the 2026-27 catalog at `catalog.paloverde.edu` (Acalog); the census took the 2025-26 eLumen one. #2104 fixed the pick (applies 2026-10-18); the Acalog reader (#2112) then reads all 52.
+
+- ✅ **Open Asks Sheet 81 (Sam, 2026-10-14 20:22Z, all five his own call; `sam-sheet-81-rulings-2026-10-14`):** card 1 *count*: a degree total inside the span the blocks, general education and open electives allow adds up (`within`); card 2 *adt*: a transfer degree printing its total and no electives is filled by transferable electives (`transfer`, `fill`; Ed. Code 66746(a)). `degree_verdict()` in the scorer holds both; `kb/_program_requirements_rescore.py` applied them to the filed records (35: Cabrillo 29 within and 1 transfer, 35651; Palo Verde 2 within and 3 transfer) and the live rows' `checks.arithmetic` moved through `supabase-migrate.yml` (receipt `kb/receipts/program_requirement_records_rescore_2026-10-14_s392.json`, its rollback inside). ✅ Card 3 El Camino and card 5 San Joaquin Delta: extracted ($8.08, $13.42), loaded unchecked (117, 202) and displayed (S392).
+- ✅ **Sheet 82 (Sam, 22:14Z; `sam-sheet-82-rulings-2026-10-14`):** a confirm carries over a rerun that changes only degree figures (*carry*); a transfer degree whose major and general education overlap past its total adds up (*overlap*). ✅ Both built (S393, #2136; lessons S393). 🔨 **Cerritos's steps (S393, #2139):** a minimum of 60 (`degree_total_minimum`), CGEC 24-28 by a `set` step, electives as needed; Major only 148 to 56, re-read live; Merged and applied (build `45fdd29240cb`). ✅ Extraction v10 (#2141, S394): units a block holds never count twice; Cabrillo 06350 and 06378 read 60 of 60.
+- **Reconcile, read:** Orange Coast's REQUIREMENTS tab prints "Total Major Units", "OCC AS General Education Up to 21" and "Total Minimum Degree Units - OCC AS GE 60"; Monterey Peninsula's GE page states Cal-GETC as 34, MPC GE by area with no total; Victor Valley's AUTO 82.0 prints no units; its totals agree without it.
+- Course outcomes loaded by college (S388): RCCD (#2049: Riverside City 1,174, Norco 817, Moreno Valley 674), SDCCD (#2066: San Diego City 588, Mesa 1,026, Miramar 615), and from catalog course pages addressed by code: Cabrillo 1,124 and Modesto Junior 910 on eLumen (#2103), Coastline 522 from the Coast district's outlines of record (#2105; 28 common course numbers answer 404 there).
+- **Chaffey** (#2073): neither public report prints course outcomes. Cerritos, Long Beach City and Mt. San Antonio print none on their CourseLeaf pages (#2101). **Palo Verde held** for its 2026-27 Acalog catalog (reader merged, #2112).
+
+## S398 (SkyLinden, 2026-10-16): wave 4 finished, and two limits the display build was about to meet
+
+- **A display apply that times out files no rollback.** S397 dispatched build `66b50c86891e`'s apply at 05:45Z (run 38857449086). At one GET and one PATCH a program it was canceled at the job's 30-minute limit after 6,875 of 7,125 programs, and `kb/_program_requirements_display_apply.py` writes its applied record only when the loop ends, so none was filed. Nothing said so: the handoff named the dispatch, and the next session found it only because the re-run (38909267523) read 6,875 rows as already holding the build. The rows it wrote go back by re-applying `515c9d71e086`'s receipt to its keys and setting the rest to null. #2159 raised the limit to 120 minutes (about 30,000 programs at the measured 0.22 s a program; 6,320 had taken 14 minutes the day before, so the pace varies by a factor of 1.6). Build `fa8ee2a84935` (8,070) then applied in about 36 minutes (run 38915019105).
+- **A receipt is a file, and GitHub refuses one over 100 MB.** Each program's display is about 9 KB of SQL; `fa8ee2a84935`'s receipt was 72.7 MB. #2159 writes new receipts gzipped (mtime 0, so one build gzips to the same bytes; 8.1 MB for the same build) and the display job reads either form. `zcat` reads one by hand; an earlier build's plain `.sql` stays its rollback.
+- **Procedure records:** `kb/_program_source_procedure_v1.py --merge` writes the v2 that merges onto a row's own record, the shape S395 wrapped by hand. A curriQunet page is counted "from the catalog's own index" (the host serves no sitemap). Wave 4's nine are applied (#2161).
+- **What the wave-4 reads left open:** Palomar lost 103 of 331 programs' pages to a sibling award (the Foothill pattern); Ventura and Oxnard each keep 30 records out of the load (no listed course placed); Saddleback 19 and Santa Ana 8 pages claimed by a sibling; Reedley's index held 40 entries for 200 programs.
+
+## S399 SkyRowan (2026-10-16): wave 5, ten curriQunet colleges; two reader faults found before any spend
+
+**Sam's words this run.** Open Asks Sheet 85, all his own call at 17:51Z: cards 2, 3, 5 and 6 kept; card 4, *"Leave both as read and showing and flag rather than send to college for follow up"* (Victor Valley 37006 and 38352 stay unchecked, shown, flagged incomplete by the arithmetic check); `cpl_memory` `sam-sheet-85-rulings-2026-10-16`.
+
+- **Wave 5, ten curriQunet colleges from the census's unread list, each on its own subdomain and branch** (`claude/s399-<college>`, dispatched with `step=read`, `extract=1`; $37.87 in all). Loaded unchecked (#2168): College of Alameda 59, Feather River 44, Imperial Valley 83, Laney 150, Las Positas 20, Madera 98. Merritt read whole (81 of 81, 68 passing, $6.13) after 105 minutes and was loading at sign-off. Build `9c74da80bad7` (8,524 programs) dispatched from `main` at 18:34Z.
+- **Two reader faults, both caught at no cost because extraction only spends on found pages.** Berkeley City and Butte: the start page asks `_getNavigation?id=0` first, an empty placeholder, and `cq_catalog_id` took the first id heard. Gavilan: the alias start page lists active catalogs and fetches nothing, and its `_getCatalogs` title "Gavilan College Catalog 2026-2027" failed the every-title-word-in-the-name test on "Catalog". #2167: skip 0; set "catalog" aside like the year. A free page read (`kb/college_reads/<college>_curriqunet_catalogs.json`, `network: true` on the start page plus `_getCatalogs`) showed both in one run (38942920358); a subagent read its log and returned the ids, which kept the network bodies out of the session's context.
+- **Dated reads for six colleges in one pass.** One SQL per file, each row checked by md5 against the filed JSON before writing. The committed query's shape (`map_cr_by_course.sql`) aggregated fine, but a fingerprint computed over a lateral join to the titles repeats each code once per title: count codes and hash counts in one CTE, titles in another.
+- **Las Positas** read 158 index nodes and found 20 of 201 programs; two ECONNRESETs cut the walk. A reread, not a reader change.
+
+**What went wrong.** #2167 went up without `check_generated.sh` (the dependency map indexes the reader file) and its `lints` failed once. The rule is the last step before every push, including a two-function fix. A `git fetch --prune` of every remote branch hung for minutes; fetch the one branch you need.
+
+**Patterns that worked.** Read the host's own list before touching the reader. Merge the wave branch while three colleges reread, so the display build ships and the stragglers take the next one.
+
+## Moved from the lane (S399 compaction)
+
+**Loaded:** Cerritos 305, Mt. San Antonio 382, Riverside City 244, Moreno Valley 139, Norco 147, Long Beach City 344, Chaffey 191, San Diego City 167, San Diego Miramar 120, San Diego Mesa 175, Bakersfield 229 (eLumen, S381), Coastline 140, Cabrillo 268 (S382), Modesto Junior 185 and Palo Verde 52 (S385), Southwestern 190 (S389), Fresno City 211 (S390, #2120), El Camino 117 and San Joaquin Delta 202 (S392, the Acalog reader; Sam, Open Asks Sheet 81 cards 3 and 5), and the catalog sweep (S394, #2143, #2144): Santa Barbara City 242, Orange Coast 206, Foothill 97, Sierra 25, Fullerton 311, Citrus 144, Victor Valley 169, Monterey Peninsula 197; wave 3 (S395, #2149): Cypress 251, San Bernardino Valley 200, Cuyamaca 179, Sequoias 118, Mt. San Jacinto 94, Napa Valley 94, Evergreen Valley 74, Moorpark 54, Golden West 50, MiraCosta 18; wave 4 (S396-S398; #2157, build `66b50c86891e`; #2158, build `fa8ee2a84935`): Ventura 101, Oxnard 64, Reedley 36, Palomar 220, Chabot 231, Allan Hancock 153, Santa Ana 346, Rio Hondo 288, Saddleback 311. 
+
+🔨 **The catalog sweep (S394-S395; Sam's aim of 2026-10-14: every catalog, then curated audit sweeps).** One branch per college, never two on one host; a wave branch merges the loaded ones, their dated reads and one display build. Extraction runs under the $40 go (S394 $103.83, S395 $92.92, S396 about $175 across nine colleges). **Parked for the reader:** Diablo Valley (no program list in its eLumen catalog), Sierra (sitemap 404), Foothill (73 programs lost their page to a sibling award), San Jose City (8 of 90 found, none passing), MiraCosta (29 of 161), Orange Coast's 27 empty records, Reedley (36 of 200: its curriQunet index held 40 entries in 2 sections; 34 programs lost their page to a sibling and 130 matched none; a page read first). **Santa Ana:** titles put the award after a colon ("Accounting: A.S. Degree"), which #2148 reads (merged S396); its capture found 345 of 359, so it is extracting with the other curriQunet colleges. **Wave 4 (S396-S398), done.** Nine colleges loaded unchecked (curriQunet unless named): Ventura and Oxnard (CourseLeaf) 101 and 64, Reedley 36, Palomar 220, Chabot 231, Allan Hancock 153, Santa Ana 346 (347 of 359 found, $22.03), Rio Hondo 288 (292 of 301, $18.94), Saddleback 311 (321 of 353, $25.88); Orange Coast's and Monterey Peninsula's reconciles and rereads. Build `66b50c86891e` (7,125 rows) applied by run 38909267523 (S398) after S397's run 38857449086 was canceled at the display job's then 30-minute limit with 6,875 written and no applied record (those rows go back by re-applying `515c9d71e086`'s receipt to its keys, null for the rest); build `fa8ee2a84935` (8,070 rows, #2158) applied from `main` in S398. **The display job now has 120 minutes and new receipts are gzipped** (#2159): at 0.22 s a program the apply of 8,070 runs about 30 minutes, and a plain receipt (about 9 KB a program, 72.7 MB at 8,070) would have passed GitHub's 100 MB file limit near 11,000 programs. Procedure records (S398): Allan Hancock, Chabot and Palomar v1; Ventura, Oxnard and Reedley v2 merged onto S346's record (`kb/_program_source_procedure_v1.py --merge`); Santa Ana, Rio Hondo and Saddleback follow `fa8ee2a84935`'s apply. **Open from the reads:** Palomar lost 103 of 331 programs' pages to a sibling award; Ventura and Oxnard each keep 30 records out of the load (no listed course placed). **NEXT:** procedure records for the three, then the next wave from the census's unread catalogs.

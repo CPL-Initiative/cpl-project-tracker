@@ -224,11 +224,11 @@ async function seedCollegeSelect(page) {
    function's stream is stubbed, and six questions are asked, so the first one
    expands the dock exactly as a reader's would and every answer carries the
    feedback row cpl_chat.js writes. One answer carries a table wider than a
-   phone. Program Requirements, because its Sierra is open by default. */
+   phone. My College, because its Sierra is open by default. */
 async function seedSierraDockFull(page, theme) {
-  // The sweep aborts the tab's reads, and the read-failed state has no Sierra
-  // section; the Progress seed paints the tab whole first.
-  await seedProgress(page, theme);
+  // Sierra docks on My College (she left Program Requirements, Sam 2026-10-14); its seed
+  // paints the page whole first.
+  await seedMyCollegePage(page, theme);
   // First Light's once-a-day greeting opens 650 ms after load and would cover
   // the screenshots: mark the day seen and close it if it is up.
   await page.evaluate(() => {
@@ -236,10 +236,10 @@ async function seedSierraDockFull(page, theme) {
     const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
     if (x) x.click();
   });
-  await page.waitForFunction(() => window.CPL_CHAT && document.querySelector("#prh-sierra-mount .cplchat .cplchat-dock-btn"),
+  await page.waitForFunction(() => window.CPL_CHAT && document.querySelector("#cb-assistant-mount .cplchat .cplchat-dock-btn"),
     null, { timeout: 60000 });
   await page.evaluate(async () => {
-    const wrap = document.querySelector("#prh-sierra-mount .cplchat");
+    const wrap = document.querySelector("#cb-assistant-mount .cplchat");
     const chip = Array.from(wrap.querySelectorAll(".cplchat-aud-chip")).find((b) => /Faculty/.test(b.textContent));
     if (chip) chip.click();
     const table = "\n\n| Credential | Course | Units | College | C-ID |\n|---|---|---|---|---|\n" +
@@ -272,18 +272,74 @@ async function seedSierraDockFull(page, theme) {
   });
   await page.waitForTimeout(200);
 }
-async function sierraDockFullChecks(page) {
+/* Sierra AI over a COBI tab (S398: the CPL Assistant tab retired into her).
+   CPL_CHAT.open() puts her full screen over whatever tab is showing; she is
+   opened over Sierra Training, where the owner's "Try it in: Sierra" asks her,
+   and seeded the way the dock is: the role confirmed on its chip, only the chat
+   function's stream stubbed, six questions asked through open({ send: true }),
+   one answer carrying a table wider than a phone. */
+async function seedSierraCobiFull(page, theme) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "sierra-training") location.hash = "sierra-training"; });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  // First Light's once-a-day greeting would cover the screenshots (see seedSierraDockFull).
+  await page.evaluate(() => {
+    try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+  });
+  // The tab underneath has painted (its sign-in gate, with every read aborted), so
+  // nothing it adds to the page lands after the dialog has made the page inert.
+  await page.waitForFunction(() => window.CPL_CHAT && typeof window.CPL_CHAT.open === "function"
+    && window.CPL_SIERRA_TRAINING_TAB && !/^\s*Loading/.test((document.getElementById("sierra-training-root") || {}).textContent || ""),
+    null, { timeout: 60000 });
+  await page.evaluate(async () => {
+    window.CPL_CHAT.open();
+    const wrap = document.querySelector(".cplchat.cplchat-full");
+    const chip = Array.from(wrap.querySelectorAll(".cplchat-aud-chip")).find((b) => /Faculty/.test(b.textContent));
+    if (chip) chip.click();
+    const table = "\n\n| Credential | Course | Units | College | C-ID |\n|---|---|---|---|---|\n" +
+      "| FIW Orientation | WELD 100 Introduction to Welding Technology | 3.0 | Cerritos College | none |\n" +
+      "| Post Tensioning 3 | WELD 244 D1.1 Code Clinic | 2.0 | Santa Ana College | none |\n";
+    let n = 0;
+    const real = window.fetch;
+    window.fetch = function (url) {
+      // The chat function's request, by the name its URL ends in (see seedSierraDockFull).
+      if (!/\/cpl-chat(\?|$)/.test(String(url))) return real.apply(this, arguments);
+      const text = "Seeded answer " + (++n) + " for layout measurement, long enough to wrap on a narrow viewport " +
+        "and push the dialog past its own height. Ask the [CPL coordinator](https://example.org/cpl) at the college " +
+        "you plan to attend." + (n === 1 ? table : "");
+      const sse = "event: text\ndata: " + JSON.stringify({ text: text }) + "\n\nevent: done\ndata: {}\n\n";
+      return Promise.resolve(new Response(sse, { status: 200, headers: { "Content-Type": "text/event-stream" } }));
+    };
+    const idle = () => new Promise((resolve) => {
+      const t0 = Date.now();
+      (function poll() {
+        const box = document.querySelector(".cplchat-full .cplchat-input");
+        if ((box && !box.disabled) || Date.now() - t0 > 5000) resolve(); else setTimeout(poll, 30);
+      })();
+    });
+    for (let i = 0; i < 6; i++) {
+      window.CPL_CHAT.open({ question: "Seeded question " + (i + 1) +
+        ": I have a journey worker license as an Iron and Steel worker. What CPL can I get here?", send: true });
+      await new Promise((r) => setTimeout(r, 30));
+      await idle();
+    }
+  });
+  await page.waitForTimeout(200);
+}
+// The full-screen checks every Sierra dialog shares; `what` names the one measured.
+async function sierraFullScreenChecks(page, what) {
   const out = [];
-  out.push(await page.evaluate(() => {
+  out.push(await page.evaluate((what) => {
     const w = document.querySelector(".cplchat.cplchat-full");
     const lab = w && document.getElementById(w.getAttribute("aria-labelledby") || "");
     return {
-      name: "a send expands the dock: a modal dialog in <body>, named",
+      name: what + ": a modal dialog in <body>, named",
       ok: !!w && w.parentNode === document.body && w.getAttribute("role") === "dialog" &&
         w.getAttribute("aria-modal") === "true" && !!lab && lab.textContent.trim() === "Sierra AI",
       detail: w ? "role=" + w.getAttribute("role") + ", name=" + (lab ? '"' + lab.textContent.trim() + '"' : "none") : "not expanded",
     };
-  }));
+  }, what));
   out.push(await page.evaluate(() => {
     const w = document.querySelector(".cplchat-full");
     // A fixed layer above the dialog (First Light's greeting) stays live on purpose.
@@ -317,16 +373,38 @@ async function sierraDockFullChecks(page) {
       detail: "scrollTop after End = " + Math.round(w.scrollTop) + " of " + Math.round(w.scrollHeight - w.clientHeight),
     };
   }));
+  return out;
+}
+async function sierraDockFullChecks(page) {
+  const out = await sierraFullScreenChecks(page, "a send expands the dock");
   await page.keyboard.press("Escape");
   await page.waitForTimeout(100);
   out.push(await page.evaluate(() => {
-    const w = document.querySelector("#prh-sierra-mount > .cplchat");
+    const w = document.querySelector("#cb-assistant-mount > .cplchat");
     return {
       name: "Escape takes her back to the tab, the conversation with her",
       ok: !document.querySelector(".cplchat-full") && !!w && w.querySelectorAll(".cplchat-msg").length === 12 &&
         !document.querySelector("body > [inert]") && document.activeElement === w.querySelector(".cplchat-dock-btn"),
       detail: (w ? w.querySelectorAll(".cplchat-msg").length + " turns in the tab" : "not in the tab") +
         ", focus on " + (document.activeElement && document.activeElement.className),
+    };
+  }));
+  return out;
+}
+async function sierraCobiFullChecks(page) {
+  const out = await sierraFullScreenChecks(page, "open() puts her over the tab");
+  await page.keyboard.press("Escape");
+  await page.waitForTimeout(100);
+  out.push(await page.evaluate(() => {
+    const host = document.getElementById("cplchat-cobi");
+    const w = host && host.querySelector(".cplchat");
+    return {
+      name: "Escape closes her into her hidden host, the conversation kept for the next open",
+      ok: !document.querySelector(".cplchat-full") && !!host && host.hidden && !!w &&
+        w.querySelectorAll(".cplchat-msg").length === 12 && !document.querySelector("body > [inert]") &&
+        getComputedStyle(document.documentElement).overflowY !== "hidden",
+      detail: (w ? w.querySelectorAll(".cplchat-msg").length + " turns kept" : "no box in the host") +
+        ", host hidden=" + !!(host && host.hidden),
     };
   }));
   return out;
@@ -411,6 +489,9 @@ async function seedRecords(page, theme) {
     S.review = { email: "reviewer@example.org", records: [art], verdicts: [], error: null };
     S.error = null;
     S.open = { "Irvine Valley College|10265": true };
+    /* The Records view lists the colleges a reader picks (2026-10-13): pick the record's, so its
+       card, the picker and the find controls are all measured. */
+    S.pick = ["Irvine Valley College"]; S.rscope = "pick";
     S.view = "records";
     M._render();
     const fix = document.querySelector("#program-requirements-root .prh-verdict button[aria-expanded]");
@@ -430,6 +511,17 @@ async function seedExhibits(page, theme) {
   await page.waitForTimeout(300);
 }
 
+// Seeds the Records view with its first filter open (S391 UI pass): the dropdowns of #2121
+// (Sam, 2026-10-14) open a list of checkboxes no other target paints.
+async function seedFilterOpen(page, theme) {
+  await seedRecords(page, theme);
+  await page.evaluate(() => {
+    const b = document.querySelector("#program-requirements-root .prh-dd-btn");
+    if (b) b.click();
+  });
+  await page.waitForTimeout(300);
+}
+
 // Seeds the side by side view (S355, Sam 2026-10-09: "show a split view like this on the
 // Prog Rev tab so I don't have to do it manually"): the signed-in record above, opened
 // beside its catalog page, so the bar, the frame's pane and the record pane are measured
@@ -443,6 +535,13 @@ async function seedSplit(page, theme) {
     if (b) b.click();
   });
   await page.waitForTimeout(300);
+}
+
+// The Common Course Reference list (S378): wait for its table, then set the theme.
+async function seedCcrList(page, theme) {
+  await page.waitForSelector("#tab-unified-courses table.uc-table tbody tr", { timeout: 30000 }).catch(() => {});
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.waitForTimeout(200);
 }
 
 // Seeds MAP Users as a signed-in reviewer sees it (S358 UI pass): the cobi sweep opens
@@ -547,6 +646,52 @@ async function seedWorkplanGoalsEditor(page, theme, modal) {
     if (openModal) { const add = document.querySelector("#tab-workplan-goals .wpg-btn-add"); if (add) add.click(); }
   }, !!modal);
   await page.waitForTimeout(300);
+}
+
+// Annual Workplan Goals, keyboard and phone (S375 UI pass): an editor reaches a value
+// by Tab and opens it with Enter, Escape hands focus back, and below 560px each
+// sub-activity is a card that fits the screen. Behavior, not shape: jsdom proves the
+// attributes (tests/annual_goals_ui_pass.test.js); this proves the browser obeys them.
+async function workplanGoalsKeyboardChecks(page) {
+  const out = [];
+  // The keyboard page opens without the route's hash (as seedContracts notes): open the tab.
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "workplan-goals") location.hash = "workplan-goals"; });
+  await page.waitForTimeout(400);
+  out.push(await page.evaluate(() => {
+    const c = document.querySelector('#tab-workplan-goals td.wpg-editable[data-editable="1"]');
+    if (!c) return { name: "a goal value takes focus", ok: false, detail: "no editable value (not signed in?)" };
+    c.focus();
+    return { name: "a goal value takes focus", ok: document.activeElement === c && c.getAttribute("tabindex") === "0",
+      detail: (c.getAttribute("data-aid") || "") + " " + (c.getAttribute("data-yr") || "") };
+  }));
+  await page.keyboard.press("Enter");
+  await page.waitForTimeout(150);
+  out.push(await page.evaluate(() => {
+    const i = document.activeElement;
+    return { name: "Enter opens a named field", ok: !!i && i.tagName === "INPUT" && !!i.getAttribute("aria-label"),
+      detail: i ? (i.getAttribute("aria-label") || "(unnamed " + i.tagName + ")") : "nothing focused" };
+  }));
+  await page.keyboard.press("Escape");
+  await page.waitForTimeout(150);
+  out.push(await page.evaluate(() => {
+    const a = document.activeElement;
+    return { name: "Escape returns focus to the value", ok: !!a && a.tagName === "TD" && a.classList.contains("wpg-editable"),
+      detail: a ? a.tagName + "." + a.className : "nothing focused" };
+  }));
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.waitForTimeout(250);
+  out.push(await page.evaluate(() => {
+    const t = document.querySelector("#tab-workplan-goals .wpg-annual-table");
+    if (!t) return { name: "below 560px each sub-activity is a card", ok: false,
+      detail: "no .wpg-annual-table: the page predates the S375 renderer (the next cron run rebuilds it)" };
+    const r = t.querySelector(".wpg-r");
+    const sc = t.closest(".wpg-annual-scroll");
+    const grid = r && getComputedStyle(r).display === "grid";
+    const fits = sc && sc.scrollWidth <= sc.clientWidth + 1;
+    return { name: "below 560px each sub-activity is a card", ok: !!(grid && fits),
+      detail: "row display " + (r ? getComputedStyle(r).display : "?") + ", scroller " + (sc ? sc.scrollWidth + "/" + sc.clientWidth : "?") };
+  }));
+  return out;
 }
 
 // Contracts as a reviewer sees it (S364 UI pass): the register is gated, so the signed-out
@@ -886,6 +1031,181 @@ async function seedMapQueue(page, theme) {
   await page.waitForTimeout(300);
 }
 
+// GR Priorities as a GR phrase holder sees it (S394 UI pass): the register is gated, so the
+// signed-out cobi sweep measures the lock. The seed holds a GR phrase and stubs the tab's
+// five reads with tests/gr_priorities.test.js's and tests/gr_memos.test.js's synthetic
+// shapes (never a live row: the register's content is gated), each state a row can take:
+// a derived citation, an adopted item, a red pathway, a memo with sections, two areas
+// sharing a section, and an artifact with no safe link.
+async function seedGrPriorities(page, theme) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "gr-priorities") location.hash = "gr-priorities"; });
+  await page.waitForFunction(() => !!window.CPL_GR, null, { timeout: 20000 });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.evaluate(() => {
+    try {
+      localStorage.setItem("cpl_gr_pass", "seed-phrase");
+      localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString());
+    } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+    const AREAS = [
+      { id: "cpl", title: "Credit for Prior Learning", division: "ESS", status: "active", sort: 1,
+        summary: "Title 5 and Ed. Code revisions under consideration for CPL.",
+        narrative: { thesis: "A <b>regulation</b> question.", caveat: "Seed text for the measurement." } },
+      { id: "dual-enrollment", title: "Dual Enrollment", division: "ESS", status: "active", sort: 2, summary: "Seed area." },
+    ];
+    const REVS = [
+      { id: "1", area_id: "cpl", n: 1, title: "Item one", grp: "Scope", summary: "<p>One <a href=\"https://x.example.org/a\">\u00a755050</a>.</p>",
+        consideration: "consider", instrument: null, pathway: ["g", "y"], citations: ["T5 \u00a755050"],
+        citations_derived: true, ed_first: "No", status: "proposed", updated_by: "someone@example.org" },
+      { id: "2", area_id: "cpl", n: 2, title: "Item two", grp: "Scope", summary: "Two.", consideration: null,
+        instrument: null, pathway: ["y"], citations: ["T5 \u00a755023", "EC \u00a776004"], citations_derived: false,
+        ed_first: "No", status: "adopted", updated_by: null },
+      { id: "3", area_id: "cpl", n: 7, title: "Apportionment", grp: "Funding", summary: "Hard one.", consideration: "risk",
+        instrument: null, pathway: ["r"], citations: ["T5 \u00a758050"], citations_derived: false,
+        ed_first: "Yes", status: "proposed", updated_by: null },
+    ];
+    const CROSS = REVS.map((r) => ({ area_id: r.area_id, citations: r.citations }))
+      .concat([{ area_id: "dual-enrollment", citations: ["EC \u00a776004"] }]);
+    const ARTS = [
+      { id: "a1", area_id: "cpl", title: "A memo", url: "https://x.example.org/m", kind: "memo", source: "CCCCO",
+        division: "ESS", why: "Sets the baseline.", citations: ["T5 \u00a755050"], added_by: "someone@example.org",
+        created_at: "2026-10-01T00:00:00Z" },
+      { id: "a2", area_id: "cpl", title: "Not a link", url: "javascript:alert(1)", kind: "other", source: null,
+        division: null, why: null, citations: [], added_by: null, created_at: "2026-09-01T00:00:00Z" },
+    ];
+    const MEMOS = [{ id: "m1", area_id: "cpl", memo_key: "A", title: "What existing law and regulation already provide",
+      audience: "CIOs, CSSOs, Senate Presidents", from_line: "[Office]", date_line: "[Issue upon adoption]",
+      status: "draft", hold_note: "Issues only after the pending revisions are adopted.",
+      purpose: "Colleges pause CPL work over requirements they believe exist.", sort: 1 }];
+    const SECS = [{ id: "s1", memo_id: "m1", n: 1, heading: "Every catalog course may be CPL-eligible",
+      body: "First paragraph with <b>validated</b> prose.\n\nSecond paragraph.", citations: ["T5 \u00a755002"],
+      citations_derived: false, revision_ns: [1, 2], authority: "existing regulation", confirm_note: null }];
+    const real = window.fetch;
+    window.fetch = function (url) {
+      const u = String(url);
+      const body = /\/gr_areas\?/.test(u) ? AREAS
+        : /\/gr_revisions\?select=area_id,citations/.test(u) ? CROSS
+        : /\/gr_revisions\?/.test(u) ? REVS : /\/gr_artifacts\?/.test(u) ? ARTS
+        : /\/gr_memos\?/.test(u) ? MEMOS : /\/gr_memo_sections\?/.test(u) ? SECS : null;
+      if (body) return Promise.resolve(new Response(JSON.stringify(body), { status: 200, headers: { "Content-Type": "application/json" } }));
+      return real.apply(this, arguments);
+    };
+    window.CPL_GR.activate();
+  });
+  await page.waitForFunction(() => !!document.querySelector("#gr-priorities-root .gx-item"), null, { timeout: 20000 });
+  await page.waitForTimeout(300);
+}
+
+// Memory as a team-phrase holder sees it (S398 UI pass): signed out, the cobi sweep measures
+// the lock and the masthead only. The seed holds a team phrase, stubs the tab's read with
+// tests/cpl_memory.test.js's synthetic shapes (never a live row: the table is team-gated),
+// then opens one state through the view's own controls: the Add form, a record's tools, or
+// the Report view.
+async function seedMemory(page, theme, state) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "memory") location.hash = "memory"; });
+  await page.waitForFunction(() => !!window.CPL_MEMORY, null, { timeout: 20000 });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.evaluate((state) => {
+    try {
+      localStorage.setItem("cpl_team_pass", "seed-phrase");
+      localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString());
+    } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+    const ROWS = [
+      { id: "11111111-1111-1111-1111-111111111111", slug: "pr1", kind: "procedure", status: "verified",
+        title: "Change the generator", summary: "Change the generator, not the HTML",
+        detail: "Edit excel_to_dashboard.py; keep index.html identical. See f1.", tags: ["dashboard"],
+        source: "CLAUDE.md Rule 1", affects: ["excel_to_dashboard.py", "index.html"], related: ["f1"] },
+      { id: "22222222-2222-2222-2222-222222222222", slug: "f1", kind: "fact", status: "verified",
+        title: "Two HTMLs", summary: "index.html and CPL_Dashboard.html must stay identical",
+        detail: "The workflow copies one to the other.", tags: ["dashboard"], source: "CLAUDE.md Rule 4",
+        affects: ["index.html"], related: [] },
+      { id: "33333333-3333-3333-3333-333333333333", slug: "o1", kind: "opportunity", status: "proposed",
+        title: "Stale articulations", summary: "Systemwide stale-articulation signal",
+        detail: "Flag articulations absent from the current catalog.", tags: ["ccr"],
+        source: "methodology-filter-live-counts", affects: [], related: [] },
+    ];
+    const real = window.fetch;
+    window.fetch = function (url) {
+      const u = String(url);
+      const body = /\/cpl_memory_log/.test(u) ? [] : /\/cpl_memory\?/.test(u) ? ROWS : null;
+      if (body) return Promise.resolve(new Response(JSON.stringify(body), { status: 200, headers: { "Content-Type": "application/json" } }));
+      return real.apply(this, arguments);
+    };
+    window.CPL_MEMORY.activate();
+  }, state);
+  await page.waitForFunction(() => !!document.querySelector("#memory-root .mem-list li"), null, { timeout: 20000 });
+  await page.evaluate((state) => {
+    if (state === "add") { const b = document.querySelector("#memory-root .mem-addbtn"); if (b) b.click(); }
+    if (state === "entry") { const li = document.querySelector("#memory-root .mem-list li"); if (li) li.click(); }
+    if (state === "report") window.CPL_MEMORY._setViewMode("report");
+  }, state);
+  const ready = { add: ".mem-form-actions", entry: ".rp-tools", report: ".mr-btn" }[state];
+  await page.waitForFunction((sel) => !!document.querySelector("#memory-root " + sel), ready, { timeout: 20000 });
+  await page.waitForTimeout(300);
+}
+
+// College Identity's roster (S371 UI pass). The tab reads map_colleges (public) and
+// map_college_contacts (reviewer or team phrase) live; with every read aborted the cobi
+// sweep paints only the failed-read notice and the snapshot's findings. The seed stands in
+// both reads with real map_colleges rows (each row shape the table draws: variants, a
+// continuing-education arm, a partner with no MIS code, a placeholder code, suppressed
+// sandbox rows) and contact names that raise a live whitespace and an unknown finding.
+async function seedCollegeIdentity(page, theme) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "college-identity") location.hash = "college-identity"; });
+  await page.waitForFunction(() => !!window.CPL_COLLEGE_IDENTITY_TAB, null, { timeout: 20000 });
+  // The tab's own first load (every read aborted) must finish before the stand-ins go in.
+  await page.waitForFunction(() => {
+    const st = window.CPL_COLLEGE_IDENTITY_TAB._state;
+    return !st.loading && (st.live || st.error);
+  }, null, { timeout: 20000 });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.evaluate(() => {
+    try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+    const row = (id, name, kind, variants, district, d, c, why, test) => ({ college_id: id, college_name: name,
+      entity_kind: kind, is_test: !!test, variants: variants, district: district, mis_district_code: d,
+      mis_college_code: c, mis_absent_why: why || null });
+    const PARTNER = "A partner organization we host a CPL landing page for, not a California Community College. "
+      + "No MIS code exists, and none should be invented.";
+    const COLLEGES = [
+      row(24, "Calbright College Non-Credit", "college", ["CALBRIGHT", "Calbright College"],
+        "California Online Community College District", "X00", "X02",
+        "not in the supplied Appendix A (searched CALBRIGHT); statewide online college, launched 2018"),
+      row(9, "Chaffey College", "college", ["CHAFFEY", "Chaffey"], "Chaffey Community College District", "920", "921"),
+      row(133, "Futuro Health", "partner", [], null, null, null, PARTNER),
+      row(73, "Los Angeles Southwest College", "college", ["LA Southwest", "LA SWEST", "Southwest", "Southwest College", "LA Swest"],
+        "Los Angeles Community College District", "740", "745"),
+      row(4, "NORCO College - Syllabus Manager", "test", [], null, null, null, null, true),
+      row(119, "San Diego College of Continuing Education", "continuing_education",
+        ["San Diego Adult", "SAN DIEGO ADULT", "San Diego College of Continuing Education Credit", "San Diego Continuing Education"],
+        "San Diego Community College District", "070", "076"),
+      row(96, "San Diego City College", "college", ["SAN DIEGO CITY", "San Diego City"], "San Diego Community College District", "070", "071"),
+      row(5, "Testing College", "test", [], null, null, null, null, true),
+    ];
+    const CONTACTS = [{ college: "Chaffey College" }, { college: "San Diego City " }, { college: "Example Unlisted College" }];
+    const json = (b) => Promise.resolve(new Response(JSON.stringify(b), { status: 200, headers: { "Content-Type": "application/json" } }));
+    const real = window.fetch;
+    window.fetch = function (url) {
+      const u = String(url);
+      if (/\/map_colleges\?/.test(u)) return json(COLLEGES);
+      if (/\/map_college_contacts\?/.test(u)) return json(CONTACTS);
+      return real.apply(this, arguments);
+    };
+    const M = window.CPL_COLLEGE_IDENTITY_TAB;
+    M._state.live = null; M._state.error = null; M._state.contacts = null;
+    M.activate();
+  });
+  await page.waitForFunction(() => {
+    const st = window.CPL_COLLEGE_IDENTITY_TAB._state;
+    return !st.loading && st.live && st.live.length && document.querySelector("#college-identity-root .cid-t");
+  }, null, { timeout: 20000 });
+  await page.waitForTimeout(300);
+}
+
 async function seedMyCollegeReports(page, signin) {
   await page.evaluate(() => new Promise((res) => {
     if (window.CPL_FUNDING_TAB) return res();
@@ -911,6 +1231,115 @@ async function seedMyCollegeReports(page, signin) {
     M.render(root);
   }, signin);
   await page.waitForTimeout(400);
+}
+
+// My College on one college's page (S370 UI pass). The cobi sweep opens the tab on its scope
+// question, so the page a college reads, its figures, strategies, credentials and drafts, was
+// never measured. The sweep aborts every read off the origin, so this stands in each Supabase
+// read with the table's own shape (columns from information_schema, 2026-10-12) and invented
+// figures: the tracker is public, so no real contact or student count is written here. Then it
+// picks the college through the page's own scope and college controls, as a reader does, and
+// opens every section.
+async function seedMyCollegePage(page, theme) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "college-briefing") location.hash = "college-briefing"; });
+  await page.waitForFunction(() => !!window.CPL_COLLEGE_BRIEFING, null, { timeout: 20000 });
+  // The tab's own first load (every read aborted) must finish before the stand-ins go in, or
+  // it lands after them and empties the college list (the motion check seeds 400 ms after load).
+  await page.waitForFunction(() => {
+    const st = window.CPL_COLLEGE_BRIEFING._state;
+    return !st.loading && (st.data || st.error);
+  }, null, { timeout: 20000 });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.evaluate(() => {
+    try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+    const C = "Chaffey College", ID = 9;
+    const CONFIG = { projects: {
+      "cpl-implementation": { label: "CPL Implementation Funding", published: "Scenario 1",
+        scenarios: { "Scenario 1": { yearPriorities: { "1": {
+          "0": { share: 0.5, title: "Access", description: "Increase access.", metric: "Applied CPL Units measured in FTES",
+                 strategies: ["Act on all JST credit recommendations in MAP", "Adopt or Adapt possible statewide credit recommendations"] },
+          "1": { share: 0.3, title: "Institutionalize", description: "Institutionalize.", metric: "Transcribed CPL Units",
+                 strategies: ["Complete Transcribe step in MAP for each student record with CPL"] },
+          "2": { share: 0.2, title: "Outreach", description: "Reach students.",
+                 strategies: ["Ensure a CPL Coordinator and/or Counselor is listed and responsive"] } } } } } } } };
+    const COLLEGES = [{ college_id: ID, college_name: C, variants: ["Chaffey"] },
+      { college_id: 12, college_name: "Cerritos College", variants: [] },
+      { college_id: 81, college_name: "Mt. San Antonio College", variants: ["Mt. SAC"] }];
+    const SUMMARY = [{ college_id: ID, students: 1200, suppressed: false, dormant_credits: 6000, articulated_waiting: 900,
+      applied_credits: 15000, transcribed_credits: 450, built_at: "2026-10-01T00:00:00Z" }];
+    const CONTACTS = [{ college: C, cpl_coordinator: "Pat Lee", cpl_coordinator_email: "coordinator@example.edu",
+      cpl_counselor: "Jordan Cruz", cpl_counselor_email: "counselor@example.edu", landing_page_url: "https://example.edu/cpl" }];
+    const roll = (t, types, s, pot, app, tr, ap, na) => ({ unified_title: t, cpl_types: types, students: s, students_suppressed: s == null,
+      potential_units: pot, applied_units: app, transcribed_units: tr, apprenticeship_units: ap, rows_needs_action: na });
+    const ROLLUP = [roll("AP U.S. History", ["Standardized Assessment"], 300, 1800, 1790, 6, 0, 0),
+      roll("Army Basic Combat Training", ["Military Training"], 40, 320, 120, 0, 0, 12),
+      roll("Electrician Apprenticeship (State of California)", ["Apprenticeship"], null, 96, 0, 0, 96, 3),
+      roll("CompTIA Security+", ["Industry Certification"], 18, 54, 27, 0, 0, 2)];
+    const ADOPTED = [{ unified_title: "AP U.S. History", cpl_types: ["Standardized Assessment"], statewide: true },
+      { unified_title: "CompTIA Security+", cpl_types: ["Industry Certification"], statewide: false }];
+    const POTENTIAL = [{ unified_title: "AP 2-D Art and Design", cpl_types: ["Credit By Exam", "Standardized Assessment"], statewide: false,
+      ccc_rec: null, adopter_colleges: ["Cerritos College", "Mt. San Antonio College", "Norco College"] },
+      { unified_title: "Emergency Medical Technician (EMT)", cpl_types: ["Industry Certification"], statewide: true,
+        ccc_rec: "3 units EMS", adopter_colleges: ["Cerritos College"] }];
+    const GOAL2 = [{ dest: "AREA", rows_n: 700, students: 650, suppressed: false, reason: null },
+      { dest: "COURSE", rows_n: 5000, students: 1100, suppressed: false, reason: null }];
+    const WAITING = [{ credit_rec: "3 semester units in Military Science", college_course: "MIL 1", course_type: "Course",
+      sum_articulated_credits: 240, distinct_students: 80, withheld_recommendations: 0 },
+      { credit_rec: "1 semester unit in Physical Education", college_course: "KIN 10", course_type: "Course",
+        sum_articulated_credits: 60, distinct_students: null, withheld_recommendations: 2 }];
+    // program_record_college_items' rows, one an item the college owns (S386).
+    const ITEMS = [
+      { program_title: "Welding Technology", control_number: "04755", award: "A.S. Degree", catalog_year: "2026-2027", checked: false,
+        n: 1, kind: "Catalog and state file differ",
+        text: "The catalog prints WELD 410 and WELD 413 for this program; the state's Program Course File does not list them." },
+      { program_title: "Emergency Medical Technician", control_number: "20675", award: "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+        catalog_year: "2026-2027", checked: true, n: 1, kind: "Catalog and state file differ",
+        text: "The state's Program Course File lists EMS 10, which the catalog does not print for this program." }];
+    const json = (b) => Promise.resolve(new Response(JSON.stringify(b), { status: 200, headers: { "Content-Type": "application/json" } }));
+    const real = window.fetch;
+    window.fetch = function (url) {
+      const u = String(url);
+      if (/\/cpl_funding_config\?/.test(u)) return json([{ config: CONFIG }]);
+      if (/\/map_colleges\?/.test(u)) return json(COLLEGES);
+      if (/\/map_college_credit_summary(_pub)?\?/.test(u)) return json(SUMMARY);
+      if (/\/map_college_contacts(_pub)?\?/.test(u)) return json(CONTACTS);
+      if (/\/map_credential_student_rollup\?/.test(u)) return json(ROLLUP);
+      if (/\/chatbox_credentials\?adopter_colleges/.test(u)) return json(ADOPTED);
+      if (/\/chatbox_credentials\?potential_colleges/.test(u)) return json(POTENTIAL);
+      if (/\/map_college_goal2(_pub)?\?/.test(u)) return json(GOAL2);
+      if (/\/map_college_cr_waiting_pub\?|\/map_college_cr_unit\?/.test(u)) return json(WAITING);
+      if (/\/program_source_registry\?/.test(u)) return json([{ college: C }]);
+      if (/\/program_record_college_items\?/.test(u)) return json(ITEMS);
+      return real.apply(this, arguments);
+    };
+    const M = window.CPL_COLLEGE_BRIEFING, root = document.getElementById("college-briefing-root");
+    M._state.data = null; M._state.error = null; M._state.scope = null; M._state.college = null;
+    M.activate();
+  });
+  // Through the page's own controls, but not with the mouse: a pointer click turns off
+  // :focus-visible for the focus the sweep moves later, and every ring reads as missing.
+  await page.waitForSelector('#college-briefing-root [data-scope="college"]', { timeout: 20000 });
+  await page.evaluate(() => document.querySelector('#college-briefing-root [data-scope="college"]').click());
+  await page.waitForFunction(() => {
+    const s = document.querySelector("#cb-college");
+    return s && Array.from(s.options).some((o) => o.value === "Chaffey College");
+  }, null, { timeout: 20000 });
+  await page.evaluate(() => {
+    const s = document.querySelector("#cb-college");
+    s.value = "Chaffey College";
+    s.dispatchEvent(new Event("change", { bubbles: true }));
+  });
+  await page.waitForTimeout(1200);
+  // The drafts section paints from program_record_college_items (S386); a seed whose
+  // stand-in read no longer matches the page's request would sweep a page without it.
+  await page.waitForSelector("#college-briefing-root ul.cb-dr li", { state: "attached", timeout: 20000 });
+  // Every section open, so the sweep measures what a reader can expand.
+  await page.evaluate(() => {
+    document.querySelectorAll("#college-briefing-root details").forEach((d) => { d.open = true; });
+  });
+  await page.waitForTimeout(300);
 }
 
 /* ── The veteran map (S350: First Light, one builder, three targets) ─────────
@@ -1239,40 +1668,44 @@ module.exports = {
     mayHideBelow: [],
   },
 
-  /* ── The funding tab's Public view, and My CPL Funding (S307, 2026-09-30) ──
+  /* ── The funding tab's Public page view (S307, 2026-09-30; reshaped 2026-10-15) ──
      Sam asked for the Public view and the explainer to be audited for
-     consistent margins, AA and phone widths, and for My CPL Funding at the top
-     of both with a college or district chooser. The `cobi` target measures the
-     tab in its Internal view only, so these three hold the other renderings:
-     the Public view by its link (?fundview=public), and the one-institution
-     view on each surface, opened the way a reader opens it and set to the
-     largest district, whose line and member blocks are the longest page it
-     draws. */
+     consistent margins, AA and phone widths. Since 2026-10-15 (his call 1 on
+     the one public funding page) the Public page view frames funding-model/
+     itself, so this target measures the tab's chrome around the frame, opened
+     by its link (?fundview=public); the page inside it is the page the two
+     funding-model targets measure, and this runner does not read into frames.
+     The old funding-public-mycpl target drew My CPL Funding on the tab's own
+     public rendering, which retired with it; funding-model-mycpl holds that
+     view on the one page that draws it. */
   "funding-public": {
     file: "index.html",
     query: "?fundview=public",
-    title: "Implementation Funding, Public view",
+    title: "Implementation Funding, Public page view",
     routes: [{ hash: "implementation-funding", name: "public-view" }],
     widths: [390, 768, 1024, 1440],
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
-  "funding-public-mycpl": {
-    file: "index.html",
-    query: "?fundview=public",
-    title: "Implementation Funding, Public view: My CPL Funding for a district",
-    routes: [{ hash: "implementation-funding", name: "my-cpl-funding" }],
-    widths: [390, 768, 1024, 1440],
+  /* How to meet it (Sam, 2026-10-15, call 5): the confirmation condition's
+     dialog open over the statewide Eligibility requirements, the one dialog
+     every surface opens. */
+  "funding-model-howto": {
+    file: "funding-model/index.html",
+    title: "Funding model explainer: a How to meet it dialog open",
+    widths: [390, 1440],
     seed: async (page) => {
       await page.evaluate(() => {
-        const T = window.CPL_FUNDING_TAB;
-        if (T && T.showMyFunding) T.showMyFunding();
-        const pick = document.getElementById("cplFundOnePick");
-        const opts = pick ? Array.from(pick.querySelectorAll('optgroup[label="Districts"] option')) : [];
-        if (opts.length) { pick.value = opts[0].value; pick.dispatchEvent(new Event("change", { bubbles: true })); }
+        const b = document.querySelector('#req-list [data-howto="part"]');
+        if (b) b.click();
+        // showModal() makes the page behind the dialog inert without the
+        // attribute, which is what the focus measurement reads; say so, as
+        // the Sierra dock does (S349), so the page behind is not measured here.
+        const dlg = document.getElementById("cplFundHowTo");
+        Array.prototype.forEach.call(document.body.children, (el) => { if (el !== dlg) el.setAttribute("inert", ""); });
       });
-      await page.waitForTimeout(900);
+      await page.waitForTimeout(300);
     },
-    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+    mayHideBelow: [],
   },
   "funding-model-mycpl": {
     file: "funding-model/index.html",
@@ -1280,8 +1713,7 @@ module.exports = {
     widths: [390, 768, 1024, 1440],
     seed: async (page) => {
       await page.evaluate(() => {
-        const b = document.getElementById("my-funding-btn");
-        if (b) b.click();
+        // Step 1 is the one way in since 2026-10-15 (Sam's call 8).
         const pick = document.getElementById("cplFundOnePick");
         const opts = pick ? Array.from(pick.querySelectorAll('optgroup[label="Districts"] option')) : [];
         if (opts.length) { pick.value = opts[0].value; pick.dispatchEvent(new Event("change", { bubbles: true })); }
@@ -1410,6 +1842,74 @@ module.exports = {
     seed: (page) => seedMapQueue(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
+  /* ── GR Priorities, unlocked with a GR phrase (S394) ───────────────────
+     The register, its filters, memos and artifacts paint only for a phrase
+     holder; the cobi sweep is signed out. */
+  "gr-priorities-gr": {
+    file: "index.html",
+    title: "GR Priorities unlocked with a GR phrase, the synthetic register",
+    routes: [{ hash: "gr-priorities", name: "gr" }],
+    widths: [320, 390, 1440],
+    seed: (page) => seedGrPriorities(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "gr-priorities-gr-dark": {
+    file: "index.html",
+    title: "GR Priorities unlocked with a GR phrase, the synthetic register, dark",
+    routes: [{ hash: "gr-priorities", name: "gr" }],
+    widths: [320, 390, 1440],
+    seed: (page) => seedGrPriorities(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── Memory, unlocked with a team phrase (S398) ── */
+  "memory-add": {
+    file: "index.html",
+    title: "Memory, a team-phrase holder's view: the Add form open (synthetic rows)",
+    routes: [{ hash: "memory", name: "add" }],
+    widths: [390, 1440],
+    seed: (page) => seedMemory(page, "light", "add"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "memory-add-dark": {
+    file: "index.html",
+    title: "Memory, a team-phrase holder's view: the Add form open, dark (synthetic rows)",
+    routes: [{ hash: "memory", name: "add" }],
+    widths: [390, 1440],
+    seed: (page) => seedMemory(page, "dark", "add"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "memory-entry": {
+    file: "index.html",
+    title: "Memory, a team-phrase holder's view: a record's tools (synthetic rows)",
+    routes: [{ hash: "memory", name: "entry" }],
+    widths: [390, 1440],
+    seed: (page) => seedMemory(page, "light", "entry"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "memory-entry-dark": {
+    file: "index.html",
+    title: "Memory, a team-phrase holder's view: a record's tools, dark (synthetic rows)",
+    routes: [{ hash: "memory", name: "entry" }],
+    widths: [390, 1440],
+    seed: (page) => seedMemory(page, "dark", "entry"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "memory-report": {
+    file: "index.html",
+    title: "Memory, a team-phrase holder's view: the Report view (synthetic rows)",
+    routes: [{ hash: "memory", name: "report" }],
+    widths: [390, 1440],
+    seed: (page) => seedMemory(page, "light", "report"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "memory-report-dark": {
+    file: "index.html",
+    title: "Memory, a team-phrase holder's view: the Report view, dark (synthetic rows)",
+    routes: [{ hash: "memory", name: "report" }],
+    widths: [390, 1440],
+    seed: (page) => seedMemory(page, "dark", "report"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
   "contracts": {
     file: "index.html",
     title: "Contracts, a reviewer's view of the V0718 fixture",
@@ -1435,6 +1935,7 @@ module.exports = {
     routes: [{ hash: "workplan-goals", name: "editor" }],
     widths: [390, 1440],
     seed: (page) => seedWorkplanGoalsEditor(page, "light", false),
+    keyboard: async (page) => workplanGoalsKeyboardChecks(page),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "workplan-goals-editor-dark": {
@@ -1512,6 +2013,44 @@ module.exports = {
     routes: [{ hash: "college-briefing", name: "reports-table" }],
     widths: [390, 768, 1024, 1440],
     seed: (page) => seedMyCollegeReports(page, false),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── My College: a college's page, every section open (S370 UI pass) ───────
+     The cobi target stops at the scope question. These pick a college through
+     the page's own controls with each read stood in (seedMyCollegePage). */
+  "my-college-page": {
+    file: "index.html",
+    title: "My College: one college's page, every section open",
+    routes: [{ hash: "college-briefing", name: "college-page" }],
+    widths: [320, 390, 1440],
+    seed: (page) => seedMyCollegePage(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── College Identity: the roster with both reads stood in (S371 UI pass) ──
+     The cobi target paints the failed-read notice: the sandbox reaches no
+     database. These seed the table a reader uses (seedCollegeIdentity). */
+  "college-identity-roster": {
+    file: "index.html",
+    title: "College Identity: the roster and the live contact findings",
+    routes: [{ hash: "college-identity", name: "roster" }],
+    widths: [320, 390, 1440],
+    seed: (page) => seedCollegeIdentity(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "college-identity-roster-dark": {
+    file: "index.html",
+    title: "College Identity: the roster and the live contact findings, dark",
+    routes: [{ hash: "college-identity", name: "roster" }],
+    widths: [320, 390, 1440],
+    seed: (page) => seedCollegeIdentity(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "my-college-page-dark": {
+    file: "index.html",
+    title: "My College: one college's page, every section open, dark",
+    routes: [{ hash: "college-briefing", name: "college-page" }],
+    widths: [320, 390, 1440],
+    seed: (page) => seedMyCollegePage(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   /* ── CPL Pathways: a harvested catalog record (S334) ──────────────────────
@@ -1599,6 +2138,23 @@ module.exports = {
     seed: (page) => seedRecords(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
+  /* ── Program Requirements: a Records filter open (S391 UI pass) ──────── */
+  "program-requirements-filter": {
+    file: "index.html",
+    title: "Program Requirements: Records, a filter open",
+    routes: [{ hash: "program-requirements", name: "filter" }],
+    widths: [390, 768, 1024, 1440],
+    seed: (page) => seedFilterOpen(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "program-requirements-filter-dark": {
+    file: "index.html",
+    title: "Program Requirements: Records, a filter open, dark",
+    routes: [{ hash: "program-requirements", name: "filter-dark" }],
+    widths: [390, 768, 1024, 1440],
+    seed: (page) => seedFilterOpen(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
   /* ── Program Requirements: the exhibits view (S355) ─────────────────────
      A course's CPL count opened: what is articulated here, the leads. */
   "program-requirements-exhibits": {
@@ -1637,12 +2193,12 @@ module.exports = {
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   /* ── The docked Sierra, full screen (S349, Sheet 54 card 1) ─────────────
-     Expanded over Program Requirements with six seeded turns, one per theme:
+     Expanded over My College with six seeded turns, one per theme:
      the dialog, the page behind it inert, the sticky box, End and Escape. */
   "sierra-dock-full": {
     file: "index.html",
     title: "Sierra docked, full screen while she answers",
-    routes: [{ hash: "program-requirements", name: "dock-full" }],
+    routes: [{ hash: "college-briefing", name: "dock-full" }],
     widths: [390, 768, 1024, 1440],
     seed: (page) => seedSierraDockFull(page, "light"),
     keyboard: async (page) => sierraDockFullChecks(page),
@@ -1651,10 +2207,32 @@ module.exports = {
   "sierra-dock-full-dark": {
     file: "index.html",
     title: "Sierra docked, full screen while she answers, dark",
-    routes: [{ hash: "program-requirements", name: "dock-full-dark" }],
+    routes: [{ hash: "college-briefing", name: "dock-full-dark" }],
     widths: [390, 768, 1024, 1440],
     seed: (page) => seedSierraDockFull(page, "dark"),
     keyboard: async (page) => sierraDockFullChecks(page),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── Sierra AI over a COBI tab (S398) ─────────────────────────────────────
+     The box CPL_CHAT.open() builds, the CPL Assistant tab's heir, open over
+     Sierra Training with six seeded turns, one per theme: the dialog, the page
+     behind it inert, the sticky box, End, and Escape closing her into her host. */
+  "sierra-cobi-full": {
+    file: "index.html",
+    title: "Sierra AI over a COBI tab",
+    routes: [{ hash: "sierra-training", name: "cobi-full" }],
+    widths: [390, 768, 1024, 1440],
+    seed: (page) => seedSierraCobiFull(page, "light"),
+    keyboard: async (page) => sierraCobiFullChecks(page),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "sierra-cobi-full-dark": {
+    file: "index.html",
+    title: "Sierra AI over a COBI tab, dark",
+    routes: [{ hash: "sierra-training", name: "cobi-full-dark" }],
+    widths: [390, 768, 1024, 1440],
+    seed: (page) => seedSierraCobiFull(page, "dark"),
+    keyboard: async (page) => sierraCobiFullChecks(page),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "my-college-reports-signin": {
@@ -1698,6 +2276,28 @@ module.exports = {
     routes: [{ hash: "map-users", name: "gaps-dark" }],
     widths: [390, 768, 1024, 1440],
     seed: (page) => seedMapUsers(page, "dark", "gaps"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* The Common Course Reference opens on SkyView, filling the window, so the cobi
+     sweep measures the map and never the list a curator works in (S378 UI pass:
+     the list's dark faults went unseen). #unified-courses/list is the list's own
+     link; the seed waits for its table, a 10 MB data file the tab loads on open. */
+  "ccr-list": {
+    file: "index.html",
+    title: "Common Course Reference, the list view",
+    routes: [{ hash: "unified-courses/list", name: "list" }],
+    widths: [390, 1440],
+    settle: 1500,
+    seed: (page) => seedCcrList(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "ccr-list-dark": {
+    file: "index.html",
+    title: "Common Course Reference, the list view, dark",
+    routes: [{ hash: "unified-courses/list", name: "list-dark" }],
+    widths: [390, 1440],
+    settle: 1500,
+    seed: (page) => seedCcrList(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   },

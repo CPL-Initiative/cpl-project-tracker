@@ -1,0 +1,190 @@
+{
+ "college": "San Bernardino Valley College",
+ "control_number": "19002",
+ "shape": "certificate",
+ "title": "Child Development - Early Intervention and Inclusion",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/child-development/child-development-early-intervention-inclusion-aa-degree/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8385,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8385,
+    "output_tokens": 1668,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1668,
+  "output_tokens_details": {
+   "thinking_tokens": 645
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0669,
+ "ms": 15192,
+ "seconds": 15.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 11,
+   "share": 0.0,
+   "missing": [
+    "CDEV111",
+    "CDEV126",
+    "CDEV127",
+    "CDEV185",
+    "CDEV186",
+    "CDEV205",
+    "CDEV215",
+    "CDEV244",
+    "CDEV245",
+    "CDEVC1000",
+    "CDEVC1000H"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record states no figure, but the catalog text names 8 units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Child Development - Early Intervention and Inclusion Associate of Arts Degree",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CDEVC1000",
+    "why": "named only in the A.A. degree section; certificate section not in the text"
+   },
+   {
+    "code": "CDEVC1000H",
+    "why": "named only in the A.A. degree section (as alternative to CDEV C1000); certificate section not in the text"
+   },
+   {
+    "code": "CDEV111",
+    "why": "named only in the A.A. degree section; certificate section not in the text"
+   },
+   {
+    "code": "CDEV126",
+    "why": "named only in the A.A. degree section; certificate section not in the text"
+   },
+   {
+    "code": "CDEV127",
+    "why": "named only in the A.A. degree section; certificate section not in the text"
+   },
+   {
+    "code": "CDEV185",
+    "why": "named only in the A.A. degree section; certificate section not in the text"
+   },
+   {
+    "code": "CDEV186",
+    "why": "named only in the A.A. degree section; certificate section not in the text"
+   },
+   {
+    "code": "CDEV244",
+    "why": "named only in the A.A. degree section; certificate section not in the text"
+   },
+   {
+    "code": "CDEV245",
+    "why": "named only in the A.A. degree section; certificate section not in the text"
+   },
+   {
+    "code": "CDEV215",
+    "why": "named only in the A.A. degree section; certificate section not in the text"
+   },
+   {
+    "code": "CDEV205",
+    "why": "named only in the A.A. degree section; certificate section not in the text"
+   }
+  ],
+  "notes": [
+   "The source page is the Child Development - Early Intervention and Inclusion Associate of Arts Degree page, not the Certificate of Achievement page. The text prints no section for the Certificate of Achievement, so no blocks, totals, outcomes or careers were recorded for it.",
+   "For reviewer reference, the A.A. degree section lists: Required Courses CDEV C1000 (3) or CDEV C1000H, CDEV 111 (3), CDEV 126 (3), CDEV 127 (3), CDEV 185 (3), CDEV 186 (3), CDEV 244 (3), CDEV 245 (3); Required Courses for Experience Working with Children (8 units): CDEV 215 (4), CDEV 205 (4); Total Units 32; Recommended Course: CDEV 109 (3, not in closed list). The degree requires SBVC GE or Cal-GETC and a minimum of 60 semester units.",
+   "The degree description names 'early childhood paraprofessionals' and 'early childhood intervention/early childhood special education paraprofessionals'; not recorded as careers because they belong to the degree section.",
+   "The page's Program Learning Outcomes tab lists seven outcomes for the degree; not recorded because it is not shown that the certificate shares them. The certificate page should be fetched to confirm requirements, which may match the degree's 32-unit major."
+  ]
+ },
+ "extracted_run": "38748858322"
+}

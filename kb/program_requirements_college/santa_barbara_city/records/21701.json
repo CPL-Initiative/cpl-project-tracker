@@ -1,0 +1,273 @@
+{
+ "college": "Santa Barbara City College",
+ "control_number": "21701",
+ "shape": "certificate",
+ "title": "Addictive Disorders Counseling",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.sbcc.edu/academic-departments/addictive-disorders-counseling/addictive-disorders-counseling-certificate-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7756,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7756,
+    "output_tokens": 1828,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1828,
+  "output_tokens_details": {
+   "thinking_tokens": 361
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06758,
+ "ms": 14486,
+ "seconds": 14.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 17,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    40.0,
+    41.0
+   ],
+   "stated": [
+    40.0,
+    41.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Addictive Disorders Counseling, Certificate of Achievement (C)",
+   "measure": "units",
+   "total_units": {
+    "min": 40,
+    "max": 41
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Implement a systematic approach to screening and assessment of individuals thought to have a substance use disorder and who are being considered for addiction-related services in a crisis situation.",
+    "Use a collaborative process in which professionals and the client develop a written document that identifies important treatment goals within measurable, time-sensitive action steps toward achieving those goals with expected outcomes.",
+    "Employ the administrative, clinical and evaluative activities that bring the client, treatment services and other resources together to focus on the issues and needs identified in the treatment plan.",
+    "Facilitate the client’s progress toward mutually determined treatment goals and objectives, including counseling methods that are sensitive to individual client needs and to the influence of significant others, as well as the client’s cultural and social norms.",
+    "Present clients, families, significant others and community groups with information on risks related to psychoactive substance use, as well as available prevention, treatment and recovery resources.",
+    "Record the screening and intake process, assessment, treatment plan, clinical reports and progress notes, discharge summaries and other client-related data.",
+    "Adhere to the obligations of an addiction counselor within accepted ethical and behavioral standards of conduct and professional development."
+   ],
+   "careers": [
+    "addictions counseling",
+    "entry-level addictions counselors"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ADC 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADC 121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADC 122",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADC 123",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADC 124",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADC 125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADC 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADC 135",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADC 146",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADC 148",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADC 152",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADC 290",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "PSYC C1000H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC 101",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC 101H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ADC 131",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "ADC 290 is printed with 4 units in the catalog, while the state file stores 1 unit; recorded as printed (likely variable-unit work experience).",
+   "The catalog prints a single '3-4' units figure on the PSYC C1000 row for the whole or-group (PSYC C1000 / PSYC C1000H / SOC 101 / SOC 101H / ADC 131); alternatives have no units printed beside them, so their units are null.",
+   "Careers taken from the overview: 'work in the field of addictions counseling' and 'qualify for employment as entry-level addictions counselors'.",
+   "Overview mentions a separate Associate Degree and a Post-Professional Practice certificate; only this Certificate of Achievement section was recorded."
+  ]
+ },
+ "extracted_run": "38670933359"
+}

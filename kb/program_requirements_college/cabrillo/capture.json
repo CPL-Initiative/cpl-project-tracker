@@ -1,0 +1,295 @@
+{
+ "college": "Cabrillo College",
+ "catalog_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+ "platform": "elumen",
+ "catalog_year": "2026-2027",
+ "programs": 291,
+ "with_closed_list": 281,
+ "started": "2026-10-15T02:26:55Z",
+ "elumen": {
+  "catalog": "2026-2027",
+  "read": "publish/content",
+  "menu_programs": 0,
+  "errors": [],
+  "menu_departments": 70,
+  "department_programs": 291,
+  "program_pages": 291
+ },
+ "pages_read": 291,
+ "banner_h1": null,
+ "loads": 362,
+ "seconds": 1528.4,
+ "found": 271,
+ "by_method": {
+  "no_closed_list": 10,
+  "not_found": 7,
+  "page_claimed": 3,
+  "sitemap_page": 271
+ },
+ "shared_pages": {
+  "https://cabrillo.elumenapp.com/catalog/2026-2027/program/political-science-associate-in-arts-for-transfer-a-a-t-fall-2026": [
+   "06396",
+   "32067"
+  ],
+  "https://cabrillo.elumenapp.com/catalog/2026-2027/program/english-associate-in-arts-for-transfer-a-a-t-fall-2026": [
+   "09602",
+   "32200"
+  ],
+  "https://cabrillo.elumenapp.com/catalog/2026-2027/program/mathematics-2-0-associate-in-science-for-transfer-a-s-t-fall-2026": [
+   "30754",
+   "46244"
+  ],
+  "https://cabrillo.elumenapp.com/catalog/2026-2027/program/art-history-associate-in-arts-for-transfer-a-a-t-fall-2026": [
+   "31610",
+   "32201"
+  ],
+  "https://cabrillo.elumenapp.com/catalog/2026-2027/program/communication-studies-2-0-associate-in-arts-for-transfer-a-a-t-fall-2026": [
+   "32069",
+   "43111"
+  ],
+  "https://cabrillo.elumenapp.com/catalog/2026-2027/program/elementary-teacher-education-integrated-programs-associate-in-arts-for-transfer-a-a-t-fall-2026": [
+   "33673",
+   "46340"
+  ],
+  "https://cabrillo.elumenapp.com/catalog/2026-2027/program/video-certificate-of-achievement-fall-2026": [
+   "41099",
+   "46185"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "06362",
+   "title": "Nursing",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/nursing-2-0-associate-of-science-a-s-fall-2027",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 10,
+    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
+    "error": null,
+    "chars": {
+     "body": 10974,
+     "content": 10974,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "36677",
+   "title": "Math PLUS: Preparation for Precalculus and Calculus",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/math-plus-preparation-for-precalculus-and-calculus-certificate-of-competency-summer-2022",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1436,
+     "content": 1436,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "36680",
+   "title": "Math PLUS: Preparation for Algebra and Business Calculus",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/math-plus-preparation-for-algebra-and-business-calculus-certificate-of-competency-summer-2022",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1490,
+     "content": 1490,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "36837",
+   "title": "Math PLUS: Preparation for Statistics",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/math-plus-preparation-for-statistics-certificate-of-competency-summer-2022",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1350,
+     "content": 1350,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "37545",
+   "title": "Fundamentals of Teaching with Migrant Student Populations",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/fundamentals-of-teaching-with-migrant-student-populations-certificate-of-completion-spring-2019",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1487,
+     "content": 1487,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "42748",
+   "title": "EMT-B National and State Preparation",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/emt-b-national-and-state-preparation-certificate-of-completion-fall-2023",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1437,
+     "content": 1437,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "42764",
+   "title": "Cybersecurity Basics",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/cybersecurity-competitions-i-certificate-of-completion-fall-2023",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 10,
+    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1714,
+     "content": 1714,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "36878",
+   "title": "Academic Writing and Research Literacy",
+   "award": "Noncredit program",
+   "pages": [
+    "https://cabrillo.elumenapp.com/catalog/2026-2027/program/digital-literacy-certificate-of-competency-fall-2025"
+   ]
+  },
+  {
+   "control_number": "37328",
+   "title": "Functional Nutrition",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://cabrillo.elumenapp.com/catalog/2026-2027/program/culinary-arts-and-hospitality-management-certificate-of-achievement-fall-2026",
+    "https://cabrillo.elumenapp.com/catalog/2026-2027/program/entry-level-baking-certificate-of-achievement-fall-2026",
+    "https://cabrillo.elumenapp.com/catalog/2026-2027/program/entry-level-catering-certificate-of-achievement-fall-2026",
+    "https://cabrillo.elumenapp.com/catalog/2026-2027/program/entry-level-cook-certificate-of-achievement-fall-2026",
+    "https://cabrillo.elumenapp.com/catalog/2026-2027/program/entry-level-restaurant-preparation-certificate-of-achievement-fall-2026",
+    "https://cabrillo.elumenapp.com/catalog/2026-2027/program/personal-trainer-certificate-of-achievement-fall-2025",
+    "https://cabrillo.elumenapp.com/catalog/2026-2027/program/culinary-arts-and-hospitality-management-associate-in-science-a-s-fall-2026"
+   ]
+  },
+  {
+   "control_number": "43086",
+   "title": "Cybersecurity",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://cabrillo.elumenapp.com/catalog/2026-2027/program/information-security-certificate-of-achievement-fall-2025",
+    "https://cabrillo.elumenapp.com/catalog/2026-2027/program/cloud-computing-certificate-of-achievement-fall-2025",
+    "https://cabrillo.elumenapp.com/catalog/2026-2027/program/computer-information-systems-foundations-certificate-of-achievement-fall-2025",
+    "https://cabrillo.elumenapp.com/catalog/2026-2027/program/computer-support-certificate-of-achievement-fall-2025",
+    "https://cabrillo.elumenapp.com/catalog/2026-2027/program/information-technology-it-support-apprentice-certificate-of-achievement-fall-2025",
+    "https://cabrillo.elumenapp.com/catalog/2026-2027/program/networking-certificate-of-achievement-fall-2025",
+    "https://cabrillo.elumenapp.com/catalog/2026-2027/program/operating-systems-certificate-of-achievement-fall-2026",
+    "https://cabrillo.elumenapp.com/catalog/2026-2027/program/information-technology-associate-in-science-a-s-fall-2026",
+    "https://cabrillo.elumenapp.com/catalog/2026-2027/program/computer-support-associate-in-science-a-s-fall-2025"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 8,
+  "0.8-1.0": 45,
+  "1.0": 218
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/cabrillo",
+  "kept": 271,
+  "programs": 0,
+  "list": []
+ },
+ "run": "38670925488"
+}

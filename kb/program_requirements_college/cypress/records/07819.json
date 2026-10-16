@@ -1,0 +1,250 @@
+{
+ "college": "Cypress College",
+ "control_number": "07819",
+ "shape": "degree",
+ "title": "Court Reporting",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/court-reporting/court-reporting-associate-in-science-degree/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7575,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7575,
+    "output_tokens": 1599,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1599,
+  "output_tokens_details": {
+   "thinking_tokens": 430
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06228,
+ "ms": 12919,
+ "seconds": 13.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "CTRP51C",
+    "CTRP52C",
+    "CTRP74C"
+   ],
+   "flagged": [
+    "CTRP51C",
+    "CTRP52C",
+    "CTRP74C"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    33.5,
+    33.5
+   ],
+   "stated": [
+    33.5,
+    33.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Court Reporting Associate in Science Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 33.5,
+    "max": 33.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cypress College Native General Education; CSU GE Breadth or IGETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Acquire the necessary academic skills and machine shorthand skills in order to take and pass the California Certified Shorthand Reporters (CSR) examination. Special emphasis is put on accuracy and speed with training in vocabulary, legal, medical, congressional record, and jury charge material. Students will also take the state-mandated capstone class in order to assess their academic abilities in medical, legal, court and depo procedures and other related fields to ensure a solid foundation for future success as a CSR. This combined skillset is necessary to be employed in the field of court reporting."
+   ],
+   "careers": [
+    "court reporting",
+    "deposition reporting"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required courses are listed in suggested sequence (33.5 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 33.5,
+     "max": 33.5
+    },
+    "courses": [
+     {
+      "code": "CTRP 071 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTRP 067 C",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTRP 068 C",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTRP 051 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CTRP 052 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CTRP 053 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTRP 055 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTRP 056 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTRP 076 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTRP 081 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTRP 050 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTRP 074 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page states a major total of 33.5 units; the 60-unit figure is a general associate degree minimum ('any elective courses to complete a minimum of 60 units'), so degree_total is left null and electives_fill_degree set true.",
+   "The page names three GE options (Cypress College Native GE, CSU GE Breadth, or IGETC) without GE units.",
+   "CTRP 051 C, CTRP 052 C and CTRP 074 C appear in the catalog but not in the closed list; marked as catalog additions.",
+   "The outcomes tab prints one program-level outcome; recorded without its 'OUTCOME 1:' label."
+  ]
+ },
+ "extracted_run": "38748866826"
+}

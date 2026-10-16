@@ -1,0 +1,344 @@
+{
+ "college": "San Joaquin Delta College",
+ "control_number": "22246",
+ "shape": "degree",
+ "title": "Administrative Executive Professional/Office Manager",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3304&print",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7044,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7044,
+    "output_tokens": 2628,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2628,
+  "output_tokens_details": {
+   "thinking_tokens": 790
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08074,
+ "ms": 19450,
+ "seconds": 19.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 18,
+   "share": 0.722,
+   "missing": [
+    "BUS10A",
+    "BUS1A",
+    "BUS89",
+    "COMMDIS3",
+    "COMMDIS7"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "ACCT10A",
+    "ACCT1A",
+    "ACCT89",
+    "COMM3",
+    "COMM7"
+   ],
+   "flagged": [
+    "ACCT10A",
+    "ACCT1A",
+    "ACCT89",
+    "COMM3",
+    "COMM7"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    42.0,
+    42.0
+   ],
+   "stated": [
+    42.0,
+    42.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Administrative Executive Professional/Office Manager, AS",
+   "measure": "units",
+   "total_units": {
+    "min": 42,
+    "max": 42
+   },
+   "open_elective_units": null,
+   "ge_pattern": "San Joaquin Delta College Associate Degree General Education Pattern or Cal-GETC",
+   "degree_total": {
+    "min": 66,
+    "max": 66
+   },
+   "ge_units": {
+    "min": 27,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply office management principles to design a comprehensive Standard Operating Procedure (SOP) for a workplace policy or onboarding procedure. The work sample will be a written, verbal, or video that demonstrates business communication principles aligned with the organization’s goals and objectives.",
+    "Apply and demonstrate business document formatting principles by creating a professional portfolio that contains correctly formatted office management documents and messages, such as employee/manager formal memoranda, top and mid-level strategic planning meeting emails, and/or marketing/outreach social media content."
+   ],
+   "careers": [
+    "Administrative Manager",
+    "Administrative Professional",
+    "Health Service Manager",
+    "First-Line Supervisor",
+    "Administrative Executive",
+    "Office Manager"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Major Requirements - Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 36,
+     "max": 36
+    },
+    "courses": [
+     {
+      "code": "BIM 1A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIM 1B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIM 9",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIM 38",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIM 39",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIM 79",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIM 81",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 17",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 36",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 89",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CSA 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Major Requirements - Restricted Electives: Area A",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ACCT 1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACCT 10A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Major Requirements - Restricted Electives: Area B",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BUS 1A",
+    "why": "not in the text; catalog prints ACCT 1A Principles of Accounting instead (apparent renumbering)"
+   },
+   {
+    "code": "BUS 10A",
+    "why": "not in the text; catalog prints ACCT 10A Bookkeeping instead (apparent renumbering)"
+   },
+   {
+    "code": "BUS 89",
+    "why": "not in the text; catalog prints ACCT 89 QuickBooks instead (apparent renumbering)"
+   },
+   {
+    "code": "COMM DIS 3",
+    "why": "not in the text"
+   },
+   {
+    "code": "COMM DIS 7",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "Catalog prints BIM 38 at 4 units; the state file stores 3.5.",
+   "BIM 1B title in catalog is 'Intermediate Keyboarding and Microsoft Word Business Documents Formatting', differing from the state file title.",
+   "ACCT 1A, ACCT 10A and ACCT 89 appear to be renumbered BUS 1A, BUS 10A and BUS 89; reviewer should confirm.",
+   "Two GE patterns offered: San Joaquin Delta College Associate Degree GE Pattern (27 units) or Cal-GETC (34 units); ge_units recorded as 27-34 from these two printed figures.",
+   "Minimum Major Units Required: 42 recorded as total_units; Minimum Degree Units Required: 66 recorded as degree_total.",
+   "Area A and Area B each state 'Complete 3 units selected from'; recorded as stated 3."
+  ]
+ },
+ "extracted_run": "38631691511"
+}

@@ -1,0 +1,26 @@
+{
+ "_readme": "S387 SkyMagnolia, 2026-10-14. The census listed 79 catalog addenda at 52 colleges (apply of 2026-10-11); none has been read. This read opens the addenda that amend a catalog the harvest has loaded records from, to learn what an addendum prints (program and course changes, dates, effective terms) before the reading agent is written. Pages only, no model call, no table write.",
+ "college": "Norco College",
+ "questions": {
+  "what_it_changes": "Which programs and courses the addendum adds, removes or revises, the date it prints and the term it takes effect, and whether it links further addenda."
+ },
+ "keywords": [
+  "[Pp]rogram",
+  "[Dd]egree",
+  "[Cc]ertificate",
+  "[Aa]dded|[Dd]eleted|[Rr]emoved|[Rr]evised|[Cc]hange",
+  "[Ee]ffective",
+  "[Uu]nits?",
+  "[A-Z]{2,5} ?[A-Z]?\\d{1,3}[A-Z]?\\b"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "what_it_changes"
+   ],
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5361",
+   "links": "addend|\\.pdf",
+   "expand": true
+  }
+ ]
+}

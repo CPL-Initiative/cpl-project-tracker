@@ -1,0 +1,237 @@
+{
+ "college": "Allan Hancock College",
+ "control_number": "19920",
+ "shape": "certificate",
+ "title": "LVN to RN",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30969",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9874,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9874,
+    "output_tokens": 1658,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1658,
+  "output_tokens_details": {
+   "thinking_tokens": 352
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07266,
+ "ms": 13498,
+ "seconds": 13.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 9,
+   "share": 0.889,
+   "missing": [
+    "BIOL124"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "BIOL128"
+   ],
+   "flagged": [
+    "BIOL128"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    30.0,
+    30.0
+   ],
+   "stated": [
+    30.0,
+    30.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 9,
+   "courses": 0,
+   "count": 9,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Nursing: 30 Unit Option - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 30,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Evaluate nursing care provided to patients, families, groups, populations, and communities across the lifespan from diverse backgrounds in a variety of settings to ensure that it is compassionate, age and culturally appropriate and based on a patient's preferences, values and needs.",
+    "Collaborate with members of the interprofessional health care team to manage and coordinate the provision of safe, quality care for patients, families, and groups.",
+    "Demonstrate use of best current evidence and clinical expertise when making clinical decisions in the provision of patient-centered care.",
+    "Use evidence-based quality improvement processes to effect change in the delivery of patient-centered care.",
+    "Demonstrate effective use of strategies to mitigate errors and reduce the risk of harm to patients, self and others in healthcare, home, and community settings.",
+    "Use evidence-based information and patient care technology to communicate relevant patient information, manage care and mitigate error in the provision of safe, quality patient-centered care.",
+    "Assimilate integrity and accountability into practices that uphold established regulatory, legal, and ethical principles while providing patient-centered, standard-based nursing care.",
+    "Use leadership, management and priority-setting skills in the provision and management of safe, quality patient-centered care.",
+    "Use verbal and nonverbal communication strategies with patients, families, and groups from diverse backgrounds that promote an effective exchange of information and development of therapeutic relationships."
+   ],
+   "careers": [
+    "“non-graduate” registered nurse"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required core courses (30 units):",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 30,
+     "max": 30
+    },
+    "courses": [
+     {
+      "code": "BIOL 125",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 128",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NURS 103",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 106",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 111",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 108",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 109",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BIOL 124",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The page's heading is 'Nursing: 30 Unit Option - Certificate of Achievement' while the program title given is 'LVN to RN'; reviewer should confirm this is the same award.",
+   "The Suggested Course Sequence lists NURS 112 RN Skills 2 (0.5 units) and totals 30.5, but NURS 112 does not appear in the required core courses list (Total: 30.0); it was not placed in a block.",
+   "BIOL 128 Microbiology is required in the catalog but not in the closed list; recorded as a catalog addition.",
+   "Outcomes are printed for 'the Certificate of Achievement in Nursing: 30 Unit Option' and recorded as this award's outcomes."
+  ]
+ },
+ "extracted_run": "38843474519"
+}

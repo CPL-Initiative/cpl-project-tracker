@@ -1,0 +1,133 @@
+{
+ "college": "Napa Valley College",
+ "programs": 127,
+ "with_closed_list": 111,
+ "found": 98,
+ "extracted": 98,
+ "errors": 0,
+ "passed_machine_checks": 83,
+ "failed": {
+  "coverage": 4,
+  "invented": 0,
+  "arithmetic": 15,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 6.36,
+ "cost_per_program": 0.0649,
+ "not_found": [
+  {
+   "control_number": "03685",
+   "title": "Digital Design Graphics Technology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.napavalley.edu//areas-of-study/digital-design-graphics-technology/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2404,
+     "content": 5905,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Curriculum",
+      49
+     ],
+     [
+      "Contact Information",
+      508
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "19942",
+   "title": "Digital Design Graphics Technology",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.napavalley.edu//areas-of-study/digital-design-graphics-technology/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 0 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2404,
+     "content": 5905,
+     "tabs": 0
+    },
+    "tab_panels": [
+     [
+      "Curriculum",
+      49
+     ],
+     [
+      "Contact Information",
+      508
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "36505",
+   "title": "Entrepreneurship",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.napavalley.edu//areas-of-study/business-and-entrepreneurship/business-marketing-coa/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.062,
+    "body": 0.062,
+    "content": 0.0,
+    "net": 1,
+    "listed": 16,
+    "why": "coarse net: the page's code tokens name 1 of 16 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2748,
+     "content": 4267,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "37927",
+   "title": "Mechanical Drafting and Design",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "37928",
+   "title": "Architectural Drafting and Design",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "run": "38748853261"
+}

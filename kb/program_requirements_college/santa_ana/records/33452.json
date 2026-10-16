@@ -1,0 +1,206 @@
+{
+ "college": "Santa Ana College",
+ "control_number": "33452",
+ "shape": "noncredit",
+ "title": "Adult Basic Education/Adult Secondary Education Reading Proficiency",
+ "award": "Noncredit program",
+ "source_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36225/36183",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6280,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6280,
+    "output_tokens": 1092,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1092,
+  "output_tokens_details": {
+   "thinking_tokens": 293
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04696,
+ "ms": 9435,
+ "seconds": 9.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "HSS31"
+   ],
+   "flagged": [
+    "HSS31"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    108.0,
+    192.0
+   ],
+   "stated": [
+    108.0,
+    192.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Adult Basic Education/Adult Secondary Education Reading Proficiency: Certificate of Competency (Noncredit)",
+   "measure": "hours",
+   "total_units": {
+    "min": 108,
+    "max": 192
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Determine the main idea and details of a level-appropriate passage",
+    "Draw correct inferences after reading a level-appropriate passage"
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Students must complete and pass ONE of the following courses:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 36,
+     "max": 96
+    },
+    "courses": [
+     {
+      "code": "ABE 023",
+      "units": 36,
+      "units_max": 72,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSRDG 089",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSS 031",
+      "units": 72,
+      "units_max": 96,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Students must complete and pass ONE of the following courses:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 72,
+     "max": 96
+    },
+    "courses": [
+     {
+      "code": "HSRDG 093",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSS 035",
+      "units": 72,
+      "units_max": 96,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit program counted in hours; all units fields hold hours as printed.",
+   "Catalog prints codes with leading zeros (ABE 023, HSRDG 089, HSRDG 093, HSS 035); matched to closed-list ABE 23, HSRDG 89, HSRDG 93, HSS 35.",
+   "HSS 031 is not in the closed list and is recorded as a catalog addition.",
+   "ABE 023, HSS 031 and HSS 035 are marked '( Historical )' in the catalog; reviewer may check whether they are still offered.",
+   "Each block is printed as a list of courses joined by OR under 'complete and pass ONE of the following courses'; recorded as choose_courses with minimum 1."
+  ]
+ },
+ "extracted_run": "38843461766"
+}

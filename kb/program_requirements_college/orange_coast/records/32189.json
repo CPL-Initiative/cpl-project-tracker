@@ -1,0 +1,574 @@
+{
+ "college": "Orange Coast College",
+ "control_number": "32189",
+ "shape": "adt",
+ "title": "English",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/language-communication/english/english-associate-arts-degree-transfer-aat/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10623,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10623,
+    "output_tokens": 4595,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4595,
+  "output_tokens_details": {
+   "thinking_tokens": 1512
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.13439,
+ "ms": 36821,
+ "seconds": 37.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 46,
+   "listed": 49,
+   "share": 0.939,
+   "missing": [
+    "ENGLA101H",
+    "ENGLA140",
+    "ENGLA140H"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "ENGLC1002",
+    "ENGLC1002H",
+    "ENGLC1003H"
+   ],
+   "flagged": [
+    "ENGLC1002",
+    "ENGLC1002H",
+    "ENGLC1003H"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    16.0,
+    20.0
+   ],
+   "stated": [
+    19.0,
+    19.0
+   ],
+   "against": "program",
+   "why": [
+    "a required course in 'Option 1' has no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate Degree for Transfer Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 19,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "This program serves all English majors whether their emphasis at the CSU level will ultimately be the study of literature, rhetoric and non-fiction writing, or creative writing.",
+    "Students will be eligible and prepared for admission (SB 1440 and Education Code 66746) to California State University system schools."
+   ],
+   "careers": [
+    "teaching at the K-12 or community college level",
+    "literary scholarship at the graduate level",
+    "legal professions",
+    "creative writing",
+    "non-fiction essay writing in literary, business, and scientific journals"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Option 1",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Core",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ENGL C1001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1001H",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL A109",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1002H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Option 2",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Core",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ENGL C1003",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1003H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A - Select two courses from the following:",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ENGL A150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL A150H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL A151",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL A151H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL A160",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL A160H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL A161",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL A161H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL A270",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL A270H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL A275",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL A275H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B - If using Core option 1 select 1 course, if Core option 2 is used select two courses",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ENGL A119",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1002H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL A141",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL A141H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL A143",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL A143H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL A152",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL A152H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL A173",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL A173H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL A176",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL A176H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL A181",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL A181H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List C - Select one course not used in Lists A or B or from the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ENGL A121",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL A122",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL A126",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL A127",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL A147",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL A147H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL A148",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL A148H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL A156",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL A156H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL A168",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL A170",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL A170H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL A179",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL A179H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL A187",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL A187H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ENGL A101H",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL A140",
+    "why": "not in the text (Introduction to Literature appears as ENGL C1002)"
+   },
+   {
+    "code": "ENGL A140H",
+    "why": "not in the text (Introduction to Literature Honors appears as ENGL C1002H)"
+   }
+  ],
+  "notes": [
+   "The requirements table prints no units beside individual courses; all course units are recorded as null.",
+   "The Core heading 'Core Courses - Select Option 1 or Option 2' prints 4-7 units for the core as a whole; no separate total is printed for Option 1 or Option 2, so their stated is null.",
+   "List B requires 1 course if Core Option 1 is used and 2 courses if Core Option 2 is used (printed '6-3'); minimum recorded as 1. List B also allows 'Any List A Course not already used'. ENGL C1002/C1002H count in List B only if not used to fulfill Core requirements.",
+   "List C allows any course not used in Lists A or B in addition to the listed courses.",
+   "Cal-GETC is printed as 'up to 34' units; recorded ge_units as 34. Footnote says some major units may also meet GE requirements.",
+   "Transferable electives are printed as 'Varies' to satisfy the 60-unit total; electives_fill_degree set true.",
+   "Closed-list codes ENGLA109, ENGLA119 and ENGLC1001H (no space) were matched to ENGL A109, ENGL A119 and ENGL C1001H.",
+   "ENGL C1002, ENGL C1002H and ENGL C1003H are not in the closed list and are marked catalog additions.",
+   "Program Learning Outcomes are printed for the program page as a whole; recorded for this AA-T.",
+   "Program Sequence (Cal-GETC) tab is a sample plan of study and was not used for blocks; HIST and POLS courses there are GE/American Institutions courses.",
+   "Careers list is taken from the description's stated uses of the major (teaching, scholarship, legal professions, writing); reviewer may check whether these should count as careers."
+  ]
+ },
+ "extracted_run": "38670927724"
+}

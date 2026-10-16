@@ -1,0 +1,232 @@
+{
+ "college": "Oxnard College",
+ "control_number": "36569",
+ "shape": "adt",
+ "title": "Geology",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.vcccd.edu/oxnard/programs-courses/geology/geology-ast/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7646,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7646,
+    "output_tokens": 2031,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2031,
+  "output_tokens_details": {
+   "thinking_tokens": 673
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0712,
+ "ms": 16696,
+ "seconds": 17.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 8,
+   "share": 0.875,
+   "missing": [
+    "GEOLR101L"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "GEOGR101L"
+   ],
+   "flagged": [
+    "GEOGR101L"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": [
+    28.0,
+    28.0
+   ],
+   "against": "program",
+   "why": [
+    "a required course in 'Required Core Courses' has no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 9,
+   "courses": 0,
+   "count": 9,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "REQUIREMENTS",
+   "measure": "units",
+   "total_units": {
+    "min": 28,
+    "max": 28
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 5,
+    "max": 5
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 37,
+    "max": 37
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply the scientific method to solve earth science problems such as determining the age of the Earth or determining the origin of the oceans.",
+    "Acquire knowledge and skills sufficient to allow one to pursue advanced study in earth science or find employment in earth science related fields.",
+    "Apply general math skills such as unit conversion, ratios and percentages to solving simple rate problems; evaluate data, produce and interpret tables and graphs; apply the metric system of measurement.",
+    "Demonstrate scientific literacy by defining and explaining the major steps in the scientific method of investigation, specifically, the difference between empirical data, interpretation, testable hypothesis, theory, paradigm, speculation, and pseudo-science.",
+    "Display written competency in the description and analysis of earth science subject matter.",
+    "Identify, research, evaluate and integrate scholarly literature within the discipline.",
+    "List and categorize common natural resources and explain their origin, spatial distribution, appropriate exploration methods, and the resulting products, wastes, and contaminants.",
+    "List, explain, and evaluate global and local earth science hazards such as earthquakes, volcanoes, landslides, and seismic sea waves.",
+    "Recognize applications of earth science in everyday life."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "GEOL R101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG R101L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOL R114",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL R114L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM R120",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM R122",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2220",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "GEOL R101L",
+    "why": "not in the text; catalog pairs GEOL R101 with GEOG R101L (Physical Geography Laboratory) instead, possibly a catalog typo"
+   }
+  ],
+  "notes": [
+   "The extracted text does not include the page's program heading; section_heading uses the REQUIREMENTS tab label. The page URL indicates the Geology AS-T.",
+   "The catalog prints paired courses with one unit figure: 'GEOL R101 & GEOG R101L' 4 units and 'GEOL R114 & R114L' 4 units. The 4 units are recorded on the first course of each pair and null on the second.",
+   "The catalog pairs GEOL R101 with GEOG R101L (Physical Geography Laboratory) rather than GEOL R101L (Physical Geology Laboratory), which is on the closed list. A reviewer should check whether this is a catalog error.",
+   "The page prints Total Required Major Units 28, Cal-GETC 37, Double-Counted Units -7, Free Electives Required 5 and Total Units Required for AS-T Degree 60. The free electives are recorded in degree_elective_units.",
+   "The outcomes list comes from the page's program student learning outcomes tab for this program.",
+   "No careers are named in the text."
+  ]
+ },
+ "extracted_run": "38842203500"
+}

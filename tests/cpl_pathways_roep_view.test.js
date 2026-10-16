@@ -174,6 +174,22 @@ function click(w, root, value) {
   const broken = { key: "x", college: "X", title: "Y" };
   T._renderRoepProgram(root, broken);
   check("(b) a record the build lacks says so", /unavailable/.test(root.textContent));
+
+  // Record shape 5 (Sam, Open Asks Sheet 78 card 2): a page that prints the degree total with
+  // general education and no major total names both figures, and the bar stays off.
+  const some = w.CPL_PATHWAYS_ROEP.programs.find((p) => p.display.figure.up_to);
+  const deg = JSON.parse(JSON.stringify(some));
+  deg.measure = "units";
+  deg.display.figure.measure = "units";
+  deg.display.figure.total = { min: null, max: null };
+  deg.display.figure.degree = { total: { min: 64, max: 68 }, ge: { min: 34, max: 38 }, ge_pattern: "CalGETC", electives_fill: false };
+  deg.display.checks = Object.assign({}, deg.display.checks, { arithmetic: "equal", against: "degree" });
+  T._renderRoepProgram(root, deg);
+  const dlabel = root.querySelector(".cplpw-rmeter .mlabel").textContent;
+  check("(b) a degree total printed with general education is named, not 'no program total'",
+    /^The catalog prints no major total; the degree takes 64–68 units with general education \(CalGETC, 34–38 units\); /.test(dlabel)
+    && !/no program total/.test(dlabel), dlabel);
+  check("(b) and draws no bar against the degree", !root.querySelector(".cplpw-rbar"));
 }
 
 // ── (h) a read map places each course in its term (S340) ──

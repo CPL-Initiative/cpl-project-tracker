@@ -1,0 +1,213 @@
+{
+ "college": "Citrus College",
+ "programs": 193,
+ "with_closed_list": 185,
+ "found": 148,
+ "extracted": 148,
+ "errors": 0,
+ "passed_machine_checks": 122,
+ "failed": {
+  "coverage": 5,
+  "invented": 0,
+  "arithmetic": 25,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 9.33,
+ "cost_per_program": 0.063,
+ "not_found": [
+  {
+   "control_number": "02356",
+   "title": "Criminal Justice",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "20037",
+   "title": "Criminal Justice",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "30937",
+   "title": "Administration of Justice",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://catalog.citruscollege.edu/disciplines/public-works/public-works-administration-certificate-achievement/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 14,
+    "why": "coarse net: the page's code tokens name 0 of 14 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5210,
+     "content": 21788,
+     "tabs": 354
+    },
+    "tab_panels": [
+     [
+      "Learning Outcomes",
+      1153
+     ],
+     [
+      "Requirements",
+      334
+     ],
+     [
+      "Career Information",
+      162
+     ],
+     [
+      "Close this window",
+      147
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "33599",
+   "title": "Correctional Science",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.citruscollege.edu/disciplines/multidisciplinary/physical-science-as/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 9,
+    "why": "coarse net: the page's code tokens name 0 of 9 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4853,
+     "content": 23912,
+     "tabs": 3543
+    },
+    "tab_panels": [
+     [
+      "Learning Outcomes",
+      422
+     ],
+     [
+      "Requirements",
+      1523
+     ],
+     [
+      "Curriculum Map",
+      1976
+     ],
+     [
+      "Career Information",
+      162
+     ],
+     [
+      "Close this window",
+      147
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "44410",
+   "title": "Hairstyling Program",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.citruscollege.edu/disciplines/cosmetology/hairstyling-certificate-achievement/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4949,
+     "content": 21211,
+     "tabs": 335
+    },
+    "tab_panels": [
+     [
+      "Learning Outcomes",
+      496
+     ],
+     [
+      "Requirements",
+      315
+     ],
+     [
+      "Career Information",
+      664
+     ],
+     [
+      "Close this window",
+      147
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "44462",
+   "title": "Hairstyling Program",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.citruscollege.edu/disciplines/cosmetology/hairstyling-as/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4930,
+     "content": 21744,
+     "tabs": 912
+    },
+    "tab_panels": [
+     [
+      "Learning Outcomes",
+      466
+     ],
+     [
+      "Requirements",
+      892
+     ],
+     [
+      "Career Information",
+      664
+     ],
+     [
+      "Close this window",
+      147
+     ]
+    ]
+   }
+  }
+ ],
+ "run": "38675245799"
+}

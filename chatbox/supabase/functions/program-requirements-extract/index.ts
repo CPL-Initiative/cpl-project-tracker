@@ -61,6 +61,40 @@
 // part's codes (part 1 also takes every catalog addition). The runner
 // (kb/_program_requirements_extract.py, call) sends the parts at once and merges
 // them. A body without part reads exactly as version 5 did.
+// Version 7 (S389, 2026-10-14): record shape version 5, Sam's Open Asks Sheet 78
+// card 2 ("Record both figures"). Palo Verde and Cabrillo pages print the degree
+// total with general education and no total for the major (Automotive
+// Technology A.S.: Total 64 - 68 = a 24-unit core, 6 units of electives and
+// CalGETC 34 - 38), and 79 records failed arithmetic for want of a total.
+// program.degree_total and program.ge_units keep both figures as printed, and
+// program.electives_fill_degree says the page fills the rest of the degree with
+// electives it prints no figure for. The scorer adds the blocks, the open
+// electives and the general education against the degree total when the page
+// prints no major total.
+// Version 8 (S392, 2026-10-14): record shape version 6. Sam marked Cabrillo's
+// Biology A.S. Needs a fix ("missing the Cabrillo College General Education
+// credits required: 24 and the 6 units of Elective. Both are noted on the
+// catalog."): its page prints "Complete the following number of credits: 60 ·
+// Cabrillo College General Education 24", the major, and "General electives:
+// any transferable or degree applicable course. 6", and every Cabrillo degree
+// page says "at least 30 units in the major", which the reading took for the
+// major total. A sentence giving a kind of degree's minimum in the major is no
+// major total, and program.degree_elective_units keeps the electives a page
+// counts toward the degree beside a major total it also prints. The scorer
+// checks the major against its total and the major, general education and those
+// electives against the degree total.
+// Version 9 (S393, 2026-10-14): the same record, a schema the API accepts. Version 8
+// failed on every call ("Schemas contains too many parameters with union types (17
+// parameters with type arrays or anyOf)"; Cabrillo 06350 and 06378, run 38656003434):
+// degree_elective_units added two nullable numbers to version 7's fifteen. Each span
+// (total_units, degree_elective_units, degree_total, ge_units, a block's stated) is now
+// one nullable object of plain numbers, so the schema holds twelve unions, and the
+// function returns a null span as {min: null, max: null}, the shape the scorer reads.
+// Version 10 (S394, 2026-10-15): the same record. Under version 9 Cabrillo's Theatre Arts
+// 06350 and Physics 06378 read their Recommended Major Electives block (run 38661293784)
+// and also put its units in open_elective_units, because the block's list ends "or any
+// transferable or degree applicable course": 18 + 18 + 18 + 24 read 78 against the
+// printed 60. Units a block holds never go in open_elective_units too.
 // Deploy from main with cpl-chat-deploy.yml (function program-requirements-extract);
 // before S360 it went out with the Supabase MCP deploy_edge_function (project
 // hvuwhnbuahrtptokpqfh, slug program-requirements-extract).
@@ -78,6 +112,32 @@ const JSON_HEADERS = { "content-type": "application/json" };
 
 // ── The record's shape (the scorer's contract) ─────────────────────────────
 const NUM_OR_NULL = { anyOf: [{ type: "number" }, { type: "null" }] };
+// A printed range, or null when the text prints none. One union per span: the API refuses
+// a schema with more than sixteen (version 8 had seventeen).
+const SPAN_OR_NULL = {
+  anyOf: [
+    {
+      type: "object",
+      additionalProperties: false,
+      required: ["min", "max"],
+      properties: { min: { type: "number" }, max: { type: "number" } },
+    },
+    { type: "null" },
+  ],
+};
+// The record keeps a span the text does not print as {min: null, max: null}.
+const SPAN_KEYS = ["total_units", "degree_elective_units", "degree_total", "ge_units"];
+function unnullSpans(rec: any): any {
+  if (!rec || typeof rec !== "object") return rec;
+  const prog = rec.program;
+  if (prog && typeof prog === "object") {
+    for (const k of SPAN_KEYS) if (prog[k] === null || prog[k] === undefined) prog[k] = { min: null, max: null };
+  }
+  for (const b of Array.isArray(rec.blocks) ? rec.blocks : []) {
+    if (b && (b.stated === null || b.stated === undefined)) b.stated = { min: null, max: null };
+  }
+  return rec;
+}
 const RECORD_SCHEMA = {
   type: "object",
   additionalProperties: false,
@@ -86,7 +146,8 @@ const RECORD_SCHEMA = {
     program: {
       type: "object",
       additionalProperties: false,
-      required: ["section_heading", "measure", "total_units", "open_elective_units", "ge_pattern", "outcomes", "careers"],
+      required: ["section_heading", "measure", "total_units", "open_elective_units", "degree_elective_units", "ge_pattern", "degree_total",
+        "ge_units", "electives_fill_degree", "outcomes", "careers"],
       properties: {
         section_heading: {
           type: "string",
@@ -98,19 +159,32 @@ const RECORD_SCHEMA = {
           description: "What the catalog counts this award in. A noncredit program usually states hours; then every units field holds hours.",
         },
         total_units: {
-          type: "object",
-          additionalProperties: false,
-          required: ["min", "max"],
-          description: "The total the catalog states for this award's requirements (the major or the certificate), not the 60-unit degree total. Equal min and max for a single number; null and null when the text states none.",
-          properties: { min: NUM_OR_NULL, max: NUM_OR_NULL },
+          ...SPAN_OR_NULL,
+          description: "The total the catalog states for this award's requirements (the major or the certificate), not the 60-unit degree total, and never a sentence giving the least a kind of degree requires in its major ('at least 30 units in the major'). Equal min and max for a single number; null when the text states none.",
         },
         open_elective_units: {
           ...NUM_OR_NULL,
-          description: "Units of electives the requirements leave open (any course), when the catalog names them as part of this award's total; else null.",
+          description: "Units of electives open to any course, printed outside every block, that the checked total counts: total_units when the catalog prints one, else degree_total. Never units a block already holds. Else null.",
+        },
+        degree_elective_units: {
+          ...SPAN_OR_NULL,
+          description: "Units of electives the page counts toward degree_total and outside the major, when the page prints a major total too ('General electives: any transferable or degree applicable course. 6'). Null otherwise; with no major total those electives go in open_elective_units.",
         },
         ge_pattern: {
           anyOf: [{ type: "string" }, { type: "null" }],
           description: "The general education pattern a degree names (CSU GE, IGETC, Cal-GETC, local GE), else null. GE courses never go in a block.",
+        },
+        degree_total: {
+          ...SPAN_OR_NULL,
+          description: "The total the page prints for this whole award with general education in it ('Total 64 - 68', 'Complete the following number of credits: 60'), as printed. Null when the page prints none, or prints only the major's total.",
+        },
+        ge_units: {
+          ...SPAN_OR_NULL,
+          description: "The units the page prints for its general education pattern ('CalGETC 34 - 38', 'Cabrillo College General Education 24'), as printed. Null when it prints none.",
+        },
+        electives_fill_degree: {
+          type: "boolean",
+          description: "True when the page says electives make up the rest of degree_total and prints no units for them ('transferable electives as needed to reach 60 units'); else false.",
         },
         outcomes: {
           type: "array",
@@ -146,11 +220,8 @@ const RECORD_SCHEMA = {
             description: "When the student completes one of several whole blocks (Option 1 or Option 2, one of two sequences), the same short name on each of those blocks; else null.",
           },
           stated: {
-            type: "object",
-            additionalProperties: false,
-            required: ["min", "max"],
-            description: "The total the catalog prints for this block ('6-22 units', 'List B 6-7'). Equal min and max for a single number; null and null when it prints none.",
-            properties: { min: NUM_OR_NULL, max: NUM_OR_NULL },
+            ...SPAN_OR_NULL,
+            description: "The total the catalog prints for this block ('6-22 units', 'List B 6-7'). Equal min and max for a single number; null when it prints none.",
           },
           courses: {
             type: "array",
@@ -230,13 +301,15 @@ When the student completes one of several whole blocks ("Select one of the follo
 
 List each course once in a block. When a rule offers two paths that share a course ("two HIST courses, or HIST 50 and POLS 1 plus one more HIST course"), record the course once and describe the other path in notes.
 
-When the catalog prints a total for a block ("6-22 units", "Select a minimum of 6 units 6.00-7.00"), record it in that block's stated; else stated is null and null.
+When the catalog prints a total for a block ("6-22 units", "Select a minimum of 6 units 6.00-7.00"), record it in that block's stated; else stated is null.
 
 Write each code as the catalog prints it, with the units printed beside it. Write every code with its subject: "CHLD 67 & 67L" is CHLD 67 and CHLD 67L. When the catalog prints a range beside a course ("MICR 1 4-5"), units is 4 and units_max 5; else units_max is null. When a code in the section is missing from the closed list, record it with catalog_addition true, on the course or on the alternative that names it.
 
 program.measure is "units" unless the catalog counts the award in hours, as noncredit programs usually do ("Total Hours of Completion (136 Hours)", "Intro to Lighting Retrofits (40 Hours)"). With "hours", every units field holds hours: the hours printed beside each course and the total hours in total_units. The closed list's 0 units for a noncredit course are not its hours. List every closed-list course you do not place in missing_explained, with the reason in a few words (for example, "named only in the A.S. section", "not in the text").
 
-program.total_units is the total the catalog states for this award's requirements: the major or the certificate, without general education. A range ("27-29 units") is min 27 and max 29. When the text states no total, both are null; never compute one yourself. open_elective_units is set only when the catalog names open electives as part of that total. General education courses never go in a block.
+program.total_units is the total the catalog states for this award's requirements: the major or the certificate, without general education. A range ("27-29 units") is min 27 and max 29. When the text states no total, it is null; never compute one yourself. General education courses never go in a block.
+
+Many degree pages print the total for the whole degree with general education in it, and no total for the major ("Total 64 - 68" over a core, electives and "CalGETC 34 - 38"; "Complete the following number of credits: 60" over the major and "Cal-GETC 34"). Record that figure as printed in program.degree_total, never in total_units, and the units the page prints for the general education pattern in program.ge_units. A sentence that every degree of a kind requires 60 units is no degree total unless the page prints it as this award's total. When the page prints both a major total and a degree total, record each in its own field, and put electives the page counts toward the degree and outside the major in program.degree_elective_units. A sentence giving the least a kind of degree requires in its major ("An Associate in Science degree requires 60 units ... and at least 30 units in the major") is no total for this award: total_units stays null unless the page prints the major's own total. open_elective_units holds the units of electives open to any course ("General Electives: any transferable course, 8 units") that the checked total counts: total_units when the page prints one, else degree_total. Count each unit once: units a block holds never go in open_elective_units too. A block whose list ends with any course ("or any transferable or degree applicable course") stays a block with its printed units, and open_elective_units holds only electives the page prints outside every block. When the page says electives make up the rest of the degree total and prints no units for them ("transferable electives as needed to reach 60 units"), set electives_fill_degree true; never compute their units.
 
 Outcomes. Copy each program learning outcome (or program student learning outcome) the text prints for this award into program.outcomes exactly as printed: the same words, spelling, capitals and punctuation. One entry per outcome. Leave out its list number or bullet and the lead-in sentence ("Upon successful completion of this program, students should be able to:"). Read a line break inside an outcome as a space. Never reword, shorten, merge, split or complete an outcome, and never write one the text does not print. When the page prints one outcomes list for the program as a whole, and the award shares it, record it and say so in notes. Outcomes printed under a single course go in course_outcomes under that course's code, the same way. When the text prints a heading for outcomes but no outcomes under it, both stay empty; say so in notes.
 
@@ -376,7 +449,7 @@ Deno.serve(async (req) => {
       | { text: string }
       | undefined;
     try {
-      out.record = textBlock ? JSON.parse(textBlock.text) : null;
+      out.record = textBlock ? unnullSpans(JSON.parse(textBlock.text)) : null;
       if (!out.record) out.error = "no text block in the response";
     } catch (_e) {
       out.error = "the response was not JSON";

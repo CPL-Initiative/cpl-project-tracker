@@ -1,0 +1,372 @@
+{
+ "college": "Fullerton College",
+ "control_number": "10610",
+ "shape": "certificate",
+ "title": "Computer Animation/Multi Media",
+ "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+ "source_url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/art-computer-graphics/computer-animation-multi-media-certificate/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8290,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8290,
+    "output_tokens": 2561,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2561,
+  "output_tokens_details": {
+   "thinking_tokens": 520
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08438,
+ "ms": 18441,
+ "seconds": 18.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 19,
+   "listed": 19,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "ART118F",
+    "ART144F",
+    "ART182F",
+    "ART299F",
+    "DART120F"
+   ],
+   "flagged": [
+    "ART118F",
+    "ART144F",
+    "ART182F",
+    "ART299F",
+    "DART120F"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    30.0,
+    32.0
+   ],
+   "stated": [
+    30.0,
+    32.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Computer Animation/Multi Media Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 30,
+    "max": 32
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Upon successful completion of the courses leading to the Computer Animation/Multimedia Certificate, the student will be able to demonstrate basic use of computer graphics software and hardware, and be able to demonstrate basic competence in selected image-making techniques.",
+    "Upon successful completion of the courses leading to the Computer Animation/Multimedia Certificate, the student will be able to apply the terminology of computer graphics to communications within the field of digital media.",
+    "Upon successful completion of the courses leading to the Computer Animation/Multimedia Certificate, the student will be able to devise solutions to gain an understanding of computer technology vital to web designers.",
+    "Upon successful completion of the courses leading to the Computer Animation/Multimedia Certificate, the student will be able to devise solutions to visual problems using principles of form, design, and color.",
+    "Upon successful completion of the courses leading to the Computer Animation/Multimedia Certificate, the student will be able to create projects that demonstrate specialized knowledge of 2D computer animation and multi-media projects from initial design concept through project completion that clearly illustrates the student's solutions.",
+    "Upon successful completion of the courses leading to the Computer Animation/Multimedia Certificate, the student will be able to create effective documents by effectively using the concepts of design, such as: color, style, typography and composition."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Select one of the Introduction classes (3 units)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "DART 100 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DART 102 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DART 104 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DART 106 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Art Introduction Class (3 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ART 118 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ART 120 F",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Required Advanced Courses (14 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 14,
+     "max": 14
+    },
+    "courses": [
+     {
+      "code": "ART 144 F",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DART 120 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DART 150 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DART 162 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DART 164 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Restricted Electives (10-12 units)",
+    "rule": "choose_units",
+    "minimum": 10,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "ART 123 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 180 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 182 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ART 299 F",
+      "units": 1,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DART 112 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DART 132 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DART 140 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DART 146 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DART 170 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DART 180 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 124 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CRTV 150 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CRTV 245AF",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints no units beside the alternative ART 120 F (\"or ART 120 F Basic Design\"); its units are left null.",
+   "The description states 20 units in required courses plus 10-12 units of restricted electives, total 30-32 units; the block totals (3 + 3 + 14 + 10-12) match.",
+   "Outcomes come from the page's outcomes tab and are numbered 'Outcome 1:' to 'Outcome 6:'; the numbering labels were removed. They refer to the 'Computer Animation/Multimedia Certificate'.",
+   "The award title given in the request (Certificate of Achievement, 18 or more units) is consistent with this 30-32 unit certificate."
+  ]
+ },
+ "extracted_run": "38675136988"
+}

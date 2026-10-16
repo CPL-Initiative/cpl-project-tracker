@@ -1,0 +1,63 @@
+{
+ "college": "Chabot College",
+ "programs": 248,
+ "with_closed_list": 244,
+ "found": 233,
+ "extracted": 233,
+ "errors": 0,
+ "passed_machine_checks": 201,
+ "failed": {
+  "coverage": 2,
+  "invented": 0,
+  "arithmetic": 30,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 15.83,
+ "cost_per_program": 0.068,
+ "not_found": [
+  {
+   "control_number": "46102",
+   "title": "High Intermediate ESL",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6551",
+    "label": {
+     "award": 1,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2489,
+     "content": 2489,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "46409",
+   "title": "Engineering Industry Preparation",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "46504",
+   "title": "Paramedicine",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "run": "38843479215"
+}

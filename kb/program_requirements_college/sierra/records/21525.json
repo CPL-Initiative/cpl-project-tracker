@@ -1,0 +1,319 @@
+{
+ "college": "Sierra College",
+ "control_number": "21525",
+ "shape": "certificate",
+ "title": "Interdisciplinary Entrepreneurship",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.sierracollege.edu/departments/business/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11893,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11893,
+    "output_tokens": 2265,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2265,
+  "output_tokens_details": {
+   "thinking_tokens": 741
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.09287,
+ "ms": 18609,
+ "seconds": 19.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 1,
+   "listed": 3,
+   "share": 0.333,
+   "missing": [
+    "BUS28",
+    "BUS95"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 14,
+   "codes": [
+    "BUS144",
+    "BUS146",
+    "BUS215",
+    "BUS241",
+    "BUS242",
+    "BUS260",
+    "BUS261",
+    "BUS265",
+    "BUS266",
+    "BUS273",
+    "BUS277",
+    "BUS280",
+    "BUS282",
+    "BUS284"
+   ],
+   "flagged": [
+    "BUS144",
+    "BUS146",
+    "BUS215",
+    "BUS241",
+    "BUS242",
+    "BUS260",
+    "BUS261",
+    "BUS265",
+    "BUS266",
+    "BUS273",
+    "BUS277",
+    "BUS280",
+    "BUS282",
+    "BUS284"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Innovation and Entrepreneurship Certificate of Achievement (formerly Interdisciplinary Entrepreneurship)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Communicate effectively in written and oral forms.",
+    "Demonstrate and develop critical and quantitative thinking skills and problem solving skills specific to business or transfer readiness (e.g., Accounting, Management, Marketing, Real Estate, Entrepreneurship, Computer Applications).",
+    "Identify and apply ethical principles and responsible citizenship behavior.",
+    "Demonstrate the effective use of technology to support business practices and engage in the workplace OR to support transfer readiness and preparation for a bachelor’s degree."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BUS 0144",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS 0241",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS 0242",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS 0265",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 0266",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS 0280",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 0282",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Select 3 units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "BUS 0146",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS 0215",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS 0241",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS 0260",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS 0261",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS 0273",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS 0277",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS 0284",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "IT 0060",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BUS 28",
+    "why": "not in the certificate text; section is cut off after IT 0060, and the matching degree section lists BUS 0028 in a further 'Select 3 units' block that is likely truncated here"
+   },
+   {
+    "code": "BUS 95",
+    "why": "not in the certificate text; section is cut off after IT 0060, and the matching degree section lists BUS 0095 in a further 'Select 3 units' block that is likely truncated here"
+   }
+  ],
+  "notes": [
+   "The certificate section is cut off mid-list after 'IT 0060'; the rest of the elective list, any further block (likely BUS 0028/BUS 0095 as in the A.A./A.S. section) and the Total Units line are missing, so total_units is null. Reviewer should check the full page.",
+   "Closed-list codes IT 60, BUS 28, BUS 95 correspond to catalog codes IT 0060, BUS 0028, BUS 0095 (zero-padded); IT 0060 treated as on the closed list.",
+   "BUS 0241 appears both in Required Courses and in the 'Select 3 units' list, as printed.",
+   "The outcomes are one Program Student Learning Outcomes list on the department page's outcomes tab, shared by all Business programs; recorded here as applying to this award.",
+   "The description says the certificate 'provides foundational business skills for entrepreneurs'; no explicit career list is printed, so careers left empty."
+  ]
+ },
+ "extracted_run": "38675248607"
+}

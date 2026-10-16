@@ -83,6 +83,8 @@ def norm_code(code: str | None) -> str:
 
 CODE_PARTS = re.compile(r"^([A-Z&][A-Z&\s]*?)[\s\-]*(C?\d[0-9A-Z.\-]*)$")
 NUM_PARTS = re.compile(r"^(C?)(\d+)(?:([.\-])(\d+))?([A-Z]*)$")
+SPACED_CAMPUS = re.compile(r"^(.*\d[0-9A-Z.\-]*) ([A-Z])$")
+CODE_END = r"(?![0-9A-Za-z]|[.\-]\d)"
 
 
 def code_pattern(code: str) -> re.Pattern | None:
@@ -92,6 +94,14 @@ def code_pattern(code: str) -> re.Pattern | None:
     ADJ 10 or ADJ 1.5, and KIN 251 is not KIN 251-1. Built from the code as stored, before any normal form,
     because the normal form drops the decimal point a pattern needs."""
     raw = re.sub(r"\s+", " ", (code or "").upper().strip())
+    # A campus letter after a space: NOCCCD's file and pages write Fullerton's HORT 001 F
+    # and Cypress's with C (S394; 4,993 and 4,099 listed codes). It reads joined or spaced.
+    campus = SPACED_CAMPUS.match(raw)
+    if campus:
+        base = code_pattern(campus.group(1))
+        if base is None:
+            return None
+        return re.compile(base.pattern[:-len(CODE_END)] + r"[\s\-]?" + campus.group(2) + CODE_END, re.I)
     m = CODE_PARTS.match(raw)
     if not m:
         letters = re.sub(r"[^A-Z&]", "", raw)
@@ -114,7 +124,7 @@ def code_pattern(code: str) -> re.Pattern | None:
                 num_re += r"[\s\-]?" + frac
             num_re += suffix
         body = r"[\s\-]?".join(re.escape(ch) for ch in subj) + r"[\s\-]{0,2}" + num_re
-    return re.compile(r"(?<![A-Za-z0-9&])" + body + r"(?![0-9A-Za-z]|[.\-]\d)", re.I)
+    return re.compile(r"(?<![A-Za-z0-9&])" + body + CODE_END, re.I)
 
 
 def find_codes(text: str, courses: list[dict]) -> dict[str, list[int]]:
@@ -559,7 +569,9 @@ def load(reader, url: str, cache: dict, spa: bool) -> dict:
 
 
 INDEX_SUBJECTS = 40   # a tab panel naming courses in more subjects than this is a course index
-SUBJECT_TOKEN = re.compile(r"\b([A-Z][A-Z&]{1,7})[ \u00a0]?\d{1,4}[A-Z]?\b")
+# The Coast district numbers its courses with a C (Coastline's BCI C100): without the C?
+# its Requirements tab read as naming no course and was dropped (S382).
+SUBJECT_TOKEN = re.compile(r"\b([A-Z][A-Z&]{1,7})[ \u00a0]?C?\d{1,4}[A-Z]?\b")
 
 
 def hidden_tabs_text(got: dict) -> str:

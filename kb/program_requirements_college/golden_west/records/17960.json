@@ -1,0 +1,2629 @@
+{
+ "college": "Golden West College",
+ "control_number": "17960",
+ "shape": "certificate",
+ "title": "CSU General Education Breadth",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.cccd.edu/golden-west/general-education/associate-degree/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 37610,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "output_tokens": 21209
+ },
+ "cost_usd": 0.57462,
+ "ms": 99170,
+ "seconds": 100.7,
+ "parts": 2,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 167,
+   "listed": 290,
+   "share": 0.576,
+   "missing": [
+    "ANTHG185",
+    "ANTHG185L",
+    "ARTG105",
+    "ARTG106",
+    "ASTRG100",
+    "ASTRG100L",
+    "ATHLG235",
+    "ATHLG236",
+    "ATHLG239",
+    "ATHLG240",
+    "ATHLG243",
+    "ATHLG244",
+    "ATHLG246",
+    "ATHLG249",
+    "ATHLG250",
+    "ATHLG253",
+    "ATHLG254",
+    "ATHLG255",
+    "ATHLG256",
+    "ATHLG259",
+    "ATHLG260",
+    "ATHLG263",
+    "ATHLG264",
+    "ATHLG279",
+    "BIOLG100",
+    "BIOLG101",
+    "BIOLG104",
+    "BIOLG104L",
+    "BIOLG110",
+    "BIOLG120",
+    "BIOLG160",
+    "BIOLG180",
+    "BIOLG182",
+    "BIOLG183",
+    "BIOLG186",
+    "BIOLG210",
+    "BIOLG220",
+    "BIOLG225",
+    "CHEMG110",
+    "CHEMG130",
+    "CHEMG180",
+    "CHEMG185",
+    "CHEMG220",
+    "CHEMG225",
+    "CMSTG260",
+    "COLLG100",
+    "COUNG104",
+    "COUNG105",
+    "COUNG150",
+    "COUNG151",
+    "COUNG152",
+    "COUNG153",
+    "COUNG154",
+    "COUNG155",
+    "COUNG156",
+    "DANCG105",
+    "DANCG106",
+    "DANCG115",
+    "DANCG119",
+    "DANCG130",
+    "DANCG135",
+    "DANCG145",
+    "DANCG150",
+    "DANCG160",
+    "DANCG200",
+    "DANCG201",
+    "DANCG215",
+    "DANCG230",
+    "ECONG170",
+    "ECONG175",
+    "ENGLG110",
+    "ENGLG112",
+    "ENGLG281",
+    "ETHSG101",
+    "ETHSG111",
+    "ETHSG135",
+    "ETHSG150",
+    "ETHSG255",
+    "GEOGG130",
+    "GEOGG180",
+    "GEOGG180L",
+    "GEOLG105",
+    "GEOLG106",
+    "GEOLG110",
+    "GEOLG120",
+    "GLSTG230",
+    "HISTG170",
+    "HISTG175",
+    "HLEDG100",
+    "HLEDG107",
+    "HLEDG135",
+    "KING100",
+    "KING101",
+    "KING110",
+    "PEG101",
+    "PEG103",
+    "PEG105",
+    "PEG108",
+    "PEG111",
+    "PEG114",
+    "PEG126",
+    "PEG132",
+    "PEG150",
+    "PEG158",
+    "PEG166",
+    "PEG173",
+    "PEG176",
+    "PEG178",
+    "PEG186",
+    "PEG192",
+    "PEG195",
+    "PEG196",
+    "PHSCG100",
+    "PHYSG110",
+    "PHYSG111",
+    "PHYSG120",
+    "PHYSG125",
+    "PHYSG185",
+    "PHYSG280",
+    "PHYSG285",
+    "PSYCG167",
+    "SOCG101",
+    "SOCG135"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 61,
+   "codes": [
+    "AFSG100",
+    "ARTG108",
+    "ARTG109",
+    "ARTG115",
+    "ARTG118",
+    "ARTG138",
+    "ARTG145",
+    "ARTG160",
+    "ARTHC1100",
+    "ARTHC1200",
+    "ASAMG100",
+    "BUSG139",
+    "CJG150",
+    "DANCG232",
+    "ECONC2001",
+    "ECONC2002",
+    "ECONG100",
+    "ECONG120",
+    "EDUCG210",
+    "EDUCG220",
+    "ENGLC1002",
+    "ENGLC1003",
+    "ENGLG127",
+    "ENGLG204",
+    "ENGLG205",
+    "ENGLG206",
+    "GLSTG100",
+    "GLSTG110",
+    "HISTC1001",
+    "HISTC1002",
+    "HISTG145",
+    "MATHG287",
+    "MUSG105",
+    "MUSG106",
+    "MUSG115",
+    "MUSG121",
+    "MUSG122",
+    "MUSG127",
+    "MUSG128",
+    "MUSG141",
+    "MUSG142",
+    "MUSG146",
+    "MUSG147",
+    "MUSG150",
+    "MUSG261",
+    "PHOTG190",
+    "SIGNG180",
+    "SIGNG185",
+    "SIGNG280",
+    "SIGNG285",
+    "SWHSG110",
+    "THEAG115",
+    "THEAG119",
+    "THEAG125",
+    "THEAG135",
+    "THEAG146",
+    "THEAG160",
+    "THEAG161",
+    "THEAG166",
+    "THEAG174",
+    "THEAG188"
+   ],
+   "flagged": [
+    "AFSG100",
+    "ARTG108",
+    "ARTG109",
+    "ARTG115",
+    "ARTG118",
+    "ARTG138",
+    "ARTG145",
+    "ARTG160",
+    "ARTHC1100",
+    "ARTHC1200",
+    "ASAMG100",
+    "BUSG139",
+    "CJG150",
+    "DANCG232",
+    "ECONC2001",
+    "ECONC2002",
+    "ECONG100",
+    "ECONG120",
+    "EDUCG210",
+    "EDUCG220",
+    "ENGLC1002",
+    "ENGLC1003",
+    "ENGLG127",
+    "ENGLG204",
+    "ENGLG205",
+    "ENGLG206",
+    "GLSTG100",
+    "GLSTG110",
+    "HISTC1001",
+    "HISTC1002",
+    "HISTG145",
+    "MATHG287",
+    "MUSG105",
+    "MUSG106",
+    "MUSG115",
+    "MUSG121",
+    "MUSG122",
+    "MUSG127",
+    "MUSG128",
+    "MUSG141",
+    "MUSG142",
+    "MUSG146",
+    "MUSG147",
+    "MUSG150",
+    "MUSG261",
+    "PHOTG190",
+    "SIGNG180",
+    "SIGNG185",
+    "SIGNG280",
+    "SIGNG285",
+    "SWHSG110",
+    "THEAG115",
+    "THEAG119",
+    "THEAG125",
+    "THEAG135",
+    "THEAG146",
+    "THEAG160",
+    "THEAG161",
+    "THEAG166",
+    "THEAG174",
+    "THEAG188"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    16.0,
+    19.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "2026-2027 Local General Education",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "1A. English Composition: select one course (3 units)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ENGL C1000",
+      "units": 4,
+      "units_max": 6,
+      "alternatives": [
+       {
+        "code": "ENGL C1000E",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "1B. Oral Communication and Critical Thinking: select one course (3 units)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "BUS G139",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CMST G100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMST G112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMST G220",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1003",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHIL G115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL G125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC G130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "AREA 2: Mathematics",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CS G262",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON G105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON G115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON G160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH G100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH G103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH G104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH G115",
+      "units": 4,
+      "units_max": 6,
+      "alternatives": [
+       {
+        "code": "MATH G115S",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH G120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH G140",
+      "units": 4,
+      "units_max": 6,
+      "alternatives": [
+       {
+        "code": "MATH G140S",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH G170",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH G180",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH G185",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH G280",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH G285",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH G287",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC G140",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC G125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": 6,
+      "alternatives": [
+       {
+        "code": "STAT C1000E",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "AREA 3: Arts and Humanities",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ART G100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART G103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART G104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART G107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART G108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ART G109",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ART G115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ART G116",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART G118",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ART G121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART G123",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART G127",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART G128",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART G129",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART G130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART G138",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ART G139",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART G142",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART G145",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ART G150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART G160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARTH C1100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARTH C1200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CMST G180",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC G100",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC G101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC G120",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC G125",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC G232",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON G120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST G110",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL C1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL C1003",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL G114",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL G127",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL G143",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL G147",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL G150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL G155",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL G160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL G161",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL G181",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL G204",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL G205",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL G206",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL G270",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL G275",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST C1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST G120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST G121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST G145",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST G150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST G161",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST G162",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST G180",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST G185",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS G101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS G103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS G105",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS G106",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS G108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS G115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS G121",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS G122",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS G127",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS G128",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS G139",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS G141",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS G142",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS G143",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS G145",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS G146",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS G147",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS G150",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS G261",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHIL G100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL G102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL G110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL G111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL G120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL G140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL G150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSCI G150",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT G120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT G190",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SIGN G180",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SIGN G185",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SIGN G200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SIGN G280",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SIGN G285",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SPAN G160",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN G165",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN G180",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN G185",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN G200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN G280",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN G285",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA G100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA G102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA G106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA G108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA G111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA G112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA G115",
+      "units": 1,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "THEA G119",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "THEA G120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA G125",
+      "units": 1,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "THEA G135",
+      "units": 1,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "THEA G146",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "THEA G160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "THEA G161",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "THEA G166",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "THEA G174",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "THEA G175",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA G176",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA G177",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA G178",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA G188",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "THEA G210",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VIET G180",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VIET G185",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VIET G280",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VIET G285",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "AREA 4: Social and Behavioral Sciences",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AFS G100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH G100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH G130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH G140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH G150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH G190",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH G200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASAM G100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS G100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMST G180",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMST G225",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMST G255",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMST G265",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ G123",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ G140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ G141",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ G150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON G100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON G110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON G120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST G110",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON G130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON G135",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EDUC G180",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EDUC G210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "EDUC G220",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETHS G103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSCI G103",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHS G120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOG G120",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHS G133",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC G133",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHS G134",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC G134",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHS G167",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHS G181",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSCI G181",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG G100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG G185",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG G190",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GLST G100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GLST G101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GLST G102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GLST G110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GLST G130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GLST G150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST C1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST G120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST G121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST G140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST G145",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST G150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST G155",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST G161",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST G162",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST G180",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST G185",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HLED G220",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSCI G100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSCI G101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSCI G110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSCI G130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSCI G150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHIL G150",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSCI G185",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC G110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC G116",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC G118",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC G165",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC G250",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC G255",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC G260",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC G280",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC G100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC G110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC G111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC G115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC G140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC G160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC G185",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC G200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SWHS G110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SPAN G200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANTH G185",
+    "why": "not in the text; Area 5 tab not printed"
+   },
+   {
+    "code": "ANTH G185L",
+    "why": "not in the text; Area 5 tab not printed"
+   },
+   {
+    "code": "ART G105",
+    "why": "not in the text; Area 3 lists ARTH C1100 instead"
+   },
+   {
+    "code": "ART G106",
+    "why": "not in the text; Area 3 lists ARTH C1200 instead"
+   },
+   {
+    "code": "ASTR G100",
+    "why": "not in the text; Area 5 tab not printed"
+   },
+   {
+    "code": "ASTR G100L",
+    "why": "not in the text; Area 5 tab not printed"
+   },
+   {
+    "code": "ATHL G235",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "ATHL G236",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "ATHL G239",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "ATHL G240",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "ATHL G243",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "ATHL G244",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "ATHL G246",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "ATHL G249",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "ATHL G250",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "ATHL G253",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "ATHL G254",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "ATHL G255",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "ATHL G256",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "ATHL G259",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "ATHL G260",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "ATHL G263",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "ATHL G264",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "ATHL G279",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "BIOL G100",
+    "why": "not in the text; Area 5 tab not printed"
+   },
+   {
+    "code": "BIOL G101",
+    "why": "not in the text; Area 5 tab not printed"
+   },
+   {
+    "code": "BIOL G104",
+    "why": "not in the text; Area 5 tab not printed"
+   },
+   {
+    "code": "BIOL G104L",
+    "why": "not in the text; Area 5 tab not printed"
+   },
+   {
+    "code": "BIOL G110",
+    "why": "not in the text; Area 5 tab not printed"
+   },
+   {
+    "code": "BIOL G120",
+    "why": "not in the text; Area 5 tab not printed"
+   },
+   {
+    "code": "BIOL G160",
+    "why": "not in the text; Area 5 tab not printed"
+   },
+   {
+    "code": "BIOL G180",
+    "why": "not in the text; Area 5 tab not printed"
+   },
+   {
+    "code": "BIOL G182",
+    "why": "not in the text; Area 5 tab not printed"
+   },
+   {
+    "code": "BIOL G183",
+    "why": "not in the text; Area 5 tab not printed"
+   },
+   {
+    "code": "BIOL G186",
+    "why": "not in the text; Area 5 tab not printed"
+   },
+   {
+    "code": "BIOL G210",
+    "why": "not in the text; Area 5 tab not printed"
+   },
+   {
+    "code": "BIOL G220",
+    "why": "not in the text; Area 5 tab not printed"
+   },
+   {
+    "code": "BIOL G225",
+    "why": "not in the text; Area 5 tab not printed"
+   },
+   {
+    "code": "CHEM G110",
+    "why": "not in the text; Area 5 tab not printed"
+   },
+   {
+    "code": "CHEM G130",
+    "why": "not in the text; Area 5 tab not printed"
+   },
+   {
+    "code": "CHEM G180",
+    "why": "not in the text; Area 5 tab not printed"
+   },
+   {
+    "code": "CHEM G185",
+    "why": "not in the text; Area 5 tab not printed"
+   },
+   {
+    "code": "CHEM G220",
+    "why": "not in the text; Area 5 tab not printed"
+   },
+   {
+    "code": "CHEM G225",
+    "why": "not in the text; Area 5 tab not printed"
+   },
+   {
+    "code": "CMST G260",
+    "why": "not in the text"
+   },
+   {
+    "code": "COLL G100",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "COUN G104",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "COUN G105",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "COUN G150",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "COUN G151",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "COUN G152",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "COUN G153",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "COUN G154",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "COUN G155",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "COUN G156",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "DANC G105",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "DANC G106",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "DANC G115",
+    "why": "not in the text"
+   },
+   {
+    "code": "DANC G119",
+    "why": "not in the text"
+   },
+   {
+    "code": "DANC G130",
+    "why": "not in the text"
+   },
+   {
+    "code": "DANC G135",
+    "why": "not in the text"
+   },
+   {
+    "code": "DANC G145",
+    "why": "not in the text"
+   },
+   {
+    "code": "DANC G150",
+    "why": "not in the text"
+   },
+   {
+    "code": "DANC G160",
+    "why": "not in the text"
+   },
+   {
+    "code": "DANC G200",
+    "why": "not in the text"
+   },
+   {
+    "code": "DANC G201",
+    "why": "not in the text"
+   },
+   {
+    "code": "DANC G215",
+    "why": "not in the text"
+   },
+   {
+    "code": "DANC G230",
+    "why": "not in the text"
+   },
+   {
+    "code": "ECON G170",
+    "why": "not in the text; Area 4 lists ECON C2001 instead"
+   },
+   {
+    "code": "ECON G175",
+    "why": "not in the text; Area 4 lists ECON C2002 instead"
+   },
+   {
+    "code": "ENGL G110",
+    "why": "not in the text; text lists ENGL C1003 instead"
+   },
+   {
+    "code": "ENGL G112",
+    "why": "not in the text; Area 3 lists ENGL C1002 instead"
+   },
+   {
+    "code": "ENGL G281",
+    "why": "not in the text"
+   },
+   {
+    "code": "ETHS G101",
+    "why": "not in the text; Area 6 tab not printed"
+   },
+   {
+    "code": "ETHS G111",
+    "why": "not in the text; Area 6 tab not printed"
+   },
+   {
+    "code": "ETHS G135",
+    "why": "not in the text; Area 6 tab not printed"
+   },
+   {
+    "code": "ETHS G150",
+    "why": "not in the text; Area 6 tab not printed"
+   },
+   {
+    "code": "ETHS G255",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOG G130",
+    "why": "not in the text; Area 5 tab not printed"
+   },
+   {
+    "code": "GEOG G180",
+    "why": "not in the text; Area 5 tab not printed"
+   },
+   {
+    "code": "GEOG G180L",
+    "why": "not in the text; Area 5 tab not printed"
+   },
+   {
+    "code": "GEOL G105",
+    "why": "not in the text; Area 5 tab not printed"
+   },
+   {
+    "code": "GEOL G106",
+    "why": "not in the text; Area 5 tab not printed"
+   },
+   {
+    "code": "GEOL G110",
+    "why": "not in the text; Area 5 tab not printed"
+   },
+   {
+    "code": "GEOL G120",
+    "why": "not in the text; Area 5 tab not printed"
+   },
+   {
+    "code": "GLST G230",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST G170",
+    "why": "not in the text; text lists HIST C1001 instead"
+   },
+   {
+    "code": "HIST G175",
+    "why": "not in the text; text lists HIST C1002 instead"
+   },
+   {
+    "code": "HLED G100",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "HLED G107",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "HLED G135",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "KIN G100",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "KIN G101",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "KIN G110",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "PE G101",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "PE G103",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "PE G105",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "PE G108",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "PE G111",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "PE G114",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "PE G126",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "PE G132",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "PE G150",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "PE G158",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "PE G166",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "PE G173",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "PE G176",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "PE G178",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "PE G186",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "PE G192",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "PE G195",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "PE G196",
+    "why": "not in the text; Area 7E tab not printed"
+   },
+   {
+    "code": "PHSC G100",
+    "why": "not in the text; Area 5 tab not printed"
+   },
+   {
+    "code": "PHYS G110",
+    "why": "not in the text; Area 5 tab not printed"
+   },
+   {
+    "code": "PHYS G111",
+    "why": "not in the text; Area 5 tab not printed"
+   },
+   {
+    "code": "PHYS G120",
+    "why": "not in the text; Area 5 tab not printed"
+   },
+   {
+    "code": "PHYS G125",
+    "why": "not in the text; Area 5 tab not printed"
+   },
+   {
+    "code": "PHYS G185",
+    "why": "not in the text; Area 5 tab not printed"
+   },
+   {
+    "code": "PHYS G280",
+    "why": "not in the text; Area 5 tab not printed"
+   },
+   {
+    "code": "PHYS G285",
+    "why": "not in the text; Area 5 tab not printed"
+   },
+   {
+    "code": "PSYC G167",
+    "why": "not in the text; Area 4 lists ETHS G167 alone"
+   },
+   {
+    "code": "SOC G101",
+    "why": "not in the text; Area 6 tab not printed"
+   },
+   {
+    "code": "SOC G135",
+    "why": "not in the text; Area 6 tab not printed"
+   }
+  ],
+  "notes": [
+   "The source page is the Golden West College 2026-2027 Local General Education (Associate Degree Graduation Requirements) page, not a section titled CSU General Education Breadth; the closed list matches this local GE course list, so its Areas are recorded as the blocks. A reviewer should confirm this page is the right source for the CSU GE Breadth certificate.",
+   "The page states 'Completion of a minimum of 24 units as listed under Areas 1 through 7E' for local GE; this is a minimum for the GE pattern used for the associate degree, not a stated total for this certificate, so total_units is left null. The 60-unit and 18-unit major sentences apply to all associate degrees and are not recorded as totals.",
+   "Area tabs for AREA 5: Natural Sciences, AREA 6: Ethnic Studies and AREA 7E: Lifelong Understanding and Self-Development are named on the page but their course lists are not in the provided text (cut off); no blocks were recorded for them. Closed-list courses from those areas (e.g., ANTH G185, ASTR, BIOL, CHEM, GEOL, PHYS, PE, ATHL, COUN, KIN, HLED G100) are not in this part.",
+   "Area 2 and Areas 3 and 4 print 'Select a minimum of 3 semester units' with no block total; stated left null.",
+   "ENGL C1000/C1000E, MATH G115/G115S, MATH G140/G140S and STAT C1000/C1000E print a single range 4-6 on the first row; the alternatives have no units printed beside them.",
+   "The catalog prints reciprocal 'or' pairs as two rows (ECON G120 or HIST G110 and HIST G110 or ECON G120; PHIL G150 or PSCI G150 and PSCI G150 or PHIL G150 in Area 3; ETHS G120/GEOG G120, ETHS G103/PSCI G103, ETHS G133/SOC G133, ETHS G134/SOC G134, ETHS G181/PSCI G181, ECON G120/HIST G110 in Area 4). Each pair is recorded once, under the first-printed row.",
+   "ART G139 matches the closed-list entry 'ARTG139' (History of Graphic Design) printed without a space; treated as the same course, catalog_addition false.",
+   "THEA G115, G125 and G135 print units '1,2'; recorded as 1 to 2.",
+   "The 1A and 1B headings say '(3 units)'; recorded as stated 3 although ENGL C1000 is printed at 4-6 units and ENGL C1003 at 4.",
+   "Closed-list ART G105/G106, ECON G170/G175, ENGL G110/G112 appear to correspond to catalog C-ID codes ARTH C1100/C1200, ECON C2001/C2002, ENGL C1003/C1002 printed in the text; the C codes are recorded as catalog additions.",
+   "Part 2: The source page is the Golden West College Local General Education / Associate Degree Graduation Requirements page, not a section for the CSU General Education Breadth Certificate of Achievement; the award named may not match this page. Reviewer should verify the correct source (CSU GE Breadth pattern).",
+   "Part 2: Only the tabs for Areas 1-4 are printed in the text; Areas 5 (Natural Sciences), 6 (Ethnic Studies) and 7E (Lifelong Understanding) are listed by heading but their course lists are missing, so many closed-list courses could not be placed.",
+   "Part 2: The page states 'Completion of a minimum of 24 units as listed under Areas 1 through 7E' and 'additional elective units to total 60 units' as general associate degree rules; not recorded as this certificate's total_units or degree_total.",
+   "Part 2: ge_pattern left null because the page itself is a GE pattern (local GE) rather than a degree naming one; the award is a GE certificate.",
+   "Part 2: No program outcomes or careers printed.",
+   "Read in 2 parts, because one reply could not hold the whole record."
+  ]
+ },
+ "extracted_run": "38748828247"
+}

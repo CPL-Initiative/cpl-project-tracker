@@ -1,0 +1,530 @@
+{
+ "run": "38350787486",
+ "index": "kb/course_outline_index/index_38350560193.json",
+ "host": "https://sdccd.curriqunet.com/",
+ "system": "curriqunet",
+ "slugs": "san_diego_city,san_diego_mesa,san_diego_miramar",
+ "part": 1,
+ "of": 1,
+ "wanted": 1641,
+ "slice": 12,
+ "at": "2026-10-13T05:22:20Z",
+ "complete": true,
+ "summary": {
+  "read": 12,
+  "shapes": {
+   "none": 2,
+   "groups": 10
+  },
+  "status_not_200": 0,
+  "outcomes": 48
+ },
+ "rows": [
+  {
+   "code": "AAPI 124",
+   "title": "Introduction to Asian American and Pacific Islander Studies",
+   "course_id": 20839,
+   "report": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/20839?entityType=Course&reportId=4",
+   "named_by": [
+    "san_diego_city",
+    "san_diego_mesa"
+   ],
+   "status": 200,
+   "final_url": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/20839?entityType=Course&reportId=4",
+   "access": "public",
+   "title_printed": "All Fields",
+   "chars": 39016,
+   "offered_at": null,
+   "shape": "none",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": null,
+   "groups": []
+  },
+  {
+   "code": "ARCH 100",
+   "title": "Graphic Design Communication I",
+   "course_id": 16329,
+   "report": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/16329?entityType=Course&reportId=4",
+   "named_by": [
+    "san_diego_mesa"
+   ],
+   "status": 200,
+   "final_url": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/16329?entityType=Course&reportId=4",
+   "access": "public",
+   "title_printed": "All Fields",
+   "chars": 16287,
+   "offered_at": null,
+   "shape": "groups",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": null,
+   "groups": [
+    {
+     "group": "Mesa",
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Communication: Write about, speak about, and/or graphically articulate solutions to individual assignments and design problems and the processes of arriving at these solutions to faculty, visiting critics, and fellow students, responding appropriately in a variety of methods. When appropriate, write about, speak about, and/or otherwise describe more advanced individual assignments and design problems with emphasis on the plan, section, building form, sustainable and environmental issues.",
+      "Critical Thinking: Explain architectural design intentions while applying complex problem-solving methods to resolve programmatic, spatial, social, political, engineering and sustainable design issues while developing rational, personal, creative and individual assignments and design solutions. When appropriate, analyze the use of natural lighting, natural ventilation, and energy conservation policies in architectural design; Develop an original building design in response to complex and advanced architectural programs; Integrate concepts of natural lighting though the analysis of building plan and section; and, Integrate concepts of natural ventilation though the analysis of building plan and section.",
+      "Information Literacy: Demonstrate information & technological literacy while gathering, analyzing, evaluating and disseminating information using multiple means of expression including, but not limited to written assignments and analysis, design projects, non-digital and digital assignments and presentation techniques while demonstrating an awareness of current technology through the use of state-of-the-art equipment and software including, but not limited to, computers, scanners, plotters, printers, copiers, digital projectors, laser engravers and 3D model making technologies including current editions of software utilized in the profession."
+     ],
+     "maps_to": null,
+     "shape": "list",
+     "fingerprint": "51ee8cf1d5597c63a3c699e322113391"
+    }
+   ]
+  },
+  {
+   "code": "BIOL 100",
+   "title": "Natural History - Environmental Biology",
+   "course_id": 13052,
+   "report": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13052?entityType=Course&reportId=4",
+   "named_by": [
+    "san_diego_mesa",
+    "san_diego_miramar"
+   ],
+   "status": 200,
+   "final_url": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13052?entityType=Course&reportId=4",
+   "access": "public",
+   "title_printed": "All Fields",
+   "chars": 20250,
+   "offered_at": null,
+   "shape": "groups",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": null,
+   "groups": [
+    {
+     "group": "Mesa",
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Critical Thinking: Think critically about the importance of biodiversity and ecological interconnections and how they relate to evolution.",
+      "Communication: Describe the major biological communities of San Diego County including correctly identifying local species.",
+      "Environmental Responsibility: Recognize how our personal and collective behaviors affect biological systems."
+     ],
+     "maps_to": null,
+     "shape": "list",
+     "fingerprint": "f7eb41b452260f145589f32fc364252e"
+    },
+    {
+     "group": "Miramar",
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Students will be able to identify the major biotic communities of San Diego County and name several dominant plants and animals of each.",
+      "Students will be able to diagram the trophic structure of typical ecosystems and the energy flow and nutrient recycling in each."
+     ],
+     "maps_to": null,
+     "shape": "list",
+     "fingerprint": "5f0dc092492755cf14916b61855e6ef6"
+    }
+   ]
+  },
+  {
+   "code": "CISC 106",
+   "title": "Introduction to Computer Science and Artificial Intelligence",
+   "course_id": 20815,
+   "report": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/20815?entityType=Course&reportId=4",
+   "named_by": [
+    "san_diego_mesa"
+   ],
+   "status": 200,
+   "final_url": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/20815?entityType=Course&reportId=4",
+   "access": "public",
+   "title_printed": "All Fields",
+   "chars": 29721,
+   "offered_at": null,
+   "shape": "groups",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": null,
+   "groups": [
+    {
+     "group": "Mesa",
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Understand the difference between procedural and object oriented approaches to programming.",
+      "Understand the difference between atomic data types and compound data types.",
+      "Articulate the working of programs through flowcharts.",
+      "Create interactive programs incorporating conditional logic."
+     ],
+     "maps_to": null,
+     "shape": "list",
+     "fingerprint": "c577513b6d5fc2d19bcacf5bbb0fe65d"
+    }
+   ]
+  },
+  {
+   "code": "DRAM 100A",
+   "title": "Fundamentals of Performance and Production I",
+   "course_id": 16883,
+   "report": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/16883?entityType=Course&reportId=4",
+   "named_by": [
+    "san_diego_mesa"
+   ],
+   "status": 200,
+   "final_url": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/16883?entityType=Course&reportId=4",
+   "access": "public",
+   "title_printed": "All Fields",
+   "chars": 17136,
+   "offered_at": null,
+   "shape": "groups",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": null,
+   "groups": [
+    {
+     "group": "Mesa",
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Understand the importance of successful collaboration in the creative process.",
+      "Outline the process and method by which the script goes from page to stage."
+     ],
+     "maps_to": null,
+     "shape": "list",
+     "fingerprint": "462380098a3700619954163f91b98c4f"
+    }
+   ]
+  },
+  {
+   "code": "EXSC 110A",
+   "title": "Surfing I",
+   "course_id": 12923,
+   "report": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12923?entityType=Course&reportId=4",
+   "named_by": [
+    "san_diego_mesa"
+   ],
+   "status": 200,
+   "final_url": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12923?entityType=Course&reportId=4",
+   "access": "public",
+   "title_printed": "All Fields",
+   "chars": 14396,
+   "offered_at": null,
+   "shape": "groups",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": null,
+   "groups": [
+    {
+     "group": "Mesa",
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Self-Awareness: Demonstrate the aquatic skills necessary to participate successfully in aquatic activities.",
+      "Professional and Ethical Behavior: Demonstrate a healthy attitude towards safety in an aquatic environment including adhering to proper etiquette and rules and regulations."
+     ],
+     "maps_to": null,
+     "shape": "list",
+     "fingerprint": "f9c2c55a185c8ae89a3121b6e6b30d36"
+    }
+   ]
+  },
+  {
+   "code": "GEOG 101",
+   "title": "Physical Geography",
+   "course_id": 16191,
+   "report": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/16191?entityType=Course&reportId=4",
+   "named_by": [
+    "san_diego_city",
+    "san_diego_mesa",
+    "san_diego_miramar"
+   ],
+   "status": 200,
+   "final_url": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/16191?entityType=Course&reportId=4",
+   "access": "public",
+   "title_printed": "All Fields",
+   "chars": 26684,
+   "offered_at": null,
+   "shape": "groups",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": null,
+   "groups": [
+    {
+     "group": "Mesa",
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Write or speak about topics in Physical Geography, thereby addressing problems, formulating theses, making arguments, analyzing and weighing evidence, and deriving conclusions.",
+      "Think critically in reading, writing, and/or speaking about topics in Physical Geography, thereby identifying problems, theses, arguments, evidence and conclusions.",
+      "Articulate similarities and contrasts among cultures, times, and environments, demonstrating an understanding of cultural pluralism.",
+      "Demonstrate an ability to understand one's role in society, take responsibility for one's own actions, and make ethical decisions in complex situations."
+     ],
+     "maps_to": null,
+     "shape": "list",
+     "fingerprint": "7be060257546cff57ecdd9398d6f2c15"
+    },
+    {
+     "group": "City",
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "The student put critical thinking into practice in the context of physical geography.",
+      "The student put critical thinking into practice in the context of physical geography.",
+      "Students will understand and be able to communicate earth-sun relationship and why earth has seasons. Students will understand why Global Climate Change does not change the fact that we have Seasons.",
+      "Demonstrate an ability to understand one's role in society, take responsibility for one's own actions, and make ethical decisions in complex situations.",
+      "Distinguish between landforms shaped by Aeolian, glacial and coastal processes"
+     ],
+     "maps_to": null,
+     "shape": "list",
+     "fingerprint": "9f5dd7db55518b68811c311546782d4b"
+    },
+    {
+     "group": "Miramar",
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Compare and Contrast Climate Change: Students will be able to use scientific data to compare and contrast climate change issues for two different cities in terms of dynamic atmospheric, hydrosphere, lithosphere and biosphere processes.",
+      "Earth & Sun Relationship: Students will be able to distinguish between Earth and Sun relationship topics, such as: mass of the Sun, plane of the ecliptic, tilt of the Earth, polarity, parallelism, circle of illumination, the tropics, arctic circles, seasonality, solar zenith angle and the elliptical orbital pattern of the planet.",
+      "Geography & the Environment: Students will be able to explain why physical geographic topics are relevant to understanding environmental issues in society with the assistance of maps or geospatial technology illustrations.",
+      "Spatial Patterns: Students will be able to analyze and interpret spatial patterns associated with plate tectonics including interaction with humans and the physical environment"
+     ],
+     "maps_to": null,
+     "shape": "list",
+     "fingerprint": "1bf038738082d53a64b14724d1511bb9"
+    }
+   ]
+  },
+  {
+   "code": "HUMA 101",
+   "title": "Introduction to the Humanities I",
+   "course_id": 14458,
+   "report": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/14458?entityType=Course&reportId=4",
+   "named_by": [
+    "san_diego_city",
+    "san_diego_mesa",
+    "san_diego_miramar"
+   ],
+   "status": 200,
+   "final_url": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/14458?entityType=Course&reportId=4",
+   "access": "public",
+   "title_printed": "All Fields",
+   "chars": 22294,
+   "offered_at": null,
+   "shape": "groups",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": null,
+   "groups": [
+    {
+     "group": "Mesa",
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Students will be able to summarize, analyze, and evaluate the arts and ideas of human cultures from Prehistoric times through the Middle Ages.",
+      "Students will develop an awareness of the arts and ideas of global cultures and civilizations."
+     ],
+     "maps_to": null,
+     "shape": "list",
+     "fingerprint": "af0f085e8a14b0d87d80642b9953a4fd"
+    },
+    {
+     "group": "Miramar",
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Define and analyze some of the world civilizations from approximately 40,000 BCE to 1400 CE.",
+      "Assess the influence of geographical, social, and historical factors on these civilizations.",
+      "Interpret, analyze, and criticize disciplines in the arts, literature, and philosophy of these cultures."
+     ],
+     "maps_to": null,
+     "shape": "list",
+     "fingerprint": "ed35ed42f1e7b8208bcd3e8bfa9b477a"
+    }
+   ]
+  },
+  {
+   "code": "LIBS 101",
+   "title": "Information Literacy and Research Skills",
+   "course_id": 17354,
+   "report": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/17354?entityType=Course&reportId=4",
+   "named_by": [
+    "san_diego_city",
+    "san_diego_mesa",
+    "san_diego_miramar"
+   ],
+   "status": 200,
+   "final_url": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/17354?entityType=Course&reportId=4",
+   "access": "public",
+   "title_printed": "All Fields",
+   "chars": 23021,
+   "offered_at": null,
+   "shape": "groups",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": null,
+   "groups": [
+    {
+     "group": "Mesa",
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Find a variety of credible and relevant information sources, including primary research studies, on a topic.",
+      "Critically examine the usefulness and reliability of the information sources they find.",
+      "Assessment method for both outcomes: Students will complete an annotated bibliography for a research question that they developed. Outcomes will be assessed using this rubric."
+     ],
+     "maps_to": null,
+     "shape": "list",
+     "fingerprint": "228a108f3ad8cc899b816591ca824e2e"
+    },
+    {
+     "group": "Miramar",
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Nested Boolean Operators: Students will use nested Boolean operators to refine search results.",
+      "Evaluate Resource Criteria: Students will evaluate resource criteria using particular \"indicators\" to determine reliability.",
+      "Library catalog accessStudents will use the library catalog to access journal articles, streaming videos, and ebooks."
+     ],
+     "maps_to": null,
+     "shape": "list",
+     "fingerprint": "2c4c1557ff539a6116d13167a6bb72b8"
+    }
+   ]
+  },
+  {
+   "code": "MUSI 100",
+   "title": "Introduction to Music",
+   "course_id": 13513,
+   "report": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13513?entityType=Course&reportId=4",
+   "named_by": [
+    "san_diego_city",
+    "san_diego_mesa",
+    "san_diego_miramar"
+   ],
+   "status": 200,
+   "final_url": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13513?entityType=Course&reportId=4",
+   "access": "public",
+   "title_printed": "All Fields",
+   "chars": 14150,
+   "offered_at": null,
+   "shape": "groups",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": null,
+   "groups": [
+    {
+     "group": "Mesa",
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Students will evaluate the music elements that define the major styles of music from various cultures and historical periods.",
+      "Students will demonstrate the vocabulary, terms and definitions used to discuss music and its characteristics."
+     ],
+     "maps_to": null,
+     "shape": "list",
+     "fingerprint": "cfc9c82cb4a9dffb35e16efafe515c3c"
+    },
+    {
+     "group": "Miramar",
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Identify Music Concepts: Identify verbally (in words) and recognize aurally (in sound) the various elements and structures of music (such as rhythm, pitch, melody, harmony, timbre, and form)"
+     ],
+     "maps_to": null,
+     "shape": "paragraph",
+     "fingerprint": "9eed8825e52d68447094404e81a01b3b"
+    }
+   ]
+  },
+  {
+   "code": "PHOT 100",
+   "title": "Introduction to Darkroom Photography",
+   "course_id": 18075,
+   "report": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/18075?entityType=Course&reportId=4",
+   "named_by": [
+    "san_diego_city"
+   ],
+   "status": 200,
+   "final_url": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/18075?entityType=Course&reportId=4",
+   "access": "public",
+   "title_printed": "All Fields",
+   "chars": 19499,
+   "offered_at": null,
+   "shape": "groups",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": null,
+   "groups": [
+    {
+     "group": "City",
+     "heading": "Student Learning Outcomes",
+     "lead": null,
+     "outcomes": [
+      "Select and use cameras, lenses and film to successfully expose black and white film and to create original images.",
+      "Student must demonstrate competent use of exposure controls, focus, and film loading in camera operation.",
+      "Student will employ visualization and compositional techniques to produce black and white photographic images.",
+      "The student must prepare chemicals and use film-processing equipment to process black and white film.",
+      "The student will apply appropriate camera settings and metering methods as well as the principles of light theory to create Black and White photographs."
+     ],
+     "maps_to": null,
+     "shape": "list",
+     "fingerprint": "f0a1a92aa4601f5089edd7a95506f46c"
+    }
+   ]
+  },
+  {
+   "code": "SDGE 302",
+   "title": "Electric Lineman IA",
+   "course_id": 18731,
+   "report": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/18731?entityType=Course&reportId=4",
+   "named_by": [
+    "san_diego_city"
+   ],
+   "status": 200,
+   "final_url": "https://sdccd.curriqunet.com/DynamicReports/AllFieldsReportByEntity/18731?entityType=Course&reportId=4",
+   "access": "public",
+   "title_printed": "All Fields",
+   "chars": 15022,
+   "offered_at": null,
+   "shape": "none",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": null,
+   "groups": []
+  }
+ ],
+ "reparsed_at": "2026-10-13T05:24:47Z",
+ "reparsed_note": "The filed pages parsed again by parse_page, the read's own parser at the time of the reparse (S374: RCCD's objectives read as SLOs; S376: SDCCD's groups by college)."
+}

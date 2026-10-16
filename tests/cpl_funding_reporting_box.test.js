@@ -100,10 +100,10 @@ function nextFy(fy) {
     (note.compareDocumentPosition(box) & window.Node.DOCUMENT_POSITION_FOLLOWING) !== 0);
   check("1e: …with no priority figure cell holding any of it (the readCells caveat)",
     !!box && !box.closest("td.c, .cplfund-subrow"));
-  T._state.previewPublic = true;
+  window.CPL_FUNDING_PUBLIC = true;   // a public rendering, as the public page draws it (call 1 retired the tab's preview)
   T.render();
-  check("1f: previewing Public hides it", !openBox(window, doc));
-  T._state.previewPublic = false;
+  check("1f: a public rendering hides it", !openBox(window, doc));
+  window.CPL_FUNDING_PUBLIC = false;
   T.render();
 
   // ───────────────────────────────────────────────────────────────────────────

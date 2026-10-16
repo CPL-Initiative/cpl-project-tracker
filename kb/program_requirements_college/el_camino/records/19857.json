@@ -1,0 +1,203 @@
+{
+ "college": "El Camino College",
+ "control_number": "19857",
+ "shape": "certificate",
+ "title": "Architecture",
+ "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+ "source_url": "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3523&print",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6763,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6763,
+    "output_tokens": 1756,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1756,
+  "output_tokens_details": {
+   "thinking_tokens": 637
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06217,
+ "ms": 15319,
+ "seconds": 15.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 14,
+   "share": 0.0,
+   "missing": [
+    "ARCH100",
+    "ARCH104",
+    "ARCH119",
+    "ARCH121",
+    "ARCH125",
+    "ARCH150A",
+    "ARCH150B",
+    "ARCH158",
+    "ARCH170",
+    "ARCH171",
+    "ARCH172",
+    "ARCH179",
+    "ARCH199",
+    "ET165"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Architecture - Professional Practice, AS",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "entry-level draftsperson"
+   ]
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ARCH 100",
+    "why": "named only in the A.S. section; no certificate section in the text"
+   },
+   {
+    "code": "ARCH 104",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARCH 119",
+    "why": "named only in the A.S. section; no certificate section in the text"
+   },
+   {
+    "code": "ARCH 121",
+    "why": "named only in the A.S. section; no certificate section in the text"
+   },
+   {
+    "code": "ARCH 125",
+    "why": "named only in the A.S. section; no certificate section in the text"
+   },
+   {
+    "code": "ARCH 150A",
+    "why": "not in the text; the A.S. lists ARCH 251 Construction Documentation I instead"
+   },
+   {
+    "code": "ARCH 150B",
+    "why": "not in the text; the A.S. lists ARCH 252 Construction Documentation II instead"
+   },
+   {
+    "code": "ARCH 158",
+    "why": "not in the text; the A.S. lists ARCH 258 Structures Analysis - Timber instead"
+   },
+   {
+    "code": "ARCH 170",
+    "why": "named only in the A.S. section; no certificate section in the text"
+   },
+   {
+    "code": "ARCH 171",
+    "why": "named only in the A.S. section; no certificate section in the text"
+   },
+   {
+    "code": "ARCH 172",
+    "why": "named only in the A.S. section; no certificate section in the text"
+   },
+   {
+    "code": "ARCH 179",
+    "why": "not in the text (A.S. lists ARCH 299 Studio 4 - Design/Build & Technology, possibly a renumbering)"
+   },
+   {
+    "code": "ARCH 199",
+    "why": "named only in the A.S. section; no certificate section in the text"
+   },
+   {
+    "code": "ET 165",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied page is the Architecture - Professional Practice, AS degree page only. It mentions that a Certificate of Achievement exists but prints no requirements for it, so no blocks were recorded for the certificate. A reviewer should locate the certificate's own catalog page.",
+   "The A.S. section prints: Required Core 29 units (ARCH 100, 107, 108, 119, 121, 251, 252, 170, 149, 199), plus a minimum of 7 units from ARCH 125, 258, 171, 172, 299. Total Major Units: 36. The page also offers ECC GE 24 units or Cal-GETC 34 units, electives to reach a minimum of 60 units, and Minimum Degree Total: 60 units. None of these figures were recorded because they belong to the A.S., not the certificate.",
+   "Several A.S. codes appear to be renumbered versions of closed-list courses: ARCH 251/252 for ARCH 150A/150B, ARCH 258 for ARCH 158, and possibly ARCH 299 for ARCH 179. ARCH 107/108 may have replaced ARCH 104.",
+   "The career 'entry-level draftsperson' comes from the program description, which says it applies to students earning either a degree or the certificate. The page prints no program learning outcomes."
+  ]
+ },
+ "extracted_run": "38631686677"
+}

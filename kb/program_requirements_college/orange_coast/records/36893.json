@@ -1,0 +1,194 @@
+{
+ "college": "Orange Coast College",
+ "control_number": "36893",
+ "shape": "noncredit",
+ "title": "English Language Learning - Intermediate",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/english-language-learning/developmental-english-language-skills-certificate-competency/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7093,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7093,
+    "output_tokens": 1234,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1234,
+  "output_tokens_details": {
+   "thinking_tokens": 473
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05305,
+ "ms": 11395,
+ "seconds": 11.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    180.0,
+    180.0
+   ],
+   "stated": [
+    180.0,
+    180.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Competency",
+   "measure": "hours",
+   "total_units": {
+    "min": 180,
+    "max": 180
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will demonstrate the ability to engage in extended discussions about less familiar topics orally and in writing with a growing grammar and pronunciation accuracy.",
+    "Students will show comprehension of the main idea and supporting details of level-appropriate written and/or oral texts."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Course List",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 180,
+     "max": 180
+    },
+    "courses": [
+     {
+      "code": "ELL A036N",
+      "units": 90,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ELL A046N",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELL A035N",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ELL A048N",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELL A037N",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ELL A045N",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit program counted in hours; total printed as 'Total Hours 180'.",
+   "ELL A037N row prints 'Intermediate Grammar Review 154'; read as title 'Intermediate Grammar Review 1' with 54 hours, consistent with 90+36+54=180. Reviewer should confirm.",
+   "Hours are printed only for the first course of each 'or' pair; alternatives' hours left null.",
+   "Catalog prints 'ELL A048N'; closed list stores it as 'ELLA048N' (same course, spacing difference), so treated as not a catalog addition.",
+   "Page header shows Control Number 36893, Not Financial Aid Eligible; the URL refers to a 'developmental English language skills' certificate while the text describes the intermediate program.",
+   "Program learning outcomes are printed once for the program and recorded for this award."
+  ]
+ },
+ "extracted_run": "38670927724"
+}

@@ -34,6 +34,24 @@ name: Program requirements, one college
 #   is how the load rolls back. kb/governance_surface_map.json dismisses this
 #   workflow with its reason (public catalog data).
 #
+# reread (a dispatch with step=reread, never a push): posts the records the
+#   newest extraction run COMMITTED on the branch to
+#   program_requirement_records_college_reread(), which replaces a row only
+#   while it is unchecked and from an earlier run (S392: a person's reading no longer holds it), and
+#   commits the receipt holding each replaced row's before-values
+#   (kb/receipts/program_requirement_records_college_reread_<slug>_<run>.json),
+#   the rollback. A read dispatched with force= extracts those programs again
+#   though their pages are unchanged ("incomplete": every filed record whose
+#   arithmetic is incomplete; Sam, Open Asks Sheet 78 card 2, record shape 5).
+#
+# reconcile (a dispatch with step=reconcile and extract=0, never a push): the read
+#   job's capture reads every page again, free of model calls, and each filed
+#   record whose page it read is reconciled with the fresh text by the college's
+#   steps (kb/program_requirements_reconcile.json; Sam, 2026-10-14: "a secondary
+#   search of the catalog text to see if we can reconcile after the initial PR
+#   harvest") and rescored. A record that changed carries the run as its
+#   extracted_run, so step=reread posts it.
+#
 # display (a dispatch with step=display, never a push): applies the receipt of
 #   the display build cpl_pathways_roep_data.js carries
 #   (kb/_program_requirements_display_apply.py), one PATCH of display a program,
@@ -59,9 +77,13 @@ on:
         required: false
         default: "0"
       step:
-        description: "read (capture, extract, file), load (the committed records, unchecked) or display (the page's display build)"
+        description: "read (capture, extract, file), reconcile (capture, then the college's reconcile steps on the filed records; extract 0), load (the committed records, unchecked), reread (replace unchecked rows from the newest run) or display (the page's display build)"
         required: false
         default: "read"
+      force:
+        description: "read only: control numbers to extract again though their page is unchanged (comma-separated), or 'incomplete'"
+        required: false
+        default: ""
   push:
     branches: ['claude/**']
     paths:
@@ -77,7 +99,7 @@ jobs:
     # The filing commit (github-actions[bot]) never runs the workflow again.
     if: >-
       github.actor != 'github-actions[bot]' && (
-      (github.event_name == 'workflow_dispatch' && github.event.inputs.step != 'load' && github.event.inputs.step != 'display') ||
+      (github.event_name == 'workflow_dispatch' && github.event.inputs.step != 'load' && github.event.inputs.step != 'reread' && github.event.inputs.step != 'display') ||
       (github.event_name == 'push' && (startsWith(github.event.head_commit.message, '[read]') ||
                                        startsWith(github.event.head_commit.message, '[extract]'))))
     runs-on: ubuntu-latest
@@ -110,7 +132,11 @@ jobs:
         if: env.EXTRACT == 'true'
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
-        run: python3 kb/_program_requirements_college.py extract --college "$COLLEGE" --out out --workers 6
+          FORCE: ${{ github.event.inputs.force || '' }}
+        run: python3 kb/_program_requirements_college.py extract --college "$COLLEGE" --out out --workers 6 --force "$FORCE"
+      - name: Reconcile the filed records with the fresh pages (no model call)
+        if: github.event.inputs.step == 'reconcile' && env.EXTRACT != 'true'
+        run: python3 kb/_program_requirements_college.py reconcile --college "$COLLEGE" --out out
       - name: File the run
         run: python3 kb/_program_requirements_college.py file --college "$COLLEGE" --out out
       - name: Commit to the branch that ran it
@@ -135,7 +161,7 @@ jobs:
   load:
     if: >-
       github.actor != 'github-actions[bot]' && (
-      (github.event_name == 'workflow_dispatch' && github.event.inputs.step == 'load') ||
+      (github.event_name == 'workflow_dispatch' && (github.event.inputs.step == 'load' || github.event.inputs.step == 'reread')) ||
       (github.event_name == 'push' && startsWith(github.event.head_commit.message, '[load]')))
     runs-on: ubuntu-latest
     timeout-minutes: 20
@@ -143,15 +169,16 @@ jobs:
       contents: write
     env:
       COLLEGE: ${{ github.event.inputs.college || 'Cerritos College' }}
+      STEP: ${{ github.event.inputs.step == 'reread' && 'reread' || 'load' }}
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
-      - name: Load the committed records, unchecked
+      - name: Load the committed records, unchecked (or replace unchecked rows from the newest run)
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
-        run: python3 kb/_program_requirements_college.py load --college "$COLLEGE"
+        run: python3 kb/_program_requirements_college.py "$STEP" --college "$COLLEGE"
       - name: Commit the receipt to the branch that ran it
         if: always()
         run: |
@@ -159,7 +186,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add kb/receipts
           if git diff --cached --quiet; then echo "no receipt"; exit 0; fi
-          git commit -m "Receipt: the load of $COLLEGE's program records (run ${{ github.run_id }})"
+          git commit -m "Receipt: the $STEP of $COLLEGE's program records (run ${{ github.run_id }})"
           for i in 1 2 3 4; do
             git push origin "HEAD:${{ github.ref_name }}" && exit 0
             sleep $((i * 5)); git pull --rebase origin "${{ github.ref_name }}"
@@ -171,7 +198,12 @@ jobs:
       github.actor != 'github-actions[bot]' &&
       github.event_name == 'workflow_dispatch' && github.event.inputs.step == 'display'
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    # One GET and one PATCH a program, in turn. At 30 minutes, build 66b50c86891e's first
+    # apply (run 38857449086, 2026-10-16 05:45Z) was cancelled after 6,875 of 7,125 programs
+    # and filed no applied record, which is the rollback; its re-run (38909267523) took 26
+    # minutes, 0.22 s a program (6,320 took 14 minutes the day before). 120 holds about
+    # 30,000 programs at that pace (S398).
+    timeout-minutes: 120
     permissions:
       contents: write
     steps:

@@ -1,0 +1,416 @@
+{
+ "college": "Gavilan College",
+ "control_number": "38787",
+ "shape": "adt",
+ "title": "Elementary Teacher Education",
+ "award": "A.A- T Degree",
+ "source_url": "https://gavilan.curriqunet.com/catalog/iq/4089/4099/4061",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7334,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7334,
+    "output_tokens": 3743,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3743,
+  "output_tokens_details": {
+   "thinking_tokens": 1479
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.1042,
+ "ms": 29747,
+ "seconds": 30.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 18,
+   "listed": 24,
+   "share": 0.75,
+   "missing": [
+    "COMMC1000",
+    "ENGLC1000",
+    "ENGLC1001",
+    "ENGLC1002",
+    "HISTC1001",
+    "POLSC1000"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 7,
+   "codes": [
+    "CMUN1A",
+    "ENGL1A",
+    "ENGL1B",
+    "ENGL1C",
+    "GEOG1",
+    "HIST1",
+    "POLS1"
+   ],
+   "flagged": [
+    "CMUN1A",
+    "ENGL1A",
+    "ENGL1B",
+    "ENGL1C",
+    "GEOG1",
+    "HIST1",
+    "POLS1"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    53.0,
+    60.0
+   ],
+   "stated": [
+    48.0,
+    60.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 53.0-60.0; the catalog states 48.0-60.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Elementary Teacher Education - A.A.-T Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 48,
+    "max": 60
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "IGETC or CSU General Education - Breadth",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Analyze diverse learning styles and demonstrate effective foundational skills needed to teach elementary school students. Apply both technical and artistic strategies when working in groups."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 42,
+     "max": 48
+    },
+    "courses": [
+     {
+      "code": "CD 8C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CD 40",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 40",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 10",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIO 12",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "BIO 15",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 30A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOG 1",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMUN 1A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 1A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 1B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 4A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "List A: Select one (3-4 units)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ENGL 1C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHIL 4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B: Select one (3 units)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ART 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List C: (0-6 units)",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CD 25A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ART 25A",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COMM C1000",
+    "why": "not in the text; catalog prints CMUN 1A Introduction to Public Speaking instead"
+   },
+   {
+    "code": "ENGL C1000",
+    "why": "not in the text; catalog prints ENGL 1A Composition and Reading instead"
+   },
+   {
+    "code": "ENGL C1001",
+    "why": "not in the text; catalog prints ENGL 1C Critical Reasoning and Writing in List A instead"
+   },
+   {
+    "code": "ENGL C1002",
+    "why": "not in the text; catalog prints ENGL 1B Composition and Literature instead"
+   },
+   {
+    "code": "HIST C1001",
+    "why": "not in the text; catalog prints HIST 1 United States History through Reconstruction instead"
+   },
+   {
+    "code": "POLS C1000",
+    "why": "not in the text; catalog prints POLS 1 Introduction to American Government instead"
+   }
+  ],
+  "notes": [
+   "The catalog uses pre-Common Course Numbering codes (CMUN 1A, ENGL 1A, ENGL 1B, ENGL 1C, HIST 1, POLS 1) where the closed list has C-numbered codes (COMM C1000, ENGL C1000, ENGL C1002, ENGL C1001, HIST C1001, POLS C1000); recorded as printed with catalog_addition true. Reviewer should confirm these are the same courses renumbered.",
+   "CHEM 30A and PHYS 1 are joined by 'and' in the Required Core, so both are recorded as required.",
+   "The Required Core prints 'Units: 42- 48', while the listed courses sum to 47-48 units; recorded as printed.",
+   "List A heading says '(3-4 units)' but its Units line prints 3; stated recorded as 3.",
+   "List C appears cut off: its last course is followed by a trailing 'or' with no further course. Its rule (0-6 units) is ambiguous; recorded as choose_units with minimum 0. CD 25A and ART 25A share the title Art Methods and are recorded as cross-listed alternatives.",
+   "Total: 48-60 is recorded as the major total (core 42-48 + List A 3 + List B 3 + List C 0-6). The 60-semester-unit sentence is the generic ADT requirement, not printed as this award's total, so degree_total is null.",
+   "The GE pattern (IGETC or CSU GE-Breadth) comes from the generic ADT requirements paragraph; no GE units are printed.",
+   "The learning outcome text is printed as one paragraph containing two sentences; recorded as a single entry, though it may represent two outcomes.",
+   "No career titles are named; the description only mentions working 'in a variety of elementary classroom settings'."
+  ]
+ },
+ "extracted_run": "38948144064"
+}

@@ -1,0 +1,293 @@
+{
+ "college": "Saddleback College",
+ "control_number": "42644",
+ "shape": "degree",
+ "title": "Kinesiology - Exercise Science",
+ "award": "A.A. Degree",
+ "source_url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_kines_exercise_aa",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9587,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9587,
+    "output_tokens": 2812,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2812,
+  "output_tokens_details": {
+   "thinking_tokens": 1278
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09459,
+ "ms": 23299,
+ "seconds": 23.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 11,
+   "share": 0.909,
+   "missing": [
+    "BIO20"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "BIOLC1000"
+   ],
+   "flagged": [
+    "BIOLC1000"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    34.0,
+    34.0
+   ],
+   "stated": [
+    26.0,
+    34.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 34.0-34.0; the catalog states 26.0-34.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "KINESIOLOGY - EXERCISE SCIENCE - A.A. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 26,
+    "max": 34
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Saddleback College Graduation Requirements or Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate an understanding of foundational anatomy and physiology.",
+    "Demonstrate an understanding of the components of fitness and how to assess them.",
+    "Analyze biomechanics of human movement.",
+    "Explain the effects of physical activity and training on health and performance.",
+    "Apply preventative and rehabilitative techniques for physical activity, training, and playing sports."
+   ],
+   "careers": [
+    "athletic training",
+    "physical therapy",
+    "other exercise physiology/science-related fields",
+    "assistant and aide positions in physical therapist offices, athletic training facilities, health and wellness institutions",
+    "training and coaching positions in fitness and sports centers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "KNES 51",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KNES 52",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KNES 53",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KNES 107",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 11",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 12",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 8",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one (chemistry)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "CHEM 8",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one (biology)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "BIOL C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Select one (psychology)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BIO 20",
+    "why": "not in the requirements; replaced by BIOL C1000 (course description says 'Formerly offered as BIO 20')"
+   }
+  ],
+  "notes": [
+   "The 26.0-34.0 units printed under 'Required Core' and as 'Total : 26.0- 34.0' cover the whole requirements list, so they are recorded as total_units, not as a block's stated total.",
+   "The catalog lists the required courses interleaved with the choices: KNES 51, 52, 53, 107; the CHEM choice; the BIOL choice; then BIO 11, BIO 12, MATH 8; then the PSYC choice. The required courses are grouped into one 'Required Core' block here. The choice blocks are named with a parenthetical subject for clarity; the catalog prints each simply as 'Select one'.",
+   "The CHEM 8 choice can also be met by one year of high school chemistry with a grade of C or better, and the BIOL C1000 choice by one year of high school biology with a grade of C or better. That is why each of these blocks is printed as 0.0-4.0 units.",
+   "The page says to complete a minimum of 60 units, including the major and general education, for the A.A. This is the generic associate degree requirement, so degree_total is left null. The page also notes 'Total units does not include all units required for the degree.'",
+   "The GE pattern is not named definitively: the page says to refer to the Graduation Requirements or to the Cal-GETC pattern.",
+   "BIOL C1000 is not in the closed list; it is the renumbered successor of BIO 20."
+  ]
+ },
+ "extracted_run": "38843470509"
+}

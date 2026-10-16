@@ -1,0 +1,367 @@
+{
+ "college": "Golden West College",
+ "control_number": "46547",
+ "shape": "adt",
+ "title": "Mathematics 2.0",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.cccd.edu/golden-west/pathways/stem/liberal-arts/emphasis-math-aa/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6981,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6981,
+    "output_tokens": 2352,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2352,
+  "output_tokens_details": {
+   "thinking_tokens": 740
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07496,
+ "ms": 21020,
+ "seconds": 21.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 6,
+   "share": 0.667,
+   "missing": [
+    "CSG175",
+    "PHYSG185"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 17,
+   "codes": [
+    "CSG262",
+    "ECONG105",
+    "ECONG115",
+    "ECONG160",
+    "MATHG100",
+    "MATHG103",
+    "MATHG104",
+    "MATHG115",
+    "MATHG115S",
+    "MATHG120",
+    "MATHG140",
+    "MATHG140S",
+    "MATHG170",
+    "PSYCG140",
+    "SOCG125",
+    "STATC1000",
+    "STATC1000E"
+   ],
+   "flagged": [
+    "CSG262",
+    "ECONG105",
+    "ECONG115",
+    "ECONG160",
+    "MATHG100",
+    "MATHG103",
+    "MATHG104",
+    "MATHG115",
+    "MATHG115S",
+    "MATHG120",
+    "MATHG140",
+    "MATHG140S",
+    "MATHG170",
+    "PSYCG140",
+    "SOCG125",
+    "STATC1000",
+    "STATC1000E"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     42.0,
+     52.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     34.0
+    ],
+    "why": [],
+    "fill": [
+     8.0,
+     18.0
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Liberal Arts: Emphasis in Mathematics, Associate in Arts Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local or Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 34
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Solve linear and nonlinear equations in the real and complex number system.",
+    "Calculate probabilities of independent and mutually exclusive events and conditional probability using appropriate formulas and theorems.",
+    "Compute derivatives of basic functions and the derivatives of their sums, differences, products, quotients, and compositions.",
+    "Solve right and oblique triangles and use appropriate laws to solve applied problems.",
+    "Perform matrix operations, evaluate determinants, and solve systems of linear equations using appropriate computational techniques.",
+    "Solve first-order differential equations."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Select at least 18 units of the following",
+    "rule": "choose_units",
+    "minimum": 18,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "CS G262",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON G105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON G115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH G100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH G103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH G104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH G115",
+      "units": 4,
+      "units_max": 6,
+      "alternatives": [
+       {
+        "code": "MATH G115S",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH G120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH G140",
+      "units": 4,
+      "units_max": 6,
+      "alternatives": [
+       {
+        "code": "MATH G140S",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": 6,
+      "alternatives": [
+       {
+        "code": "STAT C1000E",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "ECON G160",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "PSYC G140",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "SOC G125",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH G170",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH G180",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH G185",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH G280",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH G285",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CS G175",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYS G185",
+    "why": "not in the text; the page only refers generically to one science class from the Science Area of Emphasis list"
+   }
+  ],
+  "notes": [
+   "MISMATCH: the requested award is the Mathematics 2.0 A.S.-T degree, but the source page is the Liberal Arts: Emphasis in Mathematics, Associate in Arts Degree (Banner Code 2_AA_LAMA, Control Number 19437). The requirements recorded here are those of that A.A. emphasis, not the A.S.-T; a reviewer should locate the correct A.S.-T page.",
+   "The list also allows 'One science class from the list identified for the Science Area of Emphasis'; no specific courses are printed, so none were recorded for it.",
+   "Footnote 1: selections must include one math course at the level of MATH G180 or above.",
+   "Units 4-6 printed beside MATH G115, MATH G140 and STAT C1000 apparently cover their support/alternate versions; the alternatives have no units printed.",
+   "Electives are 'as needed to reach 60 units' with no units printed; electives_fill_degree set true.",
+   "The Program Learning Outcomes are printed for this Liberal Arts emphasis program on the page; they were recorded as printed."
+  ]
+ },
+ "extracted_run": "38748828247"
+}

@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 540,
+   "count": 552,
    "docs": [
     {
      "created": "2026-08-14",
@@ -1114,6 +1114,24 @@
      "updated": "2026-10-11"
     },
     {
+     "created": "2026-10-12",
+     "governs": [
+      "chatbox/supabase/functions/cpl-chat/index.ts",
+      "tests/sierra_prospective_credit.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-course-title-reads-as-its-level.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "sierra",
+      "prompt-context",
+      "articulation"
+     ],
+     "title": "A course title reads as its level, so name the course's program beside it",
+     "type": "methodology",
+     "updated": "2026-10-12"
+    },
+    {
      "created": "2026-09-07",
      "governs": [
       "kb/_build_ccr_cpl.py",
@@ -1865,7 +1883,7 @@
      ],
      "title": "A green check you did not scope is not evidence",
      "type": "methodology",
-     "updated": "2026-08-23"
+     "updated": "2026-10-14"
     },
     {
      "created": "2026-09-24",
@@ -2231,6 +2249,24 @@
      "title": "A layout that cannot shrink does not wrap \u2014 it overflows and paints over its neighbour",
      "type": "methodology",
      "updated": "2026-09-04"
+    },
+    {
+     "created": "2026-10-12",
+     "governs": [
+      "kb/_course_outcomes_read.py",
+      "tests/course_outcomes_read_test.py",
+      "kb/course_outcomes/trial_38317539422/"
+     ],
+     "path": "docs/kb-notes/methodology-a-lead-in-sentence-is-not-a-section-heading.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "course-outlines",
+      "harvest"
+     ],
+     "title": "A lead-in sentence is not a section heading",
+     "type": "methodology",
+     "updated": "2026-10-12"
     },
     {
      "created": "2026-08-12",
@@ -3152,6 +3188,24 @@
      "updated": "2026-10-10"
     },
     {
+     "created": "2026-10-14",
+     "governs": [
+      "tests/pii_guard.test.js",
+      "tests/nav_groups_overlay.test.js",
+      "excel_to_dashboard.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-red-merge-ref-can-be-mains.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "ci",
+      "pull-requests"
+     ],
+     "title": "A red merge ref can be main's, and every open PR inherits it",
+     "type": "methodology",
+     "updated": "2026-10-14"
+    },
+    {
      "created": "2026-09-02",
      "governs": [
       "cpl_funding.js",
@@ -3230,6 +3284,27 @@
      "title": "A retrieval route costs what the synonym table decides, and the batch waits for the slowest route",
      "type": "methodology",
      "updated": "2026-09-17"
+    },
+    {
+     "created": "2026-10-14",
+     "governs": [
+      "kb/_program_requirements_reconcile.py",
+      "kb/program_requirements_reconcile.json",
+      "kb/_program_requirements_score.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-reviewer-confirm-is-a-probe-for-procedure-gaps.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "program-requirements",
+      "harvest",
+      "review",
+      "procedure",
+      "audit"
+     ],
+     "title": "A reviewer's confirm is a probe for procedure gaps, and it retires as they close",
+     "type": "methodology",
+     "updated": "2026-10-14"
     },
     {
      "created": "2026-09-30",
@@ -3574,6 +3649,24 @@
      "updated": "2026-09-11"
     },
     {
+     "created": "2026-10-14",
+     "governs": [
+      "cpl_funding.js",
+      "tests/cpl_funding_nc_portion.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-share-target-inside-a-bounded-allocation-is-a-solved-weight.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "implementation-funding",
+      "noncredit",
+      "allocation"
+     ],
+     "title": "A share target inside a bounded allocation is reached by solving one weight",
+     "type": "methodology",
+     "updated": "2026-10-14"
+    },
+    {
      "created": "2026-08-12",
      "governs": [
       "team_phrase.js",
@@ -3594,6 +3687,21 @@
      "title": "A shared credential can only scope to a surface that is exclusive to its group",
      "type": "methodology",
      "updated": "2026-08-12"
+    },
+    {
+     "created": "2026-10-12",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-a-sign-in-form-is-no-proof-of-a-closed-system.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "course-outlines",
+      "census",
+      "measurement"
+     ],
+     "title": "A sign-in form is no proof of a closed system, and a catalog host is no proof of a public outline",
+     "type": "methodology",
+     "updated": "2026-10-12"
     },
     {
      "created": "2026-08-24",
@@ -4351,6 +4459,21 @@
      "updated": "2026-08-23"
     },
     {
+     "created": "2026-10-13",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-a-trigger-file-must-differ-from-main.md",
+     "status": "published",
+     "tags": [
+      "ci",
+      "github-actions",
+      "workflows",
+      "program-requirements-harvest"
+     ],
+     "title": "A trigger file must differ from main's before its workflow runs",
+     "type": "methodology",
+     "updated": "2026-10-13"
+    },
+    {
      "created": "2026-09-20",
      "governs": [
       "kb/_typesafe_smoke.py",
@@ -4555,7 +4678,7 @@
      ],
      "title": "A wrong column is worse than a missing one",
      "type": "methodology",
-     "updated": "2026-08-07"
+     "updated": "2026-10-12"
     },
     {
      "created": "2026-07-24",
@@ -5010,6 +5133,21 @@
      "title": "An opportunity figure must be what peers ACHIEVED, not what the record allows",
      "type": "methodology",
      "updated": "2026-08-17"
+    },
+    {
+     "created": "2026-10-12",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-an-option-list-read-from-the-page-dies-with-the-renderer.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "front-end",
+      "testing",
+      "workplan"
+     ],
+     "title": "An option list read from the page dies with the renderer that printed it",
+     "type": "methodology",
+     "updated": "2026-10-12"
     },
     {
      "created": "2026-08-17",
@@ -7342,7 +7480,9 @@
      "created": "2026-07-08",
      "governs": [
       "credential_reference.js",
-      "tests/cer_overlay_pagination.test.js"
+      "tests/cer_overlay_pagination.test.js",
+      "program_requirements.js",
+      "tests/program_requirements.test.js"
      ],
      "path": "docs/kb-notes/methodology-paginate-postgrest-reads.md",
      "status": "published",
@@ -7357,7 +7497,7 @@
      ],
      "title": "Paginate every PostgREST read that can outgrow 1,000 rows",
      "type": "methodology",
-     "updated": ""
+     "updated": "2026-10-13"
     },
     {
      "created": "2026-07-11",
@@ -7642,6 +7782,22 @@
      "title": "Re-mint split invariants \u2014 id\u2194SUBJ4, control-number atomicity, dry-run\u2194apply cross-check",
      "type": "methodology",
      "updated": "2026-05-29"
+    },
+    {
+     "created": "2026-10-13",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-read-a-catalog-through-its-own-content-call.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "program-requirements",
+      "catalogs",
+      "elumen",
+      "curriqunet"
+     ],
+     "title": "Read a single-page catalog through its own content call, not by rendering",
+     "type": "methodology",
+     "updated": "2026-10-13"
     },
     {
      "created": "2026-10-02",
@@ -7971,6 +8127,24 @@
      "title": "RLS is not a gate in front of a service-role edge function",
      "type": "methodology",
      "updated": "2026-08-09"
+    },
+    {
+     "created": "2026-10-12",
+     "governs": [
+      "chatbox/supabase/functions/cpl-chat/index.ts",
+      "chatbox/smoke_test.sh"
+     ],
+     "path": "docs/kb-notes/methodology-same-context-size-means-the-model-varied.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "sierra",
+      "smoke",
+      "retrieval"
+     ],
+     "title": "Same context size, different answer, means the model varied",
+     "type": "methodology",
+     "updated": "2026-10-12"
     },
     {
      "created": "2026-08-13",
@@ -9841,6 +10015,41 @@
      "updated": "2026-06-29"
     },
     {
+     "created": "2026-10-13",
+     "governs": [
+      "scripts/verify_workplan_move.js",
+      "kb/supabase_workplan_move.sql"
+     ],
+     "path": "docs/kb-notes/playbook-test-a-database-function-locally-with-pglite.md",
+     "status": "published",
+     "tags": [
+      "playbook",
+      "supabase",
+      "testing",
+      "sql"
+     ],
+     "title": "Test a database function locally with PGlite before it goes live",
+     "type": "playbook",
+     "updated": "2026-10-13"
+    },
+    {
+     "created": "2026-10-13",
+     "governs": [
+      "kb/supabase_workplan_move.sql"
+     ],
+     "path": "docs/kb-notes/playbook-when-apply-migration-times-out-read-the-migrations-table.md",
+     "status": "published",
+     "tags": [
+      "playbook",
+      "supabase",
+      "migrations",
+      "connector"
+     ],
+     "title": "When apply_migration times out, read the migrations table before retrying",
+     "type": "playbook",
+     "updated": "2026-10-13"
+    },
+    {
      "created": "2026-09-20",
      "governs": [
       "kb/_typesafe_smoke.py",
@@ -10835,7 +11044,7 @@
   },
   {
    "blurb": "Workstream scratchpads. A dated section is appended at every checkpoint.",
-   "count": 86,
+   "count": 87,
    "docs": [
     {
      "created": "2026-08-14",
@@ -10861,6 +11070,29 @@
      "title": "Admin tab + the side menu as data \u2014 lessons",
      "type": null,
      "updated": "2026-08-14"
+    },
+    {
+     "created": "2026-10-12",
+     "governs": [
+      "workplan_goals.js",
+      "excel_to_dashboard.py",
+      "kb/supabase_projects_count_note.sql",
+      "kb/receipts/workplan_2026-10-12_s372_add_3_9_move_1_1_2.sql",
+      "tests/workplan_goals_add_flow.test.js",
+      "activity_summaries.js",
+      "tests/activity_summaries.test.js"
+     ],
+     "path": "docs/workplan_annual_goals_lessons.md",
+     "status": null,
+     "tags": [
+      "lessons",
+      "workplan",
+      "annual-goals",
+      "activities"
+     ],
+     "title": "Annual Workplan Goals \u2014 lessons",
+     "type": null,
+     "updated": ""
     },
     {
      "created": "2026-06-30",
@@ -11274,7 +11506,7 @@
      ],
      "title": "College action page & MAP-team queue \u2014 lessons",
      "type": null,
-     "updated": "2026-08-21"
+     "updated": "2026-10-14"
     },
     {
      "created": "2026-06-25",
@@ -11528,7 +11760,7 @@
      ],
      "title": "CPL Implementation Funding tab \u2014 workstream lessons",
      "type": null,
-     "updated": "2026-10-01"
+     "updated": "2026-10-15"
     },
     {
      "created": "2026-06-21",
@@ -12215,9 +12447,9 @@
       "program-requirements",
       "catalog-harvest"
      ],
-     "title": "Program requirements harvest lessons \u2014 archive (S320-S333)",
+     "title": "Program requirements harvest lessons \u2014 archive (S320-S347)",
      "type": null,
-     "updated": "2026-10-11"
+     "updated": "2026-10-12"
     },
     {
      "created": "2026-10-03",
@@ -12922,7 +13154,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 81,
+   "count": 83,
    "docs": [
     {
      "created": "2026-05-30",
@@ -13313,6 +13545,23 @@
      "title": "CourseControlNumber Re-mint \u2014 Decisions & Lessons",
      "type": null,
      "updated": ""
+    },
+    {
+     "created": "2026-10-16",
+     "governs": [],
+     "path": "docs/cpl_assistant_lessons_archive_2.md",
+     "status": "internal",
+     "tags": [
+      "lessons",
+      "archive",
+      "cpl-assistant",
+      "sierra",
+      "chatbox",
+      "rag"
+     ],
+     "title": "CPL Assistant (Sierra) lessons \u2014 archive 2",
+     "type": null,
+     "updated": "2026-10-16"
     },
     {
      "created": "2026-06-11",
@@ -13856,6 +14105,21 @@
      "title": "Phrase scope \u2014 the measurement, and why GR is a one-line fix",
      "type": null,
      "updated": ""
+    },
+    {
+     "created": "2026-10-15",
+     "governs": [],
+     "path": "docs/program_requirements_harvest_lessons_archive_2.md",
+     "status": "internal",
+     "tags": [
+      "lessons",
+      "archive",
+      "program-requirements",
+      "catalog-harvest"
+     ],
+     "title": "Program requirements harvest lessons \u2014 archive 2 (S360-S371)",
+     "type": null,
+     "updated": "2026-10-15"
     },
     {
      "created": "2026-07-16",
@@ -14570,7 +14834,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 55,
+   "count": 56,
    "docs": [
     {
      "created": "2026-08-28",
@@ -14597,6 +14861,19 @@
      "title": "Admin tab / the side menu as data \u2014 lane state",
      "type": null,
      "updated": "2026-08-30"
+    },
+    {
+     "created": "2026-10-12",
+     "governs": [],
+     "path": "docs/reference/lanes/workplan-annual-goals.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane"
+     ],
+     "title": "Annual Workplan Goals / adding, moving and counting sub-activities \u2014 lane state",
+     "type": null,
+     "updated": "2026-10-13"
     },
     {
      "created": "2026-09-08",
@@ -14767,7 +15044,7 @@
      ],
      "title": "Implementation Funding tab / the $35M model \u2014 lane state",
      "type": null,
-     "updated": "2026-10-01"
+     "updated": "2026-10-15"
     },
     {
      "created": "2026-10-05",
@@ -14861,7 +15138,7 @@
      ],
      "title": "My College (college action page) / MAP-team queue \u2014 lane state",
      "type": null,
-     "updated": "2026-10-05"
+     "updated": "2026-10-14"
     },
     {
      "created": "2026-08-28",
@@ -14926,7 +15203,7 @@
      ],
      "title": "Program requirements harvest \u2014 lane state",
      "type": null,
-     "updated": "2026-10-12"
+     "updated": "2026-10-16"
     },
     {
      "created": "2026-08-28",
@@ -15256,7 +15533,7 @@
      ],
      "title": "Scheduled sessions \u2014 what a session started by Sam's routine does",
      "type": null,
-     "updated": "2026-10-06"
+     "updated": "2026-10-14"
     },
     {
      "created": "2026-09-09",
@@ -15342,8 +15619,537 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 341,
+   "count": 371,
    "docs": [
+    {
+     "created": "2026-10-16",
+     "governs": [],
+     "n": 400,
+     "path": "docs/session_400_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "catalog-sweep",
+      "display-build",
+      "sierra"
+     ],
+     "title": "Session 400 handoff: wave 5's display apply, the three rereads and Merritt, the next build",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-16",
+     "governs": [],
+     "n": 399,
+     "path": "docs/session_399_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "sierra",
+      "program-requirements",
+      "catalog-sweep",
+      "display-build"
+     ],
+     "title": "Session 399 handoff: Sierra's statewide catalog to A/B and deploy, the next sweep wave",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-16",
+     "governs": [],
+     "n": 398,
+     "path": "docs/session_398_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "catalog-sweep",
+      "reconcile",
+      "curriqunet"
+     ],
+     "title": "Session 398 handoff: merge wave 4's display build, the three curriQunet stragglers, Sheet 84",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-16",
+     "governs": [],
+     "n": 397,
+     "path": "docs/session_397_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "catalog-sweep",
+      "reconcile",
+      "curriqunet"
+     ],
+     "title": "Session 397 handoff: wave 4's last four reads, one display build, Monterey Peninsula's reread, Sheet 84",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-15",
+     "governs": [],
+     "n": 396,
+     "path": "docs/session_396_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "catalog-sweep",
+      "reconcile",
+      "reader"
+     ],
+     "title": "Session 396 handoff: Santa Ana's extraction, Ventura and Oxnard, curriQunet, and the first reconcile steps of the sweep",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-15",
+     "governs": [],
+     "n": 395,
+     "path": "docs/session_395_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "catalog-sweep",
+      "extraction",
+      "reader"
+     ],
+     "title": "Session 395 handoff: the catalog sweep, wave 3, Santa Ana's load, and the readers the sweep parked",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-15",
+     "governs": [],
+     "n": 394,
+     "path": "docs/session_394_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "reconcile",
+      "extraction",
+      "scheduled-sessions",
+      "decision-sheet"
+     ],
+     "title": "Session 394 handoff: merge Cerritos's reconcile steps, read Cabrillo under extraction v9, the overnight sweep",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-14",
+     "governs": [],
+     "n": 393,
+     "path": "docs/session_393_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "reconcile",
+      "decision-sheet",
+      "records-view"
+     ],
+     "title": "Session 393 handoff: Sheet 82, the reconcile pass beyond Cabrillo, a display build for Cabrillo's re-read",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-14",
+     "governs": [],
+     "n": 392,
+     "path": "docs/session_392_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "acalog",
+      "catalog-year",
+      "decision-sheet",
+      "ui-pass",
+      "pii"
+     ],
+     "title": "Session 392 handoff: Sheet 81, San Joaquin Delta's extraction, Palo Verde's 2026-27 read after Sunday",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-14",
+     "governs": [],
+     "n": 391,
+     "path": "docs/session_391_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "course-outcomes",
+      "records-filters",
+      "fresno-city",
+      "decision-sheet"
+     ],
+     "title": "Session 391 handoff: Sheet 79, Fresno City and the Records filters to merge, Delta's catalog year",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-14",
+     "governs": [],
+     "n": 390,
+     "path": "docs/session_390_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "record-shape-5",
+      "reread",
+      "acalog",
+      "decision-sheet"
+     ],
+     "title": "Session 390 handoff: Sheet 79's replies, Fresno City's load, the Acalog reader",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-14",
+     "governs": [],
+     "n": 389,
+     "path": "docs/session_389_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "course-outcomes",
+      "addenda",
+      "ui-pass",
+      "decision-sheet"
+     ],
+     "title": "Palo Verde's Acalog catalog after Sunday's census; the addenda reader widens",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-14",
+     "governs": [],
+     "n": 388,
+     "path": "docs/session_388_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "course-outcomes",
+      "census",
+      "addenda",
+      "decision-sheet"
+     ],
+     "title": "course outcomes from catalog pages; Palo Verde's catalog year",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-14",
+     "governs": [],
+     "n": 387,
+     "path": "docs/session_387_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "my-college",
+      "ui-pass",
+      "decision-sheet"
+     ],
+     "title": "Sheet 78 waits; Southwestern and Fresno City captured",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-14",
+     "governs": [],
+     "n": 386,
+     "path": "docs/session_386_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "records-view",
+      "annual-goals",
+      "map-team-queue",
+      "supabase-migrate"
+     ],
+     "title": "Sheet 77 built, Modesto and Palo Verde displayed",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-13",
+     "governs": [],
+     "n": 385,
+     "path": "docs/session_385_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "records-view",
+      "postgrest",
+      "annual-goals"
+     ],
+     "title": "the college filter's first live reads, and Sam's Sheet 77",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-13",
+     "governs": [],
+     "n": 384,
+     "path": "docs/session_384_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "elumen",
+      "annual-goals",
+      "progress-view"
+     ],
+     "title": "the whole-harvest measure, the build queue, the eLumen hubs, and Sam's Sheet 76",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-13",
+     "governs": [],
+     "n": 383,
+     "path": "docs/session_383_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "coastline",
+      "cabrillo",
+      "elumen",
+      "annual-goals"
+     ],
+     "title": "Cabrillo's display, #2074's merge, the eLumen hub reader, and Sam's Annual Goals asks",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-13",
+     "governs": [],
+     "n": 382,
+     "path": "docs/session_382_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "elumen",
+      "courseleaf",
+      "coastline",
+      "cabrillo",
+      "bakersfield",
+      "progress-view"
+     ],
+     "title": "Coastline's near misses, Cabrillo's capture and extraction go, then the next college",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-13",
+     "governs": [],
+     "n": 381,
+     "path": "docs/session_381_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "elumen",
+      "courseleaf",
+      "course-outcomes",
+      "coastline",
+      "bakersfield"
+     ],
+     "title": "load Bakersfield and Coastline, merge the eLumen and Coastline readers, then the next college",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-13",
+     "governs": [],
+     "n": 380,
+     "path": "docs/session_380_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "course-outcomes",
+      "course-outlines",
+      "sdccd",
+      "san-diego-miramar"
+     ],
+     "title": "load the course outcomes, finish SDCCD's SLO read, then the next college",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-13",
+     "governs": [],
+     "n": 379,
+     "path": "docs/session_379_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "workplan",
+      "annual-goals",
+      "move",
+      "ui-pass",
+      "scheduled-sessions"
+     ],
+     "title": "Annual Goals: Move to the phrase held on Sheet 73; read the first Refresh and the first Move",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-13",
+     "governs": [],
+     "n": 378,
+     "path": "docs/session_378_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "workplan",
+      "annual-goals",
+      "move",
+      "activity-summaries"
+     ],
+     "title": "Annual Goals: the Move control is live; read the first Refresh and the first Move",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-13",
+     "governs": [],
+     "n": 377,
+     "path": "docs/session_377_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "workplan",
+      "annual-goals",
+      "move",
+      "a11y"
+     ],
+     "title": "Annual Goals: read Sheet 72, land the Move control, then Refresh summaries",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-12",
+     "governs": [],
+     "n": 376,
+     "path": "docs/session_376_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "course-outlines",
+      "course-outcomes",
+      "san-diego-mesa"
+     ],
+     "title": "load the course outcomes, then re-read Mesa",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-12",
+     "governs": [],
+     "n": 375,
+     "path": "docs/session_375_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "workplan",
+      "annual-goals",
+      "activities",
+      "fifty-percent-law"
+     ],
+     "title": "Annual Goals: land PR A, then B, C, D",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-12",
+     "governs": [],
+     "n": 374,
+     "path": "docs/session_374_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "course-outlines",
+      "san-diego-mesa",
+      "sierra"
+     ],
+     "title": "the SLO read on RCCD's outlines, after the course outline fields and the index",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-12",
+     "governs": [],
+     "n": 373,
+     "path": "docs/session_373_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "san-diego-mesa",
+      "course-outlines",
+      "first-light",
+      "sierra"
+     ],
+     "title": "Mesa's load, the course outline census, the gallery picks",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-12",
+     "governs": [],
+     "n": 372,
+     "path": "docs/session_372_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "san-diego-miramar",
+      "san-diego-mesa",
+      "first-light",
+      "sierra"
+     ],
+     "title": "load Miramar, finish the painting gallery, Mesa's registry row",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-12",
+     "governs": [],
+     "n": 371,
+     "path": "docs/session_371_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "san-diego-city",
+      "sierra",
+      "smoke",
+      "my-college"
+     ],
+     "title": "deploy the Sierra 7c fix, load and display San Diego City, College Identity's UI pass",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-12",
      "governs": [],
@@ -21192,5 +21998,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1108
+ "total": 1154
 }

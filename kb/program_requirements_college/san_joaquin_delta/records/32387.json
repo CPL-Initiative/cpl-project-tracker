@@ -1,0 +1,180 @@
+{
+ "college": "San Joaquin Delta College",
+ "control_number": "32387",
+ "shape": "certificate",
+ "title": "Auto Body Advanced Repair and Restoration",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3314&print",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6247,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6247,
+    "output_tokens": 1015,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1015,
+  "output_tokens_details": {
+   "thinking_tokens": 202
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04529,
+ "ms": 8015,
+ "seconds": 8.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.0,
+    20.0
+   ],
+   "stated": [
+    20.0,
+    20.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Auto Body - Advanced Repair and Restoration Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 20
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate the knowledge needed to accurately estimate, on a legal repair order (to Bureau of Automotive Repair standards), the required materials, parts and amount of labor to complete the repairs.",
+    "Demonstrate the advanced skill of assessing imperfections and irregularities of a surface in preparation for paint. Students will also demonstrate the skills necessary to perfect the surface prior to painting.",
+    "Demonstrate single stage and basecoat/clear coat painting skills at the industry standard level, including solvent/water based paints.",
+    "Perform the skills of metal shaping, shrinking, stretching, bending and cutting to demonstrate industry standard repairs at the advanced level."
+   ],
+   "careers": [
+    "apprentice collision repair technician",
+    "apprentice paint technician",
+    "painter’s helper"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 20,
+     "max": 20
+    },
+    "courses": [
+     {
+      "code": "AUTOBODY 88A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTOBODY 88B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTOMECH 92",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTOMECH 95",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints 'Complete 20 units' and 'Minimum Units Required: 20' for the core; recorded as total_units 20.",
+   "AUTOMECH 95 title is followed by 'A7' in the catalog, likely an ASE area designation, not part of the code.",
+   "The description says the student 'is qualified to pursue business ownership'; not recorded as a career since it is not a job title or occupation — reviewer may wish to check.",
+   "All courses require a grade of 'C' or better."
+  ]
+ },
+ "extracted_run": "38631691511"
+}

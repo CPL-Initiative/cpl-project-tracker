@@ -1,0 +1,368 @@
+{
+ "college": "College of the Sequoias",
+ "control_number": "06732",
+ "shape": "degree",
+ "title": "Engineering",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.cos.edu//areas-study/engineering/associate-science-engineering-transfer-as/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7790,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7790,
+    "output_tokens": 2923,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2923,
+  "output_tokens_details": {
+   "thinking_tokens": 901
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08962,
+ "ms": 23632,
+ "seconds": 24.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 17,
+   "share": 0.882,
+   "missing": [
+    "MATHC2210",
+    "MATHC2220"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "CSCI5",
+    "MATH65",
+    "MATH66"
+   ],
+   "flagged": [
+    "CSCI5",
+    "MATH65",
+    "MATH66"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    73.0,
+    80.0
+   ],
+   "stated": [
+    67.0,
+    74.0
+   ],
+   "against": "degree",
+   "ge": [
+    30.0,
+    30.0
+   ],
+   "why": [
+    "the blocks and general education sum to 73.0-80.0; the catalog prints 67.0-74.0 for the degree"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate of Science in Engineering (AS)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "COS GE",
+   "degree_total": {
+    "min": 67,
+    "max": 74
+   },
+   "ge_units": {
+    "min": 30,
+    "max": 30
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Develop the ability to identify, formulate, and solve engineering problems (e.g. circuits, statics, materials, graphics).",
+    "Develop the ability to design and conduct experiments, as well as to analyze and interpret data.",
+    "Develop the ability to use the techniques, skills, and modern engineering tools necessary for engineering practice."
+   ],
+   "careers": [
+    "civil engineering",
+    "mechanical engineering",
+    "electrical engineering",
+    "computer engineering"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED MAJOR COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 39,
+     "max": 39
+    },
+    "courses": [
+     {
+      "code": "CHEM 001",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 004",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 020",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CSCI 020",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 110",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 065",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 066",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 067",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 081",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 055",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 056",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "CONCENTRATION A - MECHANICAL, CIVIL, AEROSPACE, MANUFACTURING",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Concentration",
+    "stated": {
+     "min": 11,
+     "max": 11
+    },
+    "courses": [
+     {
+      "code": "ENGR 001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 003",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "CONCENTRATION B - ELECTRICAL",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Concentration",
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "CSCI 001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "CONCENTRATION C - COMPUTER",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Concentration",
+    "stated": {
+     "min": 11,
+     "max": 11
+    },
+    "courses": [
+     {
+      "code": "CSCI 001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSCI 002",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSCI 006",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Recommended for Computer Engineering majors",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CSCI 005",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MATH C2210",
+    "why": "not in the text; catalog prints MATH 065 Calculus 1, likely the same course under its local number"
+   },
+   {
+    "code": "MATH C2220",
+    "why": "not in the text; catalog prints MATH 066 Calculus 2, likely the same course under its local number"
+   }
+  ],
+  "notes": [
+   "Catalog codes are printed with leading zeros (e.g., CHEM 001); these were matched to closed-list codes (CHEM 1, etc.) and not flagged as additions.",
+   "MATH 065 (Calculus 1) and MATH 066 (Calculus 2) are not in the closed list and are flagged as catalog additions; the closed list instead names MATH C2210/C2220 (Calculus I/II: Early Transcendentals), probably the common-course-numbered equivalents. Reviewer should confirm.",
+   "TOTAL 67-74 includes the 30-unit general education/subject requirements, the 39 required major units and the concentration (4 or 11 units), with up to 6 units double counting in COS-GE; recorded as degree_total. No separate major total is printed, so total_units is null.",
+   "The page says students should complete the COS GE pattern rather than Cal-GETC; ge_pattern recorded as COS GE.",
+   "The sentence about 'completion of the 60 unit program defined above' is not recorded as a degree total; it conflicts with the printed TOTAL 67-74 and also refers to an 'Associate of Science Degree for Transfer' though the page title is an AS.",
+   "CSCI 005 is recorded as recommended (for Computer Engineering majors); no units printed. PHYS 057 is mentioned as required by CSU Fresno and other universities for select majors, not by this degree, so it is not placed in a block.",
+   "Careers taken from 'public or private practice in civil engineering, mechanical engineering, electrical engineering and computer engineering' (with a baccalaureate degree)."
+  ]
+ },
+ "extracted_run": "38748848139"
+}

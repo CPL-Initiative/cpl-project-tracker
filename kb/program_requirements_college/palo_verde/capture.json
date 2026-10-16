@@ -1,0 +1,260 @@
+{
+ "college": "Palo Verde College",
+ "catalog_url": "https://pvc.elumenapp.com/catalog/2025-2026/presidents-welcome",
+ "platform": "elumen",
+ "catalog_year": "2025-2026",
+ "programs": 69,
+ "with_closed_list": 68,
+ "started": "2026-10-14T12:57:56Z",
+ "elumen": {
+  "catalog": "2025-2026",
+  "read": "publish/content",
+  "menu_programs": 0,
+  "errors": [],
+  "menu_departments": 0,
+  "department_programs": 0,
+  "menu_hubs": [
+   "programs",
+   "adt",
+   "associate-of-arts-degrees",
+   "associate-of-science-degrees",
+   "certificate-of-achievements",
+   "certificate-of-career-preparations",
+   "non-credit-certificates"
+  ],
+  "hub_programs": 84,
+  "program_pages": 84
+ },
+ "pages_read": 84,
+ "banner_h1": null,
+ "loads": 92,
+ "seconds": 387.0,
+ "found": 54,
+ "by_method": {
+  "no_closed_list": 1,
+  "not_found": 9,
+  "page_claimed": 5,
+  "sitemap_page": 54
+ },
+ "shared_pages": {},
+ "not_found": [
+  {
+   "control_number": "09816",
+   "title": "Vocational Nursing",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/science-core-for-nursing-certificate-of-achievement-2025-2026-fall-2025fa",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1630,
+     "content": 1630,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "43203",
+   "title": "High School Equivalency Program",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/high-school-equivalency-program-2022-23-spring-2023sp",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1564,
+     "content": 1564,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45359",
+   "title": "California General Education Transfer Curriculum (Cal-GETC)",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "45471",
+   "title": "Child Care",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/child-and-adolescent-development-2025-2026-fall-2025fa",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3253,
+     "content": 3253,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45472",
+   "title": "Developing Capable Youth",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/child-development-developing-capable-youth-certificate-of-career-preparation-2021-22-summer-2022su",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1151,
+     "content": 1151,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45473",
+   "title": "Arts - Early Childhood Education",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://pvc.elumenapp.com/catalog/2025-2026/program/as-t-early-childhood-education-for-transfer-2025-2026-fall-2025fa",
+    "label": {
+     "award": 0,
+     "title": 0.75
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1941,
+     "content": 1941,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45959",
+   "title": "Umoja Scholars",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "46108",
+   "title": "Microsoft Word Specialist",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "46556",
+   "title": "Cross-Cultural Awareness",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "43010",
+   "title": "Communication Studies 2.0",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://pvc.elumenapp.com/catalog/2025-2026/program/communication-studies-2-0-2025-2026-fall-2025fa",
+    "https://pvc.elumenapp.com/catalog/2025-2026/program/law-public-policy-and-society-2025-2026-fall-2025fa"
+   ]
+  },
+  {
+   "control_number": "45376",
+   "title": "Alcohol and Drug Studies",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://pvc.elumenapp.com/catalog/2025-2026/program/associate-of-arts-in-liberal-arts-emphasis-in-social-and-behavior-science-2025-2026-fall-2025fa",
+    "https://pvc.elumenapp.com/catalog/2025-2026/program/alcohol-and-drug-studies-certificate-of-achievement-2025-2026-fall-2025fa"
+   ]
+  },
+  {
+   "control_number": "46554",
+   "title": "Anthropology",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://pvc.elumenapp.com/catalog/2025-2026/program/associate-of-arts-in-liberal-arts-emphasis-in-mathematics-and-science-2025-2026-fall-2025fa"
+   ]
+  },
+  {
+   "control_number": "46555",
+   "title": "Anthropology",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://pvc.elumenapp.com/catalog/2025-2026/program/associate-of-arts-in-liberal-arts-emphasis-in-mathematics-and-science-2025-2026-fall-2025fa"
+   ]
+  },
+  {
+   "control_number": "46557",
+   "title": "Emphasis on Studies of the Americas",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://pvc.elumenapp.com/catalog/2025-2026/program/associate-of-arts-in-liberal-arts-emphasis-in-social-and-behavior-science-2025-2026-fall-2025fa"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 5,
+  "0.8-1.0": 17,
+  "1.0": 32
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/palo_verde",
+  "kept": 54,
+  "programs": 0,
+  "list": []
+ },
+ "run": "38567765687"
+}

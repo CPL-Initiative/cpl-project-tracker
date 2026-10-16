@@ -1528,10 +1528,13 @@
     if (roepSession() && S && typeof S.authHeaders === "function") return S.authHeaders();
     return { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON };
   }
-  function roepGet(path) {
+  function roepGet(path, extra) {
     if (typeof window.fetch !== "function") return Promise.reject(new Error("this page cannot read the table"));
     var url = ROEP_REST + path;
-    var read = window.fetch(url, { headers: roepHeaders() }).then(function (r) {
+    var h = roepHeaders();
+    if (extra) { var both = {}; Object.keys(h).forEach(function (k) { both[k] = h[k]; });
+      Object.keys(extra).forEach(function (k) { both[k] = extra[k]; }); h = both; }
+    var read = window.fetch(url, { headers: h }).then(function (r) {
       if (!r.ok) throw new Error(path.split("?")[0].replace(/^\//, "") + " answered " + r.status);
       return r.json();
     });
@@ -1539,6 +1542,21 @@
       var late = setTimeout(function () { reject(new Error("the table did not answer in " + (ROEP_READ_MS / 1000) + " seconds")); }, ROEP_READ_MS);
       read.then(function (v) { clearTimeout(late); resolve(v); }, function (e) { clearTimeout(late); reject(e); });
     });
+  }
+  // Every row, in pages. PostgREST answers at most 1,000 rows a request (db-max-rows), so
+  // the one-shot index stopped at the 1,000th of 2,840 records (2026-10-13) and the
+  // programs after it were missing from the list. Pages run under that cap over the path's
+  // own stable order until a short page; a failed page fails the read.
+  var ROEP_PAGE = 500;
+  function roepGetAll(path) {
+    var out = [];
+    function page(from) {
+      return roepGet(path, { "Range-Unit": "items", Range: from + "-" + (from + ROEP_PAGE - 1) }).then(function (rows) {
+        out = out.concat(rows || []);
+        return (rows || []).length < ROEP_PAGE ? out : page(from + ROEP_PAGE);
+      });
+    }
+    return page(0);
   }
   // The list of programs, and each college's catalog platform for the record's
   // provenance line. Resolves either way; a failure leaves the index null.
@@ -1550,7 +1568,7 @@
     return ready.then(function () {
       var reviewer = !!roepSession();
       return Promise.all([
-        roepGet("/program_requirement_records?select=" + ROEP_INDEX_SELECT + "&order=college,control_number"),
+        roepGetAll("/program_requirement_records?select=" + ROEP_INDEX_SELECT + "&order=college,control_number"),
         roepGet("/program_source_registry?select=college,catalog_platform").catch(function () { return []; })
       ]).then(function (got) {
         var plat = {};
@@ -2001,6 +2019,11 @@
   function roepProgramCard(rec) {
     var disp = rec.display, fig = disp.figure || {}, checks = disp.checks || {};
     var m = roepMeasure(rec), tot = fig.total || {}, hasTot = tot.min != null;
+    // The degree total a page prints with general education where it prints no major total
+    // (record shape 5, Sam's Open Asks Sheet 78 card 2). The page names it and adds nothing.
+    var deg = (!hasTot && fig.degree && fig.degree.total && fig.degree.total.min != null) ? fig.degree : null;
+    var degWords = deg ? "the catalog prints no major total; the degree takes " + roepAmt(deg.total.min, deg.total.max, m)
+      + " with general education" + (deg.ge ? " (" + (deg.ge_pattern ? deg.ge_pattern + ", " : "") + roepAmt(deg.ge.min, deg.ge.max, m) + ")" : "") : "";
     var card = el("section", "cplpw-rprog");
     card.setAttribute("aria-label", rec.title + ", " + roepAward(rec));
     var top = el("div", "top");
@@ -2029,13 +2052,13 @@
     var label = el("div", "mlabel");
     var upTo = Number(fig.up_to) || 0;
     if (!upTo) {
-      label.appendChild(document.createTextNode("No course in this program carries CPL at this college yet" + (hasTot ? "; the catalog prints " + roepAmt(tot.min, tot.max, m) : "") + "."));
+      label.appendChild(document.createTextNode("No course in this program carries CPL at this college yet" + (hasTot ? "; the catalog prints " + roepAmt(tot.min, tot.max, m) : deg ? "; " + degWords : "") + "."));
     } else if (hasTot) {
       label.appendChild(document.createTextNode("Up to "));
       label.appendChild(el("b", null, roepAmt(upTo, null, m)));
       label.appendChild(document.createTextNode(" of the " + roepAmt(tot.min, tot.max, m) + " the catalog prints can be met through CPL."));
     } else {
-      label.appendChild(document.createTextNode("The catalog prints no program total; "));
+      label.appendChild(document.createTextNode(deg ? degWords.charAt(0).toUpperCase() + degWords.slice(1) + "; " : "The catalog prints no program total; "));
       label.appendChild(el("b", null, roepAmt(upTo, null, m)));
       label.appendChild(document.createTextNode(" of the listed courses carry CPL."));
     }
@@ -2075,8 +2098,10 @@
       row("Courses the state lists", (cov.placed != null ? cov.placed + " of " + cov.listed + " placed" : "Not measured")
         + (cov.placed < cov.listed ? "; " + (cov.listed - cov.placed) + " the catalog does not require, each explained" : ""));
       row("Catalog additions", checks.additions ? checks.additions + " printed in the catalog, not in the state's file" : "None");
-      row("Units", checks.arithmetic === "equal" ? "Add up to the printed total"
+      var byDegree = checks.against === "degree";
+      row("Units", checks.arithmetic === "equal" ? (byDegree ? "With general education, add up to the degree total the catalog prints" : "Add up to the printed total")
         : checks.arithmetic === "unstated" ? "The catalog prints no figure to check"
+        : byDegree ? "With general education, do not add up to the degree total the catalog prints"
         : hasTot ? "Do not add up to the printed total" : "No printed total to check", checks.arithmetic !== "equal" && checks.arithmetic !== "unstated");
       row("A person's reading", checks.reviewer === "ok" ? "Matches the catalog" : checks.reviewer === "fix" ? "Fixed by a procedure rerun" : "Not yet read");
       card.appendChild(dl);

@@ -1,0 +1,412 @@
+{
+ "college": "Orange Coast College",
+ "control_number": "16910",
+ "shape": "degree",
+ "title": "Business Administration",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/business/business-administration-associate-science-degree/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8047,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8047,
+    "output_tokens": 2617,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2617,
+  "output_tokens_details": {
+   "thinking_tokens": 904
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08453,
+ "ms": 21212,
+ "seconds": 21.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 13,
+   "share": 0.615,
+   "missing": [
+    "ACCTA110",
+    "BUSA200",
+    "ECONC2001",
+    "ECONC2002",
+    "PHILA150"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 15,
+   "codes": [
+    "ACCTA101H",
+    "ACCTA102H",
+    "BUSA100H",
+    "BUSA110H",
+    "CISA111H",
+    "ECONA170",
+    "ECONA170H",
+    "ECONA175",
+    "ECONA175H",
+    "ENGLC1000",
+    "ESLA100",
+    "MATHA140",
+    "MATHA180",
+    "MATHA180H",
+    "MATHA182H"
+   ],
+   "flagged": [
+    "ACCTA101H",
+    "ACCTA102H",
+    "BUSA100H",
+    "BUSA110H",
+    "CISA111H",
+    "ECONA170",
+    "ECONA170H",
+    "ECONA175",
+    "ECONA175H",
+    "ENGLC1000",
+    "ESLA100",
+    "MATHA140",
+    "MATHA180",
+    "MATHA180H",
+    "MATHA182H"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    38.0,
+    38.0
+   ],
+   "stated": [
+    38.0,
+    38.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     59.0,
+     59.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     1.0,
+     1.0
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business Administration, Associate in Science Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 38,
+    "max": 38
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "OCC AS General Education",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 21,
+    "max": 21
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Function effectively in entry-level business positions or at a four-year college business program using the skills, principles, and tools they have acquired.",
+    "Effectively apply and utilize the business principles and techniques they have learned in a business environment or at a four-year college business program.",
+    "Demonstrate effective written and/or oral skills."
+   ],
+   "careers": [],
+   "degree_total_minimum": true
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ACCT A101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ACCT A101H",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT A102",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ACCT A102H",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS A100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS A100H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS A110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS A110H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS A139",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS A111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CIS A111H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON A170",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON A170H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON A175",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON A175H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ESL A100",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC A160",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "MATH A140",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH A180",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH A180H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH A182H",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ACCT A110",
+    "why": "not in the text"
+   },
+   {
+    "code": "BUS A200",
+    "why": "not in the text"
+   },
+   {
+    "code": "ECON C2001",
+    "why": "not in the text; catalog prints ECON A170/A170H Principles of Microeconomics instead (likely the same course under an older number)"
+   },
+   {
+    "code": "ECON C2002",
+    "why": "not in the text; catalog prints ECON A175/A175H Principles of Macroeconomics instead (likely the same course under an older number)"
+   },
+   {
+    "code": "PHIL A150",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "ENGL C1000 is printed as 'ENGL C1000 (ENGL A100)'; recorded as ENGL C1000 with the former number omitted. STAT C1000 likewise printed with former number STAT A160.",
+   "ECON A170 and ECON A175 appear to correspond to closed-list ECON C2001 and ECON C2002 (same titles), but the catalog prints the A-numbers, so they are recorded as catalog additions.",
+   "The 5 units for the 'Select one of the following' math block are printed on the heading line, not beside each course; course units left null.",
+   "GE is printed as 'OCC AS General Education ... up to 21'; recorded ge_units as 21 though the page says 'up to'. Cal-GETC pattern (up to 34 units) may be substituted.",
+   "Transferable electives 'as needed to satisfy unit requirements' with units printed as 'varies'; electives_fill_degree set true.",
+   "Description says to complete the Business Administration Certificate of Achievement plus AS graduation requirements; the requirements tab prints the course list directly.",
+   "Program Learning Outcomes are printed on this degree page."
+  ]
+ },
+ "extracted_run": 38843379313,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Degree Units - OCC AS GE\t60"
+  }
+ ],
+ "read_run": "38670927724"
+}

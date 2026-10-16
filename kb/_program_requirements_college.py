@@ -35,6 +35,12 @@ scales to a college. So this pass turns the search around:
              program_requirement_records_college_load() with the service key,
              and writes the receipt (kb/receipts/program_requirement_records_
              college_<slug>_<run>.json) that names every key it inserted.
+  reread     posts the records the newest extraction run filed to
+             program_requirement_records_college_reread(), which replaces a
+             row only while it is unchecked and from an earlier run (a
+             person's reading no longer holds it, S392), and writes the receipt holding each replaced row's
+             before-values (kb/receipts/program_requirement_records_college_
+             reread_<slug>_<run>.json), which is the rollback.
 
 The reads follow the census's rules, as the pilot's do (Sam's call 5 on sheet
 23): robots.txt first for every host, CENSUS_DELAY_MS between loads, the census
@@ -177,6 +183,50 @@ def in_scope(url: str, scope: str | None) -> bool:
     return not scope or (urllib.parse.urlparse(url).path or "/").startswith(scope)
 
 
+INDEX_FILE = re.compile(r"/index\.html?$", re.I)
+
+
+def dir_form(url: str) -> str:
+    """A CourseLeaf page's address as its directory: <dir>/index.html serves the
+    same page as <dir>/. Coastline's catalog (catalog.cccd.edu, the Coast district)
+    lists every program page as .../business-as/index.html, and NOT_PROGRAM_PATH,
+    written to keep catalog index files out, dropped all of them: 109 of 159
+    programs found no page (run 38406172949, S380)."""
+    return INDEX_FILE.sub("/", (url or "").split("#")[0])
+
+
+def link_page_ok(url: str, scope: str | None) -> bool:
+    """A page the link search found may stand for a program only where a sitemap
+    page could: inside this college's scope, and never a course list, policy,
+    archive or PDF. Coastline's course listing for Real Estate
+    (course-descriptions/credit-courses/re/) names every RE course, so it read as
+    the program's page at coverage 1.0 and would have been extracted as one (run
+    38406172949, S380: five programs on three course listings)."""
+    url = dir_form(url)
+    path = urllib.parse.urlparse(url or "").path or "/"
+    return bool(url) and in_scope(url, scope) and not NOT_PROGRAM_PATH.search(path)
+
+
+def child_pages(page_url: str, links: list[dict] | None, start: str, scope: str | None = None) -> list[str]:
+    """The program pages a page links beneath its own address. Coastline's sitemap
+    lists its subject pages (pathways/<area>/<subject>/) and few of the program
+    pages each one links (.../business/marketing-applied-as/), so 114 of 159
+    programs found no page and the link search reached ten of them (run
+    38412902035, S381). A page's children pass the sitemap's own filter; a menu's
+    links to other sections are not beneath the page and stay out."""
+    base = dir_form(page_url)
+    path = urllib.parse.urlparse(base).path or "/"
+    if not path.endswith("/"):
+        return []
+    kids = []
+    for ln in links or []:
+        u = dir_form(ln.get("href") or "")
+        p = urllib.parse.urlparse(u).path or "/"
+        if p.startswith(path) and len(p) > len(path) and P.same_site(u, start):
+            kids.append(u)
+    return program_candidates(kids, start, scope)
+
+
 def program_candidates(urls: list[str], start: str, scope: str | None = None) -> list[str]:
     """The sitemap's pages that sit in a program section of this catalog: the
     catalog's own host (and, on a district host, this college's own path), a
@@ -184,7 +234,7 @@ def program_candidates(urls: list[str], start: str, scope: str | None = None) ->
     PDF uses. Deduplicated, in the sitemap's order."""
     out, seen = [], set()
     for u in urls:
-        u = u.split("#")[0]
+        u = dir_form(u)
         if not P.same_site(u, start) or u in seen or not in_scope(u, scope):
             continue
         path = urllib.parse.urlparse(u).path or "/"
@@ -201,6 +251,10 @@ def program_candidates(urls: list[str], start: str, scope: str | None = None) ->
 # never reached the exact test (S357, run 38077405309).
 CODE_TOKEN = re.compile(r"\b([A-Z][A-Z&]{0,7})[\s\-]?(C?\d{1,4}(?:\.\d{1,2})?(?:[A-Z]{1,2}\d{0,2})?)\b")
 CODE_TOKEN_2 = re.compile(r"\b([A-Z][A-Z&]{0,7}\s[A-Z&]{1,6})[\s\-]?(C?\d{1,4}(?:\.\d{1,2})?(?:[A-Z]{1,2}\d{0,2})?)\b")
+# NOCCCD prints the campus letter as its own word, as the state's file stores it: HORT 001 F at
+# Fullerton, C at Cypress. The net read HORT 001 and found none of Nursery Management's 14
+# listed courses on its own page; 312 of 326 Fullerton programs went unfound (run 38670930336).
+CODE_TOKEN_3 = re.compile(r"\b([A-Z][A-Z&]{0,7})[\s\-]?(C?\d{1,4}(?:\.\d{1,2})?[A-Z]{0,2})[ \u00a0]([A-Z])\b")
 
 
 def page_codes(text: str) -> set[str]:
@@ -210,7 +264,19 @@ def page_codes(text: str) -> set[str]:
     only decides which programs are worth the exact test, so it may over-reach."""
     t = text or ""
     return ({P.norm_code(a + " " + b) for a, b in CODE_TOKEN.findall(t)} |
-            {P.norm_code(a + " " + b) for a, b in CODE_TOKEN_2.findall(t)})
+            {P.norm_code(a + " " + b) for a, b in CODE_TOKEN_2.findall(t)} |
+            {P.norm_code(a + " " + b + c) for a, b, c in CODE_TOKEN_3.findall(t)})
+
+
+def page_net(got: dict) -> set[str]:
+    """The coarse net's codes for one loaded page: its visible text, its textContent, and
+    its hidden tab panels read cell by cell. Coastline prints each program's courses only
+    in a hidden Requirements tab, and textContent runs every code into the cell before it
+    ("Units3BCI C100Introduction"), so the net read none of Building Codes Inspector A.S.'s
+    ten listed courses on its own page and refused 98 of the 106 programs it found no page
+    for (capture-only run 38438077425, S382). The link search has no net and read
+    Information Technology A.S.'s page the same way at coverage 1.0, from the tab."""
+    return page_codes("\n".join([got.get("body") or "", got.get("content") or "", P.hidden_tabs_text(got)]))
 
 
 # A CourseLeaf address names the award in its last segment: field-ironworkers-aa,
@@ -226,6 +292,14 @@ SLUG_AWARD = [
     ("bs", re.compile(r"-bs/?$|bachelor")),
     ("coa", re.compile(r"certif\w*-(?:of-)?achievement|-coa/?$")),
     ("noncredit", re.compile(r"certif\w*-(?:of-)?(?:completion|competency)|noncredit")),
+    # Coastline spells some awards out: marketing-associate-science-degree,
+    # business-administration-2.0-associate-science-degree-transfer,
+    # project-management-essentials-certificate-specialization (S381). The transfer
+    # form is tested first, as "-as-t" is above.
+    ("adt", re.compile(r"associate-(?:in-|of-)?(?:science|arts)-degree-(?:for-)?transfer/?$")),
+    ("as", re.compile(r"associate-(?:in-|of-)?science-degree/?$")),
+    ("aa", re.compile(r"associate-(?:in-|of-)?arts-degree/?$")),
+    ("other", re.compile(r"certif\w*-(?:of-)?specialization/?$")),
 ]
 
 
@@ -264,6 +338,32 @@ HEADING_AWARD = re.compile(
     r"certificate of (?:achievement|accomplishment|completion|competency)|transfer degree|"
     r"\ba\.?\s?[as]\.?(?:\s*-\s*t)?\b|\bdegree\b|\bcertificate\b", re.I)
 LEVEL = re.compile(r"\blevel\s*(\d+|[ivx]+)\b", re.I)
+# A page title ends in the site's name after a "|" or, in CourseLeaf's
+# breadcrumb form, a "<" ("Aging Studies, Associate of Arts Degree < Coastline College").
+TITLE_SPLIT = re.compile(r"\s*\|\s*|\s+<\s+")
+BANNER_SHARE = 0.5     # an h1 on half the pages read, and on at least
+BANNER_PAGES = 10      # this many, is the catalog's banner, not a page's heading
+
+
+def drop_banner_h1(pages: list[dict]) -> str | None:
+    """Blank an h1 the catalog prints on every page, so a page's heading is read
+    from its title. Every Coastline page's h1 is "ACADEMIC CATALOGS" (run
+    38412902035, S381), so no page reached through its hidden text could name its
+    program, and the heading rule turned each one away. Returns the banner."""
+    counts: dict[str, int] = {}
+    for pg in pages:
+        h = (pg.get("h1") or "").strip()
+        if h:
+            counts[h] = counts.get(h, 0) + 1
+    if not counts:
+        return None
+    h, n = max(counts.items(), key=lambda kv: kv[1])
+    if n < BANNER_PAGES or n < BANNER_SHARE * len(pages):
+        return None
+    for pg in pages:
+        if (pg.get("h1") or "").strip() == h:
+            pg["h1"] = ""
+    return h
 
 
 def heading_match(page: dict, program: dict) -> tuple[float, float]:
@@ -272,7 +372,7 @@ def heading_match(page: dict, program: dict) -> tuple[float, float]:
     page's h1, else its title before a "|". A title word and a heading word match when
     equal, or when one begins the other and both run past three letters (Science,
     Sciences). Two different levels ("Level 2", "Level 1") score (0, 0)."""
-    head = page.get("h1") or (page.get("title") or "").split("|")[0]
+    head = page.get("h1") or TITLE_SPLIT.split(page.get("title") or "")[0]
     title = program.get("title") or ""
     lt, lh = LEVEL.search(title), LEVEL.search(head)
     if lt and lh and lt.group(1).lower() != lh.group(1).lower():
@@ -332,6 +432,52 @@ def candidates(program: dict, pages: list[dict]) -> list[dict]:
                     "key": (award_hit, title, round(cov, 3))})
     out.sort(key=lambda c: c["key"], reverse=True)
     return out
+
+
+def near_miss(program: dict, pages: list[dict]) -> dict | None:
+    """For a program no page was accepted for: the page read whose heading, title and
+    address name it best, and which of candidates()'s gates turned that page away, so a
+    not-found program says why instead of only that. Coastline's re-read (run 38429656959,
+    S381) read Information Technology A.S.'s own page from the sitemap and still left the
+    program to the link search, which took that page at coverage 1.0; nothing on file said
+    which gate had refused it."""
+    courses = program.get("closed_list") or []
+    want = {P.norm_code(c.get("code") or "") for c in courses}
+    if not want:
+        return None
+    best = None
+    for pg in pages:
+        key = label_score(pg, program)
+        if key[1] >= 0.5 and (best is None or key > best[0]):
+            best = (key, pg)
+    if best is None:
+        return {"why": "no page read names the program"}
+    (award_hit, title), pg = best
+    fb = P.find_codes(pg.get("body") or "", courses)
+    fc = P.find_codes(pg.get("content") or "", courses)
+    _, found, field = P.best_text(pg["got"], fb, fc, courses)
+    cov, net = P.coverage(found, courses), len(want & pg["codes"])
+    if net < P.ACCEPT_SHARE * len(want) * 0.8:
+        why = "coarse net: the page's code tokens name %d of %d listed courses" % (net, len(want))
+    elif cov < P.ACCEPT_SHARE:
+        why = "coverage %.2f in %s, below %.2f" % (cov, field, P.ACCEPT_SHARE)
+    elif field == "textContent" and not heading_names_program(pg, program):
+        why = "hidden text only, and the heading does not name the program"
+    elif len(want) < SMALL_LIST and title < 0.5:
+        why = "a short list on a page whose label does not name the program"
+    else:
+        why = "a candidate, lost to a program the page names more fully"
+    # What the capture itself held for the page (S382): a failed page script leaves the
+    # Reader's 6,000-character innerText alone, and a page read prints only what it renders.
+    got = pg.get("got") or {}
+    return {"url": pg["url"], "label": {"award": award_hit, "title": title}, "field": field,
+            "coverage": round(cov, 3), "body": round(P.coverage(fb, courses), 3),
+            "content": round(P.coverage(fc, courses), 3), "net": net, "listed": len(want), "why": why,
+            "error": got.get("error"),
+            "chars": {"body": len(got.get("body") or ""), "content": len(got.get("content") or ""),
+                      "tabs": len(P.hidden_tabs_text(got))},
+            "tab_panels": [[(t.get("label") or t.get("id") or "")[:40], len(t.get("text") or "")]
+                           for t in (got.get("tabPanels") or [])][:8]}
 
 
 def choose_page(program: dict, pages: list[dict]) -> dict | None:
@@ -491,21 +637,80 @@ def index_links(reader, start: str, cache: dict) -> list[str]:
 # codes: "Acting - Associate of Arts Degree and Certificate of Achievement -
 # AA1050/AA1050C/CE1050". So the read is one navigation call per list and one
 # page call per program, with no rendering and no PDF export.
+#
+# Chaffey (S369; reads 38202133197 and 38202752228) files the same way with three
+# differences. Degrees and Certificates (19210) shows a tab list of an index and
+# six schools. A program entry is titled "Business Administration 2.0 for
+# Transfer - AS-T Degree", with no local codes, so the award words had to take
+# "degree" and AS-T, and A.S. before a space (a dot then a space is no word
+# boundary). And the entry holds a child, "Requirements" (19916), whose page
+# carries the curriculum; the entry's own page carries only its title. So an
+# entry may have children: the read takes each visible child's page as part of
+# the entry's page, and a child that is itself a program becomes an entry. The
+# first capture (run 38197183697) spent its 80 calls walking every program as a
+# section and the Student Classifications and Programs section, and found none.
 CQ_CATALOG_ID = re.compile(r"/catalog/(?:_getnavigation\?id=|_getactivecatalogbyid/|_getpage\?catalogid=)(\d+)", re.I)
 CQ_SECTION = re.compile(r"degree|certificate|program|major|award", re.I)
-CQ_AWARD = re.compile(r"\b(?:associate|certificate|a\.\s?a\.|a\.\s?s\.|bachelor|noncredit|non-credit)\b", re.I)
-CQ_MAX_CALLS = 80         # navigation and section pages, before any program page
+CQ_SECTION_FIRST = re.compile(r"degree|certificate", re.I)
+CQ_AWARD = re.compile(r"\b(?:associate|certificate|degree|bachelor|noncredit|non-credit)\b"
+                      r"|\b(?:a\.\s?[as]\.|a[as]-t)(?!\w)", re.I)
+# Navigation and section pages, before any program page. Santa Ana nests its programs under
+# department pages (Instructional Programs > department > entry): its walk stopped at 400 calls
+# with 27 of its 359 listed programs reached (run 38669940195, S394), where Fresno City listed
+# 301 in 172 calls. At 1,200 it finished (837 calls, run 38674963853) and still found 27: its
+# titles put the award after a colon, which cq_is_program now reads (S395). The cap bounds a
+# walk gone wrong; each call still waits the census delay.
+CQ_MAX_CALLS = 1200
+CQ_MAX_CHILDREN = 4       # an entry's own child pages read (Chaffey's Requirements)
 CQ_MAX_DEPTH = 4
 CQ_BREAK = re.compile(r"<\s*(?:br|/p|/div|/tr|/li|/h[1-6]|/table)\b[^>]*>", re.I)
 
 
+# Berkeley City and Butte (S399; read 38935112500, 38935116675, page read 38942920358):
+# a start page's scripts first ask _getNavigation?id=0, an empty placeholder, and name
+# the catalog (10327, 14) only in later calls. Id 0 is never a catalog.
 def cq_catalog_id(urls: list[str]) -> int | None:
     """The catalog id the catalog's own scripts asked for while its start page loaded."""
     for u in urls:
         m = CQ_CATALOG_ID.search(u or "")
-        if m:
+        if m and int(m.group(1)):
             return int(m.group(1))
     return None
+
+
+# San Diego City (S369; reads 38203841691 and 38204183571): the registry's start
+# page, a district alias view (catalog/alias/city26-27/iq/15489), draws an empty
+# "Active Catalogs" shell in a headless browser and fetches nothing, so no
+# catalog id is heard. The host's own list names it: _getCatalogs gives
+# "City 2026-2027" 69, "Mesa 2026-2027" 70, "Miramar 2026-2027" 71. The catalog
+# whose title's words all appear in the college's name, in the registry's year,
+# is the one read.
+CQ_YEAR = re.compile(r"\b(?:19|20)\d\d\s*[-/]\s*(?:(?:19|20)?\d\d)\b")
+# Gavilan (S399, page read 38942920358): its alias start page lists the active
+# catalogs and fetches nothing, and _getCatalogs titles the year's catalog "Gavilan
+# College Catalog 2026-2027" beside two addenda. "Catalog" names the thing listed, not
+# a college, so it is not one of the words a title must share with the college's name.
+CQ_TITLE_GENERIC = {"catalog"}
+
+
+def cq_catalog_from_list(catalogs, college: str, year: str | None) -> int | None:
+    """The id of the one catalog in a host's _getCatalogs list that names this
+    college (every word of its title, the year and the word "catalog" aside, is a
+    word of the college's name) and, where the title carries a year, the
+    registry's year. None when no catalog or more than one does."""
+    words = set(re.findall(r"[a-z]+", (college or "").lower()))
+    want = re.sub(r"\D", "", year or "")
+    hits = []
+    for c in catalogs if isinstance(catalogs, list) else []:
+        title = c.get("Title") or ""
+        y = CQ_YEAR.search(title)
+        named = set(re.findall(r"[a-z]+", CQ_YEAR.sub(" ", title).lower())) - CQ_TITLE_GENERIC
+        if not named or not named <= words or c.get("IsDeleted"):
+            continue
+        if y and want and re.sub(r"\D", "", y.group(0)) not in (want, want[:4] + want[-2:]):
+            continue
+        hits.append(c.get("Id"))
+    return int(hits[0]) if len(hits) == 1 and hits[0] is not None else None
 
 
 def cq_base(start: str) -> tuple[str, str]:
@@ -577,11 +782,30 @@ def cq_lists(page: dict) -> list[dict]:
 
 
 def cq_is_program(nav: dict) -> bool:
-    """A program entry: a leaf whose title names an award after a dash, as the
-    index writes them. "Degrees and Certificates Explained" names no award and
-    has no dash; the index itself has children."""
+    """A program entry: its title names an award after a dash, as the index
+    writes them, or after its last colon, as Santa Ana writes them ("Accounting:
+    A.S. Degree" under the Accounting department; page read 38749570529, S395).
+    "Degrees and Certificates Explained" names no award and has no dash, nor does
+    the index; "Degrees and Certificates: Explained" names none after its colon.
+    Riverside City's entries are leaves; Chaffey's each hold a Requirements
+    child, which cq_pages reads as part of the entry."""
     text = nav.get("text") or ""
-    return not nav.get("haschildbodynavs") and " - " in text and bool(CQ_AWARD.search(text))
+    if " - " in text and CQ_AWARD.search(text):
+        return True
+    head, colon, tail = text.rpartition(": ")
+    return bool(colon and head.strip() and CQ_AWARD.search(tail))
+
+
+def cq_hidden(nav: dict) -> bool:
+    """A node the catalog keeps out of its web view (Chaffey's blank sibling of
+    each Requirements node), or one with no title."""
+    if not (nav.get("text") or "").strip():
+        return True
+    try:
+        cfg = json.loads(nav.get("config") or "{}")
+    except (TypeError, ValueError):
+        return False
+    return bool(((cfg or {}).get("nodeConfig") or {}).get("excludeFromWebView"))
 
 
 def cq_index(get, catalog: int, root: str) -> tuple[list[dict], dict]:
@@ -590,6 +814,9 @@ def cq_index(get, catalog: int, root: str) -> tuple[list[dict], dict]:
     the JSON at url, or None."""
     top = get("%s/Catalog/_getNavigation?id=%d&navigationtypeId=1" % (root, catalog)) or {}
     sections = [n for n in top.get("navs") or [] if CQ_SECTION.search(n.get("text") or "")]
+    # Degrees and certificates first: Chaffey's Student Classifications and
+    # Programs section comes before it and holds no program.
+    sections.sort(key=lambda n: not CQ_SECTION_FIRST.search(n.get("text") or ""))
     entries: dict[int, dict] = {}
     seen: set = set()
     calls = 1
@@ -634,11 +861,66 @@ def cq_group(title: str, url: str) -> str:
     return "codes:" + "+".join(codes) if codes else url
 
 
-def cq_page(entry: dict, page: dict | None, prefix: str) -> dict | None:
-    """One program entry's page in the shape assign() reads."""
+def cq_title_key(nav: dict) -> str:
+    """An entry's title as one key: case, spacing and dashes folded."""
+    return "title:" + re.sub(r"[\s\u2013\u2014-]+", " ", (nav.get("text") or "").lower()).strip()
+
+
+def cq_distinct(entries: list[dict]) -> tuple[list[dict], int]:
+    """Each program entry once. Chaffey lists every program in its index and
+    again under its school, under two ids with one title (401 entries for 202
+    programs, 1,226 loads in run 38203335820); the first is read."""
+    out, keys = [], set()
+    for e in entries:
+        k = cq_title_key(e)
+        if k in keys:
+            continue
+        keys.add(k)
+        out.append(e)
+    return out, len(entries) - len(out)
+
+
+# San Diego Mesa's special-admission programs (S374, reads 38320823942 and
+# 38321027873) show six tabs: Summary, Accreditation, Directed Clinical Practice
+# Requirement, Admission Criteria, Requirements, Courses. Read in order under the
+# cap of four, the Requirements tab was never read and nine programs (Radiologic
+# Technology, Dental Assisting and the rest) scored no course at all. A tab titled
+# Requirements is read first.
+CQ_REQ_TAB = re.compile(r"^\s*(?:program\s+)?requirements\s*$", re.I)
+
+
+def cq_children(get, catalog: int, root: str, page: dict) -> tuple[list[dict], list[dict]]:
+    """(the entry's own child pages, the program entries among its children):
+    the visible nodes the entry's page lists, read once each, up to
+    CQ_MAX_CHILDREN, a Requirements tab first. `get(url)` returns the JSON at
+    url, or None."""
+    own, more = [], []
+    for nl in cq_lists(page):
+        kids = get("%s/Catalog/_getNavigation?id=%d&parentId=%s" % (root, catalog, nl.get("id"))) or {}
+        visible = []
+        for k in kids.get("navs") or []:
+            if cq_is_program(k):
+                more.append(k)
+            elif not cq_hidden(k):
+                visible.append(k)
+        visible.sort(key=lambda k: not CQ_REQ_TAB.match(k.get("text") or ""))
+        for k in visible:
+            if len(own) >= CQ_MAX_CHILDREN:
+                break
+            child = get("%s/Catalog/_getPage?catalogId=%d&id=%s" % (root, catalog, k.get("id")))
+            if child:
+                own.append(child)
+    return own, more
+
+
+def cq_page(entry: dict, page: dict | None, prefix: str, children: list | None = None) -> dict | None:
+    """One program entry's page in the shape assign() reads, its own child
+    pages (Chaffey's Requirements) read after it."""
     if not page:
         return None
     title, text = cq_page_text(page)
+    for child in children or []:
+        text = "\n".join(t for t in (text, cq_page_text(child)[1]) if t)
     title = title or (entry.get("text") or "")
     url = prefix + (entry.get("aliaspath") or str(entry.get("id")))
     got = {"final_url": url, "title": title, "h1": title, "body": text, "content": text,
@@ -685,20 +967,428 @@ def cq_pages(reader, start: str, report: dict) -> list[dict]:
     errors: list = []
     report["curriqunet"] = {"catalog": catalog, "view_prefix": prefix, "errors": errors}
     if catalog is None:
-        report["curriqunet"]["stopped"] = "the start page's scripts named no catalog id"
+        catalog = cq_catalog_from_list(cq_json(reader, root + "/catalog/_getCatalogs", errors),
+                                       report.get("college"), report.get("catalog_year"))
+        report["curriqunet"].update(catalog=catalog, catalog_from="_getCatalogs")
+    if catalog is None:
+        report["curriqunet"]["stopped"] = "the start page's scripts named no catalog id, nor did the host's catalog list"
         return []
     entries, account = cq_index(lambda u: cq_json(reader, u, errors), catalog, root)
     report["curriqunet"].update(account)
     pages = []
-    for i, e in enumerate(entries[:MAX_PAGES]):
-        pg = cq_page(e, cq_json(reader, "%s/Catalog/_getPage?catalogId=%d&id=%s" % (root, catalog, e.get("id")),
-                                errors), prefix)
+    get = lambda u: cq_json(reader, u, errors)  # noqa: E731
+    entries, dropped = cq_distinct(entries)
+    report["curriqunet"]["same_title_entries"] = dropped
+    queue, seen, i = list(entries), {e.get("id") for e in entries} | {cq_title_key(e) for e in entries}, 0
+    while i < len(queue) and i < MAX_PAGES:
+        e = queue[i]
+        i += 1
+        page = get("%s/Catalog/_getPage?catalogId=%d&id=%s" % (root, catalog, e.get("id")))
+        children = []
+        if page and e.get("haschildbodynavs"):
+            children, more = cq_children(get, catalog, root, page)
+            for m in more:
+                if m.get("id") not in seen and cq_title_key(m) not in seen:
+                    seen.update((m.get("id"), cq_title_key(m)))
+                    queue.append(m)
+        pg = cq_page(e, page, prefix, children)
+        if pg:
+            pages.append(pg)
+        if i % 50 == 0:
+            print("  read %d of %d program pages" % (i, len(queue)), flush=True)
+    report["curriqunet"]["entries_read"] = i
+    del errors[40:]
+    return pages
+
+
+# ── eLumen: the catalog's side menu ────────────────────────────────────────
+# An eLumen catalog is a single-page app: each view draws its content from one
+# call to api-prod.elumenapp.com/catalog/sites/publish/<catalog>,<path...>
+# ?tenant=<host> (S380, read 38392014238 at Bakersfield and Palo Verde). Every
+# view carries the catalog's side menu, which links each program's page at
+# /catalog/<catalog>/program/<slug>, the slug ending in the term it took effect
+# ("Agricultural Education Associate of Science" -> .../program/agricultural-
+# education-associate-of-science-fall-2026). There is no programs view
+# (/programs answers "Catalog is not Published"). So the program index is the
+# menu's links, from the start page and the "Programs of Study" page it links,
+# and each program page is read rendered, as a CourseLeaf page is.
+EL_PROGRAM_PATH = re.compile(r"^/catalog/([^/]+)/program/[^/]+/?$", re.I)
+EL_MAX_HUBS = 3
+
+
+def el_catalog(start: str) -> str | None:
+    """The catalog's own slug: 2026-2027-Catalog in
+    https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/about-bc."""
+    m = re.match(r"^/catalog/([^/]+)", urllib.parse.urlparse(start or "").path or "", re.I)
+    return m.group(1) if m else None
+
+
+def el_program_urls(links: list, start: str) -> list[str]:
+    """The program pages a view's links name, in this catalog only, each once, in
+    the menu's order, with no query or fragment."""
+    want = (el_catalog(start) or "").lower()
+    out, seen = [], set()
+    for ln in links or []:
+        href = (ln.get("href") if isinstance(ln, dict) else ln) or ""
+        u = urllib.parse.urlparse(href.split("#")[0])
+        m = EL_PROGRAM_PATH.match(u.path or "")
+        if not m or not want or m.group(1).lower() != want or not P.same_site(href, start):
+            continue
+        url = "%s://%s%s" % (u.scheme or "https", u.netloc, u.path.rstrip("/"))
+        if url not in seen:
+            seen.add(url)
+            out.append(url)
+    return out
+
+
+def el_hubs(links: list, start: str) -> list[str]:
+    """The program index pages a view links ("Programs of Study"), in this
+    catalog, never a program page itself."""
+    want = "/catalog/%s/" % (el_catalog(start) or "").lower()
+    out = []
+    for ln in links or []:
+        href, text = (ln.get("href") or "").split("#")[0], ln.get("text") or ""
+        path = (urllib.parse.urlparse(href).path or "").lower()
+        if (P.HUB_WORDS.search(text) and not P.NOT_HUB.search(text) and P.same_site(href, start)
+                and path.startswith(want) and not EL_PROGRAM_PATH.match(path) and href not in out):
+            out.append(href)
+    return out[:EL_MAX_HUBS]
+
+
+def el_pages(reader, start: str, cache: dict, report: dict) -> list[str]:
+    """The catalog's program pages: the start page's menu, then each program
+    index page it links, read once, rendered."""
+    front = P.load(reader, start, cache, True)
+    urls = el_program_urls(front.get("links"), start)
+    hubs = el_hubs(front.get("links"), start)
+    for h in hubs:
+        got = P.load(reader, h, cache, True)
+        urls += [u for u in el_program_urls(got.get("links"), start) if u not in urls]
+    report["elumen"] = {"catalog": el_catalog(start), "start_status": front.get("status"),
+                        "from_start": len(el_program_urls(front.get("links"), start)),
+                        "hubs": hubs, "program_pages": len(urls)}
+    return urls[:MAX_PAGES]
+
+
+# The rendered read is slow: every view loads the ~4.5 MB publish call (the
+# catalog's styles, its whole side menu and the page) and then waits for the page
+# to settle, and Bakersfield's first capture (run 38393763513) was still reading
+# at 2.5 hours. Read 38413232841 showed the menu's own links load a page through a
+# lighter call, publish/content/<catalog>,<path>?tenant=<host>, and that a
+# program's requirements print in that page as rule-name / rule-credits blocks
+# under Program Requirements. So the fast read makes the full publish call once,
+# for the menu's program links, then one content call per program: the same
+# calls the catalog's own scripts make, with no rendering.
+EL_API = "https://api-prod.elumenapp.com"
+EL_STRIP = re.compile(r"<(style|script|svg)\b[^>]*>.*?</\1\s*>", re.I | re.S)
+EL_HEADING = re.compile(r"<h[1-3]\b[^>]*>(.*?)</h[1-3]\s*>", re.I | re.S)
+
+
+def el_publish_url(start: str, parts: list[str], content: bool = False) -> str:
+    """The publish call for a view of this catalog: the full one (styles, menu
+    and page) or the content one (the page alone)."""
+    u = urllib.parse.urlparse(start)
+    url = "%s/catalog/sites/%s/%s?tenant=%s" % (
+        EL_API, "publish/content" if content else "publish",
+        ",".join([el_catalog(start) or ""] + list(parts)), u.netloc)
+    return url if content else url + "&api=" + EL_API + ":443"
+
+
+def el_start_parts(start: str) -> list[str]:
+    """The start view's path after its catalog: ["about-bc"] for
+    /catalog/2026-2027-Catalog/about-bc."""
+    path = (urllib.parse.urlparse(start).path or "").strip("/").split("/")
+    return [p for p in path[2:] if p] or ["home"]
+
+
+def el_html(body: str | None) -> str:
+    """A publish call's page: the html field of its JSON, or the body itself."""
+    try:
+        data = json.loads(body or "")
+    except (TypeError, ValueError):
+        return body or ""
+    if isinstance(data, dict):
+        return data.get("html") or data.get("content") or ""
+    return data if isinstance(data, str) else ""
+
+
+def el_program_slugs(html_text: str, catalog: str) -> list[str]:
+    """The program slugs a publish call's menu links, each once, in order. The
+    menu writes them relative to /catalog/: href="2026-2027-Catalog/program/<slug>"."""
+    pat = re.compile(r'href="(?:/catalog/)?%s/program/([^"/?#]+)"' % re.escape(catalog or ""), re.I)
+    out = []
+    for slug in pat.findall(html_text or ""):
+        if slug not in out:
+            out.append(slug)
+    return out
+
+
+def el_department_slugs(html_text: str, catalog: str) -> list[str]:
+    """The department slugs a publish call's menu links, each once, in order.
+    Cabrillo's menu links departments (href="2026-2027/department/accounting"), not
+    programs; each department's content call links its programs at
+    2026-2027/program/<slug> (reads 38433649784, 38437381277, S381)."""
+    pat = re.compile(r'href="(?:/catalog/)?%s/department/([^"/?#]+)"' % re.escape(catalog or ""), re.I)
+    out = []
+    for slug in pat.findall(html_text or ""):
+        if slug not in out:
+            out.append(slug)
+    return out
+
+
+# A menu that names neither programs nor departments links hub pages one segment
+# under the catalog, each listing programs at <catalog>/program/<slug>: Modesto's
+# Programs A-Z and Programs by Type (2026-2027/programs, bytype), Palo Verde's award
+# categories (2025-2026/adt, associate-of-arts-degrees, certificate-of-achievements,
+# non-credit-certificates). Reads 38445240921, 38446053107 and S382's third read.
+EL_HUB_SLUG = re.compile(
+    r"^(?:programs?(?:-a-z|-by-type)?|bytype|majors?|adts?|associate-(?:of|in)-[a-z0-9-]+|"
+    r"certificates?-(?:of|in)-[a-z0-9-]+|[a-z0-9-]*-(?:degrees?|certificates?)|"
+    r"degrees?-(?:and-)?certificates?)$", re.I)
+EL_MAX_MENU_HUBS = 12
+
+
+def el_hub_slugs(html_text: str, catalog: str) -> list[str]:
+    """The program and award hubs a publish call's menu links, one segment under
+    the catalog, each once, in order, at most EL_MAX_MENU_HUBS."""
+    pat = re.compile(r'href="(?:/catalog/)?%s/([^"/?#]+)"' % re.escape(catalog or ""), re.I)
+    out = []
+    for slug in pat.findall(html_text or ""):
+        if EL_HUB_SLUG.match(slug) and slug not in out:
+            out.append(slug)
+    return out[:EL_MAX_MENU_HUBS]
+
+
+def el_text(html_text: str) -> str:
+    """A content call's page as the lines a reader sees, without styles, scripts
+    or icons."""
+    return cq_text(EL_STRIP.sub(" ", html_text or ""))
+
+
+def el_page(start: str, slug: str, html_text: str) -> dict | None:
+    """One program's page in the shape assign() reads."""
+    text = el_text(html_text)
+    if not text:
+        return None
+    m = EL_HEADING.search(EL_STRIP.sub(" ", html_text or ""))
+    title = cq_text(m.group(1)).replace("\n", " ") if m else slug.replace("-", " ")
+    u = urllib.parse.urlparse(start)
+    url = "%s://%s/catalog/%s/program/%s" % (u.scheme or "https", u.netloc, el_catalog(start), slug)
+    got = {"final_url": url, "title": title, "h1": title, "body": text, "content": text,
+           "status": 200, "access": "ok", "links": []}
+    return {"url": url, "title": title, "h1": title, "body": text, "content": text, "got": got,
+            "codes": page_codes(text)}
+
+
+def el_fetch(reader, url: str, errors: list) -> str | None:
+    """One publish call through the census's rules: robots first, the delay, one load."""
+    from _program_source_census import robots_allows
+    if not robots_allows(reader._robots_for(url), url):
+        errors.append("%s: robots disallows" % url)
+        return None
+    time.sleep(reader.delay)
+    reader.loads += 1
+    try:
+        resp = reader.request.get(url, timeout=120000)
+        if not resp.ok:
+            errors.append("%s: HTTP %s" % (url, resp.status))
+            return None
+        return resp.text()
+    except Exception as exc:
+        errors.append("%s: %s" % (url, str(exc).splitlines()[0][:160]))
+        return None
+
+
+def el_pages_fast(reader, start: str, report: dict) -> list[dict]:
+    """The catalog's program pages from its own publish calls: the full call
+    once for the menu, then the content call per program. An empty list sends
+    capture() to the rendered read."""
+    errors: list = []
+    catalog = el_catalog(start)
+    shell = el_html(el_fetch(reader, el_publish_url(start, el_start_parts(start)), errors))
+    slugs = el_program_slugs(shell, catalog)
+    report["elumen"] = {"catalog": catalog, "read": "publish/content", "menu_programs": len(slugs),
+                        "errors": errors}
+    if not slugs:
+        # A menu of departments (Cabrillo): each department's content call lists its programs.
+        depts = el_department_slugs(shell, catalog)
+        for d in depts:
+            page = el_html(el_fetch(reader, el_publish_url(start, ["department", d], content=True), errors))
+            slugs += [s for s in el_program_slugs(page, catalog) if s not in slugs]
+        report["elumen"].update(menu_departments=len(depts), department_programs=len(slugs))
+    if not slugs:
+        # A menu of program and award hubs (Modesto, Palo Verde): each hub's content call lists its programs.
+        hubs = el_hub_slugs(shell, catalog)
+        for h in hubs:
+            page = el_html(el_fetch(reader, el_publish_url(start, [h], content=True), errors))
+            slugs += [s for s in el_program_slugs(page, catalog) if s not in slugs]
+        report["elumen"].update(menu_hubs=hubs, hub_programs=len(slugs))
+    slugs = slugs[:MAX_PAGES]
+    pages = []
+    for i, slug in enumerate(slugs):
+        html_text = el_html(el_fetch(reader, el_publish_url(start, ["program", slug], content=True), errors))
+        pg = el_page(start, slug, html_text)
         if pg:
             pages.append(pg)
         if i % 50 == 49:
-            print("  read %d of %d program pages" % (i + 1, len(entries)), flush=True)
+            print("  read %d of %d program pages" % (i + 1, len(slugs)), flush=True)
+    report["elumen"]["program_pages"] = len(pages)
     del errors[40:]
     return pages
+
+
+# ── Acalog (S389): Palo Verde 2026-27, El Camino, San Joaquin Delta ─────────
+# An Acalog catalog (Modern Campus) serves every page from one host under a
+# catalog id (catoid): content.php?catoid=N&navoid=M for a navigation page,
+# preview_program.php?catoid=N&poid=P for a program, sitemap.php?catoid=N for a
+# list of every page where the college keeps it on. The reader takes the
+# catalog the start page's own links name most, lists its programs from the
+# site map and, short of that, from the navigation pages whose names say
+# programs, degrees or certificates, and reads each program's print-friendly
+# view (the same page without the catalog's menus).
+AC_PROGRAM = re.compile(r"preview_program\.php\?(?:[^#\s]*&)?poid=(\d+)", re.I)
+AC_CATOID = re.compile(r"[?&]catoid=(\d+)", re.I)
+AC_NAV = re.compile(r"content\.php\?(?:[^#\s]*&)?navoid=(\d+)", re.I)
+AC_PROGRAM_NAV = re.compile(r"program|degree|certificate|areas? of (?:study|interest)|majors?|pathway", re.I)
+AC_MAX_NAVS = 12          # navigation pages read for program links, at most
+# Every Acalog page carries a catalog menu (a select naming each catalog the
+# college keeps, current and archived). The option for the catoid being read
+# names its year; San Joaquin Delta's registry row names none (S391).
+AC_CATALOG_MENU_JS = r"""() => Array.from(document.querySelectorAll('select'))
+  .filter(s => /catalog/i.test((s.name || '') + ' ' + (s.id || '')))
+  .flatMap(s => Array.from(s.options).map(o => [o.value, (o.textContent || '').trim(), o.selected]))"""
+
+
+# A catalog named by its terms: San Joaquin Delta's current one is "Summer 2026 -
+# Summer 2027 College Catalog" (run 38615275825), which the census's pair reader
+# does not take. Two years a word or two apart, the second the first plus one.
+AC_TERM_SPAN = re.compile(r"(?<!\d)(20\d\d)\D{1,16}?(20\d\d)(?!\d)")
+
+
+def ac_catalog_year(options: list, catoid: int | None, title: str = "") -> tuple[str | None, str | None]:
+    """The year of the catalog being read, and where it came from: the menu's
+    option for its catoid, else the option the menu has selected, else the page
+    title. Only that one option counts, never the newest year the menu lists."""
+    from _program_source_census import parse_catalog_year
+    want = str(catoid) if catoid is not None else None
+    picks = [o for o in options if want and str(o[0]).strip() == want] or [o for o in options if o[2]]
+    for o in picks:
+        y = parse_catalog_year(o[1], max_start=2100)
+        if not y:
+            m = AC_TERM_SPAN.search(o[1] or "")
+            if m and int(m.group(2)) == int(m.group(1)) + 1:
+                y = "%s-%s" % (m.group(1), m.group(2))
+        if y:
+            return y, "catalog menu"
+    y = parse_catalog_year(title or "", max_start=2100)
+    return (y, "page title") if y else (None, None)
+
+
+def ac_base(start: str, links: list[dict] | None = None) -> str:
+    """The catalog's own origin: the scheme its links to its own host use (El
+    Camino serves http only, and an https load of its menus was unreachable,
+    run 38565157199), else the start address's."""
+    u = urllib.parse.urlparse(start)
+    for ln in links or []:
+        h = urllib.parse.urlparse(ln.get("href") or "")
+        if h.netloc.lower() == u.netloc.lower() and h.scheme in ("http", "https"):
+            return "%s://%s" % (h.scheme, u.netloc)
+    return "%s://%s" % (u.scheme or "https", u.netloc)
+
+
+def ac_catoid(links: list[dict], start: str) -> int | None:
+    """The catalog the start page serves: the catoid its own host's links carry
+    most (every menu link names the current catalog; an archived one appears
+    once, in the catalog picker)."""
+    host = urllib.parse.urlparse(start).netloc.lower()
+    counts: dict[int, int] = {}
+    for ln in links or []:
+        href = ln.get("href") or ""
+        if urllib.parse.urlparse(href).netloc.lower() not in ("", host):
+            continue
+        m = AC_CATOID.search(href)
+        if m:
+            counts[int(m.group(1))] = counts.get(int(m.group(1)), 0) + 1
+    return max(counts, key=lambda c: (counts[c], c)) if counts else None
+
+
+def ac_program_url(base: str, catoid: int, poid: str | int) -> str:
+    return "%s/preview_program.php?catoid=%d&poid=%s&print" % (base, catoid, poid)
+
+
+def ac_program_urls(links: list[dict], base: str, catoid: int) -> list[str]:
+    """The catalog's program pages a page links, once each, in its order, as
+    their print-friendly view. A link to another catalog's program is left."""
+    out, seen = [], set()
+    for ln in links or []:
+        href = ln.get("href") or ""
+        m = AC_PROGRAM.search(href)
+        c = AC_CATOID.search(href)
+        if not m or (c and int(c.group(1)) != catoid) or m.group(1) in seen:
+            continue
+        seen.add(m.group(1))
+        out.append(ac_program_url(base, catoid, m.group(1)))
+    return out
+
+
+def ac_program_navs(links: list[dict], base: str, catoid: int) -> list[str]:
+    """The navigation pages whose names say programs, degrees or certificates."""
+    out = []
+    for ln in links or []:
+        href, text = ln.get("href") or "", ln.get("text") or ""
+        m, c = AC_NAV.search(href), AC_CATOID.search(href)
+        if m and (not c or int(c.group(1)) == catoid) and AC_PROGRAM_NAV.search(text):
+            u = "%s/content.php?catoid=%d&navoid=%s" % (base, catoid, m.group(1))
+            if u not in out:
+                out.append(u)
+    return out
+
+
+def ac_urls(reader, start: str, cache: dict, report: dict) -> list[str]:
+    """Every program page of the catalog the start page serves."""
+    front = P.load(reader, start, cache, False)
+    links = front.get("links") or []
+    base = ac_base(start, links)
+    catoid = ac_catoid(links, start)
+    if catoid is None and not start.rstrip("/").endswith("index.php"):
+        front = P.load(reader, base + "/index.php", cache, False)
+        links = front.get("links") or []
+        base = ac_base(start, links)
+        catoid = ac_catoid(links, start)
+    report["acalog"] = {"base": base, "start_status": front.get("status"), "catoid": catoid,
+                        "start_links": len(links)}
+    if catoid is None:
+        report["acalog"]["stopped"] = "the start page's links name no catalog id"
+        return []
+    # Read while the reader still shows the start page, before the site map loads.
+    options = []
+    try:
+        options = reader.page.evaluate(AC_CATALOG_MENU_JS) or []
+    except Exception as exc:
+        report["acalog"]["catalog_menu_error"] = str(exc).splitlines()[0][:200] if str(exc) else type(exc).__name__
+    year, year_from = ac_catalog_year(options, catoid, front.get("title") or "")
+    report["acalog"].update(catalog_menu=[[o[0], o[1][:60], o[2]] for o in options][:12],
+                            catalog_year_read=year, catalog_year_from=year_from)
+    report["acalog"]["start_menu"] =[[(ln.get("text") or "")[:60], ln.get("href")] for ln in links
+                                      if AC_NAV.search(ln.get("href") or "")][:40]
+    sm = P.load(reader, "%s/sitemap.php?catoid=%d" % (base, catoid), cache, False)
+    urls = ac_program_urls(sm.get("links") or [], base, catoid) if sm.get("access") == "ok" else []
+    report["acalog"].update(sitemap_status=sm.get("status"), sitemap_access=sm.get("access"),
+                            sitemap_programs=len(urls))
+    navs = ac_program_navs(links, base, catoid)
+    read = []
+    for nav in navs[:AC_MAX_NAVS]:
+        if len(urls) >= 0.5 * report.get("with_closed_list", 0) and sm.get("access") == "ok":
+            break
+        got = P.load(reader, nav, cache, False)
+        nl = got.get("links") or []
+        # What each menu held, so a catalog that lists its programs elsewhere says where (S389).
+        read.append({"url": nav, "access": got.get("access"), "title": (got.get("title") or "")[:80],
+                     "links": len(nl), "sample": [[(ln.get("text") or "")[:50], ln.get("href")] for ln in nl
+                                                  if re.search(r"poid|preview_|navoid|ent_oid", ln.get("href") or "")][:25]})
+        urls += [u for u in ac_program_urls(nl, base, catoid) if u not in urls]
+    report["acalog"].update(program_navs=navs[:AC_MAX_NAVS], navs_read=len(read), navs=read, program_pages=len(urls))
+    return urls
 
 
 def capture(college: str, out_dir: str, limit: int = 0) -> int:
@@ -714,9 +1404,9 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
               "started": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
     os.makedirs(os.path.join(out_dir, "sources"), exist_ok=True)
     platform = reg.get("catalog_platform")
-    if not start or platform not in ("courseleaf", "curriqunet"):
-        # Phase 2 opens on CourseLeaf (Cerritos) and curriQunet (S357); another platform names its own enumeration first.
-        report["stopped"] = "this pass enumerates CourseLeaf and curriQunet catalogs; %s reads %s" % (college, platform)
+    if not start or platform not in ("courseleaf", "curriqunet", "elumen", "acalog"):
+        # Phase 2 opens on CourseLeaf (Cerritos), curriQunet (S357), eLumen (S380) and Acalog (S389); another platform names its own enumeration first.
+        report["stopped"] = "this pass enumerates CourseLeaf, curriQunet, eLumen and Acalog catalogs; %s reads %s" % (college, platform)
         _write(os.path.join(out_dir, "capture.json"), report)
         print(report["stopped"])
         return 1
@@ -730,6 +1420,27 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
             pages = cq_pages(reader, start, report)
             print("%s: %d programs (%d with a course list), %d curriQunet program pages, %.1f s between loads"
                   % (college, len(programs), report["with_closed_list"], len(pages), delay / 1000), flush=True)
+        elif platform == "elumen":
+            urls, pages = [], el_pages_fast(reader, start, report)
+            if not pages:
+                # The publish calls gave no program: read the menu's pages rendered.
+                urls = el_pages(reader, start, cache, report)
+            print("%s: %d programs (%d with a course list), %d eLumen program pages (%s), %.1f s between loads"
+                  % (college, len(programs), report["with_closed_list"], len(pages) or len(urls),
+                     "publish/content" if pages else "rendered", delay / 1000), flush=True)
+        elif platform == "acalog":
+            urls, pages = ac_urls(reader, start, cache, report)[:MAX_PAGES], []
+            read_year = report["acalog"].get("catalog_year_read")
+            if read_year and not reg.get("catalog_year"):
+                # Each record's source carries the registry's year, and the load stamps the report's.
+                reg = dict(reg, catalog_year=read_year)
+                report["catalog_year"] = read_year
+                report["catalog_year_from"] = report["acalog"].get("catalog_year_from")
+            elif read_year and read_year != reg.get("catalog_year"):
+                report["catalog_year_page_differs"] = read_year
+            print("%s: %d programs (%d with a course list), %d Acalog program pages (catalog %s), %.1f s between loads"
+                  % (college, len(programs), report["with_closed_list"], len(urls),
+                     report["acalog"].get("catoid"), delay / 1000), flush=True)
         else:
             scope = district_scope(start, host_registry_urls(start))
             report["scope"] = scope
@@ -745,17 +1456,29 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
             pages = []
             print("%s: %d programs (%d with a course list), %d candidate pages, %.1f s between loads"
                   % (college, len(programs), report["with_closed_list"], len(urls), delay / 1000), flush=True)
-        for i, u in enumerate(urls):
-            got = P.load(reader, u, cache, False)
+        # A page's own program pages beneath it are read too (child_pages()), once each.
+        queue, seen, i = list(urls), set(urls), 0
+        while i < len(queue):
+            u = queue[i]
+            i += 1
+            got = P.load(reader, u, cache, platform == "elumen")   # an eLumen view fills in late
             if got.get("access") != "ok":
                 continue
+            if platform not in ("curriqunet", "elumen", "acalog"):
+                for kid in child_pages(got.get("final_url") or u, got.get("links"), start, scope):
+                    if kid not in seen and len(queue) < MAX_PAGES:
+                        seen.add(kid)
+                        queue.append(kid)
             got["links"] = (got.get("links") or [])[:300]   # a program page's menus need not ride in memory
             pages.append({"url": got.get("final_url") or u, "title": got.get("title"), "h1": got.get("h1"),
                           "body": got.get("body"), "content": got.get("content"), "got": got,
-                          "codes": page_codes((got.get("body") or "") + "\n" + (got.get("content") or ""))})
-            if i % 50 == 49:
-                print("  read %d of %d pages" % (i + 1, len(urls)), flush=True)
+                          "codes": page_net(got)})
+            if i % 50 == 0:
+                print("  read %d of %d pages" % (i, len(queue)), flush=True)
         report["pages_read"] = len(pages)
+        if platform not in ("curriqunet", "elumen", "acalog"):
+            report["child_pages"] = len(queue) - len(urls)
+        report["banner_h1"] = drop_banner_h1(pages)
         recs, fallback = [], 0
         P.MAX_LOADS = FALLBACK_LOADS      # the link search, shorter here: most programs already have a page
         given = assign(programs, pages)
@@ -775,14 +1498,18 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
                     print("%-6s page_claimed %s" % (prog["control_number"], g["lost"][0]), flush=True)
                     continue
                 # A curriQunet catalog has no links to search: its index is the whole list.
-                if best is None and fallback < MAX_FALLBACKS and platform != "curriqunet":
+                # An eLumen catalog's menu is the whole list too; its links would find it again,
+                # and so would an Acalog catalog's site map or program pages.
+                if best is None and fallback < MAX_FALLBACKS and platform not in ("curriqunet", "elumen", "acalog"):
                     fallback += 1
                     res = P.locate_html(reader, {"title": prog["title"], "award": prog["award"]},
                                         prog["closed_list"], start, cache, False)
                     b = res["best"] or {}
-                    if b.get("coverage", 0.0) >= P.ACCEPT_SHARE and in_scope(b.get("url") or "", scope):
+                    if b.get("coverage", 0.0) >= P.ACCEPT_SHARE and link_page_ok(b.get("url") or "", scope):
                         best, method = dict(b, label=None), "link_search"
                 rec = source_record(college, prog, reg, best, method if best else "not_found")
+                if not best:
+                    rec["near_miss"] = near_miss(prog, pages)
             recs.append(rec)
             _write(os.path.join(out_dir, "sources", prog["control_number"] + ".json"), rec)
             print("%-6s %-12s cov %-5s %s" % (prog["control_number"], rec["method"][:12], rec["coverage"],
@@ -800,7 +1527,8 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
         by_method={m: sum(1 for r in recs if r["method"] == m)
                    for m in sorted({r["method"] for r in recs})},
         shared_pages={u: cns for u, cns in urls_used.items() if len(cns) > 1},
-        not_found=[{"control_number": r["control_number"], "title": r["title"], "award": r["award"]}
+        not_found=[{"control_number": r["control_number"], "title": r["title"], "award": r["award"],
+                    "near_miss": r.get("near_miss")}
                    for r in recs if r["method"] == "not_found"],
         page_claimed=[{"control_number": r["control_number"], "title": r["title"], "award": r["award"],
                        "pages": r.get("lost_pages")} for r in recs if r["method"] == "page_claimed"],
@@ -862,9 +1590,32 @@ def would_extract(college: str, recs: list[dict], folder: str | None = None) -> 
             "kept": kept, "programs": len(out), "list": out}
 
 
+def forced(folder: str, tokens: str) -> set[str]:
+    """The control numbers a re-read extracts again though their page is
+    unchanged: those it names, and with the word "incomplete" every filed record
+    whose arithmetic is incomplete and that places some listed course (Sam, Open
+    Asks Sheet 78 card 2: record shape 5 reads the degree total those pages
+    print). A record placing none read another program's page; reading it again
+    reads the same page."""
+    from _program_requirements_score import places_none
+    out = set()
+    for t in (x.strip() for x in (tokens or "").split(",")):
+        if t.lower() == "incomplete":
+            for path in glob.glob(os.path.join(folder, "records", "*.json")):
+                with open(path) as fh:
+                    r = json.load(fh)
+                sc = r.get("score") or {}
+                if (sc.get("arithmetic") or {}).get("status") == "incomplete" and not places_none(sc):
+                    out.add(r.get("control_number") or os.path.splitext(os.path.basename(path))[0])
+        elif t:
+            out.add(t)
+    return out
+
+
 def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: int = 6,
-            keep_from: str | None = None) -> int:
+            keep_from: str | None = None, force: set[str] | None = None) -> int:
     import _program_requirements_extract as X
+    import _program_requirements_reconcile as R
     key = os.environ.get("SUPABASE_SERVICE_KEY")
     if not key:
         print("SUPABASE_SERVICE_KEY is not set; the Edge Function takes only the service key.")
@@ -885,14 +1636,16 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
         fresh = []
         for src in sources:
             path = os.path.join(keep_from, "records", src["control_number"] + ".json")
-            if unchanged(prev.get(src["control_number"]), src) and has_record(path):
+            if (src["control_number"] not in (force or ())
+                    and unchanged(prev.get(src["control_number"]), src) and has_record(path)):
                 with open(path) as fh:
                     _write(os.path.join(out_dir, "records", src["control_number"] + ".json"), json.load(fh))
                 kept += 1
             else:
                 fresh.append(src)
         sources = fresh
-        print("kept %d records filed from the same page" % kept, flush=True)
+        print("kept %d records filed from the same page; %d to extract, %d of them forced"
+              % (kept, len(fresh), sum(1 for x in fresh if x["control_number"] in (force or ()))), flush=True)
     mine = shard_of(sources, shard, shards)
     print("extraction, shard %d of %d: %d of %d sources, %d at a time"
           % (shard + 1, shards, len(mine), len(sources), workers), flush=True)
@@ -901,8 +1654,13 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
         t0 = time.time()
         got = X.call(src, key)
         rec = got.get("record")
+        # The college's reconcile steps search the page again for a figure the reading left out
+        # (Sam, 2026-10-14; kb/_program_requirements_reconcile.py).
+        rec, notes = R.reconcile(rec, src["text"], src["college"], src.get("award"))
+        if notes:
+            got = dict(got, record=rec)
         try:
-            sc = X.score(rec, src["closed_list"], src["text"]) if isinstance(rec, dict) else None
+            sc = X.score(rec, src["closed_list"], src["text"], src.get("award")) if isinstance(rec, dict) else None
         except Exception as exc:   # one record the scorer cannot read never stops the others
             sc, got = None, dict(got, error="score: " + str(exc).splitlines()[0][:200])
         row = {"college": src["college"], "control_number": src["control_number"], "shape": src["shape"],
@@ -912,6 +1670,8 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
                "cost_usd": X.cost(got.get("model"), got.get("usage")), "ms": got.get("ms"),
                "seconds": round(time.time() - t0, 1), "parts": got.get("parts"), "error": got.get("error"), "score": sc,
                "record": rec, "extracted_run": run_id}
+        if notes:
+            row["reconciled"] = notes
         _write(os.path.join(out_dir, "records", src["control_number"] + ".json"), row)
         print("%-6s %s cov %-5s arith %-10s $%s %s" % (
             src["control_number"], "PASS" if sc and sc["pass"] else "fail",
@@ -923,6 +1683,44 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
     from concurrent.futures import ThreadPoolExecutor
     with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
         list(pool.map(one, mine))
+    return 0
+
+
+def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: str) -> int:
+    """A reconcile run (step=reconcile, no model call): every filed record goes to
+    out/records, and each one whose page the capture read again is reconciled with
+    the fresh text (kb/_program_requirements_reconcile.py) and rescored. A record
+    that changed carries the run as its extracted_run, its notes as reconciled and
+    the run it was read by as read_run, so step=reread posts it and only it."""
+    import _program_requirements_reconcile as R
+    import _program_requirements_score as S
+    sources = {}
+    for path in glob.glob(os.path.join(out_dir, "sources", "*.json")):
+        with open(path) as fh:
+            src = json.load(fh)
+        if src.get("text"):
+            sources[src["control_number"]] = src
+    os.makedirs(os.path.join(out_dir, "records"), exist_ok=True)
+    changed, unread = [], 0
+    for path in sorted(glob.glob(os.path.join(keep_from, "records", "*.json"))):
+        with open(path) as fh:
+            filed = json.load(fh)
+        src = sources.get(filed.get("control_number"))
+        rec = filed.get("record")
+        if src and isinstance(rec, dict):
+            new, notes = R.reconcile(rec, src["text"], college, filed.get("award") or src.get("award"))
+            if notes:
+                filed = dict(filed, record=new, reconciled=notes, read_run=filed.get("extracted_run"),
+                             extracted_run=int(run_id) if str(run_id or "").isdigit() else run_id,
+                             score=S.score(new, src["closed_list"], src["text"], filed.get("award") or src.get("award")))
+                changed.append(filed["control_number"])
+                a = filed["score"]["arithmetic"]
+                print("%-6s reconciled %s; arith %s" % (filed["control_number"],
+                      ", ".join(n["field"] for n in notes), a.get("status")), flush=True)
+        elif not src:
+            unread += 1
+        _write(os.path.join(out_dir, "records", os.path.basename(path)), filed)
+    print("reconcile: %d filed records changed, %d had no fresh page" % (len(changed), unread), flush=True)
     return 0
 
 
@@ -1079,6 +1877,84 @@ def load_receipt(college: str, run_id: str, rows: list[dict], skipped: list[dict
     }
 
 
+REREAD_RPC = "rpc/program_requirement_records_college_reread"
+REREAD_FUNCTION = REREAD_RPC.split("/", 1)[1]
+
+
+def reread_receipt_path(college: str, run_id: str) -> str:
+    return os.path.join(RECEIPTS, "program_requirement_records_college_reread_%s_%s.json"
+                        % (slug_of(college), run_id))
+
+
+def reread_receipt(college: str, run_id: str, newest: str | None, rows: list[dict], skipped: list[dict],
+                   results: list[dict], error: str | None = None) -> dict:
+    """What the re-read replaced, and how to take it back: each replaced row's
+    before-values, restored where the row still holds the re-read's run and is
+    still unchecked or was checked by a confirm this run carried over (Sheet 82
+    card 1), whose verdict rows the rollback deletes (Rule 10 a2)."""
+    pick = lambda k: [x for r in results for x in (r.get(k) or [])]
+    before = pick("before")
+    carried = pick("carried_keys")
+    q = lambda v: "'%s'" % str(v).replace("'", "''")
+    held_by = ("(r.checked = false or r.control_number in (%s))" % ", ".join(q(k) for k in carried)
+               if carried else "r.checked = false")
+    return {
+        "college": college, "reread_run": run_id, "function": REREAD_FUNCTION, "extracted_run": newest,
+        "at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        "posted": len(rows), "batches": len(results), "skipped": skipped, "error": error,
+        "replaced": len(pick("replaced_keys")), "absent": len(pick("absent_keys")),
+        "held": len(pick("held_keys")), "kept": len(pick("kept_keys")), "carried": len(carried),
+        "replaced_keys": pick("replaced_keys"), "absent_keys": pick("absent_keys"),
+        "held_keys": pick("held_keys"), "kept_keys": pick("kept_keys"), "carried_keys": carried,
+        "machine_pass": sum(1 for r in rows if r["checks"]["coverage"] is True and r["checks"]["invented"] is True
+                            and r["checks"]["arithmetic"] in ("equal", "unstated")),
+        "rollback": ("update public.program_requirement_records r set program_title = b.program_title, "
+                     "award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, "
+                     "measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, "
+                     "checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, "
+                     "checked_at = null from jsonb_to_recordset(<before>) as "
+                     "b(control_number text, program_title text, award text, catalog_year text, source_url text, "
+                     "measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, "
+                     "extracted_run bigint) where r.college = %s and r.control_number = b.control_number "
+                     "and %s and r.extracted_run = %s;  -- <before> is this receipt's before, "
+                     "as a jsonb literal" % (q(college), held_by, newest)
+                     + ("\ndelete from public.program_record_verdicts where college = %s and control_number in (%s) "
+                        "and verdict = 'confirm' and note like 'Carried over from verdict %% re-read run %s %%';"
+                        % (q(college), ", ".join(q(k) for k in carried), run_id) if carried else "")) if before else None,
+        "before": before,
+    }
+
+
+def reread(college: str, run_id: str | None, batch: int = LOAD_BATCH, post=None) -> int:
+    """Post the records the newest extraction run filed to the re-read function.
+    A record kept from an earlier run is not posted: its row already holds it."""
+    key = os.environ.get("SUPABASE_SERVICE_KEY")
+    if not key and post is None:
+        print("SUPABASE_SERVICE_KEY is not set; the re-read function takes only the service role.")
+        return 2
+    if not (run_id and str(run_id).isdigit()):
+        print("a numeric run id is required (--run, or GITHUB_RUN_ID)")
+        return 2
+    post = post or (lambda body: _rpc(REREAD_RPC, body, key))
+    rows, skipped = load_rows(college)
+    newest = max((r["extracted_run"] for r in rows), key=int, default=None)
+    rows = [r for r in rows if r["extracted_run"] == newest]
+    results, error = [], None
+    for i in range(0, len(rows), max(1, batch)):
+        try:
+            results.append(post({"p_college": college, "p_run": str(run_id), "p_rows": rows[i:i + batch]}))
+        except Exception as exc:   # the receipt still files what was replaced before it
+            error = "batch %d: %s" % (i // batch + 1, str(exc).splitlines()[0][:300])
+            break
+    receipt = reread_receipt(college, str(run_id), newest, rows, skipped, results, error)
+    os.makedirs(RECEIPTS, exist_ok=True)
+    _write(reread_receipt_path(college, str(run_id)), receipt)
+    print("re-read of %s (extraction run %s): %d posted, %d replaced, %d absent, %d held, %d kept, %d confirms carried%s"
+          % (college, newest, len(rows), receipt["replaced"], receipt["absent"], receipt["held"],
+             receipt["kept"], receipt["carried"], "; STOPPED at " + error if error else ""))
+    return 1 if error else 0
+
+
 def _rpc(path: str, body: dict, key: str) -> dict:
     import urllib.request
     req = urllib.request.Request(
@@ -1123,7 +1999,7 @@ def _write(path: str, obj) -> None:
 
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    ap.add_argument("step", choices=["capture", "extract", "file", "load"])
+    ap.add_argument("step", choices=["capture", "extract", "reconcile", "file", "load", "reread"])
     ap.add_argument("--college", default="Cerritos College")
     ap.add_argument("--out", default="out")
     ap.add_argument("--shard", type=int, default=0)
@@ -1131,15 +2007,23 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--workers", type=int, default=6, help="extraction calls at once")
     ap.add_argument("--fresh", action="store_true", help="extract every program, keeping no filed record")
     ap.add_argument("--limit", type=int, default=0, help="the first N programs only (a trial)")
+    ap.add_argument("--force", default="", help="control numbers to extract again though their page is "
+                                                "unchanged, comma-separated; 'incomplete' names every filed "
+                                                "record whose arithmetic is incomplete")
     ap.add_argument("--run", default=os.environ.get("GITHUB_RUN_ID"))
     args = ap.parse_args(argv)
     if args.step == "capture":
         return capture(args.college, args.out, args.limit)
     if args.step == "load":
         return load(args.college, args.run)
+    if args.step == "reread":
+        return reread(args.college, args.run)
+    if args.step == "reconcile":
+        return reconcile_filed(args.college, args.out, args.run, os.path.join(COLLEGE_DIR, slug_of(args.college)))
     if args.step == "extract":
         keep = None if args.fresh else os.path.join(COLLEGE_DIR, slug_of(args.college))
-        return extract(args.out, args.shard, args.shards, args.run, args.workers, keep)
+        force = forced(keep, args.force) if keep and args.force else None
+        return extract(args.out, args.shard, args.shards, args.run, args.workers, keep, force)
     return file_run(args.college, args.out, args.run)
 
 

@@ -24,6 +24,7 @@ network. Run from repo root: python3 tests/program_requirements_college_test.py
 """
 import json
 import os
+import re
 import shutil
 import tempfile
 import urllib.parse
@@ -258,6 +259,8 @@ for title, h1, want in [
 
 check({"COS60A1", "COS60B3", "BAK80", "THE30"} <= C.page_codes("COS-60A1 Cosmetology\nCOS-60B3\nBAK-80 THE-30"),
       "the code net reads a number ending in letters and digits (COS 60A1), as the exact test does")
+check({"HORT1F", "HORT164F"} <= C.page_codes("HORT 001 F · Principles of Horticulture I\t4 · HORT 164 F\nPlant ID"),
+      "the code net reads NOCCCD's campus letter written as its own word (HORT 001 F), as the state's file stores it")
 
 # ── curriQunet: the catalog's own JSON (S357) ──────────────────────────────
 print("curriQunet")
@@ -266,6 +269,17 @@ check(C.cq_catalog_id(["https://rccd.curriqunet.com/Content/x.css",
       and C.cq_catalog_id(["https://x.curriqunet.com/Catalog/_getNavigation?id=88&navigationtypeId=1"]) == 88
       and C.cq_catalog_id(["https://x.edu/"]) is None,
       "the catalog id comes from the calls the start page's scripts made")
+# Page read 38942920358 (S399): Berkeley City's and Butte's start pages ask
+# _getNavigation?id=0 first, then name the catalog. Taking the 0 walked an empty catalog.
+check(C.cq_catalog_id(["https://bcc.curriqunet.com/catalog/_getNavigation?id=0&navigationtypeId=1",
+                       "https://bcc.curriqunet.com/catalog/_getCatalogs",
+                       "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&navigationtypeId=1",
+                       "https://bcc.curriqunet.com/catalog/_getPage?catalogId=10327&id=40258"]) == 10327
+      and C.cq_catalog_id(["https://butte.curriqunet.com/Catalog/_getCatalogs",
+                           "https://butte.curriqunet.com/Catalog/_getNavigation?id=0&navigationtypeId=1",
+                           "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&navigationtypeId=1"]) == 14
+      and C.cq_catalog_id(["https://x.curriqunet.com/catalog/_getNavigation?id=0&navigationtypeId=1"]) is None,
+      "an id of 0 is a placeholder the start page asks first, never the catalog (Berkeley City 10327, Butte 14)")
 check(C.cq_base("https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5842/6111") ==
       ("https://rccd.curriqunet.com", "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/")
       and C.cq_base("https://irvine.curriqunet.com/Catalog/iq/48953")[1] == "https://irvine.curriqunet.com/Catalog/iq/",
@@ -280,7 +294,7 @@ check("<" not in txt and "&nbsp;" not in txt, "no tag or entity survives into th
 ENTRY = {"id": 5878, "text": ttl, "aliaspath": "5852/6117/Acting", "haschildbodynavs": False}
 check(C.cq_is_program(ENTRY) and not C.cq_is_program({"text": "Degrees and Certificates Explained"})
       and not C.cq_is_program({"text": "Degrees and Certificates Index", "haschildbodynavs": True}),
-      "a program entry is a leaf naming an award after a dash")
+      "a program entry names an award after a dash")
 NAV = {
     "top": {"navs": [{"id": 5842, "text": "Introduction to Riverside City College"},
                      {"id": 5852, "text": "Degrees and Certificates"},
@@ -418,6 +432,160 @@ check(not C.unchanged({"source": {"url": "u", "text_from": "textContent"}, "cove
                       {"source": {"url": "u", "text_from": "innerText"}, "coverage": 1.0, "codes_found": ["A1"]}),
       "a source read from the visible text never keeps a record filed from the hidden text (Long Beach City, S362)")
 
+# ── curriQunet, Chaffey's shape (S369) ──────────────────────────────────────
+# Reads 38202133197 and 38202752228: Degrees and Certificates (19210) shows a tab
+# list of an index and six schools; an entry is titled "... - AS-T Degree" with no
+# local codes and holds a Requirements child, where the curriculum is; a blank
+# sibling is kept out of the web view. The first capture (run 38197183697) walked
+# every program as a section, ran out of calls and listed none.
+check(C.cq_is_program({"text": "Business Administration 2.0 for Transfer - AS-T Degree", "haschildbodynavs": True})
+      and C.cq_is_program({"text": "Physical Therapist Assistant - A.S. Degree"})
+      and C.cq_is_program({"text": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement"})
+      and C.cq_is_program({"text": "Spanish - AA-T"})
+      and not C.cq_is_program({"text": "Requirements"}) and not C.cq_is_program({"text": "Business, Technology & Hospitality"}),
+      "Chaffey's entries name their award as AS-T Degree, A.S. Degree or a certificate, and hold children")
+# Santa Ana writes the award after a colon (page read 38749570529, S395): its 27 of 359
+# entries were the dashed titles; "Accounting: A.S. Degree" was walked as a department.
+check(C.cq_is_program({"text": "Accounting: A.S. Degree", "haschildbodynavs": True})
+      and C.cq_is_program({"text": "Certificate of Professional Accounting - Accounting Study & Ethics: Certificate of Achievement (Transcripted)"})
+      and C.cq_is_program({"text": "Science Degree - Astronomy Emphasis: A.S. Degree"})
+      and C.cq_is_program({"text": "Welding Technology: Certificate of Achievement"})
+      and not C.cq_is_program({"text": "Accounting", "haschildbodynavs": True})
+      and not C.cq_is_program({"text": "Degrees and Certificates: Explained"})
+      and not C.cq_is_program({"text": ": A.S. Degree"}),
+      "cq_is_program reads an award after the last colon (Santa Ana), never a department or an explainer")
+HIDE = json.dumps({"nodeConfig": {"excludeFromWebView": True}})
+
+check(C.cq_hidden({"text": " ", "config": HIDE}) and C.cq_hidden({"text": "Notes", "config": HIDE})
+      and not C.cq_hidden({"text": "Requirements", "config": json.dumps({"nodeConfig": {"excludeFromWebView": False}})})
+      and not C.cq_hidden({"text": "Requirements", "config": "not json"}),
+      "a node the catalog keeps out of its web view, or a blank one, is not read")
+BUS = {"id": 19915, "text": "Business Administration 2.0 for Transfer - AS-T Degree", "aliaspath": "19210/bth/busadmin2",
+       "haschildbodynavs": True}
+ACC = {"id": 19950, "text": "Accounting", "aliaspath": "19210/program_index/accounting", "haschildbodynavs": True}
+ACC_AS = {"id": 19951, "text": "Accounting - A.S. Degree", "aliaspath": "19210/program_index/accounting/19951",
+          "haschildbodynavs": True}
+REQ_HTML = ('<div class="program-summary-wrapper"><h3>Required Courses</h3><table><tr><td>ACCTG-1A</td>'
+            '<td>Financial Accounting</td><td>4</td></tr><tr><td>BUS-10</td><td>Introduction to Business</td><td>3</td>'
+            '</tr></table><p>Total Units: 27</p></div>')
+CH = {
+    "top": {"navs": [{"id": 19224, "text": "Student Classifications and Programs", "haschildbodynavs": True},
+                     {"id": 19210, "text": "Degrees and Certificates", "haschildbodynavs": True},
+                     {"id": 19209, "text": "Courses", "haschildbodynavs": True}]},
+    "page:19210": {"page": {"id": 19210, "text": "Degrees and Certificates"}, "body": [{"navlist": [{"id": 20265}]}]},
+    "nav:20265": {"navs": [{"id": 20266, "text": "Program Index", "haschildbodynavs": True},
+                           {"id": 20268, "text": "Business, Technology & Hospitality", "haschildbodynavs": True}]},
+    "page:20266": {"body": [{"navlist": [{"id": 20300}]}]},
+    "nav:20300": {"navs": [ACC]},
+    "page:19950": {"body": [{"navlist": [{"id": 20310}]}]},
+    "nav:20310": {"navs": [ACC_AS]},
+    "page:20268": {"body": [{"navlist": [{"id": 20301}]}]},
+    "nav:20301": {"navs": [BUS]},
+    "page:19224": {"body": [{"navlist": [{"id": 20400}]}]},
+    "nav:20400": {"navs": [{"id": 20401, "text": "Honors Program"}]},
+    "page:19915": {"page": {"id": 19915, "text": BUS["text"]}, "body": [{"navlist": [{"id": 20080}]}]},
+    "nav:20080": {"navs": [{"id": 19916, "text": "Requirements", "config": json.dumps({"nodeConfig": {"excludeFromWebView": False}})},
+                           {"id": 19917, "text": " ", "config": HIDE},
+                           {"id": 19999, "text": "Business Administration - Certificate of Achievement"}]},
+    "page:19916": {"page": {"id": 19916, "text": "Requirements"},
+                   "body": [{"catalogblockheader": None, "text": REQ_HTML}]},
+}
+ch_asked = []
+
+
+def chaffey_get(url):
+    ch_asked.append(url)
+    q = urllib.parse.parse_qs(urllib.parse.urlparse(url).query)
+    if "navigationtypeId" in q:
+        return CH["top"]
+    if "parentId" in q:
+        return CH.get("nav:" + q["parentId"][0])
+    return CH.get("page:" + q["id"][0])
+
+
+cents, cacct = C.cq_index(chaffey_get, 718, "https://chaffey.curriqunet.com")
+check(sorted(e["id"] for e in cents) == [19915, 19951] and cacct["sections"][0] == "Degrees and Certificates"
+      and cacct["entries"] == 2 and not cacct["stopped_at_cap"],
+      "Chaffey's walk reads Degrees and Certificates first and finds the entries under the index and the schools: %r"
+      % [e["id"] for e in cents])
+first_19224 = next(i for i, a in enumerate(ch_asked) if "id=19224" in a)
+check(all(i < first_19224 for i, a in enumerate(ch_asked) if "id=19210" in a or "parentId=20265" in a),
+      "Degrees and Certificates and its tab list are read before Student Classifications and Programs")
+check(not any("id=19915" in a or "id=19951" in a for a in ch_asked),
+      "the walk takes an entry with children as an entry and never reads it as a section")
+ch_asked.clear()
+bus_page = chaffey_get("https://chaffey.curriqunet.com/Catalog/_getPage?catalogId=718&id=19915")
+own, more = C.cq_children(chaffey_get, 718, "https://chaffey.curriqunet.com", bus_page)
+check([p["page"]["id"] for p in own] == [19916] and [m["id"] for m in more] == [19999]
+      and not any("id=19917" in a for a in ch_asked),
+      "an entry's visible child is read as its own page, a child program is an entry, the hidden sibling is never read")
+PCH = C.cq_page(BUS, bus_page, "https://chaffey.curriqunet.com/catalog/iq/", own)
+check(PCH["url"] == "https://chaffey.curriqunet.com/catalog/iq/19210/bth/busadmin2"
+      and PCH["title"] == BUS["text"] and {"ACCTG1A", "BUS10"} <= PCH["codes"] and "Total Units: 27" in PCH["body"],
+      "the entry's page carries the courses its Requirements child prints, under the entry's own address and title")
+check(C.cq_page(BUS, bus_page, "x")["codes"] == set(),
+      "without its Requirements child the entry's page names no course (the first capture's 0)")
+
+# San Diego Mesa's special-admission programs (S374): six tabs, Requirements fifth.
+RAD_TABS = [{"id": 18092, "text": "Summary"}, {"id": 19711, "text": "Accreditation"},
+            {"id": 19671, "text": "Directed Clinical Practice Requirement"}, {"id": 19670, "text": "Admission Criteria"},
+            {"id": 18284, "text": "Requirements"}, {"id": 18476, "text": "Courses"}]
+RAD = {"page:17708": {"page": {"id": 17708, "text": "Radiologic Technology - Associate of Science Degree: Mesa"},
+                      "body": [{"navlist": [{"id": 17900}]}]},
+       "nav:17900": {"navs": RAD_TABS}}
+for t in RAD_TABS:
+    RAD["page:%d" % t["id"]] = {"page": {"id": t["id"], "text": t["text"]},
+                                "body": [{"text": "<p>RADT 100 RADT 110</p>" if t["id"] == 18284 else "<p>%s</p>" % t["text"]}]}
+rad_asked = []
+
+
+def mesa_get(url):
+    rad_asked.append(url)
+    q = urllib.parse.parse_qs(urllib.parse.urlparse(url).query)
+    if "parentId" in q:
+        return RAD.get("nav:" + q["parentId"][0])
+    return RAD.get("page:" + q["id"][0])
+
+
+rad_own, rad_more = C.cq_children(mesa_get, 70, "https://sdccd.curriqunet.com", RAD["page:17708"])
+check(len(rad_own) == C.CQ_MAX_CHILDREN and rad_own[0]["page"]["id"] == 18284 and not rad_more
+      and not any("id=18476" in a for a in rad_asked),
+      "a Requirements tab is read first, under the cap, when it is the fifth of six tabs (Mesa's Radiologic Technology)")
+RAD_PAGE = C.cq_page({"id": 17708, "text": RAD["page:17708"]["page"]["text"], "aliaspath": "17540/programs/17708"},
+                     RAD["page:17708"], "x/", rad_own)
+check({"RADT100", "RADT110"} <= RAD_PAGE["codes"], "the entry's page carries the courses its Requirements tab prints")
+
+# ── curriQunet: San Diego City's catalog from the host's list, and each program once (S369) ──
+# Reads 38203841691 and 38204183571: the alias start page draws an empty "Active
+# Catalogs" shell and fetches nothing; _getCatalogs names City 2026-2027 as 69.
+SDCCD = [{"Id": 69, "Title": "City 2026-2027"}, {"Id": 70, "Title": "Mesa 2026-2027"},
+         {"Id": 71, "Title": "Miramar 2026-2027"}]
+check(C.cq_catalog_from_list(SDCCD, "San Diego City College", "2026-2027") == 69
+      and C.cq_catalog_from_list(SDCCD, "San Diego Mesa College", "2026-2027") == 70
+      and C.cq_catalog_from_list(SDCCD, "San Diego Miramar College", "2026-2027") == 71,
+      "the host's catalog list gives each college the catalog its title names")
+check(C.cq_catalog_from_list(SDCCD, "San Diego City College", "2025-2026") is None
+      and C.cq_catalog_from_list(SDCCD + [{"Id": 60, "Title": "City 2025-2026"}], "San Diego City College", "2026-2027") == 69
+      and C.cq_catalog_from_list(SDCCD + [{"Id": 72, "Title": "City 2026-2027"}], "San Diego City College", "2026-2027") is None
+      and C.cq_catalog_from_list(None, "San Diego City College", "2026-2027") is None
+      and C.cq_catalog_from_list([{"Id": 5, "Title": "2026-2027 Catalog"}], "Chaffey College", "2026-2027") is None,
+      "only the registry's year counts, two candidates are none, and a title naming no college word is none")
+# Page read 38942920358 (S399): Gavilan's alias start page lists its active catalogs and
+# fetches nothing; _getCatalogs names the year's catalog beside two addenda.
+GAVILAN = [{"Id": 19173, "Title": "Fall 2025 Addendum"}, {"Id": 19330, "Title": "Spring 2026 Addendum"},
+           {"Id": 19344, "Title": "Gavilan College Catalog 2026-2027"}]
+check(C.cq_catalog_from_list(GAVILAN, "Gavilan College", "2026-2027") == 19344
+      and C.cq_catalog_from_list([{"Id": 14, "Title": "2026-2027 Butte College Catalog"}], "Butte College", "2026-2027") == 14
+      and C.cq_catalog_from_list(GAVILAN, "Gavilan College", "2025-2026") is None
+      and C.cq_catalog_from_list([{"Id": 10327, "Title": "2026-27 Catalog"}], "Berkeley City College", "2026-2027") is None,
+      "\"Catalog\" in a title is not a word the college's name must hold (Gavilan 19344); a title of the word alone names no college")
+same, dropped = C.cq_distinct([BUS, dict(BUS, id=18990, aliaspath="19210/program_index/18990"),
+                               {"id": 19951, "text": "Accounting - A.S. Degree"}])
+check([e["id"] for e in same] == [19915, 19951] and dropped == 1,
+      "a program the index and its school both list is read once, from the first entry")
+check([e["id"] for e in C.cq_distinct([ENTRY, {"id": 5877, "text": "Accounting Basics for Small Business - Certificate of Completion - CC8009"}])[0]]
+      == [5878, 5877], "Riverside City's entries, each titled once, are all kept")
+
 # ── the source a full college files keeps the pilot's shape ─────────────────
 reg = {"catalog_url": start, "catalog_year": "2026-2027", "catalog_platform": "courseleaf", "catalog_format": "html_per_program"}
 src = C.source_record("Cerritos College", aa, reg, best, "sitemap_page")
@@ -508,7 +676,8 @@ key_line = "SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}"
 holders = [st.splitlines()[0] for st in steps(read_job) + steps(load_job) + steps(display_job)
            if "SUPABASE_SERVICE_KEY" in st]
 check(wf.count("SUPABASE_SERVICE_KEY") == 2 * wf.count(key_line) == 6
-      and holders == ["- name: Extract and score", "- name: Load the committed records, unchecked",
+      and holders == ["- name: Extract and score",
+                      "- name: Load the committed records, unchecked (or replace unchecked rows from the newest run)",
                       "- name: Apply the display build the page carries"],
       "the service key reaches the extraction, load and display steps, and no other: %r" % holders)
 check("if: env.EXTRACT == 'true'" in read_job, "the extraction step runs only when asked")
@@ -587,8 +756,429 @@ try:
           and "'00002'" not in receipt["rollback"],
           "the rollback names only the keys this load inserted, and only while they are unchecked")
     check(refused == 2, "a load without a numeric run id refuses")
+
+    # The re-read (S389; Sam, Open Asks Sheet 78 card 2): only the newest extraction run's records
+    # are posted, and the receipt holds each replaced row's before-values, which is the rollback.
+    # The failures this guards: posting records an earlier run read (their rows already hold them),
+    # and a replace with no way back.
+    reposted = []
+
+    def repost(body):
+        reposted.append(body)
+        return {"replaced_keys": [r["control_number"] for r in body["p_rows"]], "absent_keys": [],
+                "held_keys": [], "kept_keys": [],
+                "before": [{"control_number": r["control_number"], "record": {"was": True}} for r in body["p_rows"]]}
+
+    C.COLLEGE_DIR, C.RECEIPTS = parent, os.path.join(parent, "receipts")
+    try:
+        code = C.reread("Cerritos College", "38000000002", post=repost)
+        rr = json.load(open(C.reread_receipt_path("Cerritos College", "38000000002")))
+    finally:
+        C.COLLEGE_DIR, C.RECEIPTS = real
+    check(code == 0 and [r["control_number"] for b in reposted for r in b["p_rows"]] == ["00002"]
+          and rr["extracted_run"] == "37966828676",
+          "a re-read posts only the newest extraction run's records: %r" % rr.get("replaced_keys"))
+    check(rr["replaced_keys"] == ["00002"] and rr["before"] == [{"control_number": "00002", "record": {"was": True}}]
+          and "checked = false" in rr["rollback"] and "r.extracted_run = 37966828676" in rr["rollback"],
+          "the re-read's receipt holds each replaced row's before-values and a rollback guarded by "
+          "the re-read's run and checked = false")
+    # Sheet 82 card 1: a confirm the re-read carried over checked its row, so the rollback restores
+    # that row too, sets it unchecked, and deletes the carried verdict rows this run wrote.
+    cr = C.reread_receipt("Cabrillo College", "38700000000", "38639316727", [], [],
+                          [{"replaced_keys": ["06326", "06327"], "carried_keys": ["06326"],
+                            "before": [{"control_number": "06326"}, {"control_number": "06327"}]}])
+    check(cr["carried"] == 1 and cr["carried_keys"] == ["06326"]
+          and "(r.checked = false or r.control_number in ('06326'))" in cr["rollback"]
+          and "checked = false, checked_by = null, checked_at = null" in cr["rollback"]
+          and "delete from public.program_record_verdicts where college = 'Cabrillo College' and control_number in ('06326')"
+              in cr["rollback"] and "re-read run 38700000000 %" in cr["rollback"],
+          "a carried confirm's rollback restores its row unchecked and deletes the carried verdict: %s" % cr["rollback"])
+
+    # force=incomplete names the filed records whose arithmetic is incomplete and that place a course.
+    rec("00009", score={"coverage": {"pass": True, "placed": 5, "listed": 6}, "invented": {"pass": True},
+                        "arithmetic": {"status": "incomplete"}, "pass": False})
+    rec("00010", score={"coverage": {"pass": True, "placed": 0, "listed": 6}, "invented": {"pass": True},
+                        "arithmetic": {"status": "incomplete"}, "pass": False})
+    check(C.forced(tmp, "incomplete, 00001") == {"00009", "00001"} and C.forced(tmp, "") == set(),
+          "force=incomplete takes the incomplete records that place a course (never one that read another "
+          "program's page), plus any control number named")
 finally:
     shutil.rmtree(parent, ignore_errors=True)
+
+# The re-read function (chatbox/supabase_program_requirement_records_college_reread.sql) replaces
+# a row only while it is unchecked and from an earlier run (S392: a person's reading no longer holds it), never touches
+# checked or display, returns the before-values, and answers the service role alone (Rule 10).
+RR = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "chatbox",
+                       "supabase_program_requirement_records_college_reread.sql")).read()
+RR_BODY = RR.split("function public.program_requirement_records_college_reread(", 1)[1].split("as $$", 1)[1].split("$$;", 1)[0]
+check("auth.role(), '') <> 'service_role'" in RR_BODY and "from public, anon, authenticated" in RR
+      and "to service_role" in RR,
+      "the re-read function answers the service role alone, in its body and in its grants")
+check("elsif cur.checked then" in RR_BODY
+      and "cur.extracted_run >= new_run" in RR_BODY and "and checked = false;" in RR_BODY,
+      "the re-read holds a checked row only (S392: a rerun is the fix a reviewer's Needs a fix or confirm "
+      "waits on), keeps a row from the same or a newer run, and its UPDATE is guarded by checked = false")
+inserts = re.findall(r"insert into\s+([\w.]+)", RR_BODY, re.I)
+check(inserts == ["public.program_record_verdicts"] and "delete from" not in RR_BODY.lower()
+      and "display =" not in RR_BODY and "checked_by =" not in RR_BODY and "checked =" not in RR_BODY.replace("checked = false", ""),
+      "the re-read never deletes or writes checked, checked_by or display, and its one insert is a carried "
+      "confirm in program_record_verdicts: %r" % inserts)
+# Sheet 82 card 1 ("carry", Sam, 2026-10-14): the confirm carries over only when it was given on the
+# record being replaced and the posted record keeps every block and every other program field.
+carry = RR_BODY.split("Sheet 82 card 1", 1)[1].split("update public.program_requirement_records", 1)[0]
+check("v.verdict = 'confirm'" in carry and "v.requirements_fp = public.program_record_fp(cur.record)" in carry
+      and "program_record_carry_basis(r->'record') = public.program_record_carry_basis(cur.record)" in carry
+      and "'confirm'" in carry and "v.by_email" in carry and "program_record_machine_pass(r->'checks')" in carry
+      and "carried := carried ||" in carry and "'carried_keys', to_jsonb(carried)" in RR_BODY,
+      "the carry needs the latest verdict to be a confirm of the replaced record and an equal basis, "
+      "writes the confirm in the reviewer's name with the new record's checks, and reports the carried keys")
+BASIS = RR.split("function public.program_record_carry_basis", 1)[1].split("$$;", 1)[0]
+check(all("- '%s'" % k in BASIS for k in ("outcomes", "careers", "total_units", "degree_total", "ge_units",
+                                          "ge_pattern", "open_elective_units", "degree_elective_units",
+                                          "electives_fill_degree", "degree_total_minimum"))
+      and BASIS.count("- '") == 10 and "'blocks',  coalesce(rec->'blocks'" in BASIS and "md5" not in BASIS
+      and "program_record_carry_basis(jsonb) from public, anon, authenticated" in RR,
+      "the carry basis leaves out exactly the totals, the degree's figures, outcomes and careers, keeps every "
+      "block, compares as jsonb (3 and 3.0 alike), and is closed to the API roles")
+steps_fields = {st["field"] for c in json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "kb",
+                "program_requirements_reconcile.json")))["colleges"].values() for st in c["steps"]}
+check(all("- '%s'" % f in BASIS for f in steps_fields),
+      "every field a college's reconcile steps fill or clear is one a confirm carries across: %s" % sorted(steps_fields))
+VF = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "chatbox",
+                       "supabase_program_record_verdicts.sql")).read()
+check("- 'outcomes' - 'careers',\n    'blocks',  coalesce(rec->'blocks', '[]'::jsonb))::text);" in VF,
+      "program_record_fp is unchanged, so every stored verdict keeps matching its record (Sheet 82 card 1)")
+check("'before', before" in RR_BODY, "the re-read returns each replaced row's before-values")
+
+# ── the reconcile step on filed records (S392; Sam, 2026-10-14) ───────────────
+# A capture read the pages again; each filed record with fresh text is reconciled by the
+# college's steps and rescored, and one that changed carries the run so step=reread posts it.
+rcd = tempfile.mkdtemp()
+try:
+    keep, outd = os.path.join(rcd, "keep"), os.path.join(rcd, "out")
+    os.makedirs(os.path.join(keep, "records")); os.makedirs(os.path.join(outd, "sources"))
+    filed = {"college": "Cabrillo College", "control_number": "06326", "award": "A.S. Degree", "extracted_run": 38442109713,
+             "record": {"program": {"total_units": {"min": 30, "max": 30}, "measure": "units"},
+                        "blocks": [{"name": "Major", "rule": "all", "courses": [{"code": "ASTRO 3", "units": 30}]}]},
+             "score": {"arithmetic": {"status": "equal", "against": "program"}}}
+    other = dict(filed, control_number="06999")
+    for f in (filed, other):
+        json.dump(f, open(os.path.join(keep, "records", f["control_number"] + ".json"), "w"))
+    json.dump({"control_number": "06326", "award": "A.S. Degree", "closed_list": [{"code": "ASTRO 3", "units": 30}],
+               "text": "at least 30 units in the major.\nProgram Requirements\nAstronomy - Associate in Science (A.S.)\n"
+                       "Complete the following number of credits: 60\nCabrillo College General Education 24\n"
+                       "General electives: any transferable or degree applicable course. 6"},
+              open(os.path.join(outd, "sources", "06326.json"), "w"))
+    C.reconcile_filed("Cabrillo College", outd, "38700000000", keep)
+    got = json.load(open(os.path.join(outd, "records", "06326.json")))
+    kept_r = json.load(open(os.path.join(outd, "records", "06999.json")))
+    check(got["extracted_run"] == 38700000000 and got["read_run"] == 38442109713
+          and [n["field"] for n in got["reconciled"]] == ["degree_total", "ge_units", "total_units", "open_elective_units"]
+          and got["score"]["arithmetic"]["against"] == "degree" and got["score"]["arithmetic"]["status"] == "equal",
+          "reconcile: a filed record with fresh text is reconciled, rescored (30 + 6 + GE 24 = 60) and stamped with the run")
+    check(kept_r["extracted_run"] == 38442109713 and "reconciled" not in kept_r,
+          "reconcile: a filed record with no fresh page is filed again as it was")
+finally:
+    shutil.rmtree(rcd, ignore_errors=True)
+
+# ── the link search never takes a course listing for a program (S380) ───────
+# Coastline run 38406172949: the link search accepted
+# course-descriptions/credit-courses/re/ for Real Estate at coverage 1.0 (a course
+# listing names every course in its subject) and three listings for five programs.
+CL = "https://catalog.cccd.edu/coastline/"
+check(not C.link_page_ok(CL + "course-descriptions/credit-courses/re/index.html", "/coastline/")
+      and not C.link_page_ok(CL + "course-descriptions/credit-courses/emgt/", "/coastline/")
+      and not C.link_page_ok("https://catalog.cccd.edu/golden-west/pathways/business/", "/coastline/")
+      and not C.link_page_ok("", "/coastline/"),
+      "a course listing, another college's path on a district host, or no address is never a program's page")
+check(C.link_page_ok(CL + "pathways/behavior-culture-society/aging-studies/aging-studies-aa/", "/coastline/")
+      and C.link_page_ok("https://catalog.mtsac.edu/programs/accounting/", None),
+      "a program page in the college's own scope, or on a host with no scope, stands")
+
+# ── a CourseLeaf program page listed as <dir>/index.html is read (S380) ──────
+# Coastline's catalog lists each program page as .../business-as/index.html; the
+# old filter dropped every address ending in /index.html, and 109 of 159 programs
+# found no page (run 38406172949). Read in its directory form, once.
+CLP = CL + "pathways/business-operations-management/business/"
+cands = C.program_candidates([CLP + "business-as/index.html", CLP + "business-as/",
+                              CLP + "marketing-certificate-achievement/index.html",
+                              CL + "index.html", CL + "course-descriptions/credit-courses/bus/index.html",
+                              "https://catalog.cccd.edu/golden-west/pathways/business/business-as/index.html"],
+                             CL, "/coastline/")
+check(cands == [CLP + "business-as/", CLP + "marketing-certificate-achievement/"],
+      "an index.html program page is read as its directory, once; the catalog front page, a course listing and "
+      "another college's path are not")
+check(C.dir_form(CLP + "business-as/index.html#req") == CLP + "business-as/" and C.dir_form("") == "",
+      "the directory form drops index.html and any fragment")
+check(C.link_page_ok(CLP + "business-as/index.html", "/coastline/"),
+      "the link search may take an index.html program page too")
+
+# ── a subject page's own program pages are read (S381) ──────────────────────
+# Coastline run 38412902035 (after the index.html fix) still found 24 of 159: its
+# sitemap lists the subject pages and few of the program pages each one links, so
+# Information Technology A.S. turned up only through the capped link search.
+SUBJ = CLP   # pathways/business-operations-management/business/
+links = [{"href": SUBJ + "business-as/index.html"}, {"href": SUBJ + "marketing-applied-as/"},
+         {"href": SUBJ + "business-as/#requirementstext"},
+         {"href": CL + "pathways/business-operations-management/accounting/"},     # a sibling, not beneath
+         {"href": CL + "pathways/computer-cyber-sciences/"},                         # the menu
+         {"href": CL + "course-descriptions/credit-courses/bus/index.html"},
+         {"href": "https://catalog.cccd.edu/golden-west/pathways/business/business-as/"},
+         {"href": SUBJ}]
+check(C.child_pages(SUBJ, links, CL, "/coastline/") == [SUBJ + "business-as/", SUBJ + "marketing-applied-as/"],
+      "a page's children are the program pages beneath its own address, once each, in directory form")
+check(C.child_pages(SUBJ + "index.html", links, CL, "/coastline/") == [SUBJ + "business-as/", SUBJ + "marketing-applied-as/"]
+      and C.child_pages(SUBJ + "page.html", links, CL, "/coastline/") == [],
+      "an index.html page reads as its directory; a page that is a file has no children")
+
+# Coastline spells some awards out in the address (the page read 38411214415's links).
+check([C.slug_award(SUBJ + slug + "/") for slug in
+       ("marketing-associate-science-degree", "business-administration-2.0-associate-science-degree-transfer",
+        "economics-associate-arts-degree-transfer", "english-associate-arts-degree",
+        "project-management-essentials-certificate-specialization", "marketing-certificate-achievement")]
+      == ["as", "adt", "adt", "aa", "other", "coa"],
+      "an address that spells its award out names it, the transfer form before the plain one")
+adt_page = {"url": SUBJ + "business-administration-2.0-associate-science-degree-transfer/",
+            "h1": "", "title": "Business Administration 2.0, Associate in Science Degree for Transfer < Coastline College"}
+check(C.label_score(adt_page, {"award": "A.S. Degree", "title": "Business"})[0] == 0
+      and C.label_score(adt_page, {"award": "A.S.- T Degree", "title": "Business Administration 2.0"})[0] == 1,
+      "an A.S. does not read an A.S.-T page as its own because both say 'Associate in Science'")
+
+# Every Coastline page's h1 is the catalog's banner, so the heading rule read
+# "ACADEMIC CATALOGS" and turned every hidden-text page away.
+ban = [{"url": SUBJ + "p%d/" % i, "h1": "ACADEMIC CATALOGS", "title": "P%d < Coastline College" % i} for i in range(12)]
+aging = {"url": CL + "pathways/behavior-culture-society/aging-studies/aging-studies-aa/", "h1": "ACADEMIC CATALOGS",
+         "title": "Aging Studies, Associate of Arts Degree < Coastline College"}
+check(not C.heading_names_program(aging, {"title": "Aging Studies"}),
+      "the banner as a heading names no program (the failure)")
+check(C.drop_banner_h1(ban + [aging]) == "ACADEMIC CATALOGS" and aging["h1"] == ""
+      and C.heading_names_program(aging, {"title": "Aging Studies"})
+      and not C.heading_names_program(aging, {"title": "Gerontology Nursing"}),
+      "an h1 on every page is the banner: the heading is read from the title, before its ' < ' site name")
+few = [{"h1": "ACADEMIC CATALOGS"} for _ in range(4)] + [{"h1": "Art, A.A."}]
+own_heads = [{"h1": "X%d, A.A." % i} for i in range(20)]
+check(C.drop_banner_h1(few) is None and few[0]["h1"] == "ACADEMIC CATALOGS" and C.drop_banner_h1(own_heads) is None,
+      "an h1 on a handful of pages, or a heading of each page's own, stays")
+
+# ── eLumen: the program index is the catalog's side menu (S380) ─────────────
+# Read 38392014238: Bakersfield's start page links each program at
+# /catalog/2026-2027-Catalog/program/<slug>, beside its services, policies and
+# course pages; /programs is no view. A link to another year's catalog, another
+# host, or a course must never be read as a program page.
+EL_START = "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/about-bc"
+EL_BASE = "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/"
+EL_LINKS = [
+    {"text": "Programs of Study", "href": EL_BASE + "programs-of-study"},
+    {"text": "Disabled Student Programs & Services (DSPS)", "href": EL_BASE + "dsps"},
+    {"text": "Advanced Placement (AP) Program", "href": EL_BASE + "advanced-placement-ap-program"},
+    {"text": "Agricultural Education Associate of Science",
+     "href": EL_BASE + "program/agricultural-education-associate-of-science-fall-2026"},
+    {"text": "Agriculture Business Certificate of Achievement",
+     "href": EL_BASE + "program/agriculture-business-certificate-of-achievement-summer-2023#top"},
+    {"text": "Agricultural Education Associate of Science",
+     "href": EL_BASE + "program/agricultural-education-associate-of-science-fall-2026/"},
+    {"text": "ASL B3", "href": EL_BASE + "course/aslb3"},
+    {"text": "Old catalog", "href": "https://bakersfield.elumenapp.com/catalog/2025-2026-Catalog/program/old-aa-fall-2025"},
+    {"text": "Elsewhere", "href": "https://pvc.elumenapp.com/catalog/2026-2027-Catalog/program/acc-aa"},
+]
+check(C.el_catalog(EL_START) == "2026-2027-Catalog" and C.el_catalog("https://x.edu/catalog.html") is None,
+      "an eLumen start page names its catalog in the path after /catalog/")
+check(C.el_program_urls(EL_LINKS, EL_START) == [
+          EL_BASE + "program/agricultural-education-associate-of-science-fall-2026",
+          EL_BASE + "program/agriculture-business-certificate-of-achievement-summer-2023"],
+      "the menu's program pages, each once, in order: never a course, a service page, another year or another host")
+check(C.el_hubs(EL_LINKS, EL_START) == [EL_BASE + "programs-of-study"],
+      "an eLumen catalog's program index is its Programs of Study page, not DSPS or a program page")
+check(C.el_program_urls([], EL_START) == [] and C.el_program_urls(EL_LINKS, "https://bakersfield.elumenapp.com/") == [],
+      "no menu, or a start page that names no catalog, gives no program page")
+
+# ── eLumen: the fast read from the catalog's own publish calls (S380) ───────
+# Read 38413232841: the full publish call carries styles, the side menu (program
+# links written relative to /catalog/) and the page; the menu loads a page through
+# publish/content. A program's requirements print as rule-name / rule-credits.
+check(C.el_publish_url(EL_START, C.el_start_parts(EL_START)) ==
+      "https://api-prod.elumenapp.com/catalog/sites/publish/2026-2027-Catalog,about-bc"
+      "?tenant=bakersfield.elumenapp.com&api=https://api-prod.elumenapp.com:443"
+      and C.el_publish_url(EL_START, ["program", "ag-ed-as-fall-2026"], content=True) ==
+      "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027-Catalog,program,ag-ed-as-fall-2026"
+      "?tenant=bakersfield.elumenapp.com",
+      "the publish calls are the ones the catalog's own scripts make, full for the menu, content for a page")
+SHELL = ('<style scoped>.a{color:red}</style><nav>'
+         '<a class="navitem" href="2026-2027-Catalog/program/ag-ed-as-fall-2026">Ag Ed AS</a>'
+         '<a class="navitem" href="2026-2027-Catalog/course/agrib5">AGRI B5</a>'
+         '<a href="2026-2027-Catalog/program/ag-ed-as-fall-2026">again</a>'
+         '<a href="2025-2026-Catalog/program/old-as">old year</a>'
+         '<a href="2026-2027-Catalog/program/culinary-coa-fall-2026">Culinary</a></nav>')
+check(C.el_program_slugs(C.el_html(json.dumps({"html": SHELL})), "2026-2027-Catalog") ==
+      ["ag-ed-as-fall-2026", "culinary-coa-fall-2026"]
+      and C.el_program_slugs(SHELL, "2026-2027-Catalog") == ["ag-ed-as-fall-2026", "culinary-coa-fall-2026"]
+      and C.el_html("not json <p>x</p>") == "not json <p>x</p>" and C.el_html(None) == "",
+      "the menu's program slugs come once each, in this catalog only, from JSON or plain HTML")
+CONTENT = ('<style>.x{}</style><script>var a=1;</script><h2>Agricultural Education Associate of Science</h2>'
+           '<h4 class="accordionheader-x-text">Program Requirements</h4><h4>Agriculture Education AS (Total 30)</h4>'
+           '<p>Complete all of the following</p><div class="new-rule"><span class="rule-name"><a href="x">AGRIB5 - '
+           'Leadership in Agriculture</a></span><span class="rule-credits"> 3</span></div>'
+           '<div class="new-rule"><span class="rule-name"><a href="y">ANSCB1 - Introduction to Animal Science</a>'
+           '</span><span class="rule-credits"> 3</span></div>')
+EPG = C.el_page(EL_START, "ag-ed-as-fall-2026", CONTENT)
+check(EPG["url"] == EL_BASE + "program/ag-ed-as-fall-2026"
+      and EPG["title"] == "Agricultural Education Associate of Science"
+      and "var a" not in EPG["body"] and ".x{}" not in EPG["body"]
+      and "Complete all of the following" in EPG["body"]
+      and P.coverage(P.find_codes(EPG["body"], [{"code": "AGRI B5"}, {"code": "ANSC B1"}]),
+                     [{"code": "AGRI B5"}, {"code": "ANSC B1"}]) == 1.0
+      and C.el_page(EL_START, "x", "<style>a{}</style>") is None,
+      "a content call reads as its program's page: its heading, its requirements without styles or scripts, "
+      "and the spaceless codes Bakersfield prints (AGRIB5) count as the state's AGRI B5")
+
+# ── eLumen: a menu of departments, each listing its programs (Cabrillo, S381) ──
+# Capture 38432112848 read no program: Cabrillo's menu links departments
+# (href="2026-2027/department/accounting", read 38433649784), and each department's
+# content call links its programs at 2026-2027/program/<slug> (read 38437381277).
+CAB = "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome"
+CAB_MENU = ('<a class="navitem small " href="2026-2027/department/accounting" onclick="x">Accounting</a>'
+            '<a href="2026-2027/department/art">Art</a><a href="2026-2027/department/accounting">again</a>'
+            '<a href="2025-2026/department/old">last year</a>')
+CAB_DEPT = {"accounting": '<h2>Accounting</h2><a href="2026-2027/program/accounting-as-fall-2025">A.S.</a>'
+                          '<a href="2026-2027/program/bookkeeping-coa-fall-2025">Bookkeeping</a>',
+            "art": '<a href="/catalog/2026-2027/program/art-history-aat-fall-2024">AA-T</a>'
+                   '<a href="2026-2027/program/accounting-as-fall-2025">shared</a>'}
+check(C.el_department_slugs(CAB_MENU, "2026-2027") == ["accounting", "art"],
+      "a menu's department links are read once each, in this catalog only")
+asked = []
+
+
+def cab_fetch(reader, url, errors):
+    asked.append(url)
+    if "publish/content/2026-2027,department," in url:
+        return json.dumps({"html": CAB_DEPT[url.split("department,")[1].split("?")[0]]})
+    if "publish/content/2026-2027,program," in url:
+        slug = url.split("program,")[1].split("?")[0]
+        return json.dumps({"html": "<h1>%s</h1><p>Program Requirements ACCT 1A ACCT 1B</p>" % slug})
+    return json.dumps({"html": CAB_MENU})
+
+
+real_fetch, C.el_fetch = C.el_fetch, cab_fetch
+try:
+    rep = {}
+    got_pages = C.el_pages_fast(None, CAB, rep)
+finally:
+    C.el_fetch = real_fetch
+check([g["url"].rsplit("/", 1)[1] for g in got_pages] == ["accounting-as-fall-2025", "bookkeeping-coa-fall-2025", "art-history-aat-fall-2024"]
+      and rep["elumen"]["menu_programs"] == 0 and rep["elumen"]["menu_departments"] == 2 and rep["elumen"]["department_programs"] == 3,
+      "with no program in the menu, each department's content call lists the programs, each read once: %s %s"
+      % ([g["url"] for g in got_pages], rep.get("elumen")))
+check(sum(1 for u in asked if ",department," in u) == 2 and sum(1 for u in asked if ",program," in u) == 3,
+      "one call a department and one a program, nothing more")
+
+# ── a program left without a page says why (S381) ──────────────────────────
+# Coastline re-read 38429656959: Information Technology A.S.'s own page was read from the
+# sitemap, refused, and taken by the link search at coverage 1.0; nothing said which gate.
+it = {"control_number": "20378", "title": "Information Technology", "award": "A.S. Degree",
+      "closed_list": [{"code": "CST C%d" % n} for n in range(101, 107)]}
+own_thin = page(CL + "pathways/x/information-technology/information-technology-as/",
+                "Information Technology, Associate of Science Degree", "Information Technology A.S. CST C101")
+nm = C.near_miss(it, [own_thin, page(CL + "pathways/x/art/", "Art", "ART C100")])
+check(nm and nm["url"].endswith("information-technology-as/") and nm["why"].startswith("coarse net") and nm["net"] == 1
+      and nm["listed"] == 6 and nm["label"] == {"award": 1, "title": 1.0},
+      "a program's own page that names too few of its courses is named, with the gate that refused it: %s" % nm)
+# The address names the program (so the label does); the heading names another program.
+other = hidden_page(CL + "pathways/x/information-technology/photography-aa/", "Photography, Associate of Arts", "Photography A.A.")
+other["content"] = other["got"]["content"] = " ".join("CST C%d" % n for n in range(101, 107))
+other["codes"] = C.page_codes(other["content"])
+nm2 = C.near_miss(it, [other])
+check(nm2 and nm2["why"].startswith("hidden text only"), "a page read from hidden text alone, its heading naming another program: %s" % nm2)
+check(C.near_miss(it, [page(CL + "pathways/x/art/", "Art", "ART C100")]) == {"why": "no page read names the program"},
+      "with no page naming the program, it says so")
+check(C.near_miss(dict(it, closed_list=[]), [own_thin]) is None, "a program with no listed course has no near miss")
+
+# ── the coarse net reads a hidden Requirements tab (S382) ───────────────────
+# Capture-only run 38438077425: 98 of Coastline's 106 not-found programs were refused by
+# the coarse net. Page read 38443044852: Building Codes Inspector A.S. shows its Overview
+# alone (1,080 characters); its courses sit in a hidden Requirements tab, and textContent
+# runs each code into the cell before it, so no code token has a word boundary.
+bci = {"control_number": "20372", "title": "Building Codes Inspector", "award": "A.S. Degree",
+       "closed_list": [{"code": "BCI C%d" % n} for n in (100, 101, 102, 103, 104, 105, 106, 107, 108, 111)]}
+bci_req = "Requirements\nCourse\tTitle\tUnits\n" + "\n".join(
+    "BCI C%d\tCode Course %d\t3" % (n, n) for n in (100, 101, 102, 103, 104, 105, 106, 107, 108, 111))
+bci_glued = ("Building Codes Inspector, Associate of Science DegreeOVERVIEWREQUIREMENTSCoastline's Building Codes "
+             "Inspector program (BCI) is a comprehensive building codes program.CourseTitleUnits"
+             + "".join("BCI C%dCode Course %d3" % (n, n) for n in (100, 101, 102, 103, 104, 105, 106, 107, 108, 111)))
+bci_got = {"title": "Building Codes Inspector, Associate of Science Degree < Coastline College",
+           "h1": "Building Codes Inspector, Associate of Science Degree",
+           "body": "Building Codes Inspector, Associate of Science Degree\nOVERVIEW\nREQUIREMENTS\n"
+                   "Coastline's Building Codes Inspector program (BCI) is a comprehensive building codes program.",
+           "content": bci_glued,
+           "tabPanels": [{"label": "REQUIREMENTS", "id": "requirementstextcontainer", "text": bci_req}]}
+bci_page = {"url": CL + "pathways/law-safety/building-codes-inspector/building-codes-inspector-as/",
+            "title": bci_got["title"], "h1": bci_got["h1"], "body": bci_got["body"], "content": bci_got["content"],
+            "got": bci_got}
+check(not ({"BCIC100", "BCIC101"} & C.page_codes(bci_got["body"] + "\n" + bci_got["content"])),
+      "textContent runs each code into the cell before it, so the old net read none of them")
+check(C.page_net(bci_got) >= {P.norm_code(c["code"]) for c in bci["closed_list"]},
+      "the net reads the hidden Requirements tab cell by cell and names all ten listed courses")
+bci_page["codes"] = C.page_net(bci_got)
+bc = C.choose_page(bci, [bci_page])
+check(bc is not None and bc["field"] == "innerText+tabs" and bc["coverage"] == 1.0,
+      "the program's own page is accepted from its visible text and its tab: %s" % ((bc["field"], bc["coverage"]) if bc else None,))
+check(C.near_miss(bci, [dict(bci_page, codes=C.page_codes(bci_got["body"] + "\n" + bci_got["content"]))])["why"]
+      .startswith("coarse net"), "with the old net the same page is refused at the coarse net (the run's near miss)")
+cap_src = open(os.path.join(ROOT, "kb", "_program_requirements_college.py")).read()
+check('"codes": page_net(got)' in cap_src, "the capture loop builds each page's net with page_net()")
+nm3 = C.near_miss(bci, [dict(bci_page, codes=set(), got=dict(bci_got, error="Execution context was destroyed"))])
+check(nm3["error"] == "Execution context was destroyed" and nm3["chars"]["content"] == len(bci_glued)
+      and nm3["chars"]["tabs"] > 0 and nm3["tab_panels"] == [["REQUIREMENTS", len(bci_req)]],
+      "a near miss files what the capture held for the page: its script error, its text sizes, its tab panels")
+
+# ── eLumen: a menu of program and award hubs (Modesto, Palo Verde, S383) ──
+# Reads 38445240921 and 38446053107 (S382): Modesto's menu links no program or department,
+# only Programs A-Z (2026-2027/programs) and Programs by Type (bytype); Palo Verde's links
+# award categories (2025-2026/adt, associate-of-arts-degrees, certificate-of-achievements,
+# non-credit-certificates). Each hub links its programs at <catalog>/program/<slug>.
+MJC = "https://mjc.elumenapp.com/catalog/2026-2027/mjc-ge"
+MJC_MENU = ('<a href="2026-2027/mjc-ge">General Education</a><a href="2026-2027/programs">Programs A-Z</a>'
+            '<a href="2026-2027/bytype">Programs by Type</a><a href="2026-2027/academic-calendar">Calendar</a>'
+            '<a href="2026-2027/programs">again</a><a href="2025-2026/programs">last year</a>')
+MJC_HUB = {"programs": '<a href="2026-2027/program/agriculture-as-fall-2026">Agriculture</a>'
+                       '<a href="2026-2027/program/welding-coa-fall-2026">Welding</a>',
+           "bytype": '<a href="/catalog/2026-2027/program/welding-coa-fall-2026">Welding</a>'
+                     '<a href="2026-2027/program/nursing-adn-fall-2026">Nursing</a>'}
+check(C.el_hub_slugs(MJC_MENU, "2026-2027") == ["programs", "bytype"],
+      "a menu's hub links are read once each, in this catalog only, never an ordinary page")
+check(C.el_hub_slugs('<a href="2025-2026/adt">ADT</a><a href="2025-2026/associate-of-arts-degrees">AA</a>'
+                     '<a href="2025-2026/certificate-of-achievements">CA</a><a href="2025-2026/non-credit-certificates">NC</a>'
+                     '<a href="2025-2026/presidents-welcome">Welcome</a>', "2025-2026")
+      == ["adt", "associate-of-arts-degrees", "certificate-of-achievements", "non-credit-certificates"],
+      "Palo Verde's award categories read as hubs; its welcome page does not")
+check(C.el_hub_slugs(CAB_MENU, "2026-2027") == [] and C.el_hub_slugs(MJC_HUB["programs"], "2026-2027") == [],
+      "a department link or a program link is never taken for a hub")
+asked = []
+
+
+def mjc_fetch(reader, url, errors):
+    asked.append(url)
+    for h in MJC_HUB:
+        if "publish/content/2026-2027,%s?" % h in url:
+            return json.dumps({"html": MJC_HUB[h]})
+    if "publish/content/2026-2027,program," in url:
+        slug = url.split("program,")[1].split("?")[0]
+        return json.dumps({"html": "<h1>%s</h1><p>Program Requirements AG 101 WELD 1</p>" % slug})
+    return json.dumps({"html": MJC_MENU})
+
+
+real_fetch, C.el_fetch = C.el_fetch, mjc_fetch
+try:
+    rep = {}
+    got_pages = C.el_pages_fast(None, MJC, rep)
+finally:
+    C.el_fetch = real_fetch
+check([g["url"].rsplit("/", 1)[1] for g in got_pages] == ["agriculture-as-fall-2026", "welding-coa-fall-2026", "nursing-adn-fall-2026"]
+      and rep["elumen"]["menu_programs"] == 0 and rep["elumen"]["menu_departments"] == 0
+      and rep["elumen"]["menu_hubs"] == ["programs", "bytype"] and rep["elumen"]["hub_programs"] == 3,
+      "with no program or department in the menu, each hub's content call lists the programs, each read once: %s %s"
+      % ([g["url"] for g in got_pages], rep.get("elumen")))
+check(sum(1 for u in asked if ",programs?" in u or ",bytype?" in u) == 2 and sum(1 for u in asked if ",program," in u) == 3,
+      "one call a hub and one a program, nothing more")
 
 sql = open(os.path.join(ROOT, "chatbox", "supabase_program_requirement_records_college_load.sql")).read()
 body = sql.split("as $$")[1].split("$$;")[0]
@@ -600,6 +1190,114 @@ check("r->'record', r->'checks', false, null, null," in body,
 check("auth.role(), '') <> 'service_role'" in body
       and "from public, anon, authenticated;" in sql and "to service_role;" in sql.split("grant execute")[1],
       "only the service role may load: the body checks the caller's role, and the grant names service_role alone")
+
+# ── Acalog (S389): the catalog the start page serves, its program pages, its program menus ──
+# Palo Verde 2026-27, El Camino and San Joaquin Delta read Acalog (Modern Campus). The
+# failures this guards: an archived catalog's id from the catalog picker taken for the
+# current one, another catalog's program read as this one's, and a program read twice.
+ELC = "http://catalog.elcamino.edu/"
+ELC_LINKS = [{"text": "Programs", "href": "https://catalog.elcamino.edu/content.php?catoid=21&navoid=1001"},
+             {"text": "Courses", "href": "https://catalog.elcamino.edu/content.php?catoid=21&navoid=1002"},
+             {"text": "Degrees and Certificates", "href": "https://catalog.elcamino.edu/content.php?catoid=21&navoid=1003"},
+             {"text": "Home", "href": "https://catalog.elcamino.edu/index.php?catoid=21"},
+             {"text": "2025-2026 Catalog [ARCHIVED]", "href": "https://catalog.elcamino.edu/index.php?catoid=19"},
+             {"text": "Financial Aid", "href": "https://www.elcamino.edu/aid?catoid=19"},
+             {"text": "Accounting, A.S.", "href": "https://catalog.elcamino.edu/preview_program.php?catoid=21&poid=4410&returnto=1001"},
+             {"text": "Accounting, A.S. (again)", "href": "https://catalog.elcamino.edu/preview_program.php?catoid=21&poid=4410&returnto=1003"},
+             {"text": "Art History, AA-T", "href": "/preview_program.php?catoid=21&poid=4423"},
+             {"text": "Last year's Accounting", "href": "https://catalog.elcamino.edu/preview_program.php?catoid=19&poid=3999"}]
+check(C.ac_catoid(ELC_LINKS, ELC) == 21,
+      "the catalog the start page serves is the id its own links carry most, never an archived one in the picker")
+check(C.ac_catoid([], ELC) is None, "a page whose links name no catalog id names none")
+check(C.ac_base(ELC, ELC_LINKS) == "https://catalog.elcamino.edu"
+      and C.ac_base(ELC, [{"href": "http://catalog.elcamino.edu/content.php?catoid=13&navoid=886"}]) == "http://catalog.elcamino.edu"
+      and C.ac_base("https://catalog.deltacollege.edu/") == "https://catalog.deltacollege.edu",
+      "an Acalog host is read over the scheme its own links use (El Camino serves http only), else the start's")
+check(C.ac_program_urls(ELC_LINKS, C.ac_base(ELC, ELC_LINKS), 21) ==
+      ["https://catalog.elcamino.edu/preview_program.php?catoid=21&poid=4410&print",
+       "https://catalog.elcamino.edu/preview_program.php?catoid=21&poid=4423&print"],
+      "each of this catalog's programs is read once, as its print-friendly page, and another catalog's never")
+check(C.ac_program_navs(ELC_LINKS, C.ac_base(ELC, ELC_LINKS), 21) ==
+      ["https://catalog.elcamino.edu/content.php?catoid=21&navoid=1001",
+       "https://catalog.elcamino.edu/content.php?catoid=21&navoid=1003"],
+      "the navigation pages read for programs are those named programs, degrees or certificates")
+
+asked_ac = []
+
+
+def ac_load(reader, url, cache, spa):
+    asked_ac.append(url)
+    if "sitemap.php" in url:
+        return {"access": "refused", "status": 404, "links": []}
+    if "navoid=1001" in url:
+        return {"access": "ok", "status": 200, "links": ELC_LINKS[6:9]}
+    if "navoid=1003" in url:
+        return {"access": "ok", "status": 200,
+                "links": [{"text": "Biology, A.S.", "href": "https://catalog.elcamino.edu/preview_program.php?catoid=21&poid=4500"}]}
+    return {"access": "ok", "status": 200, "links": ELC_LINKS}
+
+
+real_load, C.P.load = C.P.load, ac_load
+try:
+    rep_ac = {"with_closed_list": 10}
+    ac_got = C.ac_urls(None, ELC, {}, rep_ac)
+finally:
+    C.P.load = real_load
+check([u.split("poid=")[1] for u in ac_got] == ["4410&print", "4423&print", "4500&print"]
+      and rep_ac["acalog"]["catoid"] == 21 and rep_ac["acalog"]["sitemap_programs"] == 0
+      and rep_ac["acalog"]["navs_read"] == 2 and [n["links"] for n in rep_ac["acalog"]["navs"]] == [3, 1],
+      "with no site map, the program menus list the programs, each once: %s %s" % (ac_got, rep_ac.get("acalog")))
+check(any("sitemap.php?catoid=21" in u for u in asked_ac) and not any("catoid=19" in u for u in asked_ac),
+      "the site map is tried first, and only for the catalog the start page serves")
+check(rep_ac["acalog"]["catalog_year_read"] is None and rep_ac["acalog"].get("catalog_menu_error"),
+      "a reader that cannot run the menu script reads no year, and says why")
+
+# The year of the catalog being read (S391): San Joaquin Delta's registry row names none.
+MENU = [["22", "2026-2027 Catalog", False], ["21", "2025-2026 Catalog", True],
+        ["19", "2024-2025 Catalog [ARCHIVED CATALOG]", False]]
+check(C.ac_catalog_year(MENU, 21) == ("2025-2026", "catalog menu"),
+      "the menu's option for the catoid read names the year, never the newest year the menu lists")
+check(C.ac_catalog_year([[o[0], o[1], o[0] == "22"] for o in MENU], 99) == ("2026-2027", "catalog menu"),
+      "a catoid the menu does not list takes the option the menu has selected")
+check(C.ac_catalog_year([["14", "Summer 2026 - Summer 2027 College Catalog", True],
+                         ["13", "2025-2026 San Joaquin Delta College Catalog [ARCHIVED CATALOG]", False]], 14)
+      == ("2026-2027", "catalog menu")
+      and C.ac_catalog_year([["14", "Fall 2026 - Spring 2028 Catalog", True]], 14) == (None, None),
+      "a catalog named by its terms (San Joaquin Delta, run 38615275825) reads as its academic year; "
+      "two years apart read as none")
+check(C.ac_catalog_year([["21", "Current Catalog", True]], 21, "2025-2026 Catalog | Delta") == ("2025-2026", "page title")
+      and C.ac_catalog_year([], 21, "San Joaquin Delta College") == (None, None),
+      "with no year in the menu the page title is read, and a title naming none gives none")
+
+
+class MenuPage:
+    def __init__(self, options):
+        self.options = options
+
+    def evaluate(self, js):
+        return self.options if "select" in js else None
+
+
+class MenuReader:
+    def __init__(self, options):
+        self.page = MenuPage(options)
+
+
+real_load, C.P.load = C.P.load, ac_load
+try:
+    rep_menu = {"with_closed_list": 10}
+    C.ac_urls(MenuReader(MENU), ELC, {}, rep_menu)
+finally:
+    C.P.load = real_load
+check(rep_menu["acalog"]["catalog_year_read"] == "2025-2026" and rep_menu["acalog"]["catalog_year_from"] == "catalog menu"
+      and rep_menu["acalog"]["catalog_menu"][0] == ["22", "2026-2027 Catalog", False],
+      "the capture report keeps the year read from the start page's catalog menu, and the menu itself: %s" % rep_menu["acalog"])
+CS = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "kb", "_program_requirements_college.py")).read()
+check("reg = dict(reg, catalog_year=read_year)" in CS and 'report["catalog_year"] = read_year' in CS,
+      "an Acalog year read from the page fills a registry row that names none, in the records and the report alike")
+check('platform not in ("courseleaf", "curriqunet", "elumen", "acalog")' in CS
+      and 'platform not in ("curriqunet", "elumen", "acalog")' in CS,
+      "the capture reads Acalog, without the child-page walk or the link search its program list makes needless")
 
 if failures:
     print("FAIL: %d" % len(failures))

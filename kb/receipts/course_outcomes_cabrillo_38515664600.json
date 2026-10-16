@@ -1,0 +1,5720 @@
+{
+ "what": "course_outcomes_load: course SLOs as printed, by college and course (Sheet 70 card 3)",
+ "host": "cabrillo",
+ "load_run": "38515664600",
+ "reads": [
+  "kb/course_outcomes/cabrillo/read_38507187621_p1of3.json",
+  "kb/course_outcomes/cabrillo/read_38507187621_p2of3.json",
+  "kb/course_outcomes/cabrillo/read_38507187621_p3of3.json"
+ ],
+ "posted": 1124,
+ "inserted": 1124,
+ "kept": 0,
+ "skipped": 16,
+ "skipped_rows": [
+  {
+   "course_code": "CEM 410A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ECON 1B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HIST 17B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MUS 79",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CEM 410B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ECE 139C",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ENGL 1BH",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HIST 17A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HIST 17BH",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "SPAN 16",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AH 20B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CWEE 99G",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ECON 1A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HIST 17AH",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MATH 12",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MUS 479",
+   "status": 200,
+   "shape": "none"
+  }
+ ],
+ "error": null,
+ "inserted_keys": [
+  {
+   "id": 4895,
+   "college": "Cabrillo College",
+   "course_code": "ACCT 151A"
+  },
+  {
+   "id": 4896,
+   "college": "Cabrillo College",
+   "course_code": "ACCT 163"
+  },
+  {
+   "id": 4897,
+   "college": "Cabrillo College",
+   "course_code": "ACCT 451A"
+  },
+  {
+   "id": 4898,
+   "college": "Cabrillo College",
+   "course_code": "ACCT 54A"
+  },
+  {
+   "id": 4899,
+   "college": "Cabrillo College",
+   "course_code": "ACCT 58"
+  },
+  {
+   "id": 4900,
+   "college": "Cabrillo College",
+   "course_code": "ACCT 67"
+  },
+  {
+   "id": 4901,
+   "college": "Cabrillo College",
+   "course_code": "ACCT 99"
+  },
+  {
+   "id": 4902,
+   "college": "Cabrillo College",
+   "course_code": "ADAPT 91"
+  },
+  {
+   "id": 4903,
+   "college": "Cabrillo College",
+   "course_code": "AH 10"
+  },
+  {
+   "id": 4904,
+   "college": "Cabrillo College",
+   "course_code": "AH 12"
+  },
+  {
+   "id": 4905,
+   "college": "Cabrillo College",
+   "course_code": "AH 14"
+  },
+  {
+   "id": 4906,
+   "college": "Cabrillo College",
+   "course_code": "AH 18"
+  },
+  {
+   "id": 4907,
+   "college": "Cabrillo College",
+   "course_code": "AH 52"
+  },
+  {
+   "id": 4908,
+   "college": "Cabrillo College",
+   "course_code": "ANTHR 1"
+  },
+  {
+   "id": 4909,
+   "college": "Cabrillo College",
+   "course_code": "ANTHR 1H"
+  },
+  {
+   "id": 4910,
+   "college": "Cabrillo College",
+   "course_code": "ANTHR 26"
+  },
+  {
+   "id": 4911,
+   "college": "Cabrillo College",
+   "course_code": "ANTHR 30"
+  },
+  {
+   "id": 4912,
+   "college": "Cabrillo College",
+   "course_code": "ANTHR 8"
+  },
+  {
+   "id": 4913,
+   "college": "Cabrillo College",
+   "course_code": "AP 1A"
+  },
+  {
+   "id": 4914,
+   "college": "Cabrillo College",
+   "course_code": "AP 26A"
+  },
+  {
+   "id": 4915,
+   "college": "Cabrillo College",
+   "course_code": "AP 35"
+  },
+  {
+   "id": 4916,
+   "college": "Cabrillo College",
+   "course_code": "AP 406"
+  },
+  {
+   "id": 4917,
+   "college": "Cabrillo College",
+   "course_code": "AP 414A"
+  },
+  {
+   "id": 4918,
+   "college": "Cabrillo College",
+   "course_code": "AP 432A"
+  },
+  {
+   "id": 4919,
+   "college": "Cabrillo College",
+   "course_code": "AP 446B"
+  },
+  {
+   "id": 4920,
+   "college": "Cabrillo College",
+   "course_code": "AP 448"
+  },
+  {
+   "id": 4921,
+   "college": "Cabrillo College",
+   "course_code": "AP 457"
+  },
+  {
+   "id": 4922,
+   "college": "Cabrillo College",
+   "course_code": "AP 46C"
+  },
+  {
+   "id": 4923,
+   "college": "Cabrillo College",
+   "course_code": "AP 54"
+  },
+  {
+   "id": 4924,
+   "college": "Cabrillo College",
+   "course_code": "AP 6"
+  },
+  {
+   "id": 4925,
+   "college": "Cabrillo College",
+   "course_code": "AP 9B"
+  },
+  {
+   "id": 4926,
+   "college": "Cabrillo College",
+   "course_code": "ART 11A"
+  },
+  {
+   "id": 4927,
+   "college": "Cabrillo College",
+   "course_code": "ART 13B"
+  },
+  {
+   "id": 4928,
+   "college": "Cabrillo College",
+   "course_code": "ART 25B"
+  },
+  {
+   "id": 4929,
+   "college": "Cabrillo College",
+   "course_code": "ART 27"
+  },
+  {
+   "id": 4930,
+   "college": "Cabrillo College",
+   "course_code": "ART 2B"
+  },
+  {
+   "id": 4931,
+   "college": "Cabrillo College",
+   "course_code": "ART 31C"
+  },
+  {
+   "id": 4932,
+   "college": "Cabrillo College",
+   "course_code": "ART 33A"
+  },
+  {
+   "id": 4933,
+   "college": "Cabrillo College",
+   "course_code": "ART 34B"
+  },
+  {
+   "id": 4934,
+   "college": "Cabrillo College",
+   "course_code": "ART 37A"
+  },
+  {
+   "id": 4935,
+   "college": "Cabrillo College",
+   "course_code": "ART 38B"
+  },
+  {
+   "id": 4936,
+   "college": "Cabrillo College",
+   "course_code": "ART 3B"
+  },
+  {
+   "id": 4937,
+   "college": "Cabrillo College",
+   "course_code": "ART 44A"
+  },
+  {
+   "id": 4938,
+   "college": "Cabrillo College",
+   "course_code": "ART 49"
+  },
+  {
+   "id": 4939,
+   "college": "Cabrillo College",
+   "course_code": "ART 5"
+  },
+  {
+   "id": 4940,
+   "college": "Cabrillo College",
+   "course_code": "ART 6A"
+  },
+  {
+   "id": 4941,
+   "college": "Cabrillo College",
+   "course_code": "ART 72B"
+  },
+  {
+   "id": 4942,
+   "college": "Cabrillo College",
+   "course_code": "ART 8A"
+  },
+  {
+   "id": 4943,
+   "college": "Cabrillo College",
+   "course_code": "ART 91"
+  },
+  {
+   "id": 4944,
+   "college": "Cabrillo College",
+   "course_code": "ART 95B"
+  },
+  {
+   "id": 4945,
+   "college": "Cabrillo College",
+   "course_code": "ARTHC 1100"
+  },
+  {
+   "id": 4946,
+   "college": "Cabrillo College",
+   "course_code": "ASTRO 3"
+  },
+  {
+   "id": 4947,
+   "college": "Cabrillo College",
+   "course_code": "ASTRO 7"
+  },
+  {
+   "id": 4948,
+   "college": "Cabrillo College",
+   "course_code": "ATH 10"
+  },
+  {
+   "id": 4949,
+   "college": "Cabrillo College",
+   "course_code": "ATH 15D"
+  },
+  {
+   "id": 4950,
+   "college": "Cabrillo College",
+   "course_code": "ATH 15G"
+  },
+  {
+   "id": 4951,
+   "college": "Cabrillo College",
+   "course_code": "ATH 15J"
+  },
+  {
+   "id": 4952,
+   "college": "Cabrillo College",
+   "course_code": "ATH 15N"
+  },
+  {
+   "id": 4953,
+   "college": "Cabrillo College",
+   "course_code": "ATH 15S"
+  },
+  {
+   "id": 4954,
+   "college": "Cabrillo College",
+   "course_code": "ATH 32"
+  },
+  {
+   "id": 4955,
+   "college": "Cabrillo College",
+   "course_code": "ATH 35"
+  },
+  {
+   "id": 4956,
+   "college": "Cabrillo College",
+   "course_code": "ATH 39"
+  },
+  {
+   "id": 4957,
+   "college": "Cabrillo College",
+   "course_code": "BIO 11C"
+  },
+  {
+   "id": 4958,
+   "college": "Cabrillo College",
+   "course_code": "BIO 31"
+  },
+  {
+   "id": 4959,
+   "college": "Cabrillo College",
+   "course_code": "BIO 42T"
+  },
+  {
+   "id": 4960,
+   "college": "Cabrillo College",
+   "course_code": "BIO 5"
+  },
+  {
+   "id": 4961,
+   "college": "Cabrillo College",
+   "course_code": "BIO 9B"
+  },
+  {
+   "id": 4962,
+   "college": "Cabrillo College",
+   "course_code": "BUS 450"
+  },
+  {
+   "id": 4963,
+   "college": "Cabrillo College",
+   "course_code": "BUS 489"
+  },
+  {
+   "id": 4964,
+   "college": "Cabrillo College",
+   "course_code": "BUS 52"
+  },
+  {
+   "id": 4965,
+   "college": "Cabrillo College",
+   "course_code": "BUS 69"
+  },
+  {
+   "id": 4966,
+   "college": "Cabrillo College",
+   "course_code": "BUS 88"
+  },
+  {
+   "id": 4967,
+   "college": "Cabrillo College",
+   "course_code": "BUS 99"
+  },
+  {
+   "id": 4968,
+   "college": "Cabrillo College",
+   "course_code": "CABT 102"
+  },
+  {
+   "id": 4969,
+   "college": "Cabrillo College",
+   "course_code": "CABT 109"
+  },
+  {
+   "id": 4970,
+   "college": "Cabrillo College",
+   "course_code": "CABT 110C"
+  },
+  {
+   "id": 4971,
+   "college": "Cabrillo College",
+   "course_code": "CABT 132"
+  },
+  {
+   "id": 4972,
+   "college": "Cabrillo College",
+   "course_code": "CABT 157"
+  },
+  {
+   "id": 4973,
+   "college": "Cabrillo College",
+   "course_code": "CABT 171"
+  },
+  {
+   "id": 4974,
+   "college": "Cabrillo College",
+   "course_code": "CABT 38AG"
+  },
+  {
+   "id": 4975,
+   "college": "Cabrillo College",
+   "course_code": "CABT 402"
+  },
+  {
+   "id": 4976,
+   "college": "Cabrillo College",
+   "course_code": "CABT 410"
+  },
+  {
+   "id": 4977,
+   "college": "Cabrillo College",
+   "course_code": "CABT 418"
+  },
+  {
+   "id": 4978,
+   "college": "Cabrillo College",
+   "course_code": "CABT 44"
+  },
+  {
+   "id": 4979,
+   "college": "Cabrillo College",
+   "course_code": "CABT 481A"
+  },
+  {
+   "id": 4980,
+   "college": "Cabrillo College",
+   "course_code": "CAHM 10"
+  },
+  {
+   "id": 4981,
+   "college": "Cabrillo College",
+   "course_code": "CAHM 136"
+  },
+  {
+   "id": 4982,
+   "college": "Cabrillo College",
+   "course_code": "CAHM 153"
+  },
+  {
+   "id": 4983,
+   "college": "Cabrillo College",
+   "course_code": "CAHM 159"
+  },
+  {
+   "id": 4984,
+   "college": "Cabrillo College",
+   "course_code": "CAHM 168"
+  },
+  {
+   "id": 4985,
+   "college": "Cabrillo College",
+   "course_code": "CAHM 179"
+  },
+  {
+   "id": 4986,
+   "college": "Cabrillo College",
+   "course_code": "CAHM 405A"
+  },
+  {
+   "id": 4987,
+   "college": "Cabrillo College",
+   "course_code": "CAHM 434"
+  },
+  {
+   "id": 4988,
+   "college": "Cabrillo College",
+   "course_code": "CAHM 479"
+  },
+  {
+   "id": 4989,
+   "college": "Cabrillo College",
+   "course_code": "CAHM 50C"
+  },
+  {
+   "id": 4990,
+   "college": "Cabrillo College",
+   "course_code": "CAHM 60"
+  },
+  {
+   "id": 4991,
+   "college": "Cabrillo College",
+   "course_code": "CAHM 72A"
+  },
+  {
+   "id": 4992,
+   "college": "Cabrillo College",
+   "course_code": "CAHM 76"
+  },
+  {
+   "id": 4993,
+   "college": "Cabrillo College",
+   "course_code": "CEM 151"
+  },
+  {
+   "id": 4994,
+   "college": "Cabrillo College",
+   "course_code": "CEM 151L"
+  },
+  {
+   "id": 4995,
+   "college": "Cabrillo College",
+   "course_code": "CEM 155"
+  },
+  {
+   "id": 4996,
+   "college": "Cabrillo College",
+   "course_code": "CEM 160"
+  },
+  {
+   "id": 4997,
+   "college": "Cabrillo College",
+   "course_code": "CEM 162BS"
+  },
+  {
+   "id": 4998,
+   "college": "Cabrillo College",
+   "course_code": "CEM 162PS"
+  },
+  {
+   "id": 4999,
+   "college": "Cabrillo College",
+   "course_code": "CEM 163"
+  },
+  {
+   "id": 5000,
+   "college": "Cabrillo College",
+   "course_code": "CEM 166A"
+  },
+  {
+   "id": 5001,
+   "college": "Cabrillo College",
+   "course_code": "CEM 169A"
+  },
+  {
+   "id": 5002,
+   "college": "Cabrillo College",
+   "course_code": "CEM 177"
+  },
+  {
+   "id": 5003,
+   "college": "Cabrillo College",
+   "course_code": "CEM 450L"
+  },
+  {
+   "id": 5004,
+   "college": "Cabrillo College",
+   "course_code": "CEM 455"
+  },
+  {
+   "id": 5005,
+   "college": "Cabrillo College",
+   "course_code": "CG 51"
+  },
+  {
+   "id": 5006,
+   "college": "Cabrillo College",
+   "course_code": "CHEM 12AL"
+  },
+  {
+   "id": 5007,
+   "college": "Cabrillo College",
+   "course_code": "CHEM 1A"
+  },
+  {
+   "id": 5008,
+   "college": "Cabrillo College",
+   "course_code": "CHEM 30A"
+  },
+  {
+   "id": 5009,
+   "college": "Cabrillo College",
+   "course_code": "CHEM 3L"
+  },
+  {
+   "id": 5010,
+   "college": "Cabrillo College",
+   "course_code": "CIS 116"
+  },
+  {
+   "id": 5011,
+   "college": "Cabrillo College",
+   "course_code": "CIS 194"
+  },
+  {
+   "id": 5012,
+   "college": "Cabrillo College",
+   "course_code": "CIS 33"
+  },
+  {
+   "id": 5013,
+   "college": "Cabrillo College",
+   "course_code": "CIS 430A"
+  },
+  {
+   "id": 5014,
+   "college": "Cabrillo College",
+   "course_code": "CIS 433A"
+  },
+  {
+   "id": 5015,
+   "college": "Cabrillo College",
+   "course_code": "CIS 434B"
+  },
+  {
+   "id": 5016,
+   "college": "Cabrillo College",
+   "course_code": "CIS 46"
+  },
+  {
+   "id": 5017,
+   "college": "Cabrillo College",
+   "course_code": "CIS 471A"
+  },
+  {
+   "id": 5018,
+   "college": "Cabrillo College",
+   "course_code": "CIS 483B"
+  },
+  {
+   "id": 5019,
+   "college": "Cabrillo College",
+   "course_code": "CIS 71"
+  },
+  {
+   "id": 5020,
+   "college": "Cabrillo College",
+   "course_code": "CIS 76"
+  },
+  {
+   "id": 5021,
+   "college": "Cabrillo College",
+   "course_code": "CIS 81"
+  },
+  {
+   "id": 5022,
+   "college": "Cabrillo College",
+   "course_code": "CIS 90"
+  },
+  {
+   "id": 5023,
+   "college": "Cabrillo College",
+   "course_code": "CIS 95"
+  },
+  {
+   "id": 5024,
+   "college": "Cabrillo College",
+   "course_code": "CJ 10"
+  },
+  {
+   "id": 5025,
+   "college": "Cabrillo College",
+   "course_code": "CJ 20"
+  },
+  {
+   "id": 5026,
+   "college": "Cabrillo College",
+   "course_code": "CJ 400"
+  },
+  {
+   "id": 5027,
+   "college": "Cabrillo College",
+   "course_code": "CJ 417"
+  },
+  {
+   "id": 5028,
+   "college": "Cabrillo College",
+   "course_code": "CJ 452"
+  },
+  {
+   "id": 5029,
+   "college": "Cabrillo College",
+   "course_code": "CJ 7"
+  },
+  {
+   "id": 5030,
+   "college": "Cabrillo College",
+   "course_code": "COMM 12"
+  },
+  {
+   "id": 5031,
+   "college": "Cabrillo College",
+   "course_code": "COMM 4"
+  },
+  {
+   "id": 5032,
+   "college": "Cabrillo College",
+   "course_code": "COMM 8"
+  },
+  {
+   "id": 5033,
+   "college": "Cabrillo College",
+   "course_code": "COMMC 1000"
+  },
+  {
+   "id": 5034,
+   "college": "Cabrillo College",
+   "course_code": "CS 11"
+  },
+  {
+   "id": 5035,
+   "college": "Cabrillo College",
+   "course_code": "CS 12P"
+  },
+  {
+   "id": 5036,
+   "college": "Cabrillo College",
+   "course_code": "CS 20J"
+  },
+  {
+   "id": 5037,
+   "college": "Cabrillo College",
+   "course_code": "CS 23"
+  },
+  {
+   "id": 5038,
+   "college": "Cabrillo College",
+   "course_code": "DANCE 1"
+  },
+  {
+   "id": 5039,
+   "college": "Cabrillo College",
+   "course_code": "DANCE 11A"
+  },
+  {
+   "id": 5040,
+   "college": "Cabrillo College",
+   "course_code": "DANCE 12B"
+  },
+  {
+   "id": 5041,
+   "college": "Cabrillo College",
+   "course_code": "DANCE 15A"
+  },
+  {
+   "id": 5042,
+   "college": "Cabrillo College",
+   "course_code": "DANCE 16A"
+  },
+  {
+   "id": 5043,
+   "college": "Cabrillo College",
+   "course_code": "DANCE 17B"
+  },
+  {
+   "id": 5044,
+   "college": "Cabrillo College",
+   "course_code": "DANCE 18A"
+  },
+  {
+   "id": 5045,
+   "college": "Cabrillo College",
+   "course_code": "DANCE 19C"
+  },
+  {
+   "id": 5046,
+   "college": "Cabrillo College",
+   "course_code": "DANCE 21B"
+  },
+  {
+   "id": 5047,
+   "college": "Cabrillo College",
+   "course_code": "DANCE 3AP"
+  },
+  {
+   "id": 5048,
+   "college": "Cabrillo College",
+   "course_code": "DANCE 4"
+  },
+  {
+   "id": 5049,
+   "college": "Cabrillo College",
+   "course_code": "DANCE 7"
+  },
+  {
+   "id": 5050,
+   "college": "Cabrillo College",
+   "course_code": "DANCE 9A"
+  },
+  {
+   "id": 5051,
+   "college": "Cabrillo College",
+   "course_code": "DH 161"
+  },
+  {
+   "id": 5052,
+   "college": "Cabrillo College",
+   "course_code": "DH 163A"
+  },
+  {
+   "id": 5053,
+   "college": "Cabrillo College",
+   "course_code": "DH 170"
+  },
+  {
+   "id": 5054,
+   "college": "Cabrillo College",
+   "course_code": "DH 174"
+  },
+  {
+   "id": 5055,
+   "college": "Cabrillo College",
+   "course_code": "DH 182A"
+  },
+  {
+   "id": 5056,
+   "college": "Cabrillo College",
+   "course_code": "DH 184B"
+  },
+  {
+   "id": 5057,
+   "college": "Cabrillo College",
+   "course_code": "DH 187"
+  },
+  {
+   "id": 5058,
+   "college": "Cabrillo College",
+   "course_code": "DM 10"
+  },
+  {
+   "id": 5059,
+   "college": "Cabrillo College",
+   "course_code": "DM 13"
+  },
+  {
+   "id": 5060,
+   "college": "Cabrillo College",
+   "course_code": "DM 22"
+  },
+  {
+   "id": 5061,
+   "college": "Cabrillo College",
+   "course_code": "DM 401"
+  },
+  {
+   "id": 5062,
+   "college": "Cabrillo College",
+   "course_code": "DM 422"
+  },
+  {
+   "id": 5063,
+   "college": "Cabrillo College",
+   "course_code": "DM 456"
+  },
+  {
+   "id": 5064,
+   "college": "Cabrillo College",
+   "course_code": "DM 56"
+  },
+  {
+   "id": 5065,
+   "college": "Cabrillo College",
+   "course_code": "DMCP 401"
+  },
+  {
+   "id": 5066,
+   "college": "Cabrillo College",
+   "course_code": "DMCP 404"
+  },
+  {
+   "id": 5067,
+   "college": "Cabrillo College",
+   "course_code": "ECE 131"
+  },
+  {
+   "id": 5068,
+   "college": "Cabrillo College",
+   "course_code": "ECE 134C"
+  },
+  {
+   "id": 5069,
+   "college": "Cabrillo College",
+   "course_code": "ECE 135"
+  },
+  {
+   "id": 5070,
+   "college": "Cabrillo College",
+   "course_code": "ECE 145"
+  },
+  {
+   "id": 5071,
+   "college": "Cabrillo College",
+   "course_code": "ECE 156C"
+  },
+  {
+   "id": 5072,
+   "college": "Cabrillo College",
+   "course_code": "ECE 156G"
+  },
+  {
+   "id": 5073,
+   "college": "Cabrillo College",
+   "course_code": "ECE 156L"
+  },
+  {
+   "id": 5074,
+   "college": "Cabrillo College",
+   "course_code": "ECE 156SCI"
+  },
+  {
+   "id": 5075,
+   "college": "Cabrillo College",
+   "course_code": "ECE 157C"
+  },
+  {
+   "id": 5076,
+   "college": "Cabrillo College",
+   "course_code": "ECE 32"
+  },
+  {
+   "id": 5077,
+   "college": "Cabrillo College",
+   "course_code": "ECE 401B"
+  },
+  {
+   "id": 5078,
+   "college": "Cabrillo College",
+   "course_code": "ECE 480A"
+  },
+  {
+   "id": 5079,
+   "college": "Cabrillo College",
+   "course_code": "ECE 52"
+  },
+  {
+   "id": 5080,
+   "college": "Cabrillo College",
+   "course_code": "ECE 54"
+  },
+  {
+   "id": 5081,
+   "college": "Cabrillo College",
+   "course_code": "EDUC 400"
+  },
+  {
+   "id": 5082,
+   "college": "Cabrillo College",
+   "course_code": "EDUC 401C"
+  },
+  {
+   "id": 5083,
+   "college": "Cabrillo College",
+   "course_code": "ENGL 100"
+  },
+  {
+   "id": 5084,
+   "college": "Cabrillo College",
+   "course_code": "ENGL 12A"
+  },
+  {
+   "id": 5085,
+   "college": "Cabrillo College",
+   "course_code": "ENGL 12E"
+  },
+  {
+   "id": 5086,
+   "college": "Cabrillo College",
+   "course_code": "ENGL 14B"
+  },
+  {
+   "id": 5087,
+   "college": "Cabrillo College",
+   "course_code": "ENGL 1AMC"
+  },
+  {
+   "id": 5088,
+   "college": "Cabrillo College",
+   "course_code": "ENGL 23A"
+  },
+  {
+   "id": 5089,
+   "college": "Cabrillo College",
+   "course_code": "ENGL 27AN"
+  },
+  {
+   "id": 5090,
+   "college": "Cabrillo College",
+   "course_code": "ENGL 2MCH"
+  },
+  {
+   "id": 5091,
+   "college": "Cabrillo College",
+   "course_code": "ENGL 34"
+  },
+  {
+   "id": 5092,
+   "college": "Cabrillo College",
+   "course_code": "ENGL 41A"
+  },
+  {
+   "id": 5093,
+   "college": "Cabrillo College",
+   "course_code": "ENGL 46B"
+  },
+  {
+   "id": 5094,
+   "college": "Cabrillo College",
+   "course_code": "ENGL 49B"
+  },
+  {
+   "id": 5095,
+   "college": "Cabrillo College",
+   "course_code": "ENGLC 1000"
+  },
+  {
+   "id": 5096,
+   "college": "Cabrillo College",
+   "course_code": "ENGLC 1001H"
+  },
+  {
+   "id": 5097,
+   "college": "Cabrillo College",
+   "course_code": "ENGR 10"
+  },
+  {
+   "id": 5098,
+   "college": "Cabrillo College",
+   "course_code": "ENGR 1A"
+  },
+  {
+   "id": 5099,
+   "college": "Cabrillo College",
+   "course_code": "ENGR 3"
+  },
+  {
+   "id": 5100,
+   "college": "Cabrillo College",
+   "course_code": "ENGR 36"
+  },
+  {
+   "id": 5101,
+   "college": "Cabrillo College",
+   "course_code": "ENGR 5"
+  },
+  {
+   "id": 5102,
+   "college": "Cabrillo College",
+   "course_code": "ES 15"
+  },
+  {
+   "id": 5103,
+   "college": "Cabrillo College",
+   "course_code": "ESL 1A"
+  },
+  {
+   "id": 5104,
+   "college": "Cabrillo College",
+   "course_code": "ESL 332"
+  },
+  {
+   "id": 5105,
+   "college": "Cabrillo College",
+   "course_code": "ESL 343"
+  },
+  {
+   "id": 5106,
+   "college": "Cabrillo College",
+   "course_code": "ESL 354"
+  },
+  {
+   "id": 5107,
+   "college": "Cabrillo College",
+   "course_code": "ESL 371"
+  },
+  {
+   "id": 5108,
+   "college": "Cabrillo College",
+   "course_code": "ETECH 24"
+  },
+  {
+   "id": 5109,
+   "college": "Cabrillo College",
+   "course_code": "ETECH 41"
+  },
+  {
+   "id": 5110,
+   "college": "Cabrillo College",
+   "course_code": "ETECH 61"
+  },
+  {
+   "id": 5111,
+   "college": "Cabrillo College",
+   "course_code": "ETHN 1"
+  },
+  {
+   "id": 5112,
+   "college": "Cabrillo College",
+   "course_code": "ETHN 21B"
+  },
+  {
+   "id": 5113,
+   "college": "Cabrillo College",
+   "course_code": "ETHN 27BN"
+  },
+  {
+   "id": 5114,
+   "college": "Cabrillo College",
+   "course_code": "FIN 10"
+  },
+  {
+   "id": 5115,
+   "college": "Cabrillo College",
+   "course_code": "FR 3"
+  },
+  {
+   "id": 5116,
+   "college": "Cabrillo College",
+   "course_code": "FT 169"
+  },
+  {
+   "id": 5117,
+   "college": "Cabrillo College",
+   "course_code": "FT 185"
+  },
+  {
+   "id": 5118,
+   "college": "Cabrillo College",
+   "course_code": "FT 2"
+  },
+  {
+   "id": 5119,
+   "college": "Cabrillo College",
+   "course_code": "FT 479"
+  },
+  {
+   "id": 5120,
+   "college": "Cabrillo College",
+   "course_code": "FT 8"
+  },
+  {
+   "id": 5121,
+   "college": "Cabrillo College",
+   "course_code": "GEOG 1L"
+  },
+  {
+   "id": 5122,
+   "college": "Cabrillo College",
+   "course_code": "GEOG 3L"
+  },
+  {
+   "id": 5123,
+   "college": "Cabrillo College",
+   "course_code": "GEOL 10"
+  },
+  {
+   "id": 5124,
+   "college": "Cabrillo College",
+   "course_code": "GEOL 25"
+  },
+  {
+   "id": 5125,
+   "college": "Cabrillo College",
+   "course_code": "GEOL 30"
+  },
+  {
+   "id": 5126,
+   "college": "Cabrillo College",
+   "course_code": "HIST 15"
+  },
+  {
+   "id": 5127,
+   "college": "Cabrillo College",
+   "course_code": "HIST 16C"
+  },
+  {
+   "id": 5128,
+   "college": "Cabrillo College",
+   "course_code": "HIST 19C"
+  },
+  {
+   "id": 5129,
+   "college": "Cabrillo College",
+   "course_code": "HIST 21B"
+  },
+  {
+   "id": 5130,
+   "college": "Cabrillo College",
+   "course_code": "HIST 24"
+  },
+  {
+   "id": 5131,
+   "college": "Cabrillo College",
+   "course_code": "HIST 27AN"
+  },
+  {
+   "id": 5132,
+   "college": "Cabrillo College",
+   "course_code": "HIST 29B"
+  },
+  {
+   "id": 5133,
+   "college": "Cabrillo College",
+   "course_code": "HIST 4A"
+  },
+  {
+   "id": 5134,
+   "college": "Cabrillo College",
+   "course_code": "HIST 4BH"
+  },
+  {
+   "id": 5135,
+   "college": "Cabrillo College",
+   "course_code": "HISTC 1001H"
+  },
+  {
+   "id": 5136,
+   "college": "Cabrillo College",
+   "course_code": "HORT 11"
+  },
+  {
+   "id": 5137,
+   "college": "Cabrillo College",
+   "course_code": "HORT 140A"
+  },
+  {
+   "id": 5138,
+   "college": "Cabrillo College",
+   "course_code": "HORT 143B"
+  },
+  {
+   "id": 5139,
+   "college": "Cabrillo College",
+   "course_code": "HORT 164"
+  },
+  {
+   "id": 5140,
+   "college": "Cabrillo College",
+   "course_code": "HORT 176"
+  },
+  {
+   "id": 5141,
+   "college": "Cabrillo College",
+   "course_code": "HORT 2"
+  },
+  {
+   "id": 5142,
+   "college": "Cabrillo College",
+   "course_code": "HORT 443A"
+  },
+  {
+   "id": 5143,
+   "college": "Cabrillo College",
+   "course_code": "HORT 54"
+  },
+  {
+   "id": 5144,
+   "college": "Cabrillo College",
+   "course_code": "HORT 63"
+  },
+  {
+   "id": 5145,
+   "college": "Cabrillo College",
+   "course_code": "HORT 70"
+  },
+  {
+   "id": 5146,
+   "college": "Cabrillo College",
+   "course_code": "HS 12"
+  },
+  {
+   "id": 5147,
+   "college": "Cabrillo College",
+   "course_code": "HS 15"
+  },
+  {
+   "id": 5148,
+   "college": "Cabrillo College",
+   "course_code": "HS 24"
+  },
+  {
+   "id": 5149,
+   "college": "Cabrillo College",
+   "course_code": "HS 50"
+  },
+  {
+   "id": 5150,
+   "college": "Cabrillo College",
+   "course_code": "HSERV 162"
+  },
+  {
+   "id": 5151,
+   "college": "Cabrillo College",
+   "course_code": "HSERV 450EP"
+  },
+  {
+   "id": 5152,
+   "college": "Cabrillo College",
+   "course_code": "HSERV 51"
+  },
+  {
+   "id": 5153,
+   "college": "Cabrillo College",
+   "course_code": "HSERV 55A"
+  },
+  {
+   "id": 5154,
+   "college": "Cabrillo College",
+   "course_code": "HSERV 56B"
+  },
+  {
+   "id": 5155,
+   "college": "Cabrillo College",
+   "course_code": "ITAL 3"
+  },
+  {
+   "id": 5156,
+   "college": "Cabrillo College",
+   "course_code": "JOURN 23A"
+  },
+  {
+   "id": 5157,
+   "college": "Cabrillo College",
+   "course_code": "JOURN 53"
+  },
+  {
+   "id": 5158,
+   "college": "Cabrillo College",
+   "course_code": "JOURN 54C"
+  },
+  {
+   "id": 5159,
+   "college": "Cabrillo College",
+   "course_code": "KIN 10AL"
+  },
+  {
+   "id": 5160,
+   "college": "Cabrillo College",
+   "course_code": "KIN 10CL"
+  },
+  {
+   "id": 5161,
+   "college": "Cabrillo College",
+   "course_code": "KIN 13"
+  },
+  {
+   "id": 5162,
+   "college": "Cabrillo College",
+   "course_code": "KIN 2"
+  },
+  {
+   "id": 5163,
+   "college": "Cabrillo College",
+   "course_code": "KIN 23B"
+  },
+  {
+   "id": 5164,
+   "college": "Cabrillo College",
+   "course_code": "KIN 27B"
+  },
+  {
+   "id": 5165,
+   "college": "Cabrillo College",
+   "course_code": "KIN 37B"
+  },
+  {
+   "id": 5166,
+   "college": "Cabrillo College",
+   "course_code": "KIN 39A"
+  },
+  {
+   "id": 5167,
+   "college": "Cabrillo College",
+   "course_code": "KIN 40A"
+  },
+  {
+   "id": 5168,
+   "college": "Cabrillo College",
+   "course_code": "KIN 416"
+  },
+  {
+   "id": 5169,
+   "college": "Cabrillo College",
+   "course_code": "KIN 42A"
+  },
+  {
+   "id": 5170,
+   "college": "Cabrillo College",
+   "course_code": "KIN 43A"
+  },
+  {
+   "id": 5171,
+   "college": "Cabrillo College",
+   "course_code": "KIN 464"
+  },
+  {
+   "id": 5172,
+   "college": "Cabrillo College",
+   "course_code": "KIN 47C"
+  },
+  {
+   "id": 5173,
+   "college": "Cabrillo College",
+   "course_code": "KIN 4LA"
+  },
+  {
+   "id": 5174,
+   "college": "Cabrillo College",
+   "course_code": "KIN 4LD"
+  },
+  {
+   "id": 5175,
+   "college": "Cabrillo College",
+   "course_code": "KIN 50B"
+  },
+  {
+   "id": 5176,
+   "college": "Cabrillo College",
+   "course_code": "KIN 51B"
+  },
+  {
+   "id": 5177,
+   "college": "Cabrillo College",
+   "course_code": "KIN 53C"
+  },
+  {
+   "id": 5178,
+   "college": "Cabrillo College",
+   "course_code": "KIN 54C"
+  },
+  {
+   "id": 5179,
+   "college": "Cabrillo College",
+   "course_code": "KIN 56B"
+  },
+  {
+   "id": 5180,
+   "college": "Cabrillo College",
+   "course_code": "KIN 60B"
+  },
+  {
+   "id": 5181,
+   "college": "Cabrillo College",
+   "course_code": "KIN 61B"
+  },
+  {
+   "id": 5182,
+   "college": "Cabrillo College",
+   "course_code": "KIN 63B"
+  },
+  {
+   "id": 5183,
+   "college": "Cabrillo College",
+   "course_code": "KIN 65B"
+  },
+  {
+   "id": 5184,
+   "college": "Cabrillo College",
+   "course_code": "KIN 8A"
+  },
+  {
+   "id": 5185,
+   "college": "Cabrillo College",
+   "course_code": "MA 100"
+  },
+  {
+   "id": 5186,
+   "college": "Cabrillo College",
+   "course_code": "MA 115"
+  },
+  {
+   "id": 5187,
+   "college": "Cabrillo College",
+   "course_code": "MA 130AL"
+  },
+  {
+   "id": 5188,
+   "college": "Cabrillo College",
+   "course_code": "MA 170"
+  },
+  {
+   "id": 5189,
+   "college": "Cabrillo College",
+   "course_code": "MA 435AE"
+  },
+  {
+   "id": 5190,
+   "college": "Cabrillo College",
+   "course_code": "MA 70"
+  },
+  {
+   "id": 5191,
+   "college": "Cabrillo College",
+   "course_code": "MATH 12H"
+  },
+  {
+   "id": 5192,
+   "college": "Cabrillo College",
+   "course_code": "MATH 15"
+  },
+  {
+   "id": 5193,
+   "college": "Cabrillo College",
+   "course_code": "MATH 23"
+  },
+  {
+   "id": 5194,
+   "college": "Cabrillo College",
+   "course_code": "MATH 5B"
+  },
+  {
+   "id": 5195,
+   "college": "Cabrillo College",
+   "course_code": "MATH 7"
+  },
+  {
+   "id": 5196,
+   "college": "Cabrillo College",
+   "course_code": "MUS 11A"
+  },
+  {
+   "id": 5197,
+   "college": "Cabrillo College",
+   "course_code": "MUS 13A"
+  },
+  {
+   "id": 5198,
+   "college": "Cabrillo College",
+   "course_code": "MUS 17B"
+  },
+  {
+   "id": 5199,
+   "college": "Cabrillo College",
+   "course_code": "MUS 18A"
+  },
+  {
+   "id": 5200,
+   "college": "Cabrillo College",
+   "course_code": "MUS 18JB"
+  },
+  {
+   "id": 5201,
+   "college": "Cabrillo College",
+   "course_code": "MUS 2"
+  },
+  {
+   "id": 5202,
+   "college": "Cabrillo College",
+   "course_code": "MUS 22B"
+  },
+  {
+   "id": 5203,
+   "college": "Cabrillo College",
+   "course_code": "MUS 24A"
+  },
+  {
+   "id": 5204,
+   "college": "Cabrillo College",
+   "course_code": "MUS 2M"
+  },
+  {
+   "id": 5205,
+   "college": "Cabrillo College",
+   "course_code": "MUS 31B"
+  },
+  {
+   "id": 5206,
+   "college": "Cabrillo College",
+   "course_code": "MUS 31V"
+  },
+  {
+   "id": 5207,
+   "college": "Cabrillo College",
+   "course_code": "MUS 38"
+  },
+  {
+   "id": 5208,
+   "college": "Cabrillo College",
+   "course_code": "MUS 4"
+  },
+  {
+   "id": 5209,
+   "college": "Cabrillo College",
+   "course_code": "MUS 431B"
+  },
+  {
+   "id": 5210,
+   "college": "Cabrillo College",
+   "course_code": "MUS 457B"
+  },
+  {
+   "id": 5211,
+   "college": "Cabrillo College",
+   "course_code": "MUS 46"
+  },
+  {
+   "id": 5212,
+   "college": "Cabrillo College",
+   "course_code": "MUS 49"
+  },
+  {
+   "id": 5213,
+   "college": "Cabrillo College",
+   "course_code": "MUS 50"
+  },
+  {
+   "id": 5214,
+   "college": "Cabrillo College",
+   "course_code": "MUS 51B"
+  },
+  {
+   "id": 5215,
+   "college": "Cabrillo College",
+   "course_code": "MUS 52"
+  },
+  {
+   "id": 5216,
+   "college": "Cabrillo College",
+   "course_code": "MUS 57A"
+  },
+  {
+   "id": 5217,
+   "college": "Cabrillo College",
+   "course_code": "MUS 58"
+  },
+  {
+   "id": 5218,
+   "college": "Cabrillo College",
+   "course_code": "MUS 6"
+  },
+  {
+   "id": 5219,
+   "college": "Cabrillo College",
+   "course_code": "MUS 64"
+  },
+  {
+   "id": 5220,
+   "college": "Cabrillo College",
+   "course_code": "MUS 7"
+  },
+  {
+   "id": 5221,
+   "college": "Cabrillo College",
+   "course_code": "NURS 400"
+  },
+  {
+   "id": 5222,
+   "college": "Cabrillo College",
+   "course_code": "NUTR 20"
+  },
+  {
+   "id": 5223,
+   "college": "Cabrillo College",
+   "course_code": "OCEAN 110S"
+  },
+  {
+   "id": 5224,
+   "college": "Cabrillo College",
+   "course_code": "PHILO 10"
+  },
+  {
+   "id": 5225,
+   "college": "Cabrillo College",
+   "course_code": "PHILO 14"
+  },
+  {
+   "id": 5226,
+   "college": "Cabrillo College",
+   "course_code": "PHILO 17"
+  },
+  {
+   "id": 5227,
+   "college": "Cabrillo College",
+   "course_code": "PHILO 23"
+  },
+  {
+   "id": 5228,
+   "college": "Cabrillo College",
+   "course_code": "PHILO 6"
+  },
+  {
+   "id": 5229,
+   "college": "Cabrillo College",
+   "course_code": "PHILO 9"
+  },
+  {
+   "id": 5230,
+   "college": "Cabrillo College",
+   "course_code": "PHYS 11"
+  },
+  {
+   "id": 5231,
+   "college": "Cabrillo College",
+   "course_code": "PHYS 2B"
+  },
+  {
+   "id": 5232,
+   "college": "Cabrillo College",
+   "course_code": "PHYS 4C"
+  },
+  {
+   "id": 5233,
+   "college": "Cabrillo College",
+   "course_code": "POLSC 1000H"
+  },
+  {
+   "id": 5234,
+   "college": "Cabrillo College",
+   "course_code": "PS 5"
+  },
+  {
+   "id": 5235,
+   "college": "Cabrillo College",
+   "course_code": "PSYCH 12"
+  },
+  {
+   "id": 5236,
+   "college": "Cabrillo College",
+   "course_code": "PSYCH 2A"
+  },
+  {
+   "id": 5237,
+   "college": "Cabrillo College",
+   "course_code": "PSYCH 33"
+  },
+  {
+   "id": 5238,
+   "college": "Cabrillo College",
+   "course_code": "PSYCH 4"
+  },
+  {
+   "id": 5239,
+   "college": "Cabrillo College",
+   "course_code": "PSYCH 8"
+  },
+  {
+   "id": 5240,
+   "college": "Cabrillo College",
+   "course_code": "RT 185C"
+  },
+  {
+   "id": 5241,
+   "college": "Cabrillo College",
+   "course_code": "RT 189B"
+  },
+  {
+   "id": 5242,
+   "college": "Cabrillo College",
+   "course_code": "RT 190C"
+  },
+  {
+   "id": 5243,
+   "college": "Cabrillo College",
+   "course_code": "RT 191C"
+  },
+  {
+   "id": 5244,
+   "college": "Cabrillo College",
+   "course_code": "RT 50L"
+  },
+  {
+   "id": 5245,
+   "college": "Cabrillo College",
+   "course_code": "RT 52"
+  },
+  {
+   "id": 5246,
+   "college": "Cabrillo College",
+   "course_code": "RT 53CL"
+  },
+  {
+   "id": 5247,
+   "college": "Cabrillo College",
+   "course_code": "RT 60L"
+  },
+  {
+   "id": 5248,
+   "college": "Cabrillo College",
+   "course_code": "RT 62"
+  },
+  {
+   "id": 5249,
+   "college": "Cabrillo College",
+   "course_code": "RT 70"
+  },
+  {
+   "id": 5250,
+   "college": "Cabrillo College",
+   "course_code": "RT 71L"
+  },
+  {
+   "id": 5251,
+   "college": "Cabrillo College",
+   "course_code": "RT 82"
+  },
+  {
+   "id": 5252,
+   "college": "Cabrillo College",
+   "course_code": "SOC 10"
+  },
+  {
+   "id": 5253,
+   "college": "Cabrillo College",
+   "course_code": "SOC 1H"
+  },
+  {
+   "id": 5254,
+   "college": "Cabrillo College",
+   "course_code": "SOC 3"
+  },
+  {
+   "id": 5255,
+   "college": "Cabrillo College",
+   "course_code": "SOC 9"
+  },
+  {
+   "id": 5256,
+   "college": "Cabrillo College",
+   "course_code": "SPAN 10B"
+  },
+  {
+   "id": 5257,
+   "college": "Cabrillo College",
+   "course_code": "SPAN 2"
+  },
+  {
+   "id": 5258,
+   "college": "Cabrillo College",
+   "course_code": "SPAN 3"
+  },
+  {
+   "id": 5259,
+   "college": "Cabrillo College",
+   "course_code": "SPAN 4"
+  },
+  {
+   "id": 5260,
+   "college": "Cabrillo College",
+   "course_code": "SPAN 6B"
+  },
+  {
+   "id": 5261,
+   "college": "Cabrillo College",
+   "course_code": "TA 10A"
+  },
+  {
+   "id": 5262,
+   "college": "Cabrillo College",
+   "course_code": "TA 11"
+  },
+  {
+   "id": 5263,
+   "college": "Cabrillo College",
+   "course_code": "TA 13B"
+  },
+  {
+   "id": 5264,
+   "college": "Cabrillo College",
+   "course_code": "TA 21"
+  },
+  {
+   "id": 5265,
+   "college": "Cabrillo College",
+   "course_code": "TA 29"
+  },
+  {
+   "id": 5266,
+   "college": "Cabrillo College",
+   "course_code": "TA 33"
+  },
+  {
+   "id": 5267,
+   "college": "Cabrillo College",
+   "course_code": "TA 73"
+  },
+  {
+   "id": 5268,
+   "college": "Cabrillo College",
+   "course_code": "TA 8"
+  },
+  {
+   "id": 5269,
+   "college": "Cabrillo College",
+   "course_code": "VAPA 79"
+  },
+  {
+   "id": 5270,
+   "college": "Cabrillo College",
+   "course_code": "WS 2"
+  },
+  {
+   "id": 5271,
+   "college": "Cabrillo College",
+   "course_code": "ACCT 155"
+  },
+  {
+   "id": 5272,
+   "college": "Cabrillo College",
+   "course_code": "ACCT 1A"
+  },
+  {
+   "id": 5273,
+   "college": "Cabrillo College",
+   "course_code": "ACCT 455"
+  },
+  {
+   "id": 5274,
+   "college": "Cabrillo College",
+   "course_code": "ACCT 54B"
+  },
+  {
+   "id": 5275,
+   "college": "Cabrillo College",
+   "course_code": "ACCT 59"
+  },
+  {
+   "id": 5276,
+   "college": "Cabrillo College",
+   "course_code": "ACCT 72"
+  },
+  {
+   "id": 5277,
+   "college": "Cabrillo College",
+   "course_code": "ADAPT 79"
+  },
+  {
+   "id": 5278,
+   "college": "Cabrillo College",
+   "course_code": "ADAPT 93"
+  },
+  {
+   "id": 5279,
+   "college": "Cabrillo College",
+   "course_code": "AH 11"
+  },
+  {
+   "id": 5280,
+   "college": "Cabrillo College",
+   "course_code": "AH 13"
+  },
+  {
+   "id": 5281,
+   "college": "Cabrillo College",
+   "course_code": "AH 16"
+  },
+  {
+   "id": 5282,
+   "college": "Cabrillo College",
+   "course_code": "AH 19"
+  },
+  {
+   "id": 5283,
+   "college": "Cabrillo College",
+   "course_code": "AH 53"
+  },
+  {
+   "id": 5284,
+   "college": "Cabrillo College",
+   "course_code": "ANTHR 13"
+  },
+  {
+   "id": 5285,
+   "college": "Cabrillo College",
+   "course_code": "ANTHR 1L"
+  },
+  {
+   "id": 5286,
+   "college": "Cabrillo College",
+   "course_code": "ANTHR 2H"
+  },
+  {
+   "id": 5287,
+   "college": "Cabrillo College",
+   "course_code": "ANTHR 6"
+  },
+  {
+   "id": 5288,
+   "college": "Cabrillo College",
+   "course_code": "AP 14A"
+  },
+  {
+   "id": 5289,
+   "college": "Cabrillo College",
+   "course_code": "AP 24A"
+  },
+  {
+   "id": 5290,
+   "college": "Cabrillo College",
+   "course_code": "AP 32A"
+  },
+  {
+   "id": 5291,
+   "college": "Cabrillo College",
+   "course_code": "AP 35H"
+  },
+  {
+   "id": 5292,
+   "college": "Cabrillo College",
+   "course_code": "AP 409A"
+  },
+  {
+   "id": 5293,
+   "college": "Cabrillo College",
+   "course_code": "AP 42"
+  },
+  {
+   "id": 5294,
+   "college": "Cabrillo College",
+   "course_code": "AP 442"
+  },
+  {
+   "id": 5295,
+   "college": "Cabrillo College",
+   "course_code": "AP 446C"
+  },
+  {
+   "id": 5296,
+   "college": "Cabrillo College",
+   "course_code": "AP 45"
+  },
+  {
+   "id": 5297,
+   "college": "Cabrillo College",
+   "course_code": "AP 46A"
+  },
+  {
+   "id": 5298,
+   "college": "Cabrillo College",
+   "course_code": "AP 47"
+  },
+  {
+   "id": 5299,
+   "college": "Cabrillo College",
+   "course_code": "AP 55"
+  },
+  {
+   "id": 5300,
+   "college": "Cabrillo College",
+   "course_code": "AP 65"
+  },
+  {
+   "id": 5301,
+   "college": "Cabrillo College",
+   "course_code": "AP 9C"
+  },
+  {
+   "id": 5302,
+   "college": "Cabrillo College",
+   "course_code": "ART 11B"
+  },
+  {
+   "id": 5303,
+   "college": "Cabrillo College",
+   "course_code": "ART 1A"
+  },
+  {
+   "id": 5304,
+   "college": "Cabrillo College",
+   "course_code": "ART 25CA"
+  },
+  {
+   "id": 5305,
+   "college": "Cabrillo College",
+   "course_code": "ART 28"
+  },
+  {
+   "id": 5306,
+   "college": "Cabrillo College",
+   "course_code": "ART 31A"
+  },
+  {
+   "id": 5307,
+   "college": "Cabrillo College",
+   "course_code": "ART 32A"
+  },
+  {
+   "id": 5308,
+   "college": "Cabrillo College",
+   "course_code": "ART 33B"
+  },
+  {
+   "id": 5309,
+   "college": "Cabrillo College",
+   "course_code": "ART 35"
+  },
+  {
+   "id": 5310,
+   "college": "Cabrillo College",
+   "course_code": "ART 37B"
+  },
+  {
+   "id": 5311,
+   "college": "Cabrillo College",
+   "course_code": "ART 39A"
+  },
+  {
+   "id": 5312,
+   "college": "Cabrillo College",
+   "course_code": "ART 4"
+  },
+  {
+   "id": 5313,
+   "college": "Cabrillo College",
+   "course_code": "ART 46"
+  },
+  {
+   "id": 5314,
+   "college": "Cabrillo College",
+   "course_code": "ART 495A"
+  },
+  {
+   "id": 5315,
+   "college": "Cabrillo College",
+   "course_code": "ART 50L"
+  },
+  {
+   "id": 5316,
+   "college": "Cabrillo College",
+   "course_code": "ART 6B"
+  },
+  {
+   "id": 5317,
+   "college": "Cabrillo College",
+   "course_code": "ART 74"
+  },
+  {
+   "id": 5318,
+   "college": "Cabrillo College",
+   "course_code": "ART 8B"
+  },
+  {
+   "id": 5319,
+   "college": "Cabrillo College",
+   "course_code": "ART 92"
+  },
+  {
+   "id": 5320,
+   "college": "Cabrillo College",
+   "course_code": "ART 9A"
+  },
+  {
+   "id": 5321,
+   "college": "Cabrillo College",
+   "course_code": "ARTHC 1200"
+  },
+  {
+   "id": 5322,
+   "college": "Cabrillo College",
+   "course_code": "ASTRO 4"
+  },
+  {
+   "id": 5323,
+   "college": "Cabrillo College",
+   "course_code": "ASTRO 8A"
+  },
+  {
+   "id": 5324,
+   "college": "Cabrillo College",
+   "course_code": "ATH 11"
+  },
+  {
+   "id": 5325,
+   "college": "Cabrillo College",
+   "course_code": "ATH 15E"
+  },
+  {
+   "id": 5326,
+   "college": "Cabrillo College",
+   "course_code": "ATH 15H"
+  },
+  {
+   "id": 5327,
+   "college": "Cabrillo College",
+   "course_code": "ATH 15K"
+  },
+  {
+   "id": 5328,
+   "college": "Cabrillo College",
+   "course_code": "ATH 15P"
+  },
+  {
+   "id": 5329,
+   "college": "Cabrillo College",
+   "course_code": "ATH 30"
+  },
+  {
+   "id": 5330,
+   "college": "Cabrillo College",
+   "course_code": "ATH 33"
+  },
+  {
+   "id": 5331,
+   "college": "Cabrillo College",
+   "course_code": "ATH 36"
+  },
+  {
+   "id": 5332,
+   "college": "Cabrillo College",
+   "course_code": "BIO 11A"
+  },
+  {
+   "id": 5333,
+   "college": "Cabrillo College",
+   "course_code": "BIO 13A"
+  },
+  {
+   "id": 5334,
+   "college": "Cabrillo College",
+   "course_code": "BIO 4"
+  },
+  {
+   "id": 5335,
+   "college": "Cabrillo College",
+   "course_code": "BIO 450"
+  },
+  {
+   "id": 5336,
+   "college": "Cabrillo College",
+   "course_code": "BIO 6"
+  },
+  {
+   "id": 5337,
+   "college": "Cabrillo College",
+   "course_code": "BUS 18"
+  },
+  {
+   "id": 5338,
+   "college": "Cabrillo College",
+   "course_code": "BUS 482"
+  },
+  {
+   "id": 5339,
+   "college": "Cabrillo College",
+   "course_code": "BUS 5"
+  },
+  {
+   "id": 5340,
+   "college": "Cabrillo College",
+   "course_code": "BUS 60"
+  },
+  {
+   "id": 5341,
+   "college": "Cabrillo College",
+   "course_code": "BUS 75"
+  },
+  {
+   "id": 5342,
+   "college": "Cabrillo College",
+   "course_code": "BUS 89"
+  },
+  {
+   "id": 5343,
+   "college": "Cabrillo College",
+   "course_code": "CABT 100"
+  },
+  {
+   "id": 5344,
+   "college": "Cabrillo College",
+   "course_code": "CABT 105"
+  },
+  {
+   "id": 5345,
+   "college": "Cabrillo College",
+   "course_code": "CABT 110A"
+  },
+  {
+   "id": 5346,
+   "college": "Cabrillo College",
+   "course_code": "CABT 118"
+  },
+  {
+   "id": 5347,
+   "college": "Cabrillo College",
+   "course_code": "CABT 133"
+  },
+  {
+   "id": 5348,
+   "college": "Cabrillo College",
+   "course_code": "CABT 160"
+  },
+  {
+   "id": 5349,
+   "college": "Cabrillo College",
+   "course_code": "CABT 172"
+  },
+  {
+   "id": 5350,
+   "college": "Cabrillo College",
+   "course_code": "CABT 400"
+  },
+  {
+   "id": 5351,
+   "college": "Cabrillo College",
+   "course_code": "CABT 405"
+  },
+  {
+   "id": 5352,
+   "college": "Cabrillo College",
+   "course_code": "CABT 410A"
+  },
+  {
+   "id": 5353,
+   "college": "Cabrillo College",
+   "course_code": "CABT 43"
+  },
+  {
+   "id": 5354,
+   "college": "Cabrillo College",
+   "course_code": "CABT 455"
+  },
+  {
+   "id": 5355,
+   "college": "Cabrillo College",
+   "course_code": "CABT 481B"
+  },
+  {
+   "id": 5356,
+   "college": "Cabrillo College",
+   "course_code": "CAHM 132"
+  },
+  {
+   "id": 5357,
+   "college": "Cabrillo College",
+   "course_code": "CAHM 149"
+  },
+  {
+   "id": 5358,
+   "college": "Cabrillo College",
+   "course_code": "CAHM 155"
+  },
+  {
+   "id": 5359,
+   "college": "Cabrillo College",
+   "course_code": "CAHM 165"
+  },
+  {
+   "id": 5360,
+   "college": "Cabrillo College",
+   "course_code": "CAHM 171"
+  },
+  {
+   "id": 5361,
+   "college": "Cabrillo College",
+   "course_code": "CAHM 33"
+  },
+  {
+   "id": 5362,
+   "college": "Cabrillo College",
+   "course_code": "CAHM 405B"
+  },
+  {
+   "id": 5363,
+   "college": "Cabrillo College",
+   "course_code": "CAHM 436"
+  },
+  {
+   "id": 5364,
+   "college": "Cabrillo College",
+   "course_code": "CAHM 50A"
+  },
+  {
+   "id": 5365,
+   "college": "Cabrillo College",
+   "course_code": "CAHM 50L"
+  },
+  {
+   "id": 5366,
+   "college": "Cabrillo College",
+   "course_code": "CAHM 63"
+  },
+  {
+   "id": 5367,
+   "college": "Cabrillo College",
+   "course_code": "CAHM 72B"
+  },
+  {
+   "id": 5368,
+   "college": "Cabrillo College",
+   "course_code": "CAHM 77"
+  },
+  {
+   "id": 5369,
+   "college": "Cabrillo College",
+   "course_code": "CEM 151EL"
+  },
+  {
+   "id": 5370,
+   "college": "Cabrillo College",
+   "course_code": "CEM 151PL"
+  },
+  {
+   "id": 5371,
+   "college": "Cabrillo College",
+   "course_code": "CEM 157"
+  },
+  {
+   "id": 5372,
+   "college": "Cabrillo College",
+   "course_code": "CEM 161"
+  },
+  {
+   "id": 5373,
+   "college": "Cabrillo College",
+   "course_code": "CEM 162HR"
+  },
+  {
+   "id": 5374,
+   "college": "Cabrillo College",
+   "course_code": "CEM 162SP"
+  },
+  {
+   "id": 5375,
+   "college": "Cabrillo College",
+   "course_code": "CEM 164C"
+  },
+  {
+   "id": 5376,
+   "college": "Cabrillo College",
+   "course_code": "CEM 167A"
+  },
+  {
+   "id": 5377,
+   "college": "Cabrillo College",
+   "course_code": "CEM 175C"
+  },
+  {
+   "id": 5378,
+   "college": "Cabrillo College",
+   "course_code": "CEM 178A"
+  },
+  {
+   "id": 5379,
+   "college": "Cabrillo College",
+   "course_code": "CEM 451"
+  },
+  {
+   "id": 5380,
+   "college": "Cabrillo College",
+   "course_code": "CEM 462"
+  },
+  {
+   "id": 5381,
+   "college": "Cabrillo College",
+   "course_code": "CHEM 10"
+  },
+  {
+   "id": 5382,
+   "college": "Cabrillo College",
+   "course_code": "CHEM 12B"
+  },
+  {
+   "id": 5383,
+   "college": "Cabrillo College",
+   "course_code": "CHEM 1B"
+  },
+  {
+   "id": 5384,
+   "college": "Cabrillo College",
+   "course_code": "CHEM 30B"
+  },
+  {
+   "id": 5385,
+   "college": "Cabrillo College",
+   "course_code": "CHEM 5"
+  },
+  {
+   "id": 5386,
+   "college": "Cabrillo College",
+   "course_code": "CIS 140NA"
+  },
+  {
+   "id": 5387,
+   "college": "Cabrillo College",
+   "course_code": "CIS 31"
+  },
+  {
+   "id": 5388,
+   "college": "Cabrillo College",
+   "course_code": "CIS 34"
+  },
+  {
+   "id": 5389,
+   "college": "Cabrillo College",
+   "course_code": "CIS 430B"
+  },
+  {
+   "id": 5390,
+   "college": "Cabrillo College",
+   "course_code": "CIS 433B"
+  },
+  {
+   "id": 5391,
+   "college": "Cabrillo College",
+   "course_code": "CIS 435A"
+  },
+  {
+   "id": 5392,
+   "college": "Cabrillo College",
+   "course_code": "CIS 470A"
+  },
+  {
+   "id": 5393,
+   "college": "Cabrillo College",
+   "course_code": "CIS 471B"
+  },
+  {
+   "id": 5394,
+   "college": "Cabrillo College",
+   "course_code": "CIS 483C"
+  },
+  {
+   "id": 5395,
+   "college": "Cabrillo College",
+   "course_code": "CIS 73"
+  },
+  {
+   "id": 5396,
+   "college": "Cabrillo College",
+   "course_code": "CIS 77"
+  },
+  {
+   "id": 5397,
+   "college": "Cabrillo College",
+   "course_code": "CIS 82"
+  },
+  {
+   "id": 5398,
+   "college": "Cabrillo College",
+   "course_code": "CIS 91"
+  },
+  {
+   "id": 5399,
+   "college": "Cabrillo College",
+   "course_code": "CIS 99"
+  },
+  {
+   "id": 5400,
+   "college": "Cabrillo College",
+   "course_code": "CJ 14"
+  },
+  {
+   "id": 5401,
+   "college": "Cabrillo College",
+   "course_code": "CJ 3"
+  },
+  {
+   "id": 5402,
+   "college": "Cabrillo College",
+   "course_code": "CJ 41"
+  },
+  {
+   "id": 5403,
+   "college": "Cabrillo College",
+   "course_code": "CJ 418"
+  },
+  {
+   "id": 5404,
+   "college": "Cabrillo College",
+   "course_code": "CJ 5"
+  },
+  {
+   "id": 5405,
+   "college": "Cabrillo College",
+   "course_code": "CJ 9"
+  },
+  {
+   "id": 5406,
+   "college": "Cabrillo College",
+   "course_code": "COMM 14"
+  },
+  {
+   "id": 5407,
+   "college": "Cabrillo College",
+   "course_code": "COMM 6"
+  },
+  {
+   "id": 5408,
+   "college": "Cabrillo College",
+   "course_code": "COMM C1000"
+  },
+  {
+   "id": 5409,
+   "college": "Cabrillo College",
+   "course_code": "COMMC 1000H"
+  },
+  {
+   "id": 5410,
+   "college": "Cabrillo College",
+   "course_code": "CS 11M"
+  },
+  {
+   "id": 5411,
+   "college": "Cabrillo College",
+   "course_code": "CS 19"
+  },
+  {
+   "id": 5412,
+   "college": "Cabrillo College",
+   "course_code": "CS 20P"
+  },
+  {
+   "id": 5413,
+   "college": "Cabrillo College",
+   "course_code": "CS 24"
+  },
+  {
+   "id": 5414,
+   "college": "Cabrillo College",
+   "course_code": "DANCE 10A"
+  },
+  {
+   "id": 5415,
+   "college": "Cabrillo College",
+   "course_code": "DANCE 11B"
+  },
+  {
+   "id": 5416,
+   "college": "Cabrillo College",
+   "course_code": "DANCE 13"
+  },
+  {
+   "id": 5417,
+   "college": "Cabrillo College",
+   "course_code": "DANCE 15B"
+  },
+  {
+   "id": 5418,
+   "college": "Cabrillo College",
+   "course_code": "DANCE 16B"
+  },
+  {
+   "id": 5419,
+   "college": "Cabrillo College",
+   "course_code": "DANCE 17C"
+  },
+  {
+   "id": 5420,
+   "college": "Cabrillo College",
+   "course_code": "DANCE 19A"
+  },
+  {
+   "id": 5421,
+   "college": "Cabrillo College",
+   "course_code": "DANCE 19D"
+  },
+  {
+   "id": 5422,
+   "college": "Cabrillo College",
+   "course_code": "DANCE 2A"
+  },
+  {
+   "id": 5423,
+   "college": "Cabrillo College",
+   "course_code": "DANCE 3BP"
+  },
+  {
+   "id": 5424,
+   "college": "Cabrillo College",
+   "course_code": "DANCE 5"
+  },
+  {
+   "id": 5425,
+   "college": "Cabrillo College",
+   "course_code": "DANCE 8"
+  },
+  {
+   "id": 5426,
+   "college": "Cabrillo College",
+   "course_code": "DANCE 9B"
+  },
+  {
+   "id": 5427,
+   "college": "Cabrillo College",
+   "course_code": "DH 162A"
+  },
+  {
+   "id": 5428,
+   "college": "Cabrillo College",
+   "course_code": "DH 163B"
+  },
+  {
+   "id": 5429,
+   "college": "Cabrillo College",
+   "course_code": "DH 171"
+  },
+  {
+   "id": 5430,
+   "college": "Cabrillo College",
+   "course_code": "DH 180"
+  },
+  {
+   "id": 5431,
+   "college": "Cabrillo College",
+   "course_code": "DH 183"
+  },
+  {
+   "id": 5432,
+   "college": "Cabrillo College",
+   "course_code": "DH 186A"
+  },
+  {
+   "id": 5433,
+   "college": "Cabrillo College",
+   "course_code": "DH 7"
+  },
+  {
+   "id": 5434,
+   "college": "Cabrillo College",
+   "course_code": "DM 11"
+  },
+  {
+   "id": 5435,
+   "college": "Cabrillo College",
+   "course_code": "DM 20"
+  },
+  {
+   "id": 5436,
+   "college": "Cabrillo College",
+   "course_code": "DM 34"
+  },
+  {
+   "id": 5437,
+   "college": "Cabrillo College",
+   "course_code": "DM 420"
+  },
+  {
+   "id": 5438,
+   "college": "Cabrillo College",
+   "course_code": "DM 434"
+  },
+  {
+   "id": 5439,
+   "college": "Cabrillo College",
+   "course_code": "DM 457"
+  },
+  {
+   "id": 5440,
+   "college": "Cabrillo College",
+   "course_code": "DM 57"
+  },
+  {
+   "id": 5441,
+   "college": "Cabrillo College",
+   "course_code": "DMCP 402"
+  },
+  {
+   "id": 5442,
+   "college": "Cabrillo College",
+   "course_code": "DMCP 405"
+  },
+  {
+   "id": 5443,
+   "college": "Cabrillo College",
+   "course_code": "ECE 133"
+  },
+  {
+   "id": 5444,
+   "college": "Cabrillo College",
+   "course_code": "ECE 134E"
+  },
+  {
+   "id": 5445,
+   "college": "Cabrillo College",
+   "course_code": "ECE 146"
+  },
+  {
+   "id": 5446,
+   "college": "Cabrillo College",
+   "course_code": "ECE 156D"
+  },
+  {
+   "id": 5447,
+   "college": "Cabrillo College",
+   "course_code": "ECE 156H"
+  },
+  {
+   "id": 5448,
+   "college": "Cabrillo College",
+   "course_code": "ECE 156M"
+  },
+  {
+   "id": 5449,
+   "college": "Cabrillo College",
+   "course_code": "ECE 157A"
+  },
+  {
+   "id": 5450,
+   "college": "Cabrillo College",
+   "course_code": "ECE 158"
+  },
+  {
+   "id": 5451,
+   "college": "Cabrillo College",
+   "course_code": "ECE 34"
+  },
+  {
+   "id": 5452,
+   "college": "Cabrillo College",
+   "course_code": "ECE 433"
+  },
+  {
+   "id": 5453,
+   "college": "Cabrillo College",
+   "course_code": "ECE 480B"
+  },
+  {
+   "id": 5454,
+   "college": "Cabrillo College",
+   "course_code": "ECE 53"
+  },
+  {
+   "id": 5455,
+   "college": "Cabrillo College",
+   "course_code": "ECE 59"
+  },
+  {
+   "id": 5456,
+   "college": "Cabrillo College",
+   "course_code": "ECONC 2001"
+  },
+  {
+   "id": 5457,
+   "college": "Cabrillo College",
+   "course_code": "EDUC 401A"
+  },
+  {
+   "id": 5458,
+   "college": "Cabrillo College",
+   "course_code": "EDUC 80"
+  },
+  {
+   "id": 5459,
+   "college": "Cabrillo College",
+   "course_code": "ENGL 101A"
+  },
+  {
+   "id": 5460,
+   "college": "Cabrillo College",
+   "course_code": "ENGL 12B"
+  },
+  {
+   "id": 5461,
+   "college": "Cabrillo College",
+   "course_code": "ENGL 12F"
+  },
+  {
+   "id": 5462,
+   "college": "Cabrillo College",
+   "course_code": "ENGL 14C"
+  },
+  {
+   "id": 5463,
+   "college": "Cabrillo College",
+   "course_code": "ENGL 24A"
+  },
+  {
+   "id": 5464,
+   "college": "Cabrillo College",
+   "course_code": "ENGL 27BN"
+  },
+  {
+   "id": 5465,
+   "college": "Cabrillo College",
+   "course_code": "ENGL 30A"
+  },
+  {
+   "id": 5466,
+   "college": "Cabrillo College",
+   "course_code": "ENGL 39"
+  },
+  {
+   "id": 5467,
+   "college": "Cabrillo College",
+   "course_code": "ENGL 45"
+  },
+  {
+   "id": 5468,
+   "college": "Cabrillo College",
+   "course_code": "ENGL 48A"
+  },
+  {
+   "id": 5469,
+   "college": "Cabrillo College",
+   "course_code": "ENGL C1001"
+  },
+  {
+   "id": 5470,
+   "college": "Cabrillo College",
+   "course_code": "ENGLC 1000H"
+  },
+  {
+   "id": 5471,
+   "college": "Cabrillo College",
+   "course_code": "ENGLC 1002"
+  },
+  {
+   "id": 5472,
+   "college": "Cabrillo College",
+   "course_code": "ENGR 12"
+  },
+  {
+   "id": 5473,
+   "college": "Cabrillo College",
+   "course_code": "ENGR 25"
+  },
+  {
+   "id": 5474,
+   "college": "Cabrillo College",
+   "course_code": "ENGR 30"
+  },
+  {
+   "id": 5475,
+   "college": "Cabrillo College",
+   "course_code": "ENGR 40"
+  },
+  {
+   "id": 5476,
+   "college": "Cabrillo College",
+   "course_code": "ES 10"
+  },
+  {
+   "id": 5477,
+   "college": "Cabrillo College",
+   "course_code": "ES 20"
+  },
+  {
+   "id": 5478,
+   "college": "Cabrillo College",
+   "course_code": "ESL 300"
+  },
+  {
+   "id": 5479,
+   "college": "Cabrillo College",
+   "course_code": "ESL 341"
+  },
+  {
+   "id": 5480,
+   "college": "Cabrillo College",
+   "course_code": "ESL 344"
+  },
+  {
+   "id": 5481,
+   "college": "Cabrillo College",
+   "course_code": "ESL 355"
+  },
+  {
+   "id": 5482,
+   "college": "Cabrillo College",
+   "course_code": "ETECH 130"
+  },
+  {
+   "id": 5483,
+   "college": "Cabrillo College",
+   "course_code": "ETECH 31"
+  },
+  {
+   "id": 5484,
+   "college": "Cabrillo College",
+   "course_code": "ETECH 43"
+  },
+  {
+   "id": 5485,
+   "college": "Cabrillo College",
+   "course_code": "ETECH 62"
+  },
+  {
+   "id": 5486,
+   "college": "Cabrillo College",
+   "course_code": "ETHN 21A"
+  },
+  {
+   "id": 5487,
+   "college": "Cabrillo College",
+   "course_code": "ETHN 21BH"
+  },
+  {
+   "id": 5488,
+   "college": "Cabrillo College",
+   "course_code": "ETHN 3"
+  },
+  {
+   "id": 5489,
+   "college": "Cabrillo College",
+   "course_code": "FIN 4"
+  },
+  {
+   "id": 5490,
+   "college": "Cabrillo College",
+   "course_code": "FT 1"
+  },
+  {
+   "id": 5491,
+   "college": "Cabrillo College",
+   "course_code": "FT 183"
+  },
+  {
+   "id": 5492,
+   "college": "Cabrillo College",
+   "course_code": "FT 187"
+  },
+  {
+   "id": 5493,
+   "college": "Cabrillo College",
+   "course_code": "FT 3"
+  },
+  {
+   "id": 5494,
+   "college": "Cabrillo College",
+   "course_code": "FT 5"
+  },
+  {
+   "id": 5495,
+   "college": "Cabrillo College",
+   "course_code": "GEOG 1"
+  },
+  {
+   "id": 5496,
+   "college": "Cabrillo College",
+   "course_code": "GEOG 2"
+  },
+  {
+   "id": 5497,
+   "college": "Cabrillo College",
+   "course_code": "GEOG 4"
+  },
+  {
+   "id": 5498,
+   "college": "Cabrillo College",
+   "course_code": "GEOL 15"
+  },
+  {
+   "id": 5499,
+   "college": "Cabrillo College",
+   "course_code": "GEOL 27"
+  },
+  {
+   "id": 5500,
+   "college": "Cabrillo College",
+   "course_code": "HIST 14"
+  },
+  {
+   "id": 5501,
+   "college": "Cabrillo College",
+   "course_code": "HIST 16A"
+  },
+  {
+   "id": 5502,
+   "college": "Cabrillo College",
+   "course_code": "HIST 21A"
+  },
+  {
+   "id": 5503,
+   "college": "Cabrillo College",
+   "course_code": "HIST 21BH"
+  },
+  {
+   "id": 5504,
+   "college": "Cabrillo College",
+   "course_code": "HIST 25A"
+  },
+  {
+   "id": 5505,
+   "college": "Cabrillo College",
+   "course_code": "HIST 27BN"
+  },
+  {
+   "id": 5506,
+   "college": "Cabrillo College",
+   "course_code": "HIST 2A"
+  },
+  {
+   "id": 5507,
+   "college": "Cabrillo College",
+   "course_code": "HIST 4AH"
+  },
+  {
+   "id": 5508,
+   "college": "Cabrillo College",
+   "course_code": "HIST 6"
+  },
+  {
+   "id": 5509,
+   "college": "Cabrillo College",
+   "course_code": "HISTC 1002"
+  },
+  {
+   "id": 5510,
+   "college": "Cabrillo College",
+   "course_code": "HORT 12"
+  },
+  {
+   "id": 5511,
+   "college": "Cabrillo College",
+   "course_code": "HORT 140B"
+  },
+  {
+   "id": 5512,
+   "college": "Cabrillo College",
+   "course_code": "HORT 150"
+  },
+  {
+   "id": 5513,
+   "college": "Cabrillo College",
+   "course_code": "HORT 172"
+  },
+  {
+   "id": 5514,
+   "college": "Cabrillo College",
+   "course_code": "HORT 1A"
+  },
+  {
+   "id": 5515,
+   "college": "Cabrillo College",
+   "course_code": "HORT 24"
+  },
+  {
+   "id": 5516,
+   "college": "Cabrillo College",
+   "course_code": "HORT 443B"
+  },
+  {
+   "id": 5517,
+   "college": "Cabrillo College",
+   "course_code": "HORT 58"
+  },
+  {
+   "id": 5518,
+   "college": "Cabrillo College",
+   "course_code": "HORT 65"
+  },
+  {
+   "id": 5519,
+   "college": "Cabrillo College",
+   "course_code": "HORT 99"
+  },
+  {
+   "id": 5520,
+   "college": "Cabrillo College",
+   "course_code": "HS 130"
+  },
+  {
+   "id": 5521,
+   "college": "Cabrillo College",
+   "course_code": "HS 21"
+  },
+  {
+   "id": 5522,
+   "college": "Cabrillo College",
+   "course_code": "HS 430"
+  },
+  {
+   "id": 5523,
+   "college": "Cabrillo College",
+   "course_code": "HS 99"
+  },
+  {
+   "id": 5524,
+   "college": "Cabrillo College",
+   "course_code": "HSERV 163"
+  },
+  {
+   "id": 5525,
+   "college": "Cabrillo College",
+   "course_code": "HSERV 451CP"
+  },
+  {
+   "id": 5526,
+   "college": "Cabrillo College",
+   "course_code": "HSERV 52"
+  },
+  {
+   "id": 5527,
+   "college": "Cabrillo College",
+   "course_code": "HSERV 55B"
+  },
+  {
+   "id": 5528,
+   "college": "Cabrillo College",
+   "course_code": "HSERV 60"
+  },
+  {
+   "id": 5529,
+   "college": "Cabrillo College",
+   "course_code": "JOURN 2"
+  },
+  {
+   "id": 5530,
+   "college": "Cabrillo College",
+   "course_code": "JOURN 35"
+  },
+  {
+   "id": 5531,
+   "college": "Cabrillo College",
+   "course_code": "JOURN 54A"
+  },
+  {
+   "id": 5532,
+   "college": "Cabrillo College",
+   "course_code": "JOURN 99"
+  },
+  {
+   "id": 5533,
+   "college": "Cabrillo College",
+   "course_code": "KIN 10B"
+  },
+  {
+   "id": 5534,
+   "college": "Cabrillo College",
+   "course_code": "KIN 10DL"
+  },
+  {
+   "id": 5535,
+   "college": "Cabrillo College",
+   "course_code": "KIN 15"
+  },
+  {
+   "id": 5536,
+   "college": "Cabrillo College",
+   "course_code": "KIN 22L"
+  },
+  {
+   "id": 5537,
+   "college": "Cabrillo College",
+   "course_code": "KIN 24L"
+  },
+  {
+   "id": 5538,
+   "college": "Cabrillo College",
+   "course_code": "KIN 3"
+  },
+  {
+   "id": 5539,
+   "college": "Cabrillo College",
+   "course_code": "KIN 38A"
+  },
+  {
+   "id": 5540,
+   "college": "Cabrillo College",
+   "course_code": "KIN 39B"
+  },
+  {
+   "id": 5541,
+   "college": "Cabrillo College",
+   "course_code": "KIN 40B"
+  },
+  {
+   "id": 5542,
+   "college": "Cabrillo College",
+   "course_code": "KIN 41A"
+  },
+  {
+   "id": 5543,
+   "college": "Cabrillo College",
+   "course_code": "KIN 42B"
+  },
+  {
+   "id": 5544,
+   "college": "Cabrillo College",
+   "course_code": "KIN 43B"
+  },
+  {
+   "id": 5545,
+   "college": "Cabrillo College",
+   "course_code": "KIN 47A"
+  },
+  {
+   "id": 5546,
+   "college": "Cabrillo College",
+   "course_code": "KIN 48A"
+  },
+  {
+   "id": 5547,
+   "college": "Cabrillo College",
+   "course_code": "KIN 4LB"
+  },
+  {
+   "id": 5548,
+   "college": "Cabrillo College",
+   "course_code": "KIN 5"
+  },
+  {
+   "id": 5549,
+   "college": "Cabrillo College",
+   "course_code": "KIN 50C"
+  },
+  {
+   "id": 5550,
+   "college": "Cabrillo College",
+   "course_code": "KIN 51C"
+  },
+  {
+   "id": 5551,
+   "college": "Cabrillo College",
+   "course_code": "KIN 54A"
+  },
+  {
+   "id": 5552,
+   "college": "Cabrillo College",
+   "course_code": "KIN 55"
+  },
+  {
+   "id": 5553,
+   "college": "Cabrillo College",
+   "course_code": "KIN 56C"
+  },
+  {
+   "id": 5554,
+   "college": "Cabrillo College",
+   "course_code": "KIN 60C"
+  },
+  {
+   "id": 5555,
+   "college": "Cabrillo College",
+   "course_code": "KIN 61C"
+  },
+  {
+   "id": 5556,
+   "college": "Cabrillo College",
+   "course_code": "KIN 63C"
+  },
+  {
+   "id": 5557,
+   "college": "Cabrillo College",
+   "course_code": "KIN 65C"
+  },
+  {
+   "id": 5558,
+   "college": "Cabrillo College",
+   "course_code": "KIN 8B"
+  },
+  {
+   "id": 5559,
+   "college": "Cabrillo College",
+   "course_code": "MA 101"
+  },
+  {
+   "id": 5560,
+   "college": "Cabrillo College",
+   "course_code": "MA 125"
+  },
+  {
+   "id": 5561,
+   "college": "Cabrillo College",
+   "course_code": "MA 130B"
+  },
+  {
+   "id": 5562,
+   "college": "Cabrillo College",
+   "course_code": "MA 173A"
+  },
+  {
+   "id": 5563,
+   "college": "Cabrillo College",
+   "course_code": "MA 435CE"
+  },
+  {
+   "id": 5564,
+   "college": "Cabrillo College",
+   "course_code": "MATH 10"
+  },
+  {
+   "id": 5565,
+   "college": "Cabrillo College",
+   "course_code": "MATH 13"
+  },
+  {
+   "id": 5566,
+   "college": "Cabrillo College",
+   "course_code": "MATH 18"
+  },
+  {
+   "id": 5567,
+   "college": "Cabrillo College",
+   "course_code": "MATH 4"
+  },
+  {
+   "id": 5568,
+   "college": "Cabrillo College",
+   "course_code": "MATH 5C"
+  },
+  {
+   "id": 5569,
+   "college": "Cabrillo College",
+   "course_code": "MUS 1"
+  },
+  {
+   "id": 5570,
+   "college": "Cabrillo College",
+   "course_code": "MUS 11LA"
+  },
+  {
+   "id": 5571,
+   "college": "Cabrillo College",
+   "course_code": "MUS 16"
+  },
+  {
+   "id": 5572,
+   "college": "Cabrillo College",
+   "course_code": "MUS 17C"
+  },
+  {
+   "id": 5573,
+   "college": "Cabrillo College",
+   "course_code": "MUS 18B"
+  },
+  {
+   "id": 5574,
+   "college": "Cabrillo College",
+   "course_code": "MUS 19AA"
+  },
+  {
+   "id": 5575,
+   "college": "Cabrillo College",
+   "course_code": "MUS 20"
+  },
+  {
+   "id": 5576,
+   "college": "Cabrillo College",
+   "course_code": "MUS 23"
+  },
+  {
+   "id": 5577,
+   "college": "Cabrillo College",
+   "course_code": "MUS 24B"
+  },
+  {
+   "id": 5578,
+   "college": "Cabrillo College",
+   "course_code": "MUS 3"
+  },
+  {
+   "id": 5579,
+   "college": "Cabrillo College",
+   "course_code": "MUS 31LS"
+  },
+  {
+   "id": 5580,
+   "college": "Cabrillo College",
+   "course_code": "MUS 33A"
+  },
+  {
+   "id": 5581,
+   "college": "Cabrillo College",
+   "course_code": "MUS 39"
+  },
+  {
+   "id": 5582,
+   "college": "Cabrillo College",
+   "course_code": "MUS 40"
+  },
+  {
+   "id": 5583,
+   "college": "Cabrillo College",
+   "course_code": "MUS 456M"
+  },
+  {
+   "id": 5584,
+   "college": "Cabrillo College",
+   "course_code": "MUS 459A"
+  },
+  {
+   "id": 5585,
+   "college": "Cabrillo College",
+   "course_code": "MUS 47"
+  },
+  {
+   "id": 5586,
+   "college": "Cabrillo College",
+   "course_code": "MUS 4M"
+  },
+  {
+   "id": 5587,
+   "college": "Cabrillo College",
+   "course_code": "MUS 50LJ"
+  },
+  {
+   "id": 5588,
+   "college": "Cabrillo College",
+   "course_code": "MUS 51C"
+  },
+  {
+   "id": 5589,
+   "college": "Cabrillo College",
+   "course_code": "MUS 52LA"
+  },
+  {
+   "id": 5590,
+   "college": "Cabrillo College",
+   "course_code": "MUS 57B"
+  },
+  {
+   "id": 5591,
+   "college": "Cabrillo College",
+   "course_code": "MUS 59A"
+  },
+  {
+   "id": 5592,
+   "college": "Cabrillo College",
+   "course_code": "MUS 61"
+  },
+  {
+   "id": 5593,
+   "college": "Cabrillo College",
+   "course_code": "MUS 68"
+  },
+  {
+   "id": 5594,
+   "college": "Cabrillo College",
+   "course_code": "MUS 75"
+  },
+  {
+   "id": 5595,
+   "college": "Cabrillo College",
+   "course_code": "MUS 80S"
+  },
+  {
+   "id": 5596,
+   "college": "Cabrillo College",
+   "course_code": "NURS 400L"
+  },
+  {
+   "id": 5597,
+   "college": "Cabrillo College",
+   "course_code": "NUTR 22"
+  },
+  {
+   "id": 5598,
+   "college": "Cabrillo College",
+   "course_code": "OCEAN 20"
+  },
+  {
+   "id": 5599,
+   "college": "Cabrillo College",
+   "course_code": "PHILO 10H"
+  },
+  {
+   "id": 5600,
+   "college": "Cabrillo College",
+   "course_code": "PHILO 15"
+  },
+  {
+   "id": 5601,
+   "college": "Cabrillo College",
+   "course_code": "PHILO 18"
+  },
+  {
+   "id": 5602,
+   "college": "Cabrillo College",
+   "course_code": "PHILO 4"
+  },
+  {
+   "id": 5603,
+   "college": "Cabrillo College",
+   "course_code": "PHILO 7"
+  },
+  {
+   "id": 5604,
+   "college": "Cabrillo College",
+   "course_code": "PHYS 10"
+  },
+  {
+   "id": 5605,
+   "college": "Cabrillo College",
+   "course_code": "PHYS 12"
+  },
+  {
+   "id": 5606,
+   "college": "Cabrillo College",
+   "course_code": "PHYS 4A"
+  },
+  {
+   "id": 5607,
+   "college": "Cabrillo College",
+   "course_code": "PHYS 4D"
+  },
+  {
+   "id": 5608,
+   "college": "Cabrillo College",
+   "course_code": "PS 2"
+  },
+  {
+   "id": 5609,
+   "college": "Cabrillo College",
+   "course_code": "PSYC C1000"
+  },
+  {
+   "id": 5610,
+   "college": "Cabrillo College",
+   "course_code": "PSYCH 1H"
+  },
+  {
+   "id": 5611,
+   "college": "Cabrillo College",
+   "course_code": "PSYCH 2B"
+  },
+  {
+   "id": 5612,
+   "college": "Cabrillo College",
+   "course_code": "PSYCH 35"
+  },
+  {
+   "id": 5613,
+   "college": "Cabrillo College",
+   "course_code": "PSYCH 4L"
+  },
+  {
+   "id": 5614,
+   "college": "Cabrillo College",
+   "course_code": "RT 175"
+  },
+  {
+   "id": 5615,
+   "college": "Cabrillo College",
+   "course_code": "RT 185L"
+  },
+  {
+   "id": 5616,
+   "college": "Cabrillo College",
+   "course_code": "RT 190A"
+  },
+  {
+   "id": 5617,
+   "college": "Cabrillo College",
+   "course_code": "RT 191A"
+  },
+  {
+   "id": 5618,
+   "college": "Cabrillo College",
+   "course_code": "RT 50A"
+  },
+  {
+   "id": 5619,
+   "college": "Cabrillo College",
+   "course_code": "RT 51"
+  },
+  {
+   "id": 5620,
+   "college": "Cabrillo College",
+   "course_code": "RT 53AL"
+  },
+  {
+   "id": 5621,
+   "college": "Cabrillo College",
+   "course_code": "RT 54"
+  },
+  {
+   "id": 5622,
+   "college": "Cabrillo College",
+   "course_code": "RT 61"
+  },
+  {
+   "id": 5623,
+   "college": "Cabrillo College",
+   "course_code": "RT 63AL"
+  },
+  {
+   "id": 5624,
+   "college": "Cabrillo College",
+   "course_code": "RT 70L"
+  },
+  {
+   "id": 5625,
+   "college": "Cabrillo College",
+   "course_code": "RT 72"
+  },
+  {
+   "id": 5626,
+   "college": "Cabrillo College",
+   "course_code": "RT 83"
+  },
+  {
+   "id": 5627,
+   "college": "Cabrillo College",
+   "course_code": "SOC 11"
+  },
+  {
+   "id": 5628,
+   "college": "Cabrillo College",
+   "course_code": "SOC 2"
+  },
+  {
+   "id": 5629,
+   "college": "Cabrillo College",
+   "course_code": "SOC 5"
+  },
+  {
+   "id": 5630,
+   "college": "Cabrillo College",
+   "course_code": "SPAN 1"
+  },
+  {
+   "id": 5631,
+   "college": "Cabrillo College",
+   "course_code": "SPAN 25"
+  },
+  {
+   "id": 5632,
+   "college": "Cabrillo College",
+   "course_code": "SPAN 30B"
+  },
+  {
+   "id": 5633,
+   "college": "Cabrillo College",
+   "course_code": "SPAN 5A"
+  },
+  {
+   "id": 5634,
+   "college": "Cabrillo College",
+   "course_code": "STAT C1000"
+  },
+  {
+   "id": 5635,
+   "college": "Cabrillo College",
+   "course_code": "TA 10B"
+  },
+  {
+   "id": 5636,
+   "college": "Cabrillo College",
+   "course_code": "TA 12A"
+  },
+  {
+   "id": 5637,
+   "college": "Cabrillo College",
+   "course_code": "TA 14"
+  },
+  {
+   "id": 5638,
+   "college": "Cabrillo College",
+   "course_code": "TA 27"
+  },
+  {
+   "id": 5639,
+   "college": "Cabrillo College",
+   "course_code": "TA 30"
+  },
+  {
+   "id": 5640,
+   "college": "Cabrillo College",
+   "course_code": "TA 34"
+  },
+  {
+   "id": 5641,
+   "college": "Cabrillo College",
+   "course_code": "TA 74"
+  },
+  {
+   "id": 5642,
+   "college": "Cabrillo College",
+   "course_code": "TA 9"
+  },
+  {
+   "id": 5643,
+   "college": "Cabrillo College",
+   "course_code": "WORK 99"
+  },
+  {
+   "id": 5644,
+   "college": "Cabrillo College",
+   "course_code": "WS 48"
+  },
+  {
+   "id": 5645,
+   "college": "Cabrillo College",
+   "course_code": "ACCT 16"
+  },
+  {
+   "id": 5646,
+   "college": "Cabrillo College",
+   "course_code": "ACCT 1B"
+  },
+  {
+   "id": 5647,
+   "college": "Cabrillo College",
+   "course_code": "ACCT 463"
+  },
+  {
+   "id": 5648,
+   "college": "Cabrillo College",
+   "course_code": "ACCT 54C"
+  },
+  {
+   "id": 5649,
+   "college": "Cabrillo College",
+   "course_code": "ACCT 6"
+  },
+  {
+   "id": 5650,
+   "college": "Cabrillo College",
+   "course_code": "ACCT 91"
+  },
+  {
+   "id": 5651,
+   "college": "Cabrillo College",
+   "course_code": "ADAPT 90"
+  },
+  {
+   "id": 5652,
+   "college": "Cabrillo College",
+   "course_code": "ADAPT 94"
+  },
+  {
+   "id": 5653,
+   "college": "Cabrillo College",
+   "course_code": "AH 11H"
+  },
+  {
+   "id": 5654,
+   "college": "Cabrillo College",
+   "course_code": "AH 13H"
+  },
+  {
+   "id": 5655,
+   "college": "Cabrillo College",
+   "course_code": "AH 17"
+  },
+  {
+   "id": 5656,
+   "college": "Cabrillo College",
+   "course_code": "ALH 110"
+  },
+  {
+   "id": 5657,
+   "college": "Cabrillo College",
+   "course_code": "ANTHR 17"
+  },
+  {
+   "id": 5658,
+   "college": "Cabrillo College",
+   "course_code": "ANTHR 2"
+  },
+  {
+   "id": 5659,
+   "college": "Cabrillo College",
+   "course_code": "ANTHR 3"
+  },
+  {
+   "id": 5660,
+   "college": "Cabrillo College",
+   "course_code": "ANTHR 7"
+  },
+  {
+   "id": 5661,
+   "college": "Cabrillo College",
+   "course_code": "AP 15"
+  },
+  {
+   "id": 5662,
+   "college": "Cabrillo College",
+   "course_code": "AP 25"
+  },
+  {
+   "id": 5663,
+   "college": "Cabrillo College",
+   "course_code": "AP 32B"
+  },
+  {
+   "id": 5664,
+   "college": "Cabrillo College",
+   "course_code": "AP 401A"
+  },
+  {
+   "id": 5665,
+   "college": "Cabrillo College",
+   "course_code": "AP 409B"
+  },
+  {
+   "id": 5666,
+   "college": "Cabrillo College",
+   "course_code": "AP 426A"
+  },
+  {
+   "id": 5667,
+   "college": "Cabrillo College",
+   "course_code": "AP 446A"
+  },
+  {
+   "id": 5668,
+   "college": "Cabrillo College",
+   "course_code": "AP 447"
+  },
+  {
+   "id": 5669,
+   "college": "Cabrillo College",
+   "course_code": "AP 454"
+  },
+  {
+   "id": 5670,
+   "college": "Cabrillo College",
+   "course_code": "AP 46B"
+  },
+  {
+   "id": 5671,
+   "college": "Cabrillo College",
+   "course_code": "AP 52"
+  },
+  {
+   "id": 5672,
+   "college": "Cabrillo College",
+   "course_code": "AP 57"
+  },
+  {
+   "id": 5673,
+   "college": "Cabrillo College",
+   "course_code": "AP 9A"
+  },
+  {
+   "id": 5674,
+   "college": "Cabrillo College",
+   "course_code": "ART 10A"
+  },
+  {
+   "id": 5675,
+   "college": "Cabrillo College",
+   "course_code": "ART 13A"
+  },
+  {
+   "id": 5676,
+   "college": "Cabrillo College",
+   "course_code": "ART 25A"
+  },
+  {
+   "id": 5677,
+   "college": "Cabrillo College",
+   "course_code": "ART 26"
+  },
+  {
+   "id": 5678,
+   "college": "Cabrillo College",
+   "course_code": "ART 2A"
+  },
+  {
+   "id": 5679,
+   "college": "Cabrillo College",
+   "course_code": "ART 31B"
+  },
+  {
+   "id": 5680,
+   "college": "Cabrillo College",
+   "course_code": "ART 32B"
+  },
+  {
+   "id": 5681,
+   "college": "Cabrillo College",
+   "course_code": "ART 34A"
+  },
+  {
+   "id": 5682,
+   "college": "Cabrillo College",
+   "course_code": "ART 36"
+  },
+  {
+   "id": 5683,
+   "college": "Cabrillo College",
+   "course_code": "ART 38A"
+  },
+  {
+   "id": 5684,
+   "college": "Cabrillo College",
+   "course_code": "ART 3A"
+  },
+  {
+   "id": 5685,
+   "college": "Cabrillo College",
+   "course_code": "ART 41"
+  },
+  {
+   "id": 5686,
+   "college": "Cabrillo College",
+   "course_code": "ART 48"
+  },
+  {
+   "id": 5687,
+   "college": "Cabrillo College",
+   "course_code": "ART 495B"
+  },
+  {
+   "id": 5688,
+   "college": "Cabrillo College",
+   "course_code": "ART 51L"
+  },
+  {
+   "id": 5689,
+   "college": "Cabrillo College",
+   "course_code": "ART 72A"
+  },
+  {
+   "id": 5690,
+   "college": "Cabrillo College",
+   "course_code": "ART 75"
+  },
+  {
+   "id": 5691,
+   "college": "Cabrillo College",
+   "course_code": "ART 90"
+  },
+  {
+   "id": 5692,
+   "college": "Cabrillo College",
+   "course_code": "ART 95A"
+  },
+  {
+   "id": 5693,
+   "college": "Cabrillo College",
+   "course_code": "ART 9B"
+  },
+  {
+   "id": 5694,
+   "college": "Cabrillo College",
+   "course_code": "ASTRO 25"
+  },
+  {
+   "id": 5695,
+   "college": "Cabrillo College",
+   "course_code": "ASTRO 5"
+  },
+  {
+   "id": 5696,
+   "college": "Cabrillo College",
+   "course_code": "ASTRO 9A"
+  },
+  {
+   "id": 5697,
+   "college": "Cabrillo College",
+   "course_code": "ATH 15C"
+  },
+  {
+   "id": 5698,
+   "college": "Cabrillo College",
+   "course_code": "ATH 15F"
+  },
+  {
+   "id": 5699,
+   "college": "Cabrillo College",
+   "course_code": "ATH 15I"
+  },
+  {
+   "id": 5700,
+   "college": "Cabrillo College",
+   "course_code": "ATH 15M"
+  },
+  {
+   "id": 5701,
+   "college": "Cabrillo College",
+   "course_code": "ATH 15R"
+  },
+  {
+   "id": 5702,
+   "college": "Cabrillo College",
+   "course_code": "ATH 31"
+  },
+  {
+   "id": 5703,
+   "college": "Cabrillo College",
+   "course_code": "ATH 34"
+  },
+  {
+   "id": 5704,
+   "college": "Cabrillo College",
+   "course_code": "ATH 38"
+  },
+  {
+   "id": 5705,
+   "college": "Cabrillo College",
+   "course_code": "BIO 11B"
+  },
+  {
+   "id": 5706,
+   "college": "Cabrillo College",
+   "course_code": "BIO 13AL"
+  },
+  {
+   "id": 5707,
+   "college": "Cabrillo College",
+   "course_code": "BIO 41T"
+  },
+  {
+   "id": 5708,
+   "college": "Cabrillo College",
+   "course_code": "BIO 451"
+  },
+  {
+   "id": 5709,
+   "college": "Cabrillo College",
+   "course_code": "BIO 9A"
+  },
+  {
+   "id": 5710,
+   "college": "Cabrillo College",
+   "course_code": "BUS 20"
+  },
+  {
+   "id": 5711,
+   "college": "Cabrillo College",
+   "course_code": "BUS 488"
+  },
+  {
+   "id": 5712,
+   "college": "Cabrillo College",
+   "course_code": "BUS 50"
+  },
+  {
+   "id": 5713,
+   "college": "Cabrillo College",
+   "course_code": "BUS 67"
+  },
+  {
+   "id": 5714,
+   "college": "Cabrillo College",
+   "course_code": "BUS 82"
+  },
+  {
+   "id": 5715,
+   "college": "Cabrillo College",
+   "course_code": "BUS 9"
+  },
+  {
+   "id": 5716,
+   "college": "Cabrillo College",
+   "course_code": "CABT 101"
+  },
+  {
+   "id": 5717,
+   "college": "Cabrillo College",
+   "course_code": "CABT 108"
+  },
+  {
+   "id": 5718,
+   "college": "Cabrillo College",
+   "course_code": "CABT 110B"
+  },
+  {
+   "id": 5719,
+   "college": "Cabrillo College",
+   "course_code": "CABT 121"
+  },
+  {
+   "id": 5720,
+   "college": "Cabrillo College",
+   "course_code": "CABT 156"
+  },
+  {
+   "id": 5721,
+   "college": "Cabrillo College",
+   "course_code": "CABT 161"
+  },
+  {
+   "id": 5722,
+   "college": "Cabrillo College",
+   "course_code": "CABT 38"
+  },
+  {
+   "id": 5723,
+   "college": "Cabrillo College",
+   "course_code": "CABT 401"
+  },
+  {
+   "id": 5724,
+   "college": "Cabrillo College",
+   "course_code": "CABT 406"
+  },
+  {
+   "id": 5725,
+   "college": "Cabrillo College",
+   "course_code": "CABT 410B"
+  },
+  {
+   "id": 5726,
+   "college": "Cabrillo College",
+   "course_code": "CABT 430AD"
+  },
+  {
+   "id": 5727,
+   "college": "Cabrillo College",
+   "course_code": "CABT 462AM"
+  },
+  {
+   "id": 5728,
+   "college": "Cabrillo College",
+   "course_code": "CABT 99"
+  },
+  {
+   "id": 5729,
+   "college": "Cabrillo College",
+   "course_code": "CAHM 134"
+  },
+  {
+   "id": 5730,
+   "college": "Cabrillo College",
+   "course_code": "CAHM 151B"
+  },
+  {
+   "id": 5731,
+   "college": "Cabrillo College",
+   "course_code": "CAHM 157L"
+  },
+  {
+   "id": 5732,
+   "college": "Cabrillo College",
+   "course_code": "CAHM 167"
+  },
+  {
+   "id": 5733,
+   "college": "Cabrillo College",
+   "course_code": "CAHM 175"
+  },
+  {
+   "id": 5734,
+   "college": "Cabrillo College",
+   "course_code": "CAHM 35"
+  },
+  {
+   "id": 5735,
+   "college": "Cabrillo College",
+   "course_code": "CAHM 432"
+  },
+  {
+   "id": 5736,
+   "college": "Cabrillo College",
+   "course_code": "CAHM 448"
+  },
+  {
+   "id": 5737,
+   "college": "Cabrillo College",
+   "course_code": "CAHM 50B"
+  },
+  {
+   "id": 5738,
+   "college": "Cabrillo College",
+   "course_code": "CAHM 57"
+  },
+  {
+   "id": 5739,
+   "college": "Cabrillo College",
+   "course_code": "CAHM 64"
+  },
+  {
+   "id": 5740,
+   "college": "Cabrillo College",
+   "course_code": "CAHM 74"
+  },
+  {
+   "id": 5741,
+   "college": "Cabrillo College",
+   "course_code": "CAHM 99"
+  },
+  {
+   "id": 5742,
+   "college": "Cabrillo College",
+   "course_code": "CEM 151FC"
+  },
+  {
+   "id": 5743,
+   "college": "Cabrillo College",
+   "course_code": "CEM 154"
+  },
+  {
+   "id": 5744,
+   "college": "Cabrillo College",
+   "course_code": "CEM 159"
+  },
+  {
+   "id": 5745,
+   "college": "Cabrillo College",
+   "course_code": "CEM 162"
+  },
+  {
+   "id": 5746,
+   "college": "Cabrillo College",
+   "course_code": "CEM 162LD"
+  },
+  {
+   "id": 5747,
+   "college": "Cabrillo College",
+   "course_code": "CEM 162ST"
+  },
+  {
+   "id": 5748,
+   "college": "Cabrillo College",
+   "course_code": "CEM 165E"
+  },
+  {
+   "id": 5749,
+   "college": "Cabrillo College",
+   "course_code": "CEM 168A"
+  },
+  {
+   "id": 5750,
+   "college": "Cabrillo College",
+   "course_code": "CEM 175R"
+  },
+  {
+   "id": 5751,
+   "college": "Cabrillo College",
+   "course_code": "CEM 178B"
+  },
+  {
+   "id": 5752,
+   "college": "Cabrillo College",
+   "course_code": "CEM 450"
+  },
+  {
+   "id": 5753,
+   "college": "Cabrillo College",
+   "course_code": "CEM 451L"
+  },
+  {
+   "id": 5754,
+   "college": "Cabrillo College",
+   "course_code": "CEM 99"
+  },
+  {
+   "id": 5755,
+   "college": "Cabrillo College",
+   "course_code": "CHEM 12A"
+  },
+  {
+   "id": 5756,
+   "college": "Cabrillo College",
+   "course_code": "CHEM 12BL"
+  },
+  {
+   "id": 5757,
+   "college": "Cabrillo College",
+   "course_code": "CHEM 3"
+  },
+  {
+   "id": 5758,
+   "college": "Cabrillo College",
+   "course_code": "CHEM 32"
+  },
+  {
+   "id": 5759,
+   "college": "Cabrillo College",
+   "course_code": "CIS 103"
+  },
+  {
+   "id": 5760,
+   "college": "Cabrillo College",
+   "course_code": "CIS 15"
+  },
+  {
+   "id": 5761,
+   "college": "Cabrillo College",
+   "course_code": "CIS 32"
+  },
+  {
+   "id": 5762,
+   "college": "Cabrillo College",
+   "course_code": "CIS 35"
+  },
+  {
+   "id": 5763,
+   "college": "Cabrillo College",
+   "course_code": "CIS 430C"
+  },
+  {
+   "id": 5764,
+   "college": "Cabrillo College",
+   "course_code": "CIS 434A"
+  },
+  {
+   "id": 5765,
+   "college": "Cabrillo College",
+   "course_code": "CIS 435B"
+  },
+  {
+   "id": 5766,
+   "college": "Cabrillo College",
+   "course_code": "CIS 470B"
+  },
+  {
+   "id": 5767,
+   "college": "Cabrillo College",
+   "course_code": "CIS 483A"
+  },
+  {
+   "id": 5768,
+   "college": "Cabrillo College",
+   "course_code": "CIS 54"
+  },
+  {
+   "id": 5769,
+   "college": "Cabrillo College",
+   "course_code": "CIS 75"
+  },
+  {
+   "id": 5770,
+   "college": "Cabrillo College",
+   "course_code": "CIS 78"
+  },
+  {
+   "id": 5771,
+   "college": "Cabrillo College",
+   "course_code": "CIS 83"
+  },
+  {
+   "id": 5772,
+   "college": "Cabrillo College",
+   "course_code": "CIS 92"
+  },
+  {
+   "id": 5773,
+   "college": "Cabrillo College",
+   "course_code": "CJ 1"
+  },
+  {
+   "id": 5774,
+   "college": "Cabrillo College",
+   "course_code": "CJ 2"
+  },
+  {
+   "id": 5775,
+   "college": "Cabrillo College",
+   "course_code": "CJ 4"
+  },
+  {
+   "id": 5776,
+   "college": "Cabrillo College",
+   "course_code": "CJ 411"
+  },
+  {
+   "id": 5777,
+   "college": "Cabrillo College",
+   "course_code": "CJ 451"
+  },
+  {
+   "id": 5778,
+   "college": "Cabrillo College",
+   "course_code": "CJ 6"
+  },
+  {
+   "id": 5779,
+   "college": "Cabrillo College",
+   "course_code": "COMM 10"
+  },
+  {
+   "id": 5780,
+   "college": "Cabrillo College",
+   "course_code": "COMM 2"
+  },
+  {
+   "id": 5781,
+   "college": "Cabrillo College",
+   "course_code": "COMM 7"
+  },
+  {
+   "id": 5782,
+   "college": "Cabrillo College",
+   "course_code": "COMM C1000H"
+  },
+  {
+   "id": 5783,
+   "college": "Cabrillo College",
+   "course_code": "CS 1"
+  },
+  {
+   "id": 5784,
+   "college": "Cabrillo College",
+   "course_code": "CS 12J"
+  },
+  {
+   "id": 5785,
+   "college": "Cabrillo College",
+   "course_code": "CS 1L"
+  },
+  {
+   "id": 5786,
+   "college": "Cabrillo College",
+   "course_code": "CS 21"
+  },
+  {
+   "id": 5787,
+   "college": "Cabrillo College",
+   "course_code": "DANCE 10B"
+  },
+  {
+   "id": 5788,
+   "college": "Cabrillo College",
+   "course_code": "DANCE 12A"
+  },
+  {
+   "id": 5789,
+   "college": "Cabrillo College",
+   "course_code": "DANCE 14A"
+  },
+  {
+   "id": 5790,
+   "college": "Cabrillo College",
+   "course_code": "DANCE 15C"
+  },
+  {
+   "id": 5791,
+   "college": "Cabrillo College",
+   "course_code": "DANCE 17A"
+  },
+  {
+   "id": 5792,
+   "college": "Cabrillo College",
+   "course_code": "DANCE 17D"
+  },
+  {
+   "id": 5793,
+   "college": "Cabrillo College",
+   "course_code": "DANCE 19B"
+  },
+  {
+   "id": 5794,
+   "college": "Cabrillo College",
+   "course_code": "DANCE 21A"
+  },
+  {
+   "id": 5795,
+   "college": "Cabrillo College",
+   "course_code": "DANCE 2B"
+  },
+  {
+   "id": 5796,
+   "college": "Cabrillo College",
+   "course_code": "DANCE 3CP"
+  },
+  {
+   "id": 5797,
+   "college": "Cabrillo College",
+   "course_code": "DANCE 68"
+  },
+  {
+   "id": 5798,
+   "college": "Cabrillo College",
+   "course_code": "DANCE 81"
+  },
+  {
+   "id": 5799,
+   "college": "Cabrillo College",
+   "course_code": "DH 160"
+  },
+  {
+   "id": 5800,
+   "college": "Cabrillo College",
+   "course_code": "DH 162B"
+  },
+  {
+   "id": 5801,
+   "college": "Cabrillo College",
+   "course_code": "DH 164"
+  },
+  {
+   "id": 5802,
+   "college": "Cabrillo College",
+   "course_code": "DH 173"
+  },
+  {
+   "id": 5803,
+   "college": "Cabrillo College",
+   "course_code": "DH 181"
+  },
+  {
+   "id": 5804,
+   "college": "Cabrillo College",
+   "course_code": "DH 184A"
+  },
+  {
+   "id": 5805,
+   "college": "Cabrillo College",
+   "course_code": "DH 186B"
+  },
+  {
+   "id": 5806,
+   "college": "Cabrillo College",
+   "course_code": "DM 1"
+  },
+  {
+   "id": 5807,
+   "college": "Cabrillo College",
+   "course_code": "DM 12"
+  },
+  {
+   "id": 5808,
+   "college": "Cabrillo College",
+   "course_code": "DM 21"
+  },
+  {
+   "id": 5809,
+   "college": "Cabrillo College",
+   "course_code": "DM 4"
+  },
+  {
+   "id": 5810,
+   "college": "Cabrillo College",
+   "course_code": "DM 421"
+  },
+  {
+   "id": 5811,
+   "college": "Cabrillo College",
+   "course_code": "DM 436"
+  },
+  {
+   "id": 5812,
+   "college": "Cabrillo College",
+   "course_code": "DM 5"
+  },
+  {
+   "id": 5813,
+   "college": "Cabrillo College",
+   "course_code": "DM 72"
+  },
+  {
+   "id": 5814,
+   "college": "Cabrillo College",
+   "course_code": "DMCP 403"
+  },
+  {
+   "id": 5815,
+   "college": "Cabrillo College",
+   "course_code": "DMCP 411"
+  },
+  {
+   "id": 5816,
+   "college": "Cabrillo College",
+   "course_code": "ECE 134"
+  },
+  {
+   "id": 5817,
+   "college": "Cabrillo College",
+   "course_code": "ECE 134SN"
+  },
+  {
+   "id": 5818,
+   "college": "Cabrillo College",
+   "course_code": "ECE 142"
+  },
+  {
+   "id": 5819,
+   "college": "Cabrillo College",
+   "course_code": "ECE 156ART"
+  },
+  {
+   "id": 5820,
+   "college": "Cabrillo College",
+   "course_code": "ECE 156E"
+  },
+  {
+   "id": 5821,
+   "college": "Cabrillo College",
+   "course_code": "ECE 156J"
+  },
+  {
+   "id": 5822,
+   "college": "Cabrillo College",
+   "course_code": "ECE 156MTH"
+  },
+  {
+   "id": 5823,
+   "college": "Cabrillo College",
+   "course_code": "ECE 157B"
+  },
+  {
+   "id": 5824,
+   "college": "Cabrillo College",
+   "course_code": "ECE 31"
+  },
+  {
+   "id": 5825,
+   "college": "Cabrillo College",
+   "course_code": "ECE 401A"
+  },
+  {
+   "id": 5826,
+   "college": "Cabrillo College",
+   "course_code": "ECE 434"
+  },
+  {
+   "id": 5827,
+   "college": "Cabrillo College",
+   "course_code": "ECE 51"
+  },
+  {
+   "id": 5828,
+   "college": "Cabrillo College",
+   "course_code": "ECE 53L"
+  },
+  {
+   "id": 5829,
+   "college": "Cabrillo College",
+   "course_code": "ECONC 2002"
+  },
+  {
+   "id": 5830,
+   "college": "Cabrillo College",
+   "course_code": "EDUC 401B"
+  },
+  {
+   "id": 5831,
+   "college": "Cabrillo College",
+   "course_code": "EDUC 80L"
+  },
+  {
+   "id": 5832,
+   "college": "Cabrillo College",
+   "course_code": "ENGL 115"
+  },
+  {
+   "id": 5833,
+   "college": "Cabrillo College",
+   "course_code": "ENGL 12C"
+  },
+  {
+   "id": 5834,
+   "college": "Cabrillo College",
+   "course_code": "ENGL 14A"
+  },
+  {
+   "id": 5835,
+   "college": "Cabrillo College",
+   "course_code": "ENGL 14E"
+  },
+  {
+   "id": 5836,
+   "college": "Cabrillo College",
+   "course_code": "ENGL 1BMC"
+  },
+  {
+   "id": 5837,
+   "college": "Cabrillo College",
+   "course_code": "ENGL 24B"
+  },
+  {
+   "id": 5838,
+   "college": "Cabrillo College",
+   "course_code": "ENGL 2MC"
+  },
+  {
+   "id": 5839,
+   "college": "Cabrillo College",
+   "course_code": "ENGL 30B"
+  },
+  {
+   "id": 5840,
+   "college": "Cabrillo College",
+   "course_code": "ENGL 40"
+  },
+  {
+   "id": 5841,
+   "college": "Cabrillo College",
+   "course_code": "ENGL 46A"
+  },
+  {
+   "id": 5842,
+   "college": "Cabrillo College",
+   "course_code": "ENGL 49A"
+  },
+  {
+   "id": 5843,
+   "college": "Cabrillo College",
+   "course_code": "ENGL C1001H"
+  },
+  {
+   "id": 5844,
+   "college": "Cabrillo College",
+   "course_code": "ENGLC 1001"
+  },
+  {
+   "id": 5845,
+   "college": "Cabrillo College",
+   "course_code": "ENGLC 1002H"
+  },
+  {
+   "id": 5846,
+   "college": "Cabrillo College",
+   "course_code": "ENGR 15"
+  },
+  {
+   "id": 5847,
+   "college": "Cabrillo College",
+   "course_code": "ENGR 26"
+  },
+  {
+   "id": 5848,
+   "college": "Cabrillo College",
+   "course_code": "ENGR 35"
+  },
+  {
+   "id": 5849,
+   "college": "Cabrillo College",
+   "course_code": "ENGR 45"
+  },
+  {
+   "id": 5850,
+   "college": "Cabrillo College",
+   "course_code": "ES 10L"
+  },
+  {
+   "id": 5851,
+   "college": "Cabrillo College",
+   "course_code": "ES 50"
+  },
+  {
+   "id": 5852,
+   "college": "Cabrillo College",
+   "course_code": "ESL 331"
+  },
+  {
+   "id": 5853,
+   "college": "Cabrillo College",
+   "course_code": "ESL 342"
+  },
+  {
+   "id": 5854,
+   "college": "Cabrillo College",
+   "course_code": "ESL 353"
+  },
+  {
+   "id": 5855,
+   "college": "Cabrillo College",
+   "course_code": "ESL 370"
+  },
+  {
+   "id": 5856,
+   "college": "Cabrillo College",
+   "course_code": "ETECH 131"
+  },
+  {
+   "id": 5857,
+   "college": "Cabrillo College",
+   "course_code": "ETECH 40"
+  },
+  {
+   "id": 5858,
+   "college": "Cabrillo College",
+   "course_code": "ETECH 60"
+  },
+  {
+   "id": 5859,
+   "college": "Cabrillo College",
+   "course_code": "ETECH 75"
+  },
+  {
+   "id": 5860,
+   "college": "Cabrillo College",
+   "course_code": "ETHN 21AH"
+  },
+  {
+   "id": 5861,
+   "college": "Cabrillo College",
+   "course_code": "ETHN 27AN"
+  },
+  {
+   "id": 5862,
+   "college": "Cabrillo College",
+   "course_code": "ETHN 8"
+  },
+  {
+   "id": 5863,
+   "college": "Cabrillo College",
+   "course_code": "FR 1"
+  },
+  {
+   "id": 5864,
+   "college": "Cabrillo College",
+   "course_code": "FT 150"
+  },
+  {
+   "id": 5865,
+   "college": "Cabrillo College",
+   "course_code": "FT 183L"
+  },
+  {
+   "id": 5866,
+   "college": "Cabrillo College",
+   "course_code": "FT 189"
+  },
+  {
+   "id": 5867,
+   "college": "Cabrillo College",
+   "course_code": "FT 4"
+  },
+  {
+   "id": 5868,
+   "college": "Cabrillo College",
+   "course_code": "FT 6ES"
+  },
+  {
+   "id": 5869,
+   "college": "Cabrillo College",
+   "course_code": "GEOG 17"
+  },
+  {
+   "id": 5870,
+   "college": "Cabrillo College",
+   "course_code": "GEOG 3"
+  },
+  {
+   "id": 5871,
+   "college": "Cabrillo College",
+   "course_code": "GEOG 5"
+  },
+  {
+   "id": 5872,
+   "college": "Cabrillo College",
+   "course_code": "GEOL 20"
+  },
+  {
+   "id": 5873,
+   "college": "Cabrillo College",
+   "course_code": "GEOL 28"
+  },
+  {
+   "id": 5874,
+   "college": "Cabrillo College",
+   "course_code": "HIST 14H"
+  },
+  {
+   "id": 5875,
+   "college": "Cabrillo College",
+   "course_code": "HIST 16B"
+  },
+  {
+   "id": 5876,
+   "college": "Cabrillo College",
+   "course_code": "HIST 19B"
+  },
+  {
+   "id": 5877,
+   "college": "Cabrillo College",
+   "course_code": "HIST 21AH"
+  },
+  {
+   "id": 5878,
+   "college": "Cabrillo College",
+   "course_code": "HIST 23"
+  },
+  {
+   "id": 5879,
+   "college": "Cabrillo College",
+   "course_code": "HIST 25B"
+  },
+  {
+   "id": 5880,
+   "college": "Cabrillo College",
+   "course_code": "HIST 29A"
+  },
+  {
+   "id": 5881,
+   "college": "Cabrillo College",
+   "course_code": "HIST 2B"
+  },
+  {
+   "id": 5882,
+   "college": "Cabrillo College",
+   "course_code": "HIST 4B"
+  },
+  {
+   "id": 5883,
+   "college": "Cabrillo College",
+   "course_code": "HISTC 1001"
+  },
+  {
+   "id": 5884,
+   "college": "Cabrillo College",
+   "course_code": "HISTC 1002H"
+  },
+  {
+   "id": 5885,
+   "college": "Cabrillo College",
+   "course_code": "HORT 125"
+  },
+  {
+   "id": 5886,
+   "college": "Cabrillo College",
+   "course_code": "HORT 143A"
+  },
+  {
+   "id": 5887,
+   "college": "Cabrillo College",
+   "course_code": "HORT 160B"
+  },
+  {
+   "id": 5888,
+   "college": "Cabrillo College",
+   "course_code": "HORT 173"
+  },
+  {
+   "id": 5889,
+   "college": "Cabrillo College",
+   "course_code": "HORT 1B"
+  },
+  {
+   "id": 5890,
+   "college": "Cabrillo College",
+   "course_code": "HORT 38AG"
+  },
+  {
+   "id": 5891,
+   "college": "Cabrillo College",
+   "course_code": "HORT 52"
+  },
+  {
+   "id": 5892,
+   "college": "Cabrillo College",
+   "course_code": "HORT 62"
+  },
+  {
+   "id": 5893,
+   "college": "Cabrillo College",
+   "course_code": "HORT 66"
+  },
+  {
+   "id": 5894,
+   "college": "Cabrillo College",
+   "course_code": "HS 10"
+  },
+  {
+   "id": 5895,
+   "college": "Cabrillo College",
+   "course_code": "HS 131"
+  },
+  {
+   "id": 5896,
+   "college": "Cabrillo College",
+   "course_code": "HS 23"
+  },
+  {
+   "id": 5897,
+   "college": "Cabrillo College",
+   "course_code": "HS 431"
+  },
+  {
+   "id": 5898,
+   "college": "Cabrillo College",
+   "course_code": "HSERV 161"
+  },
+  {
+   "id": 5899,
+   "college": "Cabrillo College",
+   "course_code": "HSERV 164"
+  },
+  {
+   "id": 5900,
+   "college": "Cabrillo College",
+   "course_code": "HSERV 50"
+  },
+  {
+   "id": 5901,
+   "college": "Cabrillo College",
+   "course_code": "HSERV 53"
+  },
+  {
+   "id": 5902,
+   "college": "Cabrillo College",
+   "course_code": "HSERV 56A"
+  },
+  {
+   "id": 5903,
+   "college": "Cabrillo College",
+   "course_code": "ITAL 1"
+  },
+  {
+   "id": 5904,
+   "college": "Cabrillo College",
+   "course_code": "JOURN 21"
+  },
+  {
+   "id": 5905,
+   "college": "Cabrillo College",
+   "course_code": "JOURN 435"
+  },
+  {
+   "id": 5906,
+   "college": "Cabrillo College",
+   "course_code": "JOURN 54B"
+  },
+  {
+   "id": 5907,
+   "college": "Cabrillo College",
+   "course_code": "KIN 10A"
+  },
+  {
+   "id": 5908,
+   "college": "Cabrillo College",
+   "course_code": "KIN 10BL"
+  },
+  {
+   "id": 5909,
+   "college": "Cabrillo College",
+   "course_code": "KIN 12"
+  },
+  {
+   "id": 5910,
+   "college": "Cabrillo College",
+   "course_code": "KIN 17"
+  },
+  {
+   "id": 5911,
+   "college": "Cabrillo College",
+   "course_code": "KIN 23A"
+  },
+  {
+   "id": 5912,
+   "college": "Cabrillo College",
+   "course_code": "KIN 27A"
+  },
+  {
+   "id": 5913,
+   "college": "Cabrillo College",
+   "course_code": "KIN 37A"
+  },
+  {
+   "id": 5914,
+   "college": "Cabrillo College",
+   "course_code": "KIN 38B"
+  },
+  {
+   "id": 5915,
+   "college": "Cabrillo College",
+   "course_code": "KIN 4"
+  },
+  {
+   "id": 5916,
+   "college": "Cabrillo College",
+   "course_code": "KIN 40C"
+  },
+  {
+   "id": 5917,
+   "college": "Cabrillo College",
+   "course_code": "KIN 41B"
+  },
+  {
+   "id": 5918,
+   "college": "Cabrillo College",
+   "course_code": "KIN 42C"
+  },
+  {
+   "id": 5919,
+   "college": "Cabrillo College",
+   "course_code": "KIN 43C"
+  },
+  {
+   "id": 5920,
+   "college": "Cabrillo College",
+   "course_code": "KIN 47B"
+  },
+  {
+   "id": 5921,
+   "college": "Cabrillo College",
+   "course_code": "KIN 48B"
+  },
+  {
+   "id": 5922,
+   "college": "Cabrillo College",
+   "course_code": "KIN 4LC"
+  },
+  {
+   "id": 5923,
+   "college": "Cabrillo College",
+   "course_code": "KIN 50A"
+  },
+  {
+   "id": 5924,
+   "college": "Cabrillo College",
+   "course_code": "KIN 51A"
+  },
+  {
+   "id": 5925,
+   "college": "Cabrillo College",
+   "course_code": "KIN 53B"
+  },
+  {
+   "id": 5926,
+   "college": "Cabrillo College",
+   "course_code": "KIN 54B"
+  },
+  {
+   "id": 5927,
+   "college": "Cabrillo College",
+   "course_code": "KIN 56A"
+  },
+  {
+   "id": 5928,
+   "college": "Cabrillo College",
+   "course_code": "KIN 60A"
+  },
+  {
+   "id": 5929,
+   "college": "Cabrillo College",
+   "course_code": "KIN 61A"
+  },
+  {
+   "id": 5930,
+   "college": "Cabrillo College",
+   "course_code": "KIN 63A"
+  },
+  {
+   "id": 5931,
+   "college": "Cabrillo College",
+   "course_code": "KIN 65A"
+  },
+  {
+   "id": 5932,
+   "college": "Cabrillo College",
+   "course_code": "KIN 7"
+  },
+  {
+   "id": 5933,
+   "college": "Cabrillo College",
+   "course_code": "LIBR 10H"
+  },
+  {
+   "id": 5934,
+   "college": "Cabrillo College",
+   "course_code": "MA 102"
+  },
+  {
+   "id": 5935,
+   "college": "Cabrillo College",
+   "course_code": "MA 130A"
+  },
+  {
+   "id": 5936,
+   "college": "Cabrillo College",
+   "course_code": "MA 135"
+  },
+  {
+   "id": 5937,
+   "college": "Cabrillo College",
+   "course_code": "MA 184"
+  },
+  {
+   "id": 5938,
+   "college": "Cabrillo College",
+   "course_code": "MA 435GE"
+  },
+  {
+   "id": 5939,
+   "college": "Cabrillo College",
+   "course_code": "MATH 14"
+  },
+  {
+   "id": 5940,
+   "college": "Cabrillo College",
+   "course_code": "MATH 20"
+  },
+  {
+   "id": 5941,
+   "college": "Cabrillo College",
+   "course_code": "MATH 5A"
+  },
+  {
+   "id": 5942,
+   "college": "Cabrillo College",
+   "course_code": "MATH 6"
+  },
+  {
+   "id": 5943,
+   "college": "Cabrillo College",
+   "course_code": "MUS 10"
+  },
+  {
+   "id": 5944,
+   "college": "Cabrillo College",
+   "course_code": "MUS 12"
+  },
+  {
+   "id": 5945,
+   "college": "Cabrillo College",
+   "course_code": "MUS 17A"
+  },
+  {
+   "id": 5946,
+   "college": "Cabrillo College",
+   "course_code": "MUS 17LD"
+  },
+  {
+   "id": 5947,
+   "college": "Cabrillo College",
+   "course_code": "MUS 18CB"
+  },
+  {
+   "id": 5948,
+   "college": "Cabrillo College",
+   "course_code": "MUS 1M"
+  },
+  {
+   "id": 5949,
+   "college": "Cabrillo College",
+   "course_code": "MUS 22A"
+  },
+  {
+   "id": 5950,
+   "college": "Cabrillo College",
+   "course_code": "MUS 23LIT"
+  },
+  {
+   "id": 5951,
+   "college": "Cabrillo College",
+   "course_code": "MUS 28"
+  },
+  {
+   "id": 5952,
+   "college": "Cabrillo College",
+   "course_code": "MUS 31A"
+  },
+  {
+   "id": 5953,
+   "college": "Cabrillo College",
+   "course_code": "MUS 31SP"
+  },
+  {
+   "id": 5954,
+   "college": "Cabrillo College",
+   "course_code": "MUS 36"
+  },
+  {
+   "id": 5955,
+   "college": "Cabrillo College",
+   "course_code": "MUS 3M"
+  },
+  {
+   "id": 5956,
+   "college": "Cabrillo College",
+   "course_code": "MUS 431A"
+  },
+  {
+   "id": 5957,
+   "college": "Cabrillo College",
+   "course_code": "MUS 457A"
+  },
+  {
+   "id": 5958,
+   "college": "Cabrillo College",
+   "course_code": "MUS 459B"
+  },
+  {
+   "id": 5959,
+   "college": "Cabrillo College",
+   "course_code": "MUS 5"
+  },
+  {
+   "id": 5960,
+   "college": "Cabrillo College",
+   "course_code": "MUS 51A"
+  },
+  {
+   "id": 5961,
+   "college": "Cabrillo College",
+   "course_code": "MUS 51D"
+  },
+  {
+   "id": 5962,
+   "college": "Cabrillo College",
+   "course_code": "MUS 56M"
+  },
+  {
+   "id": 5963,
+   "college": "Cabrillo College",
+   "course_code": "MUS 57NS"
+  },
+  {
+   "id": 5964,
+   "college": "Cabrillo College",
+   "course_code": "MUS 59B"
+  },
+  {
+   "id": 5965,
+   "college": "Cabrillo College",
+   "course_code": "MUS 62"
+  },
+  {
+   "id": 5966,
+   "college": "Cabrillo College",
+   "course_code": "MUS 68CP"
+  },
+  {
+   "id": 5967,
+   "college": "Cabrillo College",
+   "course_code": "MUS 77"
+  },
+  {
+   "id": 5968,
+   "college": "Cabrillo College",
+   "course_code": "MUS 99"
+  },
+  {
+   "id": 5969,
+   "college": "Cabrillo College",
+   "course_code": "NUTR 120"
+  },
+  {
+   "id": 5970,
+   "college": "Cabrillo College",
+   "course_code": "OCEAN 10"
+  },
+  {
+   "id": 5971,
+   "college": "Cabrillo College",
+   "course_code": "OCEAN 30"
+  },
+  {
+   "id": 5972,
+   "college": "Cabrillo College",
+   "course_code": "PHILO 12"
+  },
+  {
+   "id": 5973,
+   "college": "Cabrillo College",
+   "course_code": "PHILO 16"
+  },
+  {
+   "id": 5974,
+   "college": "Cabrillo College",
+   "course_code": "PHILO 19"
+  },
+  {
+   "id": 5975,
+   "college": "Cabrillo College",
+   "course_code": "PHILO 49"
+  },
+  {
+   "id": 5976,
+   "college": "Cabrillo College",
+   "course_code": "PHILO 8"
+  },
+  {
+   "id": 5977,
+   "college": "Cabrillo College",
+   "course_code": "PHYS 10L"
+  },
+  {
+   "id": 5978,
+   "college": "Cabrillo College",
+   "course_code": "PHYS 2A"
+  },
+  {
+   "id": 5979,
+   "college": "Cabrillo College",
+   "course_code": "PHYS 4B"
+  },
+  {
+   "id": 5980,
+   "college": "Cabrillo College",
+   "course_code": "POLSC 1000"
+  },
+  {
+   "id": 5981,
+   "college": "Cabrillo College",
+   "course_code": "PS 3"
+  },
+  {
+   "id": 5982,
+   "college": "Cabrillo College",
+   "course_code": "PSYCC 1000"
+  },
+  {
+   "id": 5983,
+   "college": "Cabrillo College",
+   "course_code": "PSYCH 26"
+  },
+  {
+   "id": 5984,
+   "college": "Cabrillo College",
+   "course_code": "PSYCH 31"
+  },
+  {
+   "id": 5985,
+   "college": "Cabrillo College",
+   "course_code": "PSYCH 39"
+  },
+  {
+   "id": 5986,
+   "college": "Cabrillo College",
+   "course_code": "PSYCH 6"
+  },
+  {
+   "id": 5987,
+   "college": "Cabrillo College",
+   "course_code": "RT 185"
+  },
+  {
+   "id": 5988,
+   "college": "Cabrillo College",
+   "course_code": "RT 189A"
+  },
+  {
+   "id": 5989,
+   "college": "Cabrillo College",
+   "course_code": "RT 190B"
+  },
+  {
+   "id": 5990,
+   "college": "Cabrillo College",
+   "course_code": "RT 191B"
+  },
+  {
+   "id": 5991,
+   "college": "Cabrillo College",
+   "course_code": "RT 50B"
+  },
+  {
+   "id": 5992,
+   "college": "Cabrillo College",
+   "course_code": "RT 51L"
+  },
+  {
+   "id": 5993,
+   "college": "Cabrillo College",
+   "course_code": "RT 53BL"
+  },
+  {
+   "id": 5994,
+   "college": "Cabrillo College",
+   "course_code": "RT 60"
+  },
+  {
+   "id": 5995,
+   "college": "Cabrillo College",
+   "course_code": "RT 61L"
+  },
+  {
+   "id": 5996,
+   "college": "Cabrillo College",
+   "course_code": "RT 63BL"
+  },
+  {
+   "id": 5997,
+   "college": "Cabrillo College",
+   "course_code": "RT 71"
+  },
+  {
+   "id": 5998,
+   "college": "Cabrillo College",
+   "course_code": "RT 73"
+  },
+  {
+   "id": 5999,
+   "college": "Cabrillo College",
+   "course_code": "SOC 1"
+  },
+  {
+   "id": 6000,
+   "college": "Cabrillo College",
+   "course_code": "SOC 12"
+  },
+  {
+   "id": 6001,
+   "college": "Cabrillo College",
+   "course_code": "SOC 2H"
+  },
+  {
+   "id": 6002,
+   "college": "Cabrillo College",
+   "course_code": "SOC 8"
+  },
+  {
+   "id": 6003,
+   "college": "Cabrillo College",
+   "course_code": "SPAN 10A"
+  },
+  {
+   "id": 6004,
+   "college": "Cabrillo College",
+   "course_code": "SPAN 17"
+  },
+  {
+   "id": 6005,
+   "college": "Cabrillo College",
+   "course_code": "SPAN 26"
+  },
+  {
+   "id": 6006,
+   "college": "Cabrillo College",
+   "course_code": "SPAN 3S"
+  },
+  {
+   "id": 6007,
+   "college": "Cabrillo College",
+   "course_code": "SPAN 6A"
+  },
+  {
+   "id": 6008,
+   "college": "Cabrillo College",
+   "course_code": "STATC 1000"
+  },
+  {
+   "id": 6009,
+   "college": "Cabrillo College",
+   "course_code": "TA 10C"
+  },
+  {
+   "id": 6010,
+   "college": "Cabrillo College",
+   "course_code": "TA 13A"
+  },
+  {
+   "id": 6011,
+   "college": "Cabrillo College",
+   "course_code": "TA 17"
+  },
+  {
+   "id": 6012,
+   "college": "Cabrillo College",
+   "course_code": "TA 28"
+  },
+  {
+   "id": 6013,
+   "college": "Cabrillo College",
+   "course_code": "TA 31"
+  },
+  {
+   "id": 6014,
+   "college": "Cabrillo College",
+   "course_code": "TA 35"
+  },
+  {
+   "id": 6015,
+   "college": "Cabrillo College",
+   "course_code": "TA 75"
+  },
+  {
+   "id": 6016,
+   "college": "Cabrillo College",
+   "course_code": "VAPA 479"
+  },
+  {
+   "id": 6017,
+   "college": "Cabrillo College",
+   "course_code": "WS 1"
+  },
+  {
+   "id": 6018,
+   "college": "Cabrillo College",
+   "course_code": "WS 5"
+  }
+ ],
+ "rollback": "delete from public.course_outcomes where id in (4895, 4896, 4897, 4898, 4899, 4900, 4901, 4902, 4903, 4904, 4905, 4906, 4907, 4908, 4909, 4910, 4911, 4912, 4913, 4914, 4915, 4916, 4917, 4918, 4919, 4920, 4921, 4922, 4923, 4924, 4925, 4926, 4927, 4928, 4929, 4930, 4931, 4932, 4933, 4934, 4935, 4936, 4937, 4938, 4939, 4940, 4941, 4942, 4943, 4944, 4945, 4946, 4947, 4948, 4949, 4950, 4951, 4952, 4953, 4954, 4955, 4956, 4957, 4958, 4959, 4960, 4961, 4962, 4963, 4964, 4965, 4966, 4967, 4968, 4969, 4970, 4971, 4972, 4973, 4974, 4975, 4976, 4977, 4978, 4979, 4980, 4981, 4982, 4983, 4984, 4985, 4986, 4987, 4988, 4989, 4990, 4991, 4992, 4993, 4994, 4995, 4996, 4997, 4998, 4999, 5000, 5001, 5002, 5003, 5004, 5005, 5006, 5007, 5008, 5009, 5010, 5011, 5012, 5013, 5014, 5015, 5016, 5017, 5018, 5019, 5020, 5021, 5022, 5023, 5024, 5025, 5026, 5027, 5028, 5029, 5030, 5031, 5032, 5033, 5034, 5035, 5036, 5037, 5038, 5039, 5040, 5041, 5042, 5043, 5044, 5045, 5046, 5047, 5048, 5049, 5050, 5051, 5052, 5053, 5054, 5055, 5056, 5057, 5058, 5059, 5060, 5061, 5062, 5063, 5064, 5065, 5066, 5067, 5068, 5069, 5070, 5071, 5072, 5073, 5074, 5075, 5076, 5077, 5078, 5079, 5080, 5081, 5082, 5083, 5084, 5085, 5086, 5087, 5088, 5089, 5090, 5091, 5092, 5093, 5094, 5095, 5096, 5097, 5098, 5099, 5100, 5101, 5102, 5103, 5104, 5105, 5106, 5107, 5108, 5109, 5110, 5111, 5112, 5113, 5114, 5115, 5116, 5117, 5118, 5119, 5120, 5121, 5122, 5123, 5124, 5125, 5126, 5127, 5128, 5129, 5130, 5131, 5132, 5133, 5134, 5135, 5136, 5137, 5138, 5139, 5140, 5141, 5142, 5143, 5144, 5145, 5146, 5147, 5148, 5149, 5150, 5151, 5152, 5153, 5154, 5155, 5156, 5157, 5158, 5159, 5160, 5161, 5162, 5163, 5164, 5165, 5166, 5167, 5168, 5169, 5170, 5171, 5172, 5173, 5174, 5175, 5176, 5177, 5178, 5179, 5180, 5181, 5182, 5183, 5184, 5185, 5186, 5187, 5188, 5189, 5190, 5191, 5192, 5193, 5194, 5195, 5196, 5197, 5198, 5199, 5200, 5201, 5202, 5203, 5204, 5205, 5206, 5207, 5208, 5209, 5210, 5211, 5212, 5213, 5214, 5215, 5216, 5217, 5218, 5219, 5220, 5221, 5222, 5223, 5224, 5225, 5226, 5227, 5228, 5229, 5230, 5231, 5232, 5233, 5234, 5235, 5236, 5237, 5238, 5239, 5240, 5241, 5242, 5243, 5244, 5245, 5246, 5247, 5248, 5249, 5250, 5251, 5252, 5253, 5254, 5255, 5256, 5257, 5258, 5259, 5260, 5261, 5262, 5263, 5264, 5265, 5266, 5267, 5268, 5269, 5270, 5271, 5272, 5273, 5274, 5275, 5276, 5277, 5278, 5279, 5280, 5281, 5282, 5283, 5284, 5285, 5286, 5287, 5288, 5289, 5290, 5291, 5292, 5293, 5294, 5295, 5296, 5297, 5298, 5299, 5300, 5301, 5302, 5303, 5304, 5305, 5306, 5307, 5308, 5309, 5310, 5311, 5312, 5313, 5314, 5315, 5316, 5317, 5318, 5319, 5320, 5321, 5322, 5323, 5324, 5325, 5326, 5327, 5328, 5329, 5330, 5331, 5332, 5333, 5334, 5335, 5336, 5337, 5338, 5339, 5340, 5341, 5342, 5343, 5344, 5345, 5346, 5347, 5348, 5349, 5350, 5351, 5352, 5353, 5354, 5355, 5356, 5357, 5358, 5359, 5360, 5361, 5362, 5363, 5364, 5365, 5366, 5367, 5368, 5369, 5370, 5371, 5372, 5373, 5374, 5375, 5376, 5377, 5378, 5379, 5380, 5381, 5382, 5383, 5384, 5385, 5386, 5387, 5388, 5389, 5390, 5391, 5392, 5393, 5394, 5395, 5396, 5397, 5398, 5399, 5400, 5401, 5402, 5403, 5404, 5405, 5406, 5407, 5408, 5409, 5410, 5411, 5412, 5413, 5414, 5415, 5416, 5417, 5418, 5419, 5420, 5421, 5422, 5423, 5424, 5425, 5426, 5427, 5428, 5429, 5430, 5431, 5432, 5433, 5434, 5435, 5436, 5437, 5438, 5439, 5440, 5441, 5442, 5443, 5444, 5445, 5446, 5447, 5448, 5449, 5450, 5451, 5452, 5453, 5454, 5455, 5456, 5457, 5458, 5459, 5460, 5461, 5462, 5463, 5464, 5465, 5466, 5467, 5468, 5469, 5470, 5471, 5472, 5473, 5474, 5475, 5476, 5477, 5478, 5479, 5480, 5481, 5482, 5483, 5484, 5485, 5486, 5487, 5488, 5489, 5490, 5491, 5492, 5493, 5494, 5495, 5496, 5497, 5498, 5499, 5500, 5501, 5502, 5503, 5504, 5505, 5506, 5507, 5508, 5509, 5510, 5511, 5512, 5513, 5514, 5515, 5516, 5517, 5518, 5519, 5520, 5521, 5522, 5523, 5524, 5525, 5526, 5527, 5528, 5529, 5530, 5531, 5532, 5533, 5534, 5535, 5536, 5537, 5538, 5539, 5540, 5541, 5542, 5543, 5544, 5545, 5546, 5547, 5548, 5549, 5550, 5551, 5552, 5553, 5554, 5555, 5556, 5557, 5558, 5559, 5560, 5561, 5562, 5563, 5564, 5565, 5566, 5567, 5568, 5569, 5570, 5571, 5572, 5573, 5574, 5575, 5576, 5577, 5578, 5579, 5580, 5581, 5582, 5583, 5584, 5585, 5586, 5587, 5588, 5589, 5590, 5591, 5592, 5593, 5594, 5595, 5596, 5597, 5598, 5599, 5600, 5601, 5602, 5603, 5604, 5605, 5606, 5607, 5608, 5609, 5610, 5611, 5612, 5613, 5614, 5615, 5616, 5617, 5618, 5619, 5620, 5621, 5622, 5623, 5624, 5625, 5626, 5627, 5628, 5629, 5630, 5631, 5632, 5633, 5634, 5635, 5636, 5637, 5638, 5639, 5640, 5641, 5642, 5643, 5644, 5645, 5646, 5647, 5648, 5649, 5650, 5651, 5652, 5653, 5654, 5655, 5656, 5657, 5658, 5659, 5660, 5661, 5662, 5663, 5664, 5665, 5666, 5667, 5668, 5669, 5670, 5671, 5672, 5673, 5674, 5675, 5676, 5677, 5678, 5679, 5680, 5681, 5682, 5683, 5684, 5685, 5686, 5687, 5688, 5689, 5690, 5691, 5692, 5693, 5694, 5695, 5696, 5697, 5698, 5699, 5700, 5701, 5702, 5703, 5704, 5705, 5706, 5707, 5708, 5709, 5710, 5711, 5712, 5713, 5714, 5715, 5716, 5717, 5718, 5719, 5720, 5721, 5722, 5723, 5724, 5725, 5726, 5727, 5728, 5729, 5730, 5731, 5732, 5733, 5734, 5735, 5736, 5737, 5738, 5739, 5740, 5741, 5742, 5743, 5744, 5745, 5746, 5747, 5748, 5749, 5750, 5751, 5752, 5753, 5754, 5755, 5756, 5757, 5758, 5759, 5760, 5761, 5762, 5763, 5764, 5765, 5766, 5767, 5768, 5769, 5770, 5771, 5772, 5773, 5774, 5775, 5776, 5777, 5778, 5779, 5780, 5781, 5782, 5783, 5784, 5785, 5786, 5787, 5788, 5789, 5790, 5791, 5792, 5793, 5794, 5795, 5796, 5797, 5798, 5799, 5800, 5801, 5802, 5803, 5804, 5805, 5806, 5807, 5808, 5809, 5810, 5811, 5812, 5813, 5814, 5815, 5816, 5817, 5818, 5819, 5820, 5821, 5822, 5823, 5824, 5825, 5826, 5827, 5828, 5829, 5830, 5831, 5832, 5833, 5834, 5835, 5836, 5837, 5838, 5839, 5840, 5841, 5842, 5843, 5844, 5845, 5846, 5847, 5848, 5849, 5850, 5851, 5852, 5853, 5854, 5855, 5856, 5857, 5858, 5859, 5860, 5861, 5862, 5863, 5864, 5865, 5866, 5867, 5868, 5869, 5870, 5871, 5872, 5873, 5874, 5875, 5876, 5877, 5878, 5879, 5880, 5881, 5882, 5883, 5884, 5885, 5886, 5887, 5888, 5889, 5890, 5891, 5892, 5893, 5894, 5895, 5896, 5897, 5898, 5899, 5900, 5901, 5902, 5903, 5904, 5905, 5906, 5907, 5908, 5909, 5910, 5911, 5912, 5913, 5914, 5915, 5916, 5917, 5918, 5919, 5920, 5921, 5922, 5923, 5924, 5925, 5926, 5927, 5928, 5929, 5930, 5931, 5932, 5933, 5934, 5935, 5936, 5937, 5938, 5939, 5940, 5941, 5942, 5943, 5944, 5945, 5946, 5947, 5948, 5949, 5950, 5951, 5952, 5953, 5954, 5955, 5956, 5957, 5958, 5959, 5960, 5961, 5962, 5963, 5964, 5965, 5966, 5967, 5968, 5969, 5970, 5971, 5972, 5973, 5974, 5975, 5976, 5977, 5978, 5979, 5980, 5981, 5982, 5983, 5984, 5985, 5986, 5987, 5988, 5989, 5990, 5991, 5992, 5993, 5994, 5995, 5996, 5997, 5998, 5999, 6000, 6001, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6010, 6011, 6012, 6013, 6014, 6015, 6016, 6017, 6018);"
+}

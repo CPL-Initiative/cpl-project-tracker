@@ -1,0 +1,362 @@
+{
+ "college": "Fullerton College",
+ "control_number": "36796",
+ "shape": "adt",
+ "title": "Child and Adolescent Development",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/child-development-educational-studies/child-and-adolescent-development-associate-in-arts-degree-for-transfer/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8459,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8459,
+    "output_tokens": 2969,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2969,
+  "output_tokens_details": {
+   "thinking_tokens": 950
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.09322,
+ "ms": 23799,
+ "seconds": 24.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 29,
+   "listed": 29,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    27.0,
+    27.0
+   ],
+   "stated": [
+    27.0,
+    27.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Child and Adolescent Development Associate in Arts Degree for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 27,
+    "max": 27
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Analyze and interpret development in various domains of child development (biosocial, psychosocial, and cognitive, including typical and atypical development), and generate knowledge of the domains into comprehensive understanding of child development.",
+    "Compare the major perspectives of psychology, including the areas of biological, behavioral, cognitive, psychodynamic and humanistic psychology.",
+    "Demonstrate an understanding of and ability to analyze descriptive statistics by formulating the mean, mode, median, range and standard deviation."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED CORE",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "CDES 120 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSY 161 F",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSY 161HF",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOSC 120 F",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST A: Select three courses",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 11,
+     "max": 11
+    },
+    "courses": [
+     {
+      "code": "ANTH 102 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH 102HF",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "CDES 201 F",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC 101 F",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC 101HF",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC 275 F",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC 275HF",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC 290 F",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC 290HF",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSY 139 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 101 F",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL 101HF",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST B: Select two courses",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CDES 115 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDES 122 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDES 125 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDES 140 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDES 141 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDES 204 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDES 210 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDES 225 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDES 261 F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "List A is printed as 'Select three courses (11 units)' over three rows: a long 'or' chain starting with ANTH 102 F (3 units, alternatives ANTH 102HF, CDES 201 F, SOC 101/101HF, SOC 275/275HF, SOC 290/290HF), PSY 139 F (3), and BIOL 101 F or BIOL 101HF (5). Since 3+3+5 = 11, the three rows appear effectively all required, with one course chosen from the first chain; recorded as choose_courses 3 with three entries. Reviewer should confirm.",
+   "The core note reads 'STAT C1000/H, PSY 161 F/HF and SOC 120 F are considered equivalent courses; however, SOSC 120 F is recommended for this degree.' 'SOC 120 F' appears to be a typo for SOSC 120 F, which is listed as an alternative.",
+   "The catalog prints units only on the first course of each 'or' group; alternative units are left null as not printed.",
+   "The 60-unit and 18-unit figures are the generic ADT requirements, not a printed degree total for this award; degree_total left null. Cal-GETC named as the GE pattern with no units printed.",
+   "The program outcomes come from the page's outcomes tab ('Outcome 1:' etc. prefixes removed).",
+   "The description mentions employment in child development programs, public and private pre-schools, and children's centers; these are workplaces rather than named careers, so careers left empty. Reviewer may wish to check."
+  ]
+ },
+ "extracted_run": "38675136988"
+}

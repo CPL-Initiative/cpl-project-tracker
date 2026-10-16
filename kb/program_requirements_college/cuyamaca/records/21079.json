@@ -1,0 +1,271 @@
+{
+ "college": "Cuyamaca College",
+ "control_number": "21079",
+ "shape": "certificate",
+ "title": "CADD Technology: Building Design Industry",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/environmental-applied-technology/cadd-technology/cadd-technology-building-design-industry-as-coa/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7302,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7302,
+    "output_tokens": 1999,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1999,
+  "output_tokens_details": {
+   "thinking_tokens": 579
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06919,
+ "ms": 16017,
+ "seconds": 16.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "CADD200",
+    "CADD201"
+   ],
+   "flagged": [
+    "CADD200",
+    "CADD201"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    24.0
+   ],
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Create 3D modeling objects of various orientations including sections and elevations of objects, and identify the relationships of objects or object features to demonstrate visualization proficiency.",
+    "Identify or describe the typical characteristics and uses of common construction or manufacturing materials, products and systems, document them in drawings, and make appropriate selections based on design project requirements.",
+    "Use the latest version of 2D/3D CADD and Solid Modeling software programs (AutoCAD and SolidWorks) to create industry standard architectural or engineering drawings.",
+    "Model the habits and attitudes for success in professional employment as a CADD technician including the preparation and presentation of a professional portfolio.",
+    "Demonstrate computation, communication, critical thinking, and problem-solving skills to perform effectively as a CADD technician in the field of architecture and/or the civil, electronic, mechanical, structural, and surveying engineering fields."
+   ],
+   "careers": [
+    "CAD Technician in the field of Architecture and Civil, Electronic, Mechanical, Structural, and Surveying Engineering"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Curriculum",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CADD-115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CADD-119",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Area of Emphasis: Building Design Industry",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CADD-127",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SURV-127",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CADD-131",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CADD-133",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CADD-200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "OH-200",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Select two of the following:",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CADD-128",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CADD-132",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CADD-201",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "OH-201",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The Certificate of Achievement section lists no courses; it states that students who complete only the courses required for the major including an area of emphasis qualify. Blocks and the 24-unit total are therefore read from the A.S. major tables (Core Curriculum plus Area of Emphasis: Building Design Industry).",
+   "The Area of Emphasis table prints a 'Core Courses 6' row, read as the 6 units of the Core Curriculum (CADD-115, CADD-119) counted inside the 24-unit total; the four required emphasis courses carry no printed block total.",
+   "The program learning outcomes are printed once for the whole program (degree and certificate); the certificate shares them.",
+   "CADD-200 and CADD-201 are printed as cross-listings with OH-200 and OH-201 and are not in the closed list, so they are flagged as catalog additions.",
+   "No units are printed beside the courses in the 'Select two of the following' list; the block total of 6 is printed.",
+   "The page prints no total for the certificate separate from the major's 'Total Units 24'."
+  ]
+ },
+ "extracted_run": "38748833332"
+}

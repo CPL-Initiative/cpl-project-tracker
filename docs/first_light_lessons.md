@@ -385,3 +385,22 @@ feature nobody can rediscover is a feature you've lost).
 A curation **flag nobody reads is a latent bug**, not a safeguard — wire it or
 delete it. And "lovely" is the real bar (not color-vs-B&W): the fix is a *quality
 gate + a better image*, not a blanket "drop the photos."
+
+## 2026-10-12 (S371 SkyMaple): the almanac's pointer was lost, and a gallery to curate with
+
+Sam asked where the painting catalog was and remembered a curation link. The hidden reviewer (type `almanac` on any COBI
+tab) still works, checked in a browser: 1 / 89, then 2 / 89 on the arrow. Its pointer had been in `CLAUDE.md` and left in
+a pare-down, so the feature was effectively lost: a hidden control needs a pointer that survives every pare-down, and
+this lessons doc plus the Sierra page lane now carry it.
+
+The almanac reviews; it cannot drop or add. The gallery (#2038) does both: 41 new Commons categories for California
+plein air painters, a runner that fetches 240-pixel thumbnails (an artifact cannot load an image from Commons, and the
+session cannot reach it), and a page whose marks save to its own store for a session to apply.
+
+## S372 SkyRedwood (2026-10-12): the painting gallery is published
+
+- **The gallery:** https://claude.ai/artifact/21o45k6MbPKsPMgNQk69hn, on the `db` capability; Sam's marks go to collection `picks`. 521 thumbnails (89 selected, 7 on Sierra, 432 California candidates) from `first-light-gallery-thumbs.yml` run 38279770124, none failed.
+- **An artifact version holds at most 511 files.** The page, `index.json` and 507 thumbnails fill it; the publish of the last 14 was refused (`manifest exceeds 512 entries`). They ride inline as data URIs in `thumbs-more.json`, and the page prefers an inline thumbnail. A gallery past about 500 paintings needs bundles, not one file per image.
+- **One write at a time per document.** Two quick clicks on one painting would overlap writes; `save()` now queues each painting's writes.
+- **A local preview without a charset garbles a middle dot** ("Â·"); the published skeleton declares UTF-8, and the tag line now joins with a comma.
+- **First Light's current set includes Ansel Adams's photograph** "The Tetons and the Snake River"; Sam may drop it in the gallery.

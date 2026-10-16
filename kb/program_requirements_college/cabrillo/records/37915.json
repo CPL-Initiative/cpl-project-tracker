@@ -1,0 +1,327 @@
+{
+ "college": "Cabrillo College",
+ "control_number": "37915",
+ "shape": "adt",
+ "title": "Environmental Science",
+ "award": "A.S. T Degree",
+ "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/environmental-science-associate-in-science-for-transfer-a-s-t-fall-2026",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10985,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10985,
+    "output_tokens": 2985,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2985,
+  "output_tokens_details": {
+   "thinking_tokens": 1115
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.10364,
+ "ms": 24328,
+ "seconds": 24.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 15,
+   "share": 0.933,
+   "missing": [
+    "ECON1B"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "ECONC2001"
+   ],
+   "flagged": [
+    "ECONC2001"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    74.0,
+    77.0
+   ],
+   "stated": [
+    61.0,
+    64.0
+   ],
+   "against": "degree",
+   "ge": [
+    34.0,
+    34.0
+   ],
+   "why": [],
+   "overlap": true,
+   "rescored": "Open Asks Sheet 82"
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Environmental Science Associate in Science for Transfer (A.S.-T)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 61,
+    "max": 64
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply core concepts from the natural sciences and mathematics to analyze environmental systems and processes.",
+    "Explain the formation, distribution, and importance of natural resources, including water, soil, and fossil fuels, and evaluate how their use impacts society and ecosystems.",
+    "Examine the environmental challenges posed by natural hazards such as earthquakes, volcanoes, landslides, and flooding, evaluating their interactions with society and ecological systems.",
+    "Analyze how economic, political, social justice, and Indigenous perspectives influence environmental policies and institutions.",
+    "Critically analyze data from lab work, field studies, and scientific publications using the principles of scientific inquiry."
+   ],
+   "careers": [
+    "Environmental scientists",
+    "academia",
+    "environmental law",
+    "environmental consulting",
+    "resource management"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Major Requirements - Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 29,
+     "max": 29
+    },
+    "courses": [
+     {
+      "code": "BIO9A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO9B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ES10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECONC2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS2A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS2B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Major Requirements - Core (GEOL10)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Geology or Geography",
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "GEOL10",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Major Requirements - Core (GEOG1 and GEOG1L)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Geology or Geography",
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "GEOG1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG1L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Major Requirements - Core",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "BUS9",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYCH2A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STATC1000",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Major Requirements - Core",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "MATH5A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH18",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECON 1B",
+    "why": "not in the text; catalog lists ECONC2001 - Principles of Microeconomics in its place"
+   }
+  ],
+  "notes": [
+   "The page prints 'Complete the following number of credits: 61-64' over the whole program including Cal-GETC 34; recorded as degree_total. No total for the major alone is printed, so total_units is null. The four core blocks print 29, 4, 3-5 and 4-5 credits (sum 40-43), which with Cal-GETC 34 exceeds 61-64; reviewer may wish to check, likely due to double-counting of courses in Cal-GETC.",
+   "The second core block ('Complete the following number of credits: 4', 'Select GEOG1 and GEOG1L or GEOL10') is recorded as two option blocks in option_group 'Geology or Geography': GEOL10 alone, or GEOG1 with GEOG1L. The printed 4 is shown on each option.",
+   "Statistics block: 'Note: students may take one of the statistics courses' read as choose one course; stated 3-5. Math block read as choose one (program map says 'Take one of the following'); stated 4-5.",
+   "ECONC2001 is not in the closed list (closed list has ECON 1B Introduction to Microeconomics); recorded as catalog_addition.",
+   "Codes are recorded as printed without spaces (e.g., BIO9A, STATC1000).",
+   "The text is cut off partway through the Program Map (Year 2 Spring, Cal-GETC Area 4 list); the Program Requirements section appears complete. Program Map GE courses were not placed in blocks."
+  ]
+ },
+ "extracted_run": "38565227455"
+}

@@ -1,0 +1,232 @@
+{
+ "college": "San Diego City College",
+ "control_number": "05264",
+ "shape": "degree",
+ "title": "Spanish",
+ "award": "A.A. Degree",
+ "source_url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15743",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9818,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9818,
+    "output_tokens": 1737,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1737,
+  "output_tokens_details": {
+   "thinking_tokens": 539
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07401,
+ "ms": 14871,
+ "seconds": 15.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    22.0,
+    26.0
+   ],
+   "stated": [
+    22.0,
+    26.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Spanish - Associate of Arts Degree: City",
+   "measure": "units",
+   "total_units": {
+    "min": 22,
+    "max": 26
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate preparedness for successful transition to the language program of four year institutions.",
+    "Demonstrate accurate language grammar including writing, speaking, and listening in the target language.",
+    "Discuss the social and cultural life of Language speakers in the target language.",
+    "Read and analyze writings in Language target areas.",
+    "Demonstrate through discussion and actions the acceptance and value of other peoples."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Courses Required for the Major: SPAN 101 and SPAN 102",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "First group (6.0-10.0 units)",
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "SPAN 101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 102",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Courses Required for the Major: CHIC 141A and CHIC 141B",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "First group (6.0-10.0 units)",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CHIC 141A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHIC 141B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Courses Required for the Major",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "SPAN 201",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SPAN 215",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 202",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SPAN 216",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 211",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints a 6.0-10.0 unit group: SPAN 101 AND SPAN 102 (10.0) OR CHIC 141A AND CHIC 141B (6.0); recorded as two blocks in one option_group. The option blocks have no printed names; names were supplied descriptively.",
+   "SPAN 201 OR SPAN 215 (5.0) and SPAN 202 OR SPAN 216 (5.0) are printed as separate 'or' rows without a 'sequence' heading, so they are recorded as alternatives on individual entries in the required block; a reviewer may check whether SPAN 201/202 vs SPAN 215/216 are intended as paired sequences.",
+   "The learning outcomes are printed for 'the Spanish Program' as a whole; the A.A. degree shares them.",
+   "Major total stated as 22.0-26.0 semester units; the Award Note states the degree requires a minimum of 60 units overall. No GE pattern is named in the text.",
+   "The text mentions 'opens new career opportunities' but names no specific career, so careers is empty."
+  ]
+ },
+ "extracted_run": "38252422845"
+}

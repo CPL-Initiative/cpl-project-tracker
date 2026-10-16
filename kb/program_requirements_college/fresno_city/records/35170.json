@@ -1,0 +1,293 @@
+{
+ "college": "Fresno City College",
+ "control_number": "35170",
+ "shape": "adt",
+ "title": "Nutrition and Dietetics",
+ "award": "A.S. T Degree",
+ "source_url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Food-and-Nutrition-Programs/6676",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6906,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6906,
+    "output_tokens": 3028,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3028,
+  "output_tokens_details": {
+   "thinking_tokens": 1357
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08818,
+ "ms": 24594,
+ "seconds": 24.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 16,
+   "listed": 16,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "FSM1"
+   ],
+   "flagged": [
+    "FSM1"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    25.5,
+    28.5
+   ],
+   "stated": [
+    26.5,
+    32.5
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 25.5-28.5; the catalog states 26.5-32.5"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Nutrition and Dietetics for Transfer, Associate in Science - Major #5683",
+   "measure": "units",
+   "total_units": {
+    "min": 26.5,
+    "max": 32.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate knowledge of the relationship of nutrients and lifestyle factors and the associated risk of chronic disease.",
+    "Demonstrate knowledge of physiological processes such as digestion, absorption, transport and metabolism of nutrients.",
+    "Recognize and separate scientifically supported information from misinformation.",
+    "Identify ways in which social factors influence food related choices, practices and beliefs."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 21,
+     "max": 21
+    },
+    "courses": [
+     {
+      "code": "BIOL 31",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 1B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FN 40",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Select at least one course from the list below:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "BIOL 20",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 21A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 21B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 22",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 28A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 29A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DS 23",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 42",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 42",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B: Select one course:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 2.5,
+     "max": 2.5
+    },
+    "courses": [
+     {
+      "code": "FN 1",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "FSM 1",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "List A is printed as grouped options: BIOL 21A AND BIOL 21B under a 9-unit group header, CHEM 28A AND CHEM 29A as a 5-unit pair, and DS 23 OR STAT C1000 OR MATH 42 OR PSYC 42 as a 3-4 unit choice. A '9.0 9' group header appears after BIOL 20 and before BIOL 21A, so BIOL 20 and BIOL 22 may form a 9-unit anatomy/physiology pair alternative to BIOL 21A+21B; grouping is ambiguous. Recorded as one choose-1 block with paired courses listed individually; reviewer should check.",
+   "FN 1 is printed at 2.5 units in the catalog while the state file stores 3 units. FN 1 is printed as 'same as FSM 1'; FSM 1 recorded as a cross-listed alternative not in the closed list.",
+   "MATH 42 and PSYC 42 are cross-listed ('same as'); both recorded as alternatives within the statistics choice.",
+   "The description states that students must complete 60 CSU-transferable units including Cal-GETC; this is the generic ADT requirement, not a printed degree total, so degree_total is null. Total 26.5-32.5 is the major total.",
+   "The page prints an outcomes paragraph in the description and a numbered 'Learning Outcome(s)' list; the numbered list was recorded (paragraph wording differs slightly, e.g. 'practices, and beliefs').",
+   "Source URL path references both 2026-27 and '2025-2026-FCC-Catalog'; confirm catalog year."
+  ]
+ },
+ "extracted_run": "38563582873"
+}

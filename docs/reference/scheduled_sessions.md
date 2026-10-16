@@ -1,7 +1,7 @@
 ---
 title: Scheduled sessions — what a session started by Sam's routine does
 date: 2026-10-04
-updated: 2026-10-06
+updated: 2026-10-14
 tags: [reference, scheduled-sessions, checkpoint, governance-team-enablement]
 ---
 
@@ -9,10 +9,22 @@ tags: [reference, scheduled-sessions, checkpoint, governance-team-enablement]
 
 **What it is.** Sam keeps the queue moving without pasting each opening line: a
 routine he created in his claude.ai Routines list starts a fresh session on a
-schedule (up to six a day). Each session reads the latest handoff, works the
-queue, checkpoints, and writes the next handoff, which the next firing reads.
+schedule. Each session reads the latest handoff, works the queue, checkpoints,
+and writes the next handoff, which the next firing reads.
 **No session starts another session.** The schedule is Sam's; to stop the run he
 pauses the routine.
+
+**Overnight, back to back (Sam, 2026-10-14, S393: "set it").** The routine fires
+hourly from 10:12 PM to 6:12 AM Pacific
+(`CRON_TZ=America/Los_Angeles 12 22,23,0,1,2,3,4,5,6 * * *`). A firing that finds
+a queue session still working ends in one line (*At the start*, step 1), so the
+sessions run one after another with at most an hour between them, about four or
+five a night. Once a day, a session that signed off at midnight left the queue
+idle until morning (S388, 2026-10-14). Sam edits the schedule himself: the
+platform refuses an agent's edit to a routine made in the Routines form
+(`https://claude.ai/code/routines/trig_01L8K64ZKYb5eALdT4HW6NAV`). A session Sam
+opened by hand that is still working at a firing makes that firing stand down;
+the next hour's firing tries again.
 
 **Sam's terms (2026-10-04, S329, his words):** *"be more aggressive and go with
 your recommendations more often--I'm guessing that about 80% of the time I go
@@ -77,6 +89,13 @@ deleting data, a production deploy outside a standing authorization, a change to
 the program's name or identity, funding figures published to colleges, who does
 what on the team, and any call a lane marks as his. A held item becomes a card;
 move on to the next queue item.
+
+**Extraction cost: a standing go up to $40 a college (Sam, 2026-10-14, S393,
+his words: *"limit is $40 per college"*; `cpl_memory`
+`sam-extraction-standing-go-40-per-college-2026-10-14`).** A college's
+program-requirements extraction whose estimate is $40 or less runs without a
+card; record its actual cost in the lane. Above $40 it is a card. It holds for a
+session Sam opens by hand too.
 
 **A permission-check denial is a hold.** Do not route around it. Record what was
 asked and why on the sheet, finish what does not depend on it, and move on. A

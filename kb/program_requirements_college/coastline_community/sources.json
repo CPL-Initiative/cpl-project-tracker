@@ -1,0 +1,5548 @@
+[
+ {
+  "control_number": "03723",
+  "title": "Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTC100",
+   "ACCTC101",
+   "ACCTC102",
+   "ACCTC116",
+   "BUSC100",
+   "BUSC101",
+   "BUSC110",
+   "BUSC118",
+   "BUSC120",
+   "BUSC139",
+   "BUSC141",
+   "BUSC150",
+   "BUSC281",
+   "BUSC282",
+   "BUSC283",
+   "BUSC284",
+   "CISC100",
+   "CISC105",
+   "CISC205",
+   "CMSTC100",
+   "CMSTC140",
+   "CMSTC150",
+   "COMMC1000",
+   "CYBRC101",
+   "ECONC170",
+   "ECONC175",
+   "MGMTC100",
+   "MGMTC115",
+   "PHILC140"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/management/management-associate-science-degree/",
+   "title": "Management, Associate of Science Degree < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 29,
+  "text_chars": 4815
+ },
+ {
+  "control_number": "03724",
+  "title": "Supervision",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.556,
+  "codes_found": [
+   "BUSC100",
+   "BUSC110",
+   "BUSC120",
+   "BUSC281",
+   "CMSTC100"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/business-applied-as/",
+   "title": "Business (Applied), Associate of Science Degree < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3427
+ },
+ {
+  "control_number": "03747",
+  "title": "Paralegal Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LAWC100",
+   "LAWC105",
+   "LAWC110",
+   "LAWC115",
+   "LAWC118",
+   "LAWC121",
+   "LAWC126",
+   "LAWC127",
+   "LAWC128",
+   "LAWC130",
+   "LAWC135",
+   "LAWC142",
+   "LAWC144",
+   "LAWC148",
+   "LAWC150",
+   "LAWC152",
+   "LAWC154",
+   "LAWC155",
+   "LAWC158",
+   "LAWC160",
+   "LAWC161",
+   "LAWC164",
+   "LAWC170",
+   "LAWC290"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/law-safety/paralegal/paralegal-studies-associate-arts-degree/",
+   "title": "Paralegal Studies, Associate of Arts Degree < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 6717
+ },
+ {
+  "control_number": "07510",
+  "title": "Aging Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGNGC120",
+   "AGNGC122",
+   "AGNGC131",
+   "AGNGC170",
+   "AGNGC223",
+   "AGNGC225",
+   "BIOLC120",
+   "FNC225",
+   "HLTHC223",
+   "HSVCC100",
+   "HSVCC274",
+   "HSVCC275",
+   "LAWC142",
+   "LAWC148",
+   "PSYCC170",
+   "SOCC120"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/aging-studies/aging-studies-aa/",
+   "title": "Aging Studies, Associate of Arts Degree < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 4673
+ },
+ {
+  "control_number": "11378",
+  "title": "Digital Media Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTC184",
+   "ARTC185",
+   "DMDC116",
+   "DMDC117",
+   "DMDC118",
+   "DMDC120",
+   "DMDC135",
+   "DMDC136"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/visual-performing-arts/digital-media-design/digital-media-design-coa/",
+   "title": "Digital Media Design, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2831
+ },
+ {
+  "control_number": "11459",
+  "title": "Entrepreneurship & Small Business Management",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "ACCTC116",
+   "BUSC100",
+   "BUSC110",
+   "BUSC120"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/management/supply-chain-management-associate-science-degree/",
+   "title": "Supply Chain Management, Associate of Science Degree < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.5
+   }
+  },
+  "listed": 5,
+  "text_chars": 4143
+ },
+ {
+  "control_number": "16736",
+  "title": "Retail Management",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "17982",
+  "title": "CSU General Education",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "17983",
+  "title": "CalGETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 155,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18002",
+  "title": "Liberal Studies (for Teaching)",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLC100",
+   "BIOLC100C",
+   "BIOLC100L",
+   "CHEMC140",
+   "COMMC1000",
+   "EDUCC101",
+   "EDUCC103",
+   "EDUCC104",
+   "EDUCC180",
+   "EDUCC200",
+   "EDUCC210",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGLC140",
+   "ENGLC143",
+   "ENGLC150",
+   "ENGLC155",
+   "ENGLC181",
+   "ENGLC270",
+   "ENGLC275",
+   "ETHSC123",
+   "ETHSC233",
+   "GEOGC100",
+   "GEOLC105",
+   "GEOLC105L",
+   "GEOLC106",
+   "HISTC123",
+   "HISTC150",
+   "HISTC161",
+   "HISTC170",
+   "HLTHC100",
+   "MATHC104",
+   "MATHC106",
+   "MUSC100",
+   "PHILC115",
+   "PHILC120",
+   "PHYSC140",
+   "POLSC1000",
+   "PSYCC116",
+   "SOCC233",
+   "THEAC100"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/education/education/liberal-studies-for-teaching-aa/",
+   "title": "Liberal Studies (for Teaching), Associate of Arts Degree < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 41,
+  "text_chars": 5480
+ },
+ {
+  "control_number": "18049",
+  "title": "Art",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTC100",
+   "ARTC101",
+   "ARTC105",
+   "ARTC110",
+   "ARTC111",
+   "ARTC120",
+   "ARTC121",
+   "ARTC122",
+   "ARTC150"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/visual-performing-arts/art/art-associate-arts-degree/",
+   "title": "Art, Associate of Arts Degree < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2752
+ },
+ {
+  "control_number": "18050",
+  "title": "Business Administration",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18051",
+  "title": "American Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTC102",
+   "CMSTC100",
+   "CMSTC101",
+   "CMSTC150",
+   "COMMC1000",
+   "ECONC110",
+   "ENGLC145",
+   "ENGLC150",
+   "ENGLC155",
+   "ETHSC100",
+   "ETHSC123",
+   "ETHSC233",
+   "GEOGC150",
+   "HISTC121",
+   "HISTC122",
+   "HISTC123",
+   "HISTC150",
+   "HISTC170",
+   "HISTC175",
+   "HUMC135",
+   "MUSC139",
+   "MUSC143",
+   "PHILC120",
+   "POLSC1000",
+   "PSCIC101",
+   "SOCC110",
+   "SOCC233"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/history/american-studies-associate-arts-degree/",
+   "title": "American Studies, Associate of Arts Degree < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 27,
+  "text_chars": 4020
+ },
+ {
+  "control_number": "18052",
+  "title": "Arts & Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARABC180",
+   "ARABC182",
+   "ARABC185",
+   "ARTC100",
+   "ARTC101",
+   "ARTC102",
+   "ARTC103",
+   "ARTC104",
+   "ARTC105",
+   "ARTC109",
+   "ARTC110",
+   "ARTC111",
+   "ARTC120",
+   "ARTC121",
+   "ARTC122",
+   "ARTC150",
+   "ARTC151",
+   "ARTC153",
+   "ARTC154",
+   "ARTC221",
+   "CHINC180",
+   "CHINC185",
+   "ENGLC101",
+   "ENGLC140",
+   "ENGLC143",
+   "ENGLC144",
+   "ENGLC145",
+   "ENGLC146",
+   "ENGLC150",
+   "ENGLC155",
+   "ENGLC181",
+   "ENGLC270",
+   "ENGLC275",
+   "ENGLC296",
+   "ENGLC297",
+   "ETHSC100",
+   "ETHSC123",
+   "ETHSC233",
+   "FRENC180",
+   "FRENC185",
+   "FRENC280",
+   "FRENC285",
+   "HISTC121",
+   "HISTC122",
+   "HISTC123",
+   "HISTC150",
+   "HISTC161",
+   "HISTC162",
+   "HISTC170",
+   "HISTC175",
+   "HISTC180",
+   "HISTC185",
+   "HUMC100",
+   "HUMC110",
+   "HUMC135",
+   "ITALC180",
+   "ITALC185",
+   "JAPNC180",
+   "JAPNC185",
+   "MUSC100",
+   "MUSC103",
+   "MUSC130",
+   "MUSC131",
+   "MUSC139",
+   "MUSC143",
+   "PHILC100",
+   "PHILC113",
+   "PHILC120",
+   "SOCC233",
+   "SPANC160",
+   "SPANC165",
+   "SPANC180",
+   "SPANC180A",
+   "SPANC180B",
+   "SPANC185",
+   "SPANC185A",
+   "SPANC185B",
+   "SPANC280",
+   "SPANC285",
+   "THEAC100",
+   "THEAC101",
+   "VIETC160",
+   "VIETC180",
+   "VIETC185",
+   "VIETC280",
+   "VIETC285"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/visual-performing-arts/art/arts-humanities-associate-arts-degree/",
+   "title": "Arts and Humanities, Associate of Arts Degree < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 86,
+  "text_chars": 5829
+ },
+ {
+  "control_number": "18053",
+  "title": "Communications",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18054",
+  "title": "Physical Education and Health",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "FNC225",
+   "HLTHC100",
+   "HLTHC223",
+   "KINC190",
+   "KINC289"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/general-education/associate-degree/",
+   "title": "Option 1 - AA/AS Local General Education < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.333
+   }
+  },
+  "listed": 6,
+  "text_chars": 3537
+ },
+ {
+  "control_number": "18055",
+  "title": "Science and Math",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.939,
+  "codes_found": [
+   "AGNGC122",
+   "ANTHC185",
+   "ASTRC100",
+   "ASTRC100L",
+   "BIOLC100",
+   "BIOLC100C",
+   "BIOLC100L",
+   "BIOLC102",
+   "BIOLC103",
+   "BIOLC104",
+   "BIOLC106",
+   "BIOLC120",
+   "BIOLC180",
+   "BIOLC185",
+   "BIOLC200",
+   "BIOLC220",
+   "BIOLC221",
+   "BIOLC225",
+   "BIOLC226",
+   "BIOLC281",
+   "BIOLC283",
+   "CHEMC100",
+   "CHEMC110",
+   "CHEMC130",
+   "CHEMC140",
+   "CHEMC220",
+   "CHEMC220L",
+   "CHEMC225",
+   "CHEMC225L",
+   "CHEMC281",
+   "ECOLC100",
+   "GEOGC180",
+   "GEOGC180L",
+   "GEOLC105",
+   "GEOLC105L",
+   "GEOLC106",
+   "GEOLC115",
+   "GEOLC185",
+   "GEOLC185L",
+   "MATHC100",
+   "MATHC103",
+   "MATHC104",
+   "MATHC106",
+   "MATHC115",
+   "MATHC120",
+   "MATHC140",
+   "MATHC150",
+   "MATHC170",
+   "MATHC180",
+   "MATHC185",
+   "MATHC280",
+   "MATHC285",
+   "MATHC291",
+   "MRSCC100",
+   "PHYSC110",
+   "PHYSC120",
+   "PHYSC125",
+   "PHYSC140",
+   "PHYSC185",
+   "PHYSC280",
+   "PHYSC285",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/science-mathematics/mathematics/science-math-aa/",
+   "title": "Science and Math, Associate of Arts Degree < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 66,
+  "text_chars": 5111
+ },
+ {
+  "control_number": "18056",
+  "title": "Social and Behavioral Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGNGC120",
+   "AGNGC170",
+   "ANTHC100",
+   "ANTHC120",
+   "ANTHC150",
+   "ANTHC175",
+   "ANTHC190",
+   "COUNC109",
+   "ECONC110",
+   "ECONC170",
+   "ECONC175",
+   "ETHSC100",
+   "ETHSC123",
+   "ETHSC233",
+   "FNC177",
+   "GEOGC100",
+   "GEOGC150",
+   "GEOGC185",
+   "HISTC115",
+   "HISTC121",
+   "HISTC122",
+   "HISTC123",
+   "HISTC150",
+   "HISTC161",
+   "HISTC162",
+   "HISTC170",
+   "HISTC175",
+   "HISTC180",
+   "HISTC185",
+   "HLTHC104",
+   "HLTHC230",
+   "HSVCC100",
+   "HSVCC101",
+   "HSVCC102",
+   "HSVCC104",
+   "HSVCC274",
+   "HSVCC275",
+   "POLSC1000",
+   "PSCIC101",
+   "PSCIC183",
+   "PSCIC185",
+   "PSCIC188",
+   "PSCIC200",
+   "PSYCC1000",
+   "PSYCC116",
+   "PSYCC118",
+   "PSYCC165",
+   "PSYCC170",
+   "PSYCC230",
+   "PSYCC250",
+   "PSYCC255",
+   "PSYCC260",
+   "PSYCC280",
+   "SOCC100",
+   "SOCC110",
+   "SOCC120",
+   "SOCC233"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/sociology/social-behavioral-sciences-aa/",
+   "title": "Social and Behavioral Sciences, Associate of Arts Degree < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 57,
+  "text_chars": 5062
+ },
+ {
+  "control_number": "18214",
+  "title": "Economics",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18215",
+  "title": "English",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.938,
+  "codes_found": [
+   "BUSC139",
+   "ENGLC1001",
+   "ENGLC101",
+   "ENGLC128",
+   "ENGLC129",
+   "ENGLC133",
+   "ENGLC136",
+   "ENGLC140",
+   "ENGLC143",
+   "ENGLC150",
+   "ENGLC155",
+   "ENGLC270",
+   "ENGLC275",
+   "ENGLC296",
+   "ENGLC297"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/language-literature/english/english-aa/",
+   "title": "English, Associate of Arts Degree < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3499
+ },
+ {
+  "control_number": "18216",
+  "title": "French",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "FRENC180",
+   "FRENC185"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/language-literature/french/",
+   "title": "French < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2516
+ },
+ {
+  "control_number": "18217",
+  "title": "Gerontology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.556,
+  "codes_found": [
+   "BIOLC120",
+   "FNC225",
+   "HLTHC223",
+   "PSYCC170",
+   "SOCC120"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/aging-studies/",
+   "title": "Aging Studies < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 6462
+ },
+ {
+  "control_number": "18218",
+  "title": "Health and Fitness",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 10,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18219",
+  "title": "History",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHC100",
+   "ANTHC120",
+   "ANTHC150",
+   "ANTHC175",
+   "ARTC100",
+   "ARTC101",
+   "ARTC102",
+   "ARTC103",
+   "ARTC104",
+   "ARTC153",
+   "ARTC154",
+   "ECONC110",
+   "ECONC170",
+   "ECONC175",
+   "ENGLC128",
+   "ENGLC129",
+   "ETHSC100",
+   "ETHSC123",
+   "ETHSC233",
+   "GEOGC100",
+   "GEOGC185",
+   "HISTC115",
+   "HISTC121",
+   "HISTC122",
+   "HISTC123",
+   "HISTC150",
+   "HISTC161",
+   "HISTC162",
+   "HISTC170",
+   "HISTC175",
+   "HISTC180",
+   "HISTC185",
+   "HUMC100",
+   "HUMC110",
+   "HUMC135",
+   "POLSC1000",
+   "PSCIC183",
+   "PSCIC185",
+   "PSCIC188",
+   "PSCIC200",
+   "SOCC100",
+   "SOCC233"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/history/history-aa/",
+   "title": "History, Associate of Arts Degree < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 42,
+  "text_chars": 4484
+ },
+ {
+  "control_number": "18220",
+  "title": "Human Services",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGNGC120",
+   "AGNGC170",
+   "ANTHC100",
+   "HLTHC104",
+   "HSVCC100",
+   "HSVCC101",
+   "HSVCC102",
+   "HSVCC104",
+   "HSVCC274",
+   "HSVCC275",
+   "PSYCC1000",
+   "PSYCC116",
+   "PSYCC170",
+   "SOCC100",
+   "SOCC110",
+   "SOCC120"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/human-services/human-services-aa/",
+   "title": "Human Services, Associate of Arts Degree < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3459
+ },
+ {
+  "control_number": "18221",
+  "title": "Mathematics",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18222",
+  "title": "Psychology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGNGC170",
+   "PSYCC1000",
+   "PSYCC116",
+   "PSYCC118",
+   "PSYCC165",
+   "PSYCC170",
+   "PSYCC250",
+   "PSYCC255",
+   "PSYCC260",
+   "PSYCC280",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/psychology/psychology-aa/",
+   "title": "Psychology, Associate of Arts Degree < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3131
+ },
+ {
+  "control_number": "18223",
+  "title": "Spanish",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SPANC180",
+   "SPANC180A",
+   "SPANC180B",
+   "SPANC185",
+   "SPANC185A",
+   "SPANC185B",
+   "SPANC280",
+   "SPANC285"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/language-literature/spanish/spanish-aa/",
+   "title": "Spanish, Associate of Arts Degree < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2689
+ },
+ {
+  "control_number": "18224",
+  "title": "Sociology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGNGC120",
+   "ANTHC100",
+   "ETHSC233",
+   "HSVCC100",
+   "HSVCC101",
+   "HSVCC102",
+   "HSVCC104",
+   "MGMTC115",
+   "SOCC100",
+   "SOCC110",
+   "SOCC120",
+   "SOCC233",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/sociology/sociology-aa/",
+   "title": "Sociology, Associate of Arts Degree < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3245
+ },
+ {
+  "control_number": "18719",
+  "title": "Process Technology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19423",
+  "title": "Real Estate Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "REC100",
+   "REC110",
+   "REC120",
+   "REC130",
+   "REC140",
+   "REC160"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/real-estate/real-estate-studies-certificate-achievement/",
+   "title": "Real Estate Studies, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2602
+ },
+ {
+  "control_number": "19424",
+  "title": "Real Estate Broker",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "REC100",
+   "REC105",
+   "REC110",
+   "REC120",
+   "REC130",
+   "REC140",
+   "REC160"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/real-estate/real-estate-broker-certificate-achievement/",
+   "title": "Real Estate Broker, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2802
+ },
+ {
+  "control_number": "19515",
+  "title": "Emergency Management Homeland Security",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "EMGTC101",
+   "EMGTC102",
+   "EMGTC105",
+   "EMGTC110",
+   "EMGTC120",
+   "EMGTC130",
+   "EMGTC172",
+   "EMGTC174"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/law-safety/emergency-management/emergency-management-homeland-security-criminal-justice-associate-arts-degree/",
+   "title": "Emergency Management/Homeland Security: Criminal Justice, Associate of Arts Degree < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3351
+ },
+ {
+  "control_number": "19516",
+  "title": "Emergency Management-Homeland Security",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "EMGTC101",
+   "EMGTC102",
+   "EMGTC105",
+   "EMGTC110",
+   "EMGTC120",
+   "EMGTC130",
+   "EMGTC140",
+   "EMGTC150",
+   "EMGTC160",
+   "EMGTC172",
+   "EMGTC174"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/law-safety/emergency-management/",
+   "title": "Emergency Management < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.5
+   }
+  },
+  "listed": 12,
+  "text_chars": 10219
+ },
+ {
+  "control_number": "20352",
+  "title": "Entrepreneurship and Small Business Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTC116",
+   "BUSC100",
+   "BUSC101",
+   "BUSC110",
+   "BUSC120",
+   "BUSC139",
+   "BUSC141",
+   "BUSC142",
+   "BUSC143",
+   "BUSC150",
+   "MGMTC100",
+   "MGMTC111",
+   "MGMTC115",
+   "MGMTC171"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/entrepreneurship-small-business-management-certificate-achievement/",
+   "title": "Entrepreneurship and Small Business Management, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3156
+ },
+ {
+  "control_number": "20353",
+  "title": "Supervision",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.556,
+  "codes_found": [
+   "BUSC100",
+   "BUSC110",
+   "BUSC120",
+   "BUSC281",
+   "CMSTC100"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/business-applied-as/",
+   "title": "Business (Applied), Associate of Science Degree < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3427
+ },
+ {
+  "control_number": "20356",
+  "title": "Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.967,
+  "codes_found": [
+   "ACCTC100",
+   "ACCTC101",
+   "ACCTC102",
+   "ACCTC116",
+   "BUSC100",
+   "BUSC101",
+   "BUSC110",
+   "BUSC118",
+   "BUSC120",
+   "BUSC139",
+   "BUSC141",
+   "BUSC150",
+   "BUSC281",
+   "BUSC282",
+   "BUSC283",
+   "BUSC284",
+   "CISC100",
+   "CISC105",
+   "CISC111",
+   "CISC205",
+   "CMSTC100",
+   "CMSTC150",
+   "COMMC1000",
+   "CYBRC101",
+   "ECONC170",
+   "ECONC175",
+   "MGMTC100",
+   "MGMTC115",
+   "PHILC140"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/management/management-applied-coa/",
+   "title": "Management (Applied), Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 30,
+  "text_chars": 4348
+ },
+ {
+  "control_number": "20357",
+  "title": "Retail Management",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTC116",
+   "BUSC150",
+   "BUSC283"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/management/management-certificate-achievement/",
+   "title": "Management, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 0.5
+   }
+  },
+  "listed": 3,
+  "text_chars": 3839
+ },
+ {
+  "control_number": "20364",
+  "title": "Process Technology",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20365",
+  "title": "Aging Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGNGC120",
+   "AGNGC122",
+   "AGNGC131",
+   "AGNGC170",
+   "AGNGC223",
+   "AGNGC225",
+   "BIOLC120",
+   "FNC225",
+   "HLTHC223",
+   "HSVCC100",
+   "HSVCC274",
+   "HSVCC275",
+   "LAWC142",
+   "LAWC148",
+   "PSYCC170",
+   "SOCC120"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/aging-studies/aging-studies-coa/",
+   "title": "Aging Studies, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 4461
+ },
+ {
+  "control_number": "20366",
+  "title": "Paralegal Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LAWC100",
+   "LAWC105",
+   "LAWC110",
+   "LAWC115",
+   "LAWC118",
+   "LAWC121",
+   "LAWC126",
+   "LAWC127",
+   "LAWC128",
+   "LAWC130",
+   "LAWC135",
+   "LAWC142",
+   "LAWC144",
+   "LAWC148",
+   "LAWC150",
+   "LAWC152",
+   "LAWC154",
+   "LAWC155",
+   "LAWC158",
+   "LAWC160",
+   "LAWC161",
+   "LAWC164",
+   "LAWC170",
+   "LAWC290"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/law-safety/paralegal/paralegal-studies-certificate-achievement/",
+   "title": "Paralegal Studies, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 5839
+ },
+ {
+  "control_number": "20372",
+  "title": "Building Codes Inspector",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BCIC100",
+   "BCIC101",
+   "BCIC102",
+   "BCIC103",
+   "BCIC104",
+   "BCIC105",
+   "BCIC106",
+   "BCIC107",
+   "BCIC108",
+   "BCIC111"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/law-safety/building-codes-inspector/building-codes-inspector-as/",
+   "title": "Building Codes Inspector, Associate of Science Degree < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3055
+ },
+ {
+  "control_number": "20373",
+  "title": "Building Codes Inspector",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BCIC100",
+   "BCIC101",
+   "BCIC102",
+   "BCIC103",
+   "BCIC104",
+   "BCIC105",
+   "BCIC106",
+   "BCIC107",
+   "BCIC108",
+   "BCIC111"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/law-safety/building-codes-inspector/building-codes-inspector-coa/",
+   "title": "Building Codes Inspector, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2811
+ },
+ {
+  "control_number": "20378",
+  "title": "Information Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CISC157",
+   "CYBRC101",
+   "ITC104",
+   "ITC110",
+   "ITC128",
+   "ITC158",
+   "ITC191",
+   "ITC198",
+   "ITC201",
+   "ITC202",
+   "ITC203",
+   "ITC275",
+   "ITC281",
+   "ITC282",
+   "ITC283",
+   "ITC295"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/information-technology/information-technology-as/",
+   "title": "Information Technology, Associate of Science Degree < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3579
+ },
+ {
+  "control_number": "20379",
+  "title": "Information Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CISC157",
+   "CYBRC101",
+   "ITC104",
+   "ITC110",
+   "ITC128",
+   "ITC158",
+   "ITC191",
+   "ITC198",
+   "ITC201",
+   "ITC202",
+   "ITC203",
+   "ITC275",
+   "ITC281",
+   "ITC282",
+   "ITC283",
+   "ITC295"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/information-technology/information-technology-coa/",
+   "title": "Information Technology, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3461
+ },
+ {
+  "control_number": "20382",
+  "title": "Cybersecurity",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.947,
+  "codes_found": [
+   "CISC157",
+   "CYBRC101",
+   "CYBRC132",
+   "CYBRC150",
+   "CYBRC160",
+   "CYBRC170",
+   "CYBRC225",
+   "CYBRC230",
+   "CYBRC234",
+   "CYBRC242",
+   "CYBRC250",
+   "CYBRC255",
+   "CYBRC260",
+   "CYBRC270",
+   "CYBRC280",
+   "ITC128",
+   "ITC158",
+   "ITC191"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/cybersecurity/cybersecurity-as/",
+   "title": "Cybersecurity, Associate of Science Degree < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 3786
+ },
+ {
+  "control_number": "20383",
+  "title": "Cybersecurity",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.947,
+  "codes_found": [
+   "CISC157",
+   "CYBRC101",
+   "CYBRC132",
+   "CYBRC150",
+   "CYBRC160",
+   "CYBRC170",
+   "CYBRC225",
+   "CYBRC230",
+   "CYBRC234",
+   "CYBRC242",
+   "CYBRC250",
+   "CYBRC255",
+   "CYBRC260",
+   "CYBRC270",
+   "CYBRC280",
+   "ITC128",
+   "ITC158",
+   "ITC191"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/cybersecurity/cybersecurity-coa/",
+   "title": "Cybersecurity, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 3663
+ },
+ {
+  "control_number": "20386",
+  "title": "Accounting: General Accounting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20387",
+  "title": "General Accounting",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20388",
+  "title": "Accounting: Bookkeeping",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTC100",
+   "ACCTC101",
+   "ACCTC102",
+   "ACCTC106",
+   "ACCTC107",
+   "ACCTC111",
+   "ACCTC112",
+   "ACCTC283",
+   "ACCTC284",
+   "BUSC100",
+   "CISC100",
+   "ENGLC103"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/accounting/accounting-bookkeeping-as/",
+   "title": "Accounting: Bookkeeping, Associate of Science Degree < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3010
+ },
+ {
+  "control_number": "20389",
+  "title": "Accounting: Bookkeeping",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTC100",
+   "ACCTC101",
+   "ACCTC102",
+   "ACCTC106",
+   "ACCTC107",
+   "ACCTC111",
+   "ACCTC112",
+   "ACCTC283",
+   "ACCTC284",
+   "BUSC100",
+   "CISC100",
+   "ENGLC103"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/accounting/accounting-bookkeeping-coa/",
+   "title": "Accounting: Bookkeeping, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2794
+ },
+ {
+  "control_number": "20390",
+  "title": "Accounting: Taxation",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20391",
+  "title": "Taxation",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "22939",
+  "title": "Supply Chain Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTC100",
+   "ACCTC101",
+   "ACCTC102",
+   "ACCTC116",
+   "BUSC100",
+   "BUSC101",
+   "BUSC110",
+   "BUSC118",
+   "BUSC120",
+   "BUSC139",
+   "BUSC141",
+   "BUSC281",
+   "BUSC282",
+   "BUSC283",
+   "BUSC284",
+   "CISC100",
+   "CISC250",
+   "CMSTC100",
+   "CMSTC150",
+   "COMMC1000",
+   "CYBRC101",
+   "ECONC170",
+   "ECONC175",
+   "ENGLC136",
+   "MGMTC100",
+   "MGMTC115",
+   "MGMTC171",
+   "MGMTC172",
+   "PHILC140"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/management/supply-chain-management-associate-science-degree/",
+   "title": "Supply Chain Management, Associate of Science Degree < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 29,
+  "text_chars": 4143
+ },
+ {
+  "control_number": "22940",
+  "title": "Supply Chain Management II",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.933,
+  "codes_found": [
+   "ACCTC100",
+   "ACCTC101",
+   "ACCTC102",
+   "ACCTC116",
+   "BUSC100",
+   "BUSC101",
+   "BUSC110",
+   "BUSC118",
+   "BUSC120",
+   "BUSC139",
+   "BUSC141",
+   "BUSC281",
+   "BUSC282",
+   "BUSC283",
+   "BUSC284",
+   "CISC100",
+   "CISC111",
+   "CISC250",
+   "CMSTC100",
+   "CMSTC150",
+   "COMMC1000",
+   "CYBRC101",
+   "ENGLC136",
+   "MGMTC100",
+   "MGMTC115",
+   "MGMTC171",
+   "MGMTC172",
+   "PHILC140"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/management/supply-chain-management-ii-coa/",
+   "title": "Supply Chain Management II, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 30,
+  "text_chars": 4006
+ },
+ {
+  "control_number": "23043",
+  "title": "Business",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTC100",
+   "ACCTC101",
+   "ACCTC102",
+   "ACCTC116",
+   "BUSC100",
+   "BUSC101",
+   "BUSC110",
+   "BUSC118",
+   "BUSC120",
+   "BUSC139",
+   "BUSC141",
+   "BUSC150",
+   "BUSC281",
+   "BUSC282",
+   "BUSC283",
+   "BUSC284",
+   "CISC100",
+   "CISC111",
+   "CMSTC100",
+   "CMSTC150",
+   "COMMC1000",
+   "CYBRC101",
+   "ECONC110",
+   "ECONC170",
+   "ECONC175",
+   "ENGLC136",
+   "MGMTC100",
+   "MGMTC111",
+   "MGMTC115",
+   "MGMTC171",
+   "PHILC115",
+   "PHILC120",
+   "PHILC140"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/business-as/",
+   "title": "Business, Associate of Science Degree < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 33,
+  "text_chars": 4366
+ },
+ {
+  "control_number": "23044",
+  "title": "Business",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTC100",
+   "ACCTC101",
+   "ACCTC102",
+   "ACCTC116",
+   "BUSC100",
+   "BUSC101",
+   "BUSC110",
+   "BUSC118",
+   "BUSC120",
+   "BUSC139",
+   "BUSC141",
+   "BUSC150",
+   "BUSC281",
+   "BUSC282",
+   "BUSC283",
+   "BUSC284",
+   "CISC100",
+   "CISC111",
+   "CMSTC100",
+   "CMSTC150",
+   "COMMC1000",
+   "CYBRC101",
+   "ECONC110",
+   "ECONC170",
+   "ECONC175",
+   "ENGLC136",
+   "MGMTC100",
+   "MGMTC111",
+   "MGMTC115",
+   "MGMTC171",
+   "PHILC115",
+   "PHILC120",
+   "PHILC140"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/business-coa/",
+   "title": "Business, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 33,
+  "text_chars": 4152
+ },
+ {
+  "control_number": "23045",
+  "title": "Human Resources Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSC100",
+   "BUSC101",
+   "BUSC110",
+   "BUSC118",
+   "BUSC120",
+   "BUSC139",
+   "BUSC281",
+   "BUSC282",
+   "BUSC283",
+   "BUSC284",
+   "CISC111",
+   "CMSTC100",
+   "CMSTC101",
+   "CMSTC140",
+   "CMSTC150",
+   "MGMTC100",
+   "MGMTC111",
+   "MGMTC115"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/human-resources-management-associate-science-degree/",
+   "title": "Human Resources Management, Associate of Science Degree < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 3423
+ },
+ {
+  "control_number": "23046",
+  "title": "Human Resources Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSC100",
+   "BUSC101",
+   "BUSC110",
+   "BUSC118",
+   "BUSC120",
+   "BUSC139",
+   "CISC111",
+   "CMSTC100",
+   "CMSTC101",
+   "CMSTC140",
+   "CMSTC150",
+   "MGMTC100",
+   "MGMTC111",
+   "MGMTC115"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/human-resources-management-certificate-achievement/",
+   "title": "Human Resources Management, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3141
+ },
+ {
+  "control_number": "23047",
+  "title": "Marketing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSC100",
+   "BUSC101",
+   "BUSC110",
+   "BUSC118",
+   "BUSC120",
+   "BUSC139",
+   "BUSC141",
+   "BUSC150",
+   "BUSC281",
+   "BUSC282",
+   "BUSC283",
+   "BUSC284",
+   "CISC111",
+   "MGMTC100",
+   "MGMTC171"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/marketing-associate-science-degree/",
+   "title": "Marketing, Associate of Science Degree < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3357
+ },
+ {
+  "control_number": "23048",
+  "title": "Marketing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSC100",
+   "BUSC101",
+   "BUSC110",
+   "BUSC118",
+   "BUSC120",
+   "BUSC139",
+   "BUSC141",
+   "BUSC150",
+   "BUSC281",
+   "BUSC282",
+   "BUSC283",
+   "BUSC284",
+   "MGMTC100",
+   "MGMTC171"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/marketing-certificate-achievement/",
+   "title": "Marketing, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3233
+ },
+ {
+  "control_number": "23049",
+  "title": "Business : Business Administration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.636,
+  "codes_found": [
+   "BUSC100",
+   "BUSC101",
+   "BUSC110",
+   "BUSC118",
+   "BUSC150",
+   "BUSC283",
+   "BUSC284"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/",
+   "title": "Business < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.667
+   }
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "23050",
+  "title": "Business Administration",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "ACCTC116",
+   "BUSC100",
+   "BUSC101",
+   "BUSC110",
+   "BUSC118",
+   "BUSC150",
+   "BUSC283",
+   "BUSC284",
+   "ECONC170",
+   "ECONC175"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/management/management-certificate-achievement/",
+   "title": "Management, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 0.5
+   }
+  },
+  "listed": 11,
+  "text_chars": 4348
+ },
+ {
+  "control_number": "30255",
+  "title": "Health Care Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BCC145",
+   "BCC161",
+   "BCC162",
+   "BCC163",
+   "BIOLC102",
+   "BIOLC104",
+   "BIOLC221",
+   "BUSC139",
+   "CISC100",
+   "CISC250",
+   "CYBRC101",
+   "HLTHC121",
+   "LAWC126",
+   "MGMTC100",
+   "MGMTC115",
+   "MGMTC161",
+   "PHILC140"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/management/health-care-management-associate-science-degree/",
+   "title": "Health Care Management, Associate of Science Degree < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3687
+ },
+ {
+  "control_number": "30256",
+  "title": "Health Care Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BCC145",
+   "BCC161",
+   "BCC162",
+   "BCC163",
+   "BIOLC102",
+   "BIOLC104",
+   "BIOLC221",
+   "BUSC139",
+   "CISC100",
+   "CISC250",
+   "CYBRC101",
+   "HLTHC121",
+   "LAWC126",
+   "MGMTC100",
+   "MGMTC115",
+   "MGMTC161",
+   "PHILC140"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/management/health-care-management-certificate-achievement/",
+   "title": "Health Care Management, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3561
+ },
+ {
+  "control_number": "30350",
+  "title": "Emergency Management/Homeland Security: Criminal Justice",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CJC110",
+   "CJC128",
+   "CJC135",
+   "CJC140",
+   "CJC141",
+   "CJC148",
+   "EMGTC101",
+   "EMGTC102",
+   "EMGTC105",
+   "EMGTC110",
+   "EMGTC120",
+   "EMGTC130",
+   "EMGTC172",
+   "EMGTC174"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/law-safety/emergency-management/emergency-management-homeland-security-criminal-justice-associate-arts-degree/",
+   "title": "Emergency Management/Homeland Security: Criminal Justice, Associate of Arts Degree < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3351
+ },
+ {
+  "control_number": "30879",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGNGC120",
+   "ANTHC100",
+   "ETHSC233",
+   "GEOGC185",
+   "PSYCC1000",
+   "PSYCC260",
+   "PSYCC280",
+   "SOCC100",
+   "SOCC110",
+   "SOCC120",
+   "SOCC233",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/sociology/sociology-aat/",
+   "title": "Sociology, Associate in Arts Degree for Transfer < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3375
+ },
+ {
+  "control_number": "30891",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGNGC170",
+   "BIOLC100",
+   "PSYCC1000",
+   "PSYCC116",
+   "PSYCC118",
+   "PSYCC165",
+   "PSYCC170",
+   "PSYCC250",
+   "PSYCC255",
+   "PSYCC260",
+   "PSYCC280",
+   "SOCC100",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/psychology/psychology-associate-arts-degree-transfer/",
+   "title": "Psychology, Associate in Arts Degree for Transfer < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3315
+ },
+ {
+  "control_number": "31333",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "BUSC139",
+   "ENGLC1001",
+   "ENGLC128",
+   "ENGLC129",
+   "ENGLC133",
+   "ENGLC136",
+   "ENGLC140",
+   "ENGLC143",
+   "ENGLC150",
+   "ENGLC155",
+   "ENGLC270",
+   "ENGLC275",
+   "ENGLC296",
+   "ENGLC297"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/language-literature/english/english-associate-arts-degree-transfer/",
+   "title": "English, Associate in Arts Degree for Transfer < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 3531
+ },
+ {
+  "control_number": "31453",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "ANTHC100",
+   "ANTHC150",
+   "ARTC100",
+   "ARTC101",
+   "ARTC102",
+   "ETHSC123",
+   "ETHSC233",
+   "GEOGC100",
+   "GEOGC185",
+   "HISTC115",
+   "HISTC121",
+   "HISTC122",
+   "HISTC123",
+   "HISTC150",
+   "HISTC161",
+   "HISTC162",
+   "HISTC180",
+   "HISTC185",
+   "MUSC100",
+   "MUSC139",
+   "MUSC143",
+   "POLSC1000",
+   "PSCIC185",
+   "PSYCC1000",
+   "SOCC100",
+   "SOCC233"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/history/history-aat/",
+   "title": "History, Associate in Arts Degree for Transfer < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 28,
+  "text_chars": 3987
+ },
+ {
+  "control_number": "32136",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "MATHC180",
+   "MATHC185",
+   "MATHC280",
+   "MATHC285",
+   "PHYSC185"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/science-mathematics/mathematics/mathematics-2.0-ast/",
+   "title": "Mathematics 2.0, Associate in Science Degree for Transfer < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2642
+ },
+ {
+  "control_number": "33014",
+  "title": "Communication Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "ANTHC100",
+   "CMSTC100",
+   "CMSTC101",
+   "CMSTC140",
+   "CMSTC150",
+   "CMSTC220",
+   "COMMC1000",
+   "PSYCC1000",
+   "SOCC100"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/communication-studies/communication-studies-2-aat/",
+   "title": "Communication Studies 2.0, Associate in Arts Degree for Transfer < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3143
+ },
+ {
+  "control_number": "33015",
+  "title": "Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATHC180",
+   "MATHC185",
+   "MATHC280",
+   "PHYSC185",
+   "PHYSC280",
+   "PHYSC285"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/science-mathematics/physics/physics-2.0-associate-science-degree-transfer/",
+   "title": "Physics 2.0, Associate in Science Degree for Transfer < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2357
+ },
+ {
+  "control_number": "33112",
+  "title": "Pre-Medical Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.905,
+  "codes_found": [
+   "BIOLC104",
+   "BIOLC109",
+   "BIOLC122",
+   "BIOLC180",
+   "BIOLC200",
+   "BIOLC210",
+   "BIOLC220",
+   "BIOLC225",
+   "BIOLC226",
+   "BIOLC281",
+   "BIOLC283",
+   "BIOLC296",
+   "BIOLC297",
+   "CHEMC110",
+   "CHEMC281",
+   "HLTHC109",
+   "PHILC122",
+   "PHYSC120",
+   "PHYSC185"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/science-mathematics/biology/pre-medical-studies-certificate-achievement/",
+   "title": "Pre-Medical Studies, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 2848
+ },
+ {
+  "control_number": "33606",
+  "title": "Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHC100",
+   "GEOGC185",
+   "HISTC115",
+   "HISTC122",
+   "SPANC180",
+   "SPANC180A",
+   "SPANC180B",
+   "SPANC185",
+   "SPANC185A",
+   "SPANC185B",
+   "SPANC280",
+   "SPANC285"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/language-literature/spanish/spanish-associate-arts-degree-transfer/",
+   "title": "Spanish, Associate in Arts Degree for Transfer < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3312
+ },
+ {
+  "control_number": "35740",
+  "title": "Business Information Worker",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "BCC107A",
+   "BCC107B"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/business-computing/",
+   "title": "Business Computing < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.333
+   }
+  },
+  "listed": 3,
+  "text_chars": 3568
+ },
+ {
+  "control_number": "36112",
+  "title": "Horticulture",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SPEDC1N",
+   "SPEDC2N",
+   "SPEDC5N",
+   "SPEDC61N",
+   "SPEDC76N",
+   "SPEDC77N",
+   "SPEDC78N",
+   "SPEDC79N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/special-education/horticulture-certificate-completion/",
+   "title": "Horticulture, Certificate of Completion < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2843
+ },
+ {
+  "control_number": "36288",
+  "title": "English as a Second Language Preparation for Careers",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLC11N",
+   "ESLC12N",
+   "ESLC13N",
+   "ESLC22N",
+   "ESLC23N",
+   "ESLC32N",
+   "ESLC33N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/english-second-language/english-second-language-preparation-careers-certificate-completion/",
+   "title": "English as a Second Language Preparation for Careers, Certificate of Completion < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3640
+ },
+ {
+  "control_number": "36800",
+  "title": "Porter",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SPEDC1N",
+   "SPEDC2N",
+   "SPEDC61N",
+   "SPEDC76N",
+   "SPEDC85N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/special-education/porter-certificate-completion/",
+   "title": "Porter, Certificate of Completion < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2727
+ },
+ {
+  "control_number": "37249",
+  "title": "College and Career Preparation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37669",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTC101",
+   "ACCTC102",
+   "BUSC100",
+   "BUSC110",
+   "BUSC139",
+   "ECONC110",
+   "ECONC170",
+   "ECONC175",
+   "ENGLC136",
+   "MATHC140",
+   "MATHC180",
+   "MATHC185",
+   "MATHC280",
+   "POLSC1000",
+   "PSCIC185",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/economics/economics-associate-arts-degree-transfer/",
+   "title": "Economics, Associate in Arts Degree for Transfer < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3548
+ },
+ {
+  "control_number": "37793",
+  "title": "Preparation for College Writing",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37925",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.714,
+  "codes_found": [
+   "BIOLC180",
+   "BIOLC185",
+   "BIOLC225",
+   "BIOLC283",
+   "MATHC180",
+   "PHYSC120",
+   "PHYSC125",
+   "PHYSC185",
+   "PHYSC280",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/science-mathematics/biology/biology-associate-science-degree-transfer/",
+   "title": "Biology, Associate in Science Degree for Transfer < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3131
+ },
+ {
+  "control_number": "38335",
+  "title": "Child and Adolescent Development",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHC100",
+   "BIOLC100",
+   "EDUCC103",
+   "EDUCC104",
+   "EDUCC210",
+   "ENGLC143",
+   "MATHC104",
+   "PSYCC1000",
+   "PSYCC116",
+   "PSYCC118",
+   "SOCC100",
+   "SOCC110",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/education/education/child-adolescent-development-associate-arts-transfer/",
+   "title": "Child and Adolescent Development, Associate in Arts Degree for Transfer < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 4454
+ },
+ {
+  "control_number": "38389",
+  "title": "Animal Care",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SPEDC1N",
+   "SPEDC2N",
+   "SPEDC5N",
+   "SPEDC61N",
+   "SPEDC94N",
+   "SPEDC95N",
+   "SPEDC96N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/special-education/animal-care-certificate-completion/",
+   "title": "Animal Care, Certificate of Completion < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2838
+ },
+ {
+  "control_number": "38407",
+  "title": "Customer Service Technology Level 1 (Noncredit)",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BCC11N",
+   "BCC12N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/business-computing/customer-service-technology1-certificate-completion/",
+   "title": "Customer Service Technology Level 1, Certificate of Completion < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 0.75
+   }
+  },
+  "listed": 2,
+  "text_chars": 2622
+ },
+ {
+  "control_number": "38416",
+  "title": "Customer Service Technology Level 2 (Noncredit)",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BCC13N",
+   "BCC14N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/business-computing/customer-service-technology2-certificate-completion/",
+   "title": "Customer Service Technology Level 2, Certificate of Completion < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 0.75
+   }
+  },
+  "listed": 2,
+  "text_chars": 2622
+ },
+ {
+  "control_number": "38543",
+  "title": "Data Analytics",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CISC111",
+   "CISC157",
+   "CISC190",
+   "CISC191",
+   "CISC240",
+   "CISC250",
+   "CISC260",
+   "CISC270",
+   "CISC275",
+   "CISC280",
+   "CISC285",
+   "ICSC165"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/computer-information-systems/data-analytics-coa/",
+   "title": "Data Analytics, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3166
+ },
+ {
+  "control_number": "38553",
+  "title": "ESL Intermediate Preparation for Careers",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLC42N",
+   "ESLC43N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/english-second-language/esl-intermediate-preparation-careers-certificate-completion/",
+   "title": "ESL Intermediate Preparation for Careers, Certificate of Completion < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2601
+ },
+ {
+  "control_number": "38554",
+  "title": "Guest Services",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SPEDC1N",
+   "SPEDC2N",
+   "SPEDC5N",
+   "SPEDC61N",
+   "SPEDC86N",
+   "SPEDC87N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/special-education/guest-services-certificate-completion/",
+   "title": "Guest Services, Certificate of Completion < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2779
+ },
+ {
+  "control_number": "38555",
+  "title": "Language Preparation for U.S. Citizenship",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELLC28N",
+   "ELLC38N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/english-language-learning/language-preparation-us-citizenship-certificate-competency/",
+   "title": "Language Preparation for U.S. Citizenship, Certificate of Competency < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2649
+ },
+ {
+  "control_number": "38556",
+  "title": "Culinary Arts",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "SPEDC1N",
+   "SPEDC2N",
+   "SPEDC5N",
+   "SPEDC61N",
+   "SPEDC90N",
+   "SPEDC91N",
+   "SPEDC92N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/special-education/culinary-arts-certificate-completion/",
+   "title": "Culinary Arts, Certificate of Completion < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2804
+ },
+ {
+  "control_number": "38557",
+  "title": "Management Skills for Retail",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38603",
+  "title": "Geology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.6,
+  "codes_found": [
+   "GEOLC105",
+   "GEOLC105L",
+   "GEOLC185",
+   "GEOLC185L",
+   "MATHC180",
+   "MATHC185"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/science-mathematics/geology/geology-associate-science-degree-transfer/",
+   "title": "Geology, Associate in Science Degree for Transfer < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2861
+ },
+ {
+  "control_number": "39435",
+  "title": "Data Analytics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CISC111",
+   "CISC157",
+   "CISC190",
+   "CISC191",
+   "CISC240",
+   "CISC250",
+   "CISC260",
+   "CISC270",
+   "CISC275",
+   "CISC280",
+   "CISC285",
+   "ICSC165"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/computer-information-systems/data-analytics-as/",
+   "title": "Data Analytics, Associate of Science Degree < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3287
+ },
+ {
+  "control_number": "39469",
+  "title": "Allied Health Care Careers",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLC102",
+   "BIOLC104",
+   "BIOLC221",
+   "CHEMC110",
+   "HLTHC109",
+   "KINC100",
+   "PSYCC1000",
+   "SOCC100",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/science-mathematics/biology/allied-health-care-careers-certificate-achievement/",
+   "title": "Allied Health Care Careers, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2508
+ },
+ {
+  "control_number": "39477",
+  "title": "Wellness Coaching",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGNGC225",
+   "BIOLC102",
+   "BIOLC221",
+   "FNC180",
+   "FNC225",
+   "HLTHC100",
+   "HLTHC120",
+   "HLTHC230",
+   "KINC190",
+   "KINC201",
+   "KINC289",
+   "PEC201",
+   "PSYCC230"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/health-wellness/health/wellness-coaching-certificate-achievement/",
+   "title": "Wellness Coaching, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3484
+ },
+ {
+  "control_number": "39533",
+  "title": "Digital Forensics and Incident Response",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CYBRC101",
+   "CYBRC150",
+   "CYBRC160",
+   "CYBRC170",
+   "CYBRC230",
+   "CYBRC250",
+   "CYBRC260",
+   "ITC128",
+   "ITC158"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/cybersecurity/digital-forensics-incident-response-as/",
+   "title": "Digital Forensics and Incident Response, Associate of Science Degree < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3047
+ },
+ {
+  "control_number": "39568",
+  "title": "Dietary Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGNGC225",
+   "ANTHC175",
+   "COMMC1000",
+   "FNC160",
+   "FNC177",
+   "FNC180",
+   "FNC190",
+   "FNC225",
+   "FNC283",
+   "FNC284",
+   "FNC285",
+   "HLTHC120",
+   "HLTHC230",
+   "MGMTC160",
+   "PSYCC230"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/health-wellness/foods-nutrition/dietary-management-certificate-achievement/",
+   "title": "Dietary Management, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3238
+ },
+ {
+  "control_number": "39764",
+  "title": "Drama Basics",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SPEDC14N",
+   "SPEDC15N",
+   "SPEDC17N",
+   "SPEDC1N",
+   "SPEDC2N",
+   "SPEDC5N",
+   "SPEDC61N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/special-education/drama-basics-certificate-completion/",
+   "title": "Drama Basics, Certificate of Completion < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2877
+ },
+ {
+  "control_number": "39880",
+  "title": "Educational Studies: STEM: Math Concentration",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EDUCC101",
+   "EDUCC103",
+   "EDUCC210",
+   "EDUCC211",
+   "MATHC104",
+   "MATHC106",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/education/education/ed-study-stem-math-certificate-achievement/",
+   "title": "Educational Studies: STEM: Math Concentration, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3271
+ },
+ {
+  "control_number": "39966",
+  "title": "Educational Studies: ECE Unit Concentration",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EDUCC104",
+   "EDUCC210",
+   "ENGLC143",
+   "HLTHC100",
+   "PSYCC116",
+   "PSYCC118"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/education/education/ed-study-ece-unit-concentration-certificate-achievement/",
+   "title": "Educational Studies: ECE Unit Concentration, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2995
+ },
+ {
+  "control_number": "39967",
+  "title": "Educational Studies: STEM: Instructional Technology Support Concentration",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTC183",
+   "CISC100",
+   "CISC105",
+   "CYBRC101",
+   "DMDC100",
+   "DMDC116",
+   "DMDC131",
+   "EDUCC101",
+   "EDUCC103",
+   "EDUCC104",
+   "EDUCC211",
+   "ICSC120",
+   "ITC104",
+   "LIBRC110"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/education/education/ed-study-stem-instructional-support-certificate-achievement/",
+   "title": "Educational Studies: STEM: Instructional Technology Support Concentration, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3479
+ },
+ {
+  "control_number": "39971",
+  "title": "Digital Forensics and Incident Response",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CYBRC101",
+   "CYBRC150",
+   "CYBRC160",
+   "CYBRC170",
+   "CYBRC230",
+   "CYBRC250",
+   "CYBRC260",
+   "ITC128",
+   "ITC158"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/cybersecurity/digital-forensics-incident-response-coa/",
+   "title": "Digital Forensics and Incident Response, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2924
+ },
+ {
+  "control_number": "39997",
+  "title": "Educational Studies: General",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARABC180",
+   "ARABC185",
+   "CHINC180",
+   "CHINC185",
+   "EDUCC101",
+   "EDUCC103",
+   "EDUCC104",
+   "EDUCC180",
+   "EDUCC200",
+   "EDUCC210",
+   "EDUCC211",
+   "ENGLC143",
+   "FRENC180",
+   "FRENC185",
+   "FRENC280",
+   "FRENC285",
+   "HLTHC100",
+   "HSVCC100",
+   "JAPNC180",
+   "JAPNC185",
+   "MATHC103",
+   "MATHC104",
+   "MATHC106",
+   "PSYCC116",
+   "PSYCC118",
+   "SPANC180",
+   "SPANC180A",
+   "SPANC180B",
+   "SPANC185",
+   "SPANC280",
+   "SPANC285",
+   "VIETC160",
+   "VIETC180",
+   "VIETC185"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/education/education/ed-study-general-certificate-achievement/",
+   "title": "Educational Studies: General, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 34,
+  "text_chars": 4386
+ },
+ {
+  "control_number": "40008",
+  "title": "Educational Studies: Teach Your Career/Community College Teaching",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CMSTC100",
+   "COMMC1000",
+   "EDUCC101",
+   "EDUCC103",
+   "EDUCC104",
+   "EDUCC202",
+   "EDUCC211",
+   "ENGLC1000",
+   "PSYCC118"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/education/education/ed-study-teach-career-comm-college-teaching-certificate-achievement/",
+   "title": "Educational Studies: Teach Your Career/Community College Teaching, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3129
+ },
+ {
+  "control_number": "40011",
+  "title": "Educational Studies: STEM: Science concentration",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLC100C",
+   "CHEMC140",
+   "EDUCC104",
+   "GEOLC106",
+   "PHYSC140"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/education/education/ed-study-stem-science-certificate-achievement/",
+   "title": "Educational Studies: STEM: Science Concentration, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2939
+ },
+ {
+  "control_number": "40033",
+  "title": "Cybersecurity Analyst",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CISC157",
+   "CYBRC101",
+   "CYBRC132",
+   "CYBRC150",
+   "CYBRC160",
+   "CYBRC225",
+   "CYBRC230",
+   "CYBRC234",
+   "CYBRC242",
+   "CYBRC255",
+   "CYBRC280",
+   "ITC128",
+   "ITC158",
+   "ITC191"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/cybersecurity/cybersecurity-analyst-coa/",
+   "title": "Cybersecurity Analyst, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3240
+ },
+ {
+  "control_number": "40124",
+  "title": "English Language Learning Intermediate to Advanced Oral/Aural Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELLC81N",
+   "ELLC83N",
+   "ELLC84N",
+   "ELLC85N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/english-language-learning/ell-intermediate-advanced-oral-aural-skills-certificate-completion/",
+   "title": "English Language Learning Intermediate to Advanced Oral/Aural Skills, Certificate of Completion < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2852
+ },
+ {
+  "control_number": "40125",
+  "title": "English Language Learning Beginning-Level Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELLC20N",
+   "ELLC25N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/english-language-learning/ell-beginning-level-skills-certificate-completion/",
+   "title": "English Language Learning Beginning-Level Skills, Certificate of Completion < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2610
+ },
+ {
+  "control_number": "40394",
+  "title": "ESL Preparation for Freshman Composition",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 1,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40476",
+  "title": "Introduction to Careers in Esports",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CMSTC60N",
+   "ENGLC60N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/english/introduction-careers-esports-certificate-completion/",
+   "title": "Introduction to Careers in Esports, Certificate of Completion < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2271
+ },
+ {
+  "control_number": "40477",
+  "title": "Music Basics",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SPEDC1N",
+   "SPEDC2N",
+   "SPEDC5N",
+   "SPEDC61N",
+   "SPEDC66N",
+   "SPEDC67N",
+   "SPEDC68N",
+   "SPEDC69N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/special-education/music-basics-certificate-completion/",
+   "title": "Music Basics, Certificate of Completion < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2867
+ },
+ {
+  "control_number": "40844",
+  "title": "Art Basics",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SPEDC1N",
+   "SPEDC2N",
+   "SPEDC5N",
+   "SPEDC61N",
+   "SPEDC71N",
+   "SPEDC72N",
+   "SPEDC74N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/special-education/art-basics-certificate-completion/",
+   "title": "Art Basics, Certificate of Completion < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2839
+ },
+ {
+  "control_number": "40845",
+  "title": "Creative Arts Basics",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SPEDC14N",
+   "SPEDC15N",
+   "SPEDC1N",
+   "SPEDC2N",
+   "SPEDC5N",
+   "SPEDC61N",
+   "SPEDC66N",
+   "SPEDC67N",
+   "SPEDC68N",
+   "SPEDC69N",
+   "SPEDC71N",
+   "SPEDC72N",
+   "SPEDC73N",
+   "SPEDC74N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/special-education/creative-arts-basics-certificate-completion/",
+   "title": "Creative Arts Basics, Certificate of Completion < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3224
+ },
+ {
+  "control_number": "41082",
+  "title": "Data Science",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CISC157",
+   "CISC240",
+   "CISC250",
+   "CISC270",
+   "CISC280",
+   "ICSC123",
+   "ICSC165",
+   "ICSC265",
+   "ICSC290",
+   "MATHC140",
+   "MATHC150",
+   "MATHC180",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/information-computer-sciences/data-science-coa/",
+   "title": "Data Science, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3066
+ },
+ {
+  "control_number": "41130",
+  "title": "Global Business",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTC116",
+   "BUSC100",
+   "BUSC101",
+   "BUSC110",
+   "BUSC118",
+   "BUSC139",
+   "BUSC281",
+   "BUSC282",
+   "BUSC283",
+   "BUSC284",
+   "CMSTC150",
+   "ENGLC136",
+   "MGMTC100",
+   "MGMTC115",
+   "MGMTC171",
+   "MGMTC172"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/global-business-certificate-achievement/",
+   "title": "Global Business, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3249
+ },
+ {
+  "control_number": "41169",
+  "title": "Preparation for College Mathematics",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "41175",
+  "title": "Mathematics for Workforce Developmental Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATHC1N",
+   "MATHC2N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/mathematics/mathematics-workforce-developmental-skills-certificate-competency/",
+   "title": "Mathematics for Workforce Developmental Skills, Certificate of Competency < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2280
+ },
+ {
+  "control_number": "41337",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTC101",
+   "ACCTC102",
+   "BUSC100",
+   "BUSC110",
+   "BUSC139",
+   "ECONC170",
+   "ECONC175",
+   "ENGLC136",
+   "MATHC140",
+   "MATHC150",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/business/business-administration-2.0-associate-science-degree-transfer/",
+   "title": "Business Administration 2.0, Associate in Science Degree for Transfer < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3075
+ },
+ {
+  "control_number": "41525",
+  "title": "Digital Media Design",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTC184",
+   "ARTC185",
+   "DMDC116",
+   "DMDC117",
+   "DMDC118",
+   "DMDC120",
+   "DMDC135",
+   "DMDC136"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/visual-performing-arts/digital-media-design/digital-media-design-aa/",
+   "title": "Digital Media Design, Associate of Arts Degree < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2966
+ },
+ {
+  "control_number": "41633",
+  "title": "Nutrition and Dietetics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.583,
+  "codes_found": [
+   "BIOLC100",
+   "BIOLC100C",
+   "BIOLC220",
+   "BIOLC225",
+   "PSYCC1000",
+   "SOCC100",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/health-wellness/foods-nutrition/nutrition-dietetics-associate-science-degree-transfer/",
+   "title": "Nutrition and Dietetics, Associate in Science Degree for Transfer < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3313
+ },
+ {
+  "control_number": "41639",
+  "title": "Chemistry",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "CHEMC220",
+   "CHEMC220L",
+   "CHEMC225",
+   "CHEMC225L",
+   "MATHC180",
+   "MATHC185",
+   "PHYSC185",
+   "PHYSC280"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/science-mathematics/chemistry/chemistry-ast/",
+   "title": "Chemistry, Associate in Science Degree for Transfer < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2931
+ },
+ {
+  "control_number": "41645",
+  "title": "Public Health Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.615,
+  "codes_found": [
+   "BIOLC100",
+   "BIOLC100C",
+   "BIOLC220",
+   "BIOLC225",
+   "HLTHC100",
+   "PSYCC165",
+   "SOCC100",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/health-wellness/health/public-health-ast/",
+   "title": "Public Health, Associate in Science Degree for Transfer < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3381
+ },
+ {
+  "control_number": "41677",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.952,
+  "codes_found": [
+   "ANTHC100",
+   "ANTHC120",
+   "ANTHC150",
+   "ANTHC175",
+   "ANTHC185",
+   "ANTHC190",
+   "BIOLC220",
+   "CMSTC150",
+   "ETHSC123",
+   "ETHSC233",
+   "FNC177",
+   "GEOGC155",
+   "GEOLC105",
+   "GEOLC106",
+   "HISTC115",
+   "HISTC123",
+   "MUSC103",
+   "SOCC100",
+   "SOCC233",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/anthropology/anthropology-aat/",
+   "title": "Anthropology, Associate in Arts Degree for Transfer < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 3713
+ },
+ {
+  "control_number": "41727",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECONC170",
+   "ECONC175",
+   "HISTC161",
+   "HISTC162",
+   "HISTC170",
+   "HISTC175",
+   "POLSC1000",
+   "PSCIC101",
+   "PSCIC183",
+   "PSCIC185",
+   "PSCIC188",
+   "PSCIC200",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/political-science/political-science-associate-arts-degree-transfer/",
+   "title": "Political Science, Associate in Arts Degree for Transfer < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3333
+ },
+ {
+  "control_number": "41762",
+  "title": "Health Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGNGC225",
+   "BIOLC102",
+   "BIOLC221",
+   "FNC170",
+   "FNC180",
+   "FNC225",
+   "HLTHC100",
+   "HLTHC120",
+   "HLTHC220",
+   "HLTHC230",
+   "KINC100",
+   "KINC125",
+   "KINC190",
+   "KINC289",
+   "PSYCC125",
+   "PSYCC230"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/health-wellness/health/health-science-associate-arts-degree/",
+   "title": "Health Science, Associate of Arts Degree < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3883
+ },
+ {
+  "control_number": "41801",
+  "title": "Philosophy",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLC122",
+   "HISTC161",
+   "HISTC162",
+   "HISTC180",
+   "HISTC185",
+   "HUMC100",
+   "PHILC100",
+   "PHILC102",
+   "PHILC113",
+   "PHILC115",
+   "PHILC120",
+   "PHILC122",
+   "PHILC220"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/language-literature/philosophy/philosophy-associate-arts-degree-transfer/",
+   "title": "Philosophy, Associate in Arts Degree for Transfer < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3411
+ },
+ {
+  "control_number": "41933",
+  "title": "Health and Wellness for Esports",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FNC32N",
+   "HLTHC31N",
+   "KINC33N",
+   "KINC34N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/health/health-wellness-esports-cert-completion/",
+   "title": "Health and Wellness for Esports, Certificate of Completion < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2432
+ },
+ {
+  "control_number": "42004",
+  "title": "Cloud Computing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42005",
+  "title": "Cloud Computing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "CYBRC101",
+   "ITC128",
+   "ITC158"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/cybersecurity/cybersecurity-fundamentals-cos/",
+   "title": "Cybersecurity Fundamentals, Certificate of Specialization < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2746
+ },
+ {
+  "control_number": "42277",
+  "title": "Supplemental Instruction",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGLC80N",
+   "MATHC80N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/english/supplemental-instruction-certificate-competency/",
+   "title": "Supplemental Instruction, Certificate of Competency < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2567
+ },
+ {
+  "control_number": "42322",
+  "title": "Online Learning Basics",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EDUCC94N",
+   "EDUCC95N",
+   "EDUCC96N",
+   "EDUCC97N",
+   "EDUCC98N",
+   "EDUCC99N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/education/online-learning-basics-certificate-competency/",
+   "title": "Online Learning Basics, Certificate of Competency < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2887
+ },
+ {
+  "control_number": "42323",
+  "title": "Successful Online Learning",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EDUCC94N",
+   "EDUCC95N",
+   "EDUCC96N",
+   "EDUCC97N",
+   "EDUCC98N",
+   "EDUCC99N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/education/successful-online-learning-certificate-competency/",
+   "title": "Successful Online Learning, Certificate of Competency < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2729
+ },
+ {
+  "control_number": "42525",
+  "title": "Cisco Certified Networking Administrator (CCNA)",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ITC198",
+   "ITC201",
+   "ITC202",
+   "ITC203"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/information-technology/",
+   "title": "Information Technology < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 11568
+ },
+ {
+  "control_number": "42526",
+  "title": "Offensive Security",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "CYBRC101",
+   "CYBRC132",
+   "CYBRC170",
+   "CYBRC230",
+   "CYBRC234",
+   "CYBRC242"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/cybersecurity/",
+   "title": "Cybersecurity < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "42527",
+  "title": "IT Foundation",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CYBRC101",
+   "ITC104",
+   "ITC110",
+   "ITC128",
+   "ITC158",
+   "ITC198",
+   "ITC201"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/information-technology/it-foundation-coa/",
+   "title": "IT Foundation, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2718
+ },
+ {
+  "control_number": "42600",
+  "title": "Geography",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHC100",
+   "GEOGC100",
+   "GEOGC150",
+   "GEOGC155",
+   "GEOGC165",
+   "GEOGC170",
+   "GEOGC180",
+   "GEOGC180L",
+   "GEOGC185",
+   "GEOLC105"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/geography/geography-associate-arts-degree-transfer/",
+   "title": "Geography, Associate in Arts Degree for Transfer < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3141
+ },
+ {
+  "control_number": "42635",
+  "title": "ESL Preparation for College-Level English",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLC85N",
+   "ESLC95N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/english-second-language/esl-preparation-college-level-english-certificate-competency/",
+   "title": "ESL Preparation for College-Level English, Certificate of Competency < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2856
+ },
+ {
+  "control_number": "42665",
+  "title": "English Language Learning High Beginning Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELLC24N",
+   "ELLC25N",
+   "ELLC30N",
+   "ESLC22N",
+   "ESLC23N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/english-language-learning/ell-high-beginning-skills-certificate-competency/",
+   "title": "English Language Learning High Beginning Skills, Certificate of Competency < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2799
+ },
+ {
+  "control_number": "42710",
+  "title": "English as a Second Language Low Beginning Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLC11N",
+   "ESLC12N",
+   "ESLC13N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/english-second-language/esl-low-beginning-skills-certificate-competency/",
+   "title": "English as a Second Language Low Beginning Skills, Certificate of Competency < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2641
+ },
+ {
+  "control_number": "42718",
+  "title": "English Language Learning Low Intermediate Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELLC40N",
+   "ESLC32N",
+   "ESLC33N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/english-language-learning/ell-low-intermediate-skills-certificate-competency/",
+   "title": "English Language Learning Low Intermediate Skills, Certificate of Competency < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2648
+ },
+ {
+  "control_number": "43029",
+  "title": "Art History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.905,
+  "codes_found": [
+   "ANTHC100",
+   "ARTC102",
+   "ARTC103",
+   "ARTC104",
+   "ARTC109",
+   "ARTC110",
+   "ARTC111",
+   "ARTC120",
+   "ARTC121",
+   "ARTC122",
+   "ARTC140",
+   "ARTC150",
+   "ARTC153",
+   "ARTC154",
+   "ARTC183",
+   "DMDC100",
+   "HISTC161",
+   "HUMC100",
+   "MUSC100"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/visual-performing-arts/art/art-history-aat/",
+   "title": "Art History, Associate in Arts Degree for Transfer < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 3676
+ },
+ {
+  "control_number": "43030",
+  "title": "Communication Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHC100",
+   "CMSTC100",
+   "CMSTC101",
+   "CMSTC140",
+   "CMSTC150",
+   "CMSTC220",
+   "COMMC1000",
+   "MCOMC140",
+   "PSYCC1000",
+   "SOCC100"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/communication-studies/communication-studies-aa/",
+   "title": "Communication Studies, Associate of Arts Degree < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3103
+ },
+ {
+  "control_number": "43031",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTC100",
+   "ARTC101",
+   "ARTC103",
+   "ARTC110",
+   "ARTC111",
+   "ARTC120",
+   "ARTC121",
+   "ARTC122",
+   "ARTC150",
+   "ARTC151",
+   "ARTC154",
+   "ARTC183",
+   "ARTC221",
+   "DMDC100"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/visual-performing-arts/art/studio-arts-aat/",
+   "title": "Studio Arts, Associate in Arts Degree for Transfer < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3200
+ },
+ {
+  "control_number": "43057",
+  "title": "Communications Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "CMSTC100",
+   "CMSTC101",
+   "CMSTC140",
+   "CMSTC150",
+   "CMSTC220",
+   "COMMC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/communication-studies/",
+   "title": "Communication Studies < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.5
+   }
+  },
+  "listed": 9,
+  "text_chars": 11002
+ },
+ {
+  "control_number": "43490",
+  "title": "Environmental Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.647,
+  "codes_found": [
+   "BIOLC180",
+   "BIOLC185",
+   "ENVSC100",
+   "GEOLC105",
+   "MATHC140",
+   "MATHC180",
+   "PHYSC120",
+   "PHYSC125",
+   "PHYSC185",
+   "PHYSC280",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/science-mathematics/envs/environmental-science-ast/",
+   "title": "Environmental Science, Associate in Science Degree for Transfer < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3384
+ },
+ {
+  "control_number": "43622",
+  "title": "English as a Second Language High Intermediate Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLC35N",
+   "ESLC49N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/english-second-language/esl-high-intermediate-skills-certificate-competency/",
+   "title": "English as a Second Language High Intermediate Skills, Certificate of Competency < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2604
+ },
+ {
+  "control_number": "43975",
+  "title": "Computer Information Systems",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTC100",
+   "BUSC100",
+   "CISC105",
+   "CISC157",
+   "CISC190",
+   "CISC205",
+   "CISC240",
+   "CISC250",
+   "CISC260",
+   "CISC285",
+   "CYBRC101",
+   "ICSC120",
+   "ICSC123",
+   "ICSC165",
+   "ICSC230",
+   "ICSC265",
+   "MGMTC100"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/computer-information-systems/computer-information-systems-coa/",
+   "title": "Computer Information Systems, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3309
+ },
+ {
+  "control_number": "43976",
+  "title": "Computer Information Systems",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTC100",
+   "CISC105",
+   "CISC157",
+   "CISC190",
+   "CISC205",
+   "CISC240",
+   "CISC250",
+   "CISC260",
+   "CISC285",
+   "CYBRC101",
+   "ICSC120",
+   "ICSC123",
+   "ICSC165",
+   "ICSC230",
+   "ICSC265",
+   "MGMTC100"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/computer-information-systems/computer-information-systems-as/",
+   "title": "Computer Information Systems, Associate of Science Degree < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3432
+ },
+ {
+  "control_number": "44017",
+  "title": "ESL Preparation for Digital Learning",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLC16N",
+   "ESLC26N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/english-second-language/esl-prep-digital-learning-certificate-competency/",
+   "title": "ESL Preparation for Digital Learning, Certificate of Competency < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2616
+ },
+ {
+  "control_number": "44102",
+  "title": "Social Work and Human Services",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHC100",
+   "BIOLC220",
+   "BIOLC225",
+   "CMSTC150",
+   "ECONC170",
+   "ECONC175",
+   "ENGLC1001",
+   "ETHSC233",
+   "HISTC170",
+   "HISTC175",
+   "HSVCC100",
+   "HSVCC274",
+   "HSVCC275",
+   "PSYCC1000",
+   "PSYCC116",
+   "PSYCC118",
+   "PSYCC255",
+   "SOCC100",
+   "SOCC233",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/human-services/social-work-human-services-aat/",
+   "title": "Social Work and Human Services, Associate in Arts Degree for Transfer < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 3593
+ },
+ {
+  "control_number": "44204",
+  "title": "Management (Applied)",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.905,
+  "codes_found": [
+   "ACCTC116",
+   "BUSC100",
+   "BUSC101",
+   "BUSC120",
+   "BUSC139",
+   "BUSC281",
+   "CISC105",
+   "CISC205",
+   "CISC280",
+   "CMSTC100",
+   "CMSTC140",
+   "COMMC1000",
+   "ENGLC1000",
+   "ETHSC233",
+   "KINC101",
+   "MATHC101",
+   "MGMTC100",
+   "MGMTC144",
+   "PHILC140"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/management/management-applied-as/",
+   "title": "Management (Applied), Associate of Science Degree < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 4983
+ },
+ {
+  "control_number": "44205",
+  "title": "IT Support Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CISC157",
+   "CYBRC101",
+   "CYBRC230",
+   "ITC104",
+   "ITC110",
+   "ITC128",
+   "ITC158",
+   "ITC198",
+   "ITC201"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/information-technology/it-support-specialist-coa/",
+   "title": "IT Support Specialist, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2807
+ },
+ {
+  "control_number": "44206",
+  "title": "Information and Computer Sciences",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CISC157",
+   "CISC285",
+   "CYBRC101",
+   "ICSC120",
+   "ICSC123",
+   "ICSC141",
+   "ICSC165",
+   "ICSC230",
+   "ICSC240",
+   "ICSC250",
+   "ICSC265",
+   "ICSC290"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/information-computer-sciences/information-computer-sciences-as/",
+   "title": "Information and Computer Sciences, Associate of Science Degree < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3203
+ },
+ {
+  "control_number": "44207",
+  "title": "Information and Computer Sciences",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CISC157",
+   "CISC285",
+   "CYBRC101",
+   "ICSC120",
+   "ICSC123",
+   "ICSC141",
+   "ICSC165",
+   "ICSC230",
+   "ICSC240",
+   "ICSC250",
+   "ICSC265",
+   "ICSC290"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/information-computer-sciences/information-computer-sciences-coa/",
+   "title": "Information and Computer Sciences, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3093
+ },
+ {
+  "control_number": "44223",
+  "title": "Law, Public Policy, and Society",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHC100",
+   "BUSC110",
+   "CJC128",
+   "CJC140",
+   "CJC141",
+   "CMSTC140",
+   "CMSTC220",
+   "COMMC1000",
+   "COUNC105",
+   "ECONC170",
+   "ECONC175",
+   "ENGLC1000",
+   "ENGLC1001",
+   "GEOGC185",
+   "HISTC170",
+   "HISTC175",
+   "PHILC115",
+   "PHILC120",
+   "POLSC1000",
+   "PSCIC183",
+   "PSCIC185",
+   "PSCIC188",
+   "PSCIC200",
+   "SOCC185",
+   "SOCC233",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/law-safety/criminal-justice/law-public-policy-society-aat/",
+   "title": "Law, Public Policy, and Society, Associate in Arts Degree for Transfer < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 4005
+ },
+ {
+  "control_number": "45085",
+  "title": "Core Professional Skills for Artists",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTC10N",
+   "ARTC20N",
+   "ARTC61N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/art/core-professional-skills-certificate-completion/",
+   "title": "Core Professional Skills for Artists, Certificate of Completion < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2657
+ },
+ {
+  "control_number": "45411",
+  "title": "AI for Cybersecurity",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CISC157",
+   "CYBRC101",
+   "CYBRC170",
+   "CYBRC210",
+   "CYBRC230",
+   "CYBRC242",
+   "CYBRC280",
+   "ICSC165",
+   "ICSC265",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/cybersecurity/ai-cybersecurity-coa/",
+   "title": "AI for Cybersecurity, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3001
+ },
+ {
+  "control_number": "45416",
+  "title": "Artificial Intelligence",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CISC157",
+   "CISC240",
+   "CISC285",
+   "ICSC120",
+   "ICSC123",
+   "ICSC141",
+   "ICSC165",
+   "ICSC255",
+   "ICSC265",
+   "MATHC140",
+   "MATHC150",
+   "MATHC180",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/information-computer-sciences/artificial-intelligence-coa/",
+   "title": "Artificial Intelligence, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3081
+ },
+ {
+  "control_number": "45424",
+  "title": "Artificial Intelligence",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CISC157",
+   "CISC240",
+   "CISC285",
+   "ICSC120",
+   "ICSC123",
+   "ICSC141",
+   "ICSC165",
+   "ICSC255",
+   "ICSC265",
+   "MATHC140",
+   "MATHC150",
+   "MATHC180",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/information-computer-sciences/artificial-intelligence-as/",
+   "title": "Artificial Intelligence, Associate of Science Degree < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3191
+ },
+ {
+  "control_number": "45425",
+  "title": "Data Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CISC157",
+   "CISC240",
+   "CISC250",
+   "CISC270",
+   "CISC280",
+   "ICSC123",
+   "ICSC165",
+   "ICSC265",
+   "ICSC290",
+   "MATHC140",
+   "MATHC150",
+   "MATHC180",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/information-computer-sciences/data-science-as/",
+   "title": "Data Science, Associate of Science Degree < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3180
+ },
+ {
+  "control_number": "45429",
+  "title": "AI for Cybersecurity",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CISC157",
+   "CYBRC101",
+   "CYBRC170",
+   "CYBRC210",
+   "CYBRC230",
+   "CYBRC242",
+   "CYBRC280",
+   "ICSC165",
+   "ICSC265",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/computer-cyber-sciences/cybersecurity/ai-cybersecurity-as/",
+   "title": "AI for Cybersecurity, Associate of Science Degree < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3125
+ },
+ {
+  "control_number": "45622",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.905,
+  "codes_found": [
+   "BIOLC220",
+   "BIOLC225",
+   "HLTHC100",
+   "KINC100",
+   "KINC115",
+   "KINC116",
+   "KINC118",
+   "KINC119",
+   "KINC121",
+   "KINC169",
+   "PEC115",
+   "PEC116",
+   "PEC118",
+   "PEC119",
+   "PEC121",
+   "PEC169",
+   "PHYSC120",
+   "PHYSC185",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/health-wellness/kinesiology/kinesiology-aat/",
+   "title": "Kinesiology, Associate in Arts Degree for Transfer < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 3441
+ },
+ {
+  "control_number": "45695",
+  "title": "Social Media Strategy",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSC150",
+   "DMCC100",
+   "DMCC150",
+   "DMCC160",
+   "DMCC161",
+   "DMCC162"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/digital-media-communications/social-media-strategist-coa/",
+   "title": "Social Media Strategy, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2601
+ },
+ {
+  "control_number": "45872",
+  "title": "Artificial Intelligence (AI) Readiness 2: Ethical and Creative Applications",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CISC13N",
+   "CISC14N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/computer-cyber-sciences/artificialintelligence-ai-readiness2-ethical-creative-applications-noncredit/",
+   "title": "Artificial Intelligence (AI) Readiness 2: Ethical and Creative Applications, Certificate of Completion < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2657
+ },
+ {
+  "control_number": "45873",
+  "title": "Artificial Intelligence (AI) Readiness 3: Security, Privacy, and Bias",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CISC15N",
+   "CISC16N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/computer-cyber-sciences/artificialintelligence-ai-readiness3-security-privacy-bias-noncredit/",
+   "title": "Artificial Intelligence (AI) Readiness 3: Security, Privacy, and Bias, Certificate of Completion < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2646
+ },
+ {
+  "control_number": "45874",
+  "title": "Visual Design Foundations",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DMDC10N",
+   "DMDC20N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/digital-media-design/visual-design-foundations-noncredit/",
+   "title": "Visual Design Foundations, Certificate of Competency < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2672
+ },
+ {
+  "control_number": "45879",
+  "title": "Artificial Intelligence (AI) Readiness 1: In the Workplace",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CISC11N",
+   "CISC12N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/computer-cyber-sciences/artificialintelligence-ai-readiness1-in-the-workplace-noncredit/",
+   "title": "Artificial Intelligence (AI) Readiness 1: In the Workplace, Certificate of Completion < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2648
+ },
+ {
+  "control_number": "46029",
+  "title": "Cyber Hygiene and Online Safety",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CYBRC91N",
+   "CYBRC92N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/computer-cyber-sciences/cyber-hygiene-online-safety-noncredit/",
+   "title": "Cyber Hygiene and Online Safety (Noncredit), Certificate of Completion < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2624
+ },
+ {
+  "control_number": "46030",
+  "title": "Cyber Hygiene for the Workplace",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "CYBRC93N"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/college-preparation-career-development/computer-cyber-sciences/cyber-hygiene-for-workplace-safety-noncredit/",
+   "title": "Cyber Hygiene for the Workplace (Noncredit), Certificate of Completion < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2629
+ },
+ {
+  "control_number": "46077",
+  "title": "Public Health",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "ANTHC100",
+   "BIOLC100",
+   "BIOLC100C",
+   "BIOLC210",
+   "BIOLC220",
+   "BIOLC225",
+   "COUNC108",
+   "FNC170",
+   "HLTHC100",
+   "HLTHC104",
+   "HLTHC220",
+   "PSYCC165",
+   "SOCC100",
+   "SOCC185",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/health-wellness/health/public-health-ast/",
+   "title": "Public Health, Associate in Science Degree for Transfer < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 3381
+ },
+ {
+  "control_number": "46330",
+  "title": "Cybersecurity Specialist (Applied)",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "46538",
+  "title": "Calculus",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATHC170",
+   "MATHC180",
+   "MATHC185",
+   "MATHC280",
+   "MATHC285",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/science-mathematics/mathematics/calculus-coa/",
+   "title": "Calculus, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2741
+ },
+ {
+  "control_number": "46539",
+  "title": "Emergency Management Foundations",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMGTC101",
+   "EMGTC105",
+   "EMGTC110",
+   "EMGTC120"
+  ],
+  "source": {
+   "url": "https://catalog.cccd.edu/coastline/pathways/law-safety/emergency-management/emergency-management-foundations-cos/",
+   "title": "Emergency Management Foundations, Certificate of Achievement < Coastline College",
+   "h1": "ACADEMIC CATALOGS",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2722
+ }
+]

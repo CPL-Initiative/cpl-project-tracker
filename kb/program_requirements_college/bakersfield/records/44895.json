@@ -1,0 +1,395 @@
+{
+ "college": "Bakersfield College",
+ "control_number": "44895",
+ "shape": "adt",
+ "title": "Kinesiology",
+ "award": "A.A- T Degree",
+ "source_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/kinesiology-associate-in-arts-for-transfer-fall-2025",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7477,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7477,
+    "output_tokens": 3779,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3779,
+  "output_tokens_details": {
+   "thinking_tokens": 1250
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.10549,
+ "ms": 29117,
+ "seconds": 29.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 31,
+   "listed": 31,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "KINSB21DJ",
+    "KINSB4A"
+   ],
+   "flagged": [
+    "KINSB21DJ",
+    "KINSB4A"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.0,
+    23.5
+   ],
+   "stated": [
+    20.0,
+    23.5
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Kinesiology Associate in Arts for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 23.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": "CalGETC",
+   "outcomes": [
+    "Upon successful completion of the program, the student will be able to explore the history, research, and current information in Kinesiology and their current applications.",
+    "Upon successful completion of the program, the student will be able to analyze the basic scientific principles at work in both sport performance and general fitness activities.",
+    "Upon successful completion of the program, the student will be able to examine the value and significance of physical activity for human development, human interactions, and quality of life.",
+    "Upon successful completion of the program, the student will be able to assess the primary aspects of injury and trauma response as a first responder.",
+    "Upon successful completion of the program, the student will be able to apply the principles of physical fitness development and maintenance, as well as, the body's responses to physical activity."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 14,
+     "max": 14
+    },
+    "courses": [
+     {
+      "code": "KINS B1A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL B32",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL B33",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Movement-based Courses (Select 3 units, no more than one class per category)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "KINS B21SW",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINS B22SW",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINS B21DB",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINS B21DJ",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINS B21FC",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINS B21WT",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINS B21Y",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINS B21WJ",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINS B4A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINS B21A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINS B21G",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINS B21T",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINS B21BB",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINS B21S",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINS B21VB",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINS B21SF",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINS B21BV",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST A: Select two (minimum of 6 units)",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 9.5
+    },
+    "courses": [
+     {
+      "code": "KINS B2A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC B5",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000E",
+        "units": 4.5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS B2A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHYS B4A",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM B11",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM B2A",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM B1A",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOCI B1",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HLED B1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PBHS B21",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints codes without a space (e.g., 'KINSB21SW'); recorded here with the subject separated (KINS B21SW) to match the closed list.",
+   "Core Courses prints '(Total 14)' but the three listed courses sum to 11 units (KINS B1A 3, BIOL B32 4, BIOL B33 4); reviewer should check.",
+   "Movement-based Courses are printed in five categories, each 'Complete the following number of credits: 1': Aquatics (KINS B21SW, B22SW), Dance (KINS B21DB, B21DJ), Fitness (KINS B21FC, B21WT, B21Y, B21WJ, B4A), Individual Sports (KINS B21A, B21G, B21T), Team Sports (KINS B21BB, B21S, B21VB, B21SF, B21BV). Student selects 3 units total with no more than one class per category; recorded as a single choose_units 3 block. KINS B4A (3 units) is listed under Fitness although the category total is 1.",
+   "LIST A is printed as KINS B2A plus subgroups each with its own total: Statistics (4-4.5: PSYC B5, STAT C1000, STAT C1000E), Physics (4: PHYS B2A, PHYS B4A), Chemistry (4-5: CHEM B11, CHEM B2A, CHEM B1A), Psychology or Sociology (3: PSYC C1000, SOCI B1), Health (3: HLED B1, PBHS B21). Recorded as choose 2 entries (one per subgroup) with the subgroup courses as alternatives; the heading also requires a minimum of 6 units.",
+   "KINS B21DJ and KINS B4A appear in the catalog but not on the closed list (catalog additions).",
+   "The program learning outcomes are printed for the program as a whole on this AA-T page; recorded as this award's outcomes.",
+   "Catalog text begins mid-sentence ('ology, while also...'); the start of the program description is cut off. No careers are named in the provided text.",
+   "The source URL slug references 'fall-2025' though the catalog is labeled 2026-2027; reviewer may confirm the catalog year."
+  ]
+ },
+ "extracted_run": "38414480070"
+}

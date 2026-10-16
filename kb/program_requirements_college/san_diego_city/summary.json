@@ -1,0 +1,101 @@
+{
+ "college": "San Diego City College",
+ "programs": 203,
+ "with_closed_list": 191,
+ "found": 171,
+ "extracted": 171,
+ "errors": 0,
+ "passed_machine_checks": 160,
+ "failed": {
+  "coverage": 4,
+  "invented": 0,
+  "arithmetic": 11,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 12.88,
+ "cost_per_program": 0.0753,
+ "not_found": [
+  {
+   "control_number": "05263",
+   "title": "German",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "18127",
+   "title": "Liberal Arts and Sciences: Elementary Multiple Subject Teaching Preparation",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "19266",
+   "title": "Real Estate Broker",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u"
+  },
+  {
+   "control_number": "19710",
+   "title": "Real Estate",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "33180",
+   "title": "Business Information Worker",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "33649",
+   "title": "Elementary Teacher Education",
+   "award": "A.A- T Degree"
+  },
+  {
+   "control_number": "36567",
+   "title": "Business Information Worker II",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "36568",
+   "title": "Business Information Worker",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "37387",
+   "title": "Special Effects (FX) Makeup",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "38733",
+   "title": "Green Building Energy Professional",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "38735",
+   "title": "Green Building Energy Professional",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "39358",
+   "title": "C++",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "39387",
+   "title": "Energy Analysis and Consultation",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "39388",
+   "title": "Energy Analysis and Consultation",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "42744",
+   "title": "General Atomics CNC Machine Technician Apprenticeship",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "42746",
+   "title": "General Atomics HVAC-R Technician Apprenticeship",
+   "award": "A.S. Degree"
+  }
+ ],
+ "run": "38347787891"
+}

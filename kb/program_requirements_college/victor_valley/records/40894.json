@@ -1,0 +1,220 @@
+{
+ "college": "Victor Valley College",
+ "control_number": "40894",
+ "shape": "certificate",
+ "title": "Athletic Trainer Aide II",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.vvc.edu//degrees-certificates/kinesiology/athletic-trainer-aide-ii-ca/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7068,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7068,
+    "output_tokens": 1471,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1471,
+  "output_tokens_details": {
+   "thinking_tokens": 624
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05769,
+ "ms": 12346,
+ "seconds": 12.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 7,
+   "share": 0.857,
+   "missing": [
+    "HLTH1401"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "HLTH101",
+    "KIN138"
+   ],
+   "flagged": [
+    "HLTH101",
+    "KIN138"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    16.0,
+    17.0
+   ],
+   "stated": [
+    16.0,
+    17.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Athletic Trainer Aide II Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 16,
+    "max": 17
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "Physical Therapy Aide"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ALDH 142",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "KIN 142",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 211",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL 231",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HLTH 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HLTH 102",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HLTH 202",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 138",
+      "units": 2,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "HLTH 1401",
+    "why": "not in the text; catalog prints HLTH 101 Introduction to Public Health, same title, likely the same course under a different code"
+   }
+  ],
+  "notes": [
+   "Closed-list ALDH142 and BIOL231 were matched to catalog ALDH 142 and BIOL 231 (spacing difference only).",
+   "HLTH 101 (Introduction to Public Health) is recorded as a catalog addition; the closed list names HLTH 1401 with the same title, which a reviewer should confirm is the same course.",
+   "Units are printed only on the first course of each 'or' row; alternatives KIN 142, BIOL 231 and HLTH 102 are left with null units as none is printed beside them.",
+   "KIN 138 Work Experience Education Kinesiology (2.0-3.0) is not in the closed list.",
+   "The description also names 'assisting Athletic Trainers' as employment and continued study in athletic training, physical therapy or rehabilitation; only 'Physical Therapy Aide' was recorded as a job title.",
+   "No program learning outcomes are printed in the text."
+  ]
+ },
+ "extracted_run": "38675237912"
+}

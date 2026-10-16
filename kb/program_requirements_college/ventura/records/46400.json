@@ -1,0 +1,170 @@
+{
+ "college": "Ventura College",
+ "control_number": "46400",
+ "shape": "noncredit",
+ "title": "English for Multilingual Students—Level 3: Advanced Academic Oral Communication Skills",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/noncredit-programs-courses/engm-level-3-oral-comm-cocn/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6944,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6944,
+    "output_tokens": 1159,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1159,
+  "output_tokens_details": {
+   "thinking_tokens": 461
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.05096,
+ "ms": 10574,
+ "seconds": 11.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "English for Multilingual Students—Level 3: Advanced Academic Oral Communication Skills (COCN)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply advanced listening strategies to comprehend, analyze, and evaluate college-level lectures and presentations.",
+    "Compose well-structured presentations using academic speaking conventions, including appropriate vocabulary, clear pronunciation, and proper delivery techniques."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Certificate courses (as described in overview)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ENGM N101L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGM N102L",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGM N103L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The REQUIREMENTS tab content is not in the supplied text; the block is reconstructed from the overview prose: 'two out of three sequential courses: ENGM N101L or ENGM N102L, and ENGM N103L'. A reviewer should check the actual requirements table.",
+   "No hours or units are printed for any course or for the certificate total, so all units fields and total_units are null. Measure is set to 'units' by default because the text states no hours, although this is a noncredit certificate likely counted in hours.",
+   "The closed list stores ENGM N103L as 'ENGMN103L' (no space); treated as the same course, so catalog_addition is false.",
+   "The outcomes come from the program's outcomes tab and apply to this certificate of completion.",
+   "The overview mentions 'professional communication across many career fields' and 'workforce preparation' but names no specific career, so careers is empty."
+  ]
+ },
+ "extracted_run": "38756014587"
+}

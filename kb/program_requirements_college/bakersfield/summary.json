@@ -1,0 +1,61 @@
+{
+ "college": "Bakersfield College",
+ "programs": 249,
+ "with_closed_list": 241,
+ "found": 231,
+ "extracted": 231,
+ "errors": 0,
+ "passed_machine_checks": 207,
+ "failed": {
+  "coverage": 2,
+  "invented": 0,
+  "arithmetic": 24,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 13.38,
+ "cost_per_program": 0.0579,
+ "not_found": [
+  {
+   "control_number": "02090",
+   "title": "Liberal Arts",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "36716",
+   "title": "California State University General Education Breadth",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+  },
+  {
+   "control_number": "36745",
+   "title": "Intersegmental General Education (IGETC) for STEM",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+  },
+  {
+   "control_number": "36746",
+   "title": "Intersegmental General Education (IGETC)",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+  },
+  {
+   "control_number": "43364",
+   "title": "Sheet Metal Apprenticeship",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+  },
+  {
+   "control_number": "43365",
+   "title": "Electrician Apprenticeship",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+  },
+  {
+   "control_number": "45809",
+   "title": "California General Education Transfer Curriculum (Cal-GETC)",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+  },
+  {
+   "control_number": "46263",
+   "title": "Basic First Aid and CPR",
+   "award": "Noncredit program"
+  }
+ ],
+ "run": "38414480070"
+}

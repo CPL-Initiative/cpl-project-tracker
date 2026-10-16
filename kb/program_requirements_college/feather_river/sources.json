@@ -1,0 +1,1863 @@
+[
+ {
+  "control_number": "04320",
+  "title": "Equine Studies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGAB110",
+   "AGAB188",
+   "AGAS120",
+   "AGAS125",
+   "AGAS170",
+   "AGEQ102",
+   "AGEQ103",
+   "AGEQ104",
+   "AGEQ106",
+   "AGEQ115",
+   "AGEQ116",
+   "AGEQ117",
+   "AGEQ118",
+   "AGEQ123",
+   "AGEQ124",
+   "AGEQ135",
+   "AGEQ136",
+   "AGEQ137",
+   "AGEQ138",
+   "AGEQ140",
+   "AGEQ141",
+   "AGEQ151",
+   "AGEQ152",
+   "AGEQ180",
+   "AGEQ181",
+   "AGEQ182",
+   "AGEQ186",
+   "AGEQ204",
+   "AGEQ205",
+   "AGEQ206",
+   "AGEQ207",
+   "AGEQ210",
+   "AGEQ211",
+   "AGEQ212",
+   "AGEQ214",
+   "AGEQ215",
+   "AGEQ216",
+   "AGEQ217",
+   "AGEQ225",
+   "AGEQ226",
+   "AGEQ227",
+   "AGEQ251",
+   "AGEQ252",
+   "AGEQ296",
+   "AGEQ297",
+   "AGEQ298",
+   "AGEQ299",
+   "AGMA160"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1788",
+   "title": "Equine Studies - A.S.",
+   "h1": "Equine Studies - A.S.",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 48,
+  "text_chars": 6191
+ },
+ {
+  "control_number": "04321",
+  "title": "Biology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04322",
+  "title": "Business",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "BUS100",
+   "BUS102",
+   "BUS104",
+   "BUS115",
+   "BUS118",
+   "BUS130",
+   "BUS140",
+   "BUS170",
+   "BUS171",
+   "ICT101",
+   "ICT111"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1803",
+   "title": "Business - A.A.",
+   "h1": "Business - A.A.",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3293
+ },
+ {
+  "control_number": "04326",
+  "title": "Physical Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04331",
+  "title": "Administration of Justice",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJ106",
+   "ADMJ108",
+   "ADMJ112",
+   "ADMJ114",
+   "ADMJ116",
+   "ADMJ120",
+   "ADMJ126",
+   "ADMJ203",
+   "PSYCC1000",
+   "SOCIC1000"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1809",
+   "title": "Administration of Justice - A.A.",
+   "h1": "Administration of Justice - A.A.",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3464
+ },
+ {
+  "control_number": "04332",
+  "title": "Early Childhood Education",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04333",
+  "title": "Outdoor Recreation Leadership",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS130",
+   "ENVR102",
+   "ENVR120",
+   "ORL110",
+   "ORL116",
+   "ORL120",
+   "ORL130",
+   "ORL140",
+   "ORL142",
+   "ORL144",
+   "ORL150",
+   "ORL152",
+   "ORL154",
+   "ORL156",
+   "ORL158",
+   "ORL160",
+   "ORL161",
+   "ORL162",
+   "ORL168",
+   "ORL170",
+   "ORL171",
+   "ORL172",
+   "ORL174",
+   "ORL180",
+   "ORL182",
+   "ORL188",
+   "ORL190",
+   "ORL192",
+   "ORL200",
+   "ORL280",
+   "ORL291"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1813",
+   "title": "Outdoor Recreation Leadership - A.A.",
+   "h1": "Outdoor Recreation Leadership - A.A.",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 31,
+  "text_chars": 5053
+ },
+ {
+  "control_number": "04334",
+  "title": "Social Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "04335",
+  "title": "History",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH106",
+   "ANTH150",
+   "HIST111",
+   "HIST112",
+   "HIST120",
+   "HIST130",
+   "HIST140",
+   "HIST170",
+   "HISTC1001",
+   "HISTC1002",
+   "POL140"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1817",
+   "title": "History - A.A.",
+   "h1": "History - A.A.",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3679
+ },
+ {
+  "control_number": "07075",
+  "title": "Environmental Studies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL102",
+   "BIOL104",
+   "BIOL106",
+   "CHEM102",
+   "ENVR102",
+   "ENVR103",
+   "ENVR120",
+   "ENVR130",
+   "ENVR142",
+   "ENVR142L",
+   "ENVR160",
+   "ENVR180",
+   "ENVR185",
+   "ENVR201",
+   "ENVR205",
+   "ENVR210",
+   "ENVR220",
+   "ENVR230",
+   "ENVR235",
+   "ENVR240",
+   "ENVR250",
+   "ENVR251",
+   "ENVR264",
+   "ENVR280",
+   "GEOG102",
+   "GEOL102",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1792",
+   "title": "Environmental Studies - A.S.",
+   "h1": "Environmental Studies - A.S.",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 27,
+  "text_chars": 4853
+ },
+ {
+  "control_number": "11771",
+  "title": "Vocational Nursing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL110",
+   "BIOL112",
+   "HES170",
+   "NURS100",
+   "NURS111",
+   "NURS112",
+   "NURS114",
+   "NURS118",
+   "NURS120",
+   "NURS122",
+   "NURS124",
+   "NURS126",
+   "NURS202",
+   "NURS204",
+   "NURS212",
+   "NURS214",
+   "NURS216",
+   "NURS222",
+   "NURS224",
+   "NURS230"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1905",
+   "title": "Vocational Nursing - A.S.",
+   "h1": "Vocational Nursing - A.S.",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 3769
+ },
+ {
+  "control_number": "12243",
+  "title": "Equine Studies: Ranch Skills",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "12244",
+  "title": "Equine Studies: Horse Training Skills",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "15817",
+  "title": "Equine Studies: Rodeo",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "16444",
+  "title": "Agricultural Studies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGAB110",
+   "AGAB112",
+   "AGAB124",
+   "AGAB128",
+   "AGAB150",
+   "AGAB188",
+   "AGAS120",
+   "AGAS125",
+   "AGAS170",
+   "AGAS171",
+   "AGAS172",
+   "AGEQ102",
+   "AGEQ103",
+   "AGEQ104",
+   "AGEQ106",
+   "AGEQ123",
+   "AGEQ141",
+   "AGEQ204",
+   "AGEQ205",
+   "AGEQ206",
+   "AGEQ210",
+   "AGEQ211",
+   "AGEQ212",
+   "AGEQ214",
+   "AGEQ215",
+   "AGEQ296",
+   "AGEQ298",
+   "AGEQ299",
+   "AGMA108",
+   "AGMA116",
+   "AGMA132",
+   "AGMA140",
+   "AGMA160",
+   "AGMA184",
+   "AGPS104",
+   "AGPS210",
+   "ENVR210"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1776",
+   "title": "Agricultural Studies - A.S.",
+   "h1": "Agricultural Studies - A.S.",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 37,
+  "text_chars": 5111
+ },
+ {
+  "control_number": "16693",
+  "title": "Studio Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.864,
+  "codes_found": [
+   "ART100",
+   "ART107",
+   "ART109",
+   "ART116",
+   "ART117",
+   "ART122",
+   "ART124",
+   "ART126",
+   "ART128",
+   "ART132",
+   "ART134",
+   "ART136",
+   "ART138",
+   "ART140",
+   "ART142",
+   "ART144",
+   "ART150",
+   "ART166",
+   "ART291"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1830",
+   "title": "Studio Arts - A.A.",
+   "h1": "Studio Arts - A.A.",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 3774
+ },
+ {
+  "control_number": "17753",
+  "title": "Nutrition, Foods & Culinary Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18714",
+  "title": "Liberal Arts: Fine Arts and Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "ART100",
+   "ART107",
+   "ART109",
+   "ART116",
+   "ART122",
+   "ART150",
+   "ENGL128",
+   "ENGL180",
+   "ENGL245",
+   "ENGL246",
+   "ENGL252",
+   "ENGL254",
+   "ENGL256",
+   "ENGL257",
+   "HUMN100",
+   "HUMN101",
+   "HUMN110",
+   "HUMN112",
+   "PHIL100",
+   "PHIL103"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1769",
+   "title": "General Studies: Arts and Humanities Emphasis - A.A.",
+   "h1": "General Studies: Arts and Humanities Emphasis - A.A.",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.6
+   }
+  },
+  "listed": 24,
+  "text_chars": 4766
+ },
+ {
+  "control_number": "18718",
+  "title": "General Studies: Social & Behavioral Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.977,
+  "codes_found": [
+   "ADMJ102",
+   "ADMJ152",
+   "ADMJ203",
+   "ANTH100",
+   "ANTH103",
+   "ANTH106",
+   "ANTH150",
+   "ECE153",
+   "ECE162",
+   "ENVR180",
+   "ETHN131",
+   "ETHN135",
+   "ETHN140",
+   "ETHN150",
+   "GEOG104",
+   "GEOG125",
+   "HIST111",
+   "HIST112",
+   "HIST120",
+   "HIST130",
+   "HIST135",
+   "HIST140",
+   "HISTC1001",
+   "HISTC1002",
+   "MUS150",
+   "POL110",
+   "POL120",
+   "POL130",
+   "POL140",
+   "POL150",
+   "POL160",
+   "POL180",
+   "POLSC1000",
+   "PSY152",
+   "PSYCC1000",
+   "SOC100",
+   "SOC125",
+   "SOC140",
+   "SOC150",
+   "SOC160",
+   "SOCIC1000",
+   "SOJU130",
+   "SWHS110"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1821",
+   "title": "General Studies: Social and Behavioral Sciences Emphasis - A.A.",
+   "h1": "General Studies: Social and Behavioral Sciences Emphasis - A.A.",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 44,
+  "text_chars": 5345
+ },
+ {
+  "control_number": "20859",
+  "title": "Equine Studies: Horse Training Skills",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGEQ298"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1783",
+   "title": "Fundamentals of Horse Training Skills - Certificate of Specialization",
+   "h1": "Fundamentals of Horse Training Skills - Certificate of Specialization",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.6
+   }
+  },
+  "listed": 1,
+  "text_chars": 2919
+ },
+ {
+  "control_number": "20877",
+  "title": "Health & Exercise Studies",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20879",
+  "title": "Licensed Vocational Nursing",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.789,
+  "codes_found": [
+   "NURS111",
+   "NURS112",
+   "NURS114",
+   "NURS120",
+   "NURS122",
+   "NURS212",
+   "NURS214",
+   "NURS222",
+   "NURS225",
+   "NURS232",
+   "NURS234",
+   "NURS235",
+   "NURS237",
+   "NURS239",
+   "NURS240"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1840",
+   "title": "Licensed Vocational Nursing - Certificate of Achievement",
+   "h1": "Licensed Vocational Nursing - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 3656
+ },
+ {
+  "control_number": "20881",
+  "title": "Early Childhood Education",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20882",
+  "title": "Administration of Justice",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 10,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30384",
+  "title": "Health and Exercise Sciences",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30974",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE150",
+   "ECE152",
+   "ECE153",
+   "ECE157",
+   "ECE158",
+   "ECE160",
+   "ECE162"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1797",
+   "title": "Early Childhood Education - A.S.-T",
+   "h1": "Early Childhood Education - A.S.-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3016
+ },
+ {
+  "control_number": "30998",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.625,
+  "codes_found": [
+   "BIOL110",
+   "BIOL112",
+   "CHEM102",
+   "CHEM104",
+   "CHEM106",
+   "HES133",
+   "PHYS102",
+   "PHYS104",
+   "PHYS204",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1842",
+   "title": "Kinesiology - A.A.-T",
+   "h1": "Kinesiology - A.A.-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3318
+ },
+ {
+  "control_number": "31776",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "31895",
+  "title": "Office Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.6,
+  "codes_found": [
+   "BUS100",
+   "ICT101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1857",
+   "title": "Office Technology - A.S.",
+   "h1": "Office Technology - A.S.",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3285
+ },
+ {
+  "control_number": "31896",
+  "title": "Office Technology",
+  "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "ICT101",
+   "ICT92"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1856",
+   "title": "Office Technology - Certificate of Achievement",
+   "h1": "Office Technology - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2662
+ },
+ {
+  "control_number": "32356",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJ102",
+   "ADMJ105",
+   "ADMJ106",
+   "ADMJ108",
+   "ADMJ112",
+   "ADMJ114",
+   "ADMJ116",
+   "ADMJ120",
+   "ADMJ125",
+   "ADMJ126",
+   "ADMJ203",
+   "ADMJ204",
+   "PSYCC1000",
+   "SOCIC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1808",
+   "title": "Administration of Justice - A.S.-T",
+   "h1": "Administration of Justice - A.S.-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3667
+ },
+ {
+  "control_number": "32537",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL150",
+   "ENGL170",
+   "ENGL180",
+   "ENGL245",
+   "ENGL246",
+   "ENGL252",
+   "ENGL254",
+   "ENGL256",
+   "ENGL257",
+   "ENGLC1001",
+   "ENGLC1002",
+   "HUMN110",
+   "HUMN112",
+   "SPAN101",
+   "SPAN102"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1822",
+   "title": "English - A.A.-T",
+   "h1": "English - A.A.-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3961
+ },
+ {
+  "control_number": "32567",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJ203",
+   "ANTH100",
+   "ANTH103",
+   "ANTH120",
+   "ANTH130",
+   "ANTH150",
+   "BIOL110",
+   "GEOG104",
+   "GEOL102",
+   "SOCIC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1827",
+   "title": "Anthropology - A.A.-T",
+   "h1": "Anthropology - A.A.-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3446
+ },
+ {
+  "control_number": "32743",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "POL120",
+   "POL130",
+   "POL140",
+   "POL150",
+   "POLSC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1835",
+   "title": "Political Science - A.A.-T",
+   "h1": "Political Science - A.A.-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3376
+ },
+ {
+  "control_number": "32763",
+  "title": "English as a Second Language",
+  "award": null,
+  "shape": "other",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33191",
+  "title": "Forensic Crime Scene Investigation",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "ADMJ108",
+   "ADMJ126",
+   "ANTH120",
+   "ANTH200",
+   "ART150",
+   "BIOL100",
+   "BIOL110"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1785",
+   "title": "Forensic Crime Scene Investigation - Certificate of Achievement",
+   "h1": "Forensic Crime Scene Investigation - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3199
+ },
+ {
+  "control_number": "34001",
+  "title": "Equine and Ranch Management",
+  "award": "Baccalaureate of Science (B.S.) Degree.",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 38,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36176",
+  "title": "MATHEMATICS",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.6,
+  "codes_found": [
+   "MATHC2211",
+   "MATHC2221",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1824",
+   "title": "Biology - A.S.",
+   "h1": "Biology - A.S.",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3759
+ },
+ {
+  "control_number": "36248",
+  "title": "Geology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM102",
+   "CHEM104",
+   "GEOL102",
+   "GEOL104"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1819",
+   "title": "Geology - A.S.",
+   "h1": "Geology - A.S.",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2843
+ },
+ {
+  "control_number": "36252",
+  "title": "Geography",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH100",
+   "ENVR201",
+   "GEOG102",
+   "GEOG104",
+   "GEOG125",
+   "GEOL102"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1820",
+   "title": "Geography - A.A.",
+   "h1": "Geography - A.A.",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2990
+ },
+ {
+  "control_number": "36296",
+  "title": "Geology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM102",
+   "CHEM104",
+   "GEOL102",
+   "GEOL104"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1818",
+   "title": "Geology - A.S.-T",
+   "h1": "Geology - A.S.-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2845
+ },
+ {
+  "control_number": "36333",
+  "title": "Political Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "BUS171",
+   "POL130",
+   "POL140",
+   "POL150",
+   "POLSC1000"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1901",
+   "title": "Political Science - A.A.",
+   "h1": "Political Science - A.A.",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3401
+ },
+ {
+  "control_number": "41355",
+  "title": "Social Work and Human Services",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.944,
+  "codes_found": [
+   "ADMJ102",
+   "ANTH100",
+   "BIOL100",
+   "BIOL110",
+   "BIOL112",
+   "ECE153",
+   "ECE162",
+   "ENGLC1001",
+   "HISTC1001",
+   "HISTC1002",
+   "POL140",
+   "PSYCC1000",
+   "SOC150",
+   "SOCIC1000",
+   "STATC1000",
+   "SWHS110",
+   "SWHS120"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1814",
+   "title": "Social Work and Human Services  - A.A.-T",
+   "h1": "Social Work and Human Services  - A.A.-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 3879
+ },
+ {
+  "control_number": "42704",
+  "title": "Sociology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJ112",
+   "ANTH100",
+   "ECE153",
+   "ETHN140",
+   "GEOG104",
+   "GEOG125",
+   "HUMN110",
+   "HUMN112",
+   "PHIL102",
+   "POL110",
+   "POL140",
+   "SOC100",
+   "SOC150",
+   "SOCIC1000"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1834",
+   "title": "Sociology - A.A.",
+   "h1": "Sociology - A.A.",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3550
+ },
+ {
+  "control_number": "42761",
+  "title": "Teacher",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE150",
+   "ECE152",
+   "ECE153",
+   "ECE157",
+   "ECE158",
+   "ECE159",
+   "ECE160",
+   "ECE162"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1851",
+   "title": "Teacher - Certificate of Achievement",
+   "h1": "Teacher - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3018
+ },
+ {
+  "control_number": "42786",
+  "title": "Hydrologic Technician",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGPS210",
+   "BIOL104",
+   "BIOL106",
+   "BIOL264",
+   "ENVR142",
+   "ENVR160",
+   "ENVR201",
+   "ENVR205",
+   "ENVR210",
+   "ENVR264",
+   "GEOL102",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1844",
+   "title": "Hydrologic Technician - Certificate of Achievement",
+   "h1": "Hydrologic Technician - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3414
+ },
+ {
+  "control_number": "42796",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJ112",
+   "ANTH100",
+   "ECE153",
+   "ETHN140",
+   "GEOG104",
+   "POL110",
+   "POL140",
+   "POL160",
+   "PSYCC1000",
+   "SOC100",
+   "SOC140",
+   "SOC150",
+   "SOCIC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1831",
+   "title": "Sociology - A.A.-T",
+   "h1": "Sociology - A.A.-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3602
+ },
+ {
+  "control_number": "42985",
+  "title": "Ecological Farming",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGMA160",
+   "AGPS210",
+   "BUS130",
+   "BUS171",
+   "ENVR130",
+   "ENVR131",
+   "ENVR132",
+   "ENVR133",
+   "ENVR134",
+   "ENVR135",
+   "ENVR210"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1796",
+   "title": "Ecological Farming - Certificate of Achievement",
+   "h1": "Ecological Farming - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3360
+ },
+ {
+  "control_number": "43018",
+  "title": "Forestry Technician",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGPS210",
+   "BIOL106",
+   "ENVR160",
+   "ENVR201",
+   "ENVR205",
+   "ENVR210",
+   "ENVR220",
+   "ENVR230",
+   "ENVR45"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1784",
+   "title": "Forestry Technician - Certificate of Achievement",
+   "h1": "Forestry Technician - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3316
+ },
+ {
+  "control_number": "43300",
+  "title": "Fire and Fuels Technician",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CWEE170",
+   "ENVR120",
+   "ENVR142",
+   "ENVR201",
+   "ENVR205",
+   "ENVR210",
+   "ENVR220",
+   "ENVR230",
+   "ENVR235",
+   "ENVR41",
+   "ENVR42",
+   "ENVR43",
+   "ENVR44",
+   "ENVR45",
+   "ENVR49"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1786",
+   "title": "Fire and Fuels Technician - Certificate of Achievement",
+   "h1": "Fire and Fuels Technician - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3757
+ },
+ {
+  "control_number": "43301",
+  "title": "Environmental Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL102",
+   "BIOL104",
+   "BIOL106",
+   "CHEM102",
+   "CHEM104",
+   "ENVR142",
+   "GEOL102",
+   "PHYS102",
+   "PHYS104",
+   "PHYS202",
+   "PHYS204",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1793",
+   "title": "Environmental Science - A.S.",
+   "h1": "Environmental Science - A.S.",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3558
+ },
+ {
+  "control_number": "44471",
+  "title": "Agriculture Business",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "AGAB110",
+   "AGAB112",
+   "AGAB124",
+   "AGAB128",
+   "AGAB150",
+   "AGAS120",
+   "AGPS104",
+   "AGPS210",
+   "CHEM102",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1774",
+   "title": "Agriculture Business - A.S.-T",
+   "h1": "Agriculture Business - A.S.-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3200
+ },
+ {
+  "control_number": "44510",
+  "title": "Business 2.0 A.S.-T",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "BUS100",
+   "BUS102",
+   "BUS104",
+   "BUS115",
+   "MATH114",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1801",
+   "title": "Business - A.S.-T",
+   "h1": "Business - A.S.-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2934
+ },
+ {
+  "control_number": "44522",
+  "title": "Mathematics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM102",
+   "MATH114",
+   "MATH222",
+   "MATH224",
+   "PHYS202",
+   "PHYS204",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1826",
+   "title": "Mathematics - A.S.",
+   "h1": "Mathematics - A.S.",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3033
+ },
+ {
+  "control_number": "44639",
+  "title": "Agriculture Business",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "AGAB110",
+   "AGAB112",
+   "AGAB124",
+   "AGAB128",
+   "AGAB150",
+   "AGAS120",
+   "AGPS104",
+   "AGPS210",
+   "CHEM102",
+   "ENVR210",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1774",
+   "title": "Agriculture Business - A.S.-T",
+   "h1": "Agriculture Business - A.S.-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3200
+ },
+ {
+  "control_number": "44713",
+  "title": "Allied Health",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART116",
+   "ART122",
+   "BIOL102",
+   "BIOL110",
+   "BIOL112",
+   "BIOL210",
+   "CHEM102",
+   "CHEM106",
+   "COMMC1000",
+   "EMT120",
+   "ENGL119",
+   "HES133",
+   "NURS100",
+   "NURS118",
+   "PHYS102",
+   "PSYCC1000",
+   "SOCIC1000"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1772",
+   "title": "Allied Health - A.S.",
+   "h1": "Allied Health - A.S.",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 4304
+ },
+ {
+  "control_number": "44714",
+  "title": "Allied Health",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 17,
+  "text_chars": 0
+ },
+ {
+  "control_number": "44841",
+  "title": "Hatchery Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AGAS266",
+   "AGMA140",
+   "AGMA160",
+   "BIOL264",
+   "ENVR250",
+   "ENVR264",
+   "ENVR266",
+   "ENVR291"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1770",
+   "title": "Hatchery Technician - Certificate of Achievement",
+   "h1": "Hatchery Technician - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2892
+ },
+ {
+  "control_number": "44843",
+  "title": "Biological Science Technician",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.727,
+  "codes_found": [
+   "BIOL104",
+   "BIOL106",
+   "BIOL120",
+   "BIOL264",
+   "ENVR142",
+   "ENVR240",
+   "ENVR241",
+   "ENVR264"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1804",
+   "title": "Biological Science Technician - Certificate of Achievement",
+   "h1": "Biological Science Technician - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3248
+ },
+ {
+  "control_number": "45095",
+  "title": "CalGETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.966,
+  "codes_found": [
+   "ANTH100",
+   "ANTH103",
+   "ANTH106",
+   "ANTH120",
+   "ANTH120L",
+   "ANTH150",
+   "ART100",
+   "ART124",
+   "ART166",
+   "BIOL100",
+   "BIOL102",
+   "BIOL104",
+   "BIOL106",
+   "BIOL210",
+   "CHEM102",
+   "CHEM104",
+   "CHEM106",
+   "COMMC1000",
+   "ECE153",
+   "ECE162",
+   "ENGL128",
+   "ENGL180",
+   "ENGL245",
+   "ENGL256",
+   "ENGL257",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENVR102",
+   "ENVR142",
+   "ENVR142L",
+   "ETHN135",
+   "ETHN140",
+   "ETHN150",
+   "GEOG102",
+   "GEOG104",
+   "GEOG125",
+   "GEOL102",
+   "GEOL104",
+   "GEOL120",
+   "HIST111",
+   "HIST112",
+   "HIST120",
+   "HIST130",
+   "HIST135",
+   "HIST140",
+   "HISTC1001",
+   "HISTC1002",
+   "HUMN100",
+   "HUMN101",
+   "HUMN110",
+   "HUMN112",
+   "HUMN128",
+   "MATH110",
+   "MATH114",
+   "MATH222",
+   "MATH224",
+   "MATHC2211",
+   "MATHC2221",
+   "MUS101",
+   "MUS150",
+   "PHIL100",
+   "PHIL102",
+   "PHIL103",
+   "PHSC120",
+   "PHSC120L",
+   "PHYS102",
+   "PHYS104",
+   "PHYS202",
+   "PHYS204",
+   "PHYS206",
+   "POL120",
+   "POL130",
+   "POL140",
+   "POL150",
+   "POL160",
+   "POLSC1000",
+   "PSYCC1000",
+   "SOC100",
+   "SOC140",
+   "SOC150",
+   "SOC160",
+   "SOCIC1000",
+   "SOJU130",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1771",
+   "title": "CalGETC - Certificate of Achievement",
+   "h1": "CalGETC - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 87,
+  "text_chars": 8530
+ },
+ {
+  "control_number": "46487",
+  "title": "Elementary Teacher Education: Integrated Programs",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "ART100",
+   "BIOL100",
+   "COMMC1000",
+   "ECE162",
+   "ENGLC1000",
+   "ENGLC1002",
+   "GEOL120",
+   "HIST111",
+   "HISTC1001",
+   "MATH150",
+   "MUS101",
+   "PHYS140",
+   "POLSC1000"
+  ],
+  "source": {
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1909",
+   "title": "Elementary Teacher Education: Integrated Programs - A. A.-T",
+   "h1": "Elementary Teacher Education: Integrated Programs - A. A.-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3374
+ },
+ {
+  "control_number": "46533",
+  "title": "Ecosystem Restoration and Applied Fire Management",
+  "award": "Baccalaureate of Science (B.S.) Degree.",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 41,
+  "text_chars": 0
+ }
+]

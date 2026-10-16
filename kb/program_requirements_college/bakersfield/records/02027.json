@@ -1,0 +1,301 @@
+{
+ "college": "Bakersfield College",
+ "control_number": "02027",
+ "shape": "degree",
+ "title": "Industrial Technology: Industrial Drawing",
+ "award": "A.S. Degree",
+ "source_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/program/industrial-drawing-associate-of-science-summer-2019",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5721,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5721,
+    "output_tokens": 2286,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2286,
+  "output_tokens_details": {
+   "thinking_tokens": 891
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0686,
+ "ms": 19694,
+ "seconds": 20.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 1,
+   "listed": 1,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 13,
+   "codes": [
+    "COMPB5",
+    "ENGRB24",
+    "INDRB12",
+    "INDRB20A",
+    "INDRB20B",
+    "INDRB50",
+    "INDRB51",
+    "INDRB52",
+    "MATHB70",
+    "MFGTB1AB",
+    "WELDB1A",
+    "WELDB1B",
+    "WOODB2"
+   ],
+   "flagged": [
+    "COMPB5",
+    "ENGRB24",
+    "INDRB12",
+    "INDRB20A",
+    "INDRB20B",
+    "INDRB50",
+    "INDRB51",
+    "INDRB52",
+    "MATHB70",
+    "MFGTB1AB",
+    "WELDB1A",
+    "WELDB1B",
+    "WOODB2"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    34.0,
+    34.0
+   ],
+   "stated": [
+    34.0,
+    34.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 11,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Industrial Drawing Associate of Science",
+   "measure": "units",
+   "total_units": {
+    "min": 34,
+    "max": 34
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate proficiency in technical skills and safety principles required for industrial employment.",
+    "Demonstrate problem solving skills used in industrial design and product development..",
+    "Demonstrate a deep understanding of the core material required for transfer to a four year university degree program in industrial technology."
+   ],
+   "careers": [
+    "architecture",
+    "engineering",
+    "industrial technology draftsman",
+    "CAD Technician",
+    "engineering technician",
+    "CAD Manager",
+    "detailer",
+    "Architectural and Civil Drafters",
+    "Electrical and Electronics Drafters",
+    "Engineering Technician",
+    "Mechanical Drafters"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Courses:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 28,
+     "max": 28
+    },
+    "courses": [
+     {
+      "code": "INDRB12",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "INDRB20A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "INDRB20B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "INDRB40",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INDRB50",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATHB70",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "INDRB51",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "INDRB52",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMPB5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Select one course from the following:",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "MFGTB1AB",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "WOODB2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Select three credits from the following:",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ENGRB24",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "WELDB1A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "WELDB1B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Codes are written as the catalog prints them, without a space (e.g. INDRB40); INDRB40 matches closed-list INDR B40.",
+   "The block 'Select one course from the following:' is headed as one course but its rule reads 'Complete the following number of credits: 3'; recorded as choose_units 3 (both courses are 3 units, so equivalent).",
+   "Program total printed as 34 units; the 'To Transfer Coursework' paragraph separately mentions 'A minimum of 31 semester units in the major', which conflicts with the 34-unit total.",
+   "Program learning outcomes 1 and 2 were followed by assessment methods ('Assessment:Track VTEA core indicators.' and 'Assessment:Skill exams and evaluation of group lab assignments and team projects.'); these were omitted as not part of the outcome statement. Outcome 2 printed with a stray leading '.' before its number and a double period at the end, kept as printed.",
+   "Career 'engineering technician' appears in the description and 'Engineering Technician' under Career Opportunities; both recorded as printed.",
+   "No GE pattern is named in the text."
+  ]
+ },
+ "extracted_run": "38414480070"
+}

@@ -1,0 +1,238 @@
+{
+ "college": "Saddleback College",
+ "control_number": "04103",
+ "shape": "degree",
+ "title": "Physics",
+ "award": "A.S. Degree",
+ "source_url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_phys_as",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8462,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8462,
+    "output_tokens": 1747,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1747,
+  "output_tokens_details": {
+   "thinking_tokens": 692
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06879,
+ "ms": 21240,
+ "seconds": 21.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 6,
+   "share": 0.5,
+   "missing": [
+    "MATH3A",
+    "MATH3AH",
+    "MATH3B"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "MATHC2210",
+    "MATHC2210H",
+    "MATHC2220"
+   ],
+   "flagged": [
+    "MATHC2210",
+    "MATHC2210H",
+    "MATHC2220"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    25.0,
+    25.0
+   ],
+   "stated": [
+    25.0,
+    25.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "PHYSICS - A.S. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 25,
+    "max": 25
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Saddleback College Graduation Requirements (local GE) or Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate understanding of classical (or Newtonian) and fluid dynamics.",
+    "Demonstrate understanding of classical electricity and magnetism.",
+    "Demonstrate understanding of quantum mechanics, nuclear physics, optics and the special theory of relativity."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core: Select one",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "MATH C2210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH C2210H",
+        "units": 5,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MATH C2220",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS 4A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 4B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 4C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MATH 3A",
+    "why": "renumbered; catalog lists MATH C2210 (formerly MATH 3A)"
+   },
+   {
+    "code": "MATH 3AH",
+    "why": "renumbered; catalog lists MATH C2210H (formerly MATH 3AH)"
+   },
+   {
+    "code": "MATH 3B",
+    "why": "renumbered; catalog lists MATH C2220 (formerly MATH 3B)"
+   }
+  ],
+  "notes": [
+   "The catalog prints 'Required Core: Units: 25.0' over the whole core, including the 'Select one' choice (5 units) and the four required courses (20 units); the 25 is recorded as total_units ('Total : 25.0') rather than as stated on the 'all' block.",
+   "MATH C2210, MATH C2210H and MATH C2220 are Cal-GETC common course numbers replacing MATH 3A, 3AH and 3B in the closed list; recorded as catalog additions.",
+   "The 'Complete a minimum of 60 units' sentence is generic associate degree boilerplate with no units printed for this award, so degree_total is left null.",
+   "GE pattern is given as either the college's Graduation Requirements or the Cal-GETC pattern; no GE units printed.",
+   "The page prints one learning outcomes list in the program summary; recorded as this award's outcomes.",
+   "No careers named; the summary mentions only 'entry-level employment or promotion' generally."
+  ]
+ },
+ "extracted_run": "38843470509"
+}

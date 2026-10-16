@@ -1,0 +1,252 @@
+{
+ "college": "Orange Coast College",
+ "control_number": "03997",
+ "shape": "degree",
+ "title": "Graphic Design",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/digital-media-arts-design/graphic-design-associate-science-degree/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7377,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7377,
+    "output_tokens": 2214,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2214,
+  "output_tokens_details": {
+   "thinking_tokens": 746
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07379,
+ "ms": 19401,
+ "seconds": 19.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 13,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    38.0,
+    38.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the OCC AS GE pattern, but no units for it"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Graphic Design, Associate in Science Degree",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "OCC AS GE",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Create a portfolio utilizing a variety of design techniques for the purpose of gaining employment and/or acceptance to an Art College or University.",
+    "Apply critical thinking and aesthetic judgment to demonstrate the ability to analyze, synthesize, and develop probable graphic design solutions.",
+    "Develop an original, innovative and articulate body of graphic design work for a professional portfolio for the purpose of gaining employment and/or acceptance to an Art College or University."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Program Sequence (Plan of Study Grid) major courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DMAD A115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMAD A117",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMAD A151",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMAD A181",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMAD A183",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMAD A190",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMAD A193",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMAD A116",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMAD A182",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMAD A200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMAD A280",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMAD A202",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMAD A288",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The REQUIREMENTS tab content is not in the supplied text; only the Overview and the Program Sequence (Plan of Study Grid) appear. The single 'all' block is read from the plan of study, which is a suggested curriculum map, not the official requirements table. A reviewer should check the Requirements tab for choice lists, block totals and the major's total units.",
+   "No major total is printed; total_units left null. The plan prints 'Total Units 60', recorded as degree_total since it includes OCC AS GE courses and electives.",
+   "Plan electives are printed as 3 and 4 units with footnote 'VARIES TO REACH MINIMUM 60 DEGREE APPLICABLE UNITS'; recorded electives_fill_degree true and open_elective_units null rather than summing them.",
+   "Closed list stores 'DMADA116' (no space); catalog prints 'DMAD A116 Typography & Branding'. Treated as the same course, so catalog_addition false.",
+   "Several plan titles differ from closed-list titles (e.g., DMAD A183 'InDesign for Design' vs 'Designing for Print'; DMAD A190 'Illustrator for Design'; DMAD A193 'Photoshop for Design'); codes match.",
+   "Plan footnotes: DMAD A151 satisfies OCC AS GE Area 3; DMAD A181 satisfies OCC AS GE Area 1B.",
+   "Overview mentions 'entry-level training for a variety of graphic design industries' but names no specific career or job title; careers left empty.",
+   "The breadcrumb places this program under 'Business, Management and Entrepreneurship' while the source URL lists 'visual-arts-design-performing-arts'; minor inconsistency."
+  ]
+ },
+ "extracted_run": "38670927724"
+}

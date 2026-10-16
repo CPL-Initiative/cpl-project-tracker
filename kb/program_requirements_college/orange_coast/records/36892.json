@@ -1,0 +1,217 @@
+{
+ "college": "Orange Coast College",
+ "control_number": "36892",
+ "shape": "noncredit",
+ "title": "English Language Learning: Grammar",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.cccd.edu/orange-coast/pathways/find-pathway/noncredit-certificate-programs/english-language-learning/grammar-review-certificate-competency/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7132,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7132,
+    "output_tokens": 1601,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1601,
+  "output_tokens_details": {
+   "thinking_tokens": 718
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06055,
+ "ms": 15539,
+ "seconds": 15.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    108.0,
+    108.0
+   ],
+   "stated": [
+    108.0,
+    108.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Competency",
+   "measure": "hours",
+   "total_units": {
+    "min": 108,
+    "max": 108
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will increase their proficiency in targeted grammar structures, both at the sentence level and in longer writings.",
+    "Students will increase their proficiency in using target grammar structures in speaking assignments."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ELL A017N",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ELL A027N",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ELL A037N",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ELL A045N",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ELL A047N",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ELL A037N",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ELL A045N",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ELL A047N",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ELL A057N",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints a single 'Required Courses' list of two 'or' groups joined by 'and': (ELL A017N or A027N or A037N or A045N or A047N) and (ELL A037N or A045N or A047N or A057N). Recorded as two blocks with the same printed name, so that ELL A037N, which appears in both groups, is not listed twice within one block.",
+   "Hours (54) are printed only beside the first course of each group (ELL A017N and ELL A037N); the alternatives have no printed hours, so they are recorded as null. Total Hours 108.",
+   "The catalog lists ELL A037N as 'Intermediate Grammar Review 1'; the closed list titles it 'Intermediate Grammar Review'.",
+   "Presumably the two courses chosen should differ (a student would not take ELL A037N to satisfy both groups), but the text does not say so explicitly.",
+   "The outcomes are printed under the program's 'Program Outcome' heading on a page that offers only this certificate."
+  ]
+ },
+ "extracted_run": "38670927724"
+}

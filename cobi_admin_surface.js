@@ -66,13 +66,17 @@ window.COBI_ADMIN_SURFACE = {
       "modules": [
         "workplan_goals.js"
       ],
-      "reads": [],
+      "reads": [
+        "project_lifecycle"
+      ],
       "writes": [
         "projects",
         "workplan_activity_associations",
         "workplan_goals"
       ],
-      "rpcs": [],
+      "rpcs": [
+        "workplan_move_sub_activity"
+      ],
       "measured": true
     },
     "budget": {
@@ -232,6 +236,7 @@ window.COBI_ADMIN_SURFACE = {
         "map_colleges",
         "map_contact_gaps",
         "map_data_loads",
+        "program_record_college_items",
         "sierra_feedback"
       ],
       "writes": [
@@ -246,6 +251,7 @@ window.COBI_ADMIN_SURFACE = {
     "college-briefing": {
       "modules": [
         "college_briefing.js",
+        "cpl_chat.js",
         "cpl_funding.js"
       ],
       "reads": [
@@ -262,7 +268,7 @@ window.COBI_ADMIN_SURFACE = {
         "map_college_goal2_pub",
         "map_colleges",
         "map_credential_student_rollup",
-        "program_requirement_records",
+        "program_record_college_items",
         "program_source_registry"
       ],
       "writes": [
@@ -274,7 +280,8 @@ window.COBI_ADMIN_SURFACE = {
       "rpcs": [
         "cpl_funding_my_reports",
         "cpl_funding_optin_review",
-        "map_coordinator_summary"
+        "map_coordinator_summary",
+        "sierra_feedback_upsert"
       ],
       "measured": true
     },
@@ -341,7 +348,9 @@ window.COBI_ADMIN_SURFACE = {
         "coci_lookup.js",
         "coci_lookup_data.js"
       ],
-      "reads": [],
+      "reads": [
+        "course_outcomes"
+      ],
       "writes": [],
       "rpcs": [],
       "measured": true
@@ -362,6 +371,8 @@ window.COBI_ADMIN_SURFACE = {
       ],
       "reads": [
         "coci_college_programs",
+        "course_outcomes",
+        "map_colleges",
         "program_record_verdicts",
         "program_requirement_records",
         "program_source_addenda",
@@ -493,17 +504,6 @@ window.COBI_ADMIN_SURFACE = {
         "cpl_news_requests"
       ],
       "rpcs": [],
-      "measured": true
-    },
-    "chatbot": {
-      "modules": [
-        "cpl_chat.js"
-      ],
-      "reads": [],
-      "writes": [],
-      "rpcs": [
-        "sierra_feedback_upsert"
-      ],
       "measured": true
     },
     "sierra-training": {

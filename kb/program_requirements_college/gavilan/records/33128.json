@@ -1,0 +1,296 @@
+{
+ "college": "Gavilan College",
+ "control_number": "33128",
+ "shape": "adt",
+ "title": "Political Science",
+ "award": "A.A- T Degree",
+ "source_url": "https://gavilan.curriqunet.com/catalog/iq/4089/4145/4195",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7338,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7338,
+    "output_tokens": 2173,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2173,
+  "output_tokens_details": {
+   "thinking_tokens": 657
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07281,
+ "ms": 16633,
+ "seconds": 17.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 10,
+   "share": 0.9,
+   "missing": [
+    "POLSC1000"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "POLS1",
+    "POLS9"
+   ],
+   "flagged": [
+    "POLS1",
+    "POLS9"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     64.0,
+     69.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     37.0,
+     39.0
+    ],
+    "why": [],
+    "overlap": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 9,
+   "courses": 0,
+   "count": 9,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "ADT: Political Science AA-T - CSU Transfer PROGRAM REQUIRMENTS",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 9,
+    "max": 12
+   },
+   "ge_pattern": "IGETC or CSU General Education – Breadth",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 37,
+    "max": 39
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Critically examine and analyze the core concepts of political science (government, regime, state, institutions, sovereignty, constitution, democracy, authoritarianism, and globalization)",
+    "Critically examine and analyze the political, institutional, and cultural consequences of political, social, and ethnic inequalities",
+    "Identify, compare, and contrast the major theoretical perspectives in the discipline",
+    "Critically examine and analyze the forms and processes of political participation at the local, state, national, and/or international levels",
+    "Evaluate the theories, methods, and techniques used to investigate and analyze political behavior, past and present",
+    "Critically examine and evaluate the structure and function of other nations' political systems and the international system",
+    "Critically examine and evaluate the historical and philosophical foundations of the United States and California constitutions",
+    "Critically examine complex issues and develop, evaluate, and test solutions and hypotheses using the scientific method",
+    "Write research papers using descriptive, empirical, and analytical techniques."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIREMENTS",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "POLS 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "LIST A: Select 3",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "PSYC 32",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLS 32",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST B: Select 2",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "POLS 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 9",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "POLS C1000",
+    "why": "not in the text; catalog prints POLS 1 Introduction to American Government in the required block instead"
+   }
+  ],
+  "notes": [
+   "List B also allows 'ANY COURSE NOT USED IN LIST A (3 units)' in addition to the listed courses.",
+   "POLS 1 (Introduction to American Government) is not on the closed list; the closed list's POLS C1000 (American Government and Politics) is likely its common-course-numbered replacement. Reviewer should check.",
+   "GE units printed as 'CSU: 39; IGETC: 37' with 'Units: 37- 39'; recorded ge_units 37-39.",
+   "Electives needed to reach 60 units printed as 9-12 (CSU and IGETC); recorded in degree_elective_units. Double counted units printed as 6-9.",
+   "The page ends with 'Total: 55- 57', which does not match 'Total Units for the Degree: 60'; degree_total recorded as 60.",
+   "The single Learning Outcome(s) list is printed for the program as a whole; the AA-T shares it.",
+   "Many courses are marked '(Historical)' in the catalog, which may indicate inactive status for catalog year 2026-2027."
+  ]
+ },
+ "extracted_run": "38948144064"
+}

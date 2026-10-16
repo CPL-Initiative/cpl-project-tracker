@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "chatbox/supabase_program_requirement_records_college_reread.sql",
+ "name": "program_requirement_records_college_reread_fn_2026_10_14_s393b",
+ "version": "20261014235420",
+ "sha256": "111ced7169514ef57578a1f7ad475f6c88a1a1b21f164cd508462b52a6c59938",
+ "run": "38656787068",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

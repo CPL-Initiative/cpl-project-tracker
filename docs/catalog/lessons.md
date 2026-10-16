@@ -15,11 +15,12 @@ related:
 
 Workstream scratchpads. A dated section is appended at every checkpoint.
 
-86 document(s).
+87 document(s).
 
 | Title | File | Created | Updated |
 |---|---|---|---|
 | [Admin tab + the side menu as data — lessons](../admin_tab_lessons.md) | `admin_tab_lessons.md` | 2026-08-14 | 2026-08-14 |
+| [Annual Workplan Goals — lessons](../workplan_annual_goals_lessons.md) | `workplan_annual_goals_lessons.md` | 2026-10-12 |  |
 | [Annual Workplan tab as the authoritative source — lessons](../annual_workplan_authoritative_lessons.md) | `annual_workplan_authoritative_lessons.md` | 2026-06-30 |  |
 | [Auth model and repository posture — lessons](../auth_and_repo_posture_lessons.md) | `auth_and_repo_posture_lessons.md` | 2026-08-19 |  |
 | [CCR Atlas — lessons & state](../ccr_atlas_lessons.md) | `ccr_atlas_lessons.md` | 2026-08-24 |  |
@@ -36,7 +37,7 @@ Workstream scratchpads. A dated section is appended at every checkpoint.
 | [COBI summary-data tools — lessons & roadmap](../cobi_summary_tools_lessons.md) | `cobi_summary_tools_lessons.md` | 2026-08-03 | 2026-08-03 |
 | [COBI — the masthead rename and the Mamba brand layer](../cobi_lessons.md) | `cobi_lessons.md` | 2026-06-19 | 2026-09-04 |
 | [College & district identity — lessons](../college_identity_lessons.md) | `college_identity_lessons.md` | 2026-08-12 | 2026-08-12 |
-| [College action page & MAP-team queue — lessons](../college_action_page_lessons.md) | `college_action_page_lessons.md` | 2026-08-09 | 2026-08-21 |
+| [College action page & MAP-team queue — lessons](../college_action_page_lessons.md) | `college_action_page_lessons.md` | 2026-08-09 | 2026-10-14 |
 | [College CPL landing-page link sync — lessons](../cpl_landing_pages_lessons.md) | `cpl_landing_pages_lessons.md` | 2026-06-25 |  |
 | [College-scoped occupation → CPL crosswalk (SJCOE ↔ San Joaquin Delta) — lessons](../delta_college_crosswalk_lessons.md) | `delta_college_crosswalk_lessons.md` | 2026-08-19 |  |
 | [Common CR Reference — lessons](../common_cr_reference_lessons.md) | `common_cr_reference_lessons.md` | 2026-08-13 |  |
@@ -47,7 +48,7 @@ Workstream scratchpads. A dated section is appended at every checkpoint.
 | [CPL executive presentations — lessons (BOG update + CBO budget workshop)](../cpl_presentations_lessons.md) | `cpl_presentations_lessons.md` | 2026-07-20 |  |
 | [CPL Fact Sheet — lessons](../fact_sheet_lessons.md) | `fact_sheet_lessons.md` | 2026-06-25 | 2026-08-21 |
 | [CPL Implementation Funding tab — archived lessons (2026-06-11 → 2026-09-01)](../cpl_funding_lessons_archive.md) | `cpl_funding_lessons_archive.md` | 2026-06-11 | 2026-09-30 |
-| [CPL Implementation Funding tab — workstream lessons](../cpl_funding_lessons.md) | `cpl_funding_lessons.md` | 2026-06-11 | 2026-10-01 |
+| [CPL Implementation Funding tab — workstream lessons](../cpl_funding_lessons.md) | `cpl_funding_lessons.md` | 2026-06-11 | 2026-10-15 |
 | [CPL News lane — lessons](../cpl_news_lessons.md) | `cpl_news_lessons.md` | 2026-06-21 |  |
 | [CPL Pathways tab — apprenticeship-to-baccalaureate course maps (lessons)](../cpl_pathways_lessons.md) | `cpl_pathways_lessons.md` | 2026-07-10 |  |
 | [CPL Student Portal "Credit for Being You" video — audio restoration & accessibility lessons](../cpl_portal_video_lessons.md) | `cpl_portal_video_lessons.md` | 2026-07-23 |  |
@@ -75,7 +76,7 @@ Workstream scratchpads. A dated section is appended at every checkpoint.
 | [Obsidian vault hygiene — lessons](../obsidian_vault_hygiene_lessons.md) | `obsidian_vault_hygiene_lessons.md` | 2026-08-28 | 2026-08-28 |
 | [OpenClassrooms Digital Marketer → CCC CPL crosswalk — lessons](../openclassrooms_crosswalk_lessons.md) | `openclassrooms_crosswalk_lessons.md` | 2026-09-29 |  |
 | [Partner occupation → CPL crosswalk — lessons](../partner_crosswalk_lessons.md) | `partner_crosswalk_lessons.md` | 2026-08-05 |  |
-| [Program requirements harvest lessons — archive (S320-S333)](../program_requirements_harvest_lessons_archive.md) | `program_requirements_harvest_lessons_archive.md` | 2026-10-10 | 2026-10-11 |
+| [Program requirements harvest lessons — archive (S320-S347)](../program_requirements_harvest_lessons_archive.md) | `program_requirements_harvest_lessons_archive.md` | 2026-10-10 | 2026-10-12 |
 | [Program requirements harvest — Decisions & Lessons](../program_requirements_harvest_lessons.md) | `program_requirements_harvest_lessons.md` | 2026-10-03 |  |
 | [Project lifecycle — Table / Archive a project (soft-delete) lessons](../project_lifecycle_lessons.md) | `project_lifecycle_lessons.md` | 2026-06-29 |  |
 | [Public standalone pages — accessibility and mobile lessons](../public_pages_a11y_lessons.md) | `public_pages_a11y_lessons.md` | 2026-08-20 | 2026-09-09 |

@@ -1,0 +1,399 @@
+{
+ "college": "Modesto Junior College",
+ "control_number": "06678",
+ "shape": "degree",
+ "title": "Nursing: ADN Program (RN)",
+ "award": "A.S. Degree",
+ "source_url": "https://mjc.elumenapp.com/catalog/2026-2027/program/nursing-adn-program-rn-mjc-spring-2026",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10189,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10189,
+    "output_tokens": 3319,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3319,
+  "output_tokens_details": {
+   "thinking_tokens": 824
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.10714,
+ "ms": 24942,
+ "seconds": 25.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 7,
+   "share": 0.0,
+   "missing": [
+    "NURSE270",
+    "NURSE271",
+    "NURSE272",
+    "NURSE273",
+    "NURSE274",
+    "NURSE275",
+    "NURSE278"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 17,
+   "codes": [
+    "ANAT125",
+    "ANTHR102",
+    "COMM102",
+    "COMMC1000",
+    "ELIC100",
+    "ENGLC1000",
+    "ENGLC1000E",
+    "MICRO101",
+    "PHYSO101",
+    "PSYCC1000",
+    "PSYCH141",
+    "SOCIO101",
+    "SOCIO102",
+    "SOCIO125",
+    "SOCIO150",
+    "SOCIO154",
+    "SOCIO156"
+   ],
+   "flagged": [
+    "ANAT125",
+    "ANTHR102",
+    "COMM102",
+    "COMMC1000",
+    "ELIC100",
+    "ENGLC1000",
+    "ENGLC1000E",
+    "MICRO101",
+    "PHYSO101",
+    "PSYCC1000",
+    "PSYCH141",
+    "SOCIO101",
+    "SOCIO102",
+    "SOCIO125",
+    "SOCIO150",
+    "SOCIO154",
+    "SOCIO156"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    33.0,
+    35.0
+   ],
+   "stated": [
+    65.5,
+    67.5
+   ],
+   "why": [
+    "the blocks sum to 33.0-35.0; the catalog states 65.5-67.5"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Nursing: ADN Program (RN) A.S. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 65.5,
+    "max": 67.5
+   },
+   "open_elective_units": null,
+   "ge_pattern": "MJC GE",
+   "outcomes": [
+    "Formulates a nursing diagnosis through observation of the client's physical condition and behavior, and through interpretation of information obtained from the client and others, including the health care team.",
+    "Formulates a care plan, in collaboration with the client, which ensures that direct and indirect nursing care services provide for the client's safety, comfort, hygiene, and protection, and for disease prevention, and restorative measures.",
+    "Performs skills essential to the kind of nursing action to be taken, explains the health treatment to the client and family and teach the client and family how to care for the client's health needs.",
+    "Delegates tasks to subordinates based on the legal scopes of practice of the subordinates and on the preparation and capability needed in the tasks to be delegated, and effectively supervise nursing care being given by subordinates.",
+    "Evaluates the effectiveness of the care plan through observation of the client's physical condition and behavior, signs and symptoms of illness, and reactions to treatment, and through communication with the client and health team members, and modifies the plan as needed.",
+    "Acts as the client's advocate, as circumstances require, by initiating action to improve health care or to change decisions or activities which are against the interests or wishes of the client, and by giving the client the opportunity to make informed decisions about health care before it is provided.",
+    "Employs concepts of the Roy Adaptation Model to individualize patient-centered care."
+   ],
+   "careers": [
+    "Registered Nurse (RN)"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "PROGRAM PREREQUISITES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "ANAT125",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MICRO101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYSO101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "PROGRAM PREREQUISITES",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "ENGLC1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGLC1000E",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ELIC100",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "PROGRAM PREREQUISITES",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "PSYCC1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYCH141",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "COMPLETE ONE COURSE FROM THE FOLLOWING:",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ANTHR102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOCIO101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOCIO102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOCIO125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOCIO150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOCIO154",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOCIO156",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "COMPLETE ONE COURSE FROM THE FOLLOWING:",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "COMMC1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "PROGRAM REQUIREMENTS- FIRST SEMESTER",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": []
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "NURSE 270",
+    "why": "not in the text; requirements table cut off at First Semester"
+   },
+   {
+    "code": "NURSE 271",
+    "why": "not in the text; requirements table cut off at First Semester"
+   },
+   {
+    "code": "NURSE 272",
+    "why": "not in the text; requirements table cut off at First Semester"
+   },
+   {
+    "code": "NURSE 273",
+    "why": "not in the text; requirements table cut off at First Semester"
+   },
+   {
+    "code": "NURSE 274",
+    "why": "not in the text; requirements table cut off at First Semester"
+   },
+   {
+    "code": "NURSE 275",
+    "why": "not in the text; requirements table cut off at First Semester"
+   },
+   {
+    "code": "NURSE 278",
+    "why": "named only in the program description (Leadership Preceptorship); requirements table cut off before it"
+   }
+  ],
+  "notes": [
+   "The catalog text is truncated mid-word in the 'PROGRAM REQUIREMENTS- FIRST SEMESTER (Total 9) Complete the following number of cre...' block; its courses and all later semester blocks (where the NURSE courses presumably appear) are missing. The First Semester block is recorded empty with rule read as choose_units 9 from the truncated wording; reviewer should check the full page.",
+   "The prerequisite sub-blocks are nested under an outer 'PROGRAM PREREQUISITES (Total 18 - 20)' wrapper. The sub-block totals printed (12 + 3-5 + 3 + 3 + 3 = 24-26) exceed the stated 18-20; the nesting of the Sociology and Communication blocks may differ from the flat reading here. Reviewer should check.",
+   "All prerequisite course codes are printed without spaces (e.g., ANAT125) and are recorded as printed; none are in the closed list.",
+   "Course codes printed with the 'Complete the following number of credits' rule are recorded as choose_units.",
+   "The page prints 'Upon satisfactory completion of this award, the student should be prepared to:' twice; the outcomes appear under the Program Learning Outcomes heading.",
+   "NURSE 115 and Nurse 259 are mentioned as advising/advanced-placement courses, not as degree requirements, and were not placed. STAT C1000 is mentioned only as a recommended course for the math competency admission requirement, not as a program requirement, and was not placed.",
+   "GE pattern recorded as MJC GE based on 'complete the MJC GE graduation requirements'; Cal-GETC Area 2 is cited only for the math competency admission requirement."
+  ]
+ },
+ "extracted_run": "38477845911"
+}

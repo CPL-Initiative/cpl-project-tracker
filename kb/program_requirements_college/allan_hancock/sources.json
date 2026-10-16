@@ -1,0 +1,6139 @@
+[
+ {
+  "control_number": "05839",
+  "title": "Agribusiness: Enology/Viticulture",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.913,
+  "codes_found": [
+   "AG125",
+   "AG126",
+   "BIOL128",
+   "BIOL154",
+   "BUS121",
+   "CHEM120",
+   "CHEM140",
+   "CHEM150",
+   "CHEM151",
+   "ECON121",
+   "MATH135",
+   "PHYS141",
+   "PHYS142",
+   "VEN101",
+   "VEN102",
+   "VEN103",
+   "VEN114",
+   "VEN126",
+   "VEN135",
+   "VEN310",
+   "VEN311"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31153",
+   "title": "Agribusiness: Enology/Viticulture - Associate in Arts",
+   "h1": "Agribusiness: Enology/Viticulture - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 10453
+ },
+ {
+  "control_number": "05840",
+  "title": "Architectural Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "ARCH100",
+   "ARCH101",
+   "ARCH107",
+   "ARCH111",
+   "ARCH112",
+   "ARCH121",
+   "ARCH122",
+   "ARCH131",
+   "ARCH151",
+   "ARCH152",
+   "ARCH160",
+   "ARCH321",
+   "ENGR152",
+   "ENGR156",
+   "ET100",
+   "ET160",
+   "PHYS141",
+   "PHYS142"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31137",
+   "title": "Architectural Technology - Associate in Science",
+   "h1": "Architectural Technology - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 27,
+  "text_chars": 10140
+ },
+ {
+  "control_number": "05841",
+  "title": "Biology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL132",
+   "BIOL150",
+   "BIOL154",
+   "BIOL155",
+   "BIOL189",
+   "CHEM150",
+   "CHEM151",
+   "PHYS141",
+   "PHYS142"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31122",
+   "title": "Biology - Associate in Arts",
+   "h1": "Biology - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 9713
+ },
+ {
+  "control_number": "05843",
+  "title": "Accounting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT131",
+   "ACCT132",
+   "ACCT140",
+   "ACCT150",
+   "ACCT160",
+   "ACCT170",
+   "BUS104",
+   "BUS107",
+   "BUS110",
+   "BUS130",
+   "BUS140",
+   "BUS160",
+   "CBIS141",
+   "CBIS142"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31158",
+   "title": "Accounting - Associate in Science",
+   "h1": "Accounting - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 10763
+ },
+ {
+  "control_number": "05844",
+  "title": "Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05845",
+  "title": "Marketing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05846",
+  "title": "Computer Business Office Technology: Computer Applications and Office Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS107",
+   "BUS160",
+   "BUS302",
+   "CBIS141",
+   "CBOT131",
+   "CBOT132",
+   "CBOT302",
+   "CBOT333",
+   "CBOT334",
+   "CBOT337"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31092",
+   "title": "Computer Business Office Technology: Computer Applications and Office Management - Associate in Science",
+   "h1": "Computer Business Office Technology: Computer Applications and Office Management - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 9926
+ },
+ {
+  "control_number": "05849",
+  "title": "Computer Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05850",
+  "title": "Computer Business Information Systems",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05852",
+  "title": "Engineering Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05853",
+  "title": "Computer Networking and Electronics Technology: Electronics Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNET118",
+   "CNET122",
+   "CNET123",
+   "CNET125",
+   "CNET126",
+   "CNET135",
+   "CNET136",
+   "CNET146"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31083",
+   "title": "Computer Networking and Electronics Technology: Electronic Engineering Technology - Associate in Science",
+   "h1": "Computer Networking and Electronics Technology: Electronic Engineering Technology - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 10268
+ },
+ {
+  "control_number": "05855",
+  "title": "Automotive Technology: Auto Service Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AT100",
+   "AT117",
+   "AT133",
+   "AT300",
+   "AT303",
+   "AT306",
+   "AT313",
+   "AT314",
+   "AT323",
+   "AT324",
+   "AT334",
+   "AT341",
+   "AT343",
+   "AT344",
+   "AT370",
+   "AT389"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31129",
+   "title": "Automotive Technology: Auto Service Management - Associate in Science",
+   "h1": "Automotive Technology: Auto Service Management - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 10600
+ },
+ {
+  "control_number": "05856",
+  "title": "Auto Body Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05857",
+  "title": "Electrical Apprenticeship",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05858",
+  "title": "Plumbing Apprenticeship",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05862",
+  "title": "Welding Technology: General Welding",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05863",
+  "title": "Art",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05864",
+  "title": "Music",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS100",
+   "MUS101",
+   "MUS102",
+   "MUS104",
+   "MUS106",
+   "MUS111",
+   "MUS112",
+   "MUS113",
+   "MUS114",
+   "MUS115",
+   "MUS116",
+   "MUS117",
+   "MUS118",
+   "MUS119",
+   "MUS120",
+   "MUS121",
+   "MUS122",
+   "MUS124",
+   "MUS125",
+   "MUS126",
+   "MUS127",
+   "MUS130",
+   "MUS132",
+   "MUS133",
+   "MUS137",
+   "MUS140",
+   "MUS143",
+   "MUS145",
+   "MUS146",
+   "MUS151"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30971",
+   "title": "Music - Associate in Arts",
+   "h1": "Music - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 30,
+  "text_chars": 10670
+ },
+ {
+  "control_number": "05865",
+  "title": "Theatre Professional Acting",
+  "award": "Certificate of Achievement requiring 60+S/90+Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRMA110",
+   "DRMA111",
+   "THEA101",
+   "THEA102",
+   "THEA103",
+   "THEA104",
+   "THEA110",
+   "THEA111",
+   "THEA112",
+   "THEA113",
+   "THEA114",
+   "THEA115",
+   "THEA116",
+   "THEA117",
+   "THEA120",
+   "THEA121",
+   "THEA122",
+   "THEA123"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30929",
+   "title": "Theatre: Professional Acting - Certificate of Achievement",
+   "h1": "Theatre: Professional Acting - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 9837
+ },
+ {
+  "control_number": "05867",
+  "title": "Dance",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DANC101",
+   "DANC102",
+   "DANC110",
+   "DANC111",
+   "DANC115",
+   "DANC120",
+   "DANC121",
+   "DANC125",
+   "DANC130",
+   "DANC131",
+   "DANC133",
+   "DANC135",
+   "DANC138",
+   "DANC139",
+   "DANC148",
+   "DANC152",
+   "DANC154",
+   "DANC156",
+   "DANC170",
+   "DANC171",
+   "DANC180",
+   "DANC182",
+   "DANC183",
+   "DANC186",
+   "DANC188",
+   "DANC189"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31066",
+   "title": "Dance - Associate in Arts",
+   "h1": "Dance - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 27,
+  "text_chars": 10151
+ },
+ {
+  "control_number": "05868",
+  "title": "Film and Video Production",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.955,
+  "codes_found": [
+   "ART115",
+   "FILM101",
+   "FILM102",
+   "FILM103",
+   "FILM105",
+   "FILM106",
+   "FILM107",
+   "FILM111",
+   "FILM120",
+   "FILM121",
+   "FILM123",
+   "FILM125",
+   "FILM126",
+   "FILM127",
+   "FILM189",
+   "FILM386",
+   "GRPH112",
+   "MMAC115",
+   "MMAC125",
+   "MMAC126",
+   "PHTO110"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31021",
+   "title": "Film and Video Production - Certificate of Achievement",
+   "h1": "Film and Video Production - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 9594
+ },
+ {
+  "control_number": "05869",
+  "title": "",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05870",
+  "title": "Spanish",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.941,
+  "codes_found": [
+   "ART105",
+   "ASL120",
+   "ASL121",
+   "BUS140",
+   "BUS141",
+   "COMMC1000",
+   "DANC140",
+   "DANC142",
+   "ECON141",
+   "ECS116",
+   "ECS117",
+   "ENGL130",
+   "ENGL133",
+   "ENGL148",
+   "ENGLC1001",
+   "ES101",
+   "ES120",
+   "ES135",
+   "ES139",
+   "ES152",
+   "ES153",
+   "FILM103",
+   "FRCH101",
+   "FRCH102",
+   "GBST141",
+   "HIST120",
+   "POLS104",
+   "SPAN103",
+   "SPAN104",
+   "SPAN105",
+   "SPAN111",
+   "SPAN112"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30941",
+   "title": "Spanish - Associate in Arts",
+   "h1": "Spanish - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 34,
+  "text_chars": 10753
+ },
+ {
+  "control_number": "05871",
+  "title": "Vocational Nursing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NURS310",
+   "NURS311",
+   "NURS317",
+   "NURS318",
+   "NURS322",
+   "NURS323",
+   "NURS327",
+   "NURS328",
+   "NURS329",
+   "NURS330",
+   "NURS331",
+   "NURS332",
+   "NURS335",
+   "NURS337",
+   "NURS338"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30965",
+   "title": "Nursing: Licensed Vocational Nursing - Associate in Science",
+   "h1": "Nursing: Licensed Vocational Nursing - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 10446
+ },
+ {
+  "control_number": "05874",
+  "title": "Dental Assisting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DA310",
+   "DA314",
+   "DA317",
+   "DA318",
+   "DA320",
+   "DA325",
+   "DA326",
+   "DA327",
+   "DA328",
+   "DA329",
+   "DA330",
+   "DA332",
+   "DA348",
+   "DA380"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31064",
+   "title": "Dental Assisting - Associate in Science",
+   "h1": "Dental Assisting - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 10620
+ },
+ {
+  "control_number": "05876",
+  "title": "Family & Consumer Sciences: Fashion Studies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART110",
+   "ART120",
+   "BUS102",
+   "FASH101",
+   "FASH102",
+   "FASH103",
+   "FASH104",
+   "FASH110"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31024",
+   "title": "Fashion Studies - Associate in Science",
+   "h1": "Fashion Studies - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.4
+   }
+  },
+  "listed": 8,
+  "text_chars": 9507
+ },
+ {
+  "control_number": "05877",
+  "title": "Early Childhood Studies: General",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05878",
+  "title": "English",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.944,
+  "codes_found": [
+   "ENGL104",
+   "ENGL105",
+   "ENGL106",
+   "ENGL107",
+   "ENGL108",
+   "ENGL110",
+   "ENGL130",
+   "ENGL131",
+   "ENGL132",
+   "ENGL133",
+   "ENGL135",
+   "ENGL138",
+   "ENGL139",
+   "ENGL144",
+   "ENGL145",
+   "ENGL146",
+   "ENGL148"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31032",
+   "title": "English - Associate in Arts",
+   "h1": "English - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 5059
+ },
+ {
+  "control_number": "05881",
+  "title": "Mathematics: Computer Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "CS111",
+   "CS161",
+   "MATH183",
+   "MATH184"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30987",
+   "title": "Mathematics with Computer Science Emphasis - Associate in Arts",
+   "h1": "Mathematics with Computer Science Emphasis - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 9200
+ },
+ {
+  "control_number": "05883",
+  "title": "Physics",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.778,
+  "codes_found": [
+   "CHEM150",
+   "CHEM151",
+   "MATH183",
+   "MATH184",
+   "PHYS161",
+   "PHYS162",
+   "PHYS163"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30954",
+   "title": "Physics - Associate in Arts",
+   "h1": "Physics - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 9209
+ },
+ {
+  "control_number": "05884",
+  "title": "Chemistry",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05887",
+  "title": "Human Services General",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HUSV101",
+   "HUSV102",
+   "HUSV103",
+   "HUSV104",
+   "HUSV106",
+   "HUSV107",
+   "HUSV108",
+   "HUSV110",
+   "HUSV120",
+   "HUSV121",
+   "HUSV170",
+   "PSY106",
+   "PSY112",
+   "PSY118",
+   "SOC106"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31002",
+   "title": "Human Services: General - Associate in Science",
+   "h1": "Human Services: General - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 11396
+ },
+ {
+  "control_number": "05888",
+  "title": "Administration of Justice",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ101",
+   "AJ102",
+   "AJ103",
+   "AJ104",
+   "AJ105",
+   "AJ106",
+   "AJ111",
+   "AJ115",
+   "AJ120",
+   "AJ130",
+   "AJ149",
+   "AJ150"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31155",
+   "title": "Administration of Justice - Associate in Science",
+   "h1": "Administration of Justice - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 9469
+ },
+ {
+  "control_number": "05892",
+  "title": "Fire Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05894",
+  "title": "Social Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05898",
+  "title": "Cosmetology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "05900",
+  "title": "LVN-to-RN",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NURS101",
+   "NURS102",
+   "NURS103",
+   "NURS104",
+   "NURS106",
+   "NURS108",
+   "NURS109",
+   "NURS110",
+   "NURS111",
+   "NURS112"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30963",
+   "title": "Nursing: Registered Nursing (LVN to RN) - Associate in Science",
+   "h1": "Nursing: Registered Nursing (LVN to RN) - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 11037
+ },
+ {
+  "control_number": "07172",
+  "title": "Business",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "07174",
+  "title": "Computer Business Office Technology: Word/Info Processing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "07175",
+  "title": "Computer Business Office Tech: Legal Secretarial",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "07176",
+  "title": "Engineering",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.913,
+  "codes_found": [
+   "CHEM150",
+   "CHEM151",
+   "CS111",
+   "CS112",
+   "ENGR100",
+   "ENGR124",
+   "ENGR126",
+   "ENGR152",
+   "ENGR154",
+   "ENGR156",
+   "ENGR161",
+   "ENGR162",
+   "ENGR170",
+   "ENGR171",
+   "ET140",
+   "ET145",
+   "MATH183",
+   "MATH184",
+   "PHYS161",
+   "PHYS162",
+   "PHYS163"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31038",
+   "title": "Engineering - Associate in Arts",
+   "h1": "Engineering - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "07177",
+  "title": "Apprenticeship: Operating",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "07179",
+  "title": "Sound Technology",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "07181",
+  "title": "Graphic Communication",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "07185",
+  "title": "Family & Consumer Sciences: General",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "07186",
+  "title": "Interior Design",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.933,
+  "codes_found": [
+   "ARCH121",
+   "ARCH160",
+   "ART108",
+   "ART112",
+   "ART113",
+   "BUS106",
+   "CBIS101",
+   "FASH101",
+   "FASH103",
+   "INTD100",
+   "INTD149",
+   "INTD170",
+   "INTD171",
+   "INTD172"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31027",
+   "title": "Interior Design - Associate in Science",
+   "h1": "Interior Design - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 10174
+ },
+ {
+  "control_number": "07191",
+  "title": "Global Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.913,
+  "codes_found": [
+   "ANTH102",
+   "BUS140",
+   "BUS141",
+   "ECON141",
+   "FRCH101",
+   "FRCH102",
+   "GBST101",
+   "GBST141",
+   "GEOG103",
+   "HIST102",
+   "HIST105",
+   "HUM102",
+   "HUM105",
+   "PHIL121",
+   "POLS101",
+   "POLS104",
+   "SPAN101",
+   "SPAN102",
+   "SPAN103",
+   "SPAN104",
+   "SPAN111"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31012",
+   "title": "Global Studies - Associate in Arts",
+   "h1": "Global Studies - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 11285
+ },
+ {
+  "control_number": "07192",
+  "title": "Civil Engineering Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "09514",
+  "title": "Media Arts: Multimedia",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.967,
+  "codes_found": [
+   "ART106",
+   "ART107",
+   "ART115",
+   "FILM101",
+   "FILM111",
+   "FILM115",
+   "FILM118",
+   "FILM125",
+   "FILM126",
+   "FILM128",
+   "GRPH108",
+   "GRPH112",
+   "GRPH116",
+   "GRPH118",
+   "GRPH129",
+   "MMAC101",
+   "MMAC112",
+   "MMAC114",
+   "MMAC115",
+   "MMAC117",
+   "MMAC118",
+   "MMAC125",
+   "MMAC126",
+   "MMAC128",
+   "MMAC129",
+   "MUS115",
+   "MUS116",
+   "MUS117",
+   "PHTO170"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30980",
+   "title": "Media Arts: Multimedia - Associate in Science",
+   "h1": "Media Arts: Multimedia - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 30,
+  "text_chars": 11859
+ },
+ {
+  "control_number": "09515",
+  "title": "Applied Design/Media: Animation: Traditional Drawing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "09516",
+  "title": "Media Arts: Animation & Game Art",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.926,
+  "codes_found": [
+   "ART107",
+   "ART113",
+   "ART115",
+   "ART120",
+   "ART121",
+   "ART122",
+   "DRMA104",
+   "FILM115",
+   "FILM116",
+   "FILM118",
+   "FILM126",
+   "FILM128",
+   "GRPH108",
+   "GRPH112",
+   "GRPH130",
+   "MMAC101",
+   "MMAC114",
+   "MMAC115",
+   "MMAC116",
+   "MMAC117",
+   "MMAC118",
+   "MMAC126",
+   "MMAC128",
+   "MMAC131",
+   "MUS115"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30985",
+   "title": "Media Arts: Animation & Game Art - Associate in Science",
+   "h1": "Media Arts: Animation & Game Art - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 27,
+  "text_chars": 11341
+ },
+ {
+  "control_number": "09517",
+  "title": "Film & Video Production",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART115",
+   "ES122",
+   "FILM101",
+   "FILM102",
+   "FILM103",
+   "FILM104",
+   "FILM105",
+   "FILM106",
+   "FILM107",
+   "FILM108",
+   "FILM109",
+   "FILM110",
+   "FILM111",
+   "FILM119",
+   "FILM120",
+   "FILM121",
+   "FILM122",
+   "FILM123",
+   "FILM125",
+   "FILM126",
+   "FILM129",
+   "FILM189",
+   "FILM199",
+   "MMAC115",
+   "MMAC126",
+   "PHTO110"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31022",
+   "title": "Film and Video Production - Associate in Science",
+   "h1": "Film and Video Production - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 10735
+ },
+ {
+  "control_number": "10143",
+  "title": "Agribusiness:  Wine Business",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT105",
+   "AG149",
+   "BUS103",
+   "BUS104",
+   "BUS110",
+   "BUS160",
+   "VEN101",
+   "VEN102",
+   "VEN103",
+   "VEN104",
+   "VEN105",
+   "VEN106",
+   "VEN114",
+   "VEN301",
+   "VEN302",
+   "VEN303",
+   "VEN320"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31150",
+   "title": "Agribusiness: Wine Business - Associate in Science",
+   "h1": "Agribusiness: Wine Business - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 9961
+ },
+ {
+  "control_number": "10151",
+  "title": "Early Childhood Studies: Preschool/Infant-Toddler Prog. Dir.",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "10152",
+  "title": "Early Childhood Studies: Elementary Education in Diversity Studies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.947,
+  "codes_found": [
+   "ECS101",
+   "ECS102",
+   "ECS103",
+   "ECS104",
+   "ECS105",
+   "ECS106",
+   "ECS116",
+   "ECS117",
+   "ECS118",
+   "ECS119",
+   "ECS122",
+   "ECS123",
+   "ECS125",
+   "EDUC130",
+   "EDUC132",
+   "EMS102",
+   "ENGL137",
+   "SPAN104"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31058",
+   "title": "Early Childhood Studies: Elementary Education in Diversity Studies - Associate in Science",
+   "h1": "Early Childhood Studies: Elementary Education in Diversity Studies - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 11221
+ },
+ {
+  "control_number": "10153",
+  "title": "Early Childhood Studies: Special Education",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "10158",
+  "title": "Computer Networking and Electronics Technology: Electronic Engineering Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.812,
+  "codes_found": [
+   "CHEM120",
+   "CNET118",
+   "CNET122",
+   "CNET123",
+   "CNET125",
+   "CNET126",
+   "CNET135",
+   "CNET136",
+   "CNET146",
+   "CS102",
+   "CS111",
+   "PHYS141",
+   "PHYS142"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31083",
+   "title": "Computer Networking and Electronics Technology: Electronic Engineering Technology - Associate in Science",
+   "h1": "Computer Networking and Electronics Technology: Electronic Engineering Technology - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 10315
+ },
+ {
+  "control_number": "10160",
+  "title": "Automotive Technology Auto Tune-Up and Diagnostic Procedures",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AT100",
+   "AT117",
+   "AT133",
+   "AT300",
+   "AT303",
+   "AT306",
+   "AT323",
+   "AT324",
+   "AT334",
+   "AT341",
+   "AT343",
+   "AT344",
+   "AT370",
+   "AT389"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31128",
+   "title": "Automotive Technology: Auto Tune Up and Diagnostic Procedures - Associate in Science",
+   "h1": "Automotive Technology: Auto Tune Up and Diagnostic Procedures - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 10477
+ },
+ {
+  "control_number": "10161",
+  "title": "Automotive Technology Auto Engine Rebuilding",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.933,
+  "codes_found": [
+   "AT100",
+   "AT117",
+   "AT133",
+   "AT300",
+   "AT306",
+   "AT323",
+   "AT324",
+   "AT334",
+   "AT336",
+   "AT341",
+   "AT344",
+   "AT370",
+   "AT389",
+   "MT109"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31130",
+   "title": "Automotive Technology: Auto Engine Rebuilding - Associate in Science",
+   "h1": "Automotive Technology: Auto Engine Rebuilding - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 10545
+ },
+ {
+  "control_number": "10162",
+  "title": "Automotive Technology Automotive Chassis",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.933,
+  "codes_found": [
+   "AT100",
+   "AT117",
+   "AT133",
+   "AT300",
+   "AT303",
+   "AT306",
+   "AT313",
+   "AT314",
+   "AT323",
+   "AT324",
+   "AT334",
+   "AT341",
+   "AT370",
+   "AT389"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31127",
+   "title": "Automotive Technology: Automotive Chassis - Associate in Science",
+   "h1": "Automotive Technology: Automotive Chassis - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 10248
+ },
+ {
+  "control_number": "10163",
+  "title": "Automotive Technology General Technican Tune-Up Emission Control Specialist",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AT100",
+   "AT117",
+   "AT133",
+   "AT300",
+   "AT303",
+   "AT306",
+   "AT323",
+   "AT324",
+   "AT334",
+   "AT341",
+   "AT343",
+   "AT370"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31125",
+   "title": "Automotive Technology: General Technician Tune Up Emission Control Specialist - Certificate of Achievement",
+   "h1": "Automotive Technology: General Technician Tune Up Emission Control Specialist - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.889
+   }
+  },
+  "listed": 12,
+  "text_chars": 8731
+ },
+ {
+  "control_number": "10164",
+  "title": "Automotive Technology General Technician Engine, Power Trains Specialist",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.941,
+  "codes_found": [
+   "AT100",
+   "AT117",
+   "AT133",
+   "AT300",
+   "AT303",
+   "AT306",
+   "AT313",
+   "AT314",
+   "AT323",
+   "AT324",
+   "AT334",
+   "AT341",
+   "AT343",
+   "AT344",
+   "AT370",
+   "AT389"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31126",
+   "title": "Automotive Technology: General Technician Engine, Power Trains Specialist - Certificate of Achievement",
+   "h1": "Automotive Technology: General Technician Engine, Power Trains Specialist - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 8969
+ },
+ {
+  "control_number": "10166",
+  "title": "Auto Body Metal",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AB351",
+   "AB353",
+   "AB356",
+   "AB360",
+   "AT303"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31133",
+   "title": "Auto Body Metal - Certificate of Achievement",
+   "h1": "Auto Body Metal - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 7677
+ },
+ {
+  "control_number": "11352",
+  "title": "Wildland Fire Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMS301",
+   "FT101",
+   "FT102",
+   "FT103",
+   "FT104",
+   "FT105",
+   "FT106",
+   "FT149",
+   "WFT101",
+   "WFT102",
+   "WFT103",
+   "WFT104",
+   "WFT105"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30916",
+   "title": "Wildland Fire Technology - Associate in Science",
+   "h1": "Wildland Fire Technology - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 10097
+ },
+ {
+  "control_number": "11996",
+  "title": "Computer Networking and Electronics Technology: Network Maintenance and Digital Technologies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.846,
+  "codes_found": [
+   "BUS101",
+   "CBIS101",
+   "CNET105",
+   "CNET106",
+   "CNET108",
+   "CNET118",
+   "CNET125",
+   "CNET126",
+   "CNET370",
+   "CS102",
+   "CS111"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31078",
+   "title": "Computer Networking and Electronics Technology: Network Maintenance and Digital Technologies - Associate in Science",
+   "h1": "Computer Networking and Electronics Technology: Network Maintenance and Digital Technologies - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 10570
+ },
+ {
+  "control_number": "12065",
+  "title": "Environmental Health & Safety",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.765,
+  "codes_found": [
+   "BIOL100",
+   "CHEM120",
+   "EMS102",
+   "ENVT101",
+   "ENVT150",
+   "ENVT152",
+   "ENVT153",
+   "ENVT154",
+   "ENVT159",
+   "ENVT160",
+   "MT115",
+   "PHYS141",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28878/30841",
+   "title": "Environmental Health & Safety - Associate in Science",
+   "h1": "Environmental Health & Safety - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 9290
+ },
+ {
+  "control_number": "12129",
+  "title": "Mathematics: Physics",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.714,
+  "codes_found": [
+   "MATH183",
+   "MATH184",
+   "PHYS161",
+   "PHYS162",
+   "PHYS163"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30986",
+   "title": "Mathematics with Physics Emphasis - Associate in Arts",
+   "h1": "Mathematics with Physics Emphasis - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 9347
+ },
+ {
+  "control_number": "12466",
+  "title": "Media Arts: Photography",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.96,
+  "codes_found": [
+   "ART106",
+   "ART107",
+   "ART108",
+   "ART110",
+   "FILM101",
+   "FILM102",
+   "FILM110",
+   "FILM111",
+   "GRPH110",
+   "GRPH112",
+   "PHTO101",
+   "PHTO110",
+   "PHTO120",
+   "PHTO130",
+   "PHTO140",
+   "PHTO150",
+   "PHTO151",
+   "PHTO152",
+   "PHTO170",
+   "PHTO179A",
+   "PHTO189",
+   "PHTO380",
+   "PHTO381",
+   "PHTO382"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30979",
+   "title": "Media Arts: Photography - Associate in Science",
+   "h1": "Media Arts: Photography - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 11038
+ },
+ {
+  "control_number": "12649",
+  "title": "Agribusiness: Viticulture",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.545,
+  "codes_found": [
+   "VEN101",
+   "VEN102",
+   "VEN103",
+   "VEN114",
+   "VEN125",
+   "VEN126",
+   "VEN130",
+   "VEN141",
+   "VEN307",
+   "VEN310",
+   "VEN311",
+   "VEN312"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31151",
+   "title": "Agribusiness: Viticulture - Associate in Science",
+   "h1": "Agribusiness: Viticulture - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 10672
+ },
+ {
+  "control_number": "12664",
+  "title": "Psychology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.944,
+  "codes_found": [
+   "ANTH102",
+   "BIOL100",
+   "BIOL124",
+   "BIOL125",
+   "HUSV106",
+   "PSY105",
+   "PSY112",
+   "PSY113",
+   "PSY117",
+   "PSY118",
+   "PSY119",
+   "PSY121",
+   "PSY127",
+   "PSY128",
+   "PSYCC1000",
+   "SOC110",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30950",
+   "title": "Psychology - Associate in Arts",
+   "h1": "Psychology - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 11103
+ },
+ {
+  "control_number": "13700",
+  "title": "Restaurant Management",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "15550",
+  "title": "Human Services: Co-Occurring Disorders",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FSN112",
+   "HUSV101",
+   "HUSV102",
+   "HUSV103",
+   "HUSV104",
+   "HUSV106",
+   "HUSV107",
+   "HUSV108",
+   "HUSV110",
+   "HUSV111",
+   "HUSV113",
+   "HUSV130",
+   "HUSV131",
+   "HUSV132",
+   "HUSV140",
+   "HUSV141",
+   "HUSV142",
+   "HUSV143",
+   "HUSV170",
+   "PSY106",
+   "PSY132",
+   "PSY142",
+   "PSY143",
+   "SOC106"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31007",
+   "title": "Human Services: Co-Occurring Disorders - Certificate of Achievement",
+   "h1": "Human Services: Co-Occurring Disorders - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 11589
+ },
+ {
+  "control_number": "15596",
+  "title": "Computer Networking and Electronics Technology: Electronic Training",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "CNET105",
+   "CNET118",
+   "CNET122",
+   "CNET123",
+   "CNET125",
+   "CNET126"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31082",
+   "title": "Computer Networking and Electronics Technology: Electronic Training - Certificate of Achievement",
+   "h1": "Computer Networking and Electronics Technology: Electronic Training - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 8437
+ },
+ {
+  "control_number": "15598",
+  "title": "Machining and Manufacturing Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "MT109",
+   "MT110",
+   "MT111",
+   "MT113",
+   "MT115",
+   "MT116",
+   "MT117",
+   "MT300"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30990",
+   "title": "Machining & Manufacturing Technology - Associate in Science",
+   "h1": "Machining & Manufacturing Technology - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 10513
+ },
+ {
+  "control_number": "15599",
+  "title": "Welding Technology: Metal Fabrication",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "15600",
+  "title": "Welding Technology: Pipe Welding",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "17480",
+  "title": "Engineering Technology: Mechatronics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "17481",
+  "title": "Computer Networking and Electronics Technology: Mechatronics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.951,
+  "codes_found": [
+   "CEL104",
+   "CEL128",
+   "CEL131",
+   "CEL133",
+   "CEL139",
+   "CEL162",
+   "CNET104",
+   "CNET105",
+   "CNET106",
+   "CNET118",
+   "CNET122",
+   "CNET123",
+   "CNET125",
+   "CNET126",
+   "CNET128",
+   "CNET131",
+   "CNET133",
+   "CNET135",
+   "CNET136",
+   "CNET139",
+   "CNET146",
+   "CNET162",
+   "CNET320",
+   "CS111",
+   "ET100",
+   "ET104",
+   "ET139",
+   "ET140",
+   "MT109",
+   "MT117",
+   "PHSC111",
+   "PHYS100",
+   "PHYS110",
+   "WLDT106",
+   "WLDT107",
+   "WLDT306",
+   "WLDT307",
+   "WLDT308",
+   "WLDT315"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31080",
+   "title": "Computer Networking and Electronics Technology: Mechatronics - Associate in Science",
+   "h1": "Computer Networking and Electronics Technology: Mechatronics - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 41,
+  "text_chars": 12147
+ },
+ {
+  "control_number": "17582",
+  "title": "Culinology¿",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18574",
+  "title": "Liberal Arts: Arts & Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "ART105",
+   "ART106",
+   "ART115",
+   "ART121",
+   "ART122",
+   "ART123",
+   "ART160",
+   "ART161"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30994",
+   "title": "Liberal Arts: Arts and Humanities - Associate in Arts",
+   "h1": "Liberal Arts: Arts and Humanities - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 5424
+ },
+ {
+  "control_number": "18575",
+  "title": "Liberal Arts- Mathematics & Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18576",
+  "title": "Liberal Arts: Social & Behavioral Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19896",
+  "title": "Viticulture Level 1",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "VEN102",
+   "VEN120",
+   "VEN121",
+   "VEN125",
+   "VEN130",
+   "VEN307",
+   "VEN330",
+   "VEN331"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30924",
+   "title": "Viticulture Level 1 - Certificate of Achievement",
+   "h1": "Viticulture Level 1 - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 8150
+ },
+ {
+  "control_number": "19897",
+  "title": "Agribusiness: Wine Business",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT105",
+   "AG149",
+   "BUS103",
+   "BUS104",
+   "BUS110",
+   "BUS160",
+   "VEN101",
+   "VEN102",
+   "VEN103",
+   "VEN104",
+   "VEN105",
+   "VEN106",
+   "VEN114",
+   "VEN301",
+   "VEN302",
+   "VEN303",
+   "VEN320"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31149",
+   "title": "Agribusiness: Wine Business - Certificate of Achievement",
+   "h1": "Agribusiness: Wine Business - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 8513
+ },
+ {
+  "control_number": "19898",
+  "title": "Environmental Health & Safety",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 11,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19899",
+  "title": "Accounting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT131",
+   "ACCT132",
+   "ACCT140",
+   "ACCT150",
+   "ACCT160",
+   "ACCT170",
+   "CBIS141"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31157",
+   "title": "Accounting - Certificate of Achievement",
+   "h1": "Accounting - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 8490
+ },
+ {
+  "control_number": "19900",
+  "title": "Computer Business Office Technology: Computer Applications and Office Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS107",
+   "BUS160",
+   "BUS302",
+   "CBIS141",
+   "CBOT131",
+   "CBOT132",
+   "CBOT302",
+   "CBOT333",
+   "CBOT334",
+   "CBOT337"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31091",
+   "title": "Computer Business Office Technology: Computer Applications and Office Management - Certificate of Achievement",
+   "h1": "Computer Business Office Technology: Computer Applications and Office Management - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 8606
+ },
+ {
+  "control_number": "19901",
+  "title": "Computer Business Office Technology: Word/Info Processing",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19902",
+  "title": "Computer Business Office Tech: Legal Secretarial",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19903",
+  "title": "Computer Business Information Systems",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19904",
+  "title": "Computer Networking & Electronics Technology: Network Maintenance and Digital Technologies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.846,
+  "codes_found": [
+   "BUS101",
+   "CBIS101",
+   "CNET105",
+   "CNET106",
+   "CNET108",
+   "CNET118",
+   "CNET125",
+   "CNET126",
+   "CNET370",
+   "CS102",
+   "CS111"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31077",
+   "title": "Computer Networking and Electronics Technology: Network Maintenance and Digital Technologies - Certificate of Achievement",
+   "h1": "Computer Networking and Electronics Technology: Network Maintenance and Digital Technologies - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 9094
+ },
+ {
+  "control_number": "19906",
+  "title": "Early Childhood Studies: Elementary Education in Diversity Studies",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19907",
+  "title": "Engineering Technology: Mechatronics",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19908",
+  "title": "Computer Networking and Electronics Technology: Digital Systems Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNET118",
+   "CNET122",
+   "CNET123",
+   "CNET125",
+   "CNET126",
+   "CNET135",
+   "CNET136",
+   "CNET146"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31084",
+   "title": "Computer Networking and Electronics Technology: Digital Systems Technician - Certificate of Achievement",
+   "h1": "Computer Networking and Electronics Technology: Digital Systems Technician - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 8721
+ },
+ {
+  "control_number": "19912",
+  "title": "Machining and Manufacturing Technology",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "MT109",
+   "MT110",
+   "MT111",
+   "MT113",
+   "MT115",
+   "MT116",
+   "MT117",
+   "MT300"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30989",
+   "title": "Machining & Manufacturing Technology - Certificate of Achievement",
+   "h1": "Machining & Manufacturing Technology - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 9218
+ },
+ {
+  "control_number": "19913",
+  "title": "Welding Technology: General Welding",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19914",
+  "title": "Welding Technology: Metal Fabrication",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19915",
+  "title": "Welding Technology: Pipe Welding",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19920",
+  "title": "LVN to RN",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "BIOL125",
+   "NURS103",
+   "NURS104",
+   "NURS106",
+   "NURS108",
+   "NURS109",
+   "NURS110",
+   "NURS111"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30969",
+   "title": "Nursing: 30 Unit Option - Certificate of Achievement",
+   "h1": "Nursing: 30 Unit Option - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 9710
+ },
+ {
+  "control_number": "19921",
+  "title": "Vocational Nursing",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NURS310",
+   "NURS311",
+   "NURS317",
+   "NURS318",
+   "NURS322",
+   "NURS323",
+   "NURS327",
+   "NURS328",
+   "NURS329",
+   "NURS330",
+   "NURS331",
+   "NURS332",
+   "NURS335",
+   "NURS337",
+   "NURS338"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30964",
+   "title": "Nursing: Licensed Vocational Nursing - Certificate of Achievement",
+   "h1": "Nursing: Licensed Vocational Nursing - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 9869
+ },
+ {
+  "control_number": "19922",
+  "title": "Dental Assisting",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DA310",
+   "DA314",
+   "DA317",
+   "DA318",
+   "DA320",
+   "DA325",
+   "DA326",
+   "DA327",
+   "DA328",
+   "DA330",
+   "DA332",
+   "DA348",
+   "DA380"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31063",
+   "title": "Dental Assisting - Certificate of Achievement",
+   "h1": "Dental Assisting - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 9785
+ },
+ {
+  "control_number": "19924",
+  "title": "Family & Consumer Sciences: Fashion Studies",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART110",
+   "ART120",
+   "BUS102",
+   "FASH101",
+   "FASH102",
+   "FASH103",
+   "FASH104",
+   "FASH110"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31023",
+   "title": "Fashion Studies - Certificate of Achievement",
+   "h1": "Fashion Studies - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.4
+   }
+  },
+  "listed": 8,
+  "text_chars": 8088
+ },
+ {
+  "control_number": "19925",
+  "title": "Early Childhood Studies: General",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19926",
+  "title": "Early Childhood Studies: Special Education",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19927",
+  "title": "Early Childhood Studies: Program Director/Administration Emphasis",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.958,
+  "codes_found": [
+   "ACCT317",
+   "BUS107",
+   "CBIS101",
+   "ECS101",
+   "ECS102",
+   "ECS103",
+   "ECS104",
+   "ECS105",
+   "ECS106",
+   "ECS111",
+   "ECS112",
+   "ECS114",
+   "ECS115",
+   "ECS116",
+   "ECS118",
+   "ECS119",
+   "ECS120",
+   "ECS122",
+   "ECS125",
+   "ECS149",
+   "ECS150",
+   "ECS151",
+   "EMS102"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31051",
+   "title": "Early Childhood Studies: Program Director/Administration Emphasis - Certificate of Achievement",
+   "h1": "Early Childhood Studies: Program Director/Administration Emphasis - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 10260
+ },
+ {
+  "control_number": "19928",
+  "title": "Human Services: General",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HUSV101",
+   "HUSV102",
+   "HUSV103",
+   "HUSV104",
+   "HUSV106",
+   "HUSV107",
+   "HUSV108",
+   "HUSV110",
+   "HUSV120",
+   "HUSV121",
+   "HUSV170",
+   "PSY106",
+   "PSY112",
+   "PSY118",
+   "SOC106"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31001",
+   "title": "Human Services: General - Certificate of Achievement",
+   "h1": "Human Services: General - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 9997
+ },
+ {
+  "control_number": "19930",
+  "title": "Fire Technology",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19931",
+  "title": "Wildland Fire Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMS301",
+   "FT101",
+   "FT102",
+   "FT103",
+   "FT104",
+   "FT105",
+   "FT106",
+   "FT149",
+   "WFT101",
+   "WFT102",
+   "WFT103",
+   "WFT104",
+   "WFT105"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30915",
+   "title": "Wildland Fire Technology - Certificate of Achievement",
+   "h1": "Wildland Fire Technology - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 8798
+ },
+ {
+  "control_number": "19934",
+  "title": "Cosmetology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19935",
+  "title": "Interior Design Merchandising",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19936",
+  "title": "Computer Networking and Electronics Technology: Mechatronics",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.953,
+  "codes_found": [
+   "CEL104",
+   "CEL128",
+   "CEL131",
+   "CEL133",
+   "CEL139",
+   "CEL162",
+   "CNET104",
+   "CNET105",
+   "CNET106",
+   "CNET118",
+   "CNET122",
+   "CNET123",
+   "CNET125",
+   "CNET126",
+   "CNET128",
+   "CNET131",
+   "CNET133",
+   "CNET135",
+   "CNET136",
+   "CNET139",
+   "CNET146",
+   "CNET162",
+   "CNET320",
+   "CS111",
+   "ET100",
+   "ET104",
+   "ET128",
+   "ET131",
+   "ET139",
+   "ET140",
+   "MT109",
+   "MT117",
+   "PHSC111",
+   "PHYS100",
+   "PHYS110",
+   "WLDT106",
+   "WLDT107",
+   "WLDT306",
+   "WLDT307",
+   "WLDT308",
+   "WLDT315"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31079",
+   "title": "Computer Networking and Electronics Technology: Mechatronics - Certificate of Achievement",
+   "h1": "Computer Networking and Electronics Technology: Mechatronics - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 43,
+  "text_chars": 10830
+ },
+ {
+  "control_number": "23098",
+  "title": "Dance",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DANC101",
+   "DANC110",
+   "DANC120",
+   "DANC133",
+   "DANC148",
+   "DANC152",
+   "DANC171",
+   "DANC176",
+   "DANC180",
+   "DANC182",
+   "DANC183",
+   "DANC186",
+   "DANC188"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31065",
+   "title": "Dance - Certificate of Achievement",
+   "h1": "Dance - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 8028
+ },
+ {
+  "control_number": "24105",
+  "title": "Career Preparation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WKPR7000",
+   "WKPR7001",
+   "WKPR7002"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31399",
+   "title": "Career Preparation - Certificate of Completion",
+   "h1": "Career Preparation - Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 4112
+ },
+ {
+  "control_number": "24138",
+  "title": "Interior/Exterior Maintenance Repair Technology Certificate",
+  "award": null,
+  "shape": "other",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24167",
+  "title": "Income Tax Preparation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCE7503"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31000",
+   "title": "Income Tax Preparation - Certificate of Competency",
+   "h1": "Income Tax Preparation - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 1,
+  "text_chars": 4000
+ },
+ {
+  "control_number": "24217",
+  "title": "Gardening and Landscaping",
+  "award": null,
+  "shape": "other",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30363",
+  "title": "Recreation Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.786,
+  "codes_found": [
+   "ATH104",
+   "BUS102",
+   "COMM102",
+   "EMS102",
+   "HED100",
+   "REC101",
+   "REC103",
+   "REC105",
+   "REC107",
+   "SOC120",
+   "WEE149"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30947",
+   "title": "Recreation, Event, and Sports Management - Associate in Science",
+   "h1": "Recreation, Event, and Sports Management - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 9907
+ },
+ {
+  "control_number": "30364",
+  "title": "Recreation Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.818,
+  "codes_found": [
+   "ATH104",
+   "BUS102",
+   "COMM102",
+   "EMS102",
+   "REC101",
+   "REC103",
+   "REC105",
+   "REC107",
+   "WEE149"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30948",
+   "title": "Recreation Management - Certificate of Achievement",
+   "h1": "Recreation Management - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 8304
+ },
+ {
+  "control_number": "30429",
+  "title": "Medical Assisting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MA305",
+   "MA350",
+   "MA351",
+   "MA352",
+   "MA353",
+   "MA355",
+   "MA356"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30976",
+   "title": "Medical Assisting - Certificate of Achievement",
+   "h1": "Medical Assisting - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 8029
+ },
+ {
+  "control_number": "30482",
+  "title": "Paralegal Studies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.938,
+  "codes_found": [
+   "BUS110",
+   "CBOT305",
+   "PLGL101",
+   "PLGL102",
+   "PLGL103",
+   "PLGL104",
+   "PLGL105",
+   "PLGL106",
+   "PLGL107",
+   "PLGL108",
+   "PLGL109",
+   "PLGL110",
+   "PLGL111",
+   "PLGL112",
+   "RE302"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30959",
+   "title": "Paralegal Studies - Associate in Science",
+   "h1": "Paralegal Studies - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 9545
+ },
+ {
+  "control_number": "30487",
+  "title": "Paralegal Studies",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "BUS110"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30958",
+   "title": "Paralegal Studies - Certificate of Achievement",
+   "h1": "Paralegal Studies - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 7762
+ },
+ {
+  "control_number": "30492",
+  "title": "Medical Assisting - Medical Billing & Coding",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "MA305",
+   "MA352",
+   "MA361"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30975",
+   "title": "Medical Billing and Coding - Certificate of Achievement",
+   "h1": "Medical Billing and Coding - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.8
+   }
+  },
+  "listed": 4,
+  "text_chars": 7823
+ },
+ {
+  "control_number": "30564",
+  "title": "Entrepreneurship",
+  "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "BUS302",
+   "BUS303",
+   "BUS364",
+   "BUS366",
+   "BUS377",
+   "BUS378",
+   "BUS382",
+   "BUS390",
+   "ENTR101",
+   "ENTR102"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31029",
+   "title": "Entrepreneurship and Small Business Management - Certificate of Achievement",
+   "h1": "Entrepreneurship and Small Business Management - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 7900
+ },
+ {
+  "control_number": "30565",
+  "title": "Entrepreneurship",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT105",
+   "BUS102",
+   "BUS103",
+   "BUS106",
+   "BUS107",
+   "BUS110",
+   "BUS111",
+   "BUS390",
+   "CBOT333",
+   "CBOT337",
+   "ENTR101",
+   "ENTR102"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31030",
+   "title": "Entrepreneurship - Associate in Science",
+   "h1": "Entrepreneurship - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 9579
+ },
+ {
+  "control_number": "30791",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS111",
+   "MATH181",
+   "MATH182",
+   "MATH183",
+   "MATH184",
+   "PHYS161"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30988",
+   "title": "Mathematics - Associate in Science for Transfer",
+   "h1": "Mathematics - Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 9919
+ },
+ {
+  "control_number": "30934",
+  "title": "Floral Design",
+  "award": null,
+  "shape": "other",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "VOCE7400B"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31017",
+   "title": "Floral Design - Certificate of Completion",
+   "h1": "Floral Design - Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 4000
+ },
+ {
+  "control_number": "31001",
+  "title": "Green Landscaping & Gardening",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCE7622",
+   "VOCE7623"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31011",
+   "title": "Green Landscaping and Gardening - Certificate of Competency",
+   "h1": "Green Landscaping and Gardening - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 4053
+ },
+ {
+  "control_number": "31092",
+  "title": "Clothing Alterations Management",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HOEC7103A",
+   "HOEC7105A",
+   "HOEC7106",
+   "HOEC7108A",
+   "HOEC7111A",
+   "HOEC7112A",
+   "HOEC7115A",
+   "HOEC7167A"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31397",
+   "title": "Clothing Alterations Management - Certificate of Competency",
+   "h1": "Clothing Alterations Management - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 4510
+ },
+ {
+  "control_number": "31093",
+  "title": "Clothing Construction",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HOEC7103A",
+   "HOEC7105A",
+   "HOEC7108A",
+   "HOEC7115A"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31396",
+   "title": "Clothing Construction - Certificate of Competency",
+   "h1": "Clothing Construction - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 4162
+ },
+ {
+  "control_number": "31100",
+  "title": "Kinesiology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 45,
+  "text_chars": 0
+ },
+ {
+  "control_number": "31713",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "HIST101",
+   "HIST102",
+   "HIST104",
+   "HIST105",
+   "HUM101",
+   "HUM102",
+   "HUM104",
+   "HUM105"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31010",
+   "title": "History - Associate in Arts for Transfer",
+   "h1": "History - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 10119
+ },
+ {
+  "control_number": "31784",
+  "title": "Veterinary Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "VT102",
+   "VT301",
+   "VT302",
+   "VT303",
+   "VT304",
+   "VT305",
+   "VT306",
+   "VT307",
+   "VT308",
+   "WEE149"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30926",
+   "title": "Veterinary Technology - Certificate of Achievement",
+   "h1": "Veterinary Technology - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 9947
+ },
+ {
+  "control_number": "31828",
+  "title": "Business Administration",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "ACCT131",
+   "ACCT132",
+   "ACCT140",
+   "BUS110",
+   "MATH135",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31118",
+   "title": "Business Administration 2.0 - Associate in Science for Transfer",
+   "h1": "Business Administration 2.0 - Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 9889
+ },
+ {
+  "control_number": "31831",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.963,
+  "codes_found": [
+   "ENGL104",
+   "ENGL105",
+   "ENGL106",
+   "ENGL107",
+   "ENGL108",
+   "ENGL110",
+   "ENGL118",
+   "ENGL119",
+   "ENGL130",
+   "ENGL131",
+   "ENGL132",
+   "ENGL133",
+   "ENGL135",
+   "ENGL138",
+   "ENGL139",
+   "ENGL140",
+   "ENGL144",
+   "ENGL145",
+   "ENGL146",
+   "ENGL148",
+   "ENGL150",
+   "ENGL151",
+   "ENGL152",
+   "ENGL153",
+   "ENGL180",
+   "ENGLC1001"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31031",
+   "title": "English - Associate in Arts for Transfer",
+   "h1": "English - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 27,
+  "text_chars": 11820
+ },
+ {
+  "control_number": "31832",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ102",
+   "AJ104",
+   "AJ111",
+   "AJ120",
+   "AJ130",
+   "AJ150"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31154",
+   "title": "Administration of Justice - Associate in Science for Transfer",
+   "h1": "Administration of Justice - Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 4277
+ },
+ {
+  "control_number": "31929",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "ECS102",
+   "ECS104",
+   "ECS106",
+   "ECS118"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31061",
+   "title": "Early Childhood Education - Associate in Science for Transfer",
+   "h1": "Early Childhood Education - Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 10637
+ },
+ {
+  "control_number": "32574",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "ANTH102",
+   "ECON141",
+   "GBST101",
+   "GEOG102",
+   "SOC102",
+   "SOC104",
+   "SOC110",
+   "SOC120",
+   "SOC155",
+   "SOC160",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30943",
+   "title": "Sociology - Associate in Arts for Transfer",
+   "h1": "Sociology - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 10401
+ },
+ {
+  "control_number": "32587",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "POLS101",
+   "POLS104",
+   "POLS105",
+   "POLS110",
+   "POLSC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30952",
+   "title": "Political Science - A.A.-Transfer",
+   "h1": "Political Science - A.A.-Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 9931
+ },
+ {
+  "control_number": "32589",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "ANTH103",
+   "ANTH105",
+   "GEOG102",
+   "SOC104",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31139",
+   "title": "Anthropology - Associate in Arts for Transfer",
+   "h1": "Anthropology - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 10379
+ },
+ {
+  "control_number": "32604",
+  "title": "Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SPAN101",
+   "SPAN102",
+   "SPAN103",
+   "SPAN104",
+   "SPAN105",
+   "SPAN111",
+   "SPAN112"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30940",
+   "title": "Spanish - Associate in Arts for Transfer",
+   "h1": "Spanish - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 10206
+ },
+ {
+  "control_number": "32611",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.962,
+  "codes_found": [
+   "BIOL125",
+   "CHEM150",
+   "KIN100",
+   "PE120",
+   "PE121",
+   "PE122",
+   "PE123",
+   "PE130",
+   "PE132",
+   "PE133",
+   "PE134",
+   "PE140",
+   "PE141",
+   "PE142",
+   "PE143",
+   "PE146",
+   "PE154",
+   "PE160",
+   "PE164",
+   "PE167",
+   "PE170",
+   "PE172",
+   "PHYS141",
+   "PHYS161",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30996",
+   "title": "Kinesiology - Associate in Arts for Transfer",
+   "h1": "Kinesiology - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 10776
+ },
+ {
+  "control_number": "32936",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL100",
+   "PSY105",
+   "PSY112",
+   "PSY113",
+   "PSY117",
+   "PSY118",
+   "PSY119",
+   "PSY121",
+   "PSY127",
+   "PSY128",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30949",
+   "title": "Psychology - Associate in Arts for Transfer",
+   "h1": "Psychology - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 11362
+ },
+ {
+  "control_number": "33594",
+  "title": "Elementary Teacher Education",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "BIOL100",
+   "BIOL124",
+   "BIOL125",
+   "COMM106",
+   "COMMC1000",
+   "EDUC130",
+   "EDUC132",
+   "ENGLC1000",
+   "ENGLC1001",
+   "GEOG103",
+   "GEOL100",
+   "HED100",
+   "HIST101",
+   "HIST102",
+   "HIST118",
+   "HIST119",
+   "HUM101",
+   "HUM102",
+   "PHIL112",
+   "PHIL114",
+   "PHSC111",
+   "PHSC112",
+   "POLSC1000",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31047",
+   "title": "Elementary Teacher Education - Associate in Arts for Transfer",
+   "h1": "Elementary Teacher Education - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 30,
+  "text_chars": 11250
+ },
+ {
+  "control_number": "33693",
+  "title": "Sports Medicine",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATH106",
+   "BIOL100",
+   "BIOL124",
+   "BIOL125",
+   "FSN110",
+   "KIN100",
+   "KIN129",
+   "PE149",
+   "STATC1000",
+   "WEE149"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30935",
+   "title": "Sports Medicine - Associate in Science",
+   "h1": "Sports Medicine - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 10520
+ },
+ {
+  "control_number": "33843",
+  "title": "Agriculture",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG125",
+   "AG126",
+   "AG130",
+   "AG149",
+   "AG150",
+   "AG152",
+   "AG153",
+   "AG154",
+   "AG155",
+   "AG156",
+   "AG157",
+   "AG160",
+   "AG161",
+   "AG165",
+   "AG166",
+   "AG190",
+   "AG191",
+   "AG192",
+   "VT102"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31142",
+   "title": "Agriculture - Certificate of Achievement",
+   "h1": "Agriculture - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 9713
+ },
+ {
+  "control_number": "33865",
+  "title": "Agriculture",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG125",
+   "AG126",
+   "AG130",
+   "AG149",
+   "AG150",
+   "AG152",
+   "AG153",
+   "AG154",
+   "AG155",
+   "AG156",
+   "AG157",
+   "AG160",
+   "AG161",
+   "AG165",
+   "AG166",
+   "AG190",
+   "AG191",
+   "AG192",
+   "VT102"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31143",
+   "title": "Agriculture - Associate in Science",
+   "h1": "Agriculture - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 11314
+ },
+ {
+  "control_number": "35632",
+  "title": "Computer Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "PHYS161",
+   "PHYS163"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31075",
+   "title": "Computer Science - Associate in Science for Transfer",
+   "h1": "Computer Science - Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 9378
+ },
+ {
+  "control_number": "35691",
+  "title": "Chemistry",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "CHEM180",
+   "CHEM181",
+   "PHYS161",
+   "PHYS163"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31107",
+   "title": "Chemistry - Associate in Science for Transfer",
+   "h1": "Chemistry - Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 9285
+ },
+ {
+  "control_number": "36635",
+  "title": "Theatre Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DANC182",
+   "DRMA103",
+   "DRMA104",
+   "DRMA106",
+   "DRMA110",
+   "DRMA124",
+   "DRMA128"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30931",
+   "title": "Theatre Arts - Associate in Arts for Transfer",
+   "h1": "Theatre Arts - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 10068
+ },
+ {
+  "control_number": "36983",
+  "title": "Nutrition and Dietetics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL124",
+   "BIOL125",
+   "BIOL128",
+   "CA120",
+   "CHEM150",
+   "CHEM151",
+   "CHEM180",
+   "FCS120",
+   "FSN110",
+   "FSN133",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30961",
+   "title": "Nutrition and Dietetics - Associate in Science for Transfer",
+   "h1": "Nutrition and Dietetics - Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 11151
+ },
+ {
+  "control_number": "38494",
+  "title": "Two-Dimensional Studio Art",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART107",
+   "ART110",
+   "ART120",
+   "ART122",
+   "ART124",
+   "ART151"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30927",
+   "title": "Two Dimensional Studio Art - Certificate of Achievement",
+   "h1": "Two Dimensional Studio Art - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 7478
+ },
+ {
+  "control_number": "38581",
+  "title": "Ceramics",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART110",
+   "ART113",
+   "ART160",
+   "ART161",
+   "ART366"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31109",
+   "title": "Ceramics - Certificate of Achievement",
+   "h1": "Ceramics - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 7728
+ },
+ {
+  "control_number": "38584",
+  "title": "Agricultural Business",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG125",
+   "AG150",
+   "AG152",
+   "AG157",
+   "AG158",
+   "AG161",
+   "BUS110",
+   "MATH135",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31148",
+   "title": "Agricultural Business - Associate in Science for Transfer",
+   "h1": "Agricultural Business - Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 11049
+ },
+ {
+  "control_number": "38585",
+  "title": "Agricultural Plant Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG125",
+   "AG158",
+   "AG160",
+   "AG161",
+   "CHEM120",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31145",
+   "title": "Agricultural Plant Science - Associate in Science for Transfer",
+   "h1": "Agricultural Plant Science - Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 10330
+ },
+ {
+  "control_number": "38992",
+  "title": "Basic Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BASK7003",
+   "BASK7011",
+   "BASK7012"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31401",
+   "title": "Basic Skills - Certificate of Competency",
+   "h1": "Basic Skills - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 4146
+ },
+ {
+  "control_number": "38993",
+  "title": "Secondary Education/High School Equivalency Exam Preparation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BASK7005",
+   "BASK7005B",
+   "BASK7006",
+   "BASK7007",
+   "BASK7013"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30946",
+   "title": "Secondary Education/High School Equivalency Exam Preparation - Certificate of Competency",
+   "h1": "Secondary Education/High School Equivalency Exam Preparation - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 4285
+ },
+ {
+  "control_number": "39204",
+  "title": "Culinary Arts and Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.933,
+  "codes_found": [
+   "CA119",
+   "CA120",
+   "CA121",
+   "CA122",
+   "CA123",
+   "CA124",
+   "CA125",
+   "CA126",
+   "CA129",
+   "CA325",
+   "FSN109",
+   "FSN110",
+   "FSN133",
+   "SPAN101"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31073",
+   "title": "Culinary Arts and Management - Associate in Science",
+   "h1": "Culinary Arts and Management - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 10416
+ },
+ {
+  "control_number": "39350",
+  "title": "Latino/a Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH102",
+   "ART105",
+   "DANC140",
+   "ENGL148",
+   "FILM103",
+   "HIST119",
+   "HIST120",
+   "SOC120",
+   "SPAN101",
+   "SPAN102"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30995",
+   "title": "Latino/a Studies - Associate in Arts",
+   "h1": "Latino/a Studies - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 9884
+ },
+ {
+  "control_number": "39962",
+  "title": "Accounting: Bookkeeping",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT105",
+   "ACCT150",
+   "ACCT317",
+   "ACCT318",
+   "ACCT327",
+   "CBIS141"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31156",
+   "title": "Accounting: Bookkeeping - Certificate of Achievement",
+   "h1": "Accounting: Bookkeeping - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 7935
+ },
+ {
+  "control_number": "39963",
+  "title": "Commercial Photography",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FILM110",
+   "GRPH116",
+   "PHTO101",
+   "PHTO110",
+   "PHTO120",
+   "PHTO130",
+   "PHTO140",
+   "PHTO150",
+   "PHTO151",
+   "PHTO152",
+   "PHTO170",
+   "PHTO179A",
+   "PHTO179B",
+   "PHTO189",
+   "PHTO380",
+   "PHTO381",
+   "PHTO382",
+   "PHTO383",
+   "PHTO384",
+   "PHTO385"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30984",
+   "title": "Commercial Photography - Certificate of Achievement",
+   "h1": "Commercial Photography - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 8951
+ },
+ {
+  "control_number": "39991",
+  "title": "Media Arts: Visual Design",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GRPH110",
+   "GRPH112",
+   "GRPH113",
+   "GRPH117",
+   "GRPH129",
+   "MMAC129"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30978",
+   "title": "Media Arts: Visual Design - Certificate of Achievement",
+   "h1": "Media Arts: Visual Design - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 7975
+ },
+ {
+  "control_number": "39992",
+  "title": "Agricultural Pest Control Adviser Preparation (1 of 2): Crop Protection",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG125",
+   "AG130",
+   "AG149",
+   "AG161",
+   "AG166",
+   "BIOL100"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31147",
+   "title": "Agricultural Pest Control Adviser Preparation (1 of 2): Crop Protection - Certificate of Achievement",
+   "h1": "Agricultural Pest Control Adviser Preparation (1 of 2): Crop Protection - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 8833
+ },
+ {
+  "control_number": "40002",
+  "title": "Media Arts: Graphic Design",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.966,
+  "codes_found": [
+   "ART106",
+   "ART107",
+   "ART110",
+   "ART112",
+   "ART120",
+   "ART121",
+   "ART122",
+   "FILM101",
+   "FILM126",
+   "GRPH108",
+   "GRPH110",
+   "GRPH112",
+   "GRPH113",
+   "GRPH115",
+   "GRPH116",
+   "GRPH117",
+   "GRPH118",
+   "GRPH120",
+   "GRPH127",
+   "GRPH129",
+   "GRPH130",
+   "GRPH189",
+   "MMAC101",
+   "MMAC114",
+   "MMAC126",
+   "MMAC129",
+   "PHTO170",
+   "WEE149"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30982",
+   "title": "Media Arts: Graphic Design - Certificate of Achievement",
+   "h1": "Media Arts: Graphic Design - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 29,
+  "text_chars": 10621
+ },
+ {
+  "control_number": "40003",
+  "title": "Basic Law Enforcement Academy",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LE310",
+   "LE321",
+   "LE322"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31123",
+   "title": "Basic Law Enforcement Academy - Certificate of Achievement",
+   "h1": "Basic Law Enforcement Academy - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 7747
+ },
+ {
+  "control_number": "40004",
+  "title": "Media Arts: Web Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART107",
+   "CS102",
+   "GRPH108",
+   "GRPH112",
+   "GRPH118",
+   "GRPH129",
+   "GRPH189",
+   "MMAC112",
+   "MMAC114",
+   "MMAC125",
+   "MMAC126",
+   "PHTO170"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30977",
+   "title": "Media Arts: Web Design - Certificate of Achievement",
+   "h1": "Media Arts: Web Design - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 8321
+ },
+ {
+  "control_number": "40056",
+  "title": "Philosophy",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HIST104",
+   "HIST105",
+   "HUM104",
+   "HUM105",
+   "PHIL101",
+   "PHIL105",
+   "PHIL112",
+   "PHIL114",
+   "PHIL121",
+   "PHIL122"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30955",
+   "title": "Philosophy - Associate in Arts for Transfer",
+   "h1": "Philosophy - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 10290
+ },
+ {
+  "control_number": "40108",
+  "title": "Social Justice Studies: LGBTQ Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "LGBT101",
+   "LGBT102",
+   "PSY112",
+   "SOC102",
+   "SOC110",
+   "SOC120",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30945",
+   "title": "Social Justice Studies: LGBTQ Studies - Associate in Arts for Transfer",
+   "h1": "Social Justice Studies: LGBTQ Studies - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 10963
+ },
+ {
+  "control_number": "40121",
+  "title": "Geography",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "GEOG101",
+   "GEOG102",
+   "GEOG103",
+   "GEOG105",
+   "GEOG110",
+   "GEOG155"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31014",
+   "title": "Geography - Associate in Arts for Transfer",
+   "h1": "Geography - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 11213
+ },
+ {
+  "control_number": "40277",
+  "title": "Agricultural Pest Control Adviser Preparation (2 of 2): Production Systems",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG126",
+   "AG149",
+   "AG153",
+   "AG154",
+   "AG156",
+   "AG160",
+   "AG165",
+   "AG190",
+   "AG191",
+   "AG192",
+   "CHEM120",
+   "VEN102"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31146",
+   "title": "Agricultural Pest Control Adviser Preparation (2 of 2): Production Systems - Certificate of Achievement",
+   "h1": "Agricultural Pest Control Adviser Preparation (2 of 2): Production Systems - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 9405
+ },
+ {
+  "control_number": "40292",
+  "title": "Commercial Dance",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DANC102",
+   "DANC104",
+   "DANC107",
+   "DANC109",
+   "DANC121",
+   "DANC131",
+   "DANC139"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31106",
+   "title": "Commercial Dance - Certificate of Achievement",
+   "h1": "Commercial Dance - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 7676
+ },
+ {
+  "control_number": "40437",
+  "title": "State Hospital Academy",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LE310",
+   "LE329"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30934",
+   "title": "State Hospital Academy - Certificate of Achievement",
+   "h1": "State Hospital Academy - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 7485
+ },
+ {
+  "control_number": "40623",
+  "title": "ELDV Intro to Early Childhood Studies",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECSN7310",
+   "ECSN7311",
+   "ECSN7312",
+   "ECSN7313",
+   "ECSN7314"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31048",
+   "title": "ELDV Intro to Early Childhood Studies - Certificate of Competency",
+   "h1": "ELDV Intro to Early Childhood Studies - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 4641
+ },
+ {
+  "control_number": "40624",
+  "title": "ELDV Family, Friend, & Neighbor Childcare",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECSN7300",
+   "ECSN7301",
+   "ECSN7302",
+   "ECSN7303",
+   "ECSN7304"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30921",
+   "title": "ELDV Family, Friend, & Neighbor Childcare - Certificate of Competency",
+   "h1": "ELDV Family, Friend, & Neighbor Childcare - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 4662
+ },
+ {
+  "control_number": "40625",
+  "title": "Early Childhood Studies: Introduction to Early Childhood Studies",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECSN7310",
+   "ECSN7311",
+   "ECSN7312",
+   "ECSN7313",
+   "ECSN7314"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31053",
+   "title": "Early Childhood Studies: Introduction to Early Childhood Studies - Certificate of Competency",
+   "h1": "Early Childhood Studies: Introduction to Early Childhood Studies - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 4227
+ },
+ {
+  "control_number": "40739",
+  "title": "Early Childhood Studies: Family Childcare License Preparation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECSN7300",
+   "ECSN7301",
+   "ECSN7302",
+   "ECSN7303",
+   "ECSN7304"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31056",
+   "title": "Early Childhood Studies: Family Childcare License Preparation - Certificate of Competency",
+   "h1": "Early Childhood Studies: Family Childcare License Preparation - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 4244
+ },
+ {
+  "control_number": "41542",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "ACCT131",
+   "ACCT132",
+   "ACCT140",
+   "BUS110",
+   "MATH135",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31118",
+   "title": "Business Administration 2.0 - Associate in Science for Transfer",
+   "h1": "Business Administration 2.0 - Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 9889
+ },
+ {
+  "control_number": "42208",
+  "title": "Viticulture Level 2",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.647,
+  "codes_found": [
+   "AG149",
+   "VEN102",
+   "VEN120",
+   "VEN121",
+   "VEN125",
+   "VEN130",
+   "VEN135",
+   "VEN307",
+   "VEN324",
+   "VEN330",
+   "VEN331"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30924",
+   "title": "Viticulture Level 1 - Certificate of Achievement",
+   "h1": "Viticulture Level 1 - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 8150
+ },
+ {
+  "control_number": "42209",
+  "title": "Media Arts: Graphic Design (CSU Option)",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "ART108",
+   "ART110",
+   "ART112",
+   "ART113",
+   "ART120",
+   "ART122",
+   "GRPH108",
+   "GRPH110",
+   "GRPH112",
+   "GRPH113",
+   "GRPH115",
+   "GRPH117",
+   "GRPH118",
+   "GRPH127",
+   "GRPH129",
+   "MMAC129"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30981",
+   "title": "Media Arts: Graphic Design (CSU Option) - Associate in Science",
+   "h1": "Media Arts: Graphic Design (CSU Option) - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 10570
+ },
+ {
+  "control_number": "42210",
+  "title": "Viticulture Level 3",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.55,
+  "codes_found": [
+   "AG149",
+   "VEN101",
+   "VEN102",
+   "VEN120",
+   "VEN121",
+   "VEN130",
+   "VEN135",
+   "VEN314",
+   "VEN324",
+   "VEN325",
+   "VEN330"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31644",
+   "title": "Viticulture and Enology - Winemaking - Certificate of Achievement",
+   "h1": "Viticulture and Enology - Winemaking - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 8744
+ },
+ {
+  "control_number": "42211",
+  "title": "Emergency Medical Services: Paramedicine",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "EMS309",
+   "EMS321",
+   "EMS322",
+   "EMSP323",
+   "EMSP343",
+   "EMSP353"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31045",
+   "title": "Emergency Medical Services - Certificate of Achievement",
+   "h1": "Emergency Medical Services - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.75
+   }
+  },
+  "listed": 9,
+  "text_chars": 4836
+ },
+ {
+  "control_number": "42409",
+  "title": "Geology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "CHEM150",
+   "CHEM151",
+   "GEOL100",
+   "GEOL111"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31013",
+   "title": "Geology - Associate in Science for Transfer",
+   "h1": "Geology - Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 10429
+ },
+ {
+  "control_number": "42487",
+  "title": "Music",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS111",
+   "MUS112",
+   "MUS113",
+   "MUS114",
+   "MUS130",
+   "MUS132",
+   "MUS133",
+   "MUS137",
+   "MUS140",
+   "MUS151",
+   "MUS170"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30970",
+   "title": "Music - Associate in Arts for Transfer",
+   "h1": "Music - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 10700
+ },
+ {
+  "control_number": "43004",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "COMM102",
+   "COMM106",
+   "COMM108",
+   "COMM110",
+   "COMMC1000"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31101",
+   "title": "Communication Studies 2.0 - Associate in Arts for Transfer",
+   "h1": "Communication Studies 2.0 - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 10219
+ },
+ {
+  "control_number": "43256",
+  "title": "Ballet Folklórico",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DANC102",
+   "DANC120",
+   "DANC140",
+   "DANC142",
+   "DANC145",
+   "DANC147",
+   "DANC148",
+   "DANC156"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31124",
+   "title": "Ballet Folklórico - Certificate of Achievement",
+   "h1": "Ballet Folklórico - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.333
+   }
+  },
+  "listed": 8,
+  "text_chars": 7903
+ },
+ {
+  "control_number": "43479",
+  "title": "Personal Care Attendant",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "43636",
+  "title": "Communication Skills for Public Service Professionals",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "COMM110",
+   "COMMC1000"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31104",
+   "title": "Communication Skills for Public Service Professionals - Certificate of Achievement",
+   "h1": "Communication Skills for Public Service Professionals - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 7474
+ },
+ {
+  "control_number": "43637",
+  "title": "Communication Skills for the Business Professional",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "COMM102",
+   "COMM110"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31103",
+   "title": "Communication Skills for the Business Professional - Certificate of Achievement",
+   "h1": "Communication Skills for the Business Professional - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 7401
+ },
+ {
+  "control_number": "43638",
+  "title": "Communication Skills for the Professional Speaker",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM106",
+   "COMM108",
+   "COMMC1000"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31102",
+   "title": "Communication Skills for the Professional Speaker - Certificate of Achievement",
+   "h1": "Communication Skills for the Professional Speaker - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 7218
+ },
+ {
+  "control_number": "43710",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.846,
+  "codes_found": [
+   "ART107",
+   "ART110",
+   "ART112",
+   "ART113",
+   "ART120",
+   "ART121",
+   "ART122",
+   "ART151",
+   "ART160",
+   "ART164",
+   "PHTO110"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31134",
+   "title": "Art: Studio Arts - Associate in Arts for Transfer",
+   "h1": "Art: Studio Arts - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 10356
+ },
+ {
+  "control_number": "43741",
+  "title": "Certified Registered Central Service Technician",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "43770",
+  "title": "Agricultural Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG125",
+   "AG152",
+   "AG157",
+   "AG158",
+   "AG161",
+   "CHEM120"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31148",
+   "title": "Agricultural Business - Associate in Science for Transfer",
+   "h1": "Agricultural Business - Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 11049
+ },
+ {
+  "control_number": "43817",
+  "title": "Pathways to U.S. Citizenship",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "43885",
+  "title": "Applied Professional Studies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT105",
+   "ACCT131",
+   "ACCT132",
+   "AG150",
+   "AG157",
+   "AG158",
+   "BUS101",
+   "BUS104",
+   "BUS106",
+   "BUS110",
+   "BUS121",
+   "BUS141",
+   "BUS160",
+   "CA125",
+   "CA126",
+   "CBIS101",
+   "ECON121",
+   "ECON141",
+   "ECS111",
+   "ECS150",
+   "GBST141",
+   "HUSV102",
+   "HUSV104",
+   "HUSV107",
+   "PLGL112",
+   "REC101",
+   "REC103",
+   "REC105",
+   "VEN105",
+   "VEN106",
+   "VEN114"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31138",
+   "title": "Applied Professional Studies - Associate in Science",
+   "h1": "Applied Professional Studies - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 31,
+  "text_chars": 11658
+ },
+ {
+  "control_number": "43899",
+  "title": "Substance Abuse and Treatment Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HUSV102",
+   "HUSV103",
+   "HUSV110",
+   "HUSV111",
+   "HUSV130",
+   "HUSV131",
+   "HUSV135",
+   "PSY106",
+   "SOC106"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30932",
+   "title": "Substance Abuse and Treatment Studies - Certificate of Achievement",
+   "h1": "Substance Abuse and Treatment Studies - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 9892
+ },
+ {
+  "control_number": "43911",
+  "title": "Substance Abuse and Treatment Studies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HUSV101",
+   "HUSV102",
+   "HUSV103",
+   "HUSV104",
+   "HUSV106",
+   "HUSV107",
+   "HUSV110",
+   "HUSV111",
+   "HUSV130",
+   "HUSV131",
+   "HUSV132",
+   "HUSV135",
+   "HUSV142",
+   "PSY106",
+   "PSY132",
+   "SOC106"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30933",
+   "title": "Substance Abuse and Treatment Studies - Associate in Science",
+   "h1": "Substance Abuse and Treatment Studies - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 12075
+ },
+ {
+  "control_number": "43912",
+  "title": "Fashion Merchandising",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS102",
+   "BUS103",
+   "BUS377",
+   "BUS378",
+   "BUS380",
+   "CBIS101",
+   "FASH101",
+   "FASH102",
+   "FASH103",
+   "FASH104",
+   "FASH105",
+   "FASH106",
+   "FASH149"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31025",
+   "title": "Fashion Merchandising - Certificate of Achievement",
+   "h1": "Fashion Merchandising - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 8600
+ },
+ {
+  "control_number": "43913",
+  "title": "Architectural Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCH100",
+   "ARCH101",
+   "ARCH121",
+   "ARCH122",
+   "ARCH131",
+   "ARCH160",
+   "ARCH321",
+   "ET100"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31136",
+   "title": "Architectural Technology - Certificate of Achievement",
+   "h1": "Architectural Technology - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 7926
+ },
+ {
+  "control_number": "44646",
+  "title": "Advanced English Language Development",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 13,
+  "text_chars": 0
+ },
+ {
+  "control_number": "44658",
+  "title": "Spanish Literacy",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "44659",
+  "title": "Basic English Language Development",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 5,
+  "text_chars": 0
+ },
+ {
+  "control_number": "44766",
+  "title": "Animation Foundation",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART108",
+   "ART115",
+   "ART120",
+   "ART122",
+   "FILM115",
+   "FILM116",
+   "FILM118",
+   "FILM126",
+   "FILM128",
+   "GRPH108",
+   "GRPH112",
+   "GRPH130",
+   "MMAC114",
+   "MMAC115",
+   "MMAC116",
+   "MMAC117",
+   "MMAC118",
+   "MMAC126",
+   "MMAC128"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31140",
+   "title": "Animation Foundation - Certificate of Achievement",
+   "h1": "Animation Foundation - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 9051
+ },
+ {
+  "control_number": "44768",
+  "title": "Pre-radiography",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL124",
+   "BIOL125",
+   "HIT135",
+   "MA305",
+   "MB305",
+   "RT100",
+   "RT101"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30951",
+   "title": "Pre-radiography - Associate in Science",
+   "h1": "Pre-radiography - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 10455
+ },
+ {
+  "control_number": "44769",
+  "title": "Animation & Game Art",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART107",
+   "ART108",
+   "ART115",
+   "ART120",
+   "ART122",
+   "CS111",
+   "FILM115",
+   "FILM116",
+   "FILM118",
+   "FILM126",
+   "FILM128",
+   "GRPH108",
+   "GRPH112",
+   "GRPH130",
+   "MMAC101",
+   "MMAC114",
+   "MMAC115",
+   "MMAC116",
+   "MMAC117",
+   "MMAC118",
+   "MMAC126",
+   "MMAC128",
+   "MMAC131",
+   "MUS115"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31141",
+   "title": "Animation & Game Art - Certificate of Achievement",
+   "h1": "Animation & Game Art - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 9651
+ },
+ {
+  "control_number": "44870",
+  "title": "Game Art & Design Foundation",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART108",
+   "ART115",
+   "ART120",
+   "ART122",
+   "FILM115",
+   "FILM116",
+   "FILM118",
+   "FILM126",
+   "GRPH108",
+   "GRPH112",
+   "GRPH130",
+   "MMAC112",
+   "MMAC114",
+   "MMAC115",
+   "MMAC116",
+   "MMAC117",
+   "MMAC118",
+   "MMAC126",
+   "MMAC131",
+   "MUS115"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31015",
+   "title": "Game Art & Design Foundation - Certificate of Achievement",
+   "h1": "Game Art & Design Foundation - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 8696
+ },
+ {
+  "control_number": "44871",
+  "title": "Multimedia",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART108",
+   "FILM110",
+   "FILM126",
+   "GRPH108",
+   "GRPH112",
+   "GRPH129",
+   "MMAC101",
+   "MMAC112",
+   "MMAC126",
+   "MMAC129",
+   "MUS115",
+   "PHTO170"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30973",
+   "title": "Multimedia - Certificate of Achievement",
+   "h1": "Multimedia - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 10350
+ },
+ {
+  "control_number": "44872",
+  "title": "Multimedia Foundation",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART108",
+   "FILM110",
+   "FILM126",
+   "GRPH108",
+   "GRPH112",
+   "GRPH129",
+   "MMAC112",
+   "MMAC126",
+   "MMAC129",
+   "MMAC131",
+   "MUS115",
+   "PHTO170"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30972",
+   "title": "Multimedia Foundation - Certificate of Achievement",
+   "h1": "Multimedia Foundation - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 8841
+ },
+ {
+  "control_number": "45033",
+  "title": "Cal-GETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45282",
+  "title": "EDUN Instructional Aide",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 5,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45671",
+  "title": "Early Childhood Studies Associate Teacher",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "ECS101",
+   "ECS103",
+   "ECS104",
+   "ECS105",
+   "ECS149"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31392",
+   "title": "Early Childhood Studies Associate Teacher - Certificate of Achievement",
+   "h1": "Early Childhood Studies Associate Teacher - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 7830
+ },
+ {
+  "control_number": "45905",
+  "title": "Early Childhood Studies Teacher Certification",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "ECS101",
+   "ECS102",
+   "ECS104",
+   "ECS105",
+   "ECS106",
+   "ECS116",
+   "ECS118",
+   "ECS149"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31663",
+   "title": "Early Childhood Studies Teacher Certification - Certificate of Achievement",
+   "h1": "Early Childhood Studies Teacher Certification - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 8552
+ },
+ {
+  "control_number": "45964",
+  "title": "Annual Firefighter In-Service Training",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45965",
+  "title": "Bulldog Bootcamp for Career Education",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45966",
+  "title": "Microsoft Office Basics",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45967",
+  "title": "Beginning Computer Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45968",
+  "title": "Intermediate Computer Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45969",
+  "title": "Viticulture and Enology - Winemaking",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG149",
+   "CHEM120",
+   "VEN101",
+   "VEN102",
+   "VEN103",
+   "VEN104",
+   "VEN106",
+   "VEN114",
+   "VEN120",
+   "VEN121",
+   "VEN122",
+   "VEN130",
+   "VEN135",
+   "VEN301",
+   "VEN302",
+   "VEN308",
+   "VEN310",
+   "VEN311",
+   "VEN314",
+   "VEN316",
+   "VEN318",
+   "VEN321",
+   "VEN322",
+   "VEN324",
+   "VEN325",
+   "VEN330"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31568",
+   "title": "Viticulture and Enology - Winemaking - Associate in Science",
+   "h1": "Viticulture and Enology - Winemaking - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 27,
+  "text_chars": 10174
+ },
+ {
+  "control_number": "45970",
+  "title": "Barbering",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45971",
+  "title": "Early Childhood Studies NC: Family Childcare License Preparation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45972",
+  "title": "Early Childhood Studies NC: Family, Friend, & Neighbor Childcare",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 5,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45973",
+  "title": "ELDV Family Childcare License Preparation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "46003",
+  "title": "Cybersecurity",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ160",
+   "AJ162",
+   "CBIS310",
+   "CNET106",
+   "CNET333",
+   "CS111"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31497",
+   "title": "Cybersecurity - Certificate of Achievement",
+   "h1": "Cybersecurity - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 7478
+ },
+ {
+  "control_number": "46058",
+  "title": "Early Childhood Studies Master Teacher",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.941,
+  "codes_found": [
+   "ECS101",
+   "ECS102",
+   "ECS104",
+   "ECS105",
+   "ECS106",
+   "ECS111",
+   "ECS112",
+   "ECS113",
+   "ECS115",
+   "ECS116",
+   "ECS117",
+   "ECS118",
+   "ECS120",
+   "ECS123",
+   "ECS150",
+   "ECS151"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31673",
+   "title": "Early Childhood Studies Master Teacher - Certificate of Achievement",
+   "h1": "Early Childhood Studies Master Teacher - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 10609
+ },
+ {
+  "control_number": "46093",
+  "title": "Engineering Fundamentals",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "CHEM150",
+   "ENGLC1000",
+   "ENGR100",
+   "PHYS161"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31558",
+   "title": "Engineering Fundamentals - Certificate of Achievement",
+   "h1": "Engineering Fundamentals - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 7424
+ },
+ {
+  "control_number": "46126",
+  "title": "Foundations of Sewing",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "46134",
+  "title": "Viticulture and Enology - Winemaking",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG149",
+   "CHEM120",
+   "VEN101",
+   "VEN102",
+   "VEN103",
+   "VEN104",
+   "VEN106",
+   "VEN114",
+   "VEN120",
+   "VEN121",
+   "VEN122",
+   "VEN130",
+   "VEN135",
+   "VEN301",
+   "VEN302",
+   "VEN308",
+   "VEN310",
+   "VEN311",
+   "VEN314",
+   "VEN316",
+   "VEN321",
+   "VEN322",
+   "VEN324",
+   "VEN325",
+   "VEN330"
+  ],
+  "source": {
+   "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31644",
+   "title": "Viticulture and Enology - Winemaking - Certificate of Achievement",
+   "h1": "Viticulture and Enology - Winemaking - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 9020
+ },
+ {
+  "control_number": "46368",
+  "title": "Foundations of Machine Embroidery",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ }
+]

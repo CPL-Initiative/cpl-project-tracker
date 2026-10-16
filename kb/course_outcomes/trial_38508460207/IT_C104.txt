@@ -1,0 +1,106 @@
+Skip to Content AZ Index Catalog Home Coast Colleges Home
+Search catalog
+Submit search
+Academic Catalogs
+COASTLINE COLLEGE
+GOLDEN WEST COLLEGE
+ORANGE COAST COLLEGE
+2026-2027 HOME
+IT C104: IT Fundamentals (Tech+)
+ Print Options
+Course Outline of Record›
+IT C104: IT Fundamentals (Tech+)
+IT C104: IT Fundamentals (Tech+)
+Course Outline of Record
+Item
+	
+Value
+
+Curriculum Committee Approval Date	12/06/2024
+Top Code	070800 - Computer Infrastructure and Support
+Units	4 Total Units 
+Hours	72 Total Hours (Lecture Hours 72)
+Total Outside of Class Hours	0
+Course Credit Status	Credit: Degree Applicable (D)
+Material Fee	No
+Basic Skills	Not Basic Skills (N)
+Repeatable	No
+Open Entry/Open Exit	No
+Grading Policy	Standard Letter (S), 
+Pass/No Pass (B)
+Course Description
+
+Formerly: CST C104. This course will cover the topics of the CompTIA Tech+ certification exam, which validates the knowledge and skills required to identify and explain the basics of computing, IT infrastructure, applications and software, security, software development, and database use. In addition, candidates will demonstrate their knowledge to install software, establish basic network connectivity, and identify/prevent basic security risks. Technologies and trends of the IT industry will be covered to reinforce current best practices. Helps students gain knowledge in preparation for the CompTIA Tech+ certification exam. Transfer Credit: CSU.
+
+Course Level Student Learning Outcome(s)
+Explain the troubleshooting methodology commonly used in Information Technology (IT).
+Compare and contrast components of an operating system.
+Explain methods and best practices for securing devices.
+Configure computing assets for incorporation into common business and enterprise networks.
+Course Objectives
+1. Explain concepts and terminology of IT systems and infrastructure.
+2. Compare and contrast software development concepts and various applications and software used in the IT industry.
+3. Explain database concepts and fundamental security concepts.
+4. Describe troubleshooting methodology to safely diagnose, resolve, and document common hardware and software issues.
+5. Describe how to install, configure, and troubleshoot personal computer components, drivers, and operating system utilities.
+6. Summarize cloud computing concepts, including types of cloud networks and cloud characteristics.
+7. Define virtual desktop infrastructure (VDI).
+8. Identify basic features of Microsoft Windows editions.
+9. Outline various security measures and their purposes.
+10. Compare and contrast wireless security protocols and authentication methods.
+11. Describe how to detect, remove, and prevent malware using the appropriate tools and methods.
+12. Outline the common steps to troubleshoot common personal computer (PC) security issues.
+13. Compare and contrast programming language categories.
+14. Identify common uses of artificial intelligence (AI).
+15. Explain the value of data and information.
+16. Explain common uses of artificial intelligence in information technology, such as business use and personal use.
+Lecture Content
+
+IT Concepts and Terminology Compare and contrast notational systems Compare and contrast fundamental data types and their characteristics Illustrate the basics of computing and processing Explain the value of data and information Compare and contrast common units of measure Explain the troubleshooting methodology Infrastructure and Hardware Classify common types of i/o device interfaces Given a scenario, setup and install common peripheral devices to a laptop/PC Explain the purpose of common internal computing components Compare and contrast common Internet service types Compare and contrast storage types Compare and contrast common computing devices and their purposes Explain basic computing concepts Given a scenario, install, configure, and secure a basic wireless network Given a scenario, setup a PC workstation to given specifications. Applications and Software Manage applications and software Compare and contrast components of an operating system Explain the purpose and proper use of software Explain methods of application architecture and delivery methods Given a scenario, configure and use Web browsers Compare and contrast general application concepts and uses Given a scenario, install and configure windows and/or linux OS in a PC workstation. Describe common uses of artificial intelligence in the context of business and personal use Software Development Concepts Compare and contrast programming language concepts Given a scenario, use programming organizational techniques and interpret logic Explain the purpose and use of programming concepts Database Fundamentals Explain database concepts and the purpose of a database Compare and contrast various database structures Summarize methods used to interface with databases Explain the value of data Explain basic data backup concepts Security Summarize confidentiality, integrity, and availability concerns Explain methods to secure devices and best practices Summarize behavioral security concepts Compare and contrast authentication, authorization, accounting, and non-repudiation concepts Explain password best practices Explain common uses of encryption Explain business continuity concepts Implement operational procedures Use appropriate safety procedures Understand environmental impacts and their controls Create and maintain documentation Use basic change management best practices Implement disaster prevention and recovery procedures Use basic scripting concepts Understand professionalism and best practice in communications with customers
+
+Method(s) of Instruction
+Lecture (02)
+DE Live Online Lecture (02S)
+DE Online Lecture (02X)
+Lab (04)
+DE Live Online Lab (04S)
+DE Online Lab (04X)
+Instructional Techniques
+
+This course will utilize a combination of lecture, remote virtual machine assignments, classroom/discussion student interactions, problem-solving, quizzes, tests, and troubleshooting assignments to achieve the goals and objectives of this course. All instructional methods are consistent across all modalities.
+
+Reading Assignments
+
+Read about and research the components of computing devices and peripheral equipment. Read about data, database fundamentals, and software development concepts. Read about security best practices and research the removal of unwanted software to maintain secure devices. Read about operating systems, business application software, and artificial intelligence (AI).
+
+Writing Assignments
+
+Complete documentation of purpose and use of notational systems. Complete documentation to explain the value of data and information. Complete documentation to compare and contrast common Internet service types.
+
+Out-of-class Assignments
+
+Complete hands-on lab to setup and configure a secure wireless network. Complete hands-on lab to setup peripheral devices on a laptop or personal computer. Research based on a given scenario to find a solution using the troubleshooting methodology. Complete setup of PC Hardware per provided specification. Install PC Operating Systems (Windows and Linux) to provided specifications. Students will work in a remote lab environment to complete the following assignments: Identify hardware and components used in a Personal Computer (PC). PC Hardware Install Configure Troubleshoot PC peripherals and storage devices Install Configure Troubleshoot Operating system(s) on a PC Install Configure Applications on a PC Install Configure Build a simple network. Configure network devices. Test connectivity between network devices. Troubleshoot network connectivity issues.
+
+Demonstration of Critical Thinking
+
+Students will demonstrate the troubleshooting methodology as applied to a real-world help desk scenario.
+
+Required Writing, Problem Solving, Skills Demonstration
+
+Skills will be demonstrated through written exercises and during hands-on lab exercises with skills-based configurations that are recognized as industry standard practices.
+
+Eligible Disciplines
+
+Computer information systems (computer network installation, microcomputer ...: Any bachelor's degree and two years of professional experience, or any associate degree and six years of professional experience. Computer service technology: Any bachelor's degree and two years of professional experience, or any associate degree and six years of professional experience. Computer service technology: Any bachelor's degree and two years of professional experience, or any associate degree and six years of professional experience. Telecommunication technology: Any bachelor's degree and two years of professional experience, or any associate degree and six years of professional experience. Telecommunication technology: Any bachelor's degree and two years of professional experience, or any associate degree and six years of professional experience.
+
+Textbooks Resources
+
+1. Required Chapple, M.. to make the changes at the moment. CompTIA Tech+ CertMike: Prepare. Practice. Pass the Test! , 2nd ed. Hoboken: Wiley, 2025 Rationale: Low cost textbook
+
+Other Resources
+
+1. Coastline Library 2. White papers, security reports, and articles are available at no charge to all students at multiple sites as recommended by the instructor. 3. Hands-on lab resources and virtual environments are available at no charge to enrolled students.
+
+© 2026-2027 CCCD All rights reserved
+
+Back to top

@@ -1,0 +1,954 @@
+{
+ "college": "Palo Verde College",
+ "control_number": "17999",
+ "shape": "degree",
+ "title": "Liberal Arts with Emphasis in Social and Behavioral Sciences",
+ "award": "A.A. Degree",
+ "source_url": "https://pvc.elumenapp.com/catalog/2025-2026/program/associate-of-arts-in-liberal-arts-emphasis-in-social-and-behavior-science-2025-2026-fall-2025fa",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7554,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7554,
+    "output_tokens": 5765,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 5765,
+  "output_tokens_details": {
+   "thinking_tokens": 1193
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.14552,
+ "ms": 40949,
+ "seconds": 41.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 18,
+   "listed": 31,
+   "share": 0.581,
+   "missing": [
+    "ANTHC1001",
+    "ANTHC1001L",
+    "CDEVC1000",
+    "ECONC2001",
+    "ECONC2002",
+    "GGR120",
+    "HISTC1001",
+    "HISTC1002",
+    "SOC121",
+    "SOC140",
+    "SOC160",
+    "SOCIC1000",
+    "STATC1000"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 69,
+   "codes": [
+    "ADS101",
+    "ADS102",
+    "ADS103",
+    "ADS104",
+    "ADS105",
+    "ADS106",
+    "ADS107",
+    "ADS108",
+    "ADS109",
+    "ADS110",
+    "ADS111",
+    "ADS150",
+    "ADS151",
+    "ANT100",
+    "CHD101",
+    "CHD102",
+    "CHD103",
+    "CHD104",
+    "CHD105",
+    "CHD106",
+    "CHD107",
+    "CHD108",
+    "CHD111",
+    "CHD120",
+    "CHD130",
+    "CHD131",
+    "CHD135",
+    "CHD145",
+    "CHD205",
+    "CHD215",
+    "CHD216",
+    "CHD220",
+    "CHD221",
+    "CHD227",
+    "CHD250",
+    "CHD251",
+    "CHD290",
+    "CRJ103",
+    "CRJ104",
+    "CRJ115",
+    "CRJ120",
+    "CRJ125",
+    "CRJ130",
+    "CRJ155",
+    "CRJ161",
+    "CRJ162",
+    "CRJ164",
+    "CRJ165",
+    "CRJ206",
+    "CRJ220",
+    "CRJ81",
+    "ECO105",
+    "ECO106",
+    "ETH101",
+    "ETH210",
+    "GES115",
+    "HIS115",
+    "HIS130",
+    "HIS140",
+    "POLSC1000",
+    "PSY110",
+    "PSY145",
+    "PSY202",
+    "PSY203",
+    "PSY220",
+    "PSY280",
+    "PSY290",
+    "SOC101",
+    "SOC111"
+   ],
+   "flagged": [
+    "ADS101",
+    "ADS102",
+    "ADS103",
+    "ADS104",
+    "ADS105",
+    "ADS106",
+    "ADS107",
+    "ADS108",
+    "ADS109",
+    "ADS110",
+    "ADS111",
+    "ADS150",
+    "ADS151",
+    "ANT100",
+    "CHD101",
+    "CHD102",
+    "CHD103",
+    "CHD104",
+    "CHD105",
+    "CHD106",
+    "CHD107",
+    "CHD108",
+    "CHD111",
+    "CHD120",
+    "CHD130",
+    "CHD131",
+    "CHD135",
+    "CHD145",
+    "CHD205",
+    "CHD215",
+    "CHD216",
+    "CHD220",
+    "CHD221",
+    "CHD227",
+    "CHD250",
+    "CHD251",
+    "CHD290",
+    "CRJ103",
+    "CRJ104",
+    "CRJ115",
+    "CRJ120",
+    "CRJ125",
+    "CRJ130",
+    "CRJ155",
+    "CRJ161",
+    "CRJ162",
+    "CRJ164",
+    "CRJ165",
+    "CRJ206",
+    "CRJ220",
+    "CRJ81",
+    "ECO105",
+    "ECO106",
+    "ETH101",
+    "ETH210",
+    "GES115",
+    "HIS115",
+    "HIS130",
+    "HIS140",
+    "POLSC1000",
+    "PSY110",
+    "PSY145",
+    "PSY202",
+    "PSY203",
+    "PSY220",
+    "PSY280",
+    "PSY290",
+    "SOC101",
+    "SOC111"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate of Arts in Liberal Arts, Emphasis in Social and Behavior Science",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "ge_pattern": "CalGETC",
+   "outcomes": [
+    "Acquired fundamental grounding in communication, critical thinking, scientific inquiry, and quantitative reasoning, the arts, literature and humanities, social, political and economic institutions, and self-development.",
+    "Acquired fundamental knowledge and skills in various disciplines constituting the social sciences."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Area of Emphasis",
+    "rule": "choose_units",
+    "minimum": 18,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "ADS101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ADS102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ADS103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ADS104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ADS105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ADS106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ADS107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ADS108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ADS109",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ADS110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ADS111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ADS150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ADS151",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANT100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANT101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANT102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANT107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANT201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHD101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHD102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHD103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHD104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHD105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHD106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHD107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHD108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHD111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHD120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHD130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHD131",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHD135",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHD145",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHD205",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHD215",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHD216",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHD220",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHD221",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHD227",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHD250",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHD251",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHD290",
+      "units": 0.25,
+      "units_max": 5,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CRJ081",
+      "units": 0.25,
+      "units_max": 24,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CRJ103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CRJ104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CRJ115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CRJ120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CRJ125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CRJ130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CRJ155",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CRJ161",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CRJ162",
+      "units": 1.75,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CRJ164",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CRJ165",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CRJ206",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CRJ220",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECO106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECO105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETH101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETH210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GES115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GGR103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIS110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIS115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIS120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIS125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIS130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIS140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLSC1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYCC1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSY110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSY115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSY145",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSY150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSY155",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSY201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSY202",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSY203",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSY205",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSY210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSY215",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSY220",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSY280",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSY290",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANTHC1001",
+    "why": "not in the text; catalog lists ANT100 Introduction to Biological Anthropology instead"
+   },
+   {
+    "code": "ANTHC1001L",
+    "why": "not in the text"
+   },
+   {
+    "code": "CDEVC1000",
+    "why": "not in the text; catalog lists CHD101 Child Growth and Development instead"
+   },
+   {
+    "code": "ECONC2001",
+    "why": "not in the text; catalog lists ECO106 Principles of Microeconomics instead"
+   },
+   {
+    "code": "ECONC2002",
+    "why": "not in the text; catalog lists ECO105 Principles of Macroeconomics instead"
+   },
+   {
+    "code": "GGR 120",
+    "why": "not in the text"
+   },
+   {
+    "code": "HISTC1001",
+    "why": "not in the text; catalog lists HIS130 American History I"
+   },
+   {
+    "code": "HISTC1002",
+    "why": "not in the text; catalog lists HIS140 American History II"
+   },
+   {
+    "code": "SOC 121",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOC 140",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOC 160",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOCIC1000",
+    "why": "not in the text; catalog lists SOC101 Introduction to Sociology instead"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "total_units records the 18-unit Area of Emphasis; the catalog prints 'Total 52 - 56' for Program Requirements, which includes CalGETC (34-38), and 60.0-61.0 units for the degree.",
+   "Block name is shortened; the catalog's full heading is truncated mid-sentence: 'Area of Emphasis: A minimum of 18 units is required in the Area of Emphasis listed below. For depth of study, 2 or more courses in one discipline is required. Courses selected may also be used to fulf'.",
+   "Depth rule: 2 or more courses in one discipline are required within the 18 units.",
+   "Several catalog courses (ANT100, CHD101, ECO105, ECO106, HIS130, HIS140, SOC101) appear to be older local codes for closed-list C-ID/Cal common-course codes (ANTHC1001, CDEVC1000, ECONC2002, ECONC2001, HISTC1001, HISTC1002, SOCIC1000); recorded as catalog additions since the codes differ. Reviewer should check.",
+   "PSYCC1000 matched to closed-list PSYC C1000 and ANT101 etc. matched to ANT 101 etc. despite spacing differences.",
+   "Program title in catalog reads 'Social and Behavior Science' rather than 'Social and Behavioral Sciences'."
+  ]
+ },
+ "extracted_run": "38477849603"
+}

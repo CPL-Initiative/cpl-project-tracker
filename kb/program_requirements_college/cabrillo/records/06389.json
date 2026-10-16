@@ -1,0 +1,526 @@
+{
+ "college": "Cabrillo College",
+ "control_number": "06389",
+ "shape": "degree",
+ "title": "Fire Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/fire-technology-associate-in-science-a-s-fall-2025",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7836,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7836,
+    "output_tokens": 4640,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4640,
+  "output_tokens_details": {
+   "thinking_tokens": 1454
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.12414,
+ "ms": 35393,
+ "seconds": 35.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 27,
+   "listed": 27,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    44.5,
+    60.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    24.0,
+    24.0
+   ],
+   "why": [],
+   "within": true
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Fire Technology - Associate in Science (A.S.)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": 0,
+   "ge_pattern": "Cabrillo College General Education",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 24
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify minimum qualifications and the needed entry skills for all the fire service related jobs.",
+    "Demonstrate the ability to analyze, appraise, and evaluate fire incidents.",
+    "Demonstrate knowledge of the laws, regulations, codes, and standards that impact fire department operations, including applying fire codes and other regulatory measures to ensure fire and occupant safety in buildings.",
+    "Compare and contrast the behavior of fire in enclosed versus open environments, including the various phases of fire development in buildings.",
+    "Describe application and limits of tools and equipment used in fire suppression.",
+    "Explain the operation of fire detection, fire suppression, and alarm systems used to extinguish and provide notification of fire.",
+    "Explain key firefighting tactics including size-up procedures, the incident command system, adherence to the ten standard fire orders, and the 18 situations that shout watch out.",
+    "Enhance firefighter safety by identifying common factors associated with injuries and deaths in the line of duty."
+   ],
+   "careers": [
+    "fire investigator",
+    "fire-prevention and protection engineer",
+    "fire protection",
+    "fire prevention education"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Major Requirements - Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "FT1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT6ES",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Emergency Medical Technician Pathway",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Pathway",
+    "stated": {
+     "min": 16.5,
+     "max": 16.5
+    },
+    "courses": [
+     {
+      "code": "FT183",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT183L",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO4",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Firefighter Academy Pathway",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Pathway",
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "KIN13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT185",
+      "units": 14,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT187",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Wildland Firefighter Pathway - Required",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Pathway",
+    "stated": {
+     "min": 15.5,
+     "max": 15.5
+    },
+    "courses": [
+     {
+      "code": "FT189",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG3L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG17",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Wildland Firefighter Pathway - Required",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": "Pathway",
+    "stated": {
+     "min": 2.5,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "FT8",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT169",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Major Electives",
+    "rule": "choose_units",
+    "minimum": 18,
+    "option_group": "Pathway",
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "FT8",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT169",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT185",
+      "units": 14,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT183",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT183L",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT187",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT189",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG3L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG17",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMMC1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMMC1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CEM151",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CEM151L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR5",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HS12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "No total for the major alone is printed; the page prints 'Complete the following number of credits: 60' for the whole degree (recorded as degree_total) and Cabrillo College General Education 24 (ge_units). Core is 18 and 'Choose One Pathway' is 16.5-18.",
+   "General electives ('any transferable or degree applicable course') are printed as 0 - 1.5 units, a range; open_elective_units left null because the field takes one number. Reviewer may record 1.5 as the maximum.",
+   "'Major Requirements - Choose One Pathway' (16.5-18) offers the EMT, Firefighter Academy, and Wildland Firefighter pathways; the 'Major Electives' list (18 units, 'create their own pathway based on the list of recommended electives below') is read as a fourth, self-designed pathway option and recorded as choose_units 18 in the same option_group. Reviewer should confirm.",
+   "The Wildland Firefighter Pathway (18-18.5) is split into two blocks both named 'Required' in the catalog: one all-required (15.5) and one stated 2.5-3 with FT8 (3) and FT169 (2.5), read as choose one. Both carry option_group 'Pathway' but together form a single pathway option.",
+   "COMMC1000H recorded as honors alternative to COMMC1000.",
+   "Printed units differ from the state file: FT185 printed 14 (state 13.5), FT189 printed 2.5 (state 2.3), FT183L printed 2.5 in the EMT pathway and 1 - 3 in Major Electives (state 1).",
+   "Catalog prints codes without spaces (e.g. FT1, KIN13); these match closed-list courses FT 1, KIN 13, etc.",
+   "Program description is cut off at the start ('or, fire investigator, ...'); one or more careers before 'fire investigator' may be missing from the text.",
+   "Program outcomes appear to be printed for the program as a whole on this A.S. page; recorded as this award's outcomes.",
+   "Source URL slug references 'fall-2025' although the catalog year is 2026-2027."
+  ]
+ },
+ "extracted_run": 38639316727,
+ "reconciled": [
+  {
+   "field": "open_elective_units",
+   "was": null,
+   "now": 0,
+   "words": "General electives: any transferable or degree applicable course.\n0"
+  }
+ ],
+ "read_run": "38565227455"
+}

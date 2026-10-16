@@ -1,0 +1,244 @@
+{
+ "college": "San Diego City College",
+ "control_number": "33645",
+ "shape": "degree",
+ "title": "Music Production Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15699",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10607,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10607,
+    "output_tokens": 2359,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2359,
+  "output_tokens_details": {
+   "thinking_tokens": 643
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08961,
+ "ms": 19464,
+ "seconds": 19.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "MUSC170B"
+   ],
+   "flagged": [
+    "MUSC170B"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    31.0,
+    31.0
+   ],
+   "stated": [
+    31.0,
+    31.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 13,
+   "courses": 0,
+   "count": 13,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "COURSES REQUIRED FOR THE MAJOR:",
+   "measure": "units",
+   "total_units": {
+    "min": 31,
+    "max": 31
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [
+    "Demonstrate proficiency with industry standard DAW (Digital Audio Workstations) software including Avid Pro Tools, Ableton Live, Propellerhead Reason, Cycling ’74 Max, and Apple Logic Pro X.",
+    "Utilize and demonstrate proficiency with music fundamentals, sound design principles in the creation of successful original music compositions in various formats.",
+    "Demonstrate competent operation of and familiarity with common hardware equipment used in a professional level commercial recording studio environment including mixing consoles, pre-amps, microphones, patch bays, signal processors, and audio interfaces.",
+    "Demonstrate proficiency with industry standard notation and third party extension audio processing plug-in software including Sibelius and iZotope.",
+    "Demonstrate an understanding of the physics of sound, sound isolation, and room acoustics as it pertains to studio recording and audio production.",
+    "Demonstrate an understanding of the history and development of music technology.",
+    "Demonstrate an understanding of the role of and opportunities with music technology in today’s modern multi-cultural society.",
+    "Produce a professional quality portfolio in preparation for academic transfer or for sharing with potential clients and employers.",
+    "Produce and perform in concerts and music events that incorporate new technologies and media.",
+    "Demonstrate proficiency with sound design and post production audio techniques for TV, film, video, gaming, and multimedia formats.",
+    "Demonstrate an understanding of music business elements including music publishing, copyrights, licensing, management, marketing, music contracts, self promotion.",
+    "Recognize and incorporate music technology elements such as mixing, editing, mastering, sequencing, synthesis, signal flow, controller mapping, signal processing, elastic audio, automation, and quantization in the creation of original compositions.",
+    "To prepare students for entry-level positions in the commercial music industry."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "COURSES REQUIRED FOR THE MAJOR:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 31,
+     "max": 31
+    },
+    "courses": [
+     {
+      "code": "MUSC 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 118",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 162",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 170A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 170B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSC 170C",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 220A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 220B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 260",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 252",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 262",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSI 108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog text begins mid-description, so the program/award heading is not printed; section_heading uses the requirements heading 'COURSES REQUIRED FOR THE MAJOR:'. The page appears to cover only the A.S. Degree.",
+   "Outcomes are printed for 'the Music Production Technology Program' as a whole; recorded for this A.S. award. The first outcome follows the lead-in on the same line. The last item ('To prepare students for entry-level positions in the commercial music industry.') reads like a program goal but is printed in the outcomes list, so it is recorded verbatim.",
+   "Careers left empty: the description is cut off at the start ('...uencing and programming, audio software and hardware development, and audio post production for video and gaming'), so it is unclear whether these are named as career fields; reviewer should check the full description.",
+   "MUSC 170B (1 unit) is required in the catalog but absent from the closed list; recorded as a catalog addition.",
+   "Total units 31.0 stated both as 'Semester Units: 31.0' and 'Total Units: 31.0'; the 60-unit associate degree minimum is not the major total.",
+   "No general education pattern is named in the provided text."
+  ]
+ },
+ "extracted_run": "38252422845"
+}

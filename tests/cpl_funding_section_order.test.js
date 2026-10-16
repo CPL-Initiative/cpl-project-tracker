@@ -158,7 +158,12 @@ function registerStub() {
     !doc.querySelector("#cplFundSecOrderReset"));
 }
 
-// ── 2. the public PREVIEW: exclude chips, and the stub that keeps a way back ──
+// ── 2. the Public page view (Sam, 2026-10-15, call 1) ───────────────────
+// The tab's preview, with its Exclude chips, its stubs and its list of the
+// explainer's sections, retired: the Public page view frames funding-model/,
+// whose Edit this page hides and moves the page's own blocks
+// (tests/funding_page_edit.test.js). What stays here is the seam: the page's
+// order is stored under its own key, and the tab's own order never moves.
 {
   const { window } = freshDom();
   const doc = boot(window);
@@ -167,61 +172,20 @@ function registerStub() {
   T.render();
 
   const toPublic = doc.querySelector('[data-viewmode="public"]');
-  check("2a: the view control is there to preview with", !!toPublic);
+  check("2a: the view control is there, and reads Public page", !!toPublic && toPublic.textContent === "Public page");
   click(window, toPublic);
-
-  check("2b: the preview carries an exclude chip on every top-level section",
-    doc.querySelectorAll("[data-secpvhide]").length === HOUSE.length);
-  check("2c: ...and NOT the editing controls — renaming belongs on the internal view",
+  check("2b: the Public page view frames the page, with no chip, stub or section list of the tab's own",
+    !!doc.querySelector('#cplFundingMount iframe[src="funding-model/"]') &&
+    !doc.querySelector("[data-secpvhide], [data-secstub], [data-pubsechide], .cplfund-pubsec"));
+  check("2c: ...and NOT the editing controls — renaming the tab's sections belongs on the internal view",
     !doc.querySelector("[data-secrename]") && !doc.querySelector("[data-textedit]"));
 
-  const pubRows = Array.from(doc.querySelectorAll("[data-pubsechide], [data-pubsecshow]"));
-  // ⚠ THE LIST, NOT A COUNT. This read `pubRows.length === 7` and went red on
-  // 2026-09-15 when the explainer gained its "What counts, and when" section —
-  // a true change failing a guard that was only ever counting. A hard-coded
-  // count also cannot tell a section ADDED from a section RENAMED: swap two ids
-  // and 7 is still 7. Compared against the tab's own declaration, so the rows a
-  // curator sees and the sections the page ships stay the same list, in order.
-  const pubIds = pubRows.map(function (r) {
-    return r.getAttribute("data-pubsechide") || r.getAttribute("data-pubsecshow");
-  });
-  check("2d: EVERY public-explainer section the tab declares is curatable here, in order" +
-        (pubIds.join(",") === T.publicSectionOrder().join(",") ? "" : " — rows: " + pubIds.join(",")),
-    pubIds.length > 0 && pubIds.join(",") === T.publicSectionOrder().join(","));
-
-  // Exclude a tab section: it must not simply vanish from its own curator.
-  clickSel(window, doc, '[data-secpvhide="eligibility"]');
-  const stub = doc.querySelector('[data-secstub="eligibility"]');
-  check("2e: an excluded section leaves a STUB in the preview, not a hole",
-    !!stub && /Excluded from the public page/.test(stub.textContent));
-  check("2f: the stub carries no body — the preview stays honest about what a college reads",
-    !!stub && !stub.querySelector(".cplfund-sec-body"));
-  check("2g: ...and the way back is on the stub itself",
-    !!doc.querySelector('[data-secpvshow="eligibility"]'));
-  check("2h: the exclusion is stored where every other curator edit is",
-    T._getShared().secHidden && T._getShared().secHidden.eligibility === true);
-  clickSel(window, doc, '[data-secpvshow="eligibility"]');
-  check("2i: including it again removes the stub and brings the section back",
-    !doc.querySelector('[data-secstub="eligibility"]') &&
-    !!doc.querySelector('[data-sec="eligibility"]'));
-
-  // A public-explainer section, excluded from the same block.
-  clickSel(window, doc, '[data-pubsechide="qualify"]');
-  check("2j: an explainer section excludes from the tab, under its own id",
-    T._getShared().secHidden.qualify === true &&
-    !!doc.querySelector('[data-pubsecshow="qualify"]'));
-  check("2k: the row says it is out rather than leaving the list",
-    !!doc.querySelector(".cplfund-pubsec-row.is-out"));
-  check("2l: `timing` is named as one switch, because it is in BOTH id sets",
-    /one switch with this tab/i.test(doc.querySelector(".cplfund-pubsec").textContent));
-
-  // Reordering the public page's sections is the same seam, a different key.
-  const pubPicker = doc.querySelector('[data-pubsecpos="timing"]');
-  check("2m: the explainer's sections carry position pickers too", !!pubPicker);
-  if (pubPicker) commit(window, pubPicker, "0");
-  check("2n: the explainer order is stored under its OWN key, not the tab's",
-    T._getShared().pubSecOrder && T._getShared().pubSecOrder[0] === "timing" &&
-    T.publicSectionOrder()[0] === "timing");
+  // Reordering the public page's blocks is the same seam, a different key.
+  T.movePublicSection(T.publicSectionOrder().indexOf("timeline"), 0);
+  check("2n: the page's order is stored under its OWN key, not the tab's",
+    T._getShared().pubSecOrder && T._getShared().pubSecOrder[0] === "timeline" &&
+    T.publicSectionOrder()[0] === "timeline" && !T._getShared().secOrder);
+  click(window, doc.querySelector('[data-viewmode="internal"]'));
   check("2o: ...and the tab's own order is untouched by it",
     domOrder(doc).join(",") === HOUSE.join(","));
 }
@@ -238,7 +202,7 @@ function registerStub() {
   T._setShared({ secHidden: { eligibility: true } });
   T.render();
 
-  check("3a: no preview chip survives on the public page",
+  check("3a: no preview chip on the public page (the preview retired with call 1)",
     !doc.querySelector("[data-secpvhide]") && !doc.querySelector("[data-secpvshow]") &&
     !doc.querySelector("[data-secpvpos]"));
   check("3b: no explainer-section block, and no reset buttons",

@@ -1,0 +1,542 @@
+{
+ "college": "Southwestern College",
+ "control_number": "38048",
+ "shape": "degree",
+ "title": "Criminal Justice",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.swccd.edu/associate-degree-certificate-programs/political-science/law-public-policy-and-society-aa/",
+ "record_shape": 5,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8202,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8202,
+    "output_tokens": 3548,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3548,
+  "output_tokens_details": {
+   "thinking_tokens": 1060
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.10377,
+ "ms": 27234,
+ "seconds": 27.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 12,
+   "share": 0.75,
+   "missing": [
+    "AJ156",
+    "AJ188",
+    "SOC101"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 34,
+   "codes": [
+    "ACCT101",
+    "AFRO110",
+    "AFRO151",
+    "ANTH102",
+    "ASIA113",
+    "ASIA115",
+    "BUS140",
+    "CIS101",
+    "COMM160",
+    "COMM176",
+    "COMMC1000",
+    "ECONC2001",
+    "ECONC2002",
+    "ENGLC1000",
+    "ENGLC1001",
+    "GEOG120",
+    "HIST110",
+    "HIST113",
+    "HIST141",
+    "HISTC1001",
+    "HISTC1002",
+    "LDR200",
+    "MAS141",
+    "MAS150",
+    "PA200",
+    "PA290",
+    "PD100",
+    "PHIL103",
+    "PHIL120",
+    "PS101",
+    "PS103",
+    "PS104",
+    "PS200",
+    "SOC106"
+   ],
+   "flagged": [
+    "ACCT101",
+    "AFRO110",
+    "AFRO151",
+    "ANTH102",
+    "ASIA113",
+    "ASIA115",
+    "BUS140",
+    "CIS101",
+    "COMM160",
+    "COMM176",
+    "COMMC1000",
+    "ECONC2001",
+    "ECONC2002",
+    "ENGLC1000",
+    "ENGLC1001",
+    "GEOG120",
+    "HIST110",
+    "HIST113",
+    "HIST141",
+    "HISTC1001",
+    "HISTC1002",
+    "LDR200",
+    "MAS141",
+    "MAS150",
+    "PA200",
+    "PA290",
+    "PD100",
+    "PHIL103",
+    "PHIL120",
+    "PS101",
+    "PS103",
+    "PS104",
+    "PS200",
+    "SOC106"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    31.0,
+    34.0
+   ],
+   "stated": [
+    31.0,
+    34.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Law, Public Policy, and Society",
+   "measure": "units",
+   "total_units": {
+    "min": 31,
+    "max": 34
+   },
+   "open_elective_units": null,
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Communicate complex ideas clearly and persuasively in written and oral forms.",
+    "Evaluate arguments using evidence-based reasoning."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 25,
+     "max": 27
+    },
+    "courses": [
+     {
+      "code": "AJ 111",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 140",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM 160",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL C1001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHIL 103",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 270",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 270",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST C1002",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "AJ 151",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 161",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 140",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON C2002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON C2001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PS 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PS 103",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PS 104",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACCT 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PS 200",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PA 200",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "LDR 200",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC 110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 176",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG 120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC 106",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AFRO 151",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ASIA 115",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MAS 150",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AJ 252",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AFRO 110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 110",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ASIA 113",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 113",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "MAS 141",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 141",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "PD 100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PA 290",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AJ 156",
+    "why": "not in the text"
+   },
+   {
+    "code": "AJ 188",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOC 101",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The requested program is Criminal Justice A.A. Degree, but the source page is the Law, Public Policy, and Society Associate in Arts for Transfer (Major Code 01847). The closed list overlaps this page only partly; reviewer should confirm the correct page.",
+   "The catalog prints no units beside individual courses; all course units are null.",
+   "Cross-listed codes are recorded with the first subject as the course and the other subject as an alternative: PSYC/SOC 270, PS/PA 200, AFRO/HIST 110, ASIA/HIST 113, MAS/HIST 141.",
+   "List A: the two courses must come from different areas (Areas 1 to 8), and courses used in the Required Core may not be reused. Areas: 1 AJ 151, AJ 161; 2 BUS 140; 3 ECON C2002, ECON C2001; 4 PS 101, PS 103, PS 104; 5 ACCT 101, CIS 101, PS/PA 200 or LDR 200, SOC 110; 6 ANTH 102 through MAS/HIST 141 (including AJ 252); 7 PD 100; 8 PA 290 (must be taken for 3 units).",
+   "The statement that all AA-T/AS-T degrees require 60 units is generic and is not recorded as a degree total. The GE pattern is Cal-GETC; no GE units are printed.",
+   "The page names majors the degree prepares students for (e.g., Criminal Justice, Political Science), but these are transfer majors rather than careers, so careers is empty."
+  ]
+ },
+ "extracted_run": "38563578596"
+}

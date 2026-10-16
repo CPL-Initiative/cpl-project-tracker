@@ -1,0 +1,302 @@
+{
+ "college": "Citrus College",
+ "control_number": "31430",
+ "shape": "adt",
+ "title": "English",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.citruscollege.edu/programs-study/graduation-requirements-associate-degree/general-education-requirements-option-i/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12679,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12679,
+    "output_tokens": 2065,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2065,
+  "output_tokens_details": {
+   "thinking_tokens": 313
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.09202,
+ "ms": 16371,
+ "seconds": 16.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 32,
+   "share": 0.0,
+   "missing": [
+    "COMM101",
+    "ENGL202",
+    "ENGL204",
+    "ENGL210",
+    "ENGL213",
+    "ENGL213H",
+    "ENGL216",
+    "ENGL224",
+    "ENGL224H",
+    "ENGL233",
+    "ENGL243",
+    "ENGL251",
+    "ENGL252",
+    "ENGL261",
+    "ENGL262",
+    "ENGL271",
+    "ENGL272",
+    "ENGL280",
+    "ENGL290",
+    "ENGL291",
+    "ENGL291H",
+    "ENGL293",
+    "ENGL293H",
+    "ENGL294",
+    "ENGL294H",
+    "ENGL295",
+    "ENGL298",
+    "ENGLC1001",
+    "ENGLC1001H",
+    "ENGLC1002",
+    "ENGLC1003",
+    "ENGLC1003H"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "General Education Requirements: Option I",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COMM 101",
+    "why": "not in an English A.A.-T section; listed only as a GE Area A2 course"
+   },
+   {
+    "code": "ENGL 202",
+    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+   },
+   {
+    "code": "ENGL 204",
+    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+   },
+   {
+    "code": "ENGL 210",
+    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+   },
+   {
+    "code": "ENGL 213",
+    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+   },
+   {
+    "code": "ENGL 213H",
+    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+   },
+   {
+    "code": "ENGL 216",
+    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+   },
+   {
+    "code": "ENGL 224",
+    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+   },
+   {
+    "code": "ENGL 224H",
+    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+   },
+   {
+    "code": "ENGL 233",
+    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+   },
+   {
+    "code": "ENGL 243",
+    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+   },
+   {
+    "code": "ENGL 251",
+    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+   },
+   {
+    "code": "ENGL 252",
+    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+   },
+   {
+    "code": "ENGL 261",
+    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+   },
+   {
+    "code": "ENGL 262",
+    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+   },
+   {
+    "code": "ENGL 271",
+    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+   },
+   {
+    "code": "ENGL 272",
+    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+   },
+   {
+    "code": "ENGL 280",
+    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+   },
+   {
+    "code": "ENGL 290",
+    "why": "not in an English A.A.-T section; listed only as a GE Area C1/C2 course"
+   },
+   {
+    "code": "ENGL 291",
+    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+   },
+   {
+    "code": "ENGL 291H",
+    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+   },
+   {
+    "code": "ENGL 293",
+    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+   },
+   {
+    "code": "ENGL 293H",
+    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+   },
+   {
+    "code": "ENGL 294",
+    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+   },
+   {
+    "code": "ENGL 294H",
+    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+   },
+   {
+    "code": "ENGL 295",
+    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+   },
+   {
+    "code": "ENGL 298",
+    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+   },
+   {
+    "code": "ENGL C1002",
+    "why": "not in an English A.A.-T section; listed only as a GE Area C2 course"
+   },
+   {
+    "code": "ENGL C1003",
+    "why": "not in an English A.A.-T section; listed only as a GE Area A2 course"
+   },
+   {
+    "code": "ENGL C1003H",
+    "why": "not in an English A.A.-T section; listed only as a GE Area A2 course"
+   },
+   {
+    "code": "ENGLC1001",
+    "why": "not in an English A.A.-T section; listed only as GE Area A2 course ENGL C1001"
+   },
+   {
+    "code": "ENGLC1001H",
+    "why": "not in an English A.A.-T section; listed only as GE Area A2 course ENGL C1001H"
+   }
+  ],
+  "notes": [
+   "The supplied text is the Citrus College 'General Education Requirements: Option I' page, not the English A.A.-T program page. It contains no section for the English A.A.-T, so no requirement blocks, totals, outcomes or careers could be recorded.",
+   "section_heading records the heading of the page actually supplied; it is not the award's own section.",
+   "Closed-list courses appear on this page only as general education course options (Areas A2, C1, C2). GE courses are never placed in blocks.",
+   "The text is cut off partway through Area C2 (at 'PHIL 130 Histor'), and Areas D, E and F are missing.",
+   "Reviewer should fetch the English A.A.-T page under Associate Degrees for the 2026-2027 catalog."
+  ]
+ },
+ "extracted_run": "38675245799"
+}

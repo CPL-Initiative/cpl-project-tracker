@@ -1,0 +1,264 @@
+{
+ "college": "Cypress College",
+ "control_number": "03762",
+ "shape": "degree",
+ "title": "Business Management",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/management/business-management-associate-in-science-degree/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7416,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7416,
+    "output_tokens": 1587,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1587,
+  "output_tokens_details": {
+   "thinking_tokens": 474
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0614,
+ "ms": 12935,
+ "seconds": 13.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 17,
+   "share": 0.647,
+   "missing": [
+    "ACCT102C",
+    "BUS111C",
+    "BUS151C",
+    "BUS205C",
+    "BUS208C",
+    "BUS265C"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    29.0,
+    29.0
+   ],
+   "stated": [
+    29.0,
+    29.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business Management Associate in Science Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 29,
+    "max": 29
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cypress College Native General Education; CSU GE Breadth; IGETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Acquire the knowledge and skills necessary for a career in the administration of modern organizations, including businesses operation, techniques to succeed as a manager, including management, marketing, law, accounting, economics, and the global environment."
+   ],
+   "careers": [
+    "administration of modern organizations"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required courses are listed in suggested sequence: (29 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 29,
+     "max": 29
+    },
+    "courses": [
+     {
+      "code": "BUS 100 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 111 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 262 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 266 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 240 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 101 C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 222 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON 110 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2001",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON C2001H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 261 C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ACCT 102 C",
+    "why": "not in the text"
+   },
+   {
+    "code": "BUS 111 C",
+    "why": "not in the text"
+   },
+   {
+    "code": "BUS 151 C",
+    "why": "not in the text"
+   },
+   {
+    "code": "BUS 205 C",
+    "why": "not in the text"
+   },
+   {
+    "code": "BUS 208 C",
+    "why": "not in the text"
+   },
+   {
+    "code": "BUS 265 C",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "Total of 29 units in the major is stated both in the description ('This degree requires 29 units in the major') and as 'Total Units 29'.",
+   "The page says students complete 'any elective courses to complete a minimum of 60 units'; this is the general associate degree minimum, not recorded as degree_total, but electives_fill_degree set true.",
+   "GE may be satisfied by Cypress College Native GE, CSU GE Breadth, or IGETC; no GE units printed.",
+   "No units printed beside the ECON C2001 and ECON C2001H alternatives; recorded as null.",
+   "The single program outcome comes from the page's outcomes tab; its 'OUTCOME 1:' label was omitted."
+  ]
+ },
+ "extracted_run": "38748866826"
+}

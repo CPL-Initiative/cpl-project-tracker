@@ -78,17 +78,20 @@ The whole ecosystem, end-to-end:
    "subjects needing review" lands in Common Subjects Reference filtered to
    needs-review), a **Letters** tab embedding the budget-support letter
    curator (iframe to `budget-support/web/curator.html`, passcode-gated),
-   a **CPL Assistant** tab (a conversational RAG chatbot — ask CPL questions
+   **Sierra AI** (a conversational RAG assistant — ask CPL questions
    and get streamed answers drawn from the knowledge base, live dashboard
    metrics, and 2,300+ statewide exhibits; it talks to the shared `cpl-chat`
-   Supabase Edge Function that also powers the live map.rccd.edu widget),
+   Supabase Edge Function that also powers the live map.rccd.edu widget; she
+   opens full screen over any tab — from Sierra Training, the Where To? box or
+   a `#chatbot` link — and docks in My College, and she replaced the separate
+   CPL Assistant tab on 2026-10-16),
    a **Sierra Training** tab (team-only: the assistant's improvement loop —
    the thumbs-up / thumbs-down feedback queue from both chat surfaces with a
    review status, a gap miner over the chat logs surfacing the questions the
    knowledge base had no good source for, and the plain-English **instructions**
    Sierra follows on every question — five numbers at the top that filter the
    lists they count, editable instructions, and a test question you can put
-   to her in the Sierra tab or in My College; round 1 of Sam's redesign,
+   to Sierra AI over the tab or in My College; round 1 of Sam's redesign,
    2026-09-29), a **⚖️ Governance** tab (team-only: the decision-rights
    register — who decides what, how far each input is trusted, and which cadences
    actually run; it measures itself rather than asserting compliance, so a loop
@@ -298,6 +301,11 @@ The whole ecosystem, end-to-end:
    snapshot**: it loads `cpl_funding.js` and paints every figure from the same
    engine and the same Supabase config the Implementation Funding tab uses, so a
    dial change appears on the next reload with nothing to rebuild or republish.
+   Its headline row sets the appropriation beside its two destinations, the
+   institutions box split into credit and noncredit, and noncredit's share follows
+   the tab's *Credit and noncredit* setting (blank keeps each institution's
+   teaching mix); the words in every box and passage edit on the tab under *The
+   explainer's text*, with Bold and Italic.
    Its **Max award by institution** section, directly after the introduction, is
    the tab's own institution table rendered in embed mode
    (`window.CPL_FUNDING_EMBED = "college"`) — the same rows, drill-in, search

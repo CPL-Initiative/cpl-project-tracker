@@ -1,0 +1,213 @@
+{
+ "college": "Foothill College",
+ "control_number": "46561",
+ "shape": "certificate",
+ "title": "Pre-Law Studies",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.foothill.edu/degree-certificate-requirements/general-education-graduation-requirements/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 16423,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 16423,
+    "output_tokens": 1150,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1150,
+  "output_tokens_details": {
+   "thinking_tokens": 241
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.08869,
+ "ms": 10458,
+ "seconds": 10.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 15,
+   "share": 0.0,
+   "missing": [
+    "BUSI18",
+    "BUSI19",
+    "COMM1B",
+    "ENGLC1000",
+    "HIST17A",
+    "ITRN50",
+    "ITRN51",
+    "ITRN52",
+    "ITRN53",
+    "ITRN54",
+    "PHIL1",
+    "PHIL7",
+    "POLSC1000",
+    "SOC15",
+    "STATC1000"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Foothill College General Education & Graduation Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BUSI 18",
+    "why": "not in the text; page is the GE requirements page, not the Pre-Law Studies section"
+   },
+   {
+    "code": "BUSI 19",
+    "why": "not in the text; page is the GE requirements page, not the Pre-Law Studies section"
+   },
+   {
+    "code": "COMM 001B",
+    "why": "appears only as COMM 1B in GE Area 1B list, not as a program requirement"
+   },
+   {
+    "code": "ENGL C1000",
+    "why": "appears only in GE Area 1A list, not as a program requirement"
+   },
+   {
+    "code": "HIST 017A",
+    "why": "appears only as HIST 17A in GE Area 4 list, not as a program requirement"
+   },
+   {
+    "code": "ITRN 50",
+    "why": "not in the text"
+   },
+   {
+    "code": "ITRN 51",
+    "why": "not in the text"
+   },
+   {
+    "code": "ITRN 52",
+    "why": "not in the text"
+   },
+   {
+    "code": "ITRN 53",
+    "why": "not in the text"
+   },
+   {
+    "code": "ITRN 54",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHIL 1",
+    "why": "appears only in GE Area 1B list, not as a program requirement"
+   },
+   {
+    "code": "PHIL 7",
+    "why": "appears only in GE Area 1B list, not as a program requirement"
+   },
+   {
+    "code": "POLS C1000",
+    "why": "appears only in GE Area 4 list, not as a program requirement"
+   },
+   {
+    "code": "SOC 15",
+    "why": "appears only in GE Area 4 list, not as a program requirement"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "appears only in GE Area 2 list, not as a program requirement"
+   }
+  ],
+  "notes": [
+   "The source text is Foothill College's General Education & Graduation Requirements page, not the Pre-Law Studies Certificate of Achievement section; no program requirements, total, outcomes or careers for this award are printed.",
+   "The four institutional/general education student learning outcomes on the page belong to the GE pattern, not to this certificate, so they were not recorded as program outcomes.",
+   "Several closed-list courses (ENGL C1000, COMM 1B, PHIL 1, PHIL 7, STAT C1000, HIST 17A, POLS C1000, SOC 15) appear in GE area lists; GE courses are not placed in blocks.",
+   "The text is cut off at the end of Area 4; a reviewer should locate the Pre-Law Studies program page in the 2026-2027 catalog."
+  ]
+ },
+ "extracted_run": "38675242638"
+}

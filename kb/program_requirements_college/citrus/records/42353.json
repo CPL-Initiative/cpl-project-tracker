@@ -1,0 +1,218 @@
+{
+ "college": "Citrus College",
+ "control_number": "42353",
+ "shape": "certificate",
+ "title": "Management - Level II",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.citruscollege.edu/disciplines/business/management-level-ii-certificate-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7547,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7547,
+    "output_tokens": 1663,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1663,
+  "output_tokens_details": {
+   "thinking_tokens": 639
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06345,
+ "ms": 14346,
+ "seconds": 14.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 10,
+   "share": 0.6,
+   "missing": [
+    "BUS130",
+    "BUS152",
+    "BUS171",
+    "BUS175"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    12.0,
+    12.0
+   ],
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 12.0-12.0; the catalog states 24.0-24.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Management - Level II Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Develop an understanding of employment-related and ethical issues that arise in the workplace, so that they will be able to effectively analyze, evaluate, and apply those concepts in real-world workplace situations.",
+    "Develop necessary skills to meaningfully and effectively prepare, analyze, and evaluate data presented in Excel and spreadsheets and apply that information and those findings to real-world, workplace-related situations."
+   ],
+   "careers": [
+    "entry-level organizational management positions"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BUS 132",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 132H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 160H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 172",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OFF 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BUS 130",
+    "why": "not listed in requirements; appears only in curriculum map as part of the Management - Level I Certificate of Achievement (12 units) requirement"
+   },
+   {
+    "code": "BUS 152",
+    "why": "not listed in requirements; appears only in curriculum map as part of the Management - Level I Certificate of Achievement (12 units) requirement"
+   },
+   {
+    "code": "BUS 171",
+    "why": "not listed in requirements; appears only in curriculum map as part of the Management - Level I Certificate of Achievement (12 units) requirement"
+   },
+   {
+    "code": "BUS 175",
+    "why": "not listed in requirements; appears only in curriculum map as part of the Management - Level I Certificate of Achievement (12 units) requirement"
+   }
+  ],
+  "notes": [
+   "The requirements list 'Management - Level I Certificate of Achievement 12' as a required item rather than individual courses; its component courses are not listed in the requirements tab. The curriculum map shows BUS 130, BUS 152, BUS 171 and BUS 175 (12 units) in the first term, which presumably make up the Level I certificate, but the map is labeled only an example pathway, so these were not placed in a block. The placed block sums to 12 units; the remaining 12 of the 24-unit total come from the Level I certificate.",
+   "Honors alternatives BUS 132H and BUS 160H print no separate units in the course list.",
+   "The Career Information tab content was not included in the text; the only career reference is from the overview description."
+  ]
+ },
+ "extracted_run": "38675245799"
+}

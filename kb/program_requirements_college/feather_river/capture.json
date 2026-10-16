@@ -1,0 +1,540 @@
+{
+ "college": "Feather River College",
+ "catalog_url": "https://frc.curriqunet.com/Catalog/iq/1452",
+ "platform": "curriqunet",
+ "catalog_year": "2026-2027",
+ "programs": 62,
+ "with_closed_list": 49,
+ "started": "2026-10-16T16:52:03Z",
+ "curriqunet": {
+  "catalog": 5,
+  "view_prefix": "https://frc.curriqunet.com/Catalog/iq/",
+  "errors": [],
+  "sections": [
+   "Earning a Degree at FRC",
+   "Degrees and Certificates"
+  ],
+  "nodes_read": 4,
+  "calls": 8,
+  "entries": 81,
+  "stopped_at_cap": false,
+  "same_title_entries": 0,
+  "entries_read": 81
+ },
+ "pages_read": 81,
+ "banner_h1": null,
+ "loads": 312,
+ "seconds": 1366.4,
+ "found": 45,
+ "by_method": {
+  "no_closed_list": 13,
+  "not_found": 2,
+  "page_claimed": 2,
+  "sitemap_page": 45
+ },
+ "shared_pages": {
+  "https://frc.curriqunet.com/Catalog/iq/1464/1774": [
+   "44471",
+   "44639"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "34001",
+   "title": "Equine and Ranch Management",
+   "award": "Baccalaureate of Science (B.S.) Degree.",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "46533",
+   "title": "Ecosystem Restoration and Applied Fire Management",
+   "award": "Baccalaureate of Science (B.S.) Degree.",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "20882",
+   "title": "Administration of Justice",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "pages": [
+    "https://frc.curriqunet.com/Catalog/iq/1464/1785"
+   ]
+  },
+  {
+   "control_number": "44714",
+   "title": "Allied Health",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://frc.curriqunet.com/Catalog/iq/1464/1772"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 6,
+  "0.8-1.0": 12,
+  "1.0": 27
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 45,
+  "list": [
+   {
+    "control_number": "04320",
+    "title": "Equine Studies",
+    "award": "A.S. Degree",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1788",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04322",
+    "title": "Business",
+    "award": "A.A. Degree",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1803",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04331",
+    "title": "Administration of Justice",
+    "award": "A.A. Degree",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1809",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04333",
+    "title": "Outdoor Recreation Leadership",
+    "award": "A.A. Degree",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1813",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04335",
+    "title": "History",
+    "award": "A.A. Degree",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1817",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07075",
+    "title": "Environmental Studies",
+    "award": "A.S. Degree",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1792",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11771",
+    "title": "Vocational Nursing",
+    "award": "A.S. Degree",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1905",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16444",
+    "title": "Agricultural Studies",
+    "award": "A.S. Degree",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1776",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16693",
+    "title": "Studio Arts",
+    "award": "A.A. Degree",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1830",
+    "coverage": 0.864,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18714",
+    "title": "Liberal Arts: Fine Arts and Humanities",
+    "award": "A.A. Degree",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1769",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18718",
+    "title": "General Studies: Social & Behavioral Sciences",
+    "award": "A.A. Degree",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1821",
+    "coverage": 0.977,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20859",
+    "title": "Equine Studies: Horse Training Skills",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1783",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20879",
+    "title": "Licensed Vocational Nursing",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1840",
+    "coverage": 0.789,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30974",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1797",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30998",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1842",
+    "coverage": 0.625,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31895",
+    "title": "Office Technology",
+    "award": "A.S. Degree",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1857",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31896",
+    "title": "Office Technology",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1856",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32356",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1808",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32537",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1822",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32567",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1827",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32743",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1835",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33191",
+    "title": "Forensic Crime Scene Investigation",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1785",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36176",
+    "title": "MATHEMATICS",
+    "award": "A.S. T Degree",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1824",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36248",
+    "title": "Geology",
+    "award": "A.S. Degree",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1819",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36252",
+    "title": "Geography",
+    "award": "A.A. Degree",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1820",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36296",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1818",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36333",
+    "title": "Political Science",
+    "award": "A.A. Degree",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1901",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41355",
+    "title": "Social Work and Human Services",
+    "award": "A.A- T Degree",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1814",
+    "coverage": 0.944,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42704",
+    "title": "Sociology",
+    "award": "A.A. Degree",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1834",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42761",
+    "title": "Teacher",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1851",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42786",
+    "title": "Hydrologic Technician",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1844",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42796",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1831",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42985",
+    "title": "Ecological Farming",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1796",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43018",
+    "title": "Forestry Technician",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1784",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43300",
+    "title": "Fire and Fuels Technician",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1786",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43301",
+    "title": "Environmental Science",
+    "award": "A.S. Degree",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1793",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44471",
+    "title": "Agriculture Business",
+    "award": "A.S. T Degree",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1774",
+    "coverage": 0.909,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44510",
+    "title": "Business 2.0 A.S.-T",
+    "award": "A.S. T Degree",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1801",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44522",
+    "title": "Mathematics",
+    "award": "A.S. Degree",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1826",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44639",
+    "title": "Agriculture Business",
+    "award": "A.S. Degree",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1774",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44713",
+    "title": "Allied Health",
+    "award": "A.S. Degree",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1772",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44841",
+    "title": "Hatchery Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1770",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44843",
+    "title": "Biological Science Technician",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1804",
+    "coverage": 0.727,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45095",
+    "title": "CalGETC",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1771",
+    "coverage": 0.966,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46487",
+    "title": "Elementary Teacher Education: Integrated Programs",
+    "award": "A.A- T Degree",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1909",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "38935127435"
+}

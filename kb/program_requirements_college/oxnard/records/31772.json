@@ -1,0 +1,374 @@
+{
+ "college": "Oxnard College",
+ "control_number": "31772",
+ "shape": "degree",
+ "title": "Chemistry",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.vcccd.edu/oxnard/programs-courses/chemistry/chemistry-aa/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9278,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9278,
+    "output_tokens": 3428,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3428,
+  "output_tokens_details": {
+   "thinking_tokens": 1313
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10567,
+ "ms": 28852,
+ "seconds": 29.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 21,
+   "listed": 21,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    33.0,
+    61.0
+   ],
+   "stated": [
+    33.0,
+    61.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     57.0,
+     94.0
+    ],
+    "stated": [
+     60.0,
+     79.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     24.0
+    ],
+    "why": [],
+    "within": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "REQUIREMENTS",
+   "measure": "units",
+   "total_units": {
+    "min": 33,
+    "max": 61
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 0,
+    "max": 9
+   },
+   "ge_pattern": "Oxnard College General Education or Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 79
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 24
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Conduct experiments, analyze data, and interpret results, while observing responsible and ethical scientific conduct.",
+    "Demonstrate an understanding of major concepts, theoretical principles and experimental findings in chemistry.",
+    "Be prepared to transfer to a university or enter allied health programs such as dental hygiene.",
+    "Demonstrate a foundational knowledge of general principles of chemistry and be able to apply this knowledge to the solution of problems and performance of experiments.",
+    "Demonstrate proficiency in the use of appropriate instrumentation to collect and record data from chemical experiments.",
+    "Use critical thinking and efficient problem-solving skills in the four basic areas of chemistry: analytical, inorganic, organic, and physical.",
+    "Use modern instrumentation for chemical analysis."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 20,
+     "max": 20
+    },
+    "courses": [
+     {
+      "code": "CHEM R120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM R122",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2210",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2220",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Additional Courses",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 26
+    },
+    "courses": [
+     {
+      "code": "CHEM R130",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM R132",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH R122",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH R134",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH R143",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL C1001",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL C1001H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL R120",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Sequence 1:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Physics series",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHYS R101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS R101L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS R102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS R102L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Sequence 2:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Physics series",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHYS R121",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS R122",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Series 3:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Physics series",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHYS R131",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS R132",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS R133",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "No program title heading appears in the extracted text; section_heading uses the REQUIREMENTS tab name.",
+   "The requirements course list prints no units beside individual courses, so course units are null. The Plan of Study tab prints units for some courses (CHEM R120 5, CHEM R122 5, MATH C2210 5, MATH C2220 5, PHYS R101 4, PHYS R101L 1, PHYS R102 4, PHYS R102L 1, PHYS R121 5, PHYS R122 5).",
+   "The physics requirement reads 'Complete a minimum of 10 units in Physics from the same series, as required by the intended transfer institution' with a printed total of 10-15 for the whole group; that total is not attached to any single sequence block. Series 3 (15 units) is recorded as all courses required; a reviewer should check whether a student could stop at 10 units (two courses) in Series 3.",
+   "The page prints two degree-total paths: Oxnard College General Education 24, Double-Counted Units 6, Free Electives 0-9, Total 60-79; OR Cal-GETC 34, Double-Counted Units -7-10, Free Electives 0-3, Total 60-85. degree_total, ge_units and degree_elective_units record the first (local GE) path; the Cal-GETC path is noted here.",
+   "Notes advise CSUCI transfer students to complete CHEM R130, CHEM R132 and BIOL R120; these are already in the Required Additional Courses block and are not duplicated as recommended.",
+   "One outcomes list is printed for the program; recorded for this A.A. award. An outcome mentions 'allied health programs such as dental hygiene', not recorded as a career since it is not in the description or a careers heading."
+  ]
+ },
+ "extracted_run": "38842203500"
+}

@@ -1,0 +1,227 @@
+{
+ "college": "San Diego City College",
+ "catalog_url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15489",
+ "platform": "curriqunet",
+ "catalog_year": "2026-2027",
+ "programs": 203,
+ "with_closed_list": 191,
+ "started": "2026-10-13T04:43:55Z",
+ "curriqunet": {
+  "catalog": 69,
+  "view_prefix": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/",
+  "errors": [],
+  "catalog_from": "_getCatalogs",
+  "sections": [
+   "Degree Curricula and Certificate Programs"
+  ],
+  "nodes_read": 3,
+  "calls": 7,
+  "entries": 228,
+  "stopped_at_cap": false,
+  "same_title_entries": 0,
+  "entries_read": 228
+ },
+ "pages_read": 228,
+ "loads": 1175,
+ "seconds": 5466.0,
+ "found": 171,
+ "by_method": {
+  "no_closed_list": 12,
+  "not_found": 16,
+  "page_claimed": 4,
+  "sitemap_page": 171
+ },
+ "shared_pages": {
+  "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15638": [
+   "05224",
+   "32691",
+   "41495"
+  ],
+  "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15607": [
+   "05285",
+   "32735"
+  ],
+  "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15705": [
+   "09462",
+   "37623"
+  ],
+  "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15667": [
+   "22360",
+   "38668"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "05263",
+   "title": "German",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "18127",
+   "title": "Liberal Arts and Sciences: Elementary Multiple Subject Teaching Preparation",
+   "award": "A.A. Degree"
+  },
+  {
+   "control_number": "19266",
+   "title": "Real Estate Broker",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u"
+  },
+  {
+   "control_number": "19710",
+   "title": "Real Estate",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "33180",
+   "title": "Business Information Worker",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "33649",
+   "title": "Elementary Teacher Education",
+   "award": "A.A- T Degree"
+  },
+  {
+   "control_number": "36567",
+   "title": "Business Information Worker II",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "36568",
+   "title": "Business Information Worker",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "37387",
+   "title": "Special Effects (FX) Makeup",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "38733",
+   "title": "Green Building Energy Professional",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "38735",
+   "title": "Green Building Energy Professional",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "39358",
+   "title": "C++",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "39387",
+   "title": "Energy Analysis and Consultation",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "39388",
+   "title": "Energy Analysis and Consultation",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+  },
+  {
+   "control_number": "42744",
+   "title": "General Atomics CNC Machine Technician Apprenticeship",
+   "award": "A.S. Degree"
+  },
+  {
+   "control_number": "42746",
+   "title": "General Atomics HVAC-R Technician Apprenticeship",
+   "award": "A.S. Degree"
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "15405",
+   "title": "Communications Technician Apprenticeship",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15727",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15729",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15647",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15649",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15728",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15730",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15648",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15650",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15651"
+   ]
+  },
+  {
+   "control_number": "15818",
+   "title": "Honeywell Tool and Die Apprenticeship",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15740",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15820",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15741",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15908",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15662",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15811",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/17368",
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15821"
+   ]
+  },
+  {
+   "control_number": "30706",
+   "title": "Communication Studies",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15809"
+   ]
+  },
+  {
+   "control_number": "42745",
+   "title": "General Atomics Electrical Specialist Apprenticeship",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15642"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 10,
+  "0.8-1.0": 6,
+  "1.0": 155
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/san_diego_city",
+  "kept": 168,
+  "programs": 3,
+  "list": [
+   {
+    "control_number": "31168",
+    "title": "Licensed Vocational Nurse to Registered Nurse",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15814",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "31169",
+    "title": "Registered Nurse: Generic",
+    "award": "A.S. Degree",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15613",
+    "coverage": 0.679,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "43523",
+    "title": "Cyber Defense and Analysis",
+    "award": "Baccalaureate of Science (B.S.) Degree.",
+    "url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15604/15945/15792",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   }
+  ]
+ },
+ "run": "38347787891"
+}

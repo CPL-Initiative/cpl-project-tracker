@@ -1,0 +1,140 @@
+{
+ "college": "Coastline Community College",
+ "control_number": "18216",
+ "shape": "degree",
+ "title": "French",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.cccd.edu/coastline/pathways/language-literature/french/",
+ "record_shape": 4,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 5592,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 5592,
+    "output_tokens": 511,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 511,
+  "output_tokens_details": {
+   "thinking_tokens": 108
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.03259,
+ "ms": 6209,
+ "seconds": 6.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 4,
+   "share": 0.0,
+   "missing": [
+    "FRENC180",
+    "FRENC185",
+    "FRENC280",
+    "FRENC285"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "French",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "ge_pattern": null,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "FREN C180",
+    "why": "appears only in the Courses tab description; no A.A. degree requirements in the text"
+   },
+   {
+    "code": "FREN C185",
+    "why": "appears only in the Courses tab description; no A.A. degree requirements in the text"
+   },
+   {
+    "code": "FREN C280",
+    "why": "not in the text"
+   },
+   {
+    "code": "FREN C285",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The Degrees and Certificates tab of the French page shows only 'No results found.' The text contains no A.A. degree section, requirements, total units, outcomes or careers, so no blocks are recorded.",
+   "The text includes only the Courses tab, with descriptions of FREN C180 and FREN C185 (5 units each). FREN C280 and FREN C285 do not appear.",
+   "The French A.A. Degree may not be offered in the 2026-2027 catalog, or the page may have failed to load. A reviewer should check the source page or the catalog archive."
+  ]
+ },
+ "extracted_run": "38445051060"
+}

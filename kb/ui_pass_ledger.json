@@ -86,8 +86,8 @@
    "name": "Annual Workplan Goals",
    "page": "index.html#workplan-goals",
    "audience": "staff",
-   "last": "2026-10-11",
-   "outcome": "AA in both themes at desktop and 390px (S361): the id, Contributes to, the separator and the pencil moved from #888/#999/#bbb to --text-muted; the primary chip took the themed --gold-soft ground; the subsidiary marker took --seal-blue-text; the table wrapper became a focusable named region. S364 finished the editor with seeded signed-in sweeps (workplan-goals-editor and workplan-goals-add, both themes): a title cell in its navy row read 1.06:1 on the pale saving tint in light as well as dark, so each save state sets its own ink on a tint that flips with the theme and a failed save is a red outline; Add new row, Sign in, Sign out, Lock and the dialog's Add row and Cancel are underlined words with the lead word first (the lock emoji gone); the dialog's radio labels reach 24px; #ccc, #4D7EA8, #A33 and #2A7D4F became tokens. Reads no dataset."
+   "last": "2026-10-13",
+   "outcome": "S375: keyboard reach for every editable value and the chip line (the cell editors also threw on every save and Escape in Chrome, fixed), header scopes and row headers, classes for 715 raw hexes, phone cards below 560px, Current in ink, Add description for editors, the Add dialog's checkboxes to 24px (#2054, #2057); the gray band is the fixed First Light background."
   },
   {
    "id": "cobi:budget",
@@ -182,88 +182,88 @@
    "name": "My College",
    "page": "index.html#college-briefing",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-12",
+   "outcome": "First pass on a college's page (new seeded targets my-college-page and -dark; the cobi sweep stops at the scope question): public readers saw No contact listed in MAP beside a contacts table listing the coordinator (the public row has no primary contact; it now measures the coordinator or counselor); 29px sideways at 320px (grid floors clamped); undefined --link and --warn painted raw hex, 2.47:1 in dark; section titles are h3; controls are underlined words. Clean light and dark at 320, 390, 1440."
   },
   {
    "id": "cobi:college-identity",
    "name": "College Identity",
    "page": "index.html#college-identity",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-12",
+   "outcome": "S371: seeded roster targets (college-identity-roster, -dark: both reads stood in with real map_colleges rows). Found and fixed: 49px sideways scroll at 320px (a path in the snapshot note); six columns colliding at 390px (now a labeled stack below 560px); the placeholder codes X00/X02 and 570/X01 read beside 'No MIS code' (now 'Placeholder code, not an MIS code'); an arrow for 'resolves to'. Wiring agrees: My College and Funding drop the 8 sandbox rows as the suppressed note says. Tokens all defined in both themes. Open: two partner rows say 'organisation' in live data; receipt filed, the write needs Sam (the repo guard holds it)."
   },
   {
    "id": "cobi:annual-report",
    "name": "Annual Report",
    "page": "index.html#annual-report",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-13",
+   "outcome": "First pass. npm run a11y found the preview scrolling with no keyboard reach at 390px (both themes); the screen showed four boxed glyph buttons, an unlabelled editor, unannounced status lines colored green and a raw #A33, hex fallbacks in its CSS, centered report prose and literal underscores on the data date. Fixed in one PR: underlined word controls (26px), labelled editor, the preview a named keyboard region, status announced and red only for a failure, tokens only, left-aligned, the date in italics. Wiring: the 8 headline KPIs the report quotes match CPL_DATA and the Dashboard cards; item_updates activity rows are the same newest-per-key the cards paint. a11y: 1 finding to 0, light and dark."
   },
   {
    "id": "cobi:unified-courses",
    "name": "Common Course Reference",
    "page": "index.html#unified-courses",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-13",
+   "outcome": "The list a curator works in was never measured (the tab opens on SkyView): new a11y targets ccr-list and ccr-list-dark. Light 3 contrast + 5 target kinds and dark 5 contrast (toggle 1.29:1, id column 1.76:1) to 0 in both themes, 390 and 1440; the map view's missing h1 now a screen-reader heading. Tokens only in the tab's CSS; the launcher, view toggle, Cleanup impact, Suggested merges, Verify and Export are underlined words; emoji out of the banner, toolbar and search fields; the id column wraps again; caret and info at 24px. Remaining: the Merge, Unify and worklist dialogs' inline hex (about 90 in unified_courses.js) and the squeezed column headers."
   },
   {
    "id": "cobi:canonical-subj4",
    "name": "Common Subjects Reference",
    "page": "index.html#canonical-subj4",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-14",
+   "outcome": "Five color pairs below AA (gray tags and dashes in light; light fills behind dark-theme text in dark) moved to First Light tokens in both HTMLs, and 159 controls brought to 24px tall (#2099); a dozen raw hexes remain in border and input-state rules that pass contrast."
   },
   {
    "id": "cobi:cr-reference",
    "name": "Common CR Reference",
    "page": "index.html#cr-reference",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-14",
+   "outcome": "S388: CSV control 19px tall and rank 3.55:1 fixed; every control an underlined cobalt word (Download CSV, no glyph), rank on --text-muted; sweep clean in light and dark. Reviewer-only controls are outside the signed-out sweep."
   },
   {
    "id": "cobi:coci-lookup",
    "name": "COCI Lookup",
    "page": "index.html#coci-lookup",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-14",
+   "outcome": "S389: dark mode failed on the CSV control (1.29:1, a dark fill), the identity chips (1.2:1, a half-white fill) and six inputs with no focus ring; every control is now an underlined cobalt word (Download CSV, Show more, no glyph), chips paint no fill, filters show a cobalt ring. Clean in light and dark."
   },
   {
    "id": "cobi:cip-crosswalk",
    "name": "CIP Codes",
    "page": "index.html#cip-crosswalk",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-14",
+   "outcome": "S390: light and dark clean on the first screen at 390 and 1440 (before: 4 targets under 24px, the three source links 19.6px and the theme control 23.5px; Coco's name 3.7:1 under its container's opacity). The rail's Theme, Expand and CSV are underlined words. Remaining, a lane item: the tab's private --cipx-* palette (75 raw colors, light and dark) in place of First Light tokens, about 56 boxed or filled controls past the rail (Fit check, pills, Review actions), and its own theme control beside the header's. Wiring: coci_programs_data.js is one global read untransformed here and by COCI Lookup; no shared figure sits on either first screen."
   },
   {
    "id": "cobi:program-requirements",
    "name": "Program Requirements",
    "page": "index.html#program-requirements",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-14",
+   "outcome": "S391: light and dark clean before and after at 390-1440 on all six seeded views (Progress, Records signed in, exhibits) and the cobi sweeps' route; no raw hex, every token it names defined in both HTMLs, no glyphs. Converted to underlined words (Sam, 2026-10-09): the view switch (the view in use heavier and darker), the verdict's Confirm, Needs a fix and Save the note (no filled lead), a record's toggles and Expand all / Collapse all; dead .prh-ask CSS removed. New target program-requirements-filter (light, dark) measures a Records filter open: clean. Wiring: this tab and CPL Pathways read every program_requirement_records row, paged and unfiltered; the live side by side could not be opened from the session (Supabase is unreachable from its browser)."
   },
   {
    "id": "cobi:gr-priorities",
    "name": "GR Priorities",
    "page": "index.html#gr-priorities",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-15",
+   "outcome": "S394: a seeded target (gr-priorities-gr, -dark) measures the register, not the lock; the accent is --seal-blue-text (citations, kinds and ghost buttons read 1.2-1.3:1 in dark); controls are underlined words; a summary is a paragraph and an artifact link 24px; the register is left-aligned; the analysis box's undefined variables named."
   },
   {
    "id": "cobi:memory",
    "name": "Memory",
    "page": "index.html#memory",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-16",
+   "outcome": "Signed out the sweep saw only the lock, so six seeded states (Add form, a record's tools, Report; light and dark) now measure it: twelve labels moved off decoration-only --text-faint (3.24:1 light, 4.01:1 dark), every control is an underlined word (filled primary and danger retired, toggles marked by weight and aria-pressed), targets to 24px (tag chips, status word, tags, the All toggle, two checkbox labels), a faded zero-count chip and dark's white-on-pastel kind pill fixed, five emoji out; all clean in both themes. Deferred: the tab's 27 scoped palette tokens have drifted from index.html's (dark --text-muted #A9A79E vs #ABABA3). Wiring: cpl_memory and cpl_memory_log have no other reader; cpl-chat shares no figure."
   },
   {
    "id": "cobi:map-data-quality",
@@ -333,14 +333,6 @@
    "id": "cobi:cpl-news",
    "name": "CPL News",
    "page": "index.html#cpl-news",
-   "audience": "staff",
-   "last": null,
-   "outcome": null
-  },
-  {
-   "id": "cobi:chatbot",
-   "name": "CPL Assistant",
-   "page": "index.html#chatbot",
    "audience": "staff",
    "last": null,
    "outcome": null

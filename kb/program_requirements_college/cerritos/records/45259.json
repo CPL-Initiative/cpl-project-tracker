@@ -59,7 +59,8 @@
     "WELD254L"
    ],
    "unexplained": [],
-   "pass": true
+   "none_placed": true,
+   "pass": false
   },
   "invented": {
    "count": 0,
@@ -68,15 +69,23 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     0.0,
     0.0
    ],
-   "stated": null,
-   "why": [
-    "the record names no total"
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [],
+   "minimum": true,
+   "fill": [
+    60.0,
+    60.0
    ]
   },
   "repeated": {
@@ -93,6 +102,14 @@
    "heading_without_outcomes": true,
    "pass": true
   },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
   "pass": false
  },
  "record": {
@@ -105,7 +122,13 @@
    },
    "open_elective_units": null,
    "ge_pattern": null,
-   "outcomes": []
+   "outcomes": [],
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "degree_total_minimum": true,
+   "electives_fill_degree": true
   },
   "blocks": [],
   "course_outcomes": [],
@@ -149,5 +172,29 @@
   ],
   "notes": []
  },
- "extracted_run": "37966828676"
+ "extracted_run": 38656800189,
+ "reconciled": [
+  {
+   "field": "degree_total",
+   "was": null,
+   "now": {
+    "min": 60,
+    "max": 60
+   },
+   "words": "Complete a minimum of 60 units to include (1) the above major requirements"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Complete a minimum of 60 units to include (1) the above major requirements"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": null,
+   "now": true,
+   "words": "(3) electives as needed"
+  }
+ ],
+ "read_run": "37966828676"
 }

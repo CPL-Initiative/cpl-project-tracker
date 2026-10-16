@@ -1,0 +1,243 @@
+{
+ "college": "Ventura College",
+ "load_run": "38842159685",
+ "function": "program_requirement_records_college_load",
+ "at": "2026-10-16T02:47:10Z",
+ "records": 131,
+ "posted": 101,
+ "batches": 5,
+ "inserted": 101,
+ "kept": 0,
+ "skipped": [
+  {
+   "control_number": "06947",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "06968",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "06973",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "06976",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "18475",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "20560",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "20561",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "20583",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "20591",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31298",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31363",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32834",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32893",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33728",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33820",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33821",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33822",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35198",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36653",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "40809",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "40960",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "43045",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "44186",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45133",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45196",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46415",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46424",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46425",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46483",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46546",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "extracted_runs": [
+  "38756014587"
+ ],
+ "machine_pass": 55,
+ "inserted_keys": [
+  "06948",
+  "06957",
+  "06970",
+  "06971",
+  "06972",
+  "06980",
+  "06992",
+  "06993",
+  "08253",
+  "10521",
+  "15323",
+  "18471",
+  "18472",
+  "18473",
+  "18477",
+  "20576",
+  "20587",
+  "20597",
+  "20598",
+  "20599",
+  "30587",
+  "31286",
+  "31361",
+  "31362",
+  "31437",
+  "31454",
+  "31455",
+  "31874",
+  "32052",
+  "32054",
+  "32578",
+  "32756",
+  "33720",
+  "33782",
+  "33842",
+  "35207",
+  "35441",
+  "35486",
+  "35499",
+  "35622",
+  "35652",
+  "35654",
+  "36645",
+  "36858",
+  "37365",
+  "37415",
+  "39961",
+  "39995",
+  "40081",
+  "40087",
+  "40155",
+  "40179",
+  "40249",
+  "40713",
+  "40823",
+  "41582",
+  "41875",
+  "42258",
+  "42398",
+  "42877",
+  "42967",
+  "43209",
+  "43423",
+  "43974",
+  "43989",
+  "43990",
+  "44187",
+  "44189",
+  "44386",
+  "44387",
+  "44389",
+  "44390",
+  "44722",
+  "44974",
+  "44993",
+  "44994",
+  "44995",
+  "45003",
+  "45198",
+  "45199",
+  "45355",
+  "45422",
+  "45427",
+  "45488",
+  "45503",
+  "45529",
+  "45535",
+  "45731",
+  "45732",
+  "45789",
+  "45831",
+  "46400",
+  "46401",
+  "46422",
+  "46423",
+  "46481",
+  "46542",
+  "46543",
+  "46544",
+  "46545",
+  "46563"
+ ],
+ "kept_keys": [],
+ "rollback": "delete from public.program_requirement_records where college = 'Ventura College' and checked = false and control_number in ('06948', '06957', '06970', '06971', '06972', '06980', '06992', '06993', '08253', '10521', '15323', '18471', '18472', '18473', '18477', '20576', '20587', '20597', '20598', '20599', '30587', '31286', '31361', '31362', '31437', '31454', '31455', '31874', '32052', '32054', '32578', '32756', '33720', '33782', '33842', '35207', '35441', '35486', '35499', '35622', '35652', '35654', '36645', '36858', '37365', '37415', '39961', '39995', '40081', '40087', '40155', '40179', '40249', '40713', '40823', '41582', '41875', '42258', '42398', '42877', '42967', '43209', '43423', '43974', '43989', '43990', '44187', '44189', '44386', '44387', '44389', '44390', '44722', '44974', '44993', '44994', '44995', '45003', '45198', '45199', '45355', '45422', '45427', '45488', '45503', '45529', '45535', '45731', '45732', '45789', '45831', '46400', '46401', '46422', '46423', '46481', '46542', '46543', '46544', '46545', '46563');"
+}

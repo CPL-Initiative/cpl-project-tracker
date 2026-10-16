@@ -1,0 +1,241 @@
+{
+ "college": "Ventura College",
+ "control_number": "06948",
+ "shape": "degree",
+ "title": "Business Management",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/business/business-management-as/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7660,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7660,
+    "output_tokens": 1964,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1964,
+  "output_tokens_details": {
+   "thinking_tokens": 790
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06992,
+ "ms": 17735,
+ "seconds": 18.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    30.0,
+    30.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "PLAN OF STUDY",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "VCCCD General Education Pattern",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Explain the fundamental principles of business.",
+    "Examine various approaches to decision-making.",
+    "Create, analyze, and interpret written and verbal communication in business applications.",
+    "Demonstrate an understanding of contemporary issues and theories in the areas of management and human resources systems."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Plan of Study Grid (major courses)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BUS V30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS V31",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT V03",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS V32",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS V33",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT V09",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS V45",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS V62",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS V55",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS V57",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS V46",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS V75",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog text supplied does not include the program's Requirements tab; only the Plan of Study tab and the outcomes tab are present. Blocks were read from the Plan of Study grid, which the page calls 'one sequence of courses' to meet the degree requirements, so the actual list structure (Lists A, B, C, required vs. choose rules, block totals) should be verified against the requirements tab.",
+   "The plan refers to 'List C' and schedules three 'Select course for List C . . . . Degree-applicable course' rows of 3 units each (9 units), implying a List C of electives (and presumably Lists A and B) whose contents and unit totals are not in the text; no block was created for List C.",
+   "BUS V55 or BUS V57 and BUS V46 or BUS V75 are printed as 'or' rows in the plan; they may belong to a choose list (e.g., List B) on the requirements tab.",
+   "The plan prints 'Total Units/Hours 61' for the sample two-year sequence including GE; this was not recorded as degree_total because it is the plan's sum rather than a stated award total. No major total is printed in the text.",
+   "GE pattern recorded from the plan's statement that it applies to the VCCCD General Education Pattern; no GE unit total is printed.",
+   "Outcomes come from the page's program student learning outcomes tab for this program."
+  ]
+ },
+ "extracted_run": "38756014587"
+}

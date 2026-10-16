@@ -1,0 +1,257 @@
+{
+ "college": "Citrus College",
+ "control_number": "17394",
+ "shape": "certificate",
+ "title": "Emerging Theatre Technologies",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.citruscollege.edu/disciplines/theatre/emerging-theatre-technologies-certificate-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7687,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7687,
+    "output_tokens": 1530,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1530,
+  "output_tokens_details": {
+   "thinking_tokens": 397
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06135,
+ "ms": 13099,
+ "seconds": 13.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 15,
+   "share": 0.8,
+   "missing": [
+    "REC135",
+    "THEA120",
+    "THEA125"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    30.0,
+    30.0
+   ],
+   "stated": [
+    30.0,
+    30.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate in Emerging Theatre Technologies",
+   "measure": "units",
+   "total_units": {
+    "min": 30,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Increase their ability to speak articulately and listen actively by attending various performance classes and productions, as well as having interactions with faculty and students from other disciplines.",
+    "Develop and expand writing skills to broaden communication abilities.",
+    "Become proficient in technical theatre and computer-aided design (CAD) through in-class utilization of appropriate design software, to gain the ability to make creative and analytical decisions throughout.",
+    "Investigate their personal skill set through research projects, practicum, progressive classroom assignments and varied rehearsal techniques in order to create, evaluate and execute realistic goals.",
+    "Develop a variety of learning strategies through an introduction to various theatrical styles and techniques presented by outside professionals and adjunct professors to increase educational flexibility.",
+    "Interact with audiences of all ages and backgrounds through touring, public, and outreach performances, to internalize the importance of strong community relationships, citizenship and integrity."
+   ],
+   "careers": [
+    "live event and theatre technology industry"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required courses:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "THEA 126",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "THEA 226",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA 127",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "THEA 227",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA 150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA 155",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA 160",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA 240",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA 255",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA 262",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA 270",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "REC 255",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "REC 135",
+    "why": "not in the text"
+   },
+   {
+    "code": "THEA 120",
+    "why": "not in the text"
+   },
+   {
+    "code": "THEA 125",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The catalog prints no units beside the alternatives THEA 226 and THEA 227, so their units are null.",
+   "Required courses sum to 30 units, which matches the printed Total Units of 30.",
+   "The Career Information tab content was not included in the text. The only career field recorded comes from the overview: 'employment in various professions within the live event and theatre technology industry'."
+  ]
+ },
+ "extracted_run": "38675245799"
+}

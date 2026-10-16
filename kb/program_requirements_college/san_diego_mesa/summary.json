@@ -1,0 +1,20 @@
+{
+ "college": "San Diego Mesa College",
+ "programs": 202,
+ "with_closed_list": 184,
+ "found": 177,
+ "extracted": 177,
+ "errors": 0,
+ "passed_machine_checks": 171,
+ "failed": {
+  "coverage": 2,
+  "invented": 0,
+  "arithmetic": 6,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 15.34,
+ "cost_per_program": 0.0867,
+ "not_found": [],
+ "run": "38322747831"
+}

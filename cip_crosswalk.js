@@ -2954,14 +2954,21 @@
       ".cipx-beta{font-size:.5em;font-weight:800;letter-spacing:.05em;text-transform:uppercase;vertical-align:middle;color:var(--cipx-accent);background:var(--cipx-accent-soft);border:1px solid var(--cipx-border);border-radius:7px;padding:2px 8px;margin-left:11px;position:relative;top:-4px;}",
       ".cipx-sub{margin:.2em 0 0;color:var(--cipx-text-soft);max-width:72rem;font-size:.98rem;}",
       ".cipx-hlinks{display:flex;gap:18px;flex-wrap:wrap;margin:12px 0 2px;font-size:.82rem;}",
-      ".cipx-hlinks a{color:var(--cipx-link);text-decoration:none;font-weight:600;}.cipx-hlinks a:hover{text-decoration:underline;}",
+      // UI pass (S390): each source link is a 24px target (WCAG 2.5.8); measured 19.6px.
+      ".cipx-hlinks a{display:inline-flex;align-items:center;min-height:24px;color:var(--cipx-link);text-decoration:none;font-weight:600;}.cipx-hlinks a:hover{text-decoration:underline;}",
+      ".cipx-hlinks a:focus-visible{outline:2px solid var(--cipx-focus);outline-offset:2px;}",
       // Top-right utility rail: Coco + Theme + (review) Expand/CSV, one width for harmony.
       ".cipx-toprail{position:absolute;top:2px;right:0;display:flex;flex-direction:column;align-items:stretch;gap:6px;width:6.9rem;z-index:4;}",
       ".cipx-toprail-rev{display:flex;flex-direction:column;gap:6px;}",
-      ".cipx-toprail .cipx-themetog,.cipx-toprail .cipx-rev-expand,.cipx-toprail .cipx-rev-csv{width:100%;box-sizing:border-box;margin:0;font-family:inherit;font-size:.74rem;font-weight:600;line-height:1;text-align:center;padding:7px 8px;border-radius:7px;cursor:pointer;background:var(--cipx-surface);border:1px solid var(--cipx-border-strong);color:var(--cipx-text-soft);}",
-      ".cipx-toprail .cipx-themetog:hover,.cipx-toprail .cipx-rev-expand:hover,.cipx-toprail .cipx-rev-csv:hover{border-color:var(--cipx-accent);color:var(--cipx-accent);}",
-      ".cipx-coco{display:flex;flex-direction:column;align-items:center;gap:0;color:var(--cipx-muted);opacity:.85;margin-bottom:1px;-webkit-user-select:none;user-select:none;}",
-      ".cipx-coco-svg{display:block;}",
+      // The rail's controls are underlined words (Sam, 2026-10-09: no border, no fill, 24px tall), still one
+      // column for harmony (Sam, 2026-07-18). UI pass S390: the theme word measured 23.5px tall at 390px.
+      ".cipx-toprail .cipx-themetog,.cipx-toprail .cipx-rev-expand,.cipx-toprail .cipx-rev-csv{width:100%;box-sizing:border-box;margin:0;min-height:24px;font-family:inherit;font-size:.78rem;font-weight:600;line-height:1.2;text-align:center;padding:2px 0;border:0;border-radius:0;background:none;cursor:pointer;color:var(--cipx-link);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;}",
+      ".cipx-toprail .cipx-themetog:hover,.cipx-toprail .cipx-rev-expand:hover,.cipx-toprail .cipx-rev-csv:hover{text-decoration-thickness:2px;}",
+      ".cipx-toprail .cipx-rev-expand:focus-visible,.cipx-toprail .cipx-rev-csv:focus-visible{outline:2px solid var(--cipx-focus);outline-offset:2px;}",
+      // The pup's line art stays faint; its name is text, so it keeps full --cipx-muted (UI pass S390: the
+      // container's .85 opacity painted it 3.7:1 in light).
+      ".cipx-coco{display:flex;flex-direction:column;align-items:center;gap:0;color:var(--cipx-muted);margin-bottom:1px;-webkit-user-select:none;user-select:none;}",
+      ".cipx-coco-svg{display:block;opacity:.85;}",
       ".cipx-coco-name{font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--cipx-muted);}",
       ".cipx-themetog:hover{border-color:var(--cipx-accent);color:var(--cipx-accent);}.cipx-themetog:focus-visible{outline:2px solid var(--cipx-focus);outline-offset:2px;}",
       ".cipx-panel{background:var(--cipx-surface-2);border:1px solid var(--cipx-border);border-radius:14px;padding:16px 18px;margin:14px 0 12px;}",
@@ -3410,7 +3417,7 @@
       "@media (max-width:640px){" +
         ".cipx{padding:6px 13px 24px;font-size:.92rem;}.cipx-head{padding:30px 0 6px;}" +
         // on phones the rail rides horizontally across the top instead of a fixed corner column
-        ".cipx-toprail{position:static;flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:flex-end;width:auto;gap:6px;margin:0 0 8px;}.cipx-toprail-rev{flex-direction:row;gap:6px;}.cipx-coco{flex-direction:row;gap:4px;margin:0 auto 0 0;}.cipx-toprail .cipx-themetog,.cipx-toprail .cipx-rev-expand,.cipx-toprail .cipx-rev-csv{width:auto;font-size:.72rem;padding:5px 10px;}" +
+        ".cipx-toprail{position:static;flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:flex-end;width:auto;gap:6px;margin:0 0 8px;}.cipx-toprail-rev{flex-direction:row;gap:6px;}.cipx-coco{flex-direction:row;gap:4px;margin:0 auto 0 0;}.cipx-toprail .cipx-themetog,.cipx-toprail .cipx-rev-expand,.cipx-toprail .cipx-rev-csv{width:auto;font-size:.76rem;padding:2px 4px;}" +
         ".cipx-h2{font-size:1.32rem;}.cipx-sub{font-size:.92rem;}" +
         ".cipx-hlinks{gap:10px 14px;font-size:.79rem;margin-top:10px;}" +
         ".cipx-panel{padding:13px 12px;border-radius:12px;}.cipx-panel-h{font-size:1rem;}.cipx-panel-sub{font-size:.85rem;}" +

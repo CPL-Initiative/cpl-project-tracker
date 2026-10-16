@@ -1,0 +1,238 @@
+{
+ "college": "Santa Barbara City College",
+ "control_number": "44919",
+ "shape": "certificate",
+ "title": "Fitness Trainer",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.sbcc.edu/academic-departments/physical-education-health-education-dance-athletics/fitness-trainer-certificate-achievement/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7050,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7050,
+    "output_tokens": 1743,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1743,
+  "output_tokens_details": {
+   "thinking_tokens": 677
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.06306,
+ "ms": 15120,
+ "seconds": 15.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    16.5,
+    20.5
+   ],
+   "stated": [
+    16.5,
+    20.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Fitness Trainer, Certificate of Achievement (C)",
+   "measure": "units",
+   "total_units": {
+    "min": 16.5,
+    "max": 20.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Assess client needs, goals, fitness and health history to design a safe and effective exercise program.",
+    "Apply training principles to progress and regress exercises based on client needs and wellness.",
+    "Explain exercise principles and integrate them into programs.",
+    "Explain general nutrition concepts within scope of practice and assist clients in learning the role of nutrition for health and performance."
+   ],
+   "careers": [
+    "fitness trainers",
+    "fitness industry"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core: BMS 100",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Human Body or Anatomy & Physiology",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BMS 100",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Core: BMS 107 & BMS 108",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Human Body or Anatomy & Physiology",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BMS 107",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BMS 108",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HE 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HE 213",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HE 220",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE 143A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE 295",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints 'BMS 100 The Human Body 4-8 or BMS 107 & BMS 108'. Because the alternative is a two-course pair, it is recorded as two option blocks sharing an option_group. The '4-8' range covers the whole choice: BMS 100 alone at 4 units, or BMS 107 and BMS 108 together at 8 units.",
+   "BMS 100 is recorded at 4 units. The catalog prints no individual units beside BMS 107 or BMS 108, so their units are null; the state file stores 4 units each.",
+   "The 'Goals and Objectives' list in the Overview is not recorded as learning outcomes. Outcomes are taken from the Learning Outcomes tab.",
+   "Career entries come from the program description ('fitness trainers', 'employment in the fitness industry'). The goals also mention 'fitness professionals'."
+  ]
+ },
+ "extracted_run": "38670933359"
+}

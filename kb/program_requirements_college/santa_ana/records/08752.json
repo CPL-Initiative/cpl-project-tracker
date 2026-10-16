@@ -1,0 +1,284 @@
+{
+ "college": "Santa Ana College",
+ "control_number": "08752",
+ "shape": "degree",
+ "title": "Public Fire Service Option",
+ "award": "A.S. Degree",
+ "source_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36126/35941",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7454,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7454,
+    "output_tokens": 2155,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2155,
+  "output_tokens_details": {
+   "thinking_tokens": 602
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07292,
+ "ms": 17627,
+ "seconds": 18.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 11,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "FAC7",
+    "FTC121"
+   ],
+   "flagged": [
+    "FAC7",
+    "FTC121"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    36.4,
+    36.4
+   ],
+   "stated": [
+    36.4,
+    36.4
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Public Fire Service Option : A.S. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 36.4,
+    "max": 36.4
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate the occupational knowledge and technical skills needed to perform the duties of a Firefighter I which is based upon NFPA 1001: Standard for Fire Fighter Professional Qualifications (2019) and California State Fire Training's Fire Fighter 1 (2019).",
+    "Demonstrate the occupational knowledge and technical skills required to carry out the duties of a Wildland Firefighter, based upon NFPA 1051: Standard for Wildland Firefighting Personnel Professional Qualifications (2016).",
+    "Demonstrate the occupational knowledge and technical skills needed to carry out the duties of Haz Mat/WMD Emergency Responder based upon NFPA 1072: Standard for Hazardous Materials/Weapons of Mass Destruction Emergency Response Personnel Professional Qualifications (2017)."
+   ],
+   "careers": [
+    "volunteer, paid-on-call, part-time, or full-time firefighters"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Pre-Academy Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 0.1,
+     "max": 0.1
+    },
+    "courses": [
+     {
+      "code": "FAC 008",
+      "units": 0.1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Fire Technology Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 21.3,
+     "max": 21.3
+    },
+    "courses": [
+     {
+      "code": "FTC 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTC 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTC 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTC 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTC 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTC 106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTC 121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FTC 121L",
+      "units": 0.3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Fire Academy Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "FAC 007",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FAC 060A",
+      "units": 10,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FAC 060B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FAC 060C",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints FAC 008; matched to closed-list FAC 8 (same title, Biddle Physical Ability Test). Catalog prints FTC 103; matched to closed-list FTC103.",
+   "Pre-Academy Requirements also include non-course items (Public Safety First Aid/CPR, NREMT certification, NFPA 1582 medical clearance) not recorded as courses.",
+   "FTC 121 and FTC 121L are printed as a paired 3.3-unit AND group; FAC 060A, 060B, 060C as a paired 13.0-unit AND group; all recorded in their 'all' blocks.",
+   "Degree also requires passing the National Firefighter I Exams and grades of 80% or better in Fire Academy courses, C or better in Fire Technology courses.",
+   "Page says 'Complete all General Education Coursework' but names no GE pattern and prints no GE units or degree total; Total 36.4 recorded as the major total.",
+   "Career entry copied as one phrase; it could also be read as several firefighter employment types.",
+   "Most courses are labeled '( Historical )' in the 2026-2027 catalog; reviewer may want to confirm currency."
+  ]
+ },
+ "extracted_run": "38843461766"
+}

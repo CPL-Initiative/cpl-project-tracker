@@ -1,0 +1,34 @@
+{
+ "_readme": "S393 SkySycamore, 2026-10-14. All 148 of Cerritos's associate-degree records hold the major only (record shape 6's Major only gap): no degree total and no general education units. Before writing Cerritos's reconcile steps (Sam, 2026-10-14: a secondary search of the catalog text after the harvest, each catalog its own steps; cpl_memory sam-reconcile-pass-after-harvest-2026-10-14), this read prints how a Cerritos degree page states the degree's total, its general education and its electives, and how the catalog's associate degree requirements page states them. Three loads, no model call.",
+ "college": "Cerritos College",
+ "questions": {
+  "degree_total": "Whether and how a degree page prints the degree total (60), apart from the major's total.",
+  "ge_line": "Whether and how a degree page prints the general education units for the degree.",
+  "elective_line": "Whether a degree page prints electives to reach the degree total.",
+  "requirements_page": "How the catalog's associate degree requirements page states the 60 units and the general education pattern."
+ },
+ "keywords": [
+  "[Gg]eneral [Ee]ducation[^<\"]{0,160}",
+  "[Ee]lective[^<\"]{0,120}",
+  "[Tt]otal[^<\"]{0,100}",
+  "60[^<\"]{0,100}",
+  "[Uu]nits [Rr]equired[^<\"]{0,100}",
+  "[Dd]egree [Rr]equirements[^<\"]{0,160}",
+  "courselistcomment[^<]{0,160}",
+  "listsum[^<]{0,80}"
+ ],
+ "pages": [
+  {
+   "answers": ["degree_total", "ge_line", "elective_line"],
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/biology-aa/"
+  },
+  {
+   "answers": ["degree_total", "ge_line", "elective_line"],
+   "url": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/general-technician-aa/"
+  },
+  {
+   "answers": ["requirements_page"],
+   "url": "https://cerritos-public.courseleaf.com/academic-policies-procedures/graduation-requirements/"
+  }
+ ]
+}
