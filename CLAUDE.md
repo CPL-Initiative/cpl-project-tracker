@@ -752,7 +752,7 @@ stays here.
 > time (four occasions). [`lanes/README.md`](docs/reference/lanes/README.md).
 
 > **Anything waiting on Sam is a card on the standing sheet**
-> ([5q9urLR8X9y6vokcppgDFk](https://claude.ai/artifact/5q9urLR8X9y6vokcppgDFk), sheet 85, all answered; no card is open). Answering
+> ([sheet 85](https://claude.ai/artifact/5q9urLR8X9y6vokcppgDFk), answered; none open). Answering
 > one changes its lane's marker in the same PR (`CPLBrain/decision-sheets/decision_sheets.md`).
 
 | Phase | What | Status |
@@ -793,7 +793,7 @@ stays here.
 | **COBI dark mode / the one theme control** | One header control setting the theme for every tab and window, and the token layer under it. Carries the a11y remediation pass. | ✅ live · open work — [lane state](docs/reference/lanes/cobi-dark-mode.md) |
 | **Memory tab / Autogenerate + the Briefing** | Drafting a memory row from a typed topic, reading the entries back, and curating them. | ✅ live · open work — [lane state](docs/reference/lanes/memory-tab.md) |
 | **Annual Workplan Goals / add, move, count** | The one editor of the workplan's structure: add a sub-activity, move it, set targets, say what each number counts — wired to the Activities tab and reports. | 🔨 in progress · open work — [lane state](docs/reference/lanes/workplan-annual-goals.md) |
-| **Program requirements harvest** | Each program's required, list-choice and elective courses at 115 colleges, so CPL units saved can be shown. | 🔨 in progress · 47 colleges loaded; the catalog sweep — [lane state](docs/reference/lanes/program-requirements-harvest.md) |
+| **Program requirements harvest** | Each program's required, list-choice and elective courses at 115 colleges, so CPL units saved can be shown. | 🔨 in progress · 53 colleges loaded; the catalog sweep — [lane state](docs/reference/lanes/program-requirements-harvest.md) |
 | 2 | Articulations by Unified Course — interactive view + curation | parked |
 | 4 | SLO ingestion + the rest of the MC slot fields | parked (unlocks MC-readiness scoring) |
 | 5 | CTE classifier (TOP code → COCI CTE field) | parked (unlocks CIDx lane) |
