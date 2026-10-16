@@ -14,6 +14,14 @@ md5 it expects is the registry row's current procedure md5 ('none' when empty).
 
 S394 wrote the first eight of these by hand-run code; S395 committed this one so
 the shape stops being re-derived.
+
+A row that already holds a record (S346's program-map v1, say) keeps it whole: with
+--merge, the receipt merges this run's hosts, steps and open questions onto the
+row's own record in SQL, so nothing of the earlier version is retyped (S398; S395
+wrote Cypress's, Moorpark's and Napa Valley's this way by hand):
+
+  python3 kb/_program_source_procedure_v1.py --college "Oxnard College" ... \
+      --v 2 --merge --expect <the row's procedure md5>
 """
 from __future__ import annotations
 
@@ -69,7 +77,10 @@ def found_text(cap: dict, s: dict) -> str:
     if bm.get("link_search"):
         ways.append("%d by link search" % bm["link_search"])
     if bm.get("sitemap_page"):
-        ways.append("%d by sitemap page" % bm["sitemap_page"])
+        # The reader files a curriQunet program's page under the same key, but it comes from
+        # the catalog's own JSON index (cq_index): the host serves no sitemap.
+        ways.append("%d %s" % (bm["sitemap_page"], "from the catalog's own index"
+                               if cap.get("platform") == "curriqunet" else "by sitemap page"))
     return ("%d pages in %d loads (%d min). %d of %d programs with a course list found a page (%s); "
             "%d extracted with function v10 for $%.2f; %d pass the machine checks."
             % (cap["pages_read"], cap["loads"], round(cap["seconds"] / 60), s["found"],
@@ -152,11 +163,39 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--expect", required=True, help="the registry row's procedure md5, or none")
     ap.add_argument("--v", type=int, default=1)
     ap.add_argument("--host-note", default="")
+    ap.add_argument("--merge", action="store_true",
+                    help="append to the row's own record in SQL (needs --expect md5 and --v > 1)")
     a = ap.parse_args(argv)
+    if a.merge and (a.expect == "none" or a.v < 2):
+        ap.error("--merge appends to a record the row holds: give its md5 with --expect and --v 2 or more")
     rec, by = build(a)
     slug = slug_of(a.college)
     out = ROOT / ("kb/receipts/program_source_procedure_%s_v%d_%s_%s.sql" % (
         slug, a.v, a.display_date, a.session.split()[0].lower()))
+    plat = PLATFORM_NAME.get(rec["hosts"][0]["platform"], rec["hosts"][0]["platform"])
+    if a.merge:
+        add = json.dumps({k: rec[k] for k in ("hosts", "steps", "open")}, ensure_ascii=False)
+        assert "$add$" not in add
+        name = a.college.replace("'", "''")
+        out.write_text(
+            "-- %s, %s: %s's procedure record v%d. The record the row holds is kept whole;\n"
+            "-- v%d adds the %s catalog host, the catalog sweep's read, load and display runs, and what\n"
+            "-- the read left open. The merge runs in SQL on the row's own record, so nothing of it is retyped.\n"
+            "-- Through program_source_procedure_set, expecting the row's md5 %s; the history trigger files it.\n"
+            "-- Rollback: program_source_registry_history holds the prior record.\n"
+            "-- Additions written by kb/_program_source_procedure_v1.py --merge.\n\n"
+            "select public.program_source_procedure_set('%s',\n"
+            "  p.procedure || jsonb_build_object('v', %d,\n"
+            "    'hosts', (p.procedure->'hosts') || (x.a->'hosts'),\n"
+            "    'steps', (p.procedure->'steps') || (x.a->'steps'),\n"
+            "    'open',  (p.procedure->'open')  || (x.a->'open')),\n"
+            "  '%s',\n  '%s')\n"
+            "from public.program_source_registry p,\n  (select $add$%s$add$::jsonb a) x\n"
+            "where p.college = '%s';\n"
+            % (a.session, a.display_date, a.college, a.v, a.v, plat, a.expect, name, a.v,
+               by.replace("'", "''"), a.expect, add, name))
+        print(out.relative_to(ROOT))
+        return 0
     prior = ("the registry row held none" if a.expect == "none"
              else "replacing the record whose md5 is %s" % a.expect)
     body = json.dumps(rec, ensure_ascii=False)
