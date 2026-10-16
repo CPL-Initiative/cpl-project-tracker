@@ -657,7 +657,9 @@ CQ_AWARD = re.compile(r"\b(?:associate|certificate|degree|bachelor|noncredit|non
 # Navigation and section pages, before any program page. Santa Ana nests its programs under
 # department pages (Instructional Programs > department > entry): its walk stopped at 400 calls
 # with 27 of its 359 listed programs reached (run 38669940195, S394), where Fresno City listed
-# 301 in 172 calls. The cap bounds a walk gone wrong; each call still waits the census delay.
+# 301 in 172 calls. At 1,200 it finished (837 calls, run 38674963853) and still found 27: its
+# titles put the award after a colon, which cq_is_program now reads (S395). The cap bounds a
+# walk gone wrong; each call still waits the census delay.
 CQ_MAX_CALLS = 1200
 CQ_MAX_CHILDREN = 4       # an entry's own child pages read (Chaffey's Requirements)
 CQ_MAX_DEPTH = 4
@@ -773,11 +775,17 @@ def cq_lists(page: dict) -> list[dict]:
 
 def cq_is_program(nav: dict) -> bool:
     """A program entry: its title names an award after a dash, as the index
-    writes them. "Degrees and Certificates Explained" names no award and has no
-    dash, nor does the index. Riverside City's entries are leaves; Chaffey's
-    each hold a Requirements child, which cq_pages reads as part of the entry."""
+    writes them, or after its last colon, as Santa Ana writes them ("Accounting:
+    A.S. Degree" under the Accounting department; page read 38749570529, S395).
+    "Degrees and Certificates Explained" names no award and has no dash, nor does
+    the index; "Degrees and Certificates: Explained" names none after its colon.
+    Riverside City's entries are leaves; Chaffey's each hold a Requirements
+    child, which cq_pages reads as part of the entry."""
     text = nav.get("text") or ""
-    return " - " in text and bool(CQ_AWARD.search(text))
+    if " - " in text and CQ_AWARD.search(text):
+        return True
+    head, colon, tail = text.rpartition(": ")
+    return bool(colon and head.strip() and CQ_AWARD.search(tail))
 
 
 def cq_hidden(nav: dict) -> bool:
