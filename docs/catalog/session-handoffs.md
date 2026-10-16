@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-371 document(s).
+372 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 401 | [Session 401 handoff: Sierra AI's format in My College, the program search's no-match path, wave 5 closed](../session_401_handoff.md) | 2026-10-16 |
 | 400 | [Session 400 handoff: wave 5's display apply, the three rereads and Merritt, the next build](../session_400_handoff.md) | 2026-10-16 |
 | 399 | [Session 399 handoff: Sierra's statewide catalog to A/B and deploy, the next sweep wave](../session_399_handoff.md) | 2026-10-16 |
 | 398 | [Session 398 handoff: merge wave 4's display build, the three curriQunet stragglers, Sheet 84](../session_398_handoff.md) | 2026-10-16 |

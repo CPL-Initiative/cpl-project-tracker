@@ -15619,8 +15619,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 371,
+   "count": 372,
    "docs": [
+    {
+     "created": "2026-10-16",
+     "governs": [],
+     "n": 401,
+     "path": "docs/session_401_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "sierra",
+      "my-college",
+      "program-requirements",
+      "catalog-sweep",
+      "display-build"
+     ],
+     "title": "Session 401 handoff: Sierra AI's format in My College, the program search's no-match path, wave 5 closed",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-16",
      "governs": [],
@@ -21998,5 +22016,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1154
+ "total": 1155
 }
