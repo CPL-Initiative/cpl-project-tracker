@@ -666,11 +666,14 @@ CQ_MAX_DEPTH = 4
 CQ_BREAK = re.compile(r"<\s*(?:br|/p|/div|/tr|/li|/h[1-6]|/table)\b[^>]*>", re.I)
 
 
+# Berkeley City and Butte (S399; read 38935112500, 38935116675, page read 38942920358):
+# a start page's scripts first ask _getNavigation?id=0, an empty placeholder, and name
+# the catalog (10327, 14) only in later calls. Id 0 is never a catalog.
 def cq_catalog_id(urls: list[str]) -> int | None:
     """The catalog id the catalog's own scripts asked for while its start page loaded."""
     for u in urls:
         m = CQ_CATALOG_ID.search(u or "")
-        if m:
+        if m and int(m.group(1)):
             return int(m.group(1))
     return None
 
@@ -683,20 +686,25 @@ def cq_catalog_id(urls: list[str]) -> int | None:
 # whose title's words all appear in the college's name, in the registry's year,
 # is the one read.
 CQ_YEAR = re.compile(r"\b(?:19|20)\d\d\s*[-/]\s*(?:(?:19|20)?\d\d)\b")
+# Gavilan (S399, page read 38942920358): its alias start page lists the active
+# catalogs and fetches nothing, and _getCatalogs titles the year's catalog "Gavilan
+# College Catalog 2026-2027" beside two addenda. "Catalog" names the thing listed, not
+# a college, so it is not one of the words a title must share with the college's name.
+CQ_TITLE_GENERIC = {"catalog"}
 
 
 def cq_catalog_from_list(catalogs, college: str, year: str | None) -> int | None:
     """The id of the one catalog in a host's _getCatalogs list that names this
-    college (every word of its title, the year aside, is a word of the
-    college's name) and, where the title carries a year, the registry's year.
-    None when no catalog or more than one does."""
+    college (every word of its title, the year and the word "catalog" aside, is a
+    word of the college's name) and, where the title carries a year, the
+    registry's year. None when no catalog or more than one does."""
     words = set(re.findall(r"[a-z]+", (college or "").lower()))
     want = re.sub(r"\D", "", year or "")
     hits = []
     for c in catalogs if isinstance(catalogs, list) else []:
         title = c.get("Title") or ""
         y = CQ_YEAR.search(title)
-        named = set(re.findall(r"[a-z]+", CQ_YEAR.sub(" ", title).lower()))
+        named = set(re.findall(r"[a-z]+", CQ_YEAR.sub(" ", title).lower())) - CQ_TITLE_GENERIC
         if not named or not named <= words or c.get("IsDeleted"):
             continue
         if y and want and re.sub(r"\D", "", y.group(0)) not in (want, want[:4] + want[-2:]):

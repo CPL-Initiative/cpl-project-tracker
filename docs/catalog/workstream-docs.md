@@ -15,7 +15,7 @@ related:
 
 Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` that is not a lessons doc or a session handoff.
 
-82 document(s).
+83 document(s).
 
 | Title | File | Created | Updated |
 |---|---|---|---|
@@ -37,6 +37,7 @@ Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` t
 | [COBI → CO Platform — Long-Term Strategy & Plan of Attack](../co_platform_strategy.md) | `co_platform_strategy.md` | 2026-06-28 | 2026-06-28 |
 | [Common CR Reference — scope, measured against the CCR's actual matching factors](../common_cr_reference_scope.md) | `common_cr_reference_scope.md` | 2026-08-13 |  |
 | [CourseControlNumber Re-mint — Decisions & Lessons](../coursecontrolnumber_remint.md) | `coursecontrolnumber_remint.md` | 2026-05-22 |  |
+| [CPL Assistant (Sierra) lessons — archive 2](../cpl_assistant_lessons_archive_2.md) | `cpl_assistant_lessons_archive_2.md` | 2026-10-16 | 2026-10-16 |
 | [CPL Implementation Funding — next-session handoff](../cpl_funding_handoff.md) | `cpl_funding_handoff.md` | 2026-06-11 | 2026-08-05 |
 | [CPL Pathways side-lane handoff — the Common Course Reference redesign](../cpl_pathways_handoff.md) | `cpl_pathways_handoff.md` | 2026-07-16 |  |
 | [CPL presentations — workstream handoff (StarBOG)](../cpl_presentations_handoff.md) | `cpl_presentations_handoff.md` | 2026-07-20 |  |
