@@ -81,7 +81,7 @@ Guard: `tests/sierra_training_round1.test.js`.
 `sierraHost()` already sent the Sierra button there, so the two buttons opened
 one place. **One Sierra in COBI (S398, #2163; Sam, 2026-10-16: *"consolidate Sierra Assistant into Sierra AI and sunset the separate assistant ... only gain"*, `sam-sierra-one-assistant-2026-10-16`).** The CPL Assistant tab (`#chatbot`) is retired: `CPL_CHAT.open({question, send})` opens Sierra AI full screen over any COBI tab, unscoped (surface `cobi-assistant`, kept), with the reader's sign-in. *Try it in: Sierra* and *Save & ask Sierra* ask her over the Training tab and send; *My College* keeps its hand-off; both words always show. Each box keeps its own scope and starters. Ratings from the COBI-wide box carry page `cobi-sierra`. Guard: `tests/sierra_one_cobi.test.js`. **Open:** the live `cobi_nav` row `chatbot`; the Fact Sheet drawer still names itself CPL Assistant; the floating bubble is one `open()` call away.
 
-**Statewide exhibits in full (S398).** Sierra cannot list every statewide exhibit: retrieval is topical, so Sam's 2026-10-15 rule asking for the whole set by sector (`sierra_guidance` `1b946882`) had nothing to act on. A statewide-catalog block for list questions is built on `claude/s398-sierra-statewide-catalog`; **NEXT:** A/B it, then deploy on Sam's *deploy Sierra*.
+**Statewide exhibits in full (S398).** Sierra cannot list every statewide exhibit: retrieval is topical, so Sam's 2026-10-15 rule asking for the whole set by sector (`sierra_guidance` `1b946882`) had nothing to act on. #2164 sends the whole set (164 exhibits, `fact-sheet/statewide_catalog.json`) for whole-set questions; **NEXT:** A/B, then deploy on Sam's *deploy Sierra*.
 
 ## Where applied and transcribed credit comes from (2026-09-30)
 

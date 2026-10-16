@@ -35,11 +35,14 @@ highest handoff. If the routine started you, follow `docs/reference/scheduled_se
 
 ## Priority, in order
 
-1. **Sierra's statewide catalog.** Read the branch `claude/s398-sierra-statewide-catalog` and its last commit message
-   (the agent's account). If it is complete, open its PR, run its tests, then A/B it (see the Sierra smoke and A/B
-   workflows the commit names) and put *deploy Sierra* to Sam as a card; deploy only on his go. Check it answers his
-   question in full: *"Give me a complete list of statewide exhibit titles categorized by sector"*, with total units
-   and the Fact Sheet as a link. If the branch is missing or partial, rebuild from `index.ts`'s retrieval fan-out.
+1. **Sierra's statewide catalog, #2164** (`claude/s398-sierra-statewide-catalog`). If not merged, merge on a green
+   `test` (merging is inert: only `cpl-chat-deploy.yml` reaches production). Then dispatch `cpl-chat-preview-ab.yml` on
+   `main` (input `cleanup`); expect smoke mode 7w fixed by the candidate and no regressions. Put *deploy Sierra* to Sam
+   with the A/B's result; on his go, `cpl-chat-deploy.yml` (`confirm: DEPLOY`, `function: cpl-chat`), then
+   `cpl-chat-smoke.yml`. 7w fails on production until then (the branch push ran the smoke once). The catalog is
+   `fact-sheet/statewide_catalog.json` (164 exhibits by program area, the Fact Sheet's own count), rebuilt daily.
+   Follow-ups: render the Fact Sheet's baked title lists from it (132 baked, 50 current titles missing); retire the
+   April vault note `map-exhibit-analysis.md` (Sierra's old 114); curate the 22 "Other Statewide" exhibits.
 2. **#2163** if not merged: merge on a green `test` (squash). Then ask Sam to try *Try it in: Sierra* on his
    statewide question once the catalog is deployed.
 3. **The next sweep wave**, under the $40 go: the census's unread catalogs, one branch per college.
