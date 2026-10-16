@@ -1,0 +1,354 @@
+{
+ "college": "Feather River College",
+ "control_number": "20859",
+ "shape": "certificate",
+ "title": "Equine Studies: Horse Training Skills",
+ "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+ "source_url": "https://frc.curriqunet.com/Catalog/iq/1464/1783",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7141,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7141,
+    "output_tokens": 4561,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4561,
+  "output_tokens_details": {
+   "thinking_tokens": 2964
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.11978,
+ "ms": 40195,
+ "seconds": 40.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 1,
+   "listed": 1,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 16,
+   "codes": [
+    "AGEQ103",
+    "AGEQ115",
+    "AGEQ116",
+    "AGEQ117",
+    "AGEQ118",
+    "AGEQ140",
+    "AGEQ141",
+    "AGEQ204",
+    "AGEQ205",
+    "AGEQ206",
+    "AGEQ225",
+    "AGEQ226",
+    "AGEQ227",
+    "AGEQ296",
+    "AGEQ297",
+    "AGEQ299"
+   ],
+   "flagged": [
+    "AGEQ103",
+    "AGEQ115",
+    "AGEQ116",
+    "AGEQ117",
+    "AGEQ118",
+    "AGEQ140",
+    "AGEQ141",
+    "AGEQ204",
+    "AGEQ205",
+    "AGEQ206",
+    "AGEQ225",
+    "AGEQ226",
+    "AGEQ227",
+    "AGEQ296",
+    "AGEQ297",
+    "AGEQ299"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    15.0,
+    30.0
+   ],
+   "stated": [
+    15.0,
+    15.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 15.0-30.0; the catalog states 15.0-15.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 15,
+    "max": 15
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AGEQ 103",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Certificate Requirements (choice: 0.5-2.0 units)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 0.5,
+     "max": 2
+    },
+    "courses": [
+     {
+      "code": "AGEQ 115",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AGEQ 116",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "AGEQ 140",
+        "units": 2,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Certificate Requirements (continued)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AGEQ 141",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AGEQ 204",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AGEQ 205",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Certificate Requirements (choice: 0.5-2.0 units)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 0.5,
+     "max": 2
+    },
+    "courses": [
+     {
+      "code": "AGEQ 206",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "AGEQ 225",
+        "units": 0.5,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Certificate Requirements (electives: 6.0-18.0 units)",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "AGEQ 226",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AGEQ 296",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AGEQ 297",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AGEQ 298",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AGEQ 299",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AGEQ 117",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AGEQ 118",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AGEQ 227",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The scraped table flattens nested groups; group boundaries were inferred from the range lines '0.5- 2.0', '0.5- 2.0' and '6.0- 18.0' and the 'OR' markers. Reviewer should verify.",
+   "Grouping chosen so the minimums sum to the printed total of 15.0 (AGEQ 103, 141, 204, 205 required = 8; choice of AGEQ 115/116/140 = 0.5 min; choice of AGEQ 206/225 = 0.5 min; electives = 6 min). An alternative reading places AGEQ 115 as required and the first choice as AGEQ 116 or AGEQ 140, which would sum to 15.5, so it was not used.",
+   "The first range line appears between AGEQ 115 and AGEQ 116, with 'OR' only between AGEQ 116 and AGEQ 140; whether AGEQ 115 belongs to that choice is ambiguous.",
+   "The closed list stores AGEQ 298 at 1 unit; the catalog prints 1.0-4.0.",
+   "The text ends with headings 'Program Courses' and 'Fundamentals of Horse Training Skills - Certificate of Specialization Courses', which appear to belong to a different award and were not read.",
+   "No program learning outcomes or careers are printed in the text."
+  ]
+ },
+ "extracted_run": "38935127435"
+}
