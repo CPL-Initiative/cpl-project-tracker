@@ -1,6 +1,6 @@
 // Session 112 (2026-07-11) — Sam's two CER Unclassified-triage asks:
 //   (1) MULTI-ISSUER: "I need to be able to add multiple issuing agencies and
-//       can only add one." The No-issuer lane's "＋ add issuing agency" reveal
+//       can only add one." The No-issuer lane's "Add issuing agency" reveal
 //       is ported onto the triage row; extras join into ONE " | "-delimited
 //       value saved as issuing_agency_assignment2 (the primary field is never
 //       touched), and _apply_unclassified_triage.py splits them back out.
@@ -112,7 +112,7 @@ const rowFor = (doc, name) => Array.from(doc.querySelectorAll(".cr-wl-table tbod
   check("preseed: verified C-ID prefills the title input",
     cidRow.querySelector(".cr-wl-title-input").value === "Legal Aspects of Evidence");
   check("preseed: a hint announces the pre-fill source",
-    /pre-filled from C-ID AJ 124/.test(txt(cidRow.querySelector(".cr-wl-preseed-hint"))));
+    /pre-filled from C-ID AJ 124/i.test(txt(cidRow.querySelector(".cr-wl-preseed-hint"))));
   check("preseed: the seeding chip renders active",
     !!cidRow.querySelector(".cr-wl-sugg.cr-wl-sugg-active"));
   check("preseed: pre-fill never auto-saves (Save still armed)",
@@ -123,7 +123,7 @@ const rowFor = (doc, name) => Array.from(doc.querySelectorAll(".cr-wl-table tbod
   check("preseed: a CCN outranks the C-ID for the pre-fill",
     ccnRow.querySelector(".cr-wl-title-input").value === "College Algebra");
   check("preseed: hint names the CCN",
-    /pre-filled from CCN MATH C1000/.test(txt(ccnRow.querySelector(".cr-wl-preseed-hint"))));
+    /pre-filled from CCN MATH C1000/i.test(txt(ccnRow.querySelector(".cr-wl-preseed-hint"))));
 
   const unv = rowFor(doc, "Some Unverified CID Row");
   check("preseed: an UNVERIFIED C-ID does NOT pre-fill",
