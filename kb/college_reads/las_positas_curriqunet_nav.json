@@ -1,0 +1,60 @@
+{
+ "_readme": "S401 SkyManzanita, 2026-10-16. Las Positas's reread with the retry (run 38979338956) still found 20 of 201: no call failed; the walk read 158 nodes in 316 calls under five sections (Departments, Degrees & Certificates first) and recognized 20 program entries, while 112 programs pointed at six listing pages under 102/105/155/1872 (1875-1880). This read lists the outline and the nodes on that path, to see how Las Positas titles a program entry.",
+ "college": "Las Positas College",
+ "questions": {
+  "outline": "The catalog's top sections and the nodes on the path 102/105/155/1872.",
+  "entry_titles": "How a program entry is titled, and what the pages 1872/1875-1880 are."
+ },
+ "keywords": [
+  "[Cc]ertificate",
+  "A\\.S\\.",
+  "A\\.A\\.",
+  "[Aa]ssociate",
+  "[Dd]egree",
+  "[Pp]rogram"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "outline"
+   ],
+   "url": "https://laspositas.curriqunet.com/Catalog/_getNavigation?id=164&navigationtypeId=1"
+  },
+  {
+   "answers": [
+    "entry_titles"
+   ],
+   "url": "https://laspositas.curriqunet.com/Catalog/_getNavigation?id=164&parentId=102"
+  },
+  {
+   "answers": [
+    "entry_titles"
+   ],
+   "url": "https://laspositas.curriqunet.com/Catalog/_getNavigation?id=164&parentId=105"
+  },
+  {
+   "answers": [
+    "entry_titles"
+   ],
+   "url": "https://laspositas.curriqunet.com/Catalog/_getNavigation?id=164&parentId=155"
+  },
+  {
+   "answers": [
+    "entry_titles"
+   ],
+   "url": "https://laspositas.curriqunet.com/Catalog/_getNavigation?id=164&parentId=1872"
+  },
+  {
+   "answers": [
+    "entry_titles"
+   ],
+   "url": "https://laspositas.curriqunet.com/Catalog/_getPage?catalogId=164&id=1872"
+  },
+  {
+   "answers": [
+    "entry_titles"
+   ],
+   "url": "https://laspositas.curriqunet.com/Catalog/_getPage?catalogId=164&id=1879"
+  }
+ ]
+}
