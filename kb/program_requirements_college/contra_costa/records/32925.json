@@ -1,0 +1,363 @@
+{
+ "college": "Contra Costa College",
+ "control_number": "32925",
+ "shape": "adt",
+ "title": "Kinesiology",
+ "award": "A.A- T Degree",
+ "source_url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/kinesiology-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7994,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7994,
+    "output_tokens": 2377,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2377,
+  "output_tokens_details": {
+   "thinking_tokens": 661
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07952,
+ "ms": 26685,
+ "seconds": 27.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 22,
+   "listed": 22,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    20.0,
+    23.0
+   ],
+   "stated": [
+    20.0,
+    26.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 20.0-23.0; the catalog states 20.0-26.0"
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     64.0,
+     73.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 10,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Kinesiology - A.A.-T",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 26
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 10,
+    "max": 16
+   },
+   "ge_pattern": "CalGETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate foundational knowledge and skills related to body systems, physical activity, exercise, sport.",
+    "Integrate perspectives from biological sciences, humanities and social, behavioral, and life sciences.",
+    "Articulate the importance of a commitment to life-long physical activity."
+   ],
+   "careers": [
+    "Coach",
+    "teacher",
+    "team manager",
+    "umpire",
+    "referee",
+    "athlete",
+    "sports trainer",
+    "sports medicine technician",
+    "recreational therapist",
+    "community activities director"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED CORE COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOSC132",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOSC134",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINES190",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "REQUIRED MOVEMENT BASED COURSES",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PE126A",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE261A",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE118A",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE161A",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE116A",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE165A",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE270A",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE273A",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE105A",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PE135A",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "PLUS, select two courses from any of the following groups",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHEM120",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HED133",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HED120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STATC1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOCIO234",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS120",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHYS130",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYCC1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOCIC1000",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Movement block rule: 'Select a MAXIMUM of one course from any three of the following areas for a MINIMUM total of 3 units' (Areas 1 Aquatics, 2 Combatives, 3 Dance, 4 Fitness, 5 Individual Sports). Recorded as choose_units 3; the one-course-per-area, three-area constraint is not captured by the block structure.",
+   "In the 'select two courses' block, Groups 2-4 print 'Or' between their two courses; recorded as alternatives (one choice each). Group 1's three courses are separate options. Reviewer may check whether two courses may come from the same group.",
+   "Unit Summary prints Total Major Units 20-26, CalGETC 34, Double Count Units 10, Elective Units to reach 60 10-16, Total Overall Units 60. Electives 10-16 recorded as degree_elective_units.",
+   "Codes are printed without spaces (e.g., BIOSC132, STATC1000, PSYCC1000); all match closed-list courses.",
+   "The SB1440 sentence of a minimum of 18 units in the major is a general requirement, not this award's total."
+  ]
+ },
+ "extracted_run": "38979730323"
+}

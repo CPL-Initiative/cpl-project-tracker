@@ -1,0 +1,228 @@
+{
+ "college": "Contra Costa College",
+ "control_number": "01387",
+ "shape": "degree",
+ "title": "Business Office Technology: General Office",
+ "award": "A.S. Degree",
+ "source_url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/business-office-technology-general-office-fall-2020",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6649,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6649,
+    "output_tokens": 1352,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1352,
+  "output_tokens_details": {
+   "thinking_tokens": 414
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05364,
+ "ms": 12325,
+ "seconds": 13.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "BOT222",
+    "BOT224",
+    "BOT226"
+   ],
+   "flagged": [
+    "BOT222",
+    "BOT224",
+    "BOT226"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the blocks and general education sum to 18.0-18.0; the catalog prints 60.0-60.0 for the degree"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     18.0,
+     18.0
+    ],
+    "stated": [
+     18.0,
+     18.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business Office Technology: General Office - A.S. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "office support personnel",
+    "entry-level office and administrative support"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required courses, with suggested sequence",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BOT210A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BOT118",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BOT224",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BOT243",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BOT222",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BOT226",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The major total of 18 comes from '18 Credits' and the unit summary 'Min/Max Units - Major or Area of Emphasis 18 / 18'.",
+   "The printed course units add to 18, matching that total.",
+   "The degree total of 60 comes from the unit summary 'Min/Max Units - Total Program 60 / 60', which the page prints for this program.",
+   "The unit summary lists general education (local) as 'None' and CSU/IGETC as 'N/A'. So ge_pattern and ge_units are null, although the description mentions breadth requirements.",
+   "The unit summary lists electives needed to reach the 60-unit minimum as 'None'. This conflicts with an 18-unit major inside a 60-unit total. electives_fill_degree is left false; a reviewer should check this.",
+   "The page prints the courses in two groups, '1st semester' and '2nd semester', as a suggested sequence. They are recorded as one block of required courses.",
+   "Catalog codes are printed without a space (e.g., BOT210A); they match the closed-list BOT 210A, BOT 118 and BOT 243.",
+   "BOT224, BOT222 and BOT226 are not in the closed list and are marked as catalog additions.",
+   "No program learning outcomes appear in the text.",
+   "The text is cut off mid-sentence in the Development Criteria section.",
+   "The source URL slug says 'fall-2020' although the catalog is 2026-27. Check the catalog year."
+  ]
+ },
+ "extracted_run": "38979730323"
+}

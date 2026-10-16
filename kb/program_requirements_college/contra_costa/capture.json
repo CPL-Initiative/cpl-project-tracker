@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 131,
  "with_closed_list": 105,
- "started": "2026-10-16T22:50:57Z",
+ "started": "2026-10-16T23:09:38Z",
  "elumen": {
   "catalog": "ccc-2026-27",
   "read": "publish/content",
@@ -18,7 +18,7 @@
  "pages_read": 135,
  "banner_h1": null,
  "loads": 189,
- "seconds": 786.6,
+ "seconds": 785.0,
  "found": 97,
  "by_method": {
   "no_closed_list": 26,
@@ -1081,5 +1081,5 @@
    }
   ]
  },
- "run": "38978060296"
+ "run": "38979730323"
 }
