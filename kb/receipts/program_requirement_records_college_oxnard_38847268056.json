@@ -1,0 +1,206 @@
+{
+ "college": "Oxnard College",
+ "load_run": "38847268056",
+ "function": "program_requirement_records_college_load",
+ "at": "2026-10-16T03:48:03Z",
+ "records": 94,
+ "posted": 64,
+ "batches": 3,
+ "inserted": 64,
+ "kept": 0,
+ "skipped": [
+  {
+   "control_number": "06915",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "06925",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "06938",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "09552",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "12627",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "17622",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "22470",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32087",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32092",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32109",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32718",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33666",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33928",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35226",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37827",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "38036",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "40173",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "40766",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "42422",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "44428",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "44437",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "44438",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45303",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45489",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45578",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45642",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45646",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45830",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46585",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46586",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "extracted_runs": [
+  "38842203500"
+ ],
+ "machine_pass": 37,
+ "inserted_keys": [
+  "06899",
+  "06929",
+  "09541",
+  "09553",
+  "18130",
+  "18406",
+  "18407",
+  "18408",
+  "22439",
+  "22472",
+  "30804",
+  "30820",
+  "30883",
+  "31045",
+  "31772",
+  "31838",
+  "31870",
+  "31909",
+  "31910",
+  "31924",
+  "31938",
+  "32088",
+  "32257",
+  "32402",
+  "32794",
+  "33031",
+  "33198",
+  "35031",
+  "35103",
+  "35104",
+  "35373",
+  "35482",
+  "35595",
+  "35608",
+  "35612",
+  "36518",
+  "36569",
+  "37398",
+  "37441",
+  "37665",
+  "37947",
+  "39833",
+  "40729",
+  "40767",
+  "40768",
+  "40769",
+  "40770",
+  "40862",
+  "41263",
+  "42253",
+  "42530",
+  "42881",
+  "43105",
+  "44500",
+  "44844",
+  "45214",
+  "45289",
+  "45433",
+  "45658",
+  "45659",
+  "45829",
+  "46369",
+  "46385",
+  "46583"
+ ],
+ "kept_keys": [],
+ "rollback": "delete from public.program_requirement_records where college = 'Oxnard College' and checked = false and control_number in ('06899', '06929', '09541', '09553', '18130', '18406', '18407', '18408', '22439', '22472', '30804', '30820', '30883', '31045', '31772', '31838', '31870', '31909', '31910', '31924', '31938', '32088', '32257', '32402', '32794', '33031', '33198', '35031', '35103', '35104', '35373', '35482', '35595', '35608', '35612', '36518', '36569', '37398', '37441', '37665', '37947', '39833', '40729', '40767', '40768', '40769', '40770', '40862', '41263', '42253', '42530', '42881', '43105', '44500', '44844', '45214', '45289', '45433', '45658', '45659', '45829', '46369', '46385', '46583');"
+}
