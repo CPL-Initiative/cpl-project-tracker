@@ -1,0 +1,499 @@
+{
+ "college": "Palomar College",
+ "control_number": "31312",
+ "shape": "certificate",
+ "title": "Dance: Emphasis in World Dance",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DanceEmphasisinWorldDance-AA-CA",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8727,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8727,
+    "output_tokens": 4461,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4461,
+  "output_tokens_details": {
+   "thinking_tokens": 1670
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.12413,
+ "ms": 34473,
+ "seconds": 34.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 31,
+   "listed": 31,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "DNCE165",
+    "DNCE248",
+    "MUS137",
+    "MUS138"
+   ],
+   "flagged": [
+    "DNCE165",
+    "DNCE248",
+    "MUS137",
+    "MUS138"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    19.5,
+    26.0
+   ],
+   "stated": [
+    19.5,
+    26.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 8,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Performing Arts  Department - Dance: Emphasis in World Dance - A.A. Degree Major or Certificate of Achievement (18 units or more)",
+   "measure": "units",
+   "total_units": {
+    "min": 19.5,
+    "max": 26
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Upon successful completion of the World Dance Program students will be able to identify and evaluate the elements of various world dance genres and their diverse histories.",
+    "Upon successful completion of the World Dance Program Students will be able to identify the vocabulary and successfully execute the movements of various World Dance genres."
+   ],
+   "careers": [
+    "dance-related professions",
+    "teaching in recreation centers, community centers and private studios",
+    "performing or choreographing for community events",
+    "entertainment industry",
+    "theme parks",
+    "music industry",
+    "back-up dancers for musical artists",
+    "professional theatrical dance opportunities"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16.5,
+     "max": 20
+    },
+    "courses": [
+     {
+      "code": "DNCE 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 149",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 137",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [
+       {
+        "code": "MUS 137",
+        "units": 0.5,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 151",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 145",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 280",
+      "units": 1.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 161",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 165",
+      "units": 2,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DNCE 153",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 158",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Elective (select one of the following two courses)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 0.5,
+     "max": 1.5
+    },
+    "courses": [
+     {
+      "code": "DNCE 148",
+      "units": 0.5,
+      "units_max": 1.5,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 248",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Group I Electives - Afro-Cuban/Brazilian (Select one course)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 1,
+     "max": 1
+    },
+    "courses": [
+     {
+      "code": "DNCE 150",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 249",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 250",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Group II Electives - Latin Social (Select one course)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 1,
+     "max": 1
+    },
+    "courses": [
+     {
+      "code": "DNCE 152",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 251",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 252",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Group III Electives - Capoeira or Hawaiian and Tahitian (Select one course)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 0.5,
+     "max": 1
+    },
+    "courses": [
+     {
+      "code": "DNCE 237",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 154",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 253",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 254",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 159",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 258",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 259",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Group IV Electives (Select one course not already taken)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 0.5,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "DNCE 137",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [
+       {
+        "code": "MUS 137",
+        "units": 0.5,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 138",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [
+       {
+        "code": "MUS 138",
+        "units": 0.5,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 237",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 238",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 115",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 120",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 130",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 155",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints one shared section for the A.A. Degree Major and the Certificate of Achievement; requirements, total and outcomes are shared by both awards.",
+   "total_units taken from 'Total : 19.5- 26.0'; the heading says '(18 units or more)' and the core 'Program Requirements' block states 'Units: 16.5- 20.0', which sums correctly only when the nested 'Elective (select one of the following two courses)' (0.5-1.5) is included.",
+   "DNCE 161, DNCE 165, DNCE 153 and DNCE 158 follow the nested elective choice and were read as required core courses (consistent with the 16.5-20.0 core total).",
+   "MUS 137 / DNCE 137 and MUS 138 / DNCE 138 are printed as cross-listed courses; recorded the DNCE code with the MUS code as an alternative (catalog addition).",
+   "DNCE 137 appears both in the required core and in Group IV ('not already taken'); DNCE 237 appears in both Group III (Capoeira or Hawaiian and Tahitian, where a drumming course seems out of place) and Group IV.",
+   "Catalog units differ from the state file for many activity courses (e.g., DNCE 149 printed 1.0 vs 0.5 stored); catalog units recorded.",
+   "DNCE 165 and DNCE 248 are not in the closed list."
+  ]
+ },
+ "extracted_run": "38843467865"
+}

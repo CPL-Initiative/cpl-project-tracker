@@ -1,0 +1,323 @@
+{
+ "college": "Palomar College",
+ "control_number": "30605",
+ "shape": "adt",
+ "title": "Sociology",
+ "award": "A.A- T Degree",
+ "source_url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Sociology-AAT",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7641,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7641,
+    "output_tokens": 2072,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2072,
+  "output_tokens_details": {
+   "thinking_tokens": 514
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.072,
+ "ms": 16528,
+ "seconds": 16.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 21,
+   "listed": 21,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    19.0
+   ],
+   "stated": [
+    18.0,
+    19.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Behavioral Sciences  Department - Sociology - AA-T Transfer Major (18 units or more)",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Describe the sociological imagination and apply its emphasis on the interconnections between individuals and macro-level forces to a better understanding of their own lives and the society in which they live.",
+    "Compare and contrast the three main theoretical paradigms in sociology and analyze social phenomena from these different perspectives.",
+    "Evaluate the basic principles of quantitative and qualitative scientific research methods to critically assess how knowledge is defined, generated, and interpreted.",
+    "Describe the process of social interaction and the role of culture and socialization in the development of the self."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "SOCI C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 180",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 205",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 205",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A (Select 2 courses)",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "PSYC 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 105",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 135",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "AMS 200",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "MCS 200",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B (Any course not already completed from list A or one course from list B)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "SOC 115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 125",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 145",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 145",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 165",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 170",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 175",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "SOCI C1000 as printed is treated as the closed-list code SOCIC1000 (spacing difference only), so catalog_addition is false.",
+   "In Program Requirements, SOC 180 (3) or SOC 205 / PSYC 205 (4) is a nested 3.0-4.0 choice; recorded as one required entry with alternatives.",
+   "List B may also be satisfied by any List A course not already completed; List A courses are not repeated in the List B block.",
+   "SOC 165 is marked '( Draft )' in the catalog.",
+   "The 60-unit and 18-unit figures are generic ADT completion requirements, not printed as this award's degree total; degree_total left null. Cal-GETC named as the GE pattern with no units printed.",
+   "Learning Outcome(s) are printed in the page's description section for this AA-T and recorded as the program outcomes."
+  ]
+ },
+ "extracted_run": "38843467865"
+}

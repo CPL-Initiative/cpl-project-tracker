@@ -1,0 +1,3402 @@
+{
+ "college": "Palomar College",
+ "catalog_url": "https://palomar.curriqunet.com/catalog/alias/college/iq/Cover",
+ "platform": "curriqunet",
+ "catalog_year": "2026-2027",
+ "programs": 342,
+ "with_closed_list": 331,
+ "started": "2026-10-16T03:03:04Z",
+ "curriqunet": {
+  "catalog": 27,
+  "view_prefix": "https://palomar.curriqunet.com/catalog/alias/college/iq/",
+  "errors": [],
+  "sections": [
+   "Degrees and Certificates",
+   "Associate and Certificate Programs",
+   "Noncredit Certificate Programs",
+   "Baccalaureate Programs"
+  ],
+  "nodes_read": 7,
+  "calls": 14,
+  "entries": 235,
+  "stopped_at_cap": false,
+  "same_title_entries": 0,
+  "entries_read": 235
+ },
+ "pages_read": 235,
+ "banner_h1": null,
+ "loads": 720,
+ "seconds": 3268.8,
+ "found": 224,
+ "by_method": {
+  "no_closed_list": 11,
+  "not_found": 4,
+  "page_claimed": 103,
+  "sitemap_page": 224
+ },
+ "shared_pages": {
+  "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/RadioTelevision-AA-CA": [
+   "05156",
+   "22503"
+  ],
+  "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Photography-AA-CA": [
+   "05181",
+   "22551"
+  ],
+  "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/33527": [
+   "05207",
+   "16855",
+   "16856"
+  ],
+  "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ChildDevelopmentTeacher-AS-CA": [
+   "05208",
+   "18723"
+  ],
+  "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Economics-AA-CA": [
+   "05215",
+   "22574"
+  ],
+  "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/French-AA-CA": [
+   "17287",
+   "22553"
+  ],
+  "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DanceEmphasisinWorldDance-AA-CA": [
+   "31312",
+   "31370"
+  ],
+  "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DanceEmphasisinGeneralDance-AA-CA": [
+   "31315",
+   "31369"
+  ],
+  "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DanceEmphasisinEuro-WesternDance-AA-CA": [
+   "31322",
+   "31377"
+  ],
+  "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/BusinessAdministrationAS-T20-AssociateinScience-Transfer-AST": [
+   "32058",
+   "41586"
+  ],
+  "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/German-AA-CA": [
+   "36757",
+   "36758"
+  ],
+  "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Italian-AA-CA": [
+   "36766",
+   "36767"
+  ],
+  "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Japanese-AA-CA": [
+   "37476",
+   "37516"
+  ],
+  "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/SocialWorkHumanServices-AA-CA": [
+   "40047",
+   "40048"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "14584",
+   "title": "Public Works Management - Level II",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/AdministrationJusticeEmergMgmt-CA",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 10,
+    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2529,
+     "content": 2529,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "22570",
+   "title": "Public Works Management - Level II",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/AdministrationJusticeEmergMgmt-CA",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 10,
+    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2529,
+     "content": 2529,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "35404",
+   "title": "Business Information Worker",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "36802",
+   "title": "Pre-Apprenticeship",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/NoncreditPrograms/Alphabetical/Pre-Apprenticeship-CertificateCompetency",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 0,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1407,
+     "content": 1407,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "05147",
+   "title": "Biology-General",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GeneralStudiesEmphasisinScienceMathematics-AS",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/UniversityStudiesEmphasisinScientificStudies-AS",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/UniversityStudiesEmphasisinHealthFitness-AS"
+   ]
+  },
+  {
+   "control_number": "05152",
+   "title": "Advertising, Marketing, and Merchandising",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/E-Marketing-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GeneralBusiness-AS",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Accounting-AS-CA"
+   ]
+  },
+  {
+   "control_number": "05155",
+   "title": "Multimedia Journalism",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/MultimediaJournalism-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Journalism-AAT"
+   ]
+  },
+  {
+   "control_number": "05161",
+   "title": "Graphic Communications: Emphasis in Management",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GraphicCommunications-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ScreenPrinting-AS-CA"
+   ]
+  },
+  {
+   "control_number": "05176",
+   "title": "International Business",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GeneralBusiness-AS"
+   ]
+  },
+  {
+   "control_number": "05187",
+   "title": "Associate in Arts in Nursing",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GeneralStudiesEmphasisinSocialBehavioralSciences-AA"
+   ]
+  },
+  {
+   "control_number": "05222",
+   "title": "Business Management",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GeneralBusiness-AS"
+   ]
+  },
+  {
+   "control_number": "08926",
+   "title": "Graphic Communications: Emphasis in Production",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GraphicCommunications-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ScreenPrinting-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DigitalImaging-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DigitalVideo-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/MultimediaDesign-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GraphicDesignerI-CA"
+   ]
+  },
+  {
+   "control_number": "08927",
+   "title": "Auto Chassis and Drive Lines",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/AutoCollisionRepair-AS-CA"
+   ]
+  },
+  {
+   "control_number": "08928",
+   "title": "Auto Computer Controls and Electronic Tune-Up",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DieselTechnology-AS-CA"
+   ]
+  },
+  {
+   "control_number": "08930",
+   "title": "Apprenticeship-Sound and Communication Systems Installer",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Apprenticeship-SoundTechnician-AS-CA"
+   ]
+  },
+  {
+   "control_number": "08934",
+   "title": "Drafting Technology - Multimedia",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/MultimediaDesign-AS-CA"
+   ]
+  },
+  {
+   "control_number": "08940",
+   "title": "Technical Theatre",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/TheatreArts-AA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/TheatreArts-AAT"
+   ]
+  },
+  {
+   "control_number": "16602",
+   "title": "Computer Network Administration with Emphasis: Linux",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ComputerNetworkAdministrationEmphasisCisco-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ComputerNetworkAdministrationEmphasisMicrosoft-AS-CA"
+   ]
+  },
+  {
+   "control_number": "18662",
+   "title": "Computer Network Administration with Emphasis: Cisco",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ComputerNetworkAdministrationEmphasisCisco-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ComputerNetworkAdministrationEmphasisMicrosoft-AS-CA"
+   ]
+  },
+  {
+   "control_number": "18663",
+   "title": "Computer Network Administration",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ComputerNetworkAdministrationEmphasisMicrosoft-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ComputerNetworkAdministrationEmphasisCisco-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Cybersecurity-AS"
+   ]
+  },
+  {
+   "control_number": "18664",
+   "title": "Computer Network Administration with Emphasis: Linux",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ComputerNetworkAdministrationEmphasisCisco-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ComputerNetworkAdministrationEmphasisMicrosoft-AS-CA"
+   ]
+  },
+  {
+   "control_number": "18725",
+   "title": "Child Development Master Teacher: Infant/Toddler",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ChildDevelopmentTeacher-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ChildDevelopmentAdministration-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/EarlyChildhoodEducation-AST"
+   ]
+  },
+  {
+   "control_number": "18728",
+   "title": "Child Development Master Teacher: Early Inclusion",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ChildDevelopmentAdministration-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ChildDevelopmentTeacher-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/EarlyChildhoodEducation-AST"
+   ]
+  },
+  {
+   "control_number": "18729",
+   "title": "Child Development Master Teacher: Early Inclusion",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ChildDevelopmentTeacher-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ChildDevelopmentAdministration-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/EarlyChildhoodEducation-AST"
+   ]
+  },
+  {
+   "control_number": "18730",
+   "title": "Child Development: Child and Family Services",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ChildDevelopmentAdministration-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ChildDevelopmentTeacher-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/UniversityStudiesElementaryEducationPreparation-AA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/EarlyChildhoodEducation-AST"
+   ]
+  },
+  {
+   "control_number": "18731",
+   "title": "Child Development: Child and Family Services",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ChildDevelopmentTeacher-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ChildDevelopmentAdministration-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/UniversityStudiesElementaryEducationPreparation-AA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/EarlyChildhoodEducation-AST"
+   ]
+  },
+  {
+   "control_number": "18899",
+   "title": "Computer Science with Emphasis in Video Gaming",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ComputerScienceEmphasisinVideoGaming-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ComputerScience-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/UniversityStudiesEmphasisinScientificStudies-AS"
+   ]
+  },
+  {
+   "control_number": "20796",
+   "title": "Associate in Science in Nursing",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GeneralStudiesEmphasisinSocialBehavioralSciences-AA"
+   ]
+  },
+  {
+   "control_number": "22486",
+   "title": "Biology--General",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GeneralStudiesEmphasisinScienceMathematics-AS",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/UniversityStudiesEmphasisinScientificStudies-AS",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/UniversityStudiesEmphasisinHealthFitness-AS"
+   ]
+  },
+  {
+   "control_number": "22487",
+   "title": "Biology-Preprofessional",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Biology-Preprofessional-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Biology-AST",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Engineering-AS",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Geology-AS",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Geology-AST",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/UniversityStudiesEmphasisinScientificStudies-AS",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/UniversityStudiesEmphasisinHealthFitness-AS",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GeneralStudiesEmphasisinScienceMathematics-AS",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Mathematics-AS",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/NutritionDietetics-AST",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Chemistry-AS"
+   ]
+  },
+  {
+   "control_number": "22488",
+   "title": "Accounting",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Accounting-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/BusinessAdministrationAS-T20-AssociateinScience-Transfer-AST",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GeneralBusiness-AS"
+   ]
+  },
+  {
+   "control_number": "22489",
+   "title": "Business Management",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GeneralBusiness-AS"
+   ]
+  },
+  {
+   "control_number": "22490",
+   "title": "International Business",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GeneralBusiness-AS"
+   ]
+  },
+  {
+   "control_number": "22491",
+   "title": "Advertising, Marketing, and Merchandising",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/E-Marketing-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GeneralBusiness-AS",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Accounting-AS-CA"
+   ]
+  },
+  {
+   "control_number": "22496",
+   "title": "Administrative Assistant",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/AdministrativeAssistant-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GeneralBusiness-AS"
+   ]
+  },
+  {
+   "control_number": "22500",
+   "title": "Medical Office Specialist",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/MedicalOfficeSpecialist-AS-CA"
+   ]
+  },
+  {
+   "control_number": "22505",
+   "title": "Digital Video",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/RadioTelevision-AA-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DigitalVideo-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/MultimediaDesign-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/NewMediaCompositingAuthoringDistribution-AS-CA"
+   ]
+  },
+  {
+   "control_number": "22506",
+   "title": "Multimedia Design",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/MultimediaDesign-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DigitalVideo-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/NewMediaCompositingAuthoringDistribution-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DigitalImaging-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GraphicCommunications-AS-CA"
+   ]
+  },
+  {
+   "control_number": "22507",
+   "title": "New Media Compositing, Authoring, and Distribution",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/NewMediaCompositingAuthoringDistribution-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DigitalVideo-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/MultimediaDesign-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DigitalImaging-AS-CA"
+   ]
+  },
+  {
+   "control_number": "22509",
+   "title": "Interactive Media Design: Emphasis in 3D Modeling and Animation",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/InteractiveMediaDesignEmphasisin3DModelingAnimation-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GraphicDesign-AS",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/MultimediaDesign-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/NewMediaCompositingAuthoringDistribution-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Illustration-AS",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DigitalVideo-AS-CA"
+   ]
+  },
+  {
+   "control_number": "22510",
+   "title": "Graphic Communications",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GraphicCommunications-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DigitalImaging-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/MultimediaDesign-AS-CA"
+   ]
+  },
+  {
+   "control_number": "22511",
+   "title": "Digital Imaging",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DigitalImaging-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DigitalVideo-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GraphicCommunications-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/MultimediaDesign-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/NewMediaCompositingAuthoringDistribution-AS-CA"
+   ]
+  },
+  {
+   "control_number": "22512",
+   "title": "Web: Front End Design",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/WebFrontEndDesign-AS-CA"
+   ]
+  },
+  {
+   "control_number": "22513",
+   "title": "Information Technology",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/InformationTechnology-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/CISDataAnalytics-AS-CA"
+   ]
+  },
+  {
+   "control_number": "22514",
+   "title": "Computer Science",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ComputerScience-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ComputerScienceEmphasisinVideoGaming-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DataScience-AS",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/UniversityStudiesEmphasisinScientificStudies-AS"
+   ]
+  },
+  {
+   "control_number": "22518",
+   "title": "American Sign Language/English Translation & Interpreting Studies",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/AmericanSignLanguageEnglishTranslationInterpretingStudies-AS-CA"
+   ]
+  },
+  {
+   "control_number": "22521",
+   "title": "Graphic Communications: Emphasis in Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GraphicCommunications-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ScreenPrinting-AS-CA"
+   ]
+  },
+  {
+   "control_number": "22522",
+   "title": "Graphic Communications: Emphasis in Production",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GraphicDesignerI-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GraphicCommunications-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ScreenPrinting-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DigitalImaging-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DigitalVideo-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/MultimediaDesign-AS-CA"
+   ]
+  },
+  {
+   "control_number": "22523",
+   "title": "Diesel Technology",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DieselTechnology-AS-CA"
+   ]
+  },
+  {
+   "control_number": "22524",
+   "title": "Auto Chassis and Drive Lines",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/AutoCollisionRepair-AS-CA"
+   ]
+  },
+  {
+   "control_number": "22525",
+   "title": "Auto Computer Controls and Electronic Tune-Up",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DieselTechnology-AS-CA"
+   ]
+  },
+  {
+   "control_number": "22526",
+   "title": "Auto Mechanics-General",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/33523"
+   ]
+  },
+  {
+   "control_number": "22527",
+   "title": "Auto Collision Repair",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/AutoCollisionRepair-AS-CA"
+   ]
+  },
+  {
+   "control_number": "22528",
+   "title": "Apprenticeship-Carpentry",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Apprenticeship-Carpentry-AS-CA"
+   ]
+  },
+  {
+   "control_number": "22530",
+   "title": "Apprenticeship-Inside Wireman",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Apprenticeship-InsideWireman-AS-CA"
+   ]
+  },
+  {
+   "control_number": "22531",
+   "title": "Apprenticeship-Sound and Communication Systems Installer",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Apprenticeship-SoundTechnician-AS-CA"
+   ]
+  },
+  {
+   "control_number": "22533",
+   "title": "Apprenticeship-Sound Technician",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Apprenticeship-SoundTechnician-AS-CA"
+   ]
+  },
+  {
+   "control_number": "22535",
+   "title": "Cabinetmaking and Millwork",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/CabinetmakingMillwork-AS-CA"
+   ]
+  },
+  {
+   "control_number": "22537",
+   "title": "Apprenticeship-Drywall/Lather",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Apprenticeship-DrywallLather-AS-CA"
+   ]
+  },
+  {
+   "control_number": "22538",
+   "title": "Apprenticeship-Plasterer",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Apprenticeship-Plasterer-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Apprenticeship-DrywallLather-AS-CA"
+   ]
+  },
+  {
+   "control_number": "22539",
+   "title": "Apprenticeship-Acoustical Installer",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Apprenticeship-AcousticalInstaller-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Apprenticeship-DrywallLather-AS-CA"
+   ]
+  },
+  {
+   "control_number": "22540",
+   "title": "Drafting and Design CADD/CAM Technology",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DraftingDesignCADDCAMTechnology-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/MechanicalEngineeringDraftingDesignTechnology-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/UniversityStudiesEmphasisinScientificStudies-AS"
+   ]
+  },
+  {
+   "control_number": "22541",
+   "title": "Drafting Technology - Multimedia",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/MultimediaDesign-AS-CA"
+   ]
+  },
+  {
+   "control_number": "22542",
+   "title": "Mechanical Engineering Drafting and Design Technology",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/MechanicalEngineeringDraftingDesignTechnology-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DraftingDesignCADDCAMTechnology-AS-CA"
+   ]
+  },
+  {
+   "control_number": "22543",
+   "title": "Architectural Building Information Modeling, B.I.M",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/InteriorDesign-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ArchitecturalDrafting-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/InteriorDesign-AS"
+   ]
+  },
+  {
+   "control_number": "22544",
+   "title": "Electrical Engineering Drafting and Design Technology",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ElectricalEngineeringDraftingDesignTechnology-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/MechanicalEngineeringDraftingDesignTechnology-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/CompositesTechnology-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/MachiningTechnology-AS-CA"
+   ]
+  },
+  {
+   "control_number": "22545",
+   "title": "Apprenticeship-Sheet Metal",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Apprenticeship-SheetMetal-AS-CA"
+   ]
+  },
+  {
+   "control_number": "22546",
+   "title": "Welding Technology",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/WeldingTechnology-AS-CA"
+   ]
+  },
+  {
+   "control_number": "22548",
+   "title": "Wastewater Technology Education",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/WastewaterTechnologyEducation-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/WaterTechnologyEducation-AS-CA"
+   ]
+  },
+  {
+   "control_number": "22552",
+   "title": "Screen Printing",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ScreenPrinting-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GraphicCommunications-AS-CA"
+   ]
+  },
+  {
+   "control_number": "22556",
+   "title": "Registered Dental Assisting",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/RegisteredDentalAssisting-AS-CA"
+   ]
+  },
+  {
+   "control_number": "22557",
+   "title": "Paramedic Training",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ParamedicTraining-AS-CA"
+   ]
+  },
+  {
+   "control_number": "22562",
+   "title": "Child Development Teacher",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ChildDevelopmentAdministration-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ChildDevelopmentTeacher-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/EarlyChildhoodEducation-AST"
+   ]
+  },
+  {
+   "control_number": "22565",
+   "title": "Library and Information Technology",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/LibraryInformationTechnology-AS-CA"
+   ]
+  },
+  {
+   "control_number": "22571",
+   "title": "Alcohol and Other Drug Studies",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/SocialWorkHumanServices-AA-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/AlcoholOtherDrugStudies-AS-CA"
+   ]
+  },
+  {
+   "control_number": "22572",
+   "title": "Fire Technology - General",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/FireTechnology-General-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/FireTechnology-EmergencyManagement-AS-CA"
+   ]
+  },
+  {
+   "control_number": "22573",
+   "title": "Fire Technology - Emergency Management",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/FireTechnology-EmergencyManagement-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/FireTechnology-General-AS-CA"
+   ]
+  },
+  {
+   "control_number": "30040",
+   "title": "Advanced Geographic Information Systems",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/AdvancedGeographicInformationSystems-AS-CA"
+   ]
+  },
+  {
+   "control_number": "30573",
+   "title": "Architecture",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Architecture-AS-CA"
+   ]
+  },
+  {
+   "control_number": "31228",
+   "title": "E-Marketing",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/E-Marketing-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GeneralBusiness-AS"
+   ]
+  },
+  {
+   "control_number": "31621",
+   "title": "Lathe Turning Technology",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/LatheTurningTechnology-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/WoodworkingSkillsTechnology-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/VeneeringTechnology-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/CaseFurnitureConstructionManufacturing-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/TableChairManufacturing-AS-CA"
+   ]
+  },
+  {
+   "control_number": "31631",
+   "title": "Carving Technology",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/VeneeringTechnology-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/WoodworkingSkillsTechnology-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/CaseFurnitureConstructionManufacturing-AS-CA"
+   ]
+  },
+  {
+   "control_number": "31639",
+   "title": "Case Furniture Construction/Manufacturing",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/CaseFurnitureConstructionManufacturing-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/VeneeringTechnology-AS-CA"
+   ]
+  },
+  {
+   "control_number": "31640",
+   "title": "Carving Technology",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/VeneeringTechnology-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/WoodworkingSkillsTechnology-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/CaseFurnitureConstructionManufacturing-AS-CA"
+   ]
+  },
+  {
+   "control_number": "31642",
+   "title": "Table and Chair Manufacturing",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/TableChairManufacturing-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/WoodworkingSkillsTechnology-AS-CA"
+   ]
+  },
+  {
+   "control_number": "31643",
+   "title": "Guitar Making Technology",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GuitarMakingTechnology-AS-CA"
+   ]
+  },
+  {
+   "control_number": "31646",
+   "title": "Veneering Technology",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/VeneeringTechnology-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/WoodworkingSkillsTechnology-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/CaseFurnitureConstructionManufacturing-AS-CA"
+   ]
+  },
+  {
+   "control_number": "31649",
+   "title": "Woodworking Skills Technology",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/WoodworkingSkillsTechnology-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/VeneeringTechnology-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/TableChairManufacturing-AS-CA"
+   ]
+  },
+  {
+   "control_number": "32325",
+   "title": "Fashion:  Buying and Management",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/FashionMerchandising-AS-CA"
+   ]
+  },
+  {
+   "control_number": "32548",
+   "title": "Fashion: Visual Merchandising",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/FashionVisualMerchandising-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/FashionMerchandising-AS-CA"
+   ]
+  },
+  {
+   "control_number": "32601",
+   "title": "Fashion Merchandising",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/FashionMerchandising-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/FashionVisualMerchandising-AS-CA"
+   ]
+  },
+  {
+   "control_number": "32787",
+   "title": "Fashion:  Buying and Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/FashionMerchandising-AS-CA"
+   ]
+  },
+  {
+   "control_number": "33248",
+   "title": "Fashion Design",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/FashionDesign-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/FashionMerchandising-AS-CA"
+   ]
+  },
+  {
+   "control_number": "33767",
+   "title": "CIS: Data Analytics",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/CISDataAnalytics-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DataScience-AS",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/InformationTechnology-AS-CA"
+   ]
+  },
+  {
+   "control_number": "33775",
+   "title": "Management Information Systems",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ManagementInformationSystems-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/BusinessAdministrationAS-T20-AssociateinScience-Transfer-AST"
+   ]
+  },
+  {
+   "control_number": "35879",
+   "title": "Web Development",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/InformationTechnology-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/AdvancedGeographicInformationSystems-AS-CA"
+   ]
+  },
+  {
+   "control_number": "35926",
+   "title": "Web Design and Development",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/WebFrontEndDesign-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/E-Marketing-AS-CA"
+   ]
+  },
+  {
+   "control_number": "36012",
+   "title": "Web Design and Development",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/WebFrontEndDesign-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/E-Marketing-AS-CA"
+   ]
+  },
+  {
+   "control_number": "36764",
+   "title": "Apprenticeship-Intelligent Transportation Systems",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Apprenticeship-IntelligentTransportationSystems-AS-CA"
+   ]
+  },
+  {
+   "control_number": "39740",
+   "title": "Military Leadership",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/MilitaryLeadership-AS-CA"
+   ]
+  },
+  {
+   "control_number": "39851",
+   "title": "Pre-Allied Health",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Pre-AlliedHealth-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/UniversityStudiesEmphasisinHealthFitness-AS",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/UniversityStudiesEmphasisinScientificStudies-AS",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GeneralStudiesEmphasisinScienceMathematics-AS",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Kinesiology-AA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/UniversityStudiesElementaryEducationPreparation-AA"
+   ]
+  },
+  {
+   "control_number": "40045",
+   "title": "Machining Technology",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/QualityControlInspectionTechnician-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/MachiningTechnology-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/CompositesTechnology-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ElectricalEngineeringDraftingDesignTechnology-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/MechanicalEngineeringDraftingDesignTechnology-AS-CA"
+   ]
+  },
+  {
+   "control_number": "40712",
+   "title": "Child Development Master Teacher: Preschool",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ChildDevelopmentTeacher-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ChildDevelopmentAdministration-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/EarlyChildhoodEducation-AST"
+   ]
+  },
+  {
+   "control_number": "40775",
+   "title": "Child Development Master Teacher: Preschool",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ChildDevelopmentAdministration-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ChildDevelopmentTeacher-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/EarlyChildhoodEducation-AST"
+   ]
+  },
+  {
+   "control_number": "43101",
+   "title": "Foundations of Elementary Education",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ChildDevelopmentAdministration-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/UniversityStudiesElementaryEducationPreparation-AA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/EarlyChildhoodEducation-AST",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ChildDevelopmentTeacher-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/UniversityStudiesEmphasisinSocialSciences-AA"
+   ]
+  },
+  {
+   "control_number": "43518",
+   "title": "Composites Technology",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/CompositesTechnology-AS-CA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/MachiningTechnology-AS-CA"
+   ]
+  },
+  {
+   "control_number": "43519",
+   "title": "Medium/ Heavy Duty Zero Emissions Vehicle Technologies",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/MediumHeavyDutyZeroEmissionsVehicleTechnologies-ASCA",
+    "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DieselTechnology-AS-CA"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 8,
+  "0.8-1.0": 18,
+  "1.0": 198
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 224,
+  "list": [
+   {
+    "control_number": "05146",
+    "title": "Apprenticeship-Sheet Metal",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Apprenticeship-SheetMetal-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05150",
+    "title": "Accounting",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Accounting-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05153",
+    "title": "Real Estate Broker License Preparation",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/RealEstateBrokerLicensePreparation-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05154",
+    "title": "Administrative Assistant",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/AdministrativeAssistant-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05156",
+    "title": "Radio and Television",
+    "award": "A.A. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/RadioTelevision-AA-CA",
+    "coverage": 0.962,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05157",
+    "title": "Computer Science",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ComputerScience-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05158",
+    "title": "Kinesiology",
+    "award": "A.A. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Kinesiology-AA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05159",
+    "title": "Engineering",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Engineering-AS",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05162",
+    "title": "Diesel Technology",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DieselTechnology-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05163",
+    "title": "Auto Mechanics-General",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/33523",
+    "coverage": 0.583,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05164",
+    "title": "Auto Collision Repair",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/AutoCollisionRepair-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05167",
+    "title": "Cabinetmaking and Millwork",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/CabinetmakingMillwork-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05168",
+    "title": "Architectural Building Information Modeling, B.I.M",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ArchitecturalDrafting-AS-CA",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05169",
+    "title": "Welding Technology",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/WeldingTechnology-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05173",
+    "title": "Wastewater Technology Education",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/WastewaterTechnologyEducation-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05174",
+    "title": "Pictorial Arts: Painting",
+    "award": "A.A. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/PictorialArtsPainting-AA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05175",
+    "title": "Music",
+    "award": "A.A. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Music-AA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05177",
+    "title": "Theatre Arts",
+    "award": "A.A. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/TheatreArts-AA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05181",
+    "title": "Photography",
+    "award": "A.A. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Photography-AA-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05189",
+    "title": "Registered Dental Assisting",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/RegisteredDentalAssisting-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05191",
+    "title": "Interior Design",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/InteriorDesign-AS",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05192",
+    "title": "Fashion Design",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/FashionDesign-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05195",
+    "title": "Graphic Communications",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GraphicCommunications-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05196",
+    "title": "Speech Communication",
+    "award": "A.A. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/SpeechCommunication-AA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05198",
+    "title": "Library and Information Technology",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/LibraryInformationTechnology-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05199",
+    "title": "Mathematics",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Mathematics-AS",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05201",
+    "title": "Chemistry",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Chemistry-AS",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05203",
+    "title": "Geology",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Geology-AS",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05207",
+    "title": "Administration of Justice-Law Enforcement",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/33527",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05208",
+    "title": "Child Development Teacher",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ChildDevelopmentTeacher-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05209",
+    "title": "American Sign Language/English Translation & Interpreting Studies",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/AmericanSignLanguageEnglishTranslationInterpretingStudies-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05211",
+    "title": "Fire Technology - General",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/FireTechnology-General-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05213",
+    "title": "American Indian Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/AmericanIndianStudies-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05214",
+    "title": "Archaeology",
+    "award": "A.A. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Archaeology-AA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05215",
+    "title": "Economics",
+    "award": "A.A. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Economics-AA-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08910",
+    "title": "Biology-Preprofessional",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Biology-Preprofessional-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08911",
+    "title": "General Business",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GeneralBusiness-AS",
+    "coverage": 0.963,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08918",
+    "title": "Medical Office Specialist",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/MedicalOfficeSpecialist-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08921",
+    "title": "Cinema Studies",
+    "award": "A.A. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/CinemaStudies-AA",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08922",
+    "title": "Information Technology",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/InformationTechnology-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08923",
+    "title": "Adult Fitness and Health",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/AdultFitnessHealth-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08929",
+    "title": "Apprenticeship-Carpentry",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Apprenticeship-Carpentry-AS-CA",
+    "coverage": 0.985,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08933",
+    "title": "Drafting and Design CADD/CAM Technology",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DraftingDesignCADDCAMTechnology-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08935",
+    "title": "Mechanical Engineering Drafting and Design Technology",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/MechanicalEngineeringDraftingDesignTechnology-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08936",
+    "title": "Electrical Engineering Drafting and Design Technology",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ElectricalEngineeringDraftingDesignTechnology-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08937",
+    "title": "Water Technology Education",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/WaterTechnologyEducation-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08938",
+    "title": "Three-Dimensional Arts: Sculpture",
+    "award": "A.A. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Three-DimensionalArtsSculpture-AA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08939",
+    "title": "Three-Dimensional Arts: Ceramics",
+    "award": "A.A. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Three-DimensionalArtsCeramics-AA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08941",
+    "title": "Three-Dimensional Arts: Jewelry and Metalsmithing",
+    "award": "A.A. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Three-DimensionalArts-JewelryMetalsmithing-AA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08942",
+    "title": "Illustration",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Illustration-AS",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08943",
+    "title": "Graphic Design",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GraphicDesign-AS",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08944",
+    "title": "Screen Printing",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ScreenPrinting-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08945",
+    "title": "Interactive Media Design: Emphasis in 3D Modeling and Animation",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/InteractiveMediaDesignEmphasisin3DModelingAnimation-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08947",
+    "title": "Paramedic Training",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ParamedicTraining-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08949",
+    "title": "Fashion Merchandising",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/FashionMerchandising-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08959",
+    "title": "Gender, Sexuality and Women's Studies",
+    "award": "A.A. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GenderWomen-sStudies-AA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10875",
+    "title": "Three-Dimensional Arts: Crafts",
+    "award": "A.A. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Three-DimensionalArtsCrafts-AA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10876",
+    "title": "Three-Dimensional Arts: Glass",
+    "award": "A.A. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Three-DimensionalArtsGlass-AA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10883",
+    "title": "Apprenticeship-Drywall/Lather",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Apprenticeship-DrywallLather-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10886",
+    "title": "Multimedia Design",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/MultimediaDesign-AS-CA",
+    "coverage": 0.947,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10887",
+    "title": "Archaeological Field Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ArchaeologicalFieldTechnician-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10888",
+    "title": "Archaeological Surveyor and Lab Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Anthropology-AAT",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12001",
+    "title": "Digital Imaging",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DigitalImaging-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12012",
+    "title": "Web: Front End Design",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/WebFrontEndDesign-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12060",
+    "title": "General Studies: Emphasis in Arts and Humanities",
+    "award": "A.A. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GeneralStudiesEmphasisinArtsHumanities-AA",
+    "coverage": 0.992,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12288",
+    "title": "Retail Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/RetailManagement-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12728",
+    "title": "Digital Video",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DigitalVideo-AS-CA",
+    "coverage": 0.962,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "14779",
+    "title": "General Studies: Emphasis in Science and Mathematics",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GeneralStudiesEmphasisinScienceMathematics-AS",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "14780",
+    "title": "General Studies: Emphasis in Social and Behavioral Sciences",
+    "award": "A.A. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GeneralStudiesEmphasisinSocialBehavioralSciences-AA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15469",
+    "title": "New Media Compositing, Authoring, and Distribution",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/NewMediaCompositingAuthoringDistribution-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15493",
+    "title": "Apprenticeship-Sound Technician",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Apprenticeship-SoundTechnician-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16603",
+    "title": "Computer Network Administration with Emphasis: Cisco",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ComputerNetworkAdministrationEmphasisCisco-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16604",
+    "title": "Computer Network Administration",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ComputerNetworkAdministrationEmphasisMicrosoft-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16648",
+    "title": "English",
+    "award": "A.A. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/English-AA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16854",
+    "title": "Administration of Justice- General",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/AdministrationJustice-General-AS",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16855",
+    "title": "Administration of Justice- Homeland Security",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/33527",
+    "coverage": 0.545,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16856",
+    "title": "Administration of Justice- Investigations",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/33527",
+    "coverage": 0.778,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16857",
+    "title": "Fire Technology - Emergency Management",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/FireTechnology-EmergencyManagement-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16889",
+    "title": "Apprenticeship-Acoustical Installer",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Apprenticeship-AcousticalInstaller-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16969",
+    "title": "Apprenticeship-Inside Wireman",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Apprenticeship-InsideWireman-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17287",
+    "title": "French",
+    "award": "A.A. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/French-AA-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17289",
+    "title": "Alcohol and Other Drug Studies",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/AlcoholOtherDrugStudies-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17591",
+    "title": "Apprenticeship-Plasterer",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Apprenticeship-Plasterer-AS-CA",
+    "coverage": 0.679,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18722",
+    "title": "Child Development: Administration",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ChildDevelopmentAdministration-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18723",
+    "title": "Child Development: Administration",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ChildDevelopmentTeacher-AS-CA",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18724",
+    "title": "Child Development: Infant/Toddler",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ChildDevelopmentMasterTeacherInfantToddler-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18900",
+    "title": "Computer Science with Emphasis in Video Gaming",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ComputerScienceEmphasisinVideoGaming-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19779",
+    "title": "University Studies: Elementary Education Preparation",
+    "award": "A.A. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/UniversityStudiesElementaryEducationPreparation-AA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19780",
+    "title": "University Studies: Emphasis in Arts and Humanities",
+    "award": "A.A. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/UniversityStudiesEmphasisinArtsHumanities-AA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19781",
+    "title": "University Studies: Emphasis in Health and Fitness",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/UniversityStudiesEmphasisinHealthFitness-AS",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19783",
+    "title": "University Studies: Emphasis in Scientific Studies",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/UniversityStudiesEmphasisinScientificStudies-AS",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19785",
+    "title": "University Studies: Emphasis in Social Sciences",
+    "award": "A.A. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/UniversityStudiesEmphasisinSocialSciences-AA",
+    "coverage": 0.981,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22493",
+    "title": "Real Estate Broker License Preparation",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/RealEstateSalespersonLicensePreparation-CP",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22502",
+    "title": "Multimedia Journalism",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/MultimediaJournalism-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22503",
+    "title": "Radio and Television",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/RadioTelevision-AA-CA",
+    "coverage": 0.962,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22551",
+    "title": "Photography",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Photography-AA-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22553",
+    "title": "French",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/French-AA-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22559",
+    "title": "Interior Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/InteriorDesign-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22567",
+    "title": "Astronomy",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Astronomy-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22574",
+    "title": "Economics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Economics-AA-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24044",
+    "title": "English as a Second Language",
+    "award": "Noncredit program",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/NoncreditPrograms/Alphabetical/EnglishasaSecondLanguage-CertificateCompletion",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24440",
+    "title": "Adult Basic Education",
+    "award": "Noncredit program",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/NoncreditPrograms/Alphabetical/AdultBasicEducation-CertificateCompletion",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30041",
+    "title": "Advanced Geographic Information Systems",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/AdvancedGeographicInformationSystems-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30574",
+    "title": "Architecture",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Architecture-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30605",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Sociology-AAT",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30736",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Psychology-AAT",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31243",
+    "title": "E-Marketing",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/E-Marketing-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31312",
+    "title": "Dance: Emphasis in World Dance",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DanceEmphasisinWorldDance-AA-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31315",
+    "title": "Dance: Emphasis in General Dance",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DanceEmphasisinGeneralDance-AA-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31322",
+    "title": "Dance: Emphasis in Euro-Western Dance",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DanceEmphasisinEuro-WesternDance-AA-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31369",
+    "title": "Dance: Emphasis in General Dance",
+    "award": "A.A. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DanceEmphasisinGeneralDance-AA-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31370",
+    "title": "Dance: Emphasis in World Dance",
+    "award": "A.A. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DanceEmphasisinWorldDance-AA-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31377",
+    "title": "Dance: Emphasis in Euro-Western Dance",
+    "award": "A.A. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DanceEmphasisinEuro-WesternDance-AA-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31383",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/33486",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31622",
+    "title": "Lathe Turning Technology",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/LatheTurningTechnology-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31627",
+    "title": "Woodworking Skills Technology",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/WoodworkingSkillsTechnology-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31630",
+    "title": "Case Furniture Construction/Manufacturing",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/CaseFurnitureConstructionManufacturing-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31632",
+    "title": "Table and Chair Manufacturing",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/TableChairManufacturing-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31633",
+    "title": "Guitar Making Technology",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GuitarMakingTechnology-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31634",
+    "title": "Veneering Technology",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/VeneeringTechnology-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31979",
+    "title": "Fire Academy",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/FireAcademy-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32058",
+    "title": "Business Administration",
+    "award": "A.S. T Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/BusinessAdministrationAS-T20-AssociateinScience-Transfer-AST",
+    "coverage": 0.846,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32059",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/EarlyChildhoodEducation-AST",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32070",
+    "title": "Journalism",
+    "award": "A.A- T Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Journalism-AAT",
+    "coverage": 0.778,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32310",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/TheatreArts-AAT",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32326",
+    "title": "Fashion: Visual Merchandising",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/FashionVisualMerchandising-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32437",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Geology-AST",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32535",
+    "title": "Geography",
+    "award": "A.A- T Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Geography-AAT",
+    "coverage": 0.909,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32940",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/AdministrationJustice-AST",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32969",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/English-AAT",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33389",
+    "title": "Philosophy",
+    "award": "A.A- T Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Philosophy-AAT",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33736",
+    "title": "Woodworking Fundamentals",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/WoodworkingFundamentals-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33808",
+    "title": "Management Information Systems",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ManagementInformationSystems-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33826",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Spanish-AAT",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33835",
+    "title": "CIS: Data Analytics",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/CISDataAnalytics-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33884",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Kinesiology-AAT",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35206",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Economics-AAT",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35238",
+    "title": "Social Media",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/SocialMedia-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35243",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/StudioArts-AAT",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35247",
+    "title": "Communication Studies",
+    "award": "A.A- T Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/CommunicationStudies2-0_AAT",
+    "coverage": 0.562,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35390",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ArtHistory-AAT",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35560",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Biology-AST",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35609",
+    "title": "Music",
+    "award": "A.A- T Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Music-AAT",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35851",
+    "title": "Child and Adolescent Development",
+    "award": "A.A- T Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ChildAdolescentDevelopment-AAT",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35889",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/NutritionDietetics-AST",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36200",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/History-AAT",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36232",
+    "title": "Drone Operations",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DroneOperations-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36577",
+    "title": "Air Conditioning/Heating/Refrigeration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/AirConditioningHeatingRefrigerationEntryEmploymentReady-CP",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36578",
+    "title": "Air Conditioning/Heating/Refrigeration",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/AirConditioningHeatingRefrigeration-AS",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36757",
+    "title": "German",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/German-AA-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36758",
+    "title": "German",
+    "award": "A.A. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/German-AA-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36765",
+    "title": "Apprenticeship-Intelligent Transportation Systems",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Apprenticeship-IntelligentTransportationSystems-AS-CA",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36766",
+    "title": "Italian",
+    "award": "A.A. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Italian-AA-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36767",
+    "title": "Italian",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Italian-AA-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36779",
+    "title": "Drone Applications and Technologies",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DroneApplicationsTechnologies-AS",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36862",
+    "title": "Spanish",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Spanish-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36886",
+    "title": "Medical Professions Preparation",
+    "award": "Noncredit program",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/NoncreditPrograms/Alphabetical/MedicalProfessionsPrep-CertificateCompetency",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37176",
+    "title": "Deaf Studies",
+    "award": "A.A. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DeafStudies-AA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37197",
+    "title": "Film, Television, and Electronic Media",
+    "award": "A.S. T Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/FilmTelevisionElectronicMedia-AST",
+    "coverage": 0.955,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37466",
+    "title": "Cybersecurity",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Cybersecurity-AS",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37476",
+    "title": "Japanese",
+    "award": "A.A. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Japanese-AA-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37516",
+    "title": "Japanese",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Japanese-AA-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37836",
+    "title": "Project Management",
+    "award": "Noncredit program",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/NoncreditPrograms/Alphabetical/ProjectManagement-CertificateCompetency",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37894",
+    "title": "Musical Theatre Preparation",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/MusicalTheatrePreparation-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38596",
+    "title": "Law, Public Policy and Society",
+    "award": "A.A- T Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/LawPublicPolicySociety-AAT",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39034",
+    "title": "Computer Skills for ESL",
+    "award": "Noncredit program",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/NoncreditPrograms/Alphabetical/ComputerSkillsESL-CertificateCompletion",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39035",
+    "title": "Speaking Skills for ESL",
+    "award": "Noncredit program",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/NoncreditPrograms/Alphabetical/SpeakingSkillsESL-CertificateCompletion",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39036",
+    "title": "Grammar Skills for ESL",
+    "award": "Noncredit program",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/NoncreditPrograms/Alphabetical/GrammarSkillsESL-CertificateCompletion",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39195",
+    "title": "College Preparation",
+    "award": "Noncredit program",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/NoncreditPrograms/Alphabetical/CollegePreparation-CertificateCompetency",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39437",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/PoliticalScience-AAT",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39487",
+    "title": "Conversation Skills for ESL",
+    "award": "Noncredit program",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/NoncreditPrograms/Alphabetical/ConversationSkillsESL-CertificateCompletion",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39672",
+    "title": "Environmental Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/EnvironmentalStudies-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39739",
+    "title": "Military Leadership",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/MilitaryLeadership-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39850",
+    "title": "Pre-Allied Health",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Pre-AlliedHealth-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40023",
+    "title": "Social Justice Studies, Chicano Studies",
+    "award": "A.A- T Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/SocialJusticeStudiesChicanaChicanoStudies-AAT",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40043",
+    "title": "Entry Level MasterCAM Programmer",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/EntryLevelMasterCAMProgrammer-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40044",
+    "title": "Machining Technology",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/MachiningTechnology-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40046",
+    "title": "Quality Control/Inspection Technician",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/QualityControlInspectionTechnician-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40047",
+    "title": "Social Work and Human Services",
+    "award": "A.A. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/SocialWorkHumanServices-AA-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40048",
+    "title": "Social Work and Human Services",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/SocialWorkHumanServices-AA-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40049",
+    "title": "Child Development: Preschool",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ChildDevelopmentAssociateTeacher-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40182",
+    "title": "Social Justice Studies, LGBTQ Studies",
+    "award": "A.A- T Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/SocialJusticeWomenGenderSexualityStudies-AAT",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40345",
+    "title": "Child Development: School Age",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ChildDevelopmentSchoolAgeAssistant-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40572",
+    "title": "Basic Dance",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/BasicDanceCertificate-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40622",
+    "title": "SolidWorks Drafting and Design",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/33538",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40687",
+    "title": "Creo Parametric Drafting and Design",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/33535",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40688",
+    "title": "AutoCAD Drafting and Design",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/AutoCADDraftingDesign-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40914",
+    "title": "Getting Started with Drone Careers and Drone Applications in Geomatics",
+    "award": "Noncredit program",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/NoncreditPrograms/Alphabetical/33517",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41052",
+    "title": "Cyber Defense Infrastructure Support Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/CyberDefenseInfrastructureSupportSpecialist-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41060",
+    "title": "Cybersecurity Specialist",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/CybersecuritySpecialist-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41065",
+    "title": "Cloud Computing and Virtualization",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/CloudComputingVirtualization-AS",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41066",
+    "title": "Cloud Computing Technician",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/CloudComputingTechnician-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41094",
+    "title": "Web Designer I",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/WebDesignerI-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41128",
+    "title": "Cinema Studies",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/CinemaStudies-CA",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41190",
+    "title": "Advertising and Marketing",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/AdvertisingMarketing-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41192",
+    "title": "Journalism",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/JournalismBlogging-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41194",
+    "title": "Public Relations",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/PublicRelations-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41197",
+    "title": "Business Management",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/BusinessManagement-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41206",
+    "title": "Small Business Entrepreneurship",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/SmallBusinessEntrepreneurship-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41207",
+    "title": "Drone Operator I",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DroneOperatorI-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41244",
+    "title": "Geographic Information Systems",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GeographicInformationSystems-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41586",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/BusinessAdministrationAS-T20-AssociateinScience-Transfer-AST",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41806",
+    "title": "International Business",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/InternationalBusiness-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41808",
+    "title": "Biliteracy",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Biliteracy-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42015",
+    "title": "Reading Skills for ESL",
+    "award": "Noncredit program",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/NoncreditPrograms/Alphabetical/ReadingSkillsESLCertificateCompletion-CertificateCompletion",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42250",
+    "title": "Screen Printer I",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/ScreenPrinterI-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42251",
+    "title": "Graphic Designer I",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GraphicDesignerI-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42283",
+    "title": "Multimedia Production I",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/MultimediaProductionI-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42697",
+    "title": "Global Studies",
+    "award": "A.A- T Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GlobalStudies-AAT",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43516",
+    "title": "Coaching",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Coaching-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43517",
+    "title": "Composites Technology",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/CompositesTechnology-AS-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43522",
+    "title": "Medium/ Heavy Duty Zero Emissions Vehicle Technologies",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/MediumHeavyDutyZeroEmissionsVehicleTechnologies-ASCA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44084",
+    "title": "Bookkeeping/Accounting Clerk",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/BookkeepingAccountingClerk-CP",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44150",
+    "title": "ESL Work Readiness",
+    "award": "Noncredit program",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/NoncreditPrograms/Alphabetical/ESLWorkReadiness-NC",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44461",
+    "title": "Data Science",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/DataScience-AS",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44988",
+    "title": "Glassblowing",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Glassblowing-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44991",
+    "title": "Pathway to Law",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/PathwayLaw-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45009",
+    "title": "Adult Education Workforce Preparation",
+    "award": "Noncredit program",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/NoncreditPrograms/Alphabetical/AdultEducationWorkforcePreparation-NC",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45389",
+    "title": "Regular Basic Course: Police Academy Module III",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/PoliceAcademyModuleIII-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45390",
+    "title": "Regular Basic Course: Police Academy Module II",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/PoliceAcademyModuleII-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45403",
+    "title": "Administration of Justice",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/AdministrationJustice-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45405",
+    "title": "Regular Basic Course: Police Academy Module I",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/PoliceAcademyModuleI-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45419",
+    "title": "Administration of Justice: Emergency Management for Public Safety Personnel",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/AdministrationJusticeEmergMgmt-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45421",
+    "title": "Administration of Justice: Modern Policing",
+    "award": "A.S. Degree",
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/AdministrationJusticeModernPolicing-CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "38843467865"
+}

@@ -1,0 +1,195 @@
+{
+ "college": "Palomar College",
+ "control_number": "16855",
+ "shape": "degree",
+ "title": "Administration of Justice- Homeland Security",
+ "award": "A.S. Degree",
+ "source_url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/33527",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7094,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7094,
+    "output_tokens": 882,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 882,
+  "output_tokens_details": {
+   "thinking_tokens": 231
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04602,
+ "ms": 7928,
+ "seconds": 8.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 11,
+   "share": 0.0,
+   "missing": [
+    "AJ100",
+    "AJ101",
+    "AJ102",
+    "AJ103",
+    "AJ104",
+    "AJ106",
+    "AJ151",
+    "AJ152",
+    "AJ153",
+    "AJ180",
+    "FIRE131"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AJ 100",
+    "why": "no Homeland Security section in the text; named only in the Forensic Technology A.S. section"
+   },
+   {
+    "code": "AJ 101",
+    "why": "no Homeland Security section in the text; named only in the Forensic Technology A.S. section"
+   },
+   {
+    "code": "AJ 102",
+    "why": "no Homeland Security section in the text; named only in the Forensic Technology A.S. section"
+   },
+   {
+    "code": "AJ 103",
+    "why": "no Homeland Security section in the text; named only in the Forensic Technology A.S. section"
+   },
+   {
+    "code": "AJ 104",
+    "why": "no Homeland Security section in the text; named only in the Forensic Technology A.S. section"
+   },
+   {
+    "code": "AJ 106",
+    "why": "no Homeland Security section in the text; named only in the Forensic Technology A.S. section"
+   },
+   {
+    "code": "AJ 151",
+    "why": "not in the text"
+   },
+   {
+    "code": "AJ 152",
+    "why": "not in the text"
+   },
+   {
+    "code": "AJ 153",
+    "why": "not in the text"
+   },
+   {
+    "code": "AJ 180",
+    "why": "not in the text"
+   },
+   {
+    "code": "FIRE 131",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The catalog text supplied is for 'Forensic Technology - A.S. Degree Major (18 units or more)', not Administration of Justice- Homeland Security A.S. Degree. No section for the named award appears, so no blocks, totals, outcomes or careers were recorded.",
+   "The Forensic Technology section (total 41.0 units, with its own learning outcomes) was not used because it belongs to a different program. A reviewer should fetch the correct Homeland Security page."
+  ]
+ },
+ "extracted_run": "38843467865"
+}

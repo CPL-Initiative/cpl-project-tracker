@@ -1,0 +1,232 @@
+{
+ "college": "Palomar College",
+ "control_number": "37466",
+ "shape": "degree",
+ "title": "Cybersecurity",
+ "award": "A.S. Degree",
+ "source_url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Cybersecurity-AS",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6772,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6772,
+    "output_tokens": 1330,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1330,
+  "output_tokens_details": {
+   "thinking_tokens": 329
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05369,
+ "ms": 10949,
+ "seconds": 11.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    28.0,
+    28.0
+   ],
+   "stated": [
+    28.0,
+    28.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Computer Science & Information Systems  Department - Cybersecurity - A.S. Degree Major (18 units or more)",
+   "measure": "units",
+   "total_units": {
+    "min": 28,
+    "max": 28
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Analyze the results of a network reconnaissance.",
+    "Compare and contrast the general purpose and reasons for using various cybersecurity tools and technologies.",
+    "Review security architecture and make recommendations to implement compensating controls.",
+    "Apply risk management techniques to manage risk, reduce vulnerabilities, threats, and apply appropriate safeguards/controls.",
+    "Implement or recommend the appropriate response and countermeasure for a network-based threat.",
+    "Defend a computer and a Local Area Network (LAN) against a variety of different types of security attacks using several hands-on techniques."
+   ],
+   "careers": [
+    "cybersecurity",
+    "Cybersecurity Analyst"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 28,
+     "max": 28
+    },
+    "courses": [
+     {
+      "code": "CSNT 110",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSNT 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSNT 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CSCI 130",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIT 125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIT 175",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSNT 181",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSNT 250",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSNT 255",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSNT 280",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The heading phrase 'Major (18 units or more)' is read as the minimum for this kind of major, not the award's total; total_units uses the printed 'Units: 28.0' / 'Total : 28.0'.",
+   "A stray '3.0' is printed after CSNT 111 just before the CSNT 130 OR CSCI 130 pair; it is read as the unit value for that either/or choice group. The listed courses sum to 28 with that reading.",
+   "No general education pattern, degree total, or GE units are printed on this page."
+  ]
+ },
+ "extracted_run": "38843467865"
+}

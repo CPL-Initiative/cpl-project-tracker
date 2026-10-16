@@ -1,0 +1,166 @@
+{
+ "college": "Palomar College",
+ "control_number": "24440",
+ "shape": "noncredit",
+ "title": "Adult Basic Education",
+ "award": "Noncredit program",
+ "source_url": "https://palomar.curriqunet.com/catalog/alias/college/iq/NoncreditPrograms/Alphabetical/AdultBasicEducation-CertificateCompletion",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6437,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6437,
+    "output_tokens": 1065,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1065,
+  "output_tokens_details": {
+   "thinking_tokens": 315
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04705,
+ "ms": 9164,
+ "seconds": 9.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Adult Basic Education - Certificate of Completion (Noncredit-Hours only; no units)",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Upon completing the N ABED program, students will write organized and coherent texts using standard spelling, punctuation, and sentence structure.",
+    "Upon completing the N ABED program, students will analyze written information to determine a writer's main ideas and intent.",
+    "Upon completing the N ABED program, students will use knowledge of arithmetic operations, fractions, percentages, basic algebra, and basic geometry to successfully find solutions that require mathematical reasoning.",
+    "Upon completing the N ABED program, students demonstrate language and personal skills sufficient to be able to apply for a job.",
+    "Upon completing N ABED program, the student will demonstrate intermediate skills in writing, reading, and math so as to successfully continue their education beyond the N ABED program."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "N ABED 901",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "N ABED 902",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The heading says 'Noncredit-Hours only; no units', so measure is set to hours. The catalog prints no hours for either course or for the program; it prints only 'Units: 0.0', '0.0' beside each course and 'Total : 0.0'. Because those zeros are units, not hours, course units and total_units are left null.",
+   "The description says students earn the certificate by successfully completing N ABED 902 with a grade of P, which suggests 902 alone may satisfy the award. The requirements table lists both courses, so both are recorded as required in one 'all' block. Please check this reading.",
+   "The description mentions employment, job training and careers generally but names no specific career, so careers is empty."
+  ]
+ },
+ "extracted_run": "38843467865"
+}

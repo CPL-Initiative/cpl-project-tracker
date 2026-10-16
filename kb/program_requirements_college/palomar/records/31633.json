@@ -1,0 +1,257 @@
+{
+ "college": "Palomar College",
+ "control_number": "31633",
+ "shape": "degree",
+ "title": "Guitar Making Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/GuitarMakingTechnology-AS-CA",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6980,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6980,
+    "output_tokens": 1550,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1550,
+  "output_tokens_details": {
+   "thinking_tokens": 382
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05892,
+ "ms": 13802,
+ "seconds": 14.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    24.0
+   ],
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Guitar Making Technology - A.S. Degree Major/Cert. Achievement (18 units or more)",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Through the process of constructing several stringed instruments students will develop the expertise needed for employment in the luthier field",
+    "Students will analyze various construction techniques and demonstrate solutions for stringed instrument making by creating and using appropriate jigs, forms, and/or fixtures."
+   ],
+   "careers": [
+    "maker of guitars",
+    "guitar repair technician"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIREMENTS",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 22,
+     "max": 22
+    },
+    "courses": [
+     {
+      "code": "CFT 100",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CFT 132A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CFT 133A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CFT 134A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CFT 135A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CFT 149",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CFT 195",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Electives (Select 2 or more units)",
+    "rule": "choose_units",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 2
+    },
+    "courses": [
+     {
+      "code": "CFT 128",
+      "units": 0.5,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CFT 132B",
+      "units": 3,
+      "units_max": 5,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CFT 133B",
+      "units": 2,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CFT 134B",
+      "units": 2,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CFT 135B",
+      "units": 3,
+      "units_max": 5,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The heading names a combined 'A.S. Degree Major/Cert. Achievement'; the requirements and outcomes appear shared between the A.S. degree and the Certificate of Achievement.",
+   "Total : 24.0 recorded as the major total; the page prints no degree total or general education pattern for the A.S. degree.",
+   "Catalog units differ from state file for several courses (e.g., CFT 100 printed 4.0 vs 3 stored; CFT 132A 4.0 vs 3; CFT 134A 4.0 vs 2; CFT 135A 4.0 vs 3); catalog values recorded.",
+   "CFT 149 is marked '( Historical )' and CFT 132B '( Draft )' in the catalog listing; reviewer may wish to check their status for 2026-2027.",
+   "Elective courses are printed with unit ranges (variable units)."
+  ]
+ },
+ "extracted_run": "38843467865"
+}
