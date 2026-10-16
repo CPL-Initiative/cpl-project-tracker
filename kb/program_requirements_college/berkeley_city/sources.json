@@ -4,67 +4,192 @@
   "title": "American Sign Language",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASL200B",
+   "ASL202B",
+   "ASL464",
+   "ASL50",
+   "ASL51",
+   "ASL52",
+   "ASL53",
+   "ASL55A",
+   "ASL55B",
+   "ASL57"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39977",
+   "title": "American Sign Language - A.A. Degree",
+   "h1": "American Sign Language - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 2475
  },
  {
   "control_number": "01102",
   "title": "Art",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.92,
+  "codes_found": [
+   "ART1",
+   "ART119",
+   "ART13",
+   "ART133A",
+   "ART133B",
+   "ART137",
+   "ART16",
+   "ART18",
+   "ART181",
+   "ART182",
+   "ART20",
+   "ART22",
+   "ART24",
+   "ART27",
+   "ART29",
+   "ART30",
+   "ART31",
+   "ART4",
+   "ART46",
+   "ART47",
+   "ART50",
+   "ART52",
+   "ART54"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39969",
+   "title": "Art - A.A. Degree",
+   "h1": "Art - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 25,
-  "text_chars": 0
+  "text_chars": 3392
  },
  {
   "control_number": "09056",
   "title": "Biotechnology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL1A",
+   "BIOL32",
+   "BIOL33",
+   "BIOL34",
+   "BIOL34L",
+   "BIOL50A",
+   "BIOL50B",
+   "BIOL50C",
+   "BIOL50D",
+   "BIOL51",
+   "CHEM1A",
+   "MATH1",
+   "MATH16A",
+   "MATH3A",
+   "PHYS3A",
+   "PHYS4A"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40062",
+   "title": "Biotechnology - A.S. Degree",
+   "h1": "Biotechnology - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 2926
  },
  {
   "control_number": "09057",
   "title": "General Business",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS19",
+   "BUS1A",
+   "BUS1B",
+   "BUS2",
+   "BUS24",
+   "BUS5",
+   "BUS54",
+   "BUS56",
+   "BUS6",
+   "BUS7",
+   "BUS70",
+   "BUS8",
+   "BUS9",
+   "CIS1",
+   "ECON20",
+   "ECONC2001",
+   "ECONC2002"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39987",
+   "title": "General Business - A.A. Degree",
+   "h1": "General Business - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 3128
  },
  {
   "control_number": "09058",
   "title": "Accounting",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS19",
+   "BUS1A",
+   "BUS1B",
+   "BUS2",
+   "BUS5",
+   "BUS56",
+   "CIS1",
+   "CIS42A",
+   "CIS42B"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39978",
+   "title": "Accounting - A.A. Degree",
+   "h1": "Accounting - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 2586
  },
  {
   "control_number": "09061",
   "title": "Art Figure Studies",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -76,19 +201,46 @@
   "title": "English Literature/Writing",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.944,
+  "codes_found": [
+   "ENGL10A",
+   "ENGL17A",
+   "ENGL17B",
+   "ENGL20",
+   "ENGL23",
+   "ENGL44B",
+   "ENGL47",
+   "ENGL50",
+   "ENGL70A",
+   "ENGL71A",
+   "ENGL85A",
+   "ENGL85B",
+   "ENGL85C",
+   "ENGL86",
+   "ENGL91A",
+   "ENGLC1000",
+   "ENGLC1001"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40020",
+   "title": "English Literature/Writing - A.A. Degree",
+   "h1": "English Literature/Writing - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 18,
-  "text_chars": 0
+  "text_chars": 2878
  },
  {
   "control_number": "09071",
   "title": "Applied Computer Information Systems",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -112,24 +264,80 @@
   "title": "Creative Writing/Fiction",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL10A",
+   "ENGL10B",
+   "ENGL17A",
+   "ENGL17B",
+   "ENGL47",
+   "ENGL70A",
+   "ENGL70B",
+   "ENGL71A",
+   "ENGL72A",
+   "ENGL73A",
+   "ENGL74",
+   "ENGL85A",
+   "ENGL85B",
+   "ENGL85C",
+   "ENGL86",
+   "ENGL87",
+   "ENGL91A",
+   "ENGL92A"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40016",
+   "title": "Creative Writing/Fiction - Certificate of Achievement",
+   "h1": "Creative Writing/Fiction - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 18,
-  "text_chars": 0
+  "text_chars": 2558
  },
  {
   "control_number": "11677",
   "title": "Creative Writing/Poetry",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL10A",
+   "ENGL10B",
+   "ENGL17A",
+   "ENGL17B",
+   "ENGL47",
+   "ENGL70A",
+   "ENGL70B",
+   "ENGL71A",
+   "ENGL72A",
+   "ENGL85A",
+   "ENGL85B",
+   "ENGL85C",
+   "ENGL86",
+   "ENGL87",
+   "ENGL91A",
+   "ENGL92A",
+   "ENGL93A",
+   "ENGL94"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40018",
+   "title": "Creative Writing/Poetry - Certificate of Achievement",
+   "h1": "Creative Writing/Poetry - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 18,
-  "text_chars": 0
+  "text_chars": 2491
  },
  {
   "control_number": "11744",
@@ -160,48 +368,132 @@
   "title": "Multimedia Arts--Mobile and Web Design",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "MMART1",
+   "MMART114",
+   "MMART114L",
+   "MMART162",
+   "MMART162L",
+   "MMART166",
+   "MMART166L",
+   "MMART167",
+   "MMART167L",
+   "MMART168",
+   "MMART168L",
+   "MMART170",
+   "MMART170L",
+   "MMART171",
+   "MMART171L",
+   "MMART197",
+   "MMART3",
+   "MMART468"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40035",
+   "title": "Multimedia Arts--Mobile and Web Design - A.A. Degree",
+   "h1": "Multimedia Arts--Mobile and Web Design - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 27,
-  "text_chars": 0
+  "text_chars": 3980
  },
  {
   "control_number": "11961",
   "title": "Mobile and Web Design Level I",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.545,
+  "codes_found": [
+   "MMART166",
+   "MMART166L",
+   "MMART167",
+   "MMART167L",
+   "MMART168",
+   "MMART168L"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40032",
+   "title": "Mobile And Web Design Level I - Certificate of Achievement",
+   "h1": "Mobile And Web Design Level I - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 2607
  },
  {
   "control_number": "11962",
   "title": "Mobile and Web Design Level II",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.769,
+  "codes_found": [
+   "ART46",
+   "CIS6",
+   "MMART114",
+   "MMART114L",
+   "MMART162",
+   "MMART162L",
+   "MMART170",
+   "MMART170L",
+   "MMART171",
+   "MMART171L"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40033",
+   "title": "Mobile and Web Design Level II - Certificate of Achievement",
+   "h1": "Mobile and Web Design Level II - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 2842
  },
  {
   "control_number": "15570",
   "title": "Advanced Computer Programming",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS20",
+   "CIS25",
+   "CIS27",
+   "CIS36A",
+   "CIS36B",
+   "CIS6",
+   "CIS80",
+   "CIS82",
+   "CIS83B",
+   "MATH3A"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39981",
+   "title": "Advanced Computer Programming - A.S. Degree",
+   "h1": "Advanced Computer Programming - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 2323
  },
  {
   "control_number": "16645",
@@ -256,55 +548,205 @@
   "title": "Social Sciences",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.933,
+  "codes_found": [
+   "AFRAM1",
+   "AFRAM31",
+   "ANTHR1",
+   "ANTHR13",
+   "ANTHR18",
+   "ANTHR2",
+   "ANTHR3",
+   "ASAME11",
+   "CHDEV51",
+   "ECON20",
+   "ECONC2001",
+   "ECONC2002",
+   "ETHST1",
+   "HIST19",
+   "HIST21",
+   "HIST2A",
+   "HIST2B",
+   "HIST31",
+   "HIST3A",
+   "HIST3B",
+   "HISTC1001",
+   "HISTC1002",
+   "LIS85",
+   "POLSC1000",
+   "POSCI19",
+   "POSCI2",
+   "POSCI20",
+   "POSCI3",
+   "POSCI4",
+   "POSCI6",
+   "PSYCC1000",
+   "PSYCH21",
+   "PSYCH6",
+   "PSYCH61",
+   "SOC1",
+   "SOC13",
+   "SOC18",
+   "SOC2",
+   "SOC5",
+   "SOC7",
+   "SOC8",
+   "WS1"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40069",
+   "title": "Social Sciences - A.A. Degree",
+   "h1": "Social Sciences - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 45,
-  "text_chars": 0
+  "text_chars": 4809
  },
  {
   "control_number": "19267",
   "title": "Arts and Humanities",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.962,
+  "codes_found": [
+   "ART1",
+   "ART13",
+   "ART16",
+   "ART182",
+   "ART4",
+   "ENGL17A",
+   "ENGL17B",
+   "ENGL20",
+   "ENGL23",
+   "ENGL44B",
+   "ENGL47",
+   "ENGL50",
+   "ENGL85A",
+   "ENGL85B",
+   "ENGL85C",
+   "HIST2A",
+   "HIST2B",
+   "HIST3A",
+   "HIST3B",
+   "HUMAN1",
+   "HUMAN15",
+   "HUMAN182",
+   "HUMAN21",
+   "HUMAN26",
+   "HUMAN30B",
+   "HUMAN40",
+   "HUMAN5",
+   "HUMAN52",
+   "HUMAN53",
+   "HUMAN55",
+   "HUMAN57",
+   "MMART123",
+   "MUSIC10",
+   "MUSIC15A",
+   "MUSIC15B",
+   "PHIL1",
+   "PHIL11",
+   "PHIL2",
+   "PHIL20A",
+   "PHIL20B",
+   "PHIL31A",
+   "PHIL35",
+   "SPAN1A",
+   "SPAN1B",
+   "SPAN2A",
+   "SPAN2B",
+   "SPAN38",
+   "SPAN39",
+   "SPAN40",
+   "WS35",
+   "WS52"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39974",
+   "title": "Arts and Humanities - A.A. Degree",
+   "h1": "Arts and Humanities - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 53,
-  "text_chars": 0
+  "text_chars": 5121
  },
  {
   "control_number": "19969",
   "title": "Biotechnology Research Laboratory Assistant",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL1A",
+   "BIOL3",
+   "BIOL32",
+   "BIOL33",
+   "BIOL50B",
+   "BIOL50C",
+   "BIOL50D"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40064",
+   "title": "Biotechnology Research Laboratory Assistant - Certificate of Achievement",
+   "h1": "Biotechnology Research Laboratory Assistant - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 2530
  },
  {
   "control_number": "19970",
   "title": "General Business",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS19",
+   "BUS1A",
+   "BUS2",
+   "BUS5",
+   "BUS54",
+   "BUS70",
+   "BUS9",
+   "ECON20",
+   "ECONC2001",
+   "ECONC2002"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39986",
+   "title": "General Business - Certificate of Achievement",
+   "h1": "General Business - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 2528
  },
  {
   "control_number": "19971",
   "title": "Applied Computer Information Systems",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -316,120 +758,319 @@
   "title": "Advanced Computer Programming",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS20",
+   "CIS25",
+   "CIS27",
+   "CIS36A",
+   "CIS6",
+   "CIS80",
+   "MATH3A"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39980",
+   "title": "Advanced Computer Programming - Certificate of Achievement",
+   "h1": "Advanced Computer Programming - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 1833
  },
  {
   "control_number": "19975",
   "title": "American Sign Language",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASL200B",
+   "ASL202B",
+   "ASL464",
+   "ASL50",
+   "ASL51",
+   "ASL52",
+   "ASL53",
+   "ASL55A",
+   "ASL55B",
+   "ASL57"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40987",
+   "title": "American Sign Language - Certificate of Achievement",
+   "h1": "American Sign Language - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 2354
  },
  {
   "control_number": "19976",
   "title": "Spanish Language for Heritage Speakers",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "SPAN38",
+   "SPAN39",
+   "SPAN40"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41855",
+   "title": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
+   "h1": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 4095
  },
  {
   "control_number": "31138",
   "title": "English",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "ENGL17A",
+   "ENGL17B",
+   "ENGL50",
+   "ENGL85A",
+   "ENGL85B",
+   "ENGL85C",
+   "ENGLC1001"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40014",
+   "title": "English - AA-T Degree",
+   "h1": "English - AA-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2522
  },
  {
   "control_number": "31835",
   "title": "Elementary Teacher Education",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.765,
+  "codes_found": [
+   "ART1",
+   "BIOL10",
+   "CHDEV51",
+   "CHEM30A",
+   "COMMC1000",
+   "EDUC1",
+   "ENGLC1000",
+   "GEOL10",
+   "GEOL10L",
+   "HIST3A",
+   "HISTC1001",
+   "PHYS10",
+   "POLSC1000"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41010",
+   "title": "Elementary Teacher Education: Integrated Programs - AA-T",
+   "h1": "Elementary Teacher Education: Integrated Programs - AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 3137
  },
  {
   "control_number": "31984",
   "title": "Political Science",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "POLSC1000",
+   "POSCI19",
+   "POSCI2",
+   "POSCI20",
+   "POSCI3",
+   "POSCI4",
+   "POSCI6",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40071",
+   "title": "Political Science - AA-T Degree",
+   "h1": "Political Science - AA-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2654
  },
  {
   "control_number": "33181",
   "title": "Teacher's Aide",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV51",
+   "COMMC1000",
+   "EDUC1",
+   "EDUC18",
+   "EDUC97",
+   "EDUC98",
+   "EDUC99",
+   "ENGLC1000",
+   "PSYCH21"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40022",
+   "title": "Teacher's Aide - Certificate of Achievement",
+   "h1": "Teacher's Aide - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 1910
  },
  {
   "control_number": "33548",
   "title": "Economics",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS19",
+   "BUS1A",
+   "BUS1B",
+   "ECON20",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH16A",
+   "MATH3A",
+   "MATH3B",
+   "MATH3C",
+   "MATH3E",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39985",
+   "title": "Economics - AA-T Degree",
+   "h1": "Economics - AA-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 2802
  },
  {
   "control_number": "33774",
   "title": "Analytical Chemistry",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL1A",
+   "BIOL1B",
+   "CHEM12A",
+   "CHEM12B",
+   "CHEM18",
+   "CHEM1A",
+   "CHEM1B",
+   "CIS1",
+   "MATH3A",
+   "MATH3B",
+   "PHYS3A",
+   "PHYS3B",
+   "PHYS4A",
+   "PHYS4B",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40059",
+   "title": "Analytical Chemistry - Certificate of Achievement",
+   "h1": "Analytical Chemistry - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 2788
  },
  {
   "control_number": "33788",
   "title": "Analytical Chemistry",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL1A",
+   "BIOL1B",
+   "CHEM12A",
+   "CHEM12B",
+   "CHEM18",
+   "CHEM1A",
+   "CHEM1B",
+   "CIS1",
+   "MATH3A",
+   "MATH3B",
+   "PHYS3A",
+   "PHYS3B",
+   "PHYS4A",
+   "PHYS4B",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40060",
+   "title": "Analytical Chemistry - A.S. Degree",
+   "h1": "Analytical Chemistry - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 2771
  },
  {
   "control_number": "35046",
@@ -472,12 +1113,29 @@
   "title": "Academic Composition Skills",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL508A",
+   "ENGL508B",
+   "ENGL508C",
+   "ENGL518A",
+   "ENGL518B",
+   "ENGL518C",
+   "ENGL518D"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39989",
+   "title": "Academic Composition Skills - Certificate of Competency",
+   "h1": "Academic Composition Skills - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 1732
  },
  {
   "control_number": "36612",
@@ -508,48 +1166,106 @@
   "title": "Gender Studies",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART13",
+   "COMM10",
+   "HIST21",
+   "HUMAN52",
+   "PHIL35",
+   "SOC13",
+   "SOC7",
+   "WS1",
+   "WS35",
+   "WS52"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39973",
+   "title": "Gender Studies - Certificate of Achievement",
+   "h1": "Gender Studies - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 2943
  },
  {
   "control_number": "37789",
   "title": "ESOL Advanced",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESOL552",
+   "ESOL574"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40026",
+   "title": "ESOL Advanced - Certificate of Competency",
+   "h1": "ESOL Advanced - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 1368
  },
  {
   "control_number": "37790",
   "title": "ESOL High Intermediate",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESOL513",
+   "ESOL563",
+   "ESOL573"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40028",
+   "title": "ESOL High Intermediate - Certificate of Competency",
+   "h1": "ESOL High Intermediate - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 1403
  },
  {
   "control_number": "37797",
   "title": "Research Skills",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LIS511",
+   "LIS512",
+   "LIS513"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40029",
+   "title": "Research Skills - Certificate of Competency",
+   "h1": "Research Skills - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 2002
  },
  {
   "control_number": "37808",
@@ -580,24 +1296,62 @@
   "title": "Studio Arts",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.778,
+  "codes_found": [
+   "ART20",
+   "ART22",
+   "ART4",
+   "ART46",
+   "ART47",
+   "ART50",
+   "MMART3"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39976",
+   "title": "Studio Arts - AA-T Degree",
+   "h1": "Studio Arts - AA-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 2586
  },
  {
   "control_number": "37851",
   "title": "Art History",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.846,
+  "codes_found": [
+   "ART13",
+   "ART16",
+   "ART182",
+   "ART20",
+   "ART22",
+   "ART4",
+   "ART46",
+   "ART47",
+   "ART50",
+   "HUMAN30B",
+   "MMART3"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39970",
+   "title": "Art History - AA-T Degree",
+   "h1": "Art History - AA-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 2894
  },
  {
   "control_number": "37877",
@@ -664,12 +1418,27 @@
   "title": "Biotechnology Laboratory Assistant",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL10",
+   "BIOL32",
+   "BIOL50A",
+   "CHEM30A",
+   "ENGLC1000"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40063",
+   "title": "Biotechnology Laboratory Assistant - Certificate of Achievement",
+   "h1": "Biotechnology Laboratory Assistant - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 2205
  },
  {
   "control_number": "38243",
@@ -700,12 +1469,30 @@
   "title": "Management and Entrepreneurship",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "BUS19",
+   "BUS1A",
+   "BUS1B",
+   "BUS54",
+   "BUS56",
+   "BUS7",
+   "BUS8",
+   "BUS9"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39988",
+   "title": "Management and Entrepreneurship - Certificate of Achievement",
+   "h1": "Management and Entrepreneurship - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 2402
  },
  {
   "control_number": "39254",
@@ -760,264 +1547,686 @@
   "title": "Liberal Studies - Teacher Preparation",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL10",
+   "CHDEV51",
+   "EDUC1",
+   "EDUC18",
+   "EDUC97",
+   "EDUC98",
+   "EDUC99",
+   "ENGL47",
+   "HISTC1002",
+   "SOC13"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40021",
+   "title": "Liberal Studies - Teacher Preparation - A.A. Degree",
+   "h1": "Liberal Studies - Teacher Preparation - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 2198
  },
  {
   "control_number": "39386",
   "title": "Sociology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHR3",
+   "PSYCC1000",
+   "PSYCH6",
+   "SOC1",
+   "SOC120",
+   "SOC13",
+   "SOC18",
+   "SOC2",
+   "SOC5",
+   "SOC7",
+   "SOC8",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40073",
+   "title": "Sociology - AA-T Degree",
+   "h1": "Sociology - AA-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 2719
  },
  {
   "control_number": "39856",
   "title": "Anthropology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHR1",
+   "ANTHR13",
+   "ANTHR18",
+   "ANTHR1L",
+   "ANTHR2",
+   "ANTHR3",
+   "ANTHR55",
+   "ETHST1",
+   "GEOL10",
+   "HUMAN40",
+   "PSYCH28",
+   "SOC1",
+   "SOC120",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40065",
+   "title": "Anthropology - AA-T Degree",
+   "h1": "Anthropology - AA-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 3108
  },
  {
   "control_number": "40244",
   "title": "Spanish",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SPAN1A",
+   "SPAN1B",
+   "SPAN22A",
+   "SPAN22B",
+   "SPAN2A",
+   "SPAN2B",
+   "SPAN38",
+   "SPAN39",
+   "SPAN40"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40036",
+   "title": "Spanish - AA-T Degree",
+   "h1": "Spanish - AA-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 2603
  },
  {
   "control_number": "41766",
   "title": "Business Administration 2.0",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS10",
+   "BUS1A",
+   "BUS1B",
+   "BUS2",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH16A",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39984",
+   "title": "Business Administration 2.0 - AS-T Degree",
+   "h1": "Business Administration 2.0 - AS-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2446
  },
  {
   "control_number": "41777",
   "title": "Philosophy",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HUMAN30B",
+   "PHIL1",
+   "PHIL11",
+   "PHIL2",
+   "PHIL20A",
+   "PHIL20B",
+   "PHIL31A",
+   "PHIL35",
+   "WS35"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39975",
+   "title": "Philosophy - AA-T Degree",
+   "h1": "Philosophy - AA-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 2574
  },
  {
   "control_number": "41778",
   "title": "Mathematics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "MATH3A",
+   "MATH3B",
+   "MATH3C",
+   "MATH3E",
+   "MATH3F",
+   "PHYS4A"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40030",
+   "title": "Mathematics 2.0 - AS-T Degree",
+   "h1": "Mathematics 2.0 - AS-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2320
  },
  {
   "control_number": "41794",
   "title": "History",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.933,
+  "codes_found": [
+   "ART1",
+   "ASAME11",
+   "ETHST1",
+   "HIST19",
+   "HIST21",
+   "HIST2A",
+   "HIST2B",
+   "HIST31",
+   "HIST3A",
+   "HIST3B",
+   "HISTC1001",
+   "HISTC1002",
+   "MUSIC15A",
+   "WS1"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40068",
+   "title": "History - AA-T Degree",
+   "h1": "History - AA-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 3250
  },
  {
   "control_number": "41795",
   "title": "Psychology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL10",
+   "PSYCC1000",
+   "PSYCH21",
+   "PSYCH28",
+   "PSYCH6",
+   "PSYCH61",
+   "SOC1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40072",
+   "title": "Psychology - AA-T Degree",
+   "h1": "Psychology - AA-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2560
  },
  {
   "control_number": "41796",
   "title": "Global Studies",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHR3",
+   "ECONC2001",
+   "ECONC2002",
+   "GEOG1",
+   "GEOG3",
+   "HIST3B",
+   "POSCI19",
+   "POSCI2",
+   "POSCI20",
+   "POSCI3",
+   "SPAN2A",
+   "SPAN2B"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40067",
+   "title": "Global Studies - AA-T Degree",
+   "h1": "Global Studies - AA-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 2887
  },
  {
   "control_number": "41834",
   "title": "Child and Adolescent Development",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL10",
+   "CHDEV51",
+   "EDUC18",
+   "ENGL47",
+   "POLSC1000",
+   "PSYCC1000",
+   "PSYCH21",
+   "SOC13",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40015",
+   "title": "Child and Adolescent Development - AA-T Degree",
+   "h1": "Child and Adolescent Development - AA-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 2563
  },
  {
   "control_number": "41867",
   "title": "Social and Human Service Work Readiness",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HUSV510B"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40074",
+   "title": "Social and Human Service Work Readiness - Certificate of Completion",
+   "h1": "Social and Human Service Work Readiness - Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 1,
-  "text_chars": 0
+  "text_chars": 2172
  },
  {
   "control_number": "41868",
   "title": "Tutor Training",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EDUC510A",
+   "EDUC510B"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40023",
+   "title": "Tutor Training - Certificate of Completion",
+   "h1": "Tutor Training - Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 2133
  },
  {
   "control_number": "41869",
   "title": "Community Health Worker",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HUSV502A",
+   "HUSV502B"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40066",
+   "title": "Community Health Worker - Certificate of Completion",
+   "h1": "Community Health Worker - Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 2168
  },
  {
   "control_number": "41876",
   "title": "Social Work and Human Services",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM6",
+   "HUSV120A",
+   "HUSV120B",
+   "HUSV121",
+   "PSYCC1000",
+   "SOC1",
+   "SOC2"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40070",
+   "title": "Social Work and Human Services - Certificate of Achievement",
+   "h1": "Social Work and Human Services - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 2486
  },
  {
   "control_number": "41902",
   "title": "Biology",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL1A",
+   "BIOL1B",
+   "CHEM1A",
+   "CHEM1B",
+   "MATH3A",
+   "PHYS3A",
+   "PHYS3B"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40061",
+   "title": "Biology - AS-T Degree",
+   "h1": "Biology - AS-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 2320
  },
  {
   "control_number": "42381",
   "title": "Social Work and Human Services",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHR3",
+   "BIOL10",
+   "BIOL25",
+   "CHDEV51",
+   "COMM6",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1001",
+   "HISTC1001",
+   "HISTC1002",
+   "HUSV120A",
+   "HUSV120B",
+   "HUSV121",
+   "PSYCC1000",
+   "PSYCH21",
+   "SOC1",
+   "SOC2",
+   "SOC5",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40797",
+   "title": "Social Work and Human Services - AA-T Degree",
+   "h1": "Social Work and Human Services - AA-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 19,
-  "text_chars": 0
+  "text_chars": 3254
  },
  {
   "control_number": "42838",
   "title": "Physics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH3A",
+   "MATH3B",
+   "MATH3C",
+   "PHYS4A",
+   "PHYS4B",
+   "PHYS4C"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40911",
+   "title": "Physics - AS-T Degree",
+   "h1": "Physics - AS-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 2326
  },
  {
   "control_number": "43006",
   "title": "Communication Studies 2.0",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.769,
+  "codes_found": [
+   "ANTHR3",
+   "COMM10",
+   "COMM19",
+   "COMM3",
+   "COMM4",
+   "COMM5",
+   "COMM6",
+   "COMMC1000",
+   "PSYCC1000",
+   "SOC1"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/39972",
+   "title": "Communication Studies 2.0 - AA-T Degree",
+   "h1": "Communication Studies 2.0 - AA-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 2860
  },
  {
   "control_number": "43023",
   "title": "ESOL Intermediate",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESOL512",
+   "ESOL562",
+   "ESOL572"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40917",
+   "title": "ESOL Intermediate - Certificate of Competency",
+   "h1": "ESOL Intermediate - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 1414
  },
  {
   "control_number": "43097",
   "title": "Law, Public Policy, and Society",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHR3",
+   "BUS2",
+   "COMM5",
+   "COMMC1000",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ETHST1",
+   "HISTC1001",
+   "HISTC1002",
+   "PHIL31A",
+   "POLSC1000",
+   "POSCI19",
+   "POSCI2",
+   "POSCI20",
+   "POSCI3",
+   "POSCI4",
+   "SOC2",
+   "SOC5",
+   "SOC7",
+   "SOC8",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40931",
+   "title": "Law, Public Policy, and Society - AA-T Degree",
+   "h1": "Law, Public Policy, and Society - AA-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 23,
-  "text_chars": 0
+  "text_chars": 3580
  },
  {
   "control_number": "43214",
   "title": "Film Studies",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART182",
+   "HUMAN15",
+   "HUMAN182",
+   "HUMAN21",
+   "HUMAN26",
+   "HUMAN52",
+   "HUMAN53",
+   "HUMAN55",
+   "HUMAN57",
+   "MMART123",
+   "WS52"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41244",
+   "title": "Film Studies - A.A. Degree",
+   "h1": "Film Studies - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 2997
  },
  {
   "control_number": "43424",
@@ -1048,96 +2257,292 @@
   "title": "ESOL Pathway to Business",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS10",
+   "BUS1A",
+   "CIS1",
+   "CIS5",
+   "COUN24",
+   "COUN57",
+   "ENGLC1000",
+   "ESOL253",
+   "ESOL274A",
+   "ESOL50A",
+   "ESOL52",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41189",
+   "title": "ESOL Pathway to Business - Certificate of Achievement",
+   "h1": "ESOL Pathway to Business - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 2408
  },
  {
   "control_number": "43932",
   "title": "ESOL Pathway to Humanities",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "ASL50",
+   "COUN24",
+   "COUN57",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ESOL253",
+   "ESOL274A",
+   "ESOL50A",
+   "ESOL52",
+   "HUMAN1",
+   "PHIL1",
+   "SPAN1A",
+   "SPAN22A",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41198",
+   "title": "ESOL Pathway to Humanities - Certificate of Achievement",
+   "h1": "ESOL Pathway to Humanities - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 2638
  },
  {
   "control_number": "43933",
   "title": "ESOL Pathway to Social Sciences",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHR3",
+   "COUN24",
+   "COUN57",
+   "ECONC2002",
+   "ENGLC1000",
+   "ESOL253",
+   "ESOL274A",
+   "ESOL50A",
+   "ESOL52",
+   "ETHST1",
+   "HISTC1002",
+   "POLSC1000",
+   "PSYCC1000",
+   "SOC1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41207",
+   "title": "ESOL Pathway to Social Sciences - Certificate of Achievement",
+   "h1": "ESOL Pathway to Social Sciences - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 2578
  },
  {
   "control_number": "43934",
   "title": "ESOL Pathway to STEM",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1A",
+   "CHEM30A",
+   "CIS6",
+   "COUN24",
+   "COUN57",
+   "ENGLC1000",
+   "ESOL253",
+   "ESOL274A",
+   "ESOL50A",
+   "ESOL52",
+   "MATH1",
+   "MATH3A",
+   "PHYS3A",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41216",
+   "title": "ESOL Pathway to STEM - Certificate of Achievement",
+   "h1": "ESOL Pathway to STEM - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 2781
  },
  {
   "control_number": "43935",
   "title": "ESOL Pathway to Teaching and Social Work",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV51",
+   "COUN24",
+   "COUN57",
+   "EDUC1",
+   "EDUC18",
+   "ENGLC1000",
+   "ESOL253",
+   "ESOL274A",
+   "ESOL50A",
+   "ESOL52",
+   "HUSV121",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41225",
+   "title": "ESOL Pathway to Teaching and Social Work - Certificate of Achievement",
+   "h1": "ESOL Pathway to Teaching and Social Work - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 2530
  },
  {
   "control_number": "43936",
   "title": "ESOL Pathway to the Arts",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "ART20",
+   "COUN24",
+   "COUN57",
+   "ENGLC1000",
+   "ESOL253",
+   "ESOL274A",
+   "ESOL50A",
+   "ESOL52",
+   "HUMAN21",
+   "MMART3",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41234",
+   "title": "ESOL Pathway to the Arts - Certificate of Achievement",
+   "h1": "ESOL Pathway to the Arts - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 2429
  },
  {
   "control_number": "45941",
   "title": "Fundamentals of Data Science",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.947,
+  "codes_found": [
+   "CIS27",
+   "CIS36A",
+   "CIS42A",
+   "CIS42B",
+   "CIS5",
+   "CIS6",
+   "CIS84",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH118",
+   "MATH3A",
+   "MATH3B",
+   "MATH3E",
+   "MATH3F",
+   "PHIL11",
+   "PSYCH28",
+   "SOC120",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41937",
+   "title": "Fundamentals of Data Science - A.S. Degree",
+   "h1": "Fundamentals of Data Science - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 19,
-  "text_chars": 0
+  "text_chars": 3547
  },
  {
   "control_number": "46177",
   "title": "Data Science Analytics",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL32",
+   "BIOL51",
+   "BUS24",
+   "BUS70",
+   "CIS25",
+   "CIS27",
+   "CIS36A",
+   "CIS42A",
+   "CIS42B",
+   "CIS5",
+   "CIS6",
+   "CIS84",
+   "ECONC2001",
+   "ECONC2002",
+   "GEOG1",
+   "GEOG1L",
+   "MATH118",
+   "MATH3E",
+   "PSYCH28",
+   "SOC120"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41925",
+   "title": "Data Science Analytics - Certificate of Achievement",
+   "h1": "Data Science Analytics - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 20,
-  "text_chars": 0
+  "text_chars": 3627
  },
  {
   "control_number": "46221",
@@ -1156,24 +2561,70 @@
   "title": "Elementary Teacher Education: Integrated Programs",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.905,
+  "codes_found": [
+   "AFRAM1",
+   "ART1",
+   "ASAME11",
+   "BIOL10",
+   "CHDEV51",
+   "CHEM30A",
+   "COMMC1000",
+   "EDUC1",
+   "EDUC18",
+   "ENGL47",
+   "ENGLC1000",
+   "ETHST1",
+   "GEOL10",
+   "GEOL10L",
+   "HIST3A",
+   "HISTC1001",
+   "MUSIC10",
+   "PHYS10",
+   "POLSC1000"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/41010",
+   "title": "Elementary Teacher Education: Integrated Programs - AA-T",
+   "h1": "Elementary Teacher Education: Integrated Programs - AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 21,
-  "text_chars": 0
+  "text_chars": 3425
  },
  {
   "control_number": "46230",
   "title": "Mathematics 2.0",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS6",
+   "MATH3A",
+   "MATH3B",
+   "MATH3C",
+   "MATH3E",
+   "MATH3F",
+   "PHYS4A"
+  ],
+  "source": {
+   "url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40030",
+   "title": "Mathematics 2.0 - AS-T Degree",
+   "h1": "Mathematics 2.0 - AS-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 2375
  },
  {
   "control_number": "46474",
