@@ -1,0 +1,20 @@
+{
+ "college": "Santa Ana College",
+ "control_number": "12242",
+ "shape": "degree",
+ "title": "Speech-Language Pathology Assistant",
+ "award": "A.S. Degree",
+ "source_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36152/36210",
+ "record_shape": 6,
+ "model": null,
+ "stop_reason": null,
+ "usage": null,
+ "cost_usd": null,
+ "ms": null,
+ "seconds": 24.1,
+ "parts": null,
+ "error": "HTTP 503: ",
+ "score": null,
+ "record": null,
+ "extracted_run": "38843461766"
+}

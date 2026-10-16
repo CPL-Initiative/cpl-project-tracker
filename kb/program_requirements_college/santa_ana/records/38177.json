@@ -1,0 +1,193 @@
+{
+ "college": "Santa Ana College",
+ "control_number": "38177",
+ "shape": "noncredit",
+ "title": "Leadership Capstone",
+ "award": "Noncredit program",
+ "source_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36225/36186",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6186,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6186,
+    "output_tokens": 863,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 863,
+  "output_tokens_details": {
+   "thinking_tokens": 197
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.042,
+ "ms": 7297,
+ "seconds": 7.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    72.0,
+    144.0
+   ],
+   "stated": [
+    72.0,
+    144.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Leadership Capstone: Certificate of Competency (Noncredit)",
+   "measure": "hours",
+   "total_units": {
+    "min": 72,
+    "max": 144
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Communicate within small, medium, and large groups to express opinions, ideas, and suggestions",
+    "Develop leadership skills and strategies to use in personal, academic, and workplace settings"
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Students must pass ONE of the following courses:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 36,
+     "max": 72
+    },
+    "courses": [
+     {
+      "code": "ABE 044",
+      "units": 36,
+      "units_max": 72,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSS 090",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Students must pass ONE of the following courses:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 36,
+     "max": 72
+    },
+    "courses": [
+     {
+      "code": "ABE 018",
+      "units": 36,
+      "units_max": 72,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSS 092",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes with leading zeros (ABE 044, ABE 018, HSS 090, HSS 092); matched to closed-list ABE 44, ABE 18, HSS 90, HSS 92.",
+   "ABE 044 and ABE 018 are marked (Historical) and HSS 090 / HSS 092 (Active); each pair is an either/or choice of one course.",
+   "All figures are hours (noncredit); total printed as 72.0-144.0."
+  ]
+ },
+ "extracted_run": "38843461766"
+}

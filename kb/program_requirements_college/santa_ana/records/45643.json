@@ -1,0 +1,382 @@
+{
+ "college": "Santa Ana College",
+ "control_number": "45643",
+ "shape": "degree",
+ "title": "Drone Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36107/36334",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7484,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7484,
+    "output_tokens": 3380,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3380,
+  "output_tokens_details": {
+   "thinking_tokens": 1353
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09754,
+ "ms": 26120,
+ "seconds": 26.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 21,
+   "listed": 21,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    18.5,
+    30.0
+   ],
+   "stated": [
+    18.5,
+    24.5
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 18.5-30.0; the catalog states 18.5-24.5"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 10,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Drone Technology: A.S. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 18.5,
+    "max": 24.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Understand the difference between using drones for commercial and recreational purposes.",
+    "Understand Federal Aviation Administration (FAA) regulations for commercial and recreational drone usage including drone registration.",
+    "Understand how to fly a drone safely and legally based on federal, state, and local regulations.",
+    "Understand how different careers and industries use drones.",
+    "Demonstrate proficiency in using drones to take photos and record videos.",
+    "Demonstrate proficiency in using Adobe applications to edit photos and videos"
+   ],
+   "careers": [
+    "public safety",
+    "investigations",
+    "construction",
+    "engineering",
+    "inspections",
+    "real estate",
+    "marketing",
+    "media",
+    "delivery",
+    "insurance"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 13.5,
+     "max": 15.5
+    },
+    "courses": [
+     {
+      "code": "BA 158",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DM 170",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BA 161",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CJA 050",
+        "units": 0.5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BA 164",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BA 171",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BA 172",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BA 101",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Mapping, Surveying & Geographic Analysis Emphasis",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Emphasis",
+    "stated": {
+     "min": 5,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "BA 159",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 155",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Business & Reporting Emphasis",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Emphasis",
+    "stated": {
+     "min": 6,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "BA 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Microsoft Office Applications: BA 179",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Microsoft Office Applications",
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "BA 179",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "BA 125, BA 190, BA 188",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Microsoft Office Applications",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "BA 125",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BA 190",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BA 188",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Marketing & Digital Publishing Emphasis",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Emphasis",
+    "stated": {
+     "min": 8.5,
+     "max": 8.5
+    },
+    "courses": [
+     {
+      "code": "BA 153",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MKTG 130",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENTR 130",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MKTG 123",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BA 165",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BA 168",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Elective Courses: Select 1 Emphasis (5.0-9.0 units): the three emphasis blocks share option_group 'Emphasis'.",
+   "The 'Microsoft Office Applications' (3.0-6.0) choice is nested inside the Business & Reporting Emphasis: students complete BA 179 (3) OR BA 125 + BA 190 + BA 188 (6). These two blocks use option_group 'Microsoft Office Applications' and apply only when the Business & Reporting Emphasis is chosen.",
+   "BA 101 is printed as 1.0-4.0 units, but the catalog states 'Must complete a minimum of 2 units of BA 101'; the Required Courses total 13.5-15.5 reflects 2-4 units of BA 101.",
+   "Catalog prints 'BA 158'; closed list stores it as 'BA158' (same course, units not stored). Catalog prints 'CJA 050'; closed list stores 'CJA 50'. Treated as matches, not catalog additions.",
+   "BA 161 and CJA 050 are printed under the sub-heading 'Drones & the Law' (0.5) as an OR choice.",
+   "No general education pattern or degree total (with GE) is printed on this page; total 18.5-24.5 is the major total.",
+   "Careers recorded from the summary's list of 'careers and industries using drones'; these are industries/career fields rather than job titles."
+  ]
+ },
+ "extracted_run": "38843461766"
+}

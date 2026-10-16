@@ -1,0 +1,107 @@
+{
+ "college": "Santa Ana College",
+ "programs": 370,
+ "with_closed_list": 359,
+ "found": 347,
+ "extracted": 347,
+ "errors": 1,
+ "passed_machine_checks": 307,
+ "failed": {
+  "coverage": 0,
+  "invented": 0,
+  "arithmetic": 39,
+  "repeated": 1,
+  "outcomes": 0
+ },
+ "cost_usd": 22.03,
+ "cost_per_program": 0.0635,
+ "not_found": [
+  {
+   "control_number": "04197",
+   "title": "Computer Science",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36111/36016",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2591,
+     "content": 2591,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "31594",
+   "title": "Adult High School Diploma",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36227/36178",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 138,
+    "why": "coarse net: the page's code tokens name 0 of 138 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1685,
+     "content": 1685,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "32750",
+   "title": "Automotive Fundamentals",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36251",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1636,
+     "content": 1636,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "43824",
+   "title": "Automotive Applied Skills",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "run": "38843461766"
+}
