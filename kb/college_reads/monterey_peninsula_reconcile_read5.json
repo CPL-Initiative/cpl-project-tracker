@@ -1,0 +1,21 @@
+{
+ "_readme": "S396 SkyJacaranda, 2026-10-16. Read 4 (run 38759288106) printed the GE page's two patterns: Cal-GETC \"satisfies the 34 units\", and MPC GE as eight areas (1A, 1B, 2 to 7), each \"Select three units\", with no total. Sixty-five of the college's associate-degree records name the degree total and a GE pattern with no units for it: 42 \"MPC General Education or Cal-GETC\", 23 Cal-GETC alone. This read opens every tab of a local degree page and a transfer degree page, for the words each prints about its GE pattern, its electives and the 60, which the reconcile steps will match. Two loads, no model call.",
+ "college": "Monterey Peninsula College",
+ "questions": {
+  "local_ge": "The local degree page's words for its GE pattern, electives and degree total.",
+  "adt_ge": "The transfer degree page's words for Cal-GETC, its electives and degree total."
+ },
+ "keywords": [
+  "[Gg]eneral [Ee]ducation[^<\"]{0,200}",
+  "[Cc]al-?GETC[^<\"]{0,200}",
+  "[Aa]dditional [Rr]equirements[^<\"]{0,120}",
+  "[Cc]ompetency[^<\"]{0,160}",
+  "[Ee]lectives?[^<\"]{0,160}",
+  "[Tt]otal[^<\"]{0,120}",
+  "degree-applicable[^<\"]{0,120}"
+ ],
+ "pages": [
+  {"answers": ["local_ge"], "url": "https://catalog.mpc.edu/programs-study/horticulture/horticulture-as/", "expand": true},
+  {"answers": ["adt_ge"], "url": "https://catalog.mpc.edu/programs-study/psychology/psychology-aa-t/", "expand": true}
+ ]
+}
