@@ -1,0 +1,420 @@
+{
+ "college": "Madera College",
+ "control_number": "39704",
+ "shape": "degree",
+ "title": "Liberal Arts & Sciences: Arts & Humanities",
+ "award": "A.A. Degree",
+ "source_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1100/1194",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7389,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7389,
+    "output_tokens": 2366,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2366,
+  "output_tokens_details": {
+   "thinking_tokens": 394
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07688,
+ "ms": 17294,
+ "seconds": 17.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 26,
+   "listed": 27,
+   "share": 0.963,
+   "missing": [
+    "ENGL1B"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ARTHC1100",
+    "ENGLC1002"
+   ],
+   "flagged": [
+    "ARTHC1100",
+    "ENGLC1002"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    19.0
+   ],
+   "stated": [
+    18.0,
+    19.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Liberal Arts & Sciences: Arts & Humanities, Associate in Arts - Major #M.5120.AA",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Critically evaluate the central themes and concepts explored in art, literature, history, music, and philosophy."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Select one art course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ARTH 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH C1200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARTH C1200H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH C1100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Select one English course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ENGL C1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1002H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 41",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 43A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 43B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 44A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 44B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 46A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 46B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 47",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 49",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one history course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "HIST 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST C1002H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one music course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "MUS 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MUS 12H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 16",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one philoso course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "PHIL 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 1C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHIL 1CH",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 1D",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select 3 additional units from above disciplines",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": []
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ENGL 1B",
+    "why": "not in the text; the English list names ENGL C1002 instead"
+   }
+  ],
+  "notes": [
+   "The final block 'Select 3 additional units from above disciplines' lists no courses of its own; it draws from the courses in the art, English, history, music and philosophy blocks above, so its courses array is left empty.",
+   "Honors twins (ARTH C1200H, ENGL C1002H, HIST C1002H, MUS 12H, PHIL 1CH) are printed as separate rows in the catalog and are recorded as alternatives of their non-honors courses.",
+   "ARTH C1100 and ENGL C1002 appear in the catalog but not in the closed list; recorded as catalog additions. ENGL C1002 likely replaces ENGL 1B from the closed list.",
+   "Source URL refers to the 2025-2026 catalog while the requested catalog year is 2026-2027; reviewer should confirm the year.",
+   "The single learning outcome is printed for the program and recorded as the award's outcome."
+  ]
+ },
+ "extracted_run": "38935148408"
+}

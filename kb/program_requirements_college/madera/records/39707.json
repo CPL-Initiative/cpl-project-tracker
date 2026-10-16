@@ -1,0 +1,232 @@
+{
+ "college": "Madera College",
+ "control_number": "39707",
+ "shape": "degree",
+ "title": "Agricultural Mechanics",
+ "award": "A.S. Degree",
+ "source_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1105/1212",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6589,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6589,
+    "output_tokens": 1141,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1141,
+  "output_tokens_details": {
+   "thinking_tokens": 189
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04918,
+ "ms": 9094,
+ "seconds": 9.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Agricultural Mechanics, Associate in Science - Major #M.8280.AS",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Perform basic maintenance and repairs to agricultural electrical, mechanical, and hydraulic machines/equipment.",
+    "Demonstrate the ability to fabricate tools and small equipment.",
+    "Acquire skills necessary for employment in the agricultural mechanics field.",
+    "Demonstrate the ability to safely and properly operate agricultural equipment.",
+    "Demonstrate the ability to construct agricultural projects using wood, metal and various types of plumbing materials such as metal, PVC, PE and concrete pipe.",
+    "Perform engine repairs to small gas and diesel engines."
+   ],
+   "careers": [
+    "agricultural mechanics instructors",
+    "agricultural mechanics field"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "MAG 40",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAG 41",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PLS 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select 9 units of electives from the classes below",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "MAG 42",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAG 43",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAG 44",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MFGT 21",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IT 30",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Source URL refers to the 2025-2026 MCC catalog while the requested catalog year is 2026-2027; reviewer should confirm the year.",
+   "PLS 11 is marked '( Historical )' in the catalog but is still listed among the required core courses.",
+   "The page notes that associate degree and general education requirements must also be completed but names no GE pattern or degree total.",
+   "Total : 18.0 recorded as the major total."
+  ]
+ },
+ "extracted_run": "38935148408"
+}
