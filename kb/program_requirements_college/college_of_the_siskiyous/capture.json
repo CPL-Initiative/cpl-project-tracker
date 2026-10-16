@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 80,
  "with_closed_list": 77,
- "started": "2026-10-16T22:51:01Z",
+ "started": "2026-10-16T23:05:47Z",
  "elumen": {
   "catalog": "cos26-27catalog",
   "start_status": 200,
@@ -19,7 +19,7 @@
  "pages_read": 85,
  "banner_h1": "College of the Siskiyous 2026-27 Catalog",
  "loads": 89,
- "seconds": 694.4,
+ "seconds": 675.3,
  "found": 65,
  "by_method": {
   "no_closed_list": 3,
@@ -979,5 +979,5 @@
    }
   ]
  },
- "run": "38978055293"
+ "run": "38979399672"
 }

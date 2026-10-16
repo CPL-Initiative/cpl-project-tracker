@@ -1,0 +1,203 @@
+{
+ "college": "College of the Siskiyous",
+ "control_number": "37786",
+ "shape": "noncredit",
+ "title": "Small Business Startup, Marketing & Media",
+ "award": "Noncredit program",
+ "source_url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/small-business-startup-marketing-media-non-credit-coc-winter-2023-intersession",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7340,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7340,
+    "output_tokens": 1595,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1595,
+  "output_tokens_details": {
+   "thinking_tokens": 781
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06126,
+ "ms": 14370,
+ "seconds": 14.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "BA504",
+    "BA505"
+   ],
+   "flagged": [
+    "BA504",
+    "BA505"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    156.06,
+    270.0
+   ],
+   "stated": [
+    156.06,
+    270.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Small Business Startup, Marketing & Media - Non-Credit - COC",
+   "measure": "hours",
+   "total_units": {
+    "min": 156.06,
+    "max": 270
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "media",
+    "small business",
+    "management sector"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BA0505",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CSCI0501",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WORK0512",
+      "units": 48.06,
+      "units_max": 162,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Elective Course",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 36,
+     "max": 36
+    },
+    "courses": [
+     {
+      "code": "BA0504",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page labels the figures 'credits', but this is a noncredit Certificate of Completion. The values (36, 48.06-162) are read as hours, so measure is set to hours.",
+   "The 'Requirements (Total 156.06 - 270)' group contains the nested 'Elective Course (Total 36)' group. Its total equals the program total, so it is recorded in total_units. The outer block's stated is left null, because its own three courses sum to 120.06-234.",
+   "The 'Elective Course' group says 'Complete all of the following' and lists only BA0504, so it is recorded as a required block. The Recommended Sequence instead says 'Take one of the following'.",
+   "The Recommended Sequence shows 'Total Credit Hours 120.06 - 234.0', which conflicts with the 156.06-270 requirements total. It appears to omit one 36-hour course.",
+   "Codes are printed without spaces (CSCI0501, WORK0512); they match closed-list CSCI 501 and WORK 512. BA0504 and BA0505 are not in the closed list.",
+   "Careers were taken from 'entry-level employment in media, small business and management sector'. The phrase split is a judgment call."
+  ]
+ },
+ "extracted_run": "38979399672"
+}

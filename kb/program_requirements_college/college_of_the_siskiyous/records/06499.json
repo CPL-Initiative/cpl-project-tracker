@@ -1,0 +1,284 @@
+{
+ "college": "College of the Siskiyous",
+ "control_number": "06499",
+ "shape": "degree",
+ "title": "Administration of Justice",
+ "award": "A.A. Degree",
+ "source_url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/administration-of-justice-aa-fall-2025",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8333,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8333,
+    "output_tokens": 2129,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2129,
+  "output_tokens_details": {
+   "thinking_tokens": 718
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07591,
+ "ms": 18768,
+ "seconds": 19.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 12,
+   "share": 0.917,
+   "missing": [
+    "ADJ2050"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ADJ2516",
+    "ADJ2524"
+   ],
+   "flagged": [
+    "ADJ2516",
+    "ADJ2524"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    2.0,
+    41.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Administration of Justice A.A. Degree (heading not printed in the extracted text)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Complete",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Major path",
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "ADJ1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJ1503",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJ1505",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJ1517",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJ2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJ2524",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Complete one of the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": "Major path",
+    "stated": {
+     "min": 2,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ADJ2512",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJ2522",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJ2526",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJ2528",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Alternative Major Requirements: in lieu of the 20-21 units above.",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Major path",
+    "stated": {
+     "min": 30.5,
+     "max": 41
+    },
+    "courses": [
+     {
+      "code": "ADJ2014",
+      "units": 5.5,
+      "units_max": 8,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJ2516",
+      "units": 8,
+      "units_max": 11.5,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ADJ2517",
+      "units": 17,
+      "units_max": 21.5,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ADJ 2050",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The extracted text begins mid-page; no section heading, program description, GE pattern, degree total, outcomes or careers appear in it. Section heading is supplied from the program title.",
+   "The three blocks share option_group 'Major path', but the choice is two-way: the standard path is the first two blocks together (Complete, 18 units, plus Complete one of the following, 2-3 units = the '20-21 units above'), and the alternative path is the 'Alternative Major Requirements' block (30.5-41 units), taken in lieu of them.",
+   "The 20-21 units is referenced only in the alternative block's heading and is not printed as the award's total, so total_units is left null.",
+   "Non-course requirements printed with 0 units precede the course lists: pass the PELLET-B with a minimum score of 42; physical fitness tests (1.5 mile run under 20 minutes, 20 push-ups and 30 sit-ups in 2 minutes); DOJ Live Scan firearms clearance; medical clearance before the first day of the academy. These appear to apply to the academy (alternative) path and were not recorded as courses.",
+   "The 'Complete one of the following' block also says 'Complete the following number of credits: 2-3'; recorded as choose 1 course with stated 2-3.",
+   "ADJ2524 (Introduction to Corrections) and ADJ2516 (Level II Reserve Officer Certification) are not on the closed list.",
+   "A Recommended Sequence (Option 2) is printed for the alternative path; it is cut off in Term 2 and was not used as requirements."
+  ]
+ },
+ "extracted_run": "38979399672"
+}
