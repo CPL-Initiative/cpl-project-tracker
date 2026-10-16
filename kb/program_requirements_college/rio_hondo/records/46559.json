@@ -1,0 +1,284 @@
+{
+ "college": "Rio Hondo College",
+ "control_number": "46559",
+ "shape": "degree",
+ "title": "Health Science Preparation",
+ "award": "A.S. Degree",
+ "source_url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/25610",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11300,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11300,
+    "output_tokens": 1804,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1804,
+  "output_tokens_details": {
+   "thinking_tokens": 572
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08128,
+ "ms": 13802,
+ "seconds": 14.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 14,
+   "share": 0.857,
+   "missing": [
+    "SOC101",
+    "SOC101H"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "SOCIC1000",
+    "SOCIC1000H"
+   ],
+   "flagged": [
+    "SOCIC1000",
+    "SOCIC1000H"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    34.5,
+    34.5
+   ],
+   "stated": [
+    34.5,
+    34.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "HEALTH SCIENCE PREPARATION - Associate of Science Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 34.5,
+    "max": 34.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Rio Hondo General Education (RHC GE) or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "nursing",
+    "dental hygiene",
+    "physical therapy",
+    "medical laboratory technicians",
+    "radiological sciences"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 22,
+     "max": 22
+    },
+    "courses": [
+     {
+      "code": "BIOL 125",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 222",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 226",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 110",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM 120",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Additional Major Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12.5,
+     "max": 12.5
+    },
+    "courses": [
+     {
+      "code": "ENGL C1000",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOCI C1000H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "SOC 101",
+    "why": "catalog prints its renumbered code SOCI C1000 (formerly SOC 101), recorded as a catalog addition"
+   },
+   {
+    "code": "SOC 101H",
+    "why": "catalog prints its renumbered code SOCI C1000H (formerly SOC 101H), recorded as a catalog addition"
+   }
+  ],
+  "notes": [
+   "Total : 34.5 is the major total (22.0 + 12.5); no degree total or GE unit count is printed.",
+   "The page names RHC GE or Cal-GETC as the GE pattern; it adds that CSU GE or IGETC may be used in some cases with counselor approval.",
+   "Careers are taken from the description's list of health science programs the degree prepares for (nursing, dental hygiene, physical therapy, medical laboratory technicians, radiological sciences); reviewer may check whether these should count as career fields. 'Careers in the health sciences' appears only in course descriptions and was not recorded.",
+   "No program learning outcomes are printed in the text.",
+   "SOCI C1000/SOCI C1000H appear in the closed list under their former codes SOC 101/SOC 101H."
+  ]
+ },
+ "extracted_run": "38843465712"
+}

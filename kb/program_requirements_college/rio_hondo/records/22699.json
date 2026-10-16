@@ -1,0 +1,294 @@
+{
+ "college": "Rio Hondo College",
+ "control_number": "22699",
+ "shape": "certificate",
+ "title": "Architectural Design and Drawing Technician",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24143",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11666,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11666,
+    "output_tokens": 1706,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1706,
+  "output_tokens_details": {
+   "thinking_tokens": 493
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08078,
+ "ms": 12715,
+ "seconds": 13.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 16,
+   "listed": 16,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ARCH125",
+    "CIV140"
+   ],
+   "flagged": [
+    "ARCH125",
+    "CIV140"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    31.0,
+    32.0
+   ],
+   "stated": [
+    31.0,
+    32.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "ARCHITECTURAL DESIGN AND DRAWING TECHNICIAN - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 31,
+    "max": 32
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "designers of architectural projects",
+    "architects"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 28,
+     "max": 28
+    },
+    "courses": [
+     {
+      "code": "ARCH 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CIV 101",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGT 101",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 115",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 125",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARCH 225",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIV 140",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGT 105",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGT 150",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGT 170",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose a minimum of 3 units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ARCH 215",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 260",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 280",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGT 280",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 290",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 299",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGT 200",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "ARCH 125 and CIV 140 are required in the catalog section but are not in the closed list; recorded as catalog additions.",
+   "ARCH 101, CIV 101 and ENGT 101 are cross-listed (same course); recorded as one entry with alternatives. Likewise ARCH 280 / ENGT 280.",
+   "No program learning outcomes are printed in the text.",
+   "The catalog text is cut off at the end (inside the ARCH 299 course description); the requirements section itself appears complete.",
+   "Careers taken from the description: 'preparation for careers as designers of architectural projects and potential licensure as architects'. Reviewer may check whether 'architects' (licensure) should count as a career entry."
+  ]
+ },
+ "extracted_run": "38843465712"
+}

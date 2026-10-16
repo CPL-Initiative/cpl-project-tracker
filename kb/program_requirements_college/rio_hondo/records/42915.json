@@ -1,0 +1,373 @@
+{
+ "college": "Rio Hondo College",
+ "control_number": "42915",
+ "shape": "adt",
+ "title": "Environmental Science",
+ "award": "A.S. T Degree",
+ "source_url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24572",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12019,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12019,
+    "output_tokens": 2727,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2727,
+  "output_tokens_details": {
+   "thinking_tokens": 1004
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10262,
+ "ms": 21992,
+ "seconds": 22.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 19,
+   "listed": 21,
+   "share": 0.905,
+   "missing": [
+    "ECON102",
+    "ECON102H"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ECONC2001",
+    "ECONC2001H"
+   ],
+   "flagged": [
+    "ECONC2001",
+    "ECONC2001H"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    41.0,
+    41.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Cal-GETC pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     41.0,
+     41.0
+    ],
+    "stated": [
+     41.0,
+     41.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "ENVIRONMENTAL SCIENCE - Associate in Science for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 41,
+    "max": 41
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "BIOL 200",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 201",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 130",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Select courses from list below for a minimum total of 15 units",
+    "rule": "choose_units",
+    "minimum": 15,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "BIOL 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 140",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOG 101",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 151",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOG 101L",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000H",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSY 190",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 190",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 190H",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 170",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B: Select one Economics course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2001H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "List B: Physics sequence PHY 150 and PHY 160",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "List B Physics sequence",
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "PHY 150",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHY 160",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B: Physics sequence PHY 211 and PHY 213",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "List B Physics sequence",
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "PHY 211",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHY 213",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECON 102",
+    "why": "Catalog prints ECON C2001 (formerly ECON 102) instead; recorded as ECON C2001."
+   },
+   {
+    "code": "ECON 102H",
+    "why": "Catalog prints ECON C2001H (formerly ECON 102H) instead; recorded as ECON C2001H."
+   }
+  ],
+  "notes": [
+   "List A prints a 4-unit group 'GEOL 150 AND GEOL 151 OR GEOG 101 AND GEOG 101L': the student takes either the GEOL lecture+lab pair or the GEOG lecture+lab pair. Recorded as GEOL 150 (alt GEOG 101) and GEOL 151 (alt GEOG 101L); the pairs go together.",
+   "List B is printed as one list ('Select one Economics course and one Physics sequence', Units: 11.0); split into an Economics choice (3 units) and two Physics sequence option blocks (8 units each) sharing an option_group.",
+   "Total : 41.0 recorded as the major total; 'DEGREE TOTAL 60 units' recorded as degree_total. Cal-GETC units printed as 'units will vary', so ge_units is null. Transferable electives fill to 60 units.",
+   "Several 4.0/8.0 figures appear without codes in the table; read as group subtotals for the or/and groupings.",
+   "No program learning outcomes or careers printed in the text."
+  ]
+ },
+ "extracted_run": "38843465712"
+}

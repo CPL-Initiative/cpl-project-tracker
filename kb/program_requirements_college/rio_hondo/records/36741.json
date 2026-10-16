@@ -1,0 +1,267 @@
+{
+ "college": "Rio Hondo College",
+ "control_number": "36741",
+ "shape": "degree",
+ "title": "Photography",
+ "award": "A.A. Degree",
+ "source_url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24302",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10127,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10127,
+    "output_tokens": 1423,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1423,
+  "output_tokens_details": {
+   "thinking_tokens": 352
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06897,
+ "ms": 11386,
+ "seconds": 11.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 13,
+   "share": 0.769,
+   "missing": [
+    "ART105H",
+    "ART106",
+    "ART106H"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "ARTHC1100H",
+    "ARTHC1200",
+    "ARTHC1200H"
+   ],
+   "flagged": [
+    "ARTHC1100H",
+    "ARTHC1200",
+    "ARTHC1200H"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    30.0,
+    30.0
+   ],
+   "stated": [
+    30.0,
+    30.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "PHOTOGRAPHY - Associate of Arts Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 30,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Rio Hondo College General Education (RHC GE) or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 30,
+     "max": 30
+    },
+    "courses": [
+     {
+      "code": "ARTH C1100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARTH C1100H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH C1200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARTH C1200H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ART 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GDSN 178",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTO 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTO 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTO 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHTO 131",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTO 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ART 105H",
+    "why": "Not in the text; catalog lists its replacement ARTH C1100H (formerly ART 105H)."
+   },
+   {
+    "code": "ART 106",
+    "why": "Not in the text; catalog lists its replacement ARTH C1200 (formerly ART 106)."
+   },
+   {
+    "code": "ART 106H",
+    "why": "Not in the text; catalog lists its replacement ARTH C1200H (formerly ART 106H)."
+   }
+  ],
+  "notes": [
+   "ARTH C1100 matched to closed-list entry ARTHC1100 (spacing differs only).",
+   "ARTH C1100H, ARTH C1200 and ARTH C1200H are renumbered versions of closed-list ART 105H, ART 106 and ART 106H; marked as catalog additions because their codes are not in the closed list.",
+   "Degree requires RHC GE or Cal-GETC; CSU GE or IGETC may be used in some cases per counselor. No degree total or GE units printed.",
+   "No program learning outcomes or careers printed in the text."
+  ]
+ },
+ "extracted_run": "38843465712"
+}

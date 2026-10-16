@@ -1,0 +1,244 @@
+{
+ "college": "Rio Hondo College",
+ "control_number": "46560",
+ "shape": "certificate",
+ "title": "Communication Studies",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/25611",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9901,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9901,
+    "output_tokens": 1337,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1337,
+  "output_tokens_details": {
+   "thinking_tokens": 337
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06634,
+ "ms": 11035,
+ "seconds": 11.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 11,
+   "share": 0.818,
+   "missing": [
+    "SPCH100",
+    "SPCH100H"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "COMMC1004",
+    "COMMC1004H"
+   ],
+   "flagged": [
+    "COMMC1004",
+    "COMMC1004H"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    12.0,
+    12.0
+   ],
+   "stated": [
+    12.0,
+    12.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "COMMUNICATION STUDIES - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 12,
+    "max": 12
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Please select any 12 units from the following options",
+    "rule": "choose_units",
+    "minimum": 12,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM C1004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM C1004H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "SPCH 110",
+      "units": 2,
+      "units_max": 9,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPCH 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPCH 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPCH 132",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPCH 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPCH 150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPCH 240",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "SPCH 100",
+    "why": "Not in the text under this code; catalog prints COMM C1004 (formerly SPCH 100), recorded as catalog addition."
+   },
+   {
+    "code": "SPCH 100H",
+    "why": "Not in the text under this code; catalog prints COMM C1004H (formerly SPCH 100H), recorded as catalog addition."
+   }
+  ],
+  "notes": [
+   "SPCH 110 is printed with 2.0-9.0 units in the requirements list; the course itself is 2-4 units and the footnote says it can be taken up to four times with a maximum of 9 units applied to the certificate.",
+   "SPCH 240 carries an asterisk (*) in the requirements list but no matching footnote is printed in the text.",
+   "COMM C1004 and COMM C1004H replace closed-list SPCH 100 and SPCH 100H (catalog says 'formerly SPCH 100/100H'); the state file may need updating.",
+   "No program learning outcomes or named careers are printed for this award; occupations mentioned (e.g., law, negotiation) appear only in course descriptions and were not recorded."
+  ]
+ },
+ "extracted_run": "38843465712"
+}

@@ -1,0 +1,253 @@
+{
+ "college": "Rio Hondo College",
+ "control_number": "03223",
+ "shape": "degree",
+ "title": "Vocational Nursing",
+ "award": "A.S. Degree",
+ "source_url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/22641",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9600,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9600,
+    "output_tokens": 1648,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1648,
+  "output_tokens_details": {
+   "thinking_tokens": 544
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07136,
+ "ms": 13588,
+ "seconds": 13.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    49.5,
+    49.5
+   ],
+   "stated": [
+    49.5,
+    49.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "NURSING/VOCATIONAL NURSING PROGRAM - Associate of Science Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 49.5,
+    "max": 49.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Rio Hondo College General Education (RHC GE) or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "staff nurses",
+    "Licensed Vocational Nurse"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Prerequisites",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16.5,
+     "max": 16.5
+    },
+    "courses": [
+     {
+      "code": "HS 045",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 125",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 061",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 061L",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "COURSES REQUIRED AFTER PROGRAM ADMISSION",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 33,
+     "max": 33
+    },
+    "courses": [
+     {
+      "code": "VN 073",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 078",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 078L",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 083",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 088",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 088L",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes with leading zeros (HS 045, VN 061, VN 073, VN 078, VN 083, VN 088); these were matched to closed-list HS 45, VN 61, VN 73, VN 78, VN 83, VN 88 and not marked as catalog additions.",
+   "A stray '3.0' appears after BIOL 125 (4.0) in the Prerequisites list with no course beside it; likely the PSYC C1000/C1000H choice's units printed early. Block total 16.5 matches 1+4+3+3.5+5.",
+   "The 49.5 total is the major total; no degree total or GE unit count is printed. CSU GE or IGETC may also be used in some cases per a counselor.",
+   "No program learning outcomes are printed in the text.",
+   "VN 061 and 061L are offered once per year by permit."
+  ]
+ },
+ "extracted_run": "38843465712"
+}

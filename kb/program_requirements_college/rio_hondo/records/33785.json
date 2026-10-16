@@ -1,0 +1,474 @@
+{
+ "college": "Rio Hondo College",
+ "control_number": "33785",
+ "shape": "degree",
+ "title": "Social Work",
+ "award": "A.A. Degree",
+ "source_url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24311",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12013,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12013,
+    "output_tokens": 2933,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2933,
+  "output_tokens_details": {
+   "thinking_tokens": 827
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10671,
+ "ms": 22473,
+ "seconds": 22.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 16,
+   "listed": 23,
+   "share": 0.696,
+   "missing": [
+    "CD106",
+    "HIST143",
+    "HIST143H",
+    "HIST144",
+    "HIST144H",
+    "SOC101",
+    "SOC101H"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 17,
+   "codes": [
+    "BIOL105",
+    "BIOL125",
+    "BIOL226",
+    "CDEVC1000",
+    "ECONC2001",
+    "ECONC2001H",
+    "ECONC2002",
+    "ECONC2002H",
+    "HISTC1001",
+    "HISTC1001H",
+    "HISTC1002",
+    "HISTC1002H",
+    "HUSR111",
+    "SOC116",
+    "SOCIC1000",
+    "SOCIC1000H",
+    "SPCH150"
+   ],
+   "flagged": [
+    "BIOL105",
+    "BIOL125",
+    "BIOL226",
+    "CDEVC1000",
+    "ECONC2001",
+    "ECONC2001H",
+    "ECONC2002",
+    "ECONC2002H",
+    "HISTC1001",
+    "HISTC1001H",
+    "HISTC1002",
+    "HISTC1002H",
+    "HUSR111",
+    "SOC116",
+    "SOCIC1000",
+    "SOCIC1000H",
+    "SPCH150"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    28.0,
+    30.5
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Cal-GETC pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     28.0,
+     30.5
+    ],
+    "stated": [
+     28.0,
+     30.5
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "SOCIAL WORK AND HUMAN SERVICES - Associate in Arts for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 28,
+    "max": 30.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [],
+   "careers": [
+    "social work",
+    "human services",
+    "counseling"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 22,
+     "max": 24
+    },
+    "courses": [
+     {
+      "code": "HUSR 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOCI C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOCI C1000H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUSR 199A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUSR 199B",
+      "units": 2,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000H",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSY 190",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL 125",
+        "units": 4,
+        "catalog_addition": true
+       },
+       {
+        "code": "BIOL 226",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2002H",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "ECON C2001",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "ECON C2001H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Select two courses",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6.5
+    },
+    "courses": [
+     {
+      "code": "AJ 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH 102H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CD 208",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1001",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1001H",
+        "units": 3.5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST C1001H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST C1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST C1002H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSY 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSY 114",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 116",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SPCH 150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CD 106",
+    "why": "renumbered; catalog prints CDEV C1000 (formerly CD 106)"
+   },
+   {
+    "code": "HIST 143",
+    "why": "renumbered; catalog prints HIST C1001 (formerly HIST 143)"
+   },
+   {
+    "code": "HIST 143H",
+    "why": "renumbered; catalog prints HIST C1001H (formerly HIST 143H)"
+   },
+   {
+    "code": "HIST 144",
+    "why": "renumbered; catalog prints HIST C1002 (formerly HIST 144)"
+   },
+   {
+    "code": "HIST 144H",
+    "why": "renumbered; catalog prints HIST C1002H (formerly HIST 144H)"
+   },
+   {
+    "code": "SOC 101",
+    "why": "renumbered; catalog prints SOCI C1000 (formerly SOC 101)"
+   },
+   {
+    "code": "SOC 101H",
+    "why": "renumbered; catalog prints SOCI C1000H (formerly SOC 101H)"
+   }
+  ],
+  "notes": [
+   "The requested award is an A.A. Degree in Social Work, but the page prints 'Social Work and Human Services - Associate in Arts for Transfer' (AA-T); reviewer should confirm this is the intended award.",
+   "HUSR 199A and HUSR 199B are printed joined by AND as one required row (3.0-4.0 units); recorded as two required courses.",
+   "Required Courses block printed units 22.0-24.0; overall 'Total : 28.0- 30.5' recorded as the major total; 'DEGREE TOTAL 60 units' recorded as degree_total.",
+   "Cal-GETC printed with 'units will vary', so ge_units is null; transferable electives fill to 60 units.",
+   "No program learning outcomes are printed in the text.",
+   "Catalog text is cut off at the end (within the ENGL C1001 course description).",
+   "Careers taken from the program description ('fields of social work, human services, counseling'); CSU major names listed are not recorded as careers."
+  ]
+ },
+ "extracted_run": "38843465712"
+}

@@ -1,0 +1,251 @@
+{
+ "college": "Rio Hondo College",
+ "control_number": "22713",
+ "shape": "certificate",
+ "title": "Vocational Nursing",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/22643",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9502,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9502,
+    "output_tokens": 1723,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1723,
+  "output_tokens_details": {
+   "thinking_tokens": 553
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07247,
+ "ms": 20428,
+ "seconds": 20.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    49.5,
+    49.5
+   ],
+   "stated": [
+    49.5,
+    49.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "NURSING/VOCATIONAL NURSING PROGRAM - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 49.5,
+    "max": 49.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "staff nurses",
+    "licensed vocational nurse"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Prerequisites",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16.5,
+     "max": 16.5
+    },
+    "courses": [
+     {
+      "code": "HS 045",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 125",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 061",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 061L",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "COURSES REQUIRED AFTER PROGRAM ADMISSION",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 33,
+     "max": 33
+    },
+    "courses": [
+     {
+      "code": "VN 073",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 078",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 078L",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 083",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 088",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 088L",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints zero-padded codes (HS 045, VN 061, VN 073, VN 078, VN 083, VN 088) that match the closed list's HS 45, VN 61, VN 73, VN 78, VN 83 and VN 88; these are treated as the same courses, not catalog additions.",
+   "A stray '3.0' appears after BIOL 125's 4.0 units in the Prerequisites list. It looks like the units of the PSYC C1000/C1000H row and is not recorded separately. The block sums to the stated 16.5.",
+   "The 'COURSES REQUIRED AFTER PROGRAM ADMISSION' block (33 units) combines the FALL SEMESTER (VN 073, VN 078, VN 078L) and SPRING SEMESTER (VN 083, VN 088, VN 088L) sub-lists.",
+   "The page states 'Total : 49.5', recorded as total_units. The prerequisite courses are counted in this total.",
+   "The page notes that VN 061 and 061L are offered once per year by permit. A 2.5 GPA in all college work attempted is required for completion.",
+   "No program learning outcomes are printed in the text."
+  ]
+ },
+ "extracted_run": "38843465712"
+}
