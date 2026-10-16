@@ -1,0 +1,250 @@
+{
+ "college": "College of the Redwoods",
+ "control_number": "46085",
+ "shape": "adt",
+ "title": "Physics 2.0",
+ "award": "A.S. T Degree",
+ "source_url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/physics-2-0-for-transfer-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7808,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7808,
+    "output_tokens": 1813,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1813,
+  "output_tokens_details": {
+   "thinking_tokens": 628
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06749,
+ "ms": 15224,
+ "seconds": 15.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    36.0,
+    36.0
+   ],
+   "stated": [
+    66.0,
+    66.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the CalGETC pattern, but no units for it"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Physics 2.0 for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "CalGETC",
+   "degree_total": {
+    "min": 66,
+    "max": 66
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply methods of scientific inquiry to investigate questions, and explain the limitations of this approach.",
+    "Perform experiments, collect and analyze data, evaluate sources of uncertainty, and determine if an experiment correctly verifies theory within expected errors.",
+    "Use concepts from physics theories to analyze and describe natural phenomenon.",
+    "Use physical laws, theories, and appropriate mathematics to make quantitative predictions."
+   ],
+   "careers": [
+    "Astronomers",
+    "Atmospheric and Space Scientists",
+    "Biochemists and Biophysicists",
+    "Materials Scientists",
+    "Natural Sciences Managers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Physics for Transfer",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 36,
+     "max": 40
+    },
+    "courses": [
+     {
+      "code": "MATHC2210",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATHC2220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH50C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS4A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS4B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS4C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH45",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH55",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Programming Course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "CIS12",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS18",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The 66.0 Credits printed beside the award heading is recorded as degree_total; the page prints no total for the major alone, so total_units is null.",
+   "The 'Physics for Transfer' block prints Total 36 - 40, but its eight listed courses sum to 32 units; reviewer should check whether the printed block total is in error or includes other requirements.",
+   "'Programming Course' reads 'Complete at least one of the following rules' with Total 4 - 8; recorded as choose 1 course. The recommended sequence says 'Take one of the following'.",
+   "The description recommends an astronomy course as 'the elective for this degree' for astronomy majors, but no elective block or units are printed.",
+   "The sentence requiring 60 transferable units and at least 18 units in the major is generic ADT language and is not recorded as a total.",
+   "Codes are written as the catalog prints them without spaces (e.g., MATHC2210 = MATH C2210 in the closed list).",
+   "Careers are taken from the Career Information heading on the program page."
+  ]
+ },
+ "extracted_run": "38979396148"
+}

@@ -1,0 +1,826 @@
+{
+ "college": "College of the Redwoods",
+ "catalog_url": "https://redwoods.elumenapp.com/catalog/2026-2027/home",
+ "platform": "elumen",
+ "catalog_year": "2026-2027",
+ "programs": 79,
+ "with_closed_list": 76,
+ "started": "2026-10-16T23:05:31Z",
+ "elumen": {
+  "catalog": "2026-2027",
+  "read": "publish/content",
+  "menu_programs": 84,
+  "errors": [],
+  "program_pages": 84
+ },
+ "pages_read": 84,
+ "banner_h1": null,
+ "loads": 85,
+ "seconds": 352.0,
+ "found": 73,
+ "by_method": {
+  "no_closed_list": 3,
+  "not_found": 2,
+  "page_claimed": 1,
+  "sitemap_page": 73
+ },
+ "shared_pages": {
+  "https://redwoods.elumenapp.com/catalog/2026-2027/program/mathematics-2-0-for-transfer-fall-2026": [
+   "31005",
+   "46245"
+  ],
+  "https://redwoods.elumenapp.com/catalog/2026-2027/program/physics-2-0-for-transfer-fall-2026": [
+   "32809",
+   "46085"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "46337",
+   "title": "Surgical Technology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/aquaculture-technology-fall-2023",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 11,
+    "why": "coarse net: the page's code tokens name 0 of 11 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5009,
+     "content": 5009,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "46338",
+   "title": "Respiratory Care",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "46099",
+   "title": "Data Science",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://redwoods.elumenapp.com/catalog/2026-2027/program/physics-2-0-for-transfer-fall-2026"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 3,
+  "0.8-1.0": 23,
+  "1.0": 47
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 73,
+  "list": [
+   {
+    "control_number": "01793",
+    "title": "Agriculture, General",
+    "award": "A.S. Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/agriculture-general-fall-2020",
+    "coverage": 0.955,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01796",
+    "title": "Forestry and Natural Resource Technology",
+    "award": "A.S. Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/forestry-and-natural-resources-technology-fall-2025",
+    "coverage": 0.88,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01802",
+    "title": "General Business",
+    "award": "A.S. Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/general-business-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01816",
+    "title": "Automotive Technology",
+    "award": "A.S. Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/advanced-automotive-technology-ca-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01818",
+    "title": "Construction Technology",
+    "award": "A.S. Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/construction-technology-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01821",
+    "title": "Welding Technology",
+    "award": "A.S. Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/welding-technology-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01831",
+    "title": "Registered Nursing",
+    "award": "A.S. Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/registered-nursing-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01832",
+    "title": "Licensed Vocational Nursing",
+    "award": "A.S. Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/licensed-vocational-nursing-fall-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01835",
+    "title": "Dental Assisting",
+    "award": "A.S. Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/dental-assisting-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08380",
+    "title": "CIS Networking",
+    "award": "A.S. Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/cis-networking-fall-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08393",
+    "title": "LVN or Paramedic to RN - Career Mobility",
+    "award": "A.S. Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/lvn-or-paramedic-to-rn-career-mobility-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10849",
+    "title": "Basic Law Enforcement Academy",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/basic-law-enforcement-academy-fall-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "13559",
+    "title": "Early Childhood Education",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/early-childhood-education-fall-2018",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16505",
+    "title": "Addiction Studies",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/addiction-studies-ca-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18225",
+    "title": "Liberal Arts: Science Exploration",
+    "award": "A.A. Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/liberal-arts-science-exploration-fall-2019",
+    "coverage": 0.891,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18227",
+    "title": "Liberal Arts: Science",
+    "award": "A.A. Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/liberal-arts-science-fall-2019",
+    "coverage": 0.815,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18228",
+    "title": "Liberal Arts: Fine Arts",
+    "award": "A.A. Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/liberal-arts-fine-arts-fall-2024",
+    "coverage": 0.933,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18229",
+    "title": "Liberal Arts: Behavioral and Social Science",
+    "award": "A.A. Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/liberal-arts-behavioral-social-science-fall-2020",
+    "coverage": 0.816,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18230",
+    "title": "Liberal Arts: Humanities, Language, and Communication",
+    "award": "A.A. Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/liberal-arts-humanities-language-communication-fall-2019",
+    "coverage": 0.848,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18231",
+    "title": "Liberal Arts: Business",
+    "award": "A.A. Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/liberal-arts-business-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18387",
+    "title": "Residential Construction I",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/residential-construction-i-ca-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18388",
+    "title": "Residential Construction II",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/residential-construction-ii-ca-fall-2026",
+    "coverage": 0.941,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18389",
+    "title": "Cabinetmaking & Millwork",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/cabinetmaking-millwork-ca-fall-2018",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22657",
+    "title": "Forestry and Natural Resources",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/forestry-and-natural-resources-ca-fall-2024",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22658",
+    "title": "Small Business Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/small-business-management-ca-fall-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22663",
+    "title": "CIS Networking",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/cis-networking-ca-fall-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22666",
+    "title": "Advanced Automotive Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/automotive-technology-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22673",
+    "title": "Welding Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/welding-technology-ca-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22676",
+    "title": "LVN to RN 30 Unit Option",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/lvn-to-rn-30-unit-option-ca-summer-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22677",
+    "title": "Licensed Vocational Nursing",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/licensed-vocational-nursing-ca-fall-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22678",
+    "title": "Dental Assisting",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/dental-assisting-ca-fall-2026",
+    "coverage": 0.944,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30811",
+    "title": "North Coast Paramedic",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/north-coast-paramedic-summer-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31004",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/psychology-for-transfer-fall-2025",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31005",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/mathematics-2-0-for-transfer-fall-2026",
+    "coverage": 0.7,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31662",
+    "title": "Early  Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/early-childhood-education-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31796",
+    "title": "Electrician Trainee",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/electrician-trainee-ca-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31934",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/studio-arts-for-transfer-fall-2026",
+    "coverage": 0.938,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32556",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/history-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32808",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/political-science-for-transfer-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32809",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/physics-2-0-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32932",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/english-for-transfer-fall-2026",
+    "coverage": 0.944,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32947",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/geology-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33040",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/sociology-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33200",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/administration-of-justice-for-transfer-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33282",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/kinesiology-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33284",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/anthropology-for-transfer-fall-2026",
+    "coverage": 0.905,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33453",
+    "title": "Personal and Academic English as a Second Language",
+    "award": "Noncredit program",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/personal-or-academic-english-as-a-second-language-fall-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35147",
+    "title": "Agriculture Plant Science",
+    "award": "A.S. T Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/agriculture-plant-science-for-transfer-fall-2026",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35445",
+    "title": "Philosophy",
+    "award": "A.A- T Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/philosophy-for-transfer-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35895",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/biology-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36425",
+    "title": "Police Science",
+    "award": "A.S. Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/police-science-fall-2018",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38708",
+    "title": "Horticulture & Landscape Practices",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/horticulture-landscape-practices-ca-fall-2019",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38709",
+    "title": "Organic/Sustainable Agriculture",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/organic-sustainable-agriculture-ca-fall-2019",
+    "coverage": 0.733,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38710",
+    "title": "Automotive Maintenance & Light Repair",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/automotive-maintenance-light-repair-ca-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39158",
+    "title": "Graphic Design & Visual Communication",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/graphic-design-visual-communication-ca-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39210",
+    "title": "CIS Cybersecurity",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/cis-cybersecurity-ca-fall-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39513",
+    "title": "Social Work and Human Services",
+    "award": "A.S. Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/social-work-human-services-fall-2026",
+    "coverage": 0.931,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39540",
+    "title": "Social Justice Studies: General",
+    "award": "A.A- T Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/social-justice-studies-general-fall-2026",
+    "coverage": 0.88,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41291",
+    "title": "Bookkeeping",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/bookkeeping-ca-fall-2026",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42575",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/business-administration-2-0-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42648",
+    "title": "Geomatics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/geomatics-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42895",
+    "title": "Aquaculture Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/aquaculture-technology-fall-2023",
+    "coverage": 0.895,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42928",
+    "title": "Aquaculture Technology",
+    "award": "A.S. Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/aquaculture-technology-ca-fall-2023",
+    "coverage": 0.85,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44179",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/communication-studies-2-0-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44399",
+    "title": "Personal Wellness Trainer",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/personal-wellness-trainer-ca-fall-2025",
+    "coverage": 0.964,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44463",
+    "title": "Personal Wellness",
+    "award": "A.S. Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/personal-wellness-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44697",
+    "title": "Social Work and Human Services",
+    "award": "A.S. T Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/social-work-and-human-services-for-transfer-fall-2026",
+    "coverage": 0.96,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45557",
+    "title": "Psychiatric Technician",
+    "award": "Certificate of Achievement requiring 60+S/90+Q units",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/psychiatric-technician-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45595",
+    "title": "Psychiatric Technician",
+    "award": "A.S. Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/psychiatric-technician-ca-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45727",
+    "title": "Agriculture Business",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/agriculture-business-ca-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46085",
+    "title": "Physics 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/physics-2-0-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46245",
+    "title": "Mathematics 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/mathematics-2-0-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46247",
+    "title": "Agriculture Business",
+    "award": "A.S. T Degree",
+    "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/agriculture-business-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "38979396148"
+}
