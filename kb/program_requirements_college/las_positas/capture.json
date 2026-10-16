@@ -5,14 +5,11 @@
  "catalog_year": "2026-2027",
  "programs": 204,
  "with_closed_list": 201,
- "started": "2026-10-16T16:52:21Z",
+ "started": "2026-10-16T23:05:34Z",
  "curriqunet": {
   "catalog": 164,
   "view_prefix": "https://laspositas.curriqunet.com/catalog/iq/",
-  "errors": [
-   "https://laspositas.curriqunet.com/Catalog/_getPage?catalogId=164&id=1729: APIRequestContext.get: socket hang up (ECONNRESET)",
-   "https://laspositas.curriqunet.com/Catalog/_getNavigation?id=164&parentId=1901: APIRequestContext.get: socket hang up (ECONNRESET)"
-  ],
+  "errors": [],
   "sections": [
    "Departments, Degrees & Certificates",
    "Student Services and Programs",
@@ -21,7 +18,7 @@
    "PROGRAM CHART PDF BLANK"
   ],
   "nodes_read": 158,
-  "calls": 315,
+  "calls": 316,
   "entries": 20,
   "stopped_at_cap": false,
   "same_title_entries": 0,
@@ -29,8 +26,8 @@
  },
  "pages_read": 20,
  "banner_h1": null,
- "loads": 336,
- "seconds": 1472.4,
+ "loads": 337,
+ "seconds": 1453.8,
  "found": 20,
  "by_method": {
   "no_closed_list": 3,
@@ -1635,211 +1632,10 @@
   "1.0": 15
  },
  "would_extract": {
-  "against": null,
-  "kept": 0,
-  "programs": 20,
-  "list": [
-   {
-    "control_number": "01004",
-    "title": "Art: Emphasis in Painting",
-    "award": "A.A. Degree",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/125/1270/1272",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "01032",
-    "title": "Humanities",
-    "award": "A.A. Degree",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1875",
-    "coverage": 0.833,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36234",
-    "title": "Commercial Music: Music Business",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/158/1905/1908",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36341",
-    "title": "Liberal Arts & Sciences: Mathematics and Science",
-    "award": "A.A. Degree",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1879",
-    "coverage": 0.984,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36349",
-    "title": "Commercial Music: Teaching Intermediate Piano",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/158/1905/1913",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36350",
-    "title": "Commercial Music: Teaching Beginning Piano",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/158/1905/1912",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36361",
-    "title": "Liberal Arts & Sciences: Computer Studies",
-    "award": "A.A. Degree",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1877",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36362",
-    "title": "Liberal Arts & Sciences: Language Arts and Communication",
-    "award": "A.A. Degree",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1878",
-    "coverage": 0.982,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36363",
-    "title": "Liberal Arts & Sciences: Business",
-    "award": "A.A. Degree",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1876",
-    "coverage": 0.957,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36431",
-    "title": "Liberal Arts & Sciences: Arts and Humanities",
-    "award": "A.A. Degree",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1875",
-    "coverage": 0.971,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36479",
-    "title": "Liberal Arts & Sciences: Social and Behavioral Sciences",
-    "award": "A.A. Degree",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1880",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37521",
-    "title": "Commercial Music: Scoring for Film and Multimedia",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/158/1905/1911",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37523",
-    "title": "Fire Academy - Fire Suppression",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/142/1737/1743",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37535",
-    "title": "Commercial Music: Music Technology Fundamentals",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/158/1905/1909",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39066",
-    "title": "Commercial Music: Piano Teaching Fundamentals",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/158/1905/1910",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40063",
-    "title": "Social Justice Studies: LGBTQ Studies",
-    "award": "A.A- T Degree",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/154/1865/1869",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41980",
-    "title": "Social Justice Studies: Gender Studies",
-    "award": "A.A- T Degree",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/182/2143/2146",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45955",
-    "title": "Liberal Arts & Sciences: Health and Wellness",
-    "award": "A.A. Degree",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/2204",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46194",
-    "title": "Commercial Music: Music Technology and Production",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/158/1905/2154",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46334",
-    "title": "Elementary Teacher Education: Integrated Programs",
-    "award": "A.A- T Degree",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/134/1637/1648",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   }
-  ]
+  "against": "kb/program_requirements_college/las_positas",
+  "kept": 20,
+  "programs": 0,
+  "list": []
  },
- "run": "38935144431"
+ "run": "38979338956"
 }
