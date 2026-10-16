@@ -1,0 +1,197 @@
+{
+ "college": "College of the Redwoods",
+ "control_number": "39210",
+ "shape": "certificate",
+ "title": "CIS Cybersecurity",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/cis-cybersecurity-ca-fall-2021",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7122,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7122,
+    "output_tokens": 1229,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1229,
+  "output_tokens_details": {
+   "thinking_tokens": 328
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05307,
+ "ms": 10331,
+ "seconds": 10.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "CIS31"
+   ],
+   "flagged": [
+    "CIS31"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    16.0,
+    16.0
+   ],
+   "stated": [
+    16.0,
+    16.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "CIS Cybersecurity, CA",
+   "measure": "units",
+   "total_units": {
+    "min": 16,
+    "max": 16
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Define the elements of the Confidentiality, Integrity, and Availability triad, along with the purpose of each of the elements.",
+    "Describe the tools and methods a \"hacker\" uses to break into a computer or network.",
+    "Apply strategies for network defense using firewalls, routers, switches, and anti-malware tools.",
+    "Construct and apply secure group policy settings at the Organizational Unit (OU), Domain, Site or local machine level"
+   ],
+   "careers": [
+    "entry level network security positions",
+    "Computer and Information Research Scientists",
+    "Computer and Information Systems Managers",
+    "Computer Network Architects",
+    "Computer Network Support Specialists",
+    "Computer Occupations, All Other"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "CIS Cybersecurity",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "CIS30",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS31",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS35",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS37",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "CIS31 - Systems and Network Administration is required in the catalog but is not in the closed list; recorded as a catalog addition.",
+   "Catalog prints codes without a space (CIS30, CIS31, CIS35, CIS37); recorded as printed. They correspond to closed-list CIS 30, CIS 35, CIS 37.",
+   "Total 16 credits printed both in the header ('16.0 Credits') and in Program Requirements ('Total 16'; 'Complete the following number of credits: 16'); the four required courses sum to 16.",
+   "The Recommended Sequence lists the same four courses across four semesters and adds no requirements.",
+   "Careers include occupation titles from the 'Career Information' labor-market section (wage/openings data) plus 'entry level network security positions' from the description; the industry certifications named (CCNA, MCSA, Security+, EC Council Ethical Hacking) are not careers and were not recorded.",
+   "The fourth program learning outcome is printed without a closing period; copied as printed."
+  ]
+ },
+ "extracted_run": "38979396148"
+}
