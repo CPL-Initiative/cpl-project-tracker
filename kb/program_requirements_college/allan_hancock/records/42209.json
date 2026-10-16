@@ -1,0 +1,336 @@
+{
+ "college": "Allan Hancock College",
+ "control_number": "42209",
+ "shape": "degree",
+ "title": "Media Arts: Graphic Design (CSU Option)",
+ "award": "A.S. Degree",
+ "source_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30981",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10563,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10563,
+    "output_tokens": 3077,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3077,
+  "output_tokens_details": {
+   "thinking_tokens": 1261
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10379,
+ "ms": 23870,
+ "seconds": 24.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 16,
+   "listed": 18,
+   "share": 0.889,
+   "missing": [
+    "ART103",
+    "ART104"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ARTHC1100",
+    "ARTHC1200"
+   ],
+   "flagged": [
+    "ARTHC1100",
+    "ARTHC1200"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    26.0,
+    26.0
+   ],
+   "stated": [
+    26.0,
+    26.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Media Arts: Graphic Design (CSU Option) - Associate in Science",
+   "measure": "units",
+   "total_units": {
+    "min": 26,
+    "max": 26
+   },
+   "open_elective_units": 2,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate understanding of design principles through creative processes and design thinking.",
+    "Develop core skills in design technology for the creation and development of artwork for digital and print media.",
+    "Articulate and integrate cross-disciplinary knowledge to discuss and construct effective design solutions."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required core courses (15 units):",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "ARTH C1100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARTH C1200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ART 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GRPH 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one from the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "GRPH 108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ART 108",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select two from the following:",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "MMAC 129",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GRPH 129",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 113",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GRPH 117",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select a minimum of 3 units from the following:",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ART 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 122",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GRPH 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GRPH 113",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GRPH 115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GRPH 118",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GRPH 127",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ART 103",
+    "why": "not in the text; the catalog lists ARTH C1100 (same title area, Survey of Art from Prehistory to the Medieval Era) instead"
+   },
+   {
+    "code": "ART 104",
+    "why": "not in the text; the catalog lists ARTH C1200 (Survey of Art from the Renaissance to Contemporary) instead"
+   }
+  ],
+  "notes": [
+   "The page states both 'A major of 24 units is required for the degree' and 'Total : 26.0' for the program requirements; total_units records the printed 26 total, which includes 'Elective units required for Graphic Design (CSU Option) AS: 2' (recorded as open_elective_units). The major's own total (24) equals the sum of the course blocks.",
+   "The 'Required core courses (15 units)' printed total includes the nested 'Select one from the following' choice (3 units), recorded as its own block; the four listed required courses sum to 12.",
+   "GE: page says 'California General Education Curriculum: 34 units' and that students may follow AHC GE or Cal-GETC; transfer students should use Cal-GETC. ge_pattern recorded as Cal-GETC.",
+   "No degree total with GE is printed in the requirements; the Suggested Course Sequence prints 'Total : 56.0- 65.0', which is a sequence total and was not recorded as degree_total. The summary says transfer requires 60 semester units generally.",
+   "GRPH 108 is printed 'same as ART 108' and MMAC 129 'same as GRPH 129'; recorded as alternatives.",
+   "ARTH C1100 and ARTH C1200 appear to be common course numbers replacing ART 103/ART 104 in the closed list; reviewer may confirm equivalence.",
+   "Outcomes are printed under 'The graduate of the Associate in Science in Media Arts: Graphic Design (CSU Option) will:'. No careers are named."
+  ]
+ },
+ "extracted_run": "38843474519"
+}

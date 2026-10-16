@@ -1,0 +1,299 @@
+{
+ "college": "Allan Hancock College",
+ "control_number": "05887",
+ "shape": "degree",
+ "title": "Human Services General",
+ "award": "A.S. Degree",
+ "source_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31002",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10734,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10734,
+    "output_tokens": 2509,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2509,
+  "output_tokens_details": {
+   "thinking_tokens": 796
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09312,
+ "ms": 19007,
+ "seconds": 19.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 15,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "FCS131"
+   ],
+   "flagged": [
+    "FCS131"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    28.0,
+    28.0
+   ],
+   "stated": [
+    28.0,
+    28.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Human Services: General - Associate in Science",
+   "measure": "units",
+   "total_units": {
+    "min": 28,
+    "max": 28
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "AHC GE or Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Possess knowledge and skills that will enable them to competently and ethically carry out the duties and responsibilities of jobs in the general human or social service field. The knowledge and skills that they will possess fall under the following three rubrics: (1) Interpersonal Helping Skills; (2) Ethics and Boundaries; and (3) Documentation.",
+    "Interpersonal Helping Skills: Graduates will possess interpersonal skills required to engage empathically with clients, develop safe and trusting relationships with them, assess their strengths and problems, and recommend appropriate interventions and/or referrals. They will demonstrate the ability to manifest the core conditions of helping relationships, including empathy, nonpossessive warmth, genuineness and congruence. They will recognize the importance of the family and societal contexts in which their clients live and utilize this information in providing helping services.",
+    "Ethics and Boundaries: Graduates will be familiar with a professional association’s code of ethics and demonstrate the ability to behave in accord with it. They will be able to define appropriate professional relationship boundaries and detect when these boundaries are crossed or violated. They will be able to maintain client confidentiality and know the conditions under which confidentiality must be broached. They will demonstrate an understanding of the principles of culturally competent practice.",
+    "Documentation: Graduates will demonstrate the ability to create and maintain appropriate client documentation, including intake notes, service or treatment plans, progress notes, discharge notes and other documentation such as informed consent and release of information forms."
+   ],
+   "careers": [
+    "social services"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required core courses (22 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 22,
+     "max": 22
+    },
+    "courses": [
+     {
+      "code": "FCS 131",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HUSV 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUSV 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUSV 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUSV 121",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUSV 106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUSV 108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one course from the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 2
+    },
+    "courses": [
+     {
+      "code": "HUSV 120",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUSV 170",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Plus a minimum of 6 units selected from the following",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "HUSV 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUSV 107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUSV 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 106",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSY 106",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSY 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSY 118",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The 22-unit total printed for the required core includes the nested 'Select one course' choice (HUSV 120 or HUSV 170, 2 units); the courses listed directly in the core block sum to 20 units.",
+   "HUSV 110, SOC 106 and PSY 106 are printed as separate rows but are cross-listed ('same as'); recorded as one choice with alternatives.",
+   "The Suggested Course Sequence prints 'Total : 58.5- 67.0' including GE and an AHC elective; this is a sequence total, not a stated degree total, so degree_total is left null.",
+   "Students may follow AHC GE or Cal-GETC; no GE unit total is printed.",
+   "FCS 131 is a required core course not on the closed list (catalog addition)."
+  ]
+ },
+ "extracted_run": "38843474519"
+}

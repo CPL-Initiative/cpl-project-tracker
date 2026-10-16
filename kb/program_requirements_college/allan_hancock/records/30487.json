@@ -1,0 +1,245 @@
+{
+ "college": "Allan Hancock College",
+ "control_number": "30487",
+ "shape": "certificate",
+ "title": "Paralegal Studies",
+ "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+ "source_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30958",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9103,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9103,
+    "output_tokens": 1287,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1287,
+  "output_tokens_details": {
+   "thinking_tokens": 342
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06215,
+ "ms": 10911,
+ "seconds": 11.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 1,
+   "listed": 2,
+   "share": 0.5,
+   "missing": [
+    "CWE6491A"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 8,
+   "codes": [
+    "PLGL101",
+    "PLGL102",
+    "PLGL103",
+    "PLGL104",
+    "PLGL105",
+    "PLGL106",
+    "PLGL107",
+    "WEE149"
+   ],
+   "flagged": [
+    "PLGL101",
+    "PLGL102",
+    "PLGL103",
+    "PLGL104",
+    "PLGL105",
+    "PLGL106",
+    "PLGL107",
+    "WEE149"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    23.0,
+    23.0
+   ],
+   "stated": [
+    23.0,
+    23.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Paralegal Studies - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 23,
+    "max": 23
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Recall significant paralegal issues, theories and applications.",
+    "Apply paralegal principles to produce work-based learning projects.",
+    "Demonstrate the ability to follow instructions on assignments and class activities."
+   ],
+   "careers": [
+    "entry-level paralegal position"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required core courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 23,
+     "max": 23
+    },
+    "courses": [
+     {
+      "code": "BUS 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WEE 149",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PLGL 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PLGL 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PLGL 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PLGL 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PLGL 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PLGL 106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PLGL 107",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CWE 6491A",
+    "why": "not in the text by this code; the catalog lists WEE 149 Work Experience Education: Occupational (1 unit) instead, which may be the renumbered equivalent of the closed list's CWE 149 (2 units)"
+   }
+  ],
+  "notes": [
+   "The closed list names CWE 6491A (CWE 149, 2 units); the catalog requires WEE 149 Work Experience Education: Occupational at 1.0 unit. Recorded WEE 149 as a catalog addition; reviewer should confirm whether it replaces CWE 149 and check the unit difference.",
+   "All PLGL courses are absent from the closed list and recorded as catalog additions.",
+   "The Suggested Course Sequence repeats the same nine courses totaling 23.0 units; it was not recorded as separate blocks.",
+   "The career entry is taken from the description's phrase 'an entry-level paralegal position'."
+  ]
+ },
+ "extracted_run": "38843474519"
+}

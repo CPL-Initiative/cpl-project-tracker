@@ -1,0 +1,289 @@
+{
+ "college": "Allan Hancock College",
+ "control_number": "10160",
+ "shape": "degree",
+ "title": "Automotive Technology Auto Tune-Up and Diagnostic Procedures",
+ "award": "A.S. Degree",
+ "source_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31128",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10474,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10474,
+    "output_tokens": 2330,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2330,
+  "output_tokens_details": {
+   "thinking_tokens": 721
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0885,
+ "ms": 17791,
+ "seconds": 18.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 14,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "AT399A"
+   ],
+   "flagged": [
+    "AT399A"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    30.0,
+    30.0
+   ],
+   "stated": [
+    30.0,
+    30.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 9,
+   "courses": 0,
+   "count": 9,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Automotive Technology: Auto Tune Up and Diagnostic Procedures - Associate in Science",
+   "measure": "units",
+   "total_units": {
+    "min": 30,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "AHC GE or Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate an understanding of the evolving technology in the automotive control systems and the impact the automobile has on our environment.",
+    "Demonstrate the ability to quickly master new techniques and skills as required in the automotive tune-up and diagnostic specialty.",
+    "Demonstrate the ability to effectively communicate verbally and in writing with customers, co-workers and the employer.",
+    "Demonstrate the ability to diagnose problems with the various systems of the automobile using systematic procedures and logical methods.",
+    "Demonstrate the ability to identify what technical specifications are needed, where to find them and how to use them in the course of performing their duties.",
+    "Demonstrate an understanding of the legal and ethical issues encountered in the automotive repair workplace and make responsible decisions.",
+    "Demonstrate the required mechanical skills and the ability to use the trade tools at a level of proficiency that is expected in the profession.",
+    "Demonstrate the use of the proper procedure for dealing with hazards encountered in the automotive repair work place.",
+    "Demonstrate the ability to perform all of the NATEF tasks in each of the core courses in the option or certificate."
+   ],
+   "careers": [
+    "automotive service profession",
+    "tune-up and diagnostics specialist"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required core courses (19 units):",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 19,
+     "max": 19
+    },
+    "courses": [
+     {
+      "code": "AT 100",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AT 303",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AT 341",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AT 343",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Plus a minimum of 11 units selected from the following:",
+    "rule": "choose_units",
+    "minimum": 11,
+    "option_group": null,
+    "stated": {
+     "min": 11,
+     "max": 11
+    },
+    "courses": [
+     {
+      "code": "AT 117",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AT 133",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AT 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AT 306",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AT 323",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AT 324",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AT 334",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AT 344",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AT 370",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AT 389",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AT 399A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "AT 344 is printed with a space in the catalog; the closed list stores it as 'AT344' (no units stored). Treated as the same closed-list course.",
+   "Cross-listings printed as 'same as' (AT 117 same as AB 117, ET 117, MT 117; AT 300 same as AB 300, AB 381, MT 300, MT 381, WLDT 300; AT 370 same as AB 370, ARCH 370, CNET 370, ET 370, MT 370, WLDT 370) were not recorded as alternatives; reviewer may wish to add them.",
+   "The Suggested Course Sequence prints 'Total : 56.5- 74.0' including GE; this is a sequence total, not a stated degree total, so degree_total is left null.",
+   "GE: students may follow AHC GE or Cal-GETC; no GE unit total printed.",
+   "The closed list title for AT 343 reads 'Engine Performance Diangonsis'; catalog prints 'Engine Performance/Diagnosis'."
+  ]
+ },
+ "extracted_run": "38843474519"
+}

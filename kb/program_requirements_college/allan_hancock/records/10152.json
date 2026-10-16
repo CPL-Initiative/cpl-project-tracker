@@ -1,0 +1,332 @@
+{
+ "college": "Allan Hancock College",
+ "control_number": "10152",
+ "shape": "degree",
+ "title": "Early Childhood Studies: Elementary Education in Diversity Studies",
+ "award": "A.S. Degree",
+ "source_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31058",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10885,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10885,
+    "output_tokens": 2713,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2713,
+  "output_tokens_details": {
+   "thinking_tokens": 981
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0978,
+ "ms": 21716,
+ "seconds": 22.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 18,
+   "listed": 19,
+   "share": 0.947,
+   "missing": [
+    "ECS100"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "CDEVC1000",
+    "ECS132"
+   ],
+   "flagged": [
+    "CDEVC1000",
+    "ECS132"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    42.0,
+    44.0
+   ],
+   "stated": [
+    42.0,
+    44.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Early Childhood Studies: Elementary Education in Diversity Studies - Associate in Science",
+   "measure": "units",
+   "total_units": {
+    "min": 42,
+    "max": 44
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "AHC GE or Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Understand and apply child development theories and principles.",
+    "Identify and implement observation, documentation, and other assessment strategies.",
+    "Value and cultivate collaborative family and community relationships.",
+    "Identify, develop and implement developmentally appropriate curriculum and teaching practices to positively guide children's behavior and learning.",
+    "Develop self-reflective habits and grow as members of the early childhood profession to understand the complexities of working with diverse groups of families, children, staff and the community.",
+    "Develop an environment that honors the diversity of the learning community (children, families, staff and community) through empowerment, equity, respect and dignity."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required core courses (39 units):",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 39,
+     "max": 39
+    },
+    "courses": [
+     {
+      "code": "CDEV C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECS 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECS 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECS 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECS 106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECS 116",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECS 117",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECS 118",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECS 119",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECS 123",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECS 125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EDUC 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EDUC 132",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECS 132",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Plus a minimum of 3-5 units selected from the following:",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "ECS 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECS 122",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECS 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMS 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 137",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 104",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECS 100",
+    "why": "not in the text; catalog lists CDEV C1000 Child Growth and Development in its place"
+   },
+   {
+    "code": "EDUC132",
+    "why": "duplicate of EDUC 132 without space; placed as EDUC 132"
+   }
+  ],
+  "notes": [
+   "Catalog states 'A major of 41-44 units is required for the degree' but prints 'Total : 42.0- 44.0' under the requirements (39 core + 3-5); total_units recorded as the printed Total 42-44. Reviewer should check the 41 vs 42 minimum.",
+   "EDUC 132 printed as '( same as ECS 132 )'; ECS 132 recorded as a cross-listed alternative not in the closed list.",
+   "CDEV C1000 (Child Growth and Development) appears to replace ECS 100 from the closed list; recorded as a catalog addition.",
+   "Suggested Course Sequence prints 'Total : 69.5- 78.0', a sequence total including GE; not recorded as degree_total.",
+   "Students may follow AHC GE or Cal-GETC; no GE units printed. Demonstrated proficiency in Spanish and English is required.",
+   "Text says the degree qualifies students up to a Master Teacher-level permit; not recorded as a career since it names a permit level.",
+   "Description refers to 'The certificate' though this is the A.S. degree section."
+  ]
+ },
+ "extracted_run": "38843474519"
+}

@@ -1,0 +1,242 @@
+{
+ "college": "Allan Hancock College",
+ "control_number": "40623",
+ "shape": "noncredit",
+ "title": "ELDV Intro to Early Childhood Studies",
+ "award": "Noncredit program",
+ "source_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31048",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7690,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7690,
+    "output_tokens": 1550,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1550,
+  "output_tokens_details": {
+   "thinking_tokens": 542
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06176,
+ "ms": 13169,
+ "seconds": 13.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "ELDV7310",
+    "ELDV7311",
+    "ELDV7312",
+    "ELDV7313",
+    "ELDV7314"
+   ],
+   "flagged": [
+    "ELDV7310",
+    "ELDV7311",
+    "ELDV7312",
+    "ELDV7313",
+    "ELDV7314"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    213.0,
+    345.0
+   ],
+   "stated": [
+    213.0,
+    345.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Early Childhood Studies: Vocational ELD Introduction to Early Childhood Studies - Certificate of Competency",
+   "measure": "hours",
+   "total_units": {
+    "min": 213,
+    "max": 345
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Successfully use their knowledge/acquisition of the English language to summarize important historical influences on the development of children."
+   ],
+   "careers": [
+    "child care workers",
+    "preschool teachers",
+    "teacher assistants/aides",
+    "special education teachers",
+    "preschool and childcare center directors"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required core courses:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 213,
+     "max": 345
+    },
+    "courses": [
+     {
+      "code": "ELDV 7310",
+      "units": 18,
+      "units_max": 36,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECSN 7310",
+      "units": 36,
+      "units_max": 48,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELDV 7314",
+      "units": 9,
+      "units_max": 20,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECSN 7314",
+      "units": 15,
+      "units_max": 25,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELDV 7313",
+      "units": 18,
+      "units_max": 36,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECSN 7313",
+      "units": 36,
+      "units_max": 48,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELDV 7312",
+      "units": 16,
+      "units_max": 36,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECSN 7312",
+      "units": 32,
+      "units_max": 36,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELDV 7311",
+      "units": 15,
+      "units_max": 30,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECSN 7311",
+      "units": 18,
+      "units_max": 30,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Program is noncredit and counted in hours; all unit fields hold hours as printed.",
+   "The required core is printed as five 'Take concurrently:' pairs (each ELDV course with its matching ECSN course), with pair totals: 7310 pair 54-84, 7314 pair 24-45, 7313 pair 54-84, 7312 pair 48-72, 7311 pair 33-60 hours. All ten courses are required; recorded as one 'all' block with the printed core total 213-345.",
+   "Catalog says students must complete all courses with an SP grade to earn the certificate.",
+   "The outcomes list is cut off in the text: the second outcome ('Successfully use their knowledge/acquisition of the English language to implement guidance and i...') is truncated and was not recorded; further outcomes may exist on the page.",
+   "Section heading names the award a Certificate of Competency."
+  ]
+ },
+ "extracted_run": "38843474519"
+}

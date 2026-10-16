@@ -1,0 +1,438 @@
+{
+ "college": "Allan Hancock College",
+ "control_number": "12649",
+ "shape": "degree",
+ "title": "Agribusiness: Viticulture",
+ "award": "A.S. Degree",
+ "source_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31151",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10827,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10827,
+    "output_tokens": 2564,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2564,
+  "output_tokens_details": {
+   "thinking_tokens": 579
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09459,
+ "ms": 19761,
+ "seconds": 20.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 22,
+   "share": 0.545,
+   "missing": [
+    "VEN302",
+    "VEN303",
+    "VEN305",
+    "VEN315",
+    "VEN316",
+    "VEN322",
+    "VEN323",
+    "VEN324",
+    "VEN325",
+    "VEN330"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 14,
+   "codes": [
+    "AG125",
+    "AG126",
+    "AG130",
+    "AG149",
+    "BIOL154",
+    "CHEM120",
+    "VEN120",
+    "VEN121",
+    "VEN122",
+    "VEN135",
+    "VEN140",
+    "VEN142",
+    "VEN308",
+    "VEN314"
+   ],
+   "flagged": [
+    "AG125",
+    "AG126",
+    "AG130",
+    "AG149",
+    "BIOL154",
+    "CHEM120",
+    "VEN120",
+    "VEN121",
+    "VEN122",
+    "VEN135",
+    "VEN140",
+    "VEN142",
+    "VEN308",
+    "VEN314"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    26.0,
+    26.0
+   ],
+   "stated": [
+    26.0,
+    26.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Agribusiness: Viticulture - Associate in Science",
+   "measure": "units",
+   "total_units": {
+    "min": 26,
+    "max": 26
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "AHC GE or Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Use basic ideas and concepts in viticulture including biology, and ecophysiology of vines and grape cultivars, to work in the viticulture industry.",
+    "Assess and differentiate effects of viticultural activities and processes in final grapes and wines produced, including yearly activities and grape vine phenology describing alternatives to make sound viticultural decisions during the entire year to ensure quality fruit and healthy vines.",
+    "Identify common vineyard problems and suggest solutions.",
+    "Identify effects on different soils in viticulture and analyze precision viticulture practices and be able to use the information for continuous vineyard improvement.",
+    "Analyze costs and sustainable alternatives in viticulture."
+   ],
+   "careers": [
+    "vineyard management",
+    "pest management",
+    "fertilizer sales",
+    "irrigation management"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required core courses (17 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 17,
+     "max": 17
+    },
+    "courses": [
+     {
+      "code": "VEN 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VEN 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "VEN 121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AG 125",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "VEN 125",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "AG 130",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "VEN 130",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Plus a minimum of 9 units selected from the following",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "VEN 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VEN 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VEN 114",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VEN 122",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "VEN 135",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "VEN 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "VEN 141",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VEN 142",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AG 149",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "VEN 307",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VEN 308",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "VEN 310",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VEN 311",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VEN 312",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VEN 314",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AG 126",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "VEN 126",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 154",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM 120",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "VEN 302",
+    "why": "not in the text"
+   },
+   {
+    "code": "VEN 303",
+    "why": "not in the text"
+   },
+   {
+    "code": "VEN 305",
+    "why": "not in the text"
+   },
+   {
+    "code": "VEN 315",
+    "why": "not in the text"
+   },
+   {
+    "code": "VEN 316",
+    "why": "not in the text"
+   },
+   {
+    "code": "VEN 322",
+    "why": "not in the text"
+   },
+   {
+    "code": "VEN 323",
+    "why": "not in the text"
+   },
+   {
+    "code": "VEN 324",
+    "why": "not in the text"
+   },
+   {
+    "code": "VEN 325",
+    "why": "not in the text"
+   },
+   {
+    "code": "VEN 330",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "AG 125, AG 130 and AG 126 are printed as 'same as' VEN 125, VEN 130 and VEN 126 (cross-listed); recorded the printed AG code with the VEN closed-list code as alternative.",
+   "The Suggested Course Sequence prints 'Total : 61.5- 66.0' including GE and a 3-unit AHC Elective; this is a sequence total, not printed as the degree's requirement total, so degree_total left null and the elective not recorded as open_elective_units. Reviewer may check.",
+   "GE may be met via AHC GE or Cal-GETC pathways; no GE unit total printed.",
+   "Course sequence recommends VEN 122 and VEN 142 as core electives in summer; these are already in the 9-unit elective block."
+  ]
+ },
+ "extracted_run": "38843474519"
+}

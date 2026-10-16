@@ -1,0 +1,416 @@
+{
+ "college": "Allan Hancock College",
+ "control_number": "07176",
+ "shape": "degree",
+ "title": "Engineering",
+ "award": "A.A. Degree",
+ "source_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31038",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 13814,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 13814,
+    "output_tokens": 3569,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3569,
+  "output_tokens_details": {
+   "thinking_tokens": 1255
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.12664,
+ "ms": 27753,
+ "seconds": 28.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 21,
+   "listed": 23,
+   "share": 0.913,
+   "missing": [
+    "MATH181",
+    "MATH182"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "MATHC2210",
+    "MATHC2220"
+   ],
+   "flagged": [
+    "MATHC2210",
+    "MATHC2220"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    31.0,
+    49.0
+   ],
+   "stated": [
+    36.0,
+    36.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 31.0-49.0; the catalog states 36.0-36.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Engineering - Associate in Arts",
+   "measure": "units",
+   "total_units": {
+    "min": 36,
+    "max": 36
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "AHC GE or Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply fundamental concepts of mathematics (through calculus), science and engineering.",
+    "Identify, formulate, and solve basic engineering problems.",
+    "Conduct experiments and analyze and interpret data.",
+    "Make basic design decisions concerning appropriate-level engineering problems.",
+    "Communicate effectively both orally and in writing, using symbols, graphics and numbers.",
+    "Recognize the need for, and an ability to engage in, lifelong learning.",
+    "Function professionally and ethically as an individual and within diverse teams.",
+    "Use techniques, skills and modern engineering tools necessary in engineering education and practice."
+   ],
+   "careers": [
+    "mechanical",
+    "civil",
+    "aerospace",
+    "electrical",
+    "computer",
+    "biomedical engineering"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required core courses (21 units):",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 21,
+     "max": 21
+    },
+    "courses": [
+     {
+      "code": "CHEM 150",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2210",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH C2220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS 161",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one course from the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "PHYS 162",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 163",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Category A - Engineering Courses:",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "ENGR 100",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 124",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 126",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 152",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 154",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 156",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 161",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 162",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 170",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 171",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Category B - Engineering Support Courses:",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "CHEM 151",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 111",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 112",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ET 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ET 145",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 183",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 184",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one from the following (the physics course not already used to satisfy the Required Core Courses):",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "PHYS 162",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 163",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MATH 181",
+    "why": "not in the text; requirements list MATH C2210 instead"
+   },
+   {
+    "code": "MATH 182",
+    "why": "not in the text; requirements list MATH C2220 instead"
+   }
+  ],
+  "notes": [
+   "Categories A and B sit under the heading 'Categories A and/or B (15 total units, at least 6 of which must be from Category A):' with 15.0 printed; Category A (6-15) and Category B (0-9) are recorded as separate choose_units blocks that together must total 15 units. Category B minimum recorded as 0 from its printed 0.0-9.0 range.",
+   "In Category A, ENGR 161 and ENGR 170 are each printed under 'If the following course is taken, the lab must also be taken:' (4.0 each): ENGR 161 requires ENGR 162, and ENGR 170 requires ENGR 171.",
+   "The Category B physics choice prints 8.0 beside 'Select one from the following' although each option is 4 units; recorded as printed—reviewer should check.",
+   "Closed list stores 'PHYS161' (no space); the catalog prints 'PHYS 161', treated as the same course.",
+   "GE: page says students may follow AHC GE or Cal-GETC; no GE units or degree total printed. Total printed is 36.0 for the major.",
+   "The Suggested Course Sequence (no emphasis and several emphases, e.g. Aerospace, Architectural, Biomedical, Bioresource) lists additional courses (ARCH, ENGR 122, PHYS 110, BIOL) that are not program requirements; they were not recorded. The text is cut off mid-sequence.",
+   "Careers recorded from 'a variety of engineering fields including mechanical, civil, aerospace, electrical, computer and biomedical engineering'; reviewer may judge whether these count as career fields."
+  ]
+ },
+ "extracted_run": "38843474519"
+}
