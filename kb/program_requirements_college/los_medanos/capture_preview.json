@@ -5,18 +5,25 @@
  "catalog_year": "2026-2027",
  "programs": 103,
  "with_closed_list": 97,
- "started": "2026-10-16T22:51:04Z",
+ "started": "2026-10-16T23:39:37Z",
  "elumen": {
   "catalog": "26-27",
   "read": "publish/content",
   "menu_programs": 7,
   "errors": [],
+  "menu_departments": 0,
+  "department_programs": 7,
+  "menu_hubs": [],
+  "hub_programs": 7,
+  "walk_pages": 11,
+  "walk_programs": 0,
+  "walk_stopped_at_cap": false,
   "program_pages": 7
  },
  "pages_read": 7,
  "banner_h1": null,
- "loads": 8,
- "seconds": 36.2,
+ "loads": 19,
+ "seconds": 80.8,
  "found": 7,
  "by_method": {
   "no_closed_list": 6,
@@ -937,5 +944,5 @@
    }
   ]
  },
- "run": "38978063188"
+ "run": "38982485062"
 }
