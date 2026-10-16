@@ -32,8 +32,9 @@ Q = M.load()
 bad = M.faults(Q)
 check("the committed ledger lists every view, and only views", not bad, "; ".join(bad))
 tabs = [t for t, _ in M.nav_tabs()]
-check("COBI's nav is read from index.html (40 tabs on 2026-10-08, the Program Requirements tab among them)",
-      len(tabs) >= 40 and "program-requirements" in tabs and "dashboard" in tabs, len(tabs))
+check("COBI's nav is read from index.html (40 tabs on 2026-10-08, 39 since the CPL Assistant tab retired "
+      "2026-10-16; the Program Requirements tab among them)",
+      len(tabs) >= 39 and "program-requirements" in tabs and "dashboard" in tabs and "chatbot" not in tabs, len(tabs))
 pages = M.standalone_pages()
 check("the standalone pages come from a11y.config.js",
       "sierra/index.html" in pages and "fact-sheet/index.html" in pages and "index.html" not in pages, pages)
@@ -84,6 +85,19 @@ with tempfile.TemporaryDirectory() as d:
     row = next(r for r in s["surfaces"] if r["id"] == "cobi:program-requirements")
     check("--record stamps today and the outcome", rc == 0 and row["last"] and row["outcome"].startswith("The headline"), row)
     check("--record refuses an unknown view", M.main(["--record", "cobi:nope", "x", "--path", p]) == 1)
+    # A retired view (S398: the CPL Assistant tab) is dropped by --sync, and only it.
+    with open(p, encoding="utf-8") as f:
+        s = json.load(f)
+    s["surfaces"].append({"id": "cobi:chatbot", "name": "CPL Assistant", "page": "index.html#chatbot",
+                          "audience": "staff", "last": None, "outcome": None})
+    with open(p, "w", encoding="utf-8") as f:
+        json.dump(s, f)
+    rc = M.main(["--sync", "--path", p])
+    with open(p, encoding="utf-8") as f:
+        s2 = json.load(f)
+    check("--sync drops a view the nav lost, and keeps every other row",
+          rc == 0 and not any(r["id"] == "cobi:chatbot" for r in s2["surfaces"])
+          and len(s2["surfaces"]) == len(s["surfaces"]) - 1, [r["id"] for r in s2["surfaces"]][-3:])
 
 pass_n = sum(1 for r in results if r[1])
 for name, ok, why in results:

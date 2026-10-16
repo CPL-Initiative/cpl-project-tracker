@@ -233,12 +233,12 @@ block("(5)", function () {
    * happens to contain the string it wants. Strip line comments first. */
   const CODE = CHAT.split("\n").filter(function (l) { return !/^\s*(\/\/|\*|\/\*)/.test(l); }).join("\n");
   check("(5) ⚠ the starter chips are removed by REFERENCE, not by a document id lookup",
-    !/getElementById\('cplchat-suggest'\)/.test(CODE) && /chipsEl\.remove\(\)/.test(CODE),
+    !/getElementById\('cplchat-suggest'\)/.test(CODE) && /\bb\.chips\.remove\(\)/.test(CODE),
     "two panes can hold a row at once; the id lookup clears whichever is earlier in the document");
-  check("(5) ⚠ the dedicated CPL Assistant pane clears any host-supplied list",
-    /hostSuggestions = null;[\s\S]{0,80}build\(host\);/.test(CODE),
-    "a college's questions must not follow the reader onto a pane that never named it");
-  check("(5) the widget still ships generic starters for that pane",
+  check("(5) ⚠ Sierra AI's own box (S398, the CPL Assistant pane's heir) takes no host-supplied list",
+    /build\(cobiHost, \{[^}]*\bsuggestions: null \}\)/.test(CODE),
+    "a college's questions must not follow the reader onto a box that never named it");
+  check("(5) the widget still ships generic starters for that box",
     /Does Riverside City College offer firefighter CPL\?/.test(CHAT));
 });
 

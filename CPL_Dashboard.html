@@ -4544,7 +4544,6 @@
             <button class="cpl-tab" data-tab="our-process" role="tab" aria-selected="false">Our Process</button>
             <button class="cpl-tab" data-tab="letters" role="tab" aria-selected="false">Letters</button>
             <button class="cpl-tab" data-tab="cpl-news" role="tab" aria-selected="false">CPL News</button>
-            <button class="cpl-tab" data-tab="chatbot" role="tab" aria-selected="false">CPL Assistant</button>
             <button class="cpl-tab" data-tab="sierra-training" role="tab" aria-selected="false">Sierra Training</button>
             <button class="cpl-tab" data-tab="knowledge-base" role="tab" aria-selected="false">Knowledge Base</button>
             <button class="cpl-tab" data-tab="library" role="tab" aria-selected="false">Library</button>
@@ -10432,75 +10431,6 @@ Title 5 55050 revisions based on 78093 have been drafted and are in the making t
         </div>
     </div>
     <!-- /tab-map-data-quality -->
-
-    <div class="cpl-tab-pane" id="tab-chatbot" data-tab="chatbot" role="tabpanel" aria-labelledby="tab-chatbot">
-        <div class="main-container">
-            <style>
-              /* USE THE CONTAINER (Sam, 2026-08-17: "use as much of the screen as possible
-                 for usable space"). This was max-width:880px inside a 1400px .main-container,
-                 so ~260px sat dead on each side of every answer. The measure stays readable
-                 because the cap moved onto the PROSE elements (.cplchat-bubble > p/ul/ol,
-                 82ch, in cpl_chat.js) — a table or a course list can now use the width, a
-                 paragraph still cannot. Mirrored in index.html per Rule 4. */
-              .cplchat { max-width: none; margin: 0; }
-              .cplchat-intro h2 { margin: 16px 0 6px; color: var(--navy-primary); }
-              .cplchat-intro p { margin: 0 0 8px; color: var(--text-muted); max-width:var(--cpl-measure,none); }
-              /* The yellow Beta box was deleted 2026-08-21 (Sam) — its two duties, saying
-                 Sierra is unfinished and saying not to type personal information, are
-                 carried by the Note sentence in cpl_chat.js's intro. That sentence styles
-                 itself from the widget's own CSS (.cplchat-note), so it needs no rule in
-                 either mirrored HTML. Nothing emits .cplchat-beta any more. */
-              /* GROWS WITH THE ANSWER (Sam, 2026-08-17: "so users don't have to scroll so
-                 much"). Was a fixed height:460px, which crammed a long answer into a small
-                 box inside a mostly-empty page — scrolling twice to read once. Now it sizes
-                 to its content between a floor (so a one-line answer isn't a sliver) and a
-                 viewport-relative cap (so the input row stays reachable). Only an answer
-                 past the cap scrolls internally, and scrollDown() in cpl_chat.js follows
-                 the PAGE for everything under it. */
-              .cplchat-log { border: 1px solid #d8dde6; border-radius: 10px; background: #f7f9fc; min-height: 240px; max-height: 78vh; overflow-y: auto; padding: 16px; margin: 12px 0; }
-              .cplchat-msg { display: flex; margin: 10px 0; }
-              .cplchat-user { justify-content: flex-end; }
-              .cplchat-bot { justify-content: flex-start; gap: 8px; }
-              .cplchat-avatar { flex: 0 0 auto; width: 30px; height: 30px; border-radius: 50%; background: #e7eef7; display: flex; align-items: center; justify-content: center; font-size: 16px; }
-              /* Sierra's bubble takes the width; the reader's own question does not need it. */
-              .cplchat-bubble { max-width: 78%; padding: 10px 14px; border-radius: 14px; line-height: 1.5; font-size: .95rem; word-wrap: break-word; overflow-wrap: anywhere; }
-              .cplchat-bot .cplchat-bubble { max-width: calc(100% - 38px); }
-              .cplchat-user .cplchat-bubble { max-width: min(78%, 70ch); }
-              .cplchat-user .cplchat-bubble { background: #003B5C; color: #fff; border-bottom-right-radius: 4px; }
-              .cplchat-bot .cplchat-bubble { background: var(--surface-opaque); color: #1c2433; border: 1px solid #e1e6ee; border-bottom-left-radius: 4px; }
-              .cplchat-bubble p { margin: 0 0 8px; } .cplchat-bubble p:last-child { margin-bottom: 0; }
-              .cplchat-bubble ul { margin: 4px 0 8px; padding-left: 20px; }
-              .cplchat-bubble a { color: #1565a0; }
-              .cplchat-user .cplchat-bubble a { color: #ffe6a8; }
-              .cplchat-typing { letter-spacing: 2px; color: #9aa6b8; animation: cplchatPulse 1.2s infinite; }
-              @keyframes cplchatPulse { 0%,100% { opacity: .35; } 50% { opacity: 1; } }
-              .cplchat-suggest { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 2px; }
-              .cplchat-chip { background: var(--surface-opaque); border: 1px solid #cdd6e3; color: var(--navy-primary); border-radius: 16px; padding: 7px 12px; font-size: .85rem; cursor: pointer; transition: background .15s, border-color .15s; }
-              .cplchat-chip:hover { background: #eef3fa; border-color: #9bb4d4; }
-              .cplchat-status { min-height: 18px; font-size: .85rem; color: var(--text-muted); margin: 2px 0; }
-              .cplchat-status.cplchat-error { color: #b3261e; }
-              .cplchat-inputrow { display: flex; gap: 8px; }
-              .cplchat-input { flex: 1 1 auto; padding: 12px 14px; border: 1px solid #cdd6e3; border-radius: 8px; font-size: .95rem; }
-              .cplchat-input:focus { outline: none; border-color: #003B5C; box-shadow: 0 0 0 3px rgba(0,59,92,.12); }
-              .cplchat-send { background: #003B5C; color: #fff; border: none; border-radius: 8px; padding: 0 22px; font-weight: 600; cursor: pointer; }
-              .cplchat-send:hover { background: #00507d; }
-              .cplchat-send:disabled { background: #9aa6b8; cursor: default; }
-              /* Mobile: the log gets MORE of the screen, not less — there is no room to
-                 waste on a phone, and the growth range is what makes that safe. The send
-                 button drops its wide padding so the input keeps the row. */
-              @media (max-width: 600px) {
-                .cplchat-bubble { max-width: 88%; }
-                .cplchat-bot .cplchat-bubble { max-width: calc(100% - 36px); }
-                .cplchat-user .cplchat-bubble { max-width: 88%; }
-                .cplchat-log { min-height: 200px; max-height: 68vh; padding: 12px; }
-                .cplchat-send { padding: 0 16px; }
-                .cplchat-input { min-width: 0; }
-              }
-            </style>
-            <div class="cplchat-mount"></div>
-        </div>
-    </div>
-    <!-- /tab-chatbot -->
 
     <div class="cpl-tab-pane" id="tab-cpl-news" data-tab="cpl-news" role="tabpanel" aria-labelledby="tab-cpl-news">
         <div class="main-container">
@@ -16418,7 +16348,9 @@ Title 5 55050 revisions based on 78093 have been drafted and are in the making t
     <script src="mission_control.js"></script>
     <script src="budget_editor.js"></script>
     <script src="budget_ledger.js"></script>
-    <!-- CPL Assistant chat panel (Phase 1 chatbox integration) -->
+    <!-- Sierra AI (cpl_chat.js): CPL_CHAT.open() puts her full screen over any tab, and My College
+         docks her in its own box. The CPL Assistant tab and its pane retired 2026-10-16 (S398); a
+         #chatbot link opens Sierra AI over the home tab, and the widget injects all its own CSS. -->
     <script src="cpl_chat.js"></script>
     <!-- CPL Implementation Funding tab boot — STATIC shell (NOT regenerated by
          excel_to_dashboard.py). Lazy-loads cpl_funding.js on first tab open via the

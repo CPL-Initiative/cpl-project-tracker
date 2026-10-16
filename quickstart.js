@@ -41,8 +41,12 @@
     {hash: 'exhibit-adoption',     label: 'Exhibit Adoption',     desc: 'Statewide CPL exhibit adoption & credit recommendations by unified credential identity'},
     {hash: 'pipeline',             label: 'Pipeline',                 desc: 'Data pipeline reference / methodology'},
     {hash: 'letters',              label: 'Letters',                  desc: 'Budget support letter curator — edits campaign letter blocks (passcode-gated)'},
-    {hash: 'chatbot',              label: 'CPL Assistant',            desc: 'Conversational RAG assistant — ask CPL questions; answers from the knowledge base, live dashboard metrics, and statewide exhibits. Route here for open-ended "ask"/"chat"/"what is" questions.'},
+    // Not a tab since S398: "chatbot" (the retired CPL Assistant tab's key, kept
+    // so the router's vocabulary does not change) opens Sierra AI over the
+    // current tab — see navigateTo().
+    {hash: 'chatbot',              label: 'Sierra AI',                meta: 'Opens here', desc: 'Sierra AI, the conversational RAG assistant — ask CPL questions; answers from the knowledge base, live dashboard metrics, and statewide exhibits. Opens over the current tab. Route here for open-ended "ask"/"chat"/"what is" questions.'},
   ];
+  var SIERRA_HASH = 'chatbot';
 
   var VALID_HASHES = TABS.map(function (t) { return t.hash; });
 
@@ -304,7 +308,7 @@
       entries.push({
         kind: 'tab',
         label: t.label,
-        meta: 'Tab',
+        meta: t.meta || 'Tab',
         hint: {tab: t.hash},
         searchable: (t.hash + ' ' + t.label + ' ' + (t.desc || '')).toLowerCase(),
       });
@@ -403,7 +407,7 @@
       // suggestions are exact picks.
       setTimeout(function () {
         if (s.hint.filter_hint) stashAndDispatch(s.hint.tab, s.hint.filter_hint);
-        navigateTo(s.hint.tab);
+        navigateTo(s.hint.tab, null, input);
         resetBox();
       }, 200);
     }
@@ -446,7 +450,7 @@
           // (already-mounted case) or consumes the sessionStorage value
           // (cold-load case after a refresh on a deep link).
           if (routed.filter_hint) stashAndDispatch(routed.tab, routed.filter_hint);
-          navigateTo(routed.tab);
+          navigateTo(routed.tab, q, input);
           input.disabled = false;
           resetBox();
         }, 350);
@@ -492,11 +496,21 @@
     return wrap;
   }
 
+  // Sierra AI opens over the current tab (S398). A question the router sent
+  // her way goes with her and is asked; a pick from the list just opens her.
+  // `from` is the Where To? box, so focus comes back to it when she closes.
+  function openSierra(question, from) {
+    var C = window.CPL_CHAT;
+    if (!C || typeof C.open !== 'function') return false;
+    return C.open(question ? { question: question, send: true, from: from } : { from: from });
+  }
+
   // Navigate to a tab. If the user is already on that tab, setting
   // location.hash to the same value is a no-op (no hashchange event fires),
   // so the user gets no visual feedback. Anchor the eye with a scroll-to-top
   // + a brief pulse on the matching nav button instead.
-  function navigateTo(tabHash) {
+  function navigateTo(tabHash, question, from) {
+    if (tabHash === SIERRA_HASH && openSierra(question, from)) return;
     var current = (location.hash || '').replace(/^#/, '');
     if (current === tabHash) {
       window.scrollTo({top: 0, behavior: 'smooth'});

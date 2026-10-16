@@ -49,7 +49,7 @@ vanilla JS each — no frameworks, no build step, no external libraries.
 
 | Surface | Where | Multi-turn? | Audience field? | Feedback UI? |
 |---|---|---|---|---|
-| COBI dashboard tab ("CPL Assistant") | `cpl_chat.js` on `cpl-initiative.github.io/cpl-project-tracker/` (`#chatbot`) | yes | yes | yes (`page:'cobi-tab'`) |
+| COBI's Sierra AI (the "CPL Assistant" tab until 2026-10-16) | `cpl_chat.js` on `cpl-initiative.github.io/cpl-project-tracker/`: `CPL_CHAT.open()` over any tab (`#chatbot` opens it) and My College's box | yes | yes | yes (`page:'cobi-sierra'` over a tab, `'cobi-tab'` in My College) |
 | Standalone Sierra page | `sierra/` — `cpl-initiative.github.io/cpl-project-tracker/sierra/` | yes | yes | yes (`page:'sierra'`) |
 | Public Fact Sheet drawer | `fact-sheet/factsheet_sierra.js` | yes | no | no |
 | **Production widget** | `map.rccd.edu` (not in this repo) | **no** (omits `history`) | no | no |

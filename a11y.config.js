@@ -272,18 +272,74 @@ async function seedSierraDockFull(page, theme) {
   });
   await page.waitForTimeout(200);
 }
-async function sierraDockFullChecks(page) {
+/* Sierra AI over a COBI tab (S398: the CPL Assistant tab retired into her).
+   CPL_CHAT.open() puts her full screen over whatever tab is showing; she is
+   opened over Sierra Training, where the owner's "Try it in: Sierra" asks her,
+   and seeded the way the dock is: the role confirmed on its chip, only the chat
+   function's stream stubbed, six questions asked through open({ send: true }),
+   one answer carrying a table wider than a phone. */
+async function seedSierraCobiFull(page, theme) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "sierra-training") location.hash = "sierra-training"; });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  // First Light's once-a-day greeting would cover the screenshots (see seedSierraDockFull).
+  await page.evaluate(() => {
+    try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+  });
+  // The tab underneath has painted (its sign-in gate, with every read aborted), so
+  // nothing it adds to the page lands after the dialog has made the page inert.
+  await page.waitForFunction(() => window.CPL_CHAT && typeof window.CPL_CHAT.open === "function"
+    && window.CPL_SIERRA_TRAINING_TAB && !/^\s*Loading/.test((document.getElementById("sierra-training-root") || {}).textContent || ""),
+    null, { timeout: 60000 });
+  await page.evaluate(async () => {
+    window.CPL_CHAT.open();
+    const wrap = document.querySelector(".cplchat.cplchat-full");
+    const chip = Array.from(wrap.querySelectorAll(".cplchat-aud-chip")).find((b) => /Faculty/.test(b.textContent));
+    if (chip) chip.click();
+    const table = "\n\n| Credential | Course | Units | College | C-ID |\n|---|---|---|---|---|\n" +
+      "| FIW Orientation | WELD 100 Introduction to Welding Technology | 3.0 | Cerritos College | none |\n" +
+      "| Post Tensioning 3 | WELD 244 D1.1 Code Clinic | 2.0 | Santa Ana College | none |\n";
+    let n = 0;
+    const real = window.fetch;
+    window.fetch = function (url) {
+      // The chat function's request, by the name its URL ends in (see seedSierraDockFull).
+      if (!/\/cpl-chat(\?|$)/.test(String(url))) return real.apply(this, arguments);
+      const text = "Seeded answer " + (++n) + " for layout measurement, long enough to wrap on a narrow viewport " +
+        "and push the dialog past its own height. Ask the [CPL coordinator](https://example.org/cpl) at the college " +
+        "you plan to attend." + (n === 1 ? table : "");
+      const sse = "event: text\ndata: " + JSON.stringify({ text: text }) + "\n\nevent: done\ndata: {}\n\n";
+      return Promise.resolve(new Response(sse, { status: 200, headers: { "Content-Type": "text/event-stream" } }));
+    };
+    const idle = () => new Promise((resolve) => {
+      const t0 = Date.now();
+      (function poll() {
+        const box = document.querySelector(".cplchat-full .cplchat-input");
+        if ((box && !box.disabled) || Date.now() - t0 > 5000) resolve(); else setTimeout(poll, 30);
+      })();
+    });
+    for (let i = 0; i < 6; i++) {
+      window.CPL_CHAT.open({ question: "Seeded question " + (i + 1) +
+        ": I have a journey worker license as an Iron and Steel worker. What CPL can I get here?", send: true });
+      await new Promise((r) => setTimeout(r, 30));
+      await idle();
+    }
+  });
+  await page.waitForTimeout(200);
+}
+// The full-screen checks every Sierra dialog shares; `what` names the one measured.
+async function sierraFullScreenChecks(page, what) {
   const out = [];
-  out.push(await page.evaluate(() => {
+  out.push(await page.evaluate((what) => {
     const w = document.querySelector(".cplchat.cplchat-full");
     const lab = w && document.getElementById(w.getAttribute("aria-labelledby") || "");
     return {
-      name: "a send expands the dock: a modal dialog in <body>, named",
+      name: what + ": a modal dialog in <body>, named",
       ok: !!w && w.parentNode === document.body && w.getAttribute("role") === "dialog" &&
         w.getAttribute("aria-modal") === "true" && !!lab && lab.textContent.trim() === "Sierra AI",
       detail: w ? "role=" + w.getAttribute("role") + ", name=" + (lab ? '"' + lab.textContent.trim() + '"' : "none") : "not expanded",
     };
-  }));
+  }, what));
   out.push(await page.evaluate(() => {
     const w = document.querySelector(".cplchat-full");
     // A fixed layer above the dialog (First Light's greeting) stays live on purpose.
@@ -317,6 +373,10 @@ async function sierraDockFullChecks(page) {
       detail: "scrollTop after End = " + Math.round(w.scrollTop) + " of " + Math.round(w.scrollHeight - w.clientHeight),
     };
   }));
+  return out;
+}
+async function sierraDockFullChecks(page) {
+  const out = await sierraFullScreenChecks(page, "a send expands the dock");
   await page.keyboard.press("Escape");
   await page.waitForTimeout(100);
   out.push(await page.evaluate(() => {
@@ -327,6 +387,24 @@ async function sierraDockFullChecks(page) {
         !document.querySelector("body > [inert]") && document.activeElement === w.querySelector(".cplchat-dock-btn"),
       detail: (w ? w.querySelectorAll(".cplchat-msg").length + " turns in the tab" : "not in the tab") +
         ", focus on " + (document.activeElement && document.activeElement.className),
+    };
+  }));
+  return out;
+}
+async function sierraCobiFullChecks(page) {
+  const out = await sierraFullScreenChecks(page, "open() puts her over the tab");
+  await page.keyboard.press("Escape");
+  await page.waitForTimeout(100);
+  out.push(await page.evaluate(() => {
+    const host = document.getElementById("cplchat-cobi");
+    const w = host && host.querySelector(".cplchat");
+    return {
+      name: "Escape closes her into her hidden host, the conversation kept for the next open",
+      ok: !document.querySelector(".cplchat-full") && !!host && host.hidden && !!w &&
+        w.querySelectorAll(".cplchat-msg").length === 12 && !document.querySelector("body > [inert]") &&
+        getComputedStyle(document.documentElement).overflowY !== "hidden",
+      detail: (w ? w.querySelectorAll(".cplchat-msg").length + " turns kept" : "no box in the host") +
+        ", host hidden=" + !!(host && host.hidden),
     };
   }));
   return out;
@@ -2034,6 +2112,28 @@ module.exports = {
     widths: [390, 768, 1024, 1440],
     seed: (page) => seedSierraDockFull(page, "dark"),
     keyboard: async (page) => sierraDockFullChecks(page),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── Sierra AI over a COBI tab (S398) ─────────────────────────────────────
+     The box CPL_CHAT.open() builds, the CPL Assistant tab's heir, open over
+     Sierra Training with six seeded turns, one per theme: the dialog, the page
+     behind it inert, the sticky box, End, and Escape closing her into her host. */
+  "sierra-cobi-full": {
+    file: "index.html",
+    title: "Sierra AI over a COBI tab",
+    routes: [{ hash: "sierra-training", name: "cobi-full" }],
+    widths: [390, 768, 1024, 1440],
+    seed: (page) => seedSierraCobiFull(page, "light"),
+    keyboard: async (page) => sierraCobiFullChecks(page),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "sierra-cobi-full-dark": {
+    file: "index.html",
+    title: "Sierra AI over a COBI tab, dark",
+    routes: [{ hash: "sierra-training", name: "cobi-full-dark" }],
+    widths: [390, 768, 1024, 1440],
+    seed: (page) => seedSierraCobiFull(page, "dark"),
+    keyboard: async (page) => sierraCobiFullChecks(page),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "my-college-reports-signin": {
