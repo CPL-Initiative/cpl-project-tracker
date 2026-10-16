@@ -1,0 +1,20 @@
+{
+ "college": "Columbia College",
+ "programs": 83,
+ "with_closed_list": 82,
+ "found": 82,
+ "extracted": 82,
+ "errors": 0,
+ "passed_machine_checks": 30,
+ "failed": {
+  "coverage": 0,
+  "invented": 0,
+  "arithmetic": 52,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 5.46,
+ "cost_per_program": 0.0666,
+ "not_found": [],
+ "run": "38979390136"
+}
