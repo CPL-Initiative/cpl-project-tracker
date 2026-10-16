@@ -1,0 +1,313 @@
+{
+ "college": "Oxnard College",
+ "control_number": "09541",
+ "shape": "degree",
+ "title": "Art - Two-Dimensional Studio",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.vcccd.edu/oxnard/programs-courses/art-history/art-two-dimensional-studio-aa/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8941,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8941,
+    "output_tokens": 2323,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2323,
+  "output_tokens_details": {
+   "thinking_tokens": 641
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08222,
+ "ms": 19741,
+ "seconds": 20.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 16,
+   "listed": 16,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    36.0,
+    36.0
+   ],
+   "stated": [
+    36.0,
+    36.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     60.0,
+     73.0
+    ],
+    "stated": [
+     60.0,
+     67.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     34.0
+    ],
+    "why": [],
+    "within": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Associate in Arts in Art - Two-Dimensional Studio (REQUIREMENTS tab)",
+   "measure": "units",
+   "total_units": {
+    "min": 36,
+    "max": 36
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 0,
+    "max": 3
+   },
+   "ge_pattern": "Oxnard College General Education or Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 67
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Listen, receive, attend to, interpret, and respond appropriately to (1) verbal and/or (2) nonverbal messages.",
+    "Speak clearly and organize ideas and communicate verbal or nonverbal messages appropriate to the audience and the situation.",
+    "Use basic geometric shapes, such as: lines, angles, shapes and space.",
+    "Demonstrate creative expression when they achieve a hands-on experience with creative endeavors and either individually or collaboratively create original work applying feedback to improve their performance.",
+    "Understand the complex blend of personal vision, social-cultural background, ethical values and aesthetic judgment in their own artistic work.",
+    "Demonstrate an understanding of art including historical context and interrelationships with other disciplines."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ARTH C1100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARTH C1100H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTH C1200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARTH C1200H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART R104A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART R104B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART R106A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART R106B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART R115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART R126A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART R171",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART R165",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Choose a series of 2 Painting Courses (Oil Painting series)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "List A",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ART R108A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART R108B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Choose a series of 2 Painting Courses (Acrylic Painting series)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "List A",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ART R110A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART R110B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints no heading for the award in the extracted text; section_heading is taken from the requirements statement 'Associate in Arts in Art - Two-Dimensional Studio'.",
+   "Catalog prints ARTH C1100/C1100H/C1200/C1200H with a space; the closed list stores them as ARTHC1100 etc. Treated as the same courses (not catalog additions). Honors twins have no units printed beside them.",
+   "List A prints 6 units for 'a series of 2 Painting Courses' (R108A & R108B or R110A & R110B); no per-course units printed in that list. Each series recorded as its own block in option_group 'List A' with stated 6.",
+   "The page prints two degree paths: Major 36 + Oxnard College GE 24 - 3 double-counted + 3 free electives = 60; or Major 36 + Cal-GETC 34 - 3 double-counted + 0 free electives = 67. degree_total, ge_units and degree_elective_units record the range across the two paths (60/67, 24/34, 3/0).",
+   "The outcomes are printed in the page's program student learning outcomes tab; the first three (communication, geometry) appear generic and a reviewer may wish to confirm they belong to this program.",
+   "No careers are named in the text."
+  ]
+ },
+ "extracted_run": "38842203500"
+}

@@ -1,0 +1,364 @@
+{
+ "college": "Oxnard College",
+ "control_number": "37441",
+ "shape": "degree",
+ "title": "Engineering",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.vcccd.edu/oxnard/programs-courses/engineering/engineering-as/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8493,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8493,
+    "output_tokens": 2508,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2508,
+  "output_tokens_details": {
+   "thinking_tokens": 635
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08413,
+ "ms": 19714,
+ "seconds": 20.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 22,
+   "listed": 22,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    38.0,
+    47.0
+   ],
+   "stated": [
+    42.0,
+    49.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 38.0-47.0; the catalog states 42.0-49.0"
+   ],
+   "degree": {
+    "pass": false,
+    "status": "unequal",
+    "computed": [
+     62.0,
+     71.0
+    ],
+    "stated": [
+     60.0,
+     67.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     24.0
+    ],
+    "why": [
+     "the blocks and general education sum to 62.0-71.0; the catalog prints 60.0-67.0 for the degree"
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "REQUIREMENTS",
+   "measure": "units",
+   "total_units": {
+    "min": 42,
+    "max": 49
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 0,
+    "max": 0
+   },
+   "ge_pattern": "Oxnard College General Education or Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 67
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 24
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Explain the principles of engineering and their application to the design and manufacturing of products.",
+    "Critically evaluate a given system through observations, measurements, and accepted engineering analyses.",
+    "Apply physical laws, engineering concepts and formulas to analyze engineering problems and to produce proper solutions qualitatively and quantitatively.",
+    "Communicate engineering design ideas and solutions to problems through engineering drawings, oral presentations, and technical writing."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 28,
+     "max": 28
+    },
+    "courses": [
+     {
+      "code": "MATH C2210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2220",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH R122",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH R143",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH R134",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS R131",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS R132",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Complete a minimum of two courses from the following support courses as appropriate to satisfy requirements for the intended transfer institution",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHEM R120",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM R122",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM R130",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM R132",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH R134",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS R133",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS R131",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Complete a minimum of three Engineering courses (2-3 units each minimum) as appropriate to satisfy requirements of the intended transfer institution",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 8,
+     "max": 11
+    },
+    "courses": [
+     {
+      "code": "ENGR R101",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR R130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR R135",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR R140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR R140L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR R148",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR R150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR R160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR R160L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints no named section heading for the award; 'REQUIREMENTS' is the tab name, and the page is the Engineering A.S. page per the source URL.",
+   "The page prints two degree-total paths: Oxnard College General Education (24 units, -6 double-counted, total 60-67) OR Cal-GETC (34 units, -7 double-counted, total 69-76). degree_total and ge_units record the Oxnard College GE path; the Cal-GETC path totals 69-76 with Cal-GETC 34.",
+   "Free Electives Required is printed as 0 for both paths; recorded as degree_elective_units 0.",
+   "MATH R134 appears as an alternative to MATH R143 in the core and in the support-course list; the catalog says if MATH R134 is used in the core it cannot also satisfy the support area.",
+   "The Engineering block says 'minimum of three Engineering courses (2-3 units each minimum)', so 1-unit labs (ENGR R140L, ENGR R160L) may not count as one of the three on their own; reviewer may check.",
+   "The outcomes are printed in the page's program outcomes tab for this program; recorded as the award's outcomes."
+  ]
+ },
+ "extracted_run": "38842203500"
+}

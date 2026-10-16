@@ -1,0 +1,253 @@
+{
+ "college": "Oxnard College",
+ "control_number": "40768",
+ "shape": "certificate",
+ "title": "Fire Company Officer",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.vcccd.edu/oxnard/programs-courses/fire-technology/fire-company-officer-coa/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8218,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8218,
+    "output_tokens": 1263,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1263,
+  "output_tokens_details": {
+   "thinking_tokens": 104
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05813,
+ "ms": 9964,
+ "seconds": 10.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "FTR231"
+   ],
+   "flagged": [
+    "FTR231"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    19.5,
+    19.5
+   ],
+   "stated": [
+    19.5,
+    19.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 20,
+   "courses": 0,
+   "count": 20,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Fire Company Officer, Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 19.5,
+    "max": 19.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify different levels in the Fire Company Officer Certification Track.",
+    "Describe the “Task Book” process.",
+    "Describe the State certification examination process.",
+    "Identify the duties of a Company Officer.",
+    "Describe, apply and follow human resource policies and procedures.",
+    "Identify step for creating a professional development plan.",
+    "Describe verbal communications used at emergencies.",
+    "Articulate the duties of a Wildland Fire Officer.",
+    "Describe state and federal laws that pertain to the role of company officer.",
+    "Describe the proper use of a record-management system.",
+    "Identify procedures for conducting a fire prevention inspection.",
+    "Identify construction and suppression features that contribute to spread of fire.",
+    "Describe importance of evidence preservation.",
+    "Describe basic fire cause and origin determination.",
+    "Develop an initial plan of action to control emergencies.",
+    "Describe standard operating procedures for emergencies.",
+    "Determine tactical priorities for emergency incidents.",
+    "Implement a plan of action for an emergency.",
+    "Evaluate wildland fire weather, fuels and topographic information.",
+    "Establish a clearly identified incident command post."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FT R200",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT R210",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT R220",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT R230",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT R231",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FT R232",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT R240",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT R241",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT R250",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT R251",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT R160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints no explicit section heading in the extracted text; the heading is taken from the program and award name in the page URL.",
+   "FT R231 (ICS 200: Basic Incident Command System for Initial Response, 1 unit) appears in the catalog's required core but is not in the closed list; recorded as a catalog addition.",
+   "Catalog states 'Total Required Units for Certificate 19.5'; the listed course units sum to 19.5.",
+   "Outcomes are taken from the page's program student learning outcomes tab for this certificate."
+  ]
+ },
+ "extracted_run": "38842203500"
+}

@@ -1,0 +1,603 @@
+{
+ "college": "Oxnard College",
+ "control_number": "31045",
+ "shape": "degree",
+ "title": "Coastal Environmental Studies",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.vcccd.edu/oxnard/programs-courses/coastal-environmental-studies/coastal-environmental-studies-as/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10186,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10186,
+    "output_tokens": 5037,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 5037,
+  "output_tokens_details": {
+   "thinking_tokens": 1715
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.14148,
+ "ms": 40426,
+ "seconds": 40.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 40,
+   "listed": 40,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "MSTR103",
+    "MSTR103L",
+    "MSTR178"
+   ],
+   "flagged": [
+    "MSTR103",
+    "MSTR103L",
+    "MSTR178"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    50.0,
+    55.0
+   ],
+   "stated": [
+    50.0,
+    58.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 50.0-55.0; the catalog states 50.0-58.0"
+   ],
+   "degree": {
+    "pass": false,
+    "status": "unequal",
+    "computed": [
+     74.0,
+     79.0
+    ],
+    "stated": [
+     65.0,
+     73.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     24.0
+    ],
+    "why": [
+     "the blocks and general education sum to 74.0-79.0; the catalog prints 65.0-73.0 for the degree"
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Required Core Courses",
+   "measure": "units",
+   "total_units": {
+    "min": 50,
+    "max": 58
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 0,
+    "max": 0
+   },
+   "ge_pattern": "Oxnard College General Education or Cal-GETC",
+   "degree_total": {
+    "min": 65,
+    "max": 73
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 24
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Use the scientific method and an understanding of ecological principles to critically analyze information on the ways human activities affect the environment.",
+    "Analyze the inherent environmental, social, and economics of living sustainably on current and future generations.",
+    "Demonstrate proper use of a variety of field and/or laboratory techniques used in fields of environmental study.",
+    "Understand and communicate complex relationships between natural and human systems.",
+    "Demonstrate knowledge of the roles of societal and political organizations in environmental policy-making, regulation, compliance, and enforcement."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Life Science Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 8,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "BIOL R120",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL R122",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Life Science Requirements (laboratory courses)",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL R120L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL R122L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Chemistry Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "CHEM R120",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM R122",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Earth Science Requirement",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "GEOL R101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Earth Science Requirement (laboratory)",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "GEOL R101L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Economics Requirements",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2001H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2002H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Math Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "MATH C2210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2220",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Physics Requirements: Physics with Calculus series",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Physics series",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHYS R121",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS R122",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Physics Requirements: Physics for Scientists and Engineers series",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Physics series",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHYS R131",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS R132",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS R133",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Social Science Requirements",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ANTH R102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH R102H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL R102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHIL R102H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS R100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS R104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOCI C1000H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC R102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Coastal Studies Electives",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ESRM R100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESRM R100L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL R100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MST R100",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL R100L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MST R100L",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL R170",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MST R170",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL R103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MST R103",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL R103L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MST R103L",
+        "units": 1,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL R178",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MST R178",
+        "units": 1,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MST R199",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "No program heading is printed in the extracted text; section_heading uses the first heading of the requirements tab ('Required Core Courses') for the Coastal Environmental Studies A.S.",
+   "Two degree totals are printed: Oxnard College General Education path (GE 24, double-counted -9, free electives 0, total 65-73) and Cal-GETC path (GE 34, double-counted -16, free electives 0, total 68-76). degree_total and ge_units record the Oxnard College GE path; reviewer may prefer the Cal-GETC figures.",
+   "'Free Electives Required 0' is printed on both paths; recorded as degree_elective_units 0.",
+   "Life Science Requirements prints 8-10 units: both biology lectures are required; the labs (BIOL R120L, BIOL R122L) are described only as required by most transfer institutions, so they are recorded as recommended. Likewise GEOL R101L ('If required by the intended transfer institution') is recorded as recommended under Earth Science (3-4).",
+   "Physics Requirements (10-15 units printed for the heading) offers one of two series: PHYS R121/R122 or PHYS R131/R132/R133; recorded as two blocks in option_group 'Physics series' with the printed total noted here rather than on each block.",
+   "Economics: 'Choose the appropriate Economics course' with 3 units stated; read as one course from ECON C2001/C2001H or ECON C2002/C2002H. Honors alternatives have no units printed beside them.",
+   "Catalog prints 'SOCI C1000' and 'SOCI C1000H'; the closed list stores these as SOCIC1000 and SOCIC1000H (same courses, spacing difference), so they are not marked as catalog additions.",
+   "Coastal Studies Electives lists cross-listed courses as 'BIOL/MST' and 'GEOL/MST'; recorded with the MST twin as an alternative. MST R103, MST R103L and MST R178 are not in the closed list and are marked catalog additions.",
+   "Program learning outcomes are printed in the page's outcomes tab for the program and recorded for this award.",
+   "Plan of Study totals 52-53 units and treats the ECON choice as any one of the four ECON courses; not used for requirements."
+  ]
+ },
+ "extracted_run": "38842203500"
+}

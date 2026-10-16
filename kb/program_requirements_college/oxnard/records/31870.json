@@ -1,0 +1,261 @@
+{
+ "college": "Oxnard College",
+ "control_number": "31870",
+ "shape": "adt",
+ "title": "Mathematics",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.vcccd.edu/oxnard/programs-courses/mathematics/mathematics-2-ast/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7528,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7528,
+    "output_tokens": 1302,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1302,
+  "output_tokens_details": {
+   "thinking_tokens": 227
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05615,
+ "ms": 9905,
+ "seconds": 10.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 8,
+   "share": 0.75,
+   "missing": [
+    "STATC1000",
+    "STATC1000H"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "CNITR161",
+    "CSR131"
+   ],
+   "flagged": [
+    "CNITR161",
+    "CSR131"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    26.0
+   ],
+   "stated": [
+    24.0,
+    26.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     61.0,
+     69.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Mathematics 2.0, Associate in Science for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 26
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 3,
+    "max": 9
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Develop a conceptual understanding of limit, continuity, differentiation, and integration as well as a thorough background in techniques and application of calculus.",
+    "Demonstrate a working knowledge of selected topics from calculus, linear algebra, and a distribution of other branches of mathematics.",
+    "Demonstrate the ability to solve problems, including applications outside of mathematics, by means of intuition, creativity, guessing, and the experience gained through the study of particular examples and mathematical ideas.",
+    "Demonstrate the ability to use symbolic, graphical, numerical, and written representations of mathematical ideas.",
+    "Use appropriate technology to enhance their mathematical thinking and understanding, solve mathematical problems, and judge the reasonableness of their results."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 21,
+     "max": 21
+    },
+    "courses": [
+     {
+      "code": "MATH C2210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2220",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH R122",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH R134",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH R143",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A - Complete one course from the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "CS R131",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CNIT R161",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS R131",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "STAT C1000",
+    "why": "not in the text"
+   },
+   {
+    "code": "STAT C1000H",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The page prints 'Double-Counted Units -3-7' between Cal-GETC 34 and Free Electives 3-9; the double-counted figure is not recorded in any field.",
+   "Free Electives Required 3-9 recorded as degree_elective_units since the page prints a major total (24-26) separately from the 60-unit degree total.",
+   "Outcomes come from the page's outcomes tab, which appears to apply to this program as a whole; the A.S.-T is the only award on the page."
+  ]
+ },
+ "extracted_run": "38842203500"
+}
