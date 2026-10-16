@@ -127,9 +127,9 @@ const visibleTitles = (doc) => Array.from(doc.querySelectorAll("tr.cr-row"))
 
   // ── 6. header row text white ──
   // White via the First Light token (2026-10-16 UI pass), never a raw hex.
-  check("header: th text is white", css.indexOf(".cr-table th{color:var(--on-accent);}") >= 0);
+  check("header: th text is white", css.indexOf(".cr-table th{color:var(--on-seal-blue);}") >= 0);
   check("header: active sort indicator is white",
-    css.indexOf(".cr-sort-indicator.active{color:var(--on-accent);}") >= 0);
+    css.indexOf(".cr-sort-indicator.active{color:var(--on-seal-blue);}") >= 0);
 
   // ── 4. column drag-resize ──
   check("resize: handle CSS present",

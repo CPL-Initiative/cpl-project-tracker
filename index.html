@@ -97,6 +97,7 @@
             --college-flag: #FBF6E8;   /* a flag the college owns (Program records; S347) */
             --reading-flag: #EEF3FA;   /* a flag the reading procedure owns */
             --cer-cream: rgba(254,249,218,.8);   /* the Common Exhibit Reference tab ground (Sam, 2026-07-09: cream tint) */
+            --on-seal-blue: #FFFFFF;   /* text on a --seal-blue fill; white in both themes (--on-accent is ink in dark) */
             --surface-muted: #ECE9E2;
             /* ⚠️ THE LIGHT HALF OF THE STEP SCALE (Sam, open-asks item 11, 2026-09-22).
                --surface-1/--surface-2 were DARK-ONLY, so in light every use fell
@@ -214,6 +215,7 @@
             --college-flag: #2A2618;   /* a flag the college owns (Program records; S347) */
             --reading-flag: #1C2430;   /* a flag the reading procedure owns */
             --cer-cream: rgba(42,38,24,.8);   /* the Common Exhibit Reference tab ground (Sam, 2026-07-09: cream tint) */
+            --on-seal-blue: #FFFFFF;   /* text on a --seal-blue fill; white in both themes (--on-accent is ink in dark) */
             --surface-muted: #30302E;
             /* ⚠️ --surface-1 / --surface-2 ARE DEFINED IN THE DARK BLOCKS ONLY,
                AND THAT IS THE FIX, NOT AN OVERSIGHT. Neither token was ever
@@ -336,6 +338,7 @@
             --college-flag: #2A2618;   /* a flag the college owns (Program records; S347) */
             --reading-flag: #1C2430;   /* a flag the reading procedure owns */
             --cer-cream: rgba(42,38,24,.8);   /* the Common Exhibit Reference tab ground (Sam, 2026-07-09: cream tint) */
+            --on-seal-blue: #FFFFFF;   /* text on a --seal-blue fill; white in both themes (--on-accent is ink in dark) */
             --surface-muted: #30302E;
             /* ⚠️ --surface-1 / --surface-2 ARE DEFINED IN THE DARK BLOCKS ONLY,
                AND THAT IS THE FIX, NOT AN OVERSIGHT. Neither token was ever
@@ -9832,7 +9835,7 @@ Title 5 55050 revisions based on 78093 have been drafted and are in the making t
             #tab-credential-reference input.cr-filter { min-width:200px; }
             #tab-credential-reference .cr-search-wide { min-width:260px; }
             #tab-credential-reference .cr-flag-toggle { font-size:.85rem; color:var(--text-body); cursor:pointer; user-select:none; padding:6px 4px; }
-            #tab-credential-reference .cr-summary { color:var(--on-mustard); font-size:.85rem; margin-bottom:8px; }
+            #tab-credential-reference .cr-summary { color:var(--text-body); font-size:.85rem; margin-bottom:8px; }
             #tab-credential-reference .cr-table-wrap { overflow:auto; max-height:75vh; border:1px solid var(--border); border-radius:8px; }
             #tab-credential-reference table.cr-table { border-collapse:collapse; width:100%; font-size:.85rem; }
             #tab-credential-reference .cr-table th { position:sticky; top:0; background:var(--seal-blue); color:var(--gold-accent); text-align:center; vertical-align:middle; padding:8px 10px; white-space:nowrap; z-index:1; }
@@ -9863,7 +9866,7 @@ Title 5 55050 revisions based on 78093 have been drafted and are in the making t
             #tab-credential-reference .cr-flag-cell { font-size:.78rem; }
             #tab-credential-reference .cr-flag-badge { display:inline-block; background:var(--college-flag); color:var(--mustard-text); padding:2px 7px; border-radius:10px; font-size:.7rem; }
             #tab-credential-reference .cr-rev-on { color:var(--hunter); font-weight:600; font-size:.75rem; white-space:nowrap; }
-            #tab-credential-reference .cr-action-btn { background:var(--seal-blue); color:var(--on-accent); border:none; padding:5px 11px; border-radius:5px; font-size:.78rem; cursor:pointer; }
+            #tab-credential-reference .cr-action-btn { background:var(--seal-blue); color:var(--on-seal-blue); border:none; padding:5px 11px; border-radius:5px; font-size:.78rem; cursor:pointer; }
             #tab-credential-reference .cr-action-btn:hover { background:var(--btn-primary-hover); }
             #tab-credential-reference .cr-action-btn:disabled { background:var(--surface-muted); cursor:wait; }
             #tab-credential-reference .cr-action-noop { color:var(--text-muted); }
@@ -9939,7 +9942,7 @@ Title 5 55050 revisions based on 78093 have been drafted and are in the making t
             #tab-credential-reference .cr-art-ident.cr-sys-cid    { background:var(--reading-flag); border-left:3px solid var(--cobalt); }
             #tab-credential-reference .cr-art-ident.cr-sys-mid    { background:var(--college-flag); border-left:3px solid var(--mustard-fill); }
             #tab-credential-reference .cr-art-ident.cr-sys-cluster{ background:var(--surface-subtle); border-left:3px solid var(--violet); }
-            #tab-credential-reference .cr-id-sys { display:inline-block; font-size:.66rem; padding:1px 5px; border-radius:4px; background:var(--seal-blue); color:var(--on-accent); font-weight:600; vertical-align:middle; }
+            #tab-credential-reference .cr-id-sys { display:inline-block; font-size:.66rem; padding:1px 5px; border-radius:4px; background:var(--seal-blue); color:var(--on-seal-blue); font-weight:600; vertical-align:middle; }
             #tab-credential-reference .cr-id-code { font-family:ui-monospace,Menlo,monospace; font-weight:600; color:var(--navy-primary); margin-left:4px; }
             #tab-credential-reference .cr-id-title { color:var(--text-strong); font-size:.8rem; margin-top:3px; }
             #tab-credential-reference .cr-id-meta { color:var(--text-muted); font-size:.72rem; margin-top:2px; }
@@ -9966,7 +9969,7 @@ Title 5 55050 revisions based on 78093 have been drafted and are in the making t
             #tab-credential-reference .cr-group-count { color:var(--text-muted); font-size:.78rem; font-weight:500; margin-left:4px; }
             /* Toast */
             #tab-credential-reference ~ .cr-toast,
-            .cr-toast { position:fixed; right:18px; bottom:18px; background:var(--seal-blue); color:var(--on-accent); padding:10px 14px; border-radius:8px; font-size:.85rem; box-shadow:0 4px 12px rgba(0,0,0,0.2); z-index:1000; opacity:0; transition:opacity 0.2s; pointer-events:none; }
+            .cr-toast { position:fixed; right:18px; bottom:18px; background:var(--seal-blue); color:var(--on-seal-blue); padding:10px 14px; border-radius:8px; font-size:.85rem; box-shadow:0 4px 12px rgba(0,0,0,0.2); z-index:1000; opacity:0; transition:opacity 0.2s; pointer-events:none; }
             .cr-toast.show { opacity:1; }
             .cr-toast.err { background:var(--crimson); }
         </style>

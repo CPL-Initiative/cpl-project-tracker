@@ -3100,7 +3100,7 @@
       "#tab-credential-reference .cr-wl-note{color:var(--text-muted);font-style:italic;}" +
       "#tab-credential-reference .cr-wl-table{border-collapse:collapse;width:100%;font-size:.85rem;}" +
       // Dark headers ride the CO seal blue, never ink/black (Sam, 2026-07-08).
-      "#tab-credential-reference .cr-wl-table th{text-align:left;background:var(--seal-blue);color:var(--on-accent);padding:7px 10px;position:sticky;top:0;}" +
+      "#tab-credential-reference .cr-wl-table th{text-align:left;background:var(--seal-blue);color:var(--on-seal-blue);padding:7px 10px;position:sticky;top:0;}" +
       "#tab-credential-reference .cr-wl-table td{padding:6px 10px;border-top:1px solid var(--border);vertical-align:top;}" +
       "#tab-credential-reference .cr-wl-row.cr-wl-done{background:var(--surface-subtle);}" +
       "#tab-credential-reference .cr-wl-raw{max-width:42ch;}" +
@@ -3130,7 +3130,7 @@
       "#tab-credential-reference .cr-wl-toggle-btn{border:1px solid var(--border-strong);background:rgba(255,255,255,.6);color:var(--text-body);font-size:.78rem;padding:4px 12px;cursor:pointer;}" +
       "#tab-credential-reference .cr-wl-toggle-btn:first-child{border-radius:6px 0 0 6px;}" +
       "#tab-credential-reference .cr-wl-toggle-btn:last-child{border-radius:0 6px 6px 0;border-left:none;}" +
-      "#tab-credential-reference .cr-wl-toggle-on{background:var(--seal-blue);color:var(--on-accent);border-color:var(--seal-blue);font-weight:600;}" +
+      "#tab-credential-reference .cr-wl-toggle-on{background:var(--seal-blue);color:var(--on-seal-blue);border-color:var(--seal-blue);font-weight:600;}" +
       "#tab-credential-reference .cr-wl-preseed-bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:.8rem;color:var(--text-body);background:var(--college-flag);border:1px solid var(--mustard-fill);border-radius:6px;padding:6px 10px;margin:0 0 8px;}" +
       "#tab-credential-reference .cr-wl-saveall{background:var(--hunter,#166534);color:var(--on-accent);border:none;border-radius:5px;font-size:.76rem;font-weight:600;cursor:pointer;padding:4px 10px;}" +
       "#tab-credential-reference .cr-wl-saveall:disabled{opacity:.6;cursor:default;}" +
@@ -3214,7 +3214,7 @@
       // the worklist look, so the two lanes never mix in queries or CSS.
       "#tab-credential-reference .cr-ni-title{margin-top:22px;}" +
       "#tab-credential-reference .cr-ni-table{border-collapse:collapse;width:100%;font-size:.85rem;}" +
-      "#tab-credential-reference .cr-ni-table th{text-align:left;background:var(--seal-blue);color:var(--on-accent);padding:7px 10px;position:sticky;top:0;}" +
+      "#tab-credential-reference .cr-ni-table th{text-align:left;background:var(--seal-blue);color:var(--on-seal-blue);padding:7px 10px;position:sticky;top:0;}" +
       "#tab-credential-reference .cr-ni-table td{padding:6px 10px;border-top:1px solid var(--border);vertical-align:top;}" +
       "#tab-credential-reference .cr-ni-row.cr-wl-done{background:var(--surface-subtle);}" +
       "#tab-credential-reference .cr-mg-table{width:100%;border-collapse:collapse;margin:.4em 0 1em;}" +
@@ -3249,7 +3249,7 @@
       "#tab-credential-reference .cr-lanes{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 10px;}" +
       "#tab-credential-reference .cr-lane{border:1px solid var(--border-strong);background:var(--surface-opaque,#fff);color:var(--text-body,#3A3A36);border-radius:16px;padding:4px 12px;font-size:.78rem;font-weight:600;cursor:pointer;}" +
       "#tab-credential-reference .cr-lane:hover{background:var(--surface-muted,#ECE9E2);}" +
-      "#tab-credential-reference .cr-lane.active{background:var(--seal-blue);color:var(--on-accent);border-color:var(--seal-blue);}" +
+      "#tab-credential-reference .cr-lane.active{background:var(--seal-blue);color:var(--on-seal-blue);border-color:var(--seal-blue);}" +
       "#tab-credential-reference .cr-lane-n{color:var(--text-muted,#5C5C55);font-variant-numeric:tabular-nums;}" +
       "#tab-credential-reference .cr-lane.active .cr-lane-n{color:var(--mustard-on-dark,#E3B341);}" +
       // In-cell inputs — quiet until hover/focus (the issuer-lane pattern
@@ -3321,8 +3321,8 @@
       "#tab-credential-reference .cr-chip-mergesug{color:var(--seal-blue-text,#002F6D);border-color:var(--seal-blue,#1e40af);}" +
       "#tab-credential-reference .cr-mergesug-h{color:var(--seal-blue-text,#002F6D);}" +
       // Header row text: white, not gold.
-      "#tab-credential-reference .cr-table th{color:var(--on-accent);}" +
-      "#tab-credential-reference .cr-sort-indicator.active{color:var(--on-accent);}" +
+      "#tab-credential-reference .cr-table th{color:var(--on-seal-blue);}" +
+      "#tab-credential-reference .cr-sort-indicator.active{color:var(--on-seal-blue);}" +
       // Column drag-resize handles (widths persist per-browser).
       "#tab-credential-reference .cr-table th{position:sticky;}" +
       "#tab-credential-reference .cr-resize{position:absolute;right:0;top:0;bottom:0;width:7px;cursor:col-resize;user-select:none;}" +
@@ -3370,6 +3370,10 @@
     // Phones: the grid scrolls inside its own frame; the bar wraps to one column.
     "@media (max-width:560px){#tab-credential-reference.cpl-tab-pane .cr-toolbar{flex-direction:column;align-items:stretch;}" +
       "#tab-credential-reference.cpl-tab-pane .cr-toolbar input.cr-filter,#tab-credential-reference.cpl-tab-pane .cr-search-wide{min-width:0;width:100%;}" +
+      // A <select> sizes itself to its longest option; as a flex item its min-width
+      // is auto, so it would hold the bar wider than the phone. Cap every child.
+      "#tab-credential-reference.cpl-tab-pane .cr-toolbar>*{min-width:0;max-width:100%;box-sizing:border-box;}" +
+      "#tab-credential-reference.cpl-tab-pane .cr-toolbar select.cr-filter,#tab-credential-reference.cpl-tab-pane .cr-ind-bar select.cr-filter{width:100%;}" +
       "#tab-credential-reference.cpl-tab-pane .cr-auth{margin-left:0;}}";
 
   // Compact college label for the pills (full name kept in the title attr). Looks
