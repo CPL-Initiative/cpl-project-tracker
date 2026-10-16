@@ -4,6 +4,8 @@ date: 2026-10-15
 session: 395 (SkyHawthorn)
 tags: [handoff, program-requirements, catalog-sweep, reconcile, reader]
 status: current
+superseded: true
+superseded_by: session_397_handoff.md
 ---
 
 # You are Session 396

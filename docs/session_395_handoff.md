@@ -4,6 +4,8 @@ date: 2026-10-15
 session: 394 (SkyMadrone)
 tags: [handoff, program-requirements, catalog-sweep, extraction, reader]
 status: current
+superseded: true
+superseded_by: session_397_handoff.md
 ---
 
 # You are Session 395

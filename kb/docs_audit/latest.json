@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-15",
+  "generated": "2026-10-16",
   "thresholds": {
     "always_loaded": 60000,
     "kb_note": 40000,
@@ -10,14 +10,14 @@
     "other": 150000
   },
   "summary": {
-    "files": 1162,
-    "bytes": 11963479,
-    "over_budget": 9,
-    "handoff_max": 396,
+    "files": 1163,
+    "bytes": 11972971,
+    "over_budget": 10,
+    "handoff_max": 397,
     "always_loaded_files": 1,
     "always_loaded_bytes": 60013,
-    "superseded_files": 0,
-    "superseded_bytes": 0,
+    "superseded_files": 3,
+    "superseded_bytes": 13398,
     "lanes": {
       "always_loaded": {
         "files": 1,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 120,
-        "bytes": 3567256,
+        "bytes": 3567399,
         "over": 3
       },
       "index": {
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 82,
-        "bytes": 2364301,
+        "bytes": 2367827,
         "over": 3
       },
       "kb_note": {
@@ -46,25 +46,26 @@
       },
       "roadmap_lane": {
         "files": 37,
-        "bytes": 350622,
-        "over": 2
+        "bytes": 352207,
+        "over": 3
       },
       "handoff": {
-        "files": 367,
-        "bytes": 2874350,
+        "files": 368,
+        "bytes": 2878588,
         "over": 0
       }
     },
     "by_rule": {
-      "oversized_doc": 9,
+      "oversized_doc": 10,
       "house_voice": 23,
       "kb_note_dialect": 1,
+      "superseded_handoff": 3,
       "vault_heavy_path": 62
     },
     "vault": {
-      "files": 11741,
-      "bytes": 2594901912,
-      "heavy_bytes": 1544950332,
+      "files": 11751,
+      "bytes": 2594945061,
+      "heavy_bytes": 1544998251,
       "heavy_share": 0.595,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -453,6 +454,19 @@
       "path": "docs/reference/lanes/common-cr-reference.md"
     },
     {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 21555,
+        "limit": 20000,
+        "lane": "roadmap_lane",
+        "over_by": 1555,
+        "ratio": 1.08
+      },
+      "message": "21,555 B is 1.1× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/program-requirements-harvest.md"
+    },
+    {
       "rule": "house_voice",
       "fixable": false,
       "detail": {
@@ -488,6 +502,39 @@
       },
       "message": "7 business-register terms — leverage x7 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
       "path": "docs/roadmap_archive.md"
+    },
+    {
+      "rule": "superseded_handoff",
+      "fixable": true,
+      "detail": {
+        "session": 394,
+        "authoritative": 397,
+        "has_frontmatter": true
+      },
+      "message": "handoff 394 is below the authoritative 397 but is not stamped `superseded: true`",
+      "path": "docs/session_394_handoff.md"
+    },
+    {
+      "rule": "superseded_handoff",
+      "fixable": true,
+      "detail": {
+        "session": 395,
+        "authoritative": 397,
+        "has_frontmatter": true
+      },
+      "message": "handoff 395 is below the authoritative 397 but is not stamped `superseded: true`",
+      "path": "docs/session_395_handoff.md"
+    },
+    {
+      "rule": "superseded_handoff",
+      "fixable": true,
+      "detail": {
+        "session": 396,
+        "authoritative": 397,
+        "has_frontmatter": true
+      },
+      "message": "handoff 396 is below the authoritative 397 but is not stamped `superseded: true`",
+      "path": "docs/session_396_handoff.md"
     },
     {
       "rule": "house_voice",
@@ -542,10 +589,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 661725290,
+        "bytes": 661753560,
         "kind": "dir"
       },
-      "message": "directory totals 661,725,290 B inside the vault"
+      "message": "directory totals 661,753,560 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -572,10 +619,10 @@
       "fixable": false,
       "path": "kb/program_requirements_college",
       "detail": {
-        "bytes": 52421486,
+        "bytes": 52441135,
         "kind": "dir"
       },
-      "message": "directory totals 52,421,486 B inside the vault"
+      "message": "directory totals 52,441,135 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
