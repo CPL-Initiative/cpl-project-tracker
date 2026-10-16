@@ -1,0 +1,333 @@
+{
+ "college": "Reedley College",
+ "control_number": "41849",
+ "shape": "degree",
+ "title": "Engineering: Civil",
+ "award": "A.S. Degree",
+ "source_url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3101/3520/3279",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7900,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7900,
+    "output_tokens": 2184,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2184,
+  "output_tokens_details": {
+   "thinking_tokens": 678
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07528,
+ "ms": 18100,
+ "seconds": 18.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 18,
+   "listed": 20,
+   "share": 0.9,
+   "missing": [
+    "MATH5A",
+    "MATH5B"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "ENGR40",
+    "MATHC2210",
+    "MATHC2220"
+   ],
+   "flagged": [
+    "ENGR40",
+    "MATHC2210",
+    "MATHC2220"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    35.0,
+    45.0
+   ],
+   "stated": [
+    41.0,
+    45.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 35.0-45.0; the catalog states 41.0-45.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Engineering: Civil",
+   "measure": "units",
+   "total_units": {
+    "min": 41,
+    "max": 45
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ENGR 10",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH C2220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 6",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 4A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 4B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select four courses",
+    "rule": "choose_courses",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 14,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "CSCI 40",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGR 40",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 2",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 6",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 8",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 17",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 4C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM 3A",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 4L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FOR 17",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SURV 1",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "SURV 1L",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MATH 5A",
+    "why": "not in the text; catalog lists MATH C2210 Calculus I instead"
+   },
+   {
+    "code": "MATH 5B",
+    "why": "not in the text; catalog lists MATH C2220 Calculus II instead"
+   }
+  ],
+  "notes": [
+   "The extracted text prints no section heading, award title, description, outcomes or careers; section_heading uses the program title.",
+   "The required-course block has no printed name; 'Required Courses' is a supplied label. Its courses sum to 27 units, which with the 14-18 unit choice block matches the printed Total 41.0-45.0.",
+   "ENGR 4 and 4L are printed as one grouped entry ('ENGR 4 and 4L', 4.0 units) and appear to count together as one of the four selected courses; recorded as two entries.",
+   "'FOR 17 or SURV 1 and 1L' (3.0-4.0 units) is one choice: FOR 17 alone, or SURV 1 together with SURV 1L; SURV 1 and SURV 1L are recorded as alternatives of FOR 17.",
+   "'CHEM 1A or 3A' is printed as one choice of 4.0-5.0 units.",
+   "CSCI 40 is printed as 'same as ENGR 40' (cross-listed); ENGR 40 recorded as an alternative not in the closed list.",
+   "No general education pattern, degree total, or elective units are printed in the extracted text."
+  ]
+ },
+ "extracted_run": "38843477136"
+}
