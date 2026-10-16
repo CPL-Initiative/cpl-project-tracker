@@ -5,481 +5,33 @@
  "catalog_year": "2026-2027",
  "programs": 87,
  "with_closed_list": 83,
- "started": "2026-10-16T22:50:53Z",
+ "started": "2026-10-16T23:39:26Z",
  "elumen": {
   "catalog": "2026-2027",
   "read": "publish/content",
   "menu_programs": 16,
   "errors": [],
-  "program_pages": 16
+  "menu_departments": 83,
+  "department_programs": 99,
+  "menu_hubs": [
+   "program"
+  ],
+  "hub_programs": 99,
+  "program_pages": 99
  },
- "pages_read": 16,
+ "pages_read": 99,
  "banner_h1": null,
- "loads": 17,
- "seconds": 74.2,
- "found": 16,
+ "loads": 184,
+ "seconds": 761.4,
+ "found": 78,
  "by_method": {
   "no_closed_list": 4,
-  "not_found": 57,
-  "page_claimed": 10,
-  "sitemap_page": 16
+  "not_found": 4,
+  "page_claimed": 1,
+  "sitemap_page": 78
  },
  "shared_pages": {},
  "not_found": [
-  {
-   "control_number": "01594",
-   "title": "Business- Accounting & Finance",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "01595",
-   "title": "Business Management",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/business-administration-2-0-ast-fall-2025",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.364,
-    "body": 0.364,
-    "content": 0.364,
-    "net": 4,
-    "listed": 11,
-    "why": "coarse net: the page's code tokens name 4 of 11 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3228,
-     "content": 3228,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "01596",
-   "title": "Business- Marketing",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/business-administration-2-0-ast-fall-2025",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.4,
-    "body": 0.4,
-    "content": 0.4,
-    "net": 4,
-    "listed": 10,
-    "why": "coverage 0.40 in innerText, below 0.50",
-    "error": null,
-    "chars": {
-     "body": 3228,
-     "content": 3228,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "01616",
-   "title": "Early Childhood Education",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/early-childhood-education-as-t-fall-2025",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.444,
-    "body": 0.444,
-    "content": 0.444,
-    "net": 8,
-    "listed": 18,
-    "why": "coverage 0.44 in innerText, below 0.50",
-    "error": null,
-    "chars": {
-     "body": 3232,
-     "content": 3232,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "01617",
-   "title": "Fire Science",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/political-science-aa-t-fall-2025",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 9,
-    "why": "coarse net: the page's code tokens name 0 of 9 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3614,
-     "content": 3614,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "01618",
-   "title": "Social Science",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/political-science-aa-t-fall-2025",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.261,
-    "body": 0.261,
-    "content": 0.261,
-    "net": 12,
-    "listed": 46,
-    "why": "coarse net: the page's code tokens name 12 of 46 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3614,
-     "content": 3614,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "09128",
-   "title": "Medical Office Assistant: Administrative",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "11529",
-   "title": "Addiction Studies",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "19200",
-   "title": "Liberal Arts: Arts and Humanities",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/studio-arts-aa-t-fall-2025",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.134,
-    "body": 0.134,
-    "content": 0.134,
-    "net": 11,
-    "listed": 82,
-    "why": "coarse net: the page's code tokens name 11 of 82 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3164,
-     "content": 3164,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "19265",
-   "title": "Fire Academy",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "20039",
-   "title": "Accounting Technician",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "20045",
-   "title": "Spanish",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/spanish-aa-t-fall-2025",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.385,
-    "body": 0.385,
-    "content": 0.385,
-    "net": 10,
-    "listed": 26,
-    "why": "coarse net: the page's code tokens name 10 of 26 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3300,
-     "content": 3300,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "20047",
-   "title": "Medical Office Assistant: Administrative",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "20050",
-   "title": "Addiction Studies",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "20054",
-   "title": "Fire Science",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/political-science-aa-t-fall-2025",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 9,
-    "why": "coarse net: the page's code tokens name 0 of 9 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3614,
-     "content": 3614,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "24410",
-   "title": "ESL Proficiency",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31213",
-   "title": "Fire Officer",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31326",
-   "title": "Fire Officer",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "33694",
-   "title": "Fire Academy",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "36069",
-   "title": "Anthropology",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "36498",
-   "title": "Accounting and Finance",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "36499",
-   "title": "General Business",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/business-administration-2-0-ast-fall-2025",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.429,
-    "body": 0.429,
-    "content": 0.429,
-    "net": 3,
-    "listed": 7,
-    "why": "coverage 0.43 in innerText, below 0.50",
-    "error": null,
-    "chars": {
-     "body": 3228,
-     "content": 3228,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "36500",
-   "title": "Marketing",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "36502",
-   "title": "Management",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/hospitality-management-as-t-fall-2025",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 6,
-    "why": "coarse net: the page's code tokens name 0 of 6 listed courses",
-    "error": null,
-    "chars": {
-     "body": 4048,
-     "content": 4048,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "38747",
-   "title": "Wilderness Education and Outdoor Leadership",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38759",
-   "title": "Wilderness Education and Outdoor Leadership",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "39383",
-   "title": "Computer Information Systems: Information Technology (IT) Technician - Cybersecurity",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "39384",
-   "title": "Computer Information Systems: Information Technology (IT) Technician - Cybersecurity",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "39442",
-   "title": "Environmental Science and Technology",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "39443",
-   "title": "Environmental Studies",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "39613",
-   "title": "Environmental Science",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/political-science-aa-t-fall-2025",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.029,
-    "body": 0.029,
-    "content": 0.029,
-    "net": 1,
-    "listed": 34,
-    "why": "coarse net: the page's code tokens name 1 of 34 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3614,
-     "content": 3614,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "39988",
-   "title": "Small Business Ownership",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
   {
    "control_number": "40529",
    "title": "California State University General Education Certification (CSUGE)",
@@ -505,346 +57,225 @@
    }
   },
   {
-   "control_number": "41126",
-   "title": "Geographic Information Systems",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "41392",
-   "title": "General Conservation",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "41735",
-   "title": "Dental Assisting and Radiology",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "42053",
-   "title": "Culinary Arts",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/studio-arts-aa-t-fall-2025",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 7,
-    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3164,
-     "content": 3164,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "42054",
-   "title": "Culinary Arts",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/studio-arts-aa-t-fall-2025",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 7,
-    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3164,
-     "content": 3164,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "42297",
-   "title": "Forestry",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "42298",
-   "title": "Forestry",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "42729",
-   "title": "Firefighter I Academy (South Bay JPA)",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "42943",
-   "title": "Early Childhood Education: Site Supervisor",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/early-childhood-education-as-t-fall-2025",
-    "label": {
-     "award": 0,
-     "title": 0.6
-    },
-    "field": "innerText",
-    "coverage": 0.25,
-    "body": 0.25,
-    "content": 0.25,
-    "net": 1,
-    "listed": 4,
-    "why": "coarse net: the page's code tokens name 1 of 4 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3232,
-     "content": 3232,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "43521",
-   "title": "Environmental Science & Technology Foundational Skills",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43635",
-   "title": "Forestry Foundational Skills",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43644",
-   "title": "Medical Office Assisting, Part 1 Foundational Skills",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43645",
-   "title": "Culinary Arts Level II Foundational Skills",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43648",
-   "title": "Certified Bookkeeper Foundational Skills",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "44208",
-   "title": "Art-Business Entrepreneurship",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "44210",
-   "title": "Art-Digital Media Arts",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "44213",
-   "title": "Music",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "44433",
-   "title": "Business Information Worker--Quick Start",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "45269",
-   "title": "Outdoor Foundational Skills-Wilderness Medicine",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
    "control_number": "45577",
    "title": "California General Education Transfer Curriculum - CalGETC",
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
     "why": "no page read names the program"
    }
-  },
-  {
-   "control_number": "46228",
-   "title": "Art History",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "46567",
-   "title": "Chemistry AS",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/administration-of-justice-as-t-fall-2025",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 18,
-    "why": "coarse net: the page's code tokens name 0 of 18 listed courses",
-    "error": null,
-    "chars": {
-     "body": 4009,
-     "content": 4009,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
   }
  ],
  "page_claimed": [
-  {
-   "control_number": "01614",
-   "title": "Business- General Business",
-   "award": "A.A. Degree",
-   "pages": [
-    "https://ltcc.elumenapp.com/catalog/2026-2027/program/business-administration-2-0-ast-fall-2025"
-   ]
-  },
-  {
-   "control_number": "01615",
-   "title": "Criminal Justice",
-   "award": "A.A. Degree",
-   "pages": [
-    "https://ltcc.elumenapp.com/catalog/2026-2027/program/administration-of-justice-as-t-fall-2025"
-   ]
-  },
   {
    "control_number": "20048",
    "title": "Early Childhood Education",
    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
    "pages": [
-    "https://ltcc.elumenapp.com/catalog/2026-2027/program/early-childhood-education-as-t-fall-2025"
-   ]
-  },
-  {
-   "control_number": "20051",
-   "title": "Criminal Justice",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://ltcc.elumenapp.com/catalog/2026-2027/program/administration-of-justice-as-t-fall-2025"
-   ]
-  },
-  {
-   "control_number": "38760",
-   "title": "Hospitality Management",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://ltcc.elumenapp.com/catalog/2026-2027/program/hospitality-management-as-t-fall-2025"
-   ]
-  },
-  {
-   "control_number": "43646",
-   "title": "Culinary Arts Level I Foundational Skills",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "pages": [
-    "https://ltcc.elumenapp.com/catalog/2026-2027/program/hospitality-management-as-t-fall-2025"
-   ]
-  },
-  {
-   "control_number": "43647",
-   "title": "Computer Programming Foundational Skills",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "pages": [
-    "https://ltcc.elumenapp.com/catalog/2026-2027/program/mathematics-as-t-fall-2025"
-   ]
-  },
-  {
-   "control_number": "44211",
-   "title": "Art-Pictorial Arts",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://ltcc.elumenapp.com/catalog/2026-2027/program/studio-arts-aa-t-fall-2025"
-   ]
-  },
-  {
-   "control_number": "44212",
-   "title": "Art-Spatial Arts",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://ltcc.elumenapp.com/catalog/2026-2027/program/studio-arts-aa-t-fall-2025"
-   ]
-  },
-  {
-   "control_number": "46042",
-   "title": "Art-Photography",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://ltcc.elumenapp.com/catalog/2026-2027/program/studio-arts-aa-t-fall-2025"
+    "https://ltcc.elumenapp.com/catalog/2026-2027/program/early-childhood-education-as-t-fall-2025",
+    "https://ltcc.elumenapp.com/catalog/2026-2027/program/early-childhood-education-aa-fall-2022"
    ]
   }
  ],
  "coverage_bands": {
-  "0.5-0.8": 0,
-  "0.8-1.0": 6,
-  "1.0": 10
+  "0.5-0.8": 2,
+  "0.8-1.0": 24,
+  "1.0": 52
  },
  "would_extract": {
   "against": null,
   "kept": 0,
-  "programs": 16,
+  "programs": 78,
   "list": [
+   {
+    "control_number": "01594",
+    "title": "Business- Accounting & Finance",
+    "award": "A.A. Degree",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/business-accounting-finance-aa-summer-2018",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01595",
+    "title": "Business Management",
+    "award": "A.A. Degree",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/business-management-aa-fall-2023",
+    "coverage": 0.818,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01596",
+    "title": "Business- Marketing",
+    "award": "A.A. Degree",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/business-marketing-aa-summer-2022",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01614",
+    "title": "Business- General Business",
+    "award": "A.A. Degree",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/business-general-business-aa-summer-2021",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01615",
+    "title": "Criminal Justice",
+    "award": "A.A. Degree",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/criminal-justice-aa-summer-2019",
+    "coverage": 0.818,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01616",
+    "title": "Early Childhood Education",
+    "award": "A.A. Degree",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/early-childhood-education-aa-fall-2022",
+    "coverage": 0.944,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01617",
+    "title": "Fire Science",
+    "award": "A.A. Degree",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/fire-science-aa-summer-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01618",
+    "title": "Social Science",
+    "award": "A.A. Degree",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/social-science-aa-summer-2022",
+    "coverage": 0.957,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09128",
+    "title": "Medical Office Assistant: Administrative",
+    "award": "A.A. Degree",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/medical-office-assistant-administrative-aa-summer-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11529",
+    "title": "Addiction Studies",
+    "award": "A.A. Degree",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/addiction-studies-aa-winter-2024",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19200",
+    "title": "Liberal Arts: Arts and Humanities",
+    "award": "A.A. Degree",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/liberal-arts-arts-and-humanities-aa-spring-2024",
+    "coverage": 0.988,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19265",
+    "title": "Fire Academy",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/fire-academy-certificate-summer-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20039",
+    "title": "Accounting Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/accounting-technician-certificate-summer-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20045",
+    "title": "Spanish",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/spanish-certificate-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20047",
+    "title": "Medical Office Assistant: Administrative",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/medical-office-assistant-administrative-certificate-summer-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20050",
+    "title": "Addiction Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/addiction-studies-certificate-winter-2024",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20051",
+    "title": "Criminal Justice",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/criminal-justice-certificate-of-achievement-summer-2022",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20054",
+    "title": "Fire Science",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/fire-science-certificate-summer-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24410",
+    "title": "ESL Proficiency",
+    "award": "Noncredit program",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/esl-proficiency-certificate-summer-2022",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
    {
     "control_number": "30942",
     "title": "Sociology",
@@ -860,6 +291,26 @@
     "title": "Mathematics",
     "award": "A.S. T Degree",
     "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/mathematics-as-t-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31213",
+    "title": "Fire Officer",
+    "award": "A.A. Degree",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/fire-officer-aa-summer-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31326",
+    "title": "Fire Officer",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/fire-officer-certificate-summer-2021",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
@@ -916,11 +367,71 @@
     "was_method": null
    },
    {
+    "control_number": "33694",
+    "title": "Fire Academy",
+    "award": "A.A. Degree",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/fire-academy-aa-summer-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
     "control_number": "35531",
     "title": "Elementary Teacher Education",
     "award": "A.A- T Degree",
     "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/elementary-teacher-education-aa-t-fall-2025",
     "coverage": 0.947,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36069",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/anthropology-transfer-degree-aa-t-summer-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36498",
+    "title": "Accounting and Finance",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/accounting-and-finance-certificate-summer-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36499",
+    "title": "General Business",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/general-business-certificate-summer-2021",
+    "coverage": 0.714,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36500",
+    "title": "Marketing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/marketing-certificate-summer-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36502",
+    "title": "Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/management-certificate-summer-2021",
+    "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
     "was_method": null
@@ -976,11 +487,171 @@
     "was_method": null
    },
    {
+    "control_number": "38747",
+    "title": "Wilderness Education and Outdoor Leadership",
+    "award": "A.A. Degree",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/wilderness-education-and-outdoor-leadership-aa-summer-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38759",
+    "title": "Wilderness Education and Outdoor Leadership",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/wilderness-education-and-outdoor-leadership-certificate-summer-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38760",
+    "title": "Hospitality Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/hospitality-management-certificate-summer-2021",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39383",
+    "title": "Computer Information Systems: Information Technology (IT) Technician - Cybersecurity",
+    "award": "A.S. Degree",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/computer-information-systems-information-technology-it-technician-cybersecurity-as-summer-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39384",
+    "title": "Computer Information Systems: Information Technology (IT) Technician - Cybersecurity",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/computer-information-systems-cis-information-technology-it-technician-cybersecurity-certificate-of-achievement-summer-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39442",
+    "title": "Environmental Science and Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/environmental-science-technology-certificate-fall-2020",
+    "coverage": 0.87,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39443",
+    "title": "Environmental Studies",
+    "award": "A.A. Degree",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/environmental-studies-aa-fall-2020",
+    "coverage": 0.853,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39613",
+    "title": "Environmental Science",
+    "award": "A.S. Degree",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/environmental-science-as-summer-2021",
+    "coverage": 0.912,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39988",
+    "title": "Small Business Ownership",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/small-business-ownership-certificate-summer-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
     "control_number": "40938",
     "title": "Political Science",
     "award": "A.A- T Degree",
     "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/political-science-aa-t-fall-2025",
     "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41126",
+    "title": "Geographic Information Systems",
+    "award": "Noncredit program",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/geographic-information-systems-non-credit-certificate-summer-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41392",
+    "title": "General Conservation",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/general-conservation-certificate-summer-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41735",
+    "title": "Dental Assisting and Radiology",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/dental-assisting-and-radiology-summer-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42053",
+    "title": "Culinary Arts",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/culinary-arts-certificate-of-achievement-summer-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42054",
+    "title": "Culinary Arts",
+    "award": "A.A. Degree",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/culinary-arts-aa-summer-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42297",
+    "title": "Forestry",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/forestry-certificate-of-achievement-fall-2022",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42298",
+    "title": "Forestry",
+    "award": "A.S. Degree",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/forestry-as-degree-fall-2022",
+    "coverage": 0.842,
     "was_url": null,
     "was_coverage": null,
     "was_method": null
@@ -996,6 +667,96 @@
     "was_method": null
    },
    {
+    "control_number": "42729",
+    "title": "Firefighter I Academy (South Bay JPA)",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/firefighter-i-academy-south-bay-jpa-certificate-of-achievement-summer-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42943",
+    "title": "Early Childhood Education: Site Supervisor",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/early-childhood-education-site-supervisor-certificate-of-achievement-fall-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43521",
+    "title": "Environmental Science & Technology Foundational Skills",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/environmental-science-technology-foundational-skills-certificate-fsc-winter-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43635",
+    "title": "Forestry Foundational Skills",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/forestry-foundational-skills-certificate-fsc-winter-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43644",
+    "title": "Medical Office Assisting, Part 1 Foundational Skills",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/medical-office-assisting-part-1-foundational-skills-certificate-winter-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43645",
+    "title": "Culinary Arts Level II Foundational Skills",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/culinary-arts-level-ii-foundational-skills-certificate-winter-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43646",
+    "title": "Culinary Arts Level I Foundational Skills",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/culinary-arts-level-i-foundational-skills-certificate-winter-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43647",
+    "title": "Computer Programming Foundational Skills",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/computer-programming-foundational-skills-certificate-summer-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43648",
+    "title": "Certified Bookkeeper Foundational Skills",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/certified-bookkeeper-foundational-skills-certificate-winter-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
     "control_number": "43928",
     "title": "Nutrition and Dietetics",
     "award": "A.S. T Degree",
@@ -1004,8 +765,108 @@
     "was_url": null,
     "was_coverage": null,
     "was_method": null
+   },
+   {
+    "control_number": "44208",
+    "title": "Art-Business Entrepreneurship",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/art-business-entrepreneurship-certificate-summer-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44210",
+    "title": "Art-Digital Media Arts",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/art-digital-media-arts-certificate-summer-2024",
+    "coverage": 0.909,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44211",
+    "title": "Art-Pictorial Arts",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/art-pictorial-arts-certificate-summer-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44212",
+    "title": "Art-Spatial Arts",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/art-spatial-arts-certificate-summer-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44213",
+    "title": "Music",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/music-certificate-of-achievement-summer-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44433",
+    "title": "Business Information Worker--Quick Start",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/business-information-worker-quick-start-summer-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45269",
+    "title": "Outdoor Foundational Skills-Wilderness Medicine",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/outdoor-foundational-skills-wilderness-medicine-summer-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46042",
+    "title": "Art-Photography",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/art-photography-certificate-summer-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46228",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/art-history-aa-t-summer-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46567",
+    "title": "Chemistry AS",
+    "award": "A.S. Degree",
+    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/chemistry-as-summer-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
    }
   ]
  },
- "run": "38978047103"
+ "run": "38982482079"
 }
