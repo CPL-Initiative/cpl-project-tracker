@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 87 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 82 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 56 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 369 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1151** | |
+| Session handoffs | 370 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1152** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-16 (S398 SkyLinden, Sam's session): wave 4 finished (Santa Ana, Rio Hondo, Saddleback loaded; builds `66b50c86891e` and `fa8ee2a84935` applied; nine procedure records, #2161); the display job's 120 minutes and gzipped receipts (#2159); the Memory tab's UI pass (#2160); Sierra: one assistant in COBI and her statewide catalog, on Sam's words of the day.
 - 2026-10-16 (S397 SkyCatalpa, the CPL Queue routine): Allan Hancock loaded; Monterey Peninsula's reconcile reread; wave 4's display build `66b50c86891e` (#2157, superseding #2156); Open Asks Sheet 84 published; handoff 398 (SkyLinden).
 - 2026-10-16 (S396 SkyJacaranda): wave 4 read, nine colleges, five loaded; Orange Coast and Monterey Peninsula's reconcile steps; #2148 and #2151 merged; handoff 397.
 - 2026-10-15 (S395 SkyHawthorn): wave 2's procedure records and their generator (#2146); staff email off the public dashboard (#2147); Santa Ana's colon titles in the curriQunet reader (#2148); the catalog sweep's wave 3, ten colleges, 1,132 records (#2149); handoff 396.
