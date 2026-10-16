@@ -4,9 +4,9 @@
   "supabase_tables": 99,
   "rpcs": 39,
   "edge_functions": 8,
-  "file_datasets": 648,
+  "file_datasets": 650,
   "external_services": 180,
-  "consumers": 442,
+  "consumers": 443,
   "workflows": 53,
   "data_js_files": 69,
   "tabs": 38
@@ -353,7 +353,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 6449
+     "line": 6769
     },
     {
      "id": "edgefn:cpl-news-harvest",
@@ -876,6 +876,13 @@
      "direction": "read",
      "how": "url",
      "line": 75
+    },
+    {
+     "id": "script:fact-sheet/_build_statewide_catalog.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 78
     },
     {
      "id": "script:kb/_build_partner_crosswalk.py",
@@ -2099,7 +2106,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 5771
+     "line": 5774
     }
    ],
    "main_committers": []
@@ -6639,6 +6646,19 @@
     "workflow:daily-dashboard.yml"
    ]
   },
+  "file:fact-sheet/_build_statewide_catalog.py": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:fact-sheet/_build_statewide_recs.py": {
    "consumers": [
     {
@@ -6790,6 +6810,41 @@
    "served": true,
    "main_committers": []
   },
+  "file:fact-sheet/statewide_catalog.json": {
+   "consumers": [
+    {
+     "id": "edgefn:cpl-chat",
+     "kind": "edgefn",
+     "direction": "read",
+     "how": "seeded",
+     "line": 0
+    },
+    {
+     "id": "script:fact-sheet/_build_statewide_catalog.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 73
+    },
+    {
+     "id": "script:fact-sheet/_build_statewide_catalog.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 73
+    }
+   ],
+   "producers": [
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
+   "served": true,
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
+   ]
+  },
   "file:fact-sheet/statewide_recs.js": {
    "consumers": [
     {
@@ -6884,6 +6939,13 @@
      "direction": "read",
      "how": "literal",
      "line": 5366
+    },
+    {
+     "id": "script:fact-sheet/_build_statewide_catalog.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 75
     }
    ],
    "producers": [
@@ -16683,6 +16745,13 @@
      "line": 12669
     },
     {
+     "id": "script:fact-sheet/_build_statewide_catalog.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 74
+    },
+    {
      "id": "script:fact-sheet/_build_statewide_recs.py",
      "kind": "script",
      "direction": "read",
@@ -19662,7 +19731,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 6077
+     "line": 6383
     }
    ],
    "main_committers": []
@@ -19916,7 +19985,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 1182
+     "line": 1207
     }
    ],
    "main_committers": []
@@ -20125,7 +20194,7 @@
      "kind": "edgefn",
      "direction": "write",
      "how": "literal",
-     "line": 6698
+     "line": 7028
     },
     {
      "id": "module:sierra_training.js",
@@ -21950,7 +22019,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1159
+     "line": 1184
     },
     {
      "id": "script:kb/_identity_daily_check.py",
@@ -22588,7 +22657,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1205
+     "line": 1230
     }
    ],
    "main_committers": []
@@ -22600,7 +22669,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 5842
+     "line": 6142
     },
     {
      "id": "module:sierra_training.js",
@@ -23466,6 +23535,7 @@
     "kb/_suggest_unclassified.py",
     "kb/_cred_rename_dryrun.py",
     "fact-sheet/_build_statewide_recs.py",
+    "fact-sheet/_build_statewide_catalog.py",
     "kb/_build_ccr_universe.py",
     "scripts/publish_skyview_desc_shards.sh",
     "kb/_build_ccr_atlas_extract.py",
@@ -23486,6 +23556,7 @@
     "kpi_history.json",
     "statewide_data.js",
     "fact-sheet/statewide_recs.js",
+    "fact-sheet/statewide_catalog.json",
     "fact_sheet_metrics.json",
     "statewide_prescriptive.js",
     "college_activity.js",

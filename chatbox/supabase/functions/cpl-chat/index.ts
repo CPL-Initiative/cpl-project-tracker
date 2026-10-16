@@ -5601,7 +5601,10 @@ function buildSystemPrompt(
   // "which rules were in play for this answer" without re-deriving it.
   report?: { fired: string[]; overridden: string[] },
   // The institution the CALLER'S PAGE is about (My College). See hostScopeBlock.
-  hostScope: HostScope | null = null
+  hostScope: HostScope | null = null,
+  // Every statewide exhibit by program area, when the visitor asked for the set
+  // (S398). Carries its own answer rule; see buildStatewideCatalogContext.
+  statewideCatalogContext: string = ""
   // TWO BLOCKS, not one string — `stable` is the cache breakpoint. See the
   // comment above the return for why the order had to change to allow it.
 ): { stable: string; volatile: string } {
@@ -5719,7 +5722,7 @@ ${assembled.alwaysText}`;
 
   const volatilePart = `
 ${hostScopeBlock(hostScope)}
-${context}${metricsContext}${collegeContext}${topicContext}${offeringsContext}${programsContext}${credentialContext}${volumeContext}${alignmentContext}${prospectiveContext}${creditContext}${assembled.conditionalText}${specialInstruction}${audienceRule}${teamGuidance}`;
+${context}${metricsContext}${statewideCatalogContext}${collegeContext}${topicContext}${offeringsContext}${programsContext}${credentialContext}${volumeContext}${alignmentContext}${prospectiveContext}${creditContext}${assembled.conditionalText}${specialInstruction}${audienceRule}${teamGuidance}`;
 
   return { stable, volatile: volatilePart };
 }
@@ -5774,6 +5777,303 @@ async function fetchLiveMetrics(): Promise<any> {
     if (res.ok) return await res.json();
   } catch { /* non-fatal */ }
   return null;
+}
+
+// ── STATEWIDE CATALOG BLOCK START (S398, 2026-10-16) ─────────────────────────────
+// Sam wrote a Sierra Training rule on 2026-10-15: asked for "a complete list of
+// statewide exhibit titles categorized by sector", her first response is a table of
+// every title with its total units, and the CPL Fact Sheet arrives as a link. He asked
+// her that question three times on the public page that evening, and every answer said
+// she did not have the full list. She did not. The statewide route is topical (the four
+// best matches for a phrase), no table she reads carries a program area, and
+// chatbox_credentials lacks 37 of the 164 statewide titles (they never reached the
+// credential reference artifact it syncs from). The figures she offered instead (114
+// exhibits, 949 recommendations, 53 colleges) match a vault note dated 2026-04-10.
+//
+// The list now comes from fact-sheet/statewide_catalog.json, which the daily dashboard
+// run builds beside the Fact Sheet's own statewide files and from the same inputs
+// (fact-sheet/_build_statewide_catalog.py): the Fact Sheet's 164 exhibits, its program
+// areas and their order, each exhibit's recommendation lines from the builder that
+// writes the Fact Sheet's wedges, and a total of units summed once, there, so Sierra
+// quotes it and never adds. The handler reads the file from main only when this ask is
+// detected (fetchStatewideCatalog, after this block), so a change in MAP reaches her
+// with the next daily run and no deploy.
+//
+// Everything between these markers is pure and is lifted and run by
+// tests/sierra_statewide_catalog.test.js, so it keeps to what tests/lib/lift_ts.js can
+// strip: no type aliases, no `as`, no non-null `!`, and no colon followed by a type word
+// inside a string.
+
+// The Fact Sheet's statewide section. It gives no exhibit or program area an anchor of
+// its own, so this is the deepest link it offers. The catalog file carries the same
+// URL; this copy serves the answer when the file cannot be read.
+const STATEWIDE_FACT_SHEET_LINK = "https://cpl-initiative.github.io/cpl-project-tracker/fact-sheet/#statewide-exhibits";
+
+// THE ASK HAS THREE PARTS. A statewide word, a thing that is listed, and a request for
+// the set. "How many students statewide" names no listed thing and "what is a statewide
+// exhibit" asks for no set, so both stay with the other routes. The request comes in
+// three strengths. A LIST word (a list, complete, the catalog, by sector) asks for the
+// whole, and a stray word beside it ("as a counselor, list every statewide exhibit")
+// does not change what was asked. A COUNT ("how many statewide exhibits") and a WEAK cue
+// ("which statewide exhibits", "all the statewide", "is there a statewide", "what might I
+// adopt") hold only when nothing else is named, and never when a college is: "how many
+// statewide exhibits does Chaffey offer" is about Chaffey. A question that names one
+// exhibit passes all three parts, and statewideCatalogScope below sends it back to the
+// credential routes.
+const CATALOG_STATEWIDE_CUE = /\b(?:state[\s-]?wide|ccc[\s-]+collaborative|collaborative)\b/i;
+const CATALOG_OBJECT_CUE = /\b(?:exhibits?|titles?|recommendations?|crs|standards?|credentials?|certifications?)\b/i;
+const CATALOG_STRONG_CUE = new RegExp([
+  "\\blist(?:s|ed|ing)?\\b", "\\bcomplete\\b", "\\bfull\\b", "\\bentire\\b", "\\bwhole\\b",
+  "\\bcatalog(?:ue)?\\b", "\\bcategori[sz]ed\\b", "\\bgrouped\\b", "\\borgani[sz]ed\\b",
+  "\\bsorted\\b", "\\bbroken (?:out|down)\\b",
+  "\\bby (?:sector|program area|area|discipline|category|field|industry)\\b",
+  "\\b(?:each|every|per) (?:sector|program area|area|discipline|category)\\b",
+  "\\b(?:menu|inventory|overview|rundown|roster)\\b",
+].join("|"), "i");
+const CATALOG_COUNT_CUE = /\bhow many\b/i;
+const CATALOG_WEAK_CUE = new RegExp([
+  "\\ball\\b", "\\bevery\\b",
+  "\\bwhat (?:are|is) (?:all )?(?:of )?(?:the )?(?:statewide|ccc|collaborative)\\b",
+  "\\b(?:what|which) (?:statewide|ccc|collaborative)\\b",
+  "\\b(?:show|give|send|provide|share)\\b[^.?!]{0,30}\\b(?:statewide|ccc|collaborative)\\b",
+  "\\b(?:are|is) there\\b",
+].join("|"), "i");
+const CATALOG_ADOPT_CUE = /\b(?:might|could|can|should|would|to)\b[^.?!]{0,40}\badopt\b/i;
+// The word after one of these is what the question is about: "all statewide exhibits
+// for nursing" asks about nursing, which no statewide exhibit covers.
+const CATALOG_SUBJECT_AFTER = /\b(?:for|about|regarding|covering|on|in)\s+(?:the\s+|a\s+|an\s+|my\s+|our\s+|your\s+|their\s+)?([a-z0-9][a-z0-9+.-]*)/g;
+// A college's own record, which this catalog does not hold: "how many statewide
+// exhibits has Chaffey adopted", "which statewide exhibit does Lassen host".
+const CATALOG_RECORD_WORDS = new Set([
+  "adopted", "adopting", "adopter", "adopters", "awarded", "awarding", "transcribed",
+  "host", "hosts", "hosted", "hosting",
+]);
+
+// Words that describe the ask rather than a subject. Whatever is left once these, the
+// shared stop words and the detected college or place are gone is the subject: nothing
+// means the whole catalog, program-area words mean those areas, a word from an exhibit's
+// title (POST, EMT, CompTIA) means a question the credential routes answer.
+const CATALOG_ASK_WORDS = new Set([
+  "statewide", "state", "wide", "collaborative", "exhibit", "exhibits", "title", "titles",
+  "list", "lists", "listed", "listing", "complete", "full", "entire", "whole", "every", "each",
+  "catalog", "catalogue", "categorized", "categorised", "category", "categories", "grouped",
+  "group", "groups", "organized", "organised", "sorted", "sort", "order", "ordered", "broken",
+  "out", "down", "sector", "sectors", "area", "areas", "discipline", "disciplines", "field",
+  "fields", "industry", "industries", "recommendation", "recommendations", "crs", "faculty",
+  "standard", "standards", "credential", "credentials", "adopt", "adoption", "might", "see",
+  "show", "send", "share", "need", "please", "them", "per", "total", "totals", "unit", "units",
+  "table", "tables", "current", "currently", "latest", "updated", "published", "approved",
+  "menu", "inventory", "overview", "rundown", "roster", "ones", "kind", "kinds", "type", "types",
+  "number", "count", "counts", "include", "including", "along", "plus", "both", "everything",
+  "alphabetical", "help", "our", "able", "now", "today", "california", "southern", "northern",
+  "socal", "norcal", "region", "regional", "local", "near", "nearby", "around", "system",
+  "systemwide", "statewides",
+]);
+// Program-area words that name no one area. "Fire technology" is the fire areas;
+// "technology" alone points nowhere.
+const CATALOG_SECTOR_GENERIC = new Set(["technology", "services", "systems", "administration", "statewide", "other"]);
+// Words a reader uses for an area that its name does not contain.
+const CATALOG_SECTOR_ALIASES: Record<string, string> = {
+  welder: "Welding", firefighter: "Fire Technology", firefighting: "Fire Technology",
+  wildfire: "Fire Technology - Wildland", correctional: "Corrections", auto: "Automotive Technology",
+  ems: "Emergency Medical Services", cis: "Computer Information Systems",
+  computing: "Computer Information Systems", police: "Administration of Justice",
+};
+// A named area lists its exhibits' recommendation lines when they fit in this many
+// characters (Welding's 81 lines measure about 5,800); a larger area lists exhibits only.
+const CATALOG_SECTOR_LINES_MAX = 6000;
+
+function catalogFold(w: string): string {
+  return w.length > 4 && w.endsWith("s") ? w.slice(0, -1) : w;
+}
+
+// Returns { strong, count, weak, adopt } when the question asks for the statewide set,
+// else null. The handler calls it before retrieval, so the catalog read runs only on
+// this ask.
+function statewideCatalogAsk(q: string): any {
+  const t = String(q || "");
+  if (!CATALOG_STATEWIDE_CUE.test(t) || !CATALOG_OBJECT_CUE.test(t)) return null;
+  const strong = CATALOG_STRONG_CUE.test(t);
+  const count = CATALOG_COUNT_CUE.test(t);
+  const weak = CATALOG_WEAK_CUE.test(t);
+  const adopt = CATALOG_ADOPT_CUE.test(t);
+  return strong || count || weak || adopt ? { strong: strong, count: count, weak: weak, adopt: adopt } : null;
+}
+
+// Decides what the block shows: { kind: "all" }, { kind: "sectors", sectors: [...] },
+// or null when the question is about something the catalog is the wrong answer to.
+// `q` is the question, `keywords` extractTopicKeywords(q), `extraWords` the detected
+// college's and place's own words, `collegeNamed` whether detection resolved a college.
+// With no catalog (the read failed) only the whole-set answer can be told apart, and the
+// block then says the list did not load.
+function statewideCatalogScope(ask: any, q: string, keywords: Array<string>, catalog: any,
+                               extraWords: Array<string>, collegeNamed: boolean): any {
+  if (!ask) return null;
+  // "What statewide exhibits could Chaffey adopt?" is answered by Chaffey's own
+  // adoption opportunities, and "how many does Chaffey offer" by its record; the full
+  // list comes when the question asks for the list.
+  if (collegeNamed && !ask.strong) return null;
+  const extra = new Set((extraWords || []).map((w) => catalogFold(String(w).toLowerCase())));
+  const subjects = new Set<string>();
+  for (const m of String(q || "").toLowerCase().matchAll(CATALOG_SUBJECT_AFTER)) {
+    subjects.add(catalogFold(m[1].replace(/[^a-z0-9]+/g, "")));
+  }
+  const titleWords = new Set<string>();
+  if (catalog && Array.isArray(catalog.sectors)) {
+    for (const s of catalog.sectors) {
+      for (const it of (s.items || [])) {
+        for (const w of String(it.title || "").toLowerCase().split(/[^a-z0-9]+/)) {
+          if (w.length >= 3) titleWords.add(catalogFold(w));
+        }
+      }
+    }
+  }
+  // sector word -> the areas it names. `any` rather than a nested generic: the
+  // test's type stripper cannot read one inside `new Map<...>`.
+  const index = new Map<string, any>();
+  const sectorNames = (catalog && Array.isArray(catalog.sectors))
+    ? catalog.sectors.map((s: any) => String(s.sector || "")).filter(Boolean) : [];
+  const addToken = (tok: string, sector: string) => {
+    const k = catalogFold(tok);
+    const have = index.get(k) || [];
+    if (!have.includes(sector)) have.push(sector);
+    index.set(k, have);
+  };
+  for (const name of sectorNames) {
+    for (const w of name.toLowerCase().split(/[^a-z]+/)) {
+      if (w.length >= 3 && !CATALOG_SECTOR_GENERIC.has(w)) addToken(w, name);
+    }
+  }
+  for (const alias of Object.keys(CATALOG_SECTOR_ALIASES)) {
+    if (sectorNames.includes(CATALOG_SECTOR_ALIASES[alias])) addToken(alias, CATALOG_SECTOR_ALIASES[alias]);
+  }
+  const named = new Set<string>();
+  for (const raw of keywords || []) {
+    const lower = String(raw).toLowerCase();
+    const w = catalogFold(lower);
+    if (CATALOG_ASK_WORDS.has(lower) || CATALOG_ASK_WORDS.has(w) || extra.has(w)) continue;
+    // A college's record, an exhibit's own name, or the subject of "for ..." means
+    // another route answers. Each check runs before the next, so "welding" (an area
+    // name that also sits in exhibit titles) reaches the area and "nursing" (in no
+    // title and no area) stops at the subject check.
+    if (CATALOG_RECORD_WORDS.has(lower)) return null;
+    const hit = index.get(w);
+    if (hit) { for (const s of hit) named.add(s); continue; }
+    if (CATALOG_SECTOR_GENERIC.has(w)) continue;
+    if (titleWords.has(w) || subjects.has(w)) return null;
+    if (!catalog) return null;
+    // Anything else is a word about the asker ("as a counselor"). A strong ask
+    // survives it; a weak one does not, because its cue cannot tell a list from
+    // a question about one thing.
+    if (!ask.strong) return null;
+  }
+  if (named.size === 0) return { kind: "all" };
+  return { kind: "sectors", sectors: sectorNames.filter((n: string) => named.has(n)) };
+}
+
+function catalogLineText(ln: any): string {
+  const u = String((ln && ln.u) || "").trim();
+  return (ln && ln.cid ? `C-ID ${ln.cid} — ` : "") + String((ln && ln.t) || "")
+    + (u ? ` — ${u} ${u === "1" ? "unit" : "units"}` : "");
+}
+
+const STATEWIDE_CATALOG_RULE = `
+HOW TO ANSWER FROM THE STATEWIDE EXHIBIT CATALOG. The visitor asked for the statewide exhibits as a set, or for one program area of them, and this section holds what they asked for, current as of the date in its heading.
+- Lead with the table. The answer opens with the exhibits: one markdown table for each program area, under the area's name, in the order given, with the columns Exhibit, Total units and Credit recommendations, and a row for every exhibit the section lists. One short sentence with the totals may come first. When the visitor asked only how many, give the counts by program area and offer the full table.
+- Copy each title, total and count as written. The totals are already summed, so quote them; a range such as 7–13 stays a range.
+- An exhibit marked "lines not yet published" is a statewide standard whose credit recommendation lines MAP has not posted yet. Say that in its row.
+- The count column is the right detail for the full table, and the Fact Sheet lists each exhibit's course lines under its title. When this section lists lines under an exhibit, give them after that program area's table, as written, each with its C-ID where one is shown. For any other exhibit or program area, offer to list its lines.
+- After the tables, link the Fact Sheet as a markdown link, [CPL Fact Sheet](the URL in this section), and say that any college may adopt any of these exhibits.
+- Answer from this section. The exhibit, course and program lists elsewhere in the context serve other questions.`;
+
+function buildStatewideCatalogContext(catalog: any, scope: any): string {
+  if (!scope) return "";
+  const ok = !!(catalog && Array.isArray(catalog.sectors) && catalog.sectors.length > 0);
+  const link = ok && catalog.fact_sheet_url
+    ? String(catalog.fact_sheet_url) + String(catalog.fact_sheet_anchor || "")
+    : STATEWIDE_FACT_SHEET_LINK;
+  if (!ok) {
+    return `\n\n--- STATEWIDE EXHIBIT CATALOG (did not load for this answer) ---\n`
+      + `The visitor asked for the statewide exhibits as a set, and the catalog could not be read this time. `
+      + `Say that the full list did not load, link the Fact Sheet as [CPL Fact Sheet](${link}), where every statewide exhibit `
+      + `is listed by program area, and offer to look up any exhibit or program area by name. Name no statewide exhibit `
+      + `from memory and give no count of them.\n`;
+  }
+  const wanted = scope.kind === "sectors" ? new Set<string>(scope.sectors || []) : null;
+  const sectors = catalog.sectors.filter((s: any) => !wanted || wanted.has(String(s.sector)));
+  let withLines = false;
+  if (wanted) {
+    let chars = 0;
+    for (const s of sectors) for (const it of (s.items || [])) for (const ln of (it.lines || [])) chars += catalogLineText(ln).length + 8;
+    withLines = chars <= CATALOG_SECTOR_LINES_MAX;
+  }
+  const shown = sectors.reduce((n: number, s: any) => n + (s.items || []).length, 0);
+  const shownLines = sectors.reduce((n: number, s: any) => n + Number(s.recs || 0), 0);
+  const built = catalog.source_generated_at ? String(catalog.source_generated_at).slice(0, 10) : "";
+  const areas = catalog.sectors.length;
+  const named = Number(catalog.program_areas || 0);
+
+  const plural = (n: number, word: string) => `${n} ${word}${n === 1 ? "" : "s"}`;
+  let out = `\n\n--- STATEWIDE EXHIBIT CATALOG. `;
+  out += wanted
+    ? `The ${sectors.map((s: any) => s.sector).join(" and ")} program area${sectors.length === 1 ? "" : "s"} `
+      + `of the statewide catalog, ${shown} of its ${catalog.exhibits} exhibits`
+    : `Every CCC Collaborative (statewide) exhibit in MAP, by program area, as the CPL Fact Sheet groups them`;
+  out += `. Built from MAP data${built ? " on " + built : ""}; these counts replace any older statewide figures above. ---\n`;
+  // The Fact Sheet counts its named program areas and sorts the leftover group
+  // (Other Statewide) last, so the groups past the named count are the leftovers.
+  const leftovers = named > 0 && named < areas
+    ? catalog.sectors.slice(named).map((s: any) => String(s.sector)).join(" and ") : "";
+  out += `${plural(Number(catalog.exhibits), "statewide exhibit")} in ${leftovers ? `${plural(named, "program area")} plus ${leftovers}` : plural(areas, "program area")}, `
+    + `carrying ${catalog.recs} credit recommendation lines`
+    + (Number(catalog.exhibits_without_lines) > 0 ? `; ${plural(Number(catalog.exhibits_without_lines), "exhibit")} with no lines published yet` : "")
+    + `.\n`;
+  if (wanted) {
+    out += `Shown here, ${plural(shown, "exhibit")} and ${plural(shownLines, "line")}`
+      + (withLines ? `, each exhibit's lines beneath it.\n` : `; the lines are on the Fact Sheet, and any exhibit's lines are available on request.\n`);
+  }
+  out += `Total units are each exhibit's credit recommendation lines added up, as the Fact Sheet prints them; a range means a line carries a range.\n`;
+  out += `CPL Fact Sheet, statewide exhibits: ${link}\n`;
+  out += `Each row: exhibit | total units | credit recommendations\n`;
+  for (const s of sectors) {
+    out += `Program area — ${s.sector} (${(s.items || []).length} exhibit${(s.items || []).length === 1 ? "" : "s"})\n`;
+    for (const it of (s.items || [])) {
+      const n = Number(it.recs || 0);
+      out += `- ${it.title} | ${it.units ? it.units : "lines not yet published"} | ${n}\n`;
+      if (withLines && Array.isArray(it.lines) && it.lines.length > 0) {
+        const seen = new Map<string, number>();
+        for (const ln of it.lines) {
+          out += `    • ${catalogLineText(ln)}\n`;
+          if (ln && ln.cid) seen.set(String(ln.cid), (seen.get(String(ln.cid)) || 0) + 1);
+        }
+        const repeats = [...seen.entries()].filter((e) => e[1] > 1).map((e) => e[0]);
+        if (repeats.length > 0) {
+          out += `    Note — C-ID ${repeats.join(", ")} appears on more than one line; list the lines as given.\n`;
+        }
+      }
+    }
+  }
+  return out + STATEWIDE_CATALOG_RULE + "\n";
+}
+// ── STATEWIDE CATALOG BLOCK END ───────────────────────────────────────────────────
+
+// The catalog's home is fact-sheet/statewide_catalog.json on main, the commit GitHub
+// Pages serves the Fact Sheet from, rebuilt by every daily dashboard run.
+// CPL_STATEWIDE_CATALOG_URL overrides it with no deploy (a branch's raw URL, for an
+// A/B before the file reaches main); unset, it reads main. A failed read returns null
+// and the block then says the list did not load and links the Fact Sheet.
+const STATEWIDE_CATALOG_URL = Deno.env.get("CPL_STATEWIDE_CATALOG_URL")
+  || "https://raw.githubusercontent.com/CPL-Initiative/cpl-project-tracker/main/fact-sheet/statewide_catalog.json";
+
+async function fetchStatewideCatalog(): Promise<any> {
+  try {
+    const res = await fetch(STATEWIDE_CATALOG_URL, { signal: AbortSignal.timeout(5000) });
+    if (!res.ok) return null;
+    const doc = await res.json();
+    return doc && Array.isArray(doc.sectors) && doc.sectors.length > 0 ? doc : null;
+  } catch {
+    return null;
+  }
 }
 
 // ── Team guidance layer (v25 — Phase 2 of the Sierra Training scope) ────────
@@ -6071,9 +6371,15 @@ Deno.serve(async (req: Request) => {
       : null;
     const routeText = placeNow ? placeNow.stripped : searchText;
 
+    // The statewide catalog (S398): a question asking for the statewide exhibits as a
+    // set reads the Fact Sheet's catalog beside the other routes, so it costs no wall
+    // time; every other question skips the read. A drafting caller that asks gets it as
+    // evidence like any other block, and DRAFTING_BLOCK still governs the output.
+    const catalogAsk = statewideCatalogAsk(routeText);
+
     // 2. Vector search + college detection + live metrics + topic search +
     //    course-catalog offerings + team guidance (parallel)
-    const [searchResult, collegeProfile, liveMetrics, topicResults, offeringsResults, programsResults, teamGuidance, creditData, viewer] = await Promise.all([
+    const [searchResult, collegeProfile, liveMetrics, topicResults, offeringsResults, programsResults, teamGuidance, creditData, statewideCatalog, viewer] = await Promise.all([
       sb.rpc("match_document_sections", {
         query_embedding: Array.from(queryEmbedding),
         match_threshold: MATCH_THRESHOLD,
@@ -6086,6 +6392,7 @@ Deno.serve(async (req: Request) => {
       searchCollegePrograms(routeText, sb, placeAnchor),  // program catalog: who AWARDS this (v67; place-anchored v68)
       fetchTeamGuidance(sb, hostSurface),     // sierra_guidance active rows (v25; surface-scoped v56)
       fetchCreditData(sb),                    // published credit-disposition aggregates (v36)
+      catalogAsk ? fetchStatewideCatalog() : Promise.resolve(null), // the Fact Sheet's statewide catalog (S398)
       deriveViewer(req.headers),              // who is asking, from the credential — never the body (v66)
     ]);
     markTiming(timings, "retrieved", Date.now());
@@ -6426,6 +6733,19 @@ Deno.serve(async (req: Request) => {
         collegeCreds, singleProfile.college, recsMap);
     }
 
+    // The statewide catalog block (S398), decided once detection has run: the
+    // detected college's and place's own words are not a subject, and a question
+    // that names one exhibit goes back to the credential routes above.
+    let statewideCatalogContext = "";
+    let catalogScope: any = null;
+    if (catalogAsk) {
+      const ownWords = `${singleProfile?.college || ""} ${askedPlace?.label || ""}`
+        .toLowerCase().split(/[^a-z0-9]+/).filter(Boolean);
+      catalogScope = statewideCatalogScope(catalogAsk, routeText, extractTopicKeywords(routeText),
+        statewideCatalog, ownWords, !!singleProfile);
+      statewideCatalogContext = buildStatewideCatalogContext(statewideCatalog, catalogScope);
+    }
+
     // The curator overlay for the built-in rules. Rides the same turn; null
     // (a failed or empty read) means every rule comes from its code default,
     // which is the governed state — never the ungoverned one.
@@ -6436,7 +6756,7 @@ Deno.serve(async (req: Request) => {
       sections || [], liveMetrics, collegeContext, topicContext, searchMode,
       multiTurn, offeringsContext, programsContext, audienceKey ? AUDIENCE_RULES[audienceKey] : "",
       teamGuidance || "", creditContext, credentialContext, volumeContext, alignmentContext,
-      prospectiveContext, rulesOverlay, ruleReport, hostScope);
+      prospectiveContext, rulesOverlay, ruleReport, hostScope, statewideCatalogContext);
 
     /* A drafting caller gets the answer doctrine REPLACED — see DRAFTING_BLOCK.
      * Appended to `volatile` on purpose: `stable` is the prompt-cache
@@ -6673,6 +6993,16 @@ Deno.serve(async (req: Request) => {
           input_cache_read: cacheRead,
           input_cache_write: cacheWrite,
           output_tokens: responseTokens,
+          // The statewide catalog, when the ask fired (S398): what the block showed
+          // ("all", "sectors" or "none" when the question named something else),
+          // whether the file loaded, and the block's size.
+          ...(catalogAsk ? {
+            statewide_catalog: {
+              scope: catalogScope ? catalogScope.kind : "none",
+              loaded: !!statewideCatalog,
+              chars: statewideCatalogContext.length,
+            },
+          } : {}),
         });
         console.log(
           `cpl-chat timing: total=${timingRow.total_ms} first_text=${timingRow.first_text_ms} ` +
