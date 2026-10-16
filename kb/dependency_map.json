@@ -9,7 +9,7 @@
   "consumers": 443,
   "workflows": 53,
   "data_js_files": 69,
-  "tabs": 39
+  "tabs": 38
  },
  "datasets": {
   "edgefn:FN": {
@@ -29,9 +29,9 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 30,
+     "line": 40,
      "tabs": [
-      "chatbot"
+      "college-briefing"
      ]
     },
     {
@@ -639,7 +639,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 348
+     "line": 426
     }
    ],
    "main_committers": []
@@ -1255,7 +1255,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1145
+     "line": 1273
     }
    ],
    "main_committers": []
@@ -1484,7 +1484,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2599,
+     "line": 2596,
      "tabs": [
       "program-requirements"
      ]
@@ -1756,7 +1756,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 489
+     "line": 567
     }
    ],
    "main_committers": []
@@ -3573,7 +3573,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 980
+     "line": 1058
     }
    ],
    "main_committers": []
@@ -3874,7 +3874,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 60,
+     "line": 64,
      "pages": [
       "CPL_Dashboard.html"
      ]
@@ -4058,7 +4058,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 59
+     "line": 60
     }
    ],
    "served": true,
@@ -4600,7 +4600,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 871
+     "line": 949
     },
     {
      "id": "module:admin.js",
@@ -5312,7 +5312,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1084
+     "line": 1212
     },
     {
      "id": "module:college_briefing.js",
@@ -6804,7 +6804,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 40
+     "line": 41
     }
    ],
    "served": true,
@@ -7012,7 +7012,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 41
+     "line": 42
     }
    ],
    "served": true,
@@ -7145,7 +7145,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 46
+     "line": 47
     }
    ],
    "producers": [
@@ -8326,7 +8326,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 119,
+     "line": 116,
      "tabs": [
       "program-requirements"
      ]
@@ -11077,7 +11077,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 37
+     "line": 38
     }
    ],
    "served": true,
@@ -12861,7 +12861,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 114,
+     "line": 111,
      "tabs": [
       "program-requirements"
      ]
@@ -14633,7 +14633,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 36
+     "line": 37
     }
    ],
    "served": true,
@@ -15442,7 +15442,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 41
+     "line": 42
     }
    ],
    "served": true,
@@ -16157,7 +16157,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 75
+     "line": 76
     }
    ],
    "producers": [
@@ -16630,7 +16630,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 40
+     "line": 41
     }
    ],
    "served": true,
@@ -16656,7 +16656,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1282,
+     "line": 1284,
      "tabs": [
       "sierra-training"
      ]
@@ -19217,7 +19217,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 40
+     "line": 41
     },
     {
      "id": "script:veteran-sprint-map/build_selfcontained.py",
@@ -19950,7 +19950,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1438,
+     "line": 1440,
      "tabs": [
       "sierra-training"
      ]
@@ -19965,9 +19965,9 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 592,
+     "line": 629,
      "tabs": [
-      "chatbot"
+      "college-briefing"
      ]
     },
     {
@@ -20201,7 +20201,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 945,
+     "line": 943,
      "tabs": [
       "sierra-training"
      ]
@@ -20400,7 +20400,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 730,
+     "line": 727,
      "tabs": [
       "program-requirements"
      ]
@@ -20468,7 +20468,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1720,
+     "line": 1717,
      "tabs": [
       "program-requirements"
      ]
@@ -20762,7 +20762,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1733,
+     "line": 1732,
      "tabs": [
       "memory"
      ]
@@ -20772,7 +20772,7 @@
      "kind": "module",
      "direction": "write",
      "how": "helper",
-     "line": 1661,
+     "line": 1660,
      "tabs": [
       "memory"
      ]
@@ -20794,7 +20794,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1586,
+     "line": 1585,
      "tabs": [
       "memory"
      ]
@@ -22009,7 +22009,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 655,
+     "line": 652,
      "tabs": [
       "program-requirements"
      ]
@@ -22332,7 +22332,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 768,
+     "line": 765,
      "tabs": [
       "program-requirements"
      ]
@@ -22364,7 +22364,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 459,
+     "line": 456,
      "tabs": [
       "program-requirements"
      ]
@@ -22393,7 +22393,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 829,
+     "line": 826,
      "tabs": [
       "program-requirements"
      ]
@@ -22428,7 +22428,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 620,
+     "line": 617,
      "tabs": [
       "program-requirements"
      ]
@@ -22647,7 +22647,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 918,
+     "line": 916,
      "tabs": [
       "sierra-training"
      ]
@@ -22676,7 +22676,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1058,
+     "line": 1056,
      "tabs": [
       "sierra-training"
      ]
@@ -22686,7 +22686,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1124,
+     "line": 1126,
      "tabs": [
       "sierra-training"
      ]
@@ -22708,7 +22708,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1310,
+     "line": 1312,
      "tabs": [
       "sierra-training"
      ]
@@ -22718,7 +22718,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1392,
+     "line": 1394,
      "tabs": [
       "sierra-training"
      ]
@@ -22733,7 +22733,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 955,
+     "line": 953,
      "tabs": [
       "sierra-training"
      ]
@@ -22743,7 +22743,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 976,
+     "line": 974,
      "tabs": [
       "sierra-training"
      ]
@@ -22794,7 +22794,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1301,
+     "line": 1303,
      "tabs": [
       "sierra-training"
      ]
@@ -23092,7 +23092,7 @@
    "cpl-pathways"
   ],
   "cpl_chat.js": [
-   "chatbot"
+   "college-briefing"
   ],
   "cpl_funding.js": [
    "college-briefing",

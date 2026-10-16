@@ -3,7 +3,9 @@
 // Sam, 2026-10-08: "What do you think about having Sierra expand full screen for
 // when responding?" — ruled Expand when answering (Sheet 54 card 1) and Expand
 // in place (Sheet 53 card 3). Guards:
-//  (a) the dedicated CPL Assistant pane gets no control and never expands;
+//  (a) the COBI-wide box (CPL_CHAT.open, S398 — it replaced the CPL Assistant
+//      tab's pane) lives full screen: one control, Back to the tab, which closes
+//      it into its hidden host, and a send there never steps out of full screen;
 //  (b) a dock (mountInto) gets ONE word control, a direct child of the wrap and
 //      outside the intro My College hoists away; its CSS is injected, on tokens;
 //  (c) a send through the dock expands IN PLACE: the same wrap moves to <body>
@@ -30,7 +32,6 @@ const SRC = fs.readFileSync("cpl_chat.js", "utf8");
 const HTML = '<!doctype html><html><head></head><body>' +
   '<header id="masthead"><button id="mast-btn">Menu</button></header>' +
   '<div id="greeting" style="position:fixed;inset:0;z-index:12000;display:none"><button>Close</button></div>' +
-  '<div class="cpl-tab-pane" id="tab-chatbot"><div class="main-container"></div></div>' +
   '<div class="cpl-tab-pane" id="tab-program-requirements"><section class="glass" style="backdrop-filter:blur(8px)">' +
   '<div id="prh-root"><p id="before">Records</p><div id="prh-mount"></div><p id="after">Views</p></div></section></div>' +
   '<div class="cpl-tab-pane" id="tab-college-briefing"><div id="mc-mount"></div></div>' +
@@ -109,15 +110,23 @@ function bodyKidsInert(d, wrap) {
 }
 
 (async function () {
-  // ── (a) the dedicated pane: no control, no expansion ──
+  // ── (a) the COBI-wide box: full screen from the start, one control that closes it ──
   {
     const { d, API } = loadDom();
-    const pane = d.getElementById("tab-chatbot");
-    check("(a) the CPL Assistant pane builds", !!pane.querySelector(".cplchat"));
-    check("(a) ⭐ it carries no Full screen control", !pane.querySelector(".cplchat-dock-btn"));
-    sendIn(pane, "What is CPL?");
+    check("(a) nothing builds on load: there is no pane to build in", !d.querySelector(".cplchat"));
+    API.open();
+    const host = d.getElementById("cplchat-cobi");
+    const wrap = d.querySelector(".cplchat.cplchat-full");
+    check("(a) open() builds the box and puts it straight up full screen", API._dockExpanded() && !!wrap && wrap.parentNode === d.body);
+    const btns = wrap ? wrap.querySelectorAll(".cplchat-dock-btn") : [];
+    check("(a) ⭐ its one control reads Back to the tab", btns.length === 1 && btns[0].textContent === "Back to the tab");
+    sendIn(wrap, "What is CPL?");
     await drain();
-    check("(a) …and a send there does not expand", !API._dockExpanded() && pane.contains(pane.querySelector(".cplchat-msg")));
+    check("(a) …a send there stays full screen and is answered in the box",
+      API._dockExpanded() && wrap.querySelectorAll(".cplchat-msg").length === 2);
+    btns[0].click();
+    check("(a) ⭐ Back to the tab closes her into the hidden host, nothing left inert",
+      !API._dockExpanded() && !!host && host.hidden && host.contains(wrap) && !d.querySelector("[inert]"));
   }
 
   // ── (b)–(h) one dock, the whole round trip ──
@@ -255,7 +264,7 @@ function bodyKidsInert(d, wrap) {
     check("(k) precondition: My College's Sierra is full screen", API._dockExpanded());
     w.dispatchEvent(new w.CustomEvent("cpl-tab-activated", { detail: { tab: "college-briefing" } }));
     check("(k) arriving at her own tab leaves her full screen", API._dockExpanded());
-    w.dispatchEvent(new w.CustomEvent("cpl-tab-activated", { detail: { tab: "chatbot" } }));
+    w.dispatchEvent(new w.CustomEvent("cpl-tab-activated", { detail: { tab: "sierra-training" } }));
     check("(k) ⭐ arriving at another tab takes her back to her seat", !API._dockExpanded() &&
       mc.querySelector(".cplchat") && mc.querySelector(".cplchat").parentNode === mc && !d.querySelector("[inert]"));
     // The Program Requirements box this mount superseded is still in its pane.

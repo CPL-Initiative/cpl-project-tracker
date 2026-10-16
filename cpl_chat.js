@@ -1,7 +1,17 @@
 /*
- * CPL Assistant — in-dashboard chat panel (Phase 1 of the chatbox integration).
+ * Sierra AI in COBI — the dashboard's chat assistant (Phase 1 of the chatbox
+ * integration; one assistant since S398).
  *
- * A native chat surface for the "CPL Assistant" tab. It talks DIRECTLY to the
+ * Sam, 2026-10-16: "I want to consolidate Sierra Assistant into Sierra AI and
+ * sunset the separate assistant. I don't want to lose any functionality in the
+ * process, but only gain." So there is no CPL Assistant tab any more. One module
+ * builds two kinds of box, and each carries its own context (see `active`):
+ *   · CPL_CHAT.open() builds ONE body-level box and opens it full screen over
+ *     whatever COBI tab is showing. A #chatbot link, the retired tab's address,
+ *     opens it over the home tab.
+ *   · CPL_CHAT.mountInto(host, surface) docks a box inside a tab (My College).
+ *
+ * It talks DIRECTLY to the
  * shared Supabase Edge Function `cpl-chat` (the same RAG backend that powers the
  * live map.rccd.edu widget — see docs/kb-notes/cpl-chatbox-integration-scope.md),
  * which runs 4 parallel lookups (vector RAG + college detection + live metrics +
@@ -48,7 +58,7 @@
    * literally wrong, and the reader had two question lists to reconcile.
    *
    * ⚠ AND THE GENERIC LIST NAMES ANOTHER COLLEGE. "Does Riverside City College
-   * offer firefighter CPL?" is a fine starter on the CPL Assistant tab and is
+   * offer firefighter CPL?" is a fine starter in Sierra AI over a tab and is
    * nonsense on Cabrillo's own page. A host that knows whose page this is
    * REPLACES the list rather than adding a second one.
    *
@@ -56,13 +66,11 @@
    * in its own slot — below the role chips, which makes the role the first
    * thing read and needAudience()'s "above" true again.
    *
-   * `hostSuggestions` is module-level, mirroring the existing inputEl/logEl
-   * convention: build() re-points these at whichever pane built last, and
-   * renderSuggestions() only ever touches THAT pane's row. mount() (the
-   * dedicated CPL Assistant pane) clears it, so a college's questions can never
-   * leak onto the generic tab. */
-  var hostSuggestions = null;
-  var chipsEl = null;
+   * The list is carried PER BOX (`box.suggestions`), and renderSuggestions()
+   * only ever touches that box's row. setSuggestions() writes to the docked box
+   * it belongs to; the COBI-wide box open() builds is nobody's college page and
+   * always shows the generic starters, so a college's questions can never leak
+   * onto it. */
 
   // ── Session id (one per browser tab session, reused across tab switches) ──
   function sessionId() {
@@ -216,7 +224,7 @@
    * ⭐ THE HISTORY SURVIVED THE SCOPE CHANGE AND THE TRANSCRIPT DID NOT. Two
    * facts that are individually reasonable and together are the bug:
    *   · `convo` is module-level ON PURPOSE, so the thread follows the reader
-   *     between the CPL Assistant tab and the My College box (see mountInto);
+   *     between Sierra AI over a tab and the My College box (see mountInto);
    *   · college_briefing.js's finish() does `root.innerHTML = h` on every scope
    *     change, which destroys the old mount node, so mountInto() rebuilds and
    *     the visible log starts EMPTY.
@@ -232,53 +240,72 @@
    * data for an institution the reader has navigated away from.
    *
    * The invariant: WHAT WE SEND IS NEVER MORE THAN WHAT IS ON SCREEN. `convo`
-   * still follows the reader between the two panes, because there the subject is
-   * unchanged; it is dropped the moment the subject itself changes.
+   * still follows the reader between the two boxes, because there the subject
+   * is unchanged; it is dropped the moment the subject itself changes.
    *
-   * This is the same argument mount() already makes one line down for
-   * `hostSuggestions` ("a stale host list from My College must not follow the
-   * reader here") — nobody had made it for the thread. */
-  var hostScope = null;
+   * This is the same argument the COBI-wide box makes for its starters ("a
+   * college's questions must not follow the reader there") — nobody had made
+   * it for the thread. */
+
+  /* ── Each box carries its own context (S398) ───────────────────────────────
+   * A box is what build() returns: its elements, and the three facts a question
+   * goes out with — `scope` (whose page this is; null on nobody's), `surface`
+   * (which caller) and `suggestions` (the host's starters; null for the generic
+   * ones). They were module variables that build() re-pointed at whichever box
+   * was built last. With one dock that held; with Sierra AI opening over any tab
+   * while My College keeps its own box, a re-point is a leak — opening her over
+   * Sierra Training would have handed My College's next question her surface and
+   * no college. So every handler is bound to its own box, the box the reader acts
+   * in becomes `active` before anything of its own runs (build() wires that), and
+   * the setters write only to the dock they belong to (setScope, setSuggestions,
+   * mountInto's surface). `convo`, `threadSubject` and the reader's role stay
+   * module-level ON PURPOSE: one reader, one thread (see above). */
+  var active = null;      // the box the reader last acted in, or the one built last
+  var dockBox = null;     // the box mountInto() built last (My College)
+  var cobiBox = null;     // the COBI-wide box open() builds once
+  /* The dock's context before any mountInto(): a host may hand over its scope or
+   * questions first, and the box it mounts next starts from them, as it did when
+   * these were module variables. */
+  var dockSeed = { scope: null, suggestions: null };
   /* The last NAMED subject the thread was formed under — deliberately NOT just
-   * "the previous hostScope". The dedicated CPL Assistant pane is nobody's
-   * college page and clears the ANCHOR (see mount()), so tracking the raw
-   * previous value would read a My College -> Assistant -> My College round trip
-   * as two changes of subject and delete a conversation the reader can still see
-   * above the box. Clearing the anchor and dropping the thread are two different
-   * events; only a move to a DIFFERENT named subject is the second one. */
+   * "the previous scope". The COBI-wide box is nobody's college page and carries
+   * no ANCHOR, so tracking the raw previous value would read a My College ->
+   * Sierra AI -> My College round trip as two changes of subject and delete a
+   * conversation the reader can still see in the box. Carrying no anchor and
+   * dropping the thread are two different events; only a move to a DIFFERENT
+   * named subject is the second one. */
   var threadSubject = null;
   /* WHICH CALLER this is — a third axis alongside `audience` (who is reading),
    * `ctx` (may staff contacts show) and `scope` (whose page). It exists so a
    * guidance rule naming a fact only one surface carries stops being read on the
    * other five.
    *
-   * ⚠ ONE FILE, TWO SURFACES. This module mounts on the dedicated CPL Assistant
-   * pane AND embeds into My College, and those are different callers with
-   * different rules — so the surface is set at each MOUNT rather than once at the
-   * top, where a single value would necessarily be wrong for one of them. */
-  var hostSurface = null;
-
-  // ── Chat transcript helpers ──
-  var logEl, inputEl, sendBtn, statusEl, audEl, viewerEl;
+   * ⚠ ONE FILE, TWO SURFACES. This module opens as Sierra AI over any tab AND
+   * docks in My College, and those are different callers with different rules —
+   * so the surface is set per BOX, rather than once at the top, where a single
+   * value would necessarily be wrong for one of them. The COBI-wide box keeps
+   * 'cobi-assistant', the value the retired CPL Assistant tab sent: the
+   * sierra_guidance CHECK constraint and past chat_interactions rows carry it. */
+  var COBI_SURFACE = 'cobi-assistant';
 
   /* ── A docked Sierra fills the window when she answers (Sam, 2026-10-08) ────
    * "What do you think about having Sierra expand full screen for when
    * responding?" — ruled Expand when answering (Sheet 54 card 1) and Expand in
-   * place (Sheet 53 card 3). A DOCK is a mountInto() host (My College, Program
-   * Requirements); the dedicated CPL Assistant pane is already the whole tab and
-   * gets no control.
+   * place (Sheet 53 card 3). A DOCK is a mountInto() host (My College). The
+   * COBI-wide box is a dock too, seated in a hidden body-level host: it shows
+   * only full screen, and Back to the tab closes it.
    *
    * IN PLACE means the same wrap, so the answer keeps the tab's college
-   * (`hostScope`), its surface and the reader's credential. The wrap moves to
+   * (the box's `scope`), its surface and the reader's credential. The wrap moves to
    * <body> while expanded: First Light's glass cards set backdrop-filter, and an
    * ancestor with a filter, transform or backdrop-filter traps position:fixed
    * inside itself. A placeholder holds its seat in the tab.
    *
-   * `wentBack`: a reader who returns to the tab stays docked for the rest of
-   * that conversation until they choose Full screen, so a follow-up never pulls
-   * them away from the tab twice. A new subject (clearTranscript) clears it. */
-  var wrapEl = null, wrapIsDock = false, dockBtn = null, dockNameSeq = 0;
-  var expanded = false, dockHold = null, wentBack = false, inerted = [];
+   * `wentBack` (per box): a reader who returns to the tab stays docked for the
+   * rest of that conversation until they choose Full screen, so a follow-up never
+   * pulls them away from the tab twice. A new subject (clearTranscript) clears it.
+   * One box is full screen at a time: `fullBox`. */
+  var fullBox = null, dockHold = null, inerted = [], dockNameSeq = 0;
   // Above every COBI overlay a tab opens (10000), below First Light's daily
   // greeting (12000), which may open over her and must stay dismissable.
   var DOCK_Z = 11000;
@@ -331,8 +358,9 @@
    * default it replaces — submit() leaves the text in the box and setAudience()
    * sends it the moment a role is tapped.
    *
-   * ⚠ SCOPE: this changes the two COBI surfaces (My College + CPL Assistant),
-   * which is what Sam asked about. sierra/sierra.js and
+   * ⚠ SCOPE: this changes the two COBI surfaces (My College + Sierra AI over a
+   * tab, then the CPL Assistant tab), which is what Sam asked about.
+   * sierra/sierra.js and
    * fact-sheet/factsheet_sierra.js deliberately keep the silent restore — a
    * one-visit member of the public should not be interrogated about a role they
    * picked ninety seconds ago on the same page. Same divergence shape as
@@ -341,13 +369,12 @@
    * must never drift. */
   var AUD_OK_KEY = 'cplSierraAudienceOk.v1';
   var audienceConfirmed = false;
-  /* ⚠ THE HELD QUESTION IS PINNED TO THE PANE THAT HELD IT — this is the
-   * element, not a boolean. Two panes can be mounted at once (My College and
-   * the CPL Assistant tab) and `inputEl` points at whichever built LAST, so a
-   * boolean would let a confirm armed on one pane fire submit() against the
-   * other's box: at best a no-op, at worst it sends a half-typed sentence the
-   * reader never pressed Send on. Same discipline the file already documents
-   * for `chipsEl` — by reference, never by id. */
+  /* ⚠ THE HELD QUESTION IS PINNED TO THE BOX THAT HELD IT — this is the box,
+   * not a boolean. Two boxes can be built at once (My College's and the
+   * COBI-wide one), so a boolean would let a confirm armed in one box fire
+   * submit() against the other: at best a no-op, at worst it sends a half-typed
+   * sentence the reader never pressed Send on. Same discipline the file
+   * documents for the starter row — by reference, never by id. */
   var pendingAsk = null;
 
   function audienceLabel(k) {
@@ -377,21 +404,29 @@
     } catch (e) { /* no sessionStorage — the gate simply asks once per mount */ }
     audienceConfirmed = confirmed;
   }
-  function setAudience(k) {
+  function setAudience(b, k) {
     // A tap IS the confirmation. No separate confirm button: a second control
     // to press would be a second thing to explain.
-    var resume = pendingAsk && pendingAsk === inputEl;
+    var resume = !!(pendingAsk && pendingAsk === b);
     pendingAsk = null;
     audience = k;
     audienceConfirmed = true;
     try { localStorage.setItem(AUD_KEY, k); } catch (e) { /* in-memory only */ }
     try { sessionStorage.setItem(AUD_OK_KEY, k); } catch (e) { /* in-memory only */ }
-    if (audEl) audEl.classList.remove('confirm');
-    renderAudience();
-    setStatus('');
-    if (resume) submit();
+    /* One reader, one role: every box shows it. A box still holding a confirm
+     * prompt drops it, because the role it asked about is now settled; its
+     * question stays in that box for the reader to send there. */
+    liveBoxes().forEach(function (x) {
+      if (!x.aud) return;
+      x.aud.classList.remove('confirm');
+      renderAudience(x);
+      if (x !== b && x.status && /cplchat-confirm/.test(x.status.className)) setStatus(x, '');
+    });
+    setStatus(b, '');
+    if (resume) submit(b);
   }
-  function renderAudience() {
+  function renderAudience(b) {
+    var audEl = b && b.aud;
     if (!audEl) return;
     audEl.textContent = '';
     audEl.appendChild(el('span', { className: 'cplchat-aud-label' }, "I'm a…"));
@@ -407,7 +442,7 @@
         // half is carried by the WORDS below, never by the outline alone
         // (First Light: color is never the only signal).
         'aria-pressed': picked ? 'true' : 'false',
-        onclick: function () { setAudience(a.k); },
+        onclick: function () { setAudience(b, a.k); },
       }, a.label));
     });
     if (audience && !audienceConfirmed) {
@@ -415,27 +450,29 @@
         'Carried over from a previous visit — tap to confirm, or pick another.'));
     }
   }
-  /* Paints whichever list is in force into the row build() created. Never
-   * queries the document: two panes can hold a chip row at once (My College and
-   * the CPL Assistant tab), and getElementById would find whichever was written
-   * first — the same trap documented on `inputEl` below. */
-  function renderSuggestions() {
+  /* Paints the box's own list (or the generic one) into the row build()
+   * created for THAT box. Never queries the document: two boxes can hold a chip
+   * row at once (My College's and the COBI-wide one), and getElementById would
+   * find whichever was written first. */
+  function renderSuggestions(b) {
+    var chipsEl = b && b.chips;
     if (!chipsEl) return;
     chipsEl.textContent = '';
-    var list = (hostSuggestions && hostSuggestions.length) ? hostSuggestions : SUGGESTED;
+    var list = (b.suggestions && b.suggestions.length) ? b.suggestions : SUGGESTED;
     // A heading, because a bare row of pills reads as chrome. My College's own
     // label said this; it moves with the questions rather than being lost.
     chipsEl.appendChild(el('div', { className: 'cplchat-suggest-lab' }, 'Try one of these'));
     list.forEach(function (q) {
       chipsEl.appendChild(el('button', {
         type: 'button', className: 'cplchat-chip',
-        onclick: function () { inputEl.value = q; submit(); },
+        onclick: function () { b.input.value = q; submit(b); },
       }, q));
     });
   }
 
-  function needAudience() {
-    setStatus('First, tap who you are above — it helps the assistant tailor the answer.', 'error');
+  function needAudience(b) {
+    setStatus(b, 'First, tap who you are above — it helps the assistant tailor the answer.', 'error');
+    var audEl = b && b.aud;
     if (!audEl) return;
     audEl.classList.add('need');
     setTimeout(function () { audEl.classList.remove('need'); }, 1700);
@@ -450,14 +487,14 @@
    * flash is right for "you forgot something" and wrong for "I am waiting for
    * you" — the reader may look away, and coming back to a cleared prompt with
    * an unanswered question in the box is the confusing state this replaces. */
-  function confirmAudience() {
-    pendingAsk = inputEl;
+  function confirmAudience(b) {
+    pendingAsk = b;
     // "to send" carries two facts in two words: the tap is what sends, and the
     // question is still here. The alternative said so in a third sentence.
-    setStatus('One tap first — still ' + audienceLabel(audience)
+    setStatus(b, 'One tap first — still ' + audienceLabel(audience)
       + '? Tap it above to send, or pick another.', 'confirm');
-    if (!audEl) return;
-    audEl.classList.add('confirm');
+    if (!b || !b.aud) return;
+    b.aud.classList.add('confirm');
   }
 
   // ── Per-answer feedback (Helpful / Not helpful + note → sierra_feedback) ──
@@ -601,9 +638,16 @@
               function () { return false; });
     } catch (e) { return Promise.resolve(false); }
   }
-  function addFeedbackBar(afterRow, question, answer) {
+  /* Which page a rating came from (S398). My College's box keeps 'cobi-tab', the
+   * value every COBI rating has carried; the COBI-wide box sends 'cobi-sierra', so
+   * feedback can tell the two apart. Nothing constrains the value:
+   * sierra_feedback_upsert keeps any page up to 40 characters and special-cases
+   * only 'smoke', and Sierra Training's Page filter lists whatever values arrive. */
+  function feedbackPage(b) { return b && b.cobi ? 'cobi-sierra' : 'cobi-tab'; }
+  function addFeedbackBar(b, afterRow, question, answer) {
     var tid = newTurnId();
     var rating = null;
+    var page = feedbackPage(b);
 
     var hint = el('span', null, 'Rate this answer:');
     var noteIn = el('input', {
@@ -623,7 +667,7 @@
 
     function upsert(note) {
       return sendFeedback(feedbackPayload({
-        turnId: tid, sessionId: sessionId(), page: 'cobi-tab', audience: audience,
+        turnId: tid, sessionId: sessionId(), page: page, audience: audience,
         question: question, response: answer, rating: rating, note: note,
       }));
     }
@@ -691,19 +735,73 @@
     bar.appendChild(noteWrap);
     if (afterRow && afterRow.parentNode) {
       afterRow.parentNode.insertBefore(bar, afterRow.nextSibling);
-    } else {
-      logEl.appendChild(bar);
+    } else if (b && b.log) {
+      b.log.appendChild(bar);
     }
-    scrollDown();
+    scrollDown(b);
   }
 
-  // New-class CSS injected from the JS (covers BOTH HTMLs without a Rule-4
-  // mirror — the CER ensureCerScopeCss() pattern). The pre-existing cplchat-*
-  // styles stay in the HTML <style> blocks; only the audience + feedback
-  // additions live here.
+  // The widget's whole stylesheet, injected from the JS (covers BOTH HTMLs
+  // without a Rule-4 mirror — the CER ensureCerScopeCss() pattern). Since S398
+  // that includes the base rules, which lived in the retired CPL Assistant
+  // pane's own <style>; every box needs them, My College's included.
   function ensureChatCss() {
     if (document.getElementById('cplchat-aud-css')) return;
     var css = [
+      // ── The base rules (moved from the CPL Assistant pane, S398) ───────────
+      // First in the sheet, so every rule below still refines them exactly as
+      // it did when they sat in the HTML. Same meaning, on tokens: each raw value
+      // became the token for its role, the one the dark rules below already use
+      // (--seal-blue for the navy fill and its fixed --white ink, --border,
+      // --surface-subtle, --cobalt for links, --crimson for an error).
+      //
+      // USE THE CONTAINER (Sam, 2026-08-17: "use as much of the screen as
+      // possible for usable space"). The measure stays readable because the cap
+      // sits on the PROSE elements (.cplchat-bubble > p/ul/ol, below), so a table
+      // or a course list can use the width and a paragraph still cannot.
+      '.cplchat { max-width:none; margin:0; }',
+      '.cplchat-intro h2 { margin:16px 0 6px; color:var(--navy-primary); }',
+      '.cplchat-intro p { margin:0 0 8px; color:var(--text-muted); max-width:var(--cpl-measure,none); }',
+      // GROWS WITH THE ANSWER (Sam, 2026-08-17: "so users don't have to scroll
+      // so much"). Between a floor, so a one-line answer is not a sliver, and a
+      // viewport-relative cap, so the input row stays reachable; only an answer
+      // past the cap scrolls inside, and scrollDown() follows the PAGE for the rest.
+      '.cplchat-log { border:1px solid var(--border); border-radius:10px; background:var(--surface-subtle); min-height:240px; max-height:78vh; overflow-y:auto; padding:16px; margin:12px 0; }',
+      '.cplchat-msg { display:flex; margin:10px 0; }',
+      '.cplchat-user { justify-content:flex-end; }',
+      '.cplchat-bot { justify-content:flex-start; gap:8px; }',
+      // No fill: the avatar is the Sierra mark's own roundel (see .cplchat-avatar below).
+      '.cplchat-avatar { flex:0 0 auto; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:16px; }',
+      // Sierra's bubble takes the width; the reader's own question does not need it.
+      '.cplchat-bubble { max-width:78%; padding:10px 14px; border-radius:14px; line-height:1.5; font-size:.95rem; word-wrap:break-word; overflow-wrap:anywhere; }',
+      '.cplchat-bot .cplchat-bubble { max-width:calc(100% - 38px); }',
+      '.cplchat-user .cplchat-bubble { max-width:min(78%, 70ch); }',
+      '.cplchat-user .cplchat-bubble { background:var(--seal-blue); color:var(--white); border-bottom-right-radius:4px; }',
+      '.cplchat-bot .cplchat-bubble { background:var(--surface-opaque); color:var(--text-body); border:1px solid var(--border); border-bottom-left-radius:4px; }',
+      '.cplchat-bubble p { margin:0 0 8px; } .cplchat-bubble p:last-child { margin-bottom:0; }',
+      '.cplchat-bubble ul { margin:4px 0 8px; padding-left:20px; }',
+      '.cplchat-bubble a { color:var(--cobalt); }',
+      '.cplchat-user .cplchat-bubble a { color:var(--mustard-on-dark); }',
+      '.cplchat-typing { letter-spacing:2px; color:var(--text-muted); animation:cplchatPulse 1.2s infinite; }',
+      '@keyframes cplchatPulse { 0%,100% { opacity:.35; } 50% { opacity:1; } }',
+      '.cplchat-suggest { display:flex; flex-wrap:wrap; gap:8px; margin:4px 0 2px; }',
+      '.cplchat-chip { background:var(--surface-opaque); border:1px solid var(--border-strong); color:var(--navy-primary); border-radius:16px; padding:7px 12px; font-size:.85rem; cursor:pointer; transition:background .15s, border-color .15s; }',
+      '.cplchat-chip:hover { background:var(--surface-muted); border-color:var(--cobalt); }',
+      '.cplchat-status { min-height:18px; font-size:.85rem; color:var(--text-muted); margin:2px 0; }',
+      '.cplchat-status.cplchat-error { color:var(--crimson); }',
+      '.cplchat-inputrow { display:flex; gap:8px; }',
+      '.cplchat-input { flex:1 1 auto; padding:12px 14px; border:1px solid var(--border-strong); border-radius:8px; font-size:.95rem; }',
+      '.cplchat-input:focus { outline:none; border-color:var(--seal-blue); box-shadow:0 0 0 3px color-mix(in srgb, var(--seal-blue) 12%, transparent); }',
+      '.cplchat-send { background:var(--seal-blue); color:var(--white); border:none; border-radius:8px; padding:0 22px; font-weight:600; cursor:pointer; }',
+      '.cplchat-send:hover { background:color-mix(in srgb, var(--seal-blue) 85%, var(--white)); }',
+      '.cplchat-send:disabled { background:var(--surface-muted); color:var(--text-muted); cursor:default; }',
+      // Mobile: the log gets MORE of the screen, not less — there is no room to
+      // waste on a phone, and the growth range is what makes that safe. The Send
+      // button drops its wide padding so the input keeps the row.
+      '@media (max-width: 600px) { .cplchat-bubble { max-width:88%; } .cplchat-bot .cplchat-bubble { max-width:calc(100% - 36px); }'
+        + ' .cplchat-user .cplchat-bubble { max-width:88%; } .cplchat-log { min-height:200px; max-height:68vh; padding:12px; }'
+        + ' .cplchat-send { padding:0 16px; } .cplchat-input { min-width:0; } }',
+      // ── The audience row, the feedback row and the rest ────────────────────
       '.cplchat-audience { display:flex; flex-wrap:wrap; align-items:center; gap:7px; margin:8px 0 2px; padding:8px 11px; background:var(--surface-subtle, #f2f6fb); border:1px solid var(--border, #d8dde6); border-radius:10px; }',
       '.cplchat-viewer { margin:4px 0 0; font-size:.78rem; color:var(--text-muted, #5C5C55); }',
       '.cplchat-viewer[hidden] { display:none; }',
@@ -721,10 +819,11 @@
       // Waiting on a tap is not an error, so it is cobalt, not crimson.
       '.cplchat-audience.confirm { outline:2px solid var(--cobalt, #0047AB); }',
       // Dark, on the cpl_theme.js contract (the OS rule, then the explicit choice). The
-      // widget's base rules in both HTMLs carry the light palette as raw values, so a
-      // dark reader got a light log with dark-theme muted text on it (2.19:1, measured
-      // S343 on the Program Requirements tab) and dark ink on a dark bubble. Tokens
-      // only: the dark :root already holds every role these need. Light is untouched.
+      // base rules carried the light palette as raw values until S398, so a dark
+      // reader got a light log with dark-theme muted text on it (2.19:1, measured
+      // S343 on the Program Requirements tab) and dark ink on a dark bubble. The base
+      // is on tokens now; these stay because they still differ from it in dark (the
+      // input's own fill and ink, the stronger focus halo, the disabled Send).
       darkRules([
         ['.cplchat-log', 'background:var(--surface-subtle); border-color:var(--border);'],
         ['.cplchat-bot .cplchat-bubble', 'color:var(--text-body); border-color:var(--border);'],
@@ -737,9 +836,8 @@
         ['.cplchat-status.cplchat-error', 'color:var(--crimson);'],
         ['.cplchat-send:disabled', 'background:var(--surface-muted); color:var(--text-muted);']
       ]),
-      // .cplchat-status.cplchat-error lives in both HTML <style> blocks; this
-      // sibling is injected instead, so the confirm prompt needs no Rule-4
-      // mirror. Cobalt on the subtle surface, not the crimson of an error.
+      // .cplchat-status.cplchat-error is a base rule above; this sibling is the
+      // confirm prompt. Cobalt on the subtle surface, not the crimson of an error.
       '.cplchat-status.cplchat-confirm { color:var(--cobalt, #0047AB); font-weight:600; }',
       // The row's words in --text-muted and its pills at full strength with a 24px
       // floor: the first seeded conversation the sweep measured (S349, the
@@ -798,8 +896,8 @@
       // telling a student to check with their coordinator — a caution rendered
       // in a third, fainter gray. So this inherits the description's color
       // exactly (no new contrast pair to verify) and earns its separation from
-      // a neutral border and spacing instead. It must out-specify the host
-      // pane's `.cplchat-intro p` rule, hence the two-class selector.
+      // a neutral border and spacing instead. It must out-specify the base
+      // `.cplchat-intro p` rule, hence the two-class selector.
       '.cplchat-intro .cplchat-note { border-left:3px solid var(--border-strong, #c9cfd8);'
         + ' padding-left:11px; margin-top:10px; font-size:.95em; }',
       // The suggestion row's heading. `.cplchat-suggest` is a wrapping flex row,
@@ -818,7 +916,7 @@
       // to the bubble. Tables keep their own overflow-x and are unaffected.
       '.cplchat-bubble > p, .cplchat-bubble > ul, .cplchat-bubble > ol { max-width:var(--cpl-measure,none); }',
       // ── Growing log: the reader-facing half of "don't scroll so much" ─────
-      // See the .cplchat-log rule in the HTML for the growth range itself.
+      // See the base .cplchat-log rule above for the growth range itself.
       // scroll-padding keeps a smooth page-follow from parking the newest line
       // hard against the bottom edge.
       'html { scroll-padding-bottom:96px; }',
@@ -833,7 +931,7 @@
   /* The full-screen dock, injected like the rest (one static file, no Rule-4
    * mirror). Tokens only: --paper is First Light's page color in both themes, so
    * the expanded column reads as the public page's asking view. Selectors carry
-   * `html .cplchat.cplchat-full` to outrank both the HTML rules and the dark
+   * `html .cplchat.cplchat-full` to outrank both the base rules and the dark
    * rules above, which reach (0,3,0). */
   function ensureDockCss() {
     if (document.getElementById('cplchat-dock-css')) return;
@@ -871,7 +969,7 @@
 
   // A themed rule on cpl_theme.js's contract: dark when the OS is dark and the reader
   // has not chosen light, and dark when the reader chose dark. Selectors gain
-  // :root, so these outrank the widget's base rules in the HTML.
+  // :root, so these outrank the widget's base rules.
   function darkRules(pairs) {
     var os = pairs.map(function (p) { return ':root:not([data-theme="light"]) ' + p[0] + ' { ' + p[1] + ' }'; }).join(' ');
     var chosen = pairs.map(function (p) { return ':root[data-theme="dark"] ' + p[0] + ' { ' + p[1] + ' }'; }).join('\n');
@@ -891,18 +989,19 @@
   // Both cases are handled, and the page half is deliberately conservative:
   //   · only when the anchor is actually below the fold (never scroll up, and
   //     never scroll at all when it already fits);
-  //   · only while `stick` — set at send time and cleared the moment the reader
-  //     scrolls away from the bottom themselves. Yanking someone who scrolled
-  //     up to re-read an earlier answer is the failure mode that makes chat UIs
-  //     unusable, and it is silent: they just fight the page and give up.
-  var stick = true;
+  //   · only while the box's `stick` — set at send time and cleared the moment
+  //     the reader scrolls away from the bottom themselves. Yanking someone who
+  //     scrolled up to re-read an earlier answer is the failure mode that makes
+  //     chat UIs unusable, and it is silent: they just fight the page and give up.
   var windowScrollWatched = false;
-  function nearBottom() {
+  function nearBottom(b) {
     var slack = 120;                                    // a comfortable "still at the end"
+    if (!b) return true;
     // Full screen: the wrap is the scroller and the page underneath is locked.
-    if (expanded && wrapEl) {
-      return wrapEl.scrollTop + wrapEl.clientHeight >= wrapEl.scrollHeight - slack;
+    if (fullBox === b && b.wrap) {
+      return b.wrap.scrollTop + b.wrap.clientHeight >= b.wrap.scrollHeight - slack;
     }
+    var logEl = b.log;
     if (logEl && logEl.scrollHeight > logEl.clientHeight + 1) {
       return logEl.scrollTop + logEl.clientHeight >= logEl.scrollHeight - slack;
     }
@@ -911,22 +1010,22 @@
     var below = doc.scrollHeight - (window.pageYOffset || doc.scrollTop || 0) - doc.clientHeight;
     return below <= slack;
   }
-  function stickToBottom() { stick = true; }
-  function noteReaderScroll() { stick = nearBottom(); }
-  function scrollDown() {
-    if (!logEl) return;
+  function noteReaderScroll(b) { if (b) b.stick = nearBottom(b); }
+  function scrollDown(b) {
+    if (!b || !b.log) return;
     requestAnimationFrame(function () {
+      var logEl = b.log, wrapEl = b.wrap;
       if (!logEl) return;
       // Full screen: the log grows inside the wrap, so the wrap scrolls, and
       // only while the reader is still following (same `stick` rule).
-      if (expanded && wrapEl && wrapEl.contains(logEl)) {
-        if (stick) wrapEl.scrollTop = wrapEl.scrollHeight;
+      if (fullBox === b && wrapEl && wrapEl.contains(logEl)) {
+        if (b.stick) wrapEl.scrollTop = wrapEl.scrollHeight;
         return;
       }
       // Internal scroll first. Still correct for a long answer that has hit the
       // max-height cap; a harmless no-op while the box is still growing.
       logEl.scrollTop = logEl.scrollHeight;
-      if (!stick) return;
+      if (!b.stick) return;
       try {
         var r = logEl.getBoundingClientRect();
         var vh = window.innerHeight || (document.documentElement || {}).clientHeight || 0;
@@ -943,11 +1042,11 @@
       } catch (e) { /* no layout (jsdom) or no scrollBy — internal scroll stands */ }
     });
   }
-  function addUserMsg(text) {
+  function addUserMsg(b, text) {
     var row = el('div', { className: 'cplchat-msg cplchat-user' },
       el('div', { className: 'cplchat-bubble' }, text));
-    logEl.appendChild(row);
-    scrollDown();
+    b.log.appendChild(row);
+    scrollDown(b);
   }
   // The Sierra mark — Mt Whitney's east-face ridge (sierra/whitney-mark.svg)
   // in a navy roundel. A STATIC, trusted string (never user input) inlined so
@@ -963,35 +1062,38 @@
 
   // Returns the row + bubble; the streamer appends deltas to the bubble and the
   // feedback bar anchors after the row.
-  function addAssistantMsg() {
+  function addAssistantMsg(b) {
     var bubble = el('div', { className: 'cplchat-bubble' });
     var avatar = el('div', { className: 'cplchat-avatar', 'aria-hidden': 'true' });
     avatar.innerHTML = SIERRA_MARK;
     var row = el('div', { className: 'cplchat-msg cplchat-bot' }, [avatar, bubble]);
-    logEl.appendChild(row);
-    scrollDown();
+    b.log.appendChild(row);
+    scrollDown(b);
     return { row: row, bubble: bubble };
   }
-  /* Remove the CONVERSATION from the log and nothing else.
+  /* Remove the CONVERSATION from the box's log and nothing else.
    *
-   * ⚠ NOT `logEl.innerHTML = ''`. The suggested-questions row lives INSIDE the
-   * log (build() appends `chipsEl` to it), so wiping the log deletes the widget's
-   * own chrome and leaves `chipsEl` pointing at a detached node — setSuggestions()
-   * then paints into nothing and the reader gets an assistant with no starters at
-   * all. The first draft did exactly that and my_college_sierra_box.test.js
-   * caught it: EXACTLY ONE cluster -> found 0. Clear what the turns created —
-   * message rows and their feedback bars — and leave the furniture alone. */
-  function clearTranscript() {
+   * ⚠ NOT `log.innerHTML = ''`. The suggested-questions row lives INSIDE the
+   * log (build() appends the box's chip row to it), so wiping the log deletes the
+   * widget's own chrome and leaves `box.chips` pointing at a detached node —
+   * setSuggestions() then paints into nothing and the reader gets an assistant
+   * with no starters at all. The first draft did exactly that and
+   * my_college_sierra_box.test.js caught it: EXACTLY ONE cluster -> found 0.
+   * Clear what the turns created — message rows and their feedback bars — and
+   * leave the furniture alone. */
+  function clearTranscript(b) {
+    if (!b) return;
     // A new subject is a new conversation: the next answer may expand again.
-    wentBack = false;
-    if (!logEl) return;
-    var kill = logEl.querySelectorAll('.cplchat-msg, .cplchat-fb');
+    b.wentBack = false;
+    if (!b.log) return;
+    var kill = b.log.querySelectorAll('.cplchat-msg, .cplchat-fb');
     for (var i = 0; i < kill.length; i++) {
       if (kill[i].parentNode) kill[i].parentNode.removeChild(kill[i]);
     }
   }
 
-  function setStatus(text, kind) {
+  function setStatus(b, text, kind) {
+    var statusEl = b && b.status;
     if (!statusEl) return;
     statusEl.textContent = text || '';
     statusEl.className = 'cplchat-status' + (kind ? ' cplchat-' + kind : '');
@@ -1032,7 +1134,8 @@
     reviewer: 'Recognized by the assistant as a signed-in reviewer.',
     team: 'Recognized by the assistant as CPL team.'
   };
-  function noteViewer(meta) {
+  function noteViewer(meta, b) {
+    var viewerEl = b && b.viewer;
     if (!viewerEl) return;
     var kind = meta && typeof meta.viewer === 'string' ? meta.viewer : 'public';
     var words = Object.prototype.hasOwnProperty.call(VIEWER_WORDS, kind) ? VIEWER_WORDS[kind] : '';
@@ -1041,9 +1144,14 @@
   }
 
   // ── Call the Edge Function + stream the SSE response ──
-  async function ask(query) {
-    var msg = addAssistantMsg();
+  // `b` is the box the question was asked in; `live(b)` is the box that holds
+  // its conversation NOW (a tab repainting under an answer hands the turns to a
+  // new box, see mountInto), so everything after the first await asks for it.
+  async function ask(b, query) {
+    var msg = addAssistantMsg(b);
     var bubble = msg.bubble;
+    // The question goes out with ITS box's context, read here, at send time.
+    var hostScope = b.scope, hostSurface = b.surface;
     bubble.innerHTML = '<span class="cplchat-typing">●●●</span>';
     var full = '';
 
@@ -1105,12 +1213,12 @@
                 if (firstToken) { bubble.innerHTML = ''; firstToken = false; }
                 full += d.text;
                 bubble.innerHTML = renderMarkdown(full);
-                scrollDown();
+                scrollDown(live(b));
               }
             } catch (e) { /* skip malformed delta */ }
           } else if (evt.event === 'meta') {
             // Who the FUNCTION took us to be — see noteViewer().
-            try { noteViewer(JSON.parse(evt.data)); } catch (e) { /* skip malformed meta */ }
+            try { noteViewer(JSON.parse(evt.data), live(b)); } catch (e) { /* skip malformed meta */ }
           } else if (evt.event === 'done') {
             // stream complete
           }
@@ -1127,7 +1235,7 @@
     // Record this completed turn so the next request carries the back-and-forth.
     convo.push({ role: 'user', content: query }, { role: 'assistant', content: full });
     if (convo.length > CONVO_MAX) convo = convo.slice(-CONVO_MAX);
-    addFeedbackBar(msg.row, query, full);
+    addFeedbackBar(live(b), msg.row, query, full);
   }
 
   // Parse one SSE event block ("event: <name>\ndata: <json>")
@@ -1141,9 +1249,39 @@
     return got ? out : null;
   }
 
-  // ── Full screen and back (see `wrapEl` above) ──
-  function setDockBtn() {
-    if (dockBtn) dockBtn.textContent = expanded ? 'Back to the tab' : 'Full screen';
+  // ── The boxes (see `active` above) ──
+  // The box that holds a conversation NOW. A tab repainting under an answer
+  // hands the turns to a new box (mountInto sets `next`), so anything that
+  // finishes later — the stream, the feedback row, the box re-opening — follows.
+  function live(b) {
+    while (b && b.next) b = b.next;
+    return b;
+  }
+  // The boxes a reader can still act in: the COBI-wide one and the dock.
+  function liveBoxes() {
+    return [cobiBox, dockBox].filter(function (b) { return !!b && !b.retired; });
+  }
+  function activate(b) { if (b && !b.retired) active = b; }
+  // The live box whose wrap holds `node`, if any.
+  function boxOf(node) {
+    var all = liveBoxes();
+    for (var i = 0; i < all.length; i++) if (node && all[i].wrap && all[i].wrap.contains(node)) return all[i];
+    return null;
+  }
+  // API calls that name no box act on the one the reader acts in (or the one
+  // built last); with neither, the dock, then the COBI-wide box. A box whose
+  // host a repaint took off the page is skipped: a question sent there would be
+  // answered where nobody can read it.
+  function onPage(b) { return !!(b && b.wrap && document.documentElement.contains(b.wrap)); }
+  function apiBox() {
+    if (active && !active.retired && onPage(active)) return active;
+    if (onPage(dockBox)) return dockBox;
+    return cobiBox || null;
+  }
+
+  // ── Full screen and back (see `fullBox` above) ──
+  function setDockBtn(b) {
+    if (b && b.dockBtn) b.dockBtn.textContent = fullBox === b ? 'Back to the tab' : 'Full screen';
   }
 
   /* A fixed layer that paints above the dialog stays live. Made inert, it would
@@ -1156,8 +1294,9 @@
     } catch (e) { return false; }
   }
 
-  function expandDock(focusBox) {
-    if (expanded || !wrapIsDock || !wrapEl || !wrapEl.parentNode || !document.body) return false;
+  function expandDock(b, focusBox) {
+    if (!b || fullBox || !b.dock || b.retired || !b.wrap || !b.wrap.parentNode || !document.body) return false;
+    var wrapEl = b.wrap, inputEl = b.input;
     if (!document.documentElement.contains(wrapEl)) return false;
     dockHold = document.createElement('div');
     dockHold.className = 'cplchat-dock-hold';
@@ -1182,28 +1321,34 @@
     else wrapEl.setAttribute('aria-label', 'Sierra AI');
     wrapEl.setAttribute('tabindex', '-1');
     document.documentElement.classList.add('cplchat-locked');
-    expanded = true;
-    setDockBtn();
+    fullBox = b;
+    setDockBtn(b);
     // Moving the wrap dropped focus to <body>. From submit() the box is about
     // to be disabled while she answers (a disabled box loses focus), so focus
     // lands on the dialog and submit() returns it to the box when she is done;
-    // from Full screen it lands in the box.
+    // from Full screen (or open()) it lands in the box.
     var target = (focusBox && inputEl && wrapEl.contains(inputEl) && !inputEl.disabled) ? inputEl : wrapEl;
     try { target.focus({ preventScroll: true }); } catch (e) { /* no focus support */ }
-    stick = true;
-    scrollDown();
+    b.stick = true;
+    scrollDown(b);
     return true;
   }
 
-  /* `byReader`: Back to the tab, Escape, or the reader leaving for another tab.
-   * mountInto() also collapses, to rebuild, and re-expands at once; that one is
-   * not the reader going back. */
-  function collapseDock(byReader) {
-    if (!expanded) return false;
-    expanded = false;
+  /* `byReader`: Back to the tab, Escape, or the reader leaving for another tab
+   * (`nav`). mountInto() and open() also collapse — to rebuild, or to make room
+   * — and that is not the reader going back.
+   *
+   * The COBI-wide box goes back into its hidden host, which is what closing her
+   * means, and the reader's focus goes back to whatever opened her (cobiReturn).
+   * A dock goes back to its seat in the tab and focus to its control. */
+  function collapseDock(byReader, nav) {
+    var b = fullBox;
+    if (!b) return false;
+    fullBox = null;
     for (var i = 0; i < inerted.length; i++) inerted[i].removeAttribute('inert');
     inerted = [];
     document.documentElement.classList.remove('cplchat-locked');
+    var wrapEl = b.wrap;
     if (wrapEl) {
       wrapEl.classList.remove('cplchat-full');
       ['role', 'aria-modal', 'aria-labelledby', 'aria-label', 'tabindex'].forEach(function (a) {
@@ -1214,72 +1359,106 @@
     }
     if (dockHold && dockHold.parentNode) dockHold.parentNode.removeChild(dockHold);
     dockHold = null;
-    setDockBtn();
-    if (byReader) {
-      wentBack = true;
-      try { if (dockBtn && document.documentElement.contains(dockBtn)) dockBtn.focus(); } catch (e) { /* hidden pane */ }
+    setDockBtn(b);
+    if (byReader && b.cobi) {
+      var back = cobiReturn;
+      cobiReturn = null;
+      if (!nav) restoreFocus(back);
+    } else if (byReader) {
+      b.wentBack = true;
+      try { if (b.dockBtn && document.documentElement.contains(b.dockBtn)) b.dockBtn.focus(); } catch (e) { /* hidden pane */ }
     }
     return true;
   }
 
   var dockKeysWatched = false;
   function onDockKey(e) {
-    if (!expanded || e.key !== 'Escape' || e.defaultPrevented || e.isComposing) return;
+    if (!fullBox || e.key !== 'Escape' || e.defaultPrevented || e.isComposing) return;
     e.preventDefault();
     collapseDock(true);
   }
 
   // ── Submit flow ──
-  var busy = false;
-  async function submit() {
-    if (busy) return;
+  // One request at a time PER BOX (`b.busy`): an answer streaming in My College
+  // never holds up a question asked in Sierra AI over another tab.
+  async function submit(b) {
+    if (!b || b.retired || b.busy) return;
+    var inputEl = b.input;
     var q = (inputEl.value || '').trim();
     if (!q) { inputEl.focus(); return; }
-    if (!audience) { needAudience(); return; }
+    if (!audience) { needAudience(b); return; }
     /* ⚠ ORDER MATTERS: no role at all is a different failure from a role
      * nobody has confirmed, and they get different prompts. Both return BEFORE
-     * `busy`, before addUserMsg() and before inputEl is cleared — which is what
+     * `busy`, before addUserMsg() and before the box is cleared — which is what
      * leaves the question in the box for setAudience() to resume. */
-    if (!audienceConfirmed) { confirmAudience(); return; }
+    if (!audienceConfirmed) { confirmAudience(b); return; }
     pendingAsk = null;
     // A docked Sierra fills the window as she starts answering, unless the
-    // reader already went back to the tab in this conversation.
-    if (wrapIsDock && !wentBack && !expanded && wrapEl && wrapEl.contains(inputEl)) expandDock();
-    busy = true;
+    // reader already went back to the tab in this conversation. The COBI-wide
+    // box lives full screen: a question sent to it while closed opens it.
+    if (b.cobi && fullBox !== b) {
+      if (fullBox) collapseDock(false);
+      expandDock(b);
+    } else if (b.dock && !b.wentBack && fullBox !== b && b.wrap.contains(inputEl)) {
+      expandDock(b);
+    }
+    b.busy = true;
     // Asking is an explicit "show me the answer", so re-arm page-follow even if
     // the reader had scrolled up to look at an earlier turn.
-    stickToBottom();
-    sendBtn.disabled = true; inputEl.disabled = true;
-    addUserMsg(q);
+    b.stick = true;
+    b.send.disabled = true; inputEl.disabled = true;
+    addUserMsg(b, q);
     inputEl.value = '';
-    setStatus('Thinking…', 'pending');
-    // Hide the starter chips after the first question — THIS pane's chips.
-    // ⚠ This was getElementById('cplchat-suggest'), and two panes can hold a row
-    // at once (My College mounts the same widget). The id lookup returns
-    // whichever is earlier in the document — My College — so asking on the CPL
-    // Assistant tab cleared the OTHER tab's chips and left its own on screen.
-    // Same trap as `inputEl`, documented below; `chipsEl` is re-pointed by
-    // build() alongside inputEl, so the two always refer to one pane.
-    if (chipsEl) { chipsEl.remove(); chipsEl = null; }
+    setStatus(b, 'Thinking…', 'pending');
+    // Hide the starter chips after the first question — THIS box's chips.
+    // ⚠ This was getElementById('cplchat-suggest'), and two boxes can hold a row
+    // at once (My College's and the COBI-wide one). The id lookup returns
+    // whichever is earlier in the document, so asking in one cleared the OTHER
+    // box's chips and left its own on screen. By reference: `b.chips` belongs to
+    // the box the question was asked in.
+    if (b.chips) { b.chips.remove(); b.chips = null; }
+    var cur = b;
     try {
-      await ask(q);
-      setStatus('');
+      await ask(b, q);
+      cur = live(b);
+      setStatus(cur, '');
     } catch (e) {
-      setStatus('Something went wrong. Try again.', 'error');
+      cur = live(b);
+      setStatus(cur, 'Something went wrong. Try again.', 'error');
     } finally {
-      busy = false;
-      sendBtn.disabled = false; inputEl.disabled = false;
-      inputEl.focus();
+      cur = live(b);
+      b.busy = false; cur.busy = false;
+      cur.send.disabled = false; cur.input.disabled = false;
+      // Back to the box — unless the reader is now in the other one.
+      var other = boxOf(document.activeElement);
+      if (!other || other === cur) cur.input.focus();
     }
   }
 
-  // ── Build the panel ──
-  function build(mount, dock) {
+  // ── Build a box ──
+  // `o`: { dock, cobi, scope, surface, suggestions } — the box's own context
+  // (see `active`). Returns the box, which becomes the active one.
+  function build(mount, o) {
+    o = o || {};
     ensureChatCss();
+    var dock = !!o.dock;
+    var b = {
+      dock: dock, cobi: !!o.cobi,
+      scope: o.scope || null, surface: o.surface || null, suggestions: o.suggestions || null,
+      wrap: null, log: null, input: null, send: null, status: null, aud: null,
+      viewer: null, chips: null, dockBtn: null,
+      busy: false, stick: true, wentBack: false, retired: false, next: null,
+    };
     var wrap = el('div', { className: 'cplchat' });
-    wrapEl = wrap;
-    wrapIsDock = !!dock;
-    dockBtn = null;
+    b.wrap = wrap;
+    /* The box the reader acts in is the active one BEFORE anything of its own
+     * runs: a capture listener on the wrap fires ahead of the input's, Send's,
+     * the chips' and the dock control's own handlers. Those are bound to `b`
+     * anyway; `active` is what the API calls that name no box read (ask,
+     * prefill, the test seams). */
+    ['focusin', 'keydown', 'click'].forEach(function (t) {
+      wrap.addEventListener(t, function () { activate(b); }, true);
+    });
 
     // ── The one heading (Sam, 2026-08-17) ──────────────────────────────────
     // "Change CPL Assistant title to Sierra AI with her mountain logo". She is
@@ -1287,7 +1466,7 @@
     // College (Sam, 2026-08-11). The mark is the SAME static SIERRA_MARK the
     // chat avatars use, so the header and the answers beneath it carry one
     // identity — and it needs no relative-path asset, which matters because
-    // this widget mounts in two panes and on two mirrored HTMLs.
+    // this widget builds a box in two places and on two mirrored HTMLs.
     //
     // This is now the ONLY heading on My College's assistant box: that tab used
     // to print its own "Sierra AI" h3 and purpose paragraph directly above this
@@ -1310,10 +1489,10 @@
     // not. `.cplchat-note` is the quieter weight; it is deliberately NOT a
     // colored panel, which is the thing that was removed.
     //
-    // It has to read correctly in BOTH hosts — this widget mounts on My College
-    // and on the CPL Assistant tab, so it cannot say "the sections below" (the
-    // wording My College's deleted paragraph used, which would be a promise
-    // about a page that isn't always there).
+    // It has to read correctly in BOTH boxes — My College's and Sierra AI over
+    // any tab — so it cannot say "the sections below" (the wording My College's
+    // deleted paragraph used, which would be a promise about a page that isn't
+    // always there).
     wrap.appendChild(el('div', { className: 'cplchat-intro' }, [
       title,
       el('p', null, 'Ask her anything about credit for prior learning.'),
@@ -1328,7 +1507,8 @@
      * child of the wrap, never inside the intro: My College hoists the intro's
      * heading into its <summary> and the rest of the intro above the box, and a
      * control that moved with it would be left behind when the wrap goes full
-     * screen. Expanded, the bar names her and stays at the top. */
+     * screen. Expanded, the bar names her and stays at the top. On the
+     * COBI-wide box it reads Back to the tab, and closes her. */
     if (dock) {
       ensureDockCss();
       var nameId = 'cplchat-dock-name-' + (++dockNameSeq);
@@ -1337,16 +1517,18 @@
       dockMark.innerHTML = SIERRA_MARK;             // static, trusted (see SIERRA_MARK)
       dockName.appendChild(dockMark);
       dockName.appendChild(el('span', null, 'Sierra AI'));
-      dockBtn = el('button', { type: 'button', className: 'cplchat-dock-btn' });
+      var dockBtn = el('button', { type: 'button', className: 'cplchat-dock-btn' });
+      b.dockBtn = dockBtn;
       dockBtn.addEventListener('click', function () {
         // A box left in a tab another mount has since taken over is stale; its
         // control must not move the live one.
-        if (wrap !== wrapEl) return;
-        if (expanded) { collapseDock(true); return; }
-        wentBack = false;
-        expandDock(true);
+        if (b.retired) return;
+        if (fullBox === b) { collapseDock(true); return; }
+        if (fullBox) return;                         // the other box is up; this one waits
+        b.wentBack = false;
+        expandDock(b, true);
       });
-      setDockBtn();
+      setDockBtn(b);
       wrap.appendChild(el('div', { className: 'cplchat-dockbar' }, [dockName, dockBtn]));
       if (!dockKeysWatched) {
         document.addEventListener('keydown', onDockKey);
@@ -1354,7 +1536,7 @@
       }
       // Expanded, the wrap is the scroller; the reader scrolling up takes
       // control exactly as on the page.
-      try { wrap.addEventListener('scroll', noteReaderScroll, { passive: true }); }
+      try { wrap.addEventListener('scroll', function () { noteReaderScroll(b); }, { passive: true }); }
       catch (e) { /* no options support — follow stays armed */ }
     }
 
@@ -1365,57 +1547,60 @@
      * (sierra/index.html carries role="group"); COBI kept the old markup for a
      * week because nothing compared the two. tests/sierra_surfaces_aligned now
      * asserts it, so the next divergence is caught rather than noticed. */
-    audEl = el('div', {
+    b.aud = el('div', {
       className: 'cplchat-audience', id: 'cplchat-audience', role: 'group',
       'aria-label': 'Tell the assistant who you are so answers fit your needs',
     });
     loadAudience();
-    renderAudience();
-    wrap.appendChild(audEl);
+    renderAudience(b);
+    wrap.appendChild(b.aud);
 
-    logEl = el('div', { className: 'cplchat-log', id: 'cplchat-log', 'aria-live': 'polite' });
+    b.log = el('div', { className: 'cplchat-log', id: 'cplchat-log', 'aria-live': 'polite' });
     // A reader who scrolls away from the bottom takes control; asking again
     // hands it back (see scrollDown). Passive: this must never delay a scroll.
     // The log's own listener dies with the element, but build() runs again on
     // every mountInto() — so the WINDOW listener is attached exactly once, or
-    // switching between My College and CPL Assistant would stack one per visit.
+    // every My College repaint would stack one more. Only a dock rides the
+    // page's scroll (the COBI-wide box scrolls inside itself), so it notes that.
     try {
-      logEl.addEventListener('scroll', noteReaderScroll, { passive: true });
+      b.log.addEventListener('scroll', function () { noteReaderScroll(b); }, { passive: true });
       if (!windowScrollWatched) {
-        window.addEventListener('scroll', noteReaderScroll, { passive: true });
+        window.addEventListener('scroll', function () {
+          if (dockBox && fullBox !== dockBox) noteReaderScroll(dockBox);
+        }, { passive: true });
         windowScrollWatched = true;
       }
     } catch (e) { /* no addEventListener options support — follow stays armed */ }
 
-    // Starter suggestion chips — the ONE question cluster (see hostSuggestions).
+    // Starter suggestion chips — the ONE question cluster (see SUGGESTED).
     //
     // ⚠ THEY STAY INSIDE THE LOG. Sky175 found that this log is keyboard
     // reachable only BECAUSE these chips are focusable and live in it; moving
     // them out would take the transcript out of the tab order to fix a layout
     // nit. Inside the log also puts them below the role chips for free, which
     // is the whole point of the consolidation.
-    chipsEl = el('div', { className: 'cplchat-suggest', id: 'cplchat-suggest' });
-    renderSuggestions();
-    logEl.appendChild(chipsEl);
-    wrap.appendChild(logEl);
+    b.chips = el('div', { className: 'cplchat-suggest', id: 'cplchat-suggest' });
+    renderSuggestions(b);
+    b.log.appendChild(b.chips);
+    wrap.appendChild(b.log);
 
-    statusEl = el('div', { className: 'cplchat-status', id: 'cplchat-status', 'aria-live': 'polite' });
-    wrap.appendChild(statusEl);
+    b.status = el('div', { className: 'cplchat-status', id: 'cplchat-status', 'aria-live': 'polite' });
+    wrap.appendChild(b.status);
     // The recognition line (v66) — empty and hidden until a turn's `meta` frame
     // says the function recognized a sign-in. See noteViewer().
-    viewerEl = el('p', { className: 'cplchat-viewer' });
-    viewerEl.hidden = true;
-    wrap.appendChild(viewerEl);
+    b.viewer = el('p', { className: 'cplchat-viewer' });
+    b.viewer.hidden = true;
+    wrap.appendChild(b.viewer);
 
     var row = el('div', { className: 'cplchat-inputrow' });
-    inputEl = el('input', {
+    b.input = el('input', {
       type: 'text', id: 'cplchat-input', className: 'cplchat-input',
       placeholder: 'Ask a question about CPL…', autocomplete: 'off', maxlength: '1000',
     });
-    sendBtn = el('button', { type: 'button', className: 'cplchat-send' }, 'Send');
-    inputEl.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); submit(); } });
-    sendBtn.addEventListener('click', submit);
-    row.appendChild(inputEl); row.appendChild(sendBtn);
+    b.send = el('button', { type: 'button', className: 'cplchat-send' }, 'Send');
+    b.input.addEventListener('keydown', function (e) { if (e.key === 'Enter') { e.preventDefault(); submit(b); } });
+    b.send.addEventListener('click', function () { submit(b); });
+    row.appendChild(b.input); row.appendChild(b.send);
     wrap.appendChild(row);
     // Expanded, the intro is hidden, so the privacy sentence the reader needs
     // before typing a follow-up rides under the box (the public page's footer
@@ -1426,72 +1611,37 @@
     }
 
     mount.appendChild(wrap);
+    active = b;
+    return b;
   }
 
-  // ── "Test in Sierra" prefill (Sierra Training tab handoff) ──
-  // The Training tab stores a logged question under this key then navigates to
-  // #chatbot; we fill the input (never auto-send) so the reviewer can tweak
-  // before replaying it. Consumed on tab activation (tabs.js dispatches
-  // cpl-tab-activated on WINDOW) + once at mount for the deep-link landing.
+  // ── Sierra Training's hand-off ("Try it in"), and the #chatbot link ────────
+  // "Try it in: Sierra" and "Save & ask Sierra" call CPL_CHAT.open({ question,
+  // send: true }) and the trainer never leaves the tab (S398, Sam 2026-10-16:
+  // the button "took me to the old assistant--I was expecting it to copy the
+  // question to Sierra AI and see if the outcome is improved").
+  //
+  // A question can still arrive through sessionStorage. "Try it in: My College"
+  // writes one (below), and the default destination still has a reader: a
+  // #chatbot link opens Sierra AI and fills her box with a question waiting
+  // under TEST_Q_KEY, never sending it, so the reviewer can tweak it first. That
+  // is the path a page without CPL_CHAT.open() takes (sierra_training.js and
+  // college_briefing.js fall back to it).
   var TEST_Q_KEY = 'cplSierraTestQ.v1';
-
-  // The #chatbot pane's OWN input, which is not necessarily `inputEl`.
-  //
-  // WHY (Sam, 2026-08-13: "tried to use Try it With Sierra but it didn't copy
-  // the question into Sierra"). My College mounts this SAME widget through
-  // mountInto(), and build() re-points the module-level `inputEl` at THAT
-  // pane's input. mount() then early-returns on the data-cplchat-mounted flag,
-  // so coming back to #chatbot never re-points it. After one visit to My
-  // College, `inputEl` is the hidden pane's input for the rest of the session —
-  // so the handoff typed the question into an invisible box.
-  // Is the dedicated CPL Assistant tab actually reachable? cobi_orgs.js hides a
-  // nav button with style.display + data-org-hidden="1"; the Admin tab Sam is
-  // planning will suppress tabs the same way. data-org-hidden is used rather
-  // than offsetParent because jsdom has no layout, so a visibility test based on
-  // rendering cannot be tested at all.
-  function chatbotTabSuppressed() {
-    var pane = document.getElementById('tab-chatbot');
-    if (!pane) return true;
-    var btn = document.querySelector('.cpl-tab[data-tab="chatbot"]');
-    return !!(btn && btn.getAttribute('data-org-hidden') === '1');
-  }
-
-  // The pane that should receive a Sierra Training hand-off.
-  //
-  // PREFERS the dedicated CPL Assistant pane, and falls back to My College —
-  // which mounts this SAME widget via mountInto() — when CPL Assistant is
-  // suppressed or absent. Sam, 2026-08-14, planning to suppress that tab from an
-  // Admin tab: the two surfaces are the same assistant, but the hand-off names
-  // #chatbot specifically, so suppressing it would have silently broken the only
-  // way to test an instruction. A button that does nothing looks like one that
-  // was never wired — the exact failure #1166 existed to fix.
-  //
-  // Still pane-scoped rather than using the module-level `inputEl`, because that
-  // reference goes stale after a second mount (see the note below).
-  function chatbotInputEl() {
-    if (!chatbotTabSuppressed()) {
-      var pane = document.getElementById('tab-chatbot');
-      var el = pane && pane.querySelector('#cplchat-input, .cplchat-input');
-      if (el) return el;
-    }
-    var mc = document.getElementById('tab-college-briefing');
-    return (mc && mc.querySelector('#cplchat-input, .cplchat-input')) || null;
-  }
 
   // ── Where a hand-off is addressed (Sierra Training "Try it in", round 1,
   // Sam's approval 2026-09-28) ──────────────────────────────────────────────
   // The question stays a plain string under TEST_Q_KEY; college_briefing.js and
   // the tests write it that way. A SECOND key names the destination, and only
-  // "Try it in: My College" writes one. ABSENT means the default, which behaves
-  // exactly as it did before this key existed: the CPL Assistant pane, or My
-  // College when that tab is suppressed.
+  // "Try it in: My College" writes one. ABSENT means the default: Sierra AI's
+  // own box, the COBI-wide one.
   //
-  // ⚠ The destination cannot be read off the activated tab. chatbotInputEl()
-  // picks the pane by SUPPRESSION, so a My College hand-off consumed on
-  // activation would type the question into the HIDDEN CPL Assistant input and
-  // burn the key. And My College builds its box lazily — after data loads, inside a
-  // collapsible section — so its hand-off is delivered from mountInto(), the
-  // moment that box exists, and never on activation.
+  // ⚠ The destination cannot be read off the activated tab. A My College
+  // hand-off typed into whichever box happened to exist would land in the wrong
+  // one and burn the key (the CPL Assistant pane did exactly that). And My
+  // College builds its box lazily — after data loads, inside a collapsible
+  // section — so its hand-off is delivered from mountInto(), the moment that box
+  // exists, and never on activation.
   var TEST_DEST_KEY = 'cplSierraTestDest.v1';
   var DEST_MY_COLLEGE = 'college-briefing';
   function testDest() {
@@ -1511,12 +1661,16 @@
     }
   }
 
+  // The default lands in the COBI-wide box's OWN input, never in whichever box
+  // was built last. (Sam, 2026-08-13: "tried to use Try it With Sierra but it
+  // didn't copy the question into Sierra" — a re-pointed module input had typed
+  // it into a hidden box.)
   function consumeTestQuestion(host) {
     var q = null;
     try { q = sessionStorage.getItem(TEST_Q_KEY); } catch (e) { return; }
     if (!q) return;
     var toMyCollege = testDest() === DEST_MY_COLLEGE;
-    var el = toMyCollege ? myCollegeInputEl(host) : (chatbotInputEl() || inputEl);
+    var el = toMyCollege ? myCollegeInputEl(host) : ((cobiBox && cobiBox.input) || null);
     // KEY IS NOT REMOVED ON FAILURE. It used to be deleted before the input was
     // known to exist, so an activation that fired before the widget was built
     // consumed the question and dropped it — and because the key was gone, the
@@ -1531,53 +1685,156 @@
     if (toMyCollege) openSectionsAround(el);
     try { el.focus(); } catch (e) { /* hidden pane */ }
   }
-  window.addEventListener('cpl-tab-activated', function (e) {
-    // Both hosts of this widget, so a hand-off still lands when CPL Assistant is
-    // suppressed and the reviewer is routed to My College instead. The key is
-    // not consumed until an input is actually found, so listening on the wrong
-    // one costs nothing.
-    var t = e && e.detail && e.detail.tab;
-    // Full screen covers the tab it came from; arriving anywhere else (the
-    // browser's Back, a deep link) takes it back to its seat first.
-    if (expanded && dockHold && t) {
-      var pane = document.getElementById('tab-' + t);
-      if (!pane || !pane.contains(dockHold)) collapseDock(true);
-    }
-    if (t === 'chatbot' || t === 'college-briefing') consumeTestQuestion();
-  });
 
-  function mount() {
-    var pane = document.getElementById('tab-chatbot');
-    if (!pane) return;
-    var host = pane.querySelector('.cplchat-mount') || pane.querySelector('.main-container') || pane;
-    if (host.getAttribute('data-cplchat-mounted') === '1') return; // idempotent
-    host.setAttribute('data-cplchat-mounted', '1');
-    // The dedicated tab is nobody's college page, so it always gets the generic
-    // starters — a stale host list from My College must not follow the reader
-    // here and ask about a college this pane never mentioned.
-    hostSuggestions = null;
-    hostSurface = 'cobi-assistant';
-    // Same argument, same line of reasoning, for the ANCHOR: this pane has no
-    // selected institution, so it must not keep asking the function to answer
-    // for My College's. The THREAD is not cleared here on purpose — mount() is
-    // idempotent and does not rebuild, so the transcript is still on screen, and
-    // "what we send is never more than what is shown" still holds.
-    hostScope = null;
-    build(host);
-    consumeTestQuestion();
+  // ── Sierra AI over any tab (S398) ──────────────────────────────────────────
+  // ONE body-level host, built the first time she opens and reused after, so
+  // re-opening shows the same box and the conversation still in it. She covers
+  // whatever tab is showing; Back to the tab and Escape close her and give the
+  // reader's focus back to what opened her.
+  var cobiHost = null;
+  var cobiOver = null;     // the tab she was opened over
+  var cobiReturn = null;   // where focus goes when she closes (returnPoint)
+  var lastTab = null;      // the tab tabs.js last announced
+  function currentTab() {
+    try {
+      var T = window.CPL_TABS;
+      return (T && typeof T.current === 'function') ? T.current() : null;
+    } catch (e) { return null; }
+  }
+  function attrEsc(v) { return String(v).replace(/["\\]/g, '\\$&'); }
+  /* The control that opened her, and how to find it again. Sierra Training
+   * repaints the row a button sits in (Save & ask repaints while it saves), so
+   * the element itself may be gone by the time she closes: the data-* attributes
+   * that name it find the one standing in its place. */
+  function returnPoint(node) {
+    if (!node || !node.tagName || node === document.body || node === document.documentElement) return null;
+    if (cobiBox && cobiBox.wrap && cobiBox.wrap.contains(node)) return null;
+    var sel = node.tagName.toLowerCase(), named = false;
+    if (node.id) { sel += '[id="' + attrEsc(node.id) + '"]'; named = true; }
+    for (var i = 0; i < node.attributes.length; i++) {
+      var a = node.attributes[i];
+      if (/^data-/.test(a.name)) { sel += '[' + a.name + '="' + attrEsc(a.value) + '"]'; named = true; }
+    }
+    return { node: node, sel: named ? sel : null };
+  }
+  function restoreFocus(rp) {
+    if (!rp) return;
+    var t = rp.node;
+    if (!t || !document.documentElement.contains(t)) {
+      t = null;
+      if (rp.sel) { try { t = document.querySelector(rp.sel); } catch (e) { t = null; } }
+    }
+    if (!t || t.disabled || (t.closest && t.closest('[inert]'))) return;
+    try { t.focus({ preventScroll: true }); } catch (e) { /* not focusable */ }
+  }
+  /* open({ question?, send?, from? }). With `question` the box is filled; with
+   * `send: true` it is sent — through submit(), so a role not yet chosen or
+   * confirmed runs the usual prompt and the question waits in the box. `from` is
+   * the control that opened her, when focus has already left it. */
+  function open(opts) {
+    opts = opts || {};
+    if (!document.body) return false;
+    if (!cobiHost || !document.documentElement.contains(cobiHost)) {
+      cobiHost = document.getElementById('cplchat-cobi');
+      if (!cobiHost) {
+        cobiHost = document.createElement('div');
+        cobiHost.id = 'cplchat-cobi';
+        cobiHost.hidden = true;
+        document.body.appendChild(cobiHost);
+      }
+    }
+    // A box whose host went away is rebuilt; one that is up is reused as it is.
+    if (cobiBox && fullBox !== cobiBox && !cobiHost.contains(cobiBox.wrap)) {
+      cobiBox.retired = true;
+      cobiBox = null;
+    }
+    if (!cobiBox) {
+      // Nobody's college page: no scope, the generic starters, her own surface.
+      cobiBox = build(cobiHost, { dock: true, cobi: true, surface: COBI_SURFACE, scope: null, suggestions: null });
+    }
+    var b = cobiBox;
+    if (fullBox !== b) {
+      cobiReturn = returnPoint(opts.from || document.activeElement);
+      cobiOver = lastTab || currentTab();
+      // My College's Sierra steps back into her seat first: one dialog at a time.
+      if (fullBox) collapseDock(false);
+      if (!expandDock(b, true)) return false;
+    }
+    activate(b);
+    var q = opts.question == null ? '' : String(opts.question).trim();
+    if (q) {
+      b.input.value = q.slice(0, 1000);
+      if (opts.send) {
+        submit(b);
+        // Sending disables the box while she answers, and a disabled box drops
+        // focus to <body>: hold it on the dialog, as a dock's own send does.
+        // submit() hands it back to the box when she is done.
+        if (b.busy) { try { b.wrap.focus({ preventScroll: true }); } catch (e) { /* no focus support */ } }
+      }
+      else { try { b.input.focus({ preventScroll: true }); } catch (e) { /* no focus support */ } }
+    }
+    return true;
   }
 
+  /* ⭐ THE RETIRED TAB'S ADDRESS STILL WORKS. tabs.js lands a hash that names no
+   * tab on the home tab, so a bookmark or an old link to #chatbot would land on
+   * a page with no assistant on it. It opens Sierra AI over that tab instead,
+   * fills her box with a hand-off waiting for her, and puts the home tab's own
+   * address back, so Back, a reload and the next #chatbot link behave. Deferred
+   * a turn: on a cold load this fires inside tabs.js's DOMContentLoaded, and the
+   * page's other modules have not added their own body-level elements yet —
+   * opening first would leave those outside the dialog's inert backdrop. */
+  var RETIRED_TAB = 'chatbot';
+  function retiredLink() {
+    return (location.hash || '').replace(/^#/, '').split('/')[0] === RETIRED_TAB;
+  }
+  var retiredPending = false;
+  function openRetired() {
+    if (retiredPending) return;
+    retiredPending = true;
+    setTimeout(function () {
+      retiredPending = false;
+      if (!retiredLink()) return;
+      var t = lastTab || currentTab();
+      try {
+        history.replaceState(null, '', location.pathname + location.search
+          + (t && t !== 'dashboard' ? '#' + t : ''));
+      } catch (e) { /* the address stays; she still opens */ }
+      if (open()) consumeTestQuestion();
+    }, 0);
+  }
+
+  window.addEventListener('cpl-tab-activated', function (e) {
+    var t = e && e.detail && e.detail.tab;
+    if (t) lastTab = t;
+    if (fullBox && t) {
+      if (fullBox === cobiBox) {
+        // She covers the tab she was opened over. Arriving at another one (the
+        // browser's Back, a link) closes her; the same tab announced again (a
+        // sign-in landing) leaves her be.
+        if (cobiOver && t !== cobiOver) collapseDock(true, true);
+      } else {
+        // Full screen covers the tab it came from; arriving anywhere else (the
+        // browser's Back, a deep link) takes it back to its seat first.
+        var pane = document.getElementById('tab-' + t);
+        if (!pane || !pane.contains(dockHold)) collapseDock(true);
+      }
+    }
+    if (t && retiredLink()) openRetired();
+  });
+
   // ── Mount the SAME assistant somewhere else (Sam, 2026-08-11) ──────────────
-  // The My College tab embeds the assistant rather than linking out to
-  // #chatbot, so a coordinator never leaves the page. This is deliberately a
-  // SECOND MOUNT of the one instance, not a second assistant: the audience
-  // rules, the feedback path, the markdown renderer and the conversation
-  // history all stay in this file, so they cannot drift apart. `convo` is
-  // module-level on purpose — the thread follows you between the two places.
+  // The My College tab embeds the assistant rather than sending the reader
+  // elsewhere, so a coordinator never leaves the page. This is deliberately a
+  // SECOND BOX of the one instance, not a second assistant: the audience rules,
+  // the feedback path, the markdown renderer and the conversation history all
+  // stay in this file, so they cannot drift apart. `convo` is module-level on
+  // purpose — the thread follows you between the two places.
   //
-  // Only one host is live at a time (they are tab panes), and build() re-points
-  // the module's element refs, so re-mounting on tab switch is correct rather
-  // than duplicative. `_host` tracks which one currently owns the widget.
+  // One DOCK is live at a time (they are tab panes): each mountInto() builds a
+  // new box and retires the one before, so re-mounting on a repaint is correct
+  // rather than duplicative. `_host` tracks which host currently owns the dock.
+  // The COBI-wide box is not a dock host and is never retired by this.
   var _host = null, _hostPane = null;
   function paneOf(node) {
     for (var n = node; n && n.nodeType === 1; n = n.parentNode) {
@@ -1587,13 +1844,15 @@
   }
   function mountInto(host, surface) {
     if (!host || host === _host) return;
+    var prev = dockBox;
     /* ⚠ A FULL-SCREEN SIERRA SURVIVES THE TAB REPAINTING UNDER HER. The wrap
      * sits in <body>, so the repaint did not touch it, but the rebuild below
      * reads the old mount: collapse it back into its seat (in the old, possibly
      * detached, host), rebuild, and expand the new wrap. Not the reader going
-     * back, so `wentBack` is untouched. */
-    var wasFull = expanded;
-    var hadFocus = !!(wasFull && wrapEl && wrapEl.contains(document.activeElement));
+     * back, so `wentBack` is untouched. Only the DOCK's own full screen counts:
+     * a repaint under the COBI-wide box leaves her open where she is. */
+    var wasFull = !!(prev && fullBox === prev);
+    var hadFocus = !!(wasFull && prev.wrap.contains(document.activeElement));
     if (wasFull) collapseDock(false);
     /* ⚠ CARRY UNSENT TYPING ACROSS A RE-MOUNT. The embedding tab re-renders for
      * reasons that are not the reader's — My College repaints when its roster,
@@ -1601,118 +1860,163 @@
      * this a NEW host, which build() fills with a new, EMPTY input. A question
      * half-typed there, or handed over from Sierra Training, would vanish a
      * second later.
-     * Only the previous mount's own input is carried: if the CPL Assistant pane
-     * built last, `inputEl` is that pane's and stays where it is. */
-    var carried = (_host && inputEl && _host.contains(inputEl)) ? inputEl.value : '';
+     * Only the previous dock's own input is carried, and only from the host it
+     * was mounted in; the COBI-wide box's typing stays where it is. */
+    var carried = (prev && _host && prev.input && _host.contains(prev.input)) ? prev.input.value : '';
     /* ⚠ AND THE CONVERSATION, WHEN THE SAME TAB REPAINTS. `convo` is sent with
      * the next question, so a rebuilt log that starts empty breaks "what we send
      * is never more than what is on screen" — and an answer still streaming
      * would write into the old, detached bubble. The turn rows move (the same
-     * nodes, so a streaming bubble keeps streaming). A different tab is a
-     * different place on the page and keeps today's empty log; a new subject
-     * still clears through setScope(). */
+     * nodes, so a streaming bubble keeps streaming), and the old box names the
+     * new one as its `next`, so the stream's last steps land there (live()). A
+     * different tab is a different place on the page and keeps today's empty
+     * log; a new subject still clears through setScope(). */
     var samePane = !!(_host && _hostPane && paneOf(host) === _hostPane);
-    var oldLog = (samePane && logEl && _host.contains(logEl)) ? logEl : null;
+    var oldLog = (samePane && prev && prev.log && _host.contains(prev.log)) ? prev.log : null;
     _host = host;
     _hostPane = paneOf(host);
-    /* The embedding tab declares which surface it is. Absent -> null -> every
-     * guidance rule, i.e. exactly today's behavior, so an older host that has
-     * not been updated is unaffected rather than mis-scoped. */
-    hostSurface = surface || null;
     host.innerHTML = '';
     host.setAttribute('data-cplchat-mounted', '1');
-    build(host, true);
-    if (carried && inputEl && !inputEl.value) inputEl.value = carried;
-    if (oldLog && logEl) {
+    /* The dock's context carries over from the box before it (or the seed a
+     * host set before its first mount); the setters change it afterwards. The
+     * embedding tab declares which surface it is. Absent -> null -> every
+     * guidance rule, i.e. exactly today's behavior, so an older host that has
+     * not been updated is unaffected rather than mis-scoped. */
+    var from = prev || dockSeed;
+    var b = build(host, { dock: true, surface: surface || null, scope: from.scope, suggestions: from.suggestions });
+    if (prev) {
+      prev.retired = true;
+      b.wentBack = prev.wentBack;
+      if (samePane) { prev.next = b; b.busy = prev.busy; b.stick = prev.stick; }
+    }
+    dockBox = b;
+    if (carried && b.input && !b.input.value) b.input.value = carried;
+    if (oldLog && b.log) {
       var turns = [];
       for (var i = 0; i < oldLog.children.length; i++) {
         var c = oldLog.children[i];
         if (c.classList.contains('cplchat-msg') || c.classList.contains('cplchat-fb')) turns.push(c);
       }
-      turns.forEach(function (t) { logEl.appendChild(t); });
+      turns.forEach(function (t) { b.log.appendChild(t); });
     }
     // Mid-answer, the new box waits as the old one did.
-    if (busy && sendBtn && inputEl) { sendBtn.disabled = true; inputEl.disabled = true; setStatus('Thinking…', 'pending'); }
+    if (b.busy) { b.send.disabled = true; b.input.disabled = true; setStatus(b, 'Thinking…', 'pending'); }
+    // A question held for the role prompt moved with the typing: hold it here.
+    if (prev && pendingAsk === prev) {
+      pendingAsk = null;
+      if (carried && audience && !audienceConfirmed) confirmAudience(b);
+    }
     // A Sierra Training hand-off addressed to My College lands in the box this
-    // mount just built. The default hand-off is still never consumed here.
+    // mount just built. The default hand-off is never consumed here.
     if (testDest() === DEST_MY_COLLEGE) consumeTestQuestion(host);
     /* Re-expand once the host has finished with its new box, not now: My College
      * goes on to hoist the box's heading into its <summary> and hand it the
      * scope and questions, and it looks for the box inside its own section. A
      * microtask runs before the next paint, so nothing flickers. */
     if (wasFull) {
-      var built = wrapEl;
       Promise.resolve().then(function () {
-        if (!expanded && wrapEl === built) expandDock(hadFocus);
+        if (!fullBox && dockBox === b) expandDock(b, hadFocus);
       });
     }
   }
 
+  // A #chatbot link on a cold load, if tabs.js has not routed it (see openRetired).
+  function landing() { if (retiredLink()) openRetired(); }
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', mount);
+    document.addEventListener('DOMContentLoaded', landing);
   } else {
-    mount();
+    landing();
   }
 
   // Pure helpers exposed for the jsdom tests (tests/cpl_chat_audience.test.js,
-  // tests/sierra_markdown.test.js).
+  // tests/sierra_markdown.test.js), and the API the dashboard calls.
   window.CPL_CHAT = {
     AUDIENCES: AUDIENCES, AUD_KEY: AUD_KEY, AUD_OK_KEY: AUD_OK_KEY,
     feedbackPayload: feedbackPayload,
-    credentialHeaders: credentialHeaders, noteViewer: noteViewer, VIEWER_WORDS: VIEWER_WORDS,
+    credentialHeaders: credentialHeaders, VIEWER_WORDS: VIEWER_WORDS,
+    // The recognition line of the box the reader is in (a seam: the stream's own
+    // `meta` frame is what calls it in use, on the box the question was asked in).
+    noteViewer: function (meta) { noteViewer(meta, apiBox()); },
     escapeHtml: escapeHtml, inlineMd: inlineMd, renderMarkdown: renderMarkdown,
     SIERRA_MARK: SIERRA_MARK, TEST_Q_KEY: TEST_Q_KEY, TEST_DEST_KEY: TEST_DEST_KEY,
     consumeTestQuestion: consumeTestQuestion,
+    /* Sierra AI over whatever COBI tab is showing (S398): { question?, send?,
+     * from? }. The one way in for Sierra Training's "Try it in: Sierra" and
+     * "Save & ask Sierra", the Where To? router, My College's last resort and a
+     * #chatbot link. Returns false only when there is no page to open over. */
+    open: open,
     // The growing-log follow (tests/my_college_refinement.test.js). jsdom has no
     // layout, so the only way to exercise the below-the-fold branch is to stub
     // the geometry and drive scrollDown() directly; `_setStick` reproduces the
     // reader-scrolled-away state that `nearBottom()` cannot reach with every
     // rect at zero. Test seams, not API — underscored, and nothing calls them.
-    _scrollDown: scrollDown,
-    _setStick: function (v) { stick = !!v; },
+    // Each acts on the box the reader is in (apiBox).
+    _scrollDown: function () { scrollDown(apiBox()); },
+    _setStick: function (v) { var b = apiBox(); if (b) b.stick = !!v; },
     // The full-screen dock (tests/cpl_chat_dock_full.test.js). Seams, not API.
-    _dockExpanded: function () { return expanded; },
-    _expandDock: function () { return expandDock(true); },
+    _dockExpanded: function () { return !!fullBox; },
+    _expandDock: function () { return expandDock(apiBox(), true); },
     _collapseDock: function () { return collapseDock(true); },
+    // Each box's own context (tests/sierra_one_cobi.test.js): "cobi", "dock" or
+    // the box the reader is in. Copies, so a test cannot change what it reads.
+    _boxContext: function (which) {
+      var b = which === 'cobi' ? cobiBox : which === 'dock' ? dockBox : apiBox();
+      if (!b) return null;
+      return { scope: b.scope, surface: b.surface, suggestions: b.suggestions ? b.suggestions.slice() : null,
+               wrap: b.wrap, input: b.input, cobi: b.cobi, retired: b.retired };
+    },
     // Embed the one assistant elsewhere (My College). See mountInto above.
     mountInto: mountInto,
     // Prefill the box without sending — the visitor edits before asking.
-    // ⚠ Do NOT make this send. The Sierra Training tab's "Test in Sierra"
-    // hand-off depends on the reviewer being able to tweak a logged question
-    // before replaying it. Use ask() when you want one click to be enough.
+    // ⚠ Do NOT make this send. It is the send-free fill: My College's
+    // askSierra() falls back to it, and a logged question replayed this way is
+    // one the reviewer edits first. Use ask() or open({ send: true }) when one
+    // click should be enough.
     prefill: function (q) {
-      if (!inputEl) return false;
-      inputEl.value = String(q == null ? '' : q).slice(0, 1000);
-      try { inputEl.focus(); } catch (e) { /* hidden pane */ }
+      var b = apiBox();
+      if (!b) return false;
+      if (b === cobiBox && fullBox !== b) open();   // a closed box is a box nobody can see
+      b.input.value = String(q == null ? '' : q).slice(0, 1000);
+      try { b.input.focus(); } catch (e) { /* hidden pane */ }
       return true;
     },
     // Fill AND send — the behavior of this assistant's own starter chips,
     // exposed so an embedding tab's suggested questions cost one click rather
     // than two (Sam, 2026-08-11: "so they don't have to take 2 steps and get
-    // lost"). Returns false if the assistant is not mounted, so the caller can
-    // fall back to navigating to the full tab.
+    // lost"). It acts on the box the reader is in. Returns false if no box is
+    // built yet, so the caller can fall back to open().
     ask: function (q) {
-      if (!inputEl) return false;
-      inputEl.value = String(q == null ? '' : q).slice(0, 1000);
-      submit();
+      var b = apiBox();
+      if (!b) return false;
+      var text = String(q == null ? '' : q).slice(0, 1000);
+      // The COBI-wide box opens first, and open() keeps focus on her while she answers.
+      if (b === cobiBox) return open({ question: text, send: true });
+      b.input.value = text;
+      submit(b);
       return true;
     },
     /* Hand the embedding tab's own questions to the widget, so there is ONE
      * cluster and it sits below the role chips. Pass a falsy value or an empty
      * array to go back to the generic starters. Call it AFTER mountInto() —
      * build() creates the row this paints into. Returns false if nothing is
-     * mounted, so a caller can tell "not shown" from "shown empty". */
+     * mounted, so a caller can tell "not shown" from "shown empty".
+     *
+     * It writes to the DOCK (My College's box), never to the COBI-wide box:
+     * opening Sierra AI over a tab must not change My College's starters, and
+     * My College's must not follow the reader into her. */
     setSuggestions: function (list) {
-      hostSuggestions = (list && list.length) ? list.slice(0, 8).map(function (q) {
+      var t = dockBox || dockSeed;
+      t.suggestions = (list && list.length) ? list.slice(0, 8).map(function (q) {
         return String(q == null ? '' : q).slice(0, 300);
       }) : null;
-      if (!chipsEl) return false;
-      renderSuggestions();
+      if (!dockBox || !dockBox.chips) return false;
+      renderSuggestions(dockBox);
       return true;
     },
-    /* Tell the assistant whose page it is now sitting on. See `hostScope` above
-     * for why this exists — the short version is that the thread must not
-     * outlive the subject it was formed under.
+    /* Tell the assistant whose page it is now sitting on. See the thread note
+     * above `active` for why this exists — the short version is that the thread
+     * must not outlive the subject it was formed under. Like setSuggestions, it
+     * writes the DOCK's scope; the COBI-wide box never has one.
      *
      * `kind` is "college" | "district" | "statewide"; `label` is the full name
      * as the host displays it ("Los Angeles Community College District", never
@@ -1748,23 +2052,23 @@
         var name = String(label).trim().slice(0, 200);
         if (name) next = { kind: kind, label: name };
       }
-      hostScope = next;
-      // No subject (the generic pane, or a scope not yet chosen): the anchor is
-      // cleared — a stale one must never steer an answer — but the thread is a
-      // conversation the reader can still read, so it stands.
+      (dockBox || dockSeed).scope = next;
+      // No subject (a scope not yet chosen): the anchor is cleared — a stale
+      // one must never steer an answer — but the thread is a conversation the
+      // reader can still read, so it stands.
       if (!next) return false;
       var nextKey = next.kind + ':' + next.label;
       if (nextKey === threadSubject) return false;   // same subject; thread stands
-      // A DIFFERENT subject. Drop the thread, and clear the transcript, so the
-      // two can never disagree about what this conversation contains.
+      // A DIFFERENT subject. Drop the thread, and clear the dock's transcript, so
+      // the two can never disagree about what this conversation contains.
       threadSubject = nextKey;
       convo = [];
-      clearTranscript();
+      clearTranscript(dockBox);
       return true;
     },
     // Test seam for the above — asserting on what would be SENT is the only way
     // to catch a thread that is invisible on screen and still in the payload.
     _thread: function () { return convo.slice(); },
-    _scope: function () { return hostScope; },
+    _scope: function () { return (dockBox || dockSeed).scope; },
   };
 })();

@@ -132,12 +132,12 @@ block("(4)", function () {
 
 // ── (5) Every caller declares itself, and the two-surface file does it twice ──
 block("(5)", function () {
-  check("(5) ⭐ ONE FILE, TWO SURFACES — the dedicated pane names itself",
-    /hostSurface = 'cobi-assistant';/.test(CHAT),
-    "cpl_chat.js mounts on the CPL Assistant pane AND inside My College");
+  check("(5) ⭐ ONE FILE, TWO SURFACES — Sierra AI's own box names itself",
+    /var COBI_SURFACE = 'cobi-assistant';/.test(CHAT) && /surface: COBI_SURFACE/.test(CHAT),
+    "cpl_chat.js opens over any tab (the CPL Assistant tab's heir, S398) AND docks inside My College");
   check("(5) …and the embedding host declares its own at mountInto",
     /function mountInto\(host, surface\)/.test(CHAT) &&
-    /hostSurface = surface \|\| null;/.test(CHAT),
+    /surface: surface \|\| null/.test(CHAT),
     "|| null so an older host that passes nothing gets every rule, not a wrong one");
   check("(5) My College passes it",
     /C\.mountInto\(host, "my-college"\)/.test(BRIEFING));

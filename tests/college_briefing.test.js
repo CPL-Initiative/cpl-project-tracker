@@ -463,7 +463,7 @@ check("districts: null when the roster has not loaded",
 const chatSrc = fs.readFileSync("cpl_chat.js", "utf8");
 check("Sierra AI: cpl_chat exposes a second-mount hook", /mountInto:\s*mountInto/.test(chatSrc));
 check("Sierra AI: cpl_chat exposes prefill (fill the box, never auto-send)",
-  /prefill:\s*function/.test(chatSrc) && !/\bsubmit\(\)/.test(chatSrc.slice(chatSrc.indexOf("prefill: function"), chatSrc.indexOf("prefill: function") + 400)));
+  /prefill:\s*function/.test(chatSrc) && !/\bsubmit\(/.test(chatSrc.slice(chatSrc.indexOf("prefill: function"), chatSrc.indexOf("prefill: function") + 400)));
 check("Sierra AI: the briefing mounts that instance rather than building a chat",
   /CPL_CHAT/.test(briefingSrc) && /mountInto/.test(briefingSrc));
 check("Sierra AI: the briefing never calls the chat endpoint itself",
@@ -484,11 +484,11 @@ check("ask(): the chat module exposes a fill-and-send entry point",
   /ask:\s*function/.test(chatSrc));
 check("ask(): it actually submits", (function () {
   const at = chatSrc.indexOf("ask: function");
-  return at !== -1 && /submit\(\)/.test(chatSrc.slice(at, at + 300));
+  return at !== -1 && /\bsubmit\(b\)/.test(chatSrc.slice(at, at + 400));
 })());
 check("ask(): prefill() still does NOT send — the Training tab depends on it", (function () {
   const at = chatSrc.indexOf("prefill: function");
-  return at !== -1 && !/submit\(\)/.test(chatSrc.slice(at, at + 300));
+  return at !== -1 && !/\bsubmit\(/.test(chatSrc.slice(at, at + 300));
 })(), "a reviewer edits a logged question before replaying it");
 check("askSierra() prefers ask() over prefill()",
   briefingSrc.indexOf("C.ask(question)") !== -1 &&

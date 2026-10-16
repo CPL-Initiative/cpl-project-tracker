@@ -30,8 +30,8 @@ check("Rule 4: CPL_Dashboard.html === index.html", cpl === idx);
 });
 // A tab missing from GROUPS stays top-level rather than erroring, so this is the
 // kind of thing that silently looks wrong forever. Team-only tools belong together.
-check("nav: governance sits in the team-tools group",
-  /tabs: \['chatbot', 'sierra-training', 'map-users', 'governance'/.test(
+check("nav: governance sits in the team-tools group (the CPL Assistant tab left it 2026-10-16)",
+  /tabs: \['sierra-training', 'map-users', 'governance'/.test(
     fs.readFileSync("nav_groups.js", "utf8")));
 
 // ── The register ──

@@ -4184,15 +4184,16 @@
     });
   }
 
-  /* ── The CPL Assistant, embedded ──────────────────────────────────────────
+  /* ── Sierra AI, embedded ──────────────────────────────────────────────────
    * Sam, 2026-08-11: "embed the functionality right on the page… so they can
    * type their question there and not leave the tab." This mounts the SAME
-   * assistant cpl_chat.js owns — one instance in a second place — so the
-   * audience rules, feedback path and conversation history stay in one file
-   * and cannot drift. Clicking a suggested question PREFILLS without sending,
-   * so the person can edit it first.
+   * assistant cpl_chat.js owns — a box of its own, with this tab's scope,
+   * surface and questions — so the audience rules, feedback path and
+   * conversation history stay in one file and cannot drift.
    *
-   * Falls back to the deep link if the chat module has not loaded. */
+   * Without a box here, askSierra() opens Sierra AI over the tab instead
+   * (CPL_CHAT.open); the CPL Assistant tab it used to send the reader to
+   * retired 2026-10-16 (S398). */
   var SIERRA_Q_KEY = "cplSierraTestQ.v1";
   function chatModule() {
     var C = window.CPL_CHAT;
@@ -4299,9 +4300,10 @@
    * don't have to take 2 steps and get lost."
    *
    * ask() is preferred; prefill() is the fallback for an older chat module and
-   * deliberately does NOT send (the Sierra Training tab replays a logged
-   * question through it and the reviewer edits first). If neither is
-   * available the question is stashed and we navigate to the full tab. */
+   * deliberately does NOT send (a reviewer edits a logged question first). If
+   * neither has a box to fill, Sierra AI opens over this tab and asks
+   * (CPL_CHAT.open). Without even that, the question is stashed under the
+   * hand-off key and the #chatbot link carries it to her. */
   function askSierra(question) {
     /* ⚠ SIERRA MAY BE COLLAPSED. Since 2026-08-17 she is a <details>, and
      * Collapse all closes her along with everything else. Prefilling a widget
@@ -4318,13 +4320,11 @@
     var C = chatModule();
     if (C && typeof C.ask === "function" && C.ask(question)) return;          // fills + sends
     if (C && typeof C.prefill === "function" && C.prefill(question)) return;  // stays on the tab
+    var S = window.CPL_CHAT;                                                    // over the tab, and asks
+    if (S && typeof S.open === "function" && S.open({ question: String(question || "").slice(0, 1000), send: true })) return;
     try { sessionStorage.setItem(SIERRA_Q_KEY, String(question || "").slice(0, 1000)); }
     catch (e) { /* storage unavailable — the chat still opens, just unprefilled */ }
-    if (window.CPL_TABS && typeof window.CPL_TABS.navigate === "function") {
-      window.CPL_TABS.navigate("chatbot");
-    } else {
-      location.hash = "#chatbot";
-    }
+    location.hash = "#chatbot";   // the retired tab's address opens Sierra AI and fills her box
   }
 
   /* PURE. The questions worth asking about THIS college — computed from its own

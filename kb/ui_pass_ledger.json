@@ -262,8 +262,8 @@
    "name": "Memory",
    "page": "index.html#memory",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-16",
+   "outcome": "Signed out the sweep saw only the lock, so six seeded states (Add form, a record's tools, Report; light and dark) now measure it: twelve labels moved off decoration-only --text-faint (3.24:1 light, 4.01:1 dark), every control is an underlined word (filled primary and danger retired, toggles marked by weight and aria-pressed), targets to 24px (tag chips, status word, tags, the All toggle, two checkbox labels), a faded zero-count chip and dark's white-on-pastel kind pill fixed, five emoji out; all clean in both themes. Deferred: the tab's 27 scoped palette tokens have drifted from index.html's (dark --text-muted #A9A79E vs #ABABA3). Wiring: cpl_memory and cpl_memory_log have no other reader; cpl-chat shares no figure."
   },
   {
    "id": "cobi:map-data-quality",
@@ -333,14 +333,6 @@
    "id": "cobi:cpl-news",
    "name": "CPL News",
    "page": "index.html#cpl-news",
-   "audience": "staff",
-   "last": null,
-   "outcome": null
-  },
-  {
-   "id": "cobi:chatbot",
-   "name": "CPL Assistant",
-   "page": "index.html#chatbot",
    "audience": "staff",
    "last": null,
    "outcome": null

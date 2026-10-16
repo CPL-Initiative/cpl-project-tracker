@@ -6,9 +6,11 @@
 //  (b) LOG-TURN LINK — a feedback row resolves its chat_interactions turn
 //      (same normalized question, nearest in time) and the expanded row shows
 //      the retrieval telemetry (similarity / topic-match / gap chips);
-//  (c) TEST IN SIERRA — the 🧪 button stores the question under the shared
-//      sessionStorage key and navigates to #chatbot; cpl_chat.js consumes it
-//      on chatbot activation by PREFILLING the input (never auto-sending);
+//  (c) TEST IN SIERRA — since S398 the button opens Sierra AI over this tab and
+//      asks (CPL_CHAT.open, send: true), leaving no key behind; without the
+//      chat module it stores the question under the shared sessionStorage key
+//      and goes by the #chatbot link, which cpl_chat.js answers by opening
+//      Sierra AI and PREFILLING her input (never auto-sending);
 //  (d) BULK TRIAGE — "Mark all N filtered → status" fires one
 //      sierra_feedback_set_status RPC per filtered row not already there,
 //      and skips rows already at the target;
@@ -100,7 +102,11 @@ function makeWin(opts) {
 })();
 
 // ── (c) Test in Sierra — producer + cpl_chat consumer ──
-(function () {
+// Since S398 the producer asks Sierra AI over this tab (CPL_CHAT.open with
+// send: true) and never leaves it; the key-and-link path is its fallback when
+// the chat module cannot open, and the #chatbot link is what consumes it.
+// Awaited before the report: the consumer half waits on the link's deferral.
+const handoffDone = (async function () {
   const w = makeWin();
   const api = w.CPL_SIERRA_TRAINING_TAB;
   api._state.feedback = [{ turn_id: "t9", question: "What about CPR credit?", rating: "down", status: "new", created_at: iso(1) }];
@@ -109,40 +115,32 @@ function makeWin(opts) {
   check("lookupQuestion resolves a gap handle (numeric id)", api._lookupQuestion("gap:7") === "gap question");
   check("lookupQuestion rejects a malformed handle", api._lookupQuestion("zzz") === null);
 
-  // The real page HAS a CPL Assistant pane; this fixture did not, so the
-  // hand-off's new suppression fallback correctly routed elsewhere and the
-  // assertion read as a regression. Give the fixture the pane it is meant to
-  // represent, then test the suppressed case on purpose below.
-  w.document.body.insertAdjacentHTML("beforeend",
-    '<div id="tab-chatbot"></div><nav><button class="cpl-tab" data-tab="chatbot"></button></nav>');
+  // The live page has the chat module; Sierra AI opens over this tab and asks.
+  const opened = [];
+  w.CPL_CHAT = { open: function (o) { opened.push(o); return true; } };
+  const btn = w.document.createElement("button");
+  w.location.hash = "#sierra-training";
+  api._testInSierra("What about CPR credit?", undefined, btn);
+  check("testInSierra opens Sierra AI with the question, to be asked at once",
+    opened.length === 1 && opened[0].question === "What about CPR credit?" && opened[0].send === true);
+  check("…and hands her the control that asked, for focus on the way back", opened.length === 1 && opened[0].from === btn);
+  check("…and stays on this tab, writing no hand-off key",
+    w.location.hash === "#sierra-training" && w.sessionStorage.getItem("cplSierraTestQ.v1") === null);
 
-  api._testInSierra("What about CPR credit?");
-  check("testInSierra stores the question under the shared key",
-    w.sessionStorage.getItem("cplSierraTestQ.v1") === "What about CPR credit?");
-  check("testInSierra navigates to #chatbot", w.location.hash === "#chatbot");
+  // No chat module that can open (an older page): the question waits under the
+  // shared key and the retired tab's address carries it to Sierra AI.
+  w.CPL_CHAT = undefined;
+  w.sessionStorage.setItem("cplSierraTestDest.v1", "college-briefing");   // stale, from a hop that never landed
+  api._testInSierra("fallback question");
+  check("without open(), testInSierra stores the question under the shared key",
+    w.sessionStorage.getItem("cplSierraTestQ.v1") === "fallback question");
+  check("…clears a stale My College destination, so the default stays the default",
+    w.sessionStorage.getItem("cplSierraTestDest.v1") === null);
+  check("…and goes by the #chatbot link", w.location.hash === "#chatbot");
 
-  // Sam, 2026-08-14, planning to suppress CPL Assistant from an Admin tab
-  // because it is now the same assistant as Sierra. It is — but this hand-off
-  // named #chatbot, so suppressing that tab would have left the trainer with no
-  // way to test an instruction, and it would have failed SILENTLY.
-  w.document.querySelector('.cpl-tab[data-tab="chatbot"]').setAttribute("data-org-hidden", "1");
-  w.location.hash = "#none";
-  api._testInSierra("suppressed-case question");
-  check("a suppressed CPL Assistant reroutes the hand-off to My College",
-    w.location.hash === "#college-briefing");
-  check("the question still reaches the shared key when rerouted",
-    w.sessionStorage.getItem("cplSierraTestQ.v1") === "suppressed-case question");
-
-  // And with no pane at all (removed rather than hidden).
-  w.document.getElementById("tab-chatbot").remove();
-  w.location.hash = "#none";
-  api._testInSierra("no-pane question");
-  check("a missing CPL Assistant pane also reroutes rather than dead-ending",
-    w.location.hash === "#college-briefing");
-
-  // consumer side: cpl_chat.js prefills (never auto-sends) on chatbot activation
-  const dom2 = new JSDOM('<!doctype html><html><head></head><body><div class="cpl-tab-pane" id="tab-chatbot"><div class="main-container"></div></div></body></html>',
-    { url: "https://example.org/", runScripts: "outside-only" });
+  // consumer side: the #chatbot link opens Sierra AI and fills (never sends)
+  const dom2 = new JSDOM('<!doctype html><html><head></head><body><div class="cpl-tab-pane" id="tab-dashboard"></div></body></html>',
+    { url: "https://example.org/#chatbot", runScripts: "outside-only" });
   const w2 = dom2.window;
   w2.requestAnimationFrame = (cb) => setTimeout(cb, 0);
   w2.__fetches = [];
@@ -150,17 +148,21 @@ function makeWin(opts) {
   w2.sessionStorage.setItem("cplSierraTestQ.v1", "What about CPR credit?");
   w2.eval(CHAT_SRC);
   w2.document.dispatchEvent(new w2.Event("DOMContentLoaded", { bubbles: false }));
-  const input = w2.document.getElementById("cplchat-input");
-  check("cpl_chat consumes the prefill at mount (deep-link landing)",
+  await new Promise((r) => setTimeout(r, 5));
+  const input = w2.document.querySelector("#cplchat-cobi .cplchat-input, .cplchat-full .cplchat-input");
+  check("cpl_chat consumes the prefill on the #chatbot landing, in Sierra AI's own box",
     input && input.value === "What about CPR credit?");
   check("prefill key is cleared after consumption", w2.sessionStorage.getItem("cplSierraTestQ.v1") === null);
   check("prefill never auto-sends", w2.__fetches.length === 0);
 
-  // and again via the window-dispatched tab-activation event
+  // and again via the window-dispatched tab-activation event, on a later link
   w2.sessionStorage.setItem("cplSierraTestQ.v1", "second question");
-  w2.dispatchEvent(new w2.CustomEvent("cpl-tab-activated", { detail: { tab: "chatbot" } }));
-  check("cpl_chat consumes the prefill on cpl-tab-activated (window)",
-    input.value === "second question");
+  w2.CPL_CHAT._collapseDock();
+  w2.history.replaceState(null, "", "/#chatbot");
+  w2.dispatchEvent(new w2.CustomEvent("cpl-tab-activated", { detail: { tab: "dashboard" } }));
+  await new Promise((r) => setTimeout(r, 5));
+  check("cpl_chat consumes the prefill on cpl-tab-activated (window) with the #chatbot link",
+    !!input && input.value === "second question" && w2.CPL_CHAT._dockExpanded());
 })();
 
 // ── (d) bulk triage ──
@@ -184,7 +186,7 @@ function makeWin(opts) {
     bodies.every((b) => b.p_status === "triaged") &&
     bodies.map((b) => b.p_turn_id).sort().join(",") === "b1,b3");
   check("bulk triage updates local state", api._state.feedback.every((f) => f.status === "triaged"));
-})().then(report);
+})().then(function () { return handoffDone; }).then(report);
 
 // ── (e) window-listener fix ──
 function checkListener() {

@@ -20,12 +20,13 @@
 //      and the editor stays open with the text intact — the team_access lesson:
 //      an "ok" write must prove it touched a row, or a curator watches their
 //      edit vanish while the UI says it saved;
-//  (d) "Save & ask Sierra" saves FIRST and only hops on a confirmed write —
-//      hopping on an unsaved edit tests the OLD wording and reads as "the
-//      instruction did nothing";
-//  (e) the open editor SURVIVES the round trip to #chatbot via sessionStorage,
-//      because testing means leaving the tab and the whole point is to come
-//      back and keep editing;
+//  (d) "Save & ask Sierra" saves FIRST and only asks on a confirmed write —
+//      asking on an unsaved edit tests the OLD wording and reads as "the
+//      instruction did nothing". Since S398 she opens over this tab and asks
+//      (CPL_CHAT.open), so the trainer never leaves it;
+//  (e) the open editor SURVIVES a reload via sessionStorage (testing used to
+//      mean leaving the tab, and a reload still tears it down), because the
+//      whole point is to come back and keep editing;
 //  (f) editing does not reorder the list (the sent-cap position is load-bearing);
 //  (g) XSS — an edited rule renders escaped.
 //
@@ -166,20 +167,20 @@ function seed(api) {
   check("the saved wording is what will be tested",
     api._state.guidance[0].rule === "Name the college's ironworker exhibits explicitly.");
 
-  // The live page has a CPL Assistant pane; this fixture did not, so the
-  // hand-off's suppression fallback (added 2026-08-14, so a suppressed CPL
-  // Assistant reroutes to My College instead of dead-ending) correctly sent it
-  // elsewhere. Represent the real page. The suppressed path is covered in
+  // The live page has the chat module: since S398 the hand-off opens Sierra AI
+  // over this tab and asks (the old hop to the CPL Assistant tab is retired).
+  // Represent the real page; the fallback without the module is covered in
   // tests/sierra_training_p1.test.js and tests/sierra_test_handoff.test.js.
-  w.document.body.insertAdjacentHTML("beforeend",
-    '<div id="tab-chatbot"></div><nav><button class="cpl-tab" data-tab="chatbot"></button></nav>');
-
+  const opened = [];
+  w.CPL_CHAT = { open: function (o) { opened.push(o); return true; } };
+  w.location.hash = "#sierra-training";
   api._testInSierra(hopped);
-  check("the question is handed to the assistant via sessionStorage",
-    w.sessionStorage.getItem(api.TEST_Q_KEY) === "What CPL does Cerritos College offer for ironworkers?");
-  check("the handoff navigates to the assistant", w.location.hash === "#chatbot");
+  check("the saved test question goes to Sierra AI, to be asked at once",
+    opened.length === 1 && opened[0].question === "What CPL does Cerritos College offer for ironworkers?"
+      && opened[0].send === true);
+  check("the trainer stays on this tab while she answers", w.location.hash === "#sierra-training");
 
-  // The hop tears the tab down on a reload. The editor must come back.
+  // A reload still tears the tab down. The editor must come back.
   const stored = JSON.parse(w.sessionStorage.getItem(api.EDIT_KEY) || "null");
   check("the open editor is persisted for the return trip",
     stored && stored.id === "r1" && /ironworker exhibits/.test(stored.rule));

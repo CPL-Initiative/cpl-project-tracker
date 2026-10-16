@@ -28,14 +28,11 @@
  *                requests). Sam's sheet 34 card 2: one per college, kept with its
  *                history; a misread changes the procedure, never the record.
  *
- * Sierra docks at the top of the tab (Sam, open-asks sheet 38 card 5, 2026-10-05:
- * go; then "Sierra at the top", as on My College): a collapsible "Sierra AI"
- * section under the title, open until the reader closes it (the choice is
- * remembered), mounts the one CPL Assistant widget with CPL_CHAT.mountInto(host,
- * "program-requirements"), the pattern My College uses. The thread follows the
- * reader between the panes. cpl-chat reads an unknown surface as unscoped, so her
- * guidance stays unscoped until a deploy names this surface. Without the chat
- * module the section keeps the link to the CPL Assistant tab.
+ * No Sierra on this tab (Sam, 2026-10-14: "Let's take the Sierra window off the
+ * program requirements (PR) tab as I don't think it will be useful for now"). The
+ * docked "Sierra AI" section it carried from 2026-10-05 is gone, and
+ * the tab never mounts the assistant; Sierra AI opens over any tab through
+ * CPL_CHAT.open() (S398). Guard: tests/program_requirements.test.js (4b).
  *
  * Drafts for the college (Sam, open-asks sheet 32 card 2, 2026-10-04, as proposed): a
  * gap the college owns, where the catalog and the state's Program Course File list

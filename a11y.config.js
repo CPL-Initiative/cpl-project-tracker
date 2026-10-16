@@ -272,18 +272,74 @@ async function seedSierraDockFull(page, theme) {
   });
   await page.waitForTimeout(200);
 }
-async function sierraDockFullChecks(page) {
+/* Sierra AI over a COBI tab (S398: the CPL Assistant tab retired into her).
+   CPL_CHAT.open() puts her full screen over whatever tab is showing; she is
+   opened over Sierra Training, where the owner's "Try it in: Sierra" asks her,
+   and seeded the way the dock is: the role confirmed on its chip, only the chat
+   function's stream stubbed, six questions asked through open({ send: true }),
+   one answer carrying a table wider than a phone. */
+async function seedSierraCobiFull(page, theme) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "sierra-training") location.hash = "sierra-training"; });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  // First Light's once-a-day greeting would cover the screenshots (see seedSierraDockFull).
+  await page.evaluate(() => {
+    try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+  });
+  // The tab underneath has painted (its sign-in gate, with every read aborted), so
+  // nothing it adds to the page lands after the dialog has made the page inert.
+  await page.waitForFunction(() => window.CPL_CHAT && typeof window.CPL_CHAT.open === "function"
+    && window.CPL_SIERRA_TRAINING_TAB && !/^\s*Loading/.test((document.getElementById("sierra-training-root") || {}).textContent || ""),
+    null, { timeout: 60000 });
+  await page.evaluate(async () => {
+    window.CPL_CHAT.open();
+    const wrap = document.querySelector(".cplchat.cplchat-full");
+    const chip = Array.from(wrap.querySelectorAll(".cplchat-aud-chip")).find((b) => /Faculty/.test(b.textContent));
+    if (chip) chip.click();
+    const table = "\n\n| Credential | Course | Units | College | C-ID |\n|---|---|---|---|---|\n" +
+      "| FIW Orientation | WELD 100 Introduction to Welding Technology | 3.0 | Cerritos College | none |\n" +
+      "| Post Tensioning 3 | WELD 244 D1.1 Code Clinic | 2.0 | Santa Ana College | none |\n";
+    let n = 0;
+    const real = window.fetch;
+    window.fetch = function (url) {
+      // The chat function's request, by the name its URL ends in (see seedSierraDockFull).
+      if (!/\/cpl-chat(\?|$)/.test(String(url))) return real.apply(this, arguments);
+      const text = "Seeded answer " + (++n) + " for layout measurement, long enough to wrap on a narrow viewport " +
+        "and push the dialog past its own height. Ask the [CPL coordinator](https://example.org/cpl) at the college " +
+        "you plan to attend." + (n === 1 ? table : "");
+      const sse = "event: text\ndata: " + JSON.stringify({ text: text }) + "\n\nevent: done\ndata: {}\n\n";
+      return Promise.resolve(new Response(sse, { status: 200, headers: { "Content-Type": "text/event-stream" } }));
+    };
+    const idle = () => new Promise((resolve) => {
+      const t0 = Date.now();
+      (function poll() {
+        const box = document.querySelector(".cplchat-full .cplchat-input");
+        if ((box && !box.disabled) || Date.now() - t0 > 5000) resolve(); else setTimeout(poll, 30);
+      })();
+    });
+    for (let i = 0; i < 6; i++) {
+      window.CPL_CHAT.open({ question: "Seeded question " + (i + 1) +
+        ": I have a journey worker license as an Iron and Steel worker. What CPL can I get here?", send: true });
+      await new Promise((r) => setTimeout(r, 30));
+      await idle();
+    }
+  });
+  await page.waitForTimeout(200);
+}
+// The full-screen checks every Sierra dialog shares; `what` names the one measured.
+async function sierraFullScreenChecks(page, what) {
   const out = [];
-  out.push(await page.evaluate(() => {
+  out.push(await page.evaluate((what) => {
     const w = document.querySelector(".cplchat.cplchat-full");
     const lab = w && document.getElementById(w.getAttribute("aria-labelledby") || "");
     return {
-      name: "a send expands the dock: a modal dialog in <body>, named",
+      name: what + ": a modal dialog in <body>, named",
       ok: !!w && w.parentNode === document.body && w.getAttribute("role") === "dialog" &&
         w.getAttribute("aria-modal") === "true" && !!lab && lab.textContent.trim() === "Sierra AI",
       detail: w ? "role=" + w.getAttribute("role") + ", name=" + (lab ? '"' + lab.textContent.trim() + '"' : "none") : "not expanded",
     };
-  }));
+  }, what));
   out.push(await page.evaluate(() => {
     const w = document.querySelector(".cplchat-full");
     // A fixed layer above the dialog (First Light's greeting) stays live on purpose.
@@ -317,6 +373,10 @@ async function sierraDockFullChecks(page) {
       detail: "scrollTop after End = " + Math.round(w.scrollTop) + " of " + Math.round(w.scrollHeight - w.clientHeight),
     };
   }));
+  return out;
+}
+async function sierraDockFullChecks(page) {
+  const out = await sierraFullScreenChecks(page, "a send expands the dock");
   await page.keyboard.press("Escape");
   await page.waitForTimeout(100);
   out.push(await page.evaluate(() => {
@@ -327,6 +387,24 @@ async function sierraDockFullChecks(page) {
         !document.querySelector("body > [inert]") && document.activeElement === w.querySelector(".cplchat-dock-btn"),
       detail: (w ? w.querySelectorAll(".cplchat-msg").length + " turns in the tab" : "not in the tab") +
         ", focus on " + (document.activeElement && document.activeElement.className),
+    };
+  }));
+  return out;
+}
+async function sierraCobiFullChecks(page) {
+  const out = await sierraFullScreenChecks(page, "open() puts her over the tab");
+  await page.keyboard.press("Escape");
+  await page.waitForTimeout(100);
+  out.push(await page.evaluate(() => {
+    const host = document.getElementById("cplchat-cobi");
+    const w = host && host.querySelector(".cplchat");
+    return {
+      name: "Escape closes her into her hidden host, the conversation kept for the next open",
+      ok: !document.querySelector(".cplchat-full") && !!host && host.hidden && !!w &&
+        w.querySelectorAll(".cplchat-msg").length === 12 && !document.querySelector("body > [inert]") &&
+        getComputedStyle(document.documentElement).overflowY !== "hidden",
+      detail: (w ? w.querySelectorAll(".cplchat-msg").length + " turns kept" : "no box in the host") +
+        ", host hidden=" + !!(host && host.hidden),
     };
   }));
   return out;
@@ -1016,6 +1094,56 @@ async function seedGrPriorities(page, theme) {
     window.CPL_GR.activate();
   });
   await page.waitForFunction(() => !!document.querySelector("#gr-priorities-root .gx-item"), null, { timeout: 20000 });
+  await page.waitForTimeout(300);
+}
+
+// Memory as a team-phrase holder sees it (S398 UI pass): signed out, the cobi sweep measures
+// the lock and the masthead only. The seed holds a team phrase, stubs the tab's read with
+// tests/cpl_memory.test.js's synthetic shapes (never a live row: the table is team-gated),
+// then opens one state through the view's own controls: the Add form, a record's tools, or
+// the Report view.
+async function seedMemory(page, theme, state) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "memory") location.hash = "memory"; });
+  await page.waitForFunction(() => !!window.CPL_MEMORY, null, { timeout: 20000 });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.evaluate((state) => {
+    try {
+      localStorage.setItem("cpl_team_pass", "seed-phrase");
+      localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString());
+    } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+    const ROWS = [
+      { id: "11111111-1111-1111-1111-111111111111", slug: "pr1", kind: "procedure", status: "verified",
+        title: "Change the generator", summary: "Change the generator, not the HTML",
+        detail: "Edit excel_to_dashboard.py; keep index.html identical. See f1.", tags: ["dashboard"],
+        source: "CLAUDE.md Rule 1", affects: ["excel_to_dashboard.py", "index.html"], related: ["f1"] },
+      { id: "22222222-2222-2222-2222-222222222222", slug: "f1", kind: "fact", status: "verified",
+        title: "Two HTMLs", summary: "index.html and CPL_Dashboard.html must stay identical",
+        detail: "The workflow copies one to the other.", tags: ["dashboard"], source: "CLAUDE.md Rule 4",
+        affects: ["index.html"], related: [] },
+      { id: "33333333-3333-3333-3333-333333333333", slug: "o1", kind: "opportunity", status: "proposed",
+        title: "Stale articulations", summary: "Systemwide stale-articulation signal",
+        detail: "Flag articulations absent from the current catalog.", tags: ["ccr"],
+        source: "methodology-filter-live-counts", affects: [], related: [] },
+    ];
+    const real = window.fetch;
+    window.fetch = function (url) {
+      const u = String(url);
+      const body = /\/cpl_memory_log/.test(u) ? [] : /\/cpl_memory\?/.test(u) ? ROWS : null;
+      if (body) return Promise.resolve(new Response(JSON.stringify(body), { status: 200, headers: { "Content-Type": "application/json" } }));
+      return real.apply(this, arguments);
+    };
+    window.CPL_MEMORY.activate();
+  }, state);
+  await page.waitForFunction(() => !!document.querySelector("#memory-root .mem-list li"), null, { timeout: 20000 });
+  await page.evaluate((state) => {
+    if (state === "add") { const b = document.querySelector("#memory-root .mem-addbtn"); if (b) b.click(); }
+    if (state === "entry") { const li = document.querySelector("#memory-root .mem-list li"); if (li) li.click(); }
+    if (state === "report") window.CPL_MEMORY._setViewMode("report");
+  }, state);
+  const ready = { add: ".mem-form-actions", entry: ".rp-tools", report: ".mr-btn" }[state];
+  await page.waitForFunction((sel) => !!document.querySelector("#memory-root " + sel), ready, { timeout: 20000 });
   await page.waitForTimeout(300);
 }
 
@@ -1733,6 +1861,55 @@ module.exports = {
     seed: (page) => seedGrPriorities(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
+  /* ── Memory, unlocked with a team phrase (S398) ── */
+  "memory-add": {
+    file: "index.html",
+    title: "Memory, a team-phrase holder's view: the Add form open (synthetic rows)",
+    routes: [{ hash: "memory", name: "add" }],
+    widths: [390, 1440],
+    seed: (page) => seedMemory(page, "light", "add"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "memory-add-dark": {
+    file: "index.html",
+    title: "Memory, a team-phrase holder's view: the Add form open, dark (synthetic rows)",
+    routes: [{ hash: "memory", name: "add" }],
+    widths: [390, 1440],
+    seed: (page) => seedMemory(page, "dark", "add"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "memory-entry": {
+    file: "index.html",
+    title: "Memory, a team-phrase holder's view: a record's tools (synthetic rows)",
+    routes: [{ hash: "memory", name: "entry" }],
+    widths: [390, 1440],
+    seed: (page) => seedMemory(page, "light", "entry"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "memory-entry-dark": {
+    file: "index.html",
+    title: "Memory, a team-phrase holder's view: a record's tools, dark (synthetic rows)",
+    routes: [{ hash: "memory", name: "entry" }],
+    widths: [390, 1440],
+    seed: (page) => seedMemory(page, "dark", "entry"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "memory-report": {
+    file: "index.html",
+    title: "Memory, a team-phrase holder's view: the Report view (synthetic rows)",
+    routes: [{ hash: "memory", name: "report" }],
+    widths: [390, 1440],
+    seed: (page) => seedMemory(page, "light", "report"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "memory-report-dark": {
+    file: "index.html",
+    title: "Memory, a team-phrase holder's view: the Report view, dark (synthetic rows)",
+    routes: [{ hash: "memory", name: "report" }],
+    widths: [390, 1440],
+    seed: (page) => seedMemory(page, "dark", "report"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
   "contracts": {
     file: "index.html",
     title: "Contracts, a reviewer's view of the V0718 fixture",
@@ -2034,6 +2211,28 @@ module.exports = {
     widths: [390, 768, 1024, 1440],
     seed: (page) => seedSierraDockFull(page, "dark"),
     keyboard: async (page) => sierraDockFullChecks(page),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── Sierra AI over a COBI tab (S398) ─────────────────────────────────────
+     The box CPL_CHAT.open() builds, the CPL Assistant tab's heir, open over
+     Sierra Training with six seeded turns, one per theme: the dialog, the page
+     behind it inert, the sticky box, End, and Escape closing her into her host. */
+  "sierra-cobi-full": {
+    file: "index.html",
+    title: "Sierra AI over a COBI tab",
+    routes: [{ hash: "sierra-training", name: "cobi-full" }],
+    widths: [390, 768, 1024, 1440],
+    seed: (page) => seedSierraCobiFull(page, "light"),
+    keyboard: async (page) => sierraCobiFullChecks(page),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "sierra-cobi-full-dark": {
+    file: "index.html",
+    title: "Sierra AI over a COBI tab, dark",
+    routes: [{ hash: "sierra-training", name: "cobi-full-dark" }],
+    widths: [390, 768, 1024, 1440],
+    seed: (page) => seedSierraCobiFull(page, "dark"),
+    keyboard: async (page) => sierraCobiFullChecks(page),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "my-college-reports-signin": {

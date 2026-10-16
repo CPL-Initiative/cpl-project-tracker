@@ -299,8 +299,8 @@ function selectDistrict(ctx, name) {
       + "the function resolves a district by that stem — a short form is a second matcher");
     check("(4) the request body carries it",
       /scope: hostScope,/.test(CHAT));
-    check("(4) ⚠ the dedicated pane clears the anchor",
-      /hostScope = null;/.test(CHAT));
+    check("(4) ⚠ Sierra AI's own box (the COBI-wide one, S398) is built with no anchor",
+      /cobi: true, surface: COBI_SURFACE, scope: null/.test(CHAT));
     check("(4) ⭐ `_thread` reports what would be SENT, not what is displayed",
       /_thread: function \(\) \{ return convo\.slice\(\); \}/.test(CHAT),
       "every symptom of this bug is invisible on screen; asserting on the log proves nothing");
