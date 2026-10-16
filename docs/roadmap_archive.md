@@ -10,6 +10,11 @@ status: archive
 
 # Roadmap Archive — Completed Work & Session Narratives
 
+## INDEX update-history entries rotated out (2026-10-16)
+
+- 2026-10-14 (S392 SkyTamarack): Sheet 81 carried out (#2127); the summary-row highlight (#2128); record shape 6 and the Major only gap (#2129); El Camino and San Joaquin Delta (#2131); the reconcile pass (#2130); Sheet 82; handoff 393 (SkySycamore).
+- 2026-10-14 (S391 SkyJuniper): handoff 392; Sheets 80 and 81; San Joaquin Delta's catalog year (#2125); the Program Requirements UI pass (#2124).
+
 ## INDEX update-history entries rotated out (2026-10-14)
 - 2026-10-13 S378 SkyHemlock (scheduled): #2063 already merged and run 586 green; Move to the team phrase held by the permission check (Open Asks Sheet 73); the Common Course Reference UI pass (list view measured by new a11y targets ccr-list and ccr-list-dark, 0 findings in both themes); handoff 379.
 - 2026-10-13 S377 SkySequoia: S375's checkpoint (#2058) and vault note (#327) merged; Refresh summaries shipped (#2059, `activity_summaries.js`, published by run 583; the activity header's Update link retired, its link row wraps at 390px); the Move control (#2056) green after its dialog led with Cancel, still held for its function; apply_migration down (nothing newer than 23:19Z in schema_migrations); KB note playbook-when-apply-migration-times-out-read-the-migrations-table; handoff 378.
