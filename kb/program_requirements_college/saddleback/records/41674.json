@@ -1,0 +1,231 @@
+{
+ "college": "Saddleback College",
+ "control_number": "41674",
+ "shape": "degree",
+ "title": "Hospitality Management",
+ "award": "A.S. Degree",
+ "source_url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_hm_as",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8431,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8431,
+    "output_tokens": 1755,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1755,
+  "output_tokens_details": {
+   "thinking_tokens": 701
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06882,
+ "ms": 14264,
+ "seconds": 15.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    20.0,
+    20.0
+   ],
+   "stated": [
+    18.0,
+    20.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 20.0-20.0; the catalog states 18.0-20.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "HOSPITALITY MANAGEMENT - A.S. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 20
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Saddleback College Graduation Requirements (local GE) or Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate preparation for employment in the hospitality industry.",
+    "Identify legal and ethical considerations affecting the hospitality industry.",
+    "Demonstrate knowledge of and experience of operations relative to the provisions of goods and services in the hospitality business.",
+    "Observe foundations of leadership, management and human resources.",
+    "Apply knowledge of financial management related to operations in hospitality.",
+    "Demonstrate effective written and interpersonal communication skills.",
+    "Identify event and catering management requirements."
+   ],
+   "careers": [
+    "entry‐level hotel, motel and restaurant managers",
+    "food and beverage managers",
+    "event, banquet and catering professionals",
+    "resort managers",
+    "human resource administrators"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Select one",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 2
+    },
+    "courses": [
+     {
+      "code": "CUL 171",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 20
+    },
+    "courses": [
+     {
+      "code": "CUL 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HRM 150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HRM 152",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HRM 154",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HRM 157",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL 176",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The 'Select one' (0.0-2.0 units) choice is CUL 171 OR a valid California ServSafe Certification; ServSafe is not a course, so it is not recorded as an alternative. Footnote: students with valid California ServSafe Certification may have this requirement waived.",
+   "The printed 'Required Core: Units: 18.0-20.0' covers the whole core including the nested 'Select one' block; it is recorded as stated on the Required Core block and as total_units (Total: 18.0-20.0).",
+   "The page's 'Complete a minimum of 60 units ... to qualify for the Associate of Science degree' is a generic associate degree rule, not recorded as degree_total; no GE unit figure is printed.",
+   "The Learning Outcome(s) list appears in this A.S. section and is recorded as the program outcomes."
+  ]
+ },
+ "extracted_run": "38843470509"
+}

@@ -1,0 +1,348 @@
+{
+ "college": "Saddleback College",
+ "control_number": "32583",
+ "shape": "adt",
+ "title": "JOURNALISM",
+ "award": "A.A- T Degree",
+ "source_url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_journ_aat",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11683,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11683,
+    "output_tokens": 2868,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2868,
+  "output_tokens_details": {
+   "thinking_tokens": 1171
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10409,
+ "ms": 22709,
+ "seconds": 23.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 18,
+   "listed": 18,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    19.0,
+    20.0
+   ],
+   "stated": [
+    19.0,
+    20.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 14,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "JOURNALISM - AA-T Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 19,
+    "max": 20
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate a range of skills necessary for work as photographers, video journalists, designers, etc. in editorial departments of news organizations, magazines, industrial in-house publications, emerging businesses in media and related industries.",
+    "Demonstrate an understanding of the First Amendment, media history and current trends in the industry.",
+    "Demonstrate an understanding of professional standards, ethics and media law.",
+    "Demonstrate practical skills and understanding of convergence, multimedia, emerging technology and innovation in journalism and the media industry."
+   ],
+   "careers": [
+    "reporting for newspapers and magazines",
+    "online contributors",
+    "book editing",
+    "broadcast for news stations",
+    "producing content for radio",
+    "copyediting",
+    "grant writing",
+    "graphic and page designing",
+    "photography",
+    "research analysts",
+    "social media manager",
+    "technical writing",
+    "web managing",
+    "public relations"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core: Select one",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "JRN 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "JRN 1H",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "CTVR 1",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "CTVR 1H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Core: Complete",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "JRN 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Core: Select one",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "JRN 111",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "JRN 112",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "JRN 106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CTVR 106",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B: Select two courses",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "JRN 111",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTVR 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTVR 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CTVR 3H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTVR 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTVR 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CTVR 9",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GD 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GSS 31",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints 'Required Core: Units: 10.0' over three sub-parts (Select one 3.0; Complete 3.0; Select one 4.0); these are recorded as three blocks with their printed sub-totals.",
+   "JRN 111 in List B is footnoted 'If course not already used for Required Core' (£), so it counts in List B only if the student took JRN 112 in the core.",
+   "The 60-unit figure is the generic Associate Degree for Transfer requirement (with Cal-GETC and at least 18 units in the major), not printed as this award's own total, so degree_total is null.",
+   "The catalog prints JRN 112 as 'DIGITAL REPORTING' and JRN 111 as 'NEWS MEDIA PRODUCTION'; the closed list titles differ slightly.",
+   "Careers are taken from the summary's list of jobs earned with journalism writing and media skills; the transfer majors named (Communications, Media Studies, etc.) are not recorded as careers."
+  ]
+ },
+ "extracted_run": "38843470509"
+}

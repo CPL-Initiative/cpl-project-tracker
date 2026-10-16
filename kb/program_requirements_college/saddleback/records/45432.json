@@ -1,0 +1,235 @@
+{
+ "college": "Saddleback College",
+ "control_number": "45432",
+ "shape": "noncredit",
+ "title": "Healthcare Data Analytics",
+ "award": "Noncredit program",
+ "source_url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_hlthcare_data_analytics_NC",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8664,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8664,
+    "output_tokens": 1424,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1424,
+  "output_tokens_details": {
+   "thinking_tokens": 467
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06314,
+ "ms": 12054,
+ "seconds": 12.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    431.6,
+    431.6
+   ],
+   "stated": [
+    431.6,
+    431.6
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 12,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "HEALTHCARE DATA ANALYTICS - Certificate of Completion (Noncredit)",
+   "measure": "hours",
+   "total_units": {
+    "min": 431.6,
+    "max": 431.6
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Use appropriate tools and techniques to acquire, manage, analyze, and report health data",
+    "Leverage data to improve quality and safety of patient care delivery",
+    "Leverage data to inform decision and policy making in public and population health"
+   ],
+   "careers": [
+    "health data collection",
+    "data processing",
+    "data analysis",
+    "Health Data Analyst",
+    "Associate Data Analyst",
+    "Data Coordinator",
+    "Business Analyst",
+    "Data Quality Analyst",
+    "Reporting Analyst",
+    "Junior Billing Data Analyst",
+    "Population Health Data Analyst",
+    "Research and Decision Support Specialist"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHIT 400NC",
+      "units": 33.2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIT 411NC",
+      "units": 49.8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIT 430NC",
+      "units": 49.8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIT 440NC",
+      "units": 49.8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 405NC",
+      "units": 83,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIMA 488NC",
+      "units": 83,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 83,
+     "max": 83
+    },
+    "courses": [
+     {
+      "code": "CIM 408NC",
+      "units": 83,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIMA 412NC",
+      "units": 83,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Award is counted in hours; all unit fields hold hours.",
+   "The 'Required Core: Hours 431.60' header figure equals the program total (348.6 required hours plus the 83-hour 'Select one' choice), so it is recorded as total_units rather than as the stated total of the Required Core block.",
+   "Careers include the fields 'health data collection', 'data processing', and 'data analysis' from the description ('prepares students for positions in...'); potential employers listed were not recorded as careers."
+  ]
+ },
+ "extracted_run": "38843470509"
+}

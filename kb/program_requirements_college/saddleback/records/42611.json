@@ -1,0 +1,186 @@
+{
+ "college": "Saddleback College",
+ "control_number": "42611",
+ "shape": "noncredit",
+ "title": "Workplace Readiness",
+ "award": "Noncredit program",
+ "source_url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_workplace_readiness_nc",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7408,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7408,
+    "output_tokens": 813,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 813,
+  "output_tokens_details": {
+   "thinking_tokens": 166
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04589,
+ "ms": 6611,
+ "seconds": 7.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    166.0,
+    166.0
+   ],
+   "stated": [
+    166.0,
+    166.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "WORKPLACE READINESS - Certificate of Completion (Noncredit)",
+   "measure": "hours",
+   "total_units": {
+    "min": 166,
+    "max": 166
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Use appropriate oral communications, including tone, body language, attitude, interpersonal skills, teamwork, and other factors.",
+    "Build positive, appropriate relations with superiors, colleagues, customers, and other stakeholders.",
+    "Apply basic financial principles to create a personal budget, manage credit and debt responsibly, and evaluate options for investing and retirement planning."
+   ],
+   "careers": [
+    "service-oriented occupations",
+    "customer service",
+    "health workers",
+    "selling"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 166,
+     "max": 166
+    },
+    "courses": [
+     {
+      "code": "BUS 402NC",
+      "units": 49.8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 425NC",
+      "units": 49.8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 496NC",
+      "units": 16.6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 472NC",
+      "units": 49.8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit certificate counted in hours; course hours (49.80, 49.80, 16.60, 49.80) and total 166.00 hours taken from the requirements table.",
+   "'service-oriented occupations' recorded as a career field alongside its examples; the general statement 'jobs across industries and skill and experience levels' was not recorded as a career."
+  ]
+ },
+ "extracted_run": "38843470509"
+}

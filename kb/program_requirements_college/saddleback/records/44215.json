@@ -1,0 +1,178 @@
+{
+ "college": "Saddleback College",
+ "control_number": "44215",
+ "shape": "noncredit",
+ "title": "Emergency Medical Technician",
+ "award": "Noncredit program",
+ "source_url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_emt_NC",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7552,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7552,
+    "output_tokens": 996,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 996,
+  "output_tokens_details": {
+   "thinking_tokens": 305
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05013,
+ "ms": 7962,
+ "seconds": 8.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    282.2,
+    282.2
+   ],
+   "stated": [
+    282.2,
+    282.2
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "EMERGENCY MEDICAL TECHNICIAN - Certificate of Completion (Noncredit)",
+   "measure": "hours",
+   "total_units": {
+    "min": 282.2,
+    "max": 282.2
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate proficiency in the cognitive aspects of prehospital emergency medical care as specified in the National Emergency Medical Services Education Standards.",
+    "Demonstrate proficiency in the psychomotor aspects of prehospital emergency medical care as specified in the National Emergency Medical Services Education Standards.",
+    "Demonstrate proficiency in the affective aspects of prehospital emergency medical care as specified in the National Emergency Medical Services Education Standards."
+   ],
+   "careers": [
+    "prehospital emergency professionals",
+    "EMT"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 282.2,
+     "max": 282.2
+    },
+    "courses": [
+     {
+      "code": "HSC 422NC",
+      "units": 16.6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMT 407NC",
+      "units": 215.8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMT 417NC",
+      "units": 49.8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit certificate of completion counted in hours; course hours and total (282.20) are as printed in the requirements table.",
+   "Careers read from the summary: students are developed into 'prehospital emergency professionals' and may 'become certified as an EMT'; reviewer may confirm these count as named careers.",
+   "Summary states students must achieve a grade of 'P' in EMT 407NC while the course description states an overall final grade of 80% or above; minor inconsistency in the text."
+  ]
+ },
+ "extracted_run": "38843470509"
+}

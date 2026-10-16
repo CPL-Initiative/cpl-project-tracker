@@ -1,0 +1,312 @@
+{
+ "college": "Saddleback College",
+ "control_number": "41584",
+ "shape": "adt",
+ "title": "BUSINESS ADMINISTRATION 2.0",
+ "award": "A.S. T Degree",
+ "source_url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_bus_amin_ast",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12211,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12211,
+    "output_tokens": 2461,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2461,
+  "output_tokens_details": {
+   "thinking_tokens": 930
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09806,
+ "ms": 20258,
+ "seconds": 20.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 18,
+   "share": 0.778,
+   "missing": [
+    "ECON2",
+    "ECON4",
+    "MATH3A",
+    "MATH3AH"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "ECONC2001",
+    "ECONC2002",
+    "MATHC2210",
+    "MATHC2210H"
+   ],
+   "flagged": [
+    "ECONC2001",
+    "ECONC2002",
+    "MATHC2210",
+    "MATHC2210H"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    28.0,
+    28.0
+   ],
+   "stated": [
+    28.0,
+    28.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 7,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "BUSINESS ADMINISTRATION  2.0 - AS-T Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 28,
+    "max": 28
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate preparation for transfer to a four-year institution with the required business, accounting, economics, math, and other learning.",
+    "Identify, summarize, and compare the fundamentals of legal systems, and social, ethical, and political forces affecting the development and operation of businesses.",
+    "Communicate clearly, effectively, and appropriately in writing and orally using the language of business.",
+    "Make effective business decisions using appropriate systematic, evaluative, ethical, analytical, information-based approaches.",
+    "Develop and exhibit high standards of professional practice, demonstrating awareness of ethical and social responsibilities in today’s diverse, team-oriented, technology dependent, rapidly changing environment."
+   ],
+   "careers": [
+    "accounting",
+    "computer information systems",
+    "finance",
+    "management",
+    "human resources",
+    "marketing",
+    "operations and supply chain management"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 28,
+     "max": 28
+    },
+    "courses": [
+     {
+      "code": "ACCT 1A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 1B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2001H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2002H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS 13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 13H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH C2210H",
+        "units": 5,
+        "catalog_addition": true
+       },
+       {
+        "code": "MATH 11",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000H",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 44",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 1H",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS 104",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECON 2",
+    "why": "not in the requirements; replaced by ECON C2002 (course text says 'Formerly offered as ECON 2')"
+   },
+   {
+    "code": "ECON 4",
+    "why": "not in the requirements; replaced by ECON C2001 (course text says 'Formerly offered as ECON 4')"
+   },
+   {
+    "code": "MATH 3A",
+    "why": "not in the requirements; replaced by MATH C2210 (course text says 'Formerly offered as MATH 3A')"
+   },
+   {
+    "code": "MATH 3AH",
+    "why": "not in the requirements; replaced by MATH C2210H (course text says 'Formerly offered as MATH 3AH')"
+   }
+  ],
+  "notes": [
+   "Each 'Select one' group (printed with OR rows and its own unit figure: 3.0, 3.0, 3.0, 5.0, 3.0, 3.0) is recorded as one required entry in the Required Core with the other choices as alternatives; the core total 28.0 matches 4+4+3+3+3+5+3+3.",
+   "The 60-unit figure is the generic Associate Degree for Transfer requirement ('Completion of 60 semester units...'), not printed as this award's total, so degree_total is null; no Cal-GETC unit figure is printed.",
+   "The summary says students gain understanding of computer information systems, but no CIS course appears in the requirements.",
+   "The course list at the end of the text is cut off mid-description (STAT C1000H)."
+  ]
+ },
+ "extracted_run": "38843470509"
+}

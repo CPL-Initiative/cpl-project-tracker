@@ -1,0 +1,347 @@
+{
+ "college": "Saddleback College",
+ "control_number": "36221",
+ "shape": "certificate",
+ "title": "Business Communications",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_bus_comm_ca",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12110,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12110,
+    "output_tokens": 2921,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2921,
+  "output_tokens_details": {
+   "thinking_tokens": 849
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10686,
+ "ms": 23186,
+ "seconds": 23.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 21,
+   "listed": 22,
+   "share": 0.955,
+   "missing": [
+    "COMM5"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "COMMC1004"
+   ],
+   "flagged": [
+    "COMMC1004"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    22.0,
+    25.0
+   ],
+   "stated": [
+    22.0,
+    25.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 11,
+   "courses": 0,
+   "count": 11,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 11,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "BUSINESS COMMUNICATIONS - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 22,
+    "max": 25
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Work effectively in today’s business environments and management structures.",
+    "Identify the fundamentals of legal systems, and technological, social, ethical, global, and political forces affecting the development and operation of businesses.",
+    "Describe the functions of business in society including the major concepts related to business ownership and the factors that influence them; competition and marketing; and the systems, technologies, and operational controls through which business organizations operate.",
+    "List, describe, give examples of, and apply the key management functions of planning, organizing, leading, controlling, and project management in ways that will contribute to organizational and business success and social responsibility.",
+    "Describe/apply effective human relations techniques for team or project management.",
+    "Effectively and appropriately apply principles, planning, organization, tone, and styles to written and oral business communications, including adequate consideration of ethical, cultural, gender, and other aspects of the communication.",
+    "Create appropriate and effective written business documents, such as letters, memorandums, reports, proposals, requests for proposals (RFPs), instructions, employment-related documents, as well as email and other online written business communications.",
+    "Use correct grammar, punctuation, tone, style, and document format.",
+    "Use appropriate business oral communications clearly, effectively, and appropriately, including critical listening, communication with workplace superiors, coworkers, customers, clients; use telephone, webinar, video conferencing, and other distance and online communications.",
+    "Use effective teamwork, meeting, and leadership skills, interviewing, business etiquette, presentations, as well as nonverbal communications.",
+    "Behave in a professional manner appropriate to organizational expectations, including the exercise of initiative and self-direction and observation of laws, rules, and ethical practices."
+   ],
+   "careers": [
+    "corporate communications specialists, assistants, and managers",
+    "media and communication specialists, assistants and managers",
+    "public relations assistants and managers",
+    "strategic communications assistants",
+    "sales and marketing coordinators, specialists, assistants, and managers",
+    "copywriters",
+    "content specialists",
+    "office assistants",
+    "event planners and consultants",
+    "fundraising specialists and assistants",
+    "supervisors"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 19,
+     "max": 21
+    },
+    "courses": [
+     {
+      "code": "BUS 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1000",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1000H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 196",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 180WE",
+        "units": 2,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 1H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 13H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Restricted Electives: Select one course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "BUS 16",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 135",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIM 1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIM 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIMA 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIMA 108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM C1004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COMM 5",
+    "why": "not in the text; catalog lists COMM C1004 Interpersonal Communication in its place"
+   }
+  ],
+  "notes": [
+   "The Required Core (19.0-21.0 units) contains nested 'Select one' choices (BUS 103 or ENGL C1000 or ENGL C1000H; BUS 196 or BUS 180WE; BUS 1 or BUS 1H; BUS 13 or BUS 13H); each was recorded as one required entry with its 'OR' options as alternatives.",
+   "BUS 180WE is printed as 2.0 units in the requirements, but the course list shows it as 2.0-4.0 units (variable); recorded 2 as printed beside it in the requirement.",
+   "COMM C1004 (Interpersonal Communication) is not on the closed list; it appears to replace COMM 5 (Interpersonal Communication) from the state file.",
+   "The course descriptions list is cut off at COMM C1004.",
+   "Total printed as 22.0-25.0 units."
+  ]
+ },
+ "extracted_run": "38843470509"
+}

@@ -1,0 +1,462 @@
+{
+ "college": "Saddleback College",
+ "control_number": "40032",
+ "shape": "adt",
+ "title": "Environmental Science",
+ "award": "A.S. T Degree",
+ "source_url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_env_studies_ast",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12974,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12974,
+    "output_tokens": 3519,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3519,
+  "output_tokens_details": {
+   "thinking_tokens": 1049
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.12228,
+ "ms": 26296,
+ "seconds": 26.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 19,
+   "listed": 22,
+   "share": 0.864,
+   "missing": [
+    "ECON4",
+    "MATH3A",
+    "MATH3AH"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "ECONC2001",
+    "MATHC2210",
+    "MATHC2210H"
+   ],
+   "flagged": [
+    "ECONC2001",
+    "MATHC2210",
+    "MATHC2210H"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    41.0,
+    42.0
+   ],
+   "stated": [
+    41.0,
+    42.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "ENVIRONMENTAL SCIENCE - AS-T Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 41,
+    "max": 42
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate knowledge of the physical, biological, ecological, and social sciences required to effectively address current environmental issues and be prepared to pursue further study in an environmental science program at the baccalaureate level.",
+    "Demonstrate scientific literacy and ability to engage in scientific inquiry concerning environmental issues through the evaluation and analysis of scientific literature, and presentation of results in written and oral form.",
+    "Critically evaluate strategies for sustainable management of environmental systems and for the remediation or restoration of degraded environments and human health protection."
+   ],
+   "careers": [
+    "Environmental scientists",
+    "academia",
+    "environmental law",
+    "environmental consulting",
+    "biodiversity conservation",
+    "resource management"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Option 1",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Option 1 or Option 2",
+    "stated": {
+     "min": 13,
+     "max": 13
+    },
+    "courses": [
+     {
+      "code": "BIO 4A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 4B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Option 2",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Option 1 or Option 2",
+    "stated": {
+     "min": 14,
+     "max": 14
+    },
+    "courses": [
+     {
+      "code": "BIO 4A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 1B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one (Environmental Studies)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ENV 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENV 1H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select GEOL 1",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Select GEOL 1 or Either GEOG 1 or GEOG 1H and GEOG 1L",
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "GEOL 1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Either GEOG 1 or GEOG 1H and GEOG 1L",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Select GEOL 1 or Either GEOG 1 or GEOG 1H and GEOG 1L",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "GEOG 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOG 1H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 1L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one (Statistics)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "STAT C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 44",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one (Calculus)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "MATH C2210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH C2210H",
+        "units": 5,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 11",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one (Microeconomics)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2001H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "PHYS 4A and PHYS 4B",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Select PHYS 4A and PHYS 4B or PHYS 2A and PHYS 2B",
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "PHYS 4A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 4B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "PHYS 2A and PHYS 2B",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Select PHYS 4A and PHYS 4B or PHYS 2A and PHYS 2B",
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "PHYS 2A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 2B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECON 4",
+    "why": "not in the text as a requirement; replaced by ECON C2001 (course description says formerly offered as ECON 4)"
+   },
+   {
+    "code": "MATH 3A",
+    "why": "not in the text as a requirement; replaced by MATH C2210 (formerly offered as MATH 3A)"
+   },
+   {
+    "code": "MATH 3AH",
+    "why": "not in the text as a requirement; replaced by MATH C2210H (formerly offered as MATH 3AH)"
+   }
+  ],
+  "notes": [
+   "The blocks after the Option 1/Option 2 choice sit under 'Complete the following: 28.0'; total required core 41-42 units.",
+   "The GEOL/GEOG choice prints 4.0 for the heading and stray figures '1.0' and '3.0' around the GEOG path; the GEOG path (GEOG 1 or 1H plus GEOG 1L) totals 4 units but no block total is cleanly printed, so stated is null.",
+   "The 60-unit figure is the generic Associate Degree for Transfer requirement, not recorded as degree_total; Cal-GETC is named but no GE units are printed.",
+   "Catalog text is cut off mid-sentence in the PHYS 4B course description.",
+   "'Environmental scientists' is taken from the program summary describing what environmental scientists do; reviewer may confirm it counts as a named career."
+  ]
+ },
+ "extracted_run": "38843470509"
+}
