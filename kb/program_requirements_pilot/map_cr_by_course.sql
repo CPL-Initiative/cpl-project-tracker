@@ -14,7 +14,9 @@ with u as (
                          'Santa Barbara City College','Orange Coast College','Foothill College','Sierra College',
                          'Fullerton College','Citrus College','Victor Valley College','Monterey Peninsula College',
                          'Golden West College','Cuyamaca College','Mt. San Jacinto College','MiraCosta College','College of the Sequoias',
-                         'Napa Valley College','San Bernardino Valley College','Moorpark College','Cypress College','Evergreen Valley College')
+                         'Napa Valley College','San Bernardino Valley College','Moorpark College','Cypress College','Evergreen Valley College',
+                         'Ventura College','Oxnard College','Santa Ana College','Rio Hondo College','Palomar College',
+                         'Saddleback College','Allan Hancock College','Reedley College','Chabot College')
     and coalesce(u.college_course,'') <> ''
 ), p as (
   select college, m[1] || ' ' || m[2] code, source_code, exhibit_id, credit_rec from u
