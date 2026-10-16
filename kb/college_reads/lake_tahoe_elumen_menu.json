@@ -1,0 +1,25 @@
+{
+ "_readme": "S401 SkyManzanita, 2026-10-16. Lake Tahoe's capture-only read (run 38978047103) found 16 program pages, all transfer degrees, for 87 programs. The fast read stops at the first menu that names programs. This read prints the menu's other links, to see where the local degrees and certificates are listed.",
+ "college": "Lake Tahoe Community College",
+ "questions": {
+  "menu": "Which catalog addresses the start page's menu links, besides program pages: departments, award hubs, program indexes, and the catalog slug its links name.",
+  "programs": "How the menu writes a program page's address (the catalog slug in it)."
+ },
+ "keywords": [
+  "[Pp]rogram",
+  "[Dd]egree",
+  "[Cc]ertificate",
+  "[Dd]epartment",
+  "A\\.A",
+  "A\\.S"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "menu"
+   ],
+   "url": "https://ltcc.elumenapp.com/catalog/2026-2027/about-this-catalog",
+   "links": "/catalog/(?![^/]+/program/)"
+  }
+ ]
+}

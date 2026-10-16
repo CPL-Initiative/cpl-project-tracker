@@ -1,0 +1,25 @@
+{
+ "_readme": "S401 SkyManzanita, 2026-10-16. Los Medanos's capture-only read (run 38978063188) found 7 program pages, all Art's: the registry's start page is the Art department (/catalog/26-27/art) and the fast read stops at the first menu that names programs. This read prints the menu's other links, to see how its departments or hubs are addressed.",
+ "college": "Los Medanos College",
+ "questions": {
+  "menu": "Which catalog addresses the start page's menu links, besides program pages: departments, award hubs, program indexes, and the catalog slug its links name.",
+  "programs": "How the menu writes a program page's address (the catalog slug in it)."
+ },
+ "keywords": [
+  "[Pp]rogram",
+  "[Dd]egree",
+  "[Cc]ertificate",
+  "[Dd]epartment",
+  "A\\.A",
+  "A\\.S"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "menu"
+   ],
+   "url": "https://lmc.elumenapp.com/catalog/26-27/art",
+   "links": "/catalog/(?![^/]+/program/)"
+  }
+ ]
+}

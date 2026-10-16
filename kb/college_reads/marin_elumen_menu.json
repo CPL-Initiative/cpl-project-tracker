@@ -1,0 +1,38 @@
+{
+ "_readme": "S401 SkyManzanita, 2026-10-16. Marin's capture-only read (run 38978049676) found 0 program pages: the registry's start page is /catalog/current/home, the fast read's menu named no program, department or hub, and the rendered read found none from the start page or its hub academic-programs. This read prints the menu's links, to see whether they name another catalog slug than current.",
+ "college": "College of Marin",
+ "questions": {
+  "menu": "Which catalog addresses the start page's menu links, besides program pages: departments, award hubs, program indexes, and the catalog slug its links name.",
+  "programs": "How the menu writes a program page's address (the catalog slug in it)."
+ },
+ "keywords": [
+  "[Pp]rogram",
+  "[Dd]egree",
+  "[Cc]ertificate",
+  "[Dd]epartment",
+  "A\\.A",
+  "A\\.S"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "menu"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/current,home?tenant=marin.elumenapp.com&api=https://api-prod.elumenapp.com:443"
+  },
+  {
+   "answers": [
+    "menu"
+   ],
+   "url": "https://marin.elumenapp.com/catalog/current/home",
+   "links": "/catalog/(?![^/]+/program/)"
+  },
+  {
+   "answers": [
+    "programs"
+   ],
+   "url": "https://marin.elumenapp.com/catalog/current/academic-programs",
+   "links": "/catalog/[^/]+/program/"
+  }
+ ]
+}
