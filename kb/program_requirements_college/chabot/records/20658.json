@@ -1,0 +1,341 @@
+{
+ "college": "Chabot College",
+ "control_number": "20658",
+ "shape": "degree",
+ "title": "Medical Assisting",
+ "award": "A.S. Degree",
+ "source_url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6118",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7952,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7952,
+    "output_tokens": 2376,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2376,
+  "output_tokens_details": {
+   "thinking_tokens": 693
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07933,
+ "ms": 19725,
+ "seconds": 20.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 14,
+   "share": 0.857,
+   "missing": [
+    "APHC9701A",
+    "APHC9701B"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "MEDA70A",
+    "MEDA71A",
+    "MEDA71B"
+   ],
+   "flagged": [
+    "MEDA70A",
+    "MEDA71A",
+    "MEDA71B"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    41.0,
+    41.0
+   ],
+   "stated": [
+    41.0,
+    41.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     63.0,
+     63.0
+    ],
+    "stated": [
+     63.0,
+     63.0
+    ],
+    "against": "degree",
+    "ge": [
+     22.0,
+     22.0
+    ],
+    "why": [],
+    "fill": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Medical Assisting - Associate in Science",
+   "measure": "units",
+   "total_units": {
+    "min": 41,
+    "max": 41
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": 63,
+    "max": 63
+   },
+   "ge_units": {
+    "min": 22,
+    "max": 22
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "prepare competent entry-level professional medical assistants in the cognitive (knowledge), psychomotor (skills), and affective (behavior) learning domains.",
+    "be responsive to the communities of interest that are served by the program to include, but are not limited to, students, graduates, faculty, sponsor administration, industry partners, physicians, and the public.",
+    "Employ principles of communication theory to facilitate and maintain effective, verbal, written and non verbal interaction."
+   ],
+   "careers": [
+    "Medical Assistants"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "YEAR ONE (Semester 1, 10 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "HLTH 51A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NUTR 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "NUTR 6",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "YEAR ONE (Semester 2, 10 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "MEDA 60",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HLTH 51B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOS 15",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "YEAR TWO (Semester 3, 10.5 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10.5,
+     "max": 10.5
+    },
+    "courses": [
+     {
+      "code": "MEDA 70A",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MEDA 71A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MEDA 75",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MEDA 76",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "YEAR TWO (Semester 4, 10.5 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10.5,
+     "max": 10.5
+    },
+    "courses": [
+     {
+      "code": "MEDA 70B",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MEDA 71B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MEDA 73",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MEDA 74",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "APHC 9701A",
+    "why": "not in the text (noncredit counterpart of HLTH 51A)"
+   },
+   {
+    "code": "APHC 9701B",
+    "why": "not in the text (noncredit counterpart of HLTH 51B)"
+   }
+  ],
+  "notes": [
+   "Block stated totals taken from the block headings (e.g. 'Semester 1, 10 units'); the units column beside the headings prints 0.0, and '0.5- 10.5' beside Semester 4, which look like rendering artifacts.",
+   "An extra '3.0' appears after PSYC C1000 before the NUTR 1 OR NUTR 6 rows; read NUTR 1 / NUTR 6 as a single 3-unit choice within Semester 1.",
+   "Catalog prints 'NUTR 1' and 'NUTR 6'; closed list stores them as 'NUTR1' and 'NUTR6'; treated as the same courses (catalog_addition false).",
+   "Unit Calculations: Major Requirements 41.0, General Education 22.0, 'Electives (Degree applicable units as needed)' with no units, Total 63.0. No GE pattern is named.",
+   "Learning outcomes are copied as printed; the first outcome follows the lead-in on the same line. The outcomes read like accreditation goals rather than student outcomes; reviewer may check.",
+   "The text mentions grading rules for the 'Medical Assisting Certificate Program'; this record reads the A.S. degree page."
+  ]
+ },
+ "extracted_run": "38843479215"
+}

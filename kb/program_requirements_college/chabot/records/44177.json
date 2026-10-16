@@ -1,0 +1,212 @@
+{
+ "college": "Chabot College",
+ "control_number": "44177",
+ "shape": "certificate",
+ "title": "Heavy Duty Coach Mechanic",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6239",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7675,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7675,
+    "output_tokens": 1591,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1591,
+  "output_tokens_details": {
+   "thinking_tokens": 436
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06252,
+ "ms": 12593,
+ "seconds": 13.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    32.0,
+    32.0
+   ],
+   "stated": [
+    32.0,
+    32.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Heavy Duty Coach Mechanic - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 32,
+    "max": 32
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "diagnose malfunctions and use hand tools, power tools, and specialized equipment. Safely raise buses and heavy parts or equipment using hydraulic jacks or hoists and perform routine maintenance. Assess engine performance using test equipment and interpret data from diagnostic tools such as handheld computers, motor analyzers, chassis charts, or pressure gauges.",
+    "diagnose, adjust, repair, Inspect, and verify dimensions and clearances of parts to ensure conformance to factory specifications. Overhaul diesel engines and their components; inspect brake, steering, and suspension; troubleshoot electrical systems; use specialized diagnosis and repair software.",
+    "document repairs and record time on all required work, including weekly online worksheets (OJT sheets). Communicate with supervisors and provide solutions to technical problems. Communicate effectively and work independently as well as under close supervision. Foster effective working relationships and apply sound customer service principles.",
+    "Adjust or repair computer-controlled exhaust emissions devices and install or repair accessories or adjust seats, doors, or windows. Dismount, mount, and repair or replace tires. Perform wheel alignment."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 32,
+     "max": 32
+    },
+    "courses": [
+     {
+      "code": "APAC 9471",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APAC 9472",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APAC 9473",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APAC 9474",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APAC 9475",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APAC 9476",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APAC 9477",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APAC 9478",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Program Learning Outcomes are printed as four paragraphs, each containing several sentences; each paragraph is recorded as one outcome. The first paragraph follows the lead-in on the same line; the lead-in was omitted. A reviewer may prefer a different split.",
+   "The 'Total : 32.0' printed under the Required Core table is recorded as both the block's stated total and the certificate total.",
+   "The description mentions 198 hours of related supplemental instruction per year at the AC Transit training center; the award itself is counted in units (32.0), so measure is units.",
+   "No career titles are named apart from the program's own title and 'Heavy Duty Coach Mechanic Apprentices'; careers left empty."
+  ]
+ },
+ "extracted_run": "38843479215"
+}

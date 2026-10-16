@@ -1,0 +1,255 @@
+{
+ "college": "Chabot College",
+ "control_number": "39346",
+ "shape": "degree",
+ "title": "Fire Prevention Inspector",
+ "award": "A.S. Degree",
+ "source_url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6257",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7226,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7226,
+    "output_tokens": 1722,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1722,
+  "output_tokens_details": {
+   "thinking_tokens": 505
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06334,
+ "ms": 14105,
+ "seconds": 14.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "FT1"
+   ],
+   "flagged": [
+    "FT1"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    24.0
+   ],
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     60.0,
+     60.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     22.0,
+     22.0
+    ],
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Program Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 14,
+    "max": 14
+   },
+   "ge_pattern": "A.S. General Education",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 22,
+    "max": 22
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "identify and comprehend laws, regulations, codes and standards that influence fire department operations, and identify regulatory and advisory organizations that create and mandate them, especially in the areas of fire prevention, building codes and ordinances, and firefighter health and safety.",
+    "perform basic fire inspector tasks involving report writing, building inspection, code compliance, records management and measurements and calculations as they relate to the International Fire and Building Codes, California edition.",
+    "analyze the effects of fire on the environment and relate how the efforts of modern day fire prevention technology, fire protection equipment and systems, and building construction for fire protection contribute to the protection of society against unwanted fire.",
+    "identify and describe common types of building construction and conditions associated with structural collapse and firefighter safety."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FT 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FT 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT 4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BUS 22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INDT 74",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MTH 47",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog text begins mid-description; the program's own heading is not in the excerpt, so section_heading uses 'Program Requirements'.",
+   "Core Courses and List A headers print 0.0 units; no block totals recorded.",
+   "List A read as BUS 22 required plus INDT 74 OR MTH 47 (a stray '3.0' line precedes the OR pair). This matches Major Requirements 24.0 = 6 FT courses (18) + BUS 22 (3) + one of INDT 74/MTH 47 (3).",
+   "Unit Calculations print Major 24, General Education 22, Electives (Degree applicable units as needed) 14, Total 60; electives recorded as degree_elective_units since a major total is printed.",
+   "GE pattern refers to the A.S. General Education/Graduation Requirements section of the catalog (Chabot local GE).",
+   "Program learning outcomes are printed for the program as a whole; the A.S. degree shares them. Lead-in 'Upon the successful completion of this program, students should be able to:' omitted from first outcome.",
+   "FT 1 is not in the closed list and is recorded as a catalog addition."
+  ]
+ },
+ "extracted_run": "38843479215"
+}

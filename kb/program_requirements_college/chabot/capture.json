@@ -1,0 +1,2507 @@
+{
+ "college": "Chabot College",
+ "catalog_url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/6077",
+ "platform": "curriqunet",
+ "catalog_year": "2026-2027",
+ "programs": 248,
+ "with_closed_list": 244,
+ "started": "2026-10-16T03:03:31Z",
+ "curriqunet": {
+  "catalog": 2114,
+  "view_prefix": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/",
+  "errors": [],
+  "sections": [
+   "Associate Degree Requirements",
+   "Degrees and Certificates",
+   "Student Support Programs"
+  ],
+  "nodes_read": 11,
+  "calls": 30,
+  "entries": 771,
+  "stopped_at_cap": false,
+  "same_title_entries": 483,
+  "entries_read": 288
+ },
+ "pages_read": 288,
+ "banner_h1": null,
+ "loads": 1174,
+ "seconds": 5559.5,
+ "found": 233,
+ "by_method": {
+  "no_closed_list": 4,
+  "not_found": 3,
+  "page_claimed": 8,
+  "sitemap_page": 233
+ },
+ "shared_pages": {
+  "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/7073": [
+   "37627",
+   "46083"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "46102",
+   "title": "High Intermediate ESL",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6551",
+    "label": {
+     "award": 1,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2489,
+     "content": 2489,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "46409",
+   "title": "Engineering Industry Preparation",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "46504",
+   "title": "Paramedicine",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "01087",
+   "title": "Speech Communication",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6107",
+    "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/4081/5401",
+    "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6205"
+   ]
+  },
+  {
+   "control_number": "09661",
+   "title": "Spanish",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/4081/5401",
+    "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6568"
+   ]
+  },
+  {
+   "control_number": "32521",
+   "title": "Spanish",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6144",
+    "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6287",
+    "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6288",
+    "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/4081/5401",
+    "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6568",
+    "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6282",
+    "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6283"
+   ]
+  },
+  {
+   "control_number": "37697",
+   "title": "Spanish",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6568",
+    "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/4081/5401"
+   ]
+  },
+  {
+   "control_number": "40569",
+   "title": "Acting Level 2",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/4081/5401",
+    "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6096"
+   ]
+  },
+  {
+   "control_number": "40798",
+   "title": "Technical Theater",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6096",
+    "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/4081/5401"
+   ]
+  },
+  {
+   "control_number": "46306",
+   "title": "Optical Technology",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6577"
+   ]
+  },
+  {
+   "control_number": "46307",
+   "title": "Legal Studies",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/4081/5401"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 15,
+  "0.8-1.0": 15,
+  "1.0": 203
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 233,
+  "list": [
+   {
+    "control_number": "01060",
+    "title": "Interior Design",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6091",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01061",
+    "title": "Biology",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6138",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01064",
+    "title": "Marketing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6184",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01065",
+    "title": "Administrative Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6181",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01066",
+    "title": "Mass Communications",
+    "award": "A.A. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6109",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01068",
+    "title": "Radio and Television Broadcasting",
+    "award": "A.A. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6207",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01070",
+    "title": "Automotive Technology",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6234",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01075",
+    "title": "Machine Tool Technology",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6128",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01080",
+    "title": "Photography",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6168",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01081",
+    "title": "Nursing",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6119",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01082",
+    "title": "Medical Assisting",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6219",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01084",
+    "title": "Dental Hygiene",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6116",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01088",
+    "title": "Mathematics",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6139",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01090",
+    "title": "Chemistry",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6134",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01091",
+    "title": "Administration of Justice",
+    "award": "A.A. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6130",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01092",
+    "title": "Early Childhood Development",
+    "award": "A.A. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6142",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01093",
+    "title": "Fire Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6259",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01094",
+    "title": "Social Science",
+    "award": "A.A. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6294",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01098",
+    "title": "Graphic Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6158",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09636",
+    "title": "Biological Sciences: Emphasis Health Science",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6217",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09637",
+    "title": "Business",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6100",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09638",
+    "title": "Real Estate",
+    "award": "A.A. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6105",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09645",
+    "title": "Automotive Chassis Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6225",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09653",
+    "title": "Humanities",
+    "award": "A.A. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6146",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09654",
+    "title": "Numerical Control",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6248",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09656",
+    "title": "Software Specialist",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6195",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09658",
+    "title": "French",
+    "award": "A.A. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6209",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09778",
+    "title": "Computer Science",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6135",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09802",
+    "title": "International Studies",
+    "award": "A.A. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6566",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09803",
+    "title": "Behavioral Science",
+    "award": "A.A. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6293",
+    "coverage": 0.933,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10020",
+    "title": "Architecture",
+    "award": "A.A. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6087",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11252",
+    "title": "Machinist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6247",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "13596",
+    "title": "Pathway to Sports Injury Care",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6216",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "14046",
+    "title": "Health Information Coding",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6558",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16618",
+    "title": "Human Services",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6145",
+    "coverage": 0.824,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16760",
+    "title": "Geography",
+    "award": "A.A. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6261",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16859",
+    "title": "English (Emphasis in Literature)",
+    "award": "A.A. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/4081/5313",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18675",
+    "title": "Liberal Arts",
+    "award": "A.A. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/4081/5401",
+    "coverage": 0.989,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18739",
+    "title": "Engineering",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6137",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19286",
+    "title": "Theater Arts",
+    "award": "A.A. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6096",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19293",
+    "title": "Early Childhood Intervention Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6274",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19294",
+    "title": "Early Childhood Intervention",
+    "award": "A.A. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6273",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20643",
+    "title": "Accounting Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6177",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20644",
+    "title": "Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6104",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20646",
+    "title": "Real Estate Broker",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6202",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20648",
+    "title": "Software Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6194",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20655",
+    "title": "Tool Maker",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6249",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20656",
+    "title": "Computer Numerical Control Programmer",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6246",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20657",
+    "title": "Welding Technology",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6129",
+    "coverage": 0.769,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20658",
+    "title": "Medical Assisting",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6118",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20659",
+    "title": "Interior Design (Residential)",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6159",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20660",
+    "title": "Early Childhood Development (Teacher)",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6272",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20661",
+    "title": "Fire Technology",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6132",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22934",
+    "title": "Human Resources Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6197",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22935",
+    "title": "Small Business Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6200",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22936",
+    "title": "Bookkeeping",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6178",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22937",
+    "title": "Business Administration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6182",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22961",
+    "title": "Health Care Administrator",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6196",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30180",
+    "title": "Electronic Systems Technology",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6127",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30181",
+    "title": "ESYS: Industrial Electronic Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6245",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30182",
+    "title": "ESYS: Consumer Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6244",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30828",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6150",
+    "coverage": 0.882,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31249",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6266",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31250",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6279",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31287",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6148",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31881",
+    "title": "Environmental Studies",
+    "award": "A.A. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/4081/5325",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31890",
+    "title": "Anthropology",
+    "award": "A.A. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6141",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32004",
+    "title": "Journalism",
+    "award": "A.A- T Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6289",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32013",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6252",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32046",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6149",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32047",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6095",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32053",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/4080/5209",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32060",
+    "title": "Music",
+    "award": "A.A- T Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6092",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32061",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6117",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32076",
+    "title": "Architecture Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6152",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32327",
+    "title": "Entrepreneurship",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6102",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32429",
+    "title": "Art History",
+    "award": "A.A. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6088",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32677",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6208",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32736",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6267",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33111",
+    "title": "Hybrid and Alternative Fuel Vehicles",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6240",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33192",
+    "title": "Automotive Service Consulting",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6233",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33274",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6187",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35242",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6265",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35731",
+    "title": "Information Technology (COA)",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/4082/5785",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36033",
+    "title": "Advanced Manufacturing Technology",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6126",
+    "coverage": 0.72,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36329",
+    "title": "Women's Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6151",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36330",
+    "title": "Advanced Manufacturing Technology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6221",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36701",
+    "title": "Social Justice Studies: Ethnic Studies",
+    "award": "A.A- T Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6288",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37171",
+    "title": "Accounting",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6098",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37172",
+    "title": "Information Technology",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6103",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37428",
+    "title": "Environmental Science",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/4081/5321",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37557",
+    "title": "Geography",
+    "award": "A.A- T Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6262",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37627",
+    "title": "Public Health Science",
+    "award": "A.S. T Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/7073",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37680",
+    "title": "Ethnic Studies",
+    "award": "A.A. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6283",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37681",
+    "title": "Fine Art Painting and Drawing",
+    "award": "A.A. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6171",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37682",
+    "title": "Fine Art Studio Foundations",
+    "award": "A.A. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6173",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37683",
+    "title": "Fine Art Ceramics",
+    "award": "A.A. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6170",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37686",
+    "title": "Fine Art Sculpture",
+    "award": "A.A. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6172",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37695",
+    "title": "French",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6210",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37696",
+    "title": "Japanese",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6211",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37811",
+    "title": "ASE Test Preparation",
+    "award": "Noncredit program",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6593",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37910",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6144",
+    "coverage": 0.816,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37912",
+    "title": "Social Work And Human Services",
+    "award": "A.A- T Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/4080/5193",
+    "coverage": 0.955,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38004",
+    "title": "ASE Under Car Test Preparation",
+    "award": "Noncredit program",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6594",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38098",
+    "title": "Family Child Care Entrepreneur",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6276",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38270",
+    "title": "Kitchen and Bath Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6160",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38438",
+    "title": "Early Childhood Administration",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6269",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38439",
+    "title": "Infant/Toddler Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6277",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38440",
+    "title": "Early Childhood Development (Associate Teacher)",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6271",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38504",
+    "title": "Early Childhood Curriculum Specialist/Transitional Kindergarten",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6270",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38714",
+    "title": "International Entrepreneur – Japanese",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6189",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38761",
+    "title": "International Entrepreneur – French",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6188",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38762",
+    "title": "International Entrepreneur – Spanish",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6190",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38785",
+    "title": "Graphic Design",
+    "award": "A.A. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6090",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38840",
+    "title": "Social Justice: Chicana/o Studies",
+    "award": "A.A- T Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6287",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38845",
+    "title": "Persuasive and Rhetorical Communication",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6204",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38846",
+    "title": "Public Speaking and Forensics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6205",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38864",
+    "title": "Social Justice: Asian American Studies",
+    "award": "A.A- T Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6286",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38865",
+    "title": "Social Justice: African American Studies",
+    "award": "A.A- T Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6285",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38917",
+    "title": "Interpersonal Communication",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6203",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38918",
+    "title": "Chinese",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6110",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38919",
+    "title": "Student Support Leadership (Emphasis in Tutoring)",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6556",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38932",
+    "title": "Fine Art Photography",
+    "award": "A.A. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6167",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38933",
+    "title": "Asian American Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6281",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38971",
+    "title": "Paralegal Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6133",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39040",
+    "title": "Preparation for Academic ESL",
+    "award": "Noncredit program",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6557",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39041",
+    "title": "Preparation for BSTEM Math",
+    "award": "Noncredit program",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6564",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39042",
+    "title": "Preparation for Statistics and Liberal Arts Math",
+    "award": "Noncredit program",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6565",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39250",
+    "title": "Animation",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6154",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39273",
+    "title": "International Entrepreneur - Chinese",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6191",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39274",
+    "title": "Filmmaking",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6156",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39276",
+    "title": "Digital Media Arts",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6157",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39281",
+    "title": "Film and Animation",
+    "award": "A.A. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6089",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39284",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6120",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39291",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6140",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39296",
+    "title": "Chicanx and Latinx Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6282",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39297",
+    "title": "Dental Radiation Safety",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6215",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39342",
+    "title": "Fire Prevention Inspector",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6258",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39346",
+    "title": "Fire Prevention Inspector",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6257",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39695",
+    "title": "Computational Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6263",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39716",
+    "title": "Technical Design Drafting",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/4082/5949",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39720",
+    "title": "Fire Fighter Academy",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6256",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39729",
+    "title": "LVN-RN",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6220",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39816",
+    "title": "Africana and African American Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6143",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40245",
+    "title": "Film, Television, and Electronic Media",
+    "award": "A.S. T Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6155",
+    "coverage": 0.944,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40315",
+    "title": "English (Emphasis in Creative Writing)",
+    "award": "A.A. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6518",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40554",
+    "title": "Non-Credit Preparation for English Composition",
+    "award": "Noncredit program",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6555",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40570",
+    "title": "Acting Level 1",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6174",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40578",
+    "title": "Educational Aide",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6275",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40718",
+    "title": "Philosophy",
+    "award": "A.A. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6147",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40797",
+    "title": "Technology-Based Automotive Systems",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6242",
+    "coverage": 0.714,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40799",
+    "title": "Tax Preparer",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6180",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40840",
+    "title": "Administrative Assistant",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6099",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40877",
+    "title": "Music Production",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6164",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40927",
+    "title": "Audio Recording",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6163",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41009",
+    "title": "Music Technology & Production",
+    "award": "A.A. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6093",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41075",
+    "title": "Law Enforcement",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6254",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41086",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6153",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41087",
+    "title": "Philosophy",
+    "award": "A.A- T Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6292",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41330",
+    "title": "Behavioral Health",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6290",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41414",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6183",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41684",
+    "title": "Biological Sciences: Health Science Fundamentals",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6218",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41690",
+    "title": "Jazz Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6162",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41798",
+    "title": "Applied Ceramics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6169",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41871",
+    "title": "Liberal Arts and Sciences: Science, Math and Technology",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/4081/5405",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41907",
+    "title": "Careers in Education",
+    "award": "Noncredit program",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6268",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41908",
+    "title": "Intermediate ESL Oral Communication",
+    "award": "Noncredit program",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6552",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41909",
+    "title": "Intermediate ESL Reading and Writing",
+    "award": "Noncredit program",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6553",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41915",
+    "title": "Hybrid and Alternative Fuel Vehicles",
+    "award": "Noncredit program",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6241",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41916",
+    "title": "Technology-Based Automotive Systems",
+    "award": "Noncredit program",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6243",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41917",
+    "title": "Automotive Technology",
+    "award": "Noncredit program",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6236",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41918",
+    "title": "Automotive Electrical and Body Electronics Technology",
+    "award": "Noncredit program",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6228",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41919",
+    "title": "Automotive Chassis Technology",
+    "award": "Noncredit program",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6226",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41920",
+    "title": "Automotive Engine Performance",
+    "award": "Noncredit program",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6230",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41941",
+    "title": "Automotive Powertrain Technology",
+    "award": "Noncredit program",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6232",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41942",
+    "title": "Intermediate ESL",
+    "award": "Noncredit program",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6551",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41943",
+    "title": "Low-Intermediate ESL",
+    "award": "Noncredit program",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6554",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41996",
+    "title": "Black & White Darkroom Photography",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6165",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41999",
+    "title": "Digital Imaging",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6166",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42001",
+    "title": "Photography",
+    "award": "A.A. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6094",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42038",
+    "title": "Automotive Electrical and Body Electronics Technology",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6227",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42050",
+    "title": "Automotive Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6235",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42051",
+    "title": "Automotive Powertrain Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6231",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42052",
+    "title": "Automotive Engine Performance",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6229",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42061",
+    "title": "Introduction to Infant/Toddler Care",
+    "award": "Noncredit program",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6278",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42082",
+    "title": "Industrial Electronic Technology",
+    "award": "Noncredit program",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6222",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42095",
+    "title": "Community and Organizational Leadership in the Justice System",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6253",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42104",
+    "title": "Electrician, Inside Wireman Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6575",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42110",
+    "title": "Sprinkler Fitter Technology",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6589",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42111",
+    "title": "Precision Manufacturing",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6582",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42112",
+    "title": "Precision Manufacturing",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6223",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42133",
+    "title": "Sprinkler Fitter Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6590",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42528",
+    "title": "Community Health Worker",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6238",
+    "coverage": 0.625,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43360",
+    "title": "Sheet Metal Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6588",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43545",
+    "title": "Construction Electronic Systems Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6571",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43546",
+    "title": "Pipefitting Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6579",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43547",
+    "title": "Roofing and Waterproofing Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6586",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43548",
+    "title": "Telecommunications Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6592",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43566",
+    "title": "Electrical Construction",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6573",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43852",
+    "title": "Plumbing Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6581",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43955",
+    "title": "Telecommunications Technology",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6591",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43956",
+    "title": "Sheet Metal Technology",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6587",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43957",
+    "title": "Roofing and Waterproofing Technology",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6585",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43958",
+    "title": "Pipefitting Technology",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6578",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43959",
+    "title": "Electrical Construction",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6572",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43960",
+    "title": "Construction Electronic Systems Technology",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6570",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44016",
+    "title": "Preparation for STEM Chemistry",
+    "award": "Noncredit program",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6562",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44058",
+    "title": "ESL Composition",
+    "award": "Noncredit program",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6549",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44083",
+    "title": "High Beginning Writing Skills",
+    "award": "Noncredit program",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6550",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44176",
+    "title": "Engineering Technologist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6264",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44177",
+    "title": "Heavy Duty Coach Mechanic",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6239",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44178",
+    "title": "Heavy Duty Coach Mechanic",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6237",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44286",
+    "title": "Residential Sprinkler Fitter Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6584",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44356",
+    "title": "Residential Sprinkler Fitter Technology",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6583",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44460",
+    "title": "Plumbing Technology",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6580",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44490",
+    "title": "Social Justice Studies, Gender Studies",
+    "award": "A.A- T Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6284",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44597",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6107",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44791",
+    "title": "Modern Policing",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6561",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44800",
+    "title": "Construction Management",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6101",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44850",
+    "title": "American Sign Language",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6548",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44914",
+    "title": "Construction Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6186",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44939",
+    "title": "Optical Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6577",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45029",
+    "title": "Cal-GETC",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6568",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45139",
+    "title": "Emergency Medical Services",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6255",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45143",
+    "title": "Emergency Medical Services",
+    "award": "A.S. Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6131",
+    "coverage": 0.765,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45175",
+    "title": "Advanced Diagnosis",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6224",
+    "coverage": 0.545,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45213",
+    "title": "Advanced Diagnosis",
+    "award": "Noncredit program",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6569",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45407",
+    "title": "Medical Assisting - Administrative",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6559",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45417",
+    "title": "Fire and Life Safety Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6576",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45650",
+    "title": "Elementary Teacher Education: Integrated Programs",
+    "award": "A.A- T Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/7074",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46083",
+    "title": "Public Health",
+    "award": "A.S. T Degree",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/7073",
+    "coverage": 0.765,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46101",
+    "title": "ESL Independent Study",
+    "award": "Noncredit program",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/4083/6013",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46104",
+    "title": "Preparation for Health Sciences",
+    "award": "Noncredit program",
+    "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/4083/6065",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "38843479215"
+}
