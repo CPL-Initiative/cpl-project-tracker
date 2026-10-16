@@ -1,5 +1,5 @@
 {
- "_readme": "S401 SkyManzanita, 2026-10-16. Butte's reread (run 38948140330, #2167's reader) found catalog 14 and three sections (Academic Program Types and Requirements, Programs by Subject, Programs by Communities of Interest), read 542 nodes in 1,083 calls and recognized 18 program entries, since cq_is_program wants an award after a dash or a last colon. 19 of 168 programs found a page. This read lists the outline's sections and the children of the nodes that hold the recognized entries (Automotive 28086, Nursing 28039, Spanish 28007, Diesel 28019, Nutrition 28037, Radio-TV-Film 28045), so their siblings' titles show how Butte writes a program entry. No model call; JSON calls only, the census's Reader.",
+ "_readme": "S401 SkyManzanita, 2026-10-16. Butte's reread (run 38948140330, #2167's reader) found catalog 14 and three sections (Academic Program Types and Requirements, Programs by Subject, Programs by Communities of Interest), read 542 nodes in 1,083 calls and recognized 18 program entries, since cq_is_program wants an award after a dash or a last colon. 19 of 168 programs found a page. This read lists the outline's sections and the children of the nodes that hold the recognized entries (Automotive 28086, Nursing 28039, Spanish 28007, Diesel 28019, Nutrition 28037, Radio-TV-Film 28045), so their siblings' titles show how Butte writes a program entry. No model call; JSON calls only, the census's Reader. Read 2 (S401): read 1 (run 38977301962) shows each node's navigation is a link-list wrapper (Programs by Subject 25398 holds wrapper 28408 of 61 subjects; Automotive 28086 holds wrapper 28059 of 6). This read lists the wrappers' children, where the entries are titled.",
  "college": "Butte College",
  "questions": {
   "outline": "The catalog's top sections and their ids, and the children of each program section.",
@@ -14,16 +14,53 @@
   "[Pp]rogram"
  ],
  "pages": [
-  {"answers": ["outline"], "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&navigationtypeId=1"},
-  {"answers": ["outline"], "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=25398"},
-  {"answers": ["outline"], "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=25399"},
-  {"answers": ["outline"], "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28163"},
-  {"answers": ["entry_titles"], "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28086"},
-  {"answers": ["entry_titles"], "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28039"},
-  {"answers": ["entry_titles"], "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28007"},
-  {"answers": ["entry_titles"], "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28019"},
-  {"answers": ["entry_titles"], "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28037"},
-  {"answers": ["entry_titles"], "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28045"},
-  {"answers": ["entry_titles"], "url": "https://butte.curriqunet.com/Catalog/_getPage?catalogId=14&id=28086"}
+  {
+   "answers": [
+    "outline"
+   ],
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28408"
+  },
+  {
+   "answers": [
+    "outline"
+   ],
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28409"
+  },
+  {
+   "answers": [
+    "entry_titles"
+   ],
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28059"
+  },
+  {
+   "answers": [
+    "entry_titles"
+   ],
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=27336"
+  },
+  {
+   "answers": [
+    "entry_titles"
+   ],
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=27316"
+  },
+  {
+   "answers": [
+    "entry_titles"
+   ],
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=27310"
+  },
+  {
+   "answers": [
+    "entry_titles"
+   ],
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=27332"
+  },
+  {
+   "answers": [
+    "entry_titles"
+   ],
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=27322"
+  }
  ]
 }
