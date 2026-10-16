@@ -1,0 +1,56 @@
+{
+ "college": "Butte College",
+ "load_run": "38965262431",
+ "function": "program_requirement_records_college_load",
+ "at": "2026-10-16T20:52:13Z",
+ "records": 19,
+ "posted": 14,
+ "batches": 1,
+ "inserted": 14,
+ "kept": 0,
+ "skipped": [
+  {
+   "control_number": "14583",
+   "why": "extraction error: HTTP 503: {\"code\":\"BOOT_ERROR\",\"message\":\"Function failed to start (please check logs)\"}"
+  },
+  {
+   "control_number": "35132",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35887",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37941",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "38059",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "extracted_runs": [
+  "38948140330"
+ ],
+ "machine_pass": 8,
+ "inserted_keys": [
+  "01323",
+  "07474",
+  "17970",
+  "19995",
+  "19999",
+  "20005",
+  "33254",
+  "35937",
+  "36240",
+  "37972",
+  "38066",
+  "43185",
+  "43186",
+  "43187"
+ ],
+ "kept_keys": [],
+ "rollback": "delete from public.program_requirement_records where college = 'Butte College' and checked = false and control_number in ('01323', '07474', '17970', '19995', '19999', '20005', '33254', '35937', '36240', '37972', '38066', '43185', '43186', '43187');"
+}
