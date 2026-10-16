@@ -280,6 +280,15 @@ jobs:
       - name: Build statewide credit recs (Fact Sheet)
         run: python3 fact-sheet/_build_statewide_recs.py || echo "statewide recs build failed (non-fatal; prior artifact kept)"
 
+      # Every statewide exhibit by program area, with its total units and its lines,
+      # from the same statewide_data.js and fact_sheet_metrics.json this run just wrote
+      # (S398). Sierra reads this file from main when a visitor asks for the statewide
+      # list, so it is current as of this run with no deploy. The builder refuses when
+      # its program-area counts disagree with fact_sheet_metrics.json; the prior file is
+      # then kept, and tests/sierra_statewide_catalog.test.js names the mismatch on main.
+      - name: Build statewide catalog (Fact Sheet + Sierra)
+        run: python3 fact-sheet/_build_statewide_catalog.py || echo "::warning title=Statewide catalog not rebuilt::fact-sheet/_build_statewide_catalog.py failed; Sierra reads the previous catalog until the next run. Check the step log."
+
       # ── Step 4d: SkyView description shards → Supabase Storage ───
       # SkyView shows a course's catalog description on click, from one JSON
       # shard per subject area in the PUBLIC bucket `ccr-desc` (50 MB of
@@ -421,6 +430,7 @@ jobs:
           git add index.html CPL_Dashboard.html CPL_Data.js \
                   live_metrics.json kpi_history.json statewide_data.js \
                   fact-sheet/statewide_recs.js \
+                  fact-sheet/statewide_catalog.json \
                   fact_sheet_metrics.json \
                   statewide_prescriptive.js \
                   college_activity.js college_activity_template.html \
