@@ -106,10 +106,12 @@ block("(1a)", function () {
     !Array.prototype.some.call(heads, function (h) { return /CPL Assistant/.test(h.textContent); }),
     "Sam: change the CPL Assistant title to Sierra AI");
 
-  // Exactly one description too — two paragraphs saying the same thing was
-  // half the redundancy, and a heading count alone would not catch it.
-  check("(1a) the box describes her once, not twice",
-    (box.textContent.match(/Ask her anything/g) || []).length === 1);
+  // Two paragraphs saying the same thing was half the redundancy, and a
+  // heading count alone would not catch it. Since S400 the box carries no
+  // description at all (Sierra AI's format: name, role row, starters, box; the
+  // placeholder asks), so neither copy may come back.
+  check("(1a) the box carries no description of her above the role row (S400)",
+    !/Ask her anything|Ask Sierra anything/.test(box.textContent) && !box.querySelector(".cplchat-intro p"));
 });
 
 // ── (1b) reading order: title → what she is → pickers → chat ───────────────
@@ -268,8 +270,10 @@ block("(4)", function () {
   const rule = (css.match(/(^|\n)\.cplchat-log \{[^}]*\}/) || [""])[0];
   check("(4) the widget's sheet: the log no longer has a FIXED height",
     !!rule && !/[^-]height: ?460px/.test(rule), rule.slice(0, 160));
-  check("(4) the widget's sheet: it grows between a floor and a cap",
-    /min-height:/.test(rule) && /max-height:/.test(rule), rule.slice(0, 160));
+  // The floor went in S400: docked, it painted an empty 240px panel under the
+  // starters, the old format Sam pointed at. A one-line answer now takes one line.
+  check("(4) the widget's sheet: it grows to a cap, with no floor (S400)",
+    /max-height:/.test(rule) && !/min-height: ?[1-9]/.test(rule), rule.slice(0, 160));
 });
 
 // Async: scrollDown() defers a frame (requestAnimationFrame), so every drive
