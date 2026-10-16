@@ -198,7 +198,12 @@ jobs:
       github.actor != 'github-actions[bot]' &&
       github.event_name == 'workflow_dispatch' && github.event.inputs.step == 'display'
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    # One GET and one PATCH a program, in turn. At 30 minutes, build 66b50c86891e's first
+    # apply (run 38857449086, 2026-10-16 05:45Z) was cancelled after 6,875 of 7,125 programs
+    # and filed no applied record, which is the rollback; its re-run (38909267523) took 26
+    # minutes, 0.22 s a program (6,320 took 14 minutes the day before). 120 holds about
+    # 30,000 programs at that pace (S398).
+    timeout-minutes: 120
     permissions:
       contents: write
     steps:

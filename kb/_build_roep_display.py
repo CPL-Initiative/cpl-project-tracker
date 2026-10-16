@@ -11,7 +11,7 @@ understand all the included data and considerations".
 Sierra and the page must say the same thing, so neither computes its own: this
 builder writes the facts once, to
   cpl_pathways_roep_data.js                       (window.CPL_PATHWAYS_ROEP, the page)
-  kb/receipts/program_requirement_records_display_<date>.sql
+  kb/receipts/program_requirement_records_display_<date>_<build>.sql.gz
                                                   (the `display` column Sierra reads)
 and every program's facts carry the same `build` stamp in both.
 tests/roep_display_test.py fails when the two disagree.
@@ -64,6 +64,7 @@ from __future__ import annotations
 import argparse
 import csv
 import glob
+import gzip
 import hashlib
 import json
 import os
@@ -1117,12 +1118,37 @@ def verify_sql(b: dict) -> str:
 
 def receipt_path(b: dict) -> str:
     """Dated, and named by build from S332: two builds on one read date each keep their
-    receipt, so the earlier one stays the later one's rollback."""
-    stamped = os.path.join(RECEIPTS, "program_requirement_records_display_%s_%s.sql" % (b["built"], b["build"]))
+    receipt, so the earlier one stays the later one's rollback. Gzipped from S398: build
+    fa8ee2a84935's 8,070 statements ran 72.7 MB of SQL, and GitHub refuses a file over
+    100 MB, so plain text would have stopped a push about 3,000 records later. Gzipped it is
+    about a ninth (66b50c86891e: 64.8 MB to 7.2 MB). A build written before keeps its
+    plain .sql, which this still finds, so it stays the next build's rollback."""
+    stem = os.path.join(RECEIPTS, "program_requirement_records_display_%s_%s.sql" % (b["built"], b["build"]))
     first = os.path.join(RECEIPTS, "program_requirement_records_display_%s.sql" % b["built"])
-    if not os.path.exists(stamped) and os.path.exists(first) and ("build %s," % b["build"]) in open(first).readline():
+    if os.path.exists(stem):
+        return stem
+    if not os.path.exists(stem + ".gz") and os.path.exists(first) and ("build %s," % b["build"]) in open(first).readline():
         return first
-    return stamped
+    return stem + ".gz"
+
+
+def read_receipt(path: str) -> str:
+    """A receipt's text, gzipped or plain (zcat reads a .gz one by hand)."""
+    if path.endswith(".gz"):
+        with gzip.open(path, "rt", encoding="utf-8") as fh:
+            return fh.read()
+    with open(path, encoding="utf-8") as fh:
+        return fh.read()
+
+
+def write_receipt(path: str, sql: str) -> None:
+    """mtime 0, so the same SQL always gzips to the same bytes."""
+    if not path.endswith(".gz"):
+        with open(path, "w", encoding="utf-8") as fh:
+            fh.write(sql)
+        return
+    with open(path, "wb") as raw, gzip.GzipFile(filename="", mode="wb", fileobj=raw, mtime=0, compresslevel=9) as gz:
+        gz.write(sql.encode("utf-8"))
 
 
 def main(argv=None) -> int:
@@ -1164,7 +1190,7 @@ def main(argv=None) -> int:
         print("wrote %s; build %s unchanged, its receipt %s kept" % (
             os.path.relpath(OUT_JS, ROOT), b["build"], os.path.relpath(receipt_path(b), ROOT)))
         return 0
-    open(receipt_path(b), "w").write(sql)
+    write_receipt(receipt_path(b), sql)
     print("wrote %s and %s" % (os.path.relpath(OUT_JS, ROOT), os.path.relpath(receipt_path(b), ROOT)))
     return 0
 
