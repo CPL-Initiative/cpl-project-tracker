@@ -126,9 +126,10 @@ const visibleTitles = (doc) => Array.from(doc.querySelectorAll("tr.cr-row"))
     css.indexOf(".cr-mergesug-h{color:var(--seal-blue-text,#002F6D);}") >= 0);
 
   // ── 6. header row text white ──
-  check("header: th text is white", css.indexOf(".cr-table th{color:#fff;}") >= 0);
+  // White via the First Light token (2026-10-16 UI pass), never a raw hex.
+  check("header: th text is white", css.indexOf(".cr-table th{color:var(--on-seal-blue);}") >= 0);
   check("header: active sort indicator is white",
-    css.indexOf(".cr-sort-indicator.active{color:#fff;}") >= 0);
+    css.indexOf(".cr-sort-indicator.active{color:var(--on-seal-blue);}") >= 0);
 
   // ── 4. column drag-resize ──
   check("resize: handle CSS present",
@@ -227,7 +228,7 @@ const visibleTitles = (doc) => Array.from(doc.querySelectorAll("tr.cr-row"))
 
   // The extracts ride the override too.
   const jsonBtn = Array.from(doc.querySelectorAll(".cr-export-btn"))
-    .find((b) => txt(b) === "⬇ JSON");
+    .find((b) => txt(b) === "JSON");
   jsonBtn.click();
   await sleep(30);
   const parsed = JSON.parse(await log.blobs[log.blobs.length - 1].text());
