@@ -1,0 +1,257 @@
+{
+ "college": "Imperial Valley College",
+ "control_number": "35587",
+ "shape": "adt",
+ "title": "Geography",
+ "award": "A.A- T Degree",
+ "source_url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8329",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7046,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7046,
+    "output_tokens": 2291,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2291,
+  "output_tokens_details": {
+   "thinking_tokens": 895
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.074,
+ "ms": 19600,
+ "seconds": 20.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    20.0,
+    20.0
+   ],
+   "stated": [
+    19.0,
+    20.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 20.0-20.0; the catalog states 19.0-20.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 7,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "GEOGRAPHY FOR TRANSFER (MAJOR - A.A.-T)",
+   "measure": "units",
+   "total_units": {
+    "min": 19,
+    "max": 20
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Acquire and utilize terminology and vocabulary appropriate to geography as a field of study and academic discipline;",
+    "Establish and exercise the skills necessary to express and interpret spatial relations and patterns via maps and/or other geo-spatial representational media;",
+    "Identify and demonstrate the major concepts associated with Cultural, Physical, and Regional Geography in written and oral formats;",
+    "Explain fundamental physical relationships among the atmosphere, hydrosphere, lithosphere and biosphere, within the context of the scientific method;",
+    "Demonstrate critical thinking skills necessary to utilize a geographic perspective in explaining geo-spatial relationships, distributions, and impacts in scalar terms."
+   ],
+   "careers": [
+    "urban planning",
+    "market research",
+    "land use analysis",
+    "transportation",
+    "tourism",
+    "education",
+    "public and government agencies"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required courses for the major (7.0 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 7,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "GEOG 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 111",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOG 108",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST A: Select two courses (6.0 units)",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "GEOG 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 155",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST B: Select two courses (6.0-7.0 units)",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "ANTH 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 100",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The required core includes 'Select one from either GEOG 102 or GEOG 108', recorded as GEOG 102 with GEOG 108 as an alternative inside the 7.0-unit core block.",
+   "LIST A also allows 'Any required core course not already used' (i.e., the unused one of GEOG 102/GEOG 108).",
+   "LIST B also allows 'Any LIST A or core course not already used.'",
+   "The page states 'Must complete a maximum of 60 CSU-transferable semester units' as a general ADT requirement; not recorded as degree_total since it is the generic ADT unit rule (wording 'maximum' appears to be a catalog error for 'minimum').",
+   "Cal-GETC is printed as '34 units minimum'; recorded ge_units as 34.",
+   "Outcomes are listed under 'Learning Outcome(s):' for this program; copied with trailing semicolons as printed.",
+   "Catalog title for GEOG 155 reads 'Introduction to Geographic Information Systems and Techniques with Lab', slightly differing from the state file title.",
+   "Text is cut off at the end ('ASSOCIATE DEGREE PROGRAM (For Transfer) The Associate in Art')."
+  ]
+ },
+ "extracted_run": "38935136329"
+}

@@ -1,0 +1,383 @@
+{
+ "college": "Imperial Valley College",
+ "control_number": "21477",
+ "shape": "certificate",
+ "title": "Nursing - Vocational (V.N.)",
+ "award": "Certificate of Achievement requiring 60+S/90+Q units",
+ "source_url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8642",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7568,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7568,
+    "output_tokens": 2918,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2918,
+  "output_tokens_details": {
+   "thinking_tokens": 909
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08863,
+ "ms": 22779,
+ "seconds": 23.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 19,
+   "listed": 20,
+   "share": 0.95,
+   "missing": [
+    "ENGLC1000"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "ENGL110"
+   ],
+   "flagged": [
+    "ENGL110"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    64.0,
+    65.0
+   ],
+   "stated": [
+    64.0,
+    65.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "NURSING - VOCATIONAL (V.N.) (CERTIFICATE)",
+   "measure": "units",
+   "total_units": {
+    "min": 64,
+    "max": 65
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will meet or exceed the national mean pass rates for the national licensing exam (NCLEX-VN)",
+    "Students will demonstrate comprehensive knowledge of vocational nursing at 75% or higher by the end of the LVN program.",
+    "Program completion rates within 6 semesters will be at least 75% or higher.",
+    "At least 75% of graduates, alumni, and employers will indicate satisfaction with the Imperial Valley College VN program."
+   ],
+   "careers": [
+    "Licensed Vocational Nurse (LVN)"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Prerequisites for the certificate",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 26,
+     "max": 27
+    },
+    "courses": [
+     {
+      "code": "AHP 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 220",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSY 204",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Anatomy and Physiology Sequence (BIOL 200 and BIOL 202)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Anatomy and Physiology Sequence",
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "BIOL 200",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 202",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Anatomy and Physiology Sequence (BIOL 204 and BIOL 206)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Anatomy and Physiology Sequence",
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "BIOL 204",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 206",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one from either ENGL 105 or ENGL 110 or ESL 108",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "ENGL 105",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 110",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ESL 108",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Semester 1",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 11.5,
+     "max": 11.5
+    },
+    "courses": [
+     {
+      "code": "VN 110",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 112",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 114",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Semester 2",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 13,
+     "max": 13
+    },
+    "courses": [
+     {
+      "code": "VN 120",
+      "units": 5.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 122",
+      "units": 5.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 124",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Semester 3",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 13.5,
+     "max": 13.5
+    },
+    "courses": [
+     {
+      "code": "VN 116",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 130",
+      "units": 5.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VN 132",
+      "units": 5.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ENGL C1000",
+    "why": "not in the text; catalog lists ENGL 110 instead among English options"
+   }
+  ],
+  "notes": [
+   "The 26.0-27.0 printed for 'Prerequisites for the certificate' covers the whole prerequisite group, including the Anatomy and Physiology Sequence option blocks and the English choice block, not only the four courses recorded directly in that block (3+8+5+4/5+3+3 = 26-27).",
+   "The Anatomy and Physiology Sequence (8.0) is printed as BIOL 200 AND BIOL 202 OR BIOL 204 AND BIOL 206; recorded as two option blocks.",
+   "PSYC C1000 and PSY 204 are printed without an 'or' and both are needed to reach the 26-27 prerequisite total, so both are recorded as required.",
+   "Total 64.0-65.0 includes the prerequisite courses plus the VN semester courses (38 units); recorded as the certificate total.",
+   "ENGL 110 is not in the closed list (catalog addition); ENGL C1000 from the closed list does not appear in the text.",
+   "Award title states 60+S/90+Q units; catalog prints total 64.0-65.0."
+  ]
+ },
+ "extracted_run": "38935136329"
+}
