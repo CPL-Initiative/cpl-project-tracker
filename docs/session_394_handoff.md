@@ -4,6 +4,8 @@ date: 2026-10-15
 session: 393 (SkySycamore)
 tags: [handoff, program-requirements, reconcile, extraction, scheduled-sessions, decision-sheet]
 status: current
+superseded: true
+superseded_by: session_397_handoff.md
 ---
 
 # You are Session 394
