@@ -1,0 +1,859 @@
+{
+ "college": "Merritt College",
+ "catalog_url": "https://mc.curriqunet.com/catalog/iq/46097",
+ "platform": "curriqunet",
+ "catalog_year": "2026-2027",
+ "programs": 83,
+ "with_closed_list": 81,
+ "started": "2026-10-16T16:53:10Z",
+ "curriqunet": {
+  "catalog": 10549,
+  "view_prefix": "https://mc.curriqunet.com/catalog/iq/",
+  "errors": [],
+  "sections": [
+   "Associate Degrees and Certificates",
+   "Courses and Programs"
+  ],
+  "nodes_read": 36,
+  "calls": 72,
+  "entries": 179,
+  "stopped_at_cap": false,
+  "same_title_entries": 1,
+  "entries_read": 178
+ },
+ "pages_read": 178,
+ "banner_h1": null,
+ "loads": 787,
+ "seconds": 3791.3,
+ "found": 81,
+ "by_method": {
+  "no_closed_list": 2,
+  "sitemap_page": 81
+ },
+ "shared_pages": {},
+ "not_found": [],
+ "page_claimed": [],
+ "coverage_bands": {
+  "0.5-0.8": 0,
+  "0.8-1.0": 3,
+  "1.0": 78
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 81,
+  "list": [
+   {
+    "control_number": "01192",
+    "title": "Basic Landscape Horticulture",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48791",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01195",
+    "title": "Accounting",
+    "award": "A.A. Degree",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48772",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01196",
+    "title": "Business Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48795",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01197",
+    "title": "Real Estate",
+    "award": "A.A. Degree",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48849",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01208",
+    "title": "Nursing",
+    "award": "A.S. Degree",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48840",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01210",
+    "title": "Radiologic Science",
+    "award": "A.S. Degree",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48847",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01212",
+    "title": "Dietary Manager",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48809",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01213",
+    "title": "Paralegal Studies",
+    "award": "A.A. Degree",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48843",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01226",
+    "title": "Administration of Justice: Police Science",
+    "award": "A.A. Degree",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48777",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01227",
+    "title": "Child Development",
+    "award": "A.A. Degree",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48797",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01231",
+    "title": "African American Studies",
+    "award": "A.A. Degree",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48780",
+    "coverage": 0.958,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09040",
+    "title": "Nursery Management",
+    "award": "A.S. Degree",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48838",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09042",
+    "title": "Landscape Design and Construction",
+    "award": "A.S. Degree",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48831",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09050",
+    "title": "Community Social Services/Substance Abuse",
+    "award": "A.A. Degree",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48800",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09051",
+    "title": "Administration of Justice: Corrections",
+    "award": "A.A. Degree",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48775",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09054",
+    "title": "Health Sciences",
+    "award": "A.S. Degree",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48821",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09055",
+    "title": "Natural Sciences",
+    "award": "A.S. Degree",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48837",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11693",
+    "title": "Landscape And Parks Maintenance",
+    "award": "A.S. Degree",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48828",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12299",
+    "title": "Dietetic Technology",
+    "award": "A.S. Degree",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48810",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19145",
+    "title": "California General Education Transfer Curriculum (Cal-GETC)",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/49733",
+    "coverage": 0.963,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22010",
+    "title": "Landscape and Parks Maintenance",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48829",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22011",
+    "title": "Landscape Design and Construction",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48832",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22012",
+    "title": "Nursery Management",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48839",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22015",
+    "title": "Accounting",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48773",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22016",
+    "title": "Real Estate",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48850",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22023",
+    "title": "Radiologic Science",
+    "award": "Certificate of Achievement requiring 60+S/90+Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48848",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22025",
+    "title": "Teacher",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48854",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22026",
+    "title": "Paralegal Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48844",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22028",
+    "title": "Community Social Services/Substance Abuse",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48801",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22029",
+    "title": "Administration of Justice: Police Science",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48778",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22030",
+    "title": "Administration of Justice: Corrections",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48776",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30967",
+    "title": "Landscape Architecture",
+    "award": "A.A. Degree",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48830",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31180",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48774",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32928",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/math2-ast",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33081",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48813",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33332",
+    "title": "Homeland Security",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48823",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33357",
+    "title": "Applications Security",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48783",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33371",
+    "title": "Social and Behavioral Sciences",
+    "award": "A.A. Degree",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48852",
+    "coverage": 0.962,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33439",
+    "title": "Infrastructure Security",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48827",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33536",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48781",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33540",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48814",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33675",
+    "title": "Applications Security",
+    "award": "A.S. Degree",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48782",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33709",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48853",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33716",
+    "title": "Infrastructure Security",
+    "award": "A.S. Degree",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48826",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35211",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48841",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35315",
+    "title": "Histotechnician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48822",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36514",
+    "title": "Tree Care Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48856",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36515",
+    "title": "Tree Climber Specialist",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48857",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36516",
+    "title": "Arboriculture",
+    "award": "A.S. Degree",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48784",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36826",
+    "title": "Bridge to Credit ESOL",
+    "award": "Noncredit program",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48793",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37718",
+    "title": "Art Fundamentals",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48785",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37798",
+    "title": "Research Skills",
+    "award": "Noncredit program",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48851",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37964",
+    "title": "Computer Science",
+    "award": "A.S. Degree",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48803",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37966",
+    "title": "Computer Science",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48804",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38375",
+    "title": "Fire Technology",
+    "award": "A.S. Degree",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48818",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38376",
+    "title": "Fire Officer",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48817",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38377",
+    "title": "Chief Fire Officer",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48796",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38635",
+    "title": "Fire Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48819",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38636",
+    "title": "Optical Microscopy",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48842",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38637",
+    "title": "Fluorescence Bioscience Microscopy",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48820",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38648",
+    "title": "Conservation and Resource Management",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/conservation-resource-mgmt",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38649",
+    "title": "Natural History and Resources",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48836",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38650",
+    "title": "Urban Agroecology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48858",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39761",
+    "title": "Computer Science and Information Systems Career Readiness",
+    "award": "Noncredit program",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48805",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41119",
+    "title": "Digital Marketing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48812",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41238",
+    "title": "Clinical Medical Assisting",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48798",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41274",
+    "title": "Administrative Medical Assisting",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48779",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41331",
+    "title": "Computer Project Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48802",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41368",
+    "title": "Transitional Kindergarten (TK)",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48855",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41523",
+    "title": "Basic Cannabis Horticulture",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48788",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41761",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48794",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42483",
+    "title": "DevOps - Development and Operations Automation",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48808",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42571",
+    "title": "DevOps - Development and Operations Automation",
+    "award": "A.S. Degree",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48807",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42959",
+    "title": "Digital Investment",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48811",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43040",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48799",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43075",
+    "title": "Botanical Illustration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48792",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43947",
+    "title": "Permaculture Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/49657",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44195",
+    "title": "Municipal Gardener, Level 1",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48834",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44196",
+    "title": "Municipal Gardener, Level 2",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48835",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44202",
+    "title": "Paramedic",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48845",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44448",
+    "title": "Paramedic",
+    "award": "A.S. Degree",
+    "url": "https://mc.curriqunet.com/catalog/iq/48441/48770/paramedic-as-degree",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "38935152199"
+}

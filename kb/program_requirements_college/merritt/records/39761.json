@@ -1,0 +1,215 @@
+{
+ "college": "Merritt College",
+ "control_number": "39761",
+ "shape": "noncredit",
+ "title": "Computer Science and Information Systems Career Readiness",
+ "award": "Noncredit program",
+ "source_url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48805",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7715,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7715,
+    "output_tokens": 1343,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1343,
+  "output_tokens_details": {
+   "thinking_tokens": 480
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05772,
+ "ms": 12013,
+ "seconds": 12.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    34.0,
+    36.0
+   ],
+   "stated": [
+    34.0,
+    36.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Program Requirements",
+   "measure": "hours",
+   "total_units": {
+    "min": 34,
+    "max": 36
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "Technical Professional",
+    "Software Developer",
+    "Information Systems Analyst",
+    "DevOps",
+    "Computer Systems Analysts",
+    "Computer User Support Specialists"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Noncredit Courses:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 34,
+     "max": 36
+    },
+    "courses": [
+     {
+      "code": "CIS 520",
+      "units": 4,
+      "units_max": 4.5,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 521",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 522",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 523",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 524",
+      "units": 4,
+      "units_max": 4.5,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 525",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 526",
+      "units": 4,
+      "units_max": 4.5,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 527",
+      "units": 4,
+      "units_max": 4.5,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Program is noncredit and counted in hours ('HOURS' column, 'Total Hours: 34-36'); all units fields hold hours.",
+   "The catalog text is cut off mid-list in the Career Opportunities section ('Computer ...'); further occupations and any Program Learning Outcomes section are not in the text, so outcomes are empty and careers may be incomplete.",
+   "Careers 'Computer Systems Analysts' and 'Computer User Support Specialists' are printed with SOC codes (15-1121, 15-1151), omitted from the entries. 'DevOps' is printed as part of 'DevOps workforce'.",
+   "'Technical Professional' is taken from the description ('fulfill the role of a Technical Professional'); reviewer may decide whether it counts as a career.",
+   "The description calls the award a Certificate of Completion."
+  ]
+ },
+ "extracted_run": "38935152199"
+}
