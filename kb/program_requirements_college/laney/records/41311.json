@@ -1,0 +1,175 @@
+{
+ "college": "Laney College",
+ "control_number": "41311",
+ "shape": "noncredit",
+ "title": "ESOL Advanced",
+ "award": "Noncredit program",
+ "source_url": "https://lan.curriqunet.com/catalog/view/iq/44166/44195/44356",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6358,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6358,
+    "output_tokens": 1006,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1006,
+  "output_tokens_details": {
+   "thinking_tokens": 324
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04555,
+ "ms": 8843,
+ "seconds": 9.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    172.0,
+    245.0
+   ],
+   "stated": [
+    172.0,
+    245.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "ESOL Advanced - Certificate of Competency",
+   "measure": "hours",
+   "total_units": {
+    "min": 172,
+    "max": 245
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate intermediate skills in English listening, speaking, reading, and/or writing which will allow them to achieve their personal, vocational, and academic goals."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Courses (min 172 hours)",
+    "rule": "choose_units",
+    "minimum": 172,
+    "option_group": null,
+    "stated": {
+     "min": 172,
+     "max": 245
+    },
+    "courses": [
+     {
+      "code": "ESOL 550",
+      "units": 70,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESOL 552",
+      "units": 105,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESOL 574",
+      "units": 70,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit Certificate of Competency counted in hours; course hours and totals are as printed (70, 105, 70; total 172.00-245.00).",
+   "Ambiguity: the block heading reads 'Courses (min 172 hours)' with a 172-245 range, recorded as choose_units with minimum 172; but the description says the certificate verifies completion of all three core classes (Reading and Writing, Listening and Speaking, Grammar), which sum to 245 hours. A reviewer should check whether all three courses are required.",
+   "Career Opportunities states the certificate prepares students 'for vocational programs and job advancement'; no specific career, job title or field is named, so careers is empty.",
+   "The outcome refers to 'intermediate skills' although the program is ESOL Advanced; copied as printed.",
+   "A competency requirement is printed: teacher or department determines whether the student has met the program competencies."
+  ]
+ },
+ "extracted_run": "38935141023"
+}
