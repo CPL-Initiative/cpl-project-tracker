@@ -1,0 +1,184 @@
+{
+ "college": "Madera College",
+ "control_number": "39868",
+ "shape": "certificate",
+ "title": "Information Systems, Networking and Security",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1099/1189",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6787,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6787,
+    "output_tokens": 1292,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1292,
+  "output_tokens_details": {
+   "thinking_tokens": 516
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05299,
+ "ms": 11883,
+ "seconds": 12.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 9,
+   "share": 0.0,
+   "missing": [
+    "IS15",
+    "IS26A",
+    "IS40A",
+    "IS60",
+    "IS62",
+    "IS63",
+    "IS64",
+    "IS80",
+    "IS81"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Information Systems, Networking and Security, Associate in Science - Major #M.6972.AS",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "IS 15",
+    "why": "named only in the A.S. section; no certificate section in the text"
+   },
+   {
+    "code": "IS 26A",
+    "why": "named only in the A.S. section; no certificate section in the text"
+   },
+   {
+    "code": "IS 40A",
+    "why": "named only in the A.S. section; no certificate section in the text"
+   },
+   {
+    "code": "IS 60",
+    "why": "named only in the A.S. section; no certificate section in the text"
+   },
+   {
+    "code": "IS 62",
+    "why": "named only in the A.S. section; no certificate section in the text"
+   },
+   {
+    "code": "IS 63",
+    "why": "named only in the A.S. section; no certificate section in the text"
+   },
+   {
+    "code": "IS 64",
+    "why": "named only in the A.S. section; no certificate section in the text"
+   },
+   {
+    "code": "IS 80",
+    "why": "named only in the A.S. section; no certificate section in the text"
+   },
+   {
+    "code": "IS 81",
+    "why": "named only in the A.S. section; no certificate section in the text"
+   }
+  ],
+  "notes": [
+   "The catalog text contains only the Associate in Science section (Major #M.6972.AS, Total 43.5-48.0); no Certificate of Achievement section for this program is printed, so no blocks are recorded for the certificate. The heading recorded is the only section present, not the certificate's own.",
+   "The A.S. section prints seven learning outcomes; they are not recorded because they are printed for the A.S. degree, and the text does not show the certificate sharing them. A reviewer should check the certificate's own page for its outcomes and requirements.",
+   "The A.S. requirements include IT Support and Networking and Security option groups (IS 15/IS 60/IS 61/IS 62 or IS 80; IS 63/IS 64/IS 70/IS 71 or IS 81) that may correspond to the certificate, but the text does not state the certificate's requirements.",
+   "The source URL refers to the 2025-2026 MCC catalog, while the program record is for catalog year 2026-2027."
+  ]
+ },
+ "extracted_run": "38935148408"
+}
