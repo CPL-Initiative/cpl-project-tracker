@@ -1,0 +1,259 @@
+{
+ "college": "Antelope Valley College",
+ "control_number": "20175",
+ "shape": "certificate",
+ "title": "General Aircraft Maintenance",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/general-aircraft-maintenance-as-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8375,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8375,
+    "output_tokens": 2108,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2108,
+  "output_tokens_details": {
+   "thinking_tokens": 737
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07566,
+ "ms": 17763,
+ "seconds": 18.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    23.0
+   ],
+   "stated": [
+    18.0,
+    23.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     39.0,
+     44.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": [],
+    "fill": [
+     16.0,
+     21.0
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "General Aircraft Maintenance AS",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 23
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "AVC GE",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 21,
+    "max": 21
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Analyze and evaluate critical aspects of the aerospace industry related to safe work practices, standards and tolerances, standard shop practices, proper use of tools, power equipment, and personal protective equipment.",
+    "Analyze, evaluate, troubleshoot, and repair structural, propulsion, electrical, and guidance systems to meet airworthy standards.",
+    "Evaluate and apply Federal Aviation Regulations, technical maintenance data, and acceptable industry standards pertinent to proper maintenance and safety standards."
+   ],
+   "careers": [
+    "aviation maintenance",
+    "supervisory and management positions",
+    "certificates aircraft mechanic"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "AERO 120",
+      "units": 7.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AERO 121",
+      "units": 7.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Program Electives",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "AFAB 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AFAB 115",
+      "units": 8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AFAB 120",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AFAB 130",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AFAB 210",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELTE 252",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ELTE 254",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The award requested is a Certificate of Achievement, but the text contains only the General Aircraft Maintenance AS (associate degree) section; requirements were read from that section. A reviewer should confirm whether the certificate has its own page or shares these course requirements.",
+   "Program Electives: the catalog says 'Complete the following number of credits: 3-8' and the description says 'an additional 3 units from the restricted list'; minimum recorded as 3, stated 3-8.",
+   "Course codes appear both without spaces (AERO120, AFAB120) and with spaces (AERO 120, AFAB 120) on the page; recorded with spaces. AFAB 120 and AFAB 130 match closed-list entries AFAB120 and AFAB130.",
+   "degree_total 60 is from 'TOTAL Units 60 units'; ge_units 21 is from the description ('21 units of general education requirements'). The table also prints 'Completion of General Education requirements, plus electives (as needed to reach 60 units) 37-42 Units', a combined GE-plus-electives figure.",
+   "GE pattern inferred as the local AVC GE from the Recommended Pathway ('Any AVC GE Area ...').",
+   "The page also prints 'Program Goals and Objectives' with three 'Objective(s)' statements referring to 'the certificate'. These are objectives, not program outcomes, so they were not recorded as outcomes. The Program Outcomes list is headed 'General Aircraft Maintenance AS'.",
+   "Proposed sequence in the requirements table lists Year 2 Summer twice; possibly a typo."
+  ]
+ },
+ "extracted_run": "38979725726"
+}

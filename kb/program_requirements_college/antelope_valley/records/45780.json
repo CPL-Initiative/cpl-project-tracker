@@ -1,0 +1,182 @@
+{
+ "college": "Antelope Valley College",
+ "control_number": "45780",
+ "shape": "noncredit",
+ "title": "Yoga Instructor",
+ "award": "Noncredit program",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/yoga-instructor-certificate-noncredit-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7175,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7175,
+    "output_tokens": 960,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 960,
+  "output_tokens_details": {
+   "thinking_tokens": 307
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0479,
+ "ms": 8556,
+ "seconds": 8.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    216.0,
+    216.0
+   ],
+   "stated": [
+    216.0,
+    216.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Yoga Instructor Certificate (Noncredit)",
+   "measure": "hours",
+   "total_units": {
+    "min": 216,
+    "max": 216
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "yoga instructors"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Yoga Teacher Training Program",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 216,
+     "max": 216
+    },
+    "courses": [
+     {
+      "code": "KINT900",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINT901",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINT902",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINT903",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit program counted in hours: each course is 54 hours; the program total is printed as 216.",
+   "The catalog prints codes without a space (KINT900); these match closed-list codes KINT 900 through KINT 903.",
+   "No program learning outcomes are printed. The 'Program Goals and Objectives' section is narrative and is cut off mid-sentence at the end of the text.",
+   "Careers: only 'yoga instructors' was recorded. The text also names workplaces (yoga studios, health and fitness clubs, health care facilities). It names existing professionals who might add yoga skills (personal trainers, body workers, caregivers, therapists and teachers in other disciplines), but not as careers the program prepares students for, so those were not recorded.",
+   "The Recommended Pathway lists the same four courses, one per term, at 54.0 hours each."
+  ]
+ },
+ "extracted_run": "38979725726"
+}

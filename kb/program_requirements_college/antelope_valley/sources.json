@@ -1,0 +1,6995 @@
+[
+ {
+  "control_number": "02138",
+  "title": "Registered Nursing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL201",
+   "BIOL202",
+   "BIOL204",
+   "COMMC1000",
+   "COMMC1000H",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "HISTC1001",
+   "HISTC1001H",
+   "HISTC1002",
+   "HISTC1002H",
+   "NS101A",
+   "NS102A",
+   "NS103A",
+   "NS201A",
+   "NS202A",
+   "NS203A",
+   "NS204A",
+   "NS205A",
+   "PHIL201",
+   "PSY236",
+   "SOCIC1000",
+   "SOCIC1000H",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/registered-nursing-as-fall-2026",
+   "title": "Registered Nursing AS",
+   "h1": "Registered Nursing AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 8307
+ },
+ {
+  "control_number": "02139",
+  "title": "General Business",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT111",
+   "ACCT201",
+   "BUS101",
+   "BUS105",
+   "BUS111",
+   "BUS113",
+   "BUS121",
+   "BUS201",
+   "BUS212",
+   "CA103",
+   "CA111",
+   "CA121",
+   "CA221",
+   "MATH116",
+   "MATH124",
+   "MGT101",
+   "MGT115",
+   "MGT121",
+   "MGT199",
+   "MGT201",
+   "MKTG101",
+   "MKTG112",
+   "MKTG130",
+   "MKTG132",
+   "MKTG199",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/general-business-cert-fall-2026",
+   "title": "General Business Cert",
+   "h1": "General Business Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 8440
+ },
+ {
+  "control_number": "02140",
+  "title": "Real Estate",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT111",
+   "ACCT201",
+   "BIP115",
+   "BUS105",
+   "BUS201",
+   "CA103",
+   "CA221",
+   "MKTG130",
+   "RE101",
+   "RE105",
+   "RE111",
+   "RE121",
+   "RE131",
+   "RE141",
+   "RE161",
+   "RE180",
+   "RE199"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/real-estate-as-fall-2026",
+   "title": "Real Estate AS",
+   "h1": "Real Estate AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 4041
+ },
+ {
+  "control_number": "02145",
+  "title": "Computer Applications",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CA103",
+   "CA107",
+   "CA111",
+   "CA121",
+   "CA131",
+   "CA151",
+   "CA157",
+   "CA171",
+   "CA175",
+   "CA199",
+   "CA221"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-applications-cert-fall-2026",
+   "title": "Computer Applications Cert",
+   "h1": "Computer Applications Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 4740
+ },
+ {
+  "control_number": "02147",
+  "title": "Mechanical Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM110",
+   "CHEM110H",
+   "ENGR110",
+   "ENGR125",
+   "ENGR130",
+   "ENGR140",
+   "ENGR210",
+   "MATH150",
+   "MATH150H",
+   "MATH160",
+   "MATH230",
+   "MATH250",
+   "PHYS110",
+   "PHYS120"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/mechanical-engineering-as-fall-2026",
+   "title": "Mechanical Engineering AS",
+   "h1": "Mechanical Engineering AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 4359
+ },
+ {
+  "control_number": "02149",
+  "title": "Electronics Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELTE105",
+   "ELTE110",
+   "ELTE125",
+   "ELTE130",
+   "ELTE135",
+   "ELTE140",
+   "ELTE145",
+   "ELTE180",
+   "ELTE199",
+   "ELTE220",
+   "ELTE235",
+   "ELTE252",
+   "ELTE254"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/electronics-technology-cert-fall-2026",
+   "title": "Electronics Technology Cert",
+   "h1": "Electronics Technology Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 4964
+ },
+ {
+  "control_number": "02150",
+  "title": "Air Conditioning & Refrigeration Specialist",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACRV112",
+   "ACRV113",
+   "ACRV122",
+   "ACRV123",
+   "ACRV212",
+   "ACRV213",
+   "ACRV222",
+   "ACRV223"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/air-conditioning-refrigeration-specialist-cert-fall-2026",
+   "title": "Air Conditioning & Refrigeration Specialist Cert",
+   "h1": "Air Conditioning & Refrigeration Specialist Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 6666
+ },
+ {
+  "control_number": "02152",
+  "title": "Automotive Collision Repair Specialist",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ABDY112",
+   "ABDY113",
+   "ABDY115",
+   "ABDY122",
+   "ABDY123",
+   "ABDY125",
+   "ABDY212",
+   "ABDY213",
+   "ABDY215"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-collision-repair-specialist-cert-fall-2026",
+   "title": "Automotive Collision Repair Specialist Cert",
+   "h1": "Automotive Collision Repair Specialist Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 4583
+ },
+ {
+  "control_number": "02153",
+  "title": "General Aircraft Maintenance",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AERO120",
+   "AERO121",
+   "AFAB110",
+   "AFAB115",
+   "AFAB120",
+   "AFAB130",
+   "AFAB210",
+   "ELTE252",
+   "ELTE254"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/general-aircraft-maintenance-cert-fall-2026",
+   "title": "General Aircraft Maintenance Cert",
+   "h1": "General Aircraft Maintenance Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 5080
+ },
+ {
+  "control_number": "02155",
+  "title": "Welding",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WELD110",
+   "WELD120",
+   "WELD130",
+   "WELD135",
+   "WELD137",
+   "WELD212",
+   "WELD230",
+   "WELD240",
+   "WELD260",
+   "WELD265"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/welding-cert-fall-2026",
+   "title": "Welding Cert",
+   "h1": "Welding Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 4912
+ },
+ {
+  "control_number": "02157",
+  "title": "Music",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS120",
+   "MUS131",
+   "MUS132",
+   "MUS151",
+   "MUS153A",
+   "MUS153B",
+   "MUS160",
+   "MUS166",
+   "MUS180",
+   "MUS181",
+   "MUS231",
+   "MUS251A",
+   "MUS251B",
+   "MUS253A",
+   "MUS253B",
+   "MUS291A",
+   "MUS291B",
+   "MUS291C"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/music-aa-fall-2026",
+   "title": "Music AA",
+   "h1": "Music AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 6382
+ },
+ {
+  "control_number": "02158",
+  "title": "Commercial Music: Level I",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FTV241",
+   "MUS120",
+   "MUS291D",
+   "MUS292",
+   "MUSC100",
+   "MUSC102",
+   "MUSC103",
+   "MUSC104",
+   "MUSC107",
+   "MUSC108",
+   "MUSC109",
+   "MUSC124A",
+   "MUSC134",
+   "MUSC136",
+   "MUSC141",
+   "MUSC142",
+   "MUSC143A",
+   "MUSC150C",
+   "MUSC173",
+   "MUSC199",
+   "MUSC220A",
+   "MUSC233",
+   "MUSC273"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/commercial-music-level-i-certificate-fall-2026",
+   "title": "Commercial Music: Level I Certificate",
+   "h1": "Commercial Music: Level I Certificate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 5981
+ },
+ {
+  "control_number": "02160",
+  "title": "Commercial Photography",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART100",
+   "PHOT107",
+   "PHOT213",
+   "PHTC101",
+   "PHTC125",
+   "PHTC150",
+   "PHTC200",
+   "PHTC201",
+   "PHTC203",
+   "PHTC205",
+   "PHTC211",
+   "PHTC215",
+   "PHTC275",
+   "PHTC298"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/commercial-photography-cert-fall-2025",
+   "title": "Commercial Photography Cert",
+   "h1": "Commercial Photography Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 4858
+ },
+ {
+  "control_number": "02167",
+  "title": "Medical Assistant",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL100",
+   "BIP110",
+   "BIP111",
+   "BIP112",
+   "BIP120",
+   "BIP121",
+   "BIP122",
+   "BIP130",
+   "BIP131",
+   "BIP132",
+   "BIP151",
+   "BIP152",
+   "BIP205",
+   "COMMC1000",
+   "COMMC1000H",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "MOA101",
+   "MOA102",
+   "MOA110",
+   "MOA111",
+   "NF100"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/medical-assistant-as-fall-2026",
+   "title": "Medical Assistant AS",
+   "h1": "Medical Assistant AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 6104
+ },
+ {
+  "control_number": "02182",
+  "title": "Administration of Justice",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ101",
+   "AJ102",
+   "AJ103",
+   "AJ104",
+   "AJ109",
+   "AJ110",
+   "AJ111",
+   "AJ112",
+   "AJ113",
+   "AJ130",
+   "AJ199",
+   "AJ201",
+   "AJ203",
+   "AJ204",
+   "AJ205",
+   "AJ206",
+   "AJ207",
+   "AJ208"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/administration-of-justice-aa-fall-2026",
+   "title": "Administration of Justice AA",
+   "h1": "Administration of Justice AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 5743
+ },
+ {
+  "control_number": "02183",
+  "title": "Child and Family Education",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CFE101",
+   "CFE102",
+   "CFE103",
+   "CFE105",
+   "CFE106",
+   "CFE107",
+   "CFE109",
+   "CFE110",
+   "CFE111",
+   "CFE113",
+   "CFE114",
+   "CFE115",
+   "CFE116",
+   "CFE120",
+   "CFE122",
+   "CFE150",
+   "CFE151",
+   "CFE152",
+   "CFE155",
+   "CFE156",
+   "CFE157",
+   "CFE199",
+   "CFE201",
+   "CFE202",
+   "CFE211",
+   "DA103",
+   "NF100",
+   "NF102"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/child-and-family-education-aa-fall-2026",
+   "title": "Child and Family Education AA",
+   "h1": "Child and Family Education AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 28,
+  "text_chars": 5510
+ },
+ {
+  "control_number": "02184",
+  "title": "Instructional Aide",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CA103",
+   "CFE101",
+   "CFE102",
+   "CFE103",
+   "CFE105",
+   "CFE106",
+   "CFE115",
+   "CFE116",
+   "CFE202",
+   "CFE211",
+   "DFST101",
+   "DFST102",
+   "ED140",
+   "ED141",
+   "ED145",
+   "ED199",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "PSY235",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SPAN101",
+   "SPAN102"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/instructional-aide-cert-fall-2026",
+   "title": "Instructional Aide Cert",
+   "h1": "Instructional Aide Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 4653
+ },
+ {
+  "control_number": "02185",
+  "title": "Fire Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMT101",
+   "FTEC109",
+   "FTEC111",
+   "FTEC112",
+   "FTEC113",
+   "FTEC117",
+   "FTEC125",
+   "FTEC211",
+   "FTEC212",
+   "FTEC215",
+   "FTEC290A",
+   "FTEC290B",
+   "FTEC295A",
+   "FTEC295AL",
+   "FTEC295B",
+   "FTEC295BL",
+   "FTW121",
+   "FTW122",
+   "FTW123",
+   "FTW124",
+   "FTW221",
+   "FTW222",
+   "FTW223",
+   "FTW224",
+   "GEOG201"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/fire-technology-cert-fall-2026",
+   "title": "Fire Technology Cert",
+   "h1": "Fire Technology Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 4154
+ },
+ {
+  "control_number": "02197",
+  "title": "Biology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL110",
+   "BIOL120",
+   "BIOL201",
+   "BIOL202",
+   "BIOL203A",
+   "BIOL203B",
+   "BIOL204",
+   "BIOL206",
+   "CHEM110",
+   "CHEM110H",
+   "CHEM120",
+   "MATH150",
+   "MATH150H",
+   "PHYS101",
+   "PHYS102"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/biology-as-fall-2026",
+   "title": "Biology AS",
+   "h1": "Biology AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 7170
+ },
+ {
+  "control_number": "07242",
+  "title": "School-Aged Child Care",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CFE102",
+   "CFE103",
+   "CFE104",
+   "CFE105",
+   "CFE106",
+   "CFE107",
+   "CFE109",
+   "CFE110",
+   "CFE111",
+   "CFE113",
+   "CFE114",
+   "CFE115",
+   "CFE116",
+   "CFE150",
+   "CFE151",
+   "CFE152",
+   "CFE157",
+   "CFE199",
+   "CFE201",
+   "CFE202",
+   "CFE211",
+   "CFE212",
+   "CFE213",
+   "NF102"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/school-aged-child-care-cert-fall-2026",
+   "title": "School-Aged Child Care Cert",
+   "h1": "School-Aged Child Care Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 6539
+ },
+ {
+  "control_number": "07246",
+  "title": "Video Design and Production",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART100",
+   "ART110",
+   "DM101",
+   "DM105",
+   "DM106",
+   "DM110",
+   "DM112",
+   "DM113",
+   "DM115",
+   "DM127",
+   "DM199",
+   "DM206",
+   "DM246",
+   "DM298",
+   "FTV101",
+   "FTV121",
+   "FTV215",
+   "FTV230",
+   "PHTC125",
+   "THA101",
+   "THA220"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/video-design-and-production-cert-fall-2026",
+   "title": "Video Design and Production Cert",
+   "h1": "Video Design and Production Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 3798
+ },
+ {
+  "control_number": "07247",
+  "title": "Interactive Media-Web Design",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART100",
+   "ART145",
+   "DM101",
+   "DM103",
+   "DM105",
+   "DM106",
+   "DM110",
+   "DM113",
+   "DM115",
+   "DM127",
+   "DM128",
+   "DM199",
+   "DM213",
+   "DM246",
+   "DM298",
+   "PHTC125"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/interactive-media-web-design-cert-fall-2025",
+   "title": "Interactive Media-Web Design Cert",
+   "h1": "Interactive Media-Web Design Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3129
+ },
+ {
+  "control_number": "07248",
+  "title": "Deaf Studies: American Sign Language",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DFST101",
+   "DFST101L",
+   "DFST102",
+   "DFST102L",
+   "DFST105",
+   "DFST106",
+   "DFST108",
+   "DFST110",
+   "DFST199",
+   "DFST201",
+   "DFST201L",
+   "DFST202",
+   "DFST204",
+   "DFST205",
+   "DFST206",
+   "INT101",
+   "INT201",
+   "INT210"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/deaf-studies-american-sign-language-cert-fall-2025",
+   "title": "Deaf Studies: American Sign Language Cert",
+   "h1": "Deaf Studies: American Sign Language Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 4183
+ },
+ {
+  "control_number": "10234",
+  "title": "Refrigeration Specialist",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACRV112",
+   "ACRV113",
+   "ACRV212",
+   "ACRV213"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/refrigeration-specialist-cert-fall-2026",
+   "title": "Refrigeration Specialist Cert",
+   "h1": "Refrigeration Specialist Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 5338
+ },
+ {
+  "control_number": "10235",
+  "title": "Air Conditioning Specialist",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACRV122",
+   "ACRV123",
+   "ACRV222",
+   "ACRV223"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/air-conditioning-specialist-cert-fall-2026",
+   "title": "Air Conditioning Specialist Cert",
+   "h1": "Air Conditioning Specialist Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 5140
+ },
+ {
+  "control_number": "10237",
+  "title": "Automotive Refinishing Specialist",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ABDY112",
+   "ABDY113",
+   "ABDY115",
+   "ABDY122",
+   "ABDY123",
+   "ABDY125",
+   "ABDY222",
+   "ABDY223",
+   "ABDY225"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-refinishing-specialist-cert-fall-2026",
+   "title": "Automotive Refinishing Specialist Cert",
+   "h1": "Automotive Refinishing Specialist Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 4648
+ },
+ {
+  "control_number": "10238",
+  "title": "Automotive Collision Repair and Refinishing Specialist",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ABDY112",
+   "ABDY113",
+   "ABDY115",
+   "ABDY122",
+   "ABDY123",
+   "ABDY125",
+   "ABDY212",
+   "ABDY213",
+   "ABDY215",
+   "ABDY222",
+   "ABDY223",
+   "ABDY225"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-collision-repair-and-refinishing-specialist-cert-fall-2026",
+   "title": "Automotive Collision Repair and Refinishing Specialist Cert",
+   "h1": "Automotive Collision Repair and Refinishing Specialist Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 5454
+ },
+ {
+  "control_number": "10239",
+  "title": "Commercial Music: Level II",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FTV241",
+   "MUS120",
+   "MUS291D",
+   "MUS292",
+   "MUSC100",
+   "MUSC102",
+   "MUSC103",
+   "MUSC104",
+   "MUSC107",
+   "MUSC108",
+   "MUSC109",
+   "MUSC113",
+   "MUSC124A",
+   "MUSC134",
+   "MUSC136",
+   "MUSC141",
+   "MUSC142",
+   "MUSC143A",
+   "MUSC150C",
+   "MUSC173",
+   "MUSC199",
+   "MUSC220A",
+   "MUSC233",
+   "MUSC273"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/commercial-music-level-ii-certificate-fall-2026",
+   "title": "Commercial Music: Level II Certificate",
+   "h1": "Commercial Music: Level II Certificate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 6033
+ },
+ {
+  "control_number": "10241",
+  "title": "Graphic Design",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DM101",
+   "DM103",
+   "DM106",
+   "DM110",
+   "DM112",
+   "DM113",
+   "DM115",
+   "DM127",
+   "DM128",
+   "DM143",
+   "DM145",
+   "DM199",
+   "DM203",
+   "DM205",
+   "DM206",
+   "DM213",
+   "DM215",
+   "DM246",
+   "DM298"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/graphic-design-cert-fall-2025",
+   "title": "Graphic Design Cert",
+   "h1": "Graphic Design Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 4206
+ },
+ {
+  "control_number": "11647",
+  "title": "Aircraft Airframe",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AERO230",
+   "AERO231"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-airframe-cert-fall-2026",
+   "title": "Aircraft Airframe Cert",
+   "h1": "Aircraft Airframe Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 4294
+ },
+ {
+  "control_number": "11648",
+  "title": "Aircraft Powerplant",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AERO240",
+   "AERO241"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-powerplant-cert-fall-2026",
+   "title": "Aircraft Powerplant Cert",
+   "h1": "Aircraft Powerplant Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 4236
+ },
+ {
+  "control_number": "12137",
+  "title": "Deaf Studies: Interpreter Training",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DFST105",
+   "DFST110",
+   "DFST201",
+   "DFST202",
+   "DFST204",
+   "DFST205",
+   "INT101",
+   "INT199",
+   "INT201",
+   "INT202",
+   "INT203",
+   "INT205",
+   "INT206",
+   "INT210"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/deaf-studies-interpreter-training-cert-fall-2025",
+   "title": "Deaf Studies: Interpreter Training Cert",
+   "h1": "Deaf Studies: Interpreter Training Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3985
+ },
+ {
+  "control_number": "12161",
+  "title": "Computer Animation",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART110",
+   "DM101",
+   "DM103",
+   "DM106",
+   "DM110",
+   "DM112",
+   "DM113",
+   "DM115",
+   "DM127",
+   "DM128",
+   "DM143",
+   "DM145",
+   "DM199",
+   "DM205",
+   "DM206",
+   "DM213",
+   "DM246",
+   "DM298"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-animation-cert-fall-2025",
+   "title": "Computer Animation Cert",
+   "h1": "Computer Animation Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 4101
+ },
+ {
+  "control_number": "13167",
+  "title": "Geographic Information Systems",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GEOG205",
+   "GEOG220",
+   "GEOG221",
+   "GEOG222",
+   "GEOG298C"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/geographic-information-systems-cert-fall-2026",
+   "title": "Geographic Information Systems Cert",
+   "h1": "Geographic Information Systems Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 4290
+ },
+ {
+  "control_number": "13260",
+  "title": "Real Estate Salesperson",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIP115",
+   "BUS105",
+   "CA103",
+   "CA221",
+   "MKTG130",
+   "RE101",
+   "RE105",
+   "RE111",
+   "RE121",
+   "RE131",
+   "RE141",
+   "RE161",
+   "RE180"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/real-estate-salesperson-cert-fall-2026",
+   "title": "Real Estate Salesperson Cert",
+   "h1": "Real Estate Salesperson Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 4198
+ },
+ {
+  "control_number": "14414",
+  "title": "Electrical Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELEC110",
+   "ELEC115",
+   "ELEC120",
+   "ELEC130",
+   "ELEC140",
+   "ELEC150",
+   "ELEC160",
+   "ELEC220",
+   "ELEC250"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/electrical-technology-cert-fall-2025",
+   "title": "Electrical Technology Cert",
+   "h1": "Electrical Technology Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 4756
+ },
+ {
+  "control_number": "14790",
+  "title": "Computer Networking Multi-Platform",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CA103",
+   "CA107",
+   "CA131",
+   "CA132",
+   "CA151",
+   "CA153",
+   "CA157",
+   "CA159",
+   "CA171",
+   "CA175",
+   "CA176",
+   "CA182",
+   "CA183"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-networking-multi-platform-cert-fall-2026",
+   "title": "Computer Networking Multi-Platform Cert",
+   "h1": "Computer Networking Multi-Platform Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 5778
+ },
+ {
+  "control_number": "14791",
+  "title": "Computer Networking",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CA107",
+   "CA151",
+   "CA171",
+   "CA175",
+   "CA176",
+   "CA182"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-networking-cert-fall-2026",
+   "title": "Computer Networking Cert",
+   "h1": "Computer Networking Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 4376
+ },
+ {
+  "control_number": "15404",
+  "title": "Aircraft Fabrication and Assembly Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AFAB110",
+   "AFAB115",
+   "AFAB120",
+   "AFAB130",
+   "AFAB210"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-fabrication-assembly-technician-cert-fall-2026",
+   "title": "Aircraft Fabrication & Assembly Technician Cert",
+   "h1": "Aircraft Fabrication & Assembly Technician Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 4906
+ },
+ {
+  "control_number": "16468",
+  "title": "Professional Bookkeeping",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT111",
+   "ACCT113",
+   "ACCT115",
+   "ACCT121",
+   "ACCT131",
+   "ACCT199",
+   "BUS101",
+   "BUS105",
+   "BUS113",
+   "BUS121",
+   "BUS201",
+   "CA103",
+   "CA111",
+   "CA121",
+   "CA131",
+   "MATH124",
+   "MGT115"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/professional-bookkeeping-cert-fall-2026",
+   "title": "Professional Bookkeeping Cert",
+   "h1": "Professional Bookkeeping Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 6487
+ },
+ {
+  "control_number": "16508",
+  "title": "Wildland Fire Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMT101",
+   "FTEC111",
+   "FTEC112",
+   "FTEC117",
+   "FTEC125",
+   "FTEC199",
+   "FTW121",
+   "FTW122",
+   "FTW123",
+   "FTW124",
+   "FTW221",
+   "FTW222",
+   "FTW223",
+   "FTW224",
+   "FTW285",
+   "GEOG201",
+   "GEOG205"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/wildland-fire-technology-cert-fall-2026",
+   "title": "Wildland Fire Technology Cert",
+   "h1": "Wildland Fire Technology Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 5402
+ },
+ {
+  "control_number": "16569",
+  "title": "Wildland Fire Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMT101",
+   "FTEC125",
+   "FTEC199",
+   "FTW121",
+   "FTW122",
+   "FTW123",
+   "FTW124",
+   "FTW221",
+   "FTW222",
+   "FTW223",
+   "FTW224",
+   "FTW285",
+   "GEOG201",
+   "GEOG205",
+   "HE100"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/wildland-fire-technology-as-fall-2026",
+   "title": "Wildland Fire Technology AS",
+   "h1": "Wildland Fire Technology AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 6284
+ },
+ {
+  "control_number": "16876",
+  "title": "Respiratory Care/Therapy",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL201",
+   "BIOL202",
+   "BIOL203A",
+   "BIOL203B",
+   "CHEM101",
+   "COMMC1000",
+   "COMMC1000H",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "RCP101",
+   "RCP103",
+   "RCP104",
+   "RCP105",
+   "RCP201",
+   "RCP202",
+   "RCP203",
+   "RCP204"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/respiratory-care-therapy-as-fall-2026",
+   "title": "Respiratory Care/Therapy AS",
+   "h1": "Respiratory Care/Therapy AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 6391
+ },
+ {
+  "control_number": "17571",
+  "title": "Firefighter I Academy",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMT101",
+   "FTEC111",
+   "FTEC290A",
+   "FTEC290B",
+   "FTEC295A",
+   "FTEC295AL",
+   "FTEC295B",
+   "FTEC295BL"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/firefighter-i-academy-cert-fall-2026",
+   "title": "Firefighter I Academy Cert",
+   "h1": "Firefighter I Academy Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 4740
+ },
+ {
+  "control_number": "17750",
+  "title": "Radiologic Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL201",
+   "BIOL202",
+   "CHEM101",
+   "COMMC1000",
+   "COMMC1000H",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "MATH110",
+   "MATH116",
+   "MATH124",
+   "MATH128",
+   "MATH150",
+   "MATH150H",
+   "MATH160",
+   "MATH220",
+   "MATH230",
+   "MATH250",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "RADT101",
+   "RADT102",
+   "RADT103",
+   "RADT104",
+   "RADT106",
+   "RADT107",
+   "RADT108",
+   "RADT109",
+   "RADT201",
+   "RADT202",
+   "RADT203",
+   "RADT204",
+   "RADT205",
+   "RADT207",
+   "RADT208",
+   "RADT210",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/radiologic-technology-as-fall-2026",
+   "title": "Radiologic Technology AS",
+   "h1": "Radiologic Technology AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 37,
+  "text_chars": 10293
+ },
+ {
+  "control_number": "18018",
+  "title": "Arts and Humanities - Option III",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.973,
+  "codes_found": [
+   "ART100",
+   "ART103",
+   "ART104",
+   "ARTHC1100H",
+   "ARTHC1200H",
+   "CHIN101",
+   "CHIN102",
+   "CHIN201",
+   "CHIN202",
+   "DA101",
+   "DFST101",
+   "DFST102",
+   "DFST105",
+   "DFST110",
+   "DFST201",
+   "DFST202",
+   "ENGL221",
+   "ENGL222",
+   "ENGL225",
+   "ENGL227",
+   "ENGL230",
+   "ENGL231",
+   "ENGL235",
+   "ENGL242",
+   "ENGL253",
+   "ENGL256",
+   "ENGL257",
+   "ENGL259",
+   "ENGL265",
+   "ENGL279",
+   "FREN101",
+   "FREN102",
+   "FREN201",
+   "FREN202",
+   "FREN203",
+   "FTV101",
+   "FTV107",
+   "FTV108",
+   "FTV201",
+   "FTV203",
+   "GER101",
+   "GER102",
+   "GER201",
+   "GER202",
+   "HIST115",
+   "LATN101",
+   "LATN102",
+   "LATN201",
+   "MUS101",
+   "MUS101H",
+   "MUS105",
+   "MUSC102",
+   "MUSC103",
+   "MUSC107",
+   "PHIL105",
+   "PHIL105H",
+   "PHIL106",
+   "PHIL108",
+   "PHOT107",
+   "SPAN101",
+   "SPAN102",
+   "SPAN110SS",
+   "SPAN201",
+   "SPAN202",
+   "SPAN203",
+   "SPAN210SS",
+   "SPAN220SS",
+   "THA101",
+   "THA101H",
+   "THA110",
+   "THA239"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/arts-and-humanities-option-iii-aa-fall-2026",
+   "title": "Arts and Humanities - Option III AA",
+   "h1": "Arts and Humanities - Option III AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 73,
+  "text_chars": 7233
+ },
+ {
+  "control_number": "18019",
+  "title": "Math and Science - Option I",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH101",
+   "ANTH101H",
+   "ASTRC1001",
+   "ASTRC1001H",
+   "BIOL103",
+   "BIOL104",
+   "BIOL104H",
+   "BIOL110",
+   "BIOL120",
+   "BIOL201",
+   "BIOL202",
+   "BIOL204",
+   "BIOLC1001",
+   "BIOLC1001L",
+   "CHEM101",
+   "CHEM102",
+   "CHEM110",
+   "CHEM120",
+   "CHEM210",
+   "CHEM220",
+   "ERSC101",
+   "GEOG101",
+   "GEOG102",
+   "GEOL101",
+   "GEOL101H",
+   "GEOL102",
+   "MATH110",
+   "MATH116",
+   "MATH124",
+   "MATH128",
+   "MATH140",
+   "MATH148",
+   "MATH150",
+   "MATH150H",
+   "MATH160",
+   "MATH220",
+   "MATH230",
+   "MATH250",
+   "PHYS101",
+   "PHYS102",
+   "PHYS110",
+   "PHYS120",
+   "PHYS211",
+   "PSCI101",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/math-and-science-option-i-aa-fall-2026",
+   "title": "Math and Science - Option I AA",
+   "h1": "Math and Science - Option I AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 46,
+  "text_chars": 6898
+ },
+ {
+  "control_number": "18020",
+  "title": "Social and Behavioral Sciences - Option II",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.984,
+  "codes_found": [
+   "AJ206",
+   "ANTH102",
+   "ANTH103",
+   "ANTH110",
+   "ANTH112",
+   "ANTH112H",
+   "ANTH140",
+   "BUS212",
+   "CFE102",
+   "CFE103",
+   "DFST105",
+   "DFST106",
+   "ECON100",
+   "ECON110",
+   "ECONC2001H",
+   "ECONC2002",
+   "ECONC2002H",
+   "GEOG105",
+   "GEOG106",
+   "GEOG110",
+   "HIST104",
+   "HIST105",
+   "HIST110",
+   "HIST110H",
+   "HIST111",
+   "HIST111H",
+   "HIST113",
+   "HIST114",
+   "HIST116",
+   "HIST118",
+   "HIST119",
+   "HISTC1001",
+   "HISTC1001H",
+   "HISTC1002",
+   "HISTC1002H",
+   "POLS103",
+   "POLS200",
+   "POLS202",
+   "POLS203",
+   "POLSC1000",
+   "POLSC1000H",
+   "PSY200",
+   "PSY201",
+   "PSY212",
+   "PSY230",
+   "PSY232",
+   "PSY233",
+   "PSY234",
+   "PSY235",
+   "PSY236",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC105",
+   "SOC110",
+   "SOC111",
+   "SOC112",
+   "SOC115",
+   "SOC116",
+   "SOC120",
+   "SOC200",
+   "SOCIC1000",
+   "SOCIC1000H"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/social-and-behavioral-sciences-option-ii-aa-fall-2026",
+   "title": "Social and Behavioral Sciences - Option II AA",
+   "h1": "Social and Behavioral Sciences - Option II AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 63,
+  "text_chars": 13189
+ },
+ {
+  "control_number": "19460",
+  "title": "Electronics Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELTE105",
+   "ELTE110",
+   "ELTE125",
+   "ELTE130",
+   "ELTE135",
+   "ELTE140",
+   "ELTE145",
+   "ELTE180",
+   "ELTE199",
+   "ELTE220",
+   "ELTE235",
+   "ELTE252",
+   "ELTE254"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/electronics-technology-as-fall-2026",
+   "title": "Electronics Technology AS",
+   "h1": "Electronics Technology AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 5902
+ },
+ {
+  "control_number": "19463",
+  "title": "Deaf Studies: American Sign Language",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DFST101",
+   "DFST101L",
+   "DFST102",
+   "DFST102L",
+   "DFST105",
+   "DFST106",
+   "DFST108",
+   "DFST110",
+   "DFST199",
+   "DFST201",
+   "DFST201L",
+   "DFST202",
+   "DFST204",
+   "DFST205",
+   "DFST206",
+   "INT101",
+   "INT201",
+   "INT210"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/deaf-studies-american-sign-language-aa-fall-2026",
+   "title": "Deaf Studies: American Sign Language AA",
+   "h1": "Deaf Studies: American Sign Language AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 4563
+ },
+ {
+  "control_number": "19464",
+  "title": "Deaf Studies: Interpreting Training",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DFST105",
+   "DFST110",
+   "DFST201",
+   "DFST202",
+   "DFST204",
+   "DFST205",
+   "INT101",
+   "INT199",
+   "INT201",
+   "INT202",
+   "INT203",
+   "INT205",
+   "INT206",
+   "INT210"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/deaf-studies-interpreter-training-aa-fall-2026",
+   "title": "Deaf Studies: Interpreter Training AA",
+   "h1": "Deaf Studies: Interpreter Training AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.75
+   }
+  },
+  "listed": 14,
+  "text_chars": 4311
+ },
+ {
+  "control_number": "19465",
+  "title": "Commercial Photography",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART100",
+   "PHOT107",
+   "PHOT213",
+   "PHTC101",
+   "PHTC125",
+   "PHTC150",
+   "PHTC200",
+   "PHTC201",
+   "PHTC203",
+   "PHTC205",
+   "PHTC211",
+   "PHTC215",
+   "PHTC275",
+   "PHTC298"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/commercial-photography-aa-fall-2026",
+   "title": "Commercial Photography AA",
+   "h1": "Commercial Photography AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 5589
+ },
+ {
+  "control_number": "19467",
+  "title": "Computer Animation",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART110",
+   "DM101",
+   "DM103",
+   "DM106",
+   "DM110",
+   "DM112",
+   "DM113",
+   "DM115",
+   "DM127",
+   "DM128",
+   "DM143",
+   "DM145",
+   "DM199",
+   "DM205",
+   "DM206",
+   "DM213",
+   "DM246",
+   "DM298"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-animation-aa-fall-2026",
+   "title": "Computer Animation AA",
+   "h1": "Computer Animation AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 5081
+ },
+ {
+  "control_number": "19469",
+  "title": "Graphic Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DM101",
+   "DM103",
+   "DM106",
+   "DM110",
+   "DM112",
+   "DM113",
+   "DM115",
+   "DM127",
+   "DM128",
+   "DM143",
+   "DM145",
+   "DM199",
+   "DM203",
+   "DM205",
+   "DM206",
+   "DM213",
+   "DM215",
+   "DM246",
+   "DM298"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/graphic-design-aa-fall-2026",
+   "title": "Graphic Design AA",
+   "h1": "Graphic Design AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 4653
+ },
+ {
+  "control_number": "19470",
+  "title": "Interactive Media- Web Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART100",
+   "ART145",
+   "DM101",
+   "DM103",
+   "DM105",
+   "DM106",
+   "DM110",
+   "DM113",
+   "DM115",
+   "DM127",
+   "DM128",
+   "DM199",
+   "DM213",
+   "DM246",
+   "DM298",
+   "PHTC125"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/interactive-media-web-design-aa-fall-2026",
+   "title": "Interactive Media-Web Design AA",
+   "h1": "Interactive Media-Web Design AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 5149
+ },
+ {
+  "control_number": "19471",
+  "title": "Video Design and Production",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART100",
+   "ART110",
+   "DM101",
+   "DM105",
+   "DM106",
+   "DM110",
+   "DM112",
+   "DM113",
+   "DM115",
+   "DM127",
+   "DM199",
+   "DM206",
+   "DM246",
+   "DM298",
+   "FTV101",
+   "FTV121",
+   "FTV215",
+   "FTV230",
+   "PHTC125",
+   "THA101",
+   "THA220"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/video-design-and-production-aa-fall-2026",
+   "title": "Video Design and Production AA",
+   "h1": "Video Design and Production AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 5192
+ },
+ {
+  "control_number": "20148",
+  "title": "General Business",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT111",
+   "ACCT201",
+   "BUS101",
+   "BUS105",
+   "BUS111",
+   "BUS113",
+   "BUS121",
+   "BUS201",
+   "BUS212",
+   "CA103",
+   "CA111",
+   "CA121",
+   "CA221",
+   "MATH116",
+   "MATH124",
+   "MGT101",
+   "MGT115",
+   "MGT121",
+   "MGT199",
+   "MGT201",
+   "MKTG101",
+   "MKTG112",
+   "MKTG130",
+   "MKTG132",
+   "MKTG199",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/general-business-as-fall-2026",
+   "title": "General Business AS",
+   "h1": "General Business AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 10492
+ },
+ {
+  "control_number": "20149",
+  "title": "Professional Bookkeeping",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT111",
+   "ACCT113",
+   "ACCT115",
+   "ACCT121",
+   "ACCT131",
+   "ACCT199",
+   "BUS101",
+   "BUS105",
+   "BUS113",
+   "BUS121",
+   "BUS201",
+   "CA103",
+   "CA111",
+   "CA121",
+   "CA131",
+   "MATH124",
+   "MGT115"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/professional-bookkeeping-as-fall-2026",
+   "title": "Professional Bookkeeping AS",
+   "h1": "Professional Bookkeeping AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 8162
+ },
+ {
+  "control_number": "20152",
+  "title": "Real Estate Broker's",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT111",
+   "ACCT201",
+   "BIP115",
+   "BUS105",
+   "BUS201",
+   "CA103",
+   "CA221",
+   "MKTG130",
+   "RE101",
+   "RE105",
+   "RE111",
+   "RE121",
+   "RE131",
+   "RE141",
+   "RE161",
+   "RE180",
+   "RE199"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/real-estate-broker-s-cert-fall-2026",
+   "title": "Real Estate Broker's Cert",
+   "h1": "Real Estate Broker's Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 5039
+ },
+ {
+  "control_number": "20159",
+  "title": "Computer Applications",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CA103",
+   "CA107",
+   "CA111",
+   "CA121",
+   "CA131",
+   "CA151",
+   "CA157",
+   "CA171",
+   "CA175",
+   "CA199",
+   "CA221"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-applications-as-fall-2026",
+   "title": "Computer Applications AS",
+   "h1": "Computer Applications AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 6492
+ },
+ {
+  "control_number": "20162",
+  "title": "Computer Networking Multi-Platform",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CA103",
+   "CA107",
+   "CA131",
+   "CA132",
+   "CA151",
+   "CA153",
+   "CA157",
+   "CA159",
+   "CA171",
+   "CA175",
+   "CA176",
+   "CA182",
+   "CA183"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-networking-multi-platform-as-fall-2026",
+   "title": "Computer Networking Multi-Platform AS",
+   "h1": "Computer Networking Multi-Platform AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 6387
+ },
+ {
+  "control_number": "20163",
+  "title": "Instructional Aide",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CA103",
+   "CFE101",
+   "CFE102",
+   "CFE103",
+   "CFE105",
+   "CFE106",
+   "CFE115",
+   "CFE116",
+   "CFE202",
+   "CFE211",
+   "DFST101",
+   "DFST102",
+   "ED140",
+   "ED141",
+   "ED145",
+   "ED199",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "PSY235",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SPAN101",
+   "SPAN102"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/instructional-aide-aa-fall-2026",
+   "title": "Instructional Aide AA",
+   "h1": "Instructional Aide AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 5136
+ },
+ {
+  "control_number": "20165",
+  "title": "Air Conditioning Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACRV122",
+   "ACRV123",
+   "ACRV222",
+   "ACRV223"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/air-conditioning-specialist-as-fall-2026",
+   "title": "Air Conditioning Specialist AS",
+   "h1": "Air Conditioning Specialist AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 5707
+ },
+ {
+  "control_number": "20166",
+  "title": "Air Conditioning & Refrigeration Specialist",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACRV112",
+   "ACRV113",
+   "ACRV122",
+   "ACRV123",
+   "ACRV212",
+   "ACRV213",
+   "ACRV222",
+   "ACRV223"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/air-conditioning-refrigeration-specialist-as-fall-2026",
+   "title": "Air Conditioning & Refrigeration Specialist AS",
+   "h1": "Air Conditioning & Refrigeration Specialist AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 8920
+ },
+ {
+  "control_number": "20168",
+  "title": "Refrigeration Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACRV112",
+   "ACRV113",
+   "ACRV212",
+   "ACRV213"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/refrigeration-specialist-as-fall-2026",
+   "title": "Refrigeration Specialist AS",
+   "h1": "Refrigeration Specialist AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 5548
+ },
+ {
+  "control_number": "20171",
+  "title": "Automotive Collision Repair Specialist",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ABDY112",
+   "ABDY113",
+   "ABDY115",
+   "ABDY122",
+   "ABDY123",
+   "ABDY125",
+   "ABDY212",
+   "ABDY213",
+   "ABDY215"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-collision-repair-specialist-as-fall-2026",
+   "title": "Automotive Collision Repair Specialist AS",
+   "h1": "Automotive Collision Repair Specialist AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 5975
+ },
+ {
+  "control_number": "20172",
+  "title": "Automotive Refinishing Specialist",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ABDY112",
+   "ABDY113",
+   "ABDY115",
+   "ABDY122",
+   "ABDY123",
+   "ABDY125",
+   "ABDY222",
+   "ABDY223",
+   "ABDY225"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-refinishing-specialist-as-fall-2026",
+   "title": "Automotive Refinishing Specialist AS",
+   "h1": "Automotive Refinishing Specialist AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 5906
+ },
+ {
+  "control_number": "20174",
+  "title": "Automotive Collision Repair and Refinishing Specialist",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ABDY112",
+   "ABDY113",
+   "ABDY115",
+   "ABDY122",
+   "ABDY123",
+   "ABDY125",
+   "ABDY212",
+   "ABDY213",
+   "ABDY215",
+   "ABDY222",
+   "ABDY223",
+   "ABDY225"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-collision-repair-and-refinishing-specialist-as-fall-2026",
+   "title": "Automotive Collision Repair and Refinishing Specialist AS",
+   "h1": "Automotive Collision Repair and Refinishing Specialist AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 6536
+ },
+ {
+  "control_number": "20175",
+  "title": "General Aircraft Maintenance",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AERO120",
+   "AERO121",
+   "AFAB110",
+   "AFAB115",
+   "AFAB120",
+   "AFAB130",
+   "AFAB210",
+   "ELTE252",
+   "ELTE254"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/general-aircraft-maintenance-as-fall-2026",
+   "title": "General Aircraft Maintenance AS",
+   "h1": "General Aircraft Maintenance AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 5994
+ },
+ {
+  "control_number": "20177",
+  "title": "Aircraft Airframe",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AERO230",
+   "AERO231"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-airframe-as-fall-2026",
+   "title": "Aircraft Airframe AS",
+   "h1": "Aircraft Airframe AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 4318
+ },
+ {
+  "control_number": "20179",
+  "title": "Aircraft Powerplant",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AERO240",
+   "AERO241"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-powerplant-as-fall-2026",
+   "title": "Aircraft Powerplant AS",
+   "h1": "Aircraft Powerplant AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 4470
+ },
+ {
+  "control_number": "20181",
+  "title": "Aircraft Fabrication and Assembly Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AFAB110",
+   "AFAB115",
+   "AFAB120",
+   "AFAB130",
+   "AFAB210"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-fabrication-and-assembly-technician-as-fall-2026",
+   "title": "Aircraft Fabrication and Assembly Technician AS",
+   "h1": "Aircraft Fabrication and Assembly Technician AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 5776
+ },
+ {
+  "control_number": "20184",
+  "title": "Electrical Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELEC110",
+   "ELEC115",
+   "ELEC120",
+   "ELEC130",
+   "ELEC140",
+   "ELEC150",
+   "ELEC160",
+   "ELEC220",
+   "ELEC250"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/electrical-technology-as-fall-2026",
+   "title": "Electrical Technology AS",
+   "h1": "Electrical Technology AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 5267
+ },
+ {
+  "control_number": "20186",
+  "title": "Welding",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WELD110",
+   "WELD120",
+   "WELD130",
+   "WELD135",
+   "WELD137",
+   "WELD212",
+   "WELD230",
+   "WELD240",
+   "WELD260",
+   "WELD265"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/welding-as-fall-2026",
+   "title": "Welding AS",
+   "h1": "Welding AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 5775
+ },
+ {
+  "control_number": "20189",
+  "title": "Medical Assistant",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL100",
+   "BIP151",
+   "BIP152",
+   "BIP205",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "MOA101",
+   "MOA102",
+   "MOA110",
+   "MOA111",
+   "NF100"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/medical-assistant-cert-fall-2026",
+   "title": "Medical Assistant Cert",
+   "h1": "Medical Assistant Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 4855
+ },
+ {
+  "control_number": "20198",
+  "title": "Child and Family Education",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CFE101",
+   "CFE102",
+   "CFE103",
+   "CFE104",
+   "CFE105",
+   "CFE106",
+   "CFE107",
+   "CFE109",
+   "CFE110",
+   "CFE111",
+   "CFE113",
+   "CFE114",
+   "CFE115",
+   "CFE116",
+   "CFE120",
+   "CFE122",
+   "CFE150",
+   "CFE151",
+   "CFE152",
+   "CFE155",
+   "CFE156",
+   "CFE157",
+   "CFE199",
+   "CFE201",
+   "CFE202",
+   "CFE211",
+   "DA103",
+   "NF100",
+   "NF102"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/child-and-family-education-cert-fall-2026",
+   "title": "Child and Family Education Cert",
+   "h1": "Child and Family Education Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 29,
+  "text_chars": 6951
+ },
+ {
+  "control_number": "20202",
+  "title": "School-Aged Child Care",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CFE102",
+   "CFE103",
+   "CFE104",
+   "CFE105",
+   "CFE106",
+   "CFE107",
+   "CFE109",
+   "CFE110",
+   "CFE111",
+   "CFE113",
+   "CFE114",
+   "CFE115",
+   "CFE116",
+   "CFE150",
+   "CFE151",
+   "CFE152",
+   "CFE157",
+   "CFE199",
+   "CFE201",
+   "CFE202",
+   "CFE211",
+   "CFE212",
+   "CFE213",
+   "NF102"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/school-aged-child-care-aa-fall-2026",
+   "title": "School-Aged Child Care AA",
+   "h1": "School-Aged Child Care AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 5299
+ },
+ {
+  "control_number": "20203",
+  "title": "Fire Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMT101",
+   "FTEC109",
+   "FTEC111",
+   "FTEC112",
+   "FTEC113",
+   "FTEC117",
+   "FTEC125",
+   "FTEC211",
+   "FTEC212",
+   "FTEC215",
+   "FTEC290A",
+   "FTEC290B",
+   "FTEC295A",
+   "FTEC295AL",
+   "FTEC295B",
+   "FTEC295BL",
+   "FTW121",
+   "FTW122",
+   "FTW123",
+   "FTW124",
+   "FTW221",
+   "FTW222",
+   "FTW223",
+   "FTW224",
+   "GEOG201"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/fire-technology-as-fall-2026",
+   "title": "Fire Technology AS",
+   "h1": "Fire Technology AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 4430
+ },
+ {
+  "control_number": "30661",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.7,
+  "codes_found": [
+   "MATH150",
+   "MATH150H",
+   "MATH160",
+   "MATH220",
+   "MATH230",
+   "MATH250",
+   "PHYS110"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/mathematics-2-0-as-t-fall-2026",
+   "title": "Mathematics 2.0 AS-T",
+   "h1": "Mathematics 2.0 AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 5027
+ },
+ {
+  "control_number": "32137",
+  "title": "Art History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.938,
+  "codes_found": [
+   "ART103",
+   "ART104",
+   "ART106",
+   "ART110",
+   "ART113",
+   "ART120",
+   "ART121",
+   "ART132",
+   "ART135",
+   "ART136",
+   "ART137",
+   "ART140",
+   "ART145",
+   "ART163",
+   "ART170",
+   "ART210",
+   "ART213",
+   "ART216",
+   "ARTHC1100H",
+   "ARTHC1200H",
+   "DA101",
+   "FTV101",
+   "MUS101",
+   "MUS101H",
+   "MUSC102",
+   "MUSC103",
+   "MUSC107",
+   "PHTC101",
+   "THA101",
+   "THA101H"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/art-history-aa-t-fall-2026",
+   "title": "Art History AA-T",
+   "h1": "Art History AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 32,
+  "text_chars": 12574
+ },
+ {
+  "control_number": "32150",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ206",
+   "MATH116",
+   "PSY230",
+   "SOC105",
+   "SOC110",
+   "SOC111",
+   "SOC112",
+   "SOC115",
+   "SOC116",
+   "SOC120",
+   "SOC200",
+   "SOCIC1000",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/sociology-aa-t-fall-2026",
+   "title": "Sociology AA-T",
+   "h1": "Sociology AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 5541
+ },
+ {
+  "control_number": "32151",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.941,
+  "codes_found": [
+   "ANTH102",
+   "ECONC2001H",
+   "ECONC2002",
+   "ECONC2002H",
+   "MATH116",
+   "POLS103",
+   "POLS200",
+   "POLS201",
+   "POLS202",
+   "POLS203",
+   "POLSC1000",
+   "POLSC1000H",
+   "SOC110",
+   "SOC112",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/political-science-aa-t-fall-2026",
+   "title": "Political Science AA-T",
+   "h1": "Political Science AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 5903
+ },
+ {
+  "control_number": "32204",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "ART103",
+   "ART104",
+   "ART106",
+   "ART110",
+   "ART113",
+   "ART116",
+   "ART120",
+   "ART121",
+   "ART132",
+   "ART135",
+   "ART137",
+   "ART140",
+   "ART145",
+   "ART163",
+   "ART170",
+   "ART210",
+   "ART213",
+   "ART216",
+   "ARTHC1100H",
+   "ARTHC1200H",
+   "PHTC101",
+   "PHTC125"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/studio-arts-aa-t-fall-2026",
+   "title": "Studio Arts AA-T",
+   "h1": "Studio Arts AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 8110
+ },
+ {
+  "control_number": "32805",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH116",
+   "PSY200",
+   "PSY201",
+   "PSY212",
+   "PSY230",
+   "PSY232",
+   "PSY233",
+   "PSY234",
+   "PSY235",
+   "PSY236",
+   "PSY244",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/psychology-aa-t-fall-2026",
+   "title": "Psychology AA-T",
+   "h1": "Psychology AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 5415
+ },
+ {
+  "control_number": "32844",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ101",
+   "AJ102",
+   "AJ103",
+   "AJ104",
+   "AJ109",
+   "AJ110",
+   "AJ201",
+   "AJ203",
+   "AJ204",
+   "AJ205",
+   "AJ206",
+   "AJ207",
+   "AJ208"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/administration-of-justice-as-t-fall-2026",
+   "title": "Administration of Justice AS-T",
+   "h1": "Administration of Justice AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 7524
+ },
+ {
+  "control_number": "32859",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH101",
+   "ANTH101H",
+   "ANTH101L",
+   "ANTH102",
+   "ANTH103",
+   "ANTH110",
+   "ANTH112",
+   "ANTH112H",
+   "ANTH140",
+   "ANTH199",
+   "BIOL201",
+   "ERSC101",
+   "GEOG205",
+   "GEOL101",
+   "GEOL101H",
+   "GEOL101L",
+   "MATH116",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/anthropology-aa-t-fall-2026",
+   "title": "Anthropology AA-T",
+   "h1": "Anthropology AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 9539
+ },
+ {
+  "control_number": "32864",
+  "title": "Geography",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH102",
+   "GEOG101",
+   "GEOG101L",
+   "GEOG102",
+   "GEOG105",
+   "GEOG106",
+   "GEOG110",
+   "GEOG201",
+   "GEOG205",
+   "GEOG299",
+   "GEOL101",
+   "GEOL101H"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/geography-aa-t-fall-2026",
+   "title": "Geography AA-T",
+   "h1": "Geography AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 5438
+ },
+ {
+  "control_number": "33006",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL114",
+   "ENGL221",
+   "ENGL222",
+   "ENGL225",
+   "ENGL227",
+   "ENGL230",
+   "ENGL231",
+   "ENGL235",
+   "ENGL242",
+   "ENGL253",
+   "ENGL253H",
+   "ENGL256",
+   "ENGL257",
+   "ENGL259",
+   "ENGL265",
+   "ENGL279",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "ENGLC1002",
+   "ENGLC1002H"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/english-aa-t-fall-2026",
+   "title": "English AA-T",
+   "h1": "English AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 8346
+ },
+ {
+  "control_number": "33007",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HIST104",
+   "HIST105",
+   "HIST110",
+   "HIST110H",
+   "HIST111",
+   "HIST111H",
+   "HIST113",
+   "HIST114",
+   "HIST115",
+   "HIST116",
+   "HIST118",
+   "HIST119",
+   "HISTC1001",
+   "HISTC1001H",
+   "HISTC1002",
+   "HISTC1002H"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/history-aa-t-fall-2026",
+   "title": "History AA-T",
+   "h1": "History AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 6677
+ },
+ {
+  "control_number": "33008",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CFE101",
+   "CFE102",
+   "CFE103",
+   "CFE105",
+   "CFE116",
+   "CFE201",
+   "CFE202",
+   "CFE211"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/early-childhood-education-as-t-fall-2026",
+   "title": "Early Childhood Education AS-T",
+   "h1": "Early Childhood Education AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 5195
+ },
+ {
+  "control_number": "33009",
+  "title": "Geology AS-T",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM110",
+   "CHEM120",
+   "GEOL101",
+   "GEOL101H",
+   "GEOL101L",
+   "GEOL102",
+   "GEOL102L",
+   "MATH150",
+   "MATH160"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/geology-as-t-fall-2026",
+   "title": "Geology AS-T",
+   "h1": "Geology AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 4984
+ },
+ {
+  "control_number": "33010",
+  "title": "Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH150",
+   "MATH160",
+   "MATH250",
+   "PHYS110",
+   "PHYS120",
+   "PHYS211"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/physics-2-0-as-t-fall-2026",
+   "title": "Physics 2.0 AS-T",
+   "h1": "Physics 2.0 AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 6809
+ },
+ {
+  "control_number": "33011",
+  "title": "Philosophy",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "PHIL105",
+   "PHIL105H",
+   "PHIL106",
+   "PHIL108",
+   "PHIL109",
+   "PHIL110",
+   "PHIL201",
+   "PHIL210"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/philosophy-aa-t-fall-2026",
+   "title": "Philosophy AA-T",
+   "h1": "Philosophy AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 5355
+ },
+ {
+  "control_number": "33020",
+  "title": "Music",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS120",
+   "MUS151",
+   "MUS153A",
+   "MUS153B",
+   "MUS160",
+   "MUS166",
+   "MUS181",
+   "MUS251A",
+   "MUS251B",
+   "MUS253A",
+   "MUS253B",
+   "MUS291A",
+   "MUS291B",
+   "MUS291C"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/music-aa-t-fall-2026",
+   "title": "Music AA-T",
+   "h1": "Music AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 8612
+ },
+ {
+  "control_number": "33028",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL201",
+   "BIOL202",
+   "CHEM110",
+   "CHEM110H",
+   "DA103",
+   "DA106",
+   "HE100",
+   "HE101",
+   "KINF107",
+   "KINF108",
+   "KINF115",
+   "KINF116",
+   "KINF130",
+   "KINF140",
+   "KINF144",
+   "KINF150",
+   "KINF160",
+   "KINF161",
+   "KINF180",
+   "KINF181",
+   "KINF190",
+   "KINF191",
+   "KINF192",
+   "KINF193",
+   "KINF194",
+   "KINF195",
+   "KINF196",
+   "KINF220",
+   "KINF260",
+   "KINF280",
+   "KINT100",
+   "PHYS101",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOCIC1000",
+   "SOCIC1000H",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/kinesiology-aa-t-fall-2026",
+   "title": "Kinesiology AA-T",
+   "h1": "Kinesiology AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 38,
+  "text_chars": 9464
+ },
+ {
+  "control_number": "33163",
+  "title": "Theatre Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "THA101",
+   "THA101H",
+   "THA102",
+   "THA103",
+   "THA104",
+   "THA106",
+   "THA110",
+   "THA111",
+   "THA115A",
+   "THA115B",
+   "THA115C",
+   "THA116A",
+   "THA116B",
+   "THA116C",
+   "THA117A",
+   "THA117B",
+   "THA117C",
+   "THA118A",
+   "THA118B",
+   "THA118C",
+   "THA119A",
+   "THA119B",
+   "THA119C",
+   "THA121A",
+   "THA121B",
+   "THA121C",
+   "THA125",
+   "THA133",
+   "THA215",
+   "THA225",
+   "THA239",
+   "THA239H",
+   "THA240"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/theatre-arts-aa-t-fall-2026",
+   "title": "Theatre Arts AA-T",
+   "h1": "Theatre Arts AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 33,
+  "text_chars": 8233
+ },
+ {
+  "control_number": "33228",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.964,
+  "codes_found": [
+   "ACCT201",
+   "ACCT205",
+   "BUS113",
+   "BUS201",
+   "BUS201H",
+   "CA221",
+   "ECON100",
+   "ECON110",
+   "ECONC2001H",
+   "ECONC2002",
+   "ECONC2002H",
+   "MATH116",
+   "MATH124",
+   "MATH148",
+   "MATH150",
+   "MATH150H",
+   "MATH160",
+   "MATH220",
+   "MATH250",
+   "POLSC1000",
+   "POLSC1000H",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOCIC1000",
+   "SOCIC1000H",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/economics-aa-t-fall-2026",
+   "title": "Economics AA-T",
+   "h1": "Economics AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 28,
+  "text_chars": 5453
+ },
+ {
+  "control_number": "33261",
+  "title": "Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH110",
+   "ENGL256",
+   "FREN101",
+   "GER101",
+   "HIST115",
+   "HIST119",
+   "LATN101",
+   "SOC105",
+   "SPAN101",
+   "SPAN102",
+   "SPAN110SS",
+   "SPAN201",
+   "SPAN202",
+   "SPAN203",
+   "SPAN210SS",
+   "SPAN220SS"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/spanish-aa-t-fall-2026",
+   "title": "Spanish AA-T",
+   "h1": "Spanish AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 8337
+ },
+ {
+  "control_number": "33786",
+  "title": "Yoga Instructor",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "34002",
+  "title": "Airframe Manufacturing Technology",
+  "award": "Baccalaureate of Science (B.S.) Degree.",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AERO121",
+   "AERO230",
+   "AFAB110",
+   "AFAB115",
+   "AFAB120",
+   "AFAB130",
+   "AFAB210",
+   "AFMT310",
+   "AFMT320",
+   "AFMT330",
+   "AFMT340",
+   "AFMT341",
+   "AFMT345",
+   "AFMT350",
+   "AFMT442",
+   "AFMT446",
+   "AFMT451",
+   "AM135B",
+   "BIOL304",
+   "CHEM101",
+   "COMMC1000",
+   "COMMC1000H",
+   "ELTE105",
+   "ENGL115",
+   "ENGL315",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGR140",
+   "MATH135",
+   "MATH150",
+   "PHYS101",
+   "POLSC1000",
+   "PSCI302",
+   "PSY301",
+   "PSYCC1000",
+   "PSYCC1000H"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/airframe-manufacturing-technology-bs-fall-2026",
+   "title": "Airframe Manufacturing Technology BS",
+   "h1": "Airframe Manufacturing Technology BS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 36,
+  "text_chars": 13658
+ },
+ {
+  "control_number": "35323",
+  "title": "High Intermediate ESL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 12,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35809",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL110",
+   "BIOL120",
+   "CHEM110",
+   "CHEM110H",
+   "CHEM120",
+   "MATH150",
+   "MATH150H",
+   "PHYS101",
+   "PHYS102",
+   "PHYS110",
+   "PHYS120"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/biology-as-t-fall-2026",
+   "title": "Biology AS-T",
+   "h1": "Biology AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 5240
+ },
+ {
+  "control_number": "35818",
+  "title": "Chemistry",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "CHEM110",
+   "MATH150",
+   "MATH160",
+   "PHYS110"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/engineering-fundamentals-cert-fall-2026",
+   "title": "Engineering Fundamentals Cert",
+   "h1": "Engineering Fundamentals Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3759
+ },
+ {
+  "control_number": "36519",
+  "title": "Electrical Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS120",
+   "CS121",
+   "CS122",
+   "ENGR110",
+   "ENGR125",
+   "ENGR185",
+   "ENGR230",
+   "MATH150",
+   "MATH150H",
+   "MATH160",
+   "MATH220",
+   "MATH230",
+   "MATH250",
+   "PHYS110",
+   "PHYS120",
+   "PHYS211"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/electrical-engineering-as-fall-2026",
+   "title": "Electrical Engineering AS",
+   "h1": "Electrical Engineering AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 4595
+ },
+ {
+  "control_number": "36538",
+  "title": "Film, Television, and Electronic Media",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM105",
+   "DM110",
+   "FTV101",
+   "FTV103",
+   "FTV107",
+   "FTV108",
+   "FTV121",
+   "FTV134",
+   "FTV155",
+   "FTV199",
+   "FTV201",
+   "FTV203",
+   "FTV215",
+   "FTV220",
+   "FTV230",
+   "FTV241",
+   "FTV242",
+   "FTV244",
+   "PHTC101"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/film-television-and-electronic-media-as-t-fall-2026",
+   "title": "Film, Television, and Electronic Media AS-T",
+   "h1": "Film, Television, and Electronic Media AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 6366
+ },
+ {
+  "control_number": "36852",
+  "title": "Commercial Music",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FTV241",
+   "MUS120",
+   "MUS291D",
+   "MUSC100",
+   "MUSC102",
+   "MUSC103",
+   "MUSC104",
+   "MUSC107",
+   "MUSC108",
+   "MUSC109",
+   "MUSC113",
+   "MUSC124A",
+   "MUSC134",
+   "MUSC136",
+   "MUSC141",
+   "MUSC142",
+   "MUSC143A",
+   "MUSC150C",
+   "MUSC173",
+   "MUSC199",
+   "MUSC233",
+   "MUSC273"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/commercial-music-aa-fall-2026",
+   "title": "Commercial Music AA",
+   "h1": "Commercial Music AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 7045
+ },
+ {
+  "control_number": "37725",
+  "title": "Alcohol and Other Drug Studies (AODS)",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PSY102",
+   "PSY103",
+   "PSY104",
+   "PSY105",
+   "PSY106",
+   "PSY107",
+   "PSY108",
+   "PSY109",
+   "PSY110",
+   "PSY234",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC112",
+   "SOCIC1000",
+   "SOCIC1000H"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/alcohol-and-other-drug-studies-aods-cert-fall-2026",
+   "title": "Alcohol and Other Drug Studies (AODS) Cert",
+   "h1": "Alcohol and Other Drug Studies (AODS) Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 5567
+ },
+ {
+  "control_number": "37888",
+  "title": "Computer Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS110",
+   "CS120",
+   "CS121",
+   "CS122",
+   "CS130",
+   "CS131",
+   "CS132",
+   "CS140",
+   "CS150",
+   "ENGR110",
+   "ENGR185",
+   "ENGR230",
+   "MATH150",
+   "MATH150H",
+   "MATH160",
+   "MATH220",
+   "MATH230",
+   "MATH250",
+   "PHYS110",
+   "PHYS120"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-engineering-as-fall-2026",
+   "title": "Computer Engineering AS",
+   "h1": "Computer Engineering AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 5273
+ },
+ {
+  "control_number": "37982",
+  "title": "Industrial Manufacturing Technician Apprentice",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "IMTA110",
+   "IMTA112",
+   "IMTA210",
+   "IMTA212",
+   "IMTA255"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/industrial-manufacturing-technician-apprentice-cert-fall-2025",
+   "title": "Industrial Manufacturing Technician Apprentice Cert",
+   "h1": "Industrial Manufacturing Technician Apprentice Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3235
+ },
+ {
+  "control_number": "38016",
+  "title": "Nursing Skills Lab",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NS911L",
+   "NS912L",
+   "NS913L",
+   "NS921L",
+   "NS922L",
+   "NS923L",
+   "NS924L",
+   "NS950L"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/nursing-skills-lab-certificate-noncredit-fall-2026",
+   "title": "Nursing Skills Lab Certificate (Noncredit)",
+   "h1": "Nursing Skills Lab Certificate (Noncredit)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 5898
+ },
+ {
+  "control_number": "38386",
+  "title": "IT Cybersecurity",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CA107",
+   "CA157",
+   "CA159",
+   "CA165",
+   "CA166",
+   "CA170",
+   "CA171",
+   "CA175",
+   "CA176",
+   "CA179",
+   "CA182",
+   "CA183",
+   "CA185"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/it-cybersecurity-cert-fall-2026",
+   "title": "IT Cybersecurity Cert",
+   "h1": "IT Cybersecurity Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 4727
+ },
+ {
+  "control_number": "38483",
+  "title": "Avionics Technology",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELTE110",
+   "ELTE125",
+   "ELTE145"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/avionics-technology-certificate-fall-2026",
+   "title": "Avionics Technology Certificate",
+   "h1": "Avionics Technology Certificate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3105
+ },
+ {
+  "control_number": "38593",
+  "title": "Computer Aided Drafting and Manufacturing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AM100",
+   "AM105",
+   "AM135A",
+   "AM135B",
+   "AM145",
+   "AM235A",
+   "AM235B",
+   "AM245"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-aided-drafting-and-manufacturing-cert-fall-2026",
+   "title": "Computer Aided Drafting and Manufacturing Cert",
+   "h1": "Computer Aided Drafting and Manufacturing Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 4446
+ },
+ {
+  "control_number": "39295",
+  "title": "Dance",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DA102",
+   "DA103",
+   "DA104",
+   "DA105",
+   "DA107A",
+   "DA107B",
+   "DA107C",
+   "DA108",
+   "DA110",
+   "DA111",
+   "DA116",
+   "DA117",
+   "DA122",
+   "DA123",
+   "DA124",
+   "DA125",
+   "DA199",
+   "DA202",
+   "DA203",
+   "DA204",
+   "DA205",
+   "MUS111",
+   "MUSC102",
+   "MUSC108",
+   "THA101",
+   "THA110"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/dance-aa-fall-2026",
+   "title": "Dance AA",
+   "h1": "Dance AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 7440
+ },
+ {
+  "control_number": "39337",
+  "title": "Business Information Professional",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIP100",
+   "BIP105",
+   "BIP106",
+   "BIP110",
+   "BIP111",
+   "BIP112",
+   "BIP113",
+   "BIP114",
+   "BIP115",
+   "BIP120",
+   "BIP121",
+   "BIP122",
+   "BIP123",
+   "BIP124",
+   "BIP125",
+   "BIP126",
+   "BIP127",
+   "BIP130",
+   "BIP131",
+   "BIP132",
+   "BIP133",
+   "BIP150"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/business-information-professional-as-fall-2026",
+   "title": "Business Information Professional AS",
+   "h1": "Business Information Professional AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 6866
+ },
+ {
+  "control_number": "40870",
+  "title": "IT Cybersecurity",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CA107",
+   "CA159",
+   "CA165",
+   "CA166",
+   "CA170",
+   "CA171",
+   "CA175",
+   "CA176",
+   "CA179",
+   "CA182",
+   "CA183",
+   "CA185"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/it-cybersecurity-as-fall-2026",
+   "title": "IT Cybersecurity AS",
+   "h1": "IT Cybersecurity AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 5408
+ },
+ {
+  "control_number": "41246",
+  "title": "BIP Level I - Business Information Professional Quick Start",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIP100",
+   "BIP105",
+   "BIP106",
+   "BIP110",
+   "BIP111",
+   "BIP112",
+   "BIP114",
+   "BIP115"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/bip-level-i-business-information-professional-quick-start-certificate-of-achievement-fall-2026",
+   "title": "BIP Level I - Business Information Professional Quick Start Certificate of Achievement",
+   "h1": "BIP Level I - Business Information Professional Quick Start Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 4659
+ },
+ {
+  "control_number": "41247",
+  "title": "BIP Level III - Business Information Professional Three",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIP124",
+   "BIP130",
+   "BIP131",
+   "BIP132",
+   "BIP133",
+   "BIP150"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/bip-level-iii-business-information-professional-three-certificate-of-achievement-fall-2026",
+   "title": "BIP Level III - Business Information Professional Three Certificate of Achievement",
+   "h1": "BIP Level III - Business Information Professional Three Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 4095
+ },
+ {
+  "control_number": "41303",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.933,
+  "codes_found": [
+   "ACCT201",
+   "ACCT205",
+   "BUS101",
+   "BUS113",
+   "BUS201",
+   "BUS201H",
+   "ECONC2001H",
+   "ECONC2002",
+   "ECONC2002H",
+   "MATH116",
+   "MATH124",
+   "MATH148",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/business-administration-2-0-as-t-fall-2026",
+   "title": "Business Administration 2.0 AS-T",
+   "h1": "Business Administration 2.0 AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 5468
+ },
+ {
+  "control_number": "41407",
+  "title": "Computer Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL110",
+   "BIOL120",
+   "CHEM110",
+   "CS120",
+   "CS121",
+   "CS122",
+   "CS130",
+   "CS131",
+   "CS132",
+   "CS140",
+   "CS150",
+   "MATH150",
+   "MATH160",
+   "PHYS110",
+   "PHYS120"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-science-as-t-fall-2026",
+   "title": "Computer Science AS-T",
+   "h1": "Computer Science AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 5715
+ },
+ {
+  "control_number": "41432",
+  "title": "BIP Level II - Business Information Professional Two",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIP113",
+   "BIP120",
+   "BIP121",
+   "BIP122",
+   "BIP123",
+   "BIP125",
+   "BIP126",
+   "BIP127"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/bip-level-ii-business-information-professional-two-certificate-of-achievement-fall-2026",
+   "title": "BIP Level II - Business Information Professional Two Certificate of Achievement",
+   "h1": "BIP Level II - Business Information Professional Two Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 4498
+ },
+ {
+  "control_number": "41814",
+  "title": "Advanced Aircraft Structures",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AFAB210",
+   "AFAB215",
+   "AFAB220"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/advanced-aircraft-structures-cert-fall-2026",
+   "title": "Advanced Aircraft Structures Cert",
+   "h1": "Advanced Aircraft Structures Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3988
+ },
+ {
+  "control_number": "41820",
+  "title": "Metrology Sciences for Aerospace Manufacturing",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MSAM110",
+   "MSAM115"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/metrology-sciences-for-aerospace-manufacturing-cert-fall-2026",
+   "title": "Metrology Sciences for Aerospace Manufacturing Cert",
+   "h1": "Metrology Sciences for Aerospace Manufacturing Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 3431
+ },
+ {
+  "control_number": "41821",
+  "title": "Aerospace Leadership and Management",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ALM110",
+   "ALM115",
+   "ALM120",
+   "ALM130"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/aerospace-leadership-and-management-cert-fall-2026",
+   "title": "Aerospace Leadership and Management Cert",
+   "h1": "Aerospace Leadership and Management Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3661
+ },
+ {
+  "control_number": "41823",
+  "title": "Law, Public Policy, and Society",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.98,
+  "codes_found": [
+   "AJ101",
+   "AJ102",
+   "AJ103",
+   "AJ104",
+   "AJ201",
+   "AJ204",
+   "AJ206",
+   "ANTH102",
+   "BUS201",
+   "BUS201H",
+   "COMM109",
+   "COMM110",
+   "COMM115",
+   "COMM215",
+   "COMM219",
+   "COMMC1000",
+   "COMMC1000H",
+   "ECONC2001H",
+   "ECONC2002",
+   "ECONC2002H",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "GEOG105",
+   "HD101",
+   "HD102",
+   "HISTC1001",
+   "HISTC1001H",
+   "HISTC1002",
+   "HISTC1002H",
+   "MATH116",
+   "PHIL105",
+   "PHIL105H",
+   "PHIL110",
+   "POLS103",
+   "POLS199",
+   "POLS200",
+   "POLS201",
+   "POLS202",
+   "POLS203",
+   "POLSC1000",
+   "POLSC1000H",
+   "SOC110",
+   "SOC112",
+   "SOC116",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/law-public-policy-and-society-aa-t-fall-2026",
+   "title": "Law, Public Policy, and Society AA-T",
+   "h1": "Law, Public Policy, and Society AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 49,
+  "text_chars": 8114
+ },
+ {
+  "control_number": "41924",
+  "title": "Advanced ESL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL950",
+   "ESL953",
+   "ESL958"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/advanced-esl-certificate-noncredit-fall-2026",
+   "title": "Advanced ESL Certificate (Noncredit)",
+   "h1": "Advanced ESL Certificate (Noncredit)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 4830
+ },
+ {
+  "control_number": "41969",
+  "title": "Aeronautical Non-Destructive Inspection",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANDI110",
+   "ANDI115",
+   "ANDI120"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/aeronautical-non-destructive-inspection-cert-fall-2026",
+   "title": "Aeronautical Non-Destructive Inspection Cert",
+   "h1": "Aeronautical Non-Destructive Inspection Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 4127
+ },
+ {
+  "control_number": "42778",
+  "title": "Engineering Fundamentals",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM110",
+   "CHEM110H",
+   "CS110",
+   "CS120",
+   "CS121",
+   "CS122",
+   "ENGR110",
+   "ENGR125",
+   "MATH150",
+   "MATH150H",
+   "MATH160",
+   "PHYS110"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/engineering-fundamentals-cert-fall-2026",
+   "title": "Engineering Fundamentals Cert",
+   "h1": "Engineering Fundamentals Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 4040
+ },
+ {
+  "control_number": "42853",
+  "title": "Human Services",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ101",
+   "CFE102",
+   "CFE103",
+   "DFST105",
+   "ECONC2002",
+   "ECONC2002H",
+   "ENGLC1001",
+   "HISTC1001",
+   "HISTC1001H",
+   "HISTC1002",
+   "HISTC1002H",
+   "PSY102",
+   "PSY104",
+   "PSY106",
+   "PSY108",
+   "PSY109",
+   "PSY110",
+   "PSY234",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC110",
+   "SOC111",
+   "SOCIC1000",
+   "SOCIC1000H",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/human-services-aa-fall-2026",
+   "title": "Human Services AA",
+   "h1": "Human Services AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 7090
+ },
+ {
+  "control_number": "42854",
+  "title": "Programming Fundamentals",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS120",
+   "CS121",
+   "CS122",
+   "CS130",
+   "CS131",
+   "CS132",
+   "MATH150",
+   "PHYS110"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/programming-fundamentals-fall-2023",
+   "title": "Programming Fundamentals",
+   "h1": "Programming Fundamentals",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3349
+ },
+ {
+  "control_number": "42913",
+  "title": "Computer Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL110",
+   "BIOL120",
+   "CHEM110",
+   "CHEM120",
+   "CS110",
+   "CS120",
+   "CS121",
+   "CS122",
+   "CS130",
+   "CS131",
+   "CS132",
+   "CS140",
+   "CS150",
+   "CS230",
+   "CS231",
+   "ENGR185",
+   "MATH150",
+   "MATH160",
+   "MATH220",
+   "PHYS110",
+   "PHYS120"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-science-as-fall-2026",
+   "title": "Computer Science AS",
+   "h1": "Computer Science AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 5560
+ },
+ {
+  "control_number": "43028",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH102",
+   "COMM105",
+   "COMM107",
+   "COMM109",
+   "COMM110",
+   "COMM112",
+   "COMM114",
+   "COMM115",
+   "COMM116",
+   "COMM201",
+   "COMM215",
+   "COMM217",
+   "COMM219",
+   "COMMC1000",
+   "COMMC1000H",
+   "ENGLC1001",
+   "ENGLC1002",
+   "JOUR121",
+   "PSYCC1000",
+   "SOCIC1000"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/communication-studies-aa-t-2-0-fall-2026",
+   "title": "Communication Studies AA-T 2.0",
+   "h1": "Communication Studies AA-T 2.0",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 10169
+ },
+ {
+  "control_number": "43077",
+  "title": "Aerospace Welding",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AFAB110",
+   "WELD110",
+   "WELD137",
+   "WELD142",
+   "WELD200",
+   "WELD230"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/aerospace-welding-cert-fall-2025",
+   "title": "Aerospace Welding Cert",
+   "h1": "Aerospace Welding Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3027
+ },
+ {
+  "control_number": "43078",
+  "title": "Digital Marketing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DM101",
+   "DM103",
+   "DM106",
+   "DM113",
+   "DM115",
+   "DM127",
+   "MKTG101",
+   "MKTG130",
+   "MKTG132",
+   "PHTC125"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/digital-marketing-cert-fall-2026",
+   "title": "Digital Marketing Cert",
+   "h1": "Digital Marketing Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3979
+ },
+ {
+  "control_number": "43150",
+  "title": "All Automotive Systems",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO100",
+   "AUTO160",
+   "AUTO211",
+   "AUTO220",
+   "AUTO230",
+   "AUTO240",
+   "AUTO250",
+   "AUTO260",
+   "AUTO270",
+   "AUTO280"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/all-automotive-systems-cert-fall-2025",
+   "title": "All Automotive Systems Cert",
+   "h1": "All Automotive Systems Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3702
+ },
+ {
+  "control_number": "43151",
+  "title": "All Automotive Systems",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO100",
+   "AUTO160",
+   "AUTO211",
+   "AUTO220",
+   "AUTO230",
+   "AUTO240",
+   "AUTO250",
+   "AUTO260",
+   "AUTO270",
+   "AUTO280"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/all-automotive-systems-as-fall-2026",
+   "title": "All Automotive Systems AS",
+   "h1": "All Automotive Systems AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 5178
+ },
+ {
+  "control_number": "43375",
+  "title": "Licensed Vocational Nursing",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.714,
+  "codes_found": [
+   "NF100",
+   "VN119",
+   "VN120",
+   "VN122",
+   "VN123"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/licensed-vocational-nursing-cert-spring-2025",
+   "title": "Licensed Vocational Nursing Cert",
+   "h1": "Licensed Vocational Nursing Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 5781
+ },
+ {
+  "control_number": "43400",
+  "title": "Personal Business Ownership",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS990",
+   "BUS991",
+   "CA998"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/personal-business-ownership-certificate-noncredit-fall-2026",
+   "title": "Personal Business Ownership Certificate (Noncredit)",
+   "h1": "Personal Business Ownership Certificate (Noncredit)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2927
+ },
+ {
+  "control_number": "43402",
+  "title": "Computer and Workplace Fundamentals",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS999",
+   "CA998"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-and-workplace-fundamentals-certificate-noncredit-fall-2026",
+   "title": "Computer and Workplace Fundamentals Certificate (Noncredit)",
+   "h1": "Computer and Workplace Fundamentals Certificate (Noncredit)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2968
+ },
+ {
+  "control_number": "43419",
+  "title": "College Readiness - Reading and Writing",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL900",
+   "ENGL901",
+   "LAC920",
+   "READ990"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/college-readiness-reading-and-writing-cert-noncredit-fall-2026",
+   "title": "College Readiness - Reading and Writing Cert (Noncredit)",
+   "h1": "College Readiness - Reading and Writing Cert (Noncredit)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 5543
+ },
+ {
+  "control_number": "43686",
+  "title": "Chicana and Chicano Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ETHN101",
+   "ETHN102",
+   "ETHN103",
+   "ETHN104",
+   "ETHN105",
+   "ETHN110",
+   "ETHN111",
+   "ETHN112",
+   "ETHN113",
+   "ETHN114",
+   "ETHN140",
+   "ETHN200",
+   "ETHN233",
+   "ETHN237",
+   "ETHN239"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/chicana-and-chicano-studies-aa-fall-2026",
+   "title": "Chicana and Chicano Studies AA",
+   "h1": "Chicana and Chicano Studies AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 8836
+ },
+ {
+  "control_number": "43722",
+  "title": "Chemistry",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM110",
+   "CHEM110H",
+   "CHEM120",
+   "CHEM210",
+   "CHEM220",
+   "MATH150",
+   "MATH150H",
+   "MATH160",
+   "PHYS110",
+   "PHYS120"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/chemistry-as-fall-2026",
+   "title": "Chemistry AS",
+   "h1": "Chemistry AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 4978
+ },
+ {
+  "control_number": "43727",
+  "title": "Recreation and Leisure Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HE100",
+   "HE101",
+   "KINT100",
+   "KINT105",
+   "KINT114",
+   "KINT115",
+   "REC101",
+   "REC102"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/recreation-and-leisure-studies-certificate-fall-2024",
+   "title": "Recreation and Leisure Studies Certificate",
+   "h1": "Recreation and Leisure Studies Certificate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3593
+ },
+ {
+  "control_number": "43798",
+  "title": "Health and Fitness for First Responders",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ911",
+   "AJ912",
+   "AJ913"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/health-and-fitness-for-first-responders-certificate-of-completion-noncredit-fall-2026",
+   "title": "Health and Fitness for First Responders Certificate of Completion (Noncredit)",
+   "h1": "Health and Fitness for First Responders Certificate of Completion (Noncredit)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 6689
+ },
+ {
+  "control_number": "43840",
+  "title": "Child and Family Education Specialization with Core 8 Option (24 Unit)",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CFE101",
+   "CFE102",
+   "CFE103",
+   "CFE105",
+   "CFE106",
+   "CFE115",
+   "CFE116",
+   "CFE201",
+   "CFE202",
+   "CFE211"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/child-and-family-education-specialization-with-core-8-option-certificate-24-unit-fall-2026",
+   "title": "Child and Family Education Specialization with Core 8 Option Certificate (24 Unit)",
+   "h1": "Child and Family Education Specialization with Core 8 Option Certificate (24 Unit)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 8772
+ },
+ {
+  "control_number": "43841",
+  "title": "Child and Family Education Associate Teacher (12 Unit)",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CFE101",
+   "CFE102",
+   "CFE103",
+   "CFE105"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/child-and-family-education-associate-teacher-certificate-12-unit-fall-2026",
+   "title": "Child and Family Education Associate Teacher Certificate (12 Unit)",
+   "h1": "Child and Family Education Associate Teacher Certificate (12 Unit)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 5535
+ },
+ {
+  "control_number": "43842",
+  "title": "Skilled Parenting",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CFE102",
+   "CFE103",
+   "CFE150",
+   "CFE151",
+   "CFE152",
+   "CFE155",
+   "CFE156",
+   "CFE157"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/skilled-parenting-certificate-fall-2026",
+   "title": "Skilled Parenting Certificate",
+   "h1": "Skilled Parenting Certificate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 7079
+ },
+ {
+  "control_number": "43843",
+  "title": "Paramedic",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMT121",
+   "EMT122",
+   "EMT123",
+   "EMT124",
+   "EMT125",
+   "EMT126",
+   "EMT127",
+   "EMT128",
+   "EMT129",
+   "EMT130A",
+   "EMT130B"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/paramedic-cert-spring-2026",
+   "title": "Paramedic Cert",
+   "h1": "Paramedic Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 6594
+ },
+ {
+  "control_number": "43845",
+  "title": "AVC Tutor (Noncredit)",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LAC931",
+   "LAC932",
+   "LAC933"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/avc-tutor-certificate-noncredit-fall-2026",
+   "title": "AVC Tutor Certificate (Noncredit)",
+   "h1": "AVC Tutor Certificate (Noncredit)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3515
+ },
+ {
+  "control_number": "43908",
+  "title": "Nutrition and Dietetics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL201",
+   "BIOL202",
+   "BIOL204",
+   "CHEM110",
+   "CHEM110H",
+   "CHEM120",
+   "CHEM210",
+   "MATH116",
+   "NF100",
+   "NF103",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/nutrition-and-dietetics-as-t-fall-2026",
+   "title": "Nutrition and Dietetics AS-T",
+   "h1": "Nutrition and Dietetics AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 7620
+ },
+ {
+  "control_number": "43923",
+  "title": "Network System Administrator I",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CA107",
+   "CA151",
+   "CA153",
+   "CA157",
+   "CA171",
+   "CA175"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/network-system-administrator-i-cert-fall-2026",
+   "title": "Network System Administrator I Cert",
+   "h1": "Network System Administrator I Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3816
+ },
+ {
+  "control_number": "43924",
+  "title": "Network System Administrator II",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CA159",
+   "CA170",
+   "CA176",
+   "CA182",
+   "CA183",
+   "CA185"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/network-system-administrator-ii-cert-fall-2026",
+   "title": "Network System Administrator II Cert",
+   "h1": "Network System Administrator II Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3867
+ },
+ {
+  "control_number": "43964",
+  "title": "Elementary Teacher Education",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.826,
+  "codes_found": [
+   "ART100",
+   "BIOLC1001",
+   "BIOLC1001L",
+   "CFE102",
+   "COMMC1000",
+   "ED140",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGLC1002",
+   "ENGLC1002H",
+   "ERSC101",
+   "HIST104",
+   "HISTC1001",
+   "MATH120",
+   "MUS101",
+   "MUS101H",
+   "POLSC1000",
+   "THA101",
+   "THA101H"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/elementary-teacher-education-integrated-programs-aa-t-fall-2026",
+   "title": "Elementary Teacher Education: Integrated Programs AA-T",
+   "h1": "Elementary Teacher Education: Integrated Programs AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 8586
+ },
+ {
+  "control_number": "43969",
+  "title": "Human Resources Professional II",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIP123",
+   "BIP125",
+   "BUS113",
+   "BUS199",
+   "CA221"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/human-resources-professional-ii-cert-fall-2026",
+   "title": "Human Resources Professional II Cert",
+   "h1": "Human Resources Professional II Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3248
+ },
+ {
+  "control_number": "43970",
+  "title": "Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS111",
+   "BUS113",
+   "MGT101",
+   "MGT115",
+   "MGT121",
+   "MGT202"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/management-certificate-fall-2026",
+   "title": "Management Certificate",
+   "h1": "Management Certificate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3071
+ },
+ {
+  "control_number": "43971",
+  "title": "Human Resources Professional I",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIP105",
+   "BIP106",
+   "BIP111",
+   "BIP112",
+   "BIP113",
+   "BIP114",
+   "BUS111",
+   "MGT121"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/human-resources-professional-i-cert-fall-2026",
+   "title": "Human Resources Professional I Cert",
+   "h1": "Human Resources Professional I Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3145
+ },
+ {
+  "control_number": "44060",
+  "title": "Respiratory Care",
+  "award": "Baccalaureate of Science (B.S.) Degree.",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL304",
+   "ENGL315",
+   "PHIL300",
+   "PSY301",
+   "RCP301",
+   "RCP302",
+   "RCP303",
+   "RCP304",
+   "RCP305",
+   "RCP306",
+   "RCP401",
+   "RCP402",
+   "RCP403"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/bachelor-of-science-degree-respiratory-care-fall-2026",
+   "title": "Bachelor of Science Degree Respiratory Care",
+   "h1": "Bachelor of Science Degree Respiratory Care",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 11063
+ },
+ {
+  "control_number": "44641",
+  "title": "Computational Biology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL110",
+   "BIOL206",
+   "CHEM110",
+   "CHEM110H",
+   "CS110",
+   "CS122",
+   "MATH116",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/computational-biology-cert-fall-2025",
+   "title": "Computational Biology Cert",
+   "h1": "Computational Biology Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3792
+ },
+ {
+  "control_number": "44642",
+  "title": "Human Biology and Wellness",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL201",
+   "BIOL202",
+   "BIOL203A",
+   "BIOL203B",
+   "BIOLC1001",
+   "BIOLC1001L",
+   "CHEM101",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/human-biology-and-wellness-as-fall-2026",
+   "title": "Human Biology and Wellness AS",
+   "h1": "Human Biology and Wellness AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 4926
+ },
+ {
+  "control_number": "44643",
+  "title": "Software Development Essentials",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS110",
+   "CS120",
+   "CS121",
+   "CS122",
+   "CS130",
+   "CS131",
+   "CS132",
+   "CS140",
+   "CS230",
+   "CS231",
+   "MATH150",
+   "MATH150H"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/software-development-essentials-cert-fall-2026",
+   "title": "Software Development Essentials Cert",
+   "h1": "Software Development Essentials Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 4017
+ },
+ {
+  "control_number": "44644",
+  "title": "Geology Fundamentals",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GEOL101",
+   "GEOL101H",
+   "GEOL101L",
+   "GEOL102",
+   "GEOL102L"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/geology-fundamentals-cert-fall-2025",
+   "title": "Geology Fundamentals Cert",
+   "h1": "Geology Fundamentals Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2820
+ },
+ {
+  "control_number": "44645",
+  "title": "Cal-GETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "44647",
+  "title": "Case Management Work Readiness",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CA998",
+   "PSY900"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/case-management-work-readiness-cert-noncredit-fall-2025",
+   "title": "Case Management Work Readiness Cert (Noncredit)",
+   "h1": "Case Management Work Readiness Cert (Noncredit)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2285
+ },
+ {
+  "control_number": "44789",
+  "title": "Modern Policing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ101",
+   "AJ102",
+   "AJ103",
+   "AJ201",
+   "AJ204",
+   "AJ205",
+   "AJ206",
+   "ART103",
+   "CFE103",
+   "COMM219",
+   "COMMC1000",
+   "COMMC1000H",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "ETHN101",
+   "PHIL105",
+   "PHIL105H",
+   "PSY230",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/modern-policing-as-fall-2026",
+   "title": "Modern Policing AS",
+   "h1": "Modern Policing AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 5560
+ },
+ {
+  "control_number": "44807",
+  "title": "Community Modern Policing",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "44808",
+  "title": "Customer Service Essentials",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS911",
+   "BUS912",
+   "BUS913"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/customer-service-essentials-cert-noncredit-fall-2026",
+   "title": "Customer Service Essentials Cert (Noncredit)",
+   "h1": "Customer Service Essentials Cert (Noncredit)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2669
+ },
+ {
+  "control_number": "44809",
+  "title": "Logistics, Transportation and Distribution",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS901",
+   "BUS902",
+   "BUS903",
+   "BUS904",
+   "BUS905"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/logistics-transportation-and-distribution-certificate-noncredit-fall-2026",
+   "title": "Logistics, Transportation and Distribution Certificate (Noncredit)",
+   "h1": "Logistics, Transportation and Distribution Certificate (Noncredit)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2830
+ },
+ {
+  "control_number": "44810",
+  "title": "Supply Chain Warehouse Essentials",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS901",
+   "BUS902",
+   "BUS903"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/supply-chain-warehouse-essentials-certificate-noncredit-fall-2026",
+   "title": "Supply Chain Warehouse Essentials Certificate (Noncredit)",
+   "h1": "Supply Chain Warehouse Essentials Certificate (Noncredit)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2437
+ },
+ {
+  "control_number": "44828",
+  "title": "Paralegal Studies",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PARL100",
+   "PARL101",
+   "PARL102",
+   "PARL103",
+   "PARL104",
+   "PARL105",
+   "PARL106",
+   "PARL107",
+   "PARL108",
+   "PARL109",
+   "PARL110"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/paralegal-studies-cert-fall-2025",
+   "title": "Paralegal Studies Cert",
+   "h1": "Paralegal Studies Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3566
+ },
+ {
+  "control_number": "44829",
+  "title": "Technical Theatre",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AM135A",
+   "ART110",
+   "ART113",
+   "ART121",
+   "ART145",
+   "ELEC110",
+   "MUSC100",
+   "THA101",
+   "THA102",
+   "THA103",
+   "THA106",
+   "THA121A",
+   "THA121B",
+   "THA121C",
+   "WELD101",
+   "WELD110"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/technical-theatre-cert-fall-2025",
+   "title": "Technical Theatre Cert",
+   "h1": "Technical Theatre Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 4596
+ },
+ {
+  "control_number": "44830",
+  "title": "Music Performance & Education",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS101",
+   "MUS101H",
+   "MUS105",
+   "MUS106",
+   "MUS110",
+   "MUS120",
+   "MUS131",
+   "MUS132",
+   "MUS151",
+   "MUS153A",
+   "MUS153B",
+   "MUS160",
+   "MUS166",
+   "MUS180",
+   "MUS181",
+   "MUS291A",
+   "MUS291B",
+   "MUS291C",
+   "MUS291D",
+   "MUS292",
+   "MUSC102",
+   "MUSC103",
+   "MUSC107",
+   "MUSC108",
+   "MUSC109",
+   "MUSC124A",
+   "MUSC170A",
+   "MUSC173",
+   "MUSC199",
+   "MUSC220A",
+   "MUSC273"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/music-performance-education-cert-fall-2025",
+   "title": "Music Performance & Education Cert",
+   "h1": "Music Performance & Education Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 31,
+  "text_chars": 6027
+ },
+ {
+  "control_number": "44831",
+  "title": "Music Technology, Production, & Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS131",
+   "MUS132",
+   "MUS292",
+   "MUSC100",
+   "MUSC104",
+   "MUSC134",
+   "MUSC141",
+   "MUSC143A",
+   "MUSC199",
+   "MUSC233"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/music-technology-production-management-cert-fall-2025",
+   "title": "Music Technology, Production, & Management Cert",
+   "h1": "Music Technology, Production, & Management Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3134
+ },
+ {
+  "control_number": "44834",
+  "title": "Music Composition & Songwriting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS120",
+   "MUS131",
+   "MUS132",
+   "MUS151",
+   "MUS153A",
+   "MUS153B",
+   "MUS160",
+   "MUS166",
+   "MUS180",
+   "MUS181",
+   "MUS291A",
+   "MUS291B",
+   "MUS291C",
+   "MUS291D",
+   "MUS292",
+   "MUSC104",
+   "MUSC113",
+   "MUSC136",
+   "MUSC150C",
+   "MUSC170A",
+   "MUSC173",
+   "MUSC199",
+   "MUSC220A",
+   "MUSC273"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/music-composition-songwriting-cert-fall-2025",
+   "title": "Music Composition & Songwriting Cert",
+   "h1": "Music Composition & Songwriting Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 5301
+ },
+ {
+  "control_number": "44835",
+  "title": "Music Industry Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS101",
+   "MUS105",
+   "MUS106",
+   "MUS110",
+   "MUS120",
+   "MUS121",
+   "MUS126",
+   "MUS131",
+   "MUS132",
+   "MUS151",
+   "MUS153A",
+   "MUS153B",
+   "MUS160",
+   "MUS166",
+   "MUS180",
+   "MUS181",
+   "MUS231",
+   "MUS251A",
+   "MUS253A",
+   "MUS291A",
+   "MUS291B",
+   "MUS291C",
+   "MUS291D",
+   "MUS292",
+   "MUSC100",
+   "MUSC102",
+   "MUSC103",
+   "MUSC104",
+   "MUSC107",
+   "MUSC108",
+   "MUSC109",
+   "MUSC113",
+   "MUSC124A",
+   "MUSC134",
+   "MUSC136",
+   "MUSC141",
+   "MUSC143A",
+   "MUSC150C",
+   "MUSC170A",
+   "MUSC173",
+   "MUSC220A",
+   "MUSC233",
+   "MUSC273"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/music-industry-studies-aa-fall-2026",
+   "title": "Music Industry Studies AA",
+   "h1": "Music Industry Studies AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 43,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "45124",
+  "title": "Site Supervisor I",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIP115",
+   "CA221",
+   "CFE101",
+   "CFE102",
+   "CFE109",
+   "MGT101",
+   "MKTG101"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/site-supervisor-i-cert-fall-2026",
+   "title": "Site Supervisor I Cert",
+   "h1": "Site Supervisor I Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3345
+ },
+ {
+  "control_number": "45125",
+  "title": "Site Supervisor II",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIP127",
+   "CFE103",
+   "CFE110",
+   "CFE111",
+   "MGT202",
+   "MKTG130",
+   "MKTG132"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/site-supervisor-ii-cert-fall-2026",
+   "title": "Site Supervisor II Cert",
+   "h1": "Site Supervisor II Cert",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3530
+ },
+ {
+  "control_number": "45146",
+  "title": "Practical Microcontrollers",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGR910",
+   "ENGR960"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/practical-microcontrollers-cert-noncredit-fall-2025",
+   "title": "Practical Microcontrollers Cert (Noncredit)",
+   "h1": "Practical Microcontrollers Cert (Noncredit)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2768
+ },
+ {
+  "control_number": "45147",
+  "title": "Practical Robotics",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGR905",
+   "ENGR955"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/practical-robotics-cert-noncredit-fall-2025",
+   "title": "Practical Robotics Cert (Noncredit)",
+   "h1": "Practical Robotics Cert (Noncredit)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2643
+ },
+ {
+  "control_number": "45149",
+  "title": "Practical 3D Printing",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGR900",
+   "ENGR950"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/practical-3d-printing-cert-noncredit-fall-2025",
+   "title": "Practical 3D Printing Cert (Noncredit)",
+   "h1": "Practical 3D Printing Cert (Noncredit)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2639
+ },
+ {
+  "control_number": "45151",
+  "title": "Paramedic",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMT121",
+   "EMT122",
+   "EMT123",
+   "EMT124",
+   "EMT125",
+   "EMT126",
+   "EMT127",
+   "EMT128",
+   "EMT129",
+   "EMT130A",
+   "EMT130B"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/paramedic-as-spring-2026",
+   "title": "Paramedic AS",
+   "h1": "Paramedic AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 7155
+ },
+ {
+  "control_number": "45152",
+  "title": "Paralegal Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PARL100",
+   "PARL101",
+   "PARL102",
+   "PARL103",
+   "PARL104",
+   "PARL105",
+   "PARL106",
+   "PARL107",
+   "PARL108",
+   "PARL109",
+   "PARL110"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/paralegal-studies-aa-fall-2026",
+   "title": "Paralegal Studies AA",
+   "h1": "Paralegal Studies AA",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 4062
+ },
+ {
+  "control_number": "45248",
+  "title": "Chicana/o Studies, Latina/o Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL256",
+   "ETHN102",
+   "ETHN110",
+   "ETHN111",
+   "ETHN112",
+   "ETHN113",
+   "ETHN114",
+   "SPAN110SS"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/chicana-o-studies-latina-o-studies-aa-t-fall-2026",
+   "title": "Chicana/o Studies, Latina/o Studies AA-T",
+   "h1": "Chicana/o Studies, Latina/o Studies AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 6075
+ },
+ {
+  "control_number": "45736",
+  "title": "Elementary Teacher Education: Integrated Programs",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART100",
+   "BIOLC1001",
+   "BIOLC1001L",
+   "CFE102",
+   "COMMC1000",
+   "COMMC1000H",
+   "ED140",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGLC1002",
+   "ENGLC1002H",
+   "ERSC101",
+   "HIST104",
+   "HISTC1001",
+   "HISTC1001H",
+   "MATH120",
+   "MUS101",
+   "MUS101H",
+   "POLSC1000",
+   "POLSC1000H",
+   "THA101",
+   "THA101H"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/elementary-teacher-education-integrated-programs-aa-t-fall-2026",
+   "title": "Elementary Teacher Education: Integrated Programs AA-T",
+   "h1": "Elementary Teacher Education: Integrated Programs AA-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 8586
+ },
+ {
+  "control_number": "45773",
+  "title": "AI Strategies for Entrepreneurs, Small Business Owners, and Employees",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIP995",
+   "BIP996",
+   "BIP997"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/ai-strategies-for-entrepreneurs-small-business-owners-and-employees-certificate-noncredit-fall-2026",
+   "title": "AI Strategies for Entrepreneurs, Small Business Owners, and Employees Certificate (Noncredit)",
+   "h1": "AI Strategies for Entrepreneurs, Small Business Owners, and Employees Certificate (Noncredit)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3237
+ },
+ {
+  "control_number": "45775",
+  "title": "Artificial Intelligence Education",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AIED900",
+   "AIED905",
+   "AIED910",
+   "AIED915",
+   "AIED920",
+   "AIED930"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/artificial-intelligence-education-certificate-noncredit-fall-2026",
+   "title": "Artificial Intelligence Education Certificate (Noncredit)",
+   "h1": "Artificial Intelligence Education Certificate (Noncredit)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3455
+ },
+ {
+  "control_number": "45776",
+  "title": "Career and College Success",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HD900",
+   "HD901"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/career-and-college-success-certificate-noncredit-fall-2026",
+   "title": "Career and College Success Certificate (Noncredit)",
+   "h1": "Career and College Success Certificate (Noncredit)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 3053
+ },
+ {
+  "control_number": "45777",
+  "title": "Emergency Cardiac Care Provider",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMT900",
+   "EMT901",
+   "EMT902"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/emergency-cardiac-care-provider-certificate-noncredit-fall-2026",
+   "title": "Emergency Cardiac Care Provider Certificate (Noncredit)",
+   "h1": "Emergency Cardiac Care Provider Certificate (Noncredit)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 5572
+ },
+ {
+  "control_number": "45778",
+  "title": "Real Estate Salesperson",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "RE901",
+   "RE902",
+   "RE903",
+   "RE904"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/real-estate-salesperson-certificate-noncredit-fall-2026",
+   "title": "Real Estate Salesperson Certificate (Noncredit)",
+   "h1": "Real Estate Salesperson Certificate (Noncredit)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2345
+ },
+ {
+  "control_number": "45779",
+  "title": "Structural Steel Welding Performance",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WELD900",
+   "WELD901"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/structural-steel-welding-performance-certificate-noncredit-fall-2026",
+   "title": "Structural Steel Welding Performance Certificate (Noncredit)",
+   "h1": "Structural Steel Welding Performance Certificate (Noncredit)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 3796
+ },
+ {
+  "control_number": "45780",
+  "title": "Yoga Instructor",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "KINT900",
+   "KINT901",
+   "KINT902",
+   "KINT903"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/yoga-instructor-certificate-noncredit-fall-2026",
+   "title": "Yoga Instructor Certificate (Noncredit)",
+   "h1": "Yoga Instructor Certificate (Noncredit)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3506
+ },
+ {
+  "control_number": "45781",
+  "title": "Wildland Firefighting",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FTW900A",
+   "FTW900B"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/wildland-firefighting-certificate-noncredit-spring-2026",
+   "title": "Wildland Firefighting Certificate (Noncredit)",
+   "h1": "Wildland Firefighting Certificate (Noncredit)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 3246
+ },
+ {
+  "control_number": "45838",
+  "title": "Health and Fitness for First Responders",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ111",
+   "AJ112",
+   "AJ113"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/health-and-fitness-for-first-responders-certificate-fall-2026",
+   "title": "Health and Fitness for First Responders Certificate",
+   "h1": "Health and Fitness for First Responders Certificate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 6781
+ },
+ {
+  "control_number": "45846",
+  "title": "Home Visitor",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CFE102",
+   "CFE103",
+   "CFE109",
+   "SOC110",
+   "SOC115",
+   "SOC116",
+   "SOCIC1000",
+   "SOCIC1000H"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/home-visitor-certificate-fall-2026",
+   "title": "Home Visitor Certificate",
+   "h1": "Home Visitor Certificate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3290
+ },
+ {
+  "control_number": "45885",
+  "title": "Research Fundamentals Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL990",
+   "BIOL991",
+   "BIOL992",
+   "CHEM990",
+   "ENGR911"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/research-fundamentals-skills-certificate-noncredit-fall-2026",
+   "title": "Research Fundamentals Skills Certificate (Noncredit)",
+   "h1": "Research Fundamentals Skills Certificate (Noncredit)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2813
+ },
+ {
+  "control_number": "45918",
+  "title": "Pathway to Law School, Pre-Law and Legal Careers",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ199",
+   "AJ201",
+   "AJ206",
+   "BUS201",
+   "BUS201H",
+   "COMM107",
+   "COMM115",
+   "COMMC1000",
+   "COMMC1000H",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "ENGLC1002",
+   "ENGLC1002H",
+   "HISTC1001",
+   "HISTC1001H",
+   "HISTC1002",
+   "HISTC1002H",
+   "MATH116",
+   "PHIL201",
+   "POLS203",
+   "POLSC1000",
+   "POLSC1000H",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/pathway-to-law-school-pre-law-and-legal-careers-certificate-fall-2026",
+   "title": "Pathway to Law School, Pre-Law and Legal Careers Certificate",
+   "h1": "Pathway to Law School, Pre-Law and Legal Careers Certificate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 5743
+ },
+ {
+  "control_number": "45922",
+  "title": "Nutrition and Disease",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMMC1000",
+   "COMMC1000H",
+   "KINF130",
+   "NF100",
+   "NF102",
+   "NF103",
+   "NF110",
+   "NF150",
+   "NF165",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOCIC1000",
+   "SOCIC1000H"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/nutrition-and-disease-certificate-fall-2026",
+   "title": "Nutrition and Disease Certificate",
+   "h1": "Nutrition and Disease Certificate",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 4224
+ },
+ {
+  "control_number": "45923",
+  "title": "General Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM110",
+   "CHEM110H",
+   "CHEM120",
+   "CS120",
+   "CS121",
+   "CS122",
+   "ENGR110",
+   "ENGR125",
+   "ENGR130",
+   "ENGR140",
+   "ENGR185",
+   "ENGR210",
+   "ENGR230",
+   "MATH150",
+   "MATH150H",
+   "MATH160",
+   "MATH220",
+   "MATH230",
+   "MATH250",
+   "PHYS110",
+   "PHYS120",
+   "PHYS211"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/general-engineering-as-fall-2026",
+   "title": "General Engineering AS",
+   "h1": "General Engineering AS",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 5517
+ },
+ {
+  "control_number": "46238",
+  "title": "Mathematics 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS120",
+   "CS122",
+   "MATH150",
+   "MATH150H",
+   "MATH160",
+   "MATH220",
+   "MATH230",
+   "MATH250",
+   "PHYS110"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/mathematics-2-0-as-t-fall-2026",
+   "title": "Mathematics 2.0 AS-T",
+   "h1": "Mathematics 2.0 AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 5027
+ },
+ {
+  "control_number": "46295",
+  "title": "Physics 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS120",
+   "CS122",
+   "MATH150",
+   "MATH150H",
+   "MATH160",
+   "MATH220",
+   "MATH230",
+   "MATH250",
+   "PHYS110",
+   "PHYS120",
+   "PHYS211"
+  ],
+  "source": {
+   "url": "https://avc.elumenapp.com/catalog/2026-27/program/physics-2-0-as-t-fall-2026",
+   "title": "Physics 2.0 AS-T",
+   "h1": "Physics 2.0 AS-T",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 7006
+ }
+]

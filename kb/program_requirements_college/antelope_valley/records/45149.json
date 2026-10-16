@@ -1,0 +1,167 @@
+{
+ "college": "Antelope Valley College",
+ "control_number": "45149",
+ "shape": "noncredit",
+ "title": "Practical 3D Printing",
+ "award": "Noncredit program",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/practical-3d-printing-cert-noncredit-fall-2025",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6715,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6715,
+    "output_tokens": 1155,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1155,
+  "output_tokens_details": {
+   "thinking_tokens": 555
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04996,
+ "ms": 10231,
+ "seconds": 10.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    108.0,
+    108.0
+   ],
+   "stated": [
+    108.0,
+    108.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Practical 3D Printing Cert (Noncredit)",
+   "measure": "hours",
+   "total_units": {
+    "min": 108,
+    "max": 108
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "industries that require cutting-edge manufacturing solutions"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Complete all of the following",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ENGR900",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR950",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit certificate of completion counted in hours: 'Practical 3D Printing Certificate of Completion (Total 108)' with 54 hours for each course, confirmed by the Recommended Pathway's 'Total Hours 54.0' per term.",
+   "The catalog prints the codes without a space (ENGR900, ENGR950). I matched them to the closed-list codes ENGR 900 and ENGR 950, so they are not marked as catalog additions.",
+   "The page prints 'Program Goals and Objectives' (four 'The program aims to:' items), not program learning outcomes. I did not record them as outcomes; a reviewer may wish to check.",
+   "The career entry comes from the goals statement: 'preparing them for careers in industries that require cutting-edge manufacturing solutions'. The goals also mention 'fields related to additive manufacturing' for the workforce or further education. I did not record that as a career."
+  ]
+ },
+ "extracted_run": "38979725726"
+}

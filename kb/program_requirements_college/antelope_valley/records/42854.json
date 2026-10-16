@@ -1,0 +1,247 @@
+{
+ "college": "Antelope Valley College",
+ "control_number": "42854",
+ "shape": "certificate",
+ "title": "Programming Fundamentals",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/programming-fundamentals-fall-2023",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7134,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7134,
+    "output_tokens": 1591,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1591,
+  "output_tokens_details": {
+   "thinking_tokens": 436
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06036,
+ "ms": 18382,
+ "seconds": 18.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    15.0,
+    15.0
+   ],
+   "stated": [
+    15.0,
+    15.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Programming Fundamentals",
+   "measure": "units",
+   "total_units": {
+    "min": 15,
+    "max": 15
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply knowledge of computer programming to identify, define, and solve business problems.",
+    "Design and perform tests/experiments, analyze and interpret data, and prepare technical reports as a member of a computer programming project group."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Core Non Programming Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "MATH150",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS110",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "C/C++ Programming",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Core Programming Courses",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CS120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Java Programming",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Core Programming Courses",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CS121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS131",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Python Programming",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Core Programming Courses",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CS122",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS132",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Core Programming Courses (Total 6) says 'Complete the following number of rules: 1'; recorded the C/C++, Java and Python sequences as three blocks in one option_group.",
+   "Catalog prints codes without a space (e.g., MATH150); these match closed-list codes such as MATH 150.",
+   "Catalog title for CS120 is 'Programming and Algorithms in C/C++' versus closed-list 'Programming and Algorithms in C++'.",
+   "Outcomes recorded from the 'Program Outcomes' section. A separate 'Program Goals and Objectives' section, after the lead-in 'Upon successful completion of this program a student will be able to:', also prints two statements: 'Acquire, develop, and refine the foundational skills to be successful in sophomore level computer science courses such as Assembly Language and Computer Architecture and Discrete Structures.' and 'Demonstrate the ability to write computer programs and apply them towards solving problems.' These were not recorded as outcomes; a reviewer should check whether they should be.",
+   "The Recommended Pathway (Term 1: 8 credits; Term 2: 7 credits) is a sequencing suggestion and was not recorded as a separate block."
+  ]
+ },
+ "extracted_run": "38979725726"
+}

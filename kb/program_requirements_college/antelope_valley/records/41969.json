@@ -1,0 +1,183 @@
+{
+ "college": "Antelope Valley College",
+ "control_number": "41969",
+ "shape": "certificate",
+ "title": "Aeronautical Non-Destructive Inspection",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/aeronautical-non-destructive-inspection-cert-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7487,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7487,
+    "output_tokens": 1408,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1408,
+  "output_tokens_details": {
+   "thinking_tokens": 495
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05811,
+ "ms": 12630,
+ "seconds": 12.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    11.0,
+    11.0
+   ],
+   "stated": [
+    11.0,
+    11.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Aeronautical Non-Destructive Inspection Cert",
+   "measure": "units",
+   "total_units": {
+    "min": 11,
+    "max": 11
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Analyze and evaluate critical aspects of non-destructive inspection as it pertains to the aerospace manufacturing industry, which includes aspects related to safe work practices, standards and tolerances, standard shop practices, proper use of tools, equipment, operating systems, and personal protective equipment.",
+    "Inspect, analyze, evaluate, and troubleshoot, aerospace manufacturing defects, flaws, and damage as it relates to the proper methods of identifyin"
+   ],
+   "careers": [
+    "aerospace nondestructive inspection",
+    "nondestructive testing",
+    "quality inspection",
+    "aircraft or aerospace manufacturing inspection support",
+    "quality assurance and inspection positions"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Complete all of the following",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 11,
+     "max": 11
+    },
+    "courses": [
+     {
+      "code": "ANDI110",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANDI115",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANDI120",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Program total printed as '(Total 11)' and again as 'Total Units 11 units'; the Requirements table labels the block 'Required Courses 11 units'.",
+   "The catalog prints codes without a space (ANDI110) in the Program Requirements list and with a space (ANDI 110) in the Requirements table; these are the same closed-list courses.",
+   "The Program Outcomes list is headed 'Aeronautical Non-Destructive Inspection (ANDI)', a program-wide list that the certificate appears to share.",
+   "The catalog text is cut off in the middle of the second outcome ('...proper methods of identifyin'); it is recorded as printed and may continue with further outcomes. A reviewer should check the full page.",
+   "The description says 'Inspection methods covered in this course are Eddy Current and Ultrasonic inspection', which appears to be carried over from a course description.",
+   "The careers 'quality assurance and inspection positions' come from the Program Goals and Objectives section ('promotional opportunities into quality assurance and inspection positions'). The page also contains internal eLumen workflow and checklist text, which was ignored."
+  ]
+ },
+ "extracted_run": "38979725726"
+}

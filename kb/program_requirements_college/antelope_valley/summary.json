@@ -1,0 +1,73 @@
+{
+ "college": "Antelope Valley College",
+ "programs": 199,
+ "with_closed_list": 197,
+ "found": 195,
+ "extracted": 195,
+ "errors": 0,
+ "passed_machine_checks": 153,
+ "failed": {
+  "coverage": 13,
+  "invented": 0,
+  "arithmetic": 42,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 14.18,
+ "cost_per_program": 0.0727,
+ "not_found": [
+  {
+   "control_number": "33786",
+   "title": "Yoga Instructor",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://avc.elumenapp.com/catalog/2026-27/program/yoga-instructor-certificate-noncredit-fall-2026",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5217,
+     "content": 5217,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "35323",
+   "title": "High Intermediate ESL",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://avc.elumenapp.com/catalog/2026-27/program/high-intermediate-esl-certificate-noncredit-fall-2023",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.083,
+    "body": 0.083,
+    "content": 0.083,
+    "net": 1,
+    "listed": 12,
+    "why": "coarse net: the page's code tokens name 1 of 12 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5640,
+     "content": 5640,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  }
+ ],
+ "run": "38979725726"
+}
