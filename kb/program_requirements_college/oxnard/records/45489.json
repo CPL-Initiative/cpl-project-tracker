@@ -1,0 +1,198 @@
+{
+ "college": "Oxnard College",
+ "control_number": "45489",
+ "shape": "adt",
+ "title": "Chicana/o Studies, Latina/o Studies",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.vcccd.edu/oxnard/transfer-information/calgetc/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11683,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11683,
+    "output_tokens": 1420,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1420,
+  "output_tokens_details": {
+   "thinking_tokens": 466
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07513,
+ "ms": 13246,
+ "seconds": 13.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 11,
+   "share": 0.0,
+   "missing": [
+    "CHSTR101",
+    "CHSTR102",
+    "CHSTR103",
+    "CHSTR104",
+    "CHSTR108",
+    "SOCR108",
+    "SPANR210",
+    "SPANR220",
+    "SPANR220H",
+    "SPANR230",
+    "SPANR230H"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Cal-GETC",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CHST R101",
+    "why": "appears only in Cal-GETC GE lists (Areas 4 and 6), not in a program requirements section"
+   },
+   {
+    "code": "CHST R102",
+    "why": "appears only in Cal-GETC GE Area 4 list, not in a program requirements section"
+   },
+   {
+    "code": "CHST R103",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHST R104",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHST R108",
+    "why": "appears only in Cal-GETC GE Area 4 list, not in a program requirements section"
+   },
+   {
+    "code": "SOC R108",
+    "why": "appears only in Cal-GETC GE Area 4 list, not in a program requirements section"
+   },
+   {
+    "code": "SPAN R210",
+    "why": "appears only in Cal-GETC GE Area 3B list, not in a program requirements section"
+   },
+   {
+    "code": "SPAN R220",
+    "why": "appears only in Cal-GETC GE Area 3B list, not in a program requirements section"
+   },
+   {
+    "code": "SPAN R220H",
+    "why": "appears only in Cal-GETC GE Area 3B list (honors alternative), not in a program requirements section"
+   },
+   {
+    "code": "SPAN R230",
+    "why": "appears only in Cal-GETC GE Area 3B list, not in a program requirements section"
+   },
+   {
+    "code": "SPAN R230H",
+    "why": "appears only in Cal-GETC GE Area 3B list (honors alternative), not in a program requirements section"
+   }
+  ],
+  "notes": [
+   "The supplied text is Oxnard College's Cal-GETC general education area lists (source URL /transfer-information/calgetc/), not the Chicana/o Studies, Latina/o Studies A.A-T program page. No section for this award, no major requirements, totals, outcomes or careers appear in the text, so no blocks were recorded.",
+   "The text begins mid-table (Area 3A list cut off at the start) and ends mid-sentence in a tab about admission requirements.",
+   "ge_pattern set to Cal-GETC because the page states full Cal-GETC certification is required for all Associate Degrees for Transfer beginning Fall 2025; reviewer should confirm against the actual program page.",
+   "Closed-list courses found in the text appear only as GE area options (CHST R101/R102/R108, SOC R108 in Area 4; CHST R101 in Area 6; SPAN R210/R220/R220H/R230/R230H in Area 3B); GE courses are not placed in blocks.",
+   "The correct catalog page for the program's major requirements should be retrieved and re-read."
+  ]
+ },
+ "extracted_run": "38842203500"
+}

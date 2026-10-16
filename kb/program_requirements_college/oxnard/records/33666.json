@@ -1,0 +1,226 @@
+{
+ "college": "Oxnard College",
+ "control_number": "33666",
+ "shape": "adt",
+ "title": "Film, Television, and Electronic Media",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.vcccd.edu/oxnard/transfer-information/transfer-uc/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8217,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8217,
+    "output_tokens": 1251,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1251,
+  "output_tokens_details": {
+   "thinking_tokens": 248
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05789,
+ "ms": 10750,
+ "seconds": 11.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 17,
+   "share": 0.0,
+   "missing": [
+    "FTVER100",
+    "FTVER101",
+    "FTVER102",
+    "FTVER103",
+    "FTVER104",
+    "FTVER106",
+    "FTVER107",
+    "FTVER110",
+    "FTVER111",
+    "FTVER113",
+    "FTVER115",
+    "FTVER120",
+    "FTVER130",
+    "FTVER135",
+    "FTVER150",
+    "FTVER155",
+    "FTVER160"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Film, Television, and Electronic Media",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "FTVE R100",
+    "why": "named only in the UC-transferable course list, not in A.S.-T requirements"
+   },
+   {
+    "code": "FTVE R101",
+    "why": "named only in the UC-transferable course list, not in A.S.-T requirements"
+   },
+   {
+    "code": "FTVE R102",
+    "why": "not in the text"
+   },
+   {
+    "code": "FTVE R103",
+    "why": "named only in the UC-transferable course list, not in A.S.-T requirements"
+   },
+   {
+    "code": "FTVE R104",
+    "why": "not in the text"
+   },
+   {
+    "code": "FTVE R106",
+    "why": "named only in the UC-transferable course list, not in A.S.-T requirements"
+   },
+   {
+    "code": "FTVE R107",
+    "why": "named only in the UC-transferable course list, not in A.S.-T requirements"
+   },
+   {
+    "code": "FTVE R110",
+    "why": "named only in the UC-transferable course list, not in A.S.-T requirements"
+   },
+   {
+    "code": "FTVE R111",
+    "why": "not in the text"
+   },
+   {
+    "code": "FTVE R113",
+    "why": "named only in the UC-transferable course list, not in A.S.-T requirements"
+   },
+   {
+    "code": "FTVE R115",
+    "why": "named only in the UC-transferable course list, not in A.S.-T requirements"
+   },
+   {
+    "code": "FTVE R120",
+    "why": "named only in the UC-transferable course list, not in A.S.-T requirements"
+   },
+   {
+    "code": "FTVE R130",
+    "why": "named only in the UC-transferable course list, not in A.S.-T requirements"
+   },
+   {
+    "code": "FTVE R135",
+    "why": "named only in the UC-transferable course list, not in A.S.-T requirements"
+   },
+   {
+    "code": "FTVE R150",
+    "why": "named only in the UC-transferable course list, not in A.S.-T requirements"
+   },
+   {
+    "code": "FTVE R155",
+    "why": "named only in the UC-transferable course list, not in A.S.-T requirements"
+   },
+   {
+    "code": "FTVE R160",
+    "why": "named only in the UC-transferable course list, not in A.S.-T requirements"
+   }
+  ],
+  "notes": [
+   "The source page (transfer-information/transfer-uc) is a list of UC-transferable courses by subject, not the program page for the Film, Television, and Electronic Media A.S.-T degree. It prints no requirements, totals, blocks, outcomes or careers for the award, so no blocks were recorded.",
+   "The 'Film, Television, and Electronic Media' section of the UC list includes FTVE R190A and FTVE R190B, which are not in the closed list; they were not recorded as catalog additions because the list is not a requirement list.",
+   "A reviewer should locate the actual Oxnard College FTVE A.S.-T program page for the 2026-2027 catalog to record requirements."
+  ]
+ },
+ "extracted_run": "38842203500"
+}

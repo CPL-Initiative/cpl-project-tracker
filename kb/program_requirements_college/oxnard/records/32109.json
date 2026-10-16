@@ -1,0 +1,227 @@
+{
+ "college": "Oxnard College",
+ "control_number": "32109",
+ "shape": "degree",
+ "title": "Computer Networking Information Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.vcccd.edu/oxnard/programs-courses/computer-networking-information-technology/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12430,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12430,
+    "output_tokens": 1003,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1003,
+  "output_tokens_details": {
+   "thinking_tokens": 106
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06978,
+ "ms": 8910,
+ "seconds": 9.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 17,
+   "share": 0.0,
+   "missing": [
+    "CNITR101",
+    "CNITR120",
+    "CNITR121",
+    "CNITR127",
+    "CNITR130",
+    "CNITR131",
+    "CNITR142",
+    "CNITR143",
+    "CNITR144",
+    "CNITR145",
+    "CNITR146",
+    "CNITR151",
+    "CNITR161",
+    "CNITR170",
+    "CNITR191A",
+    "CNITR191B",
+    "CNITR191C"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "COURSES (no A.S. Degree requirements section in the provided text)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CNIT R101",
+    "why": "only in course descriptions; no degree requirements in text"
+   },
+   {
+    "code": "CNIT R120",
+    "why": "only in course descriptions; no degree requirements in text"
+   },
+   {
+    "code": "CNIT R121",
+    "why": "only in course descriptions; no degree requirements in text"
+   },
+   {
+    "code": "CNIT R127",
+    "why": "only in course descriptions; no degree requirements in text"
+   },
+   {
+    "code": "CNIT R130",
+    "why": "only in course descriptions; no degree requirements in text"
+   },
+   {
+    "code": "CNIT R131",
+    "why": "only in course descriptions; no degree requirements in text"
+   },
+   {
+    "code": "CNIT R142",
+    "why": "only in course descriptions; no degree requirements in text"
+   },
+   {
+    "code": "CNIT R143",
+    "why": "only in course descriptions; no degree requirements in text"
+   },
+   {
+    "code": "CNIT R144",
+    "why": "only in course descriptions; no degree requirements in text"
+   },
+   {
+    "code": "CNIT R145",
+    "why": "only in course descriptions; no degree requirements in text"
+   },
+   {
+    "code": "CNIT R146",
+    "why": "only in course descriptions; no degree requirements in text"
+   },
+   {
+    "code": "CNIT R151",
+    "why": "only in course descriptions; no degree requirements in text"
+   },
+   {
+    "code": "CNIT R161",
+    "why": "only in course descriptions; no degree requirements in text"
+   },
+   {
+    "code": "CNIT R170",
+    "why": "only in course descriptions; no degree requirements in text"
+   },
+   {
+    "code": "CNIT R191A",
+    "why": "not in the text"
+   },
+   {
+    "code": "CNIT R191B",
+    "why": "not in the text"
+   },
+   {
+    "code": "CNIT R191C",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The provided catalog text contains only site navigation, print options and the COURSES tab (course descriptions, cut off mid-sentence at CNIT R180). The program/requirements tab for the A.S. Degree is not included, so no blocks, totals, outcomes or careers could be recorded.",
+   "Careers mentioned inside course descriptions (e.g., cybersecurity in CNIT R146, R161) were not recorded, per instructions.",
+   "CNIT R171 and CNIT R180 appear in the course list but are not on the closed list; they were not placed because no requirements section names them.",
+   "A reviewer should fetch the program tab of the source page to record the degree requirements."
+  ]
+ },
+ "extracted_run": "38842203500"
+}
