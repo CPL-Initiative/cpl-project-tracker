@@ -1,0 +1,190 @@
+{
+ "college": "Contra Costa College",
+ "control_number": "33324",
+ "shape": "certificate",
+ "title": "Automotive Hybrid Technician",
+ "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+ "source_url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/automotive-hybrid-technician-spring-2022",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6533,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6533,
+    "output_tokens": 1084,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1084,
+  "output_tokens_details": {
+   "thinking_tokens": 389
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04781,
+ "ms": 9429,
+ "seconds": 10.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 1,
+   "listed": 1,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "AUSER107",
+    "AUSER190",
+    "AUSER203"
+   ],
+   "flagged": [
+    "AUSER107",
+    "AUSER190",
+    "AUSER203"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": [
+    13.5,
+    13.5
+   ],
+   "against": "program",
+   "why": [
+    "a required course in 'Automotive Hybrid Technician - Certificate' has no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Automotive Hybrid Technician - Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 13.5,
+    "max": 13.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Automotive Hybrid Technician - Certificate",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AUSER107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AUSER203",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AUSER207",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUSER-190",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The header states 13.5 Credits. The listed courses with printed units sum to 9.5. AUSER-190 Automotive Electrical Systems II is marked (INACTIVE) and prints no units, presumably the remaining 4 units. A reviewer should check whether AUSER-190 is still required.",
+   "The Unit Summary section lists every field as None, including Total Program. The 13.5 total is taken from the program header.",
+   "No program learning outcomes are printed.",
+   "Department goals mention preparing students for 'entry-level positions in the automotive industry' and for ASE certification. These are department-level goals, not careers named for this program, so they were not recorded as careers.",
+   "AUSER207 is printed with the title 'Hybrid Electric Vehicles Diagnostics and Repairs'. The state file titles it 'Hybrid, Plug-in Hybrid and Electric Vehicle', with the same 2.5 units. It was treated as the closed-list course AUSER 207."
+  ]
+ },
+ "extracted_run": "38979730323"
+}
