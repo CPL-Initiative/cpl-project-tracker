@@ -1,0 +1,403 @@
+{
+ "college": "Ventura College",
+ "control_number": "06980",
+ "shape": "degree",
+ "title": "Nursing",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/nursing-science/nursing-as/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12160,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12160,
+    "output_tokens": 3317,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3317,
+  "output_tokens_details": {
+   "thinking_tokens": 1180
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.11498,
+ "ms": 26998,
+ "seconds": 27.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 19,
+   "listed": 21,
+   "share": 0.905,
+   "missing": [
+    "CHEMV101",
+    "CHEMV104"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "BUSV27A",
+    "NSV7"
+   ],
+   "flagged": [
+    "BUSV27A",
+    "NSV7"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    88.0,
+    88.0
+   ],
+   "stated": [
+    79.0,
+    79.0
+   ],
+   "against": "degree",
+   "ge": [
+    24.0,
+    24.0
+   ],
+   "why": [
+    "the blocks and general education sum to 88.0-88.0; the catalog prints 79.0-79.0 for the degree"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     64.0,
+     64.0
+    ],
+    "stated": [
+     64.0,
+     64.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Nursing, Associate in Science",
+   "measure": "units",
+   "total_units": {
+    "min": 64,
+    "max": 64
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 0,
+    "max": 0
+   },
+   "ge_pattern": "VCCCD General Education Pattern",
+   "degree_total": {
+    "min": 79,
+    "max": 79
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 24
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Provide safe, quality, culturally appropriate patient-centered care to patients, families, and groups supported by evidence-based clinical decisions and patient preferences in a variety of settings.",
+    "Communicate effectively with patients and members of the inter-professional health care team to provide and coordinate safe, quality, patient-centered care.",
+    "Demonstrate leadership and system management knowledge and skills in the delivery of quality health care to patients while contributing to the effectiveness and efficiency of the work unit.",
+    "Integrate established regulatory (California Nurse Practice Act), legal and ethical principles into standard-based personal nursing practice."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 55,
+     "max": 55
+    },
+    "courses": [
+     {
+      "code": "ANAT V01",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MICR V01",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NS V10",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NS V20",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NS V30",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NS V40",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHSO V01",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Select 1 course from the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ANTH V02",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC V02",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC V03",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B: Select 1 course from the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CD V03",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSY V05",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List C: Select 1 course from the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM V10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Prerequisite mathematics: STAT C1000 or PSY V04 Recommended",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "STAT C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSY V04",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Highly Recommended Courses",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "NS V07",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS V27A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CHEM V101",
+    "why": "listed as a required program prerequisite under Additional VC Graduation Requirements, outside the 64 major units"
+   },
+   {
+    "code": "CHEM V104",
+    "why": "'or' alternative to CHEM V101 in the program prerequisite, outside the 64 major units"
+   }
+  ],
+  "notes": [
+   "The page prints one 'Required Additional Units 9' for Lists A, B and C together; no per-list totals are printed, so each list's stated is null.",
+   "SOCI C1000 is printed in the catalog; the closed list stores it as 'SOCIC1000' (missing space), treated as the same course.",
+   "Degree arithmetic printed: Required Major Units 64 + VCCCD GE Units 24 - Double-Counted Units (9) + Elective Units 0 = Total Units for the A.S. Degree 79. The Plan of Study totals 79-80.",
+   "Program prerequisites (Intermediate Algebra or higher math 4-5 units; CHEM V101 or CHEM V104 or higher-level chemistry with lab, 5 units) are required under 'Additional VC Graduation Requirements' but are not counted in the 64 major units; they are not placed in blocks. STAT C1000 or PSY V04 is printed as recommended for the math prerequisite, with no units beside it in the requirements list.",
+   "GE requirements VCCCD GE Area 3 (3) and Area 6 (3) are not recorded as blocks.",
+   "NS V07 and BUS V27A are highly recommended but the catalog states they do not satisfy degree requirements.",
+   "The outcomes list comes from the page's program student learning outcomes tab; the A.S. is the only award (no Certificate of Achievement is awarded in Nursing).",
+   "The admission requirements text is cut off mid-sentence."
+  ]
+ },
+ "extracted_run": "38756014587"
+}

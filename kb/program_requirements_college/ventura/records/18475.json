@@ -1,0 +1,687 @@
+{
+ "college": "Ventura College",
+ "control_number": "18475",
+ "shape": "degree",
+ "title": "General Studies Patterns II/III—Social and Behavioral Sciences Emphasis",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.vcccd.edu/ventura/transfer-information/calgetc/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 15492,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 15492,
+    "output_tokens": 5232,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 5232,
+  "output_tokens_details": {
+   "thinking_tokens": 1055
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.16661,
+ "ms": 36704,
+ "seconds": 37.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 109,
+   "share": 0.0,
+   "missing": [
+    "AGV1",
+    "AGV10",
+    "AGV11",
+    "AGV12",
+    "ANTHV2",
+    "ANTHV3",
+    "ANTHV4",
+    "ANTHV5",
+    "ANTHV6",
+    "ANTHV7",
+    "BUSV17",
+    "BUSV30",
+    "BUSV33",
+    "BUSV45",
+    "CDEVC1000",
+    "CDV24",
+    "CDV5",
+    "CDV61",
+    "CDV62",
+    "CDV63",
+    "CHSTV1",
+    "CHSTV2",
+    "CHSTV24",
+    "CHSTV3",
+    "CJV1",
+    "CJV14",
+    "CJV2",
+    "CJV25",
+    "CJV27",
+    "CJV28",
+    "CJV3",
+    "CJV30",
+    "CJV4",
+    "CJV5",
+    "CJV8",
+    "ECONC2001",
+    "ECONC2002",
+    "ESRMV3",
+    "ETHSV1",
+    "ETHSV14",
+    "ETHSV2",
+    "ETHSV4",
+    "FILMV11",
+    "GEOGV2",
+    "GEOGV6",
+    "GEOGV8",
+    "HEDV20",
+    "HEDV22",
+    "HEDV24",
+    "HISTC1001",
+    "HISTC1002",
+    "HISTV16",
+    "HISTV32",
+    "HISTV43",
+    "HISTV44",
+    "HISTV45",
+    "HISTV47",
+    "HISTV50",
+    "HISTV51",
+    "HISTV53",
+    "HISTV54",
+    "HISTV55",
+    "HISTV58",
+    "HISTV59",
+    "HISTV70",
+    "HISTV76",
+    "HISTV78",
+    "HISTV79",
+    "HISTV82",
+    "HISTV86",
+    "MATHC2210",
+    "MATHV40",
+    "MATHV43",
+    "MATHV46",
+    "POLSC1000",
+    "POLSV11",
+    "POLSV12",
+    "POLSV14",
+    "POLSV17",
+    "POLSV18",
+    "POLSV2",
+    "POLSV3",
+    "POLSV4",
+    "POLSV5",
+    "POLSV9",
+    "PSYCC1000",
+    "PSYV15",
+    "PSYV2",
+    "PSYV25",
+    "PSYV29",
+    "PSYV3",
+    "PSYV30",
+    "PSYV31",
+    "PSYV32",
+    "PSYV4",
+    "PSYV5",
+    "PSYV7",
+    "SOCIC1000",
+    "SOCV13",
+    "SOCV2",
+    "SOCV24",
+    "SOCV3",
+    "SOCV31",
+    "SOCV4",
+    "SOCV5",
+    "SOCV7",
+    "STATC1000",
+    "SWHSV1",
+    "SWHSV10"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Cal-GETC Certification Courses 2025-2026",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AG V01",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "AG V10",
+    "why": "not in the text"
+   },
+   {
+    "code": "AG V11",
+    "why": "not in the text"
+   },
+   {
+    "code": "AG V12",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "ANTH V02",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "ANTH V03",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "ANTH V04",
+    "why": "only in Cal-GETC Areas 3B/4 lists; award section not in text"
+   },
+   {
+    "code": "ANTH V05",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "ANTH V06",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "ANTH V07",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "BUS V17",
+    "why": "not in the text"
+   },
+   {
+    "code": "BUS V30",
+    "why": "not in the text"
+   },
+   {
+    "code": "BUS V33",
+    "why": "not in the text"
+   },
+   {
+    "code": "BUS V45",
+    "why": "not in the text"
+   },
+   {
+    "code": "CD V05",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "CD V24",
+    "why": "not in the text"
+   },
+   {
+    "code": "CD V61",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "CD V62",
+    "why": "not in the text"
+   },
+   {
+    "code": "CD V63",
+    "why": "not in the text"
+   },
+   {
+    "code": "CDEVC1000",
+    "why": "only in Cal-GETC Area 4 list (as CDEV C1000); award section not in text"
+   },
+   {
+    "code": "CHST V01",
+    "why": "only in Cal-GETC Areas 3B/4/6 lists; award section not in text"
+   },
+   {
+    "code": "CHST V02",
+    "why": "only in Cal-GETC Areas 4/6 lists; award section not in text"
+   },
+   {
+    "code": "CHST V03",
+    "why": "only in Cal-GETC Areas 3B/4/6 lists; award section not in text"
+   },
+   {
+    "code": "CHST V24",
+    "why": "not in the text"
+   },
+   {
+    "code": "CJ V01",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "CJ V02",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "CJ V03",
+    "why": "not in the text"
+   },
+   {
+    "code": "CJ V04",
+    "why": "not in the text"
+   },
+   {
+    "code": "CJ V05",
+    "why": "not in the text"
+   },
+   {
+    "code": "CJ V08",
+    "why": "not in the text"
+   },
+   {
+    "code": "CJ V14",
+    "why": "not in the text"
+   },
+   {
+    "code": "CJ V25",
+    "why": "not in the text"
+   },
+   {
+    "code": "CJ V27",
+    "why": "not in the text"
+   },
+   {
+    "code": "CJ V28",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "CJ V30",
+    "why": "not in the text"
+   },
+   {
+    "code": "ECON C2001",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "ECON C2002",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "ESRM V03",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "ETHS V01",
+    "why": "only in Cal-GETC Area 6 list; award section not in text"
+   },
+   {
+    "code": "ETHS V02",
+    "why": "only in Cal-GETC Area 6 list; award section not in text"
+   },
+   {
+    "code": "ETHS V04",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "ETHS V14",
+    "why": "only in Cal-GETC Area 6 list (text cut off); award section not in text"
+   },
+   {
+    "code": "FILM V11",
+    "why": "only in Cal-GETC Area 3A list; award section not in text"
+   },
+   {
+    "code": "GEOG V02",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "GEOG V06",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "GEOG V08",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "HED V20",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "HED V22",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "HED V24",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST C1001",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "HIST C1002",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "HIST V16",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "HIST V32",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "HIST V43",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "HIST V44",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "HIST V45",
+    "why": "only in Cal-GETC Areas 3B/4 lists; award section not in text"
+   },
+   {
+    "code": "HIST V47",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "HIST V50",
+    "why": "only in Cal-GETC Areas 3B/4 lists; award section not in text"
+   },
+   {
+    "code": "HIST V51",
+    "why": "only in Cal-GETC Areas 3B/4 lists; award section not in text"
+   },
+   {
+    "code": "HIST V53",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "HIST V54",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "HIST V55",
+    "why": "only in Cal-GETC Areas 3B/4 lists; award section not in text"
+   },
+   {
+    "code": "HIST V58",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "HIST V59",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "HIST V70",
+    "why": "only in Cal-GETC Areas 3B/4 lists; award section not in text"
+   },
+   {
+    "code": "HIST V76",
+    "why": "only in Cal-GETC Areas 3B/4 lists; award section not in text"
+   },
+   {
+    "code": "HIST V78",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "HIST V79",
+    "why": "only in Cal-GETC Areas 3B/4 lists; award section not in text"
+   },
+   {
+    "code": "HIST V82",
+    "why": "only in Cal-GETC Areas 3B/4 lists; award section not in text"
+   },
+   {
+    "code": "HIST V86",
+    "why": "only in Cal-GETC Areas 3B/4 lists; award section not in text"
+   },
+   {
+    "code": "MATH C2210",
+    "why": "only in Cal-GETC Area 2 list; award section not in text"
+   },
+   {
+    "code": "MATH V40",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH V43",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH V46",
+    "why": "only in Cal-GETC Area 2 list; award section not in text"
+   },
+   {
+    "code": "POLS C1000",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "POLS V02",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "POLS V03",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "POLS V04",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "POLS V05",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "POLS V09",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "POLS V11",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "POLS V12",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "POLS V14",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "POLS V17",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "POLS V18",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "PSY V02",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "PSY V03",
+    "why": "only in Cal-GETC Area 5B list; award section not in text"
+   },
+   {
+    "code": "PSY V04",
+    "why": "only in Cal-GETC Area 2 list; award section not in text"
+   },
+   {
+    "code": "PSY V05",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "PSY V07",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "PSY V15",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "PSY V25",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "PSY V29",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "PSY V30",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "PSY V31",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "PSY V32",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "SOC V02",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "SOC V03",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "SOC V04",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "SOC V05",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "SOC V07",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "SOC V13",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "SOC V24",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "SOC V31",
+    "why": "only in Cal-GETC Area 4 list; award section not in text"
+   },
+   {
+    "code": "SOCIC1000",
+    "why": "only in Cal-GETC Area 4 list (as SOCI C1000); award section not in text"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "only in Cal-GETC Area 2 list; award section not in text"
+   },
+   {
+    "code": "SWHS V01",
+    "why": "not in the text"
+   },
+   {
+    "code": "SWHS V10",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The catalog text is the Cal-GETC certification course list (headed 'Cal-GETC Certification Courses 2025-2026'), not the section for the General Studies Patterns II/III—Social and Behavioral Sciences Emphasis A.A. degree. No requirements, totals, outcomes or careers for this award appear in the text, so no blocks are recorded.",
+   "Cal-GETC area lists are general education courses and are not placed in blocks.",
+   "The Cal-GETC list heading names 2025-2026 although the catalog year requested is 2026-2027.",
+   "The text is cut off mid-entry in Area 6 (ETHS V14 'Introduction to B...').",
+   "A reviewer should locate the General Studies Social and Behavioral Sciences Emphasis page in the 2026-2027 Ventura College catalog to record the award's requirements."
+  ]
+ },
+ "extracted_run": "38756014587"
+}

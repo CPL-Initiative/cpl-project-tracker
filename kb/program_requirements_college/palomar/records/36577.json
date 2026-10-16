@@ -1,0 +1,193 @@
+{
+ "college": "Palomar College",
+ "control_number": "36577",
+ "shape": "certificate",
+ "title": "Air Conditioning/Heating/Refrigeration",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/AirConditioningHeatingRefrigerationEntryEmploymentReady-CP",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6673,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6673,
+    "output_tokens": 1805,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1805,
+  "output_tokens_details": {
+   "thinking_tokens": 893
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06279,
+ "ms": 16836,
+ "seconds": 17.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    10.0,
+    10.0
+   ],
+   "stated": [
+    10.0,
+    10.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Trade & Industry  Department - Air Conditioning, Heating and Refrigeration Entry Employment Ready - Certificate of Proficiency (Less than 18 units)",
+   "measure": "units",
+   "total_units": {
+    "min": 10,
+    "max": 10
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Review and prepare for the Environmental Protection Agency’s (EPA) Section 608 Certification examination and successfully participate in the Core, Type I, Type II, and Type III exam sections.",
+    "Install air conditioning, heating, and refrigeration systems to achieve the best, most efficient, system operation.",
+    "Discuss and demonstrate proper safety techniques when installing air conditioning, refrigeration and heating systems."
+   ],
+   "careers": [
+    "HVAC field"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "ACR 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACR 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACR 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ACR 110",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACR 105",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Award mismatch: the requested award is a Certificate of Achievement (16 to fewer than 30 units), but the only section in the text is the 'Entry Employment Ready - Certificate of Proficiency (Less than 18 units)', totaling 10 units. The closed list matches this section's courses exactly, so it was recorded; a reviewer should confirm whether the state file's award type is wrong or whether a separate Certificate of Achievement section exists on another page.",
+   "The printed total (10 units) is below the 16-unit floor of the named award type.",
+   "A stray '3.0' appears after ACR 102 and before ACR 103; read as a block subtotal for the ACR 103 OR ACR 110 choice, not as an additional course.",
+   "ACR 103 OR ACR 110 recorded as one choice with ACR 110 as the alternative.",
+   "The learning outcomes are printed in the program description of this Certificate of Proficiency page.",
+   "Career taken from the description: 'prepare the student for entry level employment in the HVAC field'."
+  ]
+ },
+ "extracted_run": "38843467865"
+}

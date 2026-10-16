@@ -1,0 +1,197 @@
+{
+ "college": "Oxnard College",
+ "control_number": "06938",
+ "shape": "degree",
+ "title": "Culinary Arts",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.vcccd.edu/oxnard/programs-courses/culinary-arts-restaurant-management/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12255,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12255,
+    "output_tokens": 780,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 780,
+  "output_tokens_details": {
+   "thinking_tokens": 231
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06462,
+ "ms": 7814,
+ "seconds": 8.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 12,
+   "share": 0.0,
+   "missing": [
+    "CRMR100",
+    "CRMR101",
+    "CRMR102A",
+    "CRMR102B",
+    "CRMR102C",
+    "CRMR103A",
+    "CRMR104",
+    "CRMR105",
+    "CRMR106",
+    "CRMR107",
+    "CRMR120",
+    "CRMR191"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CRM R100",
+    "why": "text has no A.S. requirements section; appears only in course descriptions"
+   },
+   {
+    "code": "CRM R101",
+    "why": "text has no A.S. requirements section; appears only in course descriptions"
+   },
+   {
+    "code": "CRM R102A",
+    "why": "text has no A.S. requirements section; appears only in course descriptions"
+   },
+   {
+    "code": "CRM R102B",
+    "why": "text has no A.S. requirements section; appears only in course descriptions"
+   },
+   {
+    "code": "CRM R102C",
+    "why": "text has no A.S. requirements section; appears only in course descriptions"
+   },
+   {
+    "code": "CRM R103A",
+    "why": "text has no A.S. requirements section; appears only in course descriptions"
+   },
+   {
+    "code": "CRM R104",
+    "why": "text has no A.S. requirements section; appears only in course descriptions"
+   },
+   {
+    "code": "CRM R105",
+    "why": "text has no A.S. requirements section; appears only in course descriptions"
+   },
+   {
+    "code": "CRM R106",
+    "why": "text has no A.S. requirements section; appears only in course descriptions"
+   },
+   {
+    "code": "CRM R107",
+    "why": "text has no A.S. requirements section; appears only in course descriptions"
+   },
+   {
+    "code": "CRM R120",
+    "why": "not in the text"
+   },
+   {
+    "code": "CRM R191",
+    "why": "not in the text"
+   }
+  ],
+  "notes": []
+ },
+ "extracted_run": "38842203500"
+}

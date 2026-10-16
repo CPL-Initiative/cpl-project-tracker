@@ -1,0 +1,203 @@
+{
+ "college": "Chabot College",
+ "control_number": "41919",
+ "shape": "noncredit",
+ "title": "Automotive Chassis Technology",
+ "award": "Noncredit program",
+ "source_url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6226",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6978,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6978,
+    "output_tokens": 1094,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1094,
+  "output_tokens_details": {
+   "thinking_tokens": 287
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04979,
+ "ms": 9712,
+ "seconds": 10.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "ATEC204"
+   ],
+   "flagged": [
+    "ATEC204"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    657.0,
+    657.0
+   ],
+   "stated": [
+    657.0,
+    657.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Automotive Chassis Technology - Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 657,
+    "max": 657
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "prepared to obtain employment in the automotive industry.",
+    "demonstrate the expertise needed to perform vehicle maintenance, service, diagnosis, and repair of current vehicles.",
+    "display the confidence to perform automotive operations in a timely and professional manner with limited supervision.",
+    "demonstrate an ethical code conforming to the highest standards of the automotive industry."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 657,
+     "max": 657
+    },
+    "courses": [
+     {
+      "code": "ATEC 204",
+      "units": 117,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ATEC 205",
+      "units": 117,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATEC 206A",
+      "units": 144,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATEC 206B",
+      "units": 117,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATEC 250",
+      "units": 90,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATEC 270",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog table column is headed 'UNITS', but this is a noncredit Certificate of Completion and the values (117, 144, 657, etc.) are clearly hours; recorded measure as hours.",
+   "The printed course values sum to the printed total of 657.",
+   "ATEC 204 (Automotive Suspension and Steering) appears in the required core but is not in the closed list; recorded as a catalog addition.",
+   "The first outcome runs on from the lead-in sentence ('...students should be able to: prepared to obtain employment in the automotive industry.'); the lead-in was removed and the remainder copied as printed.",
+   "No specific careers are named; the description mentions only 'employment in the automotive industry' within an outcome."
+  ]
+ },
+ "extracted_run": "38843479215"
+}

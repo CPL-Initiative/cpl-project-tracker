@@ -76,34 +76,40 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     29.0,
     29.0
    ],
    "stated": [
-    60.0,
-    60.0
+    29.0,
+    29.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the OCC AS General Education pattern, but no units for it"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     29.0,
-     29.0
+     50.0,
+     50.0
     ],
     "stated": [
-     29.0,
-     29.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     10.0,
+     10.0
+    ]
    }
   },
   "repeated": {
@@ -128,7 +134,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -150,7 +156,7 @@
    },
    "ge_units": {
     "min": null,
-    "max": null
+    "max": 21
    },
    "electives_fill_degree": true,
    "outcomes": [
@@ -158,7 +164,8 @@
    ],
    "careers": [
     "registered dental assistant"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -352,5 +359,26 @@
    "Program sequence Total Units printed as 59.5-62.5; not recorded as a degree total."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": 38843379313,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Degree Units - OCC AS GE\t60"
+  },
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": null,
+    "max": 21
+   },
+   "words": "OCC AS General Education   1,2\tup to 21"
+  }
+ ],
+ "read_run": "38670927724"
 }

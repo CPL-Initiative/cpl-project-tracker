@@ -1,0 +1,107 @@
+{
+ "college": "Palomar College",
+ "programs": 342,
+ "with_closed_list": 331,
+ "found": 224,
+ "extracted": 224,
+ "errors": 0,
+ "passed_machine_checks": 196,
+ "failed": {
+  "coverage": 5,
+  "invented": 1,
+  "arithmetic": 27,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 15.13,
+ "cost_per_program": 0.0675,
+ "not_found": [
+  {
+   "control_number": "14584",
+   "title": "Public Works Management - Level II",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/AdministrationJusticeEmergMgmt-CA",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 10,
+    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2529,
+     "content": 2529,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "22570",
+   "title": "Public Works Management - Level II",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/AdministrationJusticeEmergMgmt-CA",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 10,
+    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2529,
+     "content": 2529,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "35404",
+   "title": "Business Information Worker",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "36802",
+   "title": "Pre-Apprenticeship",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://palomar.curriqunet.com/catalog/alias/college/iq/NoncreditPrograms/Alphabetical/Pre-Apprenticeship-CertificateCompetency",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 0,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1407,
+     "content": 1407,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  }
+ ],
+ "run": "38843467865"
+}

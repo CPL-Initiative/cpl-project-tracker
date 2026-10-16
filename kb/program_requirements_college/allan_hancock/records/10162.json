@@ -1,0 +1,296 @@
+{
+ "college": "Allan Hancock College",
+ "control_number": "10162",
+ "shape": "degree",
+ "title": "Automotive Technology Automotive Chassis",
+ "award": "A.S. Degree",
+ "source_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31127",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10355,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10355,
+    "output_tokens": 2285,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2285,
+  "output_tokens_details": {
+   "thinking_tokens": 706
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08712,
+ "ms": 17932,
+ "seconds": 18.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 15,
+   "share": 0.933,
+   "missing": [
+    "AT399"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "AT399A"
+   ],
+   "flagged": [
+    "AT399A"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    30.0,
+    30.0
+   ],
+   "stated": [
+    30.0,
+    30.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 9,
+   "courses": 0,
+   "count": 9,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Automotive Technology: Automotive Chassis - Associate in Science",
+   "measure": "units",
+   "total_units": {
+    "min": 30,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "AHC GE or Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate an understanding of the science of the automotive drive train systems.",
+    "Demonstrate the ability to use the latest techniques and tools used in servicing the automotive drive train.",
+    "Demonstrate the ability to effectively communicate verbally and in writing with customers, co-workers and the employer.",
+    "Demonstrate the ability to diagnose problems with the various systems of the automobile using systematic procedures and logical methods.",
+    "Demonstrate the ability to identify what technical specifications are needed, where to find them and how to use them in the course of performing their duties.",
+    "Demonstrate an understanding of the legal and ethical issues encountered in the automotive repair workplace and make responsible decisions.",
+    "Demonstrate the required mechanical skills and the ability to use the trade tools at a level of proficiency that is expected in the profession.",
+    "Demonstrate the use of the proper procedure for dealing with hazards encountered in the automotive repair work place.",
+    "Demonstrate the ability to perform the all of the NATEF tasks in each of the core courses in the option or certificate."
+   ],
+   "careers": [
+    "automotive service profession",
+    "specialist in brake and front end work"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required core courses (22 units):",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 22,
+     "max": 22
+    },
+    "courses": [
+     {
+      "code": "AT 100",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AT 303",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AT 313",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AT 314",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AT 323",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Plus a minimum of 8 units selected from the following:",
+    "rule": "choose_units",
+    "minimum": 8,
+    "option_group": null,
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "AT 117",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AT 133",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AT 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AT 306",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AT 324",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AT 334",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AT 341",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AT 370",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AT 389",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AT 399A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AT 399",
+    "why": "catalog prints AT 399A (Special Topics in Automotive Technology) instead; recorded as AT 399A"
+   }
+  ],
+  "notes": [
+   "The catalog prints AT 399A, not AT 399 as in the closed list; same title and units, likely the same course. Recorded as a catalog addition.",
+   "Cross-listed codes printed as 'same as' (AT 117 with AB 117, ET 117, MT 117; AT 300 with AB 300, AB 381, MT 300, MT 381, WLDT 300; AT 370 with AB 370, ARCH 370, CNET 370, ET 370, MT 370, WLDT 370) are not recorded as alternatives.",
+   "The 'Total : 55.5- 69.0' belongs to the Suggested Course Sequence, not a stated degree total; degree_total left null.",
+   "GE: students may follow AHC GE or Cal-GETC; no GE unit total printed.",
+   "The outcomes list mentions drive train systems although the program is Chassis; copied as printed."
+  ]
+ },
+ "extracted_run": "38843474519"
+}

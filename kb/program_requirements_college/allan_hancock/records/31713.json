@@ -1,0 +1,260 @@
+{
+ "college": "Allan Hancock College",
+ "control_number": "31713",
+ "shape": "adt",
+ "title": "History",
+ "award": "A.A- T Degree",
+ "source_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31010",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10144,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10144,
+    "output_tokens": 1571,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1571,
+  "output_tokens_details": {
+   "thinking_tokens": 501
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.072,
+ "ms": 13590,
+ "seconds": 14.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 10,
+   "share": 0.8,
+   "missing": [
+    "HIST107",
+    "HIST108"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "HISTC1001",
+    "HISTC1002"
+   ],
+   "flagged": [
+    "HISTC1001",
+    "HISTC1002"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     66.0,
+     66.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "History - Associate in Arts for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 14,
+    "max": 14
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify connections between specific people, groups, events and ideas and larger historical themes, developments and topics.",
+    "Describe how the social, political, intellectual, and economic systems of a particular society change over time.",
+    "Critically analyze primary and secondary sources in college-level essays, written assignments, and research papers."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required core courses (18 units):",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "HIST 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HUM 101",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HUM 102",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HUM 104",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HUM 105",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST C1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "HIST 107",
+    "why": "not in the text; catalog lists HIST C1001 United States History to 1877 instead (likely renumbered)"
+   },
+   {
+    "code": "HIST 108",
+    "why": "not in the text; catalog lists HIST C1002 United States History Since 1865 instead (likely renumbered)"
+   }
+  ],
+  "notes": [
+   "HUM 101/102/104/105 recorded as alternatives because the catalog prints each HIST course as 'same as HUM' (cross-listed).",
+   "General Education row prints 28.0 units while the text states Cal-GETC is 34 units; the difference reflects the 6 units that may be double counted for major and GE. ge_units records the 34 stated for Cal-GETC.",
+   "Electives: 'Elective units required for History AA-T: 14' and 'Complete additional CSU transferable courses as needed to achieve 60 units required for the degree: 14 units' — recorded as 14 degree elective units outside the major.",
+   "Degree total printed as 'Total : 60.0'. Suggested course sequence totals 57.0-61.0; not used as a requirement total.",
+   "Program learning outcomes are printed for the Associate in Arts for Transfer in History.",
+   "No careers are named in the text."
+  ]
+ },
+ "extracted_run": "38843474519"
+}

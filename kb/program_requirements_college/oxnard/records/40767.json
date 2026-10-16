@@ -1,0 +1,274 @@
+{
+ "college": "Oxnard College",
+ "control_number": "40767",
+ "shape": "degree",
+ "title": "Fire Company Officer",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.vcccd.edu/oxnard/programs-courses/fire-technology/fire-company-officer-as/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8528,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8528,
+    "output_tokens": 1783,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1783,
+  "output_tokens_details": {
+   "thinking_tokens": 409
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06977,
+ "ms": 14910,
+ "seconds": 15.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "FTR231"
+   ],
+   "flagged": [
+    "FTR231"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    19.5,
+    19.5
+   ],
+   "stated": [
+    19.5,
+    19.5
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     50.0,
+     70.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     34.0
+    ],
+    "why": [],
+    "within": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 20,
+   "courses": 0,
+   "count": 20,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Fire Company Officer, A.S.",
+   "measure": "units",
+   "total_units": {
+    "min": 19.5,
+    "max": 19.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 6.5,
+    "max": 16.5
+   },
+   "ge_pattern": "Oxnard College General Education or Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify different levels in the Fire Company Officer Certification Track.",
+    "Describe the “Task Book” process.",
+    "Describe the State certification examination process.",
+    "Identify the duties of a Company Officer.",
+    "Describe, apply and follow human resource policies and procedures.",
+    "Identify step for creating a professional development plan.",
+    "Describe verbal communications used at emergencies.",
+    "Articulate the duties of a Wildland Fire Officer.",
+    "Describe state and federal laws that pertain to the role of company officer.",
+    "Describe the proper use of a record-management system.",
+    "Identify procedures for conducting a fire prevention inspection.",
+    "Identify construction and suppression features that contribute to spread of fire.",
+    "Describe importance of evidence preservation.",
+    "Describe basic fire cause and origin determination.",
+    "Develop an initial plan of action to control emergencies.",
+    "Describe standard operating procedures for emergencies.",
+    "Determine tactical priorities for emergency incidents.",
+    "Implement a plan of action for an emergency.",
+    "Evaluate wildland fire weather, fuels and topographic information.",
+    "Establish a clearly identified incident command post."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FT R200",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT R210",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT R220",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT R230",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT R231",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FT R232",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT R240",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT R241",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT R250",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT R251",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT R160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints two degree paths, each totaling 60 units: Oxnard College General Education (24) with 16.5 free elective units, or Cal-GETC (34) with 6.5 free elective units. ge_units and degree_elective_units record the range across the two paths (24-34 and 6.5-16.5); a reviewer should confirm this reading.",
+   "Total Required Major Units printed as 19.5; the requirements text separately says 'Complete a minimum of 18 units and all required coursework for the Fire Company Officer major', which conflicts with the 19.5 printed total. total_units uses the printed 19.5.",
+   "FT R231 (ICS 200: Basic Incident Command System for Initial Response, 1 unit) is required in the catalog but not in the closed list; recorded as a catalog addition.",
+   "FT R251 printed as '.5' in the course list and '0.5' in the plan of study.",
+   "The outcomes list is printed on the page's program student learning outcomes tab for this program; recorded as this award's outcomes.",
+   "No careers are named in the provided text."
+  ]
+ },
+ "extracted_run": "38842203500"
+}

@@ -1,0 +1,301 @@
+{
+ "college": "Allan Hancock College",
+ "control_number": "36983",
+ "shape": "adt",
+ "title": "Nutrition and Dietetics",
+ "award": "A.S. T Degree",
+ "source_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30961",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10550,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10550,
+    "output_tokens": 2949,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2949,
+  "output_tokens_details": {
+   "thinking_tokens": 1369
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10118,
+ "ms": 24156,
+ "seconds": 24.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "FSN134"
+   ],
+   "flagged": [
+    "FSN134"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    27.5,
+    29.5
+   ],
+   "stated": [
+    27.5,
+    29.5
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     58.0,
+     62.0
+    ],
+    "stated": [
+     58.0,
+     62.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     24.0
+    ],
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Nutrition and Dietetics - Associate in Science for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 27.5,
+    "max": 29.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 6.5,
+    "max": 8.5
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 58,
+    "max": 62
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 24
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "identify essential nutrients and describe their chemical structures, food sources, digestion, absorption, transport, metabolism, functions in the body, and requirements for optimal health.",
+    "apply dietary guidelines to develop meal plans and lifestyle patterns that meet individual needs, promote health, and reduce disease risk.",
+    "critically evaluate scientific research and nutrition information, and develop evidence-based responses to questions about diet and health.",
+    "communicate nutrition concepts clearly, accurately, and effectively."
+   ],
+   "careers": [
+    "nutrition and dietetics",
+    "nutrition",
+    "public health",
+    "clinical settings",
+    "registered dietitians (RD)",
+    "registered dietitian nutritionists (RDN)"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required core courses (20.5 units):",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 20.5,
+     "max": 20.5
+    },
+    "courses": [
+     {
+      "code": "BIOL 128",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 150",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 151",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FSN 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A - select one course from the following (4-5 units)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "BIOL 124",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 125",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 180",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B - Select one course from the following (3-4 units):",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "CA 120",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "FCS 120",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "FSN 133",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FSN 134",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Major total printed: 'A major of 27.5-29.5 units is required for the degree.' Core 20.5 + List A 4-5 + List B 3-4 = 27.5-29.5, so the 6.5-8.5 elective units ('Complete additional CSU transferable courses as needed to achieve 60 units ... 6.5-8.5 units') lie outside the major and are recorded as degree_elective_units.",
+   "GE: the requirements table prints 'General Education 24.0' while the text states 'Cal-GETC: 34 units' with up to 10 units double counted with the major; ge_units records the 24 that the table totals (27.5+6.5+24=58; 29.5+8.5+24=62). Reviewer may prefer 34.",
+   "Degree total recorded from requirements table 'Total : 58.0- 62.0'; the Suggested Course Sequence prints a different 'Total : 58.5- 60.5'.",
+   "CA 120 is printed '( same as FCS 120 )' and recorded with FCS 120 as its cross-listed alternative; units 4 assumed for FCS 120 from the shared row.",
+   "FSN 134 (Food, Nutrition Customs and Culture) is in List B but not on the closed list.",
+   "Suggested sequence lists a 'Core Elective - Nutrition (ADT)' 3-unit slot, not a separate requirement."
+  ]
+ },
+ "extracted_run": "38843474519"
+}

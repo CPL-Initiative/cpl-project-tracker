@@ -1,0 +1,209 @@
+{
+ "college": "Allan Hancock College",
+ "control_number": "31093",
+ "shape": "noncredit",
+ "title": "Clothing Construction",
+ "award": "Noncredit program",
+ "source_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31396",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7535,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7535,
+    "output_tokens": 1614,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1614,
+  "output_tokens_details": {
+   "thinking_tokens": 631
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06242,
+ "ms": 13990,
+ "seconds": 14.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "HOEC7100A",
+    "HOEC7101A"
+   ],
+   "flagged": [
+    "HOEC7100A",
+    "HOEC7101A"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    345.0,
+    391.0
+   ],
+   "stated": [
+    368.0,
+    368.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 345.0-391.0; the catalog states 368.0-368.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Competency in Clothing Construction",
+   "measure": "hours",
+   "total_units": {
+    "min": 368,
+    "max": 368
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify and utilize basic sewing notions (tape measure, pins, seam gauge, shears, chalk, tracing paper and wheel, beeswax, seam ripper, needles, and needle threader.",
+    "Perform basic sewing machine functions including threading the needle; winding the bobbin; adjusting tension, pressure and stitch length/width; and changing presser feet and needles.",
+    "Decipher pattern-making symbols and use appropriate method of accurately making them on the fabric.",
+    "Construct a garment (style dependent on skill level of student) that is durable, aesthetically pleasing, and fits the intended wearer.",
+    "Alter a fitted blouse or jacket pattern to adjust for shoulder width, full bust, sway back, and rounded back.",
+    "Use grain line, structure line, and wrinkle evaluation techniques to recognize and suggest solutions for poor fit"
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required core courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 345,
+     "max": 391
+    },
+    "courses": [
+     {
+      "code": "HOEC 7100A",
+      "units": 60,
+      "units_max": 68,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HOEC 7101A",
+      "units": 60,
+      "units_max": 68,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HOEC 7103A",
+      "units": 60,
+      "units_max": 68,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOEC 7105A",
+      "units": 60,
+      "units_max": 68,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOEC 7108A",
+      "units": 45,
+      "units_max": 51,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOEC 7115A",
+      "units": 60,
+      "units_max": 68,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog counts this award in hours; all units fields hold hours.",
+   "Conflicting totals: the text states 'A total of 368 hours is required for the certificate' (recorded in total_units), while the course block and 'Total' line print 345.0-391.0 hours (recorded in the block's stated). Reviewer should confirm which figure is intended.",
+   "HOEC 7100A and HOEC 7101A are marked '( Historical )' in the catalog and are not in the closed list; recorded as catalog additions. The required block may be outdated given these historical courses.",
+   "The award type is printed as Certificate of Competency; the requested award is the noncredit program.",
+   "The 'Suggested Course Sequence' section is cut off in the text."
+  ]
+ },
+ "extracted_run": "38843474519"
+}

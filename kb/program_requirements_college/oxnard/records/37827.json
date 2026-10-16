@@ -1,0 +1,151 @@
+{
+ "college": "Oxnard College",
+ "control_number": "37827",
+ "shape": "noncredit",
+ "title": "English as a Second Language Level 2",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.vcccd.edu/oxnard/programs-courses/english-second-language/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7112,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7112,
+    "output_tokens": 1175,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1175,
+  "output_tokens_details": {
+   "thinking_tokens": 452
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05195,
+ "ms": 10925,
+ "seconds": 11.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 0,
+   "listed": 2,
+   "share": 0.0,
+   "missing": [
+    "ESLR801A",
+    "ESLR801B"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "English as a Second Language",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Understand and use library and learning resources, support services, and the college's learning management system.",
+    "Hold a conversation about various topics in English so as to understand and make themselves understood in academic, social, and employment settings.",
+    "Demonstrate academic English reading skills from identifying main ideas and supporting details to critical thinking and reading skills in content area courses.",
+    "Write English sentences with correct syntax that include verb tenses of increasing complexity including present, past, and perfect tenses to developing ideas in a structured academic essay."
+   ],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ESL R801A",
+    "why": "Named only in the overview note listing all noncredit ESL courses; the Level 2 certificate's requirements (Noncredit Certificates tab) are not in the text."
+   },
+   {
+    "code": "ESL R801B",
+    "why": "Named only in the overview note listing all noncredit ESL courses; the Level 2 certificate's requirements (Noncredit Certificates tab) are not in the text."
+   }
+  ],
+  "notes": [
+   "The text is the English as a Second Language overview tab only; the NONCREDIT CERTIFICATES tab, where the Level 2 requirements would appear, is not included. No blocks, hours, or total could be recorded.",
+   "The overview note says the noncredit program includes ESL R800A, R800B, R801A, R801B, R802A, R802B, R803A, R803B, R804A, R804C and R805, but does not state which courses or hours make up the Level 2 award, so ESL R801A and R801B were not placed.",
+   "Measure set to hours because this is a noncredit program; no hours are printed in the text.",
+   "The outcomes recorded are the 'Program Student Learning Outcomes ESL' printed once for the ESL discipline as a whole (credit and noncredit); they are not specific to the Level 2 award. A reviewer should confirm the Level 2 certificate shares them."
+  ]
+ },
+ "extracted_run": "38842203500"
+}

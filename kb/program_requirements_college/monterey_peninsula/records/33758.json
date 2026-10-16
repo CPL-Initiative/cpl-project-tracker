@@ -75,20 +75,25 @@
     "the blocks sum to 19.0-19.0; the catalog states 19.0-21.0"
    ],
    "degree": {
-    "pass": false,
-    "status": "incomplete",
+    "pass": true,
+    "status": "equal",
     "computed": [
-     19.0,
-     19.0
+     43.0,
+     53.0
     ],
     "stated": [
      60.0,
      60.0
     ],
     "against": "degree",
-    "ge": null,
-    "why": [
-     "the record names the degree total and the MPC General Education or Cal-GETC pattern, but no units for it"
+    "ge": [
+     24.0,
+     34.0
+    ],
+    "why": [],
+    "fill": [
+     7.0,
+     17.0
     ]
    }
   },
@@ -135,8 +140,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 24,
+    "max": 34
    },
    "electives_fill_degree": true,
    "outcomes": [
@@ -416,5 +421,20 @@
    "Careers are taken from the program overview: 'careers in language teaching and other education positions' and 'careers in the computer industry, law, publishing and the media, advertising and government'."
   ]
  },
- "extracted_run": "38675240344"
+ "extracted_run": 38844053281,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 24,
+    "max": 34
+   },
+   "words": "general education pattern (MPC General Education or Cal-GETC) (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: MPC GE: Area 1A ENGL C1000 3; Areas 1B, 2, 3, 4, 5, 6 and 7, each \"Select three units from the following.\" Cal-GETC: \"satisfies the 34 units of lower-division general education requirements\")"
+  }
+ ],
+ "read_run": "38675240344"
 }

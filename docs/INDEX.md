@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-10-15
+updated: 2026-10-16
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 87 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 82 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 56 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 368 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1150** | |
+| Session handoffs | 369 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1151** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,11 +122,11 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-16 (S397 SkyCatalpa, the CPL Queue routine): Allan Hancock loaded; Monterey Peninsula's reconcile reread; wave 4's display build `66b50c86891e` (#2157, superseding #2156); Open Asks Sheet 84 published; handoff 398 (SkyLinden).
+- 2026-10-16 (S396 SkyJacaranda): wave 4 read, nine colleges, five loaded; Orange Coast and Monterey Peninsula's reconcile steps; #2148 and #2151 merged; handoff 397.
 - 2026-10-15 (S395 SkyHawthorn): wave 2's procedure records and their generator (#2146); staff email off the public dashboard (#2147); Santa Ana's colon titles in the curriQunet reader (#2148); the catalog sweep's wave 3, ten colleges, 1,132 records (#2149); handoff 396.
 - 2026-10-15 (S394 SkyMadrone): extraction v10 (#2141); UI pass GR Priorities (#2142); the catalog sweep, waves 1 and 2, eight colleges (#2143, #2144) with the NOCCCD campus-letter and curriQunet cap fixes; procedure records v1 for wave 1; lessons archive 2; handoff 395 (SkyHawthorn).
 - 2026-10-15 (S393 SkySycamore): Sheet 82 carried out (#2136); extraction v9 (#2138; v8 failed every call); Cerritos's reconcile steps (#2139); the overnight schedule and the $40 go (#2134); Open Asks Sheet 83; handoff 394.
 - 2026-10-14 (the funding session beside S392): a noncredit-portion setting, the explainer's three funding boxes on one row with the credit and noncredit split and editable words, Bold and Italic in the passage editor (#2132, live 22:36Z); KB note methodology-a-share-target-inside-a-bounded-allocation-is-a-solved-weight; a section in handoff 393.
 - 2026-10-14 (S392 SkyTamarack): Sheet 81 carried out (#2127); the summary-row highlight (#2128); record shape 6 and the Major only gap (#2129); El Camino and San Joaquin Delta (#2131); the reconcile pass (#2130); Sheet 82; handoff 393 (SkySycamore).
 - 2026-10-14 (S391 SkyJuniper): handoff 392; Sheets 80 and 81; San Joaquin Delta's catalog year (#2125); the Program Requirements UI pass (#2124).
-- **2026-10-14 (S390 SkySaguaro):** Southwestern merged with its procedure record (#2115); Fresno City loaded, displayed (build `04872c826890`) and its procedure record (#2120); the SLO links on Program records and COCI Lookup (#2116); the tabled line's email fixed at the generator (#2117); CIP Codes UI pass (#2118); the Acalog reader merged with San Joaquin Delta's capture (#2112); the Records view's District, College, SWP Region and CIP Sector dropdowns, Progress first, no Sierra (#2121); handoff 391 (SkyJuniper).
-- **2026-10-14 (S389 SkyPersimmon):** record shape 5, the degree total a page prints (#2110, Sam's Sheet 78 card 2); the re-read path (#2111); Palo Verde's 19 (#2114) and Cabrillo's 55 re-read and replaced, Southwestern loaded and displayed (#2115); an Acalog reader, El Camino captured (#2112); COCI Lookup UI pass (#2113); Open Asks Sheet 79; lessons doc compacted (S353-S359 to the archive); handoff 390 (SkySaguaro).

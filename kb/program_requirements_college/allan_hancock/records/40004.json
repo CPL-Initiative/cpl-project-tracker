@@ -1,0 +1,288 @@
+{
+ "college": "Allan Hancock College",
+ "control_number": "40004",
+ "shape": "certificate",
+ "title": "Media Arts: Web Design",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30977",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9494,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9494,
+    "output_tokens": 1880,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1880,
+  "output_tokens_details": {
+   "thinking_tokens": 559
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07558,
+ "ms": 14734,
+ "seconds": 15.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "ART108",
+    "FILM125",
+    "FILM126",
+    "MMAC129"
+   ],
+   "flagged": [
+    "ART108",
+    "FILM125",
+    "FILM126",
+    "MMAC129"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Media Arts: Web Design - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Discover how visual language communicates global culture through research, innovative thinking, writing, and creative expression.",
+    "Demonstrate proficiency in industry-standard processes and technologies to create, capture and manipulate visual content in developing artwork for website design.",
+    "Integrate artistic expression, professional attitudes, and effective working habits as individuals or as members of a collaborative team.",
+    "Design, build, test and publish websites that work on a variety of devices."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required core courses (15 units):",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "CS 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GRPH 118",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GRPH 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MMAC 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MMAC 114",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Plus a minimum of 3 units selected from the following:",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ART 107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GRPH 108",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "GRPH 129",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MMAC 129",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTO 170",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GRPH 189",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MMAC 125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "FILM 125",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MMAC 126",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "FILM 126",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "ART 108 and GRPH 108 are printed as two separate rows, each marked 'same as' the other (cross-listed Design 1 on the Computer); recorded as one entry, ART 108 with GRPH 108 as its alternative.",
+   "Cross-listed codes MMAC 129, FILM 125 and FILM 126 appear only in 'same as' notes; they are recorded as alternatives with the row's 3 units and catalog_addition true.",
+   "ART 107 is titled 'Introduction to Digital Art' in the catalog, but 'Computer Fine Art' in the closed list.",
+   "MMAC 126 is titled 'Introduction to Motion Graphics' in the catalog, but 'Intro to Motion Graphics' in the closed list.",
+   "The suggested course sequence repeats the same 18-unit requirements and adds none.",
+   "The page names no careers; 'entrepreneurial opportunities' and 'employability' were not read as careers."
+  ]
+ },
+ "extracted_run": "38843474519"
+}

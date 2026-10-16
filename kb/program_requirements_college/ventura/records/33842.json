@@ -1,0 +1,259 @@
+{
+ "college": "Ventura College",
+ "control_number": "33842",
+ "shape": "degree",
+ "title": "Architectural Science",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/architecture/architectural-science-as/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7734,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7734,
+    "output_tokens": 2026,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2026,
+  "output_tokens_details": {
+   "thinking_tokens": 841
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07146,
+ "ms": 25352,
+ "seconds": 25.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 10,
+   "share": 0.9,
+   "missing": [
+    "DRFTV5A"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ARCHV20",
+    "ARTV2F"
+   ],
+   "flagged": [
+    "ARCHV20",
+    "ARTV2F"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    25.0,
+    25.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Architectural Science, A.S.",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "VC GE",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will recognize and critically analyze the elements and principles of architectural design and construction",
+    "Students will develop critical understanding of the practice of architecture and its components.",
+    "Students will have the ability to recognize and execute cognitive, cultural, physical, social and sustainable factors in planning construction and the execution of architectural designs.",
+    "Students will display competency with graphic communication of ideas."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Plan of Study Grid (named ARCH courses)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ARCH V10",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH V21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH V23",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH V25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH V22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH V31",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH V32",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH V40",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH V41",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Elective ARCH course (ARCH V20/ART V02F recommended)",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ARCH V20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ART V02F",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "DRFT V05A",
+    "why": "not in the text (only the plan of study is present; ARCH V23 is listed instead)"
+   }
+  ],
+  "notes": [
+   "The captured text contains no Program Requirements tab; only the Plan of Study Grid and the outcomes tab are present. Blocks were read from the plan of study, which is a suggested sequence, not the official requirement list. A reviewer should check the requirements tab.",
+   "The plan of study lists 'Elective ARCH course' rows totaling 3+3+3+2 units, with no course codes; these were not recorded as a block, and the number of elective ARCH units required is not stated in the text. One elective ARCH row double counts with VC GE Area 3 (ARCH V20/ART V02F recommended).",
+   "The plan of study prints 'Total Units/Hours 62', which is the total of the sample plan including VC GE courses; it was not recorded as degree_total or total_units because it is not printed as the award's requirement total.",
+   "ENGL C1000 and the VC GE Area rows are general education and were not placed in blocks.",
+   "Outcomes come from the page's program student learning outcomes tab for this program."
+  ]
+ },
+ "extracted_run": "38756014587"
+}

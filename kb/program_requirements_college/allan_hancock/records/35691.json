@@ -1,0 +1,253 @@
+{
+ "college": "Allan Hancock College",
+ "control_number": "35691",
+ "shape": "adt",
+ "title": "Chemistry",
+ "award": "A.S. T Degree",
+ "source_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31107",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9787,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9787,
+    "output_tokens": 1732,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1732,
+  "output_tokens_details": {
+   "thinking_tokens": 638
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07379,
+ "ms": 14878,
+ "seconds": 15.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 6,
+   "share": 0.667,
+   "missing": [
+    "MATH181",
+    "MATH182"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "CHEM150",
+    "CHEM151",
+    "MATHC2210",
+    "MATHC2220"
+   ],
+   "flagged": [
+    "CHEM150",
+    "CHEM151",
+    "MATHC2210",
+    "MATHC2220"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    36.0,
+    36.0
+   ],
+   "stated": [
+    36.0,
+    36.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     63.0,
+     63.0
+    ],
+    "stated": [
+     63.0,
+     63.0
+    ],
+    "against": "degree",
+    "ge": [
+     27.0,
+     27.0
+    ],
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Chemistry - Associate in Science for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 36,
+    "max": 36
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 0,
+    "max": 0
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 63,
+    "max": 63
+   },
+   "ge_units": {
+    "min": 27,
+    "max": 27
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate mastery of the approach and rationale of the scientific method and be able to apply these principles to solve problems.",
+    "Demonstrate mastery of stoichiometric calculations.",
+    "Demonstrate mastery of laboratory techniques."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required core courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 36,
+     "max": 36
+    },
+    "courses": [
+     {
+      "code": "CHEM 150",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM 151",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM 180",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 181",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2210",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH C2220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS 161",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 163",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MATH 181",
+    "why": "not in the text; catalog lists MATH C2210 Calculus I: Early Transcendentals (common course numbering), likely its replacement"
+   },
+   {
+    "code": "MATH 182",
+    "why": "not in the text; catalog lists MATH C2220 Calculus II: Early Transcendentals (common course numbering), likely its replacement"
+   }
+  ],
+  "notes": [
+   "PHYS 161 is printed with a space; matched to closed-list entry 'PHYS161' and treated as not a catalog addition.",
+   "General Education block prints 27.0 units while the text states Cal-GETC is 34 units with up to 7 units double counted with the major; ge_units records the printed 27.",
+   "Degree total recorded from 'Total : 63.0' (36 major + 27 GE). The suggested course sequence prints a different 'Total : 65.0- 69.0', which includes STEM 100 and ranged GE areas.",
+   "The page states 'Complete additional CSU transferable courses as needed to achieve 60 units required for the degree: 0 units.' Recorded as degree_elective_units 0 since units are printed; electives_fill_degree left false.",
+   "STEM 100 and ENGL C1000 appear only in the suggested course sequence, not in the major requirements; not recorded in blocks.",
+   "Outcomes are printed for the Associate in Science for Transfer in Chemistry itself."
+  ]
+ },
+ "extracted_run": "38843474519"
+}

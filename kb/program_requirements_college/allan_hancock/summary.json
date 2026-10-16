@@ -1,0 +1,299 @@
+{
+ "college": "Allan Hancock College",
+ "programs": 226,
+ "with_closed_list": 179,
+ "found": 156,
+ "extracted": 156,
+ "errors": 0,
+ "passed_machine_checks": 136,
+ "failed": {
+  "coverage": 3,
+  "invented": 0,
+  "arithmetic": 20,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 12.41,
+ "cost_per_program": 0.0795,
+ "not_found": [
+  {
+   "control_number": "05898",
+   "title": "Cosmetology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "19934",
+   "title": "Cosmetology",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "24138",
+   "title": "Interior/Exterior Maintenance Repair Technology Certificate",
+   "award": null,
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "24217",
+   "title": "Gardening and Landscaping",
+   "award": null,
+   "near_miss": {
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31011",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 7369,
+     "content": 7369,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "31100",
+   "title": "Kinesiology",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30997",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.244,
+    "body": 0.244,
+    "content": 0.244,
+    "net": 11,
+    "listed": 45,
+    "why": "coarse net: the page's code tokens name 11 of 45 listed courses",
+    "error": null,
+    "chars": {
+     "body": 10034,
+     "content": 10034,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "43479",
+   "title": "Personal Care Attendant",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "43741",
+   "title": "Certified Registered Central Service Technician",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "44646",
+   "title": "Advanced English Language Development",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31406",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.385,
+    "body": 0.385,
+    "content": 0.385,
+    "net": 5,
+    "listed": 13,
+    "why": "coarse net: the page's code tokens name 5 of 13 listed courses",
+    "error": null,
+    "chars": {
+     "body": 8466,
+     "content": 8466,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "44658",
+   "title": "Spanish Literacy",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30941",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 10962,
+     "content": 10962,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "44659",
+   "title": "Basic English Language Development",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31406",
+    "label": {
+     "award": 0,
+     "title": 0.75
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 8466,
+     "content": 8466,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45282",
+   "title": "EDUN Instructional Aide",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "45964",
+   "title": "Annual Firefighter In-Service Training",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "45965",
+   "title": "Bulldog Bootcamp for Career Education",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "45966",
+   "title": "Microsoft Office Basics",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "45967",
+   "title": "Beginning Computer Skills",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31093",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 8042,
+     "content": 8042,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45968",
+   "title": "Intermediate Computer Skills",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/31093",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 8042,
+     "content": 8042,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45970",
+   "title": "Barbering",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "46126",
+   "title": "Foundations of Sewing",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "46368",
+   "title": "Foundations of Machine Embroidery",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "run": "38843474519"
+}

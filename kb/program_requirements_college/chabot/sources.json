@@ -1,0 +1,8752 @@
+[
+ {
+  "control_number": "01060",
+  "title": "Interior Design",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.923,
+  "codes_found": [
+   "ART23",
+   "ID48",
+   "ID49",
+   "ID50",
+   "ID51",
+   "ID52",
+   "ID54",
+   "ID55",
+   "ID56",
+   "ID58",
+   "ID60",
+   "ID62"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6091",
+   "title": "Interior Design - Associate in Science",
+   "h1": "Interior Design - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2993
+ },
+ {
+  "control_number": "01061",
+  "title": "Biology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOS21A",
+   "BIOS21B",
+   "BIOS21C",
+   "CHEM12A",
+   "CHEM12B",
+   "CHEM1A",
+   "CHEM1B",
+   "PHYS3A",
+   "PHYS3B"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6138",
+   "title": "Biology - Associate in Science",
+   "h1": "Biology - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3628
+ },
+ {
+  "control_number": "01064",
+  "title": "Marketing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS12",
+   "BUS16",
+   "BUS1A",
+   "BUS22",
+   "BUS32",
+   "BUS34",
+   "BUS36",
+   "BUS40",
+   "BUS50A",
+   "BUS50C",
+   "BUS50D",
+   "BUS50J",
+   "BUS50K",
+   "BUS50L",
+   "BUS50M",
+   "BUS50N",
+   "BUS50P",
+   "BUS50R",
+   "BUS50S",
+   "BUS7",
+   "ENTR1",
+   "ENTR20"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6184",
+   "title": "Marketing - Certificate of Achievement",
+   "h1": "Marketing - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 4196
+ },
+ {
+  "control_number": "01065",
+  "title": "Administrative Assistant",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS22",
+   "BUS28",
+   "BUS36",
+   "BUS7",
+   "CAS50",
+   "CAS54"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6181",
+   "title": "Administrative Assistant - Certificate of Achievement",
+   "h1": "Administrative Assistant - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2948
+ },
+ {
+  "control_number": "01066",
+  "title": "Mass Communications",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MCOM40",
+   "MCOM41",
+   "MCOM43",
+   "MCOM44",
+   "MCOM50",
+   "MCOM56",
+   "MCOM60",
+   "MCOM61"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6109",
+   "title": "Mass Communications - Associate in Arts",
+   "h1": "Mass Communications - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3086
+ },
+ {
+  "control_number": "01068",
+  "title": "Radio and Television Broadcasting",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MCOM40",
+   "MCOM41",
+   "MCOM43",
+   "MCOM44",
+   "MCOM50",
+   "MCOM58",
+   "MCOM60",
+   "MCOM61",
+   "MCOM68"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6207",
+   "title": "Radio and Television Broadcasting - Associate in Arts",
+   "h1": "Radio and Television Broadcasting - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3234
+ },
+ {
+  "control_number": "01070",
+  "title": "Automotive Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATEC1",
+   "ATEC10",
+   "ATEC2",
+   "ATEC3",
+   "ATEC4",
+   "ATEC5",
+   "ATEC50",
+   "ATEC6A",
+   "ATEC6B",
+   "ATEC7",
+   "ATEC75",
+   "ATEC8",
+   "ATEC92",
+   "ATEC94"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6234",
+   "title": "Automotive Technology - Associate in Science",
+   "h1": "Automotive Technology - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3677
+ },
+ {
+  "control_number": "01075",
+  "title": "Machine Tool Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "INDT74",
+   "MTT50",
+   "MTT60A",
+   "MTT60B",
+   "MTT65",
+   "MTT66",
+   "MTT71A",
+   "MTT81C",
+   "WELD70"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6128",
+   "title": "Machine Tool Technology - Associate in Science",
+   "h1": "Machine Tool Technology - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3146
+ },
+ {
+  "control_number": "01080",
+  "title": "Photography",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTH20",
+   "DIGM6A",
+   "PHOT1A",
+   "PHOT1B",
+   "PHOT20",
+   "PHOT2A",
+   "PHOT2B",
+   "PHOT2C",
+   "PHOT2D",
+   "PHOT3A",
+   "PHOT3B",
+   "PHOT3C",
+   "PHOT4A",
+   "PHOT4B",
+   "PHOT5A",
+   "PHOT5B",
+   "PHOT6A",
+   "PHOT6B"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6168",
+   "title": "Photography - Certificate of Achivement",
+   "h1": "Photography - Certificate of Achivement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 3857
+ },
+ {
+  "control_number": "01081",
+  "title": "Nursing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOS42",
+   "BIOS43",
+   "BIOS44",
+   "COMM10",
+   "COMMC1000",
+   "ENGLC1000",
+   "NURS51",
+   "NURS52",
+   "NURS53",
+   "NURS55",
+   "NURS60A",
+   "NURS60B",
+   "NURS60C",
+   "NUTR1",
+   "PSY5",
+   "PSYCC1000",
+   "SOCI1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6119",
+   "title": "Nursing - Associate in Science",
+   "h1": "Nursing - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 4332
+ },
+ {
+  "control_number": "01082",
+  "title": "Medical Assisting",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HLTH51A",
+   "HLTH51B",
+   "MEDA65",
+   "MEDA70A",
+   "MEDA70B",
+   "MEDA71A",
+   "MEDA71B",
+   "MEDA73",
+   "MEDA74",
+   "MEDA75",
+   "MEDA76"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6219",
+   "title": "Medical Assisting - Certificate of Achievement",
+   "h1": "Medical Assisting - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3341
+ },
+ {
+  "control_number": "01084",
+  "title": "Dental Hygiene",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOS42",
+   "BIOS43",
+   "BIOS44",
+   "CHEM30B",
+   "COMM10",
+   "COMMC1000",
+   "DHYG50A",
+   "DHYG50B",
+   "DHYG50C",
+   "DHYG51",
+   "DHYG52A",
+   "DHYG52B",
+   "DHYG54",
+   "DHYG55A",
+   "DHYG56A",
+   "DHYG56B",
+   "DHYG57",
+   "DHYG58",
+   "DHYG60",
+   "DHYG60S",
+   "DHYG61",
+   "DHYG61S",
+   "DHYG69A",
+   "DHYG69B",
+   "DHYG71A",
+   "DHYG71B",
+   "DHYG71S",
+   "DHYG72S",
+   "DHYG73",
+   "DHYG74A",
+   "DHYG74B",
+   "DHYG75",
+   "DHYG80A",
+   "DHYG80B",
+   "DHYG81A",
+   "DHYG81B",
+   "DHYG82A",
+   "DHYG82B",
+   "DHYG83",
+   "ENGLC1000",
+   "NUTR1",
+   "PSYCC1000",
+   "SOCI1"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6116",
+   "title": "Dental Hygiene - Associate in Science",
+   "h1": "Dental Hygiene - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 43,
+  "text_chars": 5758
+ },
+ {
+  "control_number": "01087",
+  "title": "Speech Communication",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "01088",
+  "title": "Mathematics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI14",
+   "MTH1",
+   "MTH2",
+   "MTH3",
+   "MTH4",
+   "MTH6",
+   "MTH8",
+   "PHYS4A"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6139",
+   "title": "Mathematics - Associate in Science",
+   "h1": "Mathematics - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3367
+ },
+ {
+  "control_number": "01090",
+  "title": "Chemistry",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM12A",
+   "CHEM12B",
+   "CHEM1A",
+   "CHEM1B",
+   "MTH1",
+   "MTH2",
+   "PHYS4A",
+   "PHYS4B"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6134",
+   "title": "Chemistry - Associate in Science",
+   "h1": "Chemistry - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2807
+ },
+ {
+  "control_number": "01091",
+  "title": "Administration of Justice",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJ40",
+   "ADMJ41",
+   "ADMJ42",
+   "ADMJ50",
+   "ADMJ54",
+   "ADMJ55",
+   "ADMJ60",
+   "ADMJ61",
+   "ADMJ63",
+   "ADMJ70",
+   "ADMJ74",
+   "ADMJ80",
+   "ADMJ85",
+   "ADMJ89"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6130",
+   "title": "Administration of Justice - Associate in Arts",
+   "h1": "Administration of Justice - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3580
+ },
+ {
+  "control_number": "01092",
+  "title": "Early Childhood Development",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECD41",
+   "ECD50",
+   "ECD54",
+   "ECD56",
+   "ECD59",
+   "ECD60",
+   "ECD62",
+   "ECD63",
+   "ECD67",
+   "ECD69",
+   "ECD79",
+   "ECD87",
+   "ECD90",
+   "ECD95"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6142",
+   "title": "Early Childhood Development - Associate in Arts",
+   "h1": "Early Childhood Development - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 4028
+ },
+ {
+  "control_number": "01093",
+  "title": "Fire Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FT10",
+   "FT11",
+   "FT2",
+   "FT3",
+   "FT4",
+   "FT5",
+   "FT6",
+   "FT88A"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6259",
+   "title": "Fire Technology - Certificate of Achievement",
+   "h1": "Fire Technology - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 4147
+ },
+ {
+  "control_number": "01094",
+  "title": "Social Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH3",
+   "ECN10",
+   "ECONC2001",
+   "GEO2",
+   "HIS12",
+   "HIS2",
+   "HIS49",
+   "POSC20",
+   "POSC30",
+   "PSYCC1000",
+   "SOCI1",
+   "SOCI2"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6294",
+   "title": "Social Science - Associate in Arts",
+   "h1": "Social Science - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3531
+ },
+ {
+  "control_number": "01098",
+  "title": "Graphic Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART25",
+   "DIGM12A",
+   "DIGM15",
+   "DIGM2",
+   "DIGM20",
+   "DIGM4A",
+   "DIGM5",
+   "DIGM6A",
+   "DIGM7",
+   "DIGM8A",
+   "DIGM8B",
+   "PHOT6A"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6158",
+   "title": "Graphic Design - Certificate of Achievement",
+   "h1": "Graphic Design - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3064
+ },
+ {
+  "control_number": "09636",
+  "title": "Biological Sciences: Emphasis Health Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "BIOS41",
+   "BIOS42",
+   "BIOS43",
+   "BIOS44",
+   "CHEM30B",
+   "HLTH1",
+   "HLTH18",
+   "NUTR1",
+   "PSYCC1000",
+   "SOCI1"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6217",
+   "title": "Biological Sciences: Emphasis Health Science - Associate in Science",
+   "h1": "Biological Sciences: Emphasis Health Science - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3498
+ },
+ {
+  "control_number": "09637",
+  "title": "Business",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS10",
+   "BUS12",
+   "BUS14",
+   "BUS16",
+   "BUS1A",
+   "BUS1B",
+   "BUS20",
+   "BUS21",
+   "BUS22",
+   "BUS26",
+   "BUS28",
+   "BUS34",
+   "BUS36",
+   "BUS40",
+   "BUS43",
+   "BUS50A",
+   "BUS50C",
+   "BUS50D",
+   "BUS50J",
+   "BUS50K",
+   "BUS50L",
+   "BUS50M",
+   "BUS50N",
+   "BUS50P",
+   "BUS50R",
+   "BUS50S",
+   "BUS7",
+   "CAS50",
+   "CAS54",
+   "CSCI8",
+   "ENTR1",
+   "ENTR20",
+   "ENTR30",
+   "ENTR5"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6100",
+   "title": "Business - Associate in Science",
+   "h1": "Business - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 34,
+  "text_chars": 6898
+ },
+ {
+  "control_number": "09638",
+  "title": "Real Estate",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS10",
+   "BUS1A",
+   "BUS7",
+   "REST80",
+   "REST81A",
+   "REST82A",
+   "REST83",
+   "REST84",
+   "REST88"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6105",
+   "title": "Real Estate - Associate in Arts",
+   "h1": "Real Estate - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3259
+ },
+ {
+  "control_number": "09645",
+  "title": "Automotive Chassis Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATEC4",
+   "ATEC5",
+   "ATEC50",
+   "ATEC6A",
+   "ATEC6B",
+   "ATEC75"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6225",
+   "title": "Automotive Chassis Technology - Certificate of Achievement",
+   "h1": "Automotive Chassis Technology - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2731
+ },
+ {
+  "control_number": "09653",
+  "title": "Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTHC1100",
+   "ARTHC1200",
+   "HIS1",
+   "HIS2",
+   "HUMN60",
+   "HUMN65",
+   "MUSL1",
+   "MUSL3",
+   "PHIL50",
+   "PHIL60",
+   "PHIL65",
+   "PHIL70",
+   "RELS50",
+   "THTR10",
+   "THTR14"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6146",
+   "title": "Humanities - Associate in Arts",
+   "h1": "Humanities - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3431
+ },
+ {
+  "control_number": "09654",
+  "title": "Numerical Control",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "INDT74",
+   "MTT50",
+   "MTT60A",
+   "MTT60B",
+   "MTT65",
+   "MTT71A",
+   "MTT71B",
+   "MTT71C",
+   "MTT81A",
+   "MTT81C"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6248",
+   "title": "Numerical Control - Associate in Science",
+   "h1": "Numerical Control - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3100
+ },
+ {
+  "control_number": "09656",
+  "title": "Software Specialist",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCH3",
+   "CAS54",
+   "CAS58",
+   "CAS88",
+   "DIGM11",
+   "DIGM12A",
+   "DIGM15",
+   "DIGM17",
+   "DIGM4A",
+   "DIGM5",
+   "DIGM6A",
+   "DIGM7",
+   "ID49"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6195",
+   "title": "Software Specialist - Associate in Science",
+   "h1": "Software Specialist - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3584
+ },
+ {
+  "control_number": "09658",
+  "title": "French",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTHC1200",
+   "FRNC1A",
+   "FRNC1B",
+   "FRNC2A",
+   "FRNC2B",
+   "HIS2",
+   "PHIL65",
+   "PHIL70"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6209",
+   "title": "French - Associate in Arts",
+   "h1": "French - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3618
+ },
+ {
+  "control_number": "09661",
+  "title": "Spanish",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 16,
+  "text_chars": 0
+ },
+ {
+  "control_number": "09778",
+  "title": "Computer Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI14",
+   "CSCI15",
+   "CSCI20",
+   "CSCI21",
+   "CSCI41",
+   "MTH1",
+   "MTH2",
+   "MTH6",
+   "MTH8"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6135",
+   "title": "Computer Science - Associate in Science",
+   "h1": "Computer Science - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3664
+ },
+ {
+  "control_number": "09802",
+  "title": "International Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH3",
+   "BUS40",
+   "CHIN1A",
+   "CHIN1B",
+   "CHIN2A",
+   "CHIN2B",
+   "COMM11",
+   "COMM6",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGL48",
+   "FRNC1A",
+   "FRNC1B",
+   "FRNC2A",
+   "FRNC2B",
+   "GEO2",
+   "GEO3",
+   "GEO5",
+   "HIS4",
+   "JAPN1A",
+   "JAPN1B",
+   "JAPN2A",
+   "JAPN2B",
+   "POSC20",
+   "POSC30",
+   "RELS50",
+   "SPA1A",
+   "SPA1B",
+   "SPA2A",
+   "SPA2B"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6566",
+   "title": "International Studies - Associate in Arts",
+   "h1": "International Studies - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 30,
+  "text_chars": 4119
+ },
+ {
+  "control_number": "09803",
+  "title": "Behavioral Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.933,
+  "codes_found": [
+   "ANTH1",
+   "ANTH12",
+   "ANTH3",
+   "ANTH5",
+   "PSY12",
+   "PSY3",
+   "PSY6",
+   "PSY8",
+   "PSYCC1000",
+   "SOCI1",
+   "SOCI2",
+   "SOCI3",
+   "SOCI6",
+   "SOCI8"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6293",
+   "title": "Behavioral Science - Associate in Arts",
+   "h1": "Behavioral Science - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3489
+ },
+ {
+  "control_number": "10020",
+  "title": "Architecture",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "ARCH14",
+   "ARCH16",
+   "ARCH2A",
+   "ARCH2B",
+   "ARCH3",
+   "ARCH4A",
+   "ARCH4B",
+   "ARCH8A",
+   "ARCH8B"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6087",
+   "title": "Architecture - Associate in Arts",
+   "h1": "Architecture - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3567
+ },
+ {
+  "control_number": "11252",
+  "title": "Machinist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "INDT74",
+   "MTT50",
+   "MTT60A",
+   "MTT60B",
+   "MTT71A",
+   "MTT81C"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6247",
+   "title": "Machinist - Certificate of Achievement",
+   "h1": "Machinist - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2978
+ },
+ {
+  "control_number": "11259",
+  "title": "Automotive Technology: Maintenance Training",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "13596",
+  "title": "Pathway to Sports Injury Care",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADPEADST",
+   "BIOS42",
+   "HLTH1",
+   "KINE1",
+   "KINE11",
+   "KINE14",
+   "NUTR1",
+   "PEACBAD1",
+   "PEACBSK1",
+   "PEACFUN1",
+   "PEACSOC1",
+   "PEACSWM1",
+   "PEACTEN1",
+   "PEACTKD1",
+   "PEACWEI1",
+   "PEACYOG1"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6216",
+   "title": "Pathway to Sports Injury Care - Certificate for Achievement",
+   "h1": "Pathway to Sports Injury Care - Certificate for Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3522
+ },
+ {
+  "control_number": "14046",
+  "title": "Health Information Coding",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HIT41",
+   "HIT42",
+   "HIT43",
+   "HIT44",
+   "HIT45",
+   "HIT46",
+   "HIT47",
+   "HIT48",
+   "HIT49",
+   "MEDA76"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6558",
+   "title": "Health Information Coding - Certificate of Achievement",
+   "h1": "Health Information Coding - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3497
+ },
+ {
+  "control_number": "16618",
+  "title": "Human Services",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.824,
+  "codes_found": [
+   "PSCN1",
+   "PSCN10",
+   "PSCN11",
+   "PSCN13",
+   "PSCN15",
+   "PSCN20",
+   "PSCN23",
+   "PSCN3",
+   "PSCN30",
+   "PSCN4",
+   "PSCN5",
+   "PSCN96",
+   "PSYCC1000",
+   "SOCI1"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6145",
+   "title": "Human Services - Associate in Science",
+   "h1": "Human Services - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3878
+ },
+ {
+  "control_number": "16760",
+  "title": "Geography",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH3",
+   "ECONC2001",
+   "GEO1",
+   "GEO10",
+   "GEO12",
+   "GEO13",
+   "GEO1L",
+   "GEO2",
+   "GEO20",
+   "GEO3",
+   "GEO5",
+   "GEO8"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6261",
+   "title": "Geography - Associate in Arts",
+   "h1": "Geography - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3471
+ },
+ {
+  "control_number": "16859",
+  "title": "English (Emphasis in Literature)",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL11A",
+   "ENGL12A",
+   "ENGL13A",
+   "ENGL20",
+   "ENGL21",
+   "ENGL22",
+   "ENGL25",
+   "ENGL28",
+   "ENGL31",
+   "ENGL32",
+   "ENGL35",
+   "ENGL41",
+   "ENGL45",
+   "ENGL48",
+   "ENGLC1001",
+   "ENGLC1003"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/4081/5313",
+   "title": "English (Emphasis in Literature) - Associate in Arts",
+   "h1": "English (Emphasis in Literature) - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3506
+ },
+ {
+  "control_number": "18675",
+  "title": "Liberal Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.989,
+  "codes_found": [
+   "ADMJ45",
+   "ADMJ50",
+   "ADMJ60",
+   "ADMJ70",
+   "ANTH1",
+   "ANTH12",
+   "ANTH2",
+   "ANTH3",
+   "ANTH4",
+   "ANTH5",
+   "APHC9702",
+   "APHC9710",
+   "APHC9712",
+   "ARCH14",
+   "ART12A",
+   "ART12B",
+   "ART12C",
+   "ART12D",
+   "ART16A",
+   "ART16B",
+   "ART16C",
+   "ART16D",
+   "ART17A",
+   "ART17B",
+   "ART18A",
+   "ART20",
+   "ART22",
+   "ART23",
+   "ART24",
+   "ART25",
+   "ART2A",
+   "ART2B",
+   "ART3A",
+   "ART3B",
+   "ART3C",
+   "ART3D",
+   "ART7A",
+   "ART7B",
+   "ART7C",
+   "ART7D",
+   "ARTH1",
+   "ARTH20",
+   "ARTH3",
+   "ARTH6",
+   "ARTH7",
+   "ARTH8",
+   "ARTHC1100",
+   "ARTHC1200",
+   "ATHLBB13",
+   "ATHLFT1",
+   "ATHLMB11",
+   "ATHLMCC7",
+   "ATHLMS15",
+   "ATHLMT19",
+   "ATHLSB12",
+   "ATHLSM3",
+   "ATHLSW2",
+   "ATHLTK16",
+   "ATHLTK17",
+   "ATHLWB10",
+   "ATHLWCC6",
+   "ATHLWR5",
+   "ATHLWS14",
+   "ATHLWT18",
+   "BIOS1",
+   "BIOS18",
+   "BIOS41",
+   "BIOS42",
+   "BIOS43",
+   "BIOS44",
+   "BIOS5",
+   "BUS10",
+   "BUS12",
+   "BUS20",
+   "BUS36",
+   "CHEM10",
+   "CHEM30A",
+   "CHEM30B",
+   "CHEM31",
+   "CHIN1A",
+   "CHIN1B",
+   "CHIN2A",
+   "CHIN2B",
+   "COMM10",
+   "COMM11",
+   "COMM12",
+   "COMM2",
+   "COMM20",
+   "COMM3",
+   "COMM46",
+   "COMM50",
+   "COMM6",
+   "COMMC1000",
+   "DIGM1",
+   "DIGM10A",
+   "DIGM2",
+   "DIGM6A",
+   "ECD52",
+   "ECD56",
+   "ECD62",
+   "ECD67",
+   "ECN10",
+   "ECONC2001",
+   "ECONC2002",
+   "EMS1",
+   "ENGL11A",
+   "ENGL11B",
+   "ENGL12A",
+   "ENGL12B",
+   "ENGL13A",
+   "ENGL13B",
+   "ENGL20",
+   "ENGL21",
+   "ENGL22",
+   "ENGL25",
+   "ENGL31",
+   "ENGL32",
+   "ENGL35",
+   "ENGL41",
+   "ENGL45",
+   "ENGL48",
+   "ENGLC1001",
+   "ENGLC1003",
+   "ENST1",
+   "ENTR5",
+   "ES1",
+   "ES11",
+   "ES12",
+   "ES13",
+   "ES14",
+   "ES25",
+   "ES4",
+   "ES42",
+   "ES43",
+   "ES5",
+   "ES52",
+   "ES53",
+   "ES6",
+   "ES62",
+   "ES63",
+   "ES7",
+   "FILM14",
+   "FILM15",
+   "FILM16",
+   "FRNC1A",
+   "FRNC1B",
+   "FRNC2A",
+   "FRNC2B",
+   "GEO10",
+   "GEO12",
+   "GEO2",
+   "GEO20",
+   "GEO3",
+   "GEO5",
+   "HIS1",
+   "HIS12",
+   "HIS2",
+   "HIS25",
+   "HIS3",
+   "HIS32",
+   "HIS33",
+   "HIS4",
+   "HIS42",
+   "HIS43",
+   "HIS48",
+   "HIS49",
+   "HIS52",
+   "HIS53",
+   "HIS62",
+   "HIS63",
+   "HISTC1001",
+   "HISTC1002",
+   "HLTH1",
+   "HLTH18",
+   "HLTH4",
+   "HLTH8",
+   "HUMN60",
+   "HUMN65",
+   "HUMN68",
+   "JAPN1A",
+   "JAPN1B",
+   "JAPN2A",
+   "JAPN2B",
+   "KINE1",
+   "KINE10",
+   "KINE11",
+   "KINE12BB",
+   "KINE12BK",
+   "KINE12FT",
+   "KINE12TK",
+   "KINE14",
+   "KINE15",
+   "KINE16",
+   "KINE17",
+   "KINE2",
+   "KINE23",
+   "KINE3",
+   "KINE3BB",
+   "KINE3BK",
+   "KINE3FT",
+   "KINE3SF",
+   "KINE3SO",
+   "KINE4",
+   "KINE5",
+   "KINE6",
+   "KINE70",
+   "KINE8",
+   "KINEBBDT",
+   "KINEBBOT",
+   "KINECSA",
+   "KINEPDBB",
+   "KINEPOBB",
+   "MCOM20",
+   "MCOM21",
+   "MCOM40",
+   "MCOM41",
+   "MCOM42",
+   "MUSA20A",
+   "MUSA20B",
+   "MUSA21A",
+   "MUSA21B",
+   "MUSA22A",
+   "MUSA22B",
+   "MUSA23A",
+   "MUSA23B",
+   "MUSA40",
+   "MUSL1",
+   "MUSL2A",
+   "MUSL2B",
+   "MUSL2C",
+   "MUSL2D",
+   "MUSL3",
+   "MUSL4",
+   "MUSL6",
+   "MUSL8",
+   "MUSP12",
+   "MUSP13",
+   "MUSP15",
+   "MUSP16",
+   "MUSP18",
+   "MUSP41",
+   "MUSP44",
+   "MUSP45",
+   "MUSP47",
+   "NUTR1",
+   "NUTR10",
+   "NUTR11",
+   "NUTR4",
+   "NUTR6",
+   "PEACAQA1",
+   "PEACARH1",
+   "PEACBAD1",
+   "PEACBSK1",
+   "PEACBTC1",
+   "PEACDIS1",
+   "PEACFTS1",
+   "PEACFUN1",
+   "PEACHTA1",
+   "PEACJUD1",
+   "PEACLSF1",
+   "PEACPIL1",
+   "PEACSMLP",
+   "PEACSOC1",
+   "PEACSWM1",
+   "PEACTEN1",
+   "PEACTKD1",
+   "PEACWAP1",
+   "PEACWEI1",
+   "PEACWLK1",
+   "PEACWOW1",
+   "PEACYOG1",
+   "PHIL50",
+   "PHIL55",
+   "PHIL60",
+   "PHIL65",
+   "PHIL70",
+   "PHOT1A",
+   "PHOT20",
+   "PHOT2A",
+   "PHOT3A",
+   "PHOT4A",
+   "PHOT6A",
+   "PHYS11",
+   "POLSC1000",
+   "POSC12",
+   "POSC20",
+   "POSC25",
+   "POSC30",
+   "POSC35",
+   "PSCN1",
+   "PSCN11",
+   "PSCN13",
+   "PSCN20",
+   "PSCN22",
+   "PSCN23",
+   "PSCN3",
+   "PSCN30",
+   "PSCN4",
+   "PSCN5",
+   "PSY12",
+   "PSY2",
+   "PSY25",
+   "PSY3",
+   "PSY33",
+   "PSY4",
+   "PSY45",
+   "PSY6",
+   "PSY7",
+   "PSY8",
+   "PSYCC1000",
+   "RELS50",
+   "RELS65",
+   "SL64",
+   "SL65",
+   "SL66",
+   "SL67",
+   "SOCI1",
+   "SOCI10",
+   "SOCI2",
+   "SOCI20",
+   "SOCI22",
+   "SOCI3",
+   "SOCI4",
+   "SOCI5",
+   "SOCI6",
+   "SOCI7",
+   "SOCI8",
+   "SPA1A",
+   "SPA1B",
+   "SPA2A",
+   "SPA2B",
+   "THTR1",
+   "THTR10",
+   "THTR14",
+   "THTR15A",
+   "THTR17",
+   "THTR21",
+   "THTR22",
+   "THTR23",
+   "THTR2A",
+   "THTR2B",
+   "THTR3",
+   "THTR46",
+   "THTR47A",
+   "THTR47B",
+   "THTR47C",
+   "THTR47D",
+   "THTR4A",
+   "THTR4B",
+   "THTR5A",
+   "THTR5B",
+   "THTR6A",
+   "THTR6B",
+   "THTR7",
+   "THTR8A",
+   "THTR8B"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/4081/5401",
+   "title": "Liberal Arts - Associate in Arts",
+   "h1": "Liberal Arts - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 360,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "18739",
+  "title": "Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOS21C",
+   "CHEM1A",
+   "CHEM1B",
+   "CSCI14",
+   "CSCI15",
+   "CSCI20",
+   "ENGR10",
+   "ENGR11",
+   "ENGR15",
+   "ENGR16",
+   "ENGR22",
+   "ENGR25",
+   "ENGR36",
+   "ENGR40",
+   "ENGR43",
+   "ENGR45",
+   "ENGR47",
+   "ENGR85",
+   "MTH1",
+   "MTH2",
+   "MTH3",
+   "MTH4",
+   "MTH6",
+   "PHYS4B",
+   "PHYS4C",
+   "PHYS5",
+   "PHYS7A",
+   "PHYS7B",
+   "PHYS7C",
+   "PHYS7D"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6137",
+   "title": "Engineering - Associate in Science",
+   "h1": "Engineering - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 30,
+  "text_chars": 5414
+ },
+ {
+  "control_number": "19286",
+  "title": "Theater Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART2A",
+   "BUS43",
+   "MURT25",
+   "THTR1",
+   "THTR10",
+   "THTR14",
+   "THTR15A",
+   "THTR17",
+   "THTR21",
+   "THTR22",
+   "THTR23",
+   "THTR2A",
+   "THTR2B",
+   "THTR3",
+   "THTR30A",
+   "THTR38A",
+   "THTR46",
+   "THTR47A",
+   "THTR4A",
+   "THTR5A",
+   "THTR6A",
+   "THTR6B",
+   "THTR7",
+   "THTR8A",
+   "WELD63"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6096",
+   "title": "Theater Arts - Associate in Arts",
+   "h1": "Theater Arts - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 5733
+ },
+ {
+  "control_number": "19293",
+  "title": "Early Childhood Intervention Assistant",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECD50",
+   "ECD54",
+   "ECD56",
+   "ECD60",
+   "ECD62",
+   "ECD63",
+   "ECD67",
+   "ECD90",
+   "ECD91"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6274",
+   "title": "Early Childhood Intervention Assistant - Certificate of Achievement",
+   "h1": "Early Childhood Intervention Assistant - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3277
+ },
+ {
+  "control_number": "19294",
+  "title": "Early Childhood Intervention",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECD50",
+   "ECD54",
+   "ECD56",
+   "ECD60",
+   "ECD62",
+   "ECD63",
+   "ECD67",
+   "ECD69",
+   "ECD79",
+   "ECD90",
+   "ECD91"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6273",
+   "title": "Early Childhood Intervention - Associate in Arts",
+   "h1": "Early Childhood Intervention - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 4046
+ },
+ {
+  "control_number": "20643",
+  "title": "Accounting Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS1A",
+   "BUS1B",
+   "BUS3B",
+   "BUS8"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6177",
+   "title": "Accounting Technician - Certificate of Achievement",
+   "h1": "Accounting Technician - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3152
+ },
+ {
+  "control_number": "20644",
+  "title": "Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS10",
+   "BUS12",
+   "BUS14",
+   "BUS16",
+   "BUS1A",
+   "BUS1B",
+   "BUS21",
+   "BUS22",
+   "BUS28",
+   "BUS36",
+   "BUS40",
+   "BUS50A",
+   "BUS50C",
+   "BUS50D",
+   "BUS50J",
+   "BUS50K",
+   "BUS50L",
+   "BUS50M",
+   "BUS50N",
+   "BUS50P",
+   "BUS50R",
+   "BUS50S",
+   "BUS7"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6104",
+   "title": "Management - Certificate of Achievement",
+   "h1": "Management - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 4445
+ },
+ {
+  "control_number": "20646",
+  "title": "Real Estate Broker",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS10",
+   "BUS1A",
+   "BUS7",
+   "REST80",
+   "REST81A",
+   "REST82A",
+   "REST83",
+   "REST84",
+   "REST88"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6202",
+   "title": "Real Estate Broker - Certificate of Achievement",
+   "h1": "Real Estate Broker - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2647
+ },
+ {
+  "control_number": "20648",
+  "title": "Software Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAS50",
+   "CAS54",
+   "CAS58",
+   "CAS88",
+   "DIGM11",
+   "DIGM12A",
+   "DIGM15",
+   "DIGM17",
+   "DIGM5",
+   "DIGM6A",
+   "DIGM7"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6194",
+   "title": "Software Specialist - Certificate of Achievement",
+   "h1": "Software Specialist - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3372
+ },
+ {
+  "control_number": "20652",
+  "title": "Automotive Technology, Automotive Maintenance Technology",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20655",
+  "title": "Tool Maker",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MTT60A",
+   "MTT60B",
+   "MTT63A",
+   "MTT65",
+   "MTT66",
+   "WELD70"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6249",
+   "title": "Tool Maker - Certificate of Achievement",
+   "h1": "Tool Maker - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2629
+ },
+ {
+  "control_number": "20656",
+  "title": "Computer Numerical Control Programmer",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MTT71A",
+   "MTT71B",
+   "MTT71C",
+   "MTT73A",
+   "MTT81A",
+   "MTT81C"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6246",
+   "title": "Computer Numerical Control Programmer - Certificate of Achievement",
+   "h1": "Computer Numerical Control Programmer - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2684
+ },
+ {
+  "control_number": "20657",
+  "title": "Welding Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.769,
+  "codes_found": [
+   "INDT74",
+   "WELD63",
+   "WELD64A",
+   "WELD64B",
+   "WELD65A",
+   "WELD65B",
+   "WELD67A",
+   "WELD67B",
+   "WELD69A",
+   "WELD69B"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6129",
+   "title": "Welding Technology - Associate in Science",
+   "h1": "Welding Technology - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3628
+ },
+ {
+  "control_number": "20658",
+  "title": "Medical Assisting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "BIOS15",
+   "HLTH51A",
+   "HLTH51B",
+   "MEDA60",
+   "MEDA70B",
+   "MEDA73",
+   "MEDA74",
+   "MEDA75",
+   "MEDA76",
+   "NUTR1",
+   "NUTR6",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6118",
+   "title": "Medical Assisting - Associate in Science",
+   "h1": "Medical Assisting - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 4671
+ },
+ {
+  "control_number": "20659",
+  "title": "Interior Design (Residential)",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.923,
+  "codes_found": [
+   "ART23",
+   "ID48",
+   "ID49",
+   "ID50",
+   "ID51",
+   "ID52",
+   "ID54",
+   "ID55",
+   "ID56",
+   "ID58",
+   "ID60",
+   "ID62"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6159",
+   "title": "Interior Design (Residential) - Certificate of Achievement",
+   "h1": "Interior Design (Residential) - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2834
+ },
+ {
+  "control_number": "20660",
+  "title": "Early Childhood Development (Teacher)",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECD41",
+   "ECD50",
+   "ECD54",
+   "ECD56",
+   "ECD59",
+   "ECD60",
+   "ECD62",
+   "ECD63",
+   "ECD69",
+   "ECD79",
+   "ECD90",
+   "ECD96"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6272",
+   "title": "Early Childhood Development (Teacher) - Certificate of Achievement",
+   "h1": "Early Childhood Development (Teacher) - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3644
+ },
+ {
+  "control_number": "20661",
+  "title": "Fire Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMS3",
+   "FT10",
+   "FT11",
+   "FT2",
+   "FT3",
+   "FT4",
+   "FT5",
+   "FT6",
+   "FT88A"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6132",
+   "title": "Fire Technology - Associate in Science",
+   "h1": "Fire Technology - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 4861
+ },
+ {
+  "control_number": "22934",
+  "title": "Human Resources Assistant",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS1A",
+   "BUS21",
+   "BUS22",
+   "BUS7",
+   "BUS8",
+   "CAS50",
+   "CAS54",
+   "CAS58",
+   "CSCI8"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6197",
+   "title": "Human Resources Assistant - Certificate of Achievement",
+   "h1": "Human Resources Assistant - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3507
+ },
+ {
+  "control_number": "22935",
+  "title": "Small Business Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS10",
+   "BUS12",
+   "BUS14",
+   "BUS21",
+   "BUS22",
+   "BUS26",
+   "BUS32",
+   "BUS34",
+   "BUS36",
+   "BUS40",
+   "BUS50A",
+   "BUS50C",
+   "BUS50D",
+   "BUS50J",
+   "BUS50K",
+   "BUS50L",
+   "BUS50M",
+   "BUS50N",
+   "BUS50P",
+   "BUS7",
+   "BUS93",
+   "ENTR1"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6200",
+   "title": "Small Business Management - Certificate of Achievement",
+   "h1": "Small Business Management - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 3870
+ },
+ {
+  "control_number": "22936",
+  "title": "Bookkeeping",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS1A",
+   "BUS7"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6178",
+   "title": "Bookkeeping - Certificate of Achievement",
+   "h1": "Bookkeeping - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 3253
+ },
+ {
+  "control_number": "22937",
+  "title": "Business Administration",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS10",
+   "BUS1A",
+   "BUS1B",
+   "ECONC2001",
+   "ECONC2002"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6182",
+   "title": "Business Administration - Certificate of Achievement",
+   "h1": "Business Administration - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2957
+ },
+ {
+  "control_number": "22961",
+  "title": "Health Care Administrator",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS21",
+   "BUS22",
+   "BUS71"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6196",
+   "title": "Health Care Administrator - Certificate of Achievement",
+   "h1": "Health Care Administrator - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3465
+ },
+ {
+  "control_number": "30180",
+  "title": "Electronic Systems Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS14",
+   "CAS74",
+   "ESYS50",
+   "ESYS51",
+   "ESYS54",
+   "ESYS55",
+   "ESYS57",
+   "ESYS63",
+   "ESYS69",
+   "INDT74",
+   "PHYS11"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6127",
+   "title": "Electronic Systems Technology - Associate in Science",
+   "h1": "Electronic Systems Technology - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3461
+ },
+ {
+  "control_number": "30181",
+  "title": "ESYS: Industrial Electronic Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESYS50",
+   "ESYS51",
+   "ESYS54",
+   "ESYS55",
+   "ESYS57",
+   "ESYS69"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6245",
+   "title": "ESYS: Industrial Electronic Technology - Certificate of Achievement",
+   "h1": "ESYS: Industrial Electronic Technology - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3128
+ },
+ {
+  "control_number": "30182",
+  "title": "ESYS: Consumer Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESYS50",
+   "ESYS51",
+   "ESYS54",
+   "ESYS55",
+   "ESYS57",
+   "ESYS63"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6244",
+   "title": "ESYS: Consumer Technology - Certificate of Achievement",
+   "h1": "ESYS: Consumer Technology - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2863
+ },
+ {
+  "control_number": "30828",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.882,
+  "codes_found": [
+   "ANTH3",
+   "BUS19",
+   "ES7",
+   "PSY5",
+   "PSYCC1000",
+   "SOCI1",
+   "SOCI10",
+   "SOCI2",
+   "SOCI3",
+   "SOCI4",
+   "SOCI5",
+   "SOCI6",
+   "SOCI7",
+   "SOCI8",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6150",
+   "title": "Sociology - Associate in Arts for Transfer",
+   "h1": "Sociology - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 4057
+ },
+ {
+  "control_number": "31249",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI14",
+   "CSCI15",
+   "CSCI19A",
+   "CSCI20",
+   "ENGR25",
+   "MTH1",
+   "MTH2",
+   "MTH25",
+   "MTH3",
+   "MTH4",
+   "MTH6",
+   "PHYS25",
+   "PHYS4A",
+   "PHYS7A"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6266",
+   "title": "Mathematics - Associate in Science for Transfer",
+   "h1": "Mathematics - Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 4081
+ },
+ {
+  "control_number": "31250",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECD50",
+   "ECD54",
+   "ECD56",
+   "ECD62",
+   "ECD63",
+   "ECD69",
+   "ECD79",
+   "ECD90"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6279",
+   "title": "Early Childhood Education - Associate in Science for Transfer",
+   "h1": "Early Childhood Education - Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3078
+ },
+ {
+  "control_number": "31287",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS19",
+   "ECONC2001",
+   "ECONC2002",
+   "ES1",
+   "POLSC1000",
+   "POSC12",
+   "POSC20",
+   "POSC25",
+   "POSC30",
+   "POSC35",
+   "PSY5",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6148",
+   "title": "Political Science - Associate in Arts for Transfer",
+   "h1": "Political Science - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 4045
+ },
+ {
+  "control_number": "31881",
+  "title": "Environmental Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH3",
+   "BIOS1",
+   "BIOS21A",
+   "BIOS41",
+   "CHEM1A",
+   "CHEM31",
+   "ENSC10",
+   "ENSC11",
+   "ENSC15",
+   "ENST1",
+   "GEO1",
+   "GEO10",
+   "GEO12",
+   "GEO13",
+   "GEO2",
+   "GEO20",
+   "GEO3",
+   "GEO5",
+   "GEO8",
+   "GEOS11",
+   "PHIL60",
+   "PHYS3A",
+   "PHYS4A",
+   "POSC20",
+   "POSC30",
+   "PSY5",
+   "SOCI1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/4081/5325",
+   "title": "Environmental Studies - Associate in Arts",
+   "h1": "Environmental Studies - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 28,
+  "text_chars": 4531
+ },
+ {
+  "control_number": "31890",
+  "title": "Anthropology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH1",
+   "ANTH12",
+   "ANTH13",
+   "ANTH1L",
+   "ANTH2",
+   "ANTH3",
+   "ANTH4",
+   "ANTH5",
+   "BIOS1",
+   "BIOS15",
+   "BIOS21A",
+   "BIOS21B",
+   "BIOS21C",
+   "BIOS41",
+   "BIOS42",
+   "COMM11",
+   "ECD50",
+   "ECD52",
+   "ECD56",
+   "ECD62",
+   "ECD79",
+   "ENSC11",
+   "ENST1",
+   "ES25",
+   "ES4",
+   "ES52",
+   "ES62",
+   "ES63",
+   "ES7",
+   "GEO1",
+   "GEO12",
+   "GEO2",
+   "GEO20",
+   "GEO5",
+   "HIS12",
+   "HIS25",
+   "HIS3",
+   "HIS4",
+   "HIS49",
+   "HIS52",
+   "HIS62",
+   "HIS63",
+   "HISTC1001",
+   "HISTC1002",
+   "HLTH8",
+   "PHIL50",
+   "PHIL60",
+   "POLSC1000",
+   "POSC12",
+   "POSC20",
+   "POSC25",
+   "POSC30",
+   "PSCN13",
+   "PSCN4",
+   "PSY2",
+   "PSY3",
+   "PSY6",
+   "PSY8",
+   "PSYCC1000",
+   "RELS50",
+   "SL64",
+   "SOCI1",
+   "SOCI10",
+   "SOCI2",
+   "SOCI3",
+   "SOCI4",
+   "SOCI7",
+   "SOCI8"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6141",
+   "title": "Anthropology - Associate in Arts",
+   "h1": "Anthropology - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 68,
+  "text_chars": 6938
+ },
+ {
+  "control_number": "32004",
+  "title": "Journalism",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS19",
+   "COMM46",
+   "COMM50",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1001",
+   "MCOM20",
+   "MCOM21",
+   "MCOM22",
+   "MCOM26",
+   "MCOM41",
+   "PHOT1A",
+   "POLSC1000",
+   "POSC20",
+   "PSY5",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6289",
+   "title": "Journalism - Associate in Arts for Transfer",
+   "h1": "Journalism - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3987
+ },
+ {
+  "control_number": "32013",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJ40",
+   "ADMJ42",
+   "ADMJ50",
+   "ADMJ55",
+   "ADMJ60",
+   "ADMJ61",
+   "ADMJ63",
+   "ADMJ70",
+   "ADMJ80",
+   "ADMJ85",
+   "BUS19",
+   "PSY5",
+   "PSYCC1000",
+   "SOCI1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6252",
+   "title": "Administration of Justice - Associate in Science for Transfer",
+   "h1": "Administration of Justice - Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3884
+ },
+ {
+  "control_number": "32046",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOS1",
+   "BIOS41",
+   "BUS19",
+   "PSY12",
+   "PSY2",
+   "PSY25",
+   "PSY3",
+   "PSY33",
+   "PSY4",
+   "PSY45",
+   "PSY5",
+   "PSY6",
+   "PSY7",
+   "PSY8",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6149",
+   "title": "Psychology - Associate in Arts for Transfer",
+   "h1": "Psychology - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 4163
+ },
+ {
+  "control_number": "32047",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART12A",
+   "ART12B",
+   "ART13A",
+   "ART16A",
+   "ART16B",
+   "ART17A",
+   "ART18A",
+   "ART20",
+   "ART23",
+   "ART24",
+   "ART25",
+   "ART2A",
+   "ART2B",
+   "ART3A",
+   "ART3B",
+   "ART61",
+   "ART7A",
+   "ART7B",
+   "ARTH6",
+   "ARTH8",
+   "ARTHC1100",
+   "ARTHC1200",
+   "DIGM1",
+   "DIGM10A",
+   "DIGM2",
+   "DIGM4A",
+   "DIGM5",
+   "PHOT1A"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6095",
+   "title": "Studio Arts - Associate in Arts for Transfer",
+   "h1": "Studio Arts - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 28,
+  "text_chars": 4487
+ },
+ {
+  "control_number": "32053",
+  "title": "Theatre Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "THTR1",
+   "THTR10",
+   "THTR17",
+   "THTR21",
+   "THTR22",
+   "THTR23",
+   "THTR2A",
+   "THTR46",
+   "THTR47A",
+   "THTR47B",
+   "THTR48A",
+   "THTR48B"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/4080/5209",
+   "title": "Theatre Arts - Associate in Arts for Transfer",
+   "h1": "Theatre Arts - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 3990
+ },
+ {
+  "control_number": "32060",
+  "title": "Music",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSA40",
+   "MUSL2A",
+   "MUSL2B",
+   "MUSL2C",
+   "MUSL2D",
+   "MUSP12",
+   "MUSP13",
+   "MUSP15",
+   "MUSP16",
+   "MUSP44",
+   "MUSP45"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6092",
+   "title": "Music - Associate in Arts for Transfer",
+   "h1": "Music - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3514
+ },
+ {
+  "control_number": "32061",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOS42",
+   "BIOS43",
+   "BUS19",
+   "CHEM1A",
+   "DANCBAL1",
+   "HLTH1",
+   "KINE1",
+   "PEACAQA1",
+   "PEACARH1",
+   "PEACBAD1",
+   "PEACBSK1",
+   "PEACFFL1",
+   "PEACLSF1",
+   "PEACSMLP",
+   "PEACSOC1",
+   "PEACSWM1",
+   "PEACTEN1",
+   "PEACWEI1",
+   "PEACWLK1",
+   "PEACWOW1",
+   "PHYS3A",
+   "PHYS4A",
+   "PSY5",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6117",
+   "title": "Kinesiology - Associate in Arts for Transfer",
+   "h1": "Kinesiology - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 4455
+ },
+ {
+  "control_number": "32076",
+  "title": "Architecture Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "ARCH12",
+   "ARCH14",
+   "ARCH16",
+   "ARCH2A",
+   "ARCH2B",
+   "ARCH3",
+   "ARCH4A",
+   "ARCH4B",
+   "ARCH80",
+   "ARCH8A",
+   "ARCH8B"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6152",
+   "title": "Architecture Technology - Certificate of Achievement",
+   "h1": "Architecture Technology - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3453
+ },
+ {
+  "control_number": "32327",
+  "title": "Entrepreneurship",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS10",
+   "BUS14",
+   "BUS16",
+   "BUS22",
+   "BUS36",
+   "BUS50J",
+   "BUS50K",
+   "BUS50N",
+   "BUS7",
+   "BUS92",
+   "BUS93",
+   "CAS50",
+   "CSCI8",
+   "ENTR1",
+   "ENTR20",
+   "ENTR30",
+   "ENTR5",
+   "PSY45"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6102",
+   "title": "Entrepreneurship - Associate in Science",
+   "h1": "Entrepreneurship - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 3621
+ },
+ {
+  "control_number": "32429",
+  "title": "Art History",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH3",
+   "ANTH5",
+   "ART17A",
+   "ART2A",
+   "ARTH1",
+   "ARTH20",
+   "ARTH6",
+   "ARTH7",
+   "ARTH8",
+   "ARTHC1100",
+   "ARTHC1200",
+   "HIS2",
+   "HUMN60",
+   "PHOT1A",
+   "PHOT20"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6088",
+   "title": "Art History - Associate in Arts",
+   "h1": "Art History - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 4011
+ },
+ {
+  "control_number": "32521",
+  "title": "Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 12,
+  "text_chars": 0
+ },
+ {
+  "control_number": "32677",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM2",
+   "ENGL11A",
+   "ENGL12A",
+   "ENGL13A",
+   "ENGL20",
+   "ENGL21",
+   "ENGL22",
+   "ENGL25",
+   "ENGL28",
+   "ENGL31",
+   "ENGL32",
+   "ENGL35",
+   "ENGL41",
+   "ENGL45",
+   "ENGLC1003",
+   "THTR10"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6208",
+   "title": "English - Associate in Arts for Transfer",
+   "h1": "English - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 4243
+ },
+ {
+  "control_number": "32736",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH1",
+   "ANTH12",
+   "ANTH13",
+   "ANTH13L",
+   "ANTH1L",
+   "ANTH2",
+   "ANTH3",
+   "ANTH4",
+   "ANTH5",
+   "BIOS42",
+   "BUS19",
+   "COMM11",
+   "ES1",
+   "ES11",
+   "ES4",
+   "ES42",
+   "ES43",
+   "ES5",
+   "ES6",
+   "ES7",
+   "GEO20",
+   "GEOS11",
+   "GEOS11L",
+   "HIS52",
+   "HIS53",
+   "HIS62",
+   "HIS63",
+   "MUSL3",
+   "PSCN13",
+   "PSCN4",
+   "PSY5",
+   "RELS50",
+   "SOCI10",
+   "SOCI3",
+   "SOCI4",
+   "SOCI6",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6267",
+   "title": "Anthropology - Associate in Arts for Transfer",
+   "h1": "Anthropology - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 37,
+  "text_chars": 5518
+ },
+ {
+  "control_number": "33111",
+  "title": "Hybrid and Alternative Fuel Vehicles",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATEC1",
+   "ATEC50",
+   "ATEC6A",
+   "ATEC6B",
+   "ATEC8",
+   "ATEC94"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6240",
+   "title": "Hybrid and Alternative Fuel Vehicles - Certificate of Achievement",
+   "h1": "Hybrid and Alternative Fuel Vehicles - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2761
+ },
+ {
+  "control_number": "33192",
+  "title": "Automotive Service Consulting",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATEC50",
+   "ATEC75",
+   "CAS50"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6233",
+   "title": "Automotive Service Consulting - Certificate of Achievement",
+   "h1": "Automotive Service Consulting - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2585
+ },
+ {
+  "control_number": "33274",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS10",
+   "BUS12",
+   "BUS14",
+   "BUS19",
+   "BUS1A",
+   "BUS1B",
+   "CAS50",
+   "CSCI10",
+   "CSCI14",
+   "CSCI19A",
+   "CSCI8",
+   "ECONC2001",
+   "ECONC2002",
+   "MTH1",
+   "MTH15",
+   "MTH16",
+   "MTH2",
+   "MTH3",
+   "MTH33",
+   "MTH4",
+   "MTH6",
+   "PSY5",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6187",
+   "title": "Economics - Associate in Arts for Transfer",
+   "h1": "Economics - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 4338
+ },
+ {
+  "control_number": "35242",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOS21A",
+   "BIOS21B",
+   "BIOS21C",
+   "CHEM1A",
+   "CHEM1B",
+   "MTH1",
+   "MTH15",
+   "PHYS3A",
+   "PHYS3B"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6265",
+   "title": "Biology - Associate in Science for Transfer",
+   "h1": "Biology - Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3526
+ },
+ {
+  "control_number": "35731",
+  "title": "Information Technology (COA)",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAS50",
+   "CAS69",
+   "CAS74",
+   "CAS75",
+   "CAS76",
+   "CAS77",
+   "CAS83",
+   "CAS85",
+   "CAS92A",
+   "CAS92B",
+   "CAS92C"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/4082/5785",
+   "title": "Information Technology (COA) - Certificate of Achievement",
+   "h1": "Information Technology (COA) - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3875
+ },
+ {
+  "control_number": "36033",
+  "title": "Advanced Manufacturing Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.72,
+  "codes_found": [
+   "ENGR11",
+   "ESYS50",
+   "ESYS51",
+   "ESYS54",
+   "ESYS55",
+   "ESYS57",
+   "ESYS69",
+   "INDT62",
+   "INDT63",
+   "INDT64",
+   "INDT65",
+   "INDT74",
+   "MTT50",
+   "MTT60A",
+   "MTT71A",
+   "MTT71C",
+   "MTT81A",
+   "WELD70"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6126",
+   "title": "Advanced Manufacturing Technology - Associate in Science",
+   "h1": "Advanced Manufacturing Technology - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 4293
+ },
+ {
+  "control_number": "36329",
+  "title": "Women's Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM12",
+   "ENGL31",
+   "ENGL32",
+   "ES7",
+   "HIS48",
+   "HIS49",
+   "HLTH4",
+   "POSC35",
+   "SERV85A",
+   "SOCI6",
+   "SOCI7"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6151",
+   "title": "Women's Studies - Certificate of Achievement",
+   "h1": "Women's Studies - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3251
+ },
+ {
+  "control_number": "36330",
+  "title": "Advanced Manufacturing Technology",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESYS51",
+   "INDT62",
+   "INDT63",
+   "INDT64",
+   "INDT65",
+   "MTT50"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6221",
+   "title": "Advanced Manufacturing Technology - Certificate of Achievement",
+   "h1": "Advanced Manufacturing Technology - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3127
+ },
+ {
+  "control_number": "36701",
+  "title": "Social Justice Studies: Ethnic Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL21",
+   "ENGL22",
+   "ENGL25",
+   "ES1",
+   "ES11",
+   "ES12",
+   "ES25",
+   "ES4",
+   "ES42",
+   "ES43",
+   "ES5",
+   "ES52",
+   "ES53",
+   "ES6",
+   "ES62",
+   "ES63",
+   "ES7",
+   "HIS25",
+   "HIS42",
+   "HIS43",
+   "HIS52",
+   "HIS53",
+   "HIS62",
+   "HIS63",
+   "SOCI10",
+   "SOCI7"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6288",
+   "title": "Social Justice: Ethnic Studies - Associate in Arts for Transfer",
+   "h1": "Social Justice: Ethnic Studies - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 6327
+ },
+ {
+  "control_number": "37171",
+  "title": "Accounting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS10",
+   "BUS11",
+   "BUS14",
+   "BUS1A",
+   "BUS1B",
+   "BUS2A",
+   "BUS2B",
+   "BUS3A",
+   "BUS3B",
+   "BUS4",
+   "BUS5",
+   "BUS6",
+   "BUS8",
+   "BUS92",
+   "BUS93"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6098",
+   "title": "Accounting - Associate in Science",
+   "h1": "Accounting - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3984
+ },
+ {
+  "control_number": "37172",
+  "title": "Information Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAS50",
+   "CAS69",
+   "CAS74",
+   "CAS75",
+   "CAS76",
+   "CAS77",
+   "CAS83",
+   "CAS85",
+   "CAS92A",
+   "CAS92B",
+   "CAS92C"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6103",
+   "title": "Information Technology - Associate in Science",
+   "h1": "Information Technology - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 4064
+ },
+ {
+  "control_number": "37428",
+  "title": "Environmental Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOS21A",
+   "BIOS21B",
+   "BIOS21C",
+   "CHEM1A",
+   "ENSC11",
+   "ENSC15",
+   "ENSC15L",
+   "GEOS1",
+   "GEOS11",
+   "GEOS11L",
+   "MTH1",
+   "MTH15",
+   "PHYS3A"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/4081/5321",
+   "title": "Environmental Science - Associate in Science",
+   "h1": "Environmental Science - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3914
+ },
+ {
+  "control_number": "37557",
+  "title": "Geography",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH3",
+   "ENST1",
+   "GEO1",
+   "GEO10",
+   "GEO12",
+   "GEO13",
+   "GEO1L",
+   "GEO2",
+   "GEO20",
+   "GEO21",
+   "GEO22",
+   "GEO3",
+   "GEO5",
+   "GEO8",
+   "GEOS11",
+   "PSY5",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6262",
+   "title": "Geography - Associate in Arts for Transfer",
+   "h1": "Geography - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 4044
+ },
+ {
+  "control_number": "37627",
+  "title": "Public Health Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "BIOS41",
+   "BIOS42",
+   "BIOS43",
+   "BIOS44",
+   "HLTH1",
+   "HLTH18",
+   "HLTH8",
+   "PSCN3",
+   "PSY5",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/7073",
+   "title": "Public Health - Associate in Science for Transfer",
+   "h1": "Public Health - Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 3907
+ },
+ {
+  "control_number": "37680",
+  "title": "Ethnic Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "ANTH5",
+   "COMM12",
+   "ENGL21",
+   "ENGL22",
+   "ENGL25",
+   "ES1",
+   "ES25",
+   "ES4",
+   "ES42",
+   "ES43",
+   "ES5",
+   "ES52",
+   "ES53",
+   "ES6",
+   "ES62",
+   "ES63",
+   "ES7",
+   "HIS32",
+   "HIS33",
+   "PSCN13",
+   "PSCN4",
+   "SOCI10",
+   "SOCI3",
+   "SOCI6"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6283",
+   "title": "Ethnic Studies - Associate in Arts",
+   "h1": "Ethnic Studies - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 32,
+  "text_chars": 5195
+ },
+ {
+  "control_number": "37681",
+  "title": "Fine Art Painting and Drawing",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART12A",
+   "ART12B",
+   "ART12C",
+   "ART13A",
+   "ART13B",
+   "ART16A",
+   "ART17A",
+   "ART17B",
+   "ART18A",
+   "ART18B",
+   "ART20",
+   "ART23",
+   "ART24",
+   "ART25",
+   "ART2A",
+   "ART2B",
+   "ART2C",
+   "ART3A",
+   "ART45",
+   "ART61",
+   "ART7A",
+   "ART7B",
+   "ART7C",
+   "ARTH6",
+   "ARTH8",
+   "ARTHC1100",
+   "ARTHC1200",
+   "DIGM1",
+   "DIGM10A",
+   "DIGM11",
+   "DIGM2",
+   "DIGM4A",
+   "DIGM6A",
+   "FILM16",
+   "PHOT1A",
+   "PHOT2A",
+   "PHOT3A",
+   "PHOT4A",
+   "PHOT6A"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6171",
+   "title": "Fine Art Painting and Drawing - Associate in Arts",
+   "h1": "Fine Art Painting and Drawing - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 39,
+  "text_chars": 10020
+ },
+ {
+  "control_number": "37682",
+  "title": "Fine Art Studio Foundations",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART12A",
+   "ART12B",
+   "ART13A",
+   "ART13B",
+   "ART16A",
+   "ART16B",
+   "ART17A",
+   "ART18B",
+   "ART20",
+   "ART23",
+   "ART24",
+   "ART25",
+   "ART2A",
+   "ART2B",
+   "ART3A",
+   "ART3B",
+   "ART45",
+   "ART61",
+   "ART7A",
+   "ART7B",
+   "ARTH6",
+   "ARTH8",
+   "ARTHC1100",
+   "ARTHC1200",
+   "DIGM1",
+   "DIGM10A",
+   "DIGM2",
+   "DIGM4A",
+   "DIGM5",
+   "FILM15",
+   "PHOT1A",
+   "PHOT2A",
+   "PHOT3A",
+   "PHOT4A",
+   "PHOT6A"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6173",
+   "title": "Fine Art Studio Foundations - Associate in Arts",
+   "h1": "Fine Art Studio Foundations - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 35,
+  "text_chars": 4462
+ },
+ {
+  "control_number": "37683",
+  "title": "Fine Art Ceramics",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART12A",
+   "ART13A",
+   "ART13B",
+   "ART16A",
+   "ART16B",
+   "ART16C",
+   "ART16D",
+   "ART17A",
+   "ART17B",
+   "ART18A",
+   "ART18B",
+   "ART20",
+   "ART23",
+   "ART24",
+   "ART2A",
+   "ART2B",
+   "ART3A",
+   "ART45",
+   "ART7A",
+   "ARTH6",
+   "ARTH8",
+   "ARTHC1100",
+   "ARTHC1200",
+   "DIGM10A",
+   "DIGM11",
+   "DIGM2",
+   "DIGM4A",
+   "DIGM6A",
+   "FILM16",
+   "PHOT1A",
+   "PHOT2A",
+   "PHOT3A",
+   "PHOT4A",
+   "PHOT6A"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6170",
+   "title": "Fine Art Ceramics - Associate in Arts",
+   "h1": "Fine Art Ceramics - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 34,
+  "text_chars": 4732
+ },
+ {
+  "control_number": "37686",
+  "title": "Fine Art Sculpture",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART12A",
+   "ART13A",
+   "ART13B",
+   "ART16A",
+   "ART17A",
+   "ART17B",
+   "ART18A",
+   "ART18B",
+   "ART20",
+   "ART22",
+   "ART23",
+   "ART24",
+   "ART2A",
+   "ART2B",
+   "ART3A",
+   "ART45",
+   "ART61",
+   "ART7A",
+   "ARTH6",
+   "ARTH8",
+   "ARTHC1100",
+   "ARTHC1200",
+   "DIGM1",
+   "DIGM10A",
+   "DIGM11",
+   "DIGM2",
+   "DIGM4A",
+   "DIGM6A",
+   "FILM16",
+   "PHOT1A",
+   "PHOT2A",
+   "PHOT3A",
+   "PHOT4A",
+   "PHOT6A"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6172",
+   "title": "Fine Art Sculpture - Associate in Arts",
+   "h1": "Fine Art Sculpture - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 34,
+  "text_chars": 4767
+ },
+ {
+  "control_number": "37695",
+  "title": "French",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTHC1200",
+   "FRNC1A",
+   "FRNC1B",
+   "FRNC2A",
+   "FRNC2B",
+   "FRNC50A",
+   "FRNC50B",
+   "FRNC50C",
+   "FRNC50D",
+   "HIS2",
+   "PHIL65",
+   "PHIL70"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6210",
+   "title": "French - Certificate of Achievement",
+   "h1": "French - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3458
+ },
+ {
+  "control_number": "37696",
+  "title": "Japanese",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL25",
+   "ES11",
+   "ES42",
+   "ES43",
+   "HIS42",
+   "HIS43",
+   "JAPN1A",
+   "JAPN1B",
+   "JAPN2A",
+   "JAPN2B",
+   "JAPN50A",
+   "JAPN50B",
+   "JAPN50C",
+   "JAPN50D",
+   "SOCI10"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6211",
+   "title": "Japanese - Certificate of Achievement",
+   "h1": "Japanese - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3637
+ },
+ {
+  "control_number": "37697",
+  "title": "Spanish",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 22,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37699",
+  "title": "Harmony & Musicianship",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37811",
+  "title": "ASE Test Preparation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATEC251",
+   "ATEC252",
+   "ATEC253",
+   "ATEC254",
+   "ATEC255",
+   "ATEC256",
+   "ATEC257",
+   "ATEC258",
+   "ATEC260",
+   "ATEC275"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6593",
+   "title": "ASE Test Preparation - Certificate of Completion",
+   "h1": "ASE Test Preparation - Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3082
+ },
+ {
+  "control_number": "37910",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.816,
+  "codes_found": [
+   "ANTH3",
+   "ES1",
+   "ES11",
+   "ES42",
+   "ES43",
+   "FRNC2A",
+   "FRNC2B",
+   "GEO2",
+   "HIS1",
+   "HIS12",
+   "HIS2",
+   "HIS25",
+   "HIS3",
+   "HIS32",
+   "HIS33",
+   "HIS4",
+   "HIS48",
+   "HIS49",
+   "HIS52",
+   "HIS53",
+   "HIS62",
+   "HIS63",
+   "HISTC1001",
+   "HISTC1002",
+   "JAPN2A",
+   "JAPN2B",
+   "POLSC1000",
+   "POSC30",
+   "PSYCC1000",
+   "SPA2A",
+   "SPA2B"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6144",
+   "title": "History - Associate in Arts for Transfer",
+   "h1": "History - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 38,
+  "text_chars": 5092
+ },
+ {
+  "control_number": "37912",
+  "title": "Social Work And Human Services",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.955,
+  "codes_found": [
+   "BIOS1",
+   "BIOS41",
+   "ECD56",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1001",
+   "ES1",
+   "PSCN13",
+   "PSCN3",
+   "PSCN4",
+   "PSCN5",
+   "PSCN95",
+   "PSCN96",
+   "PSY12",
+   "PSY5",
+   "PSY6",
+   "PSYCC1000",
+   "SOCI1",
+   "SOCI2",
+   "SOCI3",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/4080/5193",
+   "title": "Social Work And Human Services - Associate in Arts for Transfer",
+   "h1": "Social Work And Human Services - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 4311
+ },
+ {
+  "control_number": "38004",
+  "title": "ASE Under Car Test Preparation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATEC251",
+   "ATEC252",
+   "ATEC253",
+   "ATEC254",
+   "ATEC255"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6594",
+   "title": "ASE Under Car Test Preparation - Certificate of Completion",
+   "h1": "ASE Under Car Test Preparation - Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2793
+ },
+ {
+  "control_number": "38098",
+  "title": "Family Child Care Entrepreneur",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECD50",
+   "ECD56",
+   "ECD62",
+   "ECD63",
+   "ENTR1",
+   "ENTR20"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6276",
+   "title": "Family Child Care Entrepreneurship - Certificate of Achievement",
+   "h1": "Family Child Care Entrepreneurship - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.75
+   }
+  },
+  "listed": 6,
+  "text_chars": 2986
+ },
+ {
+  "control_number": "38270",
+  "title": "Kitchen and Bath Design",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ID50",
+   "ID54",
+   "ID56",
+   "ID58",
+   "ID60",
+   "ID62",
+   "ID70"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6160",
+   "title": "Kitchen and Bath Design (COA) - Certificate of Achievement",
+   "h1": "Kitchen and Bath Design (COA) - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3143
+ },
+ {
+  "control_number": "38438",
+  "title": "Early Childhood Administration",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECD50",
+   "ECD54",
+   "ECD56",
+   "ECD60",
+   "ECD62",
+   "ECD63",
+   "ECD65",
+   "ECD67",
+   "ECD68",
+   "ECD69",
+   "ECD79",
+   "ECD83",
+   "ECD87",
+   "ECD90"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6269",
+   "title": "Early Childhood Administration - Certificate of Achievement",
+   "h1": "Early Childhood Administration - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3470
+ },
+ {
+  "control_number": "38439",
+  "title": "Infant/Toddler Specialist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECD50",
+   "ECD54",
+   "ECD56",
+   "ECD60",
+   "ECD62",
+   "ECD63",
+   "ECD67",
+   "ECD69",
+   "ECD79",
+   "ECD87",
+   "ECD90"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6277",
+   "title": "Infant/Toddler Specialist - Certificate of Achievement",
+   "h1": "Infant/Toddler Specialist - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3309
+ },
+ {
+  "control_number": "38440",
+  "title": "Early Childhood Development (Associate Teacher)",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECD41",
+   "ECD50",
+   "ECD54",
+   "ECD56",
+   "ECD62",
+   "ECD63",
+   "ECD67",
+   "ECD69",
+   "ECD79",
+   "ECD87"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6271",
+   "title": "Early Childhood Development (Associate Teacher) - Certificate of Achievement",
+   "h1": "Early Childhood Development (Associate Teacher) - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3344
+ },
+ {
+  "control_number": "38504",
+  "title": "Early Childhood Curriculum Specialist/Transitional Kindergarten",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECD30",
+   "ECD31",
+   "ECD32",
+   "ECD33",
+   "ECD34",
+   "ECD35",
+   "ECD36",
+   "ECD37",
+   "ECD38",
+   "ECD39",
+   "ECD41",
+   "ECD56",
+   "ECD60",
+   "ECD62",
+   "ECD69",
+   "ECD79"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6270",
+   "title": "Early Childhood Curriculum Specialist/Transitional Kindergarten - Certificate of Achievement",
+   "h1": "Early Childhood Curriculum Specialist/Transitional Kindergarten - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3983
+ },
+ {
+  "control_number": "38714",
+  "title": "International Entrepreneur – Japanese",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS12",
+   "BUS40",
+   "ENTR1",
+   "ENTR20",
+   "JAPN1A",
+   "JAPN1B",
+   "JAPN2A",
+   "JAPN2B",
+   "JAPN50A",
+   "JAPN50B",
+   "JAPN50C",
+   "JAPN50D"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6189",
+   "title": "International Entrepreneur – Japanese - Certificate of Achievement",
+   "h1": "International Entrepreneur – Japanese - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3436
+ },
+ {
+  "control_number": "38761",
+  "title": "International Entrepreneur – French",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS12",
+   "BUS40",
+   "ENTR1",
+   "ENTR20",
+   "FRNC1A",
+   "FRNC1B",
+   "FRNC2A",
+   "FRNC2B",
+   "FRNC50A",
+   "FRNC50B",
+   "FRNC50C",
+   "FRNC50D"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6188",
+   "title": "International Entrepreneur – French - Certificate of Achievement",
+   "h1": "International Entrepreneur – French - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3480
+ },
+ {
+  "control_number": "38762",
+  "title": "International Entrepreneur – Spanish",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS12",
+   "BUS40",
+   "ENTR1",
+   "ENTR20",
+   "SPA1A",
+   "SPA1B",
+   "SPA2A",
+   "SPA2B",
+   "SPA50A",
+   "SPA50B",
+   "SPA50C",
+   "SPA50D"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6190",
+   "title": "International Entrepreneur – Spanish - Certificate of Achievement",
+   "h1": "International Entrepreneur – Spanish - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3438
+ },
+ {
+  "control_number": "38785",
+  "title": "Graphic Design",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART23",
+   "ART25",
+   "DIGM1",
+   "DIGM11",
+   "DIGM12A",
+   "DIGM2",
+   "DIGM20",
+   "DIGM4A",
+   "DIGM5",
+   "DIGM6A",
+   "DIGM7",
+   "DIGM8A",
+   "DIGM8B",
+   "FILM15",
+   "FILM16",
+   "PHOT1A",
+   "PHOT6A"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6090",
+   "title": "Graphic Design - Associate in Arts",
+   "h1": "Graphic Design - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3688
+ },
+ {
+  "control_number": "38840",
+  "title": "Social Justice: Chicana/o Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL22",
+   "ES1",
+   "ES12",
+   "ES4",
+   "ES52",
+   "ES53",
+   "ES7",
+   "HIS52",
+   "HIS53",
+   "SOCI7"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6287",
+   "title": "Social Justice: Chicana/o Studies - Associate in Arts for Transfer",
+   "h1": "Social Justice: Chicana/o Studies - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3975
+ },
+ {
+  "control_number": "38845",
+  "title": "Persuasive and Rhetorical Communication",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM20",
+   "COMM46",
+   "COMM48",
+   "COMM50",
+   "COMMC1000",
+   "ENGLC1001",
+   "ENGLC1003",
+   "MCOM40",
+   "MCOM41",
+   "MCOM43",
+   "PHIL70",
+   "POSC25"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6204",
+   "title": "Persuasive and Rhetorical Communication - Certificate of Achievement",
+   "h1": "Persuasive and Rhetorical Communication - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2799
+ },
+ {
+  "control_number": "38846",
+  "title": "Public Speaking and Forensics",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM2",
+   "COMM20",
+   "COMM46",
+   "COMM48",
+   "COMMC1000"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6205",
+   "title": "Public Speaking and Forensics - Certificate of Achievement",
+   "h1": "Public Speaking and Forensics - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2321
+ },
+ {
+  "control_number": "38864",
+  "title": "Social Justice: Asian American Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL25",
+   "ES1",
+   "ES11",
+   "ES42",
+   "ES43",
+   "ES6",
+   "ES7",
+   "HIS42",
+   "HIS43",
+   "SOCI10",
+   "SOCI7"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6286",
+   "title": "Social Justice: Asian American Studies - Associate in Arts for Transfer",
+   "h1": "Social Justice: Asian American Studies - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 5460
+ },
+ {
+  "control_number": "38865",
+  "title": "Social Justice: African American Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL21",
+   "ES1",
+   "ES4",
+   "ES5",
+   "ES62",
+   "ES63",
+   "ES7",
+   "HIS62",
+   "HIS63",
+   "SOCI7"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6285",
+   "title": "Social Justice: African American Studies - Associate in Arts for Transfer",
+   "h1": "Social Justice: African American Studies - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 4052
+ },
+ {
+  "control_number": "38917",
+  "title": "Interpersonal Communication",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM10",
+   "COMM11",
+   "COMM12",
+   "COMM3",
+   "COMM50",
+   "PSY3",
+   "PSY33",
+   "SOCI4",
+   "SOCI6"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6203",
+   "title": "Interpersonal Communication - Certificate of Achievement",
+   "h1": "Interpersonal Communication - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3048
+ },
+ {
+  "control_number": "38918",
+  "title": "Chinese",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHIN1A",
+   "CHIN1B",
+   "CHIN2A",
+   "CHIN2B",
+   "CHIN50A",
+   "CHIN50B",
+   "CHIN50C",
+   "CHIN50D",
+   "ENGL25",
+   "ES11",
+   "ES42",
+   "ES43",
+   "HIS42",
+   "HIS43",
+   "SOCI10"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6110",
+   "title": "Chinese - Certificate of Achievement",
+   "h1": "Chinese - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3624
+ },
+ {
+  "control_number": "38919",
+  "title": "Student Support Leadership (Emphasis in Tutoring)",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH3",
+   "BUS19",
+   "COMM70A",
+   "COMM70B",
+   "COMMC1000",
+   "ENGLC1000",
+   "ES1",
+   "MTH1",
+   "MTH15",
+   "MTH16",
+   "MTH2",
+   "MTH3",
+   "MTH33",
+   "MTH4",
+   "MTH41",
+   "MTH47",
+   "MTH6",
+   "MTH8",
+   "PSY3",
+   "PSY5",
+   "PSYCC1000",
+   "SOCI1",
+   "STATC1000",
+   "TUTR1A",
+   "TUTR1B",
+   "TUTR2A",
+   "TUTR2B"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6556",
+   "title": "Student Support Leadership (Emphasis in Tutoring) - Certificate of Achievement",
+   "h1": "Student Support Leadership (Emphasis in Tutoring) - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 27,
+  "text_chars": 4222
+ },
+ {
+  "control_number": "38932",
+  "title": "Fine Art Photography",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART12A",
+   "ART16A",
+   "ART17A",
+   "ART18A",
+   "ART20",
+   "ART22",
+   "ART23",
+   "ART24",
+   "ART25",
+   "ART2A",
+   "ART2B",
+   "ART3A",
+   "ART45",
+   "ART61",
+   "ARTH20",
+   "ARTH6",
+   "ARTHC1100",
+   "ARTHC1200",
+   "DIGM1",
+   "DIGM10A",
+   "DIGM11",
+   "DIGM12A",
+   "DIGM15",
+   "DIGM2",
+   "DIGM4A",
+   "DIGM6A",
+   "DIGM7",
+   "FILM14",
+   "FILM15",
+   "FILM16",
+   "PHOT1A",
+   "PHOT1B",
+   "PHOT20",
+   "PHOT2A",
+   "PHOT3A",
+   "PHOT4A",
+   "PHOT5A",
+   "PHOT6A"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6167",
+   "title": "Fine Art Photography - Associate in Arts",
+   "h1": "Fine Art Photography - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 38,
+  "text_chars": 4930
+ },
+ {
+  "control_number": "38933",
+  "title": "Asian American Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL25",
+   "ES1",
+   "ES42",
+   "ES43",
+   "ES5",
+   "ES6",
+   "ES7",
+   "HIS42",
+   "HIS43",
+   "SOCI10",
+   "SOCI7"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6281",
+   "title": "Asian American Studies - Certificate of Achievement",
+   "h1": "Asian American Studies - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3978
+ },
+ {
+  "control_number": "38971",
+  "title": "Paralegal Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJ60",
+   "PLGL30",
+   "PLGL31",
+   "PLGL32",
+   "PLGL33",
+   "PLGL34",
+   "PLGL35",
+   "PLGL36",
+   "PLGL37"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6133",
+   "title": "Paralegal Studies - Certificate of Achievement",
+   "h1": "Paralegal Studies - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3292
+ },
+ {
+  "control_number": "39040",
+  "title": "Preparation for Academic ESL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL210",
+   "ESL220",
+   "ESL230"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6557",
+   "title": "Preparation for Academic ESL - Certificate of Competency",
+   "h1": "Preparation for Academic ESL - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2654
+ },
+ {
+  "control_number": "39041",
+  "title": "Preparation for BSTEM Math",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MTH201W",
+   "MTH215W",
+   "MTH221W",
+   "MTH222W",
+   "MTH243W",
+   "MTH255"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6564",
+   "title": "Preparation for BSTEM Math - Certificate of Competency",
+   "h1": "Preparation for BSTEM Math - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3297
+ },
+ {
+  "control_number": "39042",
+  "title": "Preparation for Statistics and Liberal Arts Math",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MTH204",
+   "MTH220",
+   "MTH243W",
+   "MTH253"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6565",
+   "title": "Preparation for Statistics and Liberal Arts Math - Certificate of Competency",
+   "h1": "Preparation for Statistics and Liberal Arts Math - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2888
+ },
+ {
+  "control_number": "39250",
+  "title": "Animation",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART2A",
+   "ART3A",
+   "DIGM10A",
+   "DIGM12A",
+   "DIGM13",
+   "DIGM14",
+   "DIGM20",
+   "DIGM4A",
+   "DIGM6A",
+   "FILM12",
+   "FILM14",
+   "FILM17"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6154",
+   "title": "Animation - Certificate of Achievement",
+   "h1": "Animation - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3307
+ },
+ {
+  "control_number": "39273",
+  "title": "International Entrepreneur - Chinese",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS12",
+   "BUS40",
+   "CHIN1A",
+   "CHIN1B",
+   "CHIN2A",
+   "CHIN2B",
+   "CHIN50A",
+   "CHIN50B",
+   "CHIN50C",
+   "CHIN50D",
+   "ENTR1",
+   "ENTR20"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6191",
+   "title": "International Entrepreneur – Chinese - Certificate of Achievement",
+   "h1": "International Entrepreneur – Chinese - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3226
+ },
+ {
+  "control_number": "39274",
+  "title": "Filmmaking",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DIGM10A",
+   "DIGM11",
+   "DIGM12A",
+   "DIGM2",
+   "DIGM20",
+   "DIGM4A",
+   "DIGM6A",
+   "FILM12",
+   "FILM14",
+   "FILM15",
+   "FILM16",
+   "FILM17",
+   "PHOT1A"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6156",
+   "title": "Filmmaking - Certificate of Achievement",
+   "h1": "Filmmaking - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3419
+ },
+ {
+  "control_number": "39276",
+  "title": "Digital Media Arts",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DIGM1",
+   "DIGM10A",
+   "DIGM11",
+   "DIGM12A",
+   "DIGM2",
+   "DIGM20",
+   "DIGM4A",
+   "DIGM5",
+   "DIGM6A",
+   "DIGM7",
+   "FILM12",
+   "FILM15",
+   "FILM16",
+   "PHOT1A"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6157",
+   "title": "Digital Media Arts - Certificate of Achievement",
+   "h1": "Digital Media Arts - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3182
+ },
+ {
+  "control_number": "39281",
+  "title": "Film and Animation",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART17A",
+   "ART23",
+   "ART25",
+   "ART2A",
+   "ART3A",
+   "DIGM10A",
+   "DIGM11",
+   "DIGM12A",
+   "DIGM13",
+   "DIGM14",
+   "DIGM20",
+   "DIGM4A",
+   "DIGM6A",
+   "FILM12",
+   "FILM14",
+   "FILM15",
+   "FILM16",
+   "FILM17",
+   "PHOT1A"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6089",
+   "title": "Film and Animation - Associate in Arts",
+   "h1": "Film and Animation - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 4000
+ },
+ {
+  "control_number": "39284",
+  "title": "Nutrition and Dietetics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOS41",
+   "BIOS42",
+   "BIOS43",
+   "BIOS44",
+   "CHEM12A",
+   "CHEM1A",
+   "CHEM1B",
+   "ECONC2001",
+   "ECONC2002",
+   "NUTR1",
+   "PSY5",
+   "PSYCC1000",
+   "SOCI1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6120",
+   "title": "Nutrition and Dietetics - Associate in Science for Transfer",
+   "h1": "Nutrition and Dietetics - Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3888
+ },
+ {
+  "control_number": "39291",
+  "title": "Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MTH1",
+   "MTH2",
+   "MTH3",
+   "PHYS4A",
+   "PHYS4B",
+   "PHYS4C"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6140",
+   "title": "Physics - Associate in Science for Transfer",
+   "h1": "Physics - Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3277
+ },
+ {
+  "control_number": "39296",
+  "title": "Chicanx and Latinx Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ES1",
+   "ES4",
+   "ES52",
+   "ES53",
+   "ES7",
+   "HIS12",
+   "HIS32",
+   "HIS33",
+   "HIS52",
+   "HIS53",
+   "SOCI7"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6282",
+   "title": "Chicanx and Latinx Studies - Certificate of Achievement",
+   "h1": "Chicanx and Latinx Studies - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3458
+ },
+ {
+  "control_number": "39297",
+  "title": "Dental Radiation Safety",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DHYG50A",
+   "DHYG51",
+   "DHYG55A",
+   "DHYG60",
+   "DHYG60S",
+   "DHYG61",
+   "DHYG61S",
+   "DHYG69A",
+   "DHYG69B",
+   "DHYG71A",
+   "DHYG71B",
+   "DHYG71S",
+   "DHYG73",
+   "DHYG74A",
+   "DHYG74B",
+   "DHYG75"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6215",
+   "title": "Dental Radiation Safety - Certificate of Achievement",
+   "h1": "Dental Radiation Safety - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3838
+ },
+ {
+  "control_number": "39342",
+  "title": "Fire Prevention Inspector",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJ54",
+   "BUS22",
+   "FT2",
+   "FT3",
+   "FT4",
+   "FT5",
+   "FT6",
+   "INDT74",
+   "MTH47"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6258",
+   "title": "Fire Prevention Inspector - Certificate of Achievement",
+   "h1": "Fire Prevention Inspector - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3424
+ },
+ {
+  "control_number": "39346",
+  "title": "Fire Prevention Inspector",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS22",
+   "FT2",
+   "FT3",
+   "FT4",
+   "FT5",
+   "FT6",
+   "INDT74",
+   "MTH47"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6257",
+   "title": "Fire Prevention Inspector - Associate in Science",
+   "h1": "Fire Prevention Inspector - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3502
+ },
+ {
+  "control_number": "39695",
+  "title": "Computational Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1A",
+   "ENGR25",
+   "MTH1",
+   "MTH2",
+   "PHYS4A",
+   "PHYS7A"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6263",
+   "title": "Computational Design - Certificate of Achievement",
+   "h1": "Computational Design - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2894
+ },
+ {
+  "control_number": "39716",
+  "title": "Technical Design Drafting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGR10",
+   "ENGR11",
+   "ENGR22",
+   "MTH1",
+   "MTH2",
+   "MTH21",
+   "MTH22",
+   "MTH3",
+   "MTH4",
+   "MTH6"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/4082/5949",
+   "title": "Technical Design Drafting - Certificate of Achievement",
+   "h1": "Technical Design Drafting - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3584
+ },
+ {
+  "control_number": "39720",
+  "title": "Fire Fighter Academy",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FT10",
+   "FT11",
+   "FT2",
+   "FT7",
+   "FT88A"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6256",
+   "title": "Fire Fighter Academy - Certificate of Achievement",
+   "h1": "Fire Fighter Academy - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3407
+ },
+ {
+  "control_number": "39729",
+  "title": "LVN-RN",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOS42",
+   "BIOS43",
+   "BIOS44",
+   "COMM10",
+   "COMMC1000",
+   "ENGLC1000",
+   "NURS53",
+   "NURS60B",
+   "NURS60C",
+   "NURS70",
+   "NURS70L",
+   "NURS84",
+   "PSY5",
+   "PSYCC1000",
+   "SOCI1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6220",
+   "title": "LVN-RN - Associate in Science",
+   "h1": "LVN-RN - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 4660
+ },
+ {
+  "control_number": "39816",
+  "title": "Africana and African American Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL21",
+   "ES1",
+   "ES5",
+   "ES62",
+   "ES63",
+   "ES7",
+   "HIS62",
+   "HIS63",
+   "SOCI7"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6143",
+   "title": "Africana and African American Studies - Certificate of Achievement",
+   "h1": "Africana and African American Studies - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3662
+ },
+ {
+  "control_number": "40245",
+  "title": "Film, Television, and Electronic Media",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.944,
+  "codes_found": [
+   "ARTH3",
+   "DIGM10A",
+   "DIGM11",
+   "DIGM12A",
+   "DIGM6A",
+   "FILM12",
+   "FILM14",
+   "FILM15",
+   "FILM16",
+   "FILM17",
+   "HUMN68",
+   "MCOM40",
+   "MCOM41",
+   "MCOM42",
+   "MCOM50",
+   "MCOM60",
+   "THTR10"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6155",
+   "title": "Film, Television and Electronic Media - Associate in Science for Transfer",
+   "h1": "Film, Television and Electronic Media - Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 4326
+ },
+ {
+  "control_number": "40315",
+  "title": "English (Emphasis in Creative Writing)",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL11A",
+   "ENGL11B",
+   "ENGL12A",
+   "ENGL12B",
+   "ENGL13A",
+   "ENGL13B",
+   "ENGL20",
+   "ENGL21",
+   "ENGL22",
+   "ENGL25",
+   "ENGL28",
+   "ENGL31",
+   "ENGL32",
+   "ENGL35",
+   "ENGL41",
+   "ENGL45",
+   "ENGLC1003"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6518",
+   "title": "English (Emphasis in Creative Writing) - Associate in Arts",
+   "h1": "English (Emphasis in Creative Writing) - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3642
+ },
+ {
+  "control_number": "40554",
+  "title": "Non-Credit Preparation for English Composition",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL201A",
+   "ENGL201B",
+   "ENGL202",
+   "ENGL210",
+   "ENGL215"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6555",
+   "title": "Non-credit Preparation for English Composition - Certificate of Competency",
+   "h1": "Non-credit Preparation for English Composition - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3107
+ },
+ {
+  "control_number": "40569",
+  "title": "Acting Level 2",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 33,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40570",
+  "title": "Acting Level 1",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "THTR1",
+   "THTR10",
+   "THTR17",
+   "THTR2A",
+   "THTR2B",
+   "THTR3",
+   "THTR30A",
+   "THTR47A",
+   "THTR4A",
+   "THTR5A",
+   "THTR6A",
+   "THTR6B",
+   "THTR7",
+   "THTR8A",
+   "THTR8B"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6174",
+   "title": "Acting: Advanced - Certificate of Achievement",
+   "h1": "Acting: Advanced - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 30,
+  "text_chars": 4023
+ },
+ {
+  "control_number": "40578",
+  "title": "Educational Aide",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECD41",
+   "ECD50",
+   "ECD52",
+   "ECD54",
+   "ECD56",
+   "ECD60",
+   "ECD62",
+   "ECD63",
+   "ECD79",
+   "ENGL28"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6275",
+   "title": "Educational Aide - Certificate of Achievement",
+   "h1": "Educational Aide - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3547
+ },
+ {
+  "control_number": "40718",
+  "title": "Philosophy",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTH20",
+   "COMM6",
+   "ENGL20",
+   "ENGL21",
+   "ENGL22",
+   "ENGL25",
+   "ENGL31",
+   "ENGL41",
+   "ENGL45",
+   "ES5",
+   "FRNC2A",
+   "FRNC2B",
+   "HIS1",
+   "HIS2",
+   "HIS3",
+   "HIS4",
+   "HUMN60",
+   "HUMN65",
+   "PHIL50",
+   "PHIL55",
+   "PHIL60",
+   "PHIL65",
+   "PHIL70",
+   "RELS50",
+   "RELS65",
+   "SPA2A",
+   "SPA2B"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6147",
+   "title": "Philosophy - Associate in Arts",
+   "h1": "Philosophy - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 27,
+  "text_chars": 4498
+ },
+ {
+  "control_number": "40797",
+  "title": "Technology-Based Automotive Systems",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.714,
+  "codes_found": [
+   "ATEC6A",
+   "ATEC6B",
+   "ATEC92",
+   "ATEC93",
+   "ATEC94"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6242",
+   "title": "Technology-Based Automotive Systems - Certificate of Achievement",
+   "h1": "Technology-Based Automotive Systems - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2647
+ },
+ {
+  "control_number": "40798",
+  "title": "Technical Theater",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 7,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40799",
+  "title": "Tax Preparer",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS3A",
+   "BUS3B",
+   "BUS6",
+   "BUS7",
+   "BUS8",
+   "BUS92",
+   "BUS93"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6180",
+   "title": "Tax Preparer - Certificate of Achievemenet",
+   "h1": "Tax Preparer - Certificate of Achievemenet",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3083
+ },
+ {
+  "control_number": "40840",
+  "title": "Administrative Assistant",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS12",
+   "BUS14",
+   "BUS16",
+   "BUS21",
+   "BUS22",
+   "BUS28",
+   "BUS36",
+   "BUS50A",
+   "BUS50C",
+   "BUS50D",
+   "BUS50J",
+   "BUS50K",
+   "BUS50M",
+   "BUS50N",
+   "BUS50P",
+   "BUS50R",
+   "BUS50S",
+   "BUS7",
+   "CAS50",
+   "CAS54"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6099",
+   "title": "Administrative Assistant - Associate in Science",
+   "h1": "Administrative Assistant - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 3867
+ },
+ {
+  "control_number": "40877",
+  "title": "Music Production",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MURT20",
+   "MURT22A",
+   "MURT22B",
+   "MURT31",
+   "MUSA20A",
+   "MUSA21A",
+   "MUSA22A",
+   "MUSL28"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6164",
+   "title": "Music Production - Certificate of Achievement",
+   "h1": "Music Production - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3012
+ },
+ {
+  "control_number": "40927",
+  "title": "Audio Recording",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MURT20",
+   "MURT21",
+   "MURT23",
+   "MURT24",
+   "MURT25",
+   "MUSL8"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6163",
+   "title": "Audio Recording - Certificate of Achievement",
+   "h1": "Audio Recording - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3013
+ },
+ {
+  "control_number": "41009",
+  "title": "Music Technology & Production",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MURT20",
+   "MURT21",
+   "MURT22A",
+   "MURT22B",
+   "MURT23",
+   "MURT24",
+   "MURT25",
+   "MURT26",
+   "MURT31",
+   "MURT50",
+   "MUSA20A",
+   "MUSA21A",
+   "MUSA22A",
+   "MUSL28",
+   "MUSL2A",
+   "MUSL6",
+   "MUSL8"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6093",
+   "title": "Music Technology & Production - Associate in Arts",
+   "h1": "Music Technology & Production - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3547
+ },
+ {
+  "control_number": "41075",
+  "title": "Law Enforcement",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJ9997"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6254",
+   "title": "Law Enforcement - Certificate of Achievement",
+   "h1": "Law Enforcement - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 1,
+  "text_chars": 2867
+ },
+ {
+  "control_number": "41086",
+  "title": "Art History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "ART23",
+   "ART24",
+   "ART2A",
+   "ART3A",
+   "ARTH20",
+   "ARTH3",
+   "ARTH6",
+   "ARTH7",
+   "ARTH8",
+   "ARTHC1100",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6153",
+   "title": "Art History - Associate in Arts for Transfer",
+   "h1": "Art History - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3748
+ },
+ {
+  "control_number": "41087",
+  "title": "Philosophy",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJ60",
+   "BUS10",
+   "ENGL22",
+   "ENGL25",
+   "ENGL28",
+   "ENGL31",
+   "ENGL41",
+   "FRNC2A",
+   "FRNC2B",
+   "HIS1",
+   "HIS2",
+   "HIS3",
+   "HIS33",
+   "HIS4",
+   "HUMN60",
+   "HUMN68",
+   "PHIL50",
+   "PHIL55",
+   "PHIL60",
+   "PHIL65",
+   "PHIL70",
+   "RELS50",
+   "RELS65",
+   "SPA2A",
+   "SPA2B"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6292",
+   "title": "Philosophy - Associate for Arts for Transfer",
+   "h1": "Philosophy - Associate for Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 4674
+ },
+ {
+  "control_number": "41330",
+  "title": "Behavioral Health",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "ES1",
+   "PSCN1",
+   "PSCN10",
+   "PSCN11",
+   "PSCN13",
+   "PSCN15",
+   "PSCN18",
+   "PSCN20",
+   "PSCN22",
+   "PSCN23",
+   "PSCN24",
+   "PSCN3",
+   "PSCN30",
+   "PSCN4",
+   "PSCN5",
+   "PSCN96",
+   "PSYCC1000",
+   "SOCI1"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6290",
+   "title": "Behavioral Health - Certificate of Achievement",
+   "h1": "Behavioral Health - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 4194
+ },
+ {
+  "control_number": "41414",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS10",
+   "BUS12",
+   "BUS19",
+   "BUS1A",
+   "BUS1B",
+   "ECONC2001",
+   "ECONC2002",
+   "MTH1",
+   "MTH15",
+   "MTH33",
+   "PSY5",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6183",
+   "title": "Business Administration 2.0 - Associate in Science for Transfer",
+   "h1": "Business Administration 2.0 - Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3754
+ },
+ {
+  "control_number": "41684",
+  "title": "Biological Sciences: Health Science Fundamentals",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOS41",
+   "BIOS42",
+   "BIOS43",
+   "BIOS44"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6218",
+   "title": "Biological Sciences: Health Science Fundamentals - Certificate of Achievement",
+   "h1": "Biological Sciences: Health Science Fundamentals - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2459
+ },
+ {
+  "control_number": "41690",
+  "title": "Jazz Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSA22A",
+   "MUSA22B",
+   "MUSL42A",
+   "MUSL42B",
+   "MUSP11A",
+   "MUSP11B",
+   "MUSP15",
+   "MUSP16"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6162",
+   "title": "Jazz Studies - Certificate of Achievement",
+   "h1": "Jazz Studies - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2902
+ },
+ {
+  "control_number": "41798",
+  "title": "Applied Ceramics",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART16A",
+   "ART16B",
+   "ART16C",
+   "ART16D",
+   "ART24",
+   "ART25",
+   "ART2A",
+   "ART9A",
+   "DIGM6A",
+   "PHOT1A",
+   "PHOT6A"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6169",
+   "title": "Applied Ceramics - Certificate of Achievement",
+   "h1": "Applied Ceramics - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3280
+ },
+ {
+  "control_number": "41871",
+  "title": "Liberal Arts and Sciences: Science, Math and Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH1",
+   "ANTH13",
+   "ANTH13L",
+   "ANTH1L",
+   "ASTR10",
+   "ASTR20",
+   "ASTR30",
+   "ASTR45",
+   "BIOS1",
+   "BIOS15",
+   "BIOS21A",
+   "BIOS21B",
+   "BIOS21C",
+   "BIOS41",
+   "BIOS42",
+   "BIOS43",
+   "BIOS44",
+   "BUS19",
+   "CHEM10",
+   "CHEM12A",
+   "CHEM12B",
+   "CHEM1A",
+   "CHEM1B",
+   "CHEM30B",
+   "CHEM31",
+   "CSCI14",
+   "CSCI15",
+   "CSCI20",
+   "CSCI21",
+   "CSCI41",
+   "CSCI42",
+   "ENGR10",
+   "ENGR11",
+   "ENGR15",
+   "ENGR16",
+   "ENGR22",
+   "ENGR36",
+   "ENGR40",
+   "ENGR43",
+   "ENGR85",
+   "ENSC10",
+   "ENSC10L",
+   "ENSC11",
+   "ENSC15",
+   "ENSC15L",
+   "GEO1",
+   "GEO13",
+   "GEO1L",
+   "GEO8",
+   "GEOS1",
+   "GEOS11",
+   "GEOS11L",
+   "GEOS12",
+   "GEOS2",
+   "GEOS2L",
+   "GEOS5",
+   "GEOS9",
+   "MTH1",
+   "MTH15",
+   "MTH16",
+   "MTH2",
+   "MTH22",
+   "MTH3",
+   "MTH4",
+   "MTH41",
+   "MTH44",
+   "MTH47",
+   "MTH6",
+   "MTH8",
+   "MTH88",
+   "PHYS11",
+   "PHYS3A",
+   "PHYS3B",
+   "PHYS4A",
+   "PHYS4B",
+   "PHYS4C",
+   "PHYS5",
+   "PHYS7A",
+   "PHYS7B",
+   "PHYS7C",
+   "PHYS7D",
+   "PSY4",
+   "PSY5",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/4081/5405",
+   "title": "Liberal Arts and Sciences: Science, Math and Technology - Associate in Science",
+   "h1": "Liberal Arts and Sciences: Science, Math and Technology - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 84,
+  "text_chars": 8121
+ },
+ {
+  "control_number": "41907",
+  "title": "Careers in Education",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECD208",
+   "ECD209"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6268",
+   "title": "Careers in Education - Certificate of Completion",
+   "h1": "Careers in Education - Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2488
+ },
+ {
+  "control_number": "41908",
+  "title": "Intermediate ESL Oral Communication",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL242A",
+   "ESL242B"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6552",
+   "title": "Intermediate ESL Oral Communication - Certificate of Competency",
+   "h1": "Intermediate ESL Oral Communication - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2518
+ },
+ {
+  "control_number": "41909",
+  "title": "Intermediate ESL Reading and Writing",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL240A",
+   "ESL240B"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6553",
+   "title": "Intermediate ESL Reading and Writing - Certificate of Competency",
+   "h1": "Intermediate ESL Reading and Writing - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2543
+ },
+ {
+  "control_number": "41915",
+  "title": "Hybrid and Alternative Fuel Vehicles",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATEC201",
+   "ATEC206A",
+   "ATEC206B",
+   "ATEC208",
+   "ATEC250",
+   "ATEC294"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6241",
+   "title": "Hybrid and Alternative Fuel Vehicles - Certificate of Completion",
+   "h1": "Hybrid and Alternative Fuel Vehicles - Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2755
+ },
+ {
+  "control_number": "41916",
+  "title": "Technology-Based Automotive Systems",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATEC206A",
+   "ATEC206B",
+   "ATEC292",
+   "ATEC293",
+   "ATEC294"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6243",
+   "title": "Technology-Based Automotive Systems - Certificate of Completion",
+   "h1": "Technology-Based Automotive Systems - Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2666
+ },
+ {
+  "control_number": "41917",
+  "title": "Automotive Technology",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATEC201",
+   "ATEC202",
+   "ATEC203",
+   "ATEC205",
+   "ATEC206A",
+   "ATEC206B",
+   "ATEC207",
+   "ATEC208",
+   "ATEC250",
+   "ATEC270",
+   "ATEC292",
+   "ATEC293",
+   "ATEC294"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6236",
+   "title": "Automotive Technology - Certificate of Completion",
+   "h1": "Automotive Technology - Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3551
+ },
+ {
+  "control_number": "41918",
+  "title": "Automotive Electrical and Body Electronics Technology",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATEC206A",
+   "ATEC206B",
+   "ATEC207",
+   "ATEC250"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6228",
+   "title": "Automotive Electrical and Body Electronics Technology - Certificate of Completion",
+   "h1": "Automotive Electrical and Body Electronics Technology - Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2731
+ },
+ {
+  "control_number": "41919",
+  "title": "Automotive Chassis Technology",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATEC205",
+   "ATEC206A",
+   "ATEC206B",
+   "ATEC250",
+   "ATEC270"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6226",
+   "title": "Automotive Chassis Technology - Certificate of Completion",
+   "h1": "Automotive Chassis Technology - Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2758
+ },
+ {
+  "control_number": "41920",
+  "title": "Automotive Engine Performance",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATEC201",
+   "ATEC206A",
+   "ATEC206B",
+   "ATEC208",
+   "ATEC250"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6230",
+   "title": "Automotive Engine Performance - Certificate of Completion",
+   "h1": "Automotive Engine Performance - Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2779
+ },
+ {
+  "control_number": "41941",
+  "title": "Automotive Powertrain Technology",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATEC201",
+   "ATEC202",
+   "ATEC203",
+   "ATEC206A",
+   "ATEC206B",
+   "ATEC250"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6232",
+   "title": "Automotive Powertrain Technology - Certificate of Completion",
+   "h1": "Automotive Powertrain Technology - Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2835
+ },
+ {
+  "control_number": "41942",
+  "title": "Intermediate ESL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL240B",
+   "ESL242B"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6551",
+   "title": "Intermediate ESL - Certificate of Competency",
+   "h1": "Intermediate ESL - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2489
+ },
+ {
+  "control_number": "41943",
+  "title": "Low-Intermediate ESL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL240A",
+   "ESL242A"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6554",
+   "title": "Low-Intermediate ESL - Certificate of Competency",
+   "h1": "Low-Intermediate ESL - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2516
+ },
+ {
+  "control_number": "41996",
+  "title": "Black & White Darkroom Photography",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART23",
+   "ART2A",
+   "ARTH20",
+   "DIGM6A",
+   "PHOT1A",
+   "PHOT20",
+   "PHOT2A",
+   "PHOT2B",
+   "PHOT2C",
+   "PHOT2D",
+   "PHOT3A",
+   "PHOT4A",
+   "PHOT5A",
+   "PHOT6A"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6165",
+   "title": "Black & White Darkroom Photography - Certificate of Achievement",
+   "h1": "Black & White Darkroom Photography - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 3613
+ },
+ {
+  "control_number": "41999",
+  "title": "Digital Imaging",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DIGM1",
+   "DIGM10A",
+   "DIGM11",
+   "DIGM12A",
+   "DIGM13",
+   "DIGM14",
+   "DIGM15",
+   "DIGM16",
+   "DIGM17",
+   "DIGM2",
+   "DIGM20",
+   "DIGM4A",
+   "DIGM5",
+   "DIGM6A",
+   "DIGM7",
+   "DIGM8A",
+   "DIGM8B",
+   "PHOT1A",
+   "PHOT1B",
+   "PHOT3A",
+   "PHOT3B",
+   "PHOT3C",
+   "PHOT4A",
+   "PHOT4B",
+   "PHOT5A",
+   "PHOT5B",
+   "PHOT6A",
+   "PHOT6B"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6166",
+   "title": "Digital Imaging - Certificate of Achievement",
+   "h1": "Digital Imaging - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 28,
+  "text_chars": 4201
+ },
+ {
+  "control_number": "42001",
+  "title": "Photography",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART23",
+   "ART2A",
+   "ARTH20",
+   "DIGM1",
+   "DIGM11",
+   "DIGM6A",
+   "PHOT1A",
+   "PHOT1B",
+   "PHOT20",
+   "PHOT2A",
+   "PHOT2B",
+   "PHOT2C",
+   "PHOT2D",
+   "PHOT3A",
+   "PHOT3B",
+   "PHOT3C",
+   "PHOT4A",
+   "PHOT4B",
+   "PHOT5A",
+   "PHOT5B",
+   "PHOT6A",
+   "PHOT6B"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6094",
+   "title": "Photography - Associate in Arts",
+   "h1": "Photography - Associate in Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 4159
+ },
+ {
+  "control_number": "42038",
+  "title": "Automotive Electrical and Body Electronics Technology",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATEC50",
+   "ATEC6A",
+   "ATEC6B",
+   "ATEC7"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6227",
+   "title": "Automotive Electrical and Body Electronics Technology - Certificate of Achievement",
+   "h1": "Automotive Electrical and Body Electronics Technology - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2744
+ },
+ {
+  "control_number": "42050",
+  "title": "Automotive Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATEC1",
+   "ATEC10",
+   "ATEC2",
+   "ATEC3",
+   "ATEC4",
+   "ATEC5",
+   "ATEC50",
+   "ATEC6A",
+   "ATEC6B",
+   "ATEC7",
+   "ATEC75",
+   "ATEC8",
+   "ATEC92",
+   "ATEC93",
+   "ATEC94"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6235",
+   "title": "Automotive Technology - Certificate of Achievement",
+   "h1": "Automotive Technology - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3250
+ },
+ {
+  "control_number": "42051",
+  "title": "Automotive Powertrain Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATEC1",
+   "ATEC2",
+   "ATEC3",
+   "ATEC50",
+   "ATEC6A",
+   "ATEC6B"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6231",
+   "title": "Automotive Powertrain Technology - Certificate of Achievement",
+   "h1": "Automotive Powertrain Technology - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2813
+ },
+ {
+  "control_number": "42052",
+  "title": "Automotive Engine Performance",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATEC1",
+   "ATEC10",
+   "ATEC50",
+   "ATEC6A",
+   "ATEC6B",
+   "ATEC8"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6229",
+   "title": "Automotive Engine Performance - Certificate of Achievement",
+   "h1": "Automotive Engine Performance - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2785
+ },
+ {
+  "control_number": "42061",
+  "title": "Introduction to Infant/Toddler Care",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECD210",
+   "ECD211"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6278",
+   "title": "Introduction to Infant/Toddler Care - Certificate of Completion",
+   "h1": "Introduction to Infant/Toddler Care - Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2519
+ },
+ {
+  "control_number": "42082",
+  "title": "Industrial Electronic Technology",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESYS250",
+   "ESYS251",
+   "ESYS254",
+   "ESYS255",
+   "ESYS257",
+   "ESYS269"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6222",
+   "title": "Industrial Electronic Technology - Certificate of Completion",
+   "h1": "Industrial Electronic Technology - Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2943
+ },
+ {
+  "control_number": "42095",
+  "title": "Community and Organizational Leadership in the Justice System",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJ41",
+   "ADMJ42",
+   "ADMJ50",
+   "ADMJ70",
+   "ANTH3",
+   "COMM10",
+   "COMMC1000",
+   "PSYCC1000",
+   "SOCI1"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6253",
+   "title": "Community and Organizational Leadership in the Justice System - Certificate of Achievement",
+   "h1": "Community and Organizational Leadership in the Justice System - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3376
+ },
+ {
+  "control_number": "42104",
+  "title": "Electrician, Inside Wireman Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APEL9701",
+   "APEL9702",
+   "APEL9703",
+   "APEL9704",
+   "APEL9705",
+   "APEL9706",
+   "APEL9707",
+   "APEL9708",
+   "APEL9709",
+   "APEL9710"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6575",
+   "title": "Electrician, Inside Wireman Technology - Certificate of Achievement",
+   "h1": "Electrician, Inside Wireman Technology - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3359
+ },
+ {
+  "control_number": "42110",
+  "title": "Sprinkler Fitter Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APSF9701",
+   "APSF9702",
+   "APSF9703",
+   "APSF9704",
+   "APSF9705",
+   "APSF9706",
+   "APSF9707",
+   "APSF9708",
+   "APSF9709",
+   "APSF9710"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6589",
+   "title": "Sprinkler Fitter Technology - Associate in Science",
+   "h1": "Sprinkler Fitter Technology - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 4027
+ },
+ {
+  "control_number": "42111",
+  "title": "Precision Manufacturing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "APPM9750",
+   "APPM9760A",
+   "APPM9760B",
+   "APPM9765",
+   "APPM9766",
+   "APPM9771A",
+   "APPM9774",
+   "APPM9775",
+   "APPM9776",
+   "APPM9781C"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6582",
+   "title": "Precision Manufacturing - Associate in Science",
+   "h1": "Precision Manufacturing - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 3787
+ },
+ {
+  "control_number": "42112",
+  "title": "Precision Manufacturing",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APPM9750",
+   "APPM9760A",
+   "APPM9760B",
+   "APPM9765",
+   "APPM9766",
+   "APPM9771A",
+   "APPM9775",
+   "APPM9776",
+   "APPM9781C"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6223",
+   "title": "Precision Manufacturing - Certificate of Achievement",
+   "h1": "Precision Manufacturing - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3453
+ },
+ {
+  "control_number": "42129",
+  "title": "Electrician, Inside Wireman Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42133",
+  "title": "Sprinkler Fitter Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APSF9701",
+   "APSF9702",
+   "APSF9703",
+   "APSF9704",
+   "APSF9705",
+   "APSF9706",
+   "APSF9707",
+   "APSF9708",
+   "APSF9709",
+   "APSF9710"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6590",
+   "title": "Sprinkler Fitter Technology - Certificate of Achievement",
+   "h1": "Sprinkler Fitter Technology - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3912
+ },
+ {
+  "control_number": "42528",
+  "title": "Community Health Worker",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.625,
+  "codes_found": [
+   "APHC9701A",
+   "APHC9701B",
+   "APHC9702",
+   "APHC9710",
+   "APHC9711",
+   "APHC9712",
+   "APHC9799A",
+   "APHC9799B",
+   "APHC9799C",
+   "APHC9799D"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6238",
+   "title": "Community Health Worker - Certificate of Achievement",
+   "h1": "Community Health Worker - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3540
+ },
+ {
+  "control_number": "43360",
+  "title": "Sheet Metal Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SHEE9701",
+   "SHEE9702",
+   "SHEE9703",
+   "SHEE9704",
+   "SHEE9705",
+   "SHEE9706",
+   "SHEE9707",
+   "SHEE9708"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6588",
+   "title": "Sheet Metal Technology - Certificate of Achievement",
+   "h1": "Sheet Metal Technology - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3373
+ },
+ {
+  "control_number": "43545",
+  "title": "Construction Electronic Systems Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CEST9701",
+   "CEST9702",
+   "CEST9703",
+   "CEST9704",
+   "CEST9705",
+   "CEST9706"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6571",
+   "title": "Construction Electronic Systems Technology - Certificate of Achievement",
+   "h1": "Construction Electronic Systems Technology - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3493
+ },
+ {
+  "control_number": "43546",
+  "title": "Pipefitting Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PLPF9701",
+   "PLPF9702",
+   "PLPF9703",
+   "PLPF9704",
+   "PLPF9705",
+   "PLPF9706",
+   "PLPF9735",
+   "PLPF9740",
+   "PLPF9745",
+   "PLPF9750"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6579",
+   "title": "Pipefitting Technology - Certificate of Achievement",
+   "h1": "Pipefitting Technology - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3147
+ },
+ {
+  "control_number": "43547",
+  "title": "Roofing and Waterproofing Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APRO9701",
+   "APRO9702",
+   "APRO9703",
+   "APRO9704",
+   "APRO9705",
+   "APRO9706",
+   "APRO9707",
+   "APRO9708",
+   "APRO9709",
+   "APRO9710"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6586",
+   "title": "Roofing and Waterproofing Technology - Certificate of Achievement",
+   "h1": "Roofing and Waterproofing Technology - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3426
+ },
+ {
+  "control_number": "43548",
+  "title": "Telecommunications Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APTE9707",
+   "APTE9714",
+   "APTE9715",
+   "APTE9716",
+   "APTE9718",
+   "APTE9720",
+   "APTE9721"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6592",
+   "title": "Telecommunications Technology - Certificate of Achievement",
+   "h1": "Telecommunications Technology - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3665
+ },
+ {
+  "control_number": "43566",
+  "title": "Electrical Construction",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELEC9701",
+   "ELEC9702",
+   "ELEC9703",
+   "ELEC9704",
+   "ELEC9705",
+   "ELEC9706",
+   "ELEC9707",
+   "ELEC9708"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6573",
+   "title": "Electrical Construction - Certificate of Achievement",
+   "h1": "Electrical Construction - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3400
+ },
+ {
+  "control_number": "43852",
+  "title": "Plumbing Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PLPF9701",
+   "PLPF9702",
+   "PLPF9703",
+   "PLPF9704",
+   "PLPF9705",
+   "PLPF9706",
+   "PLPF9707",
+   "PLPF9708"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6581",
+   "title": "Plumbing Technology - Certificate of Achievement",
+   "h1": "Plumbing Technology - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3347
+ },
+ {
+  "control_number": "43955",
+  "title": "Telecommunications Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APTE9707",
+   "APTE9714",
+   "APTE9715",
+   "APTE9716",
+   "APTE9718",
+   "APTE9720",
+   "APTE9721"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6591",
+   "title": "Telecommunications Technology - Associate in Science",
+   "h1": "Telecommunications Technology - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3453
+ },
+ {
+  "control_number": "43956",
+  "title": "Sheet Metal Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SHEE9701",
+   "SHEE9702",
+   "SHEE9703",
+   "SHEE9704",
+   "SHEE9705",
+   "SHEE9706",
+   "SHEE9707",
+   "SHEE9708"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6587",
+   "title": "Sheet Metal Technology - Associate in Science",
+   "h1": "Sheet Metal Technology - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3478
+ },
+ {
+  "control_number": "43957",
+  "title": "Roofing and Waterproofing Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APRO9701",
+   "APRO9702",
+   "APRO9703",
+   "APRO9704",
+   "APRO9705",
+   "APRO9706",
+   "APRO9707",
+   "APRO9708",
+   "APRO9709",
+   "APRO9710"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6585",
+   "title": "Roofing and Waterproofing Technology - Associate in Science",
+   "h1": "Roofing and Waterproofing Technology - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3632
+ },
+ {
+  "control_number": "43958",
+  "title": "Pipefitting Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PLPF9701",
+   "PLPF9702",
+   "PLPF9703",
+   "PLPF9704",
+   "PLPF9705",
+   "PLPF9706",
+   "PLPF9735",
+   "PLPF9740",
+   "PLPF9745",
+   "PLPF9750"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6578",
+   "title": "Pipefitting Technology - Associate in Science",
+   "h1": "Pipefitting Technology - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3717
+ },
+ {
+  "control_number": "43959",
+  "title": "Electrical Construction",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELEC9701",
+   "ELEC9702",
+   "ELEC9703",
+   "ELEC9704",
+   "ELEC9705",
+   "ELEC9706",
+   "ELEC9707",
+   "ELEC9708"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6572",
+   "title": "Electrical Construction - Associate in Science",
+   "h1": "Electrical Construction - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3618
+ },
+ {
+  "control_number": "43960",
+  "title": "Construction Electronic Systems Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CEST9701",
+   "CEST9702",
+   "CEST9703",
+   "CEST9704",
+   "CEST9705",
+   "CEST9706"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6570",
+   "title": "Construction Electronic Systems Technology - Associate in Science",
+   "h1": "Construction Electronic Systems Technology - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3700
+ },
+ {
+  "control_number": "44016",
+  "title": "Preparation for STEM Chemistry",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM201",
+   "MTH201W",
+   "MTH221W",
+   "MTH222W",
+   "MTH253",
+   "MTH255"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6562",
+   "title": "Preparation for STEM Chemistry - Certificate of Competency",
+   "h1": "Preparation for STEM Chemistry - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3198
+ },
+ {
+  "control_number": "44058",
+  "title": "ESL Composition",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL250",
+   "ESL251"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6549",
+   "title": "ESL Composition - Certificate of Competency",
+   "h1": "ESL Composition - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2388
+ },
+ {
+  "control_number": "44083",
+  "title": "High Beginning Writing Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL220",
+   "ESL225"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6550",
+   "title": "High Beginning Writing Skills - Certificate of Competency",
+   "h1": "High Beginning Writing Skills - Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2370
+ },
+ {
+  "control_number": "44176",
+  "title": "Engineering Technologist",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGR15",
+   "ENGR16",
+   "ENGR36",
+   "ENGR40",
+   "ENGR43",
+   "ENGR45",
+   "ENGR47",
+   "ENGR85",
+   "MTH3",
+   "MTH4",
+   "PHYS4B",
+   "PHYS7B"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6264",
+   "title": "Engineering Technologist - Certificate of Achievement",
+   "h1": "Engineering Technologist - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3261
+ },
+ {
+  "control_number": "44177",
+  "title": "Heavy Duty Coach Mechanic",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APAC9471",
+   "APAC9472",
+   "APAC9473",
+   "APAC9474",
+   "APAC9475",
+   "APAC9476",
+   "APAC9477",
+   "APAC9478"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6239",
+   "title": "Heavy Duty Coach Mechanic - Certificate of Achievement",
+   "h1": "Heavy Duty Coach Mechanic - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 4464
+ },
+ {
+  "control_number": "44178",
+  "title": "Heavy Duty Coach Mechanic",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APAC9471",
+   "APAC9472",
+   "APAC9473",
+   "APAC9474",
+   "APAC9475",
+   "APAC9476",
+   "APAC9477",
+   "APAC9478"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6237",
+   "title": "Heavy Duty Coach Mechanic - Associate in Science",
+   "h1": "Heavy Duty Coach Mechanic - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 4281
+ },
+ {
+  "control_number": "44286",
+  "title": "Residential Sprinkler Fitter Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APSF9711",
+   "APSF9712",
+   "APSF9713",
+   "APSF9714",
+   "APSF9715"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6584",
+   "title": "Residential Sprinkler Fitter Technology - Certificate of Achievement",
+   "h1": "Residential Sprinkler Fitter Technology - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3722
+ },
+ {
+  "control_number": "44356",
+  "title": "Residential Sprinkler Fitter Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APSF9711",
+   "APSF9712",
+   "APSF9713",
+   "APSF9714",
+   "APSF9715"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6583",
+   "title": "Residential Sprinkler Fitter Technology - Associate in Science",
+   "h1": "Residential Sprinkler Fitter Technology - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3916
+ },
+ {
+  "control_number": "44460",
+  "title": "Plumbing Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PLPF9701",
+   "PLPF9702",
+   "PLPF9703",
+   "PLPF9704",
+   "PLPF9705",
+   "PLPF9706",
+   "PLPF9707",
+   "PLPF9708"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6580",
+   "title": "Plumbing Technology - Associate in Science",
+   "h1": "Plumbing Technology - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3565
+ },
+ {
+  "control_number": "44490",
+  "title": "Social Justice Studies, Gender Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM12",
+   "ENGL31",
+   "ENGL32",
+   "ES7",
+   "HIS48",
+   "HIS49",
+   "POSC35",
+   "PSY5",
+   "SOCI3",
+   "SOCI4",
+   "SOCI5",
+   "SOCI6",
+   "SOCI7",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6284",
+   "title": "Social Justice Studies, Gender Studies - Associate in Arts for Transfer",
+   "h1": "Social Justice Studies, Gender Studies - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 4284
+ },
+ {
+  "control_number": "44597",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH3",
+   "COMM10",
+   "COMM11",
+   "COMM12",
+   "COMM2",
+   "COMM20",
+   "COMM3",
+   "COMM46",
+   "COMM48",
+   "COMM50",
+   "COMM6",
+   "COMM70A",
+   "COMMC1000",
+   "ENGLC1001",
+   "ENGLC1003",
+   "MCOM20",
+   "MCOM41",
+   "PSYCC1000",
+   "SOCI1"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6107",
+   "title": "Communication Studies 2.0 - Associate in Arts for Transfer",
+   "h1": "Communication Studies 2.0 - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 4256
+ },
+ {
+  "control_number": "44791",
+  "title": "Modern Policing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJ40",
+   "ADMJ42",
+   "ADMJ50",
+   "ADMJ54",
+   "ADMJ60",
+   "ADMJ61",
+   "ADMJ63",
+   "ADMJ70",
+   "ADMJ80",
+   "ADMJ89",
+   "ANTH3",
+   "BUS19",
+   "COMM11",
+   "COMMC1000",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ES1",
+   "PHIL60",
+   "PSY5",
+   "SOCI1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6561",
+   "title": "Modern Policing - Associate in Science",
+   "h1": "Modern Policing - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 4246
+ },
+ {
+  "control_number": "44800",
+  "title": "Construction Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCH12",
+   "CMGT11",
+   "CMGT12",
+   "CMGT20",
+   "CMGT21",
+   "CMGT22"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6101",
+   "title": "Construction Management - Associate in Science",
+   "h1": "Construction Management - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3447
+ },
+ {
+  "control_number": "44850",
+  "title": "American Sign Language",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM10",
+   "COMM11",
+   "COMM12",
+   "COMM3",
+   "ECD60",
+   "PSCN4",
+   "SL64",
+   "SL65",
+   "SL66",
+   "SL67"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6548",
+   "title": "American Sign Language - Certificate of Achievement",
+   "h1": "American Sign Language - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3402
+ },
+ {
+  "control_number": "44914",
+  "title": "Construction Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CMGT1",
+   "CMGT11",
+   "CMGT12",
+   "CMGT20",
+   "CMGT21",
+   "CMGT22"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6186",
+   "title": "Construction Management - Certificate of Achievement",
+   "h1": "Construction Management - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3228
+ },
+ {
+  "control_number": "44939",
+  "title": "Optical Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "OPTN9701",
+   "OPTN9702",
+   "OPTN9703"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6577",
+   "title": "Optical Technology - Certificate of Achievement",
+   "h1": "Optical Technology - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3216
+ },
+ {
+  "control_number": "45029",
+  "title": "Cal-GETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJ45",
+   "ADMJ50",
+   "ADMJ60",
+   "ANTH1",
+   "ANTH12",
+   "ANTH13",
+   "ANTH13L",
+   "ANTH1L",
+   "ANTH2",
+   "ANTH3",
+   "ANTH4",
+   "ANTH5",
+   "APHC9702",
+   "ARTH1",
+   "ARTH20",
+   "ARTH3",
+   "ARTH6",
+   "ARTH7",
+   "ARTH8",
+   "ARTHC1100",
+   "ARTHC1200",
+   "ASTR10",
+   "ASTR20",
+   "ASTR30",
+   "ASTR45",
+   "BIOS1",
+   "BIOS15",
+   "BIOS18",
+   "BIOS21A",
+   "BIOS21B",
+   "BIOS21C",
+   "BIOS41",
+   "BIOS42",
+   "BIOS43",
+   "BIOS44",
+   "BIOS5",
+   "BUS19",
+   "BUS20",
+   "CHEM10",
+   "CHEM12A",
+   "CHEM12B",
+   "CHEM1A",
+   "CHEM1B",
+   "CHEM30B",
+   "CHEM31",
+   "COMM11",
+   "COMM12",
+   "COMM50",
+   "COMM6",
+   "COMMC1000",
+   "CSCI28",
+   "ECD52",
+   "ECD56",
+   "ECD62",
+   "ECN10",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGL20",
+   "ENGL21",
+   "ENGL22",
+   "ENGL25",
+   "ENGL28",
+   "ENGL31",
+   "ENGL32",
+   "ENGL35",
+   "ENGL41",
+   "ENGL45",
+   "ENGL48",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGLC1003",
+   "ENSC10",
+   "ENSC10L",
+   "ENSC11",
+   "ENSC15",
+   "ENSC15L",
+   "ENST1",
+   "ES1",
+   "ES11",
+   "ES25",
+   "ES4",
+   "ES42",
+   "ES43",
+   "ES5",
+   "ES52",
+   "ES53",
+   "ES6",
+   "ES62",
+   "ES63",
+   "ES7",
+   "FRNC2A",
+   "FRNC2B",
+   "GEO1",
+   "GEO10",
+   "GEO12",
+   "GEO13",
+   "GEO1L",
+   "GEO2",
+   "GEO3",
+   "GEO5",
+   "GEO8",
+   "GEOS1",
+   "GEOS11",
+   "GEOS11L",
+   "GEOS12",
+   "GEOS9",
+   "HIS1",
+   "HIS12",
+   "HIS2",
+   "HIS25",
+   "HIS3",
+   "HIS32",
+   "HIS33",
+   "HIS4",
+   "HIS42",
+   "HIS43",
+   "HIS48",
+   "HIS49",
+   "HIS52",
+   "HIS53",
+   "HIS62",
+   "HIS63",
+   "HISTC1001",
+   "HISTC1002",
+   "HLTH18",
+   "HUMN60",
+   "HUMN68",
+   "JAPN2A",
+   "JAPN2B",
+   "KINE70",
+   "MCOM40",
+   "MCOM41",
+   "MTH1",
+   "MTH15",
+   "MTH16",
+   "MTH2",
+   "MTH21",
+   "MTH22",
+   "MTH3",
+   "MTH33",
+   "MTH33S",
+   "MTH4",
+   "MTH43S",
+   "MTH44",
+   "MTH47",
+   "MTH6",
+   "MTH8",
+   "MUSL1",
+   "MUSL3",
+   "MUSL4",
+   "MUSL8",
+   "PHIL50",
+   "PHIL60",
+   "PHIL65",
+   "PHIL70",
+   "PHOT20",
+   "PHYS11",
+   "PHYS3A",
+   "PHYS3B",
+   "PHYS4A",
+   "PHYS4B",
+   "PHYS4C",
+   "PHYS5",
+   "POLSC1000",
+   "POSC12",
+   "POSC20",
+   "POSC25",
+   "POSC30",
+   "POSC35",
+   "PSCN13",
+   "PSCN4",
+   "PSY12",
+   "PSY2",
+   "PSY3",
+   "PSY33",
+   "PSY4",
+   "PSY5",
+   "PSY6",
+   "PSYCC1000",
+   "RELS50",
+   "RELS65",
+   "SOCI1",
+   "SOCI10",
+   "SOCI2",
+   "SOCI20",
+   "SOCI22",
+   "SOCI3",
+   "SOCI4",
+   "SOCI5",
+   "SOCI6",
+   "SOCI7",
+   "SPA2A",
+   "SPA2B",
+   "STATC1000",
+   "THTR10",
+   "THTR14"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6568",
+   "title": "Cal-GETC - Certificate of Achievement",
+   "h1": "Cal-GETC - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 196,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "45139",
+  "title": "Emergency Medical Services",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOS15",
+   "EMS1",
+   "EMS3",
+   "EMS8"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6255",
+   "title": "Emergency Medical Services - Certificate of Achievement",
+   "h1": "Emergency Medical Services - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2793
+ },
+ {
+  "control_number": "45143",
+  "title": "Emergency Medical Services",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.765,
+  "codes_found": [
+   "BIOS15",
+   "BUS14",
+   "CHEM31",
+   "COMMC1000",
+   "CSCI8",
+   "EMS1",
+   "EMS3",
+   "EMS8",
+   "FT7",
+   "HLTH1",
+   "HLTH18",
+   "HLTH51A",
+   "NUTR1"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6131",
+   "title": "Emergency Medical Services - Associate in Science",
+   "h1": "Emergency Medical Services - Associate in Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 4137
+ },
+ {
+  "control_number": "45175",
+  "title": "Advanced Diagnosis",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.545,
+  "codes_found": [
+   "ATEC10",
+   "ATEC11",
+   "ATEC6A",
+   "ATEC6B",
+   "ATEC8",
+   "ATEC94"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6224",
+   "title": "Advanced Diagnosis - Certificate of Achievement",
+   "h1": "Advanced Diagnosis - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2876
+ },
+ {
+  "control_number": "45213",
+  "title": "Advanced Diagnosis",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATEC206A",
+   "ATEC206B",
+   "ATEC208",
+   "ATEC211",
+   "ATEC294"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6569",
+   "title": "Advanced Diagnosis - Certificate of Completion",
+   "h1": "Advanced Diagnosis - Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3001
+ },
+ {
+  "control_number": "45407",
+  "title": "Medical Assisting - Administrative",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "HLTH51A",
+   "HLTH51B",
+   "MEDA60",
+   "MEDA74",
+   "MEDA76",
+   "MEDA83"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6559",
+   "title": "Medical Assisting - Administrative - Certificate of Achievement",
+   "h1": "Medical Assisting - Administrative - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3878
+ },
+ {
+  "control_number": "45417",
+  "title": "Fire and Life Safety Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APFL9701",
+   "APFL9702",
+   "APFL9703",
+   "APFL9704",
+   "APFL9705",
+   "APFL9706"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6576",
+   "title": "Fire and Life Safety Technician - Certificate of Achievement",
+   "h1": "Fire and Life Safety Technician - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3367
+ },
+ {
+  "control_number": "45650",
+  "title": "Elementary Teacher Education: Integrated Programs",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTH1",
+   "ARTH8",
+   "BIOS1",
+   "BIOS41",
+   "CHEM10",
+   "CHEM30A",
+   "CHEM31",
+   "COMMC1000",
+   "ECD11",
+   "ECD56",
+   "ENGLC1000",
+   "ENGLC1003",
+   "GEOS1",
+   "GEOS11",
+   "GEOS11L",
+   "HIS3",
+   "HISTC1001",
+   "MUSL1",
+   "PHYS11",
+   "POLSC1000",
+   "THTR10"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/7074",
+   "title": "Elementary Teacher Education: Integrated Programs - Associate in Arts for Transfer",
+   "h1": "Elementary Teacher Education: Integrated Programs - Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 3896
+ },
+ {
+  "control_number": "46083",
+  "title": "Public Health",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.765,
+  "codes_found": [
+   "BIOS41",
+   "BIOS42",
+   "BIOS43",
+   "BIOS44",
+   "BUS19",
+   "CHEM1A",
+   "HLTH1",
+   "HLTH18",
+   "HLTH8",
+   "PSCN3",
+   "PSY5",
+   "SOCI2",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/7073",
+   "title": "Public Health - Associate in Science for Transfer",
+   "h1": "Public Health - Associate in Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3907
+ },
+ {
+  "control_number": "46101",
+  "title": "ESL Independent Study",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "ESL250",
+   "ESL251"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/4083/6013",
+   "title": "ESL Composition - Certificate of Competency (noncredit)",
+   "h1": "ESL Composition - Certificate of Competency (noncredit)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.333
+   }
+  },
+  "listed": 3,
+  "text_chars": 2468
+ },
+ {
+  "control_number": "46102",
+  "title": "High Intermediate ESL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "46104",
+  "title": "Preparation for Health Sciences",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "MTH220",
+   "MTH243W",
+   "MTH253"
+  ],
+  "source": {
+   "url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/4083/6065",
+   "title": "Preparation for Statistics and Liberal Arts Math - Certificate of Competency (noncredit)",
+   "h1": "Preparation for Statistics and Liberal Arts Math - Certificate of Competency (noncredit)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.333
+   }
+  },
+  "listed": 6,
+  "text_chars": 3001
+ },
+ {
+  "control_number": "46306",
+  "title": "Optical Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "46307",
+  "title": "Legal Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 12,
+  "text_chars": 0
+ },
+ {
+  "control_number": "46409",
+  "title": "Engineering Industry Preparation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "46504",
+  "title": "Paramedicine",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ }
+]

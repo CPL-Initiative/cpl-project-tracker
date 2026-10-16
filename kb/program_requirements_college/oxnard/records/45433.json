@@ -1,0 +1,369 @@
+{
+ "college": "Oxnard College",
+ "control_number": "45433",
+ "shape": "degree",
+ "title": "Dental Hygiene",
+ "award": "Baccalaureate of Science (B.S.) Degree.",
+ "source_url": "https://catalog.vcccd.edu/oxnard/programs-courses/dental-hygiene/dental-hygiene-bs/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8229,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8229,
+    "output_tokens": 3707,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3707,
+  "output_tokens_details": {
+   "thinking_tokens": 1347
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10706,
+ "ms": 30447,
+ "seconds": 30.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 24,
+   "listed": 25,
+   "share": 0.96,
+   "missing": [
+    "DHR25"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "DHR325"
+   ],
+   "flagged": [
+    "DHR325"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    64.5,
+    68.5
+   ],
+   "stated": [
+    125.5,
+    126.5
+   ],
+   "against": "degree",
+   "ge": [
+    9.0,
+    9.0
+   ],
+   "why": [
+    "the blocks and general education sum to 64.5-68.5; the catalog prints 125.5-126.5 for the degree"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     55.5,
+     55.5
+    ],
+    "stated": [
+     55.5,
+     55.5
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Required Upper Division Dental Hygiene Major Courses",
+   "measure": "units",
+   "total_units": {
+    "min": 55.5,
+    "max": 55.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 0,
+    "max": 4
+   },
+   "ge_pattern": "CSU GE-Breadth, IGETC, or Cal-GETC (lower division); Upper Division General Education",
+   "degree_total": {
+    "min": 125.5,
+    "max": 126.5
+   },
+   "ge_units": {
+    "min": 9,
+    "max": 9
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Provide the highest caliber of comprehensive individualized patient care in a variety of dental health care settings to individuals from diverse socioeconomic, educational, and cultural backgrounds.",
+    "Demonstrate competence in performing the local anesthetic techniques used in the practice of dental hygiene.",
+    "Integrate evidence-based practice with problem solving and critical thinking skills to inform clinical judgement and decision making when constructing a dental hygiene care plan.",
+    "Demonstrate knowledge, skills, and values necessary for positions of responsibility in a variety of healthcare, educational, clinical, business, research, administration, and community settings.",
+    "Use interpersonal skills and cultural awareness to communicate effectively with diverse population groups and with other healthcare providers.",
+    "Manage their fundamental roles both ethically and professionally.",
+    "Pursue life-long growth and development through participation in professional organizations, research, and continuing education."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Upper Division Dental Hygiene Major Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 55.5,
+     "max": 55.5
+    },
+    "courses": [
+     {
+      "code": "DH R310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH R311",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH R312",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH R313",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH R314",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH R315",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH R320",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH R321",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH R322",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH R323",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH R324",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH R325",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DH R430",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH R431",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH R432",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH R433",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH R434",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH R435",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH R436",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH R440",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH R441",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH R442",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH R443",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH R444",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DH R445",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "DH R025",
+    "why": "not in the text; catalog prints DH R325 Periodontics I (2 units) instead, likely the same course renumbered"
+   }
+  ],
+  "notes": [
+   "The catalog text begins mid-way through the lower division prerequisite list (the first course code of the English/critical thinking requirement is cut off). The lower division prerequisites (Total Lower Division Required Prerequisite Units 50-52, including COMM C1000, COMM R102, an Ethnic Studies choice, PSYC C1000/C1000H, SOCI C1000/C1000H and others not shown) are admission prerequisites that largely double-count with general education; they were not recorded as blocks because the list is truncated. A reviewer should check the full page.",
+   "Upper division general education requires three specific courses (COMM R316 3, PSY R437 3, HED R446 3; 9 units). Following the rule that general education courses never go in a block, they are not recorded as a block; ge_units records these 9 printed upper division GE units. Lower division GE patterns print CSU GE-Breadth Minimum Units 39, IGETC Minimum Units 37, or Cal-GETC Minimum Units 34.",
+   "degree_elective_units records the Lower Division Transferable Free Electives across the three GE paths (0-2 with CSU GE, 0-1 with IGETC, 2-4 with Cal-GETC), giving 0-4 overall.",
+   "Total Lower Division Units printed as 60 (CSU GE), 60-61 (IGETC), 60 (Cal-GETC), and 60 - 61 in the summary; Total Upper Division Units 64.5; Total Units Required for the B.S. Degree 125.5 - 126.5.",
+   "DH R440 Advanced Clinical Topics is printed with 2 units in the catalog; the state file stores 1 unit. The printed 2 units are consistent with the 55.5 major total.",
+   "DH R325 Periodontics I is not in the closed list (closed list has DH R025 Periodontics for Dental Hygiene I); recorded as a catalog addition.",
+   "Outcomes come from the page's program student learning outcomes tab for this B.S. page.",
+   "Admission requires an Associate degree with Cal-GETC, IGETC, or CSU GE completed, plus prerequisites, minimum 3.0 GPA; all 300/400-level DH courses require a minimum grade of C or P."
+  ]
+ },
+ "extracted_run": "38842203500"
+}

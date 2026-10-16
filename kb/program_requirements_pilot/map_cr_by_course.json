@@ -1,8 +1,8 @@
 {
- "_what": "MAP's credit recommendations per course at the harvest's forty colleges (the pilot's five, Santa Monica, Irvine Valley, Moreno Valley, Norco, Long Beach City, Chaffey, San Diego City, San Diego Mesa, Bakersfield, Coastline, Cabrillo, Modesto Junior, Palo Verde, Southwestern, Fresno City, El Camino, San Joaquin Delta, Santa Barbara City, Orange Coast, Foothill, Sierra, Fullerton, Citrus, Victor Valley, Monterey Peninsula, Golden West, Cuyamaca, Mt. San Jacinto, MiraCosta, College of the Sequoias, Napa Valley, San Bernardino Valley, Moorpark, Cypress and Evergreen Valley): how many credit recommendations and exhibits MAP holds against each course code, and the exhibit titles behind them. Counts and credential titles only; no student column is read or carried. The ROEP display builder (kb/_build_roep_display.py) reads it as the 'articulated here' kind beside the CER's industry-credential lines.",
+ "_what": "MAP's credit recommendations per course at the harvest's forty-nine colleges (the pilot's five, Santa Monica, Irvine Valley, Moreno Valley, Norco, Long Beach City, Chaffey, San Diego City, San Diego Mesa, Bakersfield, Coastline, Cabrillo, Modesto Junior, Palo Verde, Southwestern, Fresno City, El Camino, San Joaquin Delta, Santa Barbara City, Orange Coast, Foothill, Sierra, Fullerton, Citrus, Victor Valley, Monterey Peninsula, Golden West, Cuyamaca, Mt. San Jacinto, MiraCosta, College of the Sequoias, Napa Valley, San Bernardino Valley, Moorpark, Cypress, Evergreen Valley, Ventura, Oxnard, Santa Ana, Rio Hondo, Palomar, Saddleback, Allan Hancock, Reedley and Chabot): how many credit recommendations and exhibits MAP holds against each course code, and the exhibit titles behind them. Counts and credential titles only; no student column is read or carried. The ROEP display builder (kb/_build_roep_display.py) reads it as the 'articulated here' kind beside the CER's industry-credential lines.",
  "_source": "public.map_college_cr_unit (reviewer-gated) joined to map_colleges by college_id; exhibit titles from map_ace_exhibit_titles, else chatbox_exhibits. A college_course string naming several courses ('ADJ-13 ...(3.0), ADJ-19 ...(3.0)') counts toward each course it names. Course code = the SUBJ-NUM token with the hyphen read as a space.",
- "_read_at": "2026-10-15",
- "_read_by": "SkyHawthorn (S395) through the Supabase MCP, wave 3: Cypress (41 course codes; md5 f23dc34b counts, 09bded16 titles), Napa Valley (25; 46024a39, 1cb28039), San Bernardino Valley (83; f18f1313, 4e38c8e4), Moorpark (4; 61571f0e, 0064e895), College of the Sequoias (3; 80563542, 0bba198e), Evergreen Valley (2; d32576cf, 0540a44c); Golden West, Cuyamaca, Mt. San Jacinto and MiraCosta (none) added. SkyMadrone (S394) through the Supabase MCP, second batch: Fullerton (6 course codes; md5 057fed7f counts, 11d31a76 titles), Monterey Peninsula (3; eb85fce8, 1794bde6), Citrus and Victor Valley (none) added. SkyMadrone (S394) through the Supabase MCP: Santa Barbara City, Orange Coast, Foothill and Sierra added; MAP names no course code at any of the four (map_college_cr_unit rows carry no SUBJ-NUM college_course there). Fullerton (6 course codes; md5 057fed7f counts, 11d31a76 titles) and Diablo Valley (2; 0daebf68, f20f5e51) were read the same day, matched in SQL, and are held until their records load. Earlier: SkyTamarack (S392) through the Supabase MCP: El Camino (no course code: its one college_course reads \"-\") and San Joaquin Delta (1 course code; md5 c814004d counts, d7d7ab68 titles; its \"CSU GE E\" line names no course) added. Earlier: SkyPersimmon (S389) through the Supabase MCP: Southwestern (3 course codes; md5 220de7f7 counts, b4f52863 titles) and Fresno City (2; afd80e74, 6b4b8433) added. Earlier: SkyHazel (S385) through the Supabase MCP: Modesto Junior (162 course codes) and Palo Verde (58) added; the per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads 44f69ec1a24823e14935781dbd760bd8 and 4acabc5730dedeb1e0f28194796eb23c, and the md5 over each code's titles (code#title#source#recs, in the read's order) 30765bf9ceef64b44a2e862b58111469 and 83bbe816ab4eb109b72be382c170d47a, in SQL and over the filed rows. Earlier: SkySpruce (S383) through the Supabase MCP: Cabrillo added (112 course codes); the per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads 51b488541fdab60ea9e4d093eb052c0a and the md5 over each code's titles (code#title#source#recs, in the read's order) d71fa73bd6952487451eaeafb878f3eb, in SQL and over the filed rows. Earlier: SkyRowan (S381) through the Supabase MCP: Bakersfield (100 course codes) and Coastline (26) added; per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads c58de704f09a7b58007336979431dace and 8bccde4ad1bae0d610b6de34413e24e9 in SQL and over the filed rows. Earlier: SkyCypress (S373) through the Supabase MCP: San Diego Mesa added (44 course codes); the per-college md5 over code|recs|exhibits|untitled reads 9ad02bf038663b2c19ac0c6b8aed2574 and the md5 over each code's titles (title#source#recs, in the read's order) 38e86115426ffd0ca2856d3ad6713150, in SQL and over the filed rows. Earlier: SkyLaurel (S369) through the Supabase MCP: Chaffey (94 course codes) and San Diego City (33) added; per-college md5 over code|recs|exhibits|untitled reads 115340c8a405300f47c2bd0223964f68 and 249410c6592148fbf3beb7b68b7f1cd0 in SQL and over the filed rows. Earlier: SkyCedar (S363) through the Supabase MCP: Long Beach City added (33 course codes; the per-course fingerprint over code, recs, exhibits, untitled exhibits and titles reads 5c7d3a90393e710daa4f686a2f56c917 in SQL and over the filed rows). Earlier: SkyFern (S358) through the Supabase MCP: Moreno Valley (106 course codes) and Norco (82) added; Riverside City re-read in full and equal to the 2026-10-06 read on all 34 codes (md5 feff937a5b5c8320029a06ab06a97243). Earlier: SkyLedger (S340) through the Supabase MCP. Santa Monica and Irvine Valley were read in full. The pilot's five were proved against the 2026-10-04 read by a fingerprint per course; the four courses that differed (Riverside MAG 51; West LA AVIATEK 002, 005 and 017: one exhibit title each, and one credit recommendation fewer on AVIATEK 002) were re-read. Every college's fingerprint matches the live read.",
+ "_read_at": "2026-10-16",
+ "_read_by": "SkyJacaranda (S396) through the Supabase MCP, wave 4: Santa Ana (83 course codes; md5 8cc90680 counts, 51ec66e8 titles, 05f6a23e exhibits by source), Reedley (24; 10515015, ed3bf609, d817484a), Ventura (4; 959aa3a8, b7841475, 74b4ac39), Allan Hancock (3; f784b555, 456ddf45, f07e8cd7), Oxnard (2; e3758fea, e3fdf5c4, 685d8c10); Rio Hondo, Palomar, Saddleback and Chabot (none: their few college_course strings name no SUBJ-NUM code) added, each matched in SQL ahead of its load. SkyHawthorn (S395) through the Supabase MCP, wave 3: Cypress (41 course codes; md5 f23dc34b counts, 09bded16 titles), Napa Valley (25; 46024a39, 1cb28039), San Bernardino Valley (83; f18f1313, 4e38c8e4), Moorpark (4; 61571f0e, 0064e895), College of the Sequoias (3; 80563542, 0bba198e), Evergreen Valley (2; d32576cf, 0540a44c); Golden West, Cuyamaca, Mt. San Jacinto and MiraCosta (none) added. SkyMadrone (S394) through the Supabase MCP, second batch: Fullerton (6 course codes; md5 057fed7f counts, 11d31a76 titles), Monterey Peninsula (3; eb85fce8, 1794bde6), Citrus and Victor Valley (none) added. SkyMadrone (S394) through the Supabase MCP: Santa Barbara City, Orange Coast, Foothill and Sierra added; MAP names no course code at any of the four (map_college_cr_unit rows carry no SUBJ-NUM college_course there). Fullerton (6 course codes; md5 057fed7f counts, 11d31a76 titles) and Diablo Valley (2; 0daebf68, f20f5e51) were read the same day, matched in SQL, and are held until their records load. Earlier: SkyTamarack (S392) through the Supabase MCP: El Camino (no course code: its one college_course reads \"-\") and San Joaquin Delta (1 course code; md5 c814004d counts, d7d7ab68 titles; its \"CSU GE E\" line names no course) added. Earlier: SkyPersimmon (S389) through the Supabase MCP: Southwestern (3 course codes; md5 220de7f7 counts, b4f52863 titles) and Fresno City (2; afd80e74, 6b4b8433) added. Earlier: SkyHazel (S385) through the Supabase MCP: Modesto Junior (162 course codes) and Palo Verde (58) added; the per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads 44f69ec1a24823e14935781dbd760bd8 and 4acabc5730dedeb1e0f28194796eb23c, and the md5 over each code's titles (code#title#source#recs, in the read's order) 30765bf9ceef64b44a2e862b58111469 and 83bbe816ab4eb109b72be382c170d47a, in SQL and over the filed rows. Earlier: SkySpruce (S383) through the Supabase MCP: Cabrillo added (112 course codes); the per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads 51b488541fdab60ea9e4d093eb052c0a and the md5 over each code's titles (code#title#source#recs, in the read's order) d71fa73bd6952487451eaeafb878f3eb, in SQL and over the filed rows. Earlier: SkyRowan (S381) through the Supabase MCP: Bakersfield (100 course codes) and Coastline (26) added; per-college md5 over code|recs|exhibits|untitled (codes in C order, newline-joined) reads c58de704f09a7b58007336979431dace and 8bccde4ad1bae0d610b6de34413e24e9 in SQL and over the filed rows. Earlier: SkyCypress (S373) through the Supabase MCP: San Diego Mesa added (44 course codes); the per-college md5 over code|recs|exhibits|untitled reads 9ad02bf038663b2c19ac0c6b8aed2574 and the md5 over each code's titles (title#source#recs, in the read's order) 38e86115426ffd0ca2856d3ad6713150, in SQL and over the filed rows. Earlier: SkyLaurel (S369) through the Supabase MCP: Chaffey (94 course codes) and San Diego City (33) added; per-college md5 over code|recs|exhibits|untitled reads 115340c8a405300f47c2bd0223964f68 and 249410c6592148fbf3beb7b68b7f1cd0 in SQL and over the filed rows. Earlier: SkyCedar (S363) through the Supabase MCP: Long Beach City added (33 course codes; the per-course fingerprint over code, recs, exhibits, untitled exhibits and titles reads 5c7d3a90393e710daa4f686a2f56c917 in SQL and over the filed rows). Earlier: SkyFern (S358) through the Supabase MCP: Moreno Valley (106 course codes) and Norco (82) added; Riverside City re-read in full and equal to the 2026-10-06 read on all 34 codes (md5 feff937a5b5c8320029a06ab06a97243). Earlier: SkyLedger (S340) through the Supabase MCP. Santa Monica and Irvine Valley were read in full. The pilot's five were proved against the 2026-10-04 read by a fingerprint per course; the four courses that differed (Riverside MAG 51; West LA AVIATEK 002, 005 and 017: one exhibit title each, and one credit recommendation fewer on AVIATEK 002) were re-read. Every college's fingerprint matches the live read.",
  "_refresh": "By hand, the way kb/ccr_cpl_funnel.json is refreshed: run kb/program_requirements_pilot/map_cr_by_course.sql through the Supabase MCP when the funnel reloads (map-custom-report-load.yml) or the harvest adds a college, and file the rows here.",
  "colleges": {
   "Bakersfield College": {
@@ -28793,6 +28793,2399 @@
   "Golden West College": {},
   "Cuyamaca College": {},
   "Mt. San Jacinto College": {},
-  "MiraCosta College": {}
+  "MiraCosta College": {},
+  "Ventura College": {
+   "CT V64": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Constructionman",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "HED V01": {
+    "recs": 1,
+    "titles": null,
+    "exhibits": 1,
+    "untitled_exhibits": 1,
+    "exhibits_by_source": {
+     "unnamed": 1
+    }
+   },
+   "KIN V10": {
+    "recs": 1,
+    "titles": null,
+    "exhibits": 1,
+    "untitled_exhibits": 1,
+    "exhibits_by_source": {
+     "unnamed": 1
+    }
+   },
+   "KIN V26": {
+    "recs": 1,
+    "titles": null,
+    "exhibits": 1,
+    "untitled_exhibits": 1,
+    "exhibits_by_source": {
+     "unnamed": 1
+    }
+   }
+  },
+  "Oxnard College": {
+   "HED R101": {
+    "recs": 1,
+    "titles": null,
+    "exhibits": 1,
+    "untitled_exhibits": 1,
+    "exhibits_by_source": {
+     "unnamed": 1
+    }
+   },
+   "KIN R141": {
+    "recs": 1,
+    "titles": null,
+    "exhibits": 1,
+    "untitled_exhibits": 1,
+    "exhibits_by_source": {
+     "unnamed": 1
+    }
+   }
+  },
+  "Santa Ana College": {
+   "ACCT 102": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Intro to Managerial Accounting",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "AUTO 102": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Automotive Service Excellence (ASE) G1 Certificate",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Automotive Services Excellence G1 Certificate",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "VAUTO 668: Introduction to Automotive Vehicle Systems - Lincoln Education Center",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 3,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 3
+    }
+   },
+   "AUTO 111": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Automotive Services Excellence 1 (A1) Certificate",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "AUTO 112": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Automotive Services Excellence 2 (A2) Certificate",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "AUTO 113": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Automotive Services Excellence 3 (A3) Certificate",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "AUTO 114": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Automotive Services Excellence 4 (A4) Certificate",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "AUTO 115": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Automotive Services Excellence 5 (A5) Certificate",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "AUTO 116": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Auto Service Excellence A6",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Automotive Services Excellence 6 (A6) Certificate",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "AUTO 116B": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Automotive Services Excellence 6 (A6) Certificate",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Automotive Technology Electrical Fundamentals (116A/B)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "AUTO 117": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Automotive Services Excellence 7 (A7) Certificate",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "AUTO 118": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Automotive Services Excellence 8 (A8) Certificate",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "AUTO 119": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Automotive Service Excellence (A9)",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Automotive Service Excellence (ASE) A9 Certificate Light Vehicle Diesel Engines",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "AUTO 216": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Automotive Services Excellence  6 (A6) Certificate Electrical/Electronic Systems",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "BIOL 190": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Honors Biology & Advanced Placement Biology - Mater Dei High School",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "BIOL 190L": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Honors Biology & Advanced Placement Biology - Mater Dei High School",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "BUS 100": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Fundamentals of Business - Valley High School (Mr. Scanlon)",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Fundamentals of Business - Valley High School (Ms. Santiago)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "BUS 150": {
+    "recs": 3,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Aerographer's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aerographer's Mate (3/22-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aircrewmen Mechanical (AWF) (3/22-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "AN/TRC-170 Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Assault Amphibious Vehicle (AAV)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Automated Logistical Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Ordnanceman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Ordnanceman (AO)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Combat Medic Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Construction Electrician (CE)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Culinary Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Engineering Aide",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Equipment Operator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Field Artillery Fire Controlman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Global Command and Control System Common Operational Picture/Maritime (GCCS COP/M) Operator 4.X",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Hospital Corpsman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Hospitalman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "HospitalMan",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Human Resources Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantry Unit Leader",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Logistics Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "M1A1 Tank Crewman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Machinist's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Wheeled Vehicle Mechanic",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 26,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 26
+    }
+   },
+   "CDEV 107": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Intermediate Child Development (Formerly Child Development) - Century High School",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Intermediate Child Development (Formerly Child Development) - Santa Ana High School",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "CDEV 114": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Intermediate Education or Careers in Education - Century High School",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CMPR 138": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Signal Support Systems Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Tactical Computer Network Operator (TCNO)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Unit Supply Specialist",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 3,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 3
+    }
+   },
+   "CMPR 153": {
+    "recs": 3,
+    "titles": [
+     {
+      "recs": 2,
+      "title": "TATS Signal Support Systems Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "CompTIA A+ Certification",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Disbursing Clerk, Class A1",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Machinist's Mates, Nuclear Power",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Technical Engineer",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 5,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 4,
+     "MAP": 1
+    }
+   },
+   "CMPR 155": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "CompTIA A+ Certification",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CMST 101": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Instructional Delivery Continuum (IDC) - Journeyman Instructor Training (JIT)",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "CULN 110": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Intermediate Culinary Arts (Formerly Culinary Arts) - Valley High School",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "VFOOD 210: ServeSafe Food Protection Manager Certification Exam Prep, Review, & Practice",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "CULN 140": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "VFOOD 220: Introduction to Baking & Pastry",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "DETT 181": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Automotive Services Excellence  8 (T8) Certificate- Preventive Maintenance & Inspection (PMI)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "DM 112": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Introduction to Video Editing and Postproduction",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "DM 150": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Producing and Directing",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "EDUC 114": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Intermediate Education or Careers in Education - Century High School",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FAC 007": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Fire Service Strength and Conditioning",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FAC 008": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Fire Service Physical Fitness",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FAC 060A": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Fire Fighter 1 Certification (CFSTES)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "FAC 060B": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Fire Fighter 1 Certification (CFSTES)",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Fire Fighter 1: Haz Mat + WMD",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "FAC 060C": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Fire Fighter 1 Certification (CFSTES)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FAC 079A": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "S-339 Division/Group Supervisor- ALL RISK (Wildland Fire Fighter)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FOT 032": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ICS 300: Intermediate Incident Command System for Expanding Incidents (2019)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FOT 033": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "ICS 400: Advanced Incident Command System for Command and General Staff Complex Incidents (2019)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FOT 044": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Fire Investigation 1A: Basic Fire Investigation - CSFM",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FOT 130A": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 2,
+      "title": "SFT Fire Inspector 1 Certification",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Fire Inspector 1 Certification (IFSAC/ProBoard)",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Fire Inspector 1A: Duties and Administration",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 3,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 3
+    }
+   },
+   "FOT 130B": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 2,
+      "title": "SFT Fire Inspector 1 Certification",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Fire Inspector 1 Certification (IFSAC/ProBoard)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "FOT 130C": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 2,
+      "title": "SFT Fire Inspector 1 Certification",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Fire Inspector 1 Certification (IFSAC/ProBoard)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "FOT 130D": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "SFT Fire Inspector 1 Certification",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FOT 136": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Fire Inspector 2 (IFSAC/ProBoard)",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Fire Inspector 2A: Fire Prevention Administration (+Work Experience)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "FOT 137": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Fire Inspector 2 (IFSAC/ProBoard)",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Fire Inspector 2B: Fire and Life Safety Requirements (+Work Experience)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "FOT 138": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Fire Inspector 2 (IFSAC/ProBoard)",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Fire Inspector 2C: Inspecting New and Existing Fire and Life Safety Systems and Equipment (+Work Experience)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "FOT 139": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Fire Inspector 2D: Hazardous Materials, Operations, and Processes",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FOT 150A": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Fire Officer II Certification (ProBoard)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FOT 150B": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Fire Officer II Certification (ProBoard)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FOT 150C": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Fire Officer II Certification (ProBoard)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FOT 150D": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Fire Officer II Certification (ProBoard)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FOT 150E": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "NIMS ICS All-Hazards Incident Commander (ICT3)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FOT 205": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Fire Service Instructor 1 - IFSAC/ProBoard",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FOT 206": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Fire Instructor 2 (ProBoard)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FOT 273A": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Fire Company Officer 3 Certification (IFSAC or ProBoard Certifications)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FOT 273B": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Fire Company Officer 3 Certification (IFSAC or ProBoard Certifications)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FOT 273C": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Fire Company Officer 3 Certification (IFSAC or ProBoard Certifications)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FOT 273D": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Fire Company Officer 3 Certification (IFSAC or ProBoard Certifications)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FTC 101": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Fire Science- College and Career Advantage",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Firefighter 1 Certification",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FTC 101 Fire Protection Organization (A)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 3,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 3
+    }
+   },
+   "FTC 102": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Engineering Professional Apprenticeship Career Tract (EPACT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Firefighter 1 Certification",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1,
+     "MAP": 1
+    }
+   },
+   "FTC 104": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Fire Inspector 1 Certification (IFSAC/ProBoard)",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "SFT Fire Inspector 1 Certification",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "FTC 105": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Fire Inspector 2 (IFSAC/ProBoard)",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Firefighter 1 Certification",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "FTC 106": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Fire Inspector 1 Certification (IFSAC/ProBoard)",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "SFT Fire Inspector 1 Certification",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "FTC 121L": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Firefighter 1 Certification",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "KNAQ 201A": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Recruit Training",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "MA 051A": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Hospitalman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Intermediate Patient Care (Formerly Medical Core) - Godinez High School",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Intermediate Patient Care (Formerly Medical Core) - Santa Ana High School",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Intermediate Patient Care (Formerly Medical Core) - Segerstrom High School",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Medical Core - El Modena High School",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Medical Core - Orange High School",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "Medical Core - Villa Park High School",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 7,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1,
+     "MAP": 6
+    }
+   },
+   "MA 054": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Medical Insurance Billing and Coding",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "OTA 100": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Certified Occupational Therapy Assistant (COTA®) from National Board Certification of Occupational Therapy (NBCOT)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "OTA 101": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Certified Occupational Therapy Assistant (COTA®) from National Board Certification of Occupational Therapy (NBCOT)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "OTA 101L": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Certified Occupational Therapy Assistant (COTA®) from National Board Certification of Occupational Therapy (NBCOT)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "OTA 102": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Certified Occupational Therapy Assistant (COTA®) from National Board Certification of Occupational Therapy (NBCOT)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "OTA 102L": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Certified Occupational Therapy Assistant (COTA®) from National Board Certification of Occupational Therapy (NBCOT)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "OTA 103": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Certified Occupational Therapy Assistant (COTA®) from National Board Certification of Occupational Therapy (NBCOT)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "OTA 103L": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Certified Occupational Therapy Assistant (COTA®) from National Board Certification of Occupational Therapy (NBCOT)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "OTA 110": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Certified Occupational Therapy Assistant (COTA®) from National Board Certification of Occupational Therapy (NBCOT)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "OTA 111": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Certified Occupational Therapy Assistant (COTA®) from National Board Certification of Occupational Therapy (NBCOT)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "OTA 115": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Certified Occupational Therapy Assistant (COTA®) from National Board Certification of Occupational Therapy (NBCOT)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "OTA 120": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Certified Occupational Therapy Assistant (COTA®) from National Board Certification of Occupational Therapy (NBCOT)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "OTA 130": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Certified Occupational Therapy Assistant (COTA®) from National Board Certification of Occupational Therapy (NBCOT)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "OTA 201": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Certified Occupational Therapy Assistant (COTA®) from National Board Certification of Occupational Therapy (NBCOT)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "OTA 202": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Certified Occupational Therapy Assistant (COTA®) from National Board Certification of Occupational Therapy (NBCOT)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "OTA 203": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Certified Occupational Therapy Assistant (COTA®) from National Board Certification of Occupational Therapy (NBCOT)",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "PARA 120": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Paralegal Computers Law Office",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "WELD 101": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "VCNST 101: Introduction to Welding",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   }
+  },
+  "Rio Hondo College": {},
+  "Palomar College": {},
+  "Saddleback College": {},
+  "Allan Hancock College": {
+   "ACCT 327": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Personnel Specialist Class 'A' School",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "HED 100": {
+    "recs": 1,
+    "titles": null,
+    "exhibits": 1,
+    "untitled_exhibits": 1,
+    "exhibits_by_source": {
+     "unnamed": 1
+    }
+   },
+   "PE 140": {
+    "recs": 1,
+    "titles": null,
+    "exhibits": 1,
+    "untitled_exhibits": 1,
+    "exhibits_by_source": {
+     "unnamed": 1
+    }
+   }
+  },
+  "Reedley College": {
+   "AMT 10": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FAA Certificate: Mechanic - Airframe",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FAA Certificate: Mechanic - Airframe & Powerplant",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "AMT 20": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FAA Certificate: Mechanic - Airframe",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FAA Certificate: Mechanic - Airframe & Powerplant",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "AMT 30": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FAA Certificate: Mechanic - Airframe",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FAA Certificate: Mechanic - Airframe & Powerplant",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "AMT 40": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FAA Certificate: Mechanic - Airframe",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FAA Certificate: Mechanic - Airframe & Powerplant",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "AMT 50": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FAA Certificate: Mechanic - Airframe",
+      "source": "MAP"
+     },
+     {
+      "recs": 1,
+      "title": "FAA Certificate: Mechanic - Airframe & Powerplant",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 2
+    }
+   },
+   "AMT 60": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FAA Certificate: Mechanic - Airframe & Powerplant",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "AMT 70": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FAA Certificate: Mechanic - Airframe & Powerplant",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "AMT 80": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FAA Certificate: Mechanic - Airframe & Powerplant",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "BA 15": {
+    "recs": 3,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Assault Amphibious Vehicle Commander",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Electrician's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Electronics Technician (AT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Electronics Technician (AT) (4/21-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Machinist's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Ordnanceman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Ordnanceman (AO)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Structural Mechanic, Safety Equipment",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Distributed Leader I",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fire Controlman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fire Controlman (FC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fixed-Wing Aircraft Crew Masters, KC-130",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Gunner's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Gunner's Mate (GM)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Hull Maintenance Technician",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantryman Basic Noncommissioned Officer (NCO)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Information Systems Technician (3/22-Pres)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Logistics Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Machinist's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Signal Support Systems Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Sonar Technician (Surface) (STG)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Structured Self Development (SSD) I",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Supply Administration and Operations Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warehouse Clerk",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warrior Leader (AC)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Wheeled Vehicle Mechanic",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 27,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 27
+    }
+   },
+   "COUN 53": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Recruit Basic Military Training (BMT)",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1
+    }
+   },
+   "CRIM 1": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Military Police Basic",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "POST - Peace Officer Standards and Training - Basic Academy Certificate",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 1,
+     "MAP": 1
+    }
+   },
+   "CRIM 11": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "POST - Peace Officer Standards and Training - Basic Academy Certificate",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CRIM 20": {
+    "recs": 3,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Military Police One Station Unit Training (OSUT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Corrections by Correspondence",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Internment/Resettlement Specialist Advanced Individual Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "POST - Peace Officer Standards and Training - Basic Academy Certificate",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 4,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 3,
+     "MAP": 1
+    }
+   },
+   "CRIM 3": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "POST - Peace Officer Standards and Training - Basic Academy Certificate",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CRIM 4": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "POST - Peace Officer Standards and Training - Basic Academy Certificate",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CRIM 5": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "POST - Peace Officer Standards and Training - Basic Academy Certificate",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CRIM 6": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "POST - Peace Officer Standards and Training - Basic Academy Certificate",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "CRIM 7": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Military Police One Station Unit Training (OSUT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Police Basic",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 2
+    }
+   },
+   "CRIM 8": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "Basic Military Police One Station Unit Training (OSUT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Master-At-Arms",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Military Working Dog Handler",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "POST - Peace Officer Standards and Training - Basic Academy Certificate",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 4,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 3,
+     "MAP": 1
+    }
+   },
+   "FLGHT 101": {
+    "recs": 1,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "FLIGHT 101",
+      "source": "MAP"
+     }
+    ],
+    "exhibits": 1,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "MAP": 1
+    }
+   },
+   "FOR 91": {
+    "recs": 5,
+    "titles": [
+     {
+      "recs": 3,
+      "title": "Basic Combat Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 3,
+      "title": "Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Indirect Fire Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "M1A1 Abrams Armor Crewman One Station Unit Training (OSUT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Recruit Training Master FY11",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Basic Infantry Marine",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fire Control Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantry Mortar Leader",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Infantryman Basic Noncommissioned Officer (NCO)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Marine Combat Training (MCT)",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 10,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 10
+    }
+   },
+   "IS 15": {
+    "recs": 3,
+    "titles": [
+     {
+      "recs": 1,
+      "title": "AH-64D Armament/Electrical/Avionics Systems Repairer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Electronics Technician (AT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Ordnanceman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Aviation Ordnanceman (AO)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Avionic Mechanic",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Electrician's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Fire Controlman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Light Wheel Vehicle Mechanic",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Logistics Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Machinist's Mate",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Special Warfare Operator",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "TATS Signal Support Systems Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Unit Supply Specialist",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Warehouse Clerk",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Wheeled Vehicle Mechanic",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 15,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 15
+    }
+   },
+   "PE 6": {
+    "recs": 10,
+    "titles": [
+     {
+      "recs": 4,
+      "title": "Basic Combat Training",
+      "source": "ACE"
+     },
+     {
+      "recs": 3,
+      "title": "Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 3,
+      "title": "M1A1 Abrams Armor Crewman One Station Unit Training (OSUT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 3,
+      "title": "Recruit Basic Military Training (BMT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 2,
+      "title": "Indirect Fire Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Airborne",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Basic Infantry Marine",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Basic Underwater Demolition/S Basic Orientation, 1st Phase Through Hell Week",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Basic Underwater Demolition/SEAL (BUD/S) Post Hell Week 1st, 2nd, & 3rd Phase",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Marine Combat Training (MCT)",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Master Fitness Trainer",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Naval Aircrewman Candidate School",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Naval Special Warfare Lead Breacher",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "OSUT-Indirect Fire Infantryman",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Recruit Training Master FY11",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "SEAL Qualification Training",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 16,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 16
+    }
+   },
+   "PE 8": {
+    "recs": 2,
+    "titles": [
+     {
+      "recs": 2,
+      "title": "Recruit Training Master FY11",
+      "source": "ACE"
+     },
+     {
+      "recs": 1,
+      "title": "Basic Combat Training",
+      "source": "ACE"
+     }
+    ],
+    "exhibits": 2,
+    "untitled_exhibits": 0,
+    "exhibits_by_source": {
+     "ACE": 2
+    }
+   }
+  },
+  "Chabot College": {}
  }
 }

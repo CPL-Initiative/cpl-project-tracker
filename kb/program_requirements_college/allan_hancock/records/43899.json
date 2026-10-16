@@ -1,0 +1,215 @@
+{
+ "college": "Allan Hancock College",
+ "control_number": "43899",
+ "shape": "certificate",
+ "title": "Substance Abuse and Treatment Studies",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://hancockcollege.curriqunet.com/catalog/iq/28545/28876/30932",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9930,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9930,
+    "output_tokens": 1283,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1283,
+  "output_tokens_details": {
+   "thinking_tokens": 317
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06538,
+ "ms": 11198,
+ "seconds": 11.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    21.0,
+    21.0
+   ],
+   "stated": [
+    21.0,
+    21.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Substance Abuse and Treatment Studies - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 21,
+    "max": 21
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Advanced Understanding of Addiction Dynamics: Students will be able to demonstrate an advanced understanding of the complex dynamics of addiction, including the biological, psychological, and social factors that contribute to its development and progression.",
+    "Evidence-Based Treatment Approaches: Students will develop the skills to effectively apply evidence-based treatment approaches in addiction treatment.",
+    "Cultural Competence in Addiction Treatment: Students will develop cultural competence in working with diverse populations affected by addiction.",
+    "Ethical and Legal Considerations in Addiction Treatment: Students will gain a comprehensive understanding of the ethical and legal issues that arise in addiction treatment."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required core courses (21 units):",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 21,
+     "max": 21
+    },
+    "courses": [
+     {
+      "code": "HUSV 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUSV 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUSV 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSY 106",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC 106",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUSV 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUSV 135",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUSV 130",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUSV 131",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "HUSV 110 is printed as '( same as PSY 106 , SOC 106 )'; the cross-listed PSY 106 and SOC 106 are recorded as alternatives. The catalog prints no units beside them separately (the closed list stores 3 each).",
+   "The description names work settings (outpatient clinics, residential treatment centers, community organizations, hospitals) but no careers or job titles, so careers is empty.",
+   "A Suggested Course Sequence repeats the same seven courses totaling 21.0 units; it was not recorded as separate blocks."
+  ]
+ },
+ "extracted_run": "38843474519"
+}

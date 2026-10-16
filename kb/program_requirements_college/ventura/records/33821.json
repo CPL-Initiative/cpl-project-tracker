@@ -1,0 +1,168 @@
+{
+ "college": "Ventura College",
+ "control_number": "33821",
+ "shape": "certificate",
+ "title": "Architectural Technology",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/architecture/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8841,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8841,
+    "output_tokens": 563,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 563,
+  "output_tokens_details": {
+   "thinking_tokens": 137
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.04662,
+ "ms": 6433,
+ "seconds": 6.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 7,
+   "share": 0.0,
+   "missing": [
+    "ARCHV23",
+    "ARCHV24",
+    "ARCHV25",
+    "ARCHV31",
+    "ARCHV32",
+    "DRFTV5A",
+    "DRFTV5B"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "No program requirements section in the supplied text (course descriptions only)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ARCH V23",
+    "why": "only in course descriptions; no certificate requirements in the text"
+   },
+   {
+    "code": "ARCH V24",
+    "why": "only in course descriptions; no certificate requirements in the text"
+   },
+   {
+    "code": "ARCH V25",
+    "why": "only in course descriptions; no certificate requirements in the text"
+   },
+   {
+    "code": "ARCH V31",
+    "why": "only in course descriptions; no certificate requirements in the text"
+   },
+   {
+    "code": "ARCH V32",
+    "why": "only in course descriptions; no certificate requirements in the text"
+   },
+   {
+    "code": "DRFT V05A",
+    "why": "named only as same-as or prerequisite in course descriptions; no certificate requirements in the text"
+   },
+   {
+    "code": "DRFT V05B",
+    "why": "named only as same-as for ARCH V24 in course descriptions; no certificate requirements in the text"
+   }
+  ],
+  "notes": []
+ },
+ "extracted_run": "38756014587"
+}

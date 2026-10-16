@@ -1,0 +1,329 @@
+{
+ "college": "Chabot College",
+ "control_number": "39729",
+ "shape": "degree",
+ "title": "LVN-RN",
+ "award": "A.S. Degree",
+ "source_url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6220",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7962,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7962,
+    "output_tokens": 2871,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2871,
+  "output_tokens_details": {
+   "thinking_tokens": 1011
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08927,
+ "ms": 23987,
+ "seconds": 24.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 16,
+   "listed": 16,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    44.5,
+    44.5
+   ],
+   "stated": [
+    19.5,
+    19.5
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 44.5-44.5; the catalog states 19.5-19.5"
+   ],
+   "degree": {
+    "pass": false,
+    "status": "unequal",
+    "computed": [
+     85.0,
+     85.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     22.0,
+     22.0
+    ],
+    "why": [
+     "the blocks and general education sum to 85.0-85.0; the catalog prints 60.0-60.0 for the degree"
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Program Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 19.5,
+    "max": 19.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 18.5,
+    "max": 18.5
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 22,
+    "max": 22
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Incorporate the core of knowledge unique to the nursing profession in the delivery of health care in acute, chronic, or community health settings.",
+    "Utilize the nursing process to provide care for clients, families and significant others with diverse health needs and practices.",
+    "Practice within the profession‘s ethical and legal framework.",
+    "Use critical thinking skills in decisions related to managing care for groups of clients.",
+    "Respond to the demands of rapidly changing information technology by incorporating computer literacy in health care delivery and utilizing the internet for research."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "PROGRAM PREREQUISITES:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOS 42",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOS 43",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOS 44",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM 10",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "REQUIRED COURSES FOR LVN-RN (after advanced standing application submitted, 2.5 units):",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 2.5,
+     "max": 2.5
+    },
+    "courses": [
+     {
+      "code": "NURS 70",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 70L",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 84",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "NURSING PROGRAM COURSES FOR ADMITTED STUDENTS: (17 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 17,
+     "max": 17
+    },
+    "courses": [
+     {
+      "code": "NURS 53",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 60B",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 60C",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Courses Needed to Continue for a BSN",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSY 5",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Section text begins mid-description; the program heading itself is cut off, so section_heading uses 'Program Requirements'.",
+   "Unit Calculations prints Major Requirements 19.5, General Education 22.0, Elective Units (Degree applicable as needed) 18.5, Total 60.0; recorded as total_units, ge_units, degree_elective_units and degree_total. No GE pattern is named.",
+   "Program prerequisites (BIOS 42/43/44, COMM C1000 or COMM 10, ENGL C1000, PSYC C1000, SOCI 1) are printed as prerequisites with 0.0 on the heading and do not appear to count in the 19.5-unit major; reviewer should check whether they are counted in GE. A stray '3.0' is printed before COMM C1000, likely the units for the COMM choice.",
+   "The major 19.5 equals 2.5 (NURS 70/70L/84) + 17 per heading, but NURS 53, 60B and 60C printed units sum to 14, not the 17 stated in the heading.",
+   "'Courses Needed to Continue for a BSN' (8.0) lists STAT C1000 and PSY 5; these are not required for the A.S. and were recorded as recommended. Both are statistics courses, so it is unclear whether both or one is intended despite the 8.0 total.",
+   "Conditional theory courses NURS81 Maternity, NURS82 Pediatrics and NURS64 Pharmacology are mentioned only as options if benchmark exams are failed; not recorded as blocks.",
+   "Admission requires an Advanced Standing Application, assessment exams and 500 hours of direct patient care work experience; science prerequisites have a 7-year recency requirement and a 2.5 GPA minimum."
+  ]
+ },
+ "extracted_run": "38843479215"
+}
