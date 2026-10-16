@@ -1,0 +1,299 @@
+{
+ "college": "Gavilan College",
+ "control_number": "18459",
+ "shape": "degree",
+ "title": "Liberal Arts: Business Emphasis",
+ "award": "A.A. Degree",
+ "source_url": "https://gavilan.curriqunet.com/catalog/iq/4089/4097/3981",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6611,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6611,
+    "output_tokens": 2496,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2496,
+  "output_tokens_details": {
+   "thinking_tokens": 1085
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07636,
+ "ms": 20707,
+ "seconds": 21.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 11,
+   "share": 0.818,
+   "missing": [
+    "ECONC2001",
+    "ECONC2002"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ECON1",
+    "ECON2"
+   ],
+   "flagged": [
+    "ECON1",
+    "ECON2"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     53.0,
+     57.0
+    ],
+    "stated": [
+     53.0,
+     57.0
+    ],
+    "against": "degree",
+    "ge": [
+     35.0,
+     39.0
+    ],
+    "why": [],
+    "fill": [
+     0.0,
+     4.0
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Liberal Arts: Business Emphasis - A.A. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Gavilan College A.A./A.S. general education, or the Cal-GETC pattern",
+   "degree_total": {
+    "min": 53,
+    "max": 57
+   },
+   "ge_units": {
+    "min": 35,
+    "max": 39
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Students will develop a solid foundation in economic theory and practice. They will examine market forces and gain financial management analytical experience.",
+    "Students will learn to use technical skills to analyze, synthesize and report data so that it can be used to make informed decisions."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Choose any combination of courses for a minimum of 6 units",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BUS 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Choose any combination of courses for a minimum of 12 units",
+    "rule": "choose_units",
+    "minimum": 12,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ACCT 20",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 21",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 11",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 80",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIS 1",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIS 2",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON 11",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECON C2001",
+    "why": "not in the text; catalog prints ECON 2 Principles of Microeconomics instead (likely the pre-common-course-numbering code)"
+   },
+   {
+    "code": "ECON C2002",
+    "why": "not in the text; catalog prints ECON 1 Principles of Macroeconomics instead (likely the pre-common-course-numbering code)"
+   }
+  ],
+  "notes": [
+   "ECON 1 and ECON 2 appear in both choose-units lists; recorded in each block. They are not in the closed list, which names ECON C2002 (Macro) and ECON C2001 (Micro) instead; a reviewer should confirm these are the same courses renumbered.",
+   "BUS 11 and ECON 11 share the title 'Statistics for Business and Economics' and may be cross-listed, but the catalog prints them as separate rows, so they are recorded as separate courses.",
+   "The catalog prints 'Total: 53- 57' (18 major + 35-39 GE) while the GE text says to add sufficient electives to meet a 60 unit total; degree_total records the printed 53-57 and electives_fill_degree is true.",
+   "Block totals: the catalog states only the minimums (6 and 12 units) in the rule text; stated left null.",
+   "The learning outcome paragraph is printed without bullets; it was split into two entries where a new line begins with 'Students will learn'. A reviewer may prefer to read it as a single outcome.",
+   "The catalog notes courses may double count for general education and major requirements."
+  ]
+ },
+ "extracted_run": "38948144064"
+}

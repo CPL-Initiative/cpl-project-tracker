@@ -16,108 +16,325 @@
   "title": "Business:  Accounting Option",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.944,
+  "codes_found": [
+   "ACCT103",
+   "ACCT105",
+   "ACCT120",
+   "ACCT121",
+   "ACCT20",
+   "ACCT21",
+   "BOT100",
+   "BOT212",
+   "BOT291A",
+   "BOT291B",
+   "BOT291C",
+   "BUS1",
+   "BUS100",
+   "BUS11",
+   "BUS14",
+   "BUS80",
+   "CMUN12",
+   "CMUN129",
+   "CSIS1",
+   "CSIS120",
+   "CSIS121",
+   "CSIS122",
+   "CSIS126",
+   "CSIS129",
+   "CSIS2",
+   "CSIS212",
+   "CSIS6",
+   "CSIS75",
+   "CSIS8",
+   "DM6",
+   "DM75",
+   "ECON11",
+   "ECON14",
+   "MATH5"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4097/4337",
+   "title": "Business: Accounting Option - Certificate of Achievement",
+   "h1": "Business: Accounting Option - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 36,
-  "text_chars": 0
+  "text_chars": 2669
  },
  {
   "control_number": "06116",
   "title": "Real Estate",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT103",
+   "BUS80",
+   "RE160",
+   "RE162"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4097/4116",
+   "title": "Real Estate - Certificate of Achievement",
+   "h1": "Real Estate - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 870
  },
  {
   "control_number": "06117",
   "title": "Business: Office Applications Option",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.943,
+  "codes_found": [
+   "ACCT105",
+   "ACCT120",
+   "ACCT121",
+   "ACCT20",
+   "ACCT21",
+   "BOT100",
+   "BOT212",
+   "BOT291A",
+   "BOT291B",
+   "BOT291C",
+   "BUS1",
+   "BUS100",
+   "BUS11",
+   "BUS14",
+   "BUS80",
+   "CMUN12",
+   "CMUN129",
+   "CSIS1",
+   "CSIS120",
+   "CSIS121",
+   "CSIS122",
+   "CSIS126",
+   "CSIS129",
+   "CSIS2",
+   "CSIS212",
+   "CSIS6",
+   "CSIS75",
+   "CSIS8",
+   "DM6",
+   "DM75",
+   "ECON11",
+   "ECON14",
+   "MATH5"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4097/4223",
+   "title": "Business: Office Applications Option - Certificate of Achievement",
+   "h1": "Business: Office Applications Option - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 36,
-  "text_chars": 0
+  "text_chars": 3083
  },
  {
   "control_number": "06124",
   "title": "Aviation Maintenance Technology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AMT100",
+   "AMT101",
+   "AMT110",
+   "AMT111",
+   "AMT120",
+   "AMT121",
+   "CSIS1"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4095/4112",
+   "title": "Aviation Maintenance Technology - A.S. Degree",
+   "h1": "Aviation Maintenance Technology - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 3222
  },
  {
   "control_number": "06127",
   "title": "Studio Art",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART10A",
+   "ART12A",
+   "ART15A",
+   "ART15B",
+   "ART1A",
+   "ART1B",
+   "ART21",
+   "ART34A",
+   "ART3A",
+   "ART3B",
+   "ART79",
+   "ART7A",
+   "ART8A",
+   "HIST21"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4094/4232",
+   "title": "Studio Art - A.A. Degree",
+   "h1": "Studio Art - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 2672
  },
  {
   "control_number": "06128",
   "title": "Music",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.895,
+  "codes_found": [
+   "MUS12",
+   "MUS16A",
+   "MUS1A",
+   "MUS1B",
+   "MUS3A",
+   "MUS3B",
+   "MUS4A",
+   "MUS4B",
+   "MUS5A",
+   "MUS5B",
+   "MUS5C",
+   "MUS5D",
+   "MUS6",
+   "MUS7",
+   "MUS8A",
+   "MUS8B",
+   "MUS9B"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4141/3992",
+   "title": "Music - A.A. Degree",
+   "h1": "Music - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 19,
-  "text_chars": 0
+  "text_chars": 3001
  },
  {
   "control_number": "06129",
   "title": "Theatre Arts: Acting",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEA12B"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4149/4022",
+   "title": "Theatre Arts: Acting - A.A. Degree",
+   "h1": "Theatre Arts: Acting - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 1,
-  "text_chars": 0
+  "text_chars": 3327
  },
  {
   "control_number": "06131",
   "title": "Registered Nursing",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.778,
+  "codes_found": [
+   "AH16",
+   "AH55",
+   "AH56",
+   "BIO8",
+   "BIO9",
+   "MATH240",
+   "SOC1A"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4092/4058",
+   "title": "Registered Nursing - A.S. Degree",
+   "h1": "Registered Nursing - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 2613
  },
  {
   "control_number": "06132",
   "title": "Licensed Vocational Nursing",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AH11",
+   "AH3",
+   "AH72",
+   "AH73",
+   "BIO15",
+   "BIO7",
+   "BIO9",
+   "ENGLC1000",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4092/4234",
+   "title": "Licensed Vocational Nursing - A.S. Degree",
+   "h1": "Licensed Vocational Nursing - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 2525
  },
  {
   "control_number": "06137",
@@ -148,48 +365,152 @@
   "title": "Child Development",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "CD1",
+   "CD19",
+   "CD2",
+   "CD20",
+   "CD30A",
+   "CD30B",
+   "CD32",
+   "CD4",
+   "CD5",
+   "CD7",
+   "CD9"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4099/4236",
+   "title": "Child Development - A.A. Degree",
+   "h1": "Child Development - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 3086
  },
  {
   "control_number": "08456",
   "title": "Business: Technical Publishing Option",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.953,
+  "codes_found": [
+   "ACCT105",
+   "ACCT120",
+   "ACCT121",
+   "ACCT20",
+   "ACCT21",
+   "BOT100",
+   "BOT212",
+   "BOT291A",
+   "BOT291B",
+   "BOT291C",
+   "BUS1",
+   "BUS100",
+   "BUS11",
+   "BUS14",
+   "BUS80",
+   "CMUN12",
+   "CMUN129",
+   "CSIS1",
+   "CSIS120",
+   "CSIS121",
+   "CSIS122",
+   "CSIS126",
+   "CSIS129",
+   "CSIS2",
+   "CSIS212",
+   "CSIS6",
+   "CSIS74",
+   "CSIS75",
+   "CSIS76",
+   "CSIS8",
+   "CSIS80",
+   "CSIS85",
+   "DM6",
+   "DM74",
+   "DM75",
+   "DM76",
+   "DM80",
+   "DM85",
+   "ECON11",
+   "ECON14",
+   "MATH5"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4097/4336",
+   "title": "Business: Technical Publishing Option - Certificate of Achievement",
+   "h1": "Business: Technical Publishing Option - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 43,
-  "text_chars": 0
+  "text_chars": 3022
  },
  {
   "control_number": "08458",
   "title": "Law Enforcement, Option 2",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ173",
+   "AJ176",
+   "AJ184",
+   "AJ19",
+   "AJ20",
+   "AJ21",
+   "AJ32",
+   "AJ5",
+   "JLE100",
+   "JLE142"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4091/4106",
+   "title": "Law Enforcement, Option 2 (Police Academy) - A.A. Degree",
+   "h1": "Law Enforcement, Option 2 (Police Academy) - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 2217
  },
  {
   "control_number": "08460",
   "title": "Cosmetology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COS200",
+   "COS201"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4129/4201",
+   "title": "Cosmetology - A.S. Degree",
+   "h1": "Cosmetology - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 1806
  },
  {
   "control_number": "08461",
@@ -208,72 +529,319 @@
   "title": "Liberal Arts (Multiple Subjects)",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.913,
+  "codes_found": [
+   "AH11",
+   "ANTH1",
+   "ANTH2",
+   "ANTH3",
+   "ANTH5",
+   "ART11",
+   "ART1B",
+   "ART21",
+   "ART25A",
+   "ART3A",
+   "ART6",
+   "ASTR1",
+   "BIO10",
+   "BIO12",
+   "BIO13",
+   "BIO15",
+   "BIO4",
+   "BIO5",
+   "BIO7",
+   "BIO8",
+   "BIO9",
+   "CD2",
+   "CD3",
+   "CD7",
+   "CHEM12A",
+   "CHEM12B",
+   "CHEM1A",
+   "CHEM1B",
+   "CHEM30A",
+   "CHEM30B",
+   "CMUN10",
+   "CMUN2",
+   "CMUN4",
+   "CMUN8",
+   "COMMC1000",
+   "CSIS1",
+   "CSIS2",
+   "CSIS26",
+   "ECOL1",
+   "ENGL2J",
+   "ENGL4A",
+   "ENGL4B",
+   "ENGL5A",
+   "ENGL5B",
+   "GEOG2",
+   "GEOL1",
+   "HIST12",
+   "HIST21",
+   "HIST3",
+   "HIST4A",
+   "HIST5",
+   "HIST6",
+   "HIST7A",
+   "HIST7B",
+   "HUM10",
+   "HUM3",
+   "HUM4",
+   "JOUR10",
+   "MUS2",
+   "MUS4A",
+   "MUS6",
+   "PHIL1",
+   "PHIL2",
+   "PHIL3A",
+   "PHIL3B",
+   "PHIL4",
+   "PHIL6",
+   "PHIL9",
+   "PHYS1",
+   "PHYS2A",
+   "PHYS2B",
+   "PHYS4A",
+   "PHYS4B",
+   "PHYS4C",
+   "POLS3",
+   "POLS4",
+   "POLSC1000",
+   "PSCI1",
+   "PSYC2",
+   "PSYC3",
+   "PSYC40",
+   "PSYCC1000",
+   "SOC10",
+   "SOC1A",
+   "SOC1B",
+   "SOC21",
+   "SOC3",
+   "SOC4",
+   "SPAN12A",
+   "SPAN12B",
+   "SPAN1A",
+   "SPAN1B",
+   "SPAN2A",
+   "SPAN2B",
+   "THEA1"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4135/4197",
+   "title": "Liberal Arts: Multiple Subjects - A.A. Degree",
+   "h1": "Liberal Arts: Multiple Subjects - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 104,
-  "text_chars": 0
+  "text_chars": 7579
  },
  {
   "control_number": "08466",
   "title": "Business: Medical Office Option",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.949,
+  "codes_found": [
+   "ACCT105",
+   "ACCT120",
+   "ACCT121",
+   "ACCT20",
+   "ACCT21",
+   "BOT100",
+   "BOT180",
+   "BOT182",
+   "BOT212",
+   "BOT281",
+   "BOT283",
+   "BOT291A",
+   "BOT291B",
+   "BOT291C",
+   "BUS1",
+   "BUS100",
+   "BUS11",
+   "BUS14",
+   "BUS80",
+   "CMUN12",
+   "CMUN129",
+   "CSIS1",
+   "CSIS120",
+   "CSIS121",
+   "CSIS122",
+   "CSIS126",
+   "CSIS129",
+   "CSIS2",
+   "CSIS212",
+   "CSIS6",
+   "CSIS75",
+   "CSIS8",
+   "DM6",
+   "DM75",
+   "ECON11",
+   "ECON14",
+   "MATH5"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4097/4117",
+   "title": "Business: Medical Office Option - Certificate of Achievement",
+   "h1": "Business: Medical Office Option - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 40,
-  "text_chars": 0
+  "text_chars": 2764
  },
  {
   "control_number": "12002",
   "title": "Communication Studies",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.882,
+  "codes_found": [
+   "ANTH3",
+   "CMUN10",
+   "CMUN4",
+   "CMUN5",
+   "CMUN6",
+   "CMUN8",
+   "GUID27",
+   "JOUR10",
+   "PHIL4",
+   "POLS6",
+   "PSYC6",
+   "SOC10",
+   "SOC1A",
+   "SOC21",
+   "SOC4"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4100/3983",
+   "title": "Communication Studies - A.A. Degree",
+   "h1": "Communication Studies - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 2335
  },
  {
   "control_number": "13715",
   "title": "Computer Networking",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSIS179",
+   "CSIS181",
+   "CSIS182"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4128/4030",
+   "title": "Computer Networking - A.S. Degree",
+   "h1": "Computer Networking - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 1468
  },
  {
   "control_number": "14041",
   "title": "Computer Programming",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSIS12",
+   "CSIS12L",
+   "CSIS24",
+   "CSIS26",
+   "CSIS27",
+   "CSIS28",
+   "CSIS42",
+   "CSIS44",
+   "CSIS45",
+   "CSIS46",
+   "CSIS48",
+   "CSIS51",
+   "CSIS6",
+   "CSIS78",
+   "CSIS84",
+   "DM6"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4128/4032",
+   "title": "Computer Programming - A.S. Degree",
+   "h1": "Computer Programming - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 2400
  },
  {
   "control_number": "14878",
   "title": "Digital Media (with options)",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSIS107",
+   "CSIS42",
+   "CSIS45",
+   "CSIS6",
+   "CSIS74",
+   "CSIS75",
+   "CSIS76",
+   "CSIS77",
+   "CSIS80",
+   "CSIS84",
+   "CSIS85",
+   "DM107",
+   "DM113",
+   "DM6",
+   "DM60",
+   "DM74",
+   "DM75",
+   "DM76",
+   "DM77",
+   "DM80",
+   "DM85"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4130/4200",
+   "title": "Digital Media (with options) - A.A. Degree",
+   "h1": "Digital Media (with options) - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 21,
-  "text_chars": 0
+  "text_chars": 3855
  },
  {
   "control_number": "14947",
@@ -292,43 +860,87 @@
   "title": "Theatre Arts: Technical Production",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEA12B"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4149/4023",
+   "title": "Theatre Arts: Technical Production - A.A. Degree",
+   "h1": "Theatre Arts: Technical Production - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 1,
-  "text_chars": 0
+  "text_chars": 3398
  },
  {
   "control_number": "17724",
   "title": "Communication Studies",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.818,
+  "codes_found": [
+   "CMUN10",
+   "CMUN12",
+   "CMUN129",
+   "CMUN2",
+   "CMUN4",
+   "CMUN5",
+   "CMUN8",
+   "CSIS129",
+   "THEA4"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4100/3984",
+   "title": "Communication Studies - Certificate of Achievement",
+   "h1": "Communication Studies - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 1364
  },
  {
   "control_number": "17827",
   "title": "Spanish Non-Native Speakers Option 1",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SPAN1A",
+   "SPAN1B",
+   "SPAN2A",
+   "SPAN2B"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4148/4044",
+   "title": "Spanish Non-Native Speakers Option 1 - Certificate of Achievement",
+   "h1": "Spanish Non-Native Speakers Option 1 - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 1701
  },
  {
   "control_number": "18121",
   "title": "California State University (CSU) General Education Pattern",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -340,7 +952,7 @@
   "title": "Intersegmental General Education Transfer Curriculum (IGETC)",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -352,12 +964,25 @@
   "title": "Liberal Arts: Language Arts & Humanities",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL2E",
+   "FRNH1A",
+   "FRNH1B"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4007/4011",
+   "title": "Liberal Arts: Language Arts & Humanities Emphasis - A.A. Degree",
+   "h1": "Liberal Arts: Language Arts & Humanities Emphasis - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 3489
  },
  {
   "control_number": "18454",
@@ -376,12 +1001,23 @@
   "title": "Liberal Arts: Social Science-Behavioral & Organizational",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "PSYC11"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4147/4019",
+   "title": "Liberal Arts: Social Science Emphasis- Behavioral and Organizational Social Sciences - A.A. Degree",
+   "h1": "Liberal Arts: Social Science Emphasis- Behavioral and Organizational Social Sciences - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 3085
  },
  {
   "control_number": "18456",
@@ -412,24 +1048,77 @@
   "title": "Liberal Arts: Elementary Education",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AH3",
+   "AJ20",
+   "ART25A",
+   "CD14A",
+   "CD14B",
+   "CD2",
+   "CD25A",
+   "CD3",
+   "CD31",
+   "CD40",
+   "CD6",
+   "CD7",
+   "CD8B",
+   "CD8C",
+   "CD97",
+   "ENGL2F",
+   "HIST3",
+   "KIN6",
+   "MATH12",
+   "PSYC2",
+   "PSYC3",
+   "PSYC40",
+   "PSYC7",
+   "THEA2A"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4099/4125",
+   "title": "Liberal Arts: Elementary Education Emphasis - A.A. Degree",
+   "h1": "Liberal Arts: Elementary Education Emphasis - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 24,
-  "text_chars": 0
+  "text_chars": 3141
  },
  {
   "control_number": "18459",
   "title": "Liberal Arts: Business Emphasis",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.818,
+  "codes_found": [
+   "ACCT20",
+   "ACCT21",
+   "BUS1",
+   "BUS11",
+   "BUS14",
+   "BUS80",
+   "CSIS1",
+   "CSIS2",
+   "ECON11"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4097/3981",
+   "title": "Liberal Arts: Business Emphasis - A.A. Degree",
+   "h1": "Liberal Arts: Business Emphasis - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 1711
  },
  {
   "control_number": "18460",
@@ -460,36 +1149,96 @@
   "title": "Accounting",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS1",
+   "BUS100",
+   "CSIS8"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4090/3968",
+   "title": "Accounting - A.A. Degree",
+   "h1": "Accounting - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 2453
  },
  {
   "control_number": "19327",
   "title": "Communication Studies: Interpersonal Communication",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "CMUN12",
+   "CMUN5",
+   "CMUN6",
+   "CMUN8",
+   "GUID27",
+   "POLS6",
+   "PSYC6",
+   "SOC1A"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4100/3985",
+   "title": "Communication Studies: Interpersonal Communication - Certificate of Achievement",
+   "h1": "Communication Studies: Interpersonal Communication - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 1261
  },
  {
   "control_number": "19378",
   "title": "Child Development and Educational Studies",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CD10",
+   "CD12",
+   "CD13",
+   "CD15",
+   "CD16",
+   "CD17",
+   "CD18",
+   "CD19",
+   "CD2",
+   "CD20",
+   "CD23",
+   "CD32",
+   "CD4",
+   "CD40",
+   "CD5",
+   "CD7",
+   "CD9",
+   "CD97",
+   "CD98"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4099/4122",
+   "title": "Child Development and Education Studies - Certificate of Achievement",
+   "h1": "Child Development and Education Studies - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.75
+   }
+  },
   "listed": 19,
-  "text_chars": 0
+  "text_chars": 3018
  },
  {
   "control_number": "19655",
@@ -532,115 +1281,259 @@
   "title": "Digital Design and Imaging",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSIS107",
+   "CSIS74",
+   "CSIS75",
+   "CSIS76",
+   "CSIS77",
+   "CSIS80",
+   "CSIS85",
+   "DM107",
+   "DM74",
+   "DM75",
+   "DM76",
+   "DM77",
+   "DM80",
+   "DM85"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4130/4021",
+   "title": "Digital Design and Imaging - Certificate of Achievement",
+   "h1": "Digital Design and Imaging - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 2348
  },
  {
   "control_number": "21284",
   "title": "CSIS: Programming for the Internet",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "CSIS45",
+   "CSIS51",
+   "CSIS6",
+   "CSIS75",
+   "CSIS84",
+   "CSIS85",
+   "DM6",
+   "DM7",
+   "DM75",
+   "DM85"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4128/4034",
+   "title": "Liberal Arts: Computer Science & Information Systems Emphasis - A.A. Degree",
+   "h1": "Liberal Arts: Computer Science & Information Systems Emphasis - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 2917
  },
  {
   "control_number": "21285",
   "title": "Computer Programming",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSIS24",
+   "CSIS26",
+   "CSIS27",
+   "CSIS42",
+   "CSIS45",
+   "CSIS46",
+   "CSIS48"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4128/4033",
+   "title": "Computer Programming - Certificate of Achievement",
+   "h1": "Computer Programming - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 2162
  },
  {
   "control_number": "21287",
   "title": "Computer Networking",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSIS179",
+   "CSIS181",
+   "CSIS182"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4128/4031",
+   "title": "Computer Networking - Certificate of Achievement",
+   "h1": "Computer Networking - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 1143
  },
  {
   "control_number": "21288",
   "title": "Aviation Maintenance Technology",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AMT100",
+   "AMT101",
+   "AMT110",
+   "AMT111",
+   "AMT120",
+   "AMT121",
+   "CSIS1"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4095/4113",
+   "title": "Aviation Maintenance Technology - Certificate of Achievement",
+   "h1": "Aviation Maintenance Technology - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 1815
  },
  {
   "control_number": "21290",
   "title": "Spanish Native Speakers 4",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SPAN12A",
+   "SPAN12B"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4148/4045",
+   "title": "Spanish Non-Native Speakers Option 2 - Certificate of Achievement",
+   "h1": "Spanish Non-Native Speakers Option 2 - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 1940
  },
  {
   "control_number": "21291",
   "title": "Spanish Non-Native Speakers 2",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SPAN12A",
+   "SPAN12B"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4148/4045",
+   "title": "Spanish Non-Native Speakers Option 2 - Certificate of Achievement",
+   "h1": "Spanish Non-Native Speakers Option 2 - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 1940
  },
  {
   "control_number": "21292",
   "title": "Spanish Non-Native Speakers 3",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SPAN12A",
+   "SPAN12B"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4148/4045",
+   "title": "Spanish Non-Native Speakers Option 2 - Certificate of Achievement",
+   "h1": "Spanish Non-Native Speakers Option 2 - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 1940
  },
  {
   "control_number": "21293",
   "title": "Registered Nursing",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.778,
+  "codes_found": [
+   "AH16",
+   "AH55",
+   "AH56",
+   "BIO8",
+   "BIO9",
+   "MATH240",
+   "SOC1A"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4092/4102",
+   "title": "Registered Nursing - Certificate of Achievement",
+   "h1": "Registered Nursing - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 2825
  },
  {
   "control_number": "21294",
   "title": "Licensed Vocational Nursing",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -664,192 +1557,446 @@
   "title": "Law Enforcement, Option 2",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "JLE100",
+   "JLE142"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4091/4105",
+   "title": "Law Enforcement, Option 2 - (Police Academy) Certificate of Achievement",
+   "h1": "Law Enforcement, Option 2 - (Police Academy) Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 1629
  },
  {
   "control_number": "21298",
   "title": "Cosmetology",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COS200",
+   "COS201",
+   "COS202"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4129/4005",
+   "title": "Cosmetology - Certificate of Achievement",
+   "h1": "Cosmetology - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 1461
  },
  {
   "control_number": "24369",
   "title": "GED Preparation",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL756",
+   "GUID700"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4108/4047",
+   "title": "GED Preparation - Noncredit Certificate of Completion",
+   "h1": "GED Preparation - Noncredit Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 1636
  },
  {
   "control_number": "30203",
   "title": "Aviation Maintenance Technology: Airframe",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AMT101",
+   "AMT110",
+   "AMT111"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4095/4182",
+   "title": "Aviation Maintenance Technology: Airframe - Certificate of Achievement",
+   "h1": "Aviation Maintenance Technology: Airframe - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 2570
  },
  {
   "control_number": "30204",
   "title": "Aviation Maintenance Technology: Powerplant",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AMT100",
+   "AMT101",
+   "AMT120",
+   "AMT121"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4095/4111",
+   "title": "Aviation Maintenance Technology: Powerplant -  Certificate of Achievement",
+   "h1": "Aviation Maintenance Technology: Powerplant -  Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 2657
  },
  {
   "control_number": "30260",
   "title": "Theater Arts-Television Performance",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MCTV16"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4149/4024",
+   "title": "Theater Arts-Television Performance - A.A. Degree",
+   "h1": "Theater Arts-Television Performance - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 1,
-  "text_chars": 0
+  "text_chars": 2865
  },
  {
   "control_number": "30270",
   "title": "Television Performance Option",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.571,
+  "codes_found": [
+   "HUM25",
+   "MCTV16",
+   "MCTV18",
+   "MCTV6"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4149/4025",
+   "title": "Theater Arts-Television Performance - Certificate of Achievement",
+   "h1": "Theater Arts-Television Performance - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 2039
  },
  {
   "control_number": "30548",
   "title": "Music Composition and Production",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS16A",
+   "MUS1A",
+   "MUS1B",
+   "MUS2",
+   "MUS3A",
+   "MUS3B",
+   "MUS4A",
+   "MUS6",
+   "MUS7"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4141/3993",
+   "title": "Music Composition and Production - Certificate of Achievement",
+   "h1": "Music Composition and Production - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 1679
  },
  {
   "control_number": "30577",
   "title": "Communication Studies",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "ANTH3",
+   "CMUN10",
+   "CMUN4",
+   "CMUN5",
+   "CMUN8",
+   "COMMC1000",
+   "ENGLC1001",
+   "JOUR10",
+   "PSYCC1000",
+   "SOC1A"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4100/4340",
+   "title": "Communication Studies 2.0 - A.A.-T Degree",
+   "h1": "Communication Studies 2.0 - A.A.-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 2589
  },
  {
   "control_number": "30652",
   "title": "Administration of Justice",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "AJ10",
+   "AJ12",
+   "AJ14",
+   "AJ16",
+   "AJ18",
+   "AJ19",
+   "AJ20",
+   "PSYCC1000",
+   "SOC1A"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4091/4178",
+   "title": "Administration of Justice - A.S.-T Degree",
+   "h1": "Administration of Justice - A.S.-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 3349
  },
  {
   "control_number": "31444",
   "title": "Mathematics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH1A",
+   "MATH1B",
+   "MATH1C",
+   "MATH2",
+   "MATH2C"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4139/4395",
+   "title": "Mathematics 2.0 - A.S.-T Degree",
+   "h1": "Mathematics 2.0 - A.S.-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 2517
  },
  {
   "control_number": "31533",
   "title": "Kinesiology and Athletics: Personal Fitness Training",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AH11",
+   "BIO15",
+   "HE1",
+   "KIN3",
+   "KIN84",
+   "KIN85"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4138/4004",
+   "title": "Kinesiology: Personal Fitness Training - Certificate of Achievement",
+   "h1": "Kinesiology: Personal Fitness Training - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.8
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 1292
  },
  {
   "control_number": "31609",
   "title": "Art History",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART10A",
+   "ART12A",
+   "ART13",
+   "ART1A",
+   "ART1B",
+   "ART21",
+   "ART2A",
+   "ART3A",
+   "ART8A"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4094/4181",
+   "title": "Art History - A.A.-T Degree",
+   "h1": "Art History - A.A.-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 3619
  },
  {
   "control_number": "31626",
   "title": "Water Resources Management",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WTRM201",
+   "WTRM202",
+   "WTRM205",
+   "WTRM206",
+   "WTRM207",
+   "WTRM208",
+   "WTRM209",
+   "WTRM211",
+   "WTRM232"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4150/4026",
+   "title": "Water Resources Management - A.A. Degree",
+   "h1": "Water Resources Management - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 2598
  },
  {
   "control_number": "31647",
   "title": "Water Resources Management",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WTRM201",
+   "WTRM202",
+   "WTRM205",
+   "WTRM206",
+   "WTRM207",
+   "WTRM208",
+   "WTRM209",
+   "WTRM211",
+   "WTRM232"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4150/4027",
+   "title": "Water Resources Management - Certificate of Achievement",
+   "h1": "Water Resources Management - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 2298
  },
  {
   "control_number": "31654",
   "title": "Studio Arts",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART10A",
+   "ART12A",
+   "ART13",
+   "ART15A",
+   "ART1A",
+   "ART1B",
+   "ART2A",
+   "ART3A",
+   "ART8A"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4094/4205",
+   "title": "Studio Art - A.A.-T Degree",
+   "h1": "Studio Art - A.A.-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.5
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 2820
  },
  {
   "control_number": "31719",
@@ -868,127 +2015,373 @@
   "title": "Theatre Arts",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEA1",
+   "THEA12A",
+   "THEA12B",
+   "THEA13A",
+   "THEA15",
+   "THEA25",
+   "THEA26"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4149/4183",
+   "title": "Theatre Arts - A.A.-T Degree",
+   "h1": "Theatre Arts - A.A.-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 3298
  },
  {
   "control_number": "31771",
   "title": "Kinesiology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.984,
+  "codes_found": [
+   "AH30",
+   "ATH21",
+   "ATH25",
+   "ATH27",
+   "ATH37",
+   "ATH77",
+   "BIO7",
+   "BIO9",
+   "CHEM1A",
+   "CHEM30A",
+   "KIN121A",
+   "KIN121B",
+   "KIN125A",
+   "KIN125B",
+   "KIN127A",
+   "KIN127B",
+   "KIN137A",
+   "KIN137B",
+   "KIN165A",
+   "KIN165B",
+   "KIN16A",
+   "KIN17A",
+   "KIN17B",
+   "KIN18A",
+   "KIN18B",
+   "KIN19A",
+   "KIN19B",
+   "KIN2",
+   "KIN20A",
+   "KIN20B",
+   "KIN24A",
+   "KIN24B",
+   "KIN39",
+   "KIN44A",
+   "KIN44B",
+   "KIN61A",
+   "KIN62A",
+   "KIN62B",
+   "KIN64A",
+   "KIN64B",
+   "KIN66A",
+   "KIN66B",
+   "KIN68A",
+   "KIN68B",
+   "KIN70A",
+   "KIN71A",
+   "KIN73A",
+   "KIN73B",
+   "KIN74A",
+   "KIN74B",
+   "KIN80A",
+   "KIN81A",
+   "KIN81B",
+   "KIN82A",
+   "KIN82B",
+   "KIN87",
+   "KIN88A",
+   "KIN88B",
+   "PHYS2A",
+   "PHYS4A"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4138/4191",
+   "title": "Kinesiology - A.A.-T Degree",
+   "h1": "Kinesiology - A.A.-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 61,
-  "text_chars": 0
+  "text_chars": 5480
  },
  {
   "control_number": "31830",
   "title": "Journalism",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART8A",
+   "ENGLC1001",
+   "JOUR10",
+   "PHIL2",
+   "PHIL4"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4137/4192",
+   "title": "Journalism - A.A.-T Degree",
+   "h1": "Journalism - A.A.-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 3072
  },
  {
   "control_number": "33045",
   "title": "Philosophy",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HIST7A",
+   "HIST7B",
+   "PHIL1",
+   "PHIL12",
+   "PHIL15",
+   "PHIL2",
+   "PHIL3A",
+   "PHIL3B",
+   "PHIL4",
+   "PHIL6",
+   "PHIL7A",
+   "PHIL7B",
+   "PHIL9"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4143/3995",
+   "title": "Philosophy - A.A.-T Degree",
+   "h1": "Philosophy - A.A.-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 3720
  },
  {
   "control_number": "33046",
   "title": "Spanish",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CMUN4",
+   "FRNH1A",
+   "FRNH1B",
+   "SOC1A",
+   "SPAN12A",
+   "SPAN12B",
+   "SPAN1A",
+   "SPAN1B",
+   "SPAN2A",
+   "SPAN2B",
+   "SPAN8A",
+   "SPAN8B"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4148/4186",
+   "title": "Spanish - A.A.-T Degree",
+   "h1": "Spanish - A.A.-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 3787
  },
  {
   "control_number": "33047",
   "title": "Physics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH1A",
+   "MATH1B",
+   "MATH1C",
+   "PHYS4A",
+   "PHYS4B",
+   "PHYS4C"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/3999/4394",
+   "title": "Physics 2.0 - A.S.-T Degree",
+   "h1": "Physics 2.0 - A.S.-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 3387
  },
  {
   "control_number": "33048",
   "title": "Economics",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.706,
+  "codes_found": [
+   "ACCT20",
+   "ACCT21",
+   "BUS11",
+   "CSIS2",
+   "ECON11",
+   "MATH1A",
+   "MATH1B",
+   "MATH1C",
+   "MATH2",
+   "MATH5",
+   "MATH6",
+   "MATH7"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4097/4118",
+   "title": "General Business - Certificate of Achievement",
+   "h1": "General Business - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 2336
  },
  {
   "control_number": "33049",
   "title": "English",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.938,
+  "codes_found": [
+   "CMUN2",
+   "ENGL2C",
+   "ENGL2E",
+   "ENGL2F",
+   "ENGL2J",
+   "ENGL4A",
+   "ENGL4B",
+   "ENGL5A",
+   "ENGL5B",
+   "ENGL9A",
+   "ENGLC1001",
+   "HUM3",
+   "HUM4",
+   "JOUR16A",
+   "THEA4"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4007/4010",
+   "title": "English - A.A.-T Degree",
+   "h1": "English - A.A.-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 3778
  },
  {
   "control_number": "33128",
   "title": "Political Science",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "MATH5",
+   "POLS10",
+   "POLS12",
+   "POLS3",
+   "POLS32",
+   "POLS4",
+   "POLS5",
+   "POLS7",
+   "PSYC32"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4145/4195",
+   "title": "Political Science - A.A.-T Degree",
+   "h1": "Political Science - A.A.-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 4359
  },
  {
   "control_number": "33130",
   "title": "Early Childhood Education",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CD1",
+   "CD32",
+   "CD4",
+   "CD40",
+   "CD5",
+   "CD7",
+   "CD9"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4099/4177",
+   "title": "Early Childhood Education - A.S.-T Degree",
+   "h1": "Early Childhood Education - A.S.-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 3191
  },
  {
   "control_number": "33134",
   "title": "Psychology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1012,48 +2405,140 @@
   "title": "Kinesiology",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO11",
+   "BIO15",
+   "BIO7",
+   "BIO9",
+   "BUS80",
+   "HE1",
+   "KIN15",
+   "KIN2",
+   "KIN3",
+   "KIN4A",
+   "KIN4B",
+   "KIN4C",
+   "KIN5",
+   "KIN6",
+   "KIN7",
+   "KIN8",
+   "KIN84",
+   "KIN85",
+   "KIN92"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4138/4003",
+   "title": "Kinesiology - A.A. Degree",
+   "h1": "Kinesiology - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 19,
-  "text_chars": 0
+  "text_chars": 4643
  },
  {
   "control_number": "33621",
   "title": "History",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.955,
+  "codes_found": [
+   "ANTH5",
+   "ART1A",
+   "ART1B",
+   "ART21",
+   "HIST12",
+   "HIST21",
+   "HIST3",
+   "HIST4A",
+   "HIST4B",
+   "HIST5",
+   "HIST6",
+   "HIST7A",
+   "HIST7B",
+   "MUS1A",
+   "MUS1B",
+   "POLS6",
+   "PSYC6",
+   "SOC1B",
+   "SOC3",
+   "SOC4",
+   "THEA1"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/3996/3998",
+   "title": "History - A.A.-T Degree",
+   "h1": "History - A.A.-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 22,
-  "text_chars": 0
+  "text_chars": 4168
  },
  {
   "control_number": "33778",
   "title": "Fire Science",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "JFT10",
+   "JFT8"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4133/4198",
+   "title": "Fire Science - Certificate of Achievement",
+   "h1": "Fire Science - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 1050
  },
  {
   "control_number": "35162",
   "title": "Computer Science",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSIS24",
+   "CSIS26",
+   "CSIS27",
+   "CSIS28",
+   "CSIS45",
+   "CSIS46",
+   "MATH1A",
+   "MATH1B",
+   "PHYS4A",
+   "PHYS4B"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4128/4028",
+   "title": "Computer Science - A.S.-T Degree",
+   "h1": "Computer Science - A.S.-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 2141
  },
  {
   "control_number": "35176",
@@ -1084,84 +2569,202 @@
   "title": "Chemistry",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM12A",
+   "CHEM12B",
+   "CHEM1A",
+   "CHEM1B",
+   "MATH1A",
+   "MATH1B",
+   "PHYS4A",
+   "PHYS4B"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4098/4171",
+   "title": "Chemistry - A.S.-T Degree",
+   "h1": "Chemistry - A.S.-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 3715
  },
  {
   "control_number": "36198",
   "title": "Social Justice Studies",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.95,
+  "codes_found": [
+   "ANTH3",
+   "BUS11",
+   "CMUN4",
+   "CMUN6",
+   "ENGL2E",
+   "HIST12",
+   "HIST4A",
+   "HIST4B",
+   "HIST5",
+   "HIST6",
+   "PHIL3B",
+   "POLS6",
+   "PSYC32",
+   "PSYC6",
+   "SJS5",
+   "SOC1B",
+   "SOC3",
+   "SPAN12A",
+   "SPAN2B"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4147/4184",
+   "title": "Social Justice Studies - A.A.-T Degree",
+   "h1": "Social Justice Studies - A.A.-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 20,
-  "text_chars": 0
+  "text_chars": 3674
  },
  {
   "control_number": "36286",
   "title": "Computer Applications for ESL Students",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL705",
+   "ESL706",
+   "ESL710"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4132/4349",
+   "title": "Computer Applications for ESL Students - Noncredit Certificate of Completion",
+   "h1": "Computer Applications for ESL Students - Noncredit Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 1175
  },
  {
   "control_number": "36289",
   "title": "ESL Advanced Level",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL762",
+   "ESL763",
+   "ESL764",
+   "ESL769"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4132/4071",
+   "title": "ESL Advanced Level - Noncredit Certificate of Competency",
+   "h1": "ESL Advanced Level - Noncredit Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 1331
  },
  {
   "control_number": "36844",
   "title": "ESL Citizenship",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL702A",
+   "ESL702B"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4132/4345",
+   "title": "ESL Citizenship - Noncredit Certificate of Competency",
+   "h1": "ESL Citizenship - Noncredit Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 788
  },
  {
   "control_number": "36944",
   "title": "HVAC - Heating, Ventilation and Air Conditioning",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HVAC201",
+   "HVAC202",
+   "HVAC203",
+   "HVAC204",
+   "HVAC205",
+   "HVAC206"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4012/4015",
+   "title": "HVAC - Heating, Ventilation and Air Conditioning - Certificate of Achievement",
+   "h1": "HVAC - Heating, Ventilation and Air Conditioning - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 1491
  },
  {
   "control_number": "36945",
   "title": "HVAC - Heating, Ventilation and Air Conditioning",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HVAC201",
+   "HVAC202",
+   "HVAC203",
+   "HVAC204",
+   "HVAC205",
+   "HVAC206"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4012/4016",
+   "title": "HVAC - Heating, Ventilation and Air Conditioning - A.S. Degree",
+   "h1": "HVAC - Heating, Ventilation and Air Conditioning - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 1806
  },
  {
   "control_number": "36978",
@@ -1180,67 +2783,201 @@
   "title": "Classical and Contemporary World Philosophies and Religions",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHIL1",
+   "PHIL23",
+   "PHIL3A",
+   "PHIL3B",
+   "PHIL6",
+   "PHIL9"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4143/4160",
+   "title": "Classical and Contemporary World Philosophies and Religions - Certificate of Proficiency",
+   "h1": "Classical and Contemporary World Philosophies and Religions - Certificate of Proficiency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 2480
  },
  {
   "control_number": "37750",
   "title": "Biology",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO1",
+   "BIO2",
+   "BIO4",
+   "BIO5",
+   "CHEM1A",
+   "CHEM1B",
+   "MATH1A",
+   "PHYS2A",
+   "PHYS2B",
+   "PHYS4A",
+   "PHYS4B"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4096/4073",
+   "title": "Biology - A.S.-T Degree",
+   "h1": "Biology - A.S.-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 3189
  },
  {
   "control_number": "37812",
   "title": "Welding Technology",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WELD701",
+   "WELD702"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4108/4048",
+   "title": "Welding Technology - Noncredit Certificate of Completion",
+   "h1": "Welding Technology - Noncredit Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 1091
  },
  {
   "control_number": "37896",
   "title": "Engineering",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1A",
+   "CHEM1B",
+   "CSIS45",
+   "CSIS46",
+   "ENGR1",
+   "ENGR2",
+   "ENGR5",
+   "MATH16",
+   "MATH1A",
+   "MATH1B",
+   "MATH1C",
+   "MATH2",
+   "MATH2C",
+   "PHYS4A",
+   "PHYS4B",
+   "PHYS4C"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4144/4074",
+   "title": "Engineering - A.S. Degree",
+   "h1": "Engineering - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 4716
  },
  {
   "control_number": "38119",
   "title": "Business (with options)",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.942,
+  "codes_found": [
+   "ACCT103",
+   "ACCT105",
+   "ACCT120",
+   "ACCT121",
+   "ACCT20",
+   "ACCT21",
+   "BOT100",
+   "BOT180",
+   "BOT182",
+   "BOT212",
+   "BOT281",
+   "BOT283",
+   "BOT291A",
+   "BOT291B",
+   "BOT291C",
+   "BUS1",
+   "BUS100",
+   "BUS11",
+   "BUS14",
+   "BUS80",
+   "CMUN12",
+   "CMUN129",
+   "CSIS1",
+   "CSIS120",
+   "CSIS121",
+   "CSIS122",
+   "CSIS126",
+   "CSIS129",
+   "CSIS2",
+   "CSIS212",
+   "CSIS6",
+   "CSIS74",
+   "CSIS75",
+   "CSIS76",
+   "CSIS8",
+   "CSIS80",
+   "CSIS85",
+   "DM6",
+   "DM74",
+   "DM75",
+   "DM76",
+   "DM80",
+   "DM85",
+   "ECON11",
+   "ECON14",
+   "MGMT101",
+   "MGMT104",
+   "MGMT120",
+   "MKTG100"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4097/4119",
+   "title": "Business (with options) - A.A. Degree",
+   "h1": "Business (with options) - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 53,
-  "text_chars": 0
+  "text_chars": 5023
  },
  {
   "control_number": "38482",
   "title": "Film, Television, and Electronic Media",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1252,96 +2989,237 @@
   "title": "Public Health Science",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.786,
+  "codes_found": [
+   "BIO10",
+   "BIO11",
+   "BIO7",
+   "BIO9",
+   "CHEM1A",
+   "CHEM30A",
+   "HE1",
+   "HE2",
+   "HE5",
+   "PSYCC1000",
+   "SOC1A"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4188/4063",
+   "title": "Public Health Science - A.S.-T Degree",
+   "h1": "Public Health Science - A.S.-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 2433
  },
  {
   "control_number": "38787",
   "title": "Elementary Teacher Education",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "ART25A",
+   "ART6",
+   "BIO10",
+   "BIO12",
+   "BIO15",
+   "CD25A",
+   "CD40",
+   "CD8C",
+   "CHEM30A",
+   "GEOG2",
+   "GEOL1",
+   "HIST4A",
+   "MATH12",
+   "MATH14",
+   "MUS15",
+   "PHIL4",
+   "PHYS1",
+   "PSYC40"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4099/4061",
+   "title": "Elementary Teacher Education - A.A.-T Degree",
+   "h1": "Elementary Teacher Education - A.A.-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 24,
-  "text_chars": 0
+  "text_chars": 2967
  },
  {
   "control_number": "39624",
   "title": "ESL Lifeskills",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL776",
+   "ESL784",
+   "ESL785",
+   "ESL786",
+   "ESL788",
+   "ESL789"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4132/4346",
+   "title": "ESL Lifeskills - Noncredit Certificate of Competency",
+   "h1": "ESL Lifeskills - Noncredit Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 1792
  },
  {
   "control_number": "39708",
   "title": "SOCIOLOGY",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "SOC10",
+   "SOC1A",
+   "SOC1B",
+   "SOC21",
+   "SOC3",
+   "SOC4"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4066/4065",
+   "title": "Sociology - A.A.-T Degree",
+   "h1": "Sociology - A.A.-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 2607
  },
  {
   "control_number": "39753",
   "title": "ESL Intermediate I Level",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL731",
+   "ESL737",
+   "ESL738",
+   "ESL739"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4132/4072",
+   "title": "ESL Intermediate I Level - Noncredit Certificate of Competency",
+   "h1": "ESL Intermediate I Level - Noncredit Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 1370
  },
  {
   "control_number": "39754",
   "title": "ESL Beginning Level",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL727",
+   "ESL728"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4132/4070",
+   "title": "ESL Beginning Level - Noncredit Certificate of Competency",
+   "h1": "ESL Beginning Level - Noncredit Certificate of Competency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 1081
  },
  {
   "control_number": "40538",
   "title": "Film and Television Production",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HUM10",
+   "HUM25",
+   "HUM3",
+   "HUM4",
+   "HUM6",
+   "MCTV16",
+   "MCTV17A",
+   "MCTV18",
+   "MCTV19",
+   "MCTV43",
+   "MCTV6",
+   "THEA20"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4054/4357",
+   "title": "Film and Television Production - Certificate of Achievement",
+   "h1": "Film and Television Production - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 1897
  },
  {
   "control_number": "40556",
   "title": "Workforce Preparation and Success",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "LIFE700",
+   "LIFE701"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4108/4250",
+   "title": "Workforce Preparation and Success - Noncredit Certificate of Completion",
+   "h1": "Workforce Preparation and Success - Noncredit Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 1995
  },
  {
   "control_number": "40557",
@@ -1360,24 +3238,56 @@
   "title": "Job Coaching",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GUID600",
+   "GUID601"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4108/4254",
+   "title": "Job Coaching - Noncredit Certificate of Completion",
+   "h1": "Job Coaching - Noncredit Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 901
  },
  {
   "control_number": "41394",
   "title": "Business Administration 2.0",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.769,
+  "codes_found": [
+   "ACCT20",
+   "ACCT21",
+   "BOT100",
+   "BUS1",
+   "BUS100",
+   "BUS11",
+   "BUS80",
+   "ECON11",
+   "MATH6",
+   "MATH7"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4097/4252",
+   "title": "Business Administration 2.0 - A.S.-T Degree",
+   "h1": "Business Administration 2.0 - A.S.-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 3189
  },
  {
   "control_number": "42771",
@@ -1408,139 +3318,446 @@
   "title": "Communication Studies 2.0",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.933,
+  "codes_found": [
+   "ANTH3",
+   "CMUN10",
+   "CMUN2",
+   "CMUN3",
+   "CMUN4",
+   "CMUN5",
+   "CMUN6",
+   "CMUN8",
+   "COMMC1000",
+   "ENGLC1001",
+   "JOUR10",
+   "JOUR16A",
+   "PSYCC1000",
+   "SOC1A"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4100/4340",
+   "title": "Communication Studies 2.0 - A.A.-T Degree",
+   "h1": "Communication Studies 2.0 - A.A.-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 2589
  },
  {
   "control_number": "44672",
   "title": "Chemistry for UC",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO10",
+   "CHEM12A",
+   "CHEM12B",
+   "CHEM1A",
+   "CHEM1B",
+   "ENGLC1000",
+   "ENGLC1001",
+   "HUM3",
+   "MATH1A",
+   "MATH1B",
+   "MATH1C",
+   "MATH2C",
+   "PHIL4",
+   "PHYS4A",
+   "PHYS4B",
+   "PHYS4C",
+   "PSYCC1000",
+   "SPAN1B"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4098/4339",
+   "title": "Chemistry for UC - A.S. Degree",
+   "h1": "Chemistry for UC - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 18,
-  "text_chars": 0
+  "text_chars": 3484
  },
  {
   "control_number": "44798",
   "title": "Fire Technology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "JFT100",
+   "JFT101",
+   "JFT130",
+   "JFT140",
+   "JFT150",
+   "JFT160"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4133/4350",
+   "title": "Fire Technology - A.S. Degree",
+   "h1": "Fire Technology - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 2555
  },
  {
   "control_number": "44899",
   "title": "Fundamentals of Engineering I",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1A",
+   "ENGR10",
+   "MATH1A"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4144/4354",
+   "title": "Fundamentals of Engineering I - Certificate of Achievement",
+   "h1": "Fundamentals of Engineering I - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 1761
  },
  {
   "control_number": "44900",
   "title": "Fundamentals of Engineering II",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1A",
+   "CSIS45",
+   "ENGR10",
+   "ENGR5",
+   "MATH1A",
+   "MATH1B",
+   "PHYS4A"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4144/4355",
+   "title": "Fundamentals of Engineering II - Certificate of Achievement",
+   "h1": "Fundamentals of Engineering II - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 2028
  },
  {
   "control_number": "44901",
   "title": "Fundamentals of Engineering III",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1A",
+   "CSIS45",
+   "ENGR1",
+   "ENGR10",
+   "ENGR2",
+   "ENGR3",
+   "ENGR4",
+   "ENGR5",
+   "MATH1A",
+   "MATH1B",
+   "MATH1C",
+   "PHYS4A",
+   "PHYS4C"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4144/4356",
+   "title": "Fundamentals of Engineering III - Certificate of Achievement",
+   "h1": "Fundamentals of Engineering III - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 2666
  },
  {
   "control_number": "44975",
   "title": "Water Environment",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WTRM201",
+   "WTRM202",
+   "WTRM217",
+   "WTRM220",
+   "WTRM233",
+   "WTRM235"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4150/4360",
+   "title": "Water Environment - A.A. Degree",
+   "h1": "Water Environment - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 1711
  },
  {
   "control_number": "45072",
   "title": "Introductory Culinary Arts",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CUL701",
+   "CUL702"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4108/4353",
+   "title": "Introductory Culinary Arts - Noncredit Certificate of Completion",
+   "h1": "Introductory Culinary Arts - Noncredit Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 1000
  },
  {
   "control_number": "45357",
   "title": "California General Education Transfer Curriculum (Cal-GETC)",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.888,
+  "codes_found": [
+   "AJ10",
+   "AJ5",
+   "ANTH1",
+   "ANTH1L",
+   "ANTH3",
+   "ANTH32",
+   "ANTH5",
+   "ART1A",
+   "ART1B",
+   "ART21",
+   "ART4",
+   "ART6",
+   "ASTR1",
+   "BIO1",
+   "BIO10",
+   "BIO12",
+   "BIO13",
+   "BIO15",
+   "BIO4",
+   "BIO5",
+   "CD2",
+   "CD3",
+   "CD40",
+   "CHEM1A",
+   "CHEM1B",
+   "CHEM30A",
+   "CHEM30B",
+   "CMUN4",
+   "ECOL1",
+   "ECON10",
+   "ENGL2C",
+   "ENGL2E",
+   "ENGL2F",
+   "ENGL2J",
+   "ENGL3",
+   "ENGL4A",
+   "ENGL4B",
+   "ENGL5A",
+   "ENGL5B",
+   "ENGL6A",
+   "ENGL6B",
+   "ENGL6C",
+   "ENVS1",
+   "ETHN1",
+   "ETHN10B",
+   "ETHN2",
+   "ETHN3B",
+   "FRNH2A",
+   "FRNH2B",
+   "GEOG1",
+   "GEOG2",
+   "GEOL1",
+   "HIST10",
+   "HIST12",
+   "HIST3",
+   "HIST4A",
+   "HIST4B",
+   "HIST5",
+   "HIST6",
+   "HIST7A",
+   "HIST7B",
+   "HUM10",
+   "HUM3",
+   "HUM4",
+   "HUM6",
+   "JOUR10",
+   "MATH11",
+   "MATH14",
+   "MATH16",
+   "MATH1A",
+   "MATH1B",
+   "MATH6",
+   "MATH7",
+   "MATH8A",
+   "MATH8B",
+   "MUS15",
+   "MUS1A",
+   "MUS1B",
+   "MUS2",
+   "MUS6",
+   "PHIL1",
+   "PHIL12",
+   "PHIL15",
+   "PHIL3A",
+   "PHIL3B",
+   "PHIL4",
+   "PHIL6",
+   "PHIL7A",
+   "PHIL7B",
+   "PHIL9",
+   "PHYS2A",
+   "PHYS4A",
+   "POLS10",
+   "POLS3",
+   "POLS32",
+   "POLS4",
+   "POLS5",
+   "POLS7",
+   "PSCI1",
+   "PSCI2",
+   "PSYC11",
+   "PSYC2",
+   "PSYC3",
+   "PSYC32",
+   "PSYC35",
+   "PSYC40",
+   "PSYC45",
+   "SJS5",
+   "SOC10",
+   "SOC1A",
+   "SOC1B",
+   "SOC25",
+   "SOC3",
+   "SOC4",
+   "SPAN2A",
+   "SPAN2B",
+   "THEA1",
+   "THEA3",
+   "THEA7"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4135/4166",
+   "title": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
+   "h1": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 134,
-  "text_chars": 0
+  "text_chars": 11965
  },
  {
   "control_number": "45683",
   "title": "Water Environment",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WTRM201",
+   "WTRM202",
+   "WTRM217",
+   "WTRM220",
+   "WTRM233",
+   "WTRM235"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4150/4383",
+   "title": "Water Environment - Certificate of Achievement",
+   "h1": "Water Environment - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 1616
  },
  {
   "control_number": "45720",
   "title": "Environmental Science I",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.6,
+  "codes_found": [
+   "BIO1",
+   "CHEM1A",
+   "GEOL1"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4096/3982",
+   "title": "Liberal Arts: Natural Science Emphasis - A.A. Degree",
+   "h1": "Liberal Arts: Natural Science Emphasis - A.A. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.5
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 2572
  },
  {
   "control_number": "45729",
   "title": "Environmental Science II",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1552,7 +3769,7 @@
   "title": "Environmental Science",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1564,59 +3781,177 @@
   "title": "Intercollegiate Athletics",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.973,
+  "codes_found": [
+   "ATH10A",
+   "ATH10B",
+   "ATH11A",
+   "ATH11B",
+   "ATH12A",
+   "ATH12B",
+   "ATH13A",
+   "ATH13B",
+   "ATH14A",
+   "ATH14B",
+   "ATH25",
+   "ATH27",
+   "ATH35",
+   "ATH37",
+   "ATH38",
+   "ATH42",
+   "ATH45",
+   "ATH46",
+   "ATH47",
+   "ATH48",
+   "ATH75",
+   "ATH77",
+   "ATH90",
+   "ATH91A",
+   "ATH91B",
+   "ATH9A",
+   "ATH9B",
+   "CMUN8",
+   "COMMC1000",
+   "ENGLC1000",
+   "HE1",
+   "KIN1",
+   "KIN15",
+   "KIN2",
+   "KIN8",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4138/4399",
+   "title": "Intercollegiate Athletics - Certificate of Achievement",
+   "h1": "Intercollegiate Athletics - Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 37,
-  "text_chars": 0
+  "text_chars": 2862
  },
  {
   "control_number": "46046",
   "title": "Nutrition and Dietetics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "AH11",
+   "BIO7",
+   "BIO8",
+   "BIO9",
+   "CHEM1A",
+   "CHEM1B"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4136/4194",
+   "title": "Health Science - A.S. Degree",
+   "h1": "Health Science - A.S. Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 1832
  },
  {
   "control_number": "46047",
   "title": "Public Health",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.571,
+  "codes_found": [
+   "BIO7",
+   "BIO9",
+   "CHEM1A",
+   "CHEM30A",
+   "HE1",
+   "HE2",
+   "HE5",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4188/4063",
+   "title": "Public Health Science - A.S.-T Degree",
+   "h1": "Public Health Science - A.S.-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 2433
  },
  {
   "control_number": "46246",
   "title": "Physics 2.0",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSIS24",
+   "CSIS45",
+   "MATH1A",
+   "MATH1B",
+   "MATH1C",
+   "MATH2",
+   "MATH2C",
+   "PHYS4A",
+   "PHYS4B",
+   "PHYS4C"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/3999/4394",
+   "title": "Physics 2.0 - A.S.-T Degree",
+   "h1": "Physics 2.0 - A.S.-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 3387
  },
  {
   "control_number": "46458",
   "title": "Mathematics 2.0",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSIS24",
+   "CSIS45",
+   "MATH1A",
+   "MATH1B",
+   "MATH1C",
+   "MATH2",
+   "MATH2C",
+   "PHYS4A"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4139/4395",
+   "title": "Mathematics 2.0 - A.S.-T Degree",
+   "h1": "Mathematics 2.0 - A.S.-T Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2517
  }
 ]

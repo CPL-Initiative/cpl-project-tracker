@@ -1,0 +1,326 @@
+{
+ "college": "Gavilan College",
+ "control_number": "06131",
+ "shape": "degree",
+ "title": "Registered Nursing",
+ "award": "A.S. Degree",
+ "source_url": "https://gavilan.curriqunet.com/catalog/iq/4089/4092/4058",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6952,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6952,
+    "output_tokens": 2609,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2609,
+  "output_tokens_details": {
+   "thinking_tokens": 1008
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07999,
+ "ms": 21351,
+ "seconds": 21.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 9,
+   "share": 0.778,
+   "missing": [
+    "COMMC1000",
+    "ENGLC1000"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 10,
+   "codes": [
+    "AH51",
+    "AH52",
+    "AH53",
+    "AH54",
+    "AH8",
+    "AH9",
+    "CMUN1A",
+    "ENGL1A",
+    "MATH235",
+    "MATH242"
+   ],
+   "flagged": [
+    "AH51",
+    "AH52",
+    "AH53",
+    "AH54",
+    "AH8",
+    "AH9",
+    "CMUN1A",
+    "ENGL1A",
+    "MATH235",
+    "MATH242"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    126.0,
+    135.0
+   ],
+   "stated": [
+    126.0,
+    135.0
+   ],
+   "against": "degree",
+   "ge": [
+    35.0,
+    39.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Registered Nursing - A.S. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Gavilan College A.A./A.S. general education, the CSU-GE Breadth or the IGETC pattern",
+   "degree_total": {
+    "min": 126,
+    "max": 135
+   },
+   "ge_units": {
+    "min": 35,
+    "max": 39
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Take and pass the licensure exam.",
+    "Function within the scope of practice of the registered nurse as outlined by the California Board of Registered Nursing.",
+    "Practice within professional and legal standards, ethical principles and demonstrate sensitivity to the cultural differences of clients.",
+    "Apply principles of oral, written and verbal communication to convey relevant, accurate and complete information.",
+    "Demonstrate an ability to practice safely.",
+    "Apply the nursing process by assessing, planning, implementing and evaluating nursing care and teaching the maintenance of health and prevention of disease."
+   ],
+   "careers": [
+    "registered nursing"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "RN PROGRAM PREREQUISITES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 71,
+     "max": 76
+    },
+    "courses": [
+     {
+      "code": "AH 8",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIO 8",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "AH 9",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIO 9",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 1A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CMUN 1A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC 1A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 235",
+      "units": 7.5,
+      "units_max": 10,
+      "alternatives": [
+       {
+        "code": "MATH 240",
+        "units": 5,
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 242",
+        "units": 6,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "AH 51",
+      "units": 11,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AH 52",
+      "units": 11,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AH 53",
+      "units": 11,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AH 54",
+      "units": 11,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AH 16",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "RN PROGRAM",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 20,
+     "max": 20
+    },
+    "courses": [
+     {
+      "code": "AH 55",
+      "units": 10,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AH 56",
+      "units": 10,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COMM C1000",
+    "why": "not in the text; catalog prints CMUN 1A Introduction to Public Speaking instead"
+   },
+   {
+    "code": "ENGL C1000",
+    "why": "not in the text; catalog prints ENGL 1A Composition and Reading instead"
+   }
+  ],
+  "notes": [
+   "Total: 126-135 equals prerequisites (71-76) + RN Program (20) + general education (35-39); recorded as degree_total. No separate major total is printed, so total_units is null.",
+   "The GE paragraph mentions 'sufficient electives to meet a 60 unit total' but the printed total (126-135) already exceeds 60 and no elective units are printed; electives_fill_degree left false. Reviewer may check.",
+   "AH 51, AH 52, AH 53, AH 54 (11 units each) are marked '(Historical)' yet are listed among required prerequisites; AH 8 and AH 9 are also Historical with active BIO 8/BIO 9 alternatives.",
+   "Prerequisite block also requires a current BLS Provider card and GPA of 2.5 or higher in AH/BIO 8, AH/BIO 9, CMUN 1A, and SOC 1A, with minimum grade C in all nursing prerequisites.",
+   "Learning outcomes are printed once in the program summary for the RN AS program; recorded for this award.",
+   "MATH 235 printed with range 7.5-10; alternatives MATH 240 (5) and MATH 242 (6)."
+  ]
+ },
+ "extracted_run": "38948144064"
+}

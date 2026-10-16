@@ -1,0 +1,273 @@
+{
+ "college": "Gavilan College",
+ "control_number": "30270",
+ "shape": "certificate",
+ "title": "Television Performance Option",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://gavilan.curriqunet.com/catalog/iq/4089/4149/4025",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6584,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6584,
+    "output_tokens": 1528,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1528,
+  "output_tokens_details": {
+   "thinking_tokens": 477
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0569,
+ "ms": 13486,
+ "seconds": 14.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 7,
+   "share": 0.571,
+   "missing": [
+    "MCTV43",
+    "THEA12A",
+    "THEA13A"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 6,
+   "codes": [
+    "THEA16",
+    "THEA17A",
+    "THEA18",
+    "THEA19",
+    "THEA20",
+    "THEA6"
+   ],
+   "flagged": [
+    "THEA16",
+    "THEA17A",
+    "THEA18",
+    "THEA19",
+    "THEA20",
+    "THEA6"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    15.0,
+    15.0
+   ],
+   "stated": [
+    15.0,
+    15.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Theater Arts-Television Performance - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 15,
+    "max": 15
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Develop the skills required to set-up and operate video and audio equipment for live or live to tape studio or field productions.",
+    "Demonstrate knowledge and skills in digital editing for broadcast television.",
+    "Master the skills and knowledge needed for television production including: lighting, set design, make-up, etc.",
+    "Develop teamwork skills through class exercises, assignments, and performances."
+   ],
+   "careers": [
+    "producers",
+    "actors",
+    "writers",
+    "editors",
+    "directors"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "THEA 16",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MCTV 16",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "THEA 18",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MCTV 18",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "THEA 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MCTV 6",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "THEA 17A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Choose one (if not used above)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "THEA 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HUM 25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA 19",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MCTV 43",
+    "why": "not in the text"
+   },
+   {
+    "code": "THEA 12A",
+    "why": "not in the text"
+   },
+   {
+    "code": "THEA 13A",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The catalog prints 'Requirements Units: 15' and 'Total: 15' for the whole certificate; recorded as total_units, not as a block total. Required block sums to 12 units plus one 3-unit choice.",
+   "'Choose one (if not used above)' qualifier is odd since none of the three choice courses appear in the required list; reviewer may check.",
+   "Most courses are marked '(Historical)' in the catalog (THEA 20 is '(Active)'); several THEA codes appear to be historical cross-listings of MCTV courses.",
+   "The program summary mentions an A.A. degree pathway; the outcomes list appears to be the program's shared list and is recorded for this certificate.",
+   "The page states 'This certificate does not require the core courses'."
+  ]
+ },
+ "extracted_run": "38948144064"
+}

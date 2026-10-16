@@ -1,0 +1,171 @@
+{
+ "college": "Gavilan College",
+ "control_number": "45072",
+ "shape": "noncredit",
+ "title": "Introductory Culinary Arts",
+ "award": "Noncredit program",
+ "source_url": "https://gavilan.curriqunet.com/catalog/iq/4089/4108/4353",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6080,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6080,
+    "output_tokens": 785,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 785,
+  "output_tokens_details": {
+   "thinking_tokens": 199
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04002,
+ "ms": 8319,
+ "seconds": 8.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    60.48,
+    60.48
+   ],
+   "stated": [
+    60.48,
+    60.48
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Introductory Culinary Arts - Noncredit Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": 60.48,
+    "max": 60.48
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate the application of primary standards and regulations for safe food handling and sanitation practices.",
+    "Plan and follow a food production schedule, including timing and prioritizing of tasks and activities.",
+    "Apply the knowledge and skills essential for effective customer service.",
+    "Demonstrate the qualities and behaviors that constitute a positive and professional work demeanor."
+   ],
+   "careers": [
+    "culinary field"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CUL 701",
+      "units": 48.06,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL 702",
+      "units": 12.42,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints figures beside the courses (48.06, 12.42) and 'Total: 60.48' without naming the measure; because this is a noncredit certificate and the state file stores 0 units, these were read as hours. Reviewer should confirm.",
+   "The catalog prints no heading over the course list; the block name 'Required Courses' was supplied, and both courses are listed without any choice, so they were read as all required.",
+   "Career entry 'culinary field' comes from the description: 'prepare students to work in the culinary field.'"
+  ]
+ },
+ "extracted_run": "38948144064"
+}
