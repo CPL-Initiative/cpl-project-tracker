@@ -1,0 +1,380 @@
+{
+ "college": "Ventura College",
+ "control_number": "45422",
+ "shape": "degree",
+ "title": "Forensic Science",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/criminal-justice/forensic-science-as/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9174,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9174,
+    "output_tokens": 2445,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2445,
+  "output_tokens_details": {
+   "thinking_tokens": 623
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0856,
+ "ms": 19205,
+ "seconds": 19.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 28,
+   "listed": 28,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    69.0,
+    69.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    24.0,
+    24.0
+   ],
+   "why": [
+    "the blocks and general education sum to 69.0-69.0; the catalog prints 60.0-60.0 for the degree"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     45.0,
+     45.0
+    ],
+    "stated": [
+     45.0,
+     45.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "REQUIREMENTS",
+   "measure": "units",
+   "total_units": {
+    "min": 45,
+    "max": 45
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 0,
+    "max": 0
+   },
+   "ge_pattern": "VCCCD General Education Pattern",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 24
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate ability to observe objectively and to collect data and facts to make an informed judgment.",
+    "Apply the rules of evidence, forensic science techniques and technology, and report writing to crime scene situations and scenarios.",
+    "Assess the techniques of crime scene searches, evidence analysis, and courtroom demeanor related to a variety of criminal investigation situations."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 33,
+     "max": 33
+    },
+    "courses": [
+     {
+      "code": "BIOL C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL C1001L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM V120A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM V101",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ V04",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ V06",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ V35",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH V35",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ V35L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH V35L",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ V49",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ V50",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ V52",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ V59",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSY V04",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Select 4 courses from the following",
+    "rule": "choose_courses",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "ART V70A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ V01",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ V19",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ V28",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ V36",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH V36",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ V37",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ V38",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ V51",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ V54",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ V56",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC V13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The text prints no program heading; section_heading names the REQUIREMENTS tab of the Forensic Science A.S. page.",
+   "Cross-listed codes printed as CJ/ANTH V35, V35L and V36 are recorded as the CJ course with the ANTH course as an alternative carrying the same units.",
+   "The 'or' alternatives CHEM V101 and PSY V04 print no units of their own on their rows; units left null (closed list stores 5 and 4).",
+   "Degree summary prints Required Major Units 45, VCCCD GE Units 24, Double-Counted Units (9), Elective Units 0, Total Units for the A.S. Degree 60; degree_elective_units recorded as the printed 0.",
+   "The Plan of Study totals 61 units, differing from the printed 60-unit degree total.",
+   "The Plan of Study notes CJ V59 has a CJ V01 prerequisite, though CJ V01 appears only as a List A elective.",
+   "Outcomes are the program student learning outcomes printed on this page's outcomes tab."
+  ]
+ },
+ "extracted_run": "38756014587"
+}

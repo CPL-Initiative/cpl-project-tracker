@@ -1,0 +1,241 @@
+{
+ "college": "Ventura College",
+ "control_number": "10521",
+ "shape": "degree",
+ "title": "Water Science",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/water-science/water-science-as/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7739,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7739,
+    "output_tokens": 1772,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1772,
+  "output_tokens_details": {
+   "thinking_tokens": 661
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.0664,
+ "ms": 15277,
+ "seconds": 15.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 12,
+   "share": 0.833,
+   "missing": [
+    "WSV22",
+    "WSV96"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    31.0,
+    31.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Water Science, Associate in Science",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "VCCCD GE",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Analyze the fundamentals of chemistry, physics, microbiology, and math as they relate to the water industry.",
+    "Understand the foundational engineering and operations used at potable water treatment facilities and with water distribution systems.",
+    "Tie potable water treatment requirements and water distribution system criteria and to local, state, and federal regulatory standards.",
+    "Understand the state licensing requirements for entering into and advancing in the water industry."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Plan of Study Grid (WS courses named)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "WS V11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WS V14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WS V25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WS V16",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WS V18",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WS V19",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WS V15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WS V20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WS V17",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WS V21",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "WS V22",
+    "why": "not in the text; likely a WS elective, but the requirements list with electives is not in the text"
+   },
+   {
+    "code": "WS V96",
+    "why": "not in the text; likely a WS elective, but the requirements list with electives is not in the text"
+   }
+  ],
+  "notes": [
+   "The catalog text does not include the program requirements tab; only the Plan of Study Grid and the outcomes tab are present. The single block is built from the specific WS courses the Plan of Study names and should be checked against the actual requirements list.",
+   "The Plan of Study also lists two 'WS Elective Course' slots of 3 units each with no list of eligible courses; these are not recorded as a block.",
+   "The Plan of Study prints 'Total Units/Hours 62', which is a sample schedule total including GE (ENGL C1000 and VCCCD GE Areas); it is not recorded as degree_total because no requirements total is printed.",
+   "No major total is stated in the text, so total_units is null.",
+   "The outcomes are printed in the page's program student learning outcomes tab for this program; recorded as this award's outcomes.",
+   "Closed list title for WS V20 reads 'Mathematcis'; catalog prints 'Water System Mathematics'."
+  ]
+ },
+ "extracted_run": "38756014587"
+}

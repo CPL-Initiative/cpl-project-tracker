@@ -1,0 +1,1072 @@
+{
+ "college": "Ventura College",
+ "control_number": "44722",
+ "shape": "certificate",
+ "title": "Athletic Coaching",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/intercollegiate-athletics/2-year-coa/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8922,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8922,
+    "output_tokens": 5333,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 5333,
+  "output_tokens_details": {
+   "thinking_tokens": 576
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.14235,
+ "ms": 37457,
+ "seconds": 38.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 14,
+   "share": 0.643,
+   "missing": [
+    "KINV2",
+    "KINV40A",
+    "KINV44A",
+    "KINV46A",
+    "KINV48A"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 89,
+   "codes": [
+    "ANTHV2",
+    "ANTHV3",
+    "ANTHV5",
+    "ANTHV6",
+    "ARTHV1",
+    "ARTHV7",
+    "ASTRC1001",
+    "ASTRC1001L",
+    "BIOLC1001",
+    "BIOLC1001L",
+    "BIOLV12",
+    "BIOLV4",
+    "BUSV30",
+    "BUSV49",
+    "CHEMV120A",
+    "CHEMV120B",
+    "CHSTV1",
+    "COMMC1000",
+    "COMMV2",
+    "COMMV3",
+    "ECONC2001",
+    "ECONC2002",
+    "ENGLC1000",
+    "ENGLC1001",
+    "ENGLC1003",
+    "ETHSV1",
+    "GEOGV1",
+    "GEOGV1L",
+    "HEDV1",
+    "HEDV2",
+    "HEDV22",
+    "HEDV24",
+    "HEDV3",
+    "HEDV4",
+    "HISTC1001",
+    "HISTC1002",
+    "HISTV50",
+    "HISTV51",
+    "HISTV58",
+    "ICAV13",
+    "ICAV14",
+    "ICAV15",
+    "ICAV16",
+    "ICAV17",
+    "ICAV18",
+    "ICAV19",
+    "ICAV2",
+    "ICAV20",
+    "ICAV22",
+    "ICAV23",
+    "ICAV24",
+    "ICAV25",
+    "ICAV3",
+    "ICAV30A",
+    "ICAV30B",
+    "ICAV31B",
+    "ICAV36",
+    "ICAV4",
+    "ICAV5",
+    "ICAV6",
+    "ICAV7",
+    "ICAV8",
+    "ICAV9",
+    "KINV19",
+    "KINV88",
+    "KINV89",
+    "MATHV20",
+    "MATHV4",
+    "MATHV5",
+    "MUSV1",
+    "PHILV1",
+    "PHILV2",
+    "PHILV5",
+    "PHOTV1",
+    "PHSCV1",
+    "PHSOV1",
+    "PHYSV1",
+    "POLSC1000",
+    "POLSV2",
+    "POLSV3",
+    "POLSV5",
+    "PSYCC1000",
+    "SOCIC1000",
+    "SOCV3",
+    "STATC1000",
+    "THAV1",
+    "THAV14",
+    "THAV17A",
+    "THAV17B"
+   ],
+   "flagged": [
+    "ANTHV2",
+    "ANTHV3",
+    "ANTHV5",
+    "ANTHV6",
+    "ARTHV1",
+    "ARTHV7",
+    "ASTRC1001",
+    "ASTRC1001L",
+    "BIOLC1001",
+    "BIOLC1001L",
+    "BIOLV12",
+    "BIOLV4",
+    "BUSV30",
+    "BUSV49",
+    "CHEMV120A",
+    "CHEMV120B",
+    "CHSTV1",
+    "COMMC1000",
+    "COMMV2",
+    "COMMV3",
+    "ECONC2001",
+    "ECONC2002",
+    "ENGLC1000",
+    "ENGLC1001",
+    "ENGLC1003",
+    "ETHSV1",
+    "GEOGV1",
+    "GEOGV1L",
+    "HEDV1",
+    "HEDV2",
+    "HEDV22",
+    "HEDV24",
+    "HEDV3",
+    "HEDV4",
+    "HISTC1001",
+    "HISTC1002",
+    "HISTV50",
+    "HISTV51",
+    "HISTV58",
+    "ICAV13",
+    "ICAV14",
+    "ICAV15",
+    "ICAV16",
+    "ICAV17",
+    "ICAV18",
+    "ICAV19",
+    "ICAV2",
+    "ICAV20",
+    "ICAV22",
+    "ICAV23",
+    "ICAV24",
+    "ICAV25",
+    "ICAV3",
+    "ICAV30A",
+    "ICAV30B",
+    "ICAV31B",
+    "ICAV36",
+    "ICAV4",
+    "ICAV5",
+    "ICAV6",
+    "ICAV7",
+    "ICAV8",
+    "ICAV9",
+    "KINV19",
+    "KINV88",
+    "KINV89",
+    "MATHV20",
+    "MATHV4",
+    "MATHV5",
+    "MUSV1",
+    "PHILV1",
+    "PHILV2",
+    "PHILV5",
+    "PHOTV1",
+    "PHSCV1",
+    "PHSOV1",
+    "PHYSV1",
+    "POLSC1000",
+    "POLSV2",
+    "POLSV3",
+    "POLSV5",
+    "PSYCC1000",
+    "SOCIC1000",
+    "SOCV3",
+    "STATC1000",
+    "THAV1",
+    "THAV14",
+    "THAV17A",
+    "THAV17B"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    29.0,
+    29.0
+   ],
+   "stated": [
+    29.0,
+    29.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "REQUIREMENTS",
+   "measure": "units",
+   "total_units": {
+    "min": 29,
+    "max": 29
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate critical thinking skills when applying to game strategies and situations.",
+    "Utilize critical thinking skills to apply knowledge in sports situations."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "List A: Select 8 units from the following:",
+    "rule": "choose_units",
+    "minimum": 8,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ICA V02",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ICA V03",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ICA V04",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ICA V05",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ICA V06",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ICA V07",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ICA V08",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ICA V09",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ICA V13",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ICA V14",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ICA V15",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ICA V16",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ICA V17",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ICA V18",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ICA V19",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ICA V20",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ICA V22",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ICA V23",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ICA V24",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ICA V25",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ICA V36",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "List B: Select 3 units from the following:",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ICA V30A",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ICA V30B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ICA V31B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIN V10",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN V18",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN V19",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIN V26",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List C: Select 18 units from the following:",
+    "rule": "choose_units",
+    "minimum": 18,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "ANTH V02",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH V03",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH V05",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTH V06",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARTH V01",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ARTH V07",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ASTR C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ASTR C1001L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL C1001L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL V04",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL V12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS V30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS V49",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHST V01",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM V120A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM V120B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM V02",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM V03",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL C1003",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETHS V01",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG V01",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG V01L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HED V01",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HED V02",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HED V03",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HED V04",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HED V22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HED V24",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST C1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST V50",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST V51",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST V58",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIN V80",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN V81",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN V82",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN V83",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN V84",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN V87",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN V88",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIN V89",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH V04",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH V05",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH V20",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUS V01",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHIL V01",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHIL V02",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHIL V05",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHOT V01",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHSC V01",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS V01",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHSO V01",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS V02",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS V03",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS V05",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOCI C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC V03",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "THA V01",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "THA V14",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "THA V17A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "THA V17B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "KIN V02",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN V40A",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN V44A",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN V46A",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN V48A",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The source page is the Intercollegiate Athletics 2-year Certificate of Achievement (URL intercollegiate-athletics/2-year-coa), not a page titled Athletic Coaching; the text prints no program heading, so section_heading names the REQUIREMENTS tab. Reviewer should confirm this page matches the Athletic Coaching program.",
+   "Required Core Courses prints 'Required Core Units 11' across List A (8 units) and List B (3 units); no per-list total is printed for A or B beyond their 'Select N units' rules. List C stated 18 taken from 'Required Additional Units 18'.",
+   "Core courses and restricted electives must be completed with a grade of C or better.",
+   "Core instruction says intercollegiate athletics units come from ICA V02 – V25 or V36.",
+   "Outcomes are from the page's program student learning outcomes tab and appear to be the program-wide list shared by this award.",
+   "Total Units for the Certificate 29."
+  ]
+ },
+ "extracted_run": "38756014587"
+}

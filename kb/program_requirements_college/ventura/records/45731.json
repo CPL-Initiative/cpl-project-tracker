@@ -1,0 +1,326 @@
+{
+ "college": "Ventura College",
+ "control_number": "45731",
+ "shape": "adt",
+ "title": "Computer Science",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/computer-science/computer-science-adt/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8579,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8579,
+    "output_tokens": 3884,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3884,
+  "output_tokens_details": {
+   "thinking_tokens": 2152
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.112,
+ "ms": 33629,
+ "seconds": 34.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 14,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    32.0,
+    34.0
+   ],
+   "stated": [
+    31.0,
+    32.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 32.0-34.0; the catalog states 31.0-32.0"
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     67.0,
+     73.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "REQUIREMENTS (Course List)",
+   "measure": "units",
+   "total_units": {
+    "min": 31,
+    "max": 32
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 1,
+    "max": 5
+   },
+   "ge_pattern": "CalGETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Satisfy the requirements to successfully transfer to a CSU program for a degree in computer science or a related field.",
+    "Demonstrate proficiencies of knowledge and skills in core Computer Science topics such as problem solving, software development, programming languages, artificial intelligence, operating systems, networking and communication, computer hardware and software architectures.",
+    "Develop a command of critical thinking with respect to privacy, ethics, and security.",
+    "Analyze short- and long-term trends in a selected topic using credible research sources.",
+    "Develop and justify strategies for preparing for and adapting to projected changes in the field."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CS V11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS V13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS V17",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH V52",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS V19",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2220",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS V04",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS V04L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Core Courses: PHYS V05 & V05L",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Science option",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHYS V05",
+      "units": 4,
+      "units_max": 5,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS V05L",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Core Courses: or BIOL V03",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Science option",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL V03",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Core Courses: or BIOL V04",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Science option",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL V04",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Core Courses: or CHEM V120A",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Science option",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHEM V120A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page's program title heading is not in the extracted text; section_heading names the REQUIREMENTS tab's Course List.",
+   "The catalog prints 'Required Core Units 31-32' for the whole Required Core Courses list, including the PHYS V05 & V05L / BIOL V03 / BIOL V04 / CHEM V120A choice; since that choice is split into option blocks, the 31-32 is recorded as total_units rather than as the stated total of the first block.",
+   "PHYS V04 & V04L are printed as one row with 5 units; the 5 is recorded on PHYS V04 and PHYS V04L has null units (state file: 4 and 1).",
+   "PHYS V05 & V05L are printed with 4-5 units on a row followed by 'or BIOL V03', 'or BIOL V04', 'or CHEM V120A' with no units of their own; the 4-5 range appears to cover the whole choice. Recorded as four option blocks in the 'Science option' group; units for the BIOL/CHEM options and PHYS V05L are left null as none are printed beside them.",
+   "CS V17 and MATH V52 are printed as a cross-listed pair 'CS V17/MATH V52'; recorded as one entry with MATH V52 as alternative.",
+   "Degree breakdown printed: Required Major Units 31-32, CalGETC 34, Double-Counted Units (7-10), Elective Units 1-5, Total 60.",
+   "CS V15 appears only in the Plan of Study, not in the requirements list; not recorded.",
+   "The outcomes list is printed for the program as a whole on this award's page; recorded as this award's outcomes."
+  ]
+ },
+ "extracted_run": "38756014587"
+}

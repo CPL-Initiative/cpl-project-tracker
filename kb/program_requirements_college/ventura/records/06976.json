@@ -1,0 +1,226 @@
+{
+ "college": "Ventura College",
+ "control_number": "06976",
+ "shape": "degree",
+ "title": "Photography",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.vcccd.edu/ventura/programs-courses/photography/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11963,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11963,
+    "output_tokens": 1174,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1174,
+  "output_tokens_details": {
+   "thinking_tokens": 296
+  },
+  "service_tier": "standard",
+  "inference_geo": "global"
+ },
+ "cost_usd": 0.07133,
+ "ms": 9946,
+ "seconds": 10.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 18,
+   "share": 0.0,
+   "missing": [
+    "ARTV11A",
+    "PHOTV1",
+    "PHOTV13",
+    "PHOTV14",
+    "PHOTV15",
+    "PHOTV2",
+    "PHOTV20",
+    "PHOTV4A",
+    "PHOTV4B",
+    "PHOTV6A",
+    "PHOTV6B",
+    "PHOTV7",
+    "PHOTV70A",
+    "PHOTV70B",
+    "PHOTV8",
+    "PHOTV90",
+    "PHOTV9A",
+    "PHOTV9B"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Photography, Associate in Arts",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ART V11A",
+    "why": "no A.A. requirements in the text; named only as an advisory in PHOT V70A/V70B descriptions"
+   },
+   {
+    "code": "PHOT V01",
+    "why": "no A.A. requirements in the text; appears only in the Courses tab"
+   },
+   {
+    "code": "PHOT V02",
+    "why": "no A.A. requirements in the text; appears only in the Courses tab"
+   },
+   {
+    "code": "PHOT V04A",
+    "why": "no A.A. requirements in the text; appears only in the Courses tab"
+   },
+   {
+    "code": "PHOT V04B",
+    "why": "no A.A. requirements in the text; appears only in the Courses tab"
+   },
+   {
+    "code": "PHOT V06A",
+    "why": "no A.A. requirements in the text; appears only in the Courses tab"
+   },
+   {
+    "code": "PHOT V06B",
+    "why": "no A.A. requirements in the text; appears only in the Courses tab"
+   },
+   {
+    "code": "PHOT V07",
+    "why": "no A.A. requirements in the text; appears only in the Courses tab"
+   },
+   {
+    "code": "PHOT V08",
+    "why": "no A.A. requirements in the text; appears only in the Courses tab"
+   },
+   {
+    "code": "PHOT V09A",
+    "why": "no A.A. requirements in the text; appears only in the Courses tab"
+   },
+   {
+    "code": "PHOT V09B",
+    "why": "no A.A. requirements in the text; appears only in the Courses tab"
+   },
+   {
+    "code": "PHOT V13",
+    "why": "no A.A. requirements in the text; appears only in the Courses tab"
+   },
+   {
+    "code": "PHOT V14",
+    "why": "no A.A. requirements in the text; appears only in the Courses tab"
+   },
+   {
+    "code": "PHOT V15",
+    "why": "no A.A. requirements in the text; appears only in the Courses tab"
+   },
+   {
+    "code": "PHOT V20",
+    "why": "no A.A. requirements in the text; appears only in the Courses tab"
+   },
+   {
+    "code": "PHOT V70A",
+    "why": "no A.A. requirements in the text; appears only in the Courses tab"
+   },
+   {
+    "code": "PHOT V70B",
+    "why": "no A.A. requirements in the text; appears only in the Courses tab"
+   },
+   {
+    "code": "PHOT V90",
+    "why": "no A.A. requirements in the text; appears only in the Courses tab (printed 1-6 units)"
+   }
+  ],
+  "notes": []
+ },
+ "extracted_run": "38756014587"
+}
