@@ -1764,7 +1764,13 @@
     var q = opts.question == null ? '' : String(opts.question).trim();
     if (q) {
       b.input.value = q.slice(0, 1000);
-      if (opts.send) submit(b);
+      if (opts.send) {
+        submit(b);
+        // Sending disables the box while she answers, and a disabled box drops
+        // focus to <body>: hold it on the dialog, as a dock's own send does.
+        // submit() hands it back to the box when she is done.
+        if (b.busy) { try { b.wrap.focus({ preventScroll: true }); } catch (e) { /* no focus support */ } }
+      }
       else { try { b.input.focus({ preventScroll: true }); } catch (e) { /* no focus support */ } }
     }
     return true;
@@ -1982,8 +1988,10 @@
     ask: function (q) {
       var b = apiBox();
       if (!b) return false;
-      if (b === cobiBox && fullBox !== b) open();
-      b.input.value = String(q == null ? '' : q).slice(0, 1000);
+      var text = String(q == null ? '' : q).slice(0, 1000);
+      // The COBI-wide box opens first, and open() keeps focus on her while she answers.
+      if (b === cobiBox) return open({ question: text, send: true });
+      b.input.value = text;
       submit(b);
       return true;
     },

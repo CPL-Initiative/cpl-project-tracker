@@ -132,9 +132,15 @@ const cobiWrap = (w) => w.document.querySelector("body > .cplchat.cplchat-full, 
     check("(2) focus is in her box", w.document.activeElement === wrap.querySelector(".cplchat-input"));
     check("(2) her one control reads Back to the tab", wrap.querySelector(".cplchat-dock-btn").textContent === "Back to the tab");
     API.open({ question: "What is CPL?", send: true });
+    // Sending disables her box, and a browser drops focus from a disabled box to
+    // <body>: it has to be on the dialog while she answers.
+    check("(2) ⭐ while she answers, focus holds on the dialog, never the disabled box",
+      w.document.activeElement === wrap && wrap.querySelector(".cplchat-input").disabled);
     await tick(10);
     check("(2) open({ question, send }) asks", w.__asks.length === 1 && w.__asks[0].query === "What is CPL?"
       && wrap.querySelectorAll(".cplchat-msg").length === 2);
+    check("(2) …and when she is done, focus is back in her box",
+      w.document.activeElement === wrap.querySelector(".cplchat-input"));
     w.document.dispatchEvent(new w.KeyboardEvent("keydown", { key: "Escape", bubbles: true, cancelable: true }));
     check("(2) ⭐ Escape closes her: back in the hidden host, nothing inert, the page scrolls",
       !API._dockExpanded() && host.contains(wrap) && !w.document.querySelector("[inert]")
@@ -149,6 +155,12 @@ const cobiWrap = (w) => w.document.querySelector("body > .cplchat.cplchat-full, 
     API.open({ question: "Held for the role" });
     check("(2) a question without send waits in the box, unsent",
       wrap.querySelector(".cplchat-input").value === "Held for the role" && w.__asks.length === 1);
+    API._collapseDock();
+    // ask() names no box: the reader last acted in hers, so it opens her and sends.
+    check("(2) ask() with her box the one in use opens her and sends",
+      API.ask("And who decides?") === true && API._dockExpanded() && w.__asks.length === 2
+      && w.__asks[1].query === "And who decides?" && w.document.activeElement === wrap);
+    await tick(10);
     API._collapseDock();
     // A role nobody has confirmed: the prompt runs, the question waits.
     w.sessionStorage.removeItem("cplSierraAudienceOk.v1");
