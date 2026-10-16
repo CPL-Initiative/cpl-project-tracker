@@ -1,0 +1,238 @@
+{
+ "college": "Santa Ana College",
+ "control_number": "43991",
+ "shape": "certificate",
+ "title": "Legal Office Interpreting Vietnamese",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36132/35915",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6768,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6768,
+    "output_tokens": 1556,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1556,
+  "output_tokens_details": {
+   "thinking_tokens": 539
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05819,
+ "ms": 12837,
+ "seconds": 13.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 11,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    13.0,
+    16.0
+   ],
+   "stated": [
+    13.0,
+    16.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Legal Office Interpreting Vietnamese: Certificate of Achievement (Transcripted)",
+   "measure": "units",
+   "total_units": {
+    "min": 13,
+    "max": 16
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Understand the Ethics and regulations of the legal profession in California by completing Law 100 or Para 100 and Law 121 or Para 121.",
+    "Understand basic terminology used in the law office and courts by completing the Law 110.",
+    "Demonstrate an entrylevel proficiency in legal interpretation (Vietnamese/English) by completion of BA 143 or LAW 143."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "BA 143",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "LAW 143",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "LAW 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PARA 100",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "LAW 110",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BA 149",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PARA 121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "LAW 121",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Work Experience",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 1,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "PARA 105",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [
+       {
+        "code": "PARA 299",
+        "units": 1,
+        "catalog_addition": false
+       },
+       {
+        "code": "LAW 299",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "BA 149 is printed as 'BA 149' in the catalog and 'BA149' in the closed list; treated as the same course. The catalog marks it Historical and prints 1.0 unit; the state file stores no units.",
+   "Work Experience alternatives PARA 299 and LAW 299 are each printed as 1.0-4.0 units; only the low end is recorded on the alternatives because the schema has no units_max for alternatives.",
+   "The 'Required Courses' heading prints 12.0, which matches the five required choices (3+3+2+1+3); Work Experience (1-4) brings the printed total to 13.0-16.0.",
+   "The summary names employment settings (law offices, court reporting services, the courts) rather than job titles, so careers is left empty; a reviewer may wish to check."
+  ]
+ },
+ "extracted_run": "38843461766"
+}

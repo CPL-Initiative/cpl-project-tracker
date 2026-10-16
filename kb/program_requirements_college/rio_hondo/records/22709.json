@@ -1,0 +1,168 @@
+{
+ "college": "Rio Hondo College",
+ "control_number": "22709",
+ "shape": "certificate",
+ "title": "Computer Information Technology: Office Technologies",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24034/25576/25588",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7939,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7939,
+    "output_tokens": 864,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 864,
+  "output_tokens_details": {
+   "thinking_tokens": 252
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04904,
+ "ms": 7840,
+ "seconds": 8.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 6,
+   "share": 0.0,
+   "missing": [
+    "ACCT100",
+    "CIT101",
+    "CIT103",
+    "CIT117",
+    "CIT119",
+    "MGMT108"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "ACCOUNTING/COMPUTERIZED ACCOUNTING SYSTEMS - Certificate of Acheivement",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ACCT 100",
+    "why": "not in the text as a requirement; named only as an advisory in another program's course descriptions"
+   },
+   {
+    "code": "CIT 101",
+    "why": "not in the text as a requirement; named only as an advisory for CIT 117"
+   },
+   {
+    "code": "CIT 103",
+    "why": "not in the text"
+   },
+   {
+    "code": "CIT 117",
+    "why": "named only in the Accounting/Computerized Accounting Systems certificate section, not this award"
+   },
+   {
+    "code": "CIT 119",
+    "why": "not in the text"
+   },
+   {
+    "code": "MGMT 108",
+    "why": "named only in the Accounting/Computerized Accounting Systems certificate section, not this award"
+   }
+  ],
+  "notes": [
+   "The catalog text supplied is for the Accounting/Computerized Accounting Systems Certificate of Achievement (Total: 16.0-16.5 units), not for Computer Information Technology: Office Technologies. No section for the named award appears, so no blocks, totals, outcomes or careers were recorded.",
+   "The other program's requirements (ACCT 101 or ACCT 101H; CIT 117; MGMT 108 or MGMT 208 or ENGL C1000; ACCT 106; ACCT 103) were not attributed to this award.",
+   "Reviewer should fetch the correct catalog page for the CIT: Office Technologies Certificate of Achievement (2026-2027)."
+  ]
+ },
+ "extracted_run": "38843465712"
+}

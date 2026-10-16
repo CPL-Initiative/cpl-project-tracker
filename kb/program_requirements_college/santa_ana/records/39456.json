@@ -1,0 +1,239 @@
+{
+ "college": "Santa Ana College",
+ "control_number": "39456",
+ "shape": "noncredit",
+ "title": "Digital Literacy for Office and Administrative Support Worker",
+ "award": "Noncredit program",
+ "source_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36248",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6626,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6626,
+    "output_tokens": 1386,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1386,
+  "output_tokens_details": {
+   "thinking_tokens": 420
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05422,
+ "ms": 11103,
+ "seconds": 11.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "VBUS503"
+   ],
+   "flagged": [
+    "VBUS503"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    156.0,
+    384.0
+   ],
+   "stated": [
+    156.0,
+    384.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Digital Literacy for Office and Administrative Support Worker: Certificate of Completion (Noncredit)",
+   "measure": "hours",
+   "total_units": {
+    "min": 156,
+    "max": 384
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will apply the fundamental technology skills needed to be digitally literate."
+   ],
+   "careers": [
+    "office and administrative support"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Students must pass ONE of the following courses:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 36,
+     "max": 60
+    },
+    "courses": [
+     {
+      "code": "VBUS 259",
+      "units": 60,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VBUS 500",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Students must pass ALL of the following courses:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 108,
+     "max": 108
+    },
+    "courses": [
+     {
+      "code": "VBUS 501",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VBUS 502",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VBUS 503",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Students must pass ONE of the following courses:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 216
+    },
+    "courses": [
+     {
+      "code": "VBUS 400",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VBUS 402",
+      "units": 12,
+      "units_max": 24,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL 520",
+      "units": 96,
+      "units_max": 216,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit program counted in hours; all units fields hold hours as printed (Total : 156.0- 384.0).",
+   "VBUS 503 (Digital Literacy for Real World Application – Tier 4) is printed in the required block but is not in the closed list; recorded as a catalog addition.",
+   "Most courses are marked '( Historical )' in the catalog; only VBUS 259 is marked Active. Reviewer may wish to verify the program is current for 2026-2027.",
+   "The summary names General Office Clerk, Secretary/Administrative Assistant, and Customer Service Representative as certificate programs students may transition to; these were not recorded as careers since they are named as programs. Only the career pathway 'office and administrative support' was recorded."
+  ]
+ },
+ "extracted_run": "38843461766"
+}

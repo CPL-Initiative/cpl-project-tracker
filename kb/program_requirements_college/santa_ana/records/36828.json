@@ -1,0 +1,165 @@
+{
+ "college": "Santa Ana College",
+ "control_number": "36828",
+ "shape": "noncredit",
+ "title": "ESL Core Intermediate",
+ "award": "Noncredit program",
+ "source_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36226/36196",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6098,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6098,
+    "output_tokens": 609,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 609,
+  "output_tokens_details": {
+   "thinking_tokens": 153
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.03657,
+ "ms": 6549,
+ "seconds": 6.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    192.0,
+    432.0
+   ],
+   "stated": [
+    192.0,
+    432.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "ESL Core Intermediate: Certificate of Competency (Noncredit)",
+   "measure": "hours",
+   "total_units": {
+    "min": 192,
+    "max": 432
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will acquire intermediate-level competency and skills to be prepared to take noncredit or credit courses in different subject areas, academic and vocational training programs, and at other institutions."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Must pass both of the following courses:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 192,
+     "max": 432
+    },
+    "courses": [
+     {
+      "code": "ESL 303",
+      "units": 96,
+      "units_max": 216,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL 304",
+      "units": 96,
+      "units_max": 216,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints figures (96.0-216.0 per course, Total 192.0-432.0) without a unit label; recorded as hours because this is a noncredit Certificate of Competency.",
+   "The summary mentions 'career opportunities' generically but names no specific career, so careers is empty."
+  ]
+ },
+ "extracted_run": "38843461766"
+}

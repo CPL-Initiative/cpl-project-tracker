@@ -1,0 +1,245 @@
+{
+ "college": "Santa Ana College",
+ "control_number": "17350",
+ "shape": "certificate",
+ "title": "Fire Prevention Officer",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36126/35938",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6634,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6634,
+    "output_tokens": 1313,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1313,
+  "output_tokens_details": {
+   "thinking_tokens": 282
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0528,
+ "ms": 10268,
+ "seconds": 10.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "FTC101",
+    "FTC102",
+    "FTC104",
+    "FTC105",
+    "FTC106"
+   ],
+   "flagged": [
+    "FTC101",
+    "FTC102",
+    "FTC104",
+    "FTC105",
+    "FTC106"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.5,
+    20.5
+   ],
+   "stated": [
+    20.5,
+    20.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Fire Prevention Officer: Certificate of Achievement (Transcripted)",
+   "measure": "units",
+   "total_units": {
+    "min": 20.5,
+    "max": 20.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate written and verbal communication skills, basic math skills, public relations skills and ethical decision making skills required for the occupation of Fire Inspector.",
+    "Analyze, evaluate, and develop mitigation plans for emergency and hazardous conditions that are inherent to Fire Prevention.",
+    "Perform skills that meet National Fire Protection Association Standard 1031 for Fire Inspector, California State Fire Marshal Standards for Fire Inspector and International Code Council- Fire Inspector"
+   ],
+   "careers": [
+    "Fire Inspectors",
+    "staff assistants to Fire Protection Engineers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Fire Technology Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "FTC 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FTC 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FTC 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FTC 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FTC 106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Fire Officer Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 5.5,
+     "max": 5.5
+    },
+    "courses": [
+     {
+      "code": "FOT 130A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FOT 130B",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FOT 130C",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FOT 130D",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Closed list stores FOT130A and FOT130C without a space; the catalog prints FOT 130A and FOT 130C. Treated as the same courses (catalog_addition false).",
+   "All courses in the catalog are labeled '( Historical )', which may indicate inactive/archived courses; reviewer should confirm the program is current for 2026-2027.",
+   "FTC 101, 102, 104, 105, 106 are not in the closed list and are recorded as catalog additions.",
+   "Catalog total 20.5 units matches block totals (15.0 + 5.5)."
+  ]
+ },
+ "extracted_run": "38843461766"
+}
