@@ -10,14 +10,14 @@
     "other": 150000
   },
   "summary": {
-    "files": 1163,
-    "bytes": 11972971,
+    "files": 1164,
+    "bytes": 11978822,
     "over_budget": 10,
-    "handoff_max": 397,
+    "handoff_max": 398,
     "always_loaded_files": 1,
     "always_loaded_bytes": 60013,
-    "superseded_files": 3,
-    "superseded_bytes": 13398,
+    "superseded_files": 0,
+    "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
@@ -26,17 +26,17 @@
       },
       "other": {
         "files": 120,
-        "bytes": 3567399,
+        "bytes": 3568538,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 9450,
+        "bytes": 8911,
         "over": 0
       },
       "lessons": {
         "files": 82,
-        "bytes": 2367827,
+        "bytes": 2369315,
         "over": 3
       },
       "kb_note": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 37,
-        "bytes": 352207,
+        "bytes": 352535,
         "over": 3
       },
       "handoff": {
-        "files": 368,
-        "bytes": 2878588,
+        "files": 369,
+        "bytes": 2882023,
         "over": 0
       }
     },
@@ -59,14 +59,13 @@
       "oversized_doc": 10,
       "house_voice": 23,
       "kb_note_dialect": 1,
-      "superseded_handoff": 3,
       "vault_heavy_path": 62
     },
     "vault": {
-      "files": 11751,
-      "bytes": 2594945061,
-      "heavy_bytes": 1544998251,
-      "heavy_share": 0.595,
+      "files": 12653,
+      "bytes": 2668441226,
+      "heavy_bytes": 1617700189,
+      "heavy_share": 0.606,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
         "cpl-project-tracker/kb/regional_cpl_out",
@@ -457,13 +456,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 21555,
+        "bytes": 21883,
         "limit": 20000,
         "lane": "roadmap_lane",
-        "over_by": 1555,
-        "ratio": 1.08
+        "over_by": 1883,
+        "ratio": 1.09
       },
-      "message": "21,555 B is 1.1× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "message": "21,883 B is 1.1× the roadmap_lane budget (20,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/program-requirements-harvest.md"
     },
     {
@@ -482,13 +481,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 722752,
+        "bytes": 723746,
         "limit": 150000,
         "lane": "other",
-        "over_by": 572752,
+        "over_by": 573746,
         "ratio": 4.82
       },
-      "message": "722,752 B is 4.8× the other budget (150,000 B) — candidate for compaction",
+      "message": "723,746 B is 4.8× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
@@ -502,39 +501,6 @@
       },
       "message": "7 business-register terms — leverage x7 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
       "path": "docs/roadmap_archive.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 394,
-        "authoritative": 397,
-        "has_frontmatter": true
-      },
-      "message": "handoff 394 is below the authoritative 397 but is not stamped `superseded: true`",
-      "path": "docs/session_394_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 395,
-        "authoritative": 397,
-        "has_frontmatter": true
-      },
-      "message": "handoff 395 is below the authoritative 397 but is not stamped `superseded: true`",
-      "path": "docs/session_395_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 396,
-        "authoritative": 397,
-        "has_frontmatter": true
-      },
-      "message": "handoff 396 is below the authoritative 397 but is not stamped `superseded: true`",
-      "path": "docs/session_396_handoff.md"
     },
     {
       "rule": "house_voice",
@@ -589,10 +555,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 661753560,
+        "bytes": 727030967,
         "kind": "dir"
       },
-      "message": "directory totals 661,753,560 B inside the vault"
+      "message": "directory totals 727,030,967 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -619,10 +585,10 @@
       "fixable": false,
       "path": "kb/program_requirements_college",
       "detail": {
-        "bytes": 52441135,
+        "bytes": 59865666,
         "kind": "dir"
       },
-      "message": "directory totals 52,441,135 B inside the vault"
+      "message": "directory totals 59,865,666 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

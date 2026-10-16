@@ -3,7 +3,7 @@ title: "Session 397 handoff: wave 4's last four reads, one display build, Monter
 date: 2026-10-16
 session: 396 (SkyJacaranda)
 tags: [handoff, program-requirements, catalog-sweep, reconcile, curriqunet]
-status: current
+status: superseded
 ---
 
 # You are Session 397

@@ -704,6 +704,19 @@ open PR the moment it exists. Merge in SQL rather than retype a record the datab
 
 **Patterns that worked.** Dispatching every independent read in one turn, then working the reconcile steps while they ran. A reread waits behind a reconcile on the same branch (the workflow queues per branch); the filing step rebases when the branch moved, so pushing during a run is safe.
 
+## S397 SkyCatalpa (2026-10-16): Allan Hancock loaded, Monterey Peninsula reread, wave 4's display build, Sheet 84
+
+**Sam's words this run.** None: the CPL Queue routine started the session at 05:12Z, and Open Asks Sheet 83's store held no reply.
+
+- **Allan Hancock's read** (38843474519): 156 of 226 programs found, 136 passing, $12.41. Loaded unchecked, 153 of 156 (run 38854805185).
+- **Monterey Peninsula's reconcile** (38844053281) filed after S396 signed off: 52 records changed, arithmetic failures 117 to 89. Reread 38854802315 replaced the unchecked rows.
+- **Wave 4's display build `66b50c86891e`** on PR #2157, which carries all of #2156 (closed as superseded) plus Chabot, Allan Hancock and both rereads. The builder needs `openpyxl` (`chatbox/build_program_courses.py`); install it with `python3 -m pip`, since a bare `pip` may install for another interpreter.
+- **Open Asks Sheet 84** built from S396's cards and published (https://claude.ai/artifact/AqQsUUEmSKRWkLntcbAhFz).
+
+**What went wrong.** One unfiltered `list_workflow_runs` returned a page of whole commit messages again, the cost S395 and S396 both recorded: filter by branch with `perPage` 1, or poll `git ls-remote`. A branch made from a wave branch lacks `main`'s latest checkpoint; merge `main` before writing the next.
+
+**Patterns that worked.** Taking the wave branch onto the session's own branch and opening one PR let the display build ship while three reads ran on; the stragglers get their own build.
+
 ## Moved from the lane (S394 compaction)
 
 Verbatim from `docs/reference/lanes/program-requirements-harvest.md`:
