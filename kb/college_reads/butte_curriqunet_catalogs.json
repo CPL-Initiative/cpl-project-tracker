@@ -1,0 +1,29 @@
+{
+ "_readme": "S399 SkyRowan, 2026-10-16. Wave 5's curriQunet read of Butte College found no program: the start page's scripts asked for catalog id 0, so the walk read an empty catalog (run 38935116675: 0 of 168 found). This read prints the calls the start page's scripts make and the host's own catalog list, so the reader's catalog-id choice can be fixed against what the host serves. Two page loads, no model call.",
+ "college": "Butte College",
+ "questions": {
+  "catalog_id": "Which catalog ids the start page's scripts request, and which catalogs the host's _getCatalogs list names (id, title, deleted or active), for the 2026-2027 catalog."
+ },
+ "keywords": [
+  "\"[Tt]itle\"\\s*:\\s*\"[^\"]{0,90}\"",
+  "\"[Ii]d\"\\s*:\\s*\\d+",
+  "[Cc]atalog[Ii]d=\\d+",
+  "_getNavigation\\?id=\\d+",
+  "_getActiveCatalogById/\\d+"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "catalog_id"
+   ],
+   "url": "https://butte.curriqunet.com/Catalog/",
+   "network": true
+  },
+  {
+   "answers": [
+    "catalog_id"
+   ],
+   "url": "https://butte.curriqunet.com/catalog/_getCatalogs"
+  }
+ ]
+}
