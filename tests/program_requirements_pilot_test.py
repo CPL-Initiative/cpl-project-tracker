@@ -1531,6 +1531,37 @@ check(RC.reconcile(cer_bio, CER_BIO.replace("(2) the General Education requireme
                    "Cerritos College", "A.A. Degree")[0]["program"].get("ge_units") is None,
       "the GE step needs the page's own words for the local pattern")
 
+# Orange Coast (S396): the REQUIREMENTS tab's textContent, college page read 38752570705, Management and
+# Leadership Studies A.S. (03961). The reading held the major and the 60 and no GE units.
+OCC_MGMT = ("Restricted Electives3-4 ACCT A101Financial Accounting ACCT A102Managerial Accounting PHIL A120Ethics "
+            "Total Major Units36 - 37 OCC AS General Education 1,2up to 21 Transferable electives as needed to satisfy "
+            "unit requirementsvaries Total Minimum Degree Units - OCC AS GE60 1 Some program major units may also meet "
+            "GE requirements. 2 Cal-GETC pattern (up to 34 units) may be substituted.")
+occ = {"program": {"total_units": {"min": 36, "max": 37}, "degree_total": {"min": 60, "max": 60},
+                   "ge_units": {"min": None, "max": None}, "ge_pattern": "OCC AS GE", "electives_fill_degree": True},
+       "blocks": []}
+check(S.degree_check(occ["program"], (60.0, 60.0), 36.0, 37.0, [], OCC_MGMT, "A.S. Degree")["status"] == "incomplete",
+      "Orange Coast Management as read: the 60 and the OCC AS GE pattern, no GE units")
+new, notes = RC.reconcile(occ, OCC_MGMT, "Orange Coast College", "A.S. Degree")
+deg = S.degree_check(new["program"], (60.0, 60.0), 36.0, 37.0, [], OCC_MGMT, "A.S. Degree")
+check([n["field"] for n in notes] == ["degree_total_minimum", "ge_units"]
+      and new["program"]["ge_units"] == {"min": None, "max": 21} and notes[0]["words"].endswith("GE60")
+      and deg["pass"] and deg.get("minimum") and deg["computed"] == [57.0, 58.0] and deg["fill"] == [2.0, 3.0],
+      "Orange Coast Management reconciled: the 60 is a minimum, GE up to 21, electives make up 2 to 3: %s"
+      % json.dumps(deg))
+bare = {"program": {}, "blocks": []}
+new, notes = RC.reconcile(bare, OCC_MGMT, "Orange Coast College", "A.S. Degree")
+check([n["field"] for n in notes] == ["total_units", "degree_total", "degree_total_minimum", "ge_units",
+                                      "electives_fill_degree"]
+      and new["program"]["total_units"] == {"min": 36, "max": 37} and new["program"]["degree_total"] == {"min": 60, "max": 60},
+      "Orange Coast, a record holding nothing: the major 36-37 and the 60 from the tab's totals")
+check(RC.reconcile(bare, OCC_MGMT.replace("up to 21", "up to 24"), "Orange Coast College", "A.S. Degree")[0]["program"]
+      .get("ge_units") is None,
+      "the GE step sets 21 only where the page prints 21")
+check(RC.reconcile(bare, OCC_MGMT, "Orange Coast College",
+                   "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units")[1] == [],
+      "Orange Coast's steps read associate degrees only")
+
 if failures:
     print("FAIL: %d" % len(failures))
     for f in failures:

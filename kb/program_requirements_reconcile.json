@@ -75,6 +75,43 @@
      "pattern": "\\(3\\) electives as needed"
     }
    ]
+  },
+  "Orange Coast College": {
+   "why": "Orange Coast's degree pages print their totals on the REQUIREMENTS tab, which the reading took the major from and often left the rest of (S395: 41 associate-degree records named the degree total and the OCC AS GE pattern but no units for it). College page read 38752570705 (Management and Leadership Studies A.S., 03961, and Accounting A.S.) reads the tab's textContent: \"Total Major Units36 - 37 OCC AS General Education 1,2up to 21 Transferable electives as needed to satisfy unit requirementsvaries Total Minimum Degree Units - OCC AS GE60\", footnote 1 \"Some program major units may also meet GE requirements\" and footnote 2 \"Cal-GETC pattern (up to 34 units) may be substituted\". So the 60 is a minimum and electives make it up. \"Up to 21\" is a maximum: a major course may also meet GE, so the step sets the GE units' max to 21 and leaves its min unstated (the scorer reads the span as 21, the most the pattern asks, and the electives make up the rest of the 60). S396 SkyJacaranda, 2026-10-16.",
+   "awards": "associate",
+   "steps": [
+    {
+     "kind": "fill",
+     "field": "total_units",
+     "pattern": "Total Major Units\\s*(?P<min>\\d+(?:\\.\\d+)?)(?:\\s*-\\s*(?P<max>\\d+(?:\\.\\d+)?))?"
+    },
+    {
+     "kind": "fill",
+     "field": "degree_total",
+     "pattern": "Total Minimum Degree Units\\s*-\\s*OCC AS GE\\s*(?P<min>\\d+(?:\\.\\d+)?)"
+    },
+    {
+     "kind": "set",
+     "field": "degree_total_minimum",
+     "value": true,
+     "pattern": "Total Minimum Degree Units\\s*-\\s*OCC AS GE\\s*\\d+(?:\\.\\d+)?"
+    },
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "value": {
+      "min": null,
+      "max": 21
+     },
+     "pattern": "OCC AS General Education[\\s\\d,]*up to 21\\b"
+    },
+    {
+     "kind": "set",
+     "field": "electives_fill_degree",
+     "value": true,
+     "pattern": "Transferable electives as needed to satisfy unit requirements"
+    }
+   ]
   }
  }
 }
