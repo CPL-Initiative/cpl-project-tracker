@@ -1,0 +1,178 @@
+{
+ "college": "Saddleback College",
+ "control_number": "46096",
+ "shape": "noncredit",
+ "title": "Nonprofit Business Administration",
+ "award": "Noncredit program",
+ "source_url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_nonprof_bus_adm_NC",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6880,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6880,
+    "output_tokens": 1137,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1137,
+  "output_tokens_details": {
+   "thinking_tokens": 376
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05026,
+ "ms": 9767,
+ "seconds": 10.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    83.0,
+    83.0
+   ],
+   "stated": [
+    83.0,
+    83.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "NONPROFIT BUSINESS ADMINISTRATION - Certificate of Completion (Noncredit)",
+   "measure": "hours",
+   "total_units": {
+    "min": 83,
+    "max": 83
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "identify and illustrate management best practices for leading a nonprofit organization including major areas of responsibility for nonprofit leaders, such as strategy, managing employees, fundraising, grant writing, board governance, and marketing and social media.",
+    "identify and explain the finance and development (fundraising) aspects of a nonprofit organization, including major areas of responsibility for nonprofit finance, such as financial statements, budgeting, resource allocation, and grant writing.",
+    "identify legal aspects of starting and operating a nonprofit organization, including legal structure, receiving and maintaining tax-exempt status, trustee and director liability, and Internet considerations."
+   ],
+   "careers": [
+    "managers",
+    "staff members"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 83,
+     "max": 83
+    },
+    "courses": [
+     {
+      "code": "BUS 421NC",
+      "units": 33.2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 422NC",
+      "units": 33.2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 423NC",
+      "units": 16.6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit certificate counted in hours; course hours (33.20, 33.20, 16.60) and total (83.00) taken from the requirements table.",
+   "Catalog prints 'BUS 422NC'; the closed list stores it as 'BUS422NC' (no space). Treated as the same course, not a catalog addition.",
+   "The summary says the program prepares individuals to serve as 'managers, staff members, or volunteers in nonprofit organizations'; 'volunteers' was not recorded as a career since it is not an occupation. Reviewer may wish to confirm."
+  ]
+ },
+ "extracted_run": "38843470509"
+}

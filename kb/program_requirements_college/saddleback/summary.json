@@ -1,0 +1,215 @@
+{
+ "college": "Saddleback College",
+ "programs": 367,
+ "with_closed_list": 353,
+ "found": 321,
+ "extracted": 321,
+ "errors": 0,
+ "passed_machine_checks": 270,
+ "failed": {
+  "coverage": 10,
+  "invented": 0,
+  "arithmetic": 51,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 25.88,
+ "cost_per_program": 0.0806,
+ "not_found": [
+  {
+   "control_number": "04070",
+   "title": "Marine Science Technician",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "04093",
+   "title": "Foods",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "04120",
+   "title": "COSMETOLOGY",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_cosmetology_nc",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 12,
+    "why": "coarse net: the page's code tokens name 0 of 12 listed courses",
+    "error": null,
+    "chars": {
+     "body": 7495,
+     "content": 7495,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "09851",
+   "title": "Seamanship",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "22877",
+   "title": "Marine Science Technician",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "22878",
+   "title": "Seamanship",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "22900",
+   "title": "Foods",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "38428",
+   "title": "ESTHETICIAN",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_esthetician_nc",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5397,
+     "content": 5397,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "38429",
+   "title": "ESTHETICIAN",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_esthetician_nc",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5397,
+     "content": 5397,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "38781",
+   "title": "Basic Culinary Skills",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_ae_basic_tech_nc",
+    "label": {
+     "award": 1,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3322,
+     "content": 3322,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "38797",
+   "title": "High School Equivalency for Mathematics Success",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm-highschool-equiv-nc",
+    "label": {
+     "award": 1,
+     "title": 0.6
+    },
+    "field": "innerText",
+    "coverage": 0.25,
+    "body": 0.25,
+    "content": 0.25,
+    "net": 1,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 1 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3643,
+     "content": 3643,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "43591",
+   "title": "Adult Education ESL Digital Literacy",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "43732",
+   "title": "Acute Care Nursing Assistant",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "run": "38843470509"
+}

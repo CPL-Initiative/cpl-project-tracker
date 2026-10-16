@@ -1,0 +1,288 @@
+{
+ "college": "Rio Hondo College",
+ "control_number": "37768",
+ "shape": "certificate",
+ "title": "Dance",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24228",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11508,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11508,
+    "output_tokens": 1761,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1761,
+  "output_tokens_details": {
+   "thinking_tokens": 596
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08125,
+ "ms": 13628,
+ "seconds": 14.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 15,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "DANC114",
+    "DANC162",
+    "KINA114",
+    "KINA167"
+   ],
+   "flagged": [
+    "DANC114",
+    "DANC162",
+    "KINA114",
+    "KINA167"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "DANCE - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "dance education",
+    "dance performance"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "DANC 114",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "KINA 114",
+        "units": 1,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "DANC 151",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 251",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 153",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 253",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 154",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DANC 157",
+        "units": 1,
+        "catalog_addition": false
+       },
+       {
+        "code": "DANC 167",
+        "units": 1,
+        "catalog_addition": false
+       },
+       {
+        "code": "KINA 167",
+        "units": 1,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 159",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 179",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DANC 179H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 152",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DANC 162",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "DANC 172",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "DANC 182",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 180",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 145",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The required list prints 'DANC 154 OR DANC 157 OR (DANC 167 OR KINA 167)' as one 1-unit choice; recorded as one entry with DANC 157, DANC 167 and KINA 167 as alternatives.",
+   "DANC 167 is titled 'Fitness Groove' in the catalog but 'Latin Dance for Fitness' in the closed list; cross-listed with KINA 167.",
+   "DANC 114/KINA 114 (cross-listed) and DANC 162 are not in the closed list; recorded as catalog additions.",
+   "Course units sum to the printed total of 18.0.",
+   "No program learning outcomes are printed in the text.",
+   "Description also names workplaces (private studios, recreational centers, gyms, colleges, after-school programs, dance companies, television, film, musical theater); these were not recorded as careers.",
+   "Catalog text is cut off mid-sentence at the end of the DANC 167 course description."
+  ]
+ },
+ "extracted_run": "38843465712"
+}

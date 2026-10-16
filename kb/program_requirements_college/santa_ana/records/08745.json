@@ -1,0 +1,205 @@
+{
+ "college": "Santa Ana College",
+ "control_number": "08745",
+ "shape": "certificate",
+ "title": "Culinary Arts Foundation",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36142/35871",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6424,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6424,
+    "output_tokens": 1161,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1161,
+  "output_tokens_details": {
+   "thinking_tokens": 303
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04892,
+ "ms": 10153,
+ "seconds": 10.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    11.5,
+    13.0
+   ],
+   "stated": [
+    11.5,
+    15.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 11.5-13.0; the catalog states 11.5-15.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Culinary Arts Foundation: Certificate of Achievement (Transcripted)",
+   "measure": "units",
+   "total_units": {
+    "min": 11.5,
+    "max": 15
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate fundamental skills in food handling, dining room, beverage service, baking and food service, and use of kitchen equipment and tools.",
+    "Define classic cooking terminology and methods, apply health and safety standards.",
+    "Evaluate information, solving problems, and making decisions related to food preparation and food service.",
+    "Describe career opportunities within the food industry and strategize own career pathway."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 11.5,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "CULN 110",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "NUTR 110",
+        "units": 2,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CULN 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CULN 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CULN 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CULN 190",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CULN 299",
+        "units": 0.5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints the CULN 190 OR CULN 299 group as 0.5-4.0 units; CULN 299 is printed as 0.5-4.0 units, but the alternative field holds only its low end (0.5).",
+   "The CULN 110 OR NUTR 110 group is printed with 2.0 units.",
+   "CULN 120, CULN 130, CULN 140 and CULN 190 are marked '(Historical)' in the catalog. The titles printed for CULN 120 ('Introduction to Culinary Skills & Principles') and CULN 140 ('Introduction to Baking & Pastry') differ from the state file titles.",
+   "The summary mentions beginning a culinary arts business and 'a wide variety of employment opportunities in the profession' but names no specific career, so careers is empty."
+  ]
+ },
+ "extracted_run": "38843461766"
+}

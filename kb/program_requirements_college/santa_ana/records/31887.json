@@ -1,0 +1,443 @@
+{
+ "college": "Santa Ana College",
+ "control_number": "31887",
+ "shape": "adt",
+ "title": "Elementary Teacher Education",
+ "award": "A.A- T Degree",
+ "source_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36120/36952",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8301,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8301,
+    "output_tokens": 3688,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3688,
+  "output_tokens_details": {
+   "thinking_tokens": 1394
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10696,
+ "ms": 30362,
+ "seconds": 30.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 32,
+   "listed": 35,
+   "share": 0.914,
+   "missing": [
+    "CDEV107",
+    "HIST120",
+    "HISTC1001H"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "CDEVC1000",
+    "HIST102",
+    "HIST102H",
+    "PSC115"
+   ],
+   "flagged": [
+    "CDEVC1000",
+    "HIST102",
+    "HIST102H",
+    "PSC115"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    49.0,
+    52.0
+   ],
+   "stated": [
+    52.0,
+    52.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 49.0-52.0; the catalog states 52.0-52.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Elementary Teacher Education: A.A.-T Degree for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 52,
+    "max": 52
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 45,
+     "max": 45
+    },
+    "courses": [
+     {
+      "code": "CDEV C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 157",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 102H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLS C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "EDUC 201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ERTH 115",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1000H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 115",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSC 115",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 115",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL 109H",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 109",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 109L",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 204",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 101H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1003",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1003H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOG 100H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A - Select one course (4 units)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ENGL C1001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1001H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 110",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHIL 110H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B - Select one course (3 units)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ART 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ART 100H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DNCE 100H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MUS 101H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CDEV 107",
+    "why": "not in the text; catalog prints CDEV C1000 instead"
+   },
+   {
+    "code": "HIST 120",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST C1001H",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The biology requirement prints '3.0- 4.0' and reads: BIOL 115 (4) OR BIOL 109H (3) OR BIOL 109 (3) AND BIOL 109L (1). Recorded as BIOL 115 with alternatives BIOL 109H, BIOL 109 and BIOL 109L; BIOL 109L is taken together with BIOL 109 (and probably with BIOL 109H, since the 45-unit core total only adds up with 4 units here). Reviewer should check whether BIOL 109H also requires BIOL 109L.",
+   "Required Core Courses prints 45.0; List A 4 and List B 3 make up the printed Total: 52.0, recorded as total_units.",
+   "The page lists 'Completion of 60 semester CSU transferable units' as a requirement for all Associate Degrees for Transfer. This is a generic statement, not printed as this award's degree total, so degree_total is null. Cal-GETC is named as the GE pattern, with CSU-GE or IGETC possible in some cases; no GE units are printed.",
+   "EDUC 201 is printed with the title 'Introduction to Education (Historical)', while the closed list has 'Introduction to Elementary Classroom Teaching'.",
+   "Several courses are marked Historical or Draft in the catalog (e.g., PSYC 157 Draft; ENGL C1000, BIOL 115, PHIL 110/110H, ART 100/100H, DNCE 100/100H, MUS 101/101H, THEA 100 Historical).",
+   "The Learning Outcome(s) section is cut off mid-word: 'Identify elements of diversity and diverse learni'. No complete outcome is printed, so program.outcomes is left empty rather than completing the truncated text.",
+   "CDEV C1000, HIST 102, HIST 102H and PSC 115 appear in the catalog but not in the closed list, so they are marked as catalog additions."
+  ]
+ },
+ "extracted_run": "38843461766"
+}

@@ -1,0 +1,229 @@
+{
+ "college": "Rio Hondo College",
+ "control_number": "37063",
+ "shape": "certificate",
+ "title": "Strength and Performance Coach",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/22865",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9696,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9696,
+    "output_tokens": 1538,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1538,
+  "output_tokens_details": {
+   "thinking_tokens": 571
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06954,
+ "ms": 14088,
+ "seconds": 14.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "KIN159",
+    "KIN197"
+   ],
+   "flagged": [
+    "KIN159",
+    "KIN197"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    22.0,
+    22.0
+   ],
+   "stated": [
+    22.0,
+    22.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "KINESIOLOGY/STRENGTH AND PERFORMANCE COACH - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 22,
+    "max": 22
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "Strength and conditioning coaches"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 22,
+     "max": 22
+    },
+    "courses": [
+     {
+      "code": "KIN 122",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 126",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 127",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 128",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 188",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "KIN 159",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 193",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "KIN 197",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 226",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 290",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The requirements list prints a stray '3.0' before each OR pair (KIN 188 OR KIN 159; KIN 193 OR KIN 197); read as the unit value of each one-of-two choice.",
+   "KIN 290 is printed as 1.0 unit in the requirements table, but its course description lists Units: 1-2 (repeatable to 16 units); recorded 1 as printed in the requirements.",
+   "KIN 188, KIN 159 and KIN 290 are marked '( Historical )' in the requirements list; reviewer may want to confirm they are still offered for the 2026-2027 catalog.",
+   "KIN 290 has a prerequisite/corequisite of KIN 197, which is only an alternative to KIN 193 in this certificate.",
+   "No program learning outcomes are printed in the text.",
+   "Careers: the description names 'Strength and conditioning coaches'; it also says the program will expose students to areas such as fitness, health promotion, coaching, pre-allied health, and medical fields, which were not recorded as careers because they are presented as areas of exposure rather than career outcomes."
+  ]
+ },
+ "extracted_run": "38843465712"
+}

@@ -1,0 +1,409 @@
+{
+ "college": "Saddleback College",
+ "control_number": "41571",
+ "shape": "degree",
+ "title": "BANKING AND FINANCE",
+ "award": "A.S. Degree",
+ "source_url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_banking_AS",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12416,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12416,
+    "output_tokens": 3724,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3724,
+  "output_tokens_details": {
+   "thinking_tokens": 1443
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.12414,
+ "ms": 28617,
+ "seconds": 29.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 26,
+   "listed": 28,
+   "share": 0.929,
+   "missing": [
+    "ECON2",
+    "ECON4"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ECONC2001",
+    "ECONC2002"
+   ],
+   "flagged": [
+    "ECONC2001",
+    "ECONC2002"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    35.0,
+    38.0
+   ],
+   "stated": [
+    35.0,
+    38.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 9,
+   "courses": 0,
+   "count": 9,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 14,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "BANKING AND FINANCE - A.S. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 35,
+    "max": 38
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Graduation Requirements or Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Communicate effectively regarding information and issues related to banking and finance.",
+    "Define and describe the core principles of money and banking.",
+    "Define and describe financial institutions including aspects of bank management, performance, regulation, ethics, and risk.",
+    "Explain the role of financial markets in the economy and describe and compare financial instruments.",
+    "Describe and illustrate the structure, function, and monetary policy tools of central banks as well as describe key elements of the banking and financial services industry.",
+    "Explain how banks analyze and manage performance and risk, and provide details on bank products, services, laws, and regulations.",
+    "Interpret and present a financial report reflecting various current events, issues, and circumstances affecting investments.",
+    "Help build customer relationships through marketing, personal selling, and customer service.",
+    "Evaluate short- and long-term financial plans, including comparisons of direct investments such as insurance and mutual retirement funds."
+   ],
+   "careers": [
+    "banking",
+    "Branch Operations Assistant",
+    "Bankruptcy Coordinator or Assistant Coordinator",
+    "Consumer Credit Analyst Assistant",
+    "Consumer Finance Assistant",
+    "Loans Processor Assistant",
+    "Customer Service Representative",
+    "Asset Management Assistant",
+    "Loan Representative",
+    "Mortgage Operations Assistant",
+    "New Accounts Assistant",
+    "Regulatory Compliance Analyst Assistant",
+    "Teller",
+    "Trust Assistant"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BUS 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 1H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 13H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM 20",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1000",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1000H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 196",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 180WE",
+        "units": 2,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 224",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 225",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIM 1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one (Economics)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2002H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2001H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Select one (Accounting/Statistics)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ACCT 1A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 215",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 172",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 44",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECON 2",
+    "why": "not in the text; catalog lists ECON C2002 instead"
+   },
+   {
+    "code": "ECON 4",
+    "why": "not in the text; catalog lists ECON C2001 instead"
+   }
+  ],
+  "notes": [
+   "The 'Required Core' heading prints Units 35.0-38.0 for the whole requirement list (including the select-one groups); recorded as total_units, and the 'all' block's stated left null since it covers only part of that list.",
+   "Each 'Select one' group of two or three courses within the core (BUS 1/1H, BUS 13/13H, BUS 125/COMM 20, BUS 103/ENGL C1000/ENGL C1000H, BUS 196/BUS 180WE) is recorded as one required entry with alternatives; the ECON and ACCT/statistics groups are recorded as choose-one blocks.",
+   "BUS 180WE is printed as 2.0 units in the requirement list but 2.0-4.0 units in the course description; recorded 2.",
+   "ECON C2002 and ECON C2001 are not in the closed list (closed list has ECON 2 and ECON 4); recorded as catalog additions with their honors twins as alternatives.",
+   "The 60-unit sentence is the generic Associate of Science requirement and the page states 'Total units does not include all units required for the degree'; degree_total left null. GE pattern named as 'Graduation Requirements or to the Cal-GETC pattern' with no units printed.",
+   "Catalog text is cut off mid-description in the COMM 20 course entry."
+  ]
+ },
+ "extracted_run": "38843470509"
+}

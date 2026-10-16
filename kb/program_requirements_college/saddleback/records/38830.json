@@ -1,0 +1,224 @@
+{
+ "college": "Saddleback College",
+ "control_number": "38830",
+ "shape": "certificate",
+ "title": "Cyber Operations",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_cyber_ops_ca",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9151,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9151,
+    "output_tokens": 1497,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1497,
+  "output_tokens_details": {
+   "thinking_tokens": 428
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06654,
+ "ms": 12405,
+ "seconds": 12.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    23.0,
+    23.0
+   ],
+   "stated": [
+    23.0,
+    23.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "CYBER OPERATIONS - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 23,
+    "max": 23
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate an understanding of the latest trends and techniques in risk management, risk mitigation, threat management and intrusion detection.",
+    "Demonstrate the principles and concepts of Security Operations and core Cyber Operations skills needed to begin working in a Cyber Security Operations Center (CSOC).",
+    "Perform data analysis and interpret the results to identify vulnerabilities, threats and risks to an organization.",
+    "Configure and use threat-detection tools.",
+    "Secure and protect applications and systems within an organization.",
+    "Apply the fundamentals of Crytography, Crytoanalysis, and Cryptology in a Cyber Operations environment."
+   ],
+   "careers": [
+    "Analyst",
+    "Infrastructure Support",
+    "Incident Responder",
+    "Auditor",
+    "Manager"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Prerequisite 7 units or CS Cyber Defense A.S. Degree",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 7,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "CS 1A",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 1B",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Core:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "CS 1D",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIMS 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIMS 165",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIMS 155",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS 260",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The first block (CS 1A, CS 1B, 7 units) is headed 'Prerequisite 7 units or CS Cyber Defense A.S. Degree': these courses may be satisfied by completing the CS Cyber Defense A.S. degree instead; recorded as 'all' since the printed Total 23.0 includes them.",
+   "Careers recorded are the DoD CSSP workforce employment levels named in the summary ('Analyst, Infrastructure Support, Incident Responder, Auditor, and Manager'); the summary also mentions developing 'tomorrow's cyber defenders'. Reviewer may check whether these levels should count as careers.",
+   "Outcome text copied as printed, including the misspellings 'Crytography' and 'Crytoanalysis'."
+  ]
+ },
+ "extracted_run": "38843470509"
+}

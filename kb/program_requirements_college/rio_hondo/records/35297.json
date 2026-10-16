@@ -1,0 +1,968 @@
+{
+ "college": "Rio Hondo College",
+ "control_number": "35297",
+ "shape": "certificate",
+ "title": "Intersegmental General Education Transfer Curriculum (IGETC)",
+ "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+ "source_url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24034/24036/24052",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 15995,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 15995,
+    "output_tokens": 5979,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 5979,
+  "output_tokens_details": {
+   "thinking_tokens": 425
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.18356,
+ "ms": 41648,
+ "seconds": 41.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 166,
+   "share": 0.0,
+   "missing": [
+    "ANTH101",
+    "ANTH101H",
+    "ANTH101L",
+    "ANTH102",
+    "ANTH102H",
+    "ANTH103",
+    "ANTH104",
+    "ANTH110",
+    "ANTH125",
+    "ART104",
+    "ART105H",
+    "ART106",
+    "ART106H",
+    "ART107",
+    "ART108",
+    "ART109",
+    "ART110",
+    "ART112",
+    "ART113",
+    "ART115",
+    "ARTHC1100",
+    "ASTR110",
+    "ASTR110H",
+    "ASTR112",
+    "BIOL101",
+    "BIOL105",
+    "BIOL111",
+    "BIOL111L",
+    "BIOL120",
+    "BIOL120L",
+    "BIOL200",
+    "BIOL226",
+    "CD106",
+    "CHEM110",
+    "CHEM120",
+    "CHEM140",
+    "CHEM231",
+    "CHST101",
+    "CHST146",
+    "CHST148",
+    "CHST150",
+    "COMMC1000",
+    "COMMC1000H",
+    "DANC179",
+    "DANC199",
+    "ECON101",
+    "ECON101H",
+    "ECON102",
+    "ECON102H",
+    "ECON135",
+    "ENGL126",
+    "ENGLC1000",
+    "ENGLC1001",
+    "ENGLC1001H",
+    "GEOG101",
+    "GEOG101L",
+    "GEOG102",
+    "GEOG103",
+    "GEOL150",
+    "HIST101",
+    "HIST102",
+    "HIST122",
+    "HIST131",
+    "HIST143",
+    "HIST143H",
+    "HIST144",
+    "HIST144H",
+    "HIST158",
+    "HIST159",
+    "HIST159H",
+    "HIST167",
+    "HIST170",
+    "HUM110",
+    "HUM111",
+    "HUM125",
+    "HUM125H",
+    "HUM130",
+    "LIT102",
+    "LIT102H",
+    "LIT112A",
+    "LIT112AH",
+    "LIT112B",
+    "LIT112BH",
+    "LIT114",
+    "LIT114H",
+    "LIT117",
+    "LIT117H",
+    "LIT130",
+    "LIT130H",
+    "LIT140",
+    "LIT140H",
+    "LIT141",
+    "LIT142",
+    "LIT142H",
+    "LIT144A",
+    "LIT144B",
+    "LIT145",
+    "LIT145H",
+    "LIT146A",
+    "LIT146AH",
+    "LIT146B",
+    "LIT146BH",
+    "LIT147",
+    "LIT148",
+    "LIT149",
+    "MATH160",
+    "MATH170",
+    "MATH180",
+    "MATH190",
+    "MATH190H",
+    "MATH191",
+    "MATH250",
+    "MATH260",
+    "MUS129",
+    "MUS130",
+    "MUS131",
+    "MUS132",
+    "MUS133",
+    "MUS135",
+    "MUS136",
+    "PHIL101",
+    "PHIL101H",
+    "PHIL110",
+    "PHIL120",
+    "PHIL124",
+    "PHIL126",
+    "PHIL128",
+    "PHIL135",
+    "PHIL140",
+    "PHY120",
+    "PHY150",
+    "PHY160",
+    "PHY211",
+    "PHY212",
+    "PHY213",
+    "POLS125",
+    "POLS128",
+    "POLS130",
+    "POLS135",
+    "POLS140",
+    "POLS150",
+    "POLSC1000",
+    "POLSC1000H",
+    "PSY112",
+    "PSY114",
+    "PSY190",
+    "PSY210",
+    "PSY210H",
+    "PSYCC1000",
+    "PSYCC1000H",
+    "SOC101",
+    "SOC101H",
+    "SOC102",
+    "SOC105",
+    "SOC110",
+    "SOC114",
+    "SOC116",
+    "SOC120",
+    "SOC127",
+    "SPCH100",
+    "SPCH140",
+    "STATC1000",
+    "STATC1000H",
+    "THTR101",
+    "THTR105",
+    "THTR105H"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "GENERAL STUDIES WITH AN EMPHASIS IN ARTS AND HUMAN EXPRESSION - Associate of Arts Degree",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANTH 101",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "ANTH 101H",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "ANTH 101L",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "ANTH 102",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "ANTH 102H",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "ANTH 103",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "ANTH 104",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "ANTH 110",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "ANTH 125",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "ART 104",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "ART 105H",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "ART 106",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "ART 106H",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "ART 107",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "ART 108",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "ART 109",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "ART 110",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "ART 112",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "ART 113",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "ART 115",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "ARTHC1100",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "ASTR 110",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "ASTR 110H",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "ASTR 112",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "BIOL 101",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "BIOL 105",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "BIOL 111",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "BIOL 111L",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "BIOL 120",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "BIOL 120L",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "BIOL 200",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "BIOL 226",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "CD 106",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "CHEM 110",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "CHEM 120",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "CHEM 140",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "CHEM 231",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "CHST 101",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "CHST 146",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "CHST 148",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "CHST 150",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "COMM C1000",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "COMM C1000H",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "DANC 179",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "DANC 199",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "ECON 101",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "ECON 101H",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "ECON 102",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "ECON 102H",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "ECON 135",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "ENGL 126",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "ENGL C1000",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "ENGL C1001",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "ENGL C1001H",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "GEOG 101",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "GEOG 101L",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "GEOG 102",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "GEOG 103",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "GEOL 150",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "HIST 101",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "HIST 102",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "HIST 122",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "HIST 131",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "HIST 143",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "HIST 143H",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "HIST 144",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "HIST 144H",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "HIST 158",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "HIST 159",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "HIST 159H",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "HIST 167",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "HIST 170",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "HUM 110",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "HUM 111",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "HUM 125",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "HUM 125H",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "HUM 130",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "LIT 102",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "LIT 102H",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "LIT 112A",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "LIT 112AH",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "LIT 112B",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "LIT 112BH",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "LIT 114",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "LIT 114H",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "LIT 117",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "LIT 117H",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "LIT 130",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "LIT 130H",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "LIT 140",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "LIT 140H",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "LIT 141",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "LIT 142",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "LIT 142H",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "LIT 144A",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "LIT 144B",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "LIT 145",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "LIT 145H",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "LIT 146A",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "LIT 146AH",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "LIT 146B",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "LIT 146BH",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "LIT 147",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "LIT 148",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "LIT 149",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "MATH 160",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "MATH 170",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "MATH 180",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "MATH 190",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "MATH 190H",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "MATH 191",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "MATH 250",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "MATH 260",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "MUS 129",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "MUS 130",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "MUS 131",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "MUS 132",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "MUS 133",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "MUS 135",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "MUS 136",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "PHIL 101",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "PHIL 101H",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "PHIL 110",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "PHIL 120",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "PHIL 124",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "PHIL 126",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "PHIL 128",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "PHIL 135",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "PHIL 140",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "PHY 120",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "PHY 150",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "PHY 160",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "PHY 211",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "PHY 212",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "PHY 213",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "POLS 125",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "POLS 128",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "POLS 130",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "POLS 135",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "POLS 140",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "POLS 150",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "POLS C1000",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "POLS C1000H",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "PSY 112",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "PSY 114",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "PSY 190",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "PSY 210",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "PSY 210H",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "PSYC C1000H",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "SOC 101",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "SOC 101H",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "SOC 102",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "SOC 105",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "SOC 110",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "SOC 114",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "SOC 116",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "SOC 120",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "SOC 127",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "SPCH 100",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "SPCH 140",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "STAT C1000H",
+    "why": "IGETC section not in text"
+   },
+   {
+    "code": "THTR 101",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "THTR 105",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   },
+   {
+    "code": "THTR 105H",
+    "why": "IGETC section not in text; named only in the General Studies A.A. section"
+   }
+  ],
+  "notes": [
+   "The catalog text supplied is the section for 'General Studies with an Emphasis in Arts and Human Expression - Associate of Arts Degree' (18 units, categories A Arts and B Human Expression), not the IGETC Certificate of Achievement. No section for the IGETC certificate appears in the text, so no blocks, totals, outcomes or careers were recorded; section_heading names the only section present, which belongs to a different award.",
+   "The General Studies section names careers (fine arts, foreign languages, literature, philosophy) for that degree only; they were not recorded for the IGETC certificate.",
+   "Reviewer should fetch the IGETC certificate page; the source URL appears to point to the wrong program."
+  ]
+ },
+ "extracted_run": "38843465712"
+}

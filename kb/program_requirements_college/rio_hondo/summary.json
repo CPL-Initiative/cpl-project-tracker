@@ -1,0 +1,123 @@
+{
+ "college": "Rio Hondo College",
+ "programs": 321,
+ "with_closed_list": 301,
+ "found": 292,
+ "extracted": 292,
+ "errors": 0,
+ "passed_machine_checks": 241,
+ "failed": {
+  "coverage": 5,
+  "invented": 0,
+  "arithmetic": 50,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 18.94,
+ "cost_per_program": 0.0649,
+ "not_found": [
+  {
+   "control_number": "30863",
+   "title": "Diesel Fuel and Emission Systems",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "31408",
+   "title": "Fuel Injection Systems",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "34004",
+   "title": "Automotive Technology",
+   "award": "Baccalaureate of Science (B.S.) Degree.",
+   "near_miss": {
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24158",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 19,
+    "why": "coarse net: the page's code tokens name 0 of 19 listed courses",
+    "error": null,
+    "chars": {
+     "body": 9385,
+     "content": 9385,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "35257",
+   "title": "CSU General Education (CSU-GE-Breadth)",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "42032",
+   "title": "Secondary Education Social Science II",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22175/23987/24017",
+    "label": {
+     "award": 1,
+     "title": 0.8
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 879,
+     "content": 879,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45631",
+   "title": "Electronic Digital Instrument",
+   "award": "Baccalaureate of Science (B.S.) Degree.",
+   "near_miss": {
+    "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/25502",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.273,
+    "body": 0.273,
+    "content": 0.273,
+    "net": 12,
+    "listed": 44,
+    "why": "coarse net: the page's code tokens name 12 of 44 listed courses",
+    "error": null,
+    "chars": {
+     "body": 10064,
+     "content": 10064,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  }
+ ],
+ "run": "38843465712"
+}

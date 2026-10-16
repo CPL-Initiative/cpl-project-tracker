@@ -1,0 +1,272 @@
+{
+ "college": "Santa Ana College",
+ "control_number": "46269",
+ "shape": "adt",
+ "title": "Mathematics 2.0",
+ "award": "A.S. T Degree",
+ "source_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36137/36346",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6919,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6919,
+    "output_tokens": 1906,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1906,
+  "output_tokens_details": {
+   "thinking_tokens": 613
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0658,
+ "ms": 17531,
+ "seconds": 17.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 12,
+   "share": 0.833,
+   "missing": [
+    "MATH180",
+    "MATH185"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "MATHC2210",
+    "MATHC2220"
+   ],
+   "flagged": [
+    "MATHC2210",
+    "MATHC2220"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.0,
+    21.0
+   ],
+   "stated": [
+    20.0,
+    21.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Mathematics 2.0: A.S.-T Degree for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 21
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "mathematicians"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 17,
+     "max": 17
+    },
+    "courses": [
+     {
+      "code": "MATH C2210",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH C2220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 280",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 287",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A Required: Select One (3-4 units)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "PHYS 217",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 210",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMPR 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMPR 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMPR 120",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMPR 121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMPR 129",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMPR 131",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MATH 180",
+    "why": "not in the text; catalog lists MATH C2210 (Calculus I: Early Transcendentals) instead"
+   },
+   {
+    "code": "MATH 185",
+    "why": "not in the text; catalog lists MATH C2220 (Calculus II: Early Transcendentals) instead"
+   }
+  ],
+  "notes": [
+   "List A contains two sub-headings, 'Physics Elective' (4.0: PHYS 217 or PHYS 210) and 'Computer Science Elective' (3.0-4.0: CMPR 105, 112, 120, 121, 129, 131 joined by OR); the program total of 20.0-21.0 (17 core + 3-4) indicates the student selects one course from the whole of List A, so it is recorded as a single choose-one block.",
+   "CMPR 120 and CMPR 121 match closed-list entries CMPR120 and CMPR121 (written without a space); CMPR 120 is printed at 3.5 units. CMPR 121 is marked Historical in the catalog.",
+   "MATH C2210 and MATH C2220 are common-course-numbered calculus courses not in the closed list; they appear to replace MATH 180 and MATH 185.",
+   "The summary paragraph describes what students will gain but is not labeled as program learning outcomes, so no outcomes were recorded.",
+   "The 60-unit requirement is a general statement for all Associate Degrees for Transfer, not a printed total for this award, so degree_total is null.",
+   "The catalog text is cut off mid-sentence at the end ('Completion of a minimum of 18 semest')."
+  ]
+ },
+ "extracted_run": "38843461766"
+}

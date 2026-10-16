@@ -1,0 +1,270 @@
+{
+ "college": "Santa Ana College",
+ "control_number": "41540",
+ "shape": "certificate",
+ "title": "Engineering STEM Core",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36121/35971",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6584,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6584,
+    "output_tokens": 1808,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1808,
+  "output_tokens_details": {
+   "thinking_tokens": 612
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0625,
+ "ms": 14352,
+ "seconds": 14.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 11,
+   "share": 0.818,
+   "missing": [
+    "MATH180",
+    "MATH185"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "CMPR121",
+    "MATHC2210",
+    "MATHC2220"
+   ],
+   "flagged": [
+    "CMPR121",
+    "MATHC2210",
+    "MATHC2220"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    21.0
+   ],
+   "stated": [
+    18.0,
+    21.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Engineering STEM Core : Certificate of Achievement (Transcripted)",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 21
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "apply math and science concepts and techniques to engineering problems",
+    "solve problems of common lower division engineering courses"
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Science and math courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "MATH C2210",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH C2220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS 217",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 209",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CMPR 120",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Elective courses (engineering and related) (select 1)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "ENGR 235",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 240",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 250",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 183",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 219",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMPR 121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MATH 180",
+    "why": "not in the text; catalog lists MATH C2210 Calculus I instead"
+   },
+   {
+    "code": "MATH 185",
+    "why": "not in the text; catalog lists MATH C2220 Calculus II instead"
+   }
+  ],
+  "notes": [
+   "CHEM 209 OR CMPR 120 is printed as a sub-group with its own total 3.0-4.0 inside the Science and math courses block (15.0-16.0); recorded as one entry with an alternative.",
+   "Closed list writes CMPR120 without a space; treated as the same course as catalog's CMPR 120 (Historical).",
+   "PHYS 217, CMPR 120 and CMPR 121 are marked Historical in the catalog.",
+   "MATH C2210/C2220 (common course numbering) appear to replace closed-list MATH 180/185; reviewer should confirm.",
+   "Summary advises elective choice by major (Mechanical/aerospace: ENGR 235, 240, 103; Civil/environmental: ENGR 235, 240, 183; Electrical/computer: ENGR 250, CMPR 120, CMPR 121), though the elective block heading says select 1 and CMPR 120 is printed in the science/math or-group, not the elective list."
+  ]
+ },
+ "extracted_run": "38843461766"
+}

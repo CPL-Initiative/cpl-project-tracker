@@ -1,0 +1,3704 @@
+{
+ "college": "Saddleback College",
+ "catalog_url": "https://saddleback.curriqunet.com/catalog/iq/45443",
+ "platform": "curriqunet",
+ "catalog_year": "2026-2027",
+ "programs": 367,
+ "with_closed_list": 353,
+ "started": "2026-10-16T03:03:07Z",
+ "curriqunet": {
+  "catalog": 4420,
+  "view_prefix": "https://saddleback.curriqunet.com/catalog/iq/",
+  "errors": [],
+  "sections": [
+   "**HIDDEN** Programs by Award Type",
+   "Information About Programs",
+   "Credit Programs Index",
+   "Credit Programs A-Z",
+   "Noncredit Programs Index",
+   "Noncredit Programs A-Z"
+  ],
+  "nodes_read": 51,
+  "calls": 100,
+  "entries": 574,
+  "stopped_at_cap": false,
+  "same_title_entries": 262,
+  "entries_read": 312
+ },
+ "pages_read": 312,
+ "banner_h1": null,
+ "loads": 1661,
+ "seconds": 8038.2,
+ "found": 321,
+ "by_method": {
+  "no_closed_list": 14,
+  "not_found": 13,
+  "page_claimed": 19,
+  "sitemap_page": 321
+ },
+ "shared_pages": {
+  "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_bus_comm_skills_ca": [
+   "04054",
+   "36223"
+  ],
+  "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_bus_leadership_as": [
+   "09787",
+   "22845"
+  ],
+  "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_Admin_Asst_AS": [
+   "09827",
+   "36225"
+  ],
+  "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_gen_bus_ca": [
+   "12298",
+   "36222"
+  ],
+  "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_new_media_ca": [
+   "22844",
+   "36226"
+  ],
+  "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm-calgetc-ca": [
+   "22895",
+   "22896",
+   "22897",
+   "22899"
+  ],
+  "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_comm_studies_2_AAT": [
+   "31469",
+   "42631"
+  ],
+  "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_banking_AS": [
+   "36224",
+   "41571"
+  ],
+  "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_nonprof_bus_adm_NC": [
+   "40279",
+   "46096"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "04070",
+   "title": "Marine Science Technician",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "04093",
+   "title": "Foods",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "04120",
+   "title": "COSMETOLOGY",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_cosmetology_nc",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 12,
+    "why": "coarse net: the page's code tokens name 0 of 12 listed courses",
+    "error": null,
+    "chars": {
+     "body": 7495,
+     "content": 7495,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "09851",
+   "title": "Seamanship",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "22877",
+   "title": "Marine Science Technician",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "22878",
+   "title": "Seamanship",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "22900",
+   "title": "Foods",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "38428",
+   "title": "ESTHETICIAN",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_esthetician_nc",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5397,
+     "content": 5397,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "38429",
+   "title": "ESTHETICIAN",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_esthetician_nc",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5397,
+     "content": 5397,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "38781",
+   "title": "Basic Culinary Skills",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_ae_basic_tech_nc",
+    "label": {
+     "award": 1,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3322,
+     "content": 3322,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "38797",
+   "title": "High School Equivalency for Mathematics Success",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm-highschool-equiv-nc",
+    "label": {
+     "award": 1,
+     "title": 0.6
+    },
+    "field": "innerText",
+    "coverage": 0.25,
+    "body": 0.25,
+    "content": 0.25,
+    "net": 1,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 1 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3643,
+     "content": 3643,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "43591",
+   "title": "Adult Education ESL Digital Literacy",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "43732",
+   "title": "Acute Care Nursing Assistant",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "04079",
+   "title": "Italian",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_gen_stud_arts_aa",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm-calgetc-ca"
+   ]
+  },
+  {
+   "control_number": "04105",
+   "title": "GEOLOGY",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_geol_ast",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm-calgetc-ca",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_env_studies_ast",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_gen_stud_nat_aa",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_biology_ast"
+   ]
+  },
+  {
+   "control_number": "04108",
+   "title": "Community Based Corrections",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_Alcohol_AS",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_hsg_as",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_men_health_as",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_Alcohol_CA",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_hsg_ca",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_men_health_ca",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_soc_work_hum_svcs_AAT"
+   ]
+  },
+  {
+   "control_number": "04117",
+   "title": "Political Science",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_gen_stud_sbs_aa",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_poli_aat",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm-calgetc-ca",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_law_pubpol_soc_AAT"
+   ]
+  },
+  {
+   "control_number": "09782",
+   "title": "Tax Preparation",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm-accounting-as",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm-comp-acct-spclst-as",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm-accounting-ca",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm-comp-acct-spclst-ca"
+   ]
+  },
+  {
+   "control_number": "09831",
+   "title": "Screen Acting and Voice Performance",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "pages": [
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_ctvr_ca",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_ctvr_skills_ca",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_ctvr_as",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_film_tv_ast"
+   ]
+  },
+  {
+   "control_number": "13870",
+   "title": "Cinema/Television/Radio: Critical Studies",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "pages": [
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_ctvr_ca",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_ctvr_skills_ca",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_ctvr_as",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_film_tv_ast"
+   ]
+  },
+  {
+   "control_number": "16045",
+   "title": "Early Childhood Education",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_early_child_ast",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_early_teach_ca",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_cde_aat"
+   ]
+  },
+  {
+   "control_number": "19594",
+   "title": "Screen Acting and Voice Performance",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_ctvr_as",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_ctvr_ca",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_ctvr_skills_ca",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_film_tv_ast"
+   ]
+  },
+  {
+   "control_number": "19595",
+   "title": "Cinema/Television/Radio: Critical Studies",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_ctvr_as",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_ctvr_ca",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_ctvr_skills_ca",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_film_tv_ast"
+   ]
+  },
+  {
+   "control_number": "22913",
+   "title": "Community Based Corrections",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_Alcohol_CA",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_hsg_ca",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_men_health_ca",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_Alcohol_AS",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_hsg_as",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_men_health_as"
+   ]
+  },
+  {
+   "control_number": "30205",
+   "title": "Tax Preparation",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm-accounting-ca",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm-comp-acct-spclst-ca",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm-accounting-as",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm-comp-acct-spclst-as"
+   ]
+  },
+  {
+   "control_number": "30208",
+   "title": "Post Production",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "pages": [
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_ctvr_ca",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_ctvr_skills_ca",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_ctvr_as",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_film_tv_ast"
+   ]
+  },
+  {
+   "control_number": "30209",
+   "title": "Post Production",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_ctvr_as",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_ctvr_ca",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_ctvr_skills_ca",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_film_tv_ast"
+   ]
+  },
+  {
+   "control_number": "30697",
+   "title": "HEALTH INFORMATION TECHNOLOGY",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_hs_as",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_bus_data_analytics"
+   ]
+  },
+  {
+   "control_number": "36627",
+   "title": "Healthcare Technology Optimization Specialist",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "pages": [
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_pub_health_info_tech_CA",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_data_analytics_CA",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_hs_as",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_bus_data_analytics"
+   ]
+  },
+  {
+   "control_number": "36751",
+   "title": "Medical Coding Specialist",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_pub_health_info_tech_CA",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_hs_as"
+   ]
+  },
+  {
+   "control_number": "37182",
+   "title": "Professional Development for Preschool/TK Educator",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_early_teach_ca",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_cde_aat",
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_early_child_ast"
+   ]
+  },
+  {
+   "control_number": "38796",
+   "title": "High School Equivalency for Language Arts Success",
+   "award": "Noncredit program",
+   "pages": [
+    "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm-highschool-equiv-nc"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 10,
+  "0.8-1.0": 6,
+  "1.0": 305
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 321,
+  "list": [
+   {
+    "control_number": "04044",
+    "title": "Paramedic",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_par_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04046",
+    "title": "SUSTAINABLE HORTICULTURE",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_sus_hort_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04047",
+    "title": "Architecture",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_Arch_AS",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04048",
+    "title": "Level I - Interior Design Foundations",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_int_design_lev1_CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04049",
+    "title": "ACCOUNTING",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm-accounting-as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04053",
+    "title": "Marketing",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_mktg_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04054",
+    "title": "Retailing and Selling",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_bus_comm_skills_ca",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04055",
+    "title": "Global Business",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_glob_bus_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04058",
+    "title": "JOURNALISM AND NEW MEDIA",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_journ_med_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04059",
+    "title": "Computer Science",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_comp_sci_AS",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04060",
+    "title": "Kinesiology",
+    "award": "A.A. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_kines_aa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04061",
+    "title": "Engineering",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_engr_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04062",
+    "title": "GENERAL ELECTRONIC TECHNOLOGY",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_gen_elect_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04064",
+    "title": "Graphic Communications",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_graphic_comm_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04066",
+    "title": "General Automotive Technician",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_gen_auto_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04069",
+    "title": "Drafting Technology",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_drafting_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04072",
+    "title": "Studio Arts",
+    "award": "A.A. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_studio_arts_aa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04073",
+    "title": "Music",
+    "award": "A.A. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_mus_aa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04074",
+    "title": "THEATRE ARTS PERFORMANCE AND ACTING",
+    "award": "A.A. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_tapa_aa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04075",
+    "title": "Graphic Design",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_graphic_des_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04076",
+    "title": "PHOTOGRAPHY",
+    "award": "A.A. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_phot_aa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04077",
+    "title": "FRENCH",
+    "award": "A.A. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_fr_aa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04078",
+    "title": "GERMAN",
+    "award": "A.A. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_ger_aa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04080",
+    "title": "SPANISH",
+    "award": "A.A. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_span_aa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04082",
+    "title": "Registered Nurse",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_rn_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04089",
+    "title": "FASHION DESIGN",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_fashion_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04094",
+    "title": "Introduction to Culinary Arts",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_intro_culinary_AS",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04096",
+    "title": "ENGLISH LITERATURE",
+    "award": "A.A. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_eng_lit_aa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04099",
+    "title": "Philosophy",
+    "award": "A.A. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_phil_aa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04100",
+    "title": "MATHEMATICS",
+    "award": "A.A. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_math_aa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04102",
+    "title": "Environmental Studies",
+    "award": "A.A. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_env_studies_aa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04103",
+    "title": "Physics",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_phys_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04104",
+    "title": "Chemistry",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_chem_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04107",
+    "title": "Human Services Generalist",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_hsg_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04112",
+    "title": "GENDER AND SEXUALITY STUDIES",
+    "award": "A.A. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_gender_aa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04113",
+    "title": "Anthropology",
+    "award": "A.A. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_Anthro_AA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04114",
+    "title": "Economics",
+    "award": "A.A. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_econ_aa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04115",
+    "title": "HISTORY",
+    "award": "A.A. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_hist_aa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04116",
+    "title": "GEOGRAPHY",
+    "award": "A.A. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_geog_aa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04119",
+    "title": "Advanced Culinary Arts",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_adv_culinary_AS",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04121",
+    "title": "Travel and Tourism",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_trav_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "04124",
+    "title": "Japanese",
+    "award": "A.A. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_japan_aa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09773",
+    "title": "SUSTAINABLE LANDSCAPE DESIGN",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_sus_land_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09774",
+    "title": "Ecological Restoration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_ecol_restor_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09780",
+    "title": "Biology",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_biology_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09781",
+    "title": "Computerized Accounting Specialist",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm-comp-acct-spclst-as",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09783",
+    "title": "Business Management",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_bus_mgmt_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09787",
+    "title": "Business Leadership",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_bus_leadership_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09788",
+    "title": "Entrepreneurship",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_entrep_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09824",
+    "title": "REAL ESTATE ESCROW",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_re_esc_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09825",
+    "title": "Real Estate Appraisal",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_re_app_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09826",
+    "title": "Real Estate",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_re_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09827",
+    "title": "Administrative Assistant",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_Admin_Asst_AS",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09832",
+    "title": "Software Specialist",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_soft_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09833",
+    "title": "Network Administrator",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_net_admin_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09835",
+    "title": "Applications Developer",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_AppDev_AS",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09842",
+    "title": "Analog and Digital Circuit Electronic Technology",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_ADCET_AS",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09843",
+    "title": "Digital Electronic Technology",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_digital_elect_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09845",
+    "title": "Automotive Engine Performance Specialist",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_aeps_AS",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09846",
+    "title": "Automotive Engine Service Specialist",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_aess_AS",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09847",
+    "title": "Automotive Chassis Specialist",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_ACS_AS",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09848",
+    "title": "Construction Inspection",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_ConstrInsp_AS",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09852",
+    "title": "Computer Graphics",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_com_graphics_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09857",
+    "title": "American Sign Language",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_SL_AS",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09858",
+    "title": "Level II - Interior Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_int_design_lev2_CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09859",
+    "title": "Interior Design",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_int_des_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09863",
+    "title": "FASHION MERCHANDISING",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_fash_merch_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09866",
+    "title": "FASHION DISPLAY AND PRESENTATION",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_fash_disp_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09869",
+    "title": "Catering and Special Events",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_catering_AS",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09870",
+    "title": "Nutrition",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm-nutrition-as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09871",
+    "title": "Astronomy",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_Astronomy_AS",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09872",
+    "title": "Alcohol and Drug Studies",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_Alcohol_AS",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09886",
+    "title": "Humanities",
+    "award": "A.A. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_hum_aa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10369",
+    "title": "Family and Consumer Sciences",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_fcs_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11957",
+    "title": "Illustration/Animation",
+    "award": "A.A. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_illus_aa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11959",
+    "title": "COMPUTER MAINTENANCE TECHNOLOGY",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_com_maint_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12147",
+    "title": "DANCE",
+    "award": "A.A. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/dance_pgrm_aa",
+    "coverage": 0.787,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12298",
+    "title": "Retail Management",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_gen_bus_ca",
+    "coverage": 0.533,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12349",
+    "title": "E-Commerce Specialist",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_e-com_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12350",
+    "title": "Webmaster",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_web_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12351",
+    "title": "Web Designer",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_web_des_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17830",
+    "title": "ADVANCED MANUFACTURING",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_Adv_Mfg_AS",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "17990",
+    "title": "Health Sciences",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_hs_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18210",
+    "title": "GENERAL STUDIES - ARTS & HUMANITIES",
+    "award": "A.A. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_gen_stud_arts_aa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18211",
+    "title": "GENERAL STUDIES - NATURAL SCIENCES",
+    "award": "A.A. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_gen_stud_nat_aa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18212",
+    "title": "GENERAL STUDIES-SOCIAL & BEHAVIORAL SCIENCES",
+    "award": "A.A. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_gen_stud_sbs_aa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18213",
+    "title": "Liberal Studies",
+    "award": "A.A. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_lib_aa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19050",
+    "title": "THEATRE ARTS TECHNICAL THEATRE",
+    "award": "A.A. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_tatt_aa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19051",
+    "title": "Theatre Arts Entertainment and Theatre Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_taett_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19550",
+    "title": "Mental Health Worker",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_men_health_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19551",
+    "title": "MEDICAL LABORATORY TECHNICIAN",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_med_lab_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19552",
+    "title": "Mental Health Worker",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_men_health_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22837",
+    "title": "SUSTAINABLE HORTICULTURE",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_sus_hort_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22838",
+    "title": "SUSTAINABLE LANDSCAPE DESIGN",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_sus_land_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22839",
+    "title": "Architecture",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_Arch_CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22840",
+    "title": "ACCOUNTING",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm-accounting-ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22841",
+    "title": "Computerized Accounting Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm-comp-acct-spclst-ca",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22842",
+    "title": "Business Leadership",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_bus_leadership_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22843",
+    "title": "Entrepreneurship",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_entrep_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22844",
+    "title": "Retailing and Selling",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_new_media_ca",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22845",
+    "title": "Retail Management",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_bus_leadership_as",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22846",
+    "title": "Global Business",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_glob_bus_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22847",
+    "title": "Marketing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_mktg_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22848",
+    "title": "Real Estate Appraisal",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_re_app_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22850",
+    "title": "REAL ESTATE ESCROW",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_re_esc_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22851",
+    "title": "Administrative Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_Admin_Asst_CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22852",
+    "title": "Digital Media",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_digital_media_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22853",
+    "title": "Web Designer",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_web_des_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22854",
+    "title": "Computer Graphics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_com_graphics_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22855",
+    "title": "Software Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_soft_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22856",
+    "title": "Applications Developer",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_AppDev_CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22858",
+    "title": "Network Administrator",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_net_admin_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22859",
+    "title": "Webmaster",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_web_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22860",
+    "title": "E-Commerce Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_e-com_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22864",
+    "title": "American Sign Language Interpreting",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_SL_Interp_CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22865",
+    "title": "Analog and Digital Circuit Electronic Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_ADCET_CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22866",
+    "title": "Digital Electronic Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_digital_elect_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22867",
+    "title": "General Electronic Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_gen_elec_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22868",
+    "title": "Computer Maintenance Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_com_maint_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22869",
+    "title": "Graphic Communications",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_graphic_comm_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22870",
+    "title": "Automotive Chassis Specialist",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_ACS_CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22871",
+    "title": "Automotive Engine Performance Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_aecs_CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22872",
+    "title": "Automotive Engine Service Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_aess_CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22873",
+    "title": "General Automotive Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_gen_auto_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22874",
+    "title": "Drafting Technology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_drafting_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22875",
+    "title": "ADVANCED MANUFACTURING",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_Adv_Mfg_CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22876",
+    "title": "Construction Inspection",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_ConstInsp_CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22879",
+    "title": "Graphic Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_graphic_des_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22880",
+    "title": "Illustration/Animation",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_illus_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22881",
+    "title": "COMPREHENSIVE MEDICAL ASSISTANT",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_comm_med_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22882",
+    "title": "CLINICAL MEDICAL ASSISTANT",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_clinical_med_tech_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22883",
+    "title": "Administrative Medical Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_AMS_CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22884",
+    "title": "Registered Nurse",
+    "award": "Certificate of Achievement requiring 60+S/90+Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_rn_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22886",
+    "title": "Paramedic",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_par_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22887",
+    "title": "Family and Consumer Sciences",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_fcs_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22889",
+    "title": "Level III - Interior Design Professional",
+    "award": "Certificate of Achievement requiring 60+S/90+Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_int_design_lev3_CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22890",
+    "title": "ADVANCED FASHION DESIGN AND APPAREL MANUFACTURING",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_AFDAM_CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22891",
+    "title": "FASHION DESIGN",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_fashion_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22893",
+    "title": "FASHION MERCHANDISING",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_fash_merch_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22894",
+    "title": "VISUAL DISPLAY AND PRESENTATION",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_vis_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22895",
+    "title": "SCHOOL AGE CARE AND RECREATION",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm-calgetc-ca",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22896",
+    "title": "Early Childhood Master Teacher",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm-calgetc-ca",
+    "coverage": 0.514,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22897",
+    "title": "Site Supervisor",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm-calgetc-ca",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22898",
+    "title": "Early Childhood Teacher",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_early_teach_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22899",
+    "title": "Infant Toddler Teacher",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm-calgetc-ca",
+    "coverage": 0.594,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22901",
+    "title": "Nutrition",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm-nutrition-ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22902",
+    "title": "Catering and Special Events",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_catering_CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22903",
+    "title": "Advanced Culinary Arts",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_adv_culinary_CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22904",
+    "title": "Introduction to Culinary Arts",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_intro_culinary_CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22909",
+    "title": "Human Services Generalist",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_hsg_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22912",
+    "title": "Alcohol and Drug Studies",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_Alcohol_CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22914",
+    "title": "Travel and Tourism",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_trav_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22933",
+    "title": "MEDICAL LABORATORY TECHNICIAN",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_med_lab_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24442",
+    "title": "English as a Second Language - Intermediate Level",
+    "award": "Noncredit program",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_nc_ESL_Int",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24444",
+    "title": "English as a Second Language- Advanced Level",
+    "award": "Noncredit program",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_nc_ESL_Adv",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24452",
+    "title": "English as a Second Language-Beginning Level",
+    "award": "Noncredit program",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_nc_ESL_Beg",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30206",
+    "title": "Cinema-Television-Radio",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_ctvr_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30207",
+    "title": "Cinema-Television-Radio",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_ctvr_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30570",
+    "title": "Aging Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_Aging_CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30689",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_soci_aat",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30712",
+    "title": "PSYCHOLOGY",
+    "award": "A.A- T Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_psyc_aat",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30749",
+    "title": "Arabic",
+    "award": "A.A. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_arabic_AA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30755",
+    "title": "Licensed Vocational Nurse (LVN) to Registered Nurse (RN) 30-Unit Option",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm-lvn-to-rn-ca",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30962",
+    "title": "CHINESE",
+    "award": "A.A. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_chinese_aa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31216",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_early_child_ast",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31469",
+    "title": "Communication Studies",
+    "award": "A.A- T Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_comm_studies_2_AAT",
+    "coverage": 0.68,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32064",
+    "title": "MATHEMATICS",
+    "award": "A.S. T Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/45445/cat_aat_aat/48705",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32065",
+    "title": "ENGLISH",
+    "award": "A.A- T Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_eng_aat",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32066",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_hist_aat",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32072",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_geol_ast",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32123",
+    "title": "Alternative Fuel Vehicle Specialist",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_AFVS_AS",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32167",
+    "title": "Geography",
+    "award": "A.A- T Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_geog_aat",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32192",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_phys_ast",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32307",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_ta_aat",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32331",
+    "title": "Elementary Teacher Education",
+    "award": "A.A- T Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/45445/cat_aat_aat/48695",
+    "coverage": 0.957,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32376",
+    "title": "ART HISTORY",
+    "award": "A.A- T Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_ArtHist_AAT",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32428",
+    "title": "ALTERNATIVE FUEL VEHICLE SPECIALIST",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_AFVS_CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32477",
+    "title": "POLITICAL SCIENCE",
+    "award": "A.A- T Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_poli_aat",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32480",
+    "title": "ANTHROPOLOGY",
+    "award": "A.A- T Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_Anthro_AAT",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32581",
+    "title": "KINESIOLOGY",
+    "award": "A.A- T Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_kines_aat",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32583",
+    "title": "JOURNALISM",
+    "award": "A.A- T Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_journ_aat",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32713",
+    "title": "STUDIO ARTS",
+    "award": "A.A- T Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_studio_arts_aat",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33392",
+    "title": "PHILOSOPHY",
+    "award": "A.A- T Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_phil_aat",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33533",
+    "title": "ECONOMICS",
+    "award": "A.A- T Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_econ_aat",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33565",
+    "title": "MUSIC",
+    "award": "A.A- T Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_mus_aat",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33616",
+    "title": "SPANISH",
+    "award": "A.A- T Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_span_aat",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33873",
+    "title": "WATER RESOURCES AND CONSERVATION",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_water_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35085",
+    "title": "BIOMEDICAL ILLUSTRATION",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_biomed_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35437",
+    "title": "BIOLOGY",
+    "award": "A.S. T Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_biology_ast",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35444",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_nutr_diet_ast",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35706",
+    "title": "Adult Education English as a Second Language - Advanced Level",
+    "award": "Noncredit program",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_AESl_Adv",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35715",
+    "title": "MUSIC PRODUCTION ENTREPRENEURSHIP",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_music_prod_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35716",
+    "title": "ASSOCIATE TEACHER LEVEL I",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_Assoc_TeachI_CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35777",
+    "title": "Adult Education English as a Second Language Beginning Level",
+    "award": "Noncredit program",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_AESL_Beg",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36221",
+    "title": "Business Communications",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_bus_comm_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36222",
+    "title": "General Business",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_gen_bus_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36223",
+    "title": "Business Communication Skills",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_bus_comm_skills_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36224",
+    "title": "Business Information Worker I",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_banking_AS",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36225",
+    "title": "Business Information Worker II",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_Admin_Asst_AS",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36226",
+    "title": "New Media Marketing",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_new_media_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36625",
+    "title": "Aging Studies Interdisciplinary",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_Aging_Inter_CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36628",
+    "title": "Cinema-Television-Radio Career Skills",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_ctvr_skills_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36753",
+    "title": "Real Estate",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_re_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37248",
+    "title": "Global Studies",
+    "award": "A.A- T Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_globalstudies_AAT",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37278",
+    "title": "Web and Mobile Developer Bootcamp",
+    "award": "Noncredit program",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_web_mobile",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37933",
+    "title": "Child and Adolescent Development",
+    "award": "A.A- T Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_cde_aat",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38654",
+    "title": "Persian",
+    "award": "A.A. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_pers_aa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38672",
+    "title": "Cyber Defense",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_cyber_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38724",
+    "title": "Adult Education English as a Second Language - Intermediate Level",
+    "award": "Noncredit program",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_AESL_Int",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38784",
+    "title": "Urban Farming",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_urb_farm_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38795",
+    "title": "Adult Education English as a Second Language (AESL) for the Workplace",
+    "award": "Noncredit program",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_AESL_workplace",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38811",
+    "title": "Communication Skills for Nursing Students",
+    "award": "Noncredit program",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_nc_commskills",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38812",
+    "title": "Emergency Nurse Training Program",
+    "award": "Noncredit program",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_emerg_nurse",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38826",
+    "title": "Cybersecurity/Information Security Analyst",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm-cybersec-infosec-anlyst-ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38830",
+    "title": "Cyber Operations",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_cyber_ops_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38862",
+    "title": "Wellness Gardening",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_well_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38882",
+    "title": "Medical Scribe",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_med_sc_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38899",
+    "title": "Personal Training Specialist",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_per_train_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38900",
+    "title": "Yoga Instructor",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_yoga_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39109",
+    "title": "Industrial Automation Fundamentals",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_iaf_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39767",
+    "title": "Clinical Lab Assistant and Phlebotomy Program",
+    "award": "Noncredit program",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_clinical_lab",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40032",
+    "title": "Environmental Science",
+    "award": "A.S. T Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_env_studies_ast",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40091",
+    "title": "Microsoft Solutions Expert",
+    "award": "Noncredit program",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_Microsoft",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40242",
+    "title": "Surface Design",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_surf_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40279",
+    "title": "Nonprofit Business Administration",
+    "award": "Noncredit program",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_nonprof_bus_adm_NC",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40281",
+    "title": "CREATIVE WRITING",
+    "award": "A.A. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_creative_writing_aa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40317",
+    "title": "Film, Television, and Electronic Media",
+    "award": "A.S. T Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_film_tv_ast",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40320",
+    "title": "Holistic Health Studies",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_holistic_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40322",
+    "title": "Integrative Health for Fitness and Wellness Professionals",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/prm_ihfw_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40326",
+    "title": "Hospitality Management",
+    "award": "A.S. T Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_hm_ast",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40482",
+    "title": "CISCO Network Specialist",
+    "award": "Noncredit program",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_cisco",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40837",
+    "title": "IT Help Desk Specialist",
+    "award": "Noncredit program",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_IT_help",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41418",
+    "title": "Basic Music Skills",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_basic_music_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41419",
+    "title": "Commercial Music",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_com_music_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41420",
+    "title": "Instrumental Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_instr_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41421",
+    "title": "Jazz Composition",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_jazz_comp_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41422",
+    "title": "Jazz Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_jazz_stud_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41423",
+    "title": "Keyboard Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_keyboard_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41424",
+    "title": "Music Composition",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_mus_comp_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41425",
+    "title": "Piano Pedagogy",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_piano_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41426",
+    "title": "Vocal Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_voc_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41571",
+    "title": "BANKING AND FINANCE",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_banking_AS",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41572",
+    "title": "BANKING AND FINANCE",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_banking_CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41584",
+    "title": "BUSINESS ADMINISTRATION 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_bus_amin_ast",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41585",
+    "title": "WORKPLACE READINESS",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_workplace_CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41597",
+    "title": "ADULT EDUCATION ENGLISH AS A SECOND LANGUAGE VOCABULARY DEVELOPMENT",
+    "award": "Noncredit program",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_AESl_Voc",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41648",
+    "title": "ASSOCIATE TEACHER LEVEL II: WORK EXPERIENCE",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_Assoc_TeachII_CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41673",
+    "title": "Hospitality Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_hm_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41674",
+    "title": "Hospitality Management",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_hm_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41724",
+    "title": "BUSINESS EDUCATION FOUNDATIONS",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_bus_ed_foundations_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41725",
+    "title": "LOGISTICS AND PHYSICAL DISTRIBUTION",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_log_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41726",
+    "title": "LOGISTICS AND PHYSICAL DISTRIBUTION",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_log_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41731",
+    "title": "Business Education Core",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_bus_ed_core_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41960",
+    "title": "KOREAN",
+    "award": "A.A. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_kor_aa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42176",
+    "title": "Human Resources",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_hr_as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42343",
+    "title": "Interior Design Digital Production",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_int_des_dig_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42344",
+    "title": "Geriatric Nutrition",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_gn_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42352",
+    "title": "Sustainable Food Systems",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_sus_food_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42366",
+    "title": "Sports Nutrition",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_sports_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42389",
+    "title": "General Studies - Interdisciplinary Studies",
+    "award": "A.A. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_gen_stud_inter_aa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42480",
+    "title": "Human Resources",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_hr_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42559",
+    "title": "Business Data Analytics and Database",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_bus_data_analytics",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42560",
+    "title": "Data Analytics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_data_analytics_CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42601",
+    "title": "Musical Theatre",
+    "award": "A.A. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_mus_theatre_aa",
+    "coverage": 0.841,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42610",
+    "title": "Library Technician",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_lib_tech_ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42611",
+    "title": "Workplace Readiness",
+    "award": "Noncredit program",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_workplace_readiness_nc",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42631",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_comm_studies_2_AAT",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42636",
+    "title": "Barbering",
+    "award": "Noncredit program",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_barbering_nc",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42637",
+    "title": "Cosmetology",
+    "award": "Noncredit program",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_cosmetology_nc",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42638",
+    "title": "ADULT EDUCATION BASIC TECHNOLOGY SKILLS",
+    "award": "Noncredit program",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_ae_basic_tech_nc",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42639",
+    "title": "Esthetician",
+    "award": "Noncredit program",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_esthetician_nc",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42640",
+    "title": "Hairstyling",
+    "award": "Noncredit program",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_hairstyling_nc",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42641",
+    "title": "Manicuring",
+    "award": "Noncredit program",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_manicuring_nc",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42644",
+    "title": "Kinesiology - Exercise Science",
+    "award": "A.A. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_kines_exercise_aa",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42695",
+    "title": "Costuming",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_costuming",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42696",
+    "title": "Automotive Technician Fundamentals",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_auto_tech_fund",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42698",
+    "title": "Automotive Chassis Systems",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_Auto_Chassis_Systems_CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42700",
+    "title": "Automotive Electric Vehicle Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/Pgrm_Auto_Elect_Veh_Tech_CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42701",
+    "title": "Automotive Engine Diagnostics Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_auto_eng_diag",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42702",
+    "title": "Automotive Engine Repair Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_auto_eng_repair",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42703",
+    "title": "Automotive Suspension Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_auto_suspen",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42777",
+    "title": "Financial Literacy",
+    "award": "Noncredit program",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_financial_lit_nc",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43005",
+    "title": "Agriculture Plant Science",
+    "award": "A.S. T Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_agr_plant_AST",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43273",
+    "title": "Certified Nurse Assistant",
+    "award": "Noncredit program",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_CNA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43274",
+    "title": "Public Health Informatics and Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_pub_health_info_tech_CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43697",
+    "title": "Autonomous and Advanced Vehicle Systems",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_auto_adv_veh_sys_CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43737",
+    "title": "Law, Public Policy, and Society",
+    "award": "A.A- T Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_law_pubpol_soc_AAT",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43987",
+    "title": "The Business of Horticulture and Landscape Design",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_bus_hort_lndscp_dsgn_CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44215",
+    "title": "Emergency Medical Technician",
+    "award": "Noncredit program",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_emt_NC",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44231",
+    "title": "Barber Crossover",
+    "award": "Noncredit program",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_barber_crossover_NC",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44234",
+    "title": "Employability Skills",
+    "award": "Noncredit program",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_employability_skills_NC",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44246",
+    "title": "Pre-Vocational Skills",
+    "award": "Noncredit program",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_pre_vctnl_skills_NC",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44250",
+    "title": "Workplace Skills",
+    "award": "Noncredit program",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_workplace_skills_NC",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44352",
+    "title": "Community Health Worker",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_comm_health_CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44454",
+    "title": "Public Health",
+    "award": "A.S. T Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_pub_health_AST",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44464",
+    "title": "Community Health Worker",
+    "award": "Noncredit program",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_comm_health_NC",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44468",
+    "title": "Bus Operator/Driver Commercial Learner's Permit",
+    "award": "Noncredit program",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_bus_driver_permit_NC",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44576",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_comp_sci_AST",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44664",
+    "title": "Advanced Baking and Pastry",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_adv_baking_AS",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44665",
+    "title": "Advanced Baking and Pastry",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_adv_baking_CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44666",
+    "title": "Introduction to Baking and Pastry",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_intro_baking_CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44674",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_adm_of_justice_AST",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44681",
+    "title": "Social Work and Human Services",
+    "award": "A.A- T Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_soc_work_hum_svcs_AAT",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44770",
+    "title": "Administrative Medical Assistant",
+    "award": "Noncredit program",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_adm_med_asst_NC",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44771",
+    "title": "Clinical Medical Assistant",
+    "award": "Noncredit program",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_clinical_med_asst_NC",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44772",
+    "title": "Comprehensive Medical Assistant",
+    "award": "Noncredit program",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_compre_med_asst_NC",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45228",
+    "title": "Kinesiology - Sports Administration",
+    "award": "A.A. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_kines_sports_admin_AA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45428",
+    "title": "Surgical Technology",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_surgical_tech_AS",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45430",
+    "title": "Salon Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_salon_mgmt_CA",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45431",
+    "title": "EKG/ECG Technician",
+    "award": "Noncredit program",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_ekg_ecg_tech_NC",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45432",
+    "title": "Healthcare Data Analytics",
+    "award": "Noncredit program",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_hlthcare_data_analytics_NC",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45760",
+    "title": "High School Equivalency",
+    "award": "Noncredit program",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm-highschool-equiv-nc",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45765",
+    "title": "Networking Administrator Essentials",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm-ntwrk-admin-essentials-ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45786",
+    "title": "Elementary Teacher Education: Integrated Programs",
+    "award": "A.A- T Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_elem_teacher_aat",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45790",
+    "title": "Mathematics 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_math_ast",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45824",
+    "title": "Music and Audio Production for Cinema, TV and Radio",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm-mus-audio-prod-ctvr-ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45988",
+    "title": "Games and Interactive Media",
+    "award": "A.S. Degree",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm-game-interac-media-as",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45989",
+    "title": "Games and Interactive Media - Animation",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm-game-interac-media-animat-ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45990",
+    "title": "Games and Interactive Media - Design",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm-game-interac-media-design-ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45991",
+    "title": "Kitchen and Bath Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm-kitchen-bath-dsgn-ca",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46096",
+    "title": "Nonprofit Business Administration",
+    "award": "Noncredit program",
+    "url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_noncredit_AtoZ/pgrm_nonprof_bus_adm_NC",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "38843470509"
+}

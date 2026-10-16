@@ -1,0 +1,307 @@
+{
+ "college": "Rio Hondo College",
+ "control_number": "03204",
+ "shape": "degree",
+ "title": "Engineering Design Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24241",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12060,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12060,
+    "output_tokens": 2135,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2135,
+  "output_tokens_details": {
+   "thinking_tokens": 685
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09094,
+ "ms": 16619,
+ "seconds": 17.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 20,
+   "listed": 20,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    34.0,
+    34.0
+   ],
+   "stated": [
+    34.0,
+    34.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "ENGINEERING DESIGN TECHNOLOGY - Associate of Science Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 34,
+    "max": 34
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Rio Hondo College General Education (RHC GE) or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "design, engineering and manufacturing-related industries",
+    "public works",
+    "utilities",
+    "CADD/Drafting-related industries"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 28,
+     "max": 28
+    },
+    "courses": [
+     {
+      "code": "ARCH 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CIV 101",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGT 101",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGT 105",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGT 150",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGT 170",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGT 250",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGT 122",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGT 200",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGT 131",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGT 231",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose a minimum of 6 units from the following courses",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ARCH 215",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 235",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGT 100",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGR 100",
+        "units": 2,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGT 123",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGT 270",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 280",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGT 280",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGT 290",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "ENGT 290 is printed as 4.0 in the requirements list, but its course description gives Units: 1-4 (state file stores 1); recorded 4 as printed beside it in the list.",
+   "Cross-listed courses (ARCH 101/CIV 101/ENGT 101, ENGT 150 or ENGT 170, ENGT 100/ENGR 100, ARCH 280/ENGT 280) recorded as one entry with alternatives, following the catalog's OR rows.",
+   "GE: RHC GE or Cal-GETC; text adds CSU GE or IGETC may be used in some cases. No GE units or degree total printed.",
+   "No program learning outcomes printed in the text.",
+   "Catalog text appears cut off mid-description of ENGT 231; ENGT 250 and ENGT 270 course descriptions not shown.",
+   "Careers taken from the program description ('employment in design, engineering and manufacturing-related industries, public works, utilities and CADD/Drafting-related industries'); reviewer may prefer splitting the first item."
+  ]
+ },
+ "extracted_run": "38843465712"
+}

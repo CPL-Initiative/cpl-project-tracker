@@ -1,0 +1,239 @@
+{
+ "college": "Santa Ana College",
+ "control_number": "32144",
+ "shape": "adt",
+ "title": "Geology",
+ "award": "A.S. T Degree",
+ "source_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36128/35577",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6718,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6718,
+    "output_tokens": 1521,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1521,
+  "output_tokens_details": {
+   "thinking_tokens": 549
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05729,
+ "ms": 13049,
+ "seconds": 13.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 9,
+   "share": 0.778,
+   "missing": [
+    "MATH180",
+    "MATH185"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "MATHC2210",
+    "MATHC2220"
+   ],
+   "flagged": [
+    "MATHC2210",
+    "MATHC2220"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    26.0,
+    26.0
+   ],
+   "stated": [
+    26.0,
+    26.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Geology: A.S.-T Degree for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 26,
+    "max": 26
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "education",
+    "geoscience research",
+    "government"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 26,
+     "max": 26
+    },
+    "courses": [
+     {
+      "code": "GEOL 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 101L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 201",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 219",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM 219H",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 229",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2210",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 180H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH C2220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MATH 180",
+    "why": "not in the text; catalog lists MATH C2210 in its place"
+   },
+   {
+    "code": "MATH 185",
+    "why": "not in the text; catalog lists MATH C2220 in its place"
+   }
+  ],
+  "notes": [
+   "The catalog prints group figures '5.0' above the CHEM 219/219H and CHEM 229 rows and '4.0' above the MATH C2210/180H and MATH C2220 rows; these appear to be per-row units, since the stated total of 26.0 equals 3+1+4+5+5+4+4 only if CHEM 229 and MATH C2220 are also required. Recorded all as required; reviewer should verify.",
+   "GEOL 201 is printed with title 'Introduction to Historical Geology' (Historical); CHEM 229 and MATH 180H are marked Historical.",
+   "MATH C2210 and MATH C2220 (Cal-Common course numbers) are not in the closed list; they appear to replace MATH 180 and MATH 185.",
+   "The 60 CSU transferable units sentence applies to all Associate Degrees for Transfer and was not recorded as degree_total.",
+   "No program learning outcomes printed in the text.",
+   "Catalog text is cut off mid-sentence at the end of the ADT requirements."
+  ]
+ },
+ "extracted_run": "38843461766"
+}

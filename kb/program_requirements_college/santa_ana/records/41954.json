@@ -1,0 +1,233 @@
+{
+ "college": "Santa Ana College",
+ "control_number": "41954",
+ "shape": "noncredit",
+ "title": "Introduction to Baking & Pastry Tier 1",
+ "award": "Noncredit program",
+ "source_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36235",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6629,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6629,
+    "output_tokens": 1250,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1250,
+  "output_tokens_details": {
+   "thinking_tokens": 405
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05152,
+ "ms": 12733,
+ "seconds": 13.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "VFOOD5"
+   ],
+   "flagged": [
+    "VFOOD5"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    128.0,
+    312.0
+   ],
+   "stated": [
+    128.0,
+    312.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Introduction to Baking & Pastry Tier 1: Certificate of Completion (Noncredit)",
+   "measure": "hours",
+   "total_units": {
+    "min": 128,
+    "max": 312
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will apply the knowledge and skills they gained to start their career pathway in the culinary arts field; specifically in baking and pastry."
+   ],
+   "careers": [
+    "baker",
+    "pastry cook"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Students must pass TWO of the following courses:",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 48,
+     "max": 60
+    },
+    "courses": [
+     {
+      "code": "VFOOD 212",
+      "units": 24,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VFOOD 214",
+      "units": 24,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VFOOD 216",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Students must pass the following course:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 8,
+     "max": 36
+    },
+    "courses": [
+     {
+      "code": "VFOOD 005",
+      "units": 8,
+      "units_max": 36,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Students must pass ONE of the following courses:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 72,
+     "max": 216
+    },
+    "courses": [
+     {
+      "code": "VBUS 400",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSMTH 190",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL 520",
+      "units": 96,
+      "units_max": 216,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit certificate counted in hours; all units fields hold hours as printed.",
+   "VFOOD 005 (ServSafe Food Handler) is marked Historical in the catalog and is not in the closed list; recorded as a catalog addition.",
+   "VBUS 400 and ESL 520 are marked Historical in the catalog text.",
+   "The ONE-of block is printed as courses separated by OR; recorded as a choose-1 block."
+  ]
+ },
+ "extracted_run": "38843461766"
+}

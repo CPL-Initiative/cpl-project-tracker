@@ -1,0 +1,356 @@
+{
+ "college": "Saddleback College",
+ "control_number": "42176",
+ "shape": "degree",
+ "title": "Human Resources",
+ "award": "A.S. Degree",
+ "source_url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_hr_as",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12340,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12340,
+    "output_tokens": 3403,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3403,
+  "output_tokens_details": {
+   "thinking_tokens": 1441
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.11742,
+ "ms": 27978,
+ "seconds": 28.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 26,
+   "listed": 26,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    38.0,
+    41.0
+   ],
+   "stated": [
+    38.0,
+    41.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "HUMAN RESOURCES - A.S. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 38,
+    "max": 41
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Graduation Requirements (Saddleback College GE) or Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Prepare a legally compliant job description for a job of their own design.",
+    "Apply an understanding of the influence of individual values, attitudes, perceptions, emotions, and emotional intelligence on individual and organizational effectiveness.",
+    "Explain and give examples of the importance and value of diversity in the organization.",
+    "Analyze human resource needs and identify the financial, legal, social, compensation, and ethical factors involved in managing personnel and enforcing policies, rules, and procedures.",
+    "Demonstrate the knowledge and skills needed for various human resource management positions."
+   ],
+   "careers": [
+    "human resource management",
+    "managers",
+    "specialists",
+    "analysts",
+    "officers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BUS 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 1H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 13H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1000",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1000H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 102",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIM 1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 229",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 223",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 227",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 196",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 180WE",
+        "units": 2,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ACCT 1A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 215",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 172",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000H",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 44",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Required Core prints 'Units: 38.0- 41.0' and 'Total : 38.0- 41.0'; recorded as total_units. The core block's stated is left null because the eight-course 'Select one' (ACCT/BUS/STAT/PSYC) is split into its own block; in the catalog it sits between CIM 1 and BUS 229.",
+   "Two- and three-way 'Select one' groups (BUS 1/1H, BUS 13/13H, BUS 103/ENGL C1000/ENGL C1000H, COMM 20/BUS 102, BUS 196/BUS 180WE) recorded as alternatives on one entry in the core block; each printed its own 'Select one' unit figure (3.0, 3.0, 3.0-4.0, 3.0, 1.0-2.0).",
+   "BUS 180WE is printed at 2.0 in the requirement list but 2.0-4.0 units in the course description; recorded 2.",
+   "The 60-unit statement under 'Associate of Science' is a generic degree requirement sentence, not recorded as degree_total; no GE unit figure is printed.",
+   "GE pattern: page refers to the Graduation Requirements or the Cal-GETC pattern.",
+   "Careers taken from the Summary: 'careers in the high-demand field of human resource management' and 'Potential areas of employment include managers, specialists, analysts, officers'; the list of HR functional areas (compensation, benefits, staffing, etc.) was not recorded as separate careers—reviewer may wish to check.",
+   "Course List text is cut off at CIM 1 description."
+  ]
+ },
+ "extracted_run": "38843470509"
+}

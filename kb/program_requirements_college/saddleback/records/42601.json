@@ -1,0 +1,507 @@
+{
+ "college": "Saddleback College",
+ "control_number": "42601",
+ "shape": "degree",
+ "title": "Musical Theatre",
+ "award": "A.A. Degree",
+ "source_url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_mus_theatre_aa",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 13834,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 13834,
+    "output_tokens": 3806,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3806,
+  "output_tokens_details": {
+   "thinking_tokens": 1018
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.13146,
+ "ms": 45391,
+ "seconds": 45.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 44,
+   "listed": 44,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    25.5,
+    25.5
+   ],
+   "stated": [
+    25.5,
+    25.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "MUSICAL THEATRE - A.A. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 25.5,
+    "max": 25.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Saddleback College Graduation Requirements (local GE) or Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate proficiency in acting by being able to break down a scene into its component part and perform in front of a class and an audience.",
+    "Demonstrate proficiency in singing by singing in front of a class and an audience.",
+    "Demonstrate proficiency in dancing by performing choreographed dance routines in front of a class and an audience."
+   ],
+   "careers": [
+    "Musical Theatre"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 22.5,
+     "max": 22.5
+    },
+    "courses": [
+     {
+      "code": "MUS 81",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 92",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 93",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETT 40",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TA 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TA 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TA 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TA 107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 52",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 53",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one (Jazz)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 1,
+     "max": 1
+    },
+    "courses": [
+     {
+      "code": "DANC 58",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 59",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one (Tap)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 1,
+     "max": 1
+    },
+    "courses": [
+     {
+      "code": "DANC 60",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 61",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 62",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Restricted Electives: Complete 3 units",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "TA 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TA 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TA 15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TA 16",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TA 17",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TA 19",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TA 108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 35",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TA 4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TA 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TA 22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TA 43",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "TA 190",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETT 41",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETT 42",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETT 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 51",
+      "units": 1,
+      "units_max": 1.5,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 54",
+      "units": 1,
+      "units_max": 1.5,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 55",
+      "units": 1,
+      "units_max": 1.5,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 56",
+      "units": 1,
+      "units_max": 1.5,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 67",
+      "units": 1,
+      "units_max": 1.5,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 71",
+      "units": 1,
+      "units_max": 1.5,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 72",
+      "units": 1,
+      "units_max": 1.5,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 73",
+      "units": 1,
+      "units_max": 1.5,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 75",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 78",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 79",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 80",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANC 81",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The Required Core's printed 22.5 units include the two nested 'Select one' choices (1 unit each); the listed required courses sum to 20.5. The stated 22.5 is recorded on the Required Core block. The two nested 'Select one' blocks were named '(Jazz)' and '(Tap)' for clarity; the catalog prints only 'Select one'.",
+   "The closed list stores DANC51, DANC53, DANC55, DANC59, DANC67, DANC71 and DANC73 without a space. These were matched to the catalog's 'DANC 51' and similar codes, so catalog_addition is false.",
+   "Total 25.5 is printed as the program total, with the note that it 'does not include all units required for the degree'. The generic sentence 'Complete a minimum of 60 units...' is boilerplate for A.A. degrees and is not recorded as degree_total.",
+   "The GE pattern is not fixed. The page refers to the Graduation Requirements or the Cal-GETC pattern, and no GE units are printed.",
+   "The restricted electives and core list courses in the catalog's order. The core prints 1.0 unit beside the dance courses, though the course descriptions show 1.0-1.5 for some of them (e.g. DANC 52, 53, 58, 59).",
+   "The catalog text is cut off mid-description at MUS 35 in the course list. This does not affect the requirements.",
+   "The 'Musical Theatre' career entry comes from 'students interested in entering Musical Theatre as a career'."
+  ]
+ },
+ "extracted_run": "38843470509"
+}

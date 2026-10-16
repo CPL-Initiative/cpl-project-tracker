@@ -1,0 +1,417 @@
+{
+ "college": "Saddleback College",
+ "control_number": "09788",
+ "shape": "degree",
+ "title": "Entrepreneurship",
+ "award": "A.S. Degree",
+ "source_url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_entrep_as",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12538,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12538,
+    "output_tokens": 3676,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3676,
+  "output_tokens_details": {
+   "thinking_tokens": 1203
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.12367,
+ "ms": 28533,
+ "seconds": 29.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 30,
+   "listed": 30,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    31.0,
+    34.5
+   ],
+   "stated": [
+    31.0,
+    34.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 12,
+   "courses": 0,
+   "count": 12,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "ENTREPRENEURSHIP - A.S. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 31,
+    "max": 34.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Saddleback College General Education (Graduation Requirements) or Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Describe the major influences on small businesses.",
+    "Describe governmental, financial, human resource, and other factors when planning or building a new product, service, or business.",
+    "Make business decisions that consider the fundamentals of legal systems and social, ethical, and political forces affecting the development and operation of businesses.",
+    "Communicate clearly, effectively, and appropriately in writing and orally.",
+    "Describe the functions of business in society including the major concepts related to business ownership and the factors that influence them; competition and marketing; and the systems, technologies, and operational controls through which business organizations operate.",
+    "Describe the entrepreneurial risks and challenges inherent in each major component of the entrepreneurial business.",
+    "Evaluate a product, service, or business in terms of a clearly defined proposed target customer and the need that is being satisfied.",
+    "Research and develop a business plan for all aspects of the creation and maintenance of a business.",
+    "Prepare business documents and reports using Internet and other research sources accurately and appropriately and using appropriate visual representation in the form of graphs and/or tables.",
+    "Behave appropriately in a workplace, following business policies and procedures and directions and using independent judgment as needed and using decision-making skills to solve problems.",
+    "Solve problems through hands-on projects to develop computer-based solutions to business problems.",
+    "Apply mathematical skills and knowledge to answer marketing questions or describe business characteristics."
+   ],
+   "careers": [
+    "business development",
+    "e-commerce",
+    "finances",
+    "marketing",
+    "management"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 25,
+     "max": 28
+    },
+    "courses": [
+     {
+      "code": "ACCT 235",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 1H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 13H",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS 106",
+        "units": 2,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1000",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1000H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 196",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 180WE",
+        "units": 2,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIM 1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Restricted Electives: Select any courses not already used (3-3.5 units)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3.5
+    },
+    "courses": [
+     {
+      "code": "BUS 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 106",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000H",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 44",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 223",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 237",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 180WE",
+      "units": 2,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Marketing and Communication Specialties: Select any course not already used (3 units)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "BUS 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 109",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 135",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 136",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 137",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 183",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The four 'Select one' groups inside the Required Core (BUS 1/1H; BUS 13/13H/BUS 106; BUS 103/ENGL C1000/ENGL C1000H; BUS 196/BUS 180WE) are recorded as single entries with alternatives so the core's printed 25-28 units stays with one block.",
+   "Restricted Electives: BUS 10, STAT C1000, STAT C1000H and PSYC 44 are printed as one 'OR' group worth 3.0 units; recorded as BUS 10 with alternatives. BUS 180WE is printed with 2.0-3.0 units in this list.",
+   "Courses used in the core (BUS 106, BUS 180WE) and BUS 105 reappear in elective lists; the catalog says 'any courses not already used'.",
+   "The page states a generic requirement of a minimum of 60 units for the A.S. degree including GE; not recorded as degree_total. 'Total : 31.0- 34.5' is noted as not including all units required for the degree, so it is recorded as total_units.",
+   "GE: page refers to Graduation Requirements or the Cal-GETC pattern; no GE units printed.",
+   "Catalog text is cut off mid-course-list (BUS 150 description); the requirements section appears complete."
+  ]
+ },
+ "extracted_run": "38843470509"
+}

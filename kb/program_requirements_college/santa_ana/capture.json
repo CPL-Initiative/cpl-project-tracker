@@ -5,14 +5,12 @@
  "catalog_year": "2026-2027",
  "programs": 370,
  "with_closed_list": 359,
- "started": "2026-10-15T14:34:02Z",
+ "started": "2026-10-16T03:03:02Z",
  "curriqunet": {
   "catalog": 28,
   "view_prefix": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/",
   "errors": [
-   "https://sac.curriqunet.com/Catalog/_getPage?catalogId=28&id=36259: APIRequestContext.get: socket hang up (ECONNRESET)",
-   "https://sac.curriqunet.com/Catalog/_getPage?catalogId=28&id=35017: APIRequestContext.get: socket hang up (ECONNRESET)",
-   "https://sac.curriqunet.com/Catalog/_getPage?catalogId=28&id=35523: APIRequestContext.get: socket hang up (ECONNRESET)"
+   "https://sac.curriqunet.com/Catalog/_getPage?catalogId=28&id=35002: APIRequestContext.get: socket hang up (ECONNRESET)"
   ],
   "sections": [
    "Degree & Certificate Types",
@@ -26,16 +24,16 @@
   "same_title_entries": 0,
   "entries_read": 374
  },
- "pages_read": 373,
+ "pages_read": 374,
  "banner_h1": null,
- "loads": 1633,
- "seconds": 7303.8,
- "found": 345,
+ "loads": 1636,
+ "seconds": 7227.4,
+ "found": 347,
  "by_method": {
   "no_closed_list": 11,
-  "not_found": 5,
-  "page_claimed": 9,
-  "sitemap_page": 345
+  "not_found": 4,
+  "page_claimed": 8,
+  "sitemap_page": 347
  },
  "shared_pages": {
   "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36122/35925": [
@@ -146,32 +144,6 @@
    "near_miss": {
     "why": "no page read names the program"
    }
-  },
-  {
-   "control_number": "44529",
-   "title": "Culinary Nutrition",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36142/35562",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 13,
-    "why": "coarse net: the page's code tokens name 0 of 13 listed courses",
-    "error": null,
-    "chars": {
-     "body": 816,
-     "content": 816,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
   }
  ],
  "page_claimed": [
@@ -243,18 +215,6 @@
    ]
   },
   {
-   "control_number": "43597",
-   "title": "Introduction to Automotive Technology Systems, Engines, & Transmissions",
-   "award": "Noncredit program",
-   "pages": [
-    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36258",
-    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36251",
-    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36260",
-    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36244",
-    "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36376"
-   ]
-  },
-  {
    "control_number": "46057",
    "title": "Early Childhood Education Apprenticeship Program",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
@@ -272,12 +232,12 @@
  "coverage_bands": {
   "0.5-0.8": 7,
   "0.8-1.0": 74,
-  "1.0": 264
+  "1.0": 266
  },
  "would_extract": {
   "against": null,
   "kept": 0,
-  "programs": 345,
+  "programs": 347,
   "list": [
    {
     "control_number": "04185",
@@ -3300,6 +3260,16 @@
     "was_method": null
    },
    {
+    "control_number": "43597",
+    "title": "Introduction to Automotive Technology Systems, Engines, & Transmissions",
+    "award": "Noncredit program",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34298/36163/36259",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
     "control_number": "43717",
     "title": "Photojournalism",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
@@ -3364,6 +3334,16 @@
     "title": "Artificial Intelligence",
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
     "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36111/35560",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44529",
+    "title": "Culinary Nutrition",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36142/35562",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
@@ -3731,5 +3711,5 @@
    }
   ]
  },
- "run": "38752374639"
+ "run": "38843461766"
 }

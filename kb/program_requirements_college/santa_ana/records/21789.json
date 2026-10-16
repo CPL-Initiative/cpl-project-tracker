@@ -1,0 +1,347 @@
+{
+ "college": "Santa Ana College",
+ "control_number": "21789",
+ "shape": "certificate",
+ "title": "Pharmacy Technology Advanced Option",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36145/35865",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7679,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7679,
+    "output_tokens": 3175,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3175,
+  "output_tokens_details": {
+   "thinking_tokens": 1350
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09422,
+ "ms": 25437,
+ "seconds": 25.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 18,
+   "listed": 18,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "PHAR57L"
+   ],
+   "flagged": [
+    "PHAR57L"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    24.5,
+    29.0
+   ],
+   "stated": [
+    24.0,
+    30.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 24.5-29.0; the catalog states 24.0-30.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Pharmacy Technology Advanced Option: Certificate of Achievement (Transcripted)",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Develop a polished resume for Pharmacy Technician job interviews, highlighting your advanced technical skills.",
+    "Apply and complete Pharmacy Technician Certification Board Exam successfully.",
+    "Apply for the California Board of Pharmacy application for licensing as a Pharmacy Technician in a timely manner."
+   ],
+   "careers": [
+    "pharmacy technicians"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHAR 048",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHAR 055",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHAR 051",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHAR 052",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHAR 056",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHAR 057",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHAR 060",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Skills Lab (PHAR 056L, PHAR 057L or PHAR 060L)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 0.5,
+     "max": 1
+    },
+    "courses": [
+     {
+      "code": "PHAR 056L",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHAR 057L",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHAR 060L",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Skills Lab (PHAR 072L-1 or PHAR 072L-2)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 0.5,
+     "max": 1
+    },
+    "courses": [
+     {
+      "code": "PHAR 072L-1",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHAR 072L-2",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Externship",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 1.5,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "PHAR 072A",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHAR 072B",
+      "units": 0.5,
+      "units_max": 1.5,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHAR 072C",
+      "units": 0.5,
+      "units_max": 1.5,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Recommended electives",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "BA 115",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 149",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 109",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMPR 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes with leading zeros (PHAR 048, 051, 052, 055, 056, 057, 060, 072A); treated as matching closed-list codes PHAR 48, 51, 52, 55, 56, 57, 60 and PHAR072A.",
+   "A '20.0' subtotal is printed after PHAR 048; it matches the sum of PHAR 055, 051, 052, 056, 057 and 060 (20 units). All seven lecture courses are recorded as one required block; the 24.0-30.0 'Required Courses' figure is recorded as the certificate total.",
+   "The lab groupings are printed with nested '0.5- 1.0' headers and a leading 'AND'; read as two separate one-of choices (PHAR 056L/057L/060L and PHAR 072L-1/072L-2). Reviewer should verify the nesting.",
+   "PHAR 057L is not in the closed list (catalog addition).",
+   "CMPR 100 title in catalog ('The Computer and Society') differs from closed list title ('Computer, AI, & Society').",
+   "Recommended electives header prints 0.0 units; these courses do not count toward the total.",
+   "Career entry taken from the summary phrase 'essential functions for pharmacy technicians'."
+  ]
+ },
+ "extracted_run": "38843461766"
+}

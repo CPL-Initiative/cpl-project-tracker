@@ -1,0 +1,340 @@
+{
+ "college": "Saddleback College",
+ "control_number": "04114",
+ "shape": "degree",
+ "title": "Economics",
+ "award": "A.A. Degree",
+ "source_url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_econ_aa",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12282,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12282,
+    "output_tokens": 2514,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2514,
+  "output_tokens_details": {
+   "thinking_tokens": 790
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09941,
+ "ms": 19015,
+ "seconds": 19.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 19,
+   "share": 0.737,
+   "missing": [
+    "ECON2",
+    "ECON4",
+    "MATH3A",
+    "MATH3AH",
+    "MATH3B"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "ECONC2001",
+    "ECONC2002",
+    "MATHC2210",
+    "MATHC2210H",
+    "MATHC2220"
+   ],
+   "flagged": [
+    "ECONC2001",
+    "ECONC2002",
+    "MATHC2210",
+    "MATHC2210H",
+    "MATHC2220"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.0,
+    23.0
+   ],
+   "stated": [
+    20.0,
+    23.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "ECONOMICS - Saddleback - A.A. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 23
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Saddleback College Graduation Requirements (local GE) or Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Define scarcity, and show how it relates to the concepts of choice and cost.",
+    "Outline the role of comparative advantage in exchange.",
+    "Describe and analyze the economy in quantitative terms using national income and employment data from the standpoint of current and constant dollars.",
+    "Utilize the demand and supply model and use the model to critically analyze real world examples.",
+    "Explain the role of prices in allocating goods, services and factors of production."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 14,
+     "max": 14
+    },
+    "courses": [
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2001H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2002H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "PS 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON 11",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 11",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH C2210",
+        "units": 5,
+        "catalog_addition": true
+       },
+       {
+        "code": "MATH C2210H",
+        "units": 5,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Restricted Electives: Select two courses (6-9 units)",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "ACCT 1A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 1B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 1H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIM 1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIM 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2220",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "STAT C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECON 2",
+    "why": "not in the requirements; replaced by ECON C2002 (formerly offered as ECON 2)"
+   },
+   {
+    "code": "ECON 4",
+    "why": "not in the requirements; replaced by ECON C2001 (formerly offered as ECON 4)"
+   },
+   {
+    "code": "MATH 3A",
+    "why": "not in the requirements; replaced by MATH C2210 (formerly offered as MATH 3A)"
+   },
+   {
+    "code": "MATH 3AH",
+    "why": "not in the requirements; replaced by MATH C2210H (formerly offered as MATH 3AH)"
+   },
+   {
+    "code": "MATH 3B",
+    "why": "not in the requirements; replaced by MATH C2220 (formerly offered as MATH 3B)"
+   }
+  ],
+  "notes": [
+   "Required Core prints four 'Select one' groups, each recorded as one required course with its 'OR' options as alternatives; core states Units: 14.0.",
+   "Total : 20.0- 23.0 is printed with the note 'Total units does not include all units required for the degree', so it is recorded as the major total.",
+   "The sentence 'Complete a minimum of 60 units including the total number of units described above and the General Education requirements' is generic Associate of Arts wording, so degree_total is left null.",
+   "GE: page refers to the Graduation Requirements or the Cal-GETC pattern; no GE units printed.",
+   "In Restricted Electives a stray '3.0' precedes the BUS 1/BUS 1H and STAT C1000/STAT C1000H OR groups, read as the group's units.",
+   "The page prints one Learning Outcome(s) list in the Summary for this A.A. program; recorded as program outcomes.",
+   "The Course List text is cut off mid-description of STAT C1000H; it does not affect requirements.",
+   "Summary mentions 'professional careers related to this major' and 'entry-level employment' without naming specific careers; careers left empty."
+  ]
+ },
+ "extracted_run": "38843470509"
+}

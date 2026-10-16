@@ -1,0 +1,214 @@
+{
+ "college": "Saddleback College",
+ "control_number": "45228",
+ "shape": "degree",
+ "title": "Kinesiology - Sports Administration",
+ "award": "A.A. Degree",
+ "source_url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_kines_sports_admin_AA",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8510,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8510,
+    "output_tokens": 1800,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1800,
+  "output_tokens_details": {
+   "thinking_tokens": 779
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07004,
+ "ms": 15314,
+ "seconds": 15.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    19.0,
+    19.0
+   ],
+   "stated": [
+    19.0,
+    19.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "KINESIOLOGY - SPORTS ADMINISTRATION - A.A. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 19,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Saddleback College General Education (Graduation Requirements) or Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply fundamental sports management principles and leadership techniques within various roles of sports administration and organizations.",
+    "Plan, coordinate, and manage sports events and facilities, ensuring efficient operations and safety compliance.",
+    "Create effective sports marketing and promotional strategies to engage target audiences, increase visibility, and promote sports programs and events.",
+    "Identify and evaluate key legal and ethical issues in sports, including liability, contracts, and the ethical responsibilities of sports administrators.",
+    "Apply basic finance and accounting principles to manage budgets, financial statements, and resource allocations within sports context.",
+    "Apply psychological strategies that support athlete performance, resilience, and motivation."
+   ],
+   "careers": [
+    "recreation programming",
+    "sports marketing",
+    "facility operations",
+    "athletic program coordination"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 19,
+     "max": 19
+    },
+    "courses": [
+     {
+      "code": "KNES 51",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KNES 46",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KNES 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KNES 148",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 1A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLS C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The core prints 'Select one 3.0' over POLS C1000 OR POLS C1000H; recorded as a single required entry with the honors twin as alternative so the block's stated 19 units matches the core total.",
+   "The page states 'Complete a minimum of 60 units including the total number of units described above and the General Education requirements' as a generic associate degree rule; not recorded as degree_total, and electives_fill_degree left false since electives are not explicitly named.",
+   "GE pattern: page refers to the Graduation Requirements or the Cal-GETC pattern; no GE units printed.",
+   "Careers taken from the summary's 'entry-level job positions as an assistant for recreation programming, sports marketing, facility operations, and athletic program coordination'; reviewer may prefer fuller wording."
+  ]
+ },
+ "extracted_run": "38843470509"
+}

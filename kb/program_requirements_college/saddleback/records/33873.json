@@ -1,0 +1,227 @@
+{
+ "college": "Saddleback College",
+ "control_number": "33873",
+ "shape": "certificate",
+ "title": "WATER RESOURCES AND CONSERVATION",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm_water_ca",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8778,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8778,
+    "output_tokens": 1502,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1502,
+  "output_tokens_details": {
+   "thinking_tokens": 462
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06515,
+ "ms": 11518,
+ "seconds": 11.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    23.0,
+    23.0
+   ],
+   "stated": [
+    23.0,
+    23.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "WATER RESOURCES AND CONSERVATION - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 23,
+    "max": 23
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Design, implement, evaluate and market water conservation programs to a broad audience.",
+    "Evaluate water usage patterns for rural, urban, residential, and commercial sites; recommend water efficiency measures as well as alternate water sources.",
+    "Understand water distribution, flow, and elimination systems; basic hydraulics; quality issues; balance and time of use.",
+    "Understand the many stressors to water accessibility and how they interact to affect supply and demand along with other issues.",
+    "Monitor, collect, interpret and analyze data to evaluate effectiveness of programs and modify them over time.",
+    "Calculate water and cost savings and produce comprehensive cost/benefit analysis reports.",
+    "Develop basic knowledge of water resource economics and how economics relates to supply and demand."
+   ],
+   "careers": [
+    "water field",
+    "water efficiency/conservation technicians",
+    "coordinators",
+    "specialists",
+    "water resources specialists and technicians"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 23,
+     "max": 23
+    },
+    "courses": [
+     {
+      "code": "ENV 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENV 1H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENV 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENV 38",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENV 40",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENV 105",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENV 123",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENV 141",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENV 180WE",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The 'Select one' choice of ENV 1 or ENV 1H (3 units) is recorded as ENV 1 with ENV 1H as its honors alternative inside the Required Core block.",
+   "Course units sum to 23, matching the printed Required Core and Total of 23.0.",
+   "Careers are taken from the program summary sentence 'a career in the water field as water efficiency/conservation technicians, coordinators, or specialists, or as water resources specialists and technicians'; the split of that phrase into entries is a judgment call.",
+   "Learning outcomes are printed under the program summary for this certificate."
+  ]
+ },
+ "extracted_run": "38843470509"
+}
