@@ -105,7 +105,8 @@ const rowByTitle = (doc, needle) => Array.from(doc.querySelectorAll("tr.cr-row")
   await sleep(150);
 
   const lanes = Array.from(doc.querySelectorAll(".cr-lane"));
-  check("lanes: 6 chips render", lanes.length === 6);
+  // 7 since 2026-10-16: the read-only Industry credentials lane joined the six queues.
+  check("lanes: 7 chips render", lanes.length === 7);
   check("lanes: All carries the row count", /All \(3\)/.test(txt(laneBtn(doc, /All/))));
   check("lanes: No-issuer count = 1 (Retail Management)",
     /No issuer \(1\)/.test(txt(laneBtn(doc, /No issuer/))));
@@ -190,7 +191,7 @@ const rowByTitle = (doc, needle) => Array.from(doc.querySelectorAll("tr.cr-row")
   const exportBtns = Array.from(doc.querySelectorAll(".cr-export-btn"))
     .filter((b) => !b.classList.contains("cr-resetw-btn"));
   check("exports: both buttons render", exportBtns.length === 2);
-  const jsonBtnE = exportBtns.find((b) => txt(b) === "⬇ JSON");
+  const jsonBtnE = exportBtns.find((b) => txt(b) === "JSON");
   jsonBtnE.click();
   await sleep(30);
   check("exports: JSON download produced", log.blobs.length >= 1);
@@ -202,7 +203,7 @@ const rowByTitle = (doc, needle) => Array.from(doc.querySelectorAll("tr.cr-row")
     compRec.unified_title === "CompTIA A+ (Core 1 + Core 2)");
   check("exports: JSON carries SUBJ + raw variants",
     compRec.subj === "CISC" && compRec.raw_variants.length === 2);
-  exportBtns.find((b) => txt(b) === "⬇ Excel (CSV)").click();
+  exportBtns.find((b) => txt(b) === "Excel (CSV)").click();
   await sleep(30);
   const csvText = await log.blobs[log.blobs.length - 1].text();
   check("exports: CSV header row present", /Unified Title,Issuing Agency/.test(csvText));
