@@ -1,0 +1,328 @@
+{
+ "college": "Chabot College",
+ "control_number": "20661",
+ "shape": "degree",
+ "title": "Fire Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6132",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7802,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7802,
+    "output_tokens": 2319,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2319,
+  "output_tokens_details": {
+   "thinking_tokens": 643
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07759,
+ "ms": 18920,
+ "seconds": 19.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "EMS1",
+    "FT1",
+    "FT88B",
+    "FT88C"
+   ],
+   "flagged": [
+    "EMS1",
+    "FT1",
+    "FT88B",
+    "FT88C"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    49.5,
+    49.5
+   ],
+   "stated": [
+    49.5,
+    49.5
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     71.5,
+     71.5
+    ],
+    "stated": [
+     71.5,
+     71.5
+    ],
+    "against": "degree",
+    "ge": [
+     22.0,
+     22.0
+    ],
+    "why": [],
+    "fill": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Program Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 49.5,
+    "max": 49.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Chabot College A.S. General Education",
+   "degree_total": {
+    "min": 71.5,
+    "max": 71.5
+   },
+   "ge_units": {
+    "min": 22,
+    "max": 22
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "demonstrate knowledge and skills required to respond safely and effectively to fire and environmental emergency situations at the private, city, state and federal levels with emphasis in one or more of the following areas: structural fire suppression and rescue incidents; hazardous materials operations-level incidents; wildland fire incidents; emergency medical first responder and basic life support incidents.",
+    "identify minimum qualifications and entry-level skills for fire fighter hiring. The student will be able to describe the following elements: application process; written exam process; physical ability exam; oral interview; chief's interview; background investigation; and firefighter probationary process."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Year One - First Semester - Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 13,
+     "max": 13
+    },
+    "courses": [
+     {
+      "code": "EMS 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FT 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FT 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT 88A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Year One - Second Semester - Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 13.5,
+     "max": 13.5
+    },
+    "courses": [
+     {
+      "code": "EMS 3",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT 10",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Year Two - First Semester - Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 17,
+     "max": 17
+    },
+    "courses": [
+     {
+      "code": "FT 11",
+      "units": 17,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Year Two - Second Semester - Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "FT 4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FT 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Fire Academy students are encouraged to enroll in Fire Technology 88B or 88C",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "FT 88B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FT 88C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog text begins mid-description; the section heading recorded is 'Program Requirements'.",
+   "Unit Calculations: Major Requirements 49.5, General Education 22.0, Electives 'Degree applicable units as needed', Total 71.5. Major + GE already equals 71.5, so electives_fill_degree is set true only because the page lists electives 'as needed' without units.",
+   "FT 88B and FT 88C are printed as 'Fire Technology 88B' / '88C' in notes encouraging Fire Academy students to enroll; recorded as recommended with FT subject and no units printed.",
+   "EMS 1 and FT 1 are required core courses not on the closed list (catalog additions).",
+   "Waiver note: firefighters employed by a Fire Department may have FT 10, FT 11, EMS 1, EMS 2, and EMS 2W waived with proof of certification, and may substitute an alternate PE course for FT 88A. EMS 2 and EMS 2W are not otherwise listed in requirements.",
+   "Footnote: FT 1 (or equivalent, including former FT 50), FT 88A (or equivalent), and EMS 1 (or equivalent) must be in progress or completed with C or better to enroll in FT 10; FT 10 must be passed to register for FT 11.",
+   "Program learning outcomes printed for the program; the first outcome followed the lead-in on the same line, which was omitted."
+  ]
+ },
+ "extracted_run": "38843479215"
+}

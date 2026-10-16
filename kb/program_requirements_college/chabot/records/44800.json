@@ -1,0 +1,216 @@
+{
+ "college": "Chabot College",
+ "control_number": "44800",
+ "shape": "degree",
+ "title": "Construction Management",
+ "award": "A.S. Degree",
+ "source_url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6101",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7119,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7119,
+    "output_tokens": 1066,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1066,
+  "output_tokens_details": {
+   "thinking_tokens": 278
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0498,
+ "ms": 8762,
+ "seconds": 9.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     60.0,
+     60.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     22.0,
+     22.0
+    ],
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Construction Management - Associate in Science",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 20,
+    "max": 20
+   },
+   "ge_pattern": "A.S. General Education (local)",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 22,
+    "max": 22
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate the ability to communicate, review and convey information effectively within cross-functional teams within the construction industry.",
+    "Create, assemble, and generate relevant, technical reports for both real-world and simulated construction projects.",
+    "Create work plans, construct project management plans and design work schedules for execution of construction.",
+    "Estimate, organize, and manage construction project resources through the use of cost estimates and schedules.",
+    "Apply project management methodologies to plan and control construction work activities."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Major requirements (18 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "ARCH 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMGT 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMGT 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMGT 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMGT 21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMGT 22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Unit Calculations print Major Specific Requirements 18, General Education 22, Electives (Degree applicable units as needed) 20, Total 60; electives recorded as degree_elective_units since the page prints a major total.",
+   "GE pattern is the college's local A.S. General Education, referenced to the catalog's A.S. Graduation Requirements section.",
+   "The description calls this a 'diploma program' leading to an A.S. degree; no specific careers are named."
+  ]
+ },
+ "extracted_run": "38843479215"
+}

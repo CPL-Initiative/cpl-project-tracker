@@ -1,0 +1,232 @@
+{
+ "college": "Chabot College",
+ "control_number": "44178",
+ "shape": "degree",
+ "title": "Heavy Duty Coach Mechanic",
+ "award": "A.S. Degree",
+ "source_url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6237",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7609,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7609,
+    "output_tokens": 1522,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1522,
+  "output_tokens_details": {
+   "thinking_tokens": 430
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06088,
+ "ms": 13389,
+ "seconds": 13.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    32.0,
+    32.0
+   ],
+   "stated": [
+    32.0,
+    32.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     60.0,
+     60.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     22.0,
+     22.0
+    ],
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Heavy Duty Coach Mechanic - Associate in Science",
+   "measure": "units",
+   "total_units": {
+    "min": 32,
+    "max": 32
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 6,
+    "max": 6
+   },
+   "ge_pattern": "A.S. General Education",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 22,
+    "max": 22
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "safely use essential hand tools, power tools, specialized equipment, jacks, and hoists.",
+    "diagnose, disassemble, inspect, and reassemble engines, parts, and assemblies to ensure conformance to factory specifications. Document all areas of repairs and communicate effectively both orally and in writing.",
+    "perform complete routine maintenance. Inspect, test, and diagnose malfunctions in brakes, steering, suspension, and electrical systems.",
+    "use specialized diagnosis and repair software and adjust or repair computer-controlled exhaust emissions devices; install or repair accessories or adjust seats, doors, or windows.",
+    "dismount, mount, repair, or replace tires, and perform wheel balance and wheel alignment."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 32,
+     "max": 32
+    },
+    "courses": [
+     {
+      "code": "APAC 9471",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APAC 9472",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APAC 9473",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APAC 9474",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APAC 9475",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APAC 9476",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APAC 9477",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APAC 9478",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Unit Calculations print Major Requirements 32.0, General Education 22.0, Electives (Degree applicable units as needed) 6.0, Total 60.0; the 6 elective units are recorded as degree_elective_units since a major total is printed.",
+   "GE pattern is referred to as 'A.S. General Education' (Chabot local A.S. graduation requirements); courses not listed on this page.",
+   "The lead-in 'Upon the successful completion of this program, students should be able to:' was removed from the first outcome, which was printed on the same line.",
+   "No specific career titles are named; the description mentions repairing diesel coach and transit buses and the Heavy Duty Coach Mechanic Apprenticeship but no job title list.",
+   "Program requires placement in the AC Transit apprenticeship program and 198 hours of RSI per calendar year; this is not counted as units."
+  ]
+ },
+ "extracted_run": "38843479215"
+}

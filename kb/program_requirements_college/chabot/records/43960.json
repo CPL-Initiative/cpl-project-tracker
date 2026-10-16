@@ -1,0 +1,230 @@
+{
+ "college": "Chabot College",
+ "control_number": "43960",
+ "shape": "degree",
+ "title": "Construction Electronic Systems Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6570",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7287,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7287,
+    "output_tokens": 1599,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1599,
+  "output_tokens_details": {
+   "thinking_tokens": 610
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06113,
+ "ms": 14258,
+ "seconds": 14.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "CEST9795"
+   ],
+   "flagged": [
+    "CEST9795"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    21.0,
+    21.0
+   ],
+   "stated": [
+    21.0,
+    21.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     60.0,
+     60.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     22.0,
+     22.0
+    ],
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Program Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 21,
+    "max": 21
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 17,
+    "max": 17
+   },
+   "ge_pattern": "Chabot College A.S. General Education",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 22,
+    "max": 22
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Support a safe and healthy work environment through analysis of the environment and application of safe policies and practices.",
+    "Demonstrate the skills to follow plans and blueprints, perform relevant calculations, and effectively use the tools and techniques to install, test, and maintain electronic systems in accordance with industry practice, workmanship standards, and regulations.",
+    "Describe the electrical theory, planning, economics, and industry conventions relevant to the work of a construction electronic systems technician."
+   ],
+   "careers": [
+    "Electronic System Technicians"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 21,
+     "max": 21
+    },
+    "courses": [
+     {
+      "code": "CEST 9701",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CEST 9702",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CEST 9703",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CEST 9704",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CEST 9705",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CEST 9706",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CEST 9795",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints no separate heading for the A.S. award; the 'Program Requirements' section is recorded. The page appears to describe only this degree.",
+   "total_units is taken from the 'Required Core 21.0' line in Unit Calculations, which is the only major requirement printed. Reviewer may prefer null if Required Core is not treated as a stated major total.",
+   "Unit Calculations: Required Core 21, General Education 22, Electives (Degree applicable units as needed) 17, Total 60. The 17 elective units are recorded as degree_elective_units because they sit outside the major.",
+   "The GE pattern is not named as such; the page refers to the catalog section on A.S. Graduation Requirements (local A.S. GE).",
+   "The Program Learning Outcomes are printed for the program as a whole; this award shares them.",
+   "CEST 9795 (Occupational Work Experience) is in the required core but not in the closed list; it is recorded as a catalog addition."
+  ]
+ },
+ "extracted_run": "38843479215"
+}

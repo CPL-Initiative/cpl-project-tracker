@@ -1,0 +1,278 @@
+{
+ "college": "Chabot College",
+ "control_number": "38864",
+ "shape": "adt",
+ "title": "Social Justice: Asian American Studies",
+ "award": "A.A- T Degree",
+ "source_url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6286",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8125,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8125,
+    "output_tokens": 1943,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1943,
+  "output_tokens_details": {
+   "thinking_tokens": 677
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07136,
+ "ms": 15319,
+ "seconds": 15.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 11,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     52.0,
+     52.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "transfer": true,
+    "fill": [
+     8.0,
+     8.0
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 13,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Social Justice: Asian American Studies - Associate in Arts for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate comparative, intersectional, and relational understanding of the diverse histories, cultures, and contemporary experiences of the Asian American community;",
+    "analyze institutional, structural, and ideological forces that shape the power and experiences of Asian Americans;",
+    "examine and engage in social change and antiracist movements to build a just and equitable society."
+   ],
+   "careers": [
+    "Education",
+    "Law",
+    "Social Work",
+    "Immigrant Rights",
+    "Civil Rights",
+    "Journalism",
+    "Public Health",
+    "Community and Union Organizing",
+    "Non-profit/social justice work",
+    "Government",
+    "Public Policy",
+    "Community Development/Urban Planning",
+    "International Relations"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses (select 9 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "ES 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ES 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOCI 7",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ES 43",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIS 43",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Take 3 courses* from at least 2 areas: History, Arts/Humanities, and Social Science (9 units)",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "ES 42",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIS 42",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ES 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ES 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The core block is headed 'select 9 units' but lists exactly three 3-unit choices (ES 1, ES 7/SOCI 7, ES 43/HIS 43), so it is recorded as 'all' with stated 9.",
+   "The second block requires 3 courses from at least 2 of the areas: Area 1 History (ES 42 or HIS 42), Area 2 Arts and Humanities (ENGL 25), and Area 3 Social Science (ES 6, ES 11, SOCI 10). The areas are kept in one block and the at-least-2-areas constraint is noted here. The asterisk on 'courses*' has no footnote in the text.",
+   "The description recommends ES 6 for students interested in Pacific Islander communities. ES 6 is also a listed choice in Area 3, so it is placed there.",
+   "The page prints Required Units 60.0, Total units for the major 18.0, General Education: Cal-GETC 34.0, Total units that may be double counted 9.0-12.0, and Total 60.0. No elective units are printed."
+  ]
+ },
+ "extracted_run": "38843479215"
+}

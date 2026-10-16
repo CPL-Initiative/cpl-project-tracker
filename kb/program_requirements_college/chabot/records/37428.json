@@ -1,0 +1,288 @@
+{
+ "college": "Chabot College",
+ "control_number": "37428",
+ "shape": "degree",
+ "title": "Environmental Science",
+ "award": "A.S. Degree",
+ "source_url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/4081/5321",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7557,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7557,
+    "output_tokens": 2011,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2011,
+  "output_tokens_details": {
+   "thinking_tokens": 650
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07045,
+ "ms": 16333,
+ "seconds": 16.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 13,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    27.0,
+    35.0
+   ],
+   "stated": [
+    33.0,
+    35.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 27.0-35.0; the catalog states 33.0-35.0"
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     52.0,
+     62.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     22.0,
+     22.0
+    ],
+    "why": [],
+    "within": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 11,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Environmental Science - Associate in Science",
+   "measure": "units",
+   "total_units": {
+    "min": 33,
+    "max": 35
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 3,
+    "max": 5
+   },
+   "ge_pattern": "Chabot College A.S. General Education (local)",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 22,
+    "max": 22
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "communicate ecological, biological and physical science concepts by written, verbal, and graphical/illustrative means;",
+    "demonstrate critical thinking and/or laboratory skills required to interpret data from a variety of experimental, written, and visual sources to answer scientific questions;",
+    "describe relationships between structure and function at multiple levels of biological organization with emphasis on population, community, ecosystem and biome levels;",
+    "describe how diversity arises by evolutionary change and how the unity of living systems results from evolutionary conservation;",
+    "describe interactions of organisms with each other and with their environment."
+   ],
+   "careers": [
+    "research",
+    "environmental protection and health",
+    "environmental law and policy",
+    "conservation management",
+    "agriculture",
+    "food",
+    "natural resource management",
+    "forestry",
+    "environmental protection and health technician",
+    "scientists",
+    "specialists"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Year One",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 17
+    },
+    "courses": [
+     {
+      "code": "BIOS 21A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOS 1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOS 11",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOS 11L",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENSC 11",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENSC 15",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ENSC 15L",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MTH 15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MTH 1",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Year Two",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "BIOS 21B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOS 21C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 3A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog text begins mid-sentence; no program heading is printed above the description. Section heading taken from the Program Map line 'Environmental Science - Associate in Science'.",
+   "GEOS 1 alternative is the pair GEOS 11 AND GEOS 11L (both together); ENSC 11 alternative is the pair ENSC 15 AND ENSC 15L (both together). Each pair recorded as two alternatives on one entry.",
+   "MTH 15 (3) or MTH 1 (5) row printed as 3.0-5.0.",
+   "Unit Calculations: Major Requirements 33.0-35.0, General Education 22.0, Electives (Degree applicable units as needed) 3.0-5.0, Total 60.0. Electives recorded in degree_elective_units since a major total is printed.",
+   "GE pattern is the college's A.S. General Education; the page refers to the catalog section on A.S. Graduation Requirements and names no specific courses.",
+   "Careers 'scientists' and 'specialists' come from a sentence saying they need graduate degrees; reviewer may wish to confirm inclusion."
+  ]
+ },
+ "extracted_run": "38843479215"
+}

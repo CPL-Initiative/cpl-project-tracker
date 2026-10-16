@@ -1,0 +1,436 @@
+{
+ "college": "Chabot College",
+ "control_number": "37680",
+ "shape": "degree",
+ "title": "Ethnic Studies",
+ "award": "A.A. Degree",
+ "source_url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6283",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8735,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8735,
+    "output_tokens": 3369,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3369,
+  "output_tokens_details": {
+   "thinking_tokens": 1083
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10232,
+ "ms": 25776,
+ "seconds": 26.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 24,
+   "listed": 32,
+   "share": 0.75,
+   "missing": [
+    "HIS25",
+    "HIS42",
+    "HIS43",
+    "HIS52",
+    "HIS53",
+    "HIS62",
+    "HIS63",
+    "SOCI7"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "ES11",
+    "ES12",
+    "ES13"
+   ],
+   "flagged": [
+    "ES11",
+    "ES12",
+    "ES13"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     60.0,
+     60.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     28.0,
+     28.0
+    ],
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Ethnic Studies - Associate in Arts",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 14,
+    "max": 14
+   },
+   "ge_pattern": "Chabot College A.A. Graduation Requirements (local GE)",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 28,
+    "max": 28
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate knowledge of diverse racial/ethnic groups and their cultures.",
+    "Understanding how major institutions, such as family, media, education, and government influence the experiences and opportunities of racial/ethnic groups."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ES 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Ethnic/Racial Groups - Select 4 courses (12 units) from the following. At least three different racial or ethnic groups must be studied.",
+    "rule": "choose_courses",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "ENGL 22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ES 4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ES 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIS 32",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIS 33",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ES 52",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ES 53",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ES 62",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ES 63",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ES 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ES 42",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ES 43",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ES 25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ES 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ES 13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Comparative Courses - Select 1 course (3 units)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ANTH 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ES 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ES 7",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSCN 4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSCN 13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCI 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "HIS 25",
+    "why": "not in the text (cross-listed twin of ES 25, which is listed)"
+   },
+   {
+    "code": "HIS 42",
+    "why": "not in the text (cross-listed twin of ES 42, which is listed)"
+   },
+   {
+    "code": "HIS 43",
+    "why": "not in the text (cross-listed twin of ES 43, which is listed)"
+   },
+   {
+    "code": "HIS 52",
+    "why": "not in the text (cross-listed twin of ES 52, which is listed)"
+   },
+   {
+    "code": "HIS 53",
+    "why": "not in the text (cross-listed twin of ES 53, which is listed)"
+   },
+   {
+    "code": "HIS 62",
+    "why": "not in the text (cross-listed twin of ES 62, which is listed)"
+   },
+   {
+    "code": "HIS 63",
+    "why": "not in the text (cross-listed twin of ES 63, which is listed)"
+   },
+   {
+    "code": "SOCI 7",
+    "why": "not in the text (cross-listed twin of ES 7, which is listed)"
+   }
+  ],
+  "notes": [
+   "The Ethnic/Racial Groups block is printed as Groups A (Latinx/Latin American), B (Mexican American), C (African American), D (Asian American), E (American Indian/Native American) and G (Pacific Islander); there is no Group F. Students select 4 courses (12 units) with at least three different racial or ethnic groups studied. Recorded as one block with each course listed once; ENGL 22 and ES 12 appear in both Group A and Group B.",
+   "General Education line prints 39.0 units beside the reference to A.A. Graduation Requirements, while the Unit Calculation prints General Education 28.0 (Major 18 + GE 28 + Electives 14 = 60). ge_units recorded as 28 from the Unit Calculation; reviewer should check the 39.0 figure.",
+   "Electives (Degree applicable units as needed) 14.0 recorded as degree_elective_units since the page prints a major total of 18.",
+   "Program learning outcomes are printed once for the program; the A.A. shares them. The second outcome is printed as 'Understanding...' without a leading verb form matching the first; copied as printed.",
+   "Catalog prints HIS 32 title as 'Colonial Latin America'; closed list says 'Colonial Latin American'."
+  ]
+ },
+ "extracted_run": "38843479215"
+}
