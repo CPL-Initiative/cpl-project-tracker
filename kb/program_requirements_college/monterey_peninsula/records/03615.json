@@ -76,20 +76,24 @@
    ],
    "degree": {
     "pass": false,
-    "status": "incomplete",
+    "status": "unequal",
     "computed": [
-     40.0,
-     43.5
+     64.0,
+     77.5
     ],
     "stated": [
      61.5,
      63.5
     ],
     "against": "degree",
-    "ge": null,
+    "ge": [
+     24.0,
+     34.0
+    ],
     "why": [
-     "the record names the degree total and the MPC General Education or Cal-GETC pattern, but no units for it"
-    ]
+     "the blocks and general education come to 64.0-77.5, past the 61.5-63.5 the catalog prints for the degree"
+    ],
+    "fill": null
    }
   },
   "repeated": {
@@ -135,8 +139,8 @@
     "max": 63.5
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 24,
+    "max": 34
    },
    "electives_fill_degree": true,
    "outcomes": [
@@ -260,5 +264,20 @@
    "The printed degree total (61.5-63.5) exceeds 60 because the major total plus the 20 additional units is recorded as printed."
   ]
  },
- "extracted_run": "38675240344"
+ "extracted_run": 38844053281,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 24,
+    "max": 34
+   },
+   "words": "general education pattern (MPC General Education or Cal-GETC) (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: MPC GE: Area 1A ENGL C1000 3; Areas 1B, 2, 3, 4, 5, 6 and 7, each \"Select three units from the following.\" Cal-GETC: \"satisfies the 34 units of lower-division general education requirements\")"
+  }
+ ],
+ "read_run": "38675240344"
 }

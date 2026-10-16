@@ -67,20 +67,24 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    27.5,
-    27.5
+    51.5,
+    61.5
    ],
    "stated": [
     60.0,
     60.0
    ],
    "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the MPC General Education or Cal-GETC pattern, but no units for it"
+   "ge": [
+    24.0,
+    34.0
    ],
+   "why": [
+    "the blocks and general education come to 51.5-61.5, past the 60.0-60.0 the catalog prints for the degree"
+   ],
+   "fill": null,
    "major": {
     "pass": true,
     "status": "equal",
@@ -139,8 +143,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 24,
+    "max": 34
    },
    "electives_fill_degree": true,
    "outcomes": [
@@ -261,5 +265,20 @@
    "DNTL 112 (Office Management) and DNTL 115 (Dental Specialties) are not in the closed list; recorded as catalog additions. DNTL 115 printed as 3.0 units."
   ]
  },
- "extracted_run": "38675240344"
+ "extracted_run": 38844053281,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 24,
+    "max": 34
+   },
+   "words": "general education pattern (MPC General Education or Cal-GETC) (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: MPC GE: Area 1A ENGL C1000 3; Areas 1B, 2, 3, 4, 5, 6 and 7, each \"Select three units from the following.\" Cal-GETC: \"satisfies the 34 units of lower-division general education requirements\")"
+  }
+ ],
+ "read_run": "38675240344"
 }
