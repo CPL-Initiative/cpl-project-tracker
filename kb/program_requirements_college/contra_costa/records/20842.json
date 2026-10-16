@@ -1,0 +1,204 @@
+{
+ "college": "Contra Costa College",
+ "control_number": "20842",
+ "shape": "certificate",
+ "title": "Business Office Technology: General Office",
+ "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+ "source_url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/business-office-technology-general-office-fall-2020v2",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6645,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6645,
+    "output_tokens": 1039,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1039,
+  "output_tokens_details": {
+   "thinking_tokens": 330
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04736,
+ "ms": 9211,
+ "seconds": 9.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "BOT222",
+    "BOT224",
+    "BOT226"
+   ],
+   "flagged": [
+    "BOT222",
+    "BOT224",
+    "BOT226"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business Office Technology: General Office - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "entry-level office and administrative support"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required courses, with suggested sequence",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BOT224",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BOT210A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BOT118",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BOT226",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BOT243",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BOT222",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Courses are printed under '1st semester' and '2nd semester' as a suggested sequence; all six are required and recorded in one block.",
+   "Total of 18 units appears as '18 Credits' and in the unit summary (Major 18/18, Total Program 18/18); the listed courses sum to 18.",
+   "BOT224, BOT226 and BOT222 are not in the closed list and are marked as catalog additions.",
+   "No program learning outcomes are printed in the provided text; the text is cut off at the end ('How does this'), so outcomes may appear later on the page.",
+   "Career entry taken from the goal statement ('prepare students for entry-level office and administrative support'); the description also mentions 'office support personnel' and 'a variety of positions', which a reviewer may wish to check."
+  ]
+ },
+ "extracted_run": "38979730323"
+}

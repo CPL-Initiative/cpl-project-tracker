@@ -1,0 +1,234 @@
+{
+ "college": "College of the Siskiyous",
+ "control_number": "21512",
+ "shape": "certificate",
+ "title": "Vocational Nursing",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/vocational-nursing-coa-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8058,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8058,
+    "output_tokens": 1489,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1489,
+  "output_tokens_details": {
+   "thinking_tokens": 489
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06201,
+ "ms": 12861,
+ "seconds": 13.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "NURS2929",
+    "NURS851",
+    "NURS852",
+    "NURS853",
+    "NURS966"
+   ],
+   "flagged": [
+    "NURS2929",
+    "NURS851",
+    "NURS852",
+    "NURS853",
+    "NURS966"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    38.0,
+    38.0
+   ],
+   "stated": [
+    38.0,
+    38.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Vocational Nursing - Certificate Requirements:",
+   "measure": "units",
+   "total_units": {
+    "min": 38,
+    "max": 38
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Vocational Nursing - Certificate Requirements:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 38,
+     "max": 38
+    },
+    "courses": [
+     {
+      "code": "NURS0951",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS0952",
+      "units": 15,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS0953",
+      "units": 14,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Optional Support Courses:",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "NURS0851",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NURS0852",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NURS0853",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NURS0966",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NURS2929",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints NURS0952 and NURS0953; the closed list stores them as 'NURS 952' and 'NURS 953'. Treated as the same courses (catalog_addition false).",
+   "Closed list stores no units for NURS0951; the catalog prints 9 units.",
+   "Optional Support Courses are printed with 'Total 0' and 'Complete the following number of credits: 0'; recorded as a recommended block that does not count toward the 38-unit total.",
+   "The requirements reference 'The Vocational Nursing Program Prerequisites above' (GPA 2.5 required), but that prerequisites section is not in the supplied text. The Recommended Sequence lists admission prerequisites ENGLC1000 (4), STATC1000 (4), BIO2700 (4) and NURS1045 (3); they are not counted in the 38-unit certificate total and are not placed in a block. Reviewer should check whether they should be recorded.",
+   "The certificate requires a minimum 2.0 GPA and a C or better in all certificate courses.",
+   "The Recommended Sequence text is cut off after Term 3 (ends at NURS0851).",
+   "No program learning outcomes or careers are printed in the supplied text."
+  ]
+ },
+ "extracted_run": "38979399672"
+}

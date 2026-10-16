@@ -1,0 +1,349 @@
+{
+ "college": "Antelope Valley College",
+ "control_number": "33006",
+ "shape": "adt",
+ "title": "English",
+ "award": "A.A- T Degree",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/english-aa-t-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9457,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9457,
+    "output_tokens": 2511,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2511,
+  "output_tokens_details": {
+   "thinking_tokens": 747
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08805,
+ "ms": 19506,
+ "seconds": 19.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 20,
+   "listed": 20,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     66.0,
+     75.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     39.0,
+     39.0
+    ],
+    "why": [],
+    "overlap": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "English AA-T",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 9,
+    "max": 18
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 39,
+    "max": 39
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students in program courses will enter and participate in the academic community by first understanding the impact of professional discourse, the role of rhetoric, and the function of research.",
+    "Students in program courses will demonstrate the ability to access, read, interpret, analyze, and evaluate textual materials across traditions, genres, and media, with critical attention to both diversity and complexity."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ENGL C1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1002H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1001H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Electives A",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ENGL 221",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 222",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 225",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 227",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 230",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 231",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Electives B",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ENGL 114",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Electives C",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ENGL 235",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 242",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 253",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL 253H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 256",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 257",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 259",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 265",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL 279",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Required Electives B also accepts 'Any LIST A course not already used'; Required Electives C also accepts 'Any LIST A or B course not already used'. These are recorded only as notes, not as entries.",
+   "Catalog prints codes without spaces in the program requirements (e.g., ENGLC1002, ENGL221); recorded with spaces as in the requirements table and closed list.",
+   "A second requirements table (Program Goals and Objectives section) prints different titles for some courses (ENGL 259 'Gender, Image, and Rhetoric', ENGL 265 'Film: Text and Context', ENGL 242 'Narrative and Culture', ENGL 256 'Latinx Literature'); likely outdated proposal text.",
+   "Degree totals taken from the summary table: Required Major Total 18, Completion of GE 39, Elective (Transferable) Units 9-18, Total Degree Units 60, Units that may be double-counted 6-15.",
+   "A third program outcome is cut off in the text ('Students in program courses will develop both an awareness of different audiences and the persuasive skills needed to deliver effective written arguments a...'); it was not recorded because it is incomplete. Reviewer should check the full page.",
+   "Recommended Pathway courses (MATH110, ART100, GEOL101, etc.) are GE/sample-schedule items and were not placed in blocks.",
+   "ENGL 253H recorded as the honors alternative of ENGL 253."
+  ]
+ },
+ "extracted_run": "38979725726"
+}

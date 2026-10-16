@@ -1,0 +1,239 @@
+{
+ "college": "Columbia College",
+ "control_number": "06819",
+ "shape": "degree",
+ "title": "Business Management",
+ "award": "A.S. Degree",
+ "source_url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/business-management-as-cc-fall-2025",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6521,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6521,
+    "output_tokens": 1257,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1257,
+  "output_tokens_details": {
+   "thinking_tokens": 306
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05122,
+ "ms": 10420,
+ "seconds": 11.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    29.0,
+    29.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Columbia College General Education (CC-GE) Pattern or California General Education Transfer Curriculum (Cal-GETC) Pattern pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     29.0,
+     29.0
+    ],
+    "stated": [
+     29.0,
+     29.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business Management AS",
+   "measure": "units",
+   "total_units": {
+    "min": 29,
+    "max": 29
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Columbia College General Education (CC-GE) Pattern or California General Education Transfer Curriculum (Cal-GETC) Pattern",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate the ability to work in teams and interact collaboratively within a business organization.",
+    "Demonstrate effective communication practices utilized within a business environment.",
+    "Demonstrate the knowledge and skills to prepare accurate business statements and payrolls.",
+    "Demonstrate the knowledge and skill to manage a business in a legal manner."
+   ],
+   "careers": [
+    "management position"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Complete all of the following",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 29,
+     "max": 29
+    },
+    "courses": [
+     {
+      "code": "BUSAD2A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSAD2B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSAD18",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSAD24",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSAD30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSAD40",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSAD158",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSAD163",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMP29",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints codes without a space (e.g. BUSAD2A); these match closed-list codes (e.g. BUSAD 2A), so catalog_addition is false.",
+   "Degree total of 60 taken from the line '29.0 Major Units | 60 Total Units Required'; no GE unit figure is printed.",
+   "Student completes either the CC-GE or Cal-GETC pattern.",
+   "An outcomes lead-in appears near the top with no outcomes under it; the four outcomes are taken from the Program Learning Outcomes section.",
+   "Career entry 'management position' comes from the description ('go straight into a management position'); reviewer may check whether it should count as a career."
+  ]
+ },
+ "extracted_run": "38979390136"
+}

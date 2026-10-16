@@ -1,0 +1,350 @@
+{
+ "college": "Contra Costa College",
+ "control_number": "33209",
+ "shape": "adt",
+ "title": "Journalism",
+ "award": "A.A- T Degree",
+ "source_url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/journalism-fall-2026v2",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7690,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7690,
+    "output_tokens": 2864,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2864,
+  "output_tokens_details": {
+   "thinking_tokens": 1244
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08804,
+ "ms": 23416,
+ "seconds": 23.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 15,
+   "share": 0.8,
+   "missing": [
+    "ECON220",
+    "ECON221",
+    "SPCH121I"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "ECONC2001",
+    "ECONC2002",
+    "JRNAL158"
+   ],
+   "flagged": [
+    "ECONC2001",
+    "ECONC2002",
+    "JRNAL158"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    19.0
+   ],
+   "stated": [
+    18.0,
+    19.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     68.0,
+     70.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 23,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Journalism - A.A.-T",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 16,
+    "max": 17
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will be able to effectively judge the “news value” of information concerning events and issues in contemporary society for the reading, viewing and listening public.",
+    "Students will be able to gather news and other information according to the ethical guidelines of the Society of Professional Journalists."
+   ],
+   "careers": [
+    "journalism",
+    "research",
+    "government",
+    "law",
+    "politics",
+    "education",
+    "reporter",
+    "editor",
+    "photographer",
+    "photo editor",
+    "page designer",
+    "graphic artist",
+    "illustrator",
+    "ad salesperson",
+    "Web designer/editor",
+    "multimedia reporter/editor/designer",
+    "videographer",
+    "producer",
+    "director",
+    "mass media/journalism educator or researcher",
+    "website creator/manager",
+    "advertising and public relations writer/editor/director",
+    "freelance photographer/artist/illustrator"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required core courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "JRNAL120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JRNAL130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JRNAL122",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "JRNAL123",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JRNAL158",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "List B",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "POLSC1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLSC130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLC1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPCH141",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STATC1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOCIO234",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECONC2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECONC2001",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHILO129",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHILO130",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECON 220",
+    "why": "not in the text; catalog lists ECONC2002 Principles of Macroeconomics instead"
+   },
+   {
+    "code": "ECON 221",
+    "why": "not in the text; catalog lists ECONC2001 Principles of Microeconomics instead"
+   },
+   {
+    "code": "SPCH 121I",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "POLSC1000 is printed without a space; treated as closed-list POLS C1000 (American Government and Politics). Likewise ENGLC1001 = ENGL C1001 and STATC1000 = STAT C1000.",
+   "List B prints four courses followed by three 'Or one of the following' groups (STATC1000/SOCIO234, ECONC2002/ECONC2001, PHILO129/PHILO130). Each group was recorded as one List B choice with the other course as an alternative; reviewer should confirm whether a student may count two courses from the same group.",
+   "ECONC2002 and ECONC2001 are not in the closed list (closed list has ECON 220 and ECON 221); recorded as catalog additions.",
+   "Unit summary: Total Major Units 18-19, CalGETC 34, Double Count Units 9, Elective Units to reach 60 16-17, Total Overall Units 60-60.",
+   "The description text says 'to earn an AA-T in Kinesiology', apparently a copy error in the catalog.",
+   "Program Outcomes list is cut off: the third outcome ('Students will be able to produce (write, photograph, video...') is truncated and was not recorded; further outcomes may be missing."
+  ]
+ },
+ "extracted_run": "38979730323"
+}

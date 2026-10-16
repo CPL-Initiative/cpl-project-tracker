@@ -1,0 +1,181 @@
+{
+ "college": "Contra Costa College",
+ "control_number": "32924",
+ "shape": "adt",
+ "title": "Mathematics",
+ "award": "A.S. T Degree",
+ "source_url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/liberal-arts-science-technology-engineering-and-mathematics-stem-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7820,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7820,
+    "output_tokens": 1183,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1183,
+  "output_tokens_details": {
+   "thinking_tokens": 345
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05494,
+ "ms": 10197,
+ "seconds": 10.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 8,
+   "share": 0.0,
+   "missing": [
+    "MATH185",
+    "MATH200",
+    "MATH290",
+    "MATH292",
+    "MATHC2210",
+    "MATHC2220",
+    "PHYS130",
+    "STATC1000"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MATH 185",
+    "why": "Mathematics A.S.-T section not in the text; listed only in the Liberal Arts: STEM Certificate of Achievement"
+   },
+   {
+    "code": "MATH 200",
+    "why": "Mathematics A.S.-T section not in the text; listed only in the Liberal Arts: STEM Certificate of Achievement"
+   },
+   {
+    "code": "MATH 290",
+    "why": "Mathematics A.S.-T section not in the text; listed only in the Liberal Arts: STEM Certificate of Achievement"
+   },
+   {
+    "code": "MATH 292",
+    "why": "Mathematics A.S.-T section not in the text; listed only in the Liberal Arts: STEM Certificate of Achievement"
+   },
+   {
+    "code": "MATH C2210",
+    "why": "Mathematics A.S.-T section not in the text; listed only in the Liberal Arts: STEM Certificate of Achievement"
+   },
+   {
+    "code": "MATH C2220",
+    "why": "Mathematics A.S.-T section not in the text; listed only in the Liberal Arts: STEM Certificate of Achievement"
+   },
+   {
+    "code": "PHYS 130",
+    "why": "Mathematics A.S.-T section not in the text; listed only in the Liberal Arts: STEM Certificate of Achievement"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "Mathematics A.S.-T section not in the text; listed only in the Liberal Arts: STEM Certificate of Achievement"
+   }
+  ],
+  "notes": [
+   "The supplied catalog text (and source URL) is for the Liberal Arts: Science, Technology, Engineering and Mathematics (STEM) - Certificate of Achievement, not the Mathematics A.S.-T degree. No section for the Mathematics A.S.-T appears in the text, so no blocks, totals, outcomes or careers were recorded.",
+   "The STEM certificate section prints 'Select a minimum of 18 units' (Total Major Units 18-18), one program outcome, and 'Potential Careers: None'; none of this was attributed to the Mathematics A.S.-T.",
+   "Reviewer should locate the correct Mathematics A.S.-T page in the 2026-27 Contra Costa College catalog."
+  ]
+ },
+ "extracted_run": "38979730323"
+}

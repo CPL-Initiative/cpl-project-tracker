@@ -1,0 +1,293 @@
+{
+ "college": "Antelope Valley College",
+ "control_number": "16569",
+ "shape": "degree",
+ "title": "Wildland Fire Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/wildland-fire-technology-as-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8638,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8638,
+    "output_tokens": 1677,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1677,
+  "output_tokens_details": {
+   "thinking_tokens": 398
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06809,
+ "ms": 13397,
+ "seconds": 13.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 15,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    40.0,
+    40.0
+   ],
+   "stated": [
+    40.0,
+    40.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     62.0,
+     62.0
+    ],
+    "stated": [
+     62.0,
+     62.0
+    ],
+    "against": "degree",
+    "ge": [
+     22.0,
+     22.0
+    ],
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Wildland Fire Technology AS",
+   "measure": "units",
+   "total_units": {
+    "min": 40,
+    "max": 40
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "AVC GE",
+   "degree_total": {
+    "min": 62,
+    "max": 62
+   },
+   "ge_units": {
+    "min": 22,
+    "max": 22
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Analyze the fire behavior and combustion process as observed on the fire ground to make safe and effective attacks on a variety of fires.",
+    "Differentiate between the types of suppression resources, methods, tactics and strategy, that are available for use and the type of incident to be mitigated.",
+    "Analyze and evaluate critical aspects of the fire protection job"
+   ],
+   "careers": [
+    "fire fighting"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 26,
+     "max": 26
+    },
+    "courses": [
+     {
+      "code": "FTW121",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTW122",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTW123",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTW221",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTW222",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTW223",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTW224",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HE100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Program Electives",
+    "rule": "choose_units",
+    "minimum": 14,
+    "option_group": null,
+    "stated": {
+     "min": 14,
+     "max": 14
+    },
+    "courses": [
+     {
+      "code": "EMT101",
+      "units": 8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTEC125",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTEC199",
+      "units": 1,
+      "units_max": 8,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTW124",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTW285",
+      "units": 11,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG201",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG205",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Major total 40 = Required Courses 26 + Program Electives 14. Requirements table also prints 'Completion of General Education requirements 22 units' and 'TOTAL Units 62 units'; recorded as ge_units and degree_total.",
+   "GE pattern recorded as 'AVC GE' from the Recommended Pathway's 'Any AVC GE Area' entries; the requirements table says only 'General Education requirements'.",
+   "The 'Program Goals and Objectives' and checklist/workflow sections appear to be internal curriculum proposal content (eLumen) rather than catalog text; their course list matches the Program Requirements.",
+   "Third program outcome is printed without a closing period; copied as printed.",
+   "Career recorded as 'fire fighting' from 'enhanced employability in the field of fire fighting'; the description also mentions 'supervisory and management positions', not recorded as a named career."
+  ]
+ },
+ "extracted_run": "38979725726"
+}

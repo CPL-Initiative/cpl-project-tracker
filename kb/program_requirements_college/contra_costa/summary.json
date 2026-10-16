@@ -1,0 +1,45 @@
+{
+ "college": "Contra Costa College",
+ "programs": 131,
+ "with_closed_list": 105,
+ "found": 97,
+ "extracted": 97,
+ "errors": 0,
+ "passed_machine_checks": 57,
+ "failed": {
+  "coverage": 9,
+  "invented": 0,
+  "arithmetic": 40,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 6.44,
+ "cost_per_program": 0.0664,
+ "not_found": [
+  {
+   "control_number": "07607",
+   "title": "Computer Information Systems: Computer Operations",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "38491",
+   "title": "CSU General Education Breadth",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "38492",
+   "title": "Intersegmental General Education Curriculum (IGETC)",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "run": "38979730323"
+}

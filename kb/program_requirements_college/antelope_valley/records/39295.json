@@ -1,0 +1,406 @@
+{
+ "college": "Antelope Valley College",
+ "control_number": "39295",
+ "shape": "degree",
+ "title": "Dance",
+ "award": "A.A. Degree",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/dance-aa-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9323,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9323,
+    "output_tokens": 2608,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2608,
+  "output_tokens_details": {
+   "thinking_tokens": 745
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08945,
+ "ms": 20083,
+ "seconds": 20.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 26,
+   "listed": 26,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "DA113"
+   ],
+   "flagged": [
+    "DA113"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    27.0,
+    30.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the AVC GE pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     27.0,
+     30.0
+    ],
+    "stated": [
+     27.0,
+     30.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Dance AA",
+   "measure": "units",
+   "total_units": {
+    "min": 27,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "AVC GE",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Demonstrate knowledge of various dance techniques, dance vocabulary, choreography, performance, and history of various dance forms.",
+    "Communicate dramatic or emotional content by expression through choreography and dance performance.",
+    "Analyze dance works and interpret dance works for their historical origins and choreographic technique."
+   ],
+   "careers": [
+    "dance"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 11,
+     "max": 11
+    },
+    "courses": [
+     {
+      "code": "DA103",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DA108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DA111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DA116",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Electives A",
+    "rule": "choose_units",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 2
+    },
+    "courses": [
+     {
+      "code": "DA102",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DA122",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DA202",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Electives B",
+    "rule": "choose_units",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 2
+    },
+    "courses": [
+     {
+      "code": "DA123",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DA203",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Electives C",
+    "rule": "choose_units",
+    "minimum": 12,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "DA104",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DA105",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DA107A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DA107B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DA107C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DA110",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DA113",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DA117",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DA124",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DA125",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DA199",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DA204",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DA205",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THA101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THA110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints the requirements twice (Program Requirements list and a Requirements table); both agree. The table groups Electives A, B and C as 'Required Electives (16-19 units)'.",
+   "DA199 is printed with 4 units in both lists; the state file stores 1 unit.",
+   "DA113 (World Dance - Ethnic Forms) is not in the closed list; recorded as a catalog addition.",
+   "The page prints '30-33' for 'Completion of General Education requirements, plus electives (as needed to reach 60 units)'; this combines GE and electives, so ge_units is left null and electives_fill_degree is set true.",
+   "ge_pattern 'AVC GE' is taken from the Recommended Pathway's 'Any AVC GE Area' entries; the requirements text says only 'General Education requirements'.",
+   "The Program Learning Outcomes are printed twice (under Program Goals and Objectives and under Program Outcomes 'Dance AA'), identically.",
+   "Career 'dance' is read from 'continuing a career in dance' in the program goals; reviewer may confirm."
+  ]
+ },
+ "extracted_run": "38979725726"
+}

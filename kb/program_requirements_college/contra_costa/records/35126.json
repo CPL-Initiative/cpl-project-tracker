@@ -1,0 +1,190 @@
+{
+ "college": "Contra Costa College",
+ "control_number": "35126",
+ "shape": "degree",
+ "title": "Automotive Service Technician",
+ "award": "A.S. Degree",
+ "source_url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/automotive-service-technician-fall-2024",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6851,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6851,
+    "output_tokens": 1516,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1516,
+  "output_tokens_details": {
+   "thinking_tokens": 661
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05772,
+ "ms": 14072,
+ "seconds": 14.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 9,
+   "share": 0.0,
+   "missing": [
+    "AUSER101",
+    "AUSER103",
+    "AUSER111",
+    "AUSER113",
+    "AUSER115",
+    "AUSER117",
+    "AUSER203",
+    "AUSER207",
+    "AUSER238"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Automotive Service Technician",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "automotive repair industry"
+   ]
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AUSER 101",
+    "why": "named only in the Certificate of Achievement section; no A.S. section in the text"
+   },
+   {
+    "code": "AUSER 103",
+    "why": "named only in the Certificate of Achievement section; no A.S. section in the text"
+   },
+   {
+    "code": "AUSER 111",
+    "why": "named only in the Certificate of Achievement section; no A.S. section in the text"
+   },
+   {
+    "code": "AUSER 113",
+    "why": "named only in the Certificate of Achievement section; no A.S. section in the text"
+   },
+   {
+    "code": "AUSER 115",
+    "why": "named only in the Certificate of Achievement section; no A.S. section in the text"
+   },
+   {
+    "code": "AUSER 117",
+    "why": "named only in the Certificate of Achievement section; no A.S. section in the text"
+   },
+   {
+    "code": "AUSER 203",
+    "why": "named only in the Certificate of Achievement section; no A.S. section in the text"
+   },
+   {
+    "code": "AUSER 207",
+    "why": "named only in the Certificate of Achievement section; no A.S. section in the text"
+   },
+   {
+    "code": "AUSER 238",
+    "why": "named only in the Certificate of Achievement section; no A.S. section in the text"
+   }
+  ],
+  "notes": [
+   "The catalog text describes only the Automotive Service Technician Certificate of Achievement (Credit), 40.5 Credits. It prints no A.S. Degree section, so no blocks were recorded for the requested A.S. Degree award.",
+   "The certificate section requires all nine closed-list courses: AUSER101 (5), AUSER103 (5), AUSER111 (5), AUSER113 (5), AUSER115 (5), AUSER117 (5), AUSER203 (5), AUSER207 (2.5) and AUSER238 (3). Its unit summary gives a major of 40.5/40.5 and a total program of 40.5/40.5. It lists GE and electives as N/A.",
+   "A reviewer should check whether the college offers an A.S. Degree on a separate page, or whether this source URL matches the certificate rather than the degree.",
+   "No program learning outcomes are printed in the text.",
+   "The development criteria also mention 'entry-level positions in the automotive industry' for the certificate. Only the career field named in the program description was recorded."
+  ]
+ },
+ "extracted_run": "38979730323"
+}

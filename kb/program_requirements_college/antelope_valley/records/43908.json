@@ -1,0 +1,324 @@
+{
+ "college": "Antelope Valley College",
+ "control_number": "43908",
+ "shape": "adt",
+ "title": "Nutrition and Dietetics",
+ "award": "A.S. T Degree",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/nutrition-and-dietetics-as-t-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9144,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9144,
+    "output_tokens": 2589,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2589,
+  "output_tokens_details": {
+   "thinking_tokens": 898
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08836,
+ "ms": 22793,
+ "seconds": 23.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 14,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    28.0,
+    29.0
+   ],
+   "stated": [
+    28.0,
+    29.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     69.0,
+     74.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Nutrition and Dietetics AS-T",
+   "measure": "units",
+   "total_units": {
+    "min": 28,
+    "max": 29
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 7,
+    "max": 11
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Analyze and explain the relationship between diet, lifestyle and health outcomes, within the framework of cultural and societal influences.",
+    "Analyze a diet for adequacy, balance, and moderation and its relationship to the development and treatment of various chronic diseases.",
+    "Explain the principles of nutrition and the relationship to basic physiological processes such as digestion, absorption and metabolism of nutrients.",
+    "Demonstrate the ability to use accepted nutrition computer software to analyze dietary intake.",
+    "Analyze dietary intake as it relates to common nutrition related conditions.",
+    "Develop an understanding of how food affects nutrient intake as noted by nutrition software and the ability to understand basic scientific data."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 13,
+     "max": 13
+    },
+    "courses": [
+     {
+      "code": "NF 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 120",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 204",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Course - Choose one",
+    "rule": "choose_units",
+    "minimum": 5,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "CHEM 110",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM 110H",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Course - Choose one",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Electives List A",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "CHEM 210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 201",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 202",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 116",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Electives List B",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "NF 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The three 'Required Courses' blocks (13 + 5 + 3) sit under an outer 'Required Courses (Total 21)' heading; the outer wrapper is not recorded as its own block.",
+   "Codes are printed both without a space (NF100, PSYCC1000) in the Program Requirements section and with a space (NF 100, PSYC C1000) in the Requirements table; the spaced form is used.",
+   "Honors twins (CHEM 110H, PSYC C1000H, STAT C1000H) are recorded as alternatives.",
+   "Two outcome lists are printed: three items under 'Program Goals and Objectives' ('Upon completion of this program, the student will be able to:') and three under 'Program Outcomes'; all six are recorded.",
+   "Degree total 60 units, Cal-GETC 34 units, 10-13 units double-counted, and 'Elective (Cal-GETC Transferable) 7-11 units' are printed in the Requirements table; the 7-11 elective units are recorded as degree_elective_units.",
+   "The 'A minimum of 18-semester units in a major' line is a generic ADT rule, not this award's total.",
+   "ENGL C1000 and BIOL C1001 appear only in the Recommended Pathway as Cal-GETC GE courses and are not placed in blocks.",
+   "The page includes curriculum-proposal artifacts (Checklist, Workflow Agreement), which were ignored."
+  ]
+ },
+ "extracted_run": "38979725726"
+}

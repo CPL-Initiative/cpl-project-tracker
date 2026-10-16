@@ -1,0 +1,180 @@
+{
+ "college": "Antelope Valley College",
+ "control_number": "41814",
+ "shape": "certificate",
+ "title": "Advanced Aircraft Structures",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/advanced-aircraft-structures-cert-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7338,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7338,
+    "output_tokens": 1209,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1209,
+  "output_tokens_details": {
+   "thinking_tokens": 440
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05353,
+ "ms": 10623,
+ "seconds": 10.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    19.0,
+    19.0
+   ],
+   "stated": [
+    19.0,
+    19.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Advanced Aircraft Structures Cert",
+   "measure": "units",
+   "total_units": {
+    "min": 19,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Analyze and evaluate critical aspects of the aerospace industry related to safe work practices, standards and tolerances, standard shop practices, proper use of tools, power equipment, and personal protective equipment.",
+    "Analyze, evaluate, troubleshoot, and repair structural assembly systems to meet air worthy standards."
+   ],
+   "careers": [
+    "aerospace technology",
+    "supervisory and/or management positions",
+    "structural or composite technician"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Complete all of the following",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 19,
+     "max": 19
+    },
+    "courses": [
+     {
+      "code": "AFAB210",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AFAB215",
+      "units": 8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AFAB220",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes without a space (AFAB210, AFAB220) in Program Requirements; these match closed-list AFAB 210 and AFAB 220. The second requirements table prints them with a space.",
+   "The block's stated 19 comes from the '(Total 19)' printed with the requirements; 'Total Degree Units 19 units' in the second table is the certificate's total, not a degree total.",
+   "The 'Program Goals and Objectives' section prints three objectives ('Upon completion of the certificate, the student will demonstrate...'). They were not recorded as outcomes; only the 'Program Outcomes' list was recorded. A reviewer may want to check this.",
+   "The closed list stores no units for AFAB215. The catalog prints 8 units.",
+   "The careers entry 'structural or composite technician' is taken from the Program Goals text ('Level I and Level II work as either a structural or composite technician'). 'aerospace technology' is the field named in the description."
+  ]
+ },
+ "extracted_run": "38979725726"
+}

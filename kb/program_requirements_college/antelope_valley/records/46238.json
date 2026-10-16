@@ -1,0 +1,245 @@
+{
+ "college": "Antelope Valley College",
+ "control_number": "46238",
+ "shape": "adt",
+ "title": "Mathematics 2.0",
+ "award": "A.S. T Degree",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/mathematics-2-0-as-t-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7950,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7950,
+    "output_tokens": 1957,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1957,
+  "output_tokens_details": {
+   "thinking_tokens": 871
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07094,
+ "ms": 17021,
+ "seconds": 17.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    25.0
+   ],
+   "stated": [
+    24.0,
+    25.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Mathematics 2.0 AS-T",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 25
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses - Choose one",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "MATH150",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH150H",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "MATH160",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH230",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH250",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Choose one",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "CS120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS122",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS110",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The first two blocks sit under a 'Required Core (Total 21)' heading; the major total printed is 24-25.",
+   "'Required Courses - Choose one' is printed as 'Complete the following number of credits: 5' (MATH150 or honors twin MATH150H); recorded as choose one course.",
+   "'List A: Choose one' is printed as 'Complete the following number of credits: 3-4'; recorded as choose one course.",
+   "Codes are printed without a space (e.g. MATH150); they match closed-list codes such as MATH 150.",
+   "The page lists generic ADT requirements including 'Completion of 60 semester units' and 'A minimum of 18-semester units in a major'; not recorded as degree_total or total_units since they are generic SB 1440 requirements. No Cal-GETC unit total printed.",
+   "The Recommended Pathway shows General Elective units (1.0 and 3.0) per term; not recorded as open electives since no elective requirement is printed in the program requirements.",
+   "The page prints 'Program Goals and Objectives' (objectives a-e) but no section labeled program learning outcomes; objectives not recorded as outcomes — reviewer should check.",
+   "No careers named; the text mentions transfer and further study in science and engineering only."
+  ]
+ },
+ "extracted_run": "38979725726"
+}

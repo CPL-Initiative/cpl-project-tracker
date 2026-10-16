@@ -1,0 +1,187 @@
+{
+ "college": "Antelope Valley College",
+ "control_number": "02153",
+ "shape": "degree",
+ "title": "General Aircraft Maintenance",
+ "award": "A.S. Degree",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/general-aircraft-maintenance-cert-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7962,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7962,
+    "output_tokens": 1437,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1437,
+  "output_tokens_details": {
+   "thinking_tokens": 466
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06059,
+ "ms": 13550,
+ "seconds": 13.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 9,
+   "share": 0.0,
+   "missing": [
+    "AERO120",
+    "AERO121",
+    "AFAB110",
+    "AFAB115",
+    "AFAB120",
+    "AFAB130",
+    "AFAB210",
+    "ELTE252",
+    "ELTE254"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "General Aircraft Maintenance Cert",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AERO 120",
+    "why": "named only in the certificate section; the text prints no A.S. degree section"
+   },
+   {
+    "code": "AERO 121",
+    "why": "named only in the certificate section; the text prints no A.S. degree section"
+   },
+   {
+    "code": "AFAB 110",
+    "why": "named only in the certificate section; the text prints no A.S. degree section"
+   },
+   {
+    "code": "AFAB 115",
+    "why": "named only in the certificate section; the text prints no A.S. degree section"
+   },
+   {
+    "code": "AFAB 210",
+    "why": "named only in the certificate section; the text prints no A.S. degree section"
+   },
+   {
+    "code": "AFAB120",
+    "why": "named only in the certificate section; the text prints no A.S. degree section"
+   },
+   {
+    "code": "AFAB130",
+    "why": "named only in the certificate section; the text prints no A.S. degree section"
+   },
+   {
+    "code": "ELTE 252",
+    "why": "named only in the certificate section; the text prints no A.S. degree section"
+   },
+   {
+    "code": "ELTE 254",
+    "why": "named only in the certificate section; the text prints no A.S. degree section"
+   }
+  ],
+  "notes": [
+   "The requested award is the A.S. Degree, but the source page (URL ending general-aircraft-maintenance-cert-fall-2026) and all of its text describe only the General Aircraft Maintenance Certificate ('Gen Aircraft Maint Cert'). No A.S. degree section, degree total, or GE pattern is printed, so no blocks, totals, outcomes or careers were recorded for the A.S. award. A reviewer should locate the A.S. degree page.",
+   "For reference, the certificate section prints: Required Courses (Total 15) AERO120 7.5, AERO121 7.5; Program Electives (Total 3-8, 'Complete the following number of credits: 3-8') AFAB110 3, AFAB115 8, AFAB120 7, AFAB130 4, AFAB210 4, ELTE252 3, ELTE254 3; total 18-23 units. The Recommended Pathway says 'Take one of the following' for electives.",
+   "The certificate page prints three Program Outcomes ('General Aircraft Maintenance Cert') and names career areas (aircraft maintenance support, aircraft service operations, aviation inspection support, related aviation maintenance occupations; 'certificates aircraft mechanic'); these were not recorded because they are printed for the certificate, not the A.S. degree.",
+   "Page contains eLumen workflow/administrative text (Workflow Agreement, Checklist), indicating this may be a proposal record rather than a published catalog entry."
+  ]
+ },
+ "extracted_run": "38979725726"
+}

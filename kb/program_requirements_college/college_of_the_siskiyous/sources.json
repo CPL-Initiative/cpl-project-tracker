@@ -1,0 +1,2376 @@
+[
+ {
+  "control_number": "06465",
+  "title": "Business Administration",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BA1001",
+   "BA1006",
+   "BA1018",
+   "BA1501",
+   "ECONC2001",
+   "ECONC2002",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/business-administration-aa-fall-2026",
+   "title": "Business Administration - AA",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "06473",
+  "title": "Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM2000",
+   "MATH1400",
+   "MATH1500",
+   "MATH2400",
+   "MATH2500",
+   "MATH2600",
+   "PHYS2105",
+   "PHYS2110",
+   "PHYS2115"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/engineering-as-fall-2025",
+   "title": "Engineering - AS",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "06477",
+  "title": "Welding",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI1001",
+   "WELD1101",
+   "WELD1102",
+   "WELD1103",
+   "WELD1104",
+   "WELD1105",
+   "WELD2101",
+   "WELD2102"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/welding-as-winter-2023-intersession",
+   "title": "Welding - AS",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "06480",
+  "title": "Art",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART1002",
+   "ART1003",
+   "ART1004",
+   "ART1006",
+   "ART1009",
+   "ART1010",
+   "ART1011",
+   "ART1013",
+   "ART1031",
+   "ART1032",
+   "ART1509",
+   "ARTHC1100",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/art-aa-fall-2026",
+   "title": "Art - AA",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "06481",
+  "title": "Musical Theatre",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS1004",
+   "MUS1025",
+   "MUS1105",
+   "MUS1507",
+   "MUS1512",
+   "MUS1525",
+   "MUS1528",
+   "THEA1100",
+   "THEA1150",
+   "THEA1200",
+   "THEA1301",
+   "THEA1305",
+   "THEA1501",
+   "THEA2000"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/musical-theatre-aa-winter-2023-intersession",
+   "title": "Musical Theatre - AA",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "06482",
+  "title": "Theatre Performance",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEA1001",
+   "THEA1100",
+   "THEA1150",
+   "THEA1200",
+   "THEA1301",
+   "THEA1315",
+   "THEA1501",
+   "THEA1600",
+   "THEA2000",
+   "THEA2400",
+   "THEA2600"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/theatre-performance-aa-winter-2023-intersession",
+   "title": "Theatre Performance - AA",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "06487",
+  "title": "Vocational Nursing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NURS951",
+   "NURS952",
+   "NURS953"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/vocational-nursing-as-fall-2026",
+   "title": "Vocational Nursing - AS",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 13002
+ },
+ {
+  "control_number": "06488",
+  "title": "Emergency Medical Technology: Paramedic",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMS1954",
+   "EMS1954A",
+   "EMS1954B",
+   "EMS1955",
+   "EMS2956",
+   "EMS2957"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/emergency-medical-services-paramedic-as-fall-2026",
+   "title": "Emergency Medical Services-Paramedic - AS",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 0.75
+   }
+  },
+  "listed": 6,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "06493",
+  "title": "Mathematics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI1007",
+   "MATH1010",
+   "MATH1100",
+   "MATH1200",
+   "MATH1400",
+   "MATH1500",
+   "MATH2400",
+   "MATH2500",
+   "MATH2600",
+   "PHYS1105",
+   "PHYS2105",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/mathematics-as-fall-2026",
+   "title": "Mathematics - AS",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "06494",
+  "title": "Physical Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM2000",
+   "CHEM2100",
+   "ESCI1210",
+   "PHYS1105",
+   "PHYS1110"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/physical-science-as-fall-2025",
+   "title": "Physical Science - AS",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 15135
+ },
+ {
+  "control_number": "06495",
+  "title": "Physics",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM2000",
+   "CHEM2100",
+   "MATH1400",
+   "MATH1500",
+   "PHYS2105",
+   "PHYS2110",
+   "PHYS2115"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/physics-as-winter-2023-intersession",
+   "title": "Physics - AS",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "06499",
+  "title": "Administration of Justice",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "ADJ1001",
+   "ADJ1503",
+   "ADJ1505",
+   "ADJ1517",
+   "ADJ2002",
+   "ADJ2014",
+   "ADJ2512",
+   "ADJ2517",
+   "ADJ2522",
+   "ADJ2526",
+   "ADJ2528"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/administration-of-justice-aa-fall-2025",
+   "title": "Administration of Justice - AA",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "06500",
+  "title": "Fire Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FIRE1001",
+   "FIRE1002",
+   "FIRE1003",
+   "FIRE1004",
+   "FIRE1005",
+   "FIRE1006",
+   "FIRE950"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/fire-technology-as-fall-2026",
+   "title": "Fire Technology - AS",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "06501",
+  "title": "Social Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI1001",
+   "ECONC2001",
+   "ECONC2002",
+   "ETHN1001",
+   "HIST1004",
+   "HIST1005",
+   "HIST1006",
+   "HISTC1001",
+   "HISTC1002",
+   "POLSC1000",
+   "SOC1001",
+   "SOC1002"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/social-science-aa-fall-2026",
+   "title": "Social Science - AA",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "06502",
+  "title": "History",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HIST1004",
+   "HIST1005",
+   "HIST1006",
+   "HIST1007",
+   "HIST1008",
+   "HIST1009",
+   "HIST1010",
+   "HIST1022",
+   "HIST1023",
+   "HIST1044",
+   "HIST1047",
+   "HISTC1001",
+   "HISTC1002",
+   "POLSC1000"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/history-aa-fall-2026",
+   "title": "History - AA",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "07898",
+  "title": "Early Childhood Education",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE1001",
+   "ECE1002",
+   "ECE1500",
+   "ECE1502",
+   "ECE2000",
+   "ECE2002",
+   "ECE2502"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/early-childhood-education-aa-winter-2023-intersession",
+   "title": "Early Childhood Education - AA",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "07901",
+  "title": "Accounting",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BA1001",
+   "BA1006",
+   "BA1018",
+   "BA1024",
+   "BA1501",
+   "BA1524",
+   "BA920",
+   "CSCI1001",
+   "ECONC2001",
+   "ECONC2002"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/accounting-aa-fall-2026",
+   "title": "Accounting - AA",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "07903",
+  "title": "Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTHC1100",
+   "ARTHC1200",
+   "ENGL2044",
+   "ENGL2046",
+   "ENGL2544",
+   "ENGL2546",
+   "HUM1001",
+   "MUS1131",
+   "PHIL1001",
+   "THEA2000"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/humanities-aa-fall-2026",
+   "title": "Humanities - AA",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "10946",
+  "title": "Computer Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI1001",
+   "CSCI1004",
+   "CSCI1007",
+   "CSCI1032",
+   "CSCI1033",
+   "CSCI1034",
+   "CSCI1037",
+   "CSCI1038",
+   "CSCI1039",
+   "CSCI1507",
+   "CSCI2006",
+   "MATH1400",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/computer-science-as-fall-2025",
+   "title": "Computer Science - AS",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "10948",
+  "title": "Music: Vocal Performance",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS1014",
+   "MUS1025",
+   "MUS1035",
+   "MUS1041",
+   "MUS1101",
+   "MUS1105",
+   "MUS1111",
+   "MUS1507",
+   "MUS1508",
+   "MUS1512",
+   "MUS1516",
+   "MUS1525",
+   "MUS1528",
+   "MUS1535",
+   "MUS1601",
+   "MUS2101",
+   "MUS2601"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/music-vocal-performance-aa-fall-2026",
+   "title": "Music: Vocal Performance - AA",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "10949",
+  "title": "Music: Instrumental Performance",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS1014",
+   "MUS1025",
+   "MUS1035",
+   "MUS1041",
+   "MUS1101",
+   "MUS1105",
+   "MUS1111",
+   "MUS1507",
+   "MUS1508",
+   "MUS1512",
+   "MUS1516",
+   "MUS1525",
+   "MUS1528",
+   "MUS1535",
+   "MUS1601",
+   "MUS2101",
+   "MUS2601"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/music-instrumental-performance-aa-fall-2026",
+   "title": "Music: Instrumental Performance - AA",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "11350",
+  "title": "Alcohol and Drug/ Human Services",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADHS1001",
+   "ADHS1010",
+   "ADHS1011",
+   "ADHS1013",
+   "ADHS1025",
+   "ADHS1515",
+   "ADHS1517",
+   "ADHS1521",
+   "ADHS1525",
+   "ADHS1526",
+   "ADHS2018",
+   "ADHS2020",
+   "ADHS2526",
+   "ADHS2540",
+   "ECE1002",
+   "ECE1999",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/alcohol-and-drug-human-services-aa-fall-2025",
+   "title": "Alcohol and Drug/Human Services - AA",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "14693",
+  "title": "Communication Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMMC1000",
+   "COMMC1004",
+   "COMS1038",
+   "COMS1200",
+   "COMS1500",
+   "COMS1600",
+   "COMS1700",
+   "ENGL1038",
+   "ENGLC1001",
+   "ENGLC1002",
+   "PSYCC1000",
+   "SOC1001"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/communication-studies-aa-fall-2026",
+   "title": "Communication Studies - AA",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "17045",
+  "title": "Psychology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO1000",
+   "BIO1500",
+   "BIO2700",
+   "ECE1999",
+   "PSY1003",
+   "PSY1004",
+   "PSY1502",
+   "PSY1601",
+   "PSY2001",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/psychology-aa-fall-2026",
+   "title": "Psychology - AA",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "17596",
+  "title": "LVN to RN Step-Up",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NURS1021",
+   "NURS1031",
+   "NURS1032",
+   "NURS1541",
+   "NURS1542"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/lvn-to-rn-step-up-adn-as-fall-2026",
+   "title": "LVN to RN Step-Up (ADN) - AS",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "18470",
+  "title": "Athletic Training",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO2700",
+   "BIO2800",
+   "HEA1010",
+   "KINE1011",
+   "KINE1035",
+   "KINE1036"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/athletic-training-as-fall-2026",
+   "title": "Athletic Training - AS",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "18590",
+  "title": "Liberal Arts & Sciences: Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART1002",
+   "ART1004",
+   "ART1006",
+   "ART1009",
+   "ART1010",
+   "ART1011",
+   "ART1013",
+   "ARTHC1100",
+   "ARTHC1200",
+   "ASL1020",
+   "ASL1521",
+   "COMS1500",
+   "ENGL1019",
+   "ENGL2036",
+   "ENGL2043",
+   "ENGL2044",
+   "ENGL2046",
+   "ENGL2543",
+   "ENGL2544",
+   "ENGL2546",
+   "ENGLC1002",
+   "HUM1001",
+   "HUM1005",
+   "MUS1131",
+   "MUS1633",
+   "PHIL1001",
+   "PHIL1003",
+   "THEA1100",
+   "THEA1600",
+   "THEA2000",
+   "THEA2400",
+   "THEA2600"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/liberal-arts-sciences-las-humanities-aa-fall-2026",
+   "title": "Liberal Arts & Sciences (LAS): Humanities - AA",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 32,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "18591",
+  "title": "Liberal Arts & Sciences: Multicultural Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADHS2526",
+   "ECE1502",
+   "ECE2500",
+   "ENGL1038",
+   "ENGL2043",
+   "ENGL2543",
+   "ENGL2544",
+   "ETHN1001",
+   "MUS1234",
+   "MUS1633",
+   "PSY1004",
+   "SOC1002"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/liberal-arts-sciences-las-multicultural-studies-aa-fall-2025",
+   "title": "Liberal Arts & Sciences (LAS): Multicultural Studies - AA",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 10181
+ },
+ {
+  "control_number": "18592",
+  "title": "Liberal Arts & Sciences: Natural Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASTR1110",
+   "BIO1000",
+   "BIO1400",
+   "BIO1500",
+   "BIO1700",
+   "BIO2100",
+   "BIO2200",
+   "BIO2600",
+   "BIO2700",
+   "BIO2800",
+   "CHEM1000",
+   "CHEM2000",
+   "CHEM2100",
+   "ENVS1002",
+   "ESCI1140",
+   "ESCI1210",
+   "ESCI1220",
+   "GEOG1110",
+   "MATH1100",
+   "MATH1200",
+   "MATH1400",
+   "MATH1500",
+   "MATH2400",
+   "MATH2500",
+   "MATH2600",
+   "PHYS1001",
+   "PHYS1010",
+   "PHYS1105",
+   "PHYS1110",
+   "PHYS2105",
+   "PHYS2110",
+   "PHYS2115",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/liberal-arts-sciences-las-natural-science-as-fall-2026",
+   "title": "Liberal Arts & Sciences (LAS): Natural Science - AS",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 33,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "18593",
+  "title": "Liberal Arts & Sciences: Social Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADHS2526",
+   "ADJ1001",
+   "ADJ1517",
+   "ECE1002",
+   "ECE1003",
+   "ECE1999",
+   "ECE2500",
+   "ECONC2001",
+   "ECONC2002",
+   "HIST1004",
+   "HIST1005",
+   "HIST1006",
+   "HIST1007",
+   "HIST1008",
+   "HIST1009",
+   "HIST1010",
+   "HIST1022",
+   "HISTC1001",
+   "HISTC1002",
+   "POLSC1000",
+   "PSY1003",
+   "PSY1502",
+   "PSYCC1000",
+   "SOC1001",
+   "SOC1002"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/liberal-arts-sciences-las-social-science-aa-fall-2026",
+   "title": "Liberal Arts & Sciences (LAS): Social Science - AA",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 25,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "18963",
+  "title": "Music: Vocal Performance",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18964",
+  "title": "Music: Instrumental Performance",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19000",
+  "title": "CSU General Education Breadth",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 107,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19001",
+  "title": "Intersegmental General Education Transfer Curriculum (IGETC)",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 80,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19362",
+  "title": "Welding: Advanced Level",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "CSCI1001",
+   "WELD1101",
+   "WELD1102",
+   "WELD1103",
+   "WELD1104",
+   "WELD1105",
+   "WELD2101",
+   "WELD2102",
+   "WELD957"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/welding-advanced-level-coa-summer-2024",
+   "title": "Welding: Advanced Level - COA",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "19374",
+  "title": "Accounting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 10,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19812",
+  "title": "Philosophy",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 5,
+  "text_chars": 0
+ },
+ {
+  "control_number": "20793",
+  "title": "Alcohol and Drug/Human Services",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADHS1010",
+   "ADHS1011",
+   "ADHS1013",
+   "ADHS1515",
+   "ADHS1517",
+   "ADHS1525",
+   "ADHS1526",
+   "ADHS2018",
+   "ADHS2020"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/alcohol-and-drug-human-services-coa-winter-2023-intersession",
+   "title": "Alcohol and Drug/Human Services - COA",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "21512",
+  "title": "Vocational Nursing",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NURS951",
+   "NURS952",
+   "NURS953"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/vocational-nursing-coa-fall-2026",
+   "title": "Vocational Nursing - COA",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "21513",
+  "title": "Emergency Medical Services: Paramedic",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMS1954",
+   "EMS1954A",
+   "EMS1954B",
+   "EMS1955",
+   "EMS2956",
+   "EMS2957"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/emergency-medical-services-paramedic-coa-fall-2026",
+   "title": "Emergency Medical Services-Paramedic - COA",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "30236",
+  "title": "Welding: Basic Level",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "WELD1101",
+   "WELD1102",
+   "WELD1103",
+   "WELD1104",
+   "WELD1105",
+   "WELD2102"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/welding-basic-level-coa-summer-2024",
+   "title": "Welding: Basic Level - COA",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "30254",
+  "title": "Firefighter I Academy",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FIRE950"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/firefighter-i-academy-coa-fall-2026",
+   "title": "Firefighter I Academy - COA",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 1,
+  "text_chars": 4000
+ },
+ {
+  "control_number": "30447",
+  "title": "Creative Writing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL1019",
+   "ENGL1020",
+   "ENGL1021",
+   "ENGL1022",
+   "ENGL2043",
+   "ENGL2044",
+   "ENGL2046",
+   "ENGL2543",
+   "ENGL2544",
+   "ENGL2546",
+   "ENGLC1002"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/creative-writing-coa-fall-2026",
+   "title": "Creative Writing - COA",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "30645",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "CSCI1004",
+   "CSCI1007",
+   "MATH1400",
+   "MATH1500",
+   "MATH2400",
+   "MATH2500",
+   "MATH2600",
+   "PHYS2105"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/mathematics-2-0-as-t-fall-2026",
+   "title": "Mathematics 2.0 - AS-T",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "30696",
+  "title": "Environmental Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO1400",
+   "BIO2100",
+   "BIO2200",
+   "CHEM1000",
+   "CHEM2000",
+   "CHEM2100",
+   "ECONC2001",
+   "ENVS1002",
+   "ESCI1140",
+   "ESCI1210",
+   "GEOG1110",
+   "MATH1100",
+   "MATH1200",
+   "MATH1400",
+   "MATH1500",
+   "PHYS1105",
+   "PHYS1110",
+   "PHYS2105",
+   "PHYS2110",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/environmental-science-as-fall-2026",
+   "title": "Environmental Science - AS",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "30982",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE1001",
+   "ECE1002",
+   "ECE1500",
+   "ECE1502",
+   "ECE2000",
+   "ECE2002",
+   "ECE2502"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/early-childhood-education-as-t-fall-2025",
+   "title": "Early Childhood Education - AS-T",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "30983",
+  "title": "Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH1400",
+   "MATH1500",
+   "MATH2400",
+   "PHYS2105",
+   "PHYS2110",
+   "PHYS2115"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/physics-2-0-as-t-fall-2026",
+   "title": "Physics 2.0 - AS-T",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "31043",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJ1001",
+   "ADJ1503",
+   "ADJ1505",
+   "ADJ1517",
+   "ADJ2002",
+   "ADJ2526",
+   "ADJ2528",
+   "PSYCC1000",
+   "SOC1001",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/administration-of-justice-as-t-fall-2025",
+   "title": "Administration of Justice - AS-T",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "31078",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL1019",
+   "ENGL2036",
+   "ENGL2043",
+   "ENGL2044",
+   "ENGL2046",
+   "ENGL2543",
+   "ENGL2544",
+   "ENGL2546",
+   "ENGLC1001",
+   "ENGLC1002",
+   "HUM1001"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/english-aa-t-fall-2026",
+   "title": "English - AA-T",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "31083",
+  "title": "Business Administration",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "BA1001",
+   "BA1006",
+   "BA1018",
+   "BA1501",
+   "ECONC2001",
+   "ECONC2002",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/business-administration-2-0-as-t-fall-2026",
+   "title": "Business Administration 2.0 - AS-T",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "31119",
+  "title": "Theatre Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEA1001",
+   "THEA1100",
+   "THEA1150",
+   "THEA1200",
+   "THEA1501",
+   "THEA1600",
+   "THEA2000",
+   "THEA2400",
+   "THEA2600"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/theatre-arts-aa-t-fall-2025",
+   "title": "Theatre Arts - AA-T",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "32263",
+  "title": "English as a Second Language (ESL)",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33573",
+  "title": "Music",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS1004",
+   "MUS1014",
+   "MUS1041",
+   "MUS1101",
+   "MUS1105",
+   "MUS1111",
+   "MUS1507",
+   "MUS1508",
+   "MUS1512",
+   "MUS1516",
+   "MUS1601",
+   "MUS2101",
+   "MUS2601"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/music-aa-t-fall-2025",
+   "title": "Music - AA-T",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "33574",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE1999",
+   "ETHN1001",
+   "HISTC1001",
+   "HISTC1002",
+   "POLSC1000",
+   "PSY1003",
+   "PSY2001",
+   "PSYCC1000",
+   "SOC1001",
+   "SOC1002",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/sociology-aa-t-fall-2026",
+   "title": "Sociology - AA-T",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "33575",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.933,
+  "codes_found": [
+   "ETHN1001",
+   "HIST1004",
+   "HIST1005",
+   "HIST1006",
+   "HIST1007",
+   "HIST1008",
+   "HIST1009",
+   "HIST1010",
+   "HIST1022",
+   "HIST1044",
+   "HIST1047",
+   "HISTC1001",
+   "HISTC1002",
+   "POLSC1000"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/history-aa-t-fall-2026",
+   "title": "History - AA-T",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "35430",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO1000",
+   "ECE1999",
+   "PSY1003",
+   "PSY1601",
+   "PSY2001",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/psychology-aa-t-fall-2026",
+   "title": "Psychology - AA-T",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "35892",
+  "title": "Geology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM2000",
+   "CHEM2100",
+   "ESCI1210",
+   "ESCI1220",
+   "MATH1400",
+   "MATH1500"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/geology-as-t-fall-2025",
+   "title": "Geology - AS-T",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "37783",
+  "title": "Administrative Assistant and Office Aide",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 1,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37784",
+  "title": "Culinary and Hospitality Service Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 1,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37785",
+  "title": "Media and Web Development",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37786",
+  "title": "Small Business Startup, Marketing & Media",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI501",
+   "WORK512"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/small-business-startup-marketing-media-non-credit-coc-winter-2023-intersession",
+   "title": "Small Business Startup, Marketing & Media - Non-Credit - COC",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 10678
+ },
+ {
+  "control_number": "38657",
+  "title": "Physical Education - Kinesiology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HEA1009",
+   "HEA1010",
+   "KINE1000",
+   "KINE1003",
+   "KINE1004",
+   "KINE1005",
+   "KINE1011",
+   "KINE1030",
+   "KINE1035",
+   "KINE1036",
+   "KINE1136",
+   "PEFI1035",
+   "PEMA1006",
+   "PEMA1007",
+   "PEMA1008",
+   "PEMA1014",
+   "PEMA1015",
+   "PEMA1016",
+   "PEMA1017",
+   "PEMA1018",
+   "PEMA1019",
+   "PEMA1106",
+   "PEMA1107",
+   "PEMA1108",
+   "PEMA1114",
+   "PEMA1115",
+   "PEMA1116",
+   "PEMA1117",
+   "PEMA1118",
+   "PEMA2137"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/physical-education-kinesiology-aa-fall-2026",
+   "title": "Physical Education - Kinesiology - AA",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 30,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "38692",
+  "title": "Workforce Readiness",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39644",
+  "title": "Firefighting I",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39645",
+  "title": "Small Business Startup, Marketing, and Media II",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WORK513",
+   "WORK516"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/small-business-startup-marketing-and-media-ii-non-credit-coc-winter-2023-intersession",
+   "title": "Small Business Startup, Marketing, and Media II - Non-Credit COC",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 10251
+ },
+ {
+  "control_number": "40086",
+  "title": "Administration of Justice",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJ1001",
+   "ADJ1503",
+   "ADJ1505",
+   "ADJ1517",
+   "ADJ2002"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/administration-of-justice-coa-fall-2021",
+   "title": "Administration of Justice - COA",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 14839
+ },
+ {
+  "control_number": "40178",
+  "title": "Law Enforcement Academy Training",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40253",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 11,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42474",
+  "title": "Computer Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI1007",
+   "CSCI1507",
+   "CSCI2006",
+   "CSCI2010",
+   "MATH1400",
+   "MATH1500",
+   "PHYS2105",
+   "PHYS2110"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/computer-science-as-t-fall-2025",
+   "title": "Computer Science AS-T",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "42804",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BA1001",
+   "BA1006",
+   "BA1018",
+   "BA1501",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH1010",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/business-administration-2-0-as-t-fall-2026",
+   "title": "Business Administration 2.0 - AS-T",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "43283",
+  "title": "Foundations for Academic Success",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "43412",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMMC1000",
+   "COMMC1004",
+   "COMS1038",
+   "COMS1200",
+   "COMS1500",
+   "COMS1600",
+   "COMS1700",
+   "ENGL1038",
+   "ENGLC1001",
+   "PSYCC1000",
+   "SOC1001"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/communication-studies-2-0-aa-t-fall-2026",
+   "title": "Communication Studies 2.0 - AA-T",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "45356",
+  "title": "Cal-GETC: California General Education Transfer Curriculum",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.989,
+  "codes_found": [
+   "ARTHC1100",
+   "ARTHC1200",
+   "ASTR1110",
+   "BIO1000",
+   "BIO1300",
+   "BIO1400",
+   "BIO1500",
+   "BIO2100",
+   "BIO2200",
+   "BIO2600",
+   "BIO2700",
+   "CHEM1000",
+   "CHEM1050",
+   "CHEM2000",
+   "CHEM2100",
+   "COMMC1000",
+   "COMS1038",
+   "COMS1700",
+   "ECE1002",
+   "ECE1999",
+   "ECE2500",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGL1038",
+   "ENGL2036",
+   "ENGL2043",
+   "ENGL2044",
+   "ENGL2046",
+   "ENGL2543",
+   "ENGL2544",
+   "ENGL2546",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGLC1002",
+   "ENVS1002",
+   "ESCI1140",
+   "ESCI1210",
+   "ESCI1220",
+   "ETHN1001",
+   "ETHN1004",
+   "GEOG1110",
+   "HIST1004",
+   "HIST1005",
+   "HIST1006",
+   "HIST1007",
+   "HIST1008",
+   "HIST1009",
+   "HIST1010",
+   "HIST1022",
+   "HIST1023",
+   "HIST1044",
+   "HIST1047",
+   "HISTC1001",
+   "HISTC1002",
+   "HUM1001",
+   "HUM1005",
+   "MATH1010",
+   "MATH1100",
+   "MATH1200",
+   "MATH1400",
+   "MATH1500",
+   "MATH2400",
+   "MATH2500",
+   "MATH2600",
+   "MUS1004",
+   "MUS1131",
+   "MUS1234",
+   "MUS1633",
+   "PHIL1001",
+   "PHIL1003",
+   "PHYS1001",
+   "PHYS1010",
+   "PHYS2105",
+   "PHYS2110",
+   "PHYS2115",
+   "POLSC1000",
+   "PSY1003",
+   "PSY1004",
+   "PSY1502",
+   "PSY1601",
+   "PSY2001",
+   "PSYCC1000",
+   "SOC1001",
+   "SOC1002",
+   "STATC1000",
+   "THEA2000",
+   "THEA2400"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/cal-getc-california-general-education-transfer-curriculum-coa-fall-2026",
+   "title": "Cal-GETC: California General Education Transfer Curriculum - COA",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 88,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "45945",
+  "title": "Communication Studies: Social Media",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BA1004",
+   "BA1011",
+   "COMMC1000",
+   "COMS1500",
+   "COMS1700",
+   "COMS2100",
+   "COMS2200",
+   "ENGL1021"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/communication-studies-social-media-aa-fall-2026",
+   "title": "Communication Studies: Social Media - AA",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "46169",
+  "title": "Biological Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO2100",
+   "BIO2200",
+   "CHEM2000",
+   "CHEM2100",
+   "PHYS1105",
+   "PHYS1110",
+   "PHYS2105",
+   "PHYS2110"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/biological-science-as-fall-2026",
+   "title": "Biological Science - AS",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "46170",
+  "title": "Pre-Allied Health",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO1000",
+   "BIO1500",
+   "BIO2100",
+   "BIO2600",
+   "BIO2700",
+   "BIO2800",
+   "CHEM1000",
+   "CHEM2000",
+   "KINE1011",
+   "KINE1035",
+   "NURS1045"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/pre-allied-health-as-fall-2026",
+   "title": "Pre-Allied Health - AS",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 10791
+ },
+ {
+  "control_number": "46190",
+  "title": "Pre-Allied Health",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO1000",
+   "BIO1500",
+   "BIO2100",
+   "BIO2600",
+   "BIO2700",
+   "BIO2800",
+   "CHEM1000",
+   "CHEM2000",
+   "ENGLC1000",
+   "KINE1011",
+   "KINE1035",
+   "MATH1010",
+   "MATH1100",
+   "MATH1200",
+   "MATH1400",
+   "NURS1045",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/pre-allied-health-coa-fall-2026",
+   "title": "Pre-Allied Health - COA",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "46406",
+  "title": "Artificial Intelligence Skill Building",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BA501",
+   "BA502"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/artificial-intelligence-skill-building-fall-2026",
+   "title": "Artificial Intelligence Skill Building",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "46468",
+  "title": "Modern Policing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJ1001",
+   "ADJ1301",
+   "ADJ1503",
+   "ADJ1505",
+   "ADJ1517",
+   "ADJ2002",
+   "ADJ2526",
+   "ART1070",
+   "COMMC1000",
+   "COMS1038",
+   "ECE1003",
+   "ENGLC1000",
+   "ENGLC1001",
+   "PHIL1003",
+   "PSY1003",
+   "SOC1003",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/modern-policing-as-fall-2026",
+   "title": "Modern Policing - AS",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 0,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 13730
+ },
+ {
+  "control_number": "46528",
+  "title": "Mathematics 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CSCI1004",
+   "CSCI1007",
+   "MATH1400",
+   "MATH1500",
+   "MATH2400",
+   "MATH2500",
+   "MATH2600",
+   "PHYS2105"
+  ],
+  "source": {
+   "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/mathematics-2-0-as-t-fall-2026",
+   "title": "Mathematics 2.0 - AS-T",
+   "h1": "College of the Siskiyous 2026-27 Catalog",
+   "text_from": "textContent",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 16000
+ }
+]

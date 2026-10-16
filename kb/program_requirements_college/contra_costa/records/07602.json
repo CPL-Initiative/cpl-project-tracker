@@ -1,0 +1,219 @@
+{
+ "college": "Contra Costa College",
+ "control_number": "07602",
+ "shape": "degree",
+ "title": "Real Estate",
+ "award": "A.A. Degree",
+ "source_url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/real-estate-fall-2020",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6662,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6662,
+    "output_tokens": 1201,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1201,
+  "output_tokens_details": {
+   "thinking_tokens": 396
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05067,
+ "ms": 10174,
+ "seconds": 10.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 7,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    22.0,
+    22.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the blocks and general education sum to 22.0-22.0; the catalog prints 60.0-60.0 for the degree"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     22.0,
+     22.0
+    ],
+    "stated": [
+     22.0,
+     22.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Real Estate - A.A. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 22,
+    "max": 22
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Real Estate - A.A. Degree",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BUS186",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS294",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RE160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RE161",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RE163",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RE164",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RE168",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Major total taken from '22 Credits' heading and 'Min/Max Units - Major or Area of Emphasis 22/22'.",
+   "degree_total taken from 'Min/Max Units - Total Program 60/60' in the curriculum committee unit summary.",
+   "The unit summary lists General Education (Local) as 'None', CSU/IGETC as 'N/A', and Electives needed to reach 60 units as 'None', which is inconsistent with a 60-unit total over a 22-unit major; the text also says the degree includes 'breadth requirements'. GE pattern and GE units left null; reviewer should check.",
+   "The catalog prints BUS186 as 'Principles of Accounting I'; the closed list titles BUS 186 'Financial Accounting'. Treated as the same course.",
+   "Codes are printed without a space (e.g., BUS186, RE160) and recorded as printed.",
+   "No program learning outcomes or careers are printed in the text; the text is cut off in the Development Criteria section."
+  ]
+ },
+ "extracted_run": "38979730323"
+}

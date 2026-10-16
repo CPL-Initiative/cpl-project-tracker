@@ -1,0 +1,312 @@
+{
+ "college": "Antelope Valley College",
+ "control_number": "41407",
+ "shape": "adt",
+ "title": "Computer Science",
+ "award": "A.S. T Degree",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/computer-science-as-t-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8294,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8294,
+    "output_tokens": 2018,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2018,
+  "output_tokens_details": {
+   "thinking_tokens": 553
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07354,
+ "ms": 16670,
+ "seconds": 16.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 15,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    30.0,
+    31.0
+   ],
+   "stated": [
+    30.0,
+    31.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Computer Science AS-T",
+   "measure": "units",
+   "total_units": {
+    "min": 30,
+    "max": 31
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "C/C++ Programming",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Programming Language Options; Select One Grouping",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CS120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Java Programming",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Programming Language Options; Select One Grouping",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CS121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS131",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Python Programming",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Programming Language Options; Select One Grouping",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CS122",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS132",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Core Courses Required",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 20,
+     "max": 20
+    },
+    "courses": [
+     {
+      "code": "CS140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS150",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH150",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH160",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS110",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Core Course Options",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "BIOL110",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL120",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM110",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS120",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes without a space (e.g., CS120); matched to closed-list codes such as 'CS 120'. Closed list stores PHYS110 without units; catalog prints 4.",
+   "total_units taken from 'Computer Science AST Core Courses (Total 30 - 31)', the major total.",
+   "The 60-unit line is a general ADT requirement statement, not printed as this award's total; degree_total left null. No Cal-GETC unit total printed, so ge_units null.",
+   "Core Course Options reads 'Complete the following number of credits: 4-5'; recorded as choose_units minimum 4 (effectively one course, as the Recommended Pathway says 'Take one of the following').",
+   "Programming Language Options block (Total 6) requires one of three groupings; recorded as three option blocks in one option_group.",
+   "The Recommended Pathway lists a 2-unit 'General Elective' and GE areas; this is a sample schedule, not a requirement, so no elective units were recorded.",
+   "Program Goals and Objectives is narrative; no program learning outcomes are printed.",
+   "Description says the degree 'can prepare students in areas of science and engineering'; not recorded as careers since it names fields of study rather than careers—reviewer may check.",
+   "Text ends cut off in the Checklist section."
+  ]
+ },
+ "extracted_run": "38979725726"
+}

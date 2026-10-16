@@ -1,0 +1,355 @@
+{
+ "college": "Antelope Valley College",
+ "control_number": "02158",
+ "shape": "certificate",
+ "title": "Commercial Music: Level I",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/commercial-music-level-i-certificate-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8785,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8785,
+    "output_tokens": 2538,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2538,
+  "output_tokens_details": {
+   "thinking_tokens": 684
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0859,
+ "ms": 19807,
+ "seconds": 20.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 23,
+   "listed": 23,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 10,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Commercial Music: Level I Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate the ability to categorize, identify, and analyze significant genres of music.",
+    "Demonstrate a basic understanding of and skill level in the use of music technology and sound engineering.",
+    "Demonstrate the ability to analyze and critically evaluate a live musical performance.",
+    "Compare, contrast, and assess music industry professions.",
+    "Demonstrate skills in aural analysis and notation, and performance."
+   ],
+   "careers": [
+    "instrumentalist",
+    "vocalists",
+    "songwriter",
+    "producer",
+    "sound engineer",
+    "audio engineer",
+    "performers",
+    "educators in private sectors",
+    "sound/recording engineers",
+    "composers/songwriters"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 13,
+     "max": 13
+    },
+    "courses": [
+     {
+      "code": "MUS 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 141",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 143A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Courses",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "MUSC 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 109",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Program Electives",
+    "rule": "choose_units",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 2
+    },
+    "courses": [
+     {
+      "code": "FTV 241",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 124A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 134",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 136",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 142",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 150C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 173",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 199",
+      "units": 1,
+      "units_max": 8,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 220A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 233",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSC 273",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 291D",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 292",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The two 'Required Courses' blocks (13 + 3 units) sit under a wrapper 'Required Courses (Total 16) Complete the following number of credits: 16'; certificate total printed as 18 (also 'Required Major Total 16', 'Program Electives: 2', 'Total Degree Units 18' in the Program Goals table). The 18 is the certificate total, not a degree total with GE.",
+   "The requirements list prints codes without spaces (e.g., MUS120); the Program Goals table prints them with spaces; codes recorded with spaces to match.",
+   "Catalog note: students may apply up to 1 unit of MUSC 199 toward the Level I Certificate Program Electives. MUSC 199 is printed as 1 - 8 units in the requirements list and 1 unit in the Program Goals table.",
+   "MUSC 124A is titled 'Improvisation' in the Program Goals table and 'Jazz Improvisation' in the requirements list.",
+   "The Recommended Pathway (two semesters, 12 + 5 credits) is a sequencing guide repeating required courses and MUSC 220A as an elective; not recorded as a separate block.",
+   "Careers taken from the program description and Program Goals and Objectives text."
+  ]
+ },
+ "extracted_run": "38979725726"
+}

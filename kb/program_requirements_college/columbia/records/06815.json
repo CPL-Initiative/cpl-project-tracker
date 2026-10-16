@@ -1,0 +1,373 @@
+{
+ "college": "Columbia College",
+ "control_number": "06815",
+ "shape": "degree",
+ "title": "Child Development",
+ "award": "A.S. Degree",
+ "source_url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/program/child-development-as-cc-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7739,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7739,
+    "output_tokens": 2624,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2624,
+  "output_tokens_details": {
+   "thinking_tokens": 631
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08344,
+ "ms": 29482,
+ "seconds": 30.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 18,
+   "listed": 18,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    37.0,
+    37.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Columbia College General Education (CC-GE) Pattern or California General Education Transfer Curriculum (Cal-GETC) Pattern pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     37.0,
+     37.0
+    ],
+    "stated": [
+     37.0,
+     37.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Child Development AS",
+   "measure": "units",
+   "total_units": {
+    "min": 37,
+    "max": 37
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Columbia College General Education (CC-GE) Pattern or California General Education Transfer Curriculum (Cal-GETC) Pattern",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate knowledge of child growth, development and learning theories in an ecological context, and history of the American Disabilities Act and civil rights addressing the needs of children with disabilities.",
+    "Design, implement and evaluate developmentally appropriate, healthy, safe, and inclusive learning environments and curriculum through systematic observation, screening, assessment, documentation of children.",
+    "Develop strategies that promote linguistically and culturally responsive, anti-bias approaches to ensure equity and respect while engaging children, families, teachers, programs, and communities in advocacy for high quality care and education.",
+    "Describe effective guidance and interaction strategies that promote identity development, and relationship-based, child-centered, and play-oriented approaches in support of children and families becoming socially and emotionally competent members of a diverse society.",
+    "Identify ethical guidelines, professional standards, reflective supervision practices, and advocacy approaches for high quality educational policies and procedures to administer a child care and education program.",
+    "Evaluate practicum and internship relationship-based experiences in child care and education programs through systematic observation, documentation, and assessment of appli"
+   ],
+   "careers": [
+    "Child Development"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 28,
+     "max": 28
+    },
+    "courses": [
+     {
+      "code": "CHILD 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHILD 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHILD 4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHILD 17",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHILD 22",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHILD 23",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHILD 26",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHILD 35",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHILD 36",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Practicum-Field Experience Requirement",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CHILD 16",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHILD 44",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Infant and Toddler",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Complete One Specialization",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CHILD 42",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHILD 43",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Early Intervention",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Complete One Specialization",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CHILD 19",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EDUC 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Administration",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Complete One Specialization",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CHILD 30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHILD 31",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "School-Age",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Complete One Specialization",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CHILD 45",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EDUC 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints codes without a space (e.g. 'CHILD1', 'EDUC11'); recorded with a space to match the closed list.",
+   "'60 Total Units Required' is printed in the award's Unit Requirements line, recorded as degree_total; no GE unit figure is printed.",
+   "EDUC 11 appears in both the Early Intervention and School-Age specializations.",
+   "The 'Complete One Specialization' block states a total of 6 units; each specialization is recorded as its own block in one option_group.",
+   "The last program learning outcome is cut off in the text ('assessment of appli'); recorded as printed, not completed.",
+   "A first 'Upon satisfactory completion of this award...' lead-in near the description has no outcomes under it; outcomes were taken from the Program Learning Outcomes section.",
+   "Career entry 'Child Development' comes from 'a wide variety of careers in the field of Child Development'."
+  ]
+ },
+ "extracted_run": "38979390136"
+}

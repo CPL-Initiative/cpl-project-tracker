@@ -1,0 +1,202 @@
+{
+ "college": "Antelope Valley College",
+ "control_number": "43923",
+ "shape": "certificate",
+ "title": "Network System Administrator I",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/network-system-administrator-i-cert-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7283,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7283,
+    "output_tokens": 1518,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1518,
+  "output_tokens_details": {
+   "thinking_tokens": 641
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05949,
+ "ms": 12639,
+ "seconds": 12.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    19.0,
+    19.0
+   ],
+   "stated": [
+    19.0,
+    19.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Network System Administrator I Cert",
+   "measure": "units",
+   "total_units": {
+    "min": 19,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Configure a network protocol to enable a computer to communicate on a network.",
+    "Analyze a computer problem and select the proper trouble shooting tool."
+   ],
+   "careers": [
+    "computer networking field",
+    "entry-level and mid-management positions in Network Administration",
+    "entry level system administrator jobs"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 19,
+     "max": 19
+    },
+    "courses": [
+     {
+      "code": "CA 107",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CA 151",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CA 153",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CA 157",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CA 171",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CA 175",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints the courses both as 'CA107' (Program Requirements) and 'CA 107' (Requirements table); codes recorded in the spaced form.",
+   "Conflicting totals: the Requirements table heading says 'Required Courses, 28 Units', but the Program Requirements block says 'Total 19', the 'Required Major Total' is 19, and the listed courses sum to 19. Recorded 19; reviewer should check the 28.",
+   "The two outcomes are printed under the 'Program Outcomes' heading, each labeled with a course code (CA171 and ca107). They were recorded as program outcomes; they could alternatively be read as course outcomes for CA 171 and CA 107.",
+   "The page includes eLumen curriculum-workflow content (checklist, workflow agreement, 'Program Goals and Objectives' template text), which appears to be proposal or workflow material rather than catalog copy.",
+   "The description says 'This course was specifically created for the Local Aerospace and Defense Industry.'",
+   "Careers were taken from the program description and from the Program Goals text ('entry level system administrator jobs')."
+  ]
+ },
+ "extracted_run": "38979725726"
+}

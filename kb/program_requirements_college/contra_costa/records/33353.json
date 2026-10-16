@@ -1,0 +1,222 @@
+{
+ "college": "Contra Costa College",
+ "control_number": "33353",
+ "shape": "certificate",
+ "title": "Emergency Medical Services",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/emergency-medical-services-fall-2025",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6744,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6744,
+    "output_tokens": 1385,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1385,
+  "output_tokens_details": {
+   "thinking_tokens": 574
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05468,
+ "ms": 12306,
+ "seconds": 13.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "EMED110"
+   ],
+   "flagged": [
+    "EMED110"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    19.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 18.0-18.0; the catalog states 18.0-19.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 7,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Emergency Medical Services - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Eligible to take the California Emergency Medical Boards Exam for Emergency Medical Technicians."
+   ],
+   "careers": [
+    "Emergency medical technician",
+    "medical assistant",
+    "paramedic",
+    "fire technologist",
+    "nurse",
+    "firefighter",
+    "firefighting"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Courses required for the certificate",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "EMED107",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMED110",
+      "units": 8,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMMC1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Plus, at least 3 units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "EMED130",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOSC132",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EMED135",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "EMED135 is printed with no units and marked '(Being Deactivated)'.",
+   "The unit summary prints 'Total Overall Units 18-19' with General Education N/A. This is a certificate with no general education, so degree_total is left null and the 18-19 figure is recorded as total_units.",
+   "The printed total of 18-19 does not obviously match the required courses: 4+8+3 = 15, plus at least 3 units from 4-unit courses gives 19. A reviewer should check the 18 minimum.",
+   "The program outcome is printed under 'Emergency Medical Services - Certificate'.",
+   "'firefighting' is taken from the program description ('other health related occupations as well as firefighting'). The other careers are from the Potential Careers list."
+  ]
+ },
+ "extracted_run": "38979730323"
+}

@@ -1,0 +1,211 @@
+{
+ "college": "Antelope Valley College",
+ "control_number": "45775",
+ "shape": "noncredit",
+ "title": "Artificial Intelligence Education",
+ "award": "Noncredit program",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/artificial-intelligence-education-certificate-noncredit-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7179,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7179,
+    "output_tokens": 1336,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1336,
+  "output_tokens_details": {
+   "thinking_tokens": 428
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05544,
+ "ms": 11749,
+ "seconds": 12.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    108.0,
+    162.0
+   ],
+   "stated": [
+    108.0,
+    162.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Artificial Intelligence Education Certificate (Noncredit)",
+   "measure": "hours",
+   "total_units": {
+    "min": 108,
+    "max": 162
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Understand the basic principles and concepts of AI and its everyday applications.",
+    "Design and implement AI-enhanced curricula and oversee student progress using AI tools.",
+    "Utilize AI to enhance teaching methods and monitor student use of AI in academic settings.",
+    "Apply AI to foster creativity, address ethical considerations, and improve efficiency in their work."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Core Course",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 54,
+     "max": 54
+    },
+    "courses": [
+     {
+      "code": "AIED900",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Program Electives",
+    "rule": "choose_units",
+    "minimum": 54,
+    "option_group": null,
+    "stated": {
+     "min": 54,
+     "max": 108
+    },
+    "courses": [
+     {
+      "code": "AIED905",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AIED910",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AIED915",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AIED920",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AIED930",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit certificate counted in hours; all units fields hold hours.",
+   "Program Electives says 'Complete the following number of hours: 54-108'; minimum recorded as 54 with stated 54-108.",
+   "The Recommended Pathway shows one of AIED905/910/915/920 in Term 2 plus AIED930 in Term 3 (108 hours), which is narrower than the requirement list; requirements read from the Program Requirements section.",
+   "Outcomes are taken from the 'Objectives' list under 'Program Goals and Objectives' (learners will be able to:); the separate 'goals' list was not recorded as outcomes. The text is cut off mid-word in a fifth objective ('Us'), which was not recorded; reviewer should check the full list.",
+   "The description mentions educator, student, office professional as audiences ('Whether you are...'), not careers the program leads to; careers left empty."
+  ]
+ },
+ "extracted_run": "38979725726"
+}

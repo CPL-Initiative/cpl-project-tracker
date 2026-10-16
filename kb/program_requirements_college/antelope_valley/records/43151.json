@@ -1,0 +1,236 @@
+{
+ "college": "Antelope Valley College",
+ "control_number": "43151",
+ "shape": "certificate",
+ "title": "All Automotive Systems",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/all-automotive-systems-as-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8147,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8147,
+    "output_tokens": 1577,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1577,
+  "output_tokens_details": {
+   "thinking_tokens": 418
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06413,
+ "ms": 13799,
+ "seconds": 14.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    48.0,
+    48.0
+   ],
+   "stated": [
+    48.0,
+    48.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 8,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "All Automotive Systems AS",
+   "measure": "units",
+   "total_units": {
+    "min": 48,
+    "max": 48
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Analyze and evaluate critical aspects of the automotive industry related to safe work practices, standards and tolerances, standard shop practices, proper use of tools, power equipment, and personal protective equipment.",
+    "Evaluate and apply Federal and State regulatory automotive industry requirements.",
+    "Apply theories of operation, analyze information, evaluate findings, troubleshoot, and repair major automotive systems to meet automotive standards.",
+    "Develop diverse skill sets pertaining to the automotive repair standards and performance tasks."
+   ],
+   "careers": [
+    "apprentice mechanic",
+    "assistant technician",
+    "mechanic's helper",
+    "predelivery technician",
+    "installer",
+    "service technician",
+    "service attendant",
+    "smog technician trainee"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Complete all of the following",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 48,
+     "max": 48
+    },
+    "courses": [
+     {
+      "code": "AUTO100",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO160",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO211",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO220",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO230",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO240",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO250",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO260",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO270",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO280",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The award is a Certificate of Achievement, but the source page is for the All Automotive Systems AS degree; no separate certificate section is printed. The description says the core courses qualify students 'for the degree or certificate', so the AS major requirements (Total 48) were recorded. A reviewer should confirm the certificate's requirements match the AS major.",
+   "The AS page prints 'GE Requirements 22' and 'Total Units 70' (AVC GE pattern in the Recommended Pathway); these apply to the AS degree, not the certificate, so degree_total, ge_units and ge_pattern were left null.",
+   "Program Outcomes are printed for 'All Automotive Systems AS'; recorded on the assumption that the certificate shares them.",
+   "Course codes printed as 'AUTO100' etc. in the requirements list (and 'AUTO 100' in the goals table); all match the closed list.",
+   "Page includes internal curriculum-workflow text (Checklist, Workflow Agreement) that suggests a proposal draft view; not used."
+  ]
+ },
+ "extracted_run": "38979725726"
+}

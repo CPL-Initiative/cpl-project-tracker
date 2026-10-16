@@ -1,0 +1,329 @@
+{
+ "college": "Contra Costa College",
+ "control_number": "33578",
+ "shape": "adt",
+ "title": "Economics",
+ "award": "A.A- T Degree",
+ "source_url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/economics-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7327,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7327,
+    "output_tokens": 2396,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2396,
+  "output_tokens_details": {
+   "thinking_tokens": 932
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07723,
+ "ms": 19468,
+ "seconds": 20.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 11,
+   "share": 0.818,
+   "missing": [
+    "ECON220",
+    "ECON221"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ECONC2001",
+    "ECONC2002"
+   ],
+   "flagged": [
+    "ECONC2001",
+    "ECONC2002"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    21.0,
+    24.0
+   ],
+   "stated": [
+    21.0,
+    24.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     66.0,
+     72.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 9,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Economics A.A.-T",
+   "measure": "units",
+   "total_units": {
+    "min": 21,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 11,
+    "max": 14
+   },
+   "ge_pattern": "CalGETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Assess and evaluate macroeconomics conditions and microeconomic outcomes.",
+    "Anticipate possible macro-level policy actions and potential micro-level government intervention strategies.",
+    "Make sound personal, business and/or civic decisions based on their analysis."
+   ],
+   "careers": [
+    "business",
+    "law",
+    "journalism",
+    "education",
+    "politics",
+    "finance and banking",
+    "government",
+    "public and private overseas service",
+    "labor leadership"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Required Core Courses: And one of the following (statistics)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 240",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Core Courses: And one of the following (calculus)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MATH 180",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "MATH C2220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 186",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 187",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "MATH 200",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 290",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECON 220",
+    "why": "not in the text; the catalog lists ECONC2002 Principles of Macroeconomics instead"
+   },
+   {
+    "code": "ECON 221",
+    "why": "not in the text; the catalog lists ECONC2001 Principles of Microeconomics instead"
+   }
+  ],
+  "notes": [
+   "The catalog prints codes without a space (e.g. 'ECONC2002', 'STATC1000', 'BUS240'); they are recorded with the subject separated by a space.",
+   "ECON C2002 and ECON C2001 appear to be the common course numbered replacements for closed-list ECON 220 and ECON 221; recorded as catalog additions.",
+   "'Required Core Courses (13-15 units)' covers the two required ECON courses plus both 'one of the following' choices (3+3+3-4+4-5 = 13-15); since the total spans three blocks, it is not recorded as stated on the 'all' block.",
+   "List B also allows 'Any course from List A not already used' (MATH C2220, BUS 186, BUS 187); these are not repeated in the List B block.",
+   "Unit summary: Total Major Units 21-24, CalGETC 34, Double Count Units 9, Elective Units to reach 60: 11-14, Total Overall Units 60-60.",
+   "Careers are taken from the program description and the Potential Careers section; graduate study areas (law, business, public administration) are not recorded as careers."
+  ]
+ },
+ "extracted_run": "38979730323"
+}

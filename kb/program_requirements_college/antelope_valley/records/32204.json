@@ -1,0 +1,385 @@
+{
+ "college": "Antelope Valley College",
+ "control_number": "32204",
+ "shape": "adt",
+ "title": "Studio Arts",
+ "award": "A.A- T Degree",
+ "source_url": "https://avc.elumenapp.com/catalog/2026-27/program/studio-arts-aa-t-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9787,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9787,
+    "output_tokens": 2803,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2803,
+  "output_tokens_details": {
+   "thinking_tokens": 936
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09521,
+ "ms": 22493,
+ "seconds": 22.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 22,
+   "listed": 24,
+   "share": 0.917,
+   "missing": [
+    "ART101",
+    "ART102"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "ART150",
+    "ARTHC1100",
+    "ARTHC1200"
+   ],
+   "flagged": [
+    "ART150",
+    "ARTHC1100",
+    "ARTHC1200"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    24.0
+   ],
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Studio Arts AA-T",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Course - Choose one",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ARTHC1200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARTHC1200H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "ART110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART145",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Required Electives Group A",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ARTHC1100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARTHC1100H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ART103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Electives Group B: Select a total of 3 courses from 3 different curricular areas",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "ART170",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART216",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART113",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART132",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTC101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART116",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART135",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART137",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTC125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART163",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART213",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ART 101",
+    "why": "not in the text; catalog lists ARTHC1100/ARTHC1100H in Group A instead"
+   },
+   {
+    "code": "ART 102",
+    "why": "not in the text; catalog lists ARTHC1200/ARTHC1200H as the required art history course instead"
+   }
+  ],
+  "notes": [
+   "Group B is recorded as one block of 3 courses (9 units), but the catalog requires the 3 courses to come from 3 different curricular areas, each printed as a sub-option with 0-3 units: Drawing (ART170, ART210, ART216), Painting (ART113), Printmaking (ART120), Ceramics (ART132), Digital Art (ART121), Photography (PHTC101), Other Media (ART116, ART135, ART137, ART140, PHTC125), Second Semester (ART163, ART213).",
+   "The 'Required Courses (Total 12)' parent heading groups the choose-one art history course (3) and the three required studio courses (9).",
+   "Total 24 is the major total printed for 'Studio Arts AA-T'; the 60-unit sentence is the generic ADT requirement, so degree_total is null.",
+   "Closed-list codes use a space (e.g. 'ART 110'); the catalog prints 'ART110'. Treated as the same courses. ARTHC1200, ARTHC1100 and ART150 are not in the closed list and are flagged as catalog additions.",
+   "The page prints 'Program Goals and Objectives' (objectives a-c, text cut off mid-sentence) but no program learning outcomes list; outcomes left empty.",
+   "No careers are named in the text."
+  ]
+ },
+ "extracted_run": "38979725726"
+}

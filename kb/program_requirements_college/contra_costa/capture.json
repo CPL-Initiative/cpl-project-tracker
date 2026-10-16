@@ -1,0 +1,1085 @@
+{
+ "college": "Contra Costa College",
+ "catalog_url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/home",
+ "platform": "elumen",
+ "catalog_year": "2026-2027",
+ "programs": 131,
+ "with_closed_list": 105,
+ "started": "2026-10-16T23:09:38Z",
+ "elumen": {
+  "catalog": "ccc-2026-27",
+  "read": "publish/content",
+  "menu_programs": 0,
+  "errors": [],
+  "menu_departments": 53,
+  "department_programs": 135,
+  "program_pages": 135
+ },
+ "pages_read": 135,
+ "banner_h1": null,
+ "loads": 189,
+ "seconds": 785.0,
+ "found": 97,
+ "by_method": {
+  "no_closed_list": 26,
+  "not_found": 3,
+  "page_claimed": 5,
+  "sitemap_page": 97
+ },
+ "shared_pages": {},
+ "not_found": [
+  {
+   "control_number": "07607",
+   "title": "Computer Information Systems: Computer Operations",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "38491",
+   "title": "CSU General Education Breadth",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "38492",
+   "title": "Intersegmental General Education Curriculum (IGETC)",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "20846",
+   "title": "Computer Information Systems: Computer Operations",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "pages": [
+    "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/business-office-technology-business-information-worker-fall-2020"
+   ]
+  },
+  {
+   "control_number": "31020",
+   "title": "Communication Studies",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/communication-studies-2-0-fall-2026",
+    "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/liberal-arts-communication-in-the-english-language-fall-2026",
+    "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/journalism-fall-2026"
+   ]
+  },
+  {
+   "control_number": "32373",
+   "title": "Liberal Arts: Science, Technology, Engineering and Mathematics (STEM)",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/liberal-arts-science-technology-engineering-and-mathematics-stem-fall-2026",
+    "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/liberal-arts-math-and-science-fall-2026"
+   ]
+  },
+  {
+   "control_number": "33756",
+   "title": "Business Administration",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/business-administration-fall-2026",
+    "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/business-administration-2-0-fall-2026"
+   ]
+  },
+  {
+   "control_number": "36057",
+   "title": "Public Health Science",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/public-health-fall-2026"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 3,
+  "0.8-1.0": 18,
+  "1.0": 76
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 97,
+  "list": [
+   {
+    "control_number": "01381",
+    "title": "Biological Science",
+    "award": "A.S. Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/biological-science-fall-2020",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01383",
+    "title": "Accounting Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/accounting-technician-fall-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01384",
+    "title": "Business Management",
+    "award": "A.S. Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/business-management-fall-2025v2",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01387",
+    "title": "Business Office Technology: General Office",
+    "award": "A.S. Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/business-office-technology-general-office-fall-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01388",
+    "title": "Journalism",
+    "award": "A.A. Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/journalism-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01393",
+    "title": "Engineering",
+    "award": "A.S. Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/engineering-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01400",
+    "title": "Auto Collision Repair Technology",
+    "award": "A.S. Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/automotive-collision-repair-technology-fall-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01408",
+    "title": "Studio Arts",
+    "award": "A.A. Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/studio-arts-fall-2026",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01415",
+    "title": "Spanish",
+    "award": "A.A. Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/spanish-fall-2020v2",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01417",
+    "title": "Registered Nursing",
+    "award": "A.S. Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/registered-nursing-fall-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01423",
+    "title": "Early Childhood Education",
+    "award": "A.S. Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/early-childhood-education-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01434",
+    "title": "Psychology",
+    "award": "A.A. Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/psychology-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01437",
+    "title": "Law Enforcement",
+    "award": "A.S. Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/law-enforcement-spring-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01443",
+    "title": "African American Studies",
+    "award": "A.A. Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/african-american-studies-spring-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01447",
+    "title": "Political Science",
+    "award": "A.A. Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/political-science-fall-2026",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01448",
+    "title": "Sociology",
+    "award": "A.A. Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/sociology-fall-2026v2",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07598",
+    "title": "Biotechnology",
+    "award": "A.S. Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/biotechnology-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07602",
+    "title": "Real Estate",
+    "award": "A.A. Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/real-estate-fall-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07603",
+    "title": "Business Office Technology: Administrative Assistant",
+    "award": "A.S. Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/business-office-technology-administrative-assistant-fall-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07613",
+    "title": "Medical Assisting",
+    "award": "A.S. Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/medical-assisting-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07614",
+    "title": "Early Childhood Education: Montessori Education Preschool Teacher",
+    "award": "A.S. Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/early-childhood-education-montessori-education-preschool-teacher-fall-2020",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07616",
+    "title": "La Raza Studies",
+    "award": "A.A. Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/la-raza-studies-spring-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "11702",
+    "title": "Business Administration",
+    "award": "A.S. Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/business-administration-fall-2026",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18981",
+    "title": "Liberal Arts: Arts & Humanities",
+    "award": "A.A. Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/liberal-arts-arts-humanities-fall-2026",
+    "coverage": 0.946,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18982",
+    "title": "Liberal Arts: Communication in the English Language",
+    "award": "A.A. Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/liberal-arts-communication-in-the-english-language-fall-2026",
+    "coverage": 0.96,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18983",
+    "title": "Liberal Arts: Math & Science",
+    "award": "A.A. Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/liberal-arts-math-and-science-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18984",
+    "title": "Liberal Arts: Social & Behavioral Sciences",
+    "award": "A.A. Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/liberal-arts-social-and-behavioral-sciences-fall-2026",
+    "coverage": 0.863,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20821",
+    "title": "Biotechnology Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/biotechnology-technician-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20837",
+    "title": "Business Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/business-management-fall-2025",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20839",
+    "title": "Real Estate",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/real-estate-fall-2020v2",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20842",
+    "title": "Business Office Technology: General Office",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/business-office-technology-general-office-fall-2020v2",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20855",
+    "title": "Automotive Collision Repair Technology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/automotive-collision-repair-technology-fall-2020v2",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20857",
+    "title": "Medical Assisting",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/medical-assisting-summer-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20860",
+    "title": "Early Childhood Education: Montessori Education Preschool Teacher",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/early-childhood-education-montessori-education-preschool-teacher-fall-2020v2",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20862",
+    "title": "Early Childhood Education",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/early-childhood-education-fall-2026v2v3",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20864",
+    "title": "Culinary Arts: Classical/Modern Food Preparation & Restaurant Training",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/culinary-arts-classical-modern-food-preparation-and-restaurant-training-fall-2020v2",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30249",
+    "title": "Administration of Justice: Correctional Specialist",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/administration-of-justice-correctional-specialist-fall-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30250",
+    "title": "Administration of Justice: Police Records and Services Technician",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/administration-of-justice-police-records-and-services-technician-fall-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31021",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/administration-of-justice-corrections-spring-2022",
+    "coverage": 0.545,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31965",
+    "title": "Engineering",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/engineering-fall-2026v2",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32320",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/physics-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32767",
+    "title": "Biotechnology Assistant",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/biotechnology-assistant-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32819",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/english-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32920",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/sociology-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32921",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/political-science-fall-2026v2",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32922",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/psychology-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32924",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/liberal-arts-science-technology-engineering-and-mathematics-stem-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32925",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/kinesiology-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33019",
+    "title": "MUSIC",
+    "award": "A.A- T Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/music-fall-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33097",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/early-childhood-education-fall-2026v2",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33184",
+    "title": "Pre-Allied Health",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/pre-allied-health-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33209",
+    "title": "Journalism",
+    "award": "A.A- T Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/journalism-fall-2026v2",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33324",
+    "title": "Automotive Hybrid Technician",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/automotive-hybrid-technician-spring-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33325",
+    "title": "Chassis Level I Technician",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/chassis-level-i-technician-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33326",
+    "title": "Powertrains Level I Technician",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/powertrains-level-i-technician-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33353",
+    "title": "Emergency Medical Services",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/emergency-medical-services-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33370",
+    "title": "Music",
+    "award": "A.A. Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/music-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33383",
+    "title": "Geography",
+    "award": "A.A- T Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/geography-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33550",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/spanish-fall-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33551",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/history-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33576",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/anthropology-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33578",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/economics-fall-2026",
+    "coverage": 0.818,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33601",
+    "title": "Automotive Service Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/automotive-service-technician-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33660",
+    "title": "Physical Education/Kinesiology",
+    "award": "A.S. Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/physical-education-kinesiology-spring-2021",
+    "coverage": 0.938,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35126",
+    "title": "Automotive Service Technician",
+    "award": "A.S. Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/automotive-service-technician-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35208",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/biology-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35882",
+    "title": "Pre Law Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/pre-law-studies-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36157",
+    "title": "EMED: Paramedic Studies",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/emed-paramedic-studies-spring-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36158",
+    "title": "Philosophy",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/philosophy-spring-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36230",
+    "title": "Business Office Technology: Business Information Worker",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/business-office-technology-business-information-worker-fall-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36244",
+    "title": "Philosophy",
+    "award": "A.A- T Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/philosophy-spring-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36316",
+    "title": "Chemistry",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/chemistry-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37157",
+    "title": "Social Justice: Latino and Chicano Studies",
+    "award": "A.A- T Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/social-justice-latino-and-chicano-studies-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39028",
+    "title": "Beginning ESL",
+    "award": "Noncredit program",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/beginning-esl-fall-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39029",
+    "title": "High-Beginning ESL",
+    "award": "Noncredit program",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/high-beginning-esl-fall-2020v2",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39030",
+    "title": "Intermediate ESL",
+    "award": "Noncredit program",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/intermediate-esl-fall-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39032",
+    "title": "High-Intermediate ESL",
+    "award": "Noncredit program",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/high-intermediate-esl-fall-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39048",
+    "title": "ESL Pronunciation",
+    "award": "Noncredit program",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/esl-pronunciation-fall-2020v2",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40216",
+    "title": "Computer User Support Specialist",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/computer-user-support-specialist-spring-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40217",
+    "title": "Network and Security Specialist",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/network-and-security-specialist-spring-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40260",
+    "title": "College Level Reading and Writing Proficiency",
+    "award": "Noncredit program",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/college-level-reading-and-writing-proficiency-summer-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40760",
+    "title": "Information Technology",
+    "award": "A.S. Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/information-technology-summer-2021v2",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40761",
+    "title": "Information Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/information-technology-summer-2021",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41346",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/business-administration-2-0-fall-2026",
+    "coverage": 0.778,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42085",
+    "title": "Ethnic Studies",
+    "award": "A.A. Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/ethnic-studies-summer-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42335",
+    "title": "Biological Testing Technician",
+    "award": "Noncredit program",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/biological-testing-technician-spring-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42384",
+    "title": "Project Management",
+    "award": "Noncredit program",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/project-management-spring-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42406",
+    "title": "Laboratory Professional I",
+    "award": "Noncredit program",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/laboratory-professional-i-spring-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42617",
+    "title": "UCTP Physics",
+    "award": "A.S. T Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/mathematics-fall-2026",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42741",
+    "title": "Humanities",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/humanities-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44411",
+    "title": "Early Childhood Education: Associate Teacher Infant and Toddler",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/early-childhood-education-associate-teacher-infant-and-toddler-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44526",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/studio-arts-fall-2026v2",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44782",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/theatre-arts-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45158",
+    "title": "Biological Manufacturing Technician",
+    "award": "Noncredit program",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/biological-manufacturing-technician-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45537",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/communication-studies-2-0-fall-2026",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46301",
+    "title": "Public Health",
+    "award": "A.S. T Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/public-health-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46421",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/art-history-fall-2026",
+    "coverage": 0.867,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "38979730323"
+}
