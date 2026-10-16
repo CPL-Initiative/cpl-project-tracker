@@ -1,0 +1,289 @@
+{
+ "college": "College of the Siskiyous",
+ "programs": 80,
+ "with_closed_list": 77,
+ "found": 65,
+ "extracted": 65,
+ "errors": 0,
+ "passed_machine_checks": 42,
+ "failed": {
+  "coverage": 0,
+  "invented": 0,
+  "arithmetic": 23,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 4.28,
+ "cost_per_program": 0.0659,
+ "not_found": [
+  {
+   "control_number": "19000",
+   "title": "CSU General Education Breadth",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/cal-getc-california-general-education-transfer-curriculum-coa-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "textContent",
+    "coverage": 0.804,
+    "body": 0.0,
+    "content": 0.804,
+    "net": 86,
+    "listed": 107,
+    "why": "hidden text only, and the heading does not name the program",
+    "error": null,
+    "chars": {
+     "body": 1448,
+     "content": 278671,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "19001",
+   "title": "Intersegmental General Education Transfer Curriculum (IGETC)",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/cal-getc-california-general-education-transfer-curriculum-coa-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 0.667
+    },
+    "field": "textContent",
+    "coverage": 0.975,
+    "body": 0.0,
+    "content": 0.975,
+    "net": 78,
+    "listed": 80,
+    "why": "hidden text only, and the heading does not name the program",
+    "error": null,
+    "chars": {
+     "body": 1448,
+     "content": 278671,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "19812",
+   "title": "Philosophy",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "32263",
+   "title": "English as a Second Language (ESL)",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/english-as-a-second-language-esl-non-credit-coc-fall-2021",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "textContent",
+    "coverage": 1.0,
+    "body": 0.0,
+    "content": 1.0,
+    "net": 3,
+    "listed": 3,
+    "why": "hidden text only, and the heading does not name the program",
+    "error": null,
+    "chars": {
+     "body": 1588,
+     "content": 209686,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "37783",
+   "title": "Administrative Assistant and Office Aide",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/administrative-assistant-and-office-aide-non-credit-coc-fall-2021",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "textContent",
+    "coverage": 1.0,
+    "body": 0.0,
+    "content": 1.0,
+    "net": 1,
+    "listed": 1,
+    "why": "hidden text only, and the heading does not name the program",
+    "error": null,
+    "chars": {
+     "body": 1333,
+     "content": 209536,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "37784",
+   "title": "Culinary and Hospitality Service Skills",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/culinary-and-hospitality-service-skills-non-credit-coc-fall-2021",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "textContent",
+    "coverage": 1.0,
+    "body": 0.0,
+    "content": 1.0,
+    "net": 1,
+    "listed": 1,
+    "why": "hidden text only, and the heading does not name the program",
+    "error": null,
+    "chars": {
+     "body": 1331,
+     "content": 209907,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "37785",
+   "title": "Media and Web Development",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/media-and-web-development-non-credit-coc-winter-2023-intersession",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "textContent",
+    "coverage": 1.0,
+    "body": 0.0,
+    "content": 1.0,
+    "net": 2,
+    "listed": 2,
+    "why": "hidden text only, and the heading does not name the program",
+    "error": null,
+    "chars": {
+     "body": 1248,
+     "content": 209635,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "38692",
+   "title": "Workforce Readiness",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/workforce-readiness-non-credit-coc-winter-2023-intersession",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "textContent",
+    "coverage": 1.0,
+    "body": 0.0,
+    "content": 1.0,
+    "net": 2,
+    "listed": 2,
+    "why": "hidden text only, and the heading does not name the program",
+    "error": null,
+    "chars": {
+     "body": 1233,
+     "content": 212437,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "39644",
+   "title": "Firefighting I",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/firefighting-i-non-credit-coc-fall-2021",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "textContent",
+    "coverage": 1.0,
+    "body": 0.0,
+    "content": 1.0,
+    "net": 2,
+    "listed": 2,
+    "why": "hidden text only, and the heading does not name the program",
+    "error": null,
+    "chars": {
+     "body": 1173,
+     "content": 205513,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "40253",
+   "title": "Political Science",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/computer-science-as-t-fall-2025",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 11,
+    "why": "coarse net: the page's code tokens name 0 of 11 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1628,
+     "content": 218868,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "43283",
+   "title": "Foundations for Academic Success",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/foundations-for-academic-success-non-credit-coc-cdcp-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "textContent",
+    "coverage": 1.0,
+    "body": 0.0,
+    "content": 1.0,
+    "net": 4,
+    "listed": 4,
+    "why": "hidden text only, and the heading does not name the program",
+    "error": null,
+    "chars": {
+     "body": 1547,
+     "content": 215488,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  }
+ ],
+ "run": "38979399672"
+}
