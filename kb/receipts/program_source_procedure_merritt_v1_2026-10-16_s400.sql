@@ -1,0 +1,10 @@
+-- S400 SkyBirch, 2026-10-16: Merritt College's procedure record v1 (the registry row held none), naming the
+-- curriQunet host, the read, extraction, load and display runs, and what the read left open.
+-- Through program_source_procedure_set, expecting 'none'; the history trigger files the prior row.
+-- Rollback: program_source_registry_history holds the prior row.
+-- Written by kb/_program_source_procedure_v1.py.
+-- Applied 2026-10-16 ~21:32Z through execute_sql, after display build 9237d2cbf931's apply (run 38964970724): was_md5 none, md5 dfaca37305258369fd786834de121acb.
+
+select public.program_source_procedure_set('Merritt College', $proc${"v": 1, "college": "Merritt College", "hosts": [{"host": "mc.curriqunet.com", "access": "open", "platform": "curriqunet", "note": "Merritt College's curriQunet catalog (2026-2027)."}], "steps": [{"run": "38935152199", "date": "2026-10-16", "plan": "program-requirements-college.yml, read with extraction (the catalog sweep; Sam's standing go of 2026-10-14, up to $40 a college)", "found": "178 pages in 787 loads (63 min). 81 of 81 programs with a course list found a page (81 from the catalog's own index); 81 extracted with function v10 for $6.13; 68 pass the machine checks."}, {"run": "38948185142", "date": "2026-10-16", "plan": "program-requirements-college.yml, load", "found": "81 records inserted unchecked (receipt kb/receipts/program_requirement_records_college_merritt_38948185142.json)."}, {"run": "38964970724", "date": "2026-10-16", "plan": "program-requirements-college.yml, display", "found": "Display build 9237d2cbf931 applied from main; the applied record beside the receipt is the rollback."}], "open": [{"question": "13 of 81 records fail the arithmetic check, 0 the coverage check, 0 the invented-course check and 0 the outcomes check.", "next": "Measure the Major only and degree-figure gaps per page layout, then write this catalog's reconcile steps (kb/program_requirements_reconcile.json) before any record is confirmed."}]}$proc$::jsonb,
+  'S400 SkyBirch, 2026-10-16 (the catalog sweep: read 38935152199, load 38948185142, display 38964970724)',
+  'none');
