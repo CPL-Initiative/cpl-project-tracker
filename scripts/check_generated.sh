@@ -35,6 +35,10 @@ run "dependency map contents" "python3 tests/dependency_map_test.py"
 # script exists to save you.
 run "COBI admin surface"      "python3 kb/_build_cobi_admin_surface.py --check 2>/dev/null || node tests/admin_tab.test.js >/dev/null"
 run "Sierra rule defaults"    "node tests/sierra_rules.test.js >/dev/null 2>&1 || python3 kb/_build_sierra_rule_defaults.py --check"
+# Sierra's statewide catalog (S398) is built from statewide_data.js,
+# kb/statewide_exhibit_categories.json and fact_sheet_metrics.json. The daily run
+# rebuilds it beside them; an edit to the categories or to the builder stales it here.
+run "statewide catalog (Fact Sheet + Sierra)" "python3 fact-sheet/_build_statewide_catalog.py --check"
 # The discipline-blank worklist (S243) derives from unified_courses_data.js AND
 # the subject map, so a map edit staled it in the same commit that made it.
 run "discipline blanks worklist" "python3 kb/_build_discipline_blanks_worklist.py --check"
@@ -70,7 +74,8 @@ echo
 if [ "$fail" -ne 0 ]; then
   echo "Regenerate, re-run this, THEN push:"
   echo "  python3 kb/_build_docs_index.py && python3 kb/_build_dependency_map.py \\"
-  echo "    && python3 kb/_build_cobi_admin_surface.py && python3 kb/_build_sierra_rule_defaults.py"
+  echo "    && python3 kb/_build_cobi_admin_surface.py && python3 kb/_build_sierra_rule_defaults.py \\"
+  echo "    && python3 fact-sheet/_build_statewide_catalog.py"
   exit 1
 fi
 echo "All generated files are current."

@@ -336,9 +336,12 @@ block("7. wiring", () => {
     /sb\.from\("chatbox_college_courses"\)/.test(SRC) && /program course list unavailable/.test(SRC));
   check("(7) the block reaches the prompt right after the alignment worklist",
     SRC.includes("${alignmentContext}${prospectiveContext}${creditContext}"));
+  // Asserts the argument ARRIVES in its place, never that hostScope is the last one:
+  // S398 appended statewideCatalogContext after it, and a check anchored on the closing
+  // paren would have named this block for a change that never touched it.
   check("(7) the prompt builder takes it, and the handler passes it",
     /alignmentContext: string = "",\s*prospectiveContext: string = "",/.test(SRC)
-    && /alignmentContext,\s*prospectiveContext, rulesOverlay, ruleReport, hostScope\)/.test(SRC));
+    && /alignmentContext,\s*prospectiveContext, rulesOverlay, ruleReport, hostScope\b/.test(SRC));
   const reg = SRC.slice(SRC.indexOf("const RULE_DEFAULTS"));
   const ali = reg.indexOf('key: "alignment"'), pro = reg.indexOf('key: "prospective"'), vol = reg.indexOf('key: "volume"');
   check("(7) ⭐ the rule is registered between alignment (60) and volume (70) at 65",

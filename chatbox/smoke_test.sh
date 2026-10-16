@@ -946,6 +946,31 @@ run "7v follow-up after a wrong 'no data' reply (COCI is not College of the Cany
 answer_must_match "\bCIST[ -]?1[0-2][05]\b" "7v ⭐ the follow-up folds the NOCE question back in and names a CIST course"
 answer_must_not_match -i "College of the Canyons" "7v ⭐ the follow-up never reads College of the Canyons"
 
+# ── MODE 7w: the statewide catalog, asked for as a whole (S398) ───────────────
+# Sam's Training rule (2026-10-15): asked for "a complete list of statewide exhibit
+# titles categorized by sector", the first response is a table of every title with its
+# total units, and the Fact Sheet arrives as a link. He asked exactly this on the public
+# page three times that evening; each answer said the full list was not available and
+# quoted "114 statewide exhibits" and "949 credit recommendations (13.1% of all)" from
+# an April vault note, with the Fact Sheet by name and no link. The catalog block
+# (fact-sheet/statewide_catalog.json, read from main) now carries every exhibit.
+# Thresholds over long-standing titles and the program areas, never one named title
+# or a count: the set moves every morning (162 to 164 between 2026-10-14 and -16).
+run "7w statewide catalog (Sam's question, 2026-10-15)" \
+  '{"query":"Give me a complete list of statewide exhibit titles categorized by sector","session_id":"smoke-ci","surface":"public","history":[]}'
+answer_head_must_match 900 "\|[^|]+\|[^|]+\|" "7w ⭐ opens with the table"
+answer_must_name_at_least -i 9 "7w groups by the Fact Sheet's program areas" \
+  "Construction Technology" "Welding" "Fire Technology" "Computer Information Systems" \
+  "Automotive Technology" "Wildland" "Emergency Medical Services" "Corrections" \
+  "Real Estate" "World Languages" "Administration of Justice" "Kinesiology"
+answer_must_name_at_least -i 8 "7w lists exhibits from across the catalog" \
+  "POST Basic Academy" "Basic Military Training" "CompTIA Security\+" "ASE A5" "Firefighter 1" \
+  "EMT Certification" "Real Estate Salesperson" "NCCER Welding Level 1" \
+  "Correctional Officer Core Course" "Defense Language Proficiency Test"
+answer_must_match "cpl-initiative\.github\.io/cpl-project-tracker/fact-sheet" "7w ⭐ links the Fact Sheet rather than naming it"
+answer_must_not_match -i "do(n.?t| not) have (the|a|that) (full|complete|itemized)" "7w ⭐ never says the full list is not available"
+answer_must_not_match "13\.1%|\b949\b" "7w never quotes the April vault note's statewide figures"
+
 # Broad "who teaches this" — the catalog should surface colleges that TEACH
 # construction/carpentry (not only those with an existing exhibit).
 run "8 offerings broad (who teaches construction)" \
