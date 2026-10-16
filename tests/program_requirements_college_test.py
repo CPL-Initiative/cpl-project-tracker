@@ -269,6 +269,17 @@ check(C.cq_catalog_id(["https://rccd.curriqunet.com/Content/x.css",
       and C.cq_catalog_id(["https://x.curriqunet.com/Catalog/_getNavigation?id=88&navigationtypeId=1"]) == 88
       and C.cq_catalog_id(["https://x.edu/"]) is None,
       "the catalog id comes from the calls the start page's scripts made")
+# Page read 38942920358 (S399): Berkeley City's and Butte's start pages ask
+# _getNavigation?id=0 first, then name the catalog. Taking the 0 walked an empty catalog.
+check(C.cq_catalog_id(["https://bcc.curriqunet.com/catalog/_getNavigation?id=0&navigationtypeId=1",
+                       "https://bcc.curriqunet.com/catalog/_getCatalogs",
+                       "https://bcc.curriqunet.com/catalog/_getNavigation?id=10327&navigationtypeId=1",
+                       "https://bcc.curriqunet.com/catalog/_getPage?catalogId=10327&id=40258"]) == 10327
+      and C.cq_catalog_id(["https://butte.curriqunet.com/Catalog/_getCatalogs",
+                           "https://butte.curriqunet.com/Catalog/_getNavigation?id=0&navigationtypeId=1",
+                           "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&navigationtypeId=1"]) == 14
+      and C.cq_catalog_id(["https://x.curriqunet.com/catalog/_getNavigation?id=0&navigationtypeId=1"]) is None,
+      "an id of 0 is a placeholder the start page asks first, never the catalog (Berkeley City 10327, Butte 14)")
 check(C.cq_base("https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5842/6111") ==
       ("https://rccd.curriqunet.com", "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/")
       and C.cq_base("https://irvine.curriqunet.com/Catalog/iq/48953")[1] == "https://irvine.curriqunet.com/Catalog/iq/",
@@ -559,6 +570,15 @@ check(C.cq_catalog_from_list(SDCCD, "San Diego City College", "2025-2026") is No
       and C.cq_catalog_from_list(None, "San Diego City College", "2026-2027") is None
       and C.cq_catalog_from_list([{"Id": 5, "Title": "2026-2027 Catalog"}], "Chaffey College", "2026-2027") is None,
       "only the registry's year counts, two candidates are none, and a title naming no college word is none")
+# Page read 38942920358 (S399): Gavilan's alias start page lists its active catalogs and
+# fetches nothing; _getCatalogs names the year's catalog beside two addenda.
+GAVILAN = [{"Id": 19173, "Title": "Fall 2025 Addendum"}, {"Id": 19330, "Title": "Spring 2026 Addendum"},
+           {"Id": 19344, "Title": "Gavilan College Catalog 2026-2027"}]
+check(C.cq_catalog_from_list(GAVILAN, "Gavilan College", "2026-2027") == 19344
+      and C.cq_catalog_from_list([{"Id": 14, "Title": "2026-2027 Butte College Catalog"}], "Butte College", "2026-2027") == 14
+      and C.cq_catalog_from_list(GAVILAN, "Gavilan College", "2025-2026") is None
+      and C.cq_catalog_from_list([{"Id": 10327, "Title": "2026-27 Catalog"}], "Berkeley City College", "2026-2027") is None,
+      "\"Catalog\" in a title is not a word the college's name must hold (Gavilan 19344); a title of the word alone names no college")
 same, dropped = C.cq_distinct([BUS, dict(BUS, id=18990, aliaspath="19210/program_index/18990"),
                                {"id": 19951, "text": "Accounting - A.S. Degree"}])
 check([e["id"] for e in same] == [19915, 19951] and dropped == 1,

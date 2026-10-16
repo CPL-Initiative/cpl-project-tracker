@@ -196,6 +196,12 @@ SEEDS = [
         "datasets": [("file:live_metrics.json", "read")],
         "why": "cross-service self-dependency: the repo file consumed via raw.githubusercontent",
     },
+    {   # …and the statewide catalog the same way, when a visitor asks for the set (S398)
+        "file": "chatbox/supabase/functions/cpl-chat/index.ts",
+        "anchor": r'raw\.githubusercontent\.com/CPL-Initiative/cpl-project-tracker/main/fact-sheet/statewide_catalog\.json',
+        "datasets": [("file:fact-sheet/statewide_catalog.json", "read")],
+        "why": "cross-service self-dependency: the Fact Sheet's statewide catalog read from main via raw.githubusercontent",
+    },
     {   # Sierra's pgvector retrieval tables: named only in docs; DDL applied live
         "file": "chatbox/supabase/functions/cpl-chat/index.ts",
         "anchor": r'match_document_sections',
