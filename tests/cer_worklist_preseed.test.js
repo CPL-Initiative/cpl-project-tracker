@@ -165,8 +165,8 @@ async function scenarioPrefill() {
     psRow.querySelector(".cr-wl-title-input").value === "Water Distribution Operator I");
   check("prefill: issuer input pre-filled",
     psRow.querySelector(".cr-wl-iss-input").value === "California Community Colleges");
-  check("prefill: ⚡ badge rendered with the lane",
-    /pre-seed/.test(txt(psRow.querySelector(".cr-wl-preseed-badge"))));
+  check("prefill: pre-seed badge rendered with the lane",
+    /pre-seed/i.test(txt(psRow.querySelector(".cr-wl-preseed-badge"))));
   check("prefill: badge tooltip carries the note",
     /Rule 5c fixture/.test(psRow.querySelector(".cr-wl-preseed-badge").getAttribute("title")));
   check("prefill: NOTHING auto-saved (ready to save, not saved)", log.writes.length === 0);
@@ -196,7 +196,7 @@ async function scenarioBulkSave() {
   const { window, log } = await open(opts);
   const doc = window.document;
   const bar = doc.querySelector(".cr-wl-preseed-bar");
-  check("bulk: pre-seed bar announces the pre-filled count", /1 row/.test(txt(bar)) && /pre-filled/.test(txt(bar)));
+  check("bulk: pre-seed bar announces the pre-filled count", /1 pre-seeded row/.test(txt(bar)) && /pre-filled/.test(txt(bar)));
   const btn = doc.querySelector(".cr-wl-saveall");
   check("bulk: save-all button visible when signed in", !!btn && /filled shown/.test(txt(btn)));
   // hand-edit the prefill first — bulk must save the EDITED value
@@ -291,8 +291,8 @@ async function scenarioNoPreseedFile() {
   // rows are shown to a signed-in curator (hand-typed rows are bulk-savable
   // even with no pre-seed plan), just without any ⚡ pre-filled announcement.
   const noBar = doc.querySelector(".cr-wl-preseed-bar");
-  check("no-file: save-all bar renders WITHOUT a ⚡ pre-filled count",
-    !!noBar && txt(noBar).indexOf("⚡") < 0 && !!noBar.querySelector(".cr-wl-saveall"));
+  check("no-file: save-all bar renders WITHOUT a pre-filled count",
+    !!noBar && !/pre-seeded row/.test(txt(noBar)) && !!noBar.querySelector(".cr-wl-saveall"));
 }
 
 (async () => {

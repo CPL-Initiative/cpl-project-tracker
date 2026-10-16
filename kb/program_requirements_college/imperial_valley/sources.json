@@ -1,0 +1,3643 @@
+[
+ {
+  "control_number": "01864",
+  "title": "Accounting Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "ACCT210",
+   "ACCT220",
+   "ACCT240",
+   "BUS105",
+   "BUS108",
+   "BUS124",
+   "BUS169",
+   "BUS180",
+   "BUS260",
+   "CIS124",
+   "CIS125",
+   "WE201",
+   "WE220"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8265",
+   "title": "ACCOUNTING TECHNICIAN (MAJOR - A.S.)",
+   "h1": "ACCOUNTING TECHNICIAN (MAJOR - A.S.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 14,
+  "text_chars": 2494
+ },
+ {
+  "control_number": "01868",
+  "title": "Business Office Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS105",
+   "BUS154",
+   "BUS156",
+   "BUS164",
+   "BUS169",
+   "BUS172",
+   "BUS180",
+   "BUS58",
+   "BUS59",
+   "BUS63",
+   "WE201",
+   "WE220"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8309",
+   "title": "BUSINESS OFFICE TECHNICIAN (MAJOR - A.S.)",
+   "h1": "BUSINESS OFFICE TECHNICIAN (MAJOR - A.S.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3088
+ },
+ {
+  "control_number": "01873",
+  "title": "Exercise Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ATHL120",
+   "ATHL121",
+   "ATHL122",
+   "ATHL123",
+   "ATHL124",
+   "ATHL125",
+   "ATHL126",
+   "ATHL127",
+   "ATHL128",
+   "ATHL129",
+   "ATHL130",
+   "ATHL131",
+   "ATHL132",
+   "ATHL133",
+   "ATHL134",
+   "ATHL135",
+   "ATHL136",
+   "ATHL137",
+   "ATHL138",
+   "ATHL139",
+   "ATHL164",
+   "ATHL165",
+   "ATHL166",
+   "ATHL167",
+   "ES102",
+   "ES103",
+   "ES104",
+   "ES105",
+   "ES106",
+   "ES112",
+   "ES120",
+   "ES121",
+   "ES126",
+   "ES128",
+   "ES129",
+   "ES170",
+   "ES171",
+   "ES172",
+   "ES209",
+   "ES211",
+   "ES219",
+   "ES221",
+   "ES222",
+   "HE102",
+   "HE104",
+   "HE106"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8325",
+   "title": "EXERCISE SCIENCE (MAJOR - A.S.)",
+   "h1": "EXERCISE SCIENCE (MAJOR - A.S.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 46,
+  "text_chars": 5654
+ },
+ {
+  "control_number": "01877",
+  "title": "Automotive Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUT110",
+   "AUT125",
+   "AUT130",
+   "AUT150",
+   "AUT155",
+   "AUT160",
+   "AUT170",
+   "AUT180",
+   "AUT210",
+   "AUT220",
+   "AUT230"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8302",
+   "title": "AUTOMOTIVE TECHNOLOGY (MAJOR - A.S.)",
+   "h1": "AUTOMOTIVE TECHNOLOGY (MAJOR - A.S.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2291
+ },
+ {
+  "control_number": "01880",
+  "title": "Welding Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WELD100",
+   "WELD115",
+   "WELD125",
+   "WELD135",
+   "WELD225",
+   "WELD230"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8352",
+   "title": "WELDING TECHNOLOGY (MAJOR - A.S.)",
+   "h1": "WELDING TECHNOLOGY (MAJOR - A.S.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2030
+ },
+ {
+  "control_number": "01887",
+  "title": "French",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FREN100",
+   "FREN110",
+   "FREN201",
+   "FREN211"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8327",
+   "title": "FRENCH (MAJOR - A.A.)",
+   "h1": "FRENCH (MAJOR - A.A.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1869
+ },
+ {
+  "control_number": "01889",
+  "title": "Nursing - R.N.",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NURS107",
+   "NURS109",
+   "NURS123",
+   "NURS127",
+   "NURS128",
+   "NURS218",
+   "NURS219",
+   "NURS223",
+   "NURS227"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8338",
+   "title": "NURSING - ASSOCIATE DEGREE (R.N.) (MAJOR - A.S.)",
+   "h1": "NURSING - ASSOCIATE DEGREE (R.N.) (MAJOR - A.S.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 4110
+ },
+ {
+  "control_number": "01890",
+  "title": "Nursing - Vocational (V.N.)",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AHP100",
+   "BIOL200",
+   "BIOL202",
+   "BIOL204",
+   "BIOL206",
+   "BIOL220",
+   "ENGL105",
+   "ENGLC1000",
+   "ESL108",
+   "PSY204",
+   "PSYCC1000",
+   "VN110",
+   "VN112",
+   "VN114",
+   "VN116",
+   "VN120",
+   "VN122",
+   "VN124",
+   "VN130",
+   "VN132"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8339",
+   "title": "NURSING - VOCATIONAL (V.N.) (MAJOR - A.S.)",
+   "h1": "NURSING - VOCATIONAL (V.N.) (MAJOR - A.S.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 3778
+ },
+ {
+  "control_number": "01893",
+  "title": "Medical Assistant",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 10,
+  "text_chars": 0
+ },
+ {
+  "control_number": "01906",
+  "title": "Administration of Justice",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ100",
+   "AJ102",
+   "AJ104",
+   "AJ106",
+   "AJ108",
+   "AJ110",
+   "AJ121",
+   "AJ141",
+   "AJ222",
+   "AJ223",
+   "AJ224",
+   "CSI100",
+   "CSI104"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8272",
+   "title": "ADMINISTRATION OF JUSTICE (MAJOR - A.S.)",
+   "h1": "ADMINISTRATION OF JUSTICE (MAJOR - A.S.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2436
+ },
+ {
+  "control_number": "01908",
+  "title": "Child Development",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.933,
+  "codes_found": [
+   "CDEV100",
+   "CDEV101",
+   "CDEV102",
+   "CDEV103",
+   "CDEV105",
+   "CDEV106",
+   "CDEV107",
+   "CDEV120",
+   "CDEV121",
+   "CDEV122",
+   "CDEV123",
+   "CDEV124",
+   "CDEV126",
+   "CDEV200"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8312",
+   "title": "CHILD DEVELOPMENT (MAJOR - A.S.)",
+   "h1": "CHILD DEVELOPMENT (MAJOR - A.S.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2689
+ },
+ {
+  "control_number": "01911",
+  "title": "Fire Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ108",
+   "CIS101",
+   "EMT105",
+   "FIRE100",
+   "FIRE101",
+   "FIRE102",
+   "FIRE103",
+   "FIRE104",
+   "FIRE108",
+   "FIRE140",
+   "FIRE142",
+   "FIRE144",
+   "FIRE220",
+   "FIRE221",
+   "FIRE222",
+   "FIRE223",
+   "FIRE231",
+   "FIRE246",
+   "FIRE247",
+   "FIRE248",
+   "FIRE249",
+   "FIRE250"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8326",
+   "title": "FIRE TECHNOLOGY (MAJOR - A.S.)",
+   "h1": "FIRE TECHNOLOGY (MAJOR - A.S.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 3155
+ },
+ {
+  "control_number": "01912",
+  "title": "Social Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.812,
+  "codes_found": [
+   "AIS106",
+   "AIS108",
+   "ANTH102",
+   "ANTH106",
+   "ANTH108",
+   "GEOG100",
+   "GEOG102",
+   "GEOG108",
+   "HIST100",
+   "HIST101",
+   "HIST110",
+   "HIST111",
+   "HIST130",
+   "HIST131",
+   "HIST132",
+   "HIST160",
+   "HIST220",
+   "HIST222",
+   "HIST225",
+   "POLS100",
+   "POLS104",
+   "POLS106",
+   "POLS110",
+   "POLSC1000",
+   "RELS100",
+   "SOC102"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8346",
+   "title": "SOCIAL SCIENCE (MAJOR - A.A.)",
+   "h1": "SOCIAL SCIENCE (MAJOR - A.A.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 32,
+  "text_chars": 3914
+ },
+ {
+  "control_number": "01922",
+  "title": "Addiction Disorder Studies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.952,
+  "codes_found": [
+   "ADS101",
+   "ADS110",
+   "ADS176",
+   "ADS177",
+   "ADS178",
+   "ADS200",
+   "ADS220",
+   "ADS221",
+   "ADS230",
+   "ADS235",
+   "ADS240",
+   "ADS251",
+   "PSY120",
+   "PSY130",
+   "PSY204",
+   "PSY208",
+   "PSY210",
+   "PSYCC1000",
+   "SOC150",
+   "SW220"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8271",
+   "title": "ADDICTION DISORDER STUDIES (MAJOR - A.S.)",
+   "h1": "ADDICTION DISORDER STUDIES (MAJOR - A.S.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 2960
+ },
+ {
+  "control_number": "08983",
+  "title": "Agriculture Plant Science",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "08984",
+  "title": "Business Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "ACCT210",
+   "ACCT220",
+   "ACCT240",
+   "BUS124",
+   "BUS126",
+   "BUS132",
+   "BUS136",
+   "BUS144",
+   "BUS145",
+   "BUS148",
+   "BUS260",
+   "BUS58",
+   "BUS63",
+   "CIS101",
+   "CIS124",
+   "CIS125",
+   "WE201",
+   "WE220"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8308",
+   "title": "BUSINESS MANAGEMENT (MAJOR - A.S.)",
+   "h1": "BUSINESS MANAGEMENT (MAJOR - A.S.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 2897
+ },
+ {
+  "control_number": "08988",
+  "title": "Administrative Assistant",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.933,
+  "codes_found": [
+   "ACCT210",
+   "BUS105",
+   "BUS136",
+   "BUS145",
+   "BUS154",
+   "BUS156",
+   "BUS169",
+   "BUS172",
+   "BUS180",
+   "BUS260",
+   "BUS63",
+   "CIS101",
+   "WE201",
+   "WE220"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8307",
+   "title": "ADMINISTRATIVE ASSISTANT (MAJOR - A.S.)",
+   "h1": "ADMINISTRATIVE ASSISTANT (MAJOR - A.S.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3127
+ },
+ {
+  "control_number": "08995",
+  "title": "Child Development - Infant/Toddler Specialization",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 15,
+  "text_chars": 0
+ },
+ {
+  "control_number": "08997",
+  "title": "Behavioral Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.852,
+  "codes_found": [
+   "ADS220",
+   "ADS221",
+   "AJ224",
+   "ANTH102",
+   "BIOL124",
+   "CDEV103",
+   "PSY120",
+   "PSY142",
+   "PSY144",
+   "PSY146",
+   "PSY200",
+   "PSY204",
+   "PSY206",
+   "PSY208",
+   "PSY211",
+   "PSY214",
+   "PSYCC1000",
+   "SOC102",
+   "SOC110",
+   "SOC150",
+   "SOC206",
+   "STATC1000",
+   "SW220"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8303",
+   "title": "BEHAVIORAL SCIENCE (MAJOR - A.A.)",
+   "h1": "BEHAVIORAL SCIENCE (MAJOR - A.A.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 27,
+  "text_chars": 3570
+ },
+ {
+  "control_number": "08998",
+  "title": "Correctional Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ100",
+   "AJ102",
+   "AJ108",
+   "AJ110",
+   "AJ141",
+   "AJ222",
+   "AJ223",
+   "CSI100",
+   "CSI104",
+   "CSI206",
+   "CSI208"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8316",
+   "title": "CORRECTIONAL SCIENCE (MAJOR - A.S.)",
+   "h1": "CORRECTIONAL SCIENCE (MAJOR - A.S.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2735
+ },
+ {
+  "control_number": "09001",
+  "title": "General Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.848,
+  "codes_found": [
+   "AG110",
+   "BIOL124",
+   "BIOL140",
+   "BIOL150",
+   "BIOL180",
+   "BIOL182",
+   "BIOL200",
+   "BIOL202",
+   "BIOL204",
+   "BIOL206",
+   "BIOL220",
+   "CHEM100",
+   "CHEM200",
+   "CHEM202",
+   "CHEM204",
+   "CHEM206",
+   "CHEM230",
+   "CS221",
+   "GEOG100",
+   "GEOL100",
+   "GEOL110",
+   "GEOL130",
+   "MATH190",
+   "MATH210",
+   "PHSC110",
+   "PHYS200",
+   "PHYS202",
+   "PHYS204"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8328",
+   "title": "GENERAL SCIENCE (MAJOR - A.S.)",
+   "h1": "GENERAL SCIENCE (MAJOR - A.S.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 33,
+  "text_chars": 3743
+ },
+ {
+  "control_number": "09002",
+  "title": "Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "AMSL100",
+   "AMSL102",
+   "ART110",
+   "ART120",
+   "CHIC100",
+   "COMM110",
+   "COMM180",
+   "COMMC1000",
+   "ENGL226",
+   "ENGL250",
+   "FREN100",
+   "FREN110",
+   "FREN201",
+   "FREN211",
+   "HIST110",
+   "HIST111",
+   "HUM100",
+   "MUS100",
+   "MUS102",
+   "MUS110",
+   "MUS120",
+   "MUS156",
+   "MUS171",
+   "MUS175",
+   "MUS178",
+   "MUS185",
+   "PHIL100",
+   "RELS100",
+   "SPAN100",
+   "SPAN110",
+   "SPAN200",
+   "SPAN210",
+   "SPAN220",
+   "SPAN221",
+   "THEA120"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8333",
+   "title": "HUMANITIES (MAJOR - A.A.)",
+   "h1": "HUMANITIES (MAJOR - A.A.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 40,
+  "text_chars": 4220
+ },
+ {
+  "control_number": "10943",
+  "title": "Emergency Medical Services",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 7,
+  "text_chars": 0
+ },
+ {
+  "control_number": "11793",
+  "title": "Emergency Medical Services",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMTP200",
+   "EMTP202",
+   "EMTP204",
+   "EMTP206",
+   "EMTP225",
+   "EMTP235",
+   "EMTP245"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8323",
+   "title": "EMERGENCY MEDICAL SERVICES (MAJOR - A.S.)",
+   "h1": "EMERGENCY MEDICAL SERVICES (MAJOR - A.S.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2346
+ },
+ {
+  "control_number": "15727",
+  "title": "Child Development - Administration: Specialization",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 17,
+  "text_chars": 0
+ },
+ {
+  "control_number": "15735",
+  "title": "Air Conditioning and Refrigeration",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "15827",
+  "title": "Water Treatment Systems Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WT105",
+   "WT110",
+   "WT140",
+   "WT205",
+   "WT210"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8351",
+   "title": "WATER TREATMENT SYSTEMS TECHNOLOGY (MAJOR - A.S.)",
+   "h1": "WATER TREATMENT SYSTEMS TECHNOLOGY (MAJOR - A.S.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 1991
+ },
+ {
+  "control_number": "16782",
+  "title": "Firefighter I",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "16809",
+  "title": "Apprenticeship: Electrician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "APEL105",
+   "APEL106",
+   "APEL107",
+   "APEL108",
+   "APLN106",
+   "ELTT101",
+   "ELTT102",
+   "ELTT103"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8277",
+   "title": "ELECTRICIAN (MAJOR - A.S.)",
+   "h1": "ELECTRICIAN (MAJOR - A.S.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.5
+   }
+  },
+  "listed": 9,
+  "text_chars": 2103
+ },
+ {
+  "control_number": "16810",
+  "title": "Apprenticeship: Generation Mechanic",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APGN105",
+   "APGN106",
+   "APGN107",
+   "APGN108",
+   "ELTT101",
+   "ELTT102",
+   "ELTT103",
+   "ELTT104"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8278",
+   "title": "GENERATION MECHANIC (MAJOR - A.S.)",
+   "h1": "GENERATION MECHANIC (MAJOR - A.S.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.667
+   }
+  },
+  "listed": 8,
+  "text_chars": 2088
+ },
+ {
+  "control_number": "16811",
+  "title": "Apprenticeship: Meter Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APMT105",
+   "APMT106",
+   "APMT107",
+   "APMT108",
+   "ELTT101",
+   "ELTT102",
+   "ELTT103",
+   "ELTT104"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8287",
+   "title": "METER TECHNICIAN (MAJOR - A.S.)",
+   "h1": "METER TECHNICIAN (MAJOR - A.S.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.667
+   }
+  },
+  "listed": 8,
+  "text_chars": 2061
+ },
+ {
+  "control_number": "16812",
+  "title": "Apprenticeship: Power Lineman",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APLN105",
+   "APLN106",
+   "APLN107",
+   "APLN108",
+   "ELTT101",
+   "ELTT102",
+   "ELTT103",
+   "ELTT104"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8289",
+   "title": "POWER LINEMAN (MAJOR - A.S.)",
+   "h1": "POWER LINEMAN (MAJOR - A.S.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.667
+   }
+  },
+  "listed": 8,
+  "text_chars": 2058
+ },
+ {
+  "control_number": "16813",
+  "title": "Apprenticeship: Relays Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APLN106",
+   "APRL105",
+   "APRL106",
+   "APRL107",
+   "APRL108",
+   "ELTT101",
+   "ELTT102",
+   "ELTT103",
+   "ELTT104"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8290",
+   "title": "RELAYS TECHNICIAN (MAJOR - A.S.)",
+   "h1": "RELAYS TECHNICIAN (MAJOR - A.S.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.667
+   }
+  },
+  "listed": 9,
+  "text_chars": 2162
+ },
+ {
+  "control_number": "16814",
+  "title": "Apprenticeship: SCADA/Telecommunications Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APSC105",
+   "APSC106",
+   "APSC107",
+   "APSC108",
+   "ELTT101",
+   "ELTT102",
+   "ELTT103",
+   "ELTT104"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8291",
+   "title": "SCADA/TELECOMMUNICATIONS TECHNICIAN (MAJOR - A.S.)",
+   "h1": "SCADA/TELECOMMUNICATIONS TECHNICIAN (MAJOR - A.S.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.75
+   }
+  },
+  "listed": 8,
+  "text_chars": 2156
+ },
+ {
+  "control_number": "16815",
+  "title": "Apprenticeship: Substation - Electrician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APLN106",
+   "APSB105",
+   "APSB106",
+   "APSB107",
+   "APSB108",
+   "ELTT101",
+   "ELTT102",
+   "ELTT103",
+   "ELTT104"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8294",
+   "title": "SUBSTATION-ELECTRICIAN (MAJOR - A.S.)",
+   "h1": "SUBSTATION-ELECTRICIAN (MAJOR - A.S.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.667
+   }
+  },
+  "listed": 9,
+  "text_chars": 2187
+ },
+ {
+  "control_number": "18538",
+  "title": "CSU General Education Breadth",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18539",
+  "title": "IGETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19060",
+  "title": "University Studies: Arts and Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19061",
+  "title": "University Studies: Behavioral and Social Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19062",
+  "title": "University Studies: Science and Mathematics",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19340",
+  "title": "Air Conditioning and Refrigeration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACR101",
+   "ACR102",
+   "ACR103",
+   "ACR104",
+   "ACR105",
+   "ACR106",
+   "BLDC130",
+   "EWIR110",
+   "WELD100"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8298",
+   "title": "AIR CONDITIONING AND REFRIGERATION TECHNOLOGY (MAJOR - A.S.)",
+   "h1": "AIR CONDITIONING AND REFRIGERATION TECHNOLOGY (MAJOR - A.S.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2297
+ },
+ {
+  "control_number": "19711",
+  "title": "Digital Design and Production",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART160",
+   "CIS137",
+   "CIS149",
+   "CIS150",
+   "CIS151",
+   "CIS180"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8318",
+   "title": "DIGITAL DESIGN AND PRODUCTION (MAJOR - A.S.)",
+   "h1": "DIGITAL DESIGN AND PRODUCTION (MAJOR - A.S.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2000
+ },
+ {
+  "control_number": "19712",
+  "title": "Digital Design and Production",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21456",
+  "title": "Business Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 21,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21459",
+  "title": "Accounting Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 14,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21460",
+  "title": "Business Office Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 12,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21462",
+  "title": "Administrative Assistant",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 15,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21466",
+  "title": "Apprenticeship: Electrician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 9,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21467",
+  "title": "Apprenticeship: Generation Mechanic",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21468",
+  "title": "Apprenticeship: Meter Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21469",
+  "title": "Apprenticeship: Power Lineman",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21470",
+  "title": "Apprenticeship: Relays Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 9,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21471",
+  "title": "Apprenticeship: SCADA/Telecommunications Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21472",
+  "title": "Apprenticeship: Substation - Electrician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 9,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21473",
+  "title": "Automotive Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.636,
+  "codes_found": [
+   "AUT125",
+   "AUT130",
+   "AUT155",
+   "AUT160",
+   "AUT180",
+   "AUT210",
+   "AUT220"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8615",
+   "title": "AUTOMOTIVE TECHNOLOGY: MAINTENANCE AND BASIC REPAIR (CERTIFICATE)",
+   "h1": "AUTOMOTIVE TECHNOLOGY: MAINTENANCE AND BASIC REPAIR (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2110
+ },
+ {
+  "control_number": "21475",
+  "title": "Welding Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21477",
+  "title": "Nursing - Vocational (V.N.)",
+  "award": "Certificate of Achievement requiring 60+S/90+Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.95,
+  "codes_found": [
+   "AHP100",
+   "BIOL200",
+   "BIOL202",
+   "BIOL204",
+   "BIOL206",
+   "BIOL220",
+   "ENGL105",
+   "ESL108",
+   "PSY204",
+   "PSYCC1000",
+   "VN110",
+   "VN112",
+   "VN114",
+   "VN116",
+   "VN120",
+   "VN122",
+   "VN124",
+   "VN130",
+   "VN132"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8642",
+   "title": "NURSING - VOCATIONAL (V.N.) (CERTIFICATE)",
+   "h1": "NURSING - VOCATIONAL (V.N.) (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 3657
+ },
+ {
+  "control_number": "21480",
+  "title": "Addiction Disorder Studies",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 18,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21481",
+  "title": "Administration of Justice",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 9,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21482",
+  "title": "Correctional Science",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 14,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21483",
+  "title": "Fire Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 22,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24051",
+  "title": "ESL Civics",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24098",
+  "title": "English as a Second Language- Advanced Fluency",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 9,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24435",
+  "title": "ESL Survival Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30183",
+  "title": "Child Development Associate Teacher",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30262",
+  "title": "Building Construction Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BLDC101",
+   "BLDC110",
+   "BLDC130",
+   "BLDC135",
+   "BLDC140",
+   "BLDC145",
+   "BLDC180",
+   "BLDC185"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8305",
+   "title": "BUILDING CONSTRUCTION TECHNOLOGY (MAJOR - A.S.)",
+   "h1": "BUILDING CONSTRUCTION TECHNOLOGY (MAJOR - A.S.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2236
+ },
+ {
+  "control_number": "30263",
+  "title": "Building Construction Technology: Carpentry Specialization",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 10,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30275",
+  "title": "Building Construction Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30322",
+  "title": "Electrical Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BLDC101",
+   "ELTR120",
+   "EWIR110",
+   "EWIR115",
+   "EWIR125",
+   "EWIR135",
+   "EWIR162",
+   "WE201"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8321",
+   "title": "ELECTRICAL TECHNOLOGY (MAJOR - A.S.)",
+   "h1": "ELECTRICAL TECHNOLOGY (MAJOR - A.S.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2163
+ },
+ {
+  "control_number": "30336",
+  "title": "Electrical Trades",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 5,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30337",
+  "title": "Electrical Trades",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 5,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30362",
+  "title": "Water Treatment Systems Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 5,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30438",
+  "title": "Electrical Technology: Residential Electrician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BLDC101",
+   "BLDC110",
+   "EWIR110",
+   "EWIR115",
+   "MATH105",
+   "WE220"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8635",
+   "title": "ELECTRICAL TECHNOLOGY: RESIDENTIAL ELECTRICIAN (CERTIFICATE)",
+   "h1": "ELECTRICAL TECHNOLOGY: RESIDENTIAL ELECTRICIAN (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2188
+ },
+ {
+  "control_number": "30445",
+  "title": "Water Treatment Systems Technology: Wastewater Treatment Specialization",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30807",
+  "title": "Apprenticeship: Control Operator",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30808",
+  "title": "Apprenticeship: Instrument Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30809",
+  "title": "Apprenticeship: Telecommunications Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30810",
+  "title": "Apprenticeship: Hydro Operator",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30900",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.846,
+  "codes_found": [
+   "AJ224",
+   "ANTH102",
+   "GEOG102",
+   "PSY214",
+   "PSYCC1000",
+   "SOC102",
+   "SOC110",
+   "SOC120",
+   "SOC150",
+   "SOC206",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8347",
+   "title": "SOCIOLOGY FOR TRANSFER (MAJOR - A.A.-T)",
+   "h1": "SOCIOLOGY FOR TRANSFER (MAJOR - A.A.-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3081
+ },
+ {
+  "control_number": "30901",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "CDEV100",
+   "CDEV101",
+   "CDEV103",
+   "CDEV105",
+   "CDEV106",
+   "CDEV107",
+   "CDEV200"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8319",
+   "title": "EARLY CHILDHOOD EDUCATION FOR TRANSFER (MAJOR - A.S.-T)",
+   "h1": "EARLY CHILDHOOD EDUCATION FOR TRANSFER (MAJOR - A.S.-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2646
+ },
+ {
+  "control_number": "31278",
+  "title": "Computer Networking",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "31380",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "AJ100",
+   "AJ102",
+   "AJ104",
+   "AJ106",
+   "AJ110",
+   "AJ222",
+   "AJ223",
+   "CSI100",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8273",
+   "title": "ADMINISTRATION OF JUSTICE FOR TRANSFER (MAJOR - A.S.-T)",
+   "h1": "ADMINISTRATION OF JUSTICE FOR TRANSFER (MAJOR - A.S.-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2897
+ },
+ {
+  "control_number": "31442",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "31457",
+  "title": "Communication Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.7,
+  "codes_found": [
+   "ANTH102",
+   "COMM130",
+   "COMM150",
+   "COMM180",
+   "COMMC1000",
+   "ENGLC1001",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8313",
+   "title": "COMMUNICATION STUDIES 2.0 FOR TRANSFER (MAJOR - A.A.-T)",
+   "h1": "COMMUNICATION STUDIES 2.0 FOR TRANSFER (MAJOR - A.A.-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2887
+ },
+ {
+  "control_number": "31458",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.812,
+  "codes_found": [
+   "BUS260",
+   "ENGL210",
+   "ENGL220",
+   "ENGL221",
+   "ENGL224",
+   "ENGL225",
+   "ENGL226",
+   "ENGL250",
+   "ENGL257",
+   "ENGL270",
+   "ENGLC1001",
+   "HUM100",
+   "THEA100"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8324",
+   "title": "ENGLISH FOR TRANSFER (MAJOR - A.A.-T)",
+   "h1": "ENGLISH FOR TRANSFER (MAJOR - A.A.-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3407
+ },
+ {
+  "control_number": "31459",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GLST102",
+   "POLS100",
+   "POLS104",
+   "POLS106",
+   "POLS110",
+   "POLSC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8342",
+   "title": "POLITICAL SCIENCE FOR TRANSFER (MAJOR - A.A.-T)",
+   "h1": "POLITICAL SCIENCE FOR TRANSFER (MAJOR - A.A.-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2794
+ },
+ {
+  "control_number": "31688",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.962,
+  "codes_found": [
+   "BIOL200",
+   "BIOL202",
+   "BIOL204",
+   "BIOL206",
+   "CHEM100",
+   "CHEM200",
+   "ES102",
+   "ES104",
+   "ES106",
+   "ES112",
+   "ES120",
+   "ES121",
+   "ES126",
+   "ES128",
+   "ES129",
+   "ES170",
+   "ES171",
+   "ES209",
+   "HE102",
+   "HE104",
+   "PHYS105",
+   "PHYS200",
+   "PSYCC1000",
+   "SOC101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8335",
+   "title": "KINESIOLOGY FOR TRANSFER (MAJOR - A.A.-T)",
+   "h1": "KINESIOLOGY FOR TRANSFER (MAJOR - A.A.-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 26,
+  "text_chars": 3918
+ },
+ {
+  "control_number": "31878",
+  "title": "Diesel Farm Machinery and Heavy Equipment Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 7,
+  "text_chars": 0
+ },
+ {
+  "control_number": "32350",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "AIS106",
+   "AIS108",
+   "ANTH102",
+   "ANTH106",
+   "ANTH108",
+   "ANTH120",
+   "BIOL204",
+   "GEOG155",
+   "GEOL100",
+   "HIST130",
+   "HIST131",
+   "HIST132",
+   "HIST160",
+   "HIST220",
+   "HIST225",
+   "PSY214",
+   "RELS100",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8300",
+   "title": "ANTHROPOLOGY FOR TRANSFER (MAJOR - A.A.-T)",
+   "h1": "ANTHROPOLOGY FOR TRANSFER (MAJOR - A.A.-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 20,
+  "text_chars": 3716
+ },
+ {
+  "control_number": "32451",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.794,
+  "codes_found": [
+   "AIS106",
+   "AIS108",
+   "ANTH102",
+   "ANTH106",
+   "ANTH108",
+   "ANTH120",
+   "CHIC100",
+   "ENGL226",
+   "GEOG102",
+   "GEOG108",
+   "HIST100",
+   "HIST101",
+   "HIST110",
+   "HIST111",
+   "HIST130",
+   "HIST131",
+   "HIST132",
+   "HIST160",
+   "HIST220",
+   "HIST222",
+   "HIST225",
+   "HUM100",
+   "HUM226",
+   "POLS100",
+   "POLS106",
+   "RELS100",
+   "SPAN225"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8332",
+   "title": "HISTORY FOR TRANSFER (MAJOR - A.A.-T)",
+   "h1": "HISTORY FOR TRANSFER (MAJOR - A.A.-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 34,
+  "text_chars": 4310
+ },
+ {
+  "control_number": "32588",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.765,
+  "codes_found": [
+   "ART110",
+   "ART112",
+   "ART120",
+   "ART122",
+   "ART124",
+   "ART126",
+   "ART128",
+   "ART130",
+   "ART160",
+   "ART170",
+   "ART220",
+   "ART222",
+   "ART260"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8349",
+   "title": "STUDIO ARTS FOR TRANSFER (MAJOR - A.A.-T)",
+   "h1": "STUDIO ARTS FOR TRANSFER (MAJOR - A.A.-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3066
+ },
+ {
+  "control_number": "32596",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.846,
+  "codes_found": [
+   "BIOL180",
+   "PSY120",
+   "PSY200",
+   "PSY204",
+   "PSY206",
+   "PSY208",
+   "PSY211",
+   "PSY212",
+   "PSY214",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8344",
+   "title": "PSYCHOLOGY FOR TRANSFER (MAJOR - A.A.-T)",
+   "h1": "PSYCHOLOGY FOR TRANSFER (MAJOR - A.A.-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3198
+ },
+ {
+  "control_number": "32662",
+  "title": "Music",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS100",
+   "MUS102",
+   "MUS110",
+   "MUS112",
+   "MUS120",
+   "MUS122",
+   "MUS140",
+   "MUS142",
+   "MUS150",
+   "MUS152",
+   "MUS156",
+   "MUS157",
+   "MUS160",
+   "MUS162",
+   "MUS171",
+   "MUS175",
+   "MUS177",
+   "MUS178",
+   "MUS185",
+   "MUS186",
+   "MUS210",
+   "MUS212",
+   "MUS220",
+   "MUS222",
+   "MUS240",
+   "MUS242",
+   "MUS250",
+   "MUS252",
+   "MUS260",
+   "MUS262"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8337",
+   "title": "MUSIC FOR TRANSFER (MAJOR - A.A.-T)",
+   "h1": "MUSIC FOR TRANSFER (MAJOR - A.A.-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 30,
+  "text_chars": 3651
+ },
+ {
+  "control_number": "33202",
+  "title": "Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.81,
+  "codes_found": [
+   "CHIC100",
+   "CHIC110",
+   "CHIC180",
+   "ENGL257",
+   "HIST130",
+   "HIST131",
+   "HIST132",
+   "HIST225",
+   "SPAN100",
+   "SPAN110",
+   "SPAN200",
+   "SPAN210",
+   "SPAN220",
+   "SPAN221",
+   "SPAN222",
+   "SPAN223",
+   "SPAN225"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8348",
+   "title": "SPANISH FOR TRANSFER (MAJOR - A.A.-T)",
+   "h1": "SPANISH FOR TRANSFER (MAJOR - A.A.-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 3400
+ },
+ {
+  "control_number": "33272",
+  "title": "Elementary Teacher Education",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.593,
+  "codes_found": [
+   "COMMC1000",
+   "EDUC200",
+   "ENGL105",
+   "ENGLC1000",
+   "ES211",
+   "ESL108",
+   "GEOL110",
+   "HIST100",
+   "MATH110",
+   "MATH112",
+   "MATH114",
+   "MUS100",
+   "MUS102",
+   "POLS110",
+   "POLSC1000",
+   "THEA100"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8322",
+   "title": "ELEMENTARY TEACHER EDUCATION - INTEGRATED PROGRAMS FOR TRANSFER (MAJOR - A.A.-T)",
+   "h1": "ELEMENTARY TEACHER EDUCATION - INTEGRATED PROGRAMS FOR TRANSFER (MAJOR - A.A.-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 27,
+  "text_chars": 3924
+ },
+ {
+  "control_number": "33926",
+  "title": "Agriculture Business",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "AG120",
+   "AG130",
+   "AG134",
+   "AG136",
+   "AG140",
+   "AG220",
+   "AG230",
+   "CHEM100",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8296",
+   "title": "AGRICULTURE BUSINESS FOR TRANSFER (MAJOR - A.S.-T)",
+   "h1": "AGRICULTURE BUSINESS FOR TRANSFER (MAJOR - A.S.-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2933
+ },
+ {
+  "control_number": "35191",
+  "title": "Child Development Children with Special Needs Specialization",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 16,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35417",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "BIOL180",
+   "BIOL182",
+   "CHEM200",
+   "CHEM202",
+   "PHYS200",
+   "PHYS202"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8304",
+   "title": "BIOLOGY FOR TRANSFER (MAJOR - A.S.-T)",
+   "h1": "BIOLOGY FOR TRANSFER (MAJOR - A.S.-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2723
+ },
+ {
+  "control_number": "35426",
+  "title": "Computer Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.778,
+  "codes_found": [
+   "BIOL182",
+   "CS221",
+   "CS231",
+   "CS240",
+   "CS281",
+   "PHYS200",
+   "PHYS202"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8315",
+   "title": "COMPUTER SCIENCE FOR TRANSFER (MAJOR - A.S.-T)",
+   "h1": "COMPUTER SCIENCE FOR TRANSFER (MAJOR - A.S.-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2725
+ },
+ {
+  "control_number": "35440",
+  "title": "Agriculture Plant Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AG120",
+   "AG130",
+   "AG140",
+   "AG170",
+   "AG220",
+   "AG230",
+   "AG245",
+   "CHEM100",
+   "CHEM200",
+   "ECON101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8297",
+   "title": "AGRICULTURE PLANT SCIENCE FOR TRANSFER (MAJOR - A.S.-T)",
+   "h1": "AGRICULTURE PLANT SCIENCE FOR TRANSFER (MAJOR - A.S.-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2931
+ },
+ {
+  "control_number": "35587",
+  "title": "Geography",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH102",
+   "GEOG100",
+   "GEOG102",
+   "GEOG108",
+   "GEOG111",
+   "GEOG140",
+   "GEOG155",
+   "GEOL100",
+   "GEOL130"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8329",
+   "title": "GEOGRAPHY FOR TRANSFER (MAJOR - A.A.-T)",
+   "h1": "GEOGRAPHY FOR TRANSFER (MAJOR - A.A.-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2964
+ },
+ {
+  "control_number": "36052",
+  "title": "Retail Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36071",
+  "title": "Academic Preparedness in English",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36151",
+  "title": "Chemistry",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "CHEM200",
+   "CHEM202",
+   "CHEM204",
+   "CHEM206",
+   "PHYS200",
+   "PHYS202"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8310",
+   "title": "CHEMISTRY FOR TRANSFER (MAJOR - A.S.-T)",
+   "h1": "CHEMISTRY FOR TRANSFER (MAJOR - A.S.-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2581
+ },
+ {
+  "control_number": "36695",
+  "title": "Public Health Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 18,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36755",
+  "title": "Administration of Justice: Law Enforcement",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "POST160",
+   "POST162",
+   "POST164"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8274",
+   "title": "ADMINISTRATION OF JUSTICE: LAW ENFORCEMENT (MAJOR - A.S.)",
+   "h1": "ADMINISTRATION OF JUSTICE: LAW ENFORCEMENT (MAJOR - A.S.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1927
+ },
+ {
+  "control_number": "36756",
+  "title": "Administration of Justice: Law Enforcement",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "POST160",
+   "POST162",
+   "POST164"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8611",
+   "title": "ADMINISTRATION OF JUSTICE: LAW ENFORCEMENT (CERTIFICATE)",
+   "h1": "ADMINISTRATION OF JUSTICE: LAW ENFORCEMENT (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1937
+ },
+ {
+  "control_number": "36786",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.769,
+  "codes_found": [
+   "ACCT210",
+   "ACCT220",
+   "BUS260",
+   "CIS101",
+   "MATH122",
+   "MATH170",
+   "MATH192",
+   "MATH210",
+   "MATH230",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8320",
+   "title": "ECONOMICS FOR TRANSFER (MAJOR - A.A.-T)",
+   "h1": "ECONOMICS FOR TRANSFER (MAJOR - A.A.-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3138
+ },
+ {
+  "control_number": "37392",
+  "title": "Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "MATH210",
+   "PHYS200",
+   "PHYS202",
+   "PHYS204"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8341",
+   "title": "PHYSICS FOR TRANSFER 2.0 (MAJOR - A.S.-T)",
+   "h1": "PHYSICS FOR TRANSFER 2.0 (MAJOR - A.S.-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2491
+ },
+ {
+  "control_number": "37751",
+  "title": "Art History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "ART110",
+   "ART112",
+   "ART120",
+   "ART124",
+   "ART130",
+   "ART160",
+   "ART170",
+   "HUM100"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8301",
+   "title": "ART HISTORY FOR TRANSFER (MAJOR - A.A.-T)",
+   "h1": "ART HISTORY FOR TRANSFER (MAJOR - A.A.-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2959
+ },
+ {
+  "control_number": "38183",
+  "title": "Computer Information Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.933,
+  "codes_found": [
+   "CIS101",
+   "CIS159",
+   "CIS160",
+   "CIS161",
+   "CIS162",
+   "CIS163",
+   "CIS166",
+   "CIS167",
+   "CIS202",
+   "CIS210",
+   "MATH122",
+   "MATH150",
+   "MATH170",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8314",
+   "title": "COMPUTER INFORMATION TECHNOLOGY (MAJOR - A.S.)",
+   "h1": "COMPUTER INFORMATION TECHNOLOGY (MAJOR - A.S.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2650
+ },
+ {
+  "control_number": "38184",
+  "title": "Computer Information Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 10,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38185",
+  "title": "Cybersecurity",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 7,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38186",
+  "title": "Microsoft Office & Windows",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38199",
+  "title": "Low Voltage Systems Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38210",
+  "title": "Correctional Science: Corrections Officer",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ108",
+   "AJ141",
+   "CSI55"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8629",
+   "title": "CORRECTIONAL SCIENCE: CORRECTIONS OFFICER (CERTIFICATE)",
+   "h1": "CORRECTIONAL SCIENCE: CORRECTIONS OFFICER (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1900
+ },
+ {
+  "control_number": "39569",
+  "title": "American Sign Language",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AMSL100",
+   "AMSL102",
+   "AMSL104",
+   "AMSL110",
+   "AMSL112",
+   "AMSL200",
+   "AMSL202",
+   "AMSL210",
+   "AMSL212",
+   "AMSL220"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8299",
+   "title": "AMERICAN SIGN LANGUAGE (MAJOR - A.A.)",
+   "h1": "AMERICAN SIGN LANGUAGE (MAJOR - A.A.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2291
+ },
+ {
+  "control_number": "39802",
+  "title": "Chicana/o Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.895,
+  "codes_found": [
+   "AIS106",
+   "AIS108",
+   "CHIC100",
+   "CHIC110",
+   "CHIC180",
+   "COMM150",
+   "ENGL257",
+   "GEOG140",
+   "HIST130",
+   "HIST131",
+   "HIST222",
+   "HIST225",
+   "SOC150",
+   "SOC180",
+   "SPAN200",
+   "SPAN220",
+   "SPAN225"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8350",
+   "title": "UNIVERSITY STUDIES (MAJOR - A.A.)",
+   "h1": "UNIVERSITY STUDIES (MAJOR - A.A.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.5
+   }
+  },
+  "listed": 19,
+  "text_chars": 10968
+ },
+ {
+  "control_number": "40053",
+  "title": "Global Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.913,
+  "codes_found": [
+   "AMSL200",
+   "AMSL202",
+   "ANTH102",
+   "FREN201",
+   "FREN211",
+   "GEOG100",
+   "GEOG102",
+   "GEOG108",
+   "GLST101",
+   "GLST102",
+   "HIST100",
+   "HIST101",
+   "PHIL104",
+   "POLS104",
+   "POLS106",
+   "RELS100",
+   "RELS104",
+   "SPAN200",
+   "SPAN210",
+   "SPAN220",
+   "SPAN221"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8331",
+   "title": "GLOBAL STUDIES FOR TRANSFER (MAJOR - A.A.-T.)",
+   "h1": "GLOBAL STUDIES FOR TRANSFER (MAJOR - A.A.-T.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 3540
+ },
+ {
+  "control_number": "40055",
+  "title": "Nutrition and Dietetics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 14,
+  "text_chars": 0
+ },
+ {
+  "control_number": "41064",
+  "title": "Pre-Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.895,
+  "codes_found": [
+   "CHEM200",
+   "CHEM202",
+   "CHEM204",
+   "CHEM206",
+   "CIS210",
+   "CS221",
+   "ENGR100",
+   "ENGR210",
+   "ENGR212",
+   "ENGR240",
+   "MATH210",
+   "MATH220",
+   "MATH230",
+   "PHYS200",
+   "PHYS202",
+   "PHYS204",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8343",
+   "title": "PRE-ENGINEERING (MAJOR - A.S.)",
+   "h1": "PRE-ENGINEERING (MAJOR - A.S.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 3209
+ },
+ {
+  "control_number": "41181",
+  "title": "Fundamentals of English II",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "41182",
+  "title": "Fundamentals of English III",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 1,
+  "text_chars": 0
+ },
+ {
+  "control_number": "41191",
+  "title": "Automotive Technology: Fundamentals of Automotive Service",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUT130",
+   "AUT135",
+   "AUT160",
+   "AUT170",
+   "AUT75",
+   "AUT85"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8614",
+   "title": "AUTOMOTIVE TECHNOLOGY: FUNDAMENTALS OF AUTOMOTIVE SERVICE (CERTIFICATE)",
+   "h1": "AUTOMOTIVE TECHNOLOGY: FUNDAMENTALS OF AUTOMOTIVE SERVICE (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2069
+ },
+ {
+  "control_number": "41193",
+  "title": "Electrical Technology: General Electrician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BLDC101",
+   "EWIR110",
+   "EWIR115",
+   "EWIR125",
+   "EWIR135",
+   "EWIR162",
+   "EWIR90",
+   "WE220"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8633",
+   "title": "ELECTRICAL TECHNOLOGY: GENERAL ELECTRICIAN (CERTIFICATE)",
+   "h1": "ELECTRICAL TECHNOLOGY: GENERAL ELECTRICIAN (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2223
+ },
+ {
+  "control_number": "41270",
+  "title": "Automotive Technology: Maintenance and Basic Repair",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUT125",
+   "AUT130",
+   "AUT155",
+   "AUT160",
+   "AUT180",
+   "AUT210",
+   "AUT220"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8615",
+   "title": "AUTOMOTIVE TECHNOLOGY: MAINTENANCE AND BASIC REPAIR (CERTIFICATE)",
+   "h1": "AUTOMOTIVE TECHNOLOGY: MAINTENANCE AND BASIC REPAIR (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2110
+ },
+ {
+  "control_number": "41288",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.818,
+  "codes_found": [
+   "ACCT210",
+   "ACCT220",
+   "BUS124",
+   "BUS126",
+   "BUS260",
+   "MATH122",
+   "MATH170",
+   "MATH192",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8306",
+   "title": "BUSINESS ADMINISTRATION 2.0 FOR TRANSFER (MAJOR - A.S.-T)",
+   "h1": "BUSINESS ADMINISTRATION 2.0 FOR TRANSFER (MAJOR - A.S.-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3093
+ },
+ {
+  "control_number": "42238",
+  "title": "Care of the Elderly for the Health Assistant",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42241",
+  "title": "Pre-Nursing and Allied Health",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "ANTH102",
+   "BIOL124",
+   "BIOL180",
+   "BIOL182",
+   "BIOL200",
+   "BIOL202",
+   "BIOL204",
+   "BIOL206",
+   "BIOL220",
+   "CHEM100",
+   "COMMC1000",
+   "ENGL105",
+   "ENGLC1000",
+   "ESL108",
+   "NURS100",
+   "PSY204"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8597",
+   "title": "PRE-NURSING AND ALLIED HEALTH (MAJOR - A.S.)",
+   "h1": "PRE-NURSING AND ALLIED HEALTH (MAJOR - A.S.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 2908
+ },
+ {
+  "control_number": "42286",
+  "title": "Agriculture Service Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUT140",
+   "AUT240",
+   "AUT245",
+   "AUT255",
+   "BLDC101",
+   "EWIR165",
+   "WELD100"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8334",
+   "title": "AGRICULTURAL SERVICE TECHNOLOGY (MAJOR - A.S.)",
+   "h1": "AGRICULTURAL SERVICE TECHNOLOGY (MAJOR - A.S.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.667
+   }
+  },
+  "listed": 7,
+  "text_chars": 2085
+ },
+ {
+  "control_number": "42287",
+  "title": "Agriculture Service Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 7,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42288",
+  "title": "Cybersecurity",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "CIS101",
+   "CIS159",
+   "CIS160",
+   "CIS161",
+   "CIS162",
+   "CIS166",
+   "CIS167",
+   "MATH122",
+   "MATH150",
+   "MATH170",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8317",
+   "title": "CYBERSECURITY (MAJOR - A.S.)",
+   "h1": "CYBERSECURITY (MAJOR - A.S.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2371
+ },
+ {
+  "control_number": "42408",
+  "title": "Geology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "CHEM200",
+   "CHEM202",
+   "GEOL100",
+   "GEOL140"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8330",
+   "title": "GEOLOGY FOR TRANSFER (MAJOR - A.S.-T)",
+   "h1": "GEOLOGY FOR TRANSFER (MAJOR - A.S.-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2368
+ },
+ {
+  "control_number": "42535",
+  "title": "Computer Fundamentals for ESL Students",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "43019",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.7,
+  "codes_found": [
+   "ANTH102",
+   "COMM130",
+   "COMM150",
+   "COMM180",
+   "COMMC1000",
+   "ENGLC1001",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8313",
+   "title": "COMMUNICATION STUDIES 2.0 FOR TRANSFER (MAJOR - A.A.-T)",
+   "h1": "COMMUNICATION STUDIES 2.0 FOR TRANSFER (MAJOR - A.A.-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2887
+ },
+ {
+  "control_number": "43102",
+  "title": "Building Construction Drafting Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "43146",
+  "title": "Kinesiology: Pre-Athletic Training",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.938,
+  "codes_found": [
+   "BIOL100",
+   "BIOL180",
+   "BIOL182",
+   "BIOL204",
+   "BIOL206",
+   "CHEM100",
+   "CHEM200",
+   "COMMC1000",
+   "ES209",
+   "ES219",
+   "HE104",
+   "HE106",
+   "PHYS200",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8602",
+   "title": "KINESIOLOGY: PRE-ATHLETIC TRAINING (MAJOR - A.S.)",
+   "h1": "KINESIOLOGY: PRE-ATHLETIC TRAINING (MAJOR - A.S.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 3342
+ },
+ {
+  "control_number": "43147",
+  "title": "Kinesiology: Pre-Physical Therapy",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.941,
+  "codes_found": [
+   "BIOL180",
+   "BIOL204",
+   "BIOL206",
+   "BIOL220",
+   "CHEM200",
+   "CHEM202",
+   "COMMC1000",
+   "ES209",
+   "ES219",
+   "HE104",
+   "HE106",
+   "PHYS110",
+   "PHYS200",
+   "PHYS202",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8603",
+   "title": "KINESIOLOGY: PRE-PHYSICAL THERAPY (MAJOR - A.S.)",
+   "h1": "KINESIOLOGY: PRE-PHYSICAL THERAPY (MAJOR - A.S.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3157
+ },
+ {
+  "control_number": "43284",
+  "title": "Plant Operator Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 9,
+  "text_chars": 0
+ },
+ {
+  "control_number": "43909",
+  "title": "Chemical Technician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 10,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45007",
+  "title": "Public Health Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.812,
+  "codes_found": [
+   "BIOL200",
+   "BIOL202",
+   "BIOL204",
+   "BIOL206",
+   "BIOL220",
+   "CHEM100",
+   "HE103",
+   "HE200",
+   "MATH150",
+   "MATH190",
+   "PSY214",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8345",
+   "title": "PUBLIC HEALTH SCIENCE (MAJOR - A.S.)",
+   "h1": "PUBLIC HEALTH SCIENCE (MAJOR - A.S.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 16,
+  "text_chars": 2738
+ },
+ {
+  "control_number": "45036",
+  "title": "California General Education Transfer Curriculum",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45112",
+  "title": "ESL Milestone Pathway: Public Health, Nutrition, and Kinesiology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMMC1000",
+   "ESL106",
+   "ESL107",
+   "ESL108",
+   "HE102",
+   "HE103",
+   "HE106"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8651",
+   "title": "ESL MILESTONE CERTIFICATE - PATHWAY TO TRANSFER: PUBLIC HEALTH, NUTRITION, AND KINESIOLOGY (CERTIFICATE)",
+   "h1": "ESL MILESTONE CERTIFICATE - PATHWAY TO TRANSFER: PUBLIC HEALTH, NUTRITION, AND KINESIOLOGY (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2117
+ },
+ {
+  "control_number": "45113",
+  "title": "ESL Milestone Pathway: Social Sciences & Humanities",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "CHIC100",
+   "COMMC1000",
+   "ESL106",
+   "ESL107",
+   "ESL108",
+   "POLS100",
+   "POLSC1000",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8652",
+   "title": "ESL MILESTONE CERTIFICATE - PATHWAY TO TRANSFER: SOCIAL SCIENCES & HUMANITIES (CERTIFICATE)",
+   "h1": "ESL MILESTONE CERTIFICATE - PATHWAY TO TRANSFER: SOCIAL SCIENCES & HUMANITIES (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2559
+ },
+ {
+  "control_number": "45114",
+  "title": "ESL Milestone Pathway: Business and Computer Information Systems",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "BUS124",
+   "CIS101",
+   "COMMC1000",
+   "ESL106",
+   "ESL107",
+   "ESL108"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8653",
+   "title": "ESL MILESTONE CERTIFICATE - PATHWAY TO TRANSFER: BUSINESS AND COMPUTER INFORMATION SYSTEMS (CERTIFICATE)",
+   "h1": "ESL MILESTONE CERTIFICATE - PATHWAY TO TRANSFER: BUSINESS AND COMPUTER INFORMATION SYSTEMS (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2233
+ },
+ {
+  "control_number": "45115",
+  "title": "ESL Milestone Pathway: Childhood Development/Early Childhood Education/Elementary Education",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "CDEV100",
+   "COMMC1000",
+   "ESL106",
+   "ESL107",
+   "ESL108"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8659",
+   "title": "ESL MILESTONE CERTIFICATE - PATHWAY TO TRANSFER: CHILDHOOD DEVELOPMENT, EARLY CHILDHOOD EDUCATION, ELEMENTARY EDUCATION",
+   "h1": "ESL MILESTONE CERTIFICATE - PATHWAY TO TRANSFER: CHILDHOOD DEVELOPMENT, EARLY CHILDHOOD EDUCATION, ELEMENTARY EDUCATION",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2139
+ },
+ {
+  "control_number": "45116",
+  "title": "ESL Milestone Pathway: Science, Technology, Engineering, and Mathematics",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "CHEM100",
+   "COMMC1000",
+   "ENGR100",
+   "ESL106",
+   "ESL107",
+   "ESL108",
+   "PHYS105",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8654",
+   "title": "ESL MILESTONE CERTIFICATE - PATHWAY TO TRANSFER: SCIENCE, ENGINEERING, AND MATHEMATICS (CERTIFICATE)",
+   "h1": "ESL MILESTONE CERTIFICATE - PATHWAY TO TRANSFER: SCIENCE, ENGINEERING, AND MATHEMATICS (CERTIFICATE)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.857
+   }
+  },
+  "listed": 9,
+  "text_chars": 2455
+ },
+ {
+  "control_number": "45375",
+  "title": "Industrial Automation Systems Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUT245",
+   "BLDC101",
+   "CIS120",
+   "CIS124",
+   "EWIR162",
+   "MATH105",
+   "PLNT100",
+   "PLNT150",
+   "PLNT200",
+   "PLNT250",
+   "WE201",
+   "WE220"
+  ],
+  "source": {
+   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8650",
+   "title": "INDUSTRIAL AUTOMATION SYSTEMS TECHNOLOGY (MAJOR - A.S.)",
+   "h1": "INDUSTRIAL AUTOMATION SYSTEMS TECHNOLOGY (MAJOR - A.S.)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2273
+ },
+ {
+  "control_number": "45382",
+  "title": "Instrumentation Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 11,
+  "text_chars": 0
+ }
+]

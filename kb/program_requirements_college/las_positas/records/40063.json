@@ -1,0 +1,329 @@
+{
+ "college": "Las Positas College",
+ "control_number": "40063",
+ "shape": "adt",
+ "title": "Social Justice Studies: LGBTQ Studies",
+ "award": "A.A- T Degree",
+ "source_url": "https://laspositas.curriqunet.com/catalog/iq/102/105/154/1865/1869",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7711,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7711,
+    "output_tokens": 2371,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2371,
+  "output_tokens_details": {
+   "thinking_tokens": 652
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07826,
+ "ms": 18514,
+ "seconds": 19.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 17,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "HEA3",
+    "HUMN4",
+    "PHIL5"
+   ],
+   "flagged": [
+    "HEA3",
+    "HUMN4",
+    "PHIL5"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    18.0,
+    19.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Cal-GETC pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     18.0,
+     19.0
+    ],
+    "stated": [
+     18.0,
+     19.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Social Justice Studies: LGBTQ Studies (AA-T): Program Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Discuss the social, economic, political, intellectual and cultural contributions of LGBTQ+ people of the past and present.",
+    "Synthesize the relationships between epistemological frameworks used in LGBTQ+ studies and those used in other areas (i.e., Queer Theory, Feminist Theory, and Critial Theory).",
+    "Compare and contrast the key methodologies utilized in LGBTQ+ studies."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core: Select Three (9 Units)",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "LGBT 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHS 6",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "WMST 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "WMST 2",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC 11",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Select Three Courses from at least Two of the Following Areas (9-10 Units)",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "HIST 32",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENG 32",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUMN 4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHIL 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "RELS 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GS 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 5",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GS 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HEA 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HEA 11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LGBT 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 3",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 13",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Required Core reads 'Select Three (9 Units)' over LGBT 1, SOC 3/ETHS 6, and WMST 1 OR WMST 2 OR SOC 11; the OR rows were read as one choice among WMST 1/WMST 2/SOC 11, making effectively all three slots required. Reviewer should confirm.",
+   "List A requires three courses from at least two of four areas (Area 1 History or Government: HIST 32; Area 2 Arts and Humanities: ENG 32, HUMN 4, PHIL 5, RELS 3; Area 3 Social Science: GS 1/SOC 5, GS 2, HEA 3, HEA 11, LGBT 2, PSYC 3, PSYC 13; Area 4 Quantitative Reasoning: STAT C1000). Recorded as one choose_courses block; the area-distribution constraint is not captured structurally.",
+   "The page prints 'Additional General Education and Elective Units 41.0-42.0' as a combined figure for Cal-GETC plus CSU-transferable electives; no separate GE unit figure is printed, so ge_units and elective fields are null.",
+   "Outcome text 'Critial Theory' is copied as printed (likely typo for 'Critical'). The first outcome is printed on the same line as the lead-in sentence, which was removed.",
+   "Catalog text begins mid-description (truncated); no careers are named in the visible text.",
+   "HUMN 4, PHIL 5 and HEA 3 appear in the catalog but not in the closed list."
+  ]
+ },
+ "extracted_run": "38935144431"
+}

@@ -1,0 +1,131 @@
+{
+ "college": "Gavilan College",
+ "programs": 135,
+ "with_closed_list": 120,
+ "found": 106,
+ "extracted": 106,
+ "errors": 0,
+ "passed_machine_checks": 77,
+ "failed": {
+  "coverage": 5,
+  "invented": 0,
+  "arithmetic": 29,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 7.53,
+ "cost_per_program": 0.071,
+ "not_found": [
+  {
+   "control_number": "31719",
+   "title": "Music",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4141/3992",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.286,
+    "body": 0.286,
+    "content": 0.286,
+    "net": 2,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 2 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3001,
+     "content": 3001,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "35176",
+   "title": "Wastewater Collection Technology Education",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "35177",
+   "title": "Wastewater Collection Technology Education",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "36978",
+   "title": "ESL Intermediate II Level",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4132/4018",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2233,
+     "content": 2233,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "40557",
+   "title": "Small Business Development",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "42771",
+   "title": "Construction Management",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4150/4027",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2298,
+     "content": 2298,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "42890",
+   "title": "Cybersecurity",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "run": "38948144064"
+}

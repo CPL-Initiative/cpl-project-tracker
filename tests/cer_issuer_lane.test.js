@@ -137,8 +137,8 @@ const rowFor = (doc, name) => Array.from(doc.querySelectorAll(".cr-ni-row"))
   const psRow = rowFor(doc, "Basic Welding CBE");
   check("lane: issuer input pre-filled from the staged plan",
     psRow.querySelector(".cr-ni-input").value === "California Community Colleges");
-  check("lane: ⚡ badge names the lane",
-    /pre-seed · cx/.test(txt(psRow.querySelector(".cr-wl-preseed-badge"))));
+  check("lane: pre-seed badge names the lane",
+    /pre-seed · cx/i.test(txt(psRow.querySelector(".cr-wl-preseed-badge"))));
   check("lane: nothing auto-saved", log.writes.length === 0);
 
   // ── Session 106: title editing + raw/college context (Rule 5f row) ──
@@ -210,7 +210,7 @@ const rowFor = (doc, name) => Array.from(doc.querySelectorAll(".cr-ni-row"))
   check("datalist: the NEW agency is immediately pickable",
     !!dl && Array.from(dl.children).some((o) => o.value === "Proctored Testing Center"));
 
-  // ── the "＋ add issuing agency" affordance (Rule 4 multi-issuer, 2026-07-08;
+  // ── the "Add issuing agency" affordance (Rule 4 multi-issuer, 2026-07-08;
   // UNLIMITED count Session 107): each additional agency saves into ONE
   // " | "-delimited issuing_agency_additional_override value so it never
   // clobbers the primary; Mode A2 splits + promotes each additively. ──

@@ -4,7 +4,7 @@
   "supabase_tables": 99,
   "rpcs": 39,
   "edge_functions": 8,
-  "file_datasets": 650,
+  "file_datasets": 651,
   "external_services": 180,
   "consumers": 443,
   "workflows": 53,
@@ -341,7 +341,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1082
+     "line": 1130
     }
    ],
    "main_committers": []
@@ -513,7 +513,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1021
+     "line": 1069
     }
    ],
    "main_committers": []
@@ -561,7 +561,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2690,
+     "line": 2709,
      "tabs": [
       "college-briefing"
      ]
@@ -1008,7 +1008,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 4144,
+     "line": 4227,
      "tabs": [
       "credential-reference"
      ]
@@ -1074,7 +1074,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2419,
+     "line": 2438,
      "tabs": [
       "college-briefing"
      ]
@@ -1255,7 +1255,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1273
+     "line": 1291
     }
    ],
    "main_committers": []
@@ -1756,7 +1756,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 567
+     "line": 585
     }
    ],
    "main_committers": []
@@ -1775,7 +1775,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2411,
+     "line": 2430,
      "tabs": [
       "college-briefing"
      ]
@@ -2373,7 +2373,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2437,
+     "line": 2456,
      "tabs": [
       "college-briefing"
      ]
@@ -2524,7 +2524,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2689,
+     "line": 2708,
      "tabs": [
       "college-briefing"
      ]
@@ -2820,7 +2820,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4164,
+     "line": 4247,
      "tabs": [
       "credential-reference"
      ]
@@ -3530,7 +3530,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2439,
+     "line": 2458,
      "tabs": [
       "college-briefing"
      ]
@@ -3573,7 +3573,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1058
+     "line": 1076
     }
    ],
    "main_committers": []
@@ -4600,7 +4600,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 949
+     "line": 967
     },
     {
      "id": "module:admin.js",
@@ -5312,14 +5312,14 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1212
+     "line": 1230
     },
     {
      "id": "module:college_briefing.js",
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4094,
+     "line": 4113,
      "tabs": [
       "college-briefing"
      ]
@@ -5349,7 +5349,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3909,
+     "line": 3928,
      "tabs": [
       "college-briefing"
      ]
@@ -5427,7 +5427,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2822,
+     "line": 2841,
      "tabs": [
       "college-briefing"
      ]
@@ -5837,7 +5837,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5408,
+     "line": 5821,
      "tabs": [
       "credential-reference"
      ]
@@ -6531,7 +6531,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3609,
+     "line": 3628,
      "tabs": [
       "college-briefing"
      ]
@@ -10529,7 +10529,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5334,
+     "line": 5423,
      "tabs": [
       "credential-reference"
      ]
@@ -10825,7 +10825,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 618,
+     "line": 628,
      "tabs": [
       "credential-reference"
      ]
@@ -11741,7 +11741,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 621,
+     "line": 631,
      "tabs": [
       "credential-reference"
      ]
@@ -11934,7 +11934,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 489,
+     "line": 499,
      "tabs": [
       "credential-reference"
      ]
@@ -11966,6 +11966,16 @@
   },
   "file:kb/it_ai_credential_catalog.json": {
    "consumers": [
+    {
+     "id": "module:credential_reference.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 5446,
+     "tabs": [
+      "credential-reference"
+     ]
+    },
     {
      "id": "script:kb/_build_it_ai_credential_catalog.py",
      "kind": "script",
@@ -13669,6 +13679,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/reference/industry_credential_skills.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_it_ai_credential_catalog.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 64
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/reference/industry_credential_watch.json": {
    "consumers": [
     {
@@ -14701,7 +14724,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 478,
+     "line": 488,
      "tabs": [
       "credential-reference"
      ]
@@ -14731,7 +14754,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 467,
+     "line": 477,
      "tabs": [
       "credential-reference"
      ]
@@ -14776,7 +14799,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 615,
+     "line": 625,
      "tabs": [
       "credential-reference"
      ]
@@ -15147,7 +15170,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3950,
+     "line": 3969,
      "tabs": [
       "college-briefing"
      ]
@@ -16927,7 +16950,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3921,
+     "line": 3940,
      "tabs": [
       "college-briefing"
      ]
@@ -19540,7 +19563,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 4434,
+     "line": 4453,
      "tabs": [
       "college-briefing"
      ]
@@ -19773,7 +19796,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 1793
+     "line": 1841
     }
    ],
    "main_committers": []
@@ -19785,7 +19808,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 1880
+     "line": 1928
     }
    ],
    "main_committers": []
@@ -20280,7 +20303,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1802,
+     "line": 1821,
      "tabs": [
       "college-briefing"
      ]
@@ -20612,7 +20635,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4609,
+     "line": 4628,
      "tabs": [
       "college-briefing"
      ]
@@ -21318,7 +21341,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 276,
+     "line": 286,
      "tabs": [
       "credential-reference"
      ]
@@ -21328,7 +21351,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 334,
+     "line": 344,
      "tabs": [
       "credential-reference"
      ]
@@ -21967,7 +21990,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4630,
+     "line": 4649,
      "tabs": [
       "college-briefing"
      ]
@@ -22101,7 +22124,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1799,
+     "line": 1818,
      "tabs": [
       "college-briefing"
      ]
@@ -22307,7 +22330,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1824,
+     "line": 1843,
      "tabs": [
       "college-briefing"
      ]
@@ -22408,7 +22431,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1821,
+     "line": 1840,
      "tabs": [
       "college-briefing"
      ]

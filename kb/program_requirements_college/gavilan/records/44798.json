@@ -1,0 +1,224 @@
+{
+ "college": "Gavilan College",
+ "control_number": "44798",
+ "shape": "degree",
+ "title": "Fire Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://gavilan.curriqunet.com/catalog/iq/4089/4133/4350",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6662,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6662,
+    "output_tokens": 1354,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1354,
+  "output_tokens_details": {
+   "thinking_tokens": 408
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05373,
+ "ms": 11275,
+ "seconds": 11.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     60.0,
+     60.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     42.0,
+     42.0
+    ],
+    "why": [],
+    "fill": [
+     0.0,
+     0.0
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Fire Technology - A.S. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Gavilan College A.A./A.S. general education, CSU-GE Breadth, IGETC or CalGETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 42,
+    "max": 42
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Upon completion of this program, the student will demonstrate proficiency in multi-faceted communication skills, assessment of the problem(s), interpretation of information and make judgments related to hazardous emergencies, medical emergencies, and fire (potential/actual) incidents.",
+    "Upon completion of this program, the student will demonstrate proficiency in all aspects of basic firefighter emergency responses as related to investigation and mitigation of the situation.",
+    "Apply knowledge of building construction, fire protection systems, and fire prevention codes to affect safer occupancies and fire control.",
+    "Demonstrate in-depth knowledge of the principles of fire control through the utilization of personnel, equipment, extinguishing agents on the fire ground."
+   ],
+   "careers": [
+    "fire protection",
+    "prevention",
+    "public education"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "JFT 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JFT 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JFT 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JFT 150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JFT 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JFT 160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "total_units taken from 'Core Requirements: Units: 18', the only major block printed; the page prints no separate major total.",
+   "Degree total 'Total: 60' recorded in degree_total; 'General Education Requirements: Units: 42' recorded in ge_units.",
+   "GE section says students may complete one of several GE patterns 'plus sufficient electives to meet a 60 unit total'; no elective units printed, so electives_fill_degree is true.",
+   "Careers read from the description's career fields ('fields of fire protection and prevention', 'fields of fire protection, prevention, or public education'); no job titles are named."
+  ]
+ },
+ "extracted_run": "38948144064"
+}

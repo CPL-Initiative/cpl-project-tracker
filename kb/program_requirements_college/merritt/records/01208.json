@@ -1,0 +1,262 @@
+{
+ "college": "Merritt College",
+ "control_number": "01208",
+ "shape": "degree",
+ "title": "Nursing",
+ "award": "A.S. Degree",
+ "source_url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48840",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10461,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10461,
+    "output_tokens": 1771,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1771,
+  "output_tokens_details": {
+   "thinking_tokens": 487
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07726,
+ "ms": 23020,
+ "seconds": 23.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    46.0,
+    46.0
+   ],
+   "stated": [
+    46.0,
+    46.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     67.0,
+     67.0
+    ],
+    "stated": [
+     67.0,
+     67.0
+    ],
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Program Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 46,
+    "max": 46
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local AA/AS GE",
+   "degree_total": {
+    "min": 67,
+    "max": 67
+   },
+   "ge_units": {
+    "min": 21,
+    "max": 21
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply professional and theoretical concepts of nursing theories related to evidenced-based nursing practice when working with the healthcare team in caring for patients, families, and communities.",
+    "Develop and implement safe and skillful nursing care for patients, families, and communities.",
+    "Participate effectively as a member of a health care team by applying their knowledge of the nursing process.",
+    "Develop an awareness of him/herself as a person and as a practitioner with respect to his/her abilities, needs, motives culture, values and attitudes."
+   ],
+   "careers": [
+    "entry-level registered nursing positions",
+    "registered nurses"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Major Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 46,
+     "max": 46
+    },
+    "courses": [
+     {
+      "code": "NURS 001",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 003A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 003B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 004A",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 004B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 005",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 011",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 012",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 013",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 014",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NURS 020",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog codes use zero-padded numbers (NURS 001, NURS 011) while the closed list stores NURS001, NURS 11, etc.; these were matched as the same courses. Catalog titles for NURS 011 (Professional and Theoretical Concepts), NURS 012 (Dosage Calculation) and NURS 014 (Nutrition in Nursing) differ from the closed-list titles.",
+   "Page prints Major Units 46, Minimum General Education Units 21, Degree Units 67.",
+   "ge_pattern recorded as 'Local AA/AS GE', which the page names in the admission/GE section; the requirements table itself does not name the GE pattern.",
+   "Admission prerequisites (BIOL 20A/20B or BIOL 2/4, BIOL 3, ENGL C1000/C1000E) and required GE courses (COMM C1000/C1004, ENGL C1001/C1002, PSYC C1000, SOC 1, STAT C1000, Ethnic Studies) are listed as admission requirements, not major courses, and were not placed in blocks.",
+   "The Course Sequence section repeats the same 12 major courses by semester (46 units) and was not recorded as separate blocks."
+  ]
+ },
+ "extracted_run": "38935152199"
+}

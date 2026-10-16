@@ -1,0 +1,379 @@
+{
+ "college": "Gavilan College",
+ "control_number": "14878",
+ "shape": "degree",
+ "title": "Digital Media (with options)",
+ "award": "A.A. Degree",
+ "source_url": "https://gavilan.curriqunet.com/catalog/iq/4089/4130/4200",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7547,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7547,
+    "output_tokens": 2952,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2952,
+  "output_tokens_details": {
+   "thinking_tokens": 910
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08923,
+ "ms": 22737,
+ "seconds": 23.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 21,
+   "listed": 21,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "CSIS160",
+    "DM160",
+    "DM61"
+   ],
+   "flagged": [
+    "CSIS160",
+    "DM160",
+    "DM61"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    53.0,
+    58.0
+   ],
+   "stated": [
+    65.0,
+    70.0
+   ],
+   "against": "degree",
+   "ge": [
+    35.0,
+    39.0
+   ],
+   "why": [],
+   "fill": [
+    7.0,
+    17.0
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 9,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Digital Media (with options) - A.A. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Gavilan College A.A./A.S. general education, or the Cal-GETC pattern",
+   "degree_total": {
+    "min": 65,
+    "max": 70
+   },
+   "ge_units": {
+    "min": 35,
+    "max": 39
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "analyze the relationship of aesthetics, content, user experience and/or interactivity of projects suitable for implementing and using digital media or in order to synthesize a design, produce development guidelines incorporating techniques such as storyboards and flow charts and render their design using good aesthetic principles and contemporary digital technology.",
+    "be able to perform and communicate ideas within a team environment and contribute significant work related to their option area of study.",
+    "Option in Digital Design and Imaging: demonstrate an ability to use Digital Media technology and concepts to design, produce, and integrate aesthetically pleasing 2D/3D visual and animated material for film, video, web pages, CD/DVDs, video games or digital print.",
+    "Option in Digital Video and Animation: analyze project definitions to produce scripts and storyboards in order to creatively and logically shoot and edit video; design visual effects/motion graphics; and create animation for video broadcast, web media, video games, or cell phones.",
+    "Option in Interactive Media: describe the relationship of content elements, synthesize the interactivity, and design projects such as video games, web sites, educational media, or interactive TV in line with current theories in human cognition and user experience."
+   ],
+   "careers": [
+    "Graphic/Visual Designer",
+    "Illustrator",
+    "Animator",
+    "Digital Imaging Specialist",
+    "Videographer",
+    "Editor/Visual Effects Artist",
+    "Web Designer",
+    "Game Designer/Developer",
+    "entry level production specialist"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "DM 75",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CSIS 75",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DM 76",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CSIS 76",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DM 77",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CSIS 77",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DM 107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CSIS 107",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Option in Digital Design and Imaging",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": "Option",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "DM 85",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CSIS 85",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DM 74",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CSIS 74",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DM 80",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CSIS 80",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Option in Digital Video and Animation",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": "Option",
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "DM 60",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DM 61",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DM 113",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Option in Interactive Media",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": "Option",
+    "stated": {
+     "min": 6,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "DM 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CSIS 6",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIS 42",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIS 45",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIS 84",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DM 160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CSIS 160",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The 'Option in Digital Design and Imaging' block is printed before the 'Select one of the following Options:' heading; read it as one of three alternative options (all three share option_group 'Option'), consistent with the option-specific learning outcomes. Reviewer should confirm.",
+   "Each option lists more courses than its stated units (e.g., Digital Design and Imaging lists 9 units of courses for 6 units; Digital Video and Animation lists 9 units for 6); read each as choose courses totaling the stated units.",
+   "Printed Total 65-70 recorded as degree_total as printed; it does not equal core 12 + option 6-7 + GE 35-39 (53-58) and electives to reach 60 are stated without units.",
+   "DM 61, DM 160 and CSIS 160 are marked (Historical) in the catalog and are not in the closed list; recorded as catalog additions.",
+   "The learning outcomes are printed for the program as a whole; the last three are option-specific and are copied with their option lead-ins as printed."
+  ]
+ },
+ "extracted_run": "38948144064"
+}

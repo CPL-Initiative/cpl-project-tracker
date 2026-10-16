@@ -1,0 +1,363 @@
+{
+ "college": "College of Alameda",
+ "control_number": "19837",
+ "shape": "certificate",
+ "title": "Dental Assisting",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://coa.curriqunet.com/catalog/iq/47221/47305/47429",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7485,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7485,
+    "output_tokens": 2656,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2656,
+  "output_tokens_details": {
+   "thinking_tokens": 889
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08306,
+ "ms": 21177,
+ "seconds": 21.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 12,
+   "share": 0.833,
+   "missing": [
+    "COMMC1000",
+    "PSYCC1000"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 11,
+   "codes": [
+    "CIS205",
+    "COMM20",
+    "COMM45",
+    "DENTL223",
+    "DENTL224A",
+    "DENTL224B",
+    "DENTL226",
+    "DENTL230",
+    "DENTL251",
+    "ENGL201B",
+    "PSYCH1A"
+   ],
+   "flagged": [
+    "CIS205",
+    "COMM20",
+    "COMM45",
+    "DENTL223",
+    "DENTL224A",
+    "DENTL224B",
+    "DENTL226",
+    "DENTL230",
+    "DENTL251",
+    "ENGL201B",
+    "PSYCH1A"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    41.0,
+    41.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Degree Major/Certificate Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Differentiate and evaluate specialty procedures within each of the dental specialties.",
+    "Communicate verbally using acceptable dental terminology in regards to interpersonal skills and concerns for the patients’ welfare.",
+    "Recognize, support and facilitate the importance of HIPPA laws.",
+    "Demonstrate acceptable dental office procedures."
+   ],
+   "careers": [
+    "dental assistants"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Degree Major/Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 32,
+     "max": 32
+    },
+    "courses": [
+     {
+      "code": "DENTL 220A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DENTL 220B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DENTL 221",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DENTL 222",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DENTL 223",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DENTL 224A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DENTL 225",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DENTL 224B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DENTL 226",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DENTL 227",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DENTL 228A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DENTL 228B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DENTL 229",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DENTL 230",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Courses outside discipline; also required for the Major/Certificate of Achievement (9 units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "ENGL 201B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYCH 001A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 001A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM 020",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "COMM 045",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Highly recommended prior to admission",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DENTL 251",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 205",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COMM C1000",
+    "why": "not in the text; catalog lists COMM 001A, COMM 020 or COMM 045"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "not in the text; catalog lists PSYCH 001A"
+   }
+  ],
+  "notes": [
+   "The 32.00 printed beside 'Degree Major/Certificate Requirements' equals the sum of the DENTL courses only; the outside-discipline group adds 9 units. No overall certificate total is printed, so total_units is null (the parts sum to 41).",
+   "Several listed courses are marked Historical (DENTL 222, 224B, 230, ENGL 201B, PSYCH 001A, COMM 001A/020/045); the closed list replaces PSYCH 001A and the COMM options with C-ID courses (PSYC C1000, COMM C1000). Reviewer should check whether the page reflects the 2026-2027 requirements.",
+   "HLTED 9 and HLTED 11 (or current cards) and BLS/CPR are admission/enrollment prerequisites, not award requirements; not recorded in blocks.",
+   "DENTL 251 and CIS 205 are 'highly recommended (but not required)' before admission; recorded as recommended with no units printed.",
+   "The COMM row prints 3.00 with COMM 001A OR COMM 020 OR COMM 045; recorded as one choice with alternatives.",
+   "Text begins mid-sentence; earlier description may be cut off."
+  ]
+ },
+ "extracted_run": "38935121852"
+}

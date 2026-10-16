@@ -1,0 +1,360 @@
+{
+ "college": "Laney College",
+ "control_number": "43980",
+ "shape": "degree",
+ "title": "Data Analytics",
+ "award": "A.S. Degree",
+ "source_url": "https://lan.curriqunet.com/catalog/view/iq/44166/44180/44520",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7303,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7303,
+    "output_tokens": 2588,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2588,
+  "output_tokens_details": {
+   "thinking_tokens": 835
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08097,
+ "ms": 20832,
+ "seconds": 21.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 14,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "MATH13"
+   ],
+   "flagged": [
+    "MATH13"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    27.0,
+    32.0
+   ],
+   "stated": [
+    27.0,
+    31.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 27.0-32.0; the catalog states 27.0-31.0"
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     48.0,
+     53.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": [],
+    "fill": [
+     7.0,
+     12.0
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 8,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Data Analytics - A.S. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 27,
+    "max": 31
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 21,
+    "max": 21
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Demonstrate the ability to apply statistical analysis of real world data using multiple representations such as graphs, text, or tables, being mindful of concerns around data bias and privacy.",
+    "Use programming and data analytics tools to make statistical inference on data and data sets using computational techniques.",
+    "Write computer scripts and programs to organize, produce visualizations, and numerical summaries of data and data sets."
+   ],
+   "careers": [
+    "data analyst",
+    "data scientist",
+    "machine learning engineers",
+    "business analyst",
+    "computer systems analyst",
+    "logistics analyst",
+    "marketing analyst",
+    "database managers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Relational Databases Core Courses (8 units):",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "CIS 098",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 043B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Introduction to Programming (4-5 units):",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "CIS 006",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 116",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 116",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Introduction to Computer Science (3-5 units):",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "CIS 005",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 020",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 096F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Foundations in Object Oriented Programming (4 units):",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "CIS 025",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 036A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Data Structures and Algorithms (4-5 units):",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "CIS 027",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 061",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Foundations of Data Science and Statistics (4-5 units):",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "MATH 118",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 13",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes with leading zeros (CIS 098, CIS 006, CIS 005, CIS 020, CIS 025, CIS 027, CIS 061); treated as the closed-list codes CIS 98, CIS 6, CIS 5, CIS 20, CIS 25, CIS 27, CIS 61.",
+   "CIS 116 and MATH 116 are printed as cross-listed (same as); recorded as one choice with MATH 116 as alternative.",
+   "Foundations of Data Science and Statistics heading says 4-5 units but the units column prints 4.00; stated recorded from heading as 4-5.",
+   "MATH 13 - Introduction to Statistics appears as a plain-text 'OR' line with no units; recorded as catalog addition with null units.",
+   "Several courses are marked '( Historical )' in the catalog (CIS 098, CIS 096F, CIS 025, CIS 027); reviewer may check current availability.",
+   "General Education Requirements printed as 21.00 units without naming a pattern; ge_pattern left null.",
+   "'Electives to meet 60 units' printed with no units; electives_fill_degree set true.",
+   "Description refers to 'The certificate will also serve as a foundation...' though this section is the A.S. degree."
+  ]
+ },
+ "extracted_run": "38935141023"
+}

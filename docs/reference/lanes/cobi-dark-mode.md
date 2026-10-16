@@ -203,6 +203,10 @@ redefined dark; `tests/cpl_theme.test.js` guards all three roles.
 
 ## Measured
 
+**CER UI pass 2026-10-16 (#2176):** dark 1.34:1 / 1.43:1 / 1.08:1 and 169 raw hex
+became `--cer-cream`, `--on-seal-blue` (dark `--on-accent` is ink) and tokens; the CER and
+the seeded `cer-industry(-dark)` targets now measure clean.
+
 | Sweep | S244 | S245 | S248 | **S249** |
 |---|---|---|---|---|
 | `cobi-dark` — **contrast findings** | 184 | 120 | 87 | **38** |

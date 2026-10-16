@@ -1,0 +1,319 @@
+{
+ "college": "Gavilan College",
+ "control_number": "37750",
+ "shape": "adt",
+ "title": "Biology",
+ "award": "A.S. T Degree",
+ "source_url": "https://gavilan.curriqunet.com/catalog/iq/4089/4096/4073",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7070,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7070,
+    "output_tokens": 2528,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2528,
+  "output_tokens_details": {
+   "thinking_tokens": 798
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07884,
+ "ms": 19553,
+ "seconds": 20.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 11,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    32.0,
+    35.0
+   ],
+   "stated": [
+    27.0,
+    34.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 32.0-35.0; the catalog states 27.0-34.0"
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     66.0,
+     69.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Biology - A.S.-T Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 27,
+    "max": 34
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Use raw experimental data to conduct statistical analysis, and present conclusions in a graphical and narrative form.",
+    "Find, select and evaluate various types of scientific information including primary research articles, mass media sources and world-wide web information.",
+    "Effectively communicate scientific concepts in both written and oral formats.",
+    "Identify the evolutionary processes that lead to adaptation and biological diversity.",
+    "Describe the relationship between life forms and their environment and ecosystems.",
+    "Explain the basic structures and fundamental processes of life at molecular, cellular, and organismal levels.",
+    "Demonstrate the correct operating procedures in the use of common lab equipment such as compound microscopes, spectrophotometer, pH meter, electrophoresis gel apparatus, micropipetters, and centrifuges."
+   ],
+   "careers": [
+    "allied health professions",
+    "agriculture",
+    "parks and recreation",
+    "biomedical research"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Biology sequence: BIO 1 and BIO 2",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Biology",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIO 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Biology sequence: BIO 1, BIO 4 and BIO 5",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Biology",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIO 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 4",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 5",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Chemistry and Mathematics",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHEM 1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 1B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 1A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Physics sequence: PHYS 2A and PHYS 2B",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Physics",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHYS 2A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 2B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Physics sequence: PHYS 4A and PHYS 4B",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Physics",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHYS 4A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 4B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints no block headings under 'Biology AS-T prog req'; block names are descriptive. The and/or structure was read as: (BIO 1 and BIO 2) or (BIO 1, BIO 4 and BIO 5); CHEM 1A, CHEM 1B and MATH 1A required; (PHYS 2A and PHYS 2B) or (PHYS 4A and PHYS 4B). Reviewer should confirm the grouping of the 'or' rows.",
+   "total_units recorded from 'Units: 27- 34', which is printed right after the Cal-GETC line; its placement is ambiguous. Summing the listed courses gives 32-35 major units, which does not match 27-34; not adjusted.",
+   "degree_total recorded from 'Total Units for the Degree: 60 units'. The page also prints 'Total: 59- 69' and 'Double Counted Units: Cal-GETC 7 units'; reviewer should check which figure is intended.",
+   "Recommended preparation (high school chemistry and biology or Chem 30A and Bio 10; high school math or Math 233; eligibility for Engl C1000) is preparation for entering the program, not courses within the award; not recorded as a block.",
+   "PHYS 4A and PHYS 4B titles in the catalog ('Physics for Scientists and Engineers I/II') differ slightly from the closed-list titles.",
+   "Program learning outcomes are printed under 'Learning Outcome(s):' for this degree section."
+  ]
+ },
+ "extracted_run": "38948144064"
+}

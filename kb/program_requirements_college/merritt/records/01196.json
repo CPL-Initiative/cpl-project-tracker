@@ -1,0 +1,276 @@
+{
+ "college": "Merritt College",
+ "control_number": "01196",
+ "shape": "certificate",
+ "title": "Business Management",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://mc.curriqunet.com/catalog/iq/48441/48770/48795",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7726,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7726,
+    "output_tokens": 1797,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1797,
+  "output_tokens_details": {
+   "thinking_tokens": 535
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06684,
+ "ms": 15110,
+ "seconds": 15.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "BUS70",
+    "BUS76"
+   ],
+   "flagged": [
+    "BUS70",
+    "BUS76"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    22.0,
+    23.0
+   ],
+   "stated": [
+    22.0,
+    23.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Program Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 22,
+    "max": 23
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "human resources management field",
+    "entry-level support position in a human resources department"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Courses:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "BUS 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 050",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose One:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "BUS 001A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 020",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Area A: Human Resources Management",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Areas of Emphasis",
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "BUS 051",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 052",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 056",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Area B: Entrepreneurship/Small Business Management:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Areas of Emphasis",
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "BUS 054",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 070",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS 076",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes with leading zeros (BUS 002, BUS 050, CIS 001, BUS 020, BUS 051, BUS 052, BUS 054, BUS 056); these were matched to closed-list BUS 2, BUS 50, CIS 1, BUS 20, BUS 51, BUS 52, BUS 54, BUS 56.",
+   "Area B prints a block total of 0.0, recorded as printed; it is likely a data-entry artifact since its three 3-unit courses total 9 and the parent heading says 'Choose one Area for 9 units'.",
+   "The parent heading 'Areas of Emphasis: Choose one Area for 9 units' (9.0) groups Area A and Area B as alternative options.",
+   "BUS 070 and BUS 076 are not in the closed list and are marked as catalog additions.",
+   "Most courses are labeled '( Historical )' in the catalog; reviewer may want to verify currency for 2026-2027.",
+   "The catalog text is cut off mid-sentence in the Program Description; no program learning outcomes or career opportunities sections appear in the provided text.",
+   "Careers taken from the description: 'explore the human resources management field as a career choice and gain an entry-level support position in a human resources department'."
+  ]
+ },
+ "extracted_run": "38935152199"
+}

@@ -1,0 +1,214 @@
+{
+ "college": "Laney College",
+ "control_number": "43361",
+ "shape": "certificate",
+ "title": "Fundamentals of Wood Technology",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://lan.curriqunet.com/catalog/view/iq/44166/44229/44513",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6772,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6772,
+    "output_tokens": 1658,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1658,
+  "output_tokens_details": {
+   "thinking_tokens": 565
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06025,
+ "ms": 14316,
+ "seconds": 14.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "MATH220G",
+    "MATH221"
+   ],
+   "flagged": [
+    "MATH220G",
+    "MATH221"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    9.0,
+    9.0
+   ],
+   "stated": [
+    9.0,
+    9.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Fundamentals of Wood Technology",
+   "measure": "units",
+   "total_units": {
+    "min": 9,
+    "max": 9
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Skills: Students will develop a foundation of core skills necessary to effectively use hand tools, operate power tools, create design and layout for projects, and work with software and CNC equipment that is current for the cabinet and furniture making trade.",
+    "Materials and Practices: Students will identify, analyze, and apply materials of the trade to the appropriate production parameters, creating efficient work flows for shop projects with optimal material use. Students will analyze production processes and apply required techniques in order to meet production standards.",
+    "Communication and Calculate Students will interpret, analyze, perform mathematical calculations and create architectural drawings and other shop documents used in the contemporary woodworking trade and communicate essential information from these documents to coworkers and clients. Students will use woodworking nonmenclature to communicate effectively in the woodworking field.",
+    "Safety Students will evaluate, set up and operate woodworking machinery and use hand tools according to safe operational practices and understand the implications of materials as they relate to worker and customer safety and environmental impacts."
+   ],
+   "careers": [
+    "Bench carpenter",
+    "finisher",
+    "installation",
+    "shop hand"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Courses (9 units):",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "WDTEC 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WDTEC 010L",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WDTEC 011",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Recommended but not required:",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "MATH 221",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 220G",
+        "units": 1,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The excerpt begins mid-description and prints no program heading; section_heading uses the program title from the request. Reviewer should confirm the page heading.",
+   "Catalog prints WDTEC 010 and WDTEC 011 with leading zeros; treated as the closed list's WDTEC 10 and WDTEC 11 (not catalog additions).",
+   "The program learning outcomes are printed for the program as a whole; this certificate is assumed to share them. Category labels (Skills:, Materials and Practices:, Communication and Calculate, Safety) were kept as printed.",
+   "Recommended block prints 0.00 as its total, recorded as stated 0; MATH 221 or MATH 220G are recommended only and do not count toward the 9-unit total.",
+   "Core courses are marked '( Historical )' in the catalog; reviewer may wish to verify they are current for 2026-2027."
+  ]
+ },
+ "extracted_run": "38935141023"
+}

@@ -1,0 +1,183 @@
+{
+ "college": "Berkeley City College",
+ "control_number": "37797",
+ "shape": "noncredit",
+ "title": "Research Skills",
+ "award": "Noncredit program",
+ "source_url": "https://bcc.curriqunet.com/catalog/iq/39711/39966/40029",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6423,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6423,
+    "output_tokens": 973,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 973,
+  "output_tokens_details": {
+   "thinking_tokens": 352
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04515,
+ "ms": 8630,
+ "seconds": 9.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": [
+    9.0,
+    9.0
+   ],
+   "against": "program",
+   "why": [
+    "a required course in 'Required Courses' has no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Research Skills - Certificate of Competency",
+   "measure": "hours",
+   "total_units": {
+    "min": 9,
+    "max": 9
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply information literacy skills to academic, professional, and personal life.",
+    "Complete a basic research project from topic development to information source selection, evaluation, and citation.",
+    "Analyze, synthesize, and apply information practically and ethically."
+   ],
+   "careers": [
+    "educational",
+    "financial",
+    "legal",
+    "medical"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "LIS 511",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIS 512",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LIS 513",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit Certificate of Competency counted in hours: the description states 'three courses for a total of nine (9) instructional hours', recorded as total_units 9 hours.",
+   "The table prints 0.0 in the UNITS column beside each course and beside the Required Courses heading; these are units, not hours, so per-course hours and block stated are left null. The catalog does not print hours per course (presumably 3 each, not recorded).",
+   "Career Opportunities reads 'Any occupations in the educational, financial, legal, and medical fields that involve observing, receiving, and otherwise obtaining information.'; recorded the four fields named.",
+   "Each course must be completed with a grade of Pass."
+  ]
+ },
+ "extracted_run": "38948136325"
+}

@@ -454,6 +454,74 @@ check(C.cq_is_program({"text": "Accounting: A.S. Degree", "haschildbodynavs": Tr
       and not C.cq_is_program({"text": "Degrees and Certificates: Explained"})
       and not C.cq_is_program({"text": ": A.S. Degree"}),
       "cq_is_program reads an award after the last colon (Santa Ana), never a department or an explainer")
+
+# Butte (S401, page reads 38977301962 and 38977912351): the award leads before " in "
+# under Programs by Subject and closes the title in parentheses under Programs by
+# Communities of Interest; its walk took 18 entries for 168 programs.
+BUTTE_ENTRIES = ["AS Degree in Automotive Technology", "Certificate of Achievement in Diesel Technology",
+                 "Registered Nursing (AS Degree)", "Kinesiology (AA-T Degree)", "Para Education (Certificate)",
+                 "Early Childhood Education (Noncredit Certificate of Completion)",
+                 "Film, Television & Electronic Media (AS-T Degree)",
+                 "Automotive Technology - Honda, Professional Automotive Career Training (PACT) (AS Degree)"]
+BUTTE_NAV = ["AUT-Automotive Technology", "Programs by Subject", "Programs by Communities of Interest",
+             "Health & Public Services", "Academic Program Types and Requirements", "General Studies",
+             "Degrees and Certificates in Business", "Associate Degree for Transfer (ADT)", "(AS Degree)"]
+check(all(C.cq_is_program({"text": t, "haschildbodynavs": True}) for t in BUTTE_ENTRIES)
+      and not any(C.cq_is_program({"text": t, "haschildbodynavs": True}) for t in BUTTE_NAV),
+      "cq_is_program reads an award before \" in \" or in closing parentheses (Butte), never a subject, "
+      "a community, a plural list or a bare award: %r"
+      % ([t for t in BUTTE_ENTRIES if not C.cq_is_program({"text": t})]
+         + [t for t in BUTTE_NAV if C.cq_is_program({"text": t})]))
+check(C.cq_name_award("Automotive Technology - Honda, Professional Automotive Career Training (PACT) (AS Degree)")
+      == ("Automotive Technology - Honda, Professional Automotive Career Training (PACT)", "AS Degree")
+      and C.cq_name_award("Certificate of Achievement in Automotive Technology")
+      == ("Automotive Technology", "Certificate of Achievement"),
+      "the name keeps its own parentheses; the award is the last pair or the words before \" in \"")
+for a, b in (("AS Degree in Automotive Technology", "Automotive Technology (AS Degree)"),
+             ("AS Degree in Automotive Technology - Honda, Professional Automotive Career Training (PACT)",
+              "Automotive Technology - Honda, Professional Automotive Career Training (PACT) (AS Degree)"),
+             ("Certificate of Achievement in Diesel Technology", "Diesel Technology (Certificate of Achievement)")):
+    check(C.cq_title_key({"text": a}) == C.cq_title_key({"text": b}),
+          "one program's two Butte titles are one key: %r / %r" % (a, b))
+check(C.cq_title_key({"text": "AS Degree in Automotive Technology"})
+      != C.cq_title_key({"text": "Certificate of Achievement in Automotive Technology"}),
+      "a program's degree and certificate stay two keys")
+BUTTE = {
+    "top": {"navs": [{"id": 25391, "text": "Academic Program Types and Requirements"},
+                     {"id": 25398, "text": "Programs by Subject", "haschildbodynavs": True},
+                     {"id": 25399, "text": "Programs by Communities of Interest", "haschildbodynavs": True}]},
+    "page:25391": {"body": []},
+    "page:25398": {"body": [{"navlist": [{"id": 28408}]}]},
+    "nav:28408": {"navs": [{"id": 28086, "text": "AUT-Automotive Technology", "haschildbodynavs": True}]},
+    "page:28086": {"body": [{"navlist": [{"id": 28059}]}]},
+    "nav:28059": {"navs": [{"id": 28225, "text": "AS Degree in Automotive Technology", "haschildbodynavs": True},
+                           {"id": 28226, "text": "Certificate of Achievement in Automotive Technology",
+                            "haschildbodynavs": True}]},
+    "page:25399": {"body": [{"navlist": [{"id": 28409}]}]},
+    "nav:28409": {"navs": [{"id": 28167, "text": "Industrial Technologies & Agriculture", "haschildbodynavs": True}]},
+    "page:28167": {"body": [{"navlist": [{"id": 27290}]}]},
+    "nav:27290": {"navs": [{"id": 28019, "text": "Automotive & Diesel", "haschildbodynavs": True}]},
+    "page:28019": {"body": [{"navlist": [{"id": 27310}]}]},
+    "nav:27310": {"navs": [{"id": 27919, "text": "Automotive Technology (AS Degree)", "haschildbodynavs": True},
+                           {"id": 27923, "text": "Diesel Technology (AS Degree)", "haschildbodynavs": True}]},
+}
+
+
+def butte_get(url):
+    q = urllib.parse.parse_qs(urllib.parse.urlparse(url).query)
+    if "navigationtypeId" in q:
+        return BUTTE["top"]
+    if "parentId" in q:
+        return BUTTE.get("nav:" + q["parentId"][0])
+    return BUTTE.get("page:" + q["id"][0])
+
+
+bents, bacct = C.cq_index(butte_get, 14, "https://butte.curriqunet.com")
+bdist, bdrop = C.cq_distinct(bents)
+check(sorted(e["id"] for e in bents) == [27919, 27923, 28225, 28226] and bacct["nodes_read"] == 6
+      and sorted(e["id"] for e in bdist) == [27923, 28225, 28226] and bdrop == 1,
+      "Butte's walk takes the entries under both views and reads each program once, the subject view's "
+      "title first: %r %r" % ([e["id"] for e in bents], [e["id"] for e in bdist]))
 HIDE = json.dumps({"nodeConfig": {"excludeFromWebView": True}})
 
 check(C.cq_hidden({"text": " ", "config": HIDE}) and C.cq_hidden({"text": "Notes", "config": HIDE})
@@ -1298,6 +1366,53 @@ check("reg = dict(reg, catalog_year=read_year)" in CS and 'report["catalog_year"
 check('platform not in ("courseleaf", "curriqunet", "elumen", "acalog")' in CS
       and 'platform not in ("curriqunet", "elumen", "acalog")' in CS,
       "the capture reads Acalog, without the child-page walk or the link search its program list makes needless")
+
+# A dropped connection is tried again (S401: Las Positas's two ECONNRESETs left
+# 20 of 201 found; Butte's three left nodes unread). A status is never retried.
+class FlakyResp:
+    def __init__(self, status, body):
+        self.status, self.ok, self.body = status, 200 <= status < 300, body
+
+    def json(self):
+        return self.body
+
+
+class FlakyRequest:
+    def __init__(self, script):
+        self.script, self.asked = list(script), 0
+
+    def get(self, url, timeout=None):
+        self.asked += 1
+        step = self.script.pop(0)
+        if isinstance(step, Exception):
+            raise step
+        return step
+
+
+class FlakyReader:
+    def __init__(self, script):
+        self.request, self.delay, self.loads = FlakyRequest(script), 0, 0
+
+    def _robots_for(self, url):
+        return None
+
+
+RESET = Exception("APIRequestContext.get: socket hang up (ECONNRESET)\nCall log: ...")
+fr = FlakyReader([RESET, FlakyResp(200, {"navs": [{"id": 1}]})])
+ferr = []
+got = C.cq_json(fr, "https://x.curriqunet.com/Catalog/_getNavigation?id=14&parentId=26098", ferr)
+check(got == {"navs": [{"id": 1}]} and fr.loads == 2 and len(ferr) == 1 and "tried again" in ferr[0],
+      "a reset call is made again and its answer kept, the reset noted: %r %r" % (got, ferr))
+fr = FlakyReader([RESET] * (C.CQ_RETRIES + 1))
+ferr = []
+check(C.cq_json(fr, "https://x.curriqunet.com/a", ferr) is None and fr.loads == C.CQ_RETRIES + 1
+      and "tried again" not in ferr[-1],
+      "a host that resets every time is asked CQ_RETRIES more times, then the error is final")
+for final in (FlakyResp(404, None), Exception("Timeout 60000ms exceeded")):
+    fr = FlakyReader([final, FlakyResp(200, {})])
+    ferr = []
+    check(C.cq_json(fr, "https://x.curriqunet.com/b", ferr) is None and fr.loads == 1,
+          "an HTTP status or another error is final, never retried: %r" % ferr)
 
 if failures:
     print("FAIL: %d" % len(failures))

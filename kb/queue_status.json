@@ -1,11 +1,11 @@
 {
   "schema": 1,
-  "written_at": "2026-10-16T16:25:18Z",
-  "session": 398,
-  "moniker": "SkyLinden",
+  "written_at": "2026-10-16T21:38:43Z",
+  "session": 400,
+  "moniker": "SkyBirch",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_399_handoff.md",
+  "handoff": "docs/session_401_handoff.md",
   "unchecked": [
     {
       "college": "Cerritos College",
@@ -56272,124 +56272,5052 @@
       "award": "Noncredit program",
       "control_number": "46096",
       "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Diesel Mechanics",
+      "award": "A.S. Degree",
+      "control_number": "01113",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Engine Performance",
+      "award": "A.S. Degree",
+      "control_number": "01114",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Aviation Maintenance Technology: Airframe Technician",
+      "award": "A.S. Degree",
+      "control_number": "01116",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Art",
+      "award": "A.A. Degree",
+      "control_number": "01118",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Dental Assisting",
+      "award": "A.S. Degree",
+      "control_number": "01124",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Mathematics",
+      "award": "A.S. Degree",
+      "control_number": "01129",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Psychology",
+      "award": "A.A. Degree",
+      "control_number": "01132",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "History",
+      "award": "A.A. Degree",
+      "control_number": "01138",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Sociology",
+      "award": "A.A. Degree",
+      "control_number": "01141",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Humanities",
+      "award": "A.A. Degree",
+      "control_number": "01143",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Biology",
+      "award": "A.S. Degree",
+      "control_number": "09005",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Chassis and Drivetrain",
+      "award": "A.S. Degree",
+      "control_number": "09009",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Engine Repair Specialist",
+      "award": "A.S. Degree",
+      "control_number": "09012",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Auto Paint",
+      "award": "A.S. Degree",
+      "control_number": "09015",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Aviation Maintenance Technology: Powerplant Technician",
+      "award": "A.S. Degree",
+      "control_number": "09017",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Diesel Mechanics",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "19827",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Engine Performance",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "19831",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Engine Repair Specialist",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "19832",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Auto Body",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "19833",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Auto Paint",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "19834",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Aviation Maintenance Technology: Airframe Technician",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "19835",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Aviation Maintenance Technology: Powerplant Technician",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "19836",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Dental Assisting",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "19837",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Mathematics",
+      "award": "A.S. T Degree",
+      "control_number": "31145",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Liberal Arts Emphasis in Social and Behavioral Sciences",
+      "award": "A.A. Degree",
+      "control_number": "31164",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Liberal Arts Emphasis in Natural Science",
+      "award": "A.A. Degree",
+      "control_number": "31165",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Liberal Arts Emphasis in Arts and Humanities",
+      "award": "A.A. Degree",
+      "control_number": "31166",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "History",
+      "award": "A.A- T Degree",
+      "control_number": "32497",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Political Science",
+      "award": "A.A- T Degree",
+      "control_number": "32503",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "English",
+      "award": "A.A- T Degree",
+      "control_number": "32714",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Art History",
+      "award": "A.A- T Degree",
+      "control_number": "32765",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Sociology",
+      "award": "A.A- T Degree",
+      "control_number": "33032",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Transportation, Distribution, and Logistics",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "33364",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Athletic Trainer Aide",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "36691",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Economics",
+      "award": "A.A- T Degree",
+      "control_number": "37047",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Tutor Training",
+      "award": "Noncredit program",
+      "control_number": "37829",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Pathway to Academic English",
+      "award": "Noncredit program",
+      "control_number": "38437",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Pathway to Success",
+      "award": "Noncredit program",
+      "control_number": "38462",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "ESOL Intermediate",
+      "award": "Noncredit program",
+      "control_number": "40126",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Practitioner of Fine Art",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40289",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "ESOL High Beginning",
+      "award": "Noncredit program",
+      "control_number": "40311",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "ESOL Advanced",
+      "award": "Noncredit program",
+      "control_number": "40312",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Making with Hand Tools",
+      "award": "Noncredit program",
+      "control_number": "40627",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Gospel Music Performance",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "40628",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Jazz Studies/Popular Music Performance",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "40629",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Geology",
+      "award": "A.S. Degree",
+      "control_number": "41481",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Geography",
+      "award": "A.A. Degree",
+      "control_number": "41482",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Communication Studies",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41483",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Geology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41836",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Desktop Support Technician",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42192",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "General Chemistry",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42200",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Making with the Desktop Cutter",
+      "award": "Noncredit program",
+      "control_number": "42899",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Business Administration 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "42964",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Making with the Dye Sublimation Printer",
+      "award": "Noncredit program",
+      "control_number": "43995",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Making with the Printer Cutter",
+      "award": "Noncredit program",
+      "control_number": "43996",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Making with the 3D Printer",
+      "award": "Noncredit program",
+      "control_number": "43997",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Communication Studies 2.0",
+      "award": "A.A- T Degree",
+      "control_number": "45292",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Geography",
+      "award": "A.A- T Degree",
+      "control_number": "45448",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "College of Alameda",
+      "program": "Digital Literacy and Critical Inquiry",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45995",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "Equine Studies",
+      "award": "A.S. Degree",
+      "control_number": "04320",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "Business",
+      "award": "A.A. Degree",
+      "control_number": "04322",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "Administration of Justice",
+      "award": "A.A. Degree",
+      "control_number": "04331",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "Outdoor Recreation Leadership",
+      "award": "A.A. Degree",
+      "control_number": "04333",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "History",
+      "award": "A.A. Degree",
+      "control_number": "04335",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "Environmental Studies",
+      "award": "A.S. Degree",
+      "control_number": "07075",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "Vocational Nursing",
+      "award": "A.S. Degree",
+      "control_number": "11771",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "Agricultural Studies",
+      "award": "A.S. Degree",
+      "control_number": "16444",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "Studio Arts",
+      "award": "A.A. Degree",
+      "control_number": "16693",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "Liberal Arts: Fine Arts and Humanities",
+      "award": "A.A. Degree",
+      "control_number": "18714",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "General Studies: Social & Behavioral Sciences",
+      "award": "A.A. Degree",
+      "control_number": "18718",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "Equine Studies: Horse Training Skills",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "20859",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "Licensed Vocational Nursing",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "20879",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "Early Childhood Education",
+      "award": "A.S. T Degree",
+      "control_number": "30974",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "Kinesiology",
+      "award": "A.A- T Degree",
+      "control_number": "30998",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "Office Technology",
+      "award": "A.S. Degree",
+      "control_number": "31895",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "Office Technology",
+      "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+      "control_number": "31896",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "Administration of Justice",
+      "award": "A.S. T Degree",
+      "control_number": "32356",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "English",
+      "award": "A.A- T Degree",
+      "control_number": "32537",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "Anthropology",
+      "award": "A.A- T Degree",
+      "control_number": "32567",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "Political Science",
+      "award": "A.A- T Degree",
+      "control_number": "32743",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "Forensic Crime Scene Investigation",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "33191",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "Geology",
+      "award": "A.S. Degree",
+      "control_number": "36248",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "Geography",
+      "award": "A.A. Degree",
+      "control_number": "36252",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "Geology",
+      "award": "A.S. T Degree",
+      "control_number": "36296",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "Political Science",
+      "award": "A.A. Degree",
+      "control_number": "36333",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "Social Work and Human Services",
+      "award": "A.A- T Degree",
+      "control_number": "41355",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "Sociology",
+      "award": "A.A. Degree",
+      "control_number": "42704",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "Teacher",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42761",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "Hydrologic Technician",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "42786",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "Sociology",
+      "award": "A.A- T Degree",
+      "control_number": "42796",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "Ecological Farming",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "42985",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "Forestry Technician",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "43018",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "Fire and Fuels Technician",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "43300",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "Environmental Science",
+      "award": "A.S. Degree",
+      "control_number": "43301",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "Agriculture Business",
+      "award": "A.S. T Degree",
+      "control_number": "44471",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "Business 2.0 A.S.-T",
+      "award": "A.S. T Degree",
+      "control_number": "44510",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "Mathematics",
+      "award": "A.S. Degree",
+      "control_number": "44522",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "Agriculture Business",
+      "award": "A.S. Degree",
+      "control_number": "44639",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "Allied Health",
+      "award": "A.S. Degree",
+      "control_number": "44713",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "Hatchery Technician",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44841",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "Biological Science Technician",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "44843",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "CalGETC",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "45095",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Feather River College",
+      "program": "Elementary Teacher Education: Integrated Programs",
+      "award": "A.A- T Degree",
+      "control_number": "46487",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Accounting Technician",
+      "award": "A.S. Degree",
+      "control_number": "01864",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Business Office Technician",
+      "award": "A.S. Degree",
+      "control_number": "01868",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Exercise Science",
+      "award": "A.S. Degree",
+      "control_number": "01873",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Automotive Technology",
+      "award": "A.S. Degree",
+      "control_number": "01877",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Welding Technology",
+      "award": "A.S. Degree",
+      "control_number": "01880",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "French",
+      "award": "A.A. Degree",
+      "control_number": "01887",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Nursing - R.N.",
+      "award": "A.S. Degree",
+      "control_number": "01889",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Nursing - Vocational (V.N.)",
+      "award": "A.S. Degree",
+      "control_number": "01890",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Administration of Justice",
+      "award": "A.S. Degree",
+      "control_number": "01906",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Child Development",
+      "award": "A.S. Degree",
+      "control_number": "01908",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Fire Technology",
+      "award": "A.S. Degree",
+      "control_number": "01911",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Social Science",
+      "award": "A.A. Degree",
+      "control_number": "01912",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Addiction Disorder Studies",
+      "award": "A.S. Degree",
+      "control_number": "01922",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Business Management",
+      "award": "A.S. Degree",
+      "control_number": "08984",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Administrative Assistant",
+      "award": "A.S. Degree",
+      "control_number": "08988",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Behavioral Science",
+      "award": "A.A. Degree",
+      "control_number": "08997",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Correctional Science",
+      "award": "A.S. Degree",
+      "control_number": "08998",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "General Science",
+      "award": "A.S. Degree",
+      "control_number": "09001",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Humanities",
+      "award": "A.A. Degree",
+      "control_number": "09002",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Emergency Medical Services",
+      "award": "A.S. Degree",
+      "control_number": "11793",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Water Treatment Systems Technology",
+      "award": "A.S. Degree",
+      "control_number": "15827",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Apprenticeship: Electrician",
+      "award": "A.S. Degree",
+      "control_number": "16809",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Apprenticeship: Generation Mechanic",
+      "award": "A.S. Degree",
+      "control_number": "16810",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Apprenticeship: Meter Technician",
+      "award": "A.S. Degree",
+      "control_number": "16811",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Apprenticeship: Power Lineman",
+      "award": "A.S. Degree",
+      "control_number": "16812",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Apprenticeship: Relays Technician",
+      "award": "A.S. Degree",
+      "control_number": "16813",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Apprenticeship: SCADA/Telecommunications Technician",
+      "award": "A.S. Degree",
+      "control_number": "16814",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Apprenticeship: Substation - Electrician",
+      "award": "A.S. Degree",
+      "control_number": "16815",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Air Conditioning and Refrigeration",
+      "award": "A.S. Degree",
+      "control_number": "19340",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Digital Design and Production",
+      "award": "A.S. Degree",
+      "control_number": "19711",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Automotive Technology",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "21473",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Nursing - Vocational (V.N.)",
+      "award": "Certificate of Achievement requiring 60+S/90+Q units",
+      "control_number": "21477",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Building Construction Technology",
+      "award": "A.S. Degree",
+      "control_number": "30262",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Electrical Technology",
+      "award": "A.S. Degree",
+      "control_number": "30322",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Electrical Technology: Residential Electrician",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "30438",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Sociology",
+      "award": "A.A- T Degree",
+      "control_number": "30900",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Early Childhood Education",
+      "award": "A.S. T Degree",
+      "control_number": "30901",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Administration of Justice",
+      "award": "A.S. T Degree",
+      "control_number": "31380",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Communication Studies",
+      "award": "A.A- T Degree",
+      "control_number": "31457",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "English",
+      "award": "A.A- T Degree",
+      "control_number": "31458",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Political Science",
+      "award": "A.A- T Degree",
+      "control_number": "31459",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Kinesiology",
+      "award": "A.A- T Degree",
+      "control_number": "31688",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Anthropology",
+      "award": "A.A- T Degree",
+      "control_number": "32350",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "History",
+      "award": "A.A- T Degree",
+      "control_number": "32451",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Studio Arts",
+      "award": "A.A- T Degree",
+      "control_number": "32588",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Psychology",
+      "award": "A.A- T Degree",
+      "control_number": "32596",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Music",
+      "award": "A.A- T Degree",
+      "control_number": "32662",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Spanish",
+      "award": "A.A- T Degree",
+      "control_number": "33202",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Elementary Teacher Education",
+      "award": "A.A- T Degree",
+      "control_number": "33272",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Agriculture Business",
+      "award": "A.S. T Degree",
+      "control_number": "33926",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Biology",
+      "award": "A.S. T Degree",
+      "control_number": "35417",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Computer Science",
+      "award": "A.S. T Degree",
+      "control_number": "35426",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Agriculture Plant Science",
+      "award": "A.S. T Degree",
+      "control_number": "35440",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Geography",
+      "award": "A.A- T Degree",
+      "control_number": "35587",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Chemistry",
+      "award": "A.S. T Degree",
+      "control_number": "36151",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Administration of Justice: Law Enforcement",
+      "award": "A.S. Degree",
+      "control_number": "36755",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Administration of Justice: Law Enforcement",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "36756",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Economics",
+      "award": "A.A- T Degree",
+      "control_number": "36786",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Physics",
+      "award": "A.S. T Degree",
+      "control_number": "37392",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Art History",
+      "award": "A.A- T Degree",
+      "control_number": "37751",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Computer Information Technology",
+      "award": "A.S. Degree",
+      "control_number": "38183",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Correctional Science: Corrections Officer",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38210",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "American Sign Language",
+      "award": "A.A. Degree",
+      "control_number": "39569",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Global Studies",
+      "award": "A.A- T Degree",
+      "control_number": "40053",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Pre-Engineering",
+      "award": "A.S. Degree",
+      "control_number": "41064",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Automotive Technology: Fundamentals of Automotive Service",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41191",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Electrical Technology: General Electrician",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41193",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Automotive Technology: Maintenance and Basic Repair",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41270",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Business Administration 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "41288",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Pre-Nursing and Allied Health",
+      "award": "A.S. Degree",
+      "control_number": "42241",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Agriculture Service Technology",
+      "award": "A.S. Degree",
+      "control_number": "42286",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Cybersecurity",
+      "award": "A.S. Degree",
+      "control_number": "42288",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Geology",
+      "award": "A.S. T Degree",
+      "control_number": "42408",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Communication Studies 2.0",
+      "award": "A.A- T Degree",
+      "control_number": "43019",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Kinesiology: Pre-Athletic Training",
+      "award": "A.S. Degree",
+      "control_number": "43146",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Kinesiology: Pre-Physical Therapy",
+      "award": "A.S. Degree",
+      "control_number": "43147",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Public Health Science",
+      "award": "A.S. Degree",
+      "control_number": "45007",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "ESL Milestone Pathway: Public Health, Nutrition, and Kinesiology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45112",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "ESL Milestone Pathway: Social Sciences & Humanities",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45113",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "ESL Milestone Pathway: Business and Computer Information Systems",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45114",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "ESL Milestone Pathway: Childhood Development/Early Childhood Education/Elementary Education",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45115",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "ESL Milestone Pathway: Science, Technology, Engineering, and Mathematics",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45116",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Imperial Valley College",
+      "program": "Industrial Automation Systems Technology",
+      "award": "A.S. Degree",
+      "control_number": "45375",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Accounting",
+      "award": "A.S. Degree",
+      "control_number": "01145",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Banking and Finance",
+      "award": "A.S. Degree",
+      "control_number": "01146",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Marketing And Sales",
+      "award": "A.S. Degree",
+      "control_number": "01148",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Business Information Systems",
+      "award": "A.S. Degree",
+      "control_number": "01149",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Journalism",
+      "award": "A.A. Degree",
+      "control_number": "01150",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Residential and Light Commercial HVAC & R",
+      "award": "A.S. Degree",
+      "control_number": "01156",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Wood Technology",
+      "award": "A.S. Degree",
+      "control_number": "01158",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Machine Technology",
+      "award": "A.S. Degree",
+      "control_number": "01161",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Welding Technology",
+      "award": "A.S. Degree",
+      "control_number": "01162",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Construction Management",
+      "award": "A.S. Degree",
+      "control_number": "01163",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Music",
+      "award": "A.A. Degree",
+      "control_number": "01166",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Theatre Arts",
+      "award": "A.A. Degree",
+      "control_number": "01167",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Ethnic Studies",
+      "award": "A.A. Degree",
+      "control_number": "01182",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Cosmetology",
+      "award": "A.S. Degree",
+      "control_number": "01188",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Business Administration",
+      "award": "A.S. Degree",
+      "control_number": "09022",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Applied Graphic Design-Digital Imaging",
+      "award": "A.A. Degree",
+      "control_number": "09028",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Architecture",
+      "award": "A.S. Degree",
+      "control_number": "09031",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Ceramics",
+      "award": "A.A. Degree",
+      "control_number": "09032",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Dance",
+      "award": "A.A. Degree",
+      "control_number": "09033",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Baking and Pastry",
+      "award": "A.S. Degree",
+      "control_number": "09034",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "African American Studies",
+      "award": "A.A. Degree",
+      "control_number": "09036",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Asian and Asian American Studies",
+      "award": "A.A. Degree",
+      "control_number": "14774",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Retail Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "15308",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Commercial HVAC Systems",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "18734",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Commercial HVAC Systems",
+      "award": "A.S. Degree",
+      "control_number": "18735",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Humanities",
+      "award": "A.A. Degree",
+      "control_number": "19056",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Language Arts",
+      "award": "A.A. Degree",
+      "control_number": "19057",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Social Sciences",
+      "award": "A.A. Degree",
+      "control_number": "19059",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Architecture Design & Drafting",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "21535",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Accounting",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "21536",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Banking and Finance",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "21538",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Business Administration",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "21539",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Management and Supervision",
+      "award": "A.S. Degree",
+      "control_number": "21540",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Marketing and Sales",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "21541",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Business Information Systems",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "21542",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Residential and Light Commercial HVAC & R",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "21553",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Carpentry",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "21554",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Wood Technology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "21555",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Welding Technology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "21559",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Construction Management",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "21561",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Photography",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "21563",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Applied Graphic Design-Digital Imaging",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "21564",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Baking and Pastry",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "21565",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Cosmetology",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "21567",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Building Automation Systems",
+      "award": "A.S. Degree",
+      "control_number": "30515",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Building Automation Systems",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "30533",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Mathematics",
+      "award": "A.S. T Degree",
+      "control_number": "31234",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Industrial Maintenance",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "31273",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Political Science",
+      "award": "A.A- T Degree",
+      "control_number": "32799",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Translation and Interpretation--Spanish",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "32880",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Sociology",
+      "award": "A.A- T Degree",
+      "control_number": "32884",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Psychology",
+      "award": "A.A- T Degree",
+      "control_number": "32885",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Anthropology",
+      "award": "A.A- T Degree",
+      "control_number": "32973",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Studio Arts",
+      "award": "A.A- T Degree",
+      "control_number": "32984",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Kinesiology",
+      "award": "A.A- T Degree",
+      "control_number": "32991",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Theatre Arts",
+      "award": "A.A- T Degree",
+      "control_number": "33030",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Journalism",
+      "award": "A.A- T Degree",
+      "control_number": "33179",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Philosophy",
+      "award": "A.A- T Degree",
+      "control_number": "33289",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Music",
+      "award": "A.A- T Degree",
+      "control_number": "33674",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Mathematics",
+      "award": "A.S. Degree",
+      "control_number": "35111",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "CIS-Computer Programming",
+      "award": "A.S. Degree",
+      "control_number": "35120",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Computer Information Science",
+      "award": "A.S. Degree",
+      "control_number": "35121",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Computer Programming with Java",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "35235",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Computer Programming with C++",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "35236",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Database Management with SQL",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "35260",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Computer Systems Analysis",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "35261",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Bookkeeping",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "35371",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "English",
+      "award": "A.A- T Degree",
+      "control_number": "36030",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Science",
+      "award": "A.S. Degree",
+      "control_number": "36089",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Global Studies",
+      "award": "A.A- T Degree",
+      "control_number": "36149",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Basic English",
+      "award": "Noncredit program",
+      "control_number": "36394",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Vocational English for Speakers of Other Languages",
+      "award": "Noncredit program",
+      "control_number": "36670",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Social Justice: Ethnic Studies",
+      "award": "A.A- T Degree",
+      "control_number": "36792",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Advanced Carpentry",
+      "award": "A.S. Degree",
+      "control_number": "36937",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Culinary Arts and Restaurant Management",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "36938",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Culinary Arts and Restaurant Management",
+      "award": "A.S. Degree",
+      "control_number": "36939",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Photography",
+      "award": "A.A. Degree",
+      "control_number": "36940",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Economics",
+      "award": "A.A- T Degree",
+      "control_number": "37371",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Physics",
+      "award": "A.S. T Degree",
+      "control_number": "37422",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Social Justice: African American Studies",
+      "award": "A.A- T Degree",
+      "control_number": "37460",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Geography",
+      "award": "A.A- T Degree",
+      "control_number": "37512",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Spanish",
+      "award": "A.A- T Degree",
+      "control_number": "37541",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Research Skills",
+      "award": "Noncredit program",
+      "control_number": "37796",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Entrepreneurship",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37930",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "History",
+      "award": "A.A- T Degree",
+      "control_number": "38060",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "California Green & Sustainable Building Standards",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38114",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Jazz",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "38115",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Music",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38118",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Advanced Carpentry",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "38774",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "ESOL College Ready Skills",
+      "award": "Noncredit program",
+      "control_number": "38970",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "ESOL Intermediate",
+      "award": "Noncredit program",
+      "control_number": "39365",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "ESOL High Intermediate",
+      "award": "Noncredit program",
+      "control_number": "39366",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "ESOL High Beginning",
+      "award": "Noncredit program",
+      "control_number": "39368",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Digital Fabrication Technology--Wood Technology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39790",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Advanced Culinary Techniques",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "40036",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Chinese",
+      "award": "A.A. Degree",
+      "control_number": "40539",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Chinese",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40540",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "College Preparation and Orientation",
+      "award": "Noncredit program",
+      "control_number": "40555",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Culinary Foundations",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "40701",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Jazz",
+      "award": "A.A. Degree",
+      "control_number": "41248",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Indigenous Languages and Cultures-Mam",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41267",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "ESOL Advanced",
+      "award": "Noncredit program",
+      "control_number": "41311",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Digital Newsgathering",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "41333",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Newswriting and Reporting",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41334",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Business Administration 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "41522",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Chinese Music",
+      "award": "A.A. Degree",
+      "control_number": "41681",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Chinese Music",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41682",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Digital Fabrication Technology - Art",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41930",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Communication Studies",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "41975",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Professional Lighting",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "42391",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Photographic Foundations",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "42415",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Engineering",
+      "award": "A.S. Degree",
+      "control_number": "42812",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Engineering – Computer and Electrical",
+      "award": "A.S. Degree",
+      "control_number": "42813",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Spanish for Bilingual/Heritage Students",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "42814",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Advanced Precision Machining",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "42956",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "CNC Machining",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42957",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Manual Machining",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42958",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "English for Speakers of Other Languages: Advanced",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42997",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "English for Speakers of Other Languages - Intermediate",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42999",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Refrigeration Technology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43002",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Basic Manufacturing",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43003",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "English for Speakers of Other Languages: High Intermediate",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "43017",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Spanish Language and Culture",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43246",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Fundamentals of Computer Numerical Control (CNC) Manufacturing",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "43357",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Fundamentals of Wood Technology",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "43361",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Data Science Fundamentals",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43382",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "ESOL Entry Level Employment Skills",
+      "award": "Noncredit program",
+      "control_number": "43451",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Building Codes and Inspections",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43452",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Communication Studies 2.0",
+      "award": "A.A- T Degree",
+      "control_number": "43605",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Modern Dance Teaching Preparation and Performance",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43614",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Ballet Dance Teaching Preparation and Performance",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "43615",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Jazz Dance Teaching Preparation and Performance",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43616",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Joyful Movement Life Skills: Comprehensive Apparatus Training",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "43685",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "World Folkloric Dance Teaching Preparation and Performance",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43733",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Data Science",
+      "award": "A.S. Degree",
+      "control_number": "43807",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Joyful Movement Life Skills: Reformer Training",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "43831",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Joyful Movement Life Skills: Mat Training",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43886",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Data Analytics",
+      "award": "A.S. Degree",
+      "control_number": "43980",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Graphics in Motion",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "43981",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Japanese Language and Culture",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "44127",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Advanced Japanese Language and Culture",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44128",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Hospitality Management",
+      "award": "A.S. T Degree",
+      "control_number": "44251",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Medical Interpreting",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "44538",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Introductory Spanish Language and Culture",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "45327",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Applied Generative AI",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45412",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Deep Learning",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45500",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Natural Language Processing",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45501",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Computer Programming and Data Fundamentals",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "45627",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "English for Healthcare",
+      "award": "Noncredit program",
+      "control_number": "45772",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Laney College",
+      "program": "Introduction to Digital Fabrication",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45981",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Las Positas College",
+      "program": "Art: Emphasis in Painting",
+      "award": "A.A. Degree",
+      "control_number": "01004",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Las Positas College",
+      "program": "Humanities",
+      "award": "A.A. Degree",
+      "control_number": "01032",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Las Positas College",
+      "program": "Commercial Music: Music Business",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "36234",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Las Positas College",
+      "program": "Liberal Arts & Sciences: Mathematics and Science",
+      "award": "A.A. Degree",
+      "control_number": "36341",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Las Positas College",
+      "program": "Commercial Music: Teaching Intermediate Piano",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "36349",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Las Positas College",
+      "program": "Commercial Music: Teaching Beginning Piano",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "36350",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Las Positas College",
+      "program": "Liberal Arts & Sciences: Computer Studies",
+      "award": "A.A. Degree",
+      "control_number": "36361",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Las Positas College",
+      "program": "Liberal Arts & Sciences: Language Arts and Communication",
+      "award": "A.A. Degree",
+      "control_number": "36362",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Las Positas College",
+      "program": "Liberal Arts & Sciences: Business",
+      "award": "A.A. Degree",
+      "control_number": "36363",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Las Positas College",
+      "program": "Liberal Arts & Sciences: Arts and Humanities",
+      "award": "A.A. Degree",
+      "control_number": "36431",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Las Positas College",
+      "program": "Liberal Arts & Sciences: Social and Behavioral Sciences",
+      "award": "A.A. Degree",
+      "control_number": "36479",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Las Positas College",
+      "program": "Commercial Music: Scoring for Film and Multimedia",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37521",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Las Positas College",
+      "program": "Fire Academy - Fire Suppression",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37523",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Las Positas College",
+      "program": "Commercial Music: Music Technology Fundamentals",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "37535",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Las Positas College",
+      "program": "Commercial Music: Piano Teaching Fundamentals",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "39066",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Las Positas College",
+      "program": "Social Justice Studies: LGBTQ Studies",
+      "award": "A.A- T Degree",
+      "control_number": "40063",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Las Positas College",
+      "program": "Social Justice Studies: Gender Studies",
+      "award": "A.A- T Degree",
+      "control_number": "41980",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Las Positas College",
+      "program": "Liberal Arts & Sciences: Health and Wellness",
+      "award": "A.A. Degree",
+      "control_number": "45955",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Las Positas College",
+      "program": "Commercial Music: Music Technology and Production",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "46194",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Las Positas College",
+      "program": "Elementary Teacher Education: Integrated Programs",
+      "award": "A.A- T Degree",
+      "control_number": "46334",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Administration of Justice",
+      "award": "A.S. T Degree",
+      "control_number": "39484",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Economics",
+      "award": "A.A- T Degree",
+      "control_number": "39520",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Political Science",
+      "award": "A.A- T Degree",
+      "control_number": "39521",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Psychology",
+      "award": "A.A- T Degree",
+      "control_number": "39528",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Sociology",
+      "award": "A.A- T Degree",
+      "control_number": "39529",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Early Childhood Education",
+      "award": "A.S. T Degree",
+      "control_number": "39530",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Biological Science",
+      "award": "A.S. Degree",
+      "control_number": "39690",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Communication Studies",
+      "award": "A.A. Degree",
+      "control_number": "39691",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "English",
+      "award": "A.A. Degree",
+      "control_number": "39693",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "American Sign Language",
+      "award": "A.A. Degree",
+      "control_number": "39694",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Liberal Arts & Sciences: Arts & Humanities",
+      "award": "A.A. Degree",
+      "control_number": "39704",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Liberal Arts & Sciences: Natural Sciences",
+      "award": "A.A. Degree",
+      "control_number": "39705",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Accounting",
+      "award": "A.S. Degree",
+      "control_number": "39706",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Agricultural Mechanics",
+      "award": "A.S. Degree",
+      "control_number": "39707",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Agriculture Business, Option A",
+      "award": "A.S. Degree",
+      "control_number": "39715",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Agriculture Education",
+      "award": "A.S. Degree",
+      "control_number": "39721",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Art: Two Dimensional",
+      "award": "A.A. Degree",
+      "control_number": "39722",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Business Administration: Entrepreneur",
+      "award": "A.S. Degree",
+      "control_number": "39723",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Business Administration:General Business",
+      "award": "A.S. Degree",
+      "control_number": "39724",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Business Administration: Management",
+      "award": "A.S. Degree",
+      "control_number": "39725",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Business Administration: Marketing",
+      "award": "A.S. Degree",
+      "control_number": "39726",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Business Administration: Information Systems Management",
+      "award": "A.S. Degree",
+      "control_number": "39742",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Child Development",
+      "award": "A.S. Degree",
+      "control_number": "39743",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Criminology-Corrections",
+      "award": "A.S. Degree",
+      "control_number": "39744",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Administrative Assistant",
+      "award": "A.S. Degree",
+      "control_number": "39768",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Engineering",
+      "award": "A.S. Degree",
+      "control_number": "39771",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Industrial Maintenance Technician",
+      "award": "A.S. Degree",
+      "control_number": "39772",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Liberal Studies",
+      "award": "A.A. Degree",
+      "control_number": "39773",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Licensed Vocational Nursing",
+      "award": "A.S. Degree",
+      "control_number": "39779",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "LVN-RN",
+      "award": "A.S. Degree",
+      "control_number": "39780",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Machine Tool Technology",
+      "award": "A.S. Degree",
+      "control_number": "39781",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Mathematics",
+      "award": "A.S. Degree",
+      "control_number": "39782",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Medical Administrative Assistant",
+      "award": "A.S. Degree",
+      "control_number": "39783",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Physical Science",
+      "award": "A.S. Degree",
+      "control_number": "39784",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Plant and Soil Science",
+      "award": "A.S. Degree",
+      "control_number": "39785",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Social Science",
+      "award": "A.A. Degree",
+      "control_number": "39786",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Welding Technology",
+      "award": "A.S. Degree",
+      "control_number": "39788",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Computer Science",
+      "award": "A.S. Degree",
+      "control_number": "39791",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Criminology- Law Enforcement",
+      "award": "A.S. Degree",
+      "control_number": "39793",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Environmental Horticulture",
+      "award": "A.S. Degree",
+      "control_number": "39794",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Agriculture Business",
+      "award": "A.S. T Degree",
+      "control_number": "39803",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Information Systems, Information Technology Support Option",
+      "award": "A.S. Degree",
+      "control_number": "39804",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Information Systems, Networking and Security",
+      "award": "A.S. Degree",
+      "control_number": "39805",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Biology",
+      "award": "A.S. T Degree",
+      "control_number": "39809",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Elementary Teacher Education",
+      "award": "A.A- T Degree",
+      "control_number": "39810",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Art History",
+      "award": "A.A- T Degree",
+      "control_number": "39811",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "English",
+      "award": "A.A- T Degree",
+      "control_number": "39812",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Kinesiology",
+      "award": "A.A- T Degree",
+      "control_number": "39813",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Philosphy",
+      "award": "A.A- T Degree",
+      "control_number": "39814",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Spanish",
+      "award": "A.A- T Degree",
+      "control_number": "39815",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Agriculture Plant Science",
+      "award": "A.S. T Degree",
+      "control_number": "39817",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Mathematics",
+      "award": "A.S. T Degree",
+      "control_number": "39818",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Physics",
+      "award": "A.S. T Degree",
+      "control_number": "39819",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "American Sign Language Conversational Proficiency",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39820",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Business Foundations",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39822",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "History",
+      "award": "A.A- T Degree",
+      "control_number": "39831",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Associate Teacher",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "39857",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Environmental Horticulture",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "39858",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Manufacturing 1",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "39859",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Speech Aide",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39860",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Accounting",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39861",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Administrative Assistant",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "39862",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Entry Level Business Skills",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39863",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Information Systems",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39867",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Machinist",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39869",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Managerial Assistant",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39870",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Medical Administrative Assistant",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "39871",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Office Assistant",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39872",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Welder",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39873",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Human Services",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39875",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Early Intervention Assistant",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "39876",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Licensed Vocational Nursing",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "39877",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "LVN-RN",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39894",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Information Technology Support Technician",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "39914",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Studio Arts",
+      "award": "A.A- T Degree",
+      "control_number": "39981",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "21st Century Job Skills",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "40163",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Academic and Vocational English as a Second Language",
+      "award": "Noncredit program",
+      "control_number": "40333",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Intermediate Academic and Vocational English as a Second Language",
+      "award": "Noncredit program",
+      "control_number": "40338",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Basic English as a Second Language",
+      "award": "Noncredit program",
+      "control_number": "40339",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Basics of Computers",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "40400",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Social Work and Human Services",
+      "award": "A.A- T Degree",
+      "control_number": "40893",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Business Administration 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "41309",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Crime Scene Investigation",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "42309",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Communication Studies 2.0",
+      "award": "A.A- T Degree",
+      "control_number": "43396",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Foundations of Hospitality",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43459",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Drafting",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "43474",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Fundamental Skills of Management in Hospitality",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43485",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Vocational English as a Second Language",
+      "award": "Noncredit program",
+      "control_number": "43665",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "General Music",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43673",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Music Theory",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "43674",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Vocal Performance",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "43677",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Pest Control Advisor",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "43705",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Hospitality Management",
+      "award": "A.S. T Degree",
+      "control_number": "44516",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Music",
+      "award": "A.A- T Degree",
+      "control_number": "44518",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Food and Beverage Management Level 2",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44523",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Food and Beverage Management Level I",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44524",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Music",
+      "award": "A.A. Degree",
+      "control_number": "44721",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Madera College",
+      "program": "Social Justice Studies: General",
+      "award": "A.A- T Degree",
+      "control_number": "46140",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Basic Landscape Horticulture",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "01192",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Accounting",
+      "award": "A.A. Degree",
+      "control_number": "01195",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Business Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "01196",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Real Estate",
+      "award": "A.A. Degree",
+      "control_number": "01197",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Nursing",
+      "award": "A.S. Degree",
+      "control_number": "01208",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Radiologic Science",
+      "award": "A.S. Degree",
+      "control_number": "01210",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Dietary Manager",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "01212",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Paralegal Studies",
+      "award": "A.A. Degree",
+      "control_number": "01213",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Administration of Justice: Police Science",
+      "award": "A.A. Degree",
+      "control_number": "01226",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Child Development",
+      "award": "A.A. Degree",
+      "control_number": "01227",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "African American Studies",
+      "award": "A.A. Degree",
+      "control_number": "01231",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Nursery Management",
+      "award": "A.S. Degree",
+      "control_number": "09040",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Landscape Design and Construction",
+      "award": "A.S. Degree",
+      "control_number": "09042",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Community Social Services/Substance Abuse",
+      "award": "A.A. Degree",
+      "control_number": "09050",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Administration of Justice: Corrections",
+      "award": "A.A. Degree",
+      "control_number": "09051",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Health Sciences",
+      "award": "A.S. Degree",
+      "control_number": "09054",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Natural Sciences",
+      "award": "A.S. Degree",
+      "control_number": "09055",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Landscape And Parks Maintenance",
+      "award": "A.S. Degree",
+      "control_number": "11693",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Dietetic Technology",
+      "award": "A.S. Degree",
+      "control_number": "12299",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "California General Education Transfer Curriculum (Cal-GETC)",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "19145",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Landscape and Parks Maintenance",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "22010",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Landscape Design and Construction",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "22011",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Nursery Management",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "22012",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Accounting",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "22015",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Real Estate",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "22016",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Radiologic Science",
+      "award": "Certificate of Achievement requiring 60+S/90+Q units",
+      "control_number": "22023",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Teacher",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "22025",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Paralegal Studies",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "22026",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Community Social Services/Substance Abuse",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "22028",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Administration of Justice: Police Science",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "22029",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Administration of Justice: Corrections",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "22030",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Landscape Architecture",
+      "award": "A.A. Degree",
+      "control_number": "30967",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Administration of Justice",
+      "award": "A.S. T Degree",
+      "control_number": "31180",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Mathematics",
+      "award": "A.S. T Degree",
+      "control_number": "32928",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Early Childhood Education",
+      "award": "A.S. T Degree",
+      "control_number": "33081",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Homeland Security",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "33332",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Applications Security",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "33357",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Social and Behavioral Sciences",
+      "award": "A.A. Degree",
+      "control_number": "33371",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Infrastructure Security",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "33439",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Anthropology",
+      "award": "A.A- T Degree",
+      "control_number": "33536",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Economics",
+      "award": "A.A- T Degree",
+      "control_number": "33540",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Applications Security",
+      "award": "A.S. Degree",
+      "control_number": "33675",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Sociology",
+      "award": "A.A- T Degree",
+      "control_number": "33709",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Infrastructure Security",
+      "award": "A.S. Degree",
+      "control_number": "33716",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Nutrition and Dietetics",
+      "award": "A.S. T Degree",
+      "control_number": "35211",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Histotechnician",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "35315",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Tree Care Specialist",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "36514",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Tree Climber Specialist",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "36515",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Arboriculture",
+      "award": "A.S. Degree",
+      "control_number": "36516",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Bridge to Credit ESOL",
+      "award": "Noncredit program",
+      "control_number": "36826",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Art Fundamentals",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37718",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Research Skills",
+      "award": "Noncredit program",
+      "control_number": "37798",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Computer Science",
+      "award": "A.S. Degree",
+      "control_number": "37964",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Computer Science",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "37966",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Fire Technology",
+      "award": "A.S. Degree",
+      "control_number": "38375",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Fire Officer",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38376",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Chief Fire Officer",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38377",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Fire Technology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38635",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Optical Microscopy",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "38636",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Fluorescence Bioscience Microscopy",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "38637",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Conservation and Resource Management",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "38648",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Natural History and Resources",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38649",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Urban Agroecology",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38650",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Computer Science and Information Systems Career Readiness",
+      "award": "Noncredit program",
+      "control_number": "39761",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Digital Marketing",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41119",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Clinical Medical Assisting",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41238",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Administrative Medical Assisting",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41274",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Computer Project Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41331",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Transitional Kindergarten (TK)",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "41368",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Basic Cannabis Horticulture",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41523",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Business Administration 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "41761",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "DevOps - Development and Operations Automation",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "42483",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "DevOps - Development and Operations Automation",
+      "award": "A.S. Degree",
+      "control_number": "42571",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Digital Investment",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "42959",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Communication Studies 2.0",
+      "award": "A.A- T Degree",
+      "control_number": "43040",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Botanical Illustration",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43075",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Permaculture Design",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43947",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Municipal Gardener, Level 1",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "44195",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Municipal Gardener, Level 2",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "44196",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Paramedic",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "44202",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Merritt College",
+      "program": "Paramedic",
+      "award": "A.S. Degree",
+      "control_number": "44448",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "American Sign Language",
+      "award": "A.A. Degree",
+      "control_number": "01101",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Art",
+      "award": "A.A. Degree",
+      "control_number": "01102",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Biotechnology",
+      "award": "A.S. Degree",
+      "control_number": "09056",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "General Business",
+      "award": "A.A. Degree",
+      "control_number": "09057",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Accounting",
+      "award": "A.A. Degree",
+      "control_number": "09058",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "English Literature/Writing",
+      "award": "A.A. Degree",
+      "control_number": "09065",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Creative Writing/Fiction",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "11676",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Creative Writing/Poetry",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "11677",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Multimedia Arts--Mobile and Web Design",
+      "award": "A.A. Degree",
+      "control_number": "11960",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Mobile and Web Design Level I",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "11961",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Mobile and Web Design Level II",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "11962",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Advanced Computer Programming",
+      "award": "A.S. Degree",
+      "control_number": "15570",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Social Sciences",
+      "award": "A.A. Degree",
+      "control_number": "18597",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Arts and Humanities",
+      "award": "A.A. Degree",
+      "control_number": "19267",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Biotechnology Research Laboratory Assistant",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "19969",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "General Business",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "19970",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Advanced Computer Programming",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "19972",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "American Sign Language",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "19975",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "English",
+      "award": "A.A- T Degree",
+      "control_number": "31138",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Elementary Teacher Education",
+      "award": "A.A- T Degree",
+      "control_number": "31835",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Political Science",
+      "award": "A.A- T Degree",
+      "control_number": "31984",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Teacher's Aide",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "33181",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Economics",
+      "award": "A.A- T Degree",
+      "control_number": "33548",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Analytical Chemistry",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "33774",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Analytical Chemistry",
+      "award": "A.S. Degree",
+      "control_number": "33788",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Academic Composition Skills",
+      "award": "Noncredit program",
+      "control_number": "35507",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Gender Studies",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "37668",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "ESOL Advanced",
+      "award": "Noncredit program",
+      "control_number": "37789",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "ESOL High Intermediate",
+      "award": "Noncredit program",
+      "control_number": "37790",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Research Skills",
+      "award": "Noncredit program",
+      "control_number": "37797",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Studio Arts",
+      "award": "A.A- T Degree",
+      "control_number": "37850",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Art History",
+      "award": "A.A- T Degree",
+      "control_number": "37851",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Biotechnology Laboratory Assistant",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "38228",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Management and Entrepreneurship",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "39163",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Liberal Studies - Teacher Preparation",
+      "award": "A.A. Degree",
+      "control_number": "39347",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Sociology",
+      "award": "A.A- T Degree",
+      "control_number": "39386",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Anthropology",
+      "award": "A.A- T Degree",
+      "control_number": "39856",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Spanish",
+      "award": "A.A- T Degree",
+      "control_number": "40244",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Business Administration 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "41766",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Philosophy",
+      "award": "A.A- T Degree",
+      "control_number": "41777",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Mathematics",
+      "award": "A.S. T Degree",
+      "control_number": "41778",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "History",
+      "award": "A.A- T Degree",
+      "control_number": "41794",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Psychology",
+      "award": "A.A- T Degree",
+      "control_number": "41795",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Global Studies",
+      "award": "A.A- T Degree",
+      "control_number": "41796",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Child and Adolescent Development",
+      "award": "A.A- T Degree",
+      "control_number": "41834",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Social and Human Service Work Readiness",
+      "award": "Noncredit program",
+      "control_number": "41867",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Tutor Training",
+      "award": "Noncredit program",
+      "control_number": "41868",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Community Health Worker",
+      "award": "Noncredit program",
+      "control_number": "41869",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Social Work and Human Services",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "41876",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Biology",
+      "award": "A.S. T Degree",
+      "control_number": "41902",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Social Work and Human Services",
+      "award": "A.A- T Degree",
+      "control_number": "42381",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Physics",
+      "award": "A.S. T Degree",
+      "control_number": "42838",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Communication Studies 2.0",
+      "award": "A.A- T Degree",
+      "control_number": "43006",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "ESOL Intermediate",
+      "award": "Noncredit program",
+      "control_number": "43023",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Law, Public Policy, and Society",
+      "award": "A.A- T Degree",
+      "control_number": "43097",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Film Studies",
+      "award": "A.A. Degree",
+      "control_number": "43214",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "ESOL Pathway to Business",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43931",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "ESOL Pathway to Humanities",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43932",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "ESOL Pathway to Social Sciences",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43933",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "ESOL Pathway to STEM",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43934",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "ESOL Pathway to Teaching and Social Work",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43935",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "ESOL Pathway to the Arts",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43936",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Fundamentals of Data Science",
+      "award": "A.S. Degree",
+      "control_number": "45941",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Data Science Analytics",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "46177",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Elementary Teacher Education: Integrated Programs",
+      "award": "A.A- T Degree",
+      "control_number": "46229",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Berkeley City College",
+      "program": "Mathematics 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "46230",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Business:  Accounting Option",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "06113",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Real Estate",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "06116",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Business: Office Applications Option",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "06117",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Aviation Maintenance Technology",
+      "award": "A.S. Degree",
+      "control_number": "06124",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Studio Art",
+      "award": "A.A. Degree",
+      "control_number": "06127",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Music",
+      "award": "A.A. Degree",
+      "control_number": "06128",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Theatre Arts: Acting",
+      "award": "A.A. Degree",
+      "control_number": "06129",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Registered Nursing",
+      "award": "A.S. Degree",
+      "control_number": "06131",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Licensed Vocational Nursing",
+      "award": "A.S. Degree",
+      "control_number": "06132",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Child Development",
+      "award": "A.A. Degree",
+      "control_number": "06144",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Business: Technical Publishing Option",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "08456",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Law Enforcement, Option 2",
+      "award": "A.A. Degree",
+      "control_number": "08458",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Cosmetology",
+      "award": "A.S. Degree",
+      "control_number": "08460",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Liberal Arts (Multiple Subjects)",
+      "award": "A.A. Degree",
+      "control_number": "08464",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Business: Medical Office Option",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "08466",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Communication Studies",
+      "award": "A.A. Degree",
+      "control_number": "12002",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Computer Networking",
+      "award": "A.S. Degree",
+      "control_number": "13715",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Computer Programming",
+      "award": "A.S. Degree",
+      "control_number": "14041",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Digital Media (with options)",
+      "award": "A.A. Degree",
+      "control_number": "14878",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Theatre Arts: Technical Production",
+      "award": "A.A. Degree",
+      "control_number": "15555",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Communication Studies",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "17724",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Spanish Non-Native Speakers Option 1",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "17827",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Liberal Arts: Language Arts & Humanities",
+      "award": "A.A. Degree",
+      "control_number": "18453",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Liberal Arts: Social Science-Behavioral & Organizational",
+      "award": "A.A. Degree",
+      "control_number": "18455",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Liberal Arts: Elementary Education",
+      "award": "A.A. Degree",
+      "control_number": "18458",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Liberal Arts: Business Emphasis",
+      "award": "A.A. Degree",
+      "control_number": "18459",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Accounting",
+      "award": "A.A. Degree",
+      "control_number": "18541",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Communication Studies: Interpersonal Communication",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "19327",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Child Development and Educational Studies",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "19378",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Digital Design and Imaging",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "21281",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Computer Programming",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "21285",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Computer Networking",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "21287",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Aviation Maintenance Technology",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "21288",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Spanish Non-Native Speakers 2",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "21291",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Spanish Non-Native Speakers 3",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "21292",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Registered Nursing",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "21293",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Law Enforcement, Option 2",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "21297",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Cosmetology",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "21298",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "GED Preparation",
+      "award": "Noncredit program",
+      "control_number": "24369",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Aviation Maintenance Technology: Airframe",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "30203",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Aviation Maintenance Technology: Powerplant",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "30204",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Theater Arts-Television Performance",
+      "award": "A.A. Degree",
+      "control_number": "30260",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Television Performance Option",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "30270",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Music Composition and Production",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "30548",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Communication Studies",
+      "award": "A.A- T Degree",
+      "control_number": "30577",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Administration of Justice",
+      "award": "A.S. T Degree",
+      "control_number": "30652",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Mathematics",
+      "award": "A.S. T Degree",
+      "control_number": "31444",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Kinesiology and Athletics: Personal Fitness Training",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "31533",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Art History",
+      "award": "A.A- T Degree",
+      "control_number": "31609",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Water Resources Management",
+      "award": "A.A. Degree",
+      "control_number": "31626",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Water Resources Management",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "31647",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Studio Arts",
+      "award": "A.A- T Degree",
+      "control_number": "31654",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Theatre Arts",
+      "award": "A.A- T Degree",
+      "control_number": "31752",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Kinesiology",
+      "award": "A.A- T Degree",
+      "control_number": "31771",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Journalism",
+      "award": "A.A- T Degree",
+      "control_number": "31830",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Philosophy",
+      "award": "A.A- T Degree",
+      "control_number": "33045",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Spanish",
+      "award": "A.A- T Degree",
+      "control_number": "33046",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Physics",
+      "award": "A.S. T Degree",
+      "control_number": "33047",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "English",
+      "award": "A.A- T Degree",
+      "control_number": "33049",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Political Science",
+      "award": "A.A- T Degree",
+      "control_number": "33128",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Early Childhood Education",
+      "award": "A.S. T Degree",
+      "control_number": "33130",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Kinesiology",
+      "award": "A.A. Degree",
+      "control_number": "33446",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "History",
+      "award": "A.A- T Degree",
+      "control_number": "33621",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Fire Science",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "33778",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Computer Science",
+      "award": "A.S. T Degree",
+      "control_number": "35162",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Chemistry",
+      "award": "A.S. T Degree",
+      "control_number": "35459",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Social Justice Studies",
+      "award": "A.A- T Degree",
+      "control_number": "36198",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Computer Applications for ESL Students",
+      "award": "Noncredit program",
+      "control_number": "36286",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "ESL Advanced Level",
+      "award": "Noncredit program",
+      "control_number": "36289",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "ESL Citizenship",
+      "award": "Noncredit program",
+      "control_number": "36844",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "HVAC - Heating, Ventilation and Air Conditioning",
+      "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+      "control_number": "36944",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "HVAC - Heating, Ventilation and Air Conditioning",
+      "award": "A.S. Degree",
+      "control_number": "36945",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Classical and Contemporary World Philosophies and Religions",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "37689",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Biology",
+      "award": "A.S. T Degree",
+      "control_number": "37750",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Welding Technology",
+      "award": "Noncredit program",
+      "control_number": "37812",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Engineering",
+      "award": "A.S. Degree",
+      "control_number": "37896",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Business (with options)",
+      "award": "A.A. Degree",
+      "control_number": "38119",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Public Health Science",
+      "award": "A.S. T Degree",
+      "control_number": "38634",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Elementary Teacher Education",
+      "award": "A.A- T Degree",
+      "control_number": "38787",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "ESL Lifeskills",
+      "award": "Noncredit program",
+      "control_number": "39624",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "SOCIOLOGY",
+      "award": "A.A- T Degree",
+      "control_number": "39708",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "ESL Intermediate I Level",
+      "award": "Noncredit program",
+      "control_number": "39753",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "ESL Beginning Level",
+      "award": "Noncredit program",
+      "control_number": "39754",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Film and Television Production",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "40538",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Workforce Preparation and Success",
+      "award": "Noncredit program",
+      "control_number": "40556",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Job Coaching",
+      "award": "Noncredit program",
+      "control_number": "41166",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Business Administration 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "41394",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Communication Studies 2.0",
+      "award": "A.A- T Degree",
+      "control_number": "44470",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Chemistry for UC",
+      "award": "A.S. Degree",
+      "control_number": "44672",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Fire Technology",
+      "award": "A.S. Degree",
+      "control_number": "44798",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Fundamentals of Engineering I",
+      "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+      "control_number": "44899",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Fundamentals of Engineering II",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "44900",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Fundamentals of Engineering III",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "44901",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Water Environment",
+      "award": "A.A. Degree",
+      "control_number": "44975",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Introductory Culinary Arts",
+      "award": "Noncredit program",
+      "control_number": "45072",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "California General Education Transfer Curriculum (Cal-GETC)",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "45357",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Water Environment",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45683",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Intercollegiate Athletics",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "45909",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Public Health",
+      "award": "A.S. T Degree",
+      "control_number": "46047",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Physics 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "46246",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Gavilan College",
+      "program": "Mathematics 2.0",
+      "award": "A.S. T Degree",
+      "control_number": "46458",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Butte College",
+      "program": "Automotive Technology",
+      "award": "A.S. Degree",
+      "control_number": "01323",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Butte College",
+      "program": "Radio-TV-Film: Video Production",
+      "award": "A.S. Degree",
+      "control_number": "07474",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Butte College",
+      "program": "Law Enforcement Academy - Basic/Fish and Wildlife Emphasis",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "17970",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Butte College",
+      "program": "Radio-TV-Film: Video Production",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "19995",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Butte College",
+      "program": "Automotive Technology",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "19999",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Butte College",
+      "program": "Registered Nursing: LVN to ADN",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "20005",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Butte College",
+      "program": "Law Enforcement Academy-Basic",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "33254",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Butte College",
+      "program": "Law Enforcement Academy-Basic/State Parks Emphasis",
+      "award": "A.S. Degree",
+      "control_number": "35937",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Butte College",
+      "program": "Law Enforcement Academy-Basic/State Parks Emphasis",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "36240",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Butte College",
+      "program": "Automotive Technology – Honda, Professional Automotive Career Training (PACT)",
+      "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+      "control_number": "37972",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Butte College",
+      "program": "Automotive Technology – Honda, Professional Automotive Career Training (PACT)",
+      "award": "A.S. Degree",
+      "control_number": "38066",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Butte College",
+      "program": "Accelerated Track Registered Nursing",
+      "award": "A.S. Degree",
+      "control_number": "43185",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Butte College",
+      "program": "Accelerated Track Registered Nursing: LVN to ADN",
+      "award": "A.S. Degree",
+      "control_number": "43186",
+      "loaded": "2026-10-16"
+    },
+    {
+      "college": "Butte College",
+      "program": "Accelerated Track Registered Nursing: LVN to ADN",
+      "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+      "control_number": "43187",
+      "loaded": "2026-10-16"
     }
   ],
   "next_step": {
-    "title": "Sierra's statewide catalog, then the next sweep wave",
-    "text": "Test Sierra's statewide catalog and deploy it when Sam says deploy Sierra; then read the next catalogs from the census's unread colleges, a college a branch under the $40 go."
+    "title": "Butte's reader, then the next wave",
+    "text": "Read Butte's catalog navigation on a runner to see how it titles program pages, fix the reader and read Butte again; then read Las Positas again and start the eLumen colleges."
   },
-  "calls": [
-    {
-      "title": "The CPL Queue routine's overnight schedule",
-      "text": "The routine fires hourly from 10:12 PM to 6:12 AM Pacific once Sam sets the schedule he chose in the Routines form; the platform refuses an agent's edit.",
-      "if_no_reply": "One session runs each night.",
-      "link": "https://claude.ai/artifact/AqQsUUEmSKRWkLntcbAhFz",
-      "link_text": "Open Asks Sheet 84, card 1"
-    },
-    {
-      "title": "The carry across a changed major total",
-      "text": "A confirm carries over a rerun that changes the major's total and the general electives too, as well as the degree's figures; every block must match.",
-      "if_no_reply": "The carry stays as built.",
-      "link": "https://claude.ai/artifact/AqQsUUEmSKRWkLntcbAhFz",
-      "link_text": "Open Asks Sheet 84, card 2",
-      "part": "checks"
-    },
-    {
-      "title": "Cerritos's 60 units as a minimum",
-      "text": "The check reads Cerritos's 60 as a floor: electives make up a sum short of it, and a sum past it meets it (9 degrees).",
-      "if_no_reply": "The minimum stays as built.",
-      "link": "https://claude.ai/artifact/AqQsUUEmSKRWkLntcbAhFz",
-      "link_text": "Open Asks Sheet 84, card 3",
-      "part": "checks"
-    },
-    {
-      "title": "Victor Valley's course printed with no units",
-      "text": "Two certificates list AUTO 82.0 with no units, and each page's total adds up without it; the proposal is to leave both as read and send the gap to the college.",
-      "if_no_reply": "Both certificates stay incomplete.",
-      "link": "https://claude.ai/artifact/AqQsUUEmSKRWkLntcbAhFz",
-      "link_text": "Open Asks Sheet 84, card 4",
-      "part": "checks"
-    },
-    {
-      "title": "Orange Coast's general education up to 21",
-      "text": "Orange Coast's degrees read general education as at most 21 units and the 60 as a minimum; eleven records changed and six now pass.",
-      "if_no_reply": "The reading stays as built.",
-      "link": "https://claude.ai/artifact/AqQsUUEmSKRWkLntcbAhFz",
-      "link_text": "Open Asks Sheet 84, card 5",
-      "part": "checks"
-    },
-    {
-      "title": "Monterey Peninsula's local degree general education, 24 to 34",
-      "text": "A local degree reads general education as 24 to 34 units, eight areas of three units up to Cal-GETC's 34; a transfer degree reads 34.",
-      "if_no_reply": "The reading stays as built.",
-      "link": "https://claude.ai/artifact/AqQsUUEmSKRWkLntcbAhFz",
-      "link_text": "Open Asks Sheet 84, card 6",
-      "part": "checks"
-    }
-  ],
+  "calls": [],
   "notes": {
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges.",
-    "procedures": "62 colleges have one: the nine of the sweep's wave 4 were written on Oct 16, and the 28 whose map host refuses or never reaches the reader each name the routes tried.",
+    "procedures": "68 colleges have one: the nine of the sweep's wave 5 were written on Oct 16, and the 28 whose map host refuses or never reaches the reader each name the routes tried.",
     "sierra": "The funding explainer's text is editable on the Implementation Funding tab since Oct 9, and its controls are underlined words, the First Light rule from that day.",
     "maps": "All 32 published maps are settled since Oct 8; Palo Verde's map columns were written that evening.",
     "reading": "Cerritos read on Oct 9 and Mt. San Antonio on Oct 10. RCCD's three colleges were read on Oct 10 and their Liberal Arts emphasis programs recovered on Oct 11. 18 records that read another program's page were removed on Oct 11. Long Beach City was read on Oct 11 and re-read on Oct 12: 344 records, unchecked. Chaffey was read and loaded on Oct 12: 191 records, unchecked, for 1,745 in all. Palo Verde's records come from its 2025-26 catalog; its 2026-27 catalog is on a platform the reader does not read yet."
   },
   "changes": [
     {
-      "at": "2026-10-16T05:15:00Z",
-      "text": "Allan Hancock College loaded: 153 program records, unchecked."
+      "at": "2026-10-16T20:37:00Z",
+      "text": "My College's Sierra now has Sierra AI's format: one frame, her name and Full screen on one bar, and Sam's note under the box, on his ask."
     },
     {
-      "at": "2026-10-16T05:15:00Z",
-      "text": "Monterey Peninsula's degrees reread with the general education units its pages point to: 52 records changed."
+      "at": "2026-10-16T20:49:00Z",
+      "text": "Merritt, Berkeley City and Gavilan loaded, 248 records unchecked; the display build of 8,772 programs applied at 21:29."
     },
     {
-      "at": "2026-10-16T05:22:00Z",
-      "text": "Open Asks Sheet 84 published with six cards."
+      "at": "2026-10-16T20:39:00Z",
+      "text": "Procedure records written for Alameda, Feather River, Laney, Imperial Valley, Madera and Las Positas."
     },
     {
-      "at": "2026-10-16T05:23:00Z",
-      "text": "Wave 4's display build made for six colleges, waiting on its merge."
+      "at": "2026-10-16T21:07:00Z",
+      "text": "Sierra's program search reads one college by its index when nothing matches: the failing call went from 2.7 seconds to 0.2."
     },
     {
-      "at": "2026-10-15T14:12:00Z",
-      "text": "Procedure records filed for Fullerton, Citrus, Victor Valley and Monterey Peninsula, from a generator now kept in the repository."
-    },
-    {
-      "at": "2026-10-15T14:41:00Z",
-      "text": "The public dashboard no longer carries the email address of whoever wrote a progress note."
-    },
-    {
-      "at": "2026-10-15T15:33:00Z",
-      "text": "Ten more colleges loaded in the catalog sweep: 1,132 program records, unchecked, for thirty-seven colleges in all."
-    },
-    {
-      "at": "2026-10-15T02:24:00Z",
-      "text": "Extraction version 10 deployed: units a block holds never count twice; Cabrillo's Theatre Arts and Physics read 60 of 60."
-    },
-    {
-      "at": "2026-10-15T04:15:00Z",
-      "text": "The catalog sweep loaded Santa Barbara City, Orange Coast, Foothill and Sierra, applied as display build ad2f574f892c."
-    },
-    {
-      "at": "2026-10-15T04:30:00Z",
-      "text": "The catalog sweep loaded Fullerton, Citrus, Victor Valley and Monterey Peninsula; display build 99dcfd1eed24 follows its merge."
-    },
-    {
-      "at": "2026-10-16T13:38:18Z",
-      "text": "Santa Ana, Rio Hondo and Saddleback loaded: 346, 288 and 311 program records, unchecked."
-    },
-    {
-      "at": "2026-10-16T14:03:57Z",
-      "text": "Wave 4's first display build applied to 7,125 programs after the overnight attempt ran out of time."
-    },
-    {
-      "at": "2026-10-16T14:58:20Z",
-      "text": "The second display build applied to all 8,070 programs, the three new colleges included."
-    },
-    {
-      "at": "2026-10-16T15:06:00Z",
-      "text": "Procedure records written for all nine of wave 4's colleges."
+      "at": "2026-10-16T21:33:00Z",
+      "text": "Procedure records written for Merritt, Berkeley City and Gavilan; Butte loaded 19 of 168 programs and waits for its reader."
     }
   ],
   "headline": [
@@ -56451,11 +61379,11 @@
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 24,
-    "at": "2026-10-17T05:12:14Z"
+    "at": "2026-10-17T05:12:00Z"
   },
   "harvest": {
     "day": "2026-10-16",
-    "gaps": 2104,
+    "gaps": 2489,
     "parts": {
       "links": {
         "catalog": [
@@ -56472,11 +61400,11 @@
         ]
       },
       "roep": [
-        9554,
+        10602,
         20282
       ],
       "coci": [
-        7450,
+        8127,
         20282
       ],
       "outcomes": {
@@ -56485,12 +61413,12 @@
           89192
         ],
         "plo": [
-          7450,
+          8127,
           20282
         ]
       },
       "careers": [
-        6400,
+        7077,
         20282
       ]
     }

@@ -1,0 +1,251 @@
+{
+ "college": "Imperial Valley College",
+ "control_number": "39569",
+ "shape": "degree",
+ "title": "American Sign Language",
+ "award": "A.A. Degree",
+ "source_url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8299",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6850,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6850,
+    "output_tokens": 1252,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1252,
+  "output_tokens_details": {
+   "thinking_tokens": 170
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05244,
+ "ms": 9995,
+ "seconds": 10.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    28.0,
+    28.0
+   ],
+   "stated": [
+    28.0,
+    28.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 11,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "AMERICAN SIGN LANGUAGE (MAJOR - A.A.)",
+   "measure": "units",
+   "total_units": {
+    "min": 28,
+    "max": 28
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Ability to interact clearly and effectively in ASL with both hearing and deaf peers, and members of the Deaf community in a variety of settings.",
+    "Demonstrate cultural sensitivity and knowledge of cultural adjustments necessary when interacting with Deaf community members.",
+    "Analyze ASL production through written linguistic evaluation of their own videotaped signing samples as well as native ASL users’ language samples."
+   ],
+   "careers": [
+    "counseling",
+    "education",
+    "social work",
+    "rehabilitation",
+    "interpretation",
+    "caseworker",
+    "counselor",
+    "educational aide",
+    "program coordinator",
+    "teacher",
+    "interpreter"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "I. Required courses (25.0 units):",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 25,
+     "max": 25
+    },
+    "courses": [
+     {
+      "code": "AMSL 100",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMSL 102",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMSL 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMSL 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMSL 200",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMSL 202",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMSL 220",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "II. Select one course from the following (3.0 units)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "AMSL 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMSL 210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMSL 212",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog marks AMSL 100 and AMSL 102 as '( Historical )' course versions while others are '( Active )'; reviewer may wish to confirm current course status.",
+   "The page prints 'Total : 28.0' for the major; no total for the whole degree with general education is printed, and the general Associate Degree Program text is cut off at the end of the excerpt.",
+   "Careers include both career fields from the description ('counseling, education, social work, rehabilitation, and interpretation') and job titles ('caseworker, counselor, educational aide, program coordinator, teacher, or interpreter')."
+  ]
+ },
+ "extracted_run": "38935136329"
+}

@@ -1,0 +1,331 @@
+{
+ "college": "Laney College",
+ "control_number": "09034",
+ "shape": "degree",
+ "title": "Baking and Pastry",
+ "award": "A.S. Degree",
+ "source_url": "https://lan.curriqunet.com/catalog/view/iq/44166/44186/44324",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7125,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7125,
+    "output_tokens": 2089,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2089,
+  "output_tokens_details": {
+   "thinking_tokens": 668
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07028,
+ "ms": 16296,
+ "seconds": 16.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "CULIN212"
+   ],
+   "flagged": [
+    "CULIN212"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    61.0,
+    61.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    21.0,
+    21.0
+   ],
+   "why": [
+    "the blocks and general education come to 61.0-61.0, past the 60.0-60.0 the catalog prints for the degree"
+   ],
+   "fill": null,
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     40.0,
+     40.0
+    ],
+    "stated": [
+     40.0,
+     40.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 11,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Baking And Pastry - A.S. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 40,
+    "max": 40
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 21,
+    "max": 21
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Demonstrate food safety and sanitation practices while using baking and pastry related equipment.",
+    "Apply fundamental baking and pastry techniques and their variations to a wide range of classic and contemporary pastries, breads, cake candy and plated desserts.",
+    "Intrepret recipes or formulas both orally and written and evaluate products base on ingredients, cost, method, timing, appearance, texture and overall eating quality."
+   ],
+   "careers": [
+    "baker",
+    "cake decorator",
+    "pastry chef",
+    "dessert plater",
+    "caterer",
+    "recipe tester",
+    "candy maker",
+    "chocolatier",
+    "pastry chef/owner",
+    "food industry trend setter",
+    "business ownership in the culinary industry"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "First Semester (12 units):",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "CULIN 088",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CULIN 090",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CULIN 203",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CULIN 204",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CULIN 217",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Second Semester (9 units):",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "CULIN 205",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CULIN 206",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Third Semester (10 units):",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "CULIN 207",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CULIN 208",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Fourth Semester (9 units):",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "CULIN 028",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CULIN 209",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CULIN 236",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Recommended but not required",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CULIN 212",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints CULIN 088, CULIN 090 and CULIN 028 with leading zeros; treated as the closed list's CULIN 88, CULIN 90 and CULIN 28 (catalog_addition false).",
+   "General Education Requirements printed as 21.00 units without naming a GE pattern; ge_pattern left null.",
+   "'Electives to meet 60 units' printed with no units; electives_fill_degree set true.",
+   "CULIN 207, 208, 209, 236 and the recommended CULIN 212 are marked '( Historical )' in the catalog listing; reviewer may wish to verify their current status.",
+   "The Career Opportunities section mentions 'the certificate' though this record reads the A.S. degree; careers taken from the shared program description."
+  ]
+ },
+ "extracted_run": "38935141023"
+}

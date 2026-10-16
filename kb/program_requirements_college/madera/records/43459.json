@@ -1,0 +1,216 @@
+{
+ "college": "Madera College",
+ "control_number": "43459",
+ "shape": "certificate",
+ "title": "Foundations of Hospitality",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Associate-Degree-and-Certificate-Programs/1114/1143",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6589,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6589,
+    "output_tokens": 1297,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1297,
+  "output_tokens_details": {
+   "thinking_tokens": 298
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0523,
+ "ms": 10519,
+ "seconds": 11.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.5,
+    18.5
+   ],
+   "stated": [
+    18.5,
+    18.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Foundations of Hospitality, Certificate of Achievement - Major #M.3000.CA",
+   "measure": "units",
+   "total_units": {
+    "min": 18.5,
+    "max": 18.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Define and illustrate the range of job opportunities in the hospitality industry.",
+    "Evaluate the major factors, developments, and trends affecting the hospitality industry currently and determine which ones will continue to affect the industry.",
+    "Identify the causes of food borne illness and the practices to prevent food borne illness in a food service system.",
+    "Explain the steps in successfully resolving customer complaints in the hospitality setting.",
+    "Organize, compose, and revise effective, written business communication using proper format and content.",
+    "Demonstrate critical thinking skills by researching, preparing, and presenting formal reports using graphic elements where appropriate.",
+    "Apply effective information technology skills to perform practical business functions that include word processing, spreadsheet, presentation, and database management applications."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HSP 45",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BA 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BA 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BA 47",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FSM 35",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FSM 144",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IS 15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IS 18",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints the course list with no block heading; the block name 'Required Courses' is supplied, and all listed courses are read as required since no choice rule is printed.",
+   "The description calls this a 'seven-class program' but eight courses are listed; the printed total of 18.5 equals the sum of all eight courses.",
+   "The catalog lists HSP 45 as 'Hospitality Management' while the state file titles it 'Technology in the Hospitality Industry'.",
+   "The source URL refers to the 2025-2026 MCC catalog, while the requested catalog year is 2026-2027.",
+   "The description mentions 'the types of jobs available in the hospitality industry' but names no specific careers, so careers is empty."
+  ]
+ },
+ "extracted_run": "38935148408"
+}

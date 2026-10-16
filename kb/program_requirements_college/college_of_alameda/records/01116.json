@@ -1,0 +1,240 @@
+{
+ "college": "College of Alameda",
+ "control_number": "01116",
+ "shape": "degree",
+ "title": "Aviation Maintenance Technology: Airframe Technician",
+ "award": "A.S. Degree",
+ "source_url": "https://coa.curriqunet.com/catalog/iq/47221/47233/47513",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7143,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7143,
+    "output_tokens": 1927,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1927,
+  "output_tokens_details": {
+   "thinking_tokens": 712
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06711,
+ "ms": 15802,
+ "seconds": 17.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    44.0,
+    44.0
+   ],
+   "stated": [
+    44.0,
+    44.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Major Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 44,
+    "max": 44
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Student will interpret and assess aircraft systems as to airworthy condition.",
+    "Student will demonstrate an ability to maintain these aircraft systems.",
+    "Student will apply their knowledge of systems to evaluate FAA publications as to airworthy standard.",
+    "Maintenance record recording will be completed to FAA standards.",
+    "Prepare for personal, educational and/or career goals.",
+    "Perceive, understand, and engage in verbal and nonverbal communication.",
+    "Understand and demonstrate personal, civic, social, environmental responsibility and cooperation in order to become a productive local and global citizen."
+   ],
+   "careers": [
+    "airframe and powerplant mechanic"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Major Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 44,
+     "max": 44
+    },
+    "courses": [
+     {
+      "code": "AMT 056L",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT 056",
+      "units": 6.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT 058L",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT 058",
+      "units": 6.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT 062L",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT 062",
+      "units": 6.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT 064L",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT 064",
+      "units": 6.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT 066L",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMT 066",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AMT066",
+    "why": "duplicate closed-list entry for Airframe Systems and Review; placed as AMT 066 (same course as AMT 66)"
+   }
+  ],
+  "notes": [
+   "The catalog prints lecture codes with a leading zero (AMT 056, 058, 062, 064, 066); these were matched to closed-list AMT 56, 58, 62, 64, 66 (same titles and units) and marked catalog_addition false.",
+   "The excerpt prints no distinct heading for the A.S. degree; section_heading uses the requirements table heading 'Major Requirements'. The page text before it describes Airframe and Powerplant Certificates of Achievement generally; reviewer should confirm this table belongs to the Airframe Technician A.S. degree.",
+   "No general education pattern, GE units, or degree total are printed in the excerpt.",
+   "The Learning Outcome(s) heading is followed by four program-specific outcomes and three general statements (Prepare for personal..., Perceive..., Understand and demonstrate...) that may be institutional learning outcomes; all were recorded as printed under the heading.",
+   "Career text: 'An airframe and powerplant mechanic (A&P) is certified and responsible to inspect and maintain aircraft.'"
+  ]
+ },
+ "extracted_run": "38935121852"
+}

@@ -792,8 +792,36 @@ def cq_is_program(nav: dict) -> bool:
     text = nav.get("text") or ""
     if " - " in text and CQ_AWARD.search(text):
         return True
+    if cq_name_award(text)[1]:
+        return True
     head, colon, tail = text.rpartition(": ")
     return bool(colon and head.strip() and CQ_AWARD.search(tail))
+
+
+# Butte (S401, page reads 38977301962 and 38977912351) titles one program two
+# ways, once in each of its program sections: "AS Degree in Automotive
+# Technology" under Programs by Subject, "Automotive Technology (AS Degree)" under
+# Programs by Communities of Interest. Neither has a dash or a colon, so its walk
+# read 542 nodes and took 18 entries (those that happened to carry one) for 168
+# programs. The award leads before " in ", or closes the title in parentheses.
+# The award words are singular: "Degrees and Certificates in Business" is a list.
+CQ_AWARD_LEAD = re.compile(
+    r"^((?:[A-Z]{2}(?:-T)?|A\.[AS]\.(?:-T)?|associate(?: of \w+)?|noncredit)?\s*"
+    r"(?:degree|certificate)(?: of \w+)?(?: for transfer)?)\s+in\s+(\S.*)$", re.I)
+CQ_AWARD_PAREN = re.compile(r"^(\S.*?)\s*\(([^()]*\b(?:degree|certificate)\b[^()]*)\)\s*$", re.I)
+
+
+def cq_name_award(text: str) -> tuple[str, str | None]:
+    """(the program's name, its award) from a title that leads with its award
+    before " in " or closes with it in parentheses; else (the title, None)."""
+    text = (text or "").strip()
+    m = CQ_AWARD_LEAD.match(text)
+    if m:
+        return m.group(2).strip(), m.group(1).strip()
+    m = CQ_AWARD_PAREN.match(text)
+    if m:
+        return m.group(1).strip(), m.group(2).strip()
+    return text, None
 
 
 def cq_hidden(nav: dict) -> bool:
@@ -862,8 +890,11 @@ def cq_group(title: str, url: str) -> str:
 
 
 def cq_title_key(nav: dict) -> str:
-    """An entry's title as one key: case, spacing and dashes folded."""
-    return "title:" + re.sub(r"[\s\u2013\u2014-]+", " ", (nav.get("text") or "").lower()).strip()
+    """An entry's title as one key: case, spacing and dashes folded, and Butte's
+    two forms of one program ("AS Degree in X", "X (AS Degree)") one key."""
+    name, award = cq_name_award(nav.get("text") or "")
+    text = "%s (%s)" % (name, award) if award else name
+    return "title:" + re.sub(r"[\s\u2013\u2014-]+", " ", text.lower()).strip()
 
 
 def cq_distinct(entries: list[dict]) -> tuple[list[dict], int]:
@@ -929,23 +960,40 @@ def cq_page(entry: dict, page: dict | None, prefix: str, children: list | None =
             "codes": page_codes(text), "node": entry.get("id"), "group": cq_group(entry.get("text") or title, url)}
 
 
+# A dropped connection loses a whole branch of the walk: Las Positas's two
+# ECONNRESETs mid-walk left 20 of 201 programs found (run 38935144431, S399), and
+# Butte's three left nodes unread (run 38948140330). A reset is the host's
+# moment, not its answer, so the call is made again after a longer wait, at
+# most CQ_RETRIES times; an HTTP status or any other error is final.
+CQ_RETRIES = 2
+CQ_RETRY_WAIT = 4          # the census delay, times this, before a retry
+CQ_DROPPED = re.compile(r"ECONNRESET|socket hang up|ECONNABORTED|EPIPE", re.I)
+
+
 def cq_json(reader, url: str, errors: list) -> dict | None:
-    """One JSON call through the census's rules: robots first, the delay, one load."""
+    """One JSON call through the census's rules: robots first, the delay, one
+    load; a dropped connection is tried again, slower."""
     from _program_source_census import robots_allows
     if not robots_allows(reader._robots_for(url), url):
         errors.append("%s: robots disallows" % url)
         return None
-    time.sleep(reader.delay)
-    reader.loads += 1
-    try:
-        resp = reader.request.get(url, timeout=60000)
-        if not resp.ok:
-            errors.append("%s: HTTP %s" % (url, resp.status))
+    for attempt in range(CQ_RETRIES + 1):
+        time.sleep(reader.delay * (CQ_RETRY_WAIT if attempt else 1))
+        reader.loads += 1
+        try:
+            resp = reader.request.get(url, timeout=60000)
+            if not resp.ok:
+                errors.append("%s: HTTP %s" % (url, resp.status))
+                return None
+            return resp.json()
+        except Exception as exc:
+            msg = str(exc).splitlines()[0][:160]
+            if CQ_DROPPED.search(msg) and attempt < CQ_RETRIES:
+                errors.append("%s: %s (tried again)" % (url, msg))
+                continue
+            errors.append("%s: %s" % (url, msg))
             return None
-        return resp.json()
-    except Exception as exc:
-        errors.append("%s: %s" % (url, str(exc).splitlines()[0][:160]))
-        return None
+    return None
 
 
 def cq_pages(reader, start: str, report: dict) -> list[dict]:

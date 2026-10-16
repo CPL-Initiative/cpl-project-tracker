@@ -1,0 +1,314 @@
+{
+ "college": "College of Alameda",
+ "control_number": "19827",
+ "shape": "certificate",
+ "title": "Diesel Mechanics",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://coa.curriqunet.com/catalog/iq/47221/47309/47556",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7343,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7343,
+    "output_tokens": 2074,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2074,
+  "output_tokens_details": {
+   "thinking_tokens": 526
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07085,
+ "ms": 17669,
+ "seconds": 18.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 14,
+   "share": 0.5,
+   "missing": [
+    "ATECH15",
+    "DMECH20A",
+    "DMECH20B",
+    "DMECH20C",
+    "DMECH20D",
+    "DMECH21C",
+    "DMECH21D"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "DMECH15",
+    "DMECH22A",
+    "DMECH23A"
+   ],
+   "flagged": [
+    "DMECH15",
+    "DMECH22A",
+    "DMECH23A"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    46.0,
+    46.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Diesel Mechanics",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply safe work habits and practices.",
+    "Troubleshoot and perform repairs in mechanical, electrical, and electronic systems.",
+    "Use computers to diagnose equipment and research information.",
+    "Perform preventative maintenance and inspections including engine tune-ups, front-end alignments, and brake service.",
+    "Operate shop machinery and equipment including hoists, overhead cranes, forklifts, hydraulic jacks, steam cleaners, floor jacks, disassembly stands, grinders, drill presses, hydraulic presses, and bead blasters.",
+    "Select and use precision tools such as torque wrenches, micrometers, dial indicators, tap and dies, and bore gauges.",
+    "Maintain professional attitude in challenging working conditions, develop self-confidence and pride in workmanship and think analytically and make professional decisions."
+   ],
+   "careers": [
+    "beginning mechanics",
+    "apprentices"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "FIRST SEMESTER",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "DMECH 011",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMECH 022A",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "SECOND SEMESTER",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "DMECH 012",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMECH 023A",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AUTOB 012",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "THIRD SEMESTER",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 14,
+     "max": 14
+    },
+    "courses": [
+     {
+      "code": "DMECH 014",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DMECH 021A",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATECH 023",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "FOURTH SEMESTER",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "DMECH 015",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "DMECH 021B",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ATECH 15",
+    "why": "not in the text"
+   },
+   {
+    "code": "DMECH 020A",
+    "why": "not in the text"
+   },
+   {
+    "code": "DMECH 020D",
+    "why": "not in the text"
+   },
+   {
+    "code": "DMECH 021C",
+    "why": "not in the text"
+   },
+   {
+    "code": "DMECH 021D",
+    "why": "not in the text"
+   },
+   {
+    "code": "DMECH020B",
+    "why": "not in the text"
+   },
+   {
+    "code": "DMECH020C",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The catalog text begins mid-description and prints no section heading; 'Diesel Mechanics' is taken from the program name and the sentence 'A Certificate of Achievement in Diesel Mechanics will be awarded upon satisfactory completion of the major course requirements listed below.'",
+   "The same course list serves both the Certificate of Achievement and the AS degree; the certificate is read as the major course requirements alone, without GE.",
+   "No total for the certificate is printed; only semester subtotals (10, 12, 14, 10) appear. total_units left null.",
+   "Several listed courses are marked '( Historical )' (DMECH 022A, DMECH 023A, DMECH 021A, DMECH 021B) alongside '( Active )' courses; the reviewer should check whether historical courses are still required or are legacy equivalents.",
+   "DMECH 022A is printed as 'same as APPR 451'.",
+   "The program learning outcomes are printed once for the program as a whole (shared by the certificate and the AS degree) and are recorded here."
+  ]
+ },
+ "extracted_run": "38935121852"
+}

@@ -717,3 +717,36 @@ From `docs/reference/lanes/sierra-retrieval-corpus.md`, verbatim, to keep the la
 - **The fix names the course's field from the catalog data** (`fetchPrecedentCourses`, one read of `chatbox_college_courses`): "NURVN 414 is a Licensed Vocational Nursing course at Chaffey College (6 units), the program the visitor wants to enter: this is the precedent for this request". The mark needs a title word to agree with the TOP, so TOP never decides alone. NURVN 414 is not on Chaffey's Vocational Nursing program list, so the line names the course's field, not a program list.
 - **Read the A/B's answers, not only its grid.** The grid read clean both ways; the candidate's 7s turn had 11.5k fewer context characters, which looked like a regression until `timings.slowest_read` showed `search_college_programs` cut at the 5,000 ms route limit, a read the change does not touch.
 - **The push smoke can straddle a deploy.** Smoke 341 started at 17:26:41Z, a minute before v91 went live; its 7c turn (17:29:50Z) was on v91. Judge a smoke turn by its own timestamp.
+
+## S399 SkyRowan (2026-10-16): the statewide catalog, A/B to deploy in one sitting
+
+**Sam's words this run.** Open Asks Sheet 85 card 7, *Deploy Sierra*, 17:51Z, his own call (`cpl_memory` `sam-sheet-85-rulings-2026-10-16`).
+
+- **#2164 merged after a merge of `main`** (the dependency map conflicted with #2163; regenerated, never picked). The A/B on `main` (`cpl-chat-preview-ab`, run 38936738312, `cleanup: true`) read production 5 failing assertions, all smoke mode 7w, and the candidate all modes OK, no regressions. Its grid sits in the 190-line tail of the job log, before the upload step; a 110-line tail stops short of it.
+- **The deploy went to Sam as a card, the card went to a fresh sheet** (Sheet 85, `5q9urLR8X9y6vokcppgDFk`), he answered within the hour, and `cpl-chat-deploy` (run 38943025631) then `cpl-chat-smoke` (38943211844) ran green with 7w. The answer came first through the sheet's Complete comment; the store is the authority and held the same seven verdicts.
+- **`fact-sheet/statewide_catalog.json` read stale on `main` for one afternoon:** the 16:52 daily run refreshed `statewide_data.js` before #2164 wired the catalog's rebuild into it, so `check_generated.sh` failed every branch cut from `main` until #2166 regenerated it (only `source_generated_at` moved).
+- **`docs/cpl_assistant_lessons.md` was compacted first** (#2165): ten sections to `docs/cpl_assistant_lessons_archive_2.md`, verbatim, 123,055 B to 54,424 B.
+
+## Moved from the lane (S399 compaction)
+
+**7c's precedent line names the course's program (v91, S372, #2040; Sam, Open Asks Sheet 69 item 3, *Tune it*).** The miss was the model reading NURVN 414's title and calling it a CNA-level course (the production side of A/B 38281837466: "against CNA-level courses, not LVN ones ... would be a first"). `fetchPrecedentCourses` reads the paired course's catalog line; the line now says it is a Licensed Vocational Nursing course and, in the program asked about, the precedent for this request (a title word must agree with the TOP). A/B clean; v91 live 17:27Z; smoke 341 green, its 7c cites NURVN 414. The smoke's 7c check still passes on any mention of Chaffey.
+
+## S400 SkyBirch (2026-10-16): My College's Sierra in Sierra AI's format; the program search's no-match path
+
+**Sam's words this run.** In chat, about 19:24Z: *"pick back up on the Sierra AI consolidation and make sure it's integrated in the My College tab, which still has the old format"* (`cpl_memory` `sam-my-college-sierra-ai-format-2026-10-16`, verified).
+
+- **The old format was visible, not in the code's shape.** S398 built one Sierra, `CPL_CHAT.open()` over any tab, and both boxes already shared `build()`. What differed was the docked state: My College painted three nested cards (`.cb-assist`, the `<details>` drawn as a `.cb-sec`, the log's 240px frame), the description and the Note above the role row, and *Full screen* on its own row. Screenshots of both, side by side, made the ask concrete before any edit (`npm install`, then Playwright through `a11y.config.js`'s own seeds).
+- **#2171:** the intro carries the heading alone; Sam's 2026-08-21 Note, verbatim, moves under the box (`.cplchat-foot`) in both boxes and both states, which also gives Sierra AI over a tab the caution it had lost (full screen hides the intro, so it showed only the privacy half); the description sentence is gone; the log has no frame and no floor, with a rule above and below once it holds a conversation; My College's `<details>` draws no card inside the heavier `.cb-assist` frame (Sam, 2026-08-12), its summary is the ruled bar, and CSS places *Full screen* at the bar's right end (the control stays a child of her wrap so it travels to full screen). Guard `tests/my_college_sierra_ai_format.test.js` (12 of 15 fail on the prior commit); `npm run a11y` passes all six Sierra views.
+- **The smoke's 7l negative control timed out (57014) on a data-only PR.** It tests production, and ran on #2170 only because the branch's push carried earlier `chatbox/` commits. The cause was `search_college_programs`'s fuzzy fallback: `(college_filter is null or p.college = college_filter)` cannot be served from `coci_programs_college` by a generic plan. #2173 splits the fallback per scope (rows unchanged; the canonical file had matched live by normalized md5 first) and `supabase-migrate.yml` applied it. The 7l call went from 2,742 ms to 204 ms; production smoke 38968410799 passed every mode.
+- **Two wrong turns, both corrected in place.** The first PR comment blamed harvest growth; `college_program_courses` never reads the harvest (it reads the COCI tables), and the comment was edited. The first timing after the apply read 2.80 s; the same call read 354 ms a minute later, a cold read after the function was replaced. Re-measure before reporting a regression.
+- **The repo's Supabase guard blocks `create`, `do` and `replace` through `execute_sql`, temporary functions included.** Equivalence came from the predicate's logic and the generic-plan timing came from `prepare` with `plan_cache_mode = force_generic_plan`, which the guard allows.
+- **Still costly:** the materialized `tv` CTE builds every program's tsvectors on each call (about 0.9 s). The lane names it as the next cut if `timings` show it.
+
+## Moved from the lane (S400 compaction)
+
+From `docs/reference/lanes/sierra-retrieval-corpus.md`, verbatim, to keep the lane under its budget:
+
+- (v73, `program_typical_courses()`) (50 of 65 CNA colleges list a Nurse Assistant course, 16 an acute-care one; Fundamentals of Nursing 15, Fundamentals of Vocational Nursing 12, Vocational Nursing I 10, Pharmacology 8, IV Therapy 8 of 44 LVN colleges)
+- ✅ **397 garbled course titles removed** (2026-09-27; `--rollback` restores).
+- ✅ **Timing log (#1834):** `chat_interactions.timings` per turn (first read: `cpl_memory` sierra-timing-first-read-2026-10-03).
+

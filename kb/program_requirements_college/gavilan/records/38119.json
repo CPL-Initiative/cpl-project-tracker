@@ -1,0 +1,731 @@
+{
+ "college": "Gavilan College",
+ "control_number": "38119",
+ "shape": "degree",
+ "title": "Business (with options)",
+ "award": "A.A. Degree",
+ "source_url": "https://gavilan.curriqunet.com/catalog/iq/4089/4097/4119",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9050,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9050,
+    "output_tokens": 5891,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 5891,
+  "output_tokens_details": {
+   "thinking_tokens": 2088
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.15402,
+ "ms": 64632,
+ "seconds": 65.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 49,
+   "listed": 52,
+   "share": 0.942,
+   "missing": [
+    "ECONC2001",
+    "ECONC2002",
+    "MATH5"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "CSIS128",
+    "ECON1",
+    "ECON2",
+    "STATC1000"
+   ],
+   "flagged": [
+    "CSIS128",
+    "ECON1",
+    "ECON2",
+    "STATC1000"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    2.0,
+    29.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 2.0-29.0; the catalog states 18.0-18.0"
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     37.0,
+     68.0
+    ],
+    "stated": [
+     51.0,
+     124.0
+    ],
+    "against": "degree",
+    "ge": [
+     35.0,
+     39.0
+    ],
+    "why": [],
+    "fill": [
+     0.0,
+     87.0
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business (with options) - A.A. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Gavilan College A.A./A.S. general education, or the Cal-GETC pattern",
+   "degree_total": {
+    "min": 51,
+    "max": 124
+   },
+   "ge_units": {
+    "min": 35,
+    "max": 39
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Demonstrate appropriate use of business terms and concepts across a standard breadth of business functions.",
+    "Create and produce documentable solutions to business problems and challenges."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "CORE: REQUIRED FOR ALL OPTIONS",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "CSIS 1",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CSIS 2",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Accounting Option: Choose at least 6 units",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": "Option",
+    "stated": {
+     "min": 0,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "ACCT 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ACCT 20",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CSIS 120",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Management Option: Choose at least 9 units.",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": "Option",
+    "stated": {
+     "min": 0,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "MGMT 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MKTG 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MGMT 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MGMT 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Medical Office Option: Choose 12 units.",
+    "rule": "choose_units",
+    "minimum": 12,
+    "option_group": "Option",
+    "stated": {
+     "min": 0,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "BOT 180",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BOT 281",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BOT 182",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIS 126",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BOT 283",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Office Applications Option: Choose at least 7.5 units",
+    "rule": "choose_units",
+    "minimum": 7.5,
+    "option_group": "Option",
+    "stated": {
+     "min": 0,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "ACCT 121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CSIS 121",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIS 122",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIS 126",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIS 129",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CMUN 129",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Technical Publishing Option: Choose at least 6 units.",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": "Option",
+    "stated": {
+     "min": 0,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "CSIS 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DM 6",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIS 75",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DM 75",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIS 74",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DM 74",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIS 76",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DM 76",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIS 80",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DM 80",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIS 85",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DM 85",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "ELECTIVES: Choose electives from the list below so that the core plus additional requirements for the option plus electives equals at least 18 units.",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "ACCT 20",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 21",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CSIS 120",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CSIS 121",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BOT 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 100",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BOT 212",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BOT 291A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BOT 291B",
+        "units": 1,
+        "catalog_addition": false
+       },
+       {
+        "code": "BOT 291C",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 11",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON 11",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON 14",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 80",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIS 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DM 6",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIS 8",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIS 75",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "DM 75",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIS 122",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIS 126",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIS 128",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CSIS 212",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIS 129",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CMUN 129",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMUN 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CSIS126",
+    "why": "duplicate closed-list entry without space; placed as CSIS 126"
+   },
+   {
+    "code": "ECON C2001",
+    "why": "not in the text; catalog lists ECON 2 Principles of Microeconomics instead"
+   },
+   {
+    "code": "ECON C2002",
+    "why": "not in the text; catalog lists ECON 1 Principles of Macroeconomics instead"
+   },
+   {
+    "code": "MATH 5",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "Outcomes are printed for the Business: General AA program summary; recorded for this award.",
+   "total_units 18 taken from the electives rule 'core plus additional requirements for the option plus electives equals at least 18 units'; it is a minimum, not a printed fixed total. Electives block minimum left null because its required units vary by option.",
+   "The options heading 'CHOOSE ONE OF THE OPTIONS BELOW' prints 'Units: 14- 16' for the option choice as a whole; each option block carries its own printed 0-N range.",
+   "degree_total 51-124 recorded as printed ('Total: 51- 124'); this looks system-generated and inconsistent with the GE paragraph's 60 unit total. Reviewer should check.",
+   "GE paragraph says 'plus sufficient electives to meet a 60 unit total', so electives_fill_degree is true.",
+   "CSIS 121 matched to closed-list entry 'CSIS121' (no space).",
+   "CSIS 126 printed as 3 units in the catalog (closed list stores 2); marked Historical in Office Applications and Electives lists.",
+   "CSIS 212 is printed twice in the Electives list; recorded once.",
+   "ACCT 20 appears as an alternative in the Accounting Option and also as an elective; CSIS 6, CSIS 75, ACCT 120, ACCT 121, CSIS 122, CSIS 126, CSIS 129 also appear in both an option and the electives list.",
+   "STAT C1000, CSIS 128, ECON 1, ECON 2 are not in the closed list; marked catalog additions."
+  ]
+ },
+ "extracted_run": "38948144064"
+}

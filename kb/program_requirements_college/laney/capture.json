@@ -1,0 +1,1912 @@
+{
+ "college": "Laney College",
+ "catalog_url": "https://lan.curriqunet.com/catalog/view/iq/44232",
+ "platform": "curriqunet",
+ "catalog_year": "2026-2027",
+ "programs": 175,
+ "with_closed_list": 175,
+ "started": "2026-10-16T16:52:09Z",
+ "curriqunet": {
+  "catalog": 10434,
+  "view_prefix": "https://lan.curriqunet.com/catalog/view/iq/",
+  "errors": [],
+  "sections": [
+   "Courses & Programs"
+  ],
+  "nodes_read": 65,
+  "calls": 131,
+  "entries": 161,
+  "stopped_at_cap": false,
+  "same_title_entries": 0,
+  "entries_read": 161
+ },
+ "pages_read": 161,
+ "banner_h1": null,
+ "loads": 293,
+ "seconds": 1549.8,
+ "found": 150,
+ "by_method": {
+  "not_found": 18,
+  "page_claimed": 7,
+  "sitemap_page": 150
+ },
+ "shared_pages": {
+  "https://lan.curriqunet.com/catalog/view/iq/44166/44177/44282": [
+   "21554",
+   "38774"
+  ],
+  "https://lan.curriqunet.com/catalog/view/iq/44166/44204/44522": [
+   "44127",
+   "44128"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "01147",
+   "title": "Management and Supervision",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44212/44436",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.333,
+    "body": 0.333,
+    "content": 0.333,
+    "net": 2,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 2 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2097,
+     "content": 2097,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "01151",
+   "title": "Performance and Production for Video, Broadcast and Digital Cinematography",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "09024",
+   "title": "Video Production for Video, Broadcast and Digital Cinematography",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "09037",
+   "title": "Chicanx and Latinx Studies",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44211/44453",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.409,
+    "body": 0.409,
+    "content": 0.409,
+    "net": 9,
+    "listed": 22,
+    "why": "coverage 0.41 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 4651,
+     "content": 4651,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "21544",
+   "title": "Video Production for Video, Broadcast and Digital Cinematography",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "21546",
+   "title": "Performance And Production For Video, Broadcast And Digital Cinematography",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "30964",
+   "title": "Electrical Technology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44190/44612",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 11,
+    "why": "coarse net: the page's code tokens name 0 of 11 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2990,
+     "content": 2990,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "31279",
+   "title": "Electrical Technology",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44190/44613",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 11,
+    "why": "coarse net: the page's code tokens name 0 of 11 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2913,
+     "content": 2913,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "36572",
+   "title": "Commercial Music",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44217/44293",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 5,
+    "listed": 21,
+    "why": "coarse net: the page's code tokens name 5 of 21 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2792,
+     "content": 2792,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "36935",
+   "title": "AudioVisual Technologist",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "36936",
+   "title": "AR/VR: Immersive Design",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "37473",
+   "title": "Solar Photovoltaic Professionals",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44190/44614",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2019,
+     "content": 2019,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "37484",
+   "title": "Social Justice Studies: Chicanx and Latinx Studies",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44211/44454",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.294,
+    "body": 0.294,
+    "content": 0.294,
+    "net": 5,
+    "listed": 17,
+    "why": "coarse net: the page's code tokens name 5 of 17 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4563,
+     "content": 4563,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "37932",
+   "title": "Commercial Music",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44217/44294",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 6,
+    "listed": 22,
+    "why": "coarse net: the page's code tokens name 6 of 22 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2710,
+     "content": 2710,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "41602",
+   "title": "Offline and Online Editing with DaVinci Resolve",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "42407",
+   "title": "Virtual Production",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "44095",
+   "title": "Virtual Production Fundamentals",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "45097",
+   "title": "California General Education Transfer Curriculum (Cal-GETC)",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "39777",
+   "title": "Digital Fabrication Technology - Machine Technology",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://lan.curriqunet.com/catalog/view/iq/44166/44229/44512",
+    "https://lan.curriqunet.com/catalog/view/iq/44166/44213/44430"
+   ]
+  },
+  {
+   "control_number": "41262",
+   "title": "Program Readiness for Multilingual Students",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://lan.curriqunet.com/catalog/view/iq/44166/44195/44353"
+   ]
+  },
+  {
+   "control_number": "41925",
+   "title": "Quality Control",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://lan.curriqunet.com/catalog/view/iq/44166/44213/44426",
+    "https://lan.curriqunet.com/catalog/view/iq/44166/44230/44509",
+    "https://lan.curriqunet.com/catalog/view/iq/44166/44213/44429",
+    "https://lan.curriqunet.com/catalog/view/iq/44166/44213/44430",
+    "https://lan.curriqunet.com/catalog/view/iq/44166/44230/44508"
+   ]
+  },
+  {
+   "control_number": "43238",
+   "title": "ESOL/Culinary Arts Pathway",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://lan.curriqunet.com/catalog/view/iq/44166/44195/44355"
+   ]
+  },
+  {
+   "control_number": "43239",
+   "title": "ESOL/Ethnic Studies Pathway",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://lan.curriqunet.com/catalog/view/iq/44166/44195/44355"
+   ]
+  },
+  {
+   "control_number": "43244",
+   "title": "Music Appreciation",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "pages": [
+    "https://lan.curriqunet.com/catalog/view/iq/44166/44216/44460",
+    "https://lan.curriqunet.com/catalog/view/iq/44166/44203/44400",
+    "https://lan.curriqunet.com/catalog/view/iq/44166/44216/44459"
+   ]
+  },
+  {
+   "control_number": "43675",
+   "title": "ESOL/Business Pathway",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://lan.curriqunet.com/catalog/view/iq/44166/44195/44353",
+    "https://lan.curriqunet.com/catalog/view/iq/44166/44195/44355"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 7,
+  "0.8-1.0": 23,
+  "1.0": 120
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "programs": 150,
+  "list": [
+   {
+    "control_number": "01145",
+    "title": "Accounting",
+    "award": "A.S. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44176/44267",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01146",
+    "title": "Banking and Finance",
+    "award": "A.S. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44175/44261",
+    "coverage": 0.7,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01148",
+    "title": "Marketing And Sales",
+    "award": "A.S. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44176/44276",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01149",
+    "title": "Business Information Systems",
+    "award": "A.S. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44176/44273",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01150",
+    "title": "Journalism",
+    "award": "A.A. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44205/44405",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01156",
+    "title": "Residential and Light Commercial HVAC & R",
+    "award": "A.S. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44192/44374",
+    "coverage": 0.846,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01158",
+    "title": "Wood Technology",
+    "award": "A.S. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44229/44515",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01161",
+    "title": "Machine Technology",
+    "award": "A.S. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44213/44430",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01162",
+    "title": "Welding Technology",
+    "award": "A.S. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44230/44508",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01163",
+    "title": "Construction Management",
+    "award": "A.S. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44182/44313",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01166",
+    "title": "Music",
+    "award": "A.A. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44216/44461",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01167",
+    "title": "Theatre Arts",
+    "award": "A.A. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44228/44504",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01182",
+    "title": "Ethnic Studies",
+    "award": "A.A. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44196/44378",
+    "coverage": 0.732,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01188",
+    "title": "Cosmetology",
+    "award": "A.S. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44184/44318",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09022",
+    "title": "Business Administration",
+    "award": "A.S. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44176/44270",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09028",
+    "title": "Applied Graphic Design-Digital Imaging",
+    "award": "A.A. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44200/44391",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09031",
+    "title": "Architecture",
+    "award": "A.S. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44169/44593",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09032",
+    "title": "Ceramics",
+    "award": "A.A. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44170/44597",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09033",
+    "title": "Dance",
+    "award": "A.A. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44187/44331",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09034",
+    "title": "Baking and Pastry",
+    "award": "A.S. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44186/44324",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "09036",
+    "title": "African American Studies",
+    "award": "A.A. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44167/44248",
+    "coverage": 0.95,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "14774",
+    "title": "Asian and Asian American Studies",
+    "award": "A.A. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44171/44609",
+    "coverage": 0.941,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15308",
+    "title": "Retail Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44176/44278",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18734",
+    "title": "Commercial HVAC Systems",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44192/44372",
+    "coverage": 0.882,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18735",
+    "title": "Commercial HVAC Systems",
+    "award": "A.S. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44192/44371",
+    "coverage": 0.882,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19056",
+    "title": "Humanities",
+    "award": "A.A. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44203/44400",
+    "coverage": 0.925,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19057",
+    "title": "Language Arts",
+    "award": "A.A. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44181/44300",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19059",
+    "title": "Social Sciences",
+    "award": "A.A. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44225/44489",
+    "coverage": 0.908,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21535",
+    "title": "Architecture Design & Drafting",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44169/44595",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21536",
+    "title": "Accounting",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44176/44268",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21538",
+    "title": "Banking and Finance",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44175/44260",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21539",
+    "title": "Business Administration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44176/44271",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21540",
+    "title": "Management and Supervision",
+    "award": "A.S. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44212/44435",
+    "coverage": 0.571,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21541",
+    "title": "Marketing and Sales",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44176/44277",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21542",
+    "title": "Business Information Systems",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44176/44274",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21553",
+    "title": "Residential and Light Commercial HVAC & R",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44192/44375",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21554",
+    "title": "Carpentry",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44177/44282",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21555",
+    "title": "Wood Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44229/44516",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21559",
+    "title": "Welding Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44230/44509",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21561",
+    "title": "Construction Management",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44182/44314",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21563",
+    "title": "Photography",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44220/44475",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21564",
+    "title": "Applied Graphic Design-Digital Imaging",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44200/44392",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21565",
+    "title": "Baking and Pastry",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44186/44325",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21567",
+    "title": "Cosmetology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44184/44983",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30515",
+    "title": "Building Automation Systems",
+    "award": "A.S. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44192/44369",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30533",
+    "title": "Building Automation Systems",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44192/44370",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31234",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44214/44440",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31273",
+    "title": "Industrial Maintenance",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44213/44429",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32799",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44222/44482",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32880",
+    "title": "Translation and Interpretation--Spanish",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44208/44419",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32884",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44224/44492",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32885",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44223/44485",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32973",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44168/44252",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32984",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44170/44600",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32991",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44206/44411",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33030",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44228/44505",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33179",
+    "title": "Journalism",
+    "award": "A.A- T Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44205/44406",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33289",
+    "title": "Philosophy",
+    "award": "A.A- T Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44219/44469",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33674",
+    "title": "Music",
+    "award": "A.A- T Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44216/44462",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35111",
+    "title": "Mathematics",
+    "award": "A.S. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44214/44439",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35120",
+    "title": "CIS-Computer Programming",
+    "award": "A.S. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44180/44302",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35121",
+    "title": "Computer Information Science",
+    "award": "A.S. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44180/44303",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35235",
+    "title": "Computer Programming with Java",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44180/44305",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35236",
+    "title": "Computer Programming with C++",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44180/44304",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35260",
+    "title": "Database Management with SQL",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44180/44307",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35261",
+    "title": "Computer Systems Analysis",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44180/44306",
+    "coverage": 0.926,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35371",
+    "title": "Bookkeeping",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44176/44269",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36030",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44194/44349",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36089",
+    "title": "Science",
+    "award": "A.S. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44174/44264",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36149",
+    "title": "Global Studies",
+    "award": "A.A- T Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44225/44488",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36394",
+    "title": "Basic English",
+    "award": "Noncredit program",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44195/44352",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36670",
+    "title": "Vocational English for Speakers of Other Languages",
+    "award": "Noncredit program",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44195/44366",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36792",
+    "title": "Social Justice: Ethnic Studies",
+    "award": "A.A- T Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44196/44379",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36937",
+    "title": "Advanced Carpentry",
+    "award": "A.S. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44177/44281",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36938",
+    "title": "Culinary Arts and Restaurant Management",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44186/44327",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36939",
+    "title": "Culinary Arts and Restaurant Management",
+    "award": "A.S. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44186/44326",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36940",
+    "title": "Photography",
+    "award": "A.A. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44220/44474",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37371",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44191/44343",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37422",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44221/44479",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37460",
+    "title": "Social Justice: African American Studies",
+    "award": "A.A- T Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44167/44249",
+    "coverage": 0.952,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37512",
+    "title": "Geography",
+    "award": "A.A- T Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44198/44384",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37541",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44226/44496",
+    "coverage": 0.688,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37796",
+    "title": "Research Skills",
+    "award": "Noncredit program",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44209/44422",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37930",
+    "title": "Entrepreneurship",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44176/44275",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38060",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44201/44397",
+    "coverage": 0.913,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38114",
+    "title": "California Green & Sustainable Building Standards",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44182/44312",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38115",
+    "title": "Jazz",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44216/44460",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38118",
+    "title": "Music",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44216/44463",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38774",
+    "title": "Advanced Carpentry",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44177/44282",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38970",
+    "title": "ESOL College Ready Skills",
+    "award": "Noncredit program",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44195/44357",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39365",
+    "title": "ESOL Intermediate",
+    "award": "Noncredit program",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44195/44361",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39366",
+    "title": "ESOL High Intermediate",
+    "award": "Noncredit program",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44195/44360",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39368",
+    "title": "ESOL High Beginning",
+    "award": "Noncredit program",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44195/44359",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39790",
+    "title": "Digital Fabrication Technology--Wood Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44229/44512",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40036",
+    "title": "Advanced Culinary Techniques",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44186/44323",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40539",
+    "title": "Chinese",
+    "award": "A.A. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44179/44289",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40540",
+    "title": "Chinese",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44179/44290",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40555",
+    "title": "College Preparation and Orientation",
+    "award": "Noncredit program",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44185/44321",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40701",
+    "title": "Culinary Foundations",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44186/44328",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41248",
+    "title": "Jazz",
+    "award": "A.A. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44216/44459",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41267",
+    "title": "Indigenous Languages and Cultures-Mam",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44226/44495",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41311",
+    "title": "ESOL Advanced",
+    "award": "Noncredit program",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44195/44356",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41333",
+    "title": "Digital Newsgathering",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44205/44408",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41334",
+    "title": "Newswriting and Reporting",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44205/44407",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41522",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44176/44272",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41681",
+    "title": "Chinese Music",
+    "award": "A.A. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44216/44457",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41682",
+    "title": "Chinese Music",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44216/44458",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41930",
+    "title": "Digital Fabrication Technology - Art",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44170/44598",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41975",
+    "title": "Communication Studies",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44181/44298",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42391",
+    "title": "Professional Lighting",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44220/44476",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42415",
+    "title": "Photographic Foundations",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44220/44473",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42812",
+    "title": "Engineering",
+    "award": "A.S. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44193/44345",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42813",
+    "title": "Engineering – Computer and Electrical",
+    "award": "A.S. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44193/44346",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42814",
+    "title": "Spanish for Bilingual/Heritage Students",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44226/44497",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42956",
+    "title": "Advanced Precision Machining",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44213/44425",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42957",
+    "title": "CNC Machining",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44213/44427",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42958",
+    "title": "Manual Machining",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44213/44431",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42997",
+    "title": "English for Speakers of Other Languages: Advanced",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44195/44353",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42999",
+    "title": "English for Speakers of Other Languages - Intermediate",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44195/44355",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43002",
+    "title": "Refrigeration Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44192/44373",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43003",
+    "title": "Basic Manufacturing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44213/44426",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43017",
+    "title": "English for Speakers of Other Languages: High Intermediate",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44195/44354",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43246",
+    "title": "Spanish Language and Culture",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44226/44498",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43357",
+    "title": "Fundamentals of Computer Numerical Control (CNC) Manufacturing",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44229/44514",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43361",
+    "title": "Fundamentals of Wood Technology",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44229/44513",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43382",
+    "title": "Data Science Fundamentals",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44180/44308",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43451",
+    "title": "ESOL Entry Level Employment Skills",
+    "award": "Noncredit program",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44195/44358",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43452",
+    "title": "Building Codes and Inspections",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44182/44311",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43605",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44181/44297",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43614",
+    "title": "Modern Dance Teaching Preparation and Performance",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44188/44337",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43615",
+    "title": "Ballet Dance Teaching Preparation and Performance",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44188/44334",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43616",
+    "title": "Jazz Dance Teaching Preparation and Performance",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44188/44335",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43685",
+    "title": "Joyful Movement Life Skills: Comprehensive Apparatus Training",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44188/44336",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43733",
+    "title": "World Folkloric Dance Teaching Preparation and Performance",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44188/44339",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43807",
+    "title": "Data Science",
+    "award": "A.S. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44214/44526",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43831",
+    "title": "Joyful Movement Life Skills: Reformer Training",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44188/44519",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43886",
+    "title": "Joyful Movement Life Skills: Mat Training",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44188/44518",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43980",
+    "title": "Data Analytics",
+    "award": "A.S. Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44180/44520",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43981",
+    "title": "Graphics in Motion",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44200/44521",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44127",
+    "title": "Japanese Language and Culture",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44204/44522",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44128",
+    "title": "Advanced Japanese Language and Culture",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44204/44522",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44251",
+    "title": "Hospitality Management",
+    "award": "A.S. T Degree",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44186/44590",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44538",
+    "title": "Medical Interpreting",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44208/44592",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45327",
+    "title": "Introductory Spanish Language and Culture",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44226/44984",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45412",
+    "title": "Applied Generative AI",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44855/44991",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45500",
+    "title": "Deep Learning",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44855/44992",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45501",
+    "title": "Natural Language Processing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44855/44997",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45627",
+    "title": "Computer Programming and Data Fundamentals",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44180/44849",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45772",
+    "title": "English for Healthcare",
+    "award": "Noncredit program",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44195/44852",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45981",
+    "title": "Introduction to Digital Fabrication",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://lan.curriqunet.com/catalog/view/iq/44166/44177/47690",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ]
+ },
+ "run": "38935141023"
+}

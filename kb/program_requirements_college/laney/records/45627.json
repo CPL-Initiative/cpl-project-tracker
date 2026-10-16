@@ -1,0 +1,236 @@
+{
+ "college": "Laney College",
+ "control_number": "45627",
+ "shape": "certificate",
+ "title": "Computer Programming and Data Fundamentals",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://lan.curriqunet.com/catalog/view/iq/44166/44180/44849",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6807,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6807,
+    "output_tokens": 1453,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1453,
+  "output_tokens_details": {
+   "thinking_tokens": 463
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05629,
+ "ms": 12490,
+ "seconds": 12.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    12.0,
+    14.0
+   ],
+   "stated": [
+    12.0,
+    14.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 7,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Computer Programming and Data Fundamentals - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 12,
+    "max": 14
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Write computer scripts and programs to organize, produce visualizations, and numerical summaries of data and data sets."
+   ],
+   "careers": [
+    "Computer programmers",
+    "data analysts",
+    "data scientists",
+    "business analysts",
+    "computer systems analysts",
+    "logistics analysts",
+    "marketing analysts"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Courses:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "CIS 001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select two of the following (8-10 units):",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 8,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "BUS 043B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 005",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 006",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 025",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 036A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 098",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 116",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 116",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes with zero padding (CIS 001, CIS 005, CIS 006, CIS 025, CIS 098); these were matched to closed-list CIS 1, CIS 5, CIS 6, CIS 25, CIS 98 and not marked as catalog additions.",
+   "CIS 025 is labeled '( Historical )' in the catalog while still listed as a choice; reviewer may confirm it is still offered.",
+   "CIS 116 and MATH 116 are cross-listed ('same as') and recorded as one choice with MATH 116 as the alternative; a standalone '4.00' printed before them appears to be that pair's group total.",
+   "Careers are named both in the description and under 'Career Opportunities'; recorded once from the Career Opportunities list.",
+   "Description mentions '(3) foundational courses', consistent with one core course plus two selected courses."
+  ]
+ },
+ "extracted_run": "38935141023"
+}

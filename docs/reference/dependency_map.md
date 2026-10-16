@@ -569,7 +569,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/identities_rekey_out/2026-09-05/dead_worklist.md` | none found | scripts: `kb/_identities_rekey_dryrun.py` |
 | `kb/insert.sql` | none found | modules: `kb/_carp_apprentice_plan_s109.js` |
 | `kb/issuer_preseed.json` | tabs: `credential-reference` · scripts: `kb/_preseed_null_issuers.py`, `kb/_verify_issuer_preseed.py` | scripts: `kb/_preseed_null_issuers.py` |
-| `kb/it_ai_credential_catalog.json` | scripts: `kb/_build_it_ai_credential_catalog.py` | scripts: `kb/_build_it_ai_credential_catalog.py` |
+| `kb/it_ai_credential_catalog.json` | tabs: `credential-reference` · scripts: `kb/_build_it_ai_credential_catalog.py` | scripts: `kb/_build_it_ai_credential_catalog.py` |
 | `kb/kb/reference/coci_program_course_file.csv.gz` | modules: `kb/_college_apprenticeship_cpl_roster.js` | — |
 | `kb/kin_pe_out/<date>/alias_map.json` | scripts: `kb/alias_chain.py` | — |
 | `kb/kin_pe_pass2_out/2026-06-12/athl_family_analysis.md` | scripts: `kb/_athl_fitness_merge_curation.py` | scripts: `kb/_athl_fitness_merge_curation.py` |
@@ -646,6 +646,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/reference/eacr_cip_title_rules.json` | scripts: `excel_to_dashboard.py` | — |
 | `kb/reference/esl_level_sets.json` | scripts: `kb/_esl_ladder_relevel_dryrun.py` | — |
 | `kb/reference/handout_logos.json` | scripts: `kb/_build_regional_cpl_opportunity.py` | — |
+| `kb/reference/industry_credential_skills.json` | scripts: `kb/_build_it_ai_credential_catalog.py` | — |
 | `kb/reference/industry_credential_watch.json` | scripts: `kb/_build_it_ai_credential_catalog.py`, `kb/_diff_credential_watch.py` | — |
 | `kb/reference/map_college_roster_rules.json` | scripts: `excel_to_dashboard.py`, `kb/_audit_control_number_claims.py` | — |
 | `kb/reference/mis_district_college_codes.json` | scripts: `kb/_build_college_identity_crosswalk.py` | — |
@@ -1115,5 +1116,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 99 Supabase tables · 39 RPCs · 8 edge functions · 650 file
+Coverage: 99 Supabase tables · 39 RPCs · 8 edge functions · 651 file
 datasets · 180 external services · 443 consumers · 53 workflows · 38 tabs.

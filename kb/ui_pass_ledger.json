@@ -278,8 +278,8 @@
    "name": "Common Exhibit Reference",
    "page": "index.html#credential-reference",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-16",
+   "outcome": "S401 side session 2026-10-16: 169 raw hex to tokens; --cer-cream and --on-seal-blue added to both roots (dark was 1.34:1 and 1.43:1); controls are underlined words; 4,039 sub-24px targets fixed; 10 acting links to buttons; th scope, named keyboard table frame, aria-pressed lanes; 73 glyph labels to words; phone toolbar capped (320px scrolled 47px). npm run a11y cobi + cobi-dark: CER clean. New seeded targets cer-industry(-dark) for the Industry credentials lane: clean at 320/390/1440."
   },
   {
    "id": "cobi:map-export",
