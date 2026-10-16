@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1164,
-    "bytes": 11980056,
+    "files": 1165,
+    "bytes": 11987601,
     "over_budget": 8,
-    "handoff_max": 398,
+    "handoff_max": 399,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59994,
     "superseded_files": 0,
@@ -31,12 +31,12 @@
       },
       "index": {
         "files": 1,
-        "bytes": 8911,
+        "bytes": 9275,
         "over": 0
       },
       "lessons": {
         "files": 82,
-        "bytes": 2372464,
+        "bytes": 2374419,
         "over": 3
       },
       "kb_note": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 37,
-        "bytes": 350639,
+        "bytes": 351482,
         "over": 2
       },
       "handoff": {
-        "files": 369,
-        "bytes": 2882023,
+        "files": 370,
+        "bytes": 2886406,
         "over": 0
       }
     },
@@ -59,13 +59,12 @@
       "house_voice": 23,
       "oversized_doc": 8,
       "kb_note_dialect": 1,
-      "vault_heavy_path": 186,
-      "checkpoint_overdue": 1
+      "vault_heavy_path": 186
     },
     "vault": {
-      "files": 41172,
-      "bytes": 8276379051,
-      "heavy_bytes": 5095637293,
+      "files": 41185,
+      "bytes": 8276703362,
+      "heavy_bytes": 5095662040,
       "heavy_share": 0.616,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -654,10 +653,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 800961359,
+        "bytes": 800986106,
         "kind": "dir"
       },
-      "message": "directory totals 800,961,359 B inside the vault"
+      "message": "directory totals 800,986,106 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -2508,17 +2507,6 @@
         "kind": "file"
       },
       "message": "2,038,305 B single file inside the vault"
-    },
-    {
-      "rule": "checkpoint_overdue",
-      "fixable": false,
-      "path": "docs/session_398_handoff.md",
-      "detail": {
-        "commits_since": 10,
-        "budget": 6,
-        "handoff": "session_398_handoff.md"
-      },
-      "message": "10 commit(s) have landed since `docs/session_398_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
     }
   ]
 }
