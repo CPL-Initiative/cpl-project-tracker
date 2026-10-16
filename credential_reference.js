@@ -1516,7 +1516,7 @@
 
     // ⚙ Columns picker — per-browser (cplCerCols.v1).
     var colsDd = el("details", { class: "cr-cols-dd", id: "cr-cols-dd" });
-    colsDd.appendChild(el("summary", { title: "Show/hide columns (saved per-browser)" }, ["⚙ Columns"]));
+    colsDd.appendChild(el("summary", { title: "Show/hide columns (saved per-browser)" }, ["Columns"]));
     var colsPanel = el("div", { class: "cr-cols-panel" });
     [
       ["subj", "SUBJ"], ["disc", "Discipline"], ["issuer", "Issuing agency"],
@@ -1536,7 +1536,7 @@
       colsPanel.appendChild(lab);
     });
     var resetW = el("button", { type: "button", class: "cr-export-btn cr-resetw-btn",
-      title: "Reset all column widths to automatic." }, ["↺ reset widths"]);
+      title: "Reset all column widths to automatic." }, ["Reset widths"]);
     resetW.onclick = function () {
       state.colWidths = {};
       saveColWidths();
@@ -1550,12 +1550,12 @@
     // ⬇ extract buttons — the live canonical layer (overlay applied).
     var csvBtn = el("button", { type: "button", class: "cr-export-btn",
       title: "Download the full credential layer as CSV (opens in Excel). Live — curation overrides included." },
-      ["⬇ Excel (CSV)"]);
+      ["Excel (CSV)"]);
     csvBtn.onclick = exportCsv;
     tb.appendChild(csvBtn);
     var jsonBtn = el("button", { type: "button", class: "cr-export-btn",
       title: "Download the full credential layer as JSON. Live — curation overrides included." },
-      ["⬇ JSON"]);
+      ["JSON"]);
     jsonBtn.onclick = exportJson;
     tb.appendChild(jsonBtn);
 
@@ -1594,7 +1594,7 @@
     var btn = el("button", {
       type: "button", class: "cr-bulk-btn",
       title: "Mark all selected credentials as initiated (curator-acknowledged classification)."
-    }, ["✓ Mark " + n + " initiated"]);
+    }, ["Mark " + n + " initiated"]);
     btn.onclick = function () { bulkMarkInitiated(); };
     slot.appendChild(btn);
     var clearLink = el("button", { type: "button", class: "cr-bulk-clear",
@@ -1669,7 +1669,7 @@
 
     // Signed in: show "✓ email · sign out"
     if (state.sess) {
-      auth.appendChild(el("span", { class: "cr-auth-on" }, ["✓ " + state.sess.email]));
+      auth.appendChild(el("span", { class: "cr-auth-on" }, ["Signed in as " + state.sess.email]));
       auth.appendChild(document.createTextNode("  "));
       var out = el("button", { type: "button", class: "cr-auth-link" }, ["sign out"]);
       out.onclick = function (e) {
@@ -1682,7 +1682,7 @@
     // Pending sign-in error: show red panel + retry link
     if (state.pendingSignInError) {
       var errPanel = el("div", { class: "cr-auth-panel cr-auth-panel-err" });
-      errPanel.appendChild(el("strong", null, ["✗ Sign-in failed"]));
+      errPanel.appendChild(el("strong", null, ["Sign-in failed"]));
       errPanel.appendChild(el("div", { class: "cr-auth-panel-detail" }, [state.pendingSignInError]));
       var retry = el("button", { type: "button", class: "cr-auth-link" }, ["try again"]);
       retry.onclick = function (e) {
@@ -1698,7 +1698,7 @@
     // Pending sign-in (magic link sent): show inline confirmation panel
     if (state.pendingSignInEmail) {
       var panel = el("div", { class: "cr-auth-panel cr-auth-panel-ok" });
-      panel.appendChild(el("strong", null, ["✉ Magic link sent"]));
+      panel.appendChild(el("strong", null, ["Magic link sent"]));
       panel.appendChild(el("div", { class: "cr-auth-panel-detail" },
         ["Check the inbox for ", state.pendingSignInEmail,
          " and click the link to complete sign-in. You'll land back on this tab signed in."]));
@@ -1771,7 +1771,7 @@
     if (state.cosMatches) {
       var nCos = Object.keys(state.cosMatches).length;
       sum.appendChild(el("span", { class: "cr-cos-attrib" },
-        ["✓/≈ COS badges (" + nCos + " titles): "
+        ["COS match badges (" + nCos + " titles): "
          + (state.cosAttribution || "Source: CareerOneStop, sponsored by the "
             + "U.S. Department of Labor ETA; data maintained by Minnesota DEED.")]));
     }
@@ -1811,7 +1811,7 @@
     if (vc.disc) COLS.push({ key: "disc_modal", label: "Discipline",
       title: "Predominant MQ discipline across this credential's articulated common courses." });
     if (vc.issuer) COLS.push({ key: "primary_issuer", label: "Issuing Agency",
-      title: "The certifying body. Edit right here; ＋ issuer records additional certifying bodies (never replacing the primary). Empty + Save = \"no formal issuer (local exhibit)\"." });
+      title: "The certifying body. Edit right here; Add issuer records additional certifying bodies (never replacing the primary). Empty + Save = \"no formal issuer (local exhibit)\"." });
     if (vc.trainer) COLS.push({ key: "primary_trainer", label: "Trainer",
       title: "Training agency (when distinct from the issuer — Rule 5f)." });
     if (vc.students) COLS.push({ key: "students", label: "Students",
@@ -1823,7 +1823,7 @@
     if (vc.elig) COLS.push({ key: "eligible", label: "Elig. units",
       title: "Statewide CPL credit-UNITS eligible for this credential (MAP Exhibit CRs Catalog). Credit units, not a headcount." });
     COLS.push({ key: "reviewed", label: "Status",
-      title: "💾 Save appears on rows with unsaved in-cell edits. ✓ Init = a one-time review sign-off recording that you checked the AI classification (who + when) — it changes nothing in the data and is never required. ✎ opens the full Curate panel." });
+      title: "Save appears on rows with unsaved in-cell edits. Init = a one-time review sign-off recording that you checked the AI classification (who + when) — it changes nothing in the data and is never required. ✎ opens the full Curate panel." });
 
     var headerRow = el("tr");
     COLS.forEach(function (col, idx) {
@@ -2058,13 +2058,13 @@
         title: "Raw MAP exhibit titles with no credential identity yet — assign each a unified title. Saved assignments fold on the daily sync (\"awaiting fold\")." },
       { k: "noiss", label: "No issuer", n: niQueue.length,
         title: "Classified credentials still needing agency/title triage."
-          + (staged ? " ⚡ " + staged + " pre-filled from the staged plan." : "") },
+          + (staged ? " " + staged + " pre-filled from the staged plan." : "") },
       { k: "merge", label: "Merge confirms", n: pendingMerges().length,
         title: "Saved renames that match an EXISTING credential — confirm the merge or re-title." },
-      { k: "open",  label: "○ Not initiated", n: state.rows.length - doneN,
+      { k: "open",  label: "Not initiated", n: state.rows.length - doneN,
         title: "Awaiting a one-time curator sign-off. \"Initiated\" only records that a human reviewed the AI classification (who + when) — it never changes the data, and no other action is required. Work these at your own pace." },
       { k: "done",  label: "Initiated", n: doneN,
-        title: "A curator has signed off on the AI classification (the ✓ name · date stamp on the row). Purely a review receipt — the data is identical either way." },
+        title: "A curator has signed off on the AI classification (the name · date stamp on the row). Purely a review receipt — the data is identical either way." },
       { k: "industry", label: "Industry credentials",
         n: state.industry ? state.industry.length : null,
         nText: state.industryError ? "(unavailable)" : null,
@@ -2093,7 +2093,7 @@
     if (!dirty.length) return;
     var b = el("button", { type: "button", class: "cr-saveall",
       title: "Save every row with unsaved in-cell edits." },
-      ["💾 Save all (" + dirty.length + ")"]);
+      ["Save all (" + dirty.length + ")"]);
     b.onclick = function () {
       b.disabled = true; b.textContent = "saving…";
       Promise.all(dirtyRows().map(function (r) { return saveGridRowCore(r); }))
@@ -2236,13 +2236,13 @@
     if (state.sess && rowIsDirty(r)) {
       var sv = el("button", { type: "button", class: "cr-grid-save",
         title: "Save this row's edits (Enter in any cell also saves)." },
-        ["💾 Save"]);
+        ["Save"]);
       sv.onclick = function () { saveGridRow(r, tr); };
       td.appendChild(sv);
       return;
     }
     if (state.rowSaved[ut]) {
-      td.appendChild(el("span", { class: "cr-rev-on" }, ["✓ saved"]));
+      td.appendChild(el("span", { class: "cr-rev-on" }, ["Saved"]));
     }
     if (r.curator_reviewed_at) {
       var who = (r.curator_reviewed_by || "").split("@")[0];
@@ -2250,12 +2250,12 @@
       td.appendChild(el("span", {
         class: "cr-rev-on",
         title: "Initiated by " + (r.curator_reviewed_by || "?") + " on " + when
-      }, ["✓ " + who + " · " + when]));
+      }, ["Initiated by " + who + " · " + when]));
     } else if (state.sess) {
       var b = el("button", {
         type: "button", class: "cr-action-btn",
         title: "Mark this unified title as initiated (curator-acknowledged classification)."
-      }, ["✓ Init"]);
+      }, ["Init"]);
       b.onclick = function () {
         if (!confirm("Mark \"" + r.unified_title + "\" initiated?\n\n"
             + "This records that you've reviewed the AI classification + "
@@ -2343,8 +2343,8 @@
     var target = mergeTargetFor(r, val);
     if (!target) return;
     var strip = el("div", { class: "cr-merge-strip" });
-    strip.appendChild(el("span", null, ["⇒ matches existing “" + val + "”"]));
-    var okb = el("button", { type: "button", class: "cr-merge-confirm" }, ["✓ Confirm merge"]);
+    strip.appendChild(el("span", null, ["Matches existing “" + val + "”"]));
+    var okb = el("button", { type: "button", class: "cr-merge-confirm" }, ["Confirm merge"]);
     okb.onclick = function () { saveGridRow(r, tr); };
     strip.appendChild(okb);
     holder.appendChild(strip);
@@ -2383,7 +2383,7 @@
           title: "Merge “" + (r.display_title || r.unified_title)
             + "” INTO “" + (cand.display_title || ut2)
             + "” — you'll get the standard merge confirmation." },
-          ["⇆ Merge into this"]);
+          ["Merge into this"]);
         btn.onclick = function () {
           var tr2 = btn.closest("tr");
           draftOf(r).title = ut2;      // the target's KB key — the fold's join
@@ -2468,7 +2468,7 @@
     if (!tchips) tchips = el("span", { class: "cr-title-chips" });
     if (r.raw_variants && r.raw_variants.length) {
       var rawFirst = r.raw_variants[0].raw_title || "";
-      var rawMore = r.raw_variants.length > 1 ? "  ＋" + (r.raw_variants.length - 1) : "";
+      var rawMore = r.raw_variants.length > 1 ? "  and " + (r.raw_variants.length - 1) + " more" : "";
       tchips.appendChild(el("span", { class: "cr-ctx-raw",
         title: "Raw college-entered title(s):\n" + r.raw_variants.map(function (v) {
           return v.raw_title;
@@ -2483,7 +2483,7 @@
       var sugChip = el("button", { type: "button", class: "cr-chip cr-chip-mergesug",
         title: "This title looks like the same credential as " + nOthers
           + " other row" + (nOthers === 1 ? "" : "s") + " — click to review and merge."
-      }, ["⇆ " + nOthers + " similar"]);
+      }, [nOthers + " similar"]);
       sugChip.onclick = function (e) {
         e.stopPropagation();
         state.mergeSugOpen[ut] = !state.mergeSugOpen[ut];
@@ -2560,7 +2560,7 @@
         var add = el("button", { type: "button", class: "cr-issuer-add",
           title: "Some credentials are certified by more than one body (Rule 4). "
             + "Each is ADDED alongside the primary, never replacing it." },
-          ["＋ issuer"]);
+          ["Add issuer"]);
         add.onclick = function () {
           draftOf(r).extra.push("");
           markRowDirty(r, tr);
@@ -3381,7 +3381,7 @@
   function collegeBadgeGroup(label, names, cls, icon) {
     var CAP = 12;
     var g = el("div", { class: "cr-badge-group" });
-    g.appendChild(el("span", { class: "cr-badge-grouplabel" }, [icon + " " + label + " (" + names.length + ")"]));
+    g.appendChild(el("span", { class: "cr-badge-grouplabel" }, [(icon ? icon + " " : "") + label + " (" + names.length + ")"]));
     names.slice(0, CAP).forEach(function (c) {
       g.appendChild(el("span", { class: "cr-college-badge " + cls, title: c }, [SHORT(c)]));
     });
@@ -3427,19 +3427,19 @@
         title: "Common Exhibit Title is an AI-generated draft (title confidence "
           + (r.conf_modal != null ? r.conf_modal.toFixed(2) : "—")
           + "), not yet curator-confirmed. Sign in and Mark initiated, or rename, to confirm it."
-      }, ["⚙ Generated Title"]));
+      }, ["Generated Title"]));
     }
     if (r.statewide) {
-      c.appendChild(el("span", { class: "cr-chip cr-chip-ccc", title: "At least one CCC Collaborative (statewide) articulation." }, ["🏛 CCC"]));
+      c.appendChild(el("span", { class: "cr-chip cr-chip-ccc", title: "At least one CCC Collaborative (statewide) articulation." }, ["CCC"]));
     }
     if (r.has_local) {
-      c.appendChild(el("span", { class: "cr-chip cr-chip-local", title: "At least one local-college articulation." }, ["🏠 Local"]));
+      c.appendChild(el("span", { class: "cr-chip cr-chip-local", title: "At least one local-college articulation." }, ["Local"]));
     }
     if (!r.statewide && r.has_local) {
       // This "Generated" is about the Common Course ALIGNMENT / credit
       // recommendation (no statewide CCC standard → the rec is derived from the
       // MID/CID/CCN identities), distinct from the "Generated Title" chip above.
-      c.appendChild(el("span", { class: "cr-chip cr-chip-gen", title: "Common Course alignment: no statewide CCC standard — the credit recommendation is generated from the MID/CID/CCN identities, for consideration only, NOT an official CCC standard." + (r.gen_rec ? "\nSuggested: " + r.gen_rec : "") }, ["⚙ Generated MID Credit Rec"]));
+      c.appendChild(el("span", { class: "cr-chip cr-chip-gen", title: "Common Course alignment: no statewide CCC standard — the credit recommendation is generated from the MID/CID/CCN identities, for consideration only, NOT an official CCC standard." + (r.gen_rec ? "\nSuggested: " + r.gen_rec : "") }, ["Generated MID Credit Rec"]));
     }
     if (!r.statewide && !r.has_local && !(r.articulations && r.articulations.length)) {
       c.appendChild(el("span", { class: "cr-chip cr-chip-none", title: "No common-course articulations resolved." }, ["— no articulations"]));
@@ -3461,7 +3461,7 @@
           + ":\n" + cos.name + (cos.org ? " — " + cos.org : "")
           + (cos.in_demand ? "\n★ Flagged in-demand nationally." : "")
           + "\n\n" + (state.cosAttribution || "Source: CareerOneStop (USDOL ETA / MN DEED).")
-      }, [cos.tier === "exact" ? "✓ COS" : "≈ COS"]));
+      }, [cos.tier === "exact" ? "COS match" : "COS near match"]));
     }
     return c.childNodes.length ? c : null;
   }
@@ -3478,12 +3478,12 @@
 
     if (r.statewide && r.ccc_rec) {
       wrap.appendChild(el("div", { class: "cr-rec" }, [
-        el("span", { class: "cr-rec-label cr-rec-ccc" }, ["🏛 Statewide standard: "]),
+        el("span", { class: "cr-rec-label cr-rec-ccc" }, ["Statewide standard: "]),
         el("span", { class: "cr-rec-val" }, [r.ccc_rec]),
       ]));
     } else if (!r.statewide && r.gen_rec) {
       wrap.appendChild(el("div", { class: "cr-rec", title: "Best available credit recommendation from the MID/CID/CCN identities — for consideration only, not an official CCC standard." }, [
-        el("span", { class: "cr-rec-label cr-rec-gen" }, ["⚙ Generated MID Credit Recommendation (consideration only): "]),
+        el("span", { class: "cr-rec-label cr-rec-gen" }, ["Generated MID Credit Recommendation (consideration only): "]),
         el("span", { class: "cr-rec-val" }, [r.gen_rec]),
       ]));
     }
@@ -3500,8 +3500,8 @@
     var orange = (r.potential_colleges || []);
     if (green.length || orange.length) {
       var badges = el("div", { class: "cr-badges" });
-      if (green.length) badges.appendChild(collegeBadgeGroup("Articulated", green, "cr-badge-green", "✅"));
-      if (orange.length) badges.appendChild(collegeBadgeGroup("Potential adopters", orange, "cr-badge-orange", "○"));
+      if (green.length) badges.appendChild(collegeBadgeGroup("Articulated", green, "cr-badge-green", ""));
+      if (orange.length) badges.appendChild(collegeBadgeGroup("Potential adopters", orange, "cr-badge-orange", ""));
       wrap.appendChild(badges);
     }
     return wrap.childNodes.length ? wrap : null;
@@ -3651,7 +3651,7 @@
         renderPendingMergesInto(lanePanel);
         if (!pendingMerges().length) {
           lanePanel.appendChild(el("p", { class: "cr-wl-note" },
-            ["✓ No pending merge confirmations."]));
+            ["No pending merge confirmations."]));
         }
       } else {
         renderIssuerLaneInto(lanePanel, { skipMerges: true });
@@ -3662,7 +3662,7 @@
 
     var panel = el("div", { class: "cr-worklist" });
     if (!section) {
-      var back = el("button", { type: "button", class: "cr-wl-back" }, ["← back to credentials"]);
+      var back = el("button", { type: "button", class: "cr-wl-back" }, ["Back to credentials"]);
       back.onclick = function (e) { e.preventDefault(); closeWorklist(); };
       panel.appendChild(back);
     }
@@ -3677,7 +3677,7 @@
     var items = state.unclassified;
     if (!items.length) {
       panel.appendChild(el("p", { class: "cr-wl-note" }, [
-        "🎉 Queue clear — every raw MAP exhibit title currently has a credential "
+        "Queue clear — every raw MAP exhibit title currently has a credential "
         + "identity. New unclassified titles appear here when the exhibit auditor "
         + "next runs against fresh MAP data."
       ]));
@@ -3744,20 +3744,20 @@
       var psRow = el("div", { class: "cr-wl-preseed-bar" });
       psRow.appendChild(el("span", null, [
         (preseeded.length
-          ? "⚡ " + preseeded.length + " row" + (preseeded.length === 1 ? "" : "s")
+          ? preseeded.length + " pre-seeded row" + (preseeded.length === 1 ? "" : "s")
             + " pre-filled from the staged pre-seed plan — review each (or edit), then Save. "
           : "")
         + "Save all saves every shown row with a filled-in title — pre-filled "
         + "or typed by you. Nothing is saved until you save it."
       ]));
       var saveAll = el("button", { type: "button", class: "cr-wl-saveall" },
-        ["💾 Save all filled shown"]);
+        ["Save all filled shown"]);
       saveAll.onclick = function () { bulkSaveFilled(saveAll); };
       psRow.appendChild(saveAll);
       panel.appendChild(psRow);
     } else if (preseeded.length) {
       panel.appendChild(el("div", { class: "cr-wl-preseed-bar" }, [
-        el("span", null, ["⚡ " + preseeded.length + " row"
+        el("span", null, [preseeded.length + " pre-seeded row"
           + (preseeded.length === 1 ? "" : "s")
           + " pre-filled from the staged pre-seed plan — sign in to save."])
       ]));
@@ -3793,11 +3793,11 @@
         initBar.appendChild(el("span", null, [
           "Initiate all marks the " + initTargets.length + " credential"
           + (initTargets.length === 1 ? "" : "s") + " targeted by saved "
-          + "assignments as ✓ Initiated (already-initiated targets are skipped), "
-          + "so they don't land in ○ Not initiated after the fold."
+          + "assignments as Initiated (already-initiated targets are skipped), "
+          + "so they don't land in Not initiated after the fold."
         ]));
         var initAll = el("button", { type: "button", class: "cr-wl-saveall",
-          id: "cr-wl-initall" }, ["✓ Initiate all assigned (" + initTargets.length + ")"]);
+          id: "cr-wl-initall" }, ["Initiate all assigned (" + initTargets.length + ")"]);
         initAll.onclick = function () {
           if (!window.confirm("Mark " + initTargets.length + " assigned credential"
               + (initTargets.length === 1 ? "" : "s") + " as Initiated?")) return;
@@ -3806,8 +3806,8 @@
           function step() {
             if (!queue.length) {
               initAll.textContent = failed
-                ? "✓ " + done + " initiated · " + failed + " failed — retry"
-                : "✓ " + done + " initiated";
+                ? done + " initiated · " + failed + " failed — retry"
+                : done + " initiated";
               initAll.disabled = !failed;
               renderToolbar();
               renderLanes();
@@ -3840,7 +3840,7 @@
       // rendering a bare table (the queue-clear state above only covers a
       // truly EMPTY queue)
       panel.appendChild(el("p", { class: "cr-wl-note" }, [
-        "✓ Nothing needs triage — all " + items.length + " rows have saved "
+        "Nothing needs triage — all " + items.length + " rows have saved "
         + "assignments awaiting the next daily fold. Use the \"All\" view to "
         + "review or clear them."
       ]));
@@ -3921,7 +3921,7 @@
     panel.appendChild(el("p", { class: "cr-wl-note" }, [
       "These saved unified titles match an EXISTING credential — the rename "
       + "apply holds each one in its collision queue until you decide. "
-      + "✓ Confirm merge folds the credential's records into the existing one "
+      + "Confirm merge folds the credential's records into the existing one "
       + "on the next rename apply; or re-title it to something that doesn't "
       + "collide."
     ]));
@@ -3936,7 +3936,7 @@
       tr.appendChild(el("td", null, [inp]));
       var actTd = el("td", { class: "cr-mg-act" });
       var btn = el("button", { type: "button", class: "cr-mg-confirm" },
-        ["✓ Confirm merge"]);
+        ["Confirm merge"]);
       inp.oninput = function () {
         var again = mergeTargetFor(p.r, inp.value);
         btn.textContent = again ? "Confirm merge" : "Save re-title";
@@ -3994,9 +3994,9 @@
       ["Missing issuing agency (" + queue.length + ")"]));
     if (!queue.length) {
       panel.appendChild(el("p", { class: "cr-wl-note" }, [
-        savedN ? "✓ All set — " + savedN + " issuer assignment"
+        savedN ? "All set — " + savedN + " issuer assignment"
                  + (savedN === 1 ? "" : "s") + " saved this session fold on the next daily sync."
-               : "🎉 Every credential carries an issuing agency (or a curated “no formal issuer”)."
+               : "Every credential carries an issuing agency (or a curated “no formal issuer”)."
       ]));
       return;
     }
@@ -4008,20 +4008,20 @@
       + "local exhibit”. Each row shows the raw college-entered title(s) and the "
       + "originating college so you can complete triage without flipping to the "
       + "main list. Saves are curation overrides that fold into the knowledge "
-      + "base on the next daily sync. ⚡ rows are pre-filled from the staged "
+      + "base on the next daily sync. Pre-seed rows are pre-filled from the staged "
       + "pre-seed plan — nothing is saved until you save it."
     ]));
     var staged = queue.filter(function (r) { return state.issuerPreseed[r.unified_title]; });
     if (state.sess) {
       var bar = el("div", { class: "cr-wl-preseed-bar" });
       bar.appendChild(el("span", null, [
-        (staged.length ? "⚡ " + staged.length + " pre-filled. " : "")
+        (staged.length ? staged.length + " pre-filled. " : "")
         + "Save all saves every shown row with a filled-in issuer or an edited "
         + "title/trainer"
         + (staged.length ? " — plus the pre-seeded “no formal issuer” rows" : "") + "."
       ]));
       var saveAll = el("button", { type: "button", class: "cr-wl-saveall" },
-        ["💾 Save all filled shown"]);
+        ["Save all filled shown"]);
       saveAll.onclick = function () { bulkSaveIssuers(saveAll); };
       bar.appendChild(saveAll);
       panel.appendChild(bar);
@@ -4077,7 +4077,7 @@
     nameTd.appendChild(el("span", { class: "cr-wl-rawt" }, [r.display_title || ut]));
     if (ps) {
       var psLabel = ps.issuer === ""
-        ? "⚡ pre-seed · no formal issuer" : "⚡ pre-seed · " + (ps.via || "");
+        ? "Pre-seed · no formal issuer" : "Pre-seed · " + (ps.via || "");
       nameTd.appendChild(el("span", { class: "cr-wl-preseed-badge",
         title: "Pre-filled by the staged pre-seed plan (lane: " + (ps.via || "?")
           + ", confidence " + (ps.confidence != null ? ps.confidence : "?") + ")."
@@ -4162,7 +4162,7 @@
       title: "Some credentials are certified by more than one body (Rule 4). "
         + "Record additional issuing agencies — each is ADDED alongside the "
         + "one above, never replacing it. Click again for another." },
-      ["＋ add issuing agency"]);
+      ["Add issuing agency"]);
     addLink.onclick = function (e) {
       e.preventDefault();
       inp2Wrap.style.display = "";
@@ -4190,7 +4190,7 @@
         state.niDraft[ut] = { title: titleInp.value, issuer: inp.value,
                               issuer2: joinIssuers(inp2Wrap) };
         // Re-editing a saved row makes it dirty again — RE-ARM the button.
-        // applySavedLane disables it as "✓ Saved" while the inputs stay
+        // applySavedLane disables it as "Saved" while the inputs stay
         // live; syncLabel() then relabeled the still-DISABLED button back
         // to "Save" on the next keystroke — the unresponsive firearms Save
         // (Sam, 2026-07-08). Never re-arm a save that's mid-flight.
@@ -4236,7 +4236,7 @@
     var wrap = el("div", { class: "cr-ni-lookup" });
     var searchBtn = el("button", { type: "button", class: "cr-ni-search",
       title: "Open a web search asking who issues this credential (uses the "
-        + "current unified-title input)" }, ["🔎 who issues this?"]);
+        + "current unified-title input)" }, ["Who issues this?"]);
     searchBtn.onclick = function () {
       var t = (titleInp && titleInp.value || "").trim()
         || r.display_title || r.unified_title;
@@ -4248,7 +4248,7 @@
       var aiBtn = el("button", { type: "button", class: "cr-ni-suggest",
         title: "Ask Claude (via the report proxy) who issues this credential — "
           + "the answer is a recommendation to review, never auto-saved" },
-        ["✨ suggest"]);
+        ["Suggest"]);
       var out = el("span", { class: "cr-ni-suggest-out" });
       aiBtn.onclick = function () {
         var t = (titleInp && titleInp.value || "").trim()
@@ -4338,7 +4338,7 @@
     var searchBtn = el("button", { type: "button", class: "cr-ni-tsearch",
       title: "Open a web search for this course code at its college — Sam's "
         + "manual lookup, one click (uses the current title input)" },
-      ["🔎 what is this?"]);
+      ["What is this?"]);
     searchBtn.onclick = function () {
       var c = ctx();
       window.open("https://www.google.com/search?q="
@@ -4352,7 +4352,7 @@
         title: "Ask Claude (via the report proxy) what course or credential "
           + "this code refers to — the answer is a recommendation to review, "
           + "never auto-saved" },
-        ["✨ suggest"]);
+        ["Suggest"]);
       var out = el("span", { class: "cr-ni-tsuggest-out" });
       aiBtn.onclick = function () {
         var c = ctx();
@@ -4613,7 +4613,7 @@
     function step(i) {
       if (i >= todo.length) {
         btn.textContent = failed ? ("saved " + done + ", " + failed + " failed — retry")
-                                 : ("✓ saved " + done);
+                                 : ("Saved " + done);
         btn.disabled = !failed;
         return;
       }
@@ -4663,7 +4663,7 @@
         // rows were updated IN PLACE (applySavedAssignment) — no full
         // re-render, so unsaved input typed in OTHER rows survives.
         btn.textContent = failed ? ("saved " + done + ", " + failed + " failed — retry")
-                                 : ("✓ saved " + done);
+                                 : ("Saved " + done);
         btn.disabled = !failed;  // re-enable only when there is something to retry
         return;
       }
@@ -4736,7 +4736,7 @@
         title: "Pre-filled by the staged pre-seed plan (lane: " + (ps.via || "?")
           + ", confidence " + (ps.confidence != null ? ps.confidence : "?") + ")."
           + (ps.note ? " " + ps.note : "") + " Review or edit, then Save." },
-        ["⚡ pre-seed · " + (ps.via || "") ]));
+        ["Pre-seed · " + (ps.via || "") ]));
     }
     // Originating-college chips — who entered the exhibit (Sam, 2026-07-07:
     // "knowing their local title could help determine the common course title
@@ -4780,7 +4780,7 @@
           + (authSugg.kind === "ccn" ? "official AB-1111 Common Course Number"
              : "official C-ID descriptor")
           + ". Review or edit, then Save (nothing is saved until you click)." },
-        ["↦ pre-filled from " + (authSugg.kind === "ccn" ? "CCN " : "C-ID ")
+        ["Pre-filled from " + (authSugg.kind === "ccn" ? "CCN " : "C-ID ")
           + (authSugg.id || "identity match")]));
     }
     // 💡 identity-anchored fill chips (Rule 5c precedence — CCN > C-ID > COS
@@ -4790,10 +4790,10 @@
       var srow = el("div", { class: "cr-wl-suggs" });
       suggs.forEach(function (s) {
         var label =
-          s.kind === "ccn" ? "💡 CCN " + s.id + ": " + s.title :
-          s.kind === "cid" ? "💡 C-ID " + s.id + ": " + s.title :
-          s.kind === "cos" ? "💡 COS: " + s.title + (s.org ? " — " + s.org : "") :
-          "💡 course title: " + s.title;
+          s.kind === "ccn" ? "CCN " + s.id + ": " + s.title :
+          s.kind === "cid" ? "C-ID " + s.id + ": " + s.title :
+          s.kind === "cos" ? "COS: " + s.title + (s.org ? " — " + s.org : "") :
+          "Course title: " + s.title;
         var tip =
           s.kind === "ccn" ? "Official AB-1111 Common Course Number title — the statewide student-facing name (Rule 5c tier 1). Click to fill." :
           s.kind === "cid" ? "Official C-ID descriptor title" + (s.unverified ? " (code not in our descriptor extract — verify)" : "") + " (Rule 5c tier 2). Click to fill." :
@@ -4884,7 +4884,7 @@
       title: "Some credentials are certified by more than one body (Rule 4). "
         + "Record additional issuing agencies — each is ADDED alongside the one "
         + "above, never replacing it. Click again for another." },
-      ["＋ add issuing agency"]);
+      ["Add issuing agency"]);
     addIssLink.onclick = function (e) {
       e.preventDefault();
       iss2Wrap.style.display = "";
@@ -4897,7 +4897,7 @@
 
     var actTd = el("td", { class: "cr-wl-act" });
     if (state.sess) {
-      var saveBtn = el("button", { type: "button", class: "cr-wl-save" }, [cur.title ? "✓ Saved" : "Save"]);
+      var saveBtn = el("button", { type: "button", class: "cr-wl-save" }, [cur.title ? "Saved" : "Save"]);
       function noteDraft() {
         if (saveBtn.textContent !== "Save") saveBtn.textContent = "Save";
         // capture unsaved input so a re-render can't wipe it (2026-07-08)
@@ -4935,7 +4935,7 @@
       actTd.appendChild(saveBtn);
       if (cur.title) actTd.appendChild(makeClearLink(raw, tr, actTd, saveBtn));
     } else if (cur.title) {
-      actTd.appendChild(el("span", { class: "cr-wl-assigned-by", title: "Assigned by " + (cur.by || "") }, ["✓ assigned"]));
+      actTd.appendChild(el("span", { class: "cr-wl-assigned-by", title: "Assigned by " + (cur.by || "") }, ["Assigned"]));
     }
     tr.appendChild(actTd);
     return tr;
@@ -4981,7 +4981,7 @@
     var prog = g.program || "exam";
     var box = el("div", { class: "cr-geap" });
     box.appendChild(el("div", { class: "cr-geap-head" },
-      ["📜 Statewide " + prog + " credit · CCC GE " + prog + " List"]));
+      ["Statewide " + prog + " credit · CCC GE " + prog + " List"]));
     var body = el("div", { class: "cr-geap-body" });
     if (g.na || !(g.areas && g.areas.length)) {
       body.appendChild(el("span", { class: "cr-geap-na" }, ["No GE Area assigned (N/A)"]));
@@ -5138,7 +5138,7 @@
                  + "row (same course, different local title wording). Folded: "
                  + (_mem.join("; ") || "—") + ". Durable identity merges are queued in "
                  + "the CCR Suggested-merges worklist."
-          }, ["⛓ " + a.merged + " variants"]));
+          }, [a.merged + " variants merged"]));
         }
         // Subject-outlier review badge (R1) — minority subject vs this
         // credential's predominant one; a candidate for review, not a verdict.
@@ -5405,7 +5405,7 @@
     var card = el("div", { class: "cr-wl-note" }, [
       "The Credential Reference failed to load (" + (err && err.message || "error") + "). "
     ]);
-    var retry = el("button", { type: "button", class: "cr-triage-btn" }, ["↻ Retry"]);
+    var retry = el("button", { type: "button", class: "cr-triage-btn" }, ["Retry"]);
     retry.onclick = function () { init(); };
     card.appendChild(retry);
     wrap.appendChild(card);

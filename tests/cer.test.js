@@ -69,8 +69,8 @@ function runAssertions() {
 
   // Item 3 — the two clarified chips, and the old bare one gone.
   const chips = Array.from(wrap.querySelectorAll(".cr-title-chips .cr-chip")).map(txt);
-  check("item3: 'Generated Title' chip present", chips.includes("⚙ Generated Title"));
-  check("item3: 'Generated MID Credit Rec' chip present", chips.includes("⚙ Generated MID Credit Rec"));
+  check("item3: 'Generated Title' chip present", chips.includes("Generated Title"));
+  check("item3: 'Generated MID Credit Rec' chip present", chips.includes("Generated MID Credit Rec"));
   check("item3: old bare '⚙ Generated' chip gone", !chips.includes("⚙ Generated"));
 
   // Items 2 & 7 — the crash class. Search a term that misses the synthetic

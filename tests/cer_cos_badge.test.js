@@ -71,12 +71,12 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   const rowOf = (t) => Array.from(db.querySelectorAll("tr.cr-row"))
     .find((tr) => txt(tr).indexOf(t) >= 0);
   const comptia = rowOf("CompTIA A+") && rowOf("CompTIA A+").querySelector(".cr-chip-cos");
-  check("present: exact tier renders ✓ COS", comptia && txt(comptia) === "✓ COS");
+  check("present: exact tier renders COS match", comptia && txt(comptia) === "COS match");
   check("present: tooltip carries the org", comptia && /Computing Technology Industry Association/.test(comptia.title));
   check("present: tooltip carries the attribution", comptia && /CareerOneStop/.test(comptia.title) && /DEED/.test(comptia.title));
   check("present: in-demand surfaces in the tooltip", comptia && /in-demand/.test(comptia.title));
   const ff = rowOf("Firefighter I Academy") && rowOf("Firefighter I Academy").querySelector(".cr-chip-cos");
-  check("present: weaker tier renders ≈ COS", ff && txt(ff) === "≈ COS");
+  check("present: weaker tier renders COS near match", ff && txt(ff) === "COS near match");
   check("present: unmatched row has no chip",
     rowOf("Unmatched Credential") && !rowOf("Unmatched Credential").querySelector(".cr-chip-cos"));
   check("present: summary attribution line renders", /CareerOneStop/.test(txt(db.querySelector(".cr-cos-attrib"))));
