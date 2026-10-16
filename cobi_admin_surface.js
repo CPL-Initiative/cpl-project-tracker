@@ -251,6 +251,7 @@ window.COBI_ADMIN_SURFACE = {
     "college-briefing": {
       "modules": [
         "college_briefing.js",
+        "cpl_chat.js",
         "cpl_funding.js"
       ],
       "reads": [
@@ -279,7 +280,8 @@ window.COBI_ADMIN_SURFACE = {
       "rpcs": [
         "cpl_funding_my_reports",
         "cpl_funding_optin_review",
-        "map_coordinator_summary"
+        "map_coordinator_summary",
+        "sierra_feedback_upsert"
       ],
       "measured": true
     },
@@ -502,17 +504,6 @@ window.COBI_ADMIN_SURFACE = {
         "cpl_news_requests"
       ],
       "rpcs": [],
-      "measured": true
-    },
-    "chatbot": {
-      "modules": [
-        "cpl_chat.js"
-      ],
-      "reads": [],
-      "writes": [],
-      "rpcs": [
-        "sierra_feedback_upsert"
-      ],
       "measured": true
     },
     "sierra-training": {

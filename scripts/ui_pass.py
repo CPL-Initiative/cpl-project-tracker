@@ -16,7 +16,8 @@ Usage, from the repo root:
   python3 scripts/ui_pass.py --wiring ID        the datasets the view reads, and the other
                                                 views reading each one (kb/dependency_map.json)
   python3 scripts/ui_pass.py --record ID "..."  stamp today's pass and its outcome
-  python3 scripts/ui_pass.py --sync             add views the nav or the config gained
+  python3 scripts/ui_pass.py --sync             add views the nav or the config gained, and
+                                                drop the ones they lost (a retired tab, S398)
 
 The order --next takes: never audited before audited, a public page before a COBI tab,
 then the oldest pass, then the ledger's own order (the nav's). A view on hold is
@@ -173,11 +174,19 @@ def main(argv=None):
     q = load(a.path)
     if a.sync:
         have = {r["id"] for r in q["surfaces"]}
-        for vid, name, page, aud in views():
+        want = views()
+        for vid, name, page, aud in want:
             if vid not in have:
                 q["surfaces"].append({"id": vid, "name": name, "page": page, "audience": aud,
                                       "last": None, "outcome": None})
                 print("ui_pass: added " + vid)
+        # A view the nav or the config no longer has is retired (the CPL Assistant
+        # tab, S398): its row goes, and the run says so, pass record and all.
+        keep = {v[0] for v in want}
+        for r in [r for r in q["surfaces"] if r.get("id") not in keep]:
+            q["surfaces"].remove(r)
+            print("ui_pass: dropped " + str(r.get("id")) + " (no longer a view"
+                  + ("; its last pass was " + r["last"] if r.get("last") else "") + ")")
         save(q, a.path)
     if a.record:
         vid, outcome = a.record

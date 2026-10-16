@@ -264,12 +264,12 @@ block("(5)", function () {
   check("(5) the phrase rides through the shared decorateHeaders(), the same as every gated tab",
     /P\.decorateHeaders\(h, sess\)/.test(CHAT));
   check("(5) the meta frame is handled by name, and only by name",
-    /evt\.event === 'meta'/.test(CHAT) && /noteViewer\(JSON\.parse\(evt\.data\)\)/.test(CHAT));
+    /evt\.event === 'meta'/.test(CHAT) && /noteViewer\(JSON\.parse\(evt\.data\), live\(b\)\)/.test(CHAT));
 });
 
 // ── (6) The recognition line, in a real DOM ──────────────────────────────────
 const HTML = '<!doctype html><html><head></head><body>' +
-  '<div id="tab-chatbot"><div class="main-container"></div></div></body></html>';
+  '<main id="page"></main></body></html>';   // Sierra AI's own box comes from open() (S398)
 function streamResp(frames) {
   const enc = new TextEncoder();
   let i = 0;
@@ -299,6 +299,7 @@ function loadDom(frames) {
   };
   w.eval(CHAT);
   w.document.dispatchEvent(new w.Event("DOMContentLoaded", { bubbles: false }));
+  w.CPL_CHAT.open();
   return { w, API: w.CPL_CHAT, requests };
 }
 const tick = (ms) => new Promise((r) => setTimeout(r, ms || 60));

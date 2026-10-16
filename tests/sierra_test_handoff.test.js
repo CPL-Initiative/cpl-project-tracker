@@ -10,11 +10,9 @@
 // do nothing, which is indistinguishable from a dead button:
 //
 //   1. WRONG TARGET. My College mounts the SAME assistant through mountInto(),
-//      and build() re-points the module-level `inputEl` at THAT pane's input.
-//      mount() then early-returns on the data-cplchat-mounted flag, so
-//      returning to #chatbot never re-points it back. After one visit to My
-//      College, the hand-off typed the question into a hidden box for the rest
-//      of the session.
+//      and build() used to re-point a module-level input at THAT box. The
+//      hand-off then typed the question into a hidden box for the rest of the
+//      session.
 //
 //   2. THE KEY WAS BURNED ON FAILURE. consumeTestQuestion() removed the
 //      sessionStorage key BEFORE checking that an input existed, then bailed.
@@ -22,8 +20,12 @@
 //      question and dropped it — and because the key was gone, clicking again
 //      could not work either.
 //
-// The fix targets the #chatbot pane's OWN input and only removes the key once
-// the value is actually delivered.
+// Since S398 (Sam, 2026-10-16) there is no CPL Assistant tab: Sierra Training
+// asks Sierra AI over its own tab through CPL_CHAT.open() (tests/
+// sierra_one_cobi.test.js). A question can still wait under the key — a page
+// without open() falls back to the #chatbot link — and that link delivers it
+// into Sierra AI's OWN box, the COBI-wide one, never My College's, and only
+// removes the key once the value is actually delivered.
 //
 // Run from repo root: `npm test` (or `node tests/sierra_test_handoff.test.js`).
 const fs = require("fs");
@@ -37,61 +39,67 @@ const TRAIN_SRC = fs.readFileSync("sierra_training.js", "utf8");
 const KEY = "cplSierraTestQ.v1";
 const Q = "I have a journey worker license as Iron and Steel worker. What CPL can I get here?";
 
-// A page carrying BOTH mounts, exactly like the live dashboard: the #chatbot
-// pane and a My College pane that hosts the same widget.
-function boot() {
+// A page carrying My College's box, like the live dashboard; Sierra AI's own
+// box is built by open() in a body-level host.
+function boot(url) {
   const dom = new JSDOM(
     '<!doctype html><html><head></head><body>'
-    + '<div id="tab-chatbot"><div class="main-container"></div></div>'
-    + '<div id="tab-my-college"><div class="cplchat-mount"></div></div>'
+    + '<div class="cpl-tab-pane" id="tab-dashboard"></div>'
+    + '<div class="cpl-tab-pane" id="tab-college-briefing"><div class="cplchat-mount"></div></div>'
     + "</body></html>",
-    { url: "https://example.org/", runScripts: "dangerously" });
+    { url: url || "https://example.org/", runScripts: "dangerously" });
   const w = dom.window;
   w.fetch = function () { return new Promise(function () {}); };  // never resolves; no network in tests
+  w.requestAnimationFrame = function (cb) { return setTimeout(cb, 0); };
   w.eval(CHAT_SRC);
-  // jsdom may still be at readyState "loading" when the script evaluates, in
-  // which case cpl_chat defers mount() to DOMContentLoaded. Fire it so the
-  // assertions below are synchronous. mount() is idempotent, so this is a
-  // no-op when it already ran.
   w.document.dispatchEvent(new w.Event("DOMContentLoaded"));
   return w;
 }
 
-function chatbotInput(w) {
-  return w.document.querySelector("#tab-chatbot #cplchat-input, #tab-chatbot .cplchat-input");
+function cobiInput(w) {
+  return w.document.querySelector("#cplchat-cobi .cplchat-input, body > .cplchat.cplchat-full .cplchat-input");
 }
 function myCollegeInput(w) {
-  return w.document.querySelector("#tab-my-college #cplchat-input, #tab-my-college .cplchat-input");
+  return w.document.querySelector("#tab-college-briefing #cplchat-input, #tab-college-briefing .cplchat-input");
 }
-function activateChatbot(w) {
-  w.dispatchEvent(new w.CustomEvent("cpl-tab-activated", { detail: { tab: "chatbot" } }));
+// What tabs.js does with a #chatbot link: no tab by that name, so it lands on
+// the home tab and announces it.
+function activate(w, tab) {
+  w.dispatchEvent(new w.CustomEvent("cpl-tab-activated", { detail: { tab: tab } }));
 }
+const tick = () => new Promise((r) => setTimeout(r, 0));
 
-// ── 1. The plain case still works ───────────────────────────────────────────
+(async function () {
+// ── 1. The plain case: the #chatbot link delivers into Sierra AI's box ─────
 {
-  const w = boot();
-  check("the assistant mounts into #tab-chatbot", !!chatbotInput(w));
+  const w = boot("https://example.org/#chatbot");
   w.sessionStorage.setItem(KEY, Q);
-  activateChatbot(w);
-  const el = chatbotInput(w);
-  check("the question lands in the chatbot input", el && el.value === Q);
+  activate(w, "dashboard");
+  await tick(); await tick();
+  const el = cobiInput(w);
+  check("a #chatbot link opens Sierra AI's own box", !!el);
+  check("the question lands in her input", el && el.value === Q);
   check("a delivered question is removed from sessionStorage",
         w.sessionStorage.getItem(KEY) === null);
+  check("the address names the home tab beneath her, not the retired one",
+        !/#chatbot/.test(w.location.href));
 }
 
 // ── 2. THE REPORTED BUG — after My College has mounted the same widget ──────
 {
-  const w = boot();
-  // Visit My College: this is what re-points the module's inputEl.
-  w.CPL_CHAT.mountInto(w.document.querySelector("#tab-my-college .cplchat-mount"));
+  const w = boot("https://example.org/");
+  // Visit My College: its box is built, and was the last one built.
+  w.CPL_CHAT.mountInto(w.document.querySelector("#tab-college-briefing .cplchat-mount"), "my-college");
   check("My College hosts its own input after mountInto", !!myCollegeInput(w));
 
   w.sessionStorage.setItem(KEY, Q);
-  activateChatbot(w);
+  w.location.hash = "#chatbot";
+  activate(w, "dashboard");
+  await tick(); await tick();
 
-  const cb = chatbotInput(w);
+  const cb = cobiInput(w);
   const mc = myCollegeInput(w);
-  check("the question lands in the CHATBOT input, not the hidden one",
+  check("the question lands in SIERRA AI's input, not the hidden one",
         cb && cb.value === Q);
   check("the hidden My College input is NOT filled",
         !mc || mc.value !== Q);
@@ -107,21 +115,19 @@ function activateChatbot(w) {
     { url: "https://example.org/", runScripts: "dangerously" });
   const w = dom.window;
   w.fetch = function () { return new Promise(function () {}); };
-  w.eval(CHAT_SRC);                       // no #tab-chatbot at all: nothing mounts
+  w.requestAnimationFrame = function (cb) { return setTimeout(cb, 0); };
+  w.eval(CHAT_SRC);                       // no box built anywhere yet
   w.sessionStorage.setItem(KEY, Q);
-  activateChatbot(w);
-  check("with no input anywhere, the question is NOT consumed",
+  w.CPL_CHAT.consumeTestQuestion();
+  activate(w, "college-briefing");
+  check("with no box anywhere, the question is NOT consumed",
         w.sessionStorage.getItem(KEY) === Q);
 
-  // ...and it is delivered on the next activation once the pane exists.
-  const pane = w.document.createElement("div");
-  pane.id = "tab-chatbot";
-  pane.innerHTML = '<div class="main-container"></div>';
-  w.document.body.appendChild(pane);
-  w.CPL_CHAT.mountInto(pane.querySelector(".main-container"));
-  activateChatbot(w);
-  check("a pending question is delivered on a later activation",
-        chatbotInput(w) && chatbotInput(w).value === Q);
+  // ...and it is delivered once Sierra AI's box exists.
+  w.CPL_CHAT.open();
+  w.CPL_CHAT.consumeTestQuestion();
+  check("a pending question is delivered once her box is built",
+        cobiInput(w) && cobiInput(w).value === Q && w.sessionStorage.getItem(KEY) === null);
 }
 
 // ── 4. Ordering: the key is read, delivered, THEN removed ───────────────────
@@ -129,14 +135,13 @@ function activateChatbot(w) {
 // moves removeItem back above the input check reinstates the silent drop.
 {
   const fn = CHAT_SRC.slice(CHAT_SRC.indexOf("function consumeTestQuestion"),
-                            CHAT_SRC.indexOf("function mount("));
+                            CHAT_SRC.indexOf("// ── Sierra AI over any tab (S398)"));
   check("removeItem comes AFTER the element guard",
-        fn.indexOf("if (!el) return") < fn.indexOf("removeItem"),
+        fn.indexOf("if (!el) return") > 0 && fn.indexOf("if (!el) return") < fn.indexOf("removeItem"),
         "the key must not be burned before the question is delivered");
-  check("the consumer resolves the chatbot pane's own input",
-        /chatbotInputEl\(\)/.test(fn));
+  check("the consumer resolves Sierra AI's own box, never the box built last",
+        /\(cobiBox && cobiBox\.input\)/.test(fn));
 }
-
 // ── 5. Sierra Training: the silent no-op is gone ────────────────────────────
 {
   check("a missing question tells the user instead of returning silently",
@@ -165,51 +170,41 @@ function activateChatbot(w) {
         /\.sit-q \{[\s\S]{0,260}user-select:text/.test(TRAIN_SRC));
 }
 
-// ── Report ──────────────────────────────────────────────────────────────────
-
-// ── 4. CPL ASSISTANT SUPPRESSED — the hand-off must still land ──────────────
-// Sam, 2026-08-14: "CPL Assistant on COBI is the same as Sierra now, right? So
-// if I later set CPL Assistant to suppressed using the Admin tab, nothing will
-// be lost." It IS the same assistant — but this hand-off named #chatbot
-// specifically, so suppressing that tab would have broken the only way to test
-// an instruction, and it would have broken SILENTLY. cobi_orgs.js marks a hidden
-// nav button data-org-hidden="1", so that is the signal both sides read.
+// ── 7. NOTHING TO SUPPRESS, SO NOTHING TO REROUTE ───────────────────────────
+// Sam, 2026-08-14, planning to hide the CPL Assistant tab: "nothing will be
+// lost." The hand-off then fell back to My College when the tab was hidden.
+// The tab is gone (S398), so the default has one place to go — Sierra AI's own
+// box — and arriving at My College must never take a default hand-off into
+// My College's box, even when that box is the one built last.
 {
-  const w = boot();
-  // The live page uses id="tab-college-briefing" for My College; give the
-  // fixture that id alongside a suppressed CPL Assistant nav button.
-  w.document.body.insertAdjacentHTML("beforeend",
-    '<div id="tab-college-briefing"><div class="cplchat-mount"></div></div>'
-    + '<nav><button class="cpl-tab" data-tab="chatbot" data-org-hidden="1"></button></nav>');
-  w.CPL_CHAT.mountInto(w.document.querySelector("#tab-college-briefing .cplchat-mount"));
-
+  const w = boot("https://example.org/");
+  w.CPL_CHAT.mountInto(w.document.querySelector("#tab-college-briefing .cplchat-mount"), "my-college");
   w.sessionStorage.setItem(KEY, Q);
-  w.dispatchEvent(new w.CustomEvent("cpl-tab-activated", { detail: { tab: "college-briefing" } }));
-
-  const mc = w.document.querySelector("#tab-college-briefing .cplchat-input, #tab-college-briefing #cplchat-input");
-  check("a suppressed CPL Assistant routes the hand-off into My College",
-        !!mc && mc.value === Q);
-  check("the key is consumed once delivered", w.sessionStorage.getItem(KEY) === null);
-  check("the suppressed chatbot pane did NOT receive it",
-        !(chatbotInput(w) && chatbotInput(w).value === Q));
+  activate(w, "college-briefing");
+  const mc = myCollegeInput(w);
+  check("arriving at My College leaves a default hand-off out of My College's box",
+        !!mc && mc.value === "" && w.sessionStorage.getItem(KEY) === Q);
+  w.location.hash = "#chatbot";
+  activate(w, "dashboard");
+  await tick(); await tick();
+  check("…and the #chatbot link still delivers it into Sierra AI's box",
+        cobiInput(w) && cobiInput(w).value === Q && mc.value === "" && w.sessionStorage.getItem(KEY) === null);
 }
 
-// ── 5. …and an UNsuppressed page still prefers the CPL Assistant pane ───────
-// The fallback must not quietly become the default: with both panes present and
-// nothing suppressed, the dedicated tab still wins.
+// ── 8. A delivered question is never SENT by the link ──────────────────────
+// The link fills; the reviewer edits, then asks. One click to ask is
+// CPL_CHAT.open({ send: true }), which Sierra Training uses directly.
 {
-  const w = boot();
-  w.document.body.insertAdjacentHTML("beforeend",
-    '<div id="tab-college-briefing"><div class="cplchat-mount"></div></div>'
-    + '<nav><button class="cpl-tab" data-tab="chatbot"></button></nav>');
-  w.CPL_CHAT.mountInto(w.document.querySelector("#tab-college-briefing .cplchat-mount"));
-
+  const w = boot("https://example.org/#chatbot");
+  let posted = 0;
+  w.fetch = function () { posted++; return new Promise(function () {}); };
+  w.localStorage.setItem("cplSierraAudience.v1", "faculty");
+  w.sessionStorage.setItem("cplSierraAudienceOk.v1", "faculty");
   w.sessionStorage.setItem(KEY, Q);
-  activateChatbot(w);
-  check("with nothing suppressed the CPL Assistant pane still wins",
-        chatbotInput(w) && chatbotInput(w).value === Q);
+  activate(w, "dashboard");
+  await tick(); await tick();
+  check("the link fills her box and sends nothing", cobiInput(w) && cobiInput(w).value === Q && posted === 0);
 }
-
 
 let failed = 0;
 for (const [name, ok] of results) {
@@ -218,3 +213,4 @@ for (const [name, ok] of results) {
 }
 console.log(`\n${results.length - failed}/${results.length} checks passed`);
 if (failed) process.exit(1);
+})().catch(function (e) { console.error(e); process.exit(1); });

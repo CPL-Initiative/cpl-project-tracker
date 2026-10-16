@@ -338,14 +338,6 @@
    "outcome": null
   },
   {
-   "id": "cobi:chatbot",
-   "name": "CPL Assistant",
-   "page": "index.html#chatbot",
-   "audience": "staff",
-   "last": null,
-   "outcome": null
-  },
-  {
    "id": "cobi:sierra-training",
    "name": "Sierra Training",
    "page": "index.html#sierra-training",

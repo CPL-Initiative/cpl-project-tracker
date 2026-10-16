@@ -49,7 +49,7 @@ vanilla JS each — no frameworks, no build step, no external libraries.
 
 | Surface | Where | Multi-turn? | Audience field? | Feedback UI? |
 |---|---|---|---|---|
-| COBI dashboard tab ("CPL Assistant") | `cpl_chat.js` on `cpl-initiative.github.io/cpl-project-tracker/` (`#chatbot`) | yes | yes | yes (`page:'cobi-tab'`) |
+| COBI's Sierra AI (the "CPL Assistant" tab until 2026-10-16) | `cpl_chat.js` on `cpl-initiative.github.io/cpl-project-tracker/`: `CPL_CHAT.open()` over any tab (`#chatbot` opens it) and My College's box | yes | yes | yes (`page:'cobi-sierra'` over a tab, `'cobi-tab'` in My College) |
 | Standalone Sierra page | `sierra/` — `cpl-initiative.github.io/cpl-project-tracker/sierra/` | yes | yes | yes (`page:'sierra'`) |
 | Public Fact Sheet drawer | `fact-sheet/factsheet_sierra.js` | yes | no | no |
 | **Production widget** | `map.rccd.edu` (not in this repo) | **no** (omits `history`) | no | no |
@@ -348,12 +348,13 @@ They share byte-identical core logic (asserted by tests):
   is the artifact to link or iframe. Loading it as `sierra/?ctx=external`
   activates the v27 contacts gate (the page sends `ctx:'external'` on every
   chat request); a normal visit sends no `ctx` field at all.
-- `cpl_chat.js` is self-contained *behind its CONFIG block* and injects its
-  audience/feedback/markdown CSS at runtime, **but** its base chat-layout CSS
-  currently lives in the host dashboard's `<style>` block, and it mounts only
-  into a `#tab-chatbot` container. Embedding it on a third-party page today
-  requires shipping that base CSS and providing the mount node (details in
-  the integration guide).
+- `cpl_chat.js` is self-contained *behind its CONFIG block* and injects all
+  of its CSS at runtime, the base chat layout included (since S398, when the
+  `#tab-chatbot` pane that carried that CSS retired). It builds a box only
+  when asked: `CPL_CHAT.open()` in a body-level host of its own, or
+  `CPL_CHAT.mountInto(node, surface)` in a node the page provides. Its CSS
+  reads First Light's `var(--token)` colors, so a third-party page must
+  define those tokens on `:root` (details in the integration guide).
 
 ---
 

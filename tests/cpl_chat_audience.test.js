@@ -1,8 +1,9 @@
-// CPL Assistant tab (cpl_chat.js) — audience selector + 👍/👎 feedback (jsdom).
+// Sierra AI in COBI (cpl_chat.js) — audience selector + 👍/👎 feedback (jsdom).
 //
 // Guards (Session 92 — the Sierra audience/feedback layer, mirrored from
 // sierra/sierra.js; see tests/sierra_page.test.js for the standalone page):
-//  (a) the panel mounts into #tab-chatbot and injects its NEW-class CSS from JS
+//  (a) the panel builds (since S398 in the COBI-wide box CPL_CHAT.open() makes,
+//      which replaced the CPL Assistant tab's pane) and injects its CSS from JS
 //      (no Rule-4 HTML edit — style#cplchat-aud-css);
 //  (b) the audience selector renders the 5 population chips and the pick is
 //      REQUIRED before the first send (no request without it);
@@ -14,9 +15,10 @@
 //      blocks the send, names itself in the prompt, and RESUMES the held
 //      question on the tap — the question is never dropped;
 //  (d) a completed answer gets a feedback bar; 👍 calls the
-//      sierra_feedback_upsert RPC with page:'cobi-tab' + the Q/A snapshot (a
-//      direct table upsert would trip RLS — anon has no SELECT); the note
-//      re-upserts the SAME turn row.
+//      sierra_feedback_upsert RPC with the box's page — 'cobi-sierra' from the
+//      COBI-wide box, 'cobi-tab' from My College's dock (S398) — + the Q/A
+//      snapshot (a direct table upsert would trip RLS — anon has no SELECT); the
+//      note re-upserts the SAME turn row.
 //
 // Run from repo root: `npm test` (or `node tests/cpl_chat_audience.test.js`).
 const fs = require("fs");
@@ -26,8 +28,9 @@ const results = [];
 function check(name, cond) { results.push([name, !!cond]); }
 
 const SRC = fs.readFileSync("cpl_chat.js", "utf8");
-const HTML = '<!doctype html><html><head></head><body>' +
-  '<div id="tab-chatbot"><div class="main-container"></div></div></body></html>';
+// No pane: since S398 the COBI-wide box is built by CPL_CHAT.open() in a
+// body-level host of its own (loadDom opens it, as the old pane built on load).
+const HTML = '<!doctype html><html><head></head><body><main id="page"></main></body></html>';
 
 function streamResp(deltas) {
   const enc = new TextEncoder();
@@ -76,6 +79,7 @@ function loadDom(opts) {
   };
   w.eval(SRC);
   w.document.dispatchEvent(new w.Event("DOMContentLoaded", { bubbles: false }));
+  if (!opts.closed) w.CPL_CHAT.open();
   return { dom: dom, w: w, API: w.CPL_CHAT, requests: requests };
 }
 const tick = () => new Promise((r) => setTimeout(r, 0));
@@ -89,7 +93,8 @@ function submit(w, text) {
   // ── (a) mount + injected CSS ──
   {
     const { w, API } = loadDom();
-    check("panel mounts into #tab-chatbot", !!w.document.querySelector("#tab-chatbot .cplchat"));
+    check("the panel builds in Sierra AI's own body-level box",
+      !!w.document.querySelector("#cplchat-cobi .cplchat, body > .cplchat.cplchat-full"));
     check("new-class CSS is injected from JS (style#cplchat-aud-css)",
       !!w.document.getElementById("cplchat-aud-css"));
     check("injected CSS uses var(--token) not bare hex for the brand roles",
@@ -142,9 +147,9 @@ function submit(w, text) {
     btns[1].click(); // 👎
     await drain(4);
     let fbReqs = requests.filter((r) => /\/rest\/v1\/rpc\/sierra_feedback_upsert$/.test(r.url));
-    check("clicking 👎 calls the feedback RPC with page:'cobi-tab'",
+    check("clicking 👎 in Sierra AI's own box calls the feedback RPC with page:'cobi-sierra'",
       fbReqs.length === 1 && fbReqs[0].body.p_rating === "down" &&
-      fbReqs[0].body.p_page === "cobi-tab" && fbReqs[0].body.p_audience === "student" &&
+      fbReqs[0].body.p_page === "cobi-sierra" && fbReqs[0].body.p_audience === "student" &&
       /Saddleback/.test(fbReqs[0].body.p_question));
     const noteWrap = fb.querySelector(".cplchat-fb-note");
     check("the optional note box appears after rating", noteWrap && noteWrap.hidden === false);
@@ -155,6 +160,21 @@ function submit(w, text) {
     check("Send note re-upserts the SAME turn row with the note",
       fbReqs.length === 2 && fbReqs[1].body.p_note === "Answer missed the statewide standard" &&
       fbReqs[1].body.p_turn_id === fbReqs[0].body.p_turn_id);
+
+    // My College's dock keeps the page value every COBI rating carried before.
+    w.CPL_CHAT._collapseDock();
+    const host = w.document.createElement("div");
+    w.document.body.appendChild(host);
+    w.CPL_CHAT.mountInto(host, "my-college");
+    w.CPL_CHAT.ask("Does Cabrillo College offer welding CPL?");
+    await drain(14);
+    w.CPL_CHAT._collapseDock();
+    const dockFb = host.querySelector(".cplchat-fb .cplchat-fb-btn");
+    if (dockFb) dockFb.click();
+    await drain(4);
+    fbReqs = requests.filter((r) => /\/rest\/v1\/rpc\/sierra_feedback_upsert$/.test(r.url));
+    check("a rating in My College's box still says page:'cobi-tab'",
+      fbReqs.length === 3 && fbReqs[2].body.p_page === "cobi-tab" && /Cabrillo/.test(fbReqs[2].body.p_question));
   }
 
   /* ── (e) ⭐ the remembered-role gate ────────────────────────────────────

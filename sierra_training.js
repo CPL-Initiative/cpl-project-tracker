@@ -128,8 +128,8 @@
       + "no college has articulated it, or it is filed under a different name.",
     ruleSent: "This instruction is currently being sent to Sierra with every question she answers.",
     ruleOff: "Turned off — Sierra never sees this one. Kept as a record of what was tried.",
-    testInSierra: "Opens Sierra on the CPL Assistant tab with this exact question filled in, so you can see "
-      + "whether she answers it better now. It does not send it; you press Enter yourself.",
+    testInSierra: "Opens Sierra AI over this tab and asks her this exact question, so you can see whether "
+      + "she answers it better now. Back to the tab, or Escape, brings you back here.",
     testInMyCollege: "Opens Sierra on the My College tab with this exact question filled in. There she answers "
       + "for the college picked on that tab; if none is picked yet, pick one and the question waits in her box. "
       + "It does not send it; you press Enter yourself.",
@@ -150,8 +150,8 @@
       + "so it keeps its spot among the newest instructions Sierra is actually sent.",
     ruleTestQ: "The question you want to get a better answer to. It is kept with this editor while you "
       + "go back and forth to Sierra, so you do not have to retype it each round.",
-    ruleSaveTest: "Saves the new wording, then opens Sierra with your test question filled in. Come back "
-      + "to this tab and the editor is still open, so you can adjust and try again."
+    ruleSaveTest: "Saves the new wording, then opens Sierra AI over this tab and asks her your test question. "
+      + "Close her and the editor is still open, so you can adjust and try again."
   };
   function statusLabel(s) { return STATUS_LABEL[s || "new"] || (s || "new"); }
 
@@ -168,9 +168,11 @@
     administrator: "asked by a college administrator", employer: "asked by an employer",
     civic: "asked by a civic leader", "(not set)": "no role given",
   };
+  // "cobi-sierra" is Sierra AI opened over a COBI tab (S398); "cobi-tab" is My
+  // College's box, and the retired CPL Assistant tab's ratings before it.
   var PAGE_WORD = {
-    sierra: "on the public Sierra page", "cobi-tab": "inside COBI", "student-portal": "on the student portal",
-    smoke: "from the automated test", "(unknown)": "page not recorded",
+    sierra: "on the public Sierra page", "cobi-tab": "inside COBI", "cobi-sierra": "in Sierra AI over a COBI tab",
+    "student-portal": "on the student portal", smoke: "from the automated test", "(unknown)": "page not recorded",
   };
   function audienceWord(v) { return AUDIENCE_WORD[v] || "one kind of asker"; }
   function pageWord(v) { return PAGE_WORD[v] || "on one page"; }
@@ -303,50 +305,48 @@
   // is the naming rule the whole platform depends on.
   var GUIDANCE_TOTAL_MAX = 9000;
 
-  // "Test in Sierra" handoff — same-origin sessionStorage key the CPL Assistant
-  // tab (cpl_chat.js) consumes on #chatbot activation: it prefills the input
-  // (never auto-sends) so a reviewer can replay a logged question against the
-  // live function after a fix.
+  /* "Test in Sierra" hand-off. Since S398 (Sam, 2026-10-16: the Try it on
+   * Sierra button "took me to the old assistant--I was expecting it to copy the
+   * question to Sierra AI and see if the outcome is improved") the default asks
+   * Sierra AI right here: CPL_CHAT.open({ question, send: true }) opens her full
+   * screen over this tab and sends, so one click asks. The question box here is
+   * already editable, which is what the old fill-without-sending was for.
+   *
+   * TEST_Q_KEY is the same-origin sessionStorage key cpl_chat.js reads. "Try it
+   * in: My College" still writes it, and the default writes it only when the
+   * chat module cannot open (see testInSierra). */
   var TEST_Q_KEY = "cplSierraTestQ.v1";
   /* "Try it in: My College" (round 1, Sam's approval 2026-09-28). The question
    * stays a plain string under TEST_Q_KEY — college_briefing.js and the tests
    * write it that way — and a SECOND key names the destination. cpl_chat.js
-   * reads and clears both. Absent means the default, which behaves exactly as it
-   * did before this key existed.
+   * reads and clears both, delivering into My College's own box the moment that
+   * box is built, never into another one.
    *
-   * ⚠ The destination cannot be inferred on the other side. cpl_chat.js picks
-   * the pane by SUPPRESSION, not by which tab was activated, so without this key
-   * a My College hand-off would type the question into the hidden CPL Assistant
-   * input and burn it. */
+   * ⚠ The destination cannot be inferred on the other side: without this key a
+   * My College hand-off would land in Sierra AI's own box and burn the key. */
   var TEST_DEST_KEY = "cplSierraTestDest.v1";
   var DEST_MY_COLLEGE = "college-briefing";
 
-  /* Where to send a hand-off. CPL Assistant when it is reachable; My College
-   * when it is not, because that tab mounts the SAME assistant via mountInto().
-   *
-   * Sam, 2026-08-14, planning to suppress CPL Assistant from an Admin tab on the
-   * grounds that it is now the same thing as Sierra. It is — but this hand-off
-   * named #chatbot specifically, so suppressing that tab would have left the
-   * trainer with no way to test an instruction, failing silently. cobi_orgs.js
-   * marks a hidden nav button with data-org-hidden="1", so that is the signal. */
-  function sierraHost() {
-    var pane = document.getElementById("tab-chatbot");
-    var btn = document.querySelector('.cpl-tab[data-tab="chatbot"]');
-    var suppressed = !pane || (btn && btn.getAttribute("data-org-hidden") === "1");
-    return suppressed ? "college-briefing" : "chatbot";
-  }
-  // One argument keeps today's hand-off (p1 and guidance_edit call it that way).
-  // `dest` === DEST_MY_COLLEGE sends it to My College's Sierra box instead.
-  function testInSierra(q, dest) {
+  /* One argument asks Sierra AI over this tab (p1 and guidance_edit call it that
+   * way); `dest` === DEST_MY_COLLEGE sends the question to My College's Sierra
+   * box instead, filled and not sent. `from` is the control that asked, so focus
+   * returns to it when she closes. */
+  function testInSierra(q, dest, from) {
     var toMyCollege = dest === DEST_MY_COLLEGE;
+    var C = window.CPL_CHAT;
+    if (!toMyCollege && C && typeof C.open === "function"
+        && C.open({ question: String(q || "").slice(0, 1000), send: true, from: from || null })) return;
     try {
       sessionStorage.setItem(TEST_Q_KEY, String(q || "").slice(0, 1000));
-      // The default carries NO destination, exactly as before; a stale one left
-      // by an earlier My College hop must not redirect it.
+      // The default carries NO destination; a stale one left by an earlier My
+      // College hop must not redirect it.
       if (toMyCollege) sessionStorage.setItem(TEST_DEST_KEY, DEST_MY_COLLEGE);
       else sessionStorage.removeItem(TEST_DEST_KEY);
     } catch (e) {}
-    var host = toMyCollege ? DEST_MY_COLLEGE : sierraHost();
+    // With no chat module to open, the default goes by the retired tab's
+    // address: a #chatbot link opens Sierra AI wherever cpl_chat.js is loaded,
+    // and fills her box with the question waiting under TEST_Q_KEY.
+    var host = toMyCollege ? DEST_MY_COLLEGE : "chatbot";
     if (window.CPL_TABS && typeof window.CPL_TABS.navigate === "function") {
       window.CPL_TABS.navigate(host);
     } else {
@@ -354,12 +354,12 @@
     }
   }
 
-  // Testing an instruction MEANS leaving this tab — the assistant lives at
-  // #chatbot, so the module is torn down and `state` is lost. Without this the
-  // edit-test-edit loop Sam asked for is impossible by construction: you come
-  // back to a closed editor and have to find the rule and re-open it every
-  // round. Persist the open editor (and its test question) so the return trip
-  // lands you exactly where you left off.
+  // Testing an instruction no longer leaves this tab — Sierra AI opens over it,
+  // so `state` survives the round trip — but a reload still loses it. Without
+  // this the edit-test-edit loop Sam asked for breaks there: you come back to a
+  // closed editor and have to find the rule and re-open it. Persist the open
+  // editor (and its test question) so the return trip lands you exactly where
+  // you left off.
   var EDIT_KEY = "cplSierraGuidEdit.v1";
   function saveEditDraft() {
     try {
@@ -649,8 +649,6 @@
         + " .sit-seg .sit-btn { flex:1 1 0; min-width:0; padding:4px 6px; white-space:normal; }"
         + " .sit-try { display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }"
         + " .sit-try-l { grid-column: 1 / -1; }"
-        // A lone My College button takes the row, as its neighbors do.
-        + " .sit-try-one { grid-template-columns: minmax(0, 1fr); }"
         + " #sit-guid-list .sit-q { flex:1 1 100%; }"
         + " #sit-guid-list .sit-applies { margin-left:0; }"
         + " .sit-guid-row > * { flex:1 1 100%; }"
@@ -1077,11 +1075,15 @@
    * ⚠ MUST STAY EQUAL to KNOWN_SURFACES in the edge function and to the CHECK
    * constraint on sierra_guidance.surface. A value in none of the three scopes a
    * rule to nobody — invisible and unfalsifiable. tests/sierra_surface.test.js
-   * pins the other two; this list is pinned in tests/sierra_training_surface.test.js. */
+   * pins the other two; this list is pinned in tests/sierra_training_surface.test.js.
+   *
+   * "cobi-assistant" keeps its stored value (the CHECK constraint and past rows
+   * carry it) and names what it is now: Sierra AI opened over a COBI tab, which
+   * is nobody's college page. The CPL Assistant tab it once named retired S398. */
   var SURFACES = [
     { k: "", label: "Everywhere (default)" },
     { k: "my-college", label: "Only the My College tab" },
-    { k: "cobi-assistant", label: "Only the CPL Assistant tab" },
+    { k: "cobi-assistant", label: "Only Sierra AI over a COBI tab, where no college is picked" },
     { k: "public", label: "Only the public Sierra page" },
     { k: "fact-sheet", label: "Only the Fact Sheet drawer" },
     { k: "memory-autogen", label: "Only when drafting a memory row" },
@@ -1552,23 +1554,19 @@
       + esc(statusLabel(s)) + "</span>";
   }
   // "Try it in: Sierra · My College" (round 1). Quiet buttons in a named group;
-  // `data-host` is the destination testInSierra() writes for cpl_chat.js.
+  // `data-host` is the destination testInSierra() is handed.
   //
-  // ONE BUTTON WHERE THE SITE HIDES CPL ASSISTANT (Sam's ruling, 2026-09-29,
-  // sheet 3 card 12, as proposed): keep the word Sierra, and show only My
-  // College there. sierraHost() already sent the Sierra button to My College,
-  // so the two buttons opened one place. The Sierra button is drawn only where
-  // sierraHost() would open the CPL Assistant tab, so what the group shows and
-  // where the button goes are one decision. Asked on every render; activation
-  // re-renders, so a site switch or a curator's hide shows on the next visit,
-  // and a button painted before a late menu change still routes through
-  // sierraHost() when pressed. Guard: tests/sierra_training_round1.test.js (5d).
+  // BOTH WORDS, ALWAYS (S398). Sam ruled 2026-09-29 (sheet 3 card 12) to keep
+  // the word Sierra; where a site hid the CPL Assistant tab the group used to
+  // drop to My College alone, because the Sierra button had nowhere of its own
+  // to go. It does now: Sierra opens Sierra AI over this tab and asks
+  // (CPL_CHAT.open), on every site, so there is nothing left to hide.
+  // Guard: tests/sierra_training_round1.test.js (5d).
   function tryGroup(src, labelId) {
-    var both = sierraHost() === "chatbot";
-    return '<span class="sit-try' + (both ? "" : " sit-try-one") + '" role="group" aria-labelledby="' + labelId + '">'
+    return '<span class="sit-try" role="group" aria-labelledby="' + labelId + '">'
       + '<span class="sit-try-l" id="' + labelId + '">Try it in:</span>'
-      + (both ? '<button type="button" class="sit-btn" data-qact="test" data-host="chatbot" data-qsrc="' + esc(src) + '"'
-        + ' title="' + esc(HELP.testInSierra) + '">Sierra</button>' : "")
+      + '<button type="button" class="sit-btn" data-qact="test" data-host="sierra" data-qsrc="' + esc(src) + '"'
+      + ' title="' + esc(HELP.testInSierra) + '">Sierra</button>'
       + '<button type="button" class="sit-btn" data-qact="test" data-host="' + DEST_MY_COLLEGE + '" data-qsrc="' + esc(src) + '"'
       + ' title="' + esc(HELP.testInMyCollege) + '">My College</button>'
       + "</span>";
@@ -1829,7 +1827,7 @@
       + (r.active
         ? "This one is <b>on</b>, so the new wording reaches Sierra immediately."
         : "This one is <b>switched off</b> — switch it on for Sierra to use it.")
-      + " Coming back from Sierra reopens this editor where you left it.</div>"
+      + " Closing Sierra brings you back to this editor where you left it.</div>"
       + "</div></div>";
     return h;
   }
@@ -2311,7 +2309,7 @@
         + '<option value="directive"' + (state.draftKind === "display" ? "" : " selected") + ">Instruction</option>"
         + '<option value="display"' + (state.draftKind === "display" ? " selected" : "") + ">Display rule</option>"
         + "</select></label>"
-        + '<label class="sit-meta" title="Sierra is one assistant used in several places — the My College tab, the CPL Assistant tab, the public page, the Fact Sheet drawer, and when drafting a memory row. Most instructions belong everywhere. Narrow this only when the instruction names something one place has and the others do not — an instruction about \'the selected institution\' means nothing on a page where nothing is selected.">'
+        + '<label class="sit-meta" title="Sierra is one assistant used in several places — the My College tab, Sierra AI over any COBI tab, the public page, the Fact Sheet drawer, and when drafting a memory row. Most instructions belong everywhere. Narrow this only when the instruction names something one place has and the others do not — an instruction about \'the selected institution\' means nothing on a page where nothing is selected.">'
         + "Applies: "
         + surfaceSelect("data-guid-surface", state.draftSurface)
         + "</label>"
@@ -2625,11 +2623,13 @@
         if (rule.length < 3) { alert("The instruction cannot be empty (3–" + GUIDANCE_RULE_MAX + " characters)."); return; }
         var q = (state.editTestQ || "").trim();
         if (!q) { alert("Type the question you want to test with first — it is the box just above the buttons."); return; }
-        // Save FIRST, hop only on a confirmed write. Hopping on an unsaved edit
+        // Save FIRST, ask only on a confirmed write. Asking on an unsaved edit
         // would test the OLD wording and read as "the instruction did nothing".
+        // `btn` is repainted while it saves; Sierra finds its stand-in by its
+        // data-guid-savetest to give focus back when she closes.
         saveGuidance(btn.getAttribute("data-guid-savetest"), rule, (state.editNote || "").trim(), root, function () {
-          saveEditDraft();          // editor stays open for the return trip
-          testInSierra(q);
+          saveEditDraft();          // editor stays open behind her
+          testInSierra(q, null, btn);
         });
       });
     });
@@ -2645,7 +2645,7 @@
         if (act === "copy") copyText(q, btn);
         else if (act === "rule") startRuleFrom(q, root, btn.getAttribute("data-qsrc"));
         // "Try it in: Sierra · My College" — data-host is the destination.
-        else testInSierra(q, btn.getAttribute("data-host"));
+        else testInSierra(q, btn.getAttribute("data-host"), btn);
       });
     });
   }
@@ -2761,9 +2761,10 @@
   }
 
   function renderInto(root, keepData) {
-    // Hash routing keeps this page alive, so `state` normally survives the hop to
-    // #chatbot on its own. This is the reload case: a curator who hard-refreshes
-    // (or lands here from a fresh tab) still gets their open editor back.
+    // Sierra AI opens over this tab and hash routing keeps the page alive, so
+    // `state` normally survives a test on its own. This is the reload case: a
+    // curator who hard-refreshes (or lands here from a fresh tab) still gets
+    // their open editor back.
     if (state.editId == null) restoreEditDraft();
     if (keepData && (state.feedback || state.turns)) { render(root); return; }
     if (!signedIn()) { state.loading = false; render(root); return; }
