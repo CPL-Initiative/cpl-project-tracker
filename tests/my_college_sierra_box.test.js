@@ -213,8 +213,11 @@ block("(4)", function () {
   const txt = root.textContent || "";
   check("(4) ⭐ the header no longer describes the assistant below it",
     !/Ask Sierra anything about CPL/.test(txt) && !root.querySelector(".cb-welcome-p"));
-  check("(4) …and the assistant still introduces herself, once",
-    /Ask her anything about credit for prior learning/.test(txt));
+  // Since S400 she introduces herself by name alone, as Sierra AI over a tab
+  // does, and the box's placeholder asks; the caution rides under the box.
+  check("(4) …and the assistant still names herself, once",
+    Array.prototype.filter.call(root.querySelectorAll("h1, h2, h3"), function (h) { return /Sierra AI/.test(h.textContent); }).length === 1
+      && !/Ask her anything/.test(txt), JSON.stringify(txt.slice(0, 160)));
   check("(4) the caution survived the yellow box being deleted",
     /development phase/.test(txt) && /questions are logged/.test(txt) && !/Beta — in development/.test(txt));
   check("(4) positive control: the header still names the college and its controls",
