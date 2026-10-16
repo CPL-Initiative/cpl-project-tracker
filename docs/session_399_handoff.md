@@ -64,6 +64,10 @@ The Pipeline tab (step 7): the roadmap's phases did not change. The decision she
 Sheet 84 stays current (https://claude.ai/artifact/AqQsUUEmSKRWkLntcbAhFz); the statewide deploy becomes a card once
 its A/B is clean.
 
+## Open at sign-off (an EMERGENCY close: the context meter read 48,029 tokens left)
+
+The full Rule 9 checkpoint ran before the emergency (all 13 artifacts, except the Pipeline tab and a new decision sheet, as stated above). Three PRs were still in CI at sign-off; merge each on a green `test` (squash): **#2162** (this checkpoint), **#2163** (one Sierra in COBI; `main` merged in, the dependency map regenerated), **#2164** (the statewide catalog; its red `smoke` is the expected 7w until deploy, explained on the PR).
+
 ## Subscriptions and check-ins
 
 S398 drops every PR subscription and check-in at sign-off and holds no artifact watch.
