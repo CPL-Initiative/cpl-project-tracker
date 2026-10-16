@@ -1247,6 +1247,52 @@ def el_fetch(reader, url: str, errors: list) -> str | None:
         return None
 
 
+# Every source adds to the list. Lake Tahoe's menu links its 16 transfer degrees and,
+# beside them, its departments (2026-2027/department/program-art); the read stopped at
+# the menu's programs and found 16 of 83 (run 38978047103). Los Medanos's menu links
+# neither: its departments are pages one segment under the catalog (26-27/art), listed
+# on 26-27/degrees, and each links its programs; from the Art start page the read found
+# Art's 7 of 97 (run 38978063188; page reads 38978810670, 38979564864, S401). So when
+# the list still falls short of the programs the state file names, the read walks the
+# menu's other pages one segment under the catalog and the pages they link, three steps
+# deep (courses > degrees > art), taking every program each links, at most EL_WALK_CALLS
+# content calls.
+EL_WALK_SHORT = 0.8        # walk when fewer program pages than this share of the closed lists
+EL_WALK_CALLS = 250
+EL_WALK_DEPTH = 3          # menu page, its topic (26-27/degrees), the department it lists
+
+
+def el_page_slugs(html_text: str, catalog: str) -> list[str]:
+    """Every page a publish call links one segment under the catalog, each once, in
+    order: a subject (current/aj), a department listing (26-27/degrees), a policy."""
+    pat = re.compile(r'href="(?:/catalog/)?%s/([^"/?#]+)"' % re.escape(catalog or ""), re.I)
+    out = []
+    for slug in pat.findall(html_text or ""):
+        if slug not in out:
+            out.append(slug)
+    return out
+
+
+def el_walk(reader, start: str, shell: str, catalog: str, slugs: list[str], skip: set,
+            errors: list) -> dict:
+    """Adds to slugs every program the menu's one-segment pages link, and the pages
+    they link, EL_WALK_DEPTH steps deep; the account of the walk."""
+    queue = [(s, 1) for s in el_page_slugs(shell, catalog) if s not in skip]
+    seen = skip | {s for s, _ in queue}
+    calls, before = 0, len(slugs)
+    while queue and calls < EL_WALK_CALLS:
+        slug, depth = queue.pop(0)
+        page = el_html(el_fetch(reader, el_publish_url(start, [slug], content=True), errors))
+        calls += 1
+        slugs += [p for p in el_program_slugs(page, catalog) if p not in slugs]
+        if depth < EL_WALK_DEPTH:
+            for t in el_page_slugs(page, catalog):
+                if t not in seen:
+                    seen.add(t)
+                    queue.append((t, depth + 1))
+    return {"walk_pages": calls, "walk_programs": len(slugs) - before, "walk_stopped_at_cap": bool(queue)}
+
+
 def el_pages_fast(reader, start: str, report: dict) -> list[dict]:
     """The catalog's program pages from its own publish calls: the full call
     once for the menu, then the content call per program. An empty list sends
@@ -1257,20 +1303,22 @@ def el_pages_fast(reader, start: str, report: dict) -> list[dict]:
     slugs = el_program_slugs(shell, catalog)
     report["elumen"] = {"catalog": catalog, "read": "publish/content", "menu_programs": len(slugs),
                         "errors": errors}
-    if not slugs:
-        # A menu of departments (Cabrillo): each department's content call lists its programs.
-        depts = el_department_slugs(shell, catalog)
-        for d in depts:
-            page = el_html(el_fetch(reader, el_publish_url(start, ["department", d], content=True), errors))
-            slugs += [s for s in el_program_slugs(page, catalog) if s not in slugs]
-        report["elumen"].update(menu_departments=len(depts), department_programs=len(slugs))
-    if not slugs:
-        # A menu of program and award hubs (Modesto, Palo Verde): each hub's content call lists its programs.
-        hubs = el_hub_slugs(shell, catalog)
-        for h in hubs:
-            page = el_html(el_fetch(reader, el_publish_url(start, [h], content=True), errors))
-            slugs += [s for s in el_program_slugs(page, catalog) if s not in slugs]
-        report["elumen"].update(menu_hubs=hubs, hub_programs=len(slugs))
+    # A menu of departments (Cabrillo): each department's content call lists its programs.
+    depts = el_department_slugs(shell, catalog)
+    for d in depts:
+        page = el_html(el_fetch(reader, el_publish_url(start, ["department", d], content=True), errors))
+        slugs += [s for s in el_program_slugs(page, catalog) if s not in slugs]
+    report["elumen"].update(menu_departments=len(depts), department_programs=len(slugs))
+    # A menu of program and award hubs (Modesto, Palo Verde): each hub's content call lists its programs.
+    hubs = el_hub_slugs(shell, catalog)
+    for h in hubs:
+        page = el_html(el_fetch(reader, el_publish_url(start, [h], content=True), errors))
+        slugs += [s for s in el_program_slugs(page, catalog) if s not in slugs]
+    report["elumen"].update(menu_hubs=hubs, hub_programs=len(slugs))
+    want = report.get("with_closed_list") or 0
+    if want and len(slugs) < EL_WALK_SHORT * want:
+        report["elumen"].update(el_walk(reader, start, shell, catalog, slugs,
+                                        set(hubs) | set(el_start_parts(start)), errors))
     slugs = slugs[:MAX_PAGES]
     pages = []
     for i, slug in enumerate(slugs):
