@@ -1,0 +1,188 @@
+{
+ "college": "Palomar College",
+ "control_number": "22493",
+ "shape": "certificate",
+ "title": "Real Estate Broker License Preparation",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/RealEstateSalespersonLicensePreparation-CP",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6881,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6881,
+    "output_tokens": 1281,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1281,
+  "output_tokens_details": {
+   "thinking_tokens": 408
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05314,
+ "ms": 11790,
+ "seconds": 12.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 10,
+   "share": 0.0,
+   "missing": [
+    "ACCT201",
+    "BUS117",
+    "RE100",
+    "RE105",
+    "RE110",
+    "RE111",
+    "RE115",
+    "RE120",
+    "RE140",
+    "RE150"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Real Estate Salesperson License Preparation - Certificate of Proficiency (Less than 18 units)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ACCT 201",
+    "why": "named only in the Salesperson Certificate of Proficiency section, not the Broker award"
+   },
+   {
+    "code": "BUS 117",
+    "why": "named only in the Salesperson Certificate of Proficiency section, not the Broker award"
+   },
+   {
+    "code": "RE 100",
+    "why": "named only in the Salesperson Certificate of Proficiency section, not the Broker award"
+   },
+   {
+    "code": "RE 105",
+    "why": "named only in the Salesperson Certificate of Proficiency section, not the Broker award"
+   },
+   {
+    "code": "RE 110",
+    "why": "named only in the Salesperson Certificate of Proficiency section, not the Broker award"
+   },
+   {
+    "code": "RE 111",
+    "why": "not in the text"
+   },
+   {
+    "code": "RE 115",
+    "why": "named only in the Salesperson Certificate of Proficiency section, not the Broker award"
+   },
+   {
+    "code": "RE 120",
+    "why": "named only in the Salesperson Certificate of Proficiency section, not the Broker award"
+   },
+   {
+    "code": "RE 140",
+    "why": "named only in the Salesperson Certificate of Proficiency section, not the Broker award"
+   },
+   {
+    "code": "RE 150",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The source page (alias RealEstateSalespersonLicensePreparation-CP) prints only the Real Estate Salesperson License Preparation Certificate of Proficiency (Less than 18 units), not the Real Estate Broker License Preparation Certificate of Achievement named for this record. Because no section for the named award appears in the text, no blocks, totals, outcomes or careers were recorded; section_heading gives the only heading the page prints.",
+   "For reference, the Salesperson section prints a required block RE 100 (3) and RE 115 (3), Units: 6.0; Electives (Select 3-7 units) RE 105, RE 110, RE 120, RE 140 (3 each), ACCT 201 (4), BUS 117 (3); Total: 9.0-13.0, plus three learning outcomes. These belong to a different award and were not recorded.",
+   "Reviewer should locate the Broker License Preparation Certificate of Achievement page (likely including RE 111 and RE 150) and re-extract."
+  ]
+ },
+ "extracted_run": "38843467865"
+}

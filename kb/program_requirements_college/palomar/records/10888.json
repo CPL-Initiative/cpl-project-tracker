@@ -1,0 +1,169 @@
+{
+ "college": "Palomar College",
+ "control_number": "10888",
+ "shape": "certificate",
+ "title": "Archaeological Surveyor and Lab Assistant",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Anthropology-AAT",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7797,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7797,
+    "output_tokens": 702,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 702,
+  "output_tokens_details": {
+   "thinking_tokens": 228
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04523,
+ "ms": 7086,
+ "seconds": 7.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 7,
+   "share": 0.0,
+   "missing": [
+    "ANTH105",
+    "ANTH110",
+    "ANTH120",
+    "ANTH205",
+    "ANTH210",
+    "ANTH215",
+    "ANTHC1001"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not present in text (only 'Behavioral Sciences Department - Anthropology - AA-T Transfer Major (18 units or more)' is printed)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANTH 105",
+    "why": "Named only in the Anthropology AA-T section; the certificate section is not in the text."
+   },
+   {
+    "code": "ANTH 110",
+    "why": "Named only in the Anthropology AA-T section; the certificate section is not in the text."
+   },
+   {
+    "code": "ANTH 120",
+    "why": "Named only in the AA-T List B; the certificate section is not in the text."
+   },
+   {
+    "code": "ANTH 205",
+    "why": "Named only in the AA-T List B; the certificate section is not in the text."
+   },
+   {
+    "code": "ANTH 210",
+    "why": "Named only in the AA-T List B; the certificate section is not in the text."
+   },
+   {
+    "code": "ANTH 215",
+    "why": "Named only in the AA-T List B; the certificate section is not in the text."
+   },
+   {
+    "code": "ANTH C1001",
+    "why": "Named only in the AA-T Biological Anthropology choice; the certificate section is not in the text."
+   }
+  ],
+  "notes": []
+ },
+ "extracted_run": "38843467865"
+}

@@ -1,0 +1,177 @@
+{
+ "college": "Palomar College",
+ "control_number": "39035",
+ "shape": "noncredit",
+ "title": "Speaking Skills for ESL",
+ "award": "Noncredit program",
+ "source_url": "https://palomar.curriqunet.com/catalog/alias/college/iq/NoncreditPrograms/Alphabetical/SpeakingSkillsESL-CertificateCompletion",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6208,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6208,
+    "output_tokens": 1076,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1076,
+  "output_tokens_details": {
+   "thinking_tokens": 411
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04635,
+ "ms": 10404,
+ "seconds": 10.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "NESL909"
+   ],
+   "flagged": [
+    "NESL909"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the catalog prints no total, no hours and no units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Speaking Skills for ESL - Certificate of Completion (Noncredit-Hours only; no units)",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will give a well-organized and effective presentation.",
+    "Students will speak English words and sentences clearly."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "N ESL 909",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "N ESL 910",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "N ESL 920",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The award is noncredit and is labeled 'Hours only; no units', so measure is set to hours.",
+   "The catalog prints 'Units: 0.0' beside each course and 'Total : 0.0', but prints no hours for any course or for the certificate. Course units and total_units are therefore left null.",
+   "The description calls the program a 'three-course sequence', yet it also says 'In order to earn a certificate, students must successfully complete N ESL 920.' All three listed courses are recorded as required; a reviewer should check whether only N ESL 920 is required for the certificate.",
+   "N ESL 909 (English Pronunciation I) appears in the catalog but not in the closed list, so it is marked as a catalog addition.",
+   "The learning outcomes are printed for the program as a whole and are recorded for this certificate.",
+   "The mention of 'career, associate, or transfer-degree programs' describes further study, not a named career, so no careers are recorded."
+  ]
+ },
+ "extracted_run": "38843467865"
+}

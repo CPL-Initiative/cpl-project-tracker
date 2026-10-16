@@ -1,0 +1,509 @@
+{
+ "college": "Palomar College",
+ "control_number": "05158",
+ "shape": "degree",
+ "title": "Kinesiology",
+ "award": "A.A. Degree",
+ "source_url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/Kinesiology-AA",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8093,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8093,
+    "output_tokens": 3506,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3506,
+  "output_tokens_details": {
+   "thinking_tokens": 1003
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10249,
+ "ms": 44914,
+ "seconds": 45.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 20,
+   "listed": 20,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 19,
+   "codes": [
+    "BIOL210",
+    "BIOL211",
+    "KINE117A",
+    "KINE117C",
+    "KINE135A",
+    "KINE135B",
+    "KINE135C",
+    "KINE140A",
+    "KINE140C",
+    "KINE150A",
+    "KINE150B",
+    "KINE150C",
+    "KINE166A",
+    "KINE166B",
+    "KINE166C",
+    "KINE168A",
+    "KINE168B",
+    "KINE168C",
+    "STATC1000E"
+   ],
+   "flagged": [
+    "BIOL210",
+    "BIOL211",
+    "KINE117A",
+    "KINE117C",
+    "KINE135A",
+    "KINE135B",
+    "KINE135C",
+    "KINE140A",
+    "KINE140C",
+    "KINE150A",
+    "KINE150B",
+    "KINE150C",
+    "KINE166A",
+    "KINE166B",
+    "KINE166C",
+    "KINE168A",
+    "KINE168B",
+    "KINE168C",
+    "STATC1000E"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    39.0,
+    44.0
+   ],
+   "stated": [
+    37.0,
+    41.5
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 39.0-44.0; the catalog states 37.0-41.5"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Health and Kinesiology  Department - Kinesiology - A.A. Degree Major (18 units or more)",
+   "measure": "units",
+   "total_units": {
+    "min": 37,
+    "max": 41.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Evaluate and integrate concepts of physical activity and fitness to enhance personal, educational and lifelong wellness.",
+    "Recognize and utilize effective communication skills in a diverse group setting.",
+    "Assess and apply proper strategies to prevent and reduce the risk of chronic disease."
+   ],
+   "careers": [
+    "entry level jobs in health clubs",
+    "non-credentialed physical education and coaching positions",
+    "recreation aides"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 28,
+     "max": 28
+    },
+    "courses": [
+     {
+      "code": "HE 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NUTR 165",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINE 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINE 176",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 211",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 110L",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Group I - Select a minimum of 1 course from 2 separate disciplines (minimum 7 units)",
+    "rule": "choose_units",
+    "minimum": 7,
+    "option_group": null,
+    "stated": {
+     "min": 7,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000E",
+        "units": 4,
+        "catalog_addition": true
+       },
+       {
+        "code": "MATH 135",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL C1001",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL C1001L",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "NUTR 185",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Group II - Fitness Courses: Select 1 course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 1,
+     "max": 2
+    },
+    "courses": [
+     {
+      "code": "HE 100L",
+      "units": 1,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINE 128A",
+      "units": 1,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINE 128B",
+      "units": 1,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINE 128C",
+      "units": 1,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINE 128D",
+      "units": 1,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINE 150A",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINE 150B",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINE 150C",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Group III - Sport Courses: select 1 course (An ACS course in these sports may be substituted for one)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 1,
+     "max": 2.5
+    },
+    "courses": [
+     {
+      "code": "KINE 117A",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINE 117B",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINE 117C",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINE 135A",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINE 135B",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINE 135C",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINE 140A",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINE 140B",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINE 140C",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINE 166A",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINE 166B",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINE 166C",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINE 168A",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINE 168B",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINE 168C",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "CHEM 110 and CHEM 110L are printed as a required 'General Chemistry and Lab' pair (5.0 units) within the 28-unit core; both recorded in the core block.",
+   "Group I: the Statistics Elective is STAT C1000 or STAT C1000E or MATH 135 (4.0-5.0 units); the General Biology Elective is BIOL C1000 (4) or the pair BIOL C1001 AND BIOL C1001L (3+1). BIOL C1001 and BIOL C1001L are recorded as alternatives to BIOL C1000 but must be taken together as one alternative.",
+   "Group I requires courses from 2 separate disciplines, minimum 7 units (printed 7.0-9.0).",
+   "Group III allows an ACS course in these sports to be substituted for one course.",
+   "The printed total 37.0-41.5 is the major total; no degree total or GE pattern is printed in this text.",
+   "Outcomes are printed once for the program and recorded for this A.A. degree."
+  ]
+ },
+ "extracted_run": "38843467865"
+}

@@ -1,0 +1,610 @@
+{
+ "college": "Palomar College",
+ "control_number": "08923",
+ "shape": "certificate",
+ "title": "Adult Fitness and Health",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://palomar.curriqunet.com/catalog/alias/college/iq/CreditPrograms/Alphabetical/AdultFitnessHealth-CA",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8330,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8330,
+    "output_tokens": 3792,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3792,
+  "output_tokens_details": {
+   "thinking_tokens": 843
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10916,
+ "ms": 26604,
+ "seconds": 27.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 18,
+   "listed": 18,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 31,
+   "codes": [
+    "BIOL210",
+    "BIOL211",
+    "COMMC1000",
+    "ENGLC1000E",
+    "ESL110",
+    "KINE125A",
+    "KINE125B",
+    "KINE125C",
+    "KINE125D",
+    "KINE140A",
+    "KINE140C",
+    "KINE150A",
+    "KINE150B",
+    "KINE150C",
+    "KINE168A",
+    "KINE168B",
+    "KINE168C",
+    "KINE170A",
+    "KINE170B",
+    "KINE170C",
+    "KINE170D",
+    "KINE170E",
+    "KINE170F",
+    "KINE170G",
+    "KINE170H",
+    "KINE170I",
+    "KINE170J",
+    "KINE170O",
+    "KINE170P",
+    "SOC125",
+    "STATC1000E"
+   ],
+   "flagged": [
+    "BIOL210",
+    "BIOL211",
+    "COMMC1000",
+    "ENGLC1000E",
+    "ESL110",
+    "KINE125A",
+    "KINE125B",
+    "KINE125C",
+    "KINE125D",
+    "KINE140A",
+    "KINE140C",
+    "KINE150A",
+    "KINE150B",
+    "KINE150C",
+    "KINE168A",
+    "KINE168B",
+    "KINE168C",
+    "KINE170A",
+    "KINE170B",
+    "KINE170C",
+    "KINE170D",
+    "KINE170E",
+    "KINE170F",
+    "KINE170G",
+    "KINE170H",
+    "KINE170I",
+    "KINE170J",
+    "KINE170O",
+    "KINE170P",
+    "SOC125",
+    "STATC1000E"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    31.0,
+    32.5
+   ],
+   "stated": [
+    31.0,
+    32.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Adult Fitness and Health - Certificate of Achievement (18 units or more)",
+   "measure": "units",
+   "total_units": {
+    "min": 31,
+    "max": 32.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate knowledge and an understanding of physical activity and fitness and its role in the student's personal, educational development and life-long wellness.",
+    "Students will identify and determine preventative strategies for chronic disease including heart disease, stroke, cancer, and diabetes."
+   ],
+   "careers": [
+    "fitness instructors",
+    "lifestyle educators"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 23,
+     "max": 23
+    },
+    "courses": [
+     {
+      "code": "HE 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSIT 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NUTR 165",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HE 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINE 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 211",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Group I (Select a minimum of 3 units)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CE 100",
+      "units": 0.5,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1000E",
+        "units": 4,
+        "catalog_addition": true
+       },
+       {
+        "code": "ESL 110",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000E",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Group II (Select a minimum of 3 units)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "PSYC 115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 210",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 125",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Group III (Select a minimum of 1 unit)",
+    "rule": "choose_units",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 1,
+     "max": 1
+    },
+    "courses": [
+     {
+      "code": "KINE 125A",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINE 125B",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINE 125C",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINE 125D",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINE 168A",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINE 168B",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINE 168C",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINE 170A",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINE 170B",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINE 170C",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINE 170D",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINE 170E",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINE 170F",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINE 170G",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINE 170H",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINE 170I",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINE 170J",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINE 170O",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINE 170P",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Group IV - Health/Fitness (Select 1 course)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 1,
+     "max": 2.5
+    },
+    "courses": [
+     {
+      "code": "HE 100L",
+      "units": 1,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINE 128A",
+      "units": 1,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINE 128B",
+      "units": 1,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINE 128C",
+      "units": 1,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINE 128D",
+      "units": 1,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINE 140A",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINE 140B",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINE 140C",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINE 150A",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINE 150B",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KINE 150C",
+      "units": 1,
+      "units_max": 2.5,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The heading says '(18 units or more)' but the page prints 'Total : 31.0- 32.5'; total_units records the printed total.",
+   "In Group I, 'English Composition 4.0' and 'Statistics 4.0' are printed as sub-headings over 'OR' options; each is recorded as one entry with alternatives (ENGL C1000 / ENGL C1000E / ESL 110; STAT C1000 / STAT C1000E).",
+   "COMM C1000 is marked '( Historical )' in Group I; it is still recorded as printed.",
+   "PSYC 125 / SOC 125 is printed as a cross-listed pair; SOC 125 is recorded as an alternative.",
+   "The certificate's own unit mismatch is not reconciled here: the required core is 23 units, plus at least 3 + 3 + 1 units and one Group IV course.",
+   "Group IV's units are printed as '1.0- 2.5' and recorded in stated.",
+   "The department heading reads 'Health and Kinesiology  Department - Adult Fitness and Health - Certificate of Achievement (18 units or more)'."
+  ]
+ },
+ "extracted_run": "38843467865"
+}
