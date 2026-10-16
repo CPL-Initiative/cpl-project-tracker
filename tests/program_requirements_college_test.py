@@ -1299,6 +1299,53 @@ check('platform not in ("courseleaf", "curriqunet", "elumen", "acalog")' in CS
       and 'platform not in ("curriqunet", "elumen", "acalog")' in CS,
       "the capture reads Acalog, without the child-page walk or the link search its program list makes needless")
 
+# A dropped connection is tried again (S401: Las Positas's two ECONNRESETs left
+# 20 of 201 found; Butte's three left nodes unread). A status is never retried.
+class FlakyResp:
+    def __init__(self, status, body):
+        self.status, self.ok, self.body = status, 200 <= status < 300, body
+
+    def json(self):
+        return self.body
+
+
+class FlakyRequest:
+    def __init__(self, script):
+        self.script, self.asked = list(script), 0
+
+    def get(self, url, timeout=None):
+        self.asked += 1
+        step = self.script.pop(0)
+        if isinstance(step, Exception):
+            raise step
+        return step
+
+
+class FlakyReader:
+    def __init__(self, script):
+        self.request, self.delay, self.loads = FlakyRequest(script), 0, 0
+
+    def _robots_for(self, url):
+        return None
+
+
+RESET = Exception("APIRequestContext.get: socket hang up (ECONNRESET)\nCall log: ...")
+fr = FlakyReader([RESET, FlakyResp(200, {"navs": [{"id": 1}]})])
+ferr = []
+got = C.cq_json(fr, "https://x.curriqunet.com/Catalog/_getNavigation?id=14&parentId=26098", ferr)
+check(got == {"navs": [{"id": 1}]} and fr.loads == 2 and len(ferr) == 1 and "tried again" in ferr[0],
+      "a reset call is made again and its answer kept, the reset noted: %r %r" % (got, ferr))
+fr = FlakyReader([RESET] * (C.CQ_RETRIES + 1))
+ferr = []
+check(C.cq_json(fr, "https://x.curriqunet.com/a", ferr) is None and fr.loads == C.CQ_RETRIES + 1
+      and "tried again" not in ferr[-1],
+      "a host that resets every time is asked CQ_RETRIES more times, then the error is final")
+for final in (FlakyResp(404, None), Exception("Timeout 60000ms exceeded")):
+    fr = FlakyReader([final, FlakyResp(200, {})])
+    ferr = []
+    check(C.cq_json(fr, "https://x.curriqunet.com/b", ferr) is None and fr.loads == 1,
+          "an HTTP status or another error is final, never retried: %r" % ferr)
+
 if failures:
     print("FAIL: %d" % len(failures))
     for f in failures:
