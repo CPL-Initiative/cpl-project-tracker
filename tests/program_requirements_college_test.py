@@ -1180,6 +1180,83 @@ check([g["url"].rsplit("/", 1)[1] for g in got_pages] == ["agriculture-as-fall-2
 check(sum(1 for u in asked if ",programs?" in u or ",bytype?" in u) == 2 and sum(1 for u in asked if ",program," in u) == 3,
       "one call a hub and one a program, nothing more")
 
+# Lake Tahoe (S401): the menu links 16 transfer degrees AND its departments; the read
+# stopped at the menu's programs (16 of 83, run 38978047103). Every source adds now.
+LT = "https://ltcc.elumenapp.com/catalog/2026-2027/about-this-catalog"
+LT_MENU = ('<a href="2026-2027/program/sociology-aa-t-fall-2025">Sociology AA-T</a>'
+           '<a href="2026-2027/department/program-art">Art</a><a href="2026-2027/department/program-business">Business</a>'
+           '<a href="2026-2027/financial-aid">Financial Aid</a>')
+LT_DEPT = {"program-art": '<a href="2026-2027/program/studio-arts-aa-t-fall-2025">AA-T</a>'
+                          '<a href="2026-2027/program/art-aa-fall-2025">Art AA</a>',
+           "program-business": '<a href="2026-2027/program/accounting-coa-fall-2025">Accounting</a>'}
+asked = []
+
+
+def lt_fetch(reader, url, errors):
+    asked.append(url)
+    if ",department," in url:
+        return json.dumps({"html": LT_DEPT[url.split("department,")[1].split("?")[0]]})
+    if ",program," in url:
+        return json.dumps({"html": "<h1>x</h1><p>Program Requirements SOC 101</p>"})
+    return json.dumps({"html": LT_MENU})
+
+
+real_fetch, C.el_fetch = C.el_fetch, lt_fetch
+try:
+    rep = {"with_closed_list": 5}
+    got_pages = C.el_pages_fast(None, LT, rep)
+finally:
+    C.el_fetch = real_fetch
+check([g["url"].rsplit("/", 1)[1] for g in got_pages] == ["sociology-aa-t-fall-2025", "studio-arts-aa-t-fall-2025",
+                                                          "art-aa-fall-2025", "accounting-coa-fall-2025"]
+      and rep["elumen"]["menu_programs"] == 1 and rep["elumen"]["department_programs"] == 4
+      and "walk_pages" not in rep["elumen"],
+      "a menu's programs and its departments' programs both count, and 4 of 5 is no shortfall to walk: %s %s"
+      % ([g["url"] for g in got_pages], rep.get("elumen")))
+
+# Los Medanos (S401): departments are pages one segment under the catalog (26-27/art),
+# listed on 26-27/degrees; from the Art start page the read found Art's 7 of 97.
+LMC = "https://lmc.elumenapp.com/catalog/26-27/art"
+LMC_PAGES = {
+    "shell": '<a href="26-27/welcome">Welcome</a><a href="26-27/courses">Program Requirements</a>'
+             '<a href="26-27/art">Art</a><a href="26-27/program/fine-arts-aa-fall-2026">Fine Arts AA</a>'
+             '<a href="26-27/course/art003">ART 003</a>',
+    "welcome": "<p>Welcome to LMC</p>",
+    "courses": '<a href="26-27/understanding">Understanding</a><a href="26-27/degrees">Degrees, Certificates</a>',
+    "understanding": "<p>How to read a course</p>",
+    "degrees": '<a href="26-27/art">Art</a><a href="26-27/biology">Biology</a><a href="26-27/welding">Welding</a>',
+    "biology": '<a href="26-27/program/biology-as-t-fall-2026">AS-T</a><a href="/catalog/26-27/program/biology-as-fall-2026">AS</a>',
+    "welding": '<a href="26-27/program/welding-coa-fall-2026">COA</a><a href="26-27/metals">deeper</a>',
+}
+asked = []
+
+
+def lmc_fetch(reader, url, errors):
+    asked.append(url)
+    if ",program," in url:
+        return json.dumps({"html": "<h1>x</h1><p>Program Requirements BIOL 1</p>"})
+    if "publish/content/26-27," in url:
+        return json.dumps({"html": LMC_PAGES.get(url.split("26-27,")[1].split("?")[0], "")})
+    return json.dumps({"html": LMC_PAGES["shell"]})
+
+
+real_fetch, C.el_fetch = C.el_fetch, lmc_fetch
+try:
+    rep = {"with_closed_list": 6}
+    got_pages = C.el_pages_fast(None, LMC, rep)
+finally:
+    C.el_fetch = real_fetch
+walked = [u.split("26-27,")[1].split("?")[0] for u in asked if "publish/content/26-27," in u and ",program," not in u]
+check([g["url"].rsplit("/", 1)[1] for g in got_pages] == ["fine-arts-aa-fall-2026", "biology-as-t-fall-2026",
+                                                          "biology-as-fall-2026", "welding-coa-fall-2026"]
+      and rep["elumen"]["walk_programs"] == 3 and not rep["elumen"]["walk_stopped_at_cap"],
+      "short of the closed lists, the read walks the menu's one-segment pages and the departments they list: %s %s"
+      % ([g["url"] for g in got_pages], rep.get("elumen")))
+check(walked == ["welcome", "courses", "understanding", "degrees", "biology", "welding"],
+      "the walk reads each page once, breadth first, three steps deep: %r" % walked)
+check("art" not in walked and "metals" not in walked and not any("course," in w or "course/" in w for w in walked),
+      "the start page is never read again, a page four steps down is never read, nor a course: %r" % walked)
+
 sql = open(os.path.join(ROOT, "chatbox", "supabase_program_requirement_records_college_load.sql")).read()
 body = sql.split("as $$")[1].split("$$;")[0]
 check("on conflict (college, control_number) do nothing" in body and "update" not in body.lower()
