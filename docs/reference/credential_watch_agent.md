@@ -48,6 +48,12 @@ Routine `trig_019tTcardPfntFz6ctWU9Jg1`, Mondays at 05:51 Pacific, first run
 | `kb/reference/credential_registry_national_sample.json` | Credential Engine sample, 974 of 6,738 | Sam's 2026-09-16 capture, until the Registry API replaces it |
 | `kb/it_ai_credential_catalog.json` | The joined catalog, with CIP sector and MAP status per row | `kb/_build_it_ai_credential_catalog.py` (derived; never hand-edited) |
 
+**Where it shows:** the Common Exhibit Reference tab reads `kb/it_ai_credential_catalog.json`
+(read-only, loaded after the grid): the *Industry credentials* lane lists every row, and a CER
+row the catalog joins to (`map.titles`, the CER's KB key) shows the industry record and a
+*Retired by issuer* / *Renamed by issuer* chip. A run that changes the watch file therefore
+reaches curators the day it merges, provided the builder ran (step 5).
+
 The catalog is a dated snapshot: the CER it joins to (`credential_reference_data.js`)
 is rebuilt every morning, so a committed catalog trails MAP by the days since
 its `_inputs.cer_generated_at`. Rerun the builder before citing a count.

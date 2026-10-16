@@ -115,10 +115,15 @@ const rowByTitle = (doc, needle) => Array.from(doc.querySelectorAll("tr.cr-row")
 
   // ── 1. cream background ──
   const css = doc.getElementById("cr-scope-css").textContent;
-  check("cream: scoped --cer-cream token defined (ghosted rgba since round 3)",
-    css.indexOf("--cer-cream:rgba(254,249,218,.8)") >= 0);
+  // Since the 2026-10-16 UI pass the token lives on :root in both HTMLs (Rule 4),
+  // so the dark theme carries its own value; Sam's light cream is unchanged.
+  const pageHtml = fs.readFileSync("index.html", "utf8");
+  check("cream: --cer-cream token defined on :root (ghosted rgba since round 3)",
+    pageHtml.indexOf("--cer-cream: rgba(254,249,218,.8);") >= 0);
+  check("cream: the dark theme defines its own --cer-cream",
+    (pageHtml.match(/--cer-cream: rgba\(42,38,24,\.8\);/g) || []).length === 2);
   check("cream: the CER pane background rides the token",
-    css.indexOf("#tab-credential-reference{--cer-cream:rgba(254,249,218,.8);background:var(--cer-cream);}") >= 0);
+    css.indexOf("#tab-credential-reference{background:var(--cer-cream);}") >= 0);
   check("cream: the table wrap stays opaque white (data never on cream)",
     css.indexOf(".cr-table-wrap{background:var(--surface-opaque") >= 0);
 
@@ -159,7 +164,7 @@ const rowByTitle = (doc, needle) => Array.from(doc.querySelectorAll("tr.cr-row")
   // round 3's ↺ reset-widths button shares the cr-export-btn class, so a
   // positional index is no longer stable.
   const jsonBtn = Array.from(doc.querySelectorAll(".cr-export-btn"))
-    .find((b) => txt(b) === "⬇ JSON");
+    .find((b) => txt(b) === "JSON");
   jsonBtn.click();
   await sleep(30);
   const parsed = JSON.parse(await log.blobs[log.blobs.length - 1].text());
@@ -171,8 +176,8 @@ const rowByTitle = (doc, needle) => Array.from(doc.querySelectorAll("tr.cr-row")
 
   // ── 3. the ⇆ merge-suggestion chip + panel ──
   const ase2 = rowByTitle(doc, "ASE Brakes Certification");
-  check("chip: both ASE look-alikes carry ⇆ 1 similar",
-    /⇆ 1 similar/.test(txt(ase2.querySelector(".cr-chip-mergesug")))
+  check("chip: both ASE look-alikes carry 1 similar",
+    /^1 similar/.test(txt(ase2.querySelector(".cr-chip-mergesug")))
     && !!rowByTitle(doc, "ASE Brakes (A5)").querySelector(".cr-chip-mergesug"));
   check("chip: the loner carries NO merge chip",
     !cosmo.querySelector(".cr-chip-mergesug"));
