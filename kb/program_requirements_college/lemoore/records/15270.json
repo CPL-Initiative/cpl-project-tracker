@@ -1,0 +1,270 @@
+{
+ "college": "Lemoore College",
+ "control_number": "15270",
+ "shape": "degree",
+ "title": "Business: Business Management",
+ "award": "A.S. Degree",
+ "source_url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/business-management-as-fall-2025",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7859,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7859,
+    "output_tokens": 2051,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2051,
+  "output_tokens_details": {
+   "thinking_tokens": 793
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07246,
+ "ms": 16815,
+ "seconds": 18.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 11,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "BUS13B"
+   ],
+   "flagged": [
+    "BUS13B"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    36.0,
+    36.0
+   ],
+   "stated": [
+    36.0,
+    36.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     58.0,
+     62.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     22.0,
+     24.0
+    ],
+    "why": [],
+    "within": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business Management (AS)",
+   "measure": "units",
+   "total_units": {
+    "min": 36,
+    "max": 36
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 0,
+    "max": 2
+   },
+   "ge_pattern": "Local General Education or Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 22,
+    "max": 24
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will be able to demonstrate utilization of a variety of prevailing Microsoft office applications and accounting software.",
+    "Students will be able to input and produce reports from business records.",
+    "Students will be able to identify the basic elements of a contract and assess a contract’s validity.",
+    "Students will be able to compose business letters and employment applications choosing the appropriate delivery means.",
+    "Students will be able to assess business situations from an owner’s/manager’s prospective including basic employment laws."
+   ],
+   "careers": [
+    "bookkeeping",
+    "management",
+    "retailing"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 36,
+     "max": 36
+    },
+    "courses": [
+     {
+      "code": "BUS001A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS001B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS013A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS013B",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS018",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS020",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS024",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS028",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS032",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS035",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS007",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS034",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints 'Business Management (AS) (Total 60)' / 'Complete the following number of credits: 60' as the whole degree total (recorded in degree_total). The major consists solely of 'Required Core Courses (Total 36)', so 36 was recorded as total_units and as the block's stated total; reviewer may prefer total_units null since 36 is printed as a block total.",
+   "'Local General Education or Cal-GETC requirements 22 - 24' recorded as ge_units; 'Elective units for total of 60 degree applicable semester units 0 - 2' recorded as degree_elective_units since it lies outside the major.",
+   "GE and elective courses listed in the Recommended Sequence (ENGLC1000, STATC1000, ART016A, etc.) are general education/sequence suggestions and were not recorded as blocks.",
+   "BUS013B (Word for Windows II, 1.5) is in the required core but absent from the closed list; recorded as catalog_addition.",
+   "Careers taken from 'entry-level positions in areas such as bookkeeping, management, and retailing'.",
+   "PSLO labels ('PSLO 1:' etc.) removed from outcomes."
+  ]
+ },
+ "extracted_run": "38979392604"
+}
