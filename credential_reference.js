@@ -1015,6 +1015,12 @@
     indFilter: { domain: "all", status: "all", map: "all", emerging: false },
     indShown: 100,
     indExpanded: {},  // catalog id -> bool
+    // Grid paging (2026-10-16): the grid paints GRID_PAGE rows, then "Show more".
+    // A cold load used to paint all ~2,000 rows three or four times, each a
+    // multi-second freeze on a laptop (Chrome's "Page unresponsive"). gridKey
+    // resets the budget whenever the filtered view changes.
+    gridShown: 200,
+    gridKey: "",
   };
 
   // Group key for a row given the current state.groupBy mode (single-key modes).
@@ -1890,6 +1896,11 @@
     });
     table.appendChild(el("thead", null, [headerRow]));
 
+    var gk = [state.lane, state.search, state.cplTypeFilter, state.discFilter, state.subjFilter,
+      state.collegeFilter, state.issuerFilter, state.bandFilter, state.tagFilter, state.flagOnly,
+      state.groupBy, state.sort.key, state.sort.dir].join("\u0001");
+    if (gk !== state.gridKey) { state.gridKey = gk; state.gridShown = GRID_PAGE; }
+    var budget = { left: state.gridShown, total: filtered.length, painted: 0 };
     var tbody = el("tbody");
     if (!filtered.length) {
       var tr = el("tr");
@@ -1898,7 +1909,9 @@
       tr.appendChild(td);
       tbody.appendChild(tr);
     } else if (state.groupBy === "none") {
-      filtered.forEach(function (r) { appendRowSafe(tbody, r, COLS.length); });
+      filtered.forEach(function (r) {
+        if (budget.left > 0) { appendRowSafe(tbody, r, COLS.length); budget.left--; budget.painted++; }
+      });
     } else {
       // Grouped render — bucket the filtered rows by the active group key(s)
       // (already filtered + sorted) and emit a collapsible header before each
@@ -1948,14 +1961,35 @@
         };
         hdrTd.appendChild(btn);
         hdrTr.appendChild(hdrTd);
+        if (budget.left <= 0) return;  // past the page: no orphan headers
         tbody.appendChild(hdrTr);
         if (!collapsed) {
-          rowsInGroup.forEach(function (r) { appendRowSafe(tbody, r, COLS.length); });
+          rowsInGroup.forEach(function (r) {
+            if (budget.left > 0) { appendRowSafe(tbody, r, COLS.length); budget.left--; budget.painted++; }
+          });
         }
       });
     }
     table.appendChild(tbody);
     wrap.appendChild(table);
+    var hidden = budget.total - budget.painted;
+    if (budget.left <= 0 && hidden > 0) {
+      ensureIndustryCss();  // owns the shared "Show more" bar style
+      var bar = el("div", { class: "cr-ind-morewrap cr-grid-morewrap" });
+      bar.appendChild(el("span", { class: "cr-grid-moretext" },
+        ["Showing " + budget.painted + " of " + budget.total + " · "]));
+      var more = el("button", { type: "button", class: "cr-ind-more cr-grid-more" },
+        ["Show " + Math.min(GRID_PAGE, hidden) + " more"]);
+      more.onclick = function () { state.gridShown += GRID_PAGE; render(); };
+      bar.appendChild(more);
+      bar.appendChild(document.createTextNode(" · "));
+      var all = el("button", { type: "button", class: "cr-ind-more cr-grid-all",
+        title: "Paints every row; on a slow machine this can take several seconds." },
+        ["Show all " + budget.total]);
+      all.onclick = function () { state.gridShown = Infinity; render(); };
+      bar.appendChild(all);
+      wrap.appendChild(bar);
+    }
   }
 
   // Row-level error isolation (Session 104 — Sam reported the list vanishing
@@ -5419,14 +5453,14 @@
   // cos-authority-sync workflow first lands kb/cos_matches.json). Loaded
   // AFTER the first render so the table never waits on it; a successful load
   // re-renders once to surface the ✓/≈ COS chips.
-  function fetchCosMatches() {
+  function fetchCosMatches(opts) {
     return fetch("kb/cos_matches.json", { cache: "no-store" })
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (d) {
         if (d && d.matches && Object.keys(d.matches).length) {
           state.cosMatches = d.matches;
           state.cosAttribution = d._attribution || null;
-          if (!state.worklistOpen) render();
+          if ((!opts || !opts.quiet) && !state.worklistOpen) render();
         }
       })
       .catch(function () {});
@@ -5444,6 +5478,7 @@
   // whole catalog) and, on a CER row MAP has articulated, the industry record
   // plus an issuer-change chip (retired / retiring / renamed).
   var INDUSTRY_URL = "kb/it_ai_credential_catalog.json";
+  var GRID_PAGE = 200;
   var INDUSTRY_PAGE = 100;
   var IND_STATUS = { active: "Active", "new": "New", beta: "Beta",
     retiring: "Retiring", retired: "Retired" };
@@ -5451,7 +5486,7 @@
     "exhibit, not yet articulated": "Exhibit, not articulated",
     "not in MAP": "Not in MAP" };
 
-  function fetchIndustry() {
+  function fetchIndustry(opts) {
     if (state.industry || state.industryLoading) return Promise.resolve();
     state.industryLoading = true;
     state.industryError = false;
@@ -5463,7 +5498,7 @@
         indexIndustry(d);
       })
       .catch(function () { state.industryLoading = false; state.industryError = true; })
-      .then(function () { if (!state.worklistOpen) render(); });
+      .then(function () { if (!opts || !opts.quiet) { if (!state.worklistOpen) render(); } });
   }
 
   // Exposed for tests: the join is the contract (a catalog row's map.titles are
@@ -5754,6 +5789,13 @@
     document.head.appendChild(st);
   }
 
+  // The two read-only overlays that arrive after the first paint (COS matches,
+  // the industry catalog) share ONE re-render instead of one each.
+  function loadOverlays() {
+    return Promise.all([fetchCosMatches({ quiet: true }), fetchIndustry({ quiet: true })])
+      .then(function () { if (!state.worklistOpen) render(); });
+  }
+
   function init() {
     if (!document.getElementById("tab-credential-reference")) return;
     state.sess = getSession();
@@ -5786,8 +5828,7 @@
         state.discGeAreas = baked.disc_ge_areas || {};
         renderToolbar();
         render();
-        fetchCosMatches();
-        fetchIndustry();
+        loadOverlays();
         ensureWorklistData();  // v2 lanes — populate queue counts up front
       }).catch(renderInitError);
       return;
@@ -5805,8 +5846,7 @@
       state.overlay = parts[1];
       renderToolbar();
       render();
-      fetchCosMatches();
-      fetchIndustry();
+      loadOverlays();
     }).catch(renderInitError);
   }
 
