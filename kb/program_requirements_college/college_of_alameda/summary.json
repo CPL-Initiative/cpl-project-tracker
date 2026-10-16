@@ -1,0 +1,105 @@
+{
+ "college": "College of Alameda",
+ "programs": 85,
+ "with_closed_list": 68,
+ "found": 59,
+ "extracted": 59,
+ "errors": 0,
+ "passed_machine_checks": 25,
+ "failed": {
+  "coverage": 3,
+  "invented": 3,
+  "arithmetic": 31,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 4.05,
+ "cost_per_program": 0.0686,
+ "not_found": [
+  {
+   "control_number": "01109",
+   "title": "Apparel Design & Merchandising",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "19838",
+   "title": "Apparel Design & Merchandising",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "40310",
+   "title": "ESOL High Intermediate",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47321/47444",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1651,
+     "content": 1651,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "40873",
+   "title": "Cal-GETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "41837",
+   "title": "Business Information Worker- Quick Start",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "43962",
+   "title": "Making with the Laser Cutter",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://coa.curriqunet.com/catalog/iq/47221/47369/47499",
+    "label": {
+     "award": 1,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2383,
+     "content": 2383,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  }
+ ],
+ "run": "38935121852"
+}

@@ -1,0 +1,275 @@
+{
+ "college": "College of Alameda",
+ "control_number": "19832",
+ "shape": "certificate",
+ "title": "Engine Repair Specialist",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://coa.curriqunet.com/catalog/iq/47221/47257/47368",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7852,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7852,
+    "output_tokens": 2176,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2176,
+  "output_tokens_details": {
+   "thinking_tokens": 855
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07493,
+ "ms": 28441,
+ "seconds": 29.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "ENGL268A",
+    "ENGL268B",
+    "ESL253A",
+    "ESL253B"
+   ],
+   "flagged": [
+    "ENGL268A",
+    "ENGL268B",
+    "ESL253A",
+    "ESL253B"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    34.0,
+    34.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Engine Repair Specialist - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Be ‘lifelong learners’ in the field of automotive technology, keeping up with changes in vehicles, in diagnostics and in repair procedures through a commitment to continual learning and training.",
+    "Communicate effectively with customers, supervisors and co-workers.",
+    "Apply critical thinking and problem solving skills in the process of diagnosing and repairing vehicles.",
+    "Competently perform industry standard automotive repair procedures, using proper tools, procedures and diagnostic techniques, as specified in the NATEF program certification process."
+   ],
+   "careers": [
+    "apprentice auto mechanics",
+    "management",
+    "teaching"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "FIRST SEMESTER",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 14,
+     "max": 14
+    },
+    "courses": [
+     {
+      "code": "ATECH 021",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ATECH 022",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 208",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 225",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "SECOND SEMESTER",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "ATECH 011",
+      "units": 10,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "THIRD SEMESTER",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "ATECH 041",
+      "units": 10,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Recommended prior to enrollment in any of the “major” Auto Mechanics classes",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ENGL 268A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ESL 253A",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL 268B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ESL 253B",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The section heading is truncated in the text as 'ir Specialist - Certificate of Achievement'; reconstructed as 'Engine Repair Specialist - Certificate of Achievement' from the program title.",
+   "Catalog prints codes with leading zeros (ATECH 021, 022, 011, 041); these match closed-list ATECH 21, 22, 11, 41.",
+   "No total for the certificate is printed; only semester subtotals (14, 10, 10). total_units left null.",
+   "The recommended block reflects the shared 'AS Degree and Certificate of Achievement Programs' recommendation: ENGL 268A-268B or ESL 253A-253B (as a sequence) with a grade of C or better; units not printed. The same recommendation also lists one year of high school algebra or MATH 225, which is already a required course in the First Semester block.",
+   "Learning outcomes appear to be printed for the Automotive Technology program as a whole and are shared by this award.",
+   "Careers 'management' and 'teaching' come from 'future management and teaching careers in the automotive industry' in the shared program description; reviewer may wish to confirm."
+  ]
+ },
+ "extracted_run": "38935121852"
+}

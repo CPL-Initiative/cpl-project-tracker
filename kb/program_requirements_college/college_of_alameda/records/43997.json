@@ -1,0 +1,177 @@
+{
+ "college": "College of Alameda",
+ "control_number": "43997",
+ "shape": "noncredit",
+ "title": "Making with the 3D Printer",
+ "award": "Noncredit program",
+ "source_url": "https://coa.curriqunet.com/catalog/iq/47221/47369/47502",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6644,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6644,
+    "output_tokens": 1263,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1263,
+  "output_tokens_details": {
+   "thinking_tokens": 609
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05184,
+ "ms": 11519,
+ "seconds": 12.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Making with the 3D Printer: Certificate of Completion",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Safely use the 3D printer and associated tools to design and complete a project."
+   ],
+   "careers": [
+    "Manufacturing Sector"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Complete all three courses with a \"Pass\" grade:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "MAKR 570A",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAKR 570B",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAKR 570C",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit certificate of completion; the table's column is headed HOURS, so measure is hours, but the catalog prints 0.00 beside every course and the block, which looks like a placeholder rather than actual instructional hours. Recorded as printed; reviewer should verify the real hours.",
+   "The catalog prints no total hours for the certificate; total_units left null.",
+   "The block header prints '0.00 0.00', recorded as stated 0-0.",
+   "The second heading reads 'Making withe the 3D Printer' (typo in source).",
+   "The description mentions 'a dye sublimation printer', which seems copied from another Maker program's text.",
+   "Careers: the text names only 'entry level skills for any career that requires the safe use of a 3D printer' and entry-level workers in industries of the Manufacturing Sector; recorded 'Manufacturing Sector' as the career field."
+  ]
+ },
+ "extracted_run": "38935121852"
+}

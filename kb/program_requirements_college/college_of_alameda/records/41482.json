@@ -1,0 +1,273 @@
+{
+ "college": "College of Alameda",
+ "control_number": "41482",
+ "shape": "degree",
+ "title": "Geography",
+ "award": "A.A. Degree",
+ "source_url": "https://coa.curriqunet.com/catalog/iq/47221/47329/47487",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7018,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7018,
+    "output_tokens": 1856,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1856,
+  "output_tokens_details": {
+   "thinking_tokens": 582
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06519,
+ "ms": 14795,
+ "seconds": 15.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "GEOL10"
+   ],
+   "flagged": [
+    "GEOL10"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    19.0,
+    20.0
+   ],
+   "stated": [
+    19.0,
+    20.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     59.0,
+     61.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     40.0,
+     41.0
+    ],
+    "why": [],
+    "within": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 15,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Geography - A.A. Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 19,
+    "max": 20
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "College of Alameda General Education for the Associate in Arts Degree",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 40,
+    "max": 41
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Describe the spatial organization of the world’s peoples, nations, cultural environments",
+    "Demonstrate knowledge of global physical and environmental processes and develop an appreciation of landscapes.",
+    "Demonstrate an understanding of how human activities impact the physical environment."
+   ],
+   "careers": [
+    "Aerial Photo Interpreter",
+    "Agricultural Geographer",
+    "Cartographer",
+    "Census Analyst",
+    "Climatologist",
+    "Community Development Specialist",
+    "Demographer",
+    "Development Specialist",
+    "Ecologist",
+    "Economic Development Analyst",
+    "Environmental Analyst/Planner",
+    "Geographical Information Systems Specialist",
+    "Map Curator",
+    "Natural Resources Manager",
+    "Park Ranger"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 7,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "GEOG 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 001L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select a minimum of 4 courses from the following:",
+    "rule": "choose_courses",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 13
+    },
+    "courses": [
+     {
+      "code": "GEOG 003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 015",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 018",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 014",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOL 003",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOL 010",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "ANTHR 003",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog codes are zero-padded (GEOG 001, GEOL 003, ANTHR 003); matched to closed-list GEOG 1, GEOL 3, ANTHR 3 etc.",
+   "In the 'Select a minimum of 4 courses' list, GEOG 014 OR GEOL 003 OR GEOL 010 OR ANTHR 003 is printed as one OR group (3.00-4.00 units), so with GEOG 003, 015 and 018 the four choices are effectively all required; recorded as choose 4 courses with the OR group as alternatives.",
+   "GEOL 010 Introduction to Geology is not in the closed list; recorded as catalog addition.",
+   "The page prints 'G.E. and Elective Units Required' then 'G.E. Units Required 40.00-41.00'; this figure appears to be the remainder to 60 (GE plus electives), recorded as ge_units as printed. No separate elective units printed.",
+   "Closed list stores GEOG 3 at 0 units; catalog prints 3.00.",
+   "GEOG 001L and GEOG 002 and ANTHR 003 are marked '( Historical )' in the catalog listing."
+  ]
+ },
+ "extracted_run": "38935121852"
+}
