@@ -1,0 +1,184 @@
+{
+ "college": "Laney College",
+ "control_number": "42956",
+ "shape": "certificate",
+ "title": "Advanced Precision Machining",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://lan.curriqunet.com/catalog/view/iq/44166/44213/44425",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6751,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6751,
+    "output_tokens": 1221,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1221,
+  "output_tokens_details": {
+   "thinking_tokens": 334
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05142,
+ "ms": 9793,
+ "seconds": 10.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    10.0,
+    10.0
+   ],
+   "stated": [
+    10.0,
+    10.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 7,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Advanced Precision Machining",
+   "measure": "units",
+   "total_units": {
+    "min": 10,
+    "max": 10
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate safe work procedures while operating CNC machine tools and other shop equipment. This includes selection and use of personal protective equipment, disposal of hazardous materials, working around particulates, material handling, parts cleaning, lab hygiene.",
+    "Develop a foundation of skills for setup, operation and programming of advanced CNC machine tools and metrology equipment to manufacture complex parts and inspect them to ensure they meet engineering specifications. Machine tools include 5-axis machining centers, turning centers with live tooling, diamond turning machines. Metrology equipment includes high resolution electronic gages, coordinate measuring machines, measuring microscopes, profilometers, 3D optical profilers, interferometers.",
+    "Demonstrate technical literacy in reading and writing technical documents and conducting independent research; determining required specifications based on engineering drawings and part function; applying mathematics in problem solving; programming in G-code with macro variables, using conversational programming, using CAM software; applying the principles of precision engineering, such as kinematic design, to workholding and measuring problems."
+   ],
+   "careers": [
+    "machinist",
+    "R&D machinist",
+    "CNC machinist",
+    "CNC machine operator",
+    "CNC setup technician",
+    "CNC programmer",
+    "diamond turning technician"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Courses (10 Units):",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "MACH 032",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH 075",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MACH 214",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog text begins mid-sentence and prints no section heading; the program title is used as section_heading.",
+   "The text does not name the award type; it is read as the Certificate of Achievement named in the request.",
+   "Catalog prints MACH 032 and MACH 075 with leading zeros; treated as the closed-list MACH 32 and MACH 75.",
+   "MACH 075 is marked '( Historical )' in the catalog listing; reviewer may verify it is still offered for 2026-2027."
+  ]
+ },
+ "extracted_run": "38935141023"
+}

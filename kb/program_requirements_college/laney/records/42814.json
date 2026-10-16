@@ -1,0 +1,176 @@
+{
+ "college": "Laney College",
+ "control_number": "42814",
+ "shape": "certificate",
+ "title": "Spanish for Bilingual/Heritage Students",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://lan.curriqunet.com/catalog/view/iq/44166/44226/44497",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6552,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6552,
+    "output_tokens": 1048,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1048,
+  "output_tokens_details": {
+   "thinking_tokens": 384
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04717,
+ "ms": 8144,
+ "seconds": 8.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    10.0,
+    10.0
+   ],
+   "stated": [
+    10.0,
+    10.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 7,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Spanish for Bilingual/Heritage Students - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 10,
+    "max": 10
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate oral competence in the Spanish Language: correctly apply grammar and use an advanced level of vocabulary in the Spanish language.",
+    "Demonstrate written competence in the Spanish Language: correctly apply grammar and use an advanced level of vocabulary in the Spanish language.",
+    "Describe. analyze and interpret literary, historical ,and cultural texts, films, documentaries, and videos to better understand the identity of Latinx peoples in and outside United States."
+   ],
+   "careers": [
+    "Bilingual Counselor",
+    "Bilingual teacher",
+    "Education",
+    "Medical Interpretation and Translation",
+    "Legal Interpretation and Translation",
+    "Journalism",
+    "Bilingual counseling"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Courses (10 units):",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "SPAN 022A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 022B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The Career Opportunities list also includes 'Major of Minor in Spanish at a 4-year college.', which is a transfer goal rather than a career, so it was not recorded as a career.",
+   "'Bilingual counseling careers and jobs' was recorded as the career field 'Bilingual counseling'.",
+   "The third outcome is copied as printed, including the irregular punctuation ('Describe. analyze', 'historical ,and')."
+  ]
+ },
+ "extracted_run": "38935141023"
+}

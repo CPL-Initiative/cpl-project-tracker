@@ -1,0 +1,187 @@
+{
+ "college": "Laney College",
+ "control_number": "44128",
+ "shape": "certificate",
+ "title": "Advanced Japanese Language and Culture",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://lan.curriqunet.com/catalog/view/iq/44166/44204/44522",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6721,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6721,
+    "output_tokens": 1057,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1057,
+  "output_tokens_details": {
+   "thinking_tokens": 288
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04802,
+ "ms": 9132,
+ "seconds": 9.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.0,
+    20.0
+   ],
+   "stated": [
+    20.0,
+    20.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Advanced Japanese Language and Culture - Certificate of Achievement",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 20
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Describe, analyze and interpret literary, historical, and cultural texts, films, documentaries, and videos to better understand the identity of Japanese or Japanese American in and outside United States.",
+    "Demonstrate oral competence in the Japanese Language: correctly apply grammar and use an advanced level of vocabulary in the Japanese language.",
+    "Demonstrate written competence in the Japanese Language: correctly apply grammar and use an advanced level of vocabulary in the Japanese language."
+   ],
+   "careers": [
+    "translation",
+    "interpretation",
+    "English-Japanese Interpreter",
+    "translator"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Courses:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 20,
+     "max": 20
+    },
+    "courses": [
+     {
+      "code": "JAPAN 001A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPAN 001B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPAN 002A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPAN 002B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Careers drawn from 'educational/travel fields of translation and interpretation' and 'English-Japanese Interpreter and translator'. The text also says graduates may work in 'educational and/or medical institutions' and mentions translating Manga and Anime and bilingual service roles in department stores, hospitals, etc.; these were read as workplaces/activities rather than named careers. Reviewer may wish to check.",
+   "Catalog text includes stray CSS styling code between outcomes and the course table; ignored.",
+   "Title says 'Advanced' but the required courses are elementary and intermediate Japanese (001A-002B)."
+  ]
+ },
+ "extracted_run": "38935141023"
+}
