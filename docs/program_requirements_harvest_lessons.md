@@ -689,6 +689,21 @@ of a CourseLeaf page.
 **Patterns that worked.** One branch per college let eleven reads run at once with no host read twice. Port a CI fix into every
 open PR the moment it exists. Merge in SQL rather than retype a record the database already holds.
 
+## S396 SkyJacaranda (2026-10-16): wave 4 read and partly loaded, Orange Coast and Monterey Peninsula's reconcile steps, Santa Ana's reader merged
+
+**Sam's words this run.** One, near the end: the CPL Queue routine fires around 10 PM Pacific, "so hoping it can start after you finish up". The session checkpointed then and handed the runs still in flight to the next.
+
+- **#2151 and #2148 merged.** #2148's head was the bot's filing commit, which runs no `test`; a merge of `main` on top gave it one (green), and the three dashboard artifacts took `main`'s copies, since the branch's only change to them was #2147's author removal.
+- **Wave 4, nine colleges at once, one branch and one host each** (about $175 under the $40 go). Loaded unchecked: Ventura 101 of 131 (30 placed none of their courses), Oxnard 64 of 94, Reedley 36, Palomar 220 of 224, Chabot (233 read, 201 passing; load dispatched). curriQunet did well where its index was whole: Palomar 224 of 331 found and 196 passing, Chabot 233 of 244 and 201. Reedley's index held 40 entries in 2 sections, so it found 36 of 200: parked for a page read.
+- **The dated reads went in ahead of the loads, all nine at once.** Registry columns matched by one md5 over ten columns (8cad0f35); MAP's course codes by three md5s a college (counts, titles, exhibits by source): Santa Ana 83, Reedley 24, Ventura 4, Allan Hancock 3, Oxnard 2; Rio Hondo, Palomar, Saddleback and Chabot name none. Writing the rows in the read's own pipe form and parsing them made the 83-row check exact on the first pass.
+- **Orange Coast's steps.** The Requirements tab's textContent prints "Total Major Units36 - 37 OCC AS General Education 1,2up to 21 Transferable electives as needed to satisfy unit requirementsvaries Total Minimum Degree Units - OCC AS GE60" (read 38752570705; the filed text carries tabs between label and figure). Five steps; GE is `{min: null, max: 21}`, which the scorer reads as 21. Reconcile 38843379313 changed 11 of the 41 records that lacked GE units (six now pass), and reread 38847265701 replaced them. The other thirty keep the gap: their captured text is the page's visible text, which lacks the hidden tab.
+- **Monterey Peninsula's steps.** Read 5 (38843693844) opened a transfer degree page: "Certified completion of the California General Education Transfer Curriculum (Cal-GETC) pattern". A local degree's GE is 24 to 34 (the GE page's eight areas, each "Select three units", and Cal-GETC's 34); a transfer degree's 34. The 24 is a sum the catalog does not print, so it is a card. Its reconcile run was still capturing at sign-off.
+- **Victor Valley's AUTO 82.0** prints with no units on two certificates whose totals agree without it; a card, since the fix is a new step kind for two records.
+
+**What went wrong.** Job logs cost the run about a third of its context: the college page reads print whole pages, and a log tail of 75 to 120 lines ran 15,000 to 40,000 tokens. Read a page read's answer from its excerpts by asking a narrower plan, and poll runs with `git ls-remote` (a filing or receipt commit is the signal), never `list_workflow_runs`, whose rows carry each commit's whole message. A worker restart mid-run cost nothing: the state was all on branches.
+
+**Patterns that worked.** Dispatching every independent read in one turn, then working the reconcile steps while they ran. A reread waits behind a reconcile on the same branch (the workflow queues per branch); the filing step rebases when the branch moved, so pushing during a run is safe.
+
 ## Moved from the lane (S394 compaction)
 
 Verbatim from `docs/reference/lanes/program-requirements-harvest.md`:
