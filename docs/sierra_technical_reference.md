@@ -348,12 +348,13 @@ They share byte-identical core logic (asserted by tests):
   is the artifact to link or iframe. Loading it as `sierra/?ctx=external`
   activates the v27 contacts gate (the page sends `ctx:'external'` on every
   chat request); a normal visit sends no `ctx` field at all.
-- `cpl_chat.js` is self-contained *behind its CONFIG block* and injects its
-  audience/feedback/markdown CSS at runtime, **but** its base chat-layout CSS
-  currently lives in the host dashboard's `<style>` block, and it mounts only
-  into a `#tab-chatbot` container. Embedding it on a third-party page today
-  requires shipping that base CSS and providing the mount node (details in
-  the integration guide).
+- `cpl_chat.js` is self-contained *behind its CONFIG block* and injects all
+  of its CSS at runtime, the base chat layout included (since S398, when the
+  `#tab-chatbot` pane that carried that CSS retired). It builds a box only
+  when asked: `CPL_CHAT.open()` in a body-level host of its own, or
+  `CPL_CHAT.mountInto(node, surface)` in a node the page provides. Its CSS
+  reads First Light's `var(--token)` colors, so a third-party page must
+  define those tokens on `:root` (details in the integration guide).
 
 ---
 
