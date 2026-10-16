@@ -1,5 +1,5 @@
 {
- "_readme": "S401 SkyManzanita, 2026-10-16. Lake Tahoe's capture-only read (run 38978047103) found 16 program pages, all transfer degrees, for 87 programs. The fast read stops at the first menu that names programs. This read prints the menu's other links, to see where the local degrees and certificates are listed.",
+ "_readme": "S401 SkyManzanita, 2026-10-16. Lake Tahoe's capture-only read (run 38978047103) found 16 program pages, all transfer degrees, for 87 programs. The fast read stops at the first menu that names programs. This read prints the menu's other links, to see where the local degrees and certificates are listed. Read 2 (S401): read 1 (run 38978810670) printed 40 links, all policy pages. This read prints the menu's links that name a degree, certificate or program area but are not a program page, and the content call of degree-requirements-and-transfer-planning.",
  "college": "Lake Tahoe Community College",
  "questions": {
   "menu": "Which catalog addresses the start page's menu links, besides program pages: departments, award hubs, program indexes, and the catalog slug its links name.",
@@ -19,7 +19,13 @@
     "menu"
    ],
    "url": "https://ltcc.elumenapp.com/catalog/2026-2027/about-this-catalog",
-   "links": "/catalog/(?![^/]+/program/)"
+   "links": "^(?!.*/program/).*(degree|certificate|programs|major|career|pathway|area|department|discipline)"
+  },
+  {
+   "answers": [
+    "menu"
+   ],
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,degree-requirements-and-transfer-planning?tenant=ltcc.elumenapp.com"
   }
  ]
 }
