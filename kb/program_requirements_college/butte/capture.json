@@ -5,29 +5,53 @@
  "catalog_year": "2026-2027",
  "programs": 192,
  "with_closed_list": 168,
- "started": "2026-10-16T16:52:00Z",
+ "started": "2026-10-16T18:33:54Z",
  "curriqunet": {
-  "catalog": 0,
+  "catalog": 14,
   "view_prefix": "https://butte.curriqunet.com/catalog/iq/",
-  "errors": [],
-  "sections": [],
-  "nodes_read": 0,
-  "calls": 1,
-  "entries": 0,
+  "errors": [
+   "https://butte.curriqunet.com/Catalog/_getPage?catalogId=14&id=28247: APIRequestContext.get: socket hang up (ECONNRESET)",
+   "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=26098: APIRequestContext.get: socket hang up (ECONNRESET)",
+   "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=27164: APIRequestContext.get: socket hang up (ECONNRESET)"
+  ],
+  "sections": [
+   "Academic Program Types and Requirements",
+   "Programs by Subject",
+   "Programs by Communities of Interest"
+  ],
+  "nodes_read": 542,
+  "calls": 1083,
+  "entries": 18,
   "stopped_at_cap": false,
   "same_title_entries": 0,
-  "entries_read": 0
+  "entries_read": 18
  },
- "pages_read": 0,
+ "pages_read": 18,
  "banner_h1": null,
- "loads": 2,
- "seconds": 14.8,
- "found": 0,
+ "loads": 1156,
+ "seconds": 5196.3,
+ "found": 19,
  "by_method": {
   "no_closed_list": 24,
-  "not_found": 168
+  "not_found": 146,
+  "page_claimed": 3,
+  "sitemap_page": 19
  },
- "shared_pages": {},
+ "shared_pages": {
+  "https://butte.curriqunet.com/catalog/iq/25398/28086/28227": [
+   "01323",
+   "38066"
+  ],
+  "https://butte.curriqunet.com/catalog/iq/25399/28163/28039/27611": [
+   "14583",
+   "43185",
+   "43186"
+  ],
+  "https://butte.curriqunet.com/catalog/iq/25398/28086/28228": [
+   "19999",
+   "37972"
+  ]
+ },
  "not_found": [
   {
    "control_number": "01298",
@@ -134,19 +158,29 @@
    }
   },
   {
-   "control_number": "01323",
-   "title": "Automotive Technology",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
    "control_number": "01325",
    "title": "Welding Technology",
    "award": "A.S. Degree",
    "near_miss": {
-    "why": "no page read names the program"
+    "url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28227",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 21,
+    "why": "coarse net: the page's code tokens name 0 of 21 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5835,
+     "content": 5835,
+     "tabs": 0
+    },
+    "tab_panels": []
    }
   },
   {
@@ -186,7 +220,25 @@
    "title": "Fire Technology",
    "award": "A.S. Degree",
    "near_miss": {
-    "why": "no page read names the program"
+    "url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28227",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 10,
+    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5835,
+     "content": 5835,
+     "tabs": 0
+    },
+    "tab_panels": []
    }
   },
   {
@@ -238,19 +290,29 @@
    }
   },
   {
-   "control_number": "07474",
-   "title": "Radio-TV-Film: Video Production",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
    "control_number": "09582",
    "title": "Multimedia Studies",
    "award": "A.S. Degree",
    "near_miss": {
-    "why": "no page read names the program"
+    "url": "https://butte.curriqunet.com/catalog/iq/25399/28169/28007/27725",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 20,
+    "why": "coarse net: the page's code tokens name 0 of 20 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4611,
+     "content": 4611,
+     "tabs": 0
+    },
+    "tab_panels": []
    }
   },
   {
@@ -294,14 +356,6 @@
    }
   },
   {
-   "control_number": "14583",
-   "title": "Registered Nursing",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
    "control_number": "15151",
    "title": "Environmental Science",
    "award": "A.S. Degree",
@@ -321,14 +375,6 @@
    "control_number": "16981",
    "title": "Criminal Justice",
    "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "17970",
-   "title": "Law Enforcement Academy - Basic/Fish and Wildlife Emphasis",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
     "why": "no page read names the program"
    }
@@ -414,33 +460,35 @@
    }
   },
   {
-   "control_number": "19995",
-   "title": "Radio-TV-Film: Video Production",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
    "control_number": "19996",
    "title": "Multimedia Studies",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
-    "why": "no page read names the program"
+    "url": "https://butte.curriqunet.com/catalog/iq/25399/28169/28007/27725",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 20,
+    "why": "coarse net: the page's code tokens name 0 of 20 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4611,
+     "content": 4611,
+     "tabs": 0
+    },
+    "tab_panels": []
    }
   },
   {
    "control_number": "19998",
    "title": "Civil Engineering Technology",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "19999",
-   "title": "Automotive Technology",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
     "why": "no page read names the program"
    }
@@ -458,20 +506,30 @@
    "title": "Welding Technology",
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
-    "why": "no page read names the program"
+    "url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28228",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 16,
+    "why": "coarse net: the page's code tokens name 0 of 16 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3868,
+     "content": 3868,
+     "tabs": 0
+    },
+    "tab_panels": []
    }
   },
   {
    "control_number": "20003",
    "title": "Ceramics",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "20005",
-   "title": "Registered Nursing: LVN to ADN",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
     "why": "no page read names the program"
@@ -530,7 +588,25 @@
    "title": "Fire Technology",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
-    "why": "no page read names the program"
+    "url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28228",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 13,
+    "why": "coarse net: the page's code tokens name 0 of 13 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3868,
+     "content": 3868,
+     "tabs": 0
+    },
+    "tab_panels": []
    }
   },
   {
@@ -766,22 +842,6 @@
    }
   },
   {
-   "control_number": "33254",
-   "title": "Law Enforcement Academy-Basic",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "33563",
-   "title": "Elementary Teacher Education",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
    "control_number": "33579",
    "title": "Agriculture Business",
    "award": "A.S. T Degree",
@@ -822,14 +882,6 @@
    }
   },
   {
-   "control_number": "35132",
-   "title": "Nutrition and Dietetics",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
    "control_number": "35197",
    "title": "Child and Adolescent Development",
    "award": "A.A- T Degree",
@@ -838,41 +890,9 @@
    }
   },
   {
-   "control_number": "35684",
-   "title": "Film, Television, and Electronic Media",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
    "control_number": "35746",
    "title": "Medical Coding",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "35887",
-   "title": "Spanish",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "35937",
-   "title": "Law Enforcement Academy-Basic/State Parks Emphasis",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "36240",
-   "title": "Law Enforcement Academy-Basic/State Parks Emphasis",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
     "why": "no page read names the program"
    }
@@ -926,19 +946,29 @@
    }
   },
   {
-   "control_number": "37941",
-   "title": "Diesel Technology",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
    "control_number": "37942",
    "title": "Production Management",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
-    "why": "no page read names the program"
+    "url": "https://butte.curriqunet.com/catalog/iq/25399/28161/28045/27593",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1441,
+     "content": 1441,
+     "tabs": 0
+    },
+    "tab_panels": []
    }
   },
   {
@@ -974,14 +1004,6 @@
    }
   },
   {
-   "control_number": "37972",
-   "title": "Automotive Technology – Honda, Professional Automotive Career Training (PACT)",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
    "control_number": "38056",
    "title": "Advanced Manufacturing",
    "award": "A.S. Degree",
@@ -1000,22 +1022,6 @@
   {
    "control_number": "38058",
    "title": "HVACR",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38059",
-   "title": "Diesel Technology",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38066",
-   "title": "Automotive Technology – Honda, Professional Automotive Career Training (PACT)",
    "award": "A.S. Degree",
    "near_miss": {
     "why": "no page read names the program"
@@ -1090,36 +1096,30 @@
    "title": "Professional Accountant",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
-    "why": "no page read names the program"
+    "url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28228",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3868,
+     "content": 3868,
+     "tabs": 0
+    },
+    "tab_panels": []
    }
   },
   {
    "control_number": "42240",
    "title": "Project Management",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43185",
-   "title": "Accelerated Track Registered Nursing",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43186",
-   "title": "Accelerated Track Registered Nursing: LVN to ADN",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43187",
-   "title": "Accelerated Track Registered Nursing: LVN to ADN",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
     "why": "no page read names the program"
@@ -1138,15 +1138,25 @@
    "title": "Communication Studies 2.0",
    "award": "A.A- T Degree",
    "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "44131",
-   "title": "Health Occupations Preparation",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
+    "url": "https://butte.curriqunet.com/catalog/iq/25399/28169/28007/27725",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 10,
+    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4611,
+     "content": 4611,
+     "tabs": 0
+    },
+    "tab_panels": []
    }
   },
   {
@@ -1374,17 +1384,234 @@
    }
   }
  ],
- "page_claimed": [],
+ "page_claimed": [
+  {
+   "control_number": "33563",
+   "title": "Elementary Teacher Education",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://butte.curriqunet.com/catalog/iq/25399/28169/28007/27725"
+   ]
+  },
+  {
+   "control_number": "35684",
+   "title": "Film, Television, and Electronic Media",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://butte.curriqunet.com/catalog/iq/25399/28161/28045/27591",
+    "https://butte.curriqunet.com/catalog/iq/25399/28161/28045/27593"
+   ]
+  },
+  {
+   "control_number": "44131",
+   "title": "Health Occupations Preparation",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://butte.curriqunet.com/catalog/iq/25399/28163/28037/27693"
+   ]
+  }
+ ],
  "coverage_bands": {
-  "0.5-0.8": 0,
-  "0.8-1.0": 0,
-  "1.0": 0
+  "0.5-0.8": 3,
+  "0.8-1.0": 3,
+  "1.0": 13
  },
  "would_extract": {
-  "against": null,
+  "against": "kb/program_requirements_college/butte",
   "kept": 0,
-  "programs": 0,
-  "list": []
+  "programs": 19,
+  "list": [
+   {
+    "control_number": "01323",
+    "title": "Automotive Technology",
+    "award": "A.S. Degree",
+    "url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28227",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "07474",
+    "title": "Radio-TV-Film: Video Production",
+    "award": "A.S. Degree",
+    "url": "https://butte.curriqunet.com/catalog/iq/25399/28161/28045/27591",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "14583",
+    "title": "Registered Nursing",
+    "award": "A.S. Degree",
+    "url": "https://butte.curriqunet.com/catalog/iq/25399/28163/28039/27611",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "17970",
+    "title": "Law Enforcement Academy - Basic/Fish and Wildlife Emphasis",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://butte.curriqunet.com/catalog/iq/25398/28072/28216",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "19995",
+    "title": "Radio-TV-Film: Video Production",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://butte.curriqunet.com/catalog/iq/25399/28161/28045/27593",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "19999",
+    "title": "Automotive Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28228",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "20005",
+    "title": "Registered Nursing: LVN to ADN",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://butte.curriqunet.com/catalog/iq/25399/28163/28039/27619",
+    "coverage": 0.909,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "33254",
+    "title": "Law Enforcement Academy-Basic",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://butte.curriqunet.com/catalog/iq/25398/28072/28219",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "35132",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://butte.curriqunet.com/catalog/iq/25399/28163/28037/27693",
+    "coverage": 0.636,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "35887",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://butte.curriqunet.com/catalog/iq/25399/28169/28007/27725",
+    "coverage": 0.571,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "35937",
+    "title": "Law Enforcement Academy-Basic/State Parks Emphasis",
+    "award": "A.S. Degree",
+    "url": "https://butte.curriqunet.com/catalog/iq/25398/28072/28217",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "36240",
+    "title": "Law Enforcement Academy-Basic/State Parks Emphasis",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://butte.curriqunet.com/catalog/iq/25398/28072/28218",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "37941",
+    "title": "Diesel Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://butte.curriqunet.com/catalog/iq/25399/28167/28019/27917",
+    "coverage": 0.824,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "37972",
+    "title": "Automotive Technology – Honda, Professional Automotive Career Training (PACT)",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28228",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "38059",
+    "title": "Diesel Technology",
+    "award": "A.S. Degree",
+    "url": "https://butte.curriqunet.com/catalog/iq/25399/28167/28019/27915",
+    "coverage": 0.824,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "38066",
+    "title": "Automotive Technology – Honda, Professional Automotive Career Training (PACT)",
+    "award": "A.S. Degree",
+    "url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28227",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "43185",
+    "title": "Accelerated Track Registered Nursing",
+    "award": "A.S. Degree",
+    "url": "https://butte.curriqunet.com/catalog/iq/25399/28163/28039/27611",
+    "coverage": 0.588,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "43186",
+    "title": "Accelerated Track Registered Nursing: LVN to ADN",
+    "award": "A.S. Degree",
+    "url": "https://butte.curriqunet.com/catalog/iq/25399/28163/28039/27611",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "43187",
+    "title": "Accelerated Track Registered Nursing: LVN to ADN",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://butte.curriqunet.com/catalog/iq/25399/28163/28039/27613",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   }
+  ]
  },
- "run": "38935116675"
+ "run": "38948140330"
 }

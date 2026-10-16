@@ -1,0 +1,313 @@
+{
+ "college": "Butte College",
+ "control_number": "01323",
+ "shape": "degree",
+ "title": "Automotive Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28227",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8375,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8375,
+    "output_tokens": 2117,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2117,
+  "output_tokens_details": {
+   "thinking_tokens": 535
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07584,
+ "ms": 17396,
+ "seconds": 18.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 15,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "AUT81",
+    "AUT82",
+    "AUT83"
+   ],
+   "flagged": [
+    "AUT81",
+    "AUT82",
+    "AUT83"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    49.5,
+    49.5
+   ],
+   "stated": [
+    70.5,
+    76.5
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Butte GE pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     49.5,
+     49.5
+    ],
+    "stated": [
+     49.5,
+     49.5
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Automotive Department - Automotive Technology - Honda, Professional Automotive Career Training (PACT) - AS Degree, Career/Technical Program",
+   "measure": "units",
+   "total_units": {
+    "min": 49.5,
+    "max": 49.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Butte GE",
+   "degree_total": {
+    "min": 70.5,
+    "max": 76.5
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Explain the principles of operation and maintenance required to repair all systems of the modern automobile with emphasis on Honda and Acura automobiles.",
+    "Safely and correctly maintain, diagnose and repair specific areas of the vehicle with emphasis on Honda and Acura automobiles.",
+    "Effectively communicate vehicle diagnoses, repair procedures, and maintenance recommendations, accurately documenting all work performed in accordance with industry standards.",
+    "Apply the state and federal regulations of the Occupational Safety and Health Association (OSHA) and the Environmental Protection Agency (EPA).",
+    "Demonstrate proficiency in the use of industry-standard tools and precision measuring instruments.",
+    "Apply safe work habits and practices."
+   ],
+   "careers": [
+    "automotive technicians"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 49.5,
+     "max": 49.5
+    },
+    "courses": [
+     {
+      "code": "AUT 6",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 7",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 8",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 9",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 22",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 23",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 30",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 31",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 52",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 53",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 56",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 57",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 60",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 81",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AUT 82",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AUT 83",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog text begins mid-sentence; the program's own heading is cut off, so section_heading uses the heading printed over the program map.",
+   "The closed list's 'AUT8' and 'AUT9' (no space, no units stored) were matched to the catalog's AUT 8 (3.00) and AUT 9 (3.00).",
+   "AUT 81, AUT 82 and AUT 83 (Honda PACT courses) are not in the closed list and are recorded as catalog additions.",
+   "AUT 60 is titled 'EV, Hybrid and Alternative Fuel Technologies' in the catalog vs. 'Hybrid and Alternative Fuel Technologies' in the closed list.",
+   "degree_total 70.50-76.50 is taken from the program map (Butte GE), which combines the 49.50-unit major with GE area choices; the page prints no separate GE unit total, so ge_units is null.",
+   "The page states prerequisites AUT 101 and AUT 3 for admission; these are entry prerequisites, not part of the required courses, and were not placed in a block."
+  ]
+ },
+ "extracted_run": "38948140330"
+}

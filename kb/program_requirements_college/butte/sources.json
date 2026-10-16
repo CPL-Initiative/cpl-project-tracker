@@ -196,12 +196,37 @@
   "title": "Automotive Technology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUT20",
+   "AUT21",
+   "AUT22",
+   "AUT23",
+   "AUT30",
+   "AUT31",
+   "AUT52",
+   "AUT53",
+   "AUT56",
+   "AUT57",
+   "AUT6",
+   "AUT60",
+   "AUT7",
+   "AUT8",
+   "AUT9"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28227",
+   "title": "AS Degree in Automotive Technology - Honda, Professional Automotive Career Training (PACT)",
+   "h1": "AS Degree in Automotive Technology - Honda, Professional Automotive Career Training (PACT)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 5303
  },
  {
   "control_number": "01324",
@@ -496,12 +521,29 @@
   "title": "Radio-TV-Film: Video Production",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MSP10",
+   "MSP74",
+   "RTVF12",
+   "RTVF14",
+   "RTVF30",
+   "RTVF40",
+   "RTVF55"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25399/28161/28045/27591",
+   "title": "Radio-TV-Film: Video Production (AS Degree)",
+   "h1": "Radio-TV-Film: Video Production (AS Degree)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 3123
  },
  {
   "control_number": "09582",
@@ -652,12 +694,23 @@
   "title": "Registered Nursing",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FN2"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25399/28163/28039/27611",
+   "title": "Accelerated Track Registered Nursing: LVN to ADN (AS Degree)",
+   "h1": "Accelerated Track Registered Nursing: LVN to ADN (AS Degree)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 1,
-  "text_chars": 0
+  "text_chars": 3209
  },
  {
   "control_number": "15151",
@@ -712,12 +765,24 @@
   "title": "Law Enforcement Academy - Basic/Fish and Wildlife Emphasis",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJLE100",
+   "AJLE141"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28072/28216",
+   "title": "Certificate of Achievement in Law Enforcement Academy - Basic/Fish and Wildlife Emphasis",
+   "h1": "Certificate of Achievement in Law Enforcement Academy - Basic/Fish and Wildlife Emphasis",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 1599
  },
  {
   "control_number": "18988",
@@ -868,12 +933,29 @@
   "title": "Radio-TV-Film: Video Production",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MSP10",
+   "MSP74",
+   "RTVF12",
+   "RTVF14",
+   "RTVF30",
+   "RTVF40",
+   "RTVF55"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25399/28161/28045/27593",
+   "title": "Radio-TV-Film: Video Production (Certificate of Achievement)",
+   "h1": "Radio-TV-Film: Video Production (Certificate of Achievement)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 1441
  },
  {
   "control_number": "19996",
@@ -904,12 +986,37 @@
   "title": "Automotive Technology",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUT20",
+   "AUT21",
+   "AUT22",
+   "AUT23",
+   "AUT30",
+   "AUT31",
+   "AUT52",
+   "AUT53",
+   "AUT56",
+   "AUT57",
+   "AUT6",
+   "AUT60",
+   "AUT7",
+   "AUT8",
+   "AUT9"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28228",
+   "title": "Certificate of Achievement in Automotive Technology - Honda, Professional Automotive Career Training (PACT)",
+   "h1": "Certificate of Achievement in Automotive Technology - Honda, Professional Automotive Career Training (PACT)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 3868
  },
  {
   "control_number": "20000",
@@ -952,12 +1059,32 @@
   "title": "Registered Nursing: LVN to ADN",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "BIOL15",
+   "BIOL21",
+   "NSG64",
+   "NSG68",
+   "NSG69",
+   "NSG74",
+   "NSG78",
+   "NSG79",
+   "NSG88",
+   "NSG89"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25399/28163/28039/27619",
+   "title": "Registered Nursing: LVN to ADN (Certificate of Achievement)",
+   "h1": "Registered Nursing: LVN to ADN (Certificate of Achievement)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 4210
  },
  {
   "control_number": "20006",
@@ -1396,19 +1523,31 @@
   "title": "Law Enforcement Academy-Basic",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJLE100",
+   "AJLE140"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28072/28219",
+   "title": "Certificate of Achievement in Law Enforcement Academy - Basic",
+   "h1": "Certificate of Achievement in Law Enforcement Academy - Basic",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 1363
  },
  {
   "control_number": "33563",
   "title": "Elementary Teacher Education",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1480,12 +1619,29 @@
   "title": "Nutrition and Dietetics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.636,
+  "codes_found": [
+   "BIOL20",
+   "BIOL21",
+   "CHEM1",
+   "CHEM2",
+   "PSYCC1000",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25399/28163/28037/27693",
+   "title": "Physical Education: Exercise Physiology (AA Degree)",
+   "h1": "Physical Education: Exercise Physiology (AA Degree)",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 3604
  },
  {
   "control_number": "35197",
@@ -1504,7 +1660,7 @@
   "title": "Film, Television, and Electronic Media",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1528,36 +1684,73 @@
   "title": "Spanish",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.571,
+  "codes_found": [
+   "ETHS10",
+   "SPAN2",
+   "SPAN3",
+   "SPAN4"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25399/28169/28007/27725",
+   "title": "Liberal Studies: Bilingual Pattern (AA Degree)",
+   "h1": "Liberal Studies: Bilingual Pattern (AA Degree)",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 4611
  },
  {
   "control_number": "35937",
   "title": "Law Enforcement Academy-Basic/State Parks Emphasis",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJLE100"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28072/28217",
+   "title": "AS Degree in Law Enforcement Academy - Basic/State Parks Emphasis",
+   "h1": "AS Degree in Law Enforcement Academy - Basic/State Parks Emphasis",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 1,
-  "text_chars": 0
+  "text_chars": 3341
  },
  {
   "control_number": "36240",
   "title": "Law Enforcement Academy-Basic/State Parks Emphasis",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJLE100",
+   "AJLE130"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28072/28218",
+   "title": "Certificate of Achievement in Law Enforcement Academy - Basic/State Parks Emphasis",
+   "h1": "Certificate of Achievement in Law Enforcement Academy - Basic/State Parks Emphasis",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 3002
  },
  {
   "control_number": "36241",
@@ -1636,12 +1829,36 @@
   "title": "Diesel Technology",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.824,
+  "codes_found": [
+   "AUT20",
+   "AUT21",
+   "AUT22",
+   "AUT23",
+   "AUT30",
+   "AUT31",
+   "AUT52",
+   "AUT53",
+   "AUT56",
+   "AUT57",
+   "AUT6",
+   "AUT7",
+   "AUT8",
+   "AUT9"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25399/28167/28019/27917",
+   "title": "Automotive Technology - Honda, Professional Automotive Career Training (PACT) (Certificate of Achievement)",
+   "h1": "Automotive Technology - Honda, Professional Automotive Career Training (PACT) (Certificate of Achievement)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.5
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 3605
  },
  {
   "control_number": "37942",
@@ -1708,12 +1925,40 @@
   "title": "Automotive Technology – Honda, Professional Automotive Career Training (PACT)",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUT20",
+   "AUT21",
+   "AUT22",
+   "AUT23",
+   "AUT30",
+   "AUT31",
+   "AUT52",
+   "AUT53",
+   "AUT56",
+   "AUT57",
+   "AUT6",
+   "AUT60",
+   "AUT7",
+   "AUT8",
+   "AUT81",
+   "AUT82",
+   "AUT83",
+   "AUT9"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28228",
+   "title": "Certificate of Achievement in Automotive Technology - Honda, Professional Automotive Career Training (PACT)",
+   "h1": "Certificate of Achievement in Automotive Technology - Honda, Professional Automotive Career Training (PACT)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 18,
-  "text_chars": 0
+  "text_chars": 3868
  },
  {
   "control_number": "38056",
@@ -1756,24 +2001,76 @@
   "title": "Diesel Technology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.824,
+  "codes_found": [
+   "AUT20",
+   "AUT21",
+   "AUT22",
+   "AUT23",
+   "AUT30",
+   "AUT31",
+   "AUT52",
+   "AUT53",
+   "AUT56",
+   "AUT57",
+   "AUT6",
+   "AUT7",
+   "AUT8",
+   "AUT9"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25399/28167/28019/27915",
+   "title": "Automotive Technology - Honda, Professional Automotive Career Training (PACT) (AS Degree)",
+   "h1": "Automotive Technology - Honda, Professional Automotive Career Training (PACT) (AS Degree)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.5
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 5163
  },
  {
   "control_number": "38066",
   "title": "Automotive Technology – Honda, Professional Automotive Career Training (PACT)",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUT20",
+   "AUT21",
+   "AUT22",
+   "AUT23",
+   "AUT30",
+   "AUT31",
+   "AUT52",
+   "AUT53",
+   "AUT56",
+   "AUT57",
+   "AUT6",
+   "AUT60",
+   "AUT7",
+   "AUT8",
+   "AUT81",
+   "AUT82",
+   "AUT83",
+   "AUT9"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28227",
+   "title": "AS Degree in Automotive Technology - Honda, Professional Automotive Career Training (PACT)",
+   "h1": "AS Degree in Automotive Technology - Honda, Professional Automotive Career Training (PACT)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 18,
-  "text_chars": 0
+  "text_chars": 5303
  },
  {
   "control_number": "39882",
@@ -1900,36 +2197,99 @@
   "title": "Accelerated Track Registered Nursing",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.588,
+  "codes_found": [
+   "NSG10",
+   "NSG12",
+   "NSG13",
+   "NSG14",
+   "NSG15",
+   "NSG16",
+   "NSG17",
+   "NSG4",
+   "NSG6",
+   "NSG9"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25399/28163/28039/27611",
+   "title": "Accelerated Track Registered Nursing: LVN to ADN (AS Degree)",
+   "h1": "Accelerated Track Registered Nursing: LVN to ADN (AS Degree)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 4618
  },
  {
   "control_number": "43186",
   "title": "Accelerated Track Registered Nursing: LVN to ADN",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NSG10",
+   "NSG12",
+   "NSG13",
+   "NSG14",
+   "NSG15",
+   "NSG16",
+   "NSG17",
+   "NSG4",
+   "NSG51",
+   "NSG52",
+   "NSG6",
+   "NSG9"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25399/28163/28039/27611",
+   "title": "Accelerated Track Registered Nursing: LVN to ADN (AS Degree)",
+   "h1": "Accelerated Track Registered Nursing: LVN to ADN (AS Degree)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 7839
  },
  {
   "control_number": "43187",
   "title": "Accelerated Track Registered Nursing: LVN to ADN",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL15",
+   "BIOL21",
+   "NSG12",
+   "NSG13",
+   "NSG14",
+   "NSG15",
+   "NSG16",
+   "NSG17",
+   "NSG51",
+   "NSG52",
+   "NSG9"
+  ],
+  "source": {
+   "url": "https://butte.curriqunet.com/catalog/iq/25399/28163/28039/27613",
+   "title": "Accelerated Track Registered Nursing: LVN to ADN (Certificate of Achievement)",
+   "h1": "Accelerated Track Registered Nursing: LVN to ADN (Certificate of Achievement)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 6817
  },
  {
   "control_number": "43333",
@@ -1960,7 +2320,7 @@
   "title": "Health Occupations Preparation",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,

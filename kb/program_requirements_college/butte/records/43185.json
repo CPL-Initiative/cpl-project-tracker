@@ -1,0 +1,307 @@
+{
+ "college": "Butte College",
+ "control_number": "43185",
+ "shape": "degree",
+ "title": "Accelerated Track Registered Nursing",
+ "award": "A.S. Degree",
+ "source_url": "https://butte.curriqunet.com/catalog/iq/25399/28163/28039/27611",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8150,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8150,
+    "output_tokens": 2160,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2160,
+  "output_tokens_details": {
+   "thinking_tokens": 562
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0758,
+ "ms": 17367,
+ "seconds": 17.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 17,
+   "share": 0.588,
+   "missing": [
+    "NSG1",
+    "NSG11",
+    "NSG2",
+    "NSG3",
+    "NSG5",
+    "NSG7",
+    "NSG8"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "NSG51",
+    "NSG52"
+   ],
+   "flagged": [
+    "NSG51",
+    "NSG52"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    51.0,
+    51.0
+   ],
+   "stated": [
+    60.0,
+    63.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Butte GE pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     29.5,
+     29.5
+    ],
+    "stated": [
+     29.5,
+     29.5
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Required courses:",
+   "measure": "units",
+   "total_units": {
+    "min": 29.5,
+    "max": 29.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 21.5,
+    "max": 21.5
+   },
+   "ge_pattern": "Butte GE",
+   "degree_total": {
+    "min": 60,
+    "max": 63
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Adhere to standards of professional practice and practice within legal, ethical and regulatory framework.",
+    "Demonstrate effective verbal, non-verbal, and written communication using compassion and cultural awareness resulting in trusting relationships.",
+    "Provide comprehensive assessments with a holistic view of the client using the functional health assessment.",
+    "Demonstrate evidenced-based practice and the use of critical thinking based on the nursing process to provide the foundation for appropriate clinical decision making.",
+    "Adapt care when providing nursing interventions to assist the clients in achieving desired outcomes.",
+    "Develop individualized teaching plan based on assessed needs.",
+    "Demonstrate decision-making coordination with the client, significant support person(s) and members of the healthcare team.",
+    "Demonstrate effective management through gathering information, planning, and directing in collaboration with the healthcare team to assist the client to move toward positive outcomes in an efficient and cost-effective manner."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 29.5,
+     "max": 29.5
+    },
+    "courses": [
+     {
+      "code": "NSG 51",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NSG 52",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NSG 4",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NSG 6",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NSG 9",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NSG 10",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NSG 12",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NSG 13",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NSG 14",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NSG 15",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NSG 16",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NSG 17",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "NSG 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "NSG 2",
+    "why": "not in the text"
+   },
+   {
+    "code": "NSG 3",
+    "why": "not in the text"
+   },
+   {
+    "code": "NSG 5",
+    "why": "not in the text"
+   },
+   {
+    "code": "NSG 7",
+    "why": "not in the text"
+   },
+   {
+    "code": "NSG 8",
+    "why": "not in the text"
+   },
+   {
+    "code": "NSG 11",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The text excerpt begins mid-page (admission points criteria) and prints no program title heading; section_heading uses the 'Required courses:' heading that opens the requirements list.",
+   "Closed list stores 'NSG10' without a space; catalog prints 'NSG 10' (1.50 units). Treated as the same course, catalog_addition false.",
+   "NSG 51 and NSG 52 (1.50 units each) are not in the closed list and are recorded as catalog additions.",
+   "Degree total 60.00-63.00 and Butte GE come from the 'Map (Butte GE)' section, which lists GE Area 2 (3-5), Area 3 (3-4), Area 6 (3) choices but no total for the GE pattern, so ge_units is null.",
+   "The map lists 'Elective (any course numbered 1-199 or C1000-C2999) 21.50', noted as only necessary if the 60 units needed to graduate have not been completed; recorded as degree_elective_units since the page also prints a major total of 29.50.",
+   "The map's Term 1 subtotal of 30.50-33.50 likely includes prior coursework/GE; prerequisites for the accelerated (LVN-to-RN) track are not printed in this excerpt.",
+   "The required-course list repeats in the map by term (Terms 2-5); courses recorded once."
+  ]
+ },
+ "extracted_run": "38948140330"
+}

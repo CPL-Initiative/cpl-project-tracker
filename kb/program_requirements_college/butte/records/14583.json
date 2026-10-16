@@ -1,0 +1,20 @@
+{
+ "college": "Butte College",
+ "control_number": "14583",
+ "shape": "degree",
+ "title": "Registered Nursing",
+ "award": "A.S. Degree",
+ "source_url": "https://butte.curriqunet.com/catalog/iq/25399/28163/28039/27611",
+ "record_shape": 6,
+ "model": null,
+ "stop_reason": null,
+ "usage": null,
+ "cost_usd": null,
+ "ms": null,
+ "seconds": 10.4,
+ "parts": null,
+ "error": "HTTP 503: {\"code\":\"BOOT_ERROR\",\"message\":\"Function failed to start (please check logs)\"}",
+ "score": null,
+ "record": null,
+ "extracted_run": "38948140330"
+}
