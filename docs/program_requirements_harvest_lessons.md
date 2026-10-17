@@ -688,9 +688,10 @@ reports showed. A page read of the PDF around one failing outcome named the faul
   loads. The four Los Rios colleges print one compiled catalog each, so the PDF reader needed nothing new.
 - **Extraction and loads** (each under the $40 go; $150.90 in all): Cerro Coso $4.87, 52 loaded; Porterville $6.13,
   76; Folsom Lake $9.43, 104; De Anza $19.66, 210; Sacramento City $18.50, 182; Cosumnes River $18.96, 182; CCSF
-  $23.60, 294; American River $29.75, 367 of 368 (07230 took a Cloudflare 502 from the extraction gateway and is
+  $23.60, 294; American River $29.75, 326 (07230 took a Cloudflare 502 from the extraction gateway and is
   re-extracted on its own). Records placing none of their listed courses stay out of the load: 13, 6, 3, 17, 22,
-  35, 55 and none. CCSF's 55 (16%) is the highest share of the sweep; read a few before its audit sweep.
+  35, 55 and 41; 1,426 loaded in all. CCSF's 55 (16%) is the highest share of the sweep; read a few before its
+  audit sweep.
 - **The arithmetic check fails on a degree with a local GE pattern whose units the page does not state**
   (`incomplete`): Cerro Coso 38 of 65. It is the known shape (record shape 5), not a reading fault.
 - **The registry rows wait on Sam (Open Asks Sheet 90 card 2).** The Supabase guard holds an UPDATE for a person, so
