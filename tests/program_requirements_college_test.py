@@ -472,6 +472,21 @@ check(all(C.cq_is_program({"text": t, "haschildbodynavs": True}) for t in BUTTE_
       "a community, a plural list or a bare award: %r"
       % ([t for t in BUTTE_ENTRIES if not C.cq_is_program({"text": t})]
          + [t for t in BUTTE_NAV if C.cq_is_program({"text": t})]))
+# Las Positas (S401, page read 38982439886): the award after the name's last comma;
+# only the 20 whose names also carry a colon were taken (20 of 201, run 38979338956).
+LPC_ENTRIES = ["Liberal Arts & Sciences: Mathematics and Science, Associate of Arts (AA)",
+               "Biology, Associate in Science for Transfer (AS-T)", "Accounting Technician, Certificate of Achievement",
+               "Welding Technology, AS", "Theatre Arts, AA-T", "Biology, A.S. Degree"]
+LPC_NAV = ["Film, Television & Electronic Media", "Business, General", "Degrees, Certificates & Programs of Study",
+           "Departments, Degrees & Certificates", "Programs of Study", "Art, Associated Students",
+           "Electives, as approved", "Spanish, AAA"]
+check(all(C.cq_is_program({"text": t}) for t in LPC_ENTRIES)
+      and not any(C.cq_is_program({"text": t}) for t in LPC_NAV),
+      "cq_is_program reads an award after the last comma (Las Positas), never a name's own comma or a plain word: %r"
+      % ([t for t in LPC_ENTRIES if not C.cq_is_program({"text": t})] + [t for t in LPC_NAV if C.cq_is_program({"text": t})]))
+check(C.cq_name_award("Liberal Arts & Sciences: Mathematics and Science, Associate of Arts (AA)")
+      == ("Liberal Arts & Sciences: Mathematics and Science", "Associate of Arts (AA)"),
+      "the comma form names the program and its award")
 check(C.cq_name_award("Automotive Technology - Honda, Professional Automotive Career Training (PACT) (AS Degree)")
       == ("Automotive Technology - Honda, Professional Automotive Career Training (PACT)", "AS Degree")
       and C.cq_name_award("Certificate of Achievement in Automotive Technology")
