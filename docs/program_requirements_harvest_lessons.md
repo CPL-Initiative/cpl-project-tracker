@@ -608,3 +608,7 @@ the session. Proving a seeded a11y target by running it on the old file (it must
 - Loaded unchecked in the PDF wave: Clovis 100, Barstow 56, Calbright College Credit 11, Compton 73, Lassen 59,
   Mendocino 93, Woodland 64, Canyons 148, Los Angeles City 223, Harbor 107, Pierce 173, Valley 204, Santa Rosa 222,
   Shasta 103, Yuba 89; East Los Angeles 120 (run 39012416324).
+- **Skyline's sitemap is the catalog's whole history** (capture 39024299478, 78 minutes): 48,034 pages, 3,927 on
+  program paths, so the read stopped at 900 pages and still found 54 of 58, 19 of them by link search. The registry's
+  address is `/current/`; a sitemap page outside it is another year's catalog. The next reader change: keep sitemap
+  pages under the start address's path when the host serves more than one year.

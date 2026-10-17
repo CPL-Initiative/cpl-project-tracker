@@ -35,9 +35,13 @@ None. The routine started this firing and Sam did not write. Sheet 88's `replies
 1. **#2194:** merge it once `test` passes on its head (if S404 did not). Then dispatch
    `program-requirements-college.yml` from `main` with `step=display` (build `928577b30f0f`, about 50 minutes), and
    confirm the applied record on `main`.
-2. **Skyline's capture** (run 39024299478, branch `claude/s404-skyline`, capture only) ran past an hour. When it files,
-   read `capture_preview.json` (found, by_method, sitemap). If it found most programs, dispatch `step=read extract=1`
-   on the same branch (under the $40 go), then `step=load`, and merge it with its own display build.
+2. **Skyline** (branch `claude/s404-skyline`). Capture 39024299478 (78 minutes) found 54 of the 58 programs that list
+   courses (35 sitemap, 19 link search), but its sitemap lists 48,034 pages (3,927 on program paths) and the read
+   stopped at `MAX_PAGES` (900); 25 picks sit at coverage 0.5-0.8 and four programs share one page. Extraction was
+   dispatched at 11:43Z (`step=read extract=1`, about $5). When it files, read `summary.json`; load it (`step=load`)
+   if the checks hold near San Mateo's, then a wave PR with its own display build. **Reader fix to try first next
+   time:** keep a sitemap's pages under the registry address's own path (`/current/`), so past catalog years stop
+   filling the cap (lessons S404).
 3. **Sheet 88** ([link](https://claude.ai/artifact/WkqwWZTrLCXffyzrNihLfG), current, two cards). Read the `replies`
    store first. Card 1 covers the five registry rows; card 2 is the 49-row undo paste (handoff 404 item 2).
 
