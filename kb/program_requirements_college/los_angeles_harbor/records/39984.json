@@ -1,0 +1,393 @@
+{
+ "college": "Los Angeles Harbor College",
+ "control_number": "39984",
+ "shape": "adt",
+ "title": "Environmental Science",
+ "award": "A.S. T Degree",
+ "source_url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=103",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7634,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7634,
+    "output_tokens": 3141,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3141,
+  "output_tokens_details": {
+   "thinking_tokens": 1267
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09336,
+ "ms": 25436,
+ "seconds": 25.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 12,
+   "share": 0.917,
+   "missing": [
+    "ECON1"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 7,
+   "codes": [
+    "CHEM102",
+    "ECONC2001",
+    "MATH265",
+    "MATH265S",
+    "PHYSICS37",
+    "PHYSICS38",
+    "STAT1"
+   ],
+   "flagged": [
+    "CHEM102",
+    "ECONC2001",
+    "MATH265",
+    "MATH265S",
+    "PHYSICS37",
+    "PHYSICS38",
+    "STAT1"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    41.0,
+    44.0
+   ],
+   "stated": [
+    41.0,
+    44.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     62.0,
+     65.0
+    ],
+    "stated": [
+     62.0,
+     65.0
+    ],
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Environmental Science - Associate in Science for Transfer (AS-T) Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 41,
+    "max": 44
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 62,
+    "max": 65
+   },
+   "ge_units": {
+    "min": 21,
+    "max": 21
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate knowledge of the physical, biological, and social sciences required to effectively address current environmental issues.",
+    "Have the ability to critically analyze the interplay between natural and social systems.",
+    "Demonstrate proficiency in quantitative methods, qualitative analysis, critical thinking, and written and oral communication needed to address current environmental challenges."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses - Option 1",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Core",
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "BIOLOGY 006",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOLOGY 007",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Core Courses - Option 2",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Core",
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "BIOLOGY 006",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 102",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "ENV SCI 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOLOGY 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOLOGY 006",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000E",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT 001",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 236",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 265",
+        "units": 5,
+        "catalog_addition": true
+       },
+       {
+        "code": "MATH 265S",
+        "units": 5,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "List B - Physics sequence (PHYSICS 006 and 007)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "List B Physics",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHYSICS 006",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSICS 007",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B - Physics sequence (PHYSICS 037 and 038)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "List B Physics",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PHYSICS 037",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYSICS 038",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECON 1",
+    "why": "printed as ECON C2001 (formerly ECON 001); recorded under the printed code"
+   }
+  ],
+  "notes": [
+   "List B is printed as 11-13 units total; it is split into the required ECON C2001 block plus two Physics sequence blocks (option_group 'List B Physics'), so stated is left null on each part. ECON C2001 (3) + PHYSICS 006/007 (8) = 11, or + PHYSICS 037/038 (10) = 13.",
+   "Required Core Courses heading prints 15 units; each option sums to 15, so 15 is recorded as stated on both option blocks.",
+   "ge_units records the table line 'Additional Cal-GETC Requirements* 21', which excludes 13 double-countable major units; the narrative states Cal-GETC is 34 semester units.",
+   "Degree total 62-65 = Major 41-44 + 21 additional Cal-GETC units.",
+   "BIOLOGY 007 is printed with the title 'General Biology I' (likely a typo for General Biology II).",
+   "ECON C2001 is the CCN code for ECON 1 in the closed list (catalog says formerly ECON 001); marked catalog_addition because the printed code is not in the closed list.",
+   "The sentence 'A minimum of 18 semester units' for the major is a general ADT rule, not this award's total; the major total 41-44 is printed in the table."
+  ]
+ },
+ "extracted_run": "39006381839"
+}

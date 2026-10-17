@@ -1,0 +1,427 @@
+{
+ "college": "Los Angeles Harbor College",
+ "control_number": "31028",
+ "shape": "adt",
+ "title": "Kinesiology",
+ "award": "A.A- T Degree",
+ "source_url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=117",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12223,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12223,
+    "output_tokens": 4093,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4093,
+  "output_tokens_details": {
+   "thinking_tokens": 1591
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.13075,
+ "ms": 31739,
+ "seconds": 32.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 23,
+   "listed": 43,
+   "share": 0.535,
+   "missing": [
+    "ANATOMY1",
+    "DANCETQ141",
+    "KIN10",
+    "KIN2171",
+    "KIN2172",
+    "KIN2291",
+    "KIN2292",
+    "KIN2451",
+    "KIN2452",
+    "KIN2501",
+    "KIN2502",
+    "KIN2511",
+    "KIN2512",
+    "KIN272",
+    "KIN3501",
+    "KIN3502",
+    "KINATH552",
+    "KINMAJ100",
+    "KINMAJ119",
+    "PHYSIOL1"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    6.0,
+    10.0
+   ],
+   "stated": [
+    20.0,
+    28.0
+   ],
+   "against": "program",
+   "why": [
+    "'Area 6: Team Sports' chooses courses but names no minimum"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Degrees and Certificates – KINESIOLOGY AND FITNESS",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 28
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 2,
+    "max": 19
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 21,
+    "max": 30
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Area 6: Team Sports",
+    "rule": "choose_courses",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "KIN 287-1",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 287-2",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 288-1",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 291-1",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 291-2",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN ATH 504",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN ATH 506",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN ATH 511",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN ATH 512",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN ATH 516",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN ATH 557",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN ATH 558",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST A: SELECT TWO COURSES FROM THE FOLLOWING: (AT LEAST 6 UNITS)",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000E",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT 001",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 065",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM 101",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSICS 006",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHYSICS 037",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HEALTH 012",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 001",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HEALTH 011",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANATOMY 1",
+    "why": "AA-T core likely on preceding page not in text; visible only in Certificate of Achievement section"
+   },
+   {
+    "code": "PHYSIOL 1",
+    "why": "AA-T core likely on preceding page not in text; visible only in Certificate of Achievement section"
+   },
+   {
+    "code": "KIN MAJ 100",
+    "why": "AA-T core likely on preceding page not in text; visible only in Certificate of Achievement section"
+   },
+   {
+    "code": "DANCETQ 141",
+    "why": "not in the text (likely in movement areas on preceding page)"
+   },
+   {
+    "code": "KIN 10",
+    "why": "named only in the Fitness Training Skills Certificate section"
+   },
+   {
+    "code": "KIN 217-1",
+    "why": "named only in the Certificate of Achievement section; earlier movement areas not in text"
+   },
+   {
+    "code": "KIN 217-2",
+    "why": "not in the text (likely in earlier movement areas on preceding page)"
+   },
+   {
+    "code": "KIN 229-1",
+    "why": "named only in the Certificate of Achievement section; earlier movement areas not in text"
+   },
+   {
+    "code": "KIN 229-2",
+    "why": "not in the text (likely in earlier movement areas on preceding page)"
+   },
+   {
+    "code": "KIN 245-1",
+    "why": "named only in the Certificate of Achievement section; earlier movement areas not in text"
+   },
+   {
+    "code": "KIN 245-2",
+    "why": "not in the text (likely in earlier movement areas on preceding page)"
+   },
+   {
+    "code": "KIN 250-1",
+    "why": "named only in the certificate sections; earlier movement areas not in text"
+   },
+   {
+    "code": "KIN 250-2",
+    "why": "named only in the Fitness Training Skills Certificate section; earlier movement areas not in text"
+   },
+   {
+    "code": "KIN 251-1",
+    "why": "named only in the Certificate of Achievement section; earlier movement areas not in text"
+   },
+   {
+    "code": "KIN 251-2",
+    "why": "not in the text (likely in earlier movement areas on preceding page)"
+   },
+   {
+    "code": "KIN 272",
+    "why": "named only in the Certificate of Achievement section; earlier movement areas not in text"
+   },
+   {
+    "code": "KIN 350-1",
+    "why": "named only in the Certificate of Achievement section; earlier movement areas not in text"
+   },
+   {
+    "code": "KIN 350-2",
+    "why": "not in the text (likely in earlier movement areas on preceding page)"
+   },
+   {
+    "code": "KIN ATH 552",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN MAJ 119",
+    "why": "named only in the Fitness Training Skills Certificate section"
+   }
+  ],
+  "notes": [
+   "The text begins mid-section on page 117 (catalog p.116): the AA-T heading, description, outcomes, required core and movement-based Areas 1-5 are on the preceding page and are not in the text. Only Area 6 and List A are recorded.",
+   "The selection rule for Area 6 (Team Sports) is cut off; it is likely part of a movement-based courses rule (e.g., one course from each of several areas), so minimum is left null.",
+   "Area 6 prints KIN ATH 504/506/511/512/516 at 4 units, while the state file stores 3; recorded as printed.",
+   "STAT C1000E is printed without units in List A.",
+   "List A states 'AT LEAST 6 UNITS'; recorded as stated 6.",
+   "ge_units records 'Additional Cal-GETC Requirements* 21-30', which excludes 4-13 double-countable major units; it is not the full Cal-GETC unit count. Catalog notes students with prior catalog rights may follow CSU GE Breadth or IGETC.",
+   "degree_elective_units records 'Additional CSU-Transferable Units 2-19'.",
+   "No program learning outcomes or careers for the AA-T appear in the visible text; the outcomes on page 118 belong to the Certificate of Achievement and are not recorded.",
+   "Section heading recorded from the page running header because the AA-T's own heading is not in the text."
+  ]
+ },
+ "extracted_run": "39006381839"
+}

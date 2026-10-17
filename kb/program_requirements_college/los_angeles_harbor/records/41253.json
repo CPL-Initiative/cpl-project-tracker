@@ -1,0 +1,150 @@
+{
+ "college": "Los Angeles Harbor College",
+ "control_number": "41253",
+ "shape": "noncredit",
+ "title": "COLLEGE READINESS:  READING SKILLS",
+ "award": "Noncredit program",
+ "source_url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=204",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7285,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7285,
+    "output_tokens": 859,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 859,
+  "output_tokens_details": {
+   "thinking_tokens": 335
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04632,
+ "ms": 8434,
+ "seconds": 8.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 0,
+   "listed": 3,
+   "share": 0.0,
+   "missing": [
+    "BSICSKL208CE",
+    "BSICSKL209CE",
+    "BSICSKL210CE"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record states no figure, but the catalog text names 0 units, 0 units, 0 units, 3 units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "BSICSKL 208CE: College Readiness: Reading Skills I",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BSICSKL 208CE",
+    "why": "Text has only its course description (54 Lec hours); no program requirements section"
+   },
+   {
+    "code": "BSICSKL 209CE",
+    "why": "Text has only its course description (54 Lec hours); no program requirements section"
+   },
+   {
+    "code": "BSICSKL 210CE",
+    "why": "Text has only its course description (54 Lec hours); no program requirements section"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog page 204) holds only course descriptions for BSICSKL 208CE, 209CE and 210CE, followed by BUS course descriptions. It prints no program section for the College Readiness: Reading Skills noncredit program, no requirement list and no total hours. No blocks were recorded. The section_heading is the first course heading on the page, not a program heading. A reviewer should find the program's requirements page elsewhere in the catalog.",
+   "Each of the three courses is printed as 'Total Hours: 54 Lec', '0 units', 'NC'. The program is noncredit, so measure is hours. No program total was printed, so total_units is null.",
+   "No program learning outcomes or careers are printed for this program in the text."
+  ]
+ },
+ "extracted_run": "39006381839"
+}

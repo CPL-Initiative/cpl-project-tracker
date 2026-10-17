@@ -1,0 +1,211 @@
+{
+ "college": "Los Angeles Harbor College",
+ "control_number": "43398",
+ "shape": "certificate",
+ "title": "Social Sciences Data Analytics",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=159",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6731,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6731,
+    "output_tokens": 1567,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1567,
+  "output_tokens_details": {
+   "thinking_tokens": 610
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05826,
+ "ms": 14652,
+ "seconds": 15.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "STAT185"
+   ],
+   "flagged": [
+    "STAT185"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    13.0,
+    16.0
+   ],
+   "stated": [
+    16.0,
+    16.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 13.0-16.0; the catalog states 16.0-16.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 7,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Social Sciences Data Analytics - Certificate of Achievement (CA)",
+   "measure": "units",
+   "total_units": {
+    "min": 16,
+    "max": 16
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will demonstrate the ability to clearly and concisely analyze and interpret data in oral and written form.",
+    "Students will be able to critically evaluate, analyze, and interpret data to produce actionable insights",
+    "Students will demonstrate informational and technological competences as applied to data analytics topics",
+    "Students will be able to demonstrate the ability to apply data analytical skills to real life cases and recognizing the complexity of social, cultural, and international diversity."
+   ],
+   "careers": [
+    "business",
+    "education",
+    "technology",
+    "healthcare",
+    "marketing",
+    "supply chain",
+    "government agencies"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "PSYCH 010",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYCH 066",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYCH 076",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYCH 098",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT 101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT 185",
+        "units": 1,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints codes with leading zeros (PSYCH 010, 066, 076, 098); these are read as the closed-list PSYCH 10, 66, 76, 98 and not flagged as catalog additions.",
+   "STAT 185 (Directed Study - Statistics) is not in the closed list. The catalog notes it is available for students who completed a 3-unit statistics course and need one additional unit on statistical software. It is recorded as an alternative to STAT 101 with 1 unit, inferred from 'one additional unit'. That path is a 3-unit statistics course plus STAT 185, not STAT 185 alone. A reviewer should check this reading.",
+   "The careers list holds the industries the description names ('high demand labor market skills relevant to several industries including...'). The social science disciplines listed for transfer pathways are not recorded as careers.",
+   "The PDF page header reads 'SOCIAL JUSTICE STUDIES', but the section itself is the Social Sciences Data Analytics Certificate of Achievement."
+  ]
+ },
+ "extracted_run": "39006381839"
+}
