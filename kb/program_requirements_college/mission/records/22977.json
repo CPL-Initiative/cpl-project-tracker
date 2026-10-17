@@ -1,0 +1,248 @@
+{
+ "college": "Mission College",
+ "control_number": "22977",
+ "shape": "certificate",
+ "title": "Entrepreneurship and Small Business",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://mission.elumenapp.com/catalog/24-25/program/entrepreneurship-and-small-business-ca-2024fa",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6748,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6748,
+    "output_tokens": 1821,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1821,
+  "output_tokens_details": {
+   "thinking_tokens": 704
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06341,
+ "ms": 21325,
+ "seconds": 21.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    16.0,
+    18.0
+   ],
+   "stated": [
+    16.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 16,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Entrepreneurship and Small Business CA",
+   "measure": "units",
+   "total_units": {
+    "min": 16,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify and describe the entrepreneurship fundamentals in the various disciplines (i.e. Finance, Marketing, Law..)",
+    "Develop a business plan before launching a business venture.",
+    "Evaluate the feasibility of a business concept in the current local market along with its strengths and weaknesses."
+   ],
+   "careers": [
+    "business owners",
+    "freelancers",
+    "consultants",
+    "the arts",
+    "accounting",
+    "hospitality",
+    "music",
+    "information technology",
+    "programming",
+    "Business Owner",
+    "Art Freelancer",
+    "Music Freelancer",
+    "Financial Service Professional",
+    "Business Development Lead",
+    "Software Programmer",
+    "B2B Account Manager"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 8,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "BUS054",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS114",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ACC061",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Electives",
+    "rule": "choose_units",
+    "minimum": 8,
+    "option_group": null,
+    "stated": {
+     "min": 8,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "ACC023",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS022",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS023",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS056A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WRK300GW",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The core's 'Complete BUS 114 or ACC 061' sub-list (printed with 0 units) is recorded as one core entry, BUS114 with ACC061 as its alternative; this accounts for the core's 8-9 unit range.",
+   "Catalog codes are printed without spaces or with leading zeros (BUS054, ACC061, ACC023, BUS022, BUS023); they match closed-list BUS 54, ACC 61, ACC 23, BUS 22, BUS 23.",
+   "Electives say 'Complete the following number of credits: 8-9'; minimum recorded as 8.",
+   "Source URL points to the 24-25 catalog while the requested catalog year is 2026-2027; reviewer should confirm the year.",
+   "Curriculum change notes mention ACC060 was deleted from the course block; it is not in the closed list or the requirements.",
+   "Careers include the areas named in the description ('the arts, accounting, hospitality, music, information technology and programming') read as career fields; reviewer may wish to confirm."
+  ]
+ },
+ "extracted_run": "39000023893"
+}

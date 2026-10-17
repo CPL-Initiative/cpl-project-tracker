@@ -1,0 +1,282 @@
+{
+ "college": "Mission College",
+ "control_number": "06305",
+ "shape": "degree",
+ "title": "Graphic Design",
+ "award": "A.S. Degree",
+ "source_url": "https://mission.elumenapp.com/catalog/24-25/program/graphic-design-ca-2026fa",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7683,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7683,
+    "output_tokens": 3108,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3108,
+  "output_tokens_details": {
+   "thinking_tokens": 1211
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09289,
+ "ms": 26584,
+ "seconds": 27.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 28,
+   "share": 0.0,
+   "missing": [
+    "ART31A",
+    "ART31B",
+    "ART33A",
+    "ART33B",
+    "ART34A",
+    "GDS10",
+    "GDS12",
+    "GDS15",
+    "GDS16",
+    "GDS35",
+    "GDS39A",
+    "GDS45",
+    "GDS46",
+    "GDS55A",
+    "GDS56",
+    "GDS61",
+    "GDS62",
+    "GDS64",
+    "GDS65",
+    "GDS67",
+    "GDS70",
+    "GDS72",
+    "GDS75",
+    "GDS76",
+    "GDS77",
+    "GDS80",
+    "GDS81",
+    "GDS85"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Graphic Design CA",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ART 031A",
+    "why": "named only in the Graphic Design CA (certificate) section; text has no A.S. section"
+   },
+   {
+    "code": "ART 033B",
+    "why": "named only in the Graphic Design CA (certificate) section; text has no A.S. section"
+   },
+   {
+    "code": "ART 034A",
+    "why": "named only in the Graphic Design CA (certificate) section; text has no A.S. section"
+   },
+   {
+    "code": "ART031B",
+    "why": "named only in the Graphic Design CA (certificate) section; text has no A.S. section"
+   },
+   {
+    "code": "ART033A",
+    "why": "named only in the Graphic Design CA (certificate) section; text has no A.S. section"
+   },
+   {
+    "code": "GDS 039A",
+    "why": "named only in the Graphic Design CA (certificate) section; text has no A.S. section"
+   },
+   {
+    "code": "GDS 055A",
+    "why": "named only in the Graphic Design CA (certificate) section; text has no A.S. section"
+   },
+   {
+    "code": "GDS 10",
+    "why": "named only in the Graphic Design CA (certificate) section; text has no A.S. section"
+   },
+   {
+    "code": "GDS 12",
+    "why": "named only in the Graphic Design CA (certificate) section; text has no A.S. section"
+   },
+   {
+    "code": "GDS 15",
+    "why": "named only in the Graphic Design CA (certificate) section; text has no A.S. section"
+   },
+   {
+    "code": "GDS 16",
+    "why": "named only in the Graphic Design CA (certificate) section; text has no A.S. section"
+   },
+   {
+    "code": "GDS 35",
+    "why": "named only in the Graphic Design CA (certificate) section; text has no A.S. section"
+   },
+   {
+    "code": "GDS 45",
+    "why": "named only in the Graphic Design CA (certificate) section; text has no A.S. section"
+   },
+   {
+    "code": "GDS 46",
+    "why": "named only in the Graphic Design CA (certificate) section; text has no A.S. section"
+   },
+   {
+    "code": "GDS 56",
+    "why": "named only in the Graphic Design CA (certificate) section; text has no A.S. section"
+   },
+   {
+    "code": "GDS 61",
+    "why": "named only in the Graphic Design CA (certificate) section; text has no A.S. section"
+   },
+   {
+    "code": "GDS 62",
+    "why": "named only in the Graphic Design CA (certificate) section; text has no A.S. section"
+   },
+   {
+    "code": "GDS 64",
+    "why": "named only in the Graphic Design CA (certificate) section; text has no A.S. section"
+   },
+   {
+    "code": "GDS 65",
+    "why": "named only in the Graphic Design CA (certificate) section; text has no A.S. section"
+   },
+   {
+    "code": "GDS 67",
+    "why": "named only in the Graphic Design CA (certificate) section; text has no A.S. section"
+   },
+   {
+    "code": "GDS 70",
+    "why": "named only in the Graphic Design CA (certificate) section; text has no A.S. section"
+   },
+   {
+    "code": "GDS 72",
+    "why": "named only in the Graphic Design CA (certificate) section; text has no A.S. section"
+   },
+   {
+    "code": "GDS 75",
+    "why": "named only in the Graphic Design CA (certificate) section; text has no A.S. section"
+   },
+   {
+    "code": "GDS 76",
+    "why": "named only in the Graphic Design CA (certificate) section; text has no A.S. section"
+   },
+   {
+    "code": "GDS 77",
+    "why": "named only in the Graphic Design CA (certificate) section; text has no A.S. section"
+   },
+   {
+    "code": "GDS 80",
+    "why": "named only in the Graphic Design CA (certificate) section; text has no A.S. section"
+   },
+   {
+    "code": "GDS 81",
+    "why": "named only in the Graphic Design CA (certificate) section; text has no A.S. section"
+   },
+   {
+    "code": "GDS 85",
+    "why": "named only in the Graphic Design CA (certificate) section; text has no A.S. section"
+   }
+  ],
+  "notes": [
+   "The source text is the Graphic Design Certificate of Achievement (CA) page only (URL ends 'graphic-design-ca-2026fa'); it prints no A.S. Degree section, so no requirements, totals, outcomes or careers are recorded for the A.S. A reviewer should locate the A.S. page.",
+   "For reference, the CA section prints: total 33; 'Core Requirements' (Total 30, complete all): GDS035, GDS045, GDS061, GDS062, GDS064, GDS065, GDS070, GDS055A, GDS067, GDS085 (3 each); 'Elective' (Total 3, complete 3 credits) from ART031A, ART031B, ART033A, ART033B, ART034A, GDS010, GDS011, GDS012, GDS015, GDS016, GDS022, GDS032, GDS039A, GDS046, GDS056, GDS067, GDS069, GDS072, GDS073, GDS074, GDS075, GDS076, GDS077, GDS080, GDS081 (3 each). GDS011, GDS022, GDS032, GDS069, GDS073 and GDS074 are not in the closed list. GDS067 appears in both the core and the elective list.",
+   "The CA page prints a Program Outcomes list of six bullets (apparently an old and a revised set of three) and career opportunities; these were not copied because they belong to the certificate page, not an A.S. section.",
+   "Source URL path says catalog '24-25' while the record is for 2026-2027 (slug says 2026fa); the page also includes internal curriculum-change notes (courses added GDS 010, 016, 075; deleted GDS 047, GDS 084)."
+  ]
+ },
+ "extracted_run": "39000023893"
+}

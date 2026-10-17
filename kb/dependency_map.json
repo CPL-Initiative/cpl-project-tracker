@@ -5,7 +5,7 @@
   "rpcs": 39,
   "edge_functions": 8,
   "file_datasets": 651,
-  "external_services": 180,
+  "external_services": 181,
   "consumers": 443,
   "workflows": 53,
   "data_js_files": 69,
@@ -307,6 +307,18 @@
      "direction": "read",
      "how": "url",
      "line": 8
+    }
+   ],
+   "main_committers": []
+  },
+  "external:<host>": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_requirements_college.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 1185
     }
    ],
    "main_committers": []
@@ -19796,7 +19808,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 1941
+     "line": 1959
     }
    ],
    "main_committers": []
@@ -19808,7 +19820,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 2028
+     "line": 2046
     }
    ],
    "main_committers": []

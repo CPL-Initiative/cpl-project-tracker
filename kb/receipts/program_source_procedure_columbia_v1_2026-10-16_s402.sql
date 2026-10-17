@@ -1,0 +1,10 @@
+-- S402 SkyToyon, 2026-10-16: Columbia College's procedure record v1 (the registry row held none), naming the
+-- eLumen host, the read, extraction, load and display runs, and what the read left open.
+-- Through program_source_procedure_set, expecting 'none'; the history trigger files the prior row.
+-- Rollback: program_source_registry_history holds the prior row.
+-- Written by kb/_program_source_procedure_v1.py.
+-- Applied 2026-10-17 ~03:2xZ through execute_sql, after display build d4ac5009f5aa's apply (run 38984134036): was_md5 none, md5 438c20c10cfe5d0386719b44e2414164.
+
+select public.program_source_procedure_set('Columbia College', $proc${"v": 1, "college": "Columbia College", "hosts": [{"host": "gocolumbia.elumenapp.com", "access": "open", "platform": "elumen", "note": "Columbia College's eLumen catalog (2026-2027)."}], "steps": [{"run": "38979390136", "date": "2026-10-16", "plan": "program-requirements-college.yml, read with extraction (the catalog sweep; Sam's standing go of 2026-10-14, up to $40 a college)", "found": "101 pages in 103 loads (7 min). 82 of 82 programs with a course list found a page (82 from the catalog's own menu); 82 extracted with function v10 for $5.46; 30 pass the machine checks."}, {"run": "38982450635", "date": "2026-10-16", "plan": "program-requirements-college.yml, load", "found": "82 records inserted unchecked (receipt kb/receipts/program_requirement_records_college_columbia_38982450635.json)."}, {"run": "38984134036", "date": "2026-10-16", "plan": "program-requirements-college.yml, display", "found": "Display build d4ac5009f5aa applied from main; the applied record beside the receipt is the rollback."}], "open": [{"question": "52 of 82 records fail the arithmetic check, 0 the coverage check, 0 the invented-course check and 0 the outcomes check.", "next": "Measure the Major only and degree-figure gaps per page layout, then write this catalog's reconcile steps (kb/program_requirements_reconcile.json) before any record is confirmed."}]}$proc$::jsonb,
+  'S402 SkyToyon, 2026-10-16 (the catalog sweep: read 38979390136, load 38982450635, display 38984134036)',
+  'none');

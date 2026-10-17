@@ -1,0 +1,47 @@
+{
+ "college": "Mission College",
+ "programs": 124,
+ "with_closed_list": 113,
+ "found": 108,
+ "extracted": 108,
+ "errors": 0,
+ "passed_machine_checks": 85,
+ "failed": {
+  "coverage": 5,
+  "invented": 2,
+  "arithmetic": 22,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 7.56,
+ "cost_per_program": 0.07,
+ "not_found": [
+  {
+   "control_number": "18067",
+   "title": "Liberal Arts: Arts & Humanities",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://mission.elumenapp.com/catalog/24-25/program/liberal-arts-arts-and-humanities-aa-2025fa",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2064,
+     "content": 2064,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  }
+ ],
+ "run": "39000023893"
+}

@@ -1,0 +1,376 @@
+{
+ "college": "Mission College",
+ "control_number": "16375",
+ "shape": "degree",
+ "title": "Hospitality Management",
+ "award": "A.S. Degree",
+ "source_url": "https://mission.elumenapp.com/catalog/24-25/program/hospitality-management-as-2026fa",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7532,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7532,
+    "output_tokens": 2535,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2535,
+  "output_tokens_details": {
+   "thinking_tokens": 702
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08083,
+ "ms": 19945,
+ "seconds": 20.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 26,
+   "share": 0.5,
+   "missing": [
+    "FDR105",
+    "FDR106A",
+    "FDR106B",
+    "FDR72",
+    "FDR73",
+    "FDR74",
+    "FDR78",
+    "FDR79",
+    "FDR81",
+    "FDR82",
+    "FDR86",
+    "HMT75",
+    "HMT76"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "FDR153",
+    "FDR153L",
+    "FDR96",
+    "WRK300HM"
+   ],
+   "flagged": [
+    "FDR153",
+    "FDR153L",
+    "FDR96",
+    "WRK300HM"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    48.5,
+    48.5
+   ],
+   "stated": [
+    48.5,
+    48.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Hospitality Management AS",
+   "measure": "units",
+   "total_units": {
+    "min": 48.5,
+    "max": 48.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "AA/AS General Education, IGETC or CSU GE-Breadth",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Effectively train, motivate, and lead a diverse team toward efficient and effective operational practices through the application of transformational management/leadership concepts.",
+    "Reach sound operational conclusions and decisions based on an “audit trail” analysis of source documentation.",
+    "Use forecasting techniques to translate strategic business objectives and financial documents into effective and efficient daily operational processes.",
+    "Conceptualize the functions of primary departments/work stations within full-service food service, lodging and other hospitality operations.",
+    "Demonstrate the ability to lead a diverse work crew in the cost effective execution of a food service and/or hospitality environment.",
+    "Perform necessary product and labor cost calculations, profit and loss statement development and analysis, periodic and perpetual inventory calculations and summaries; and be able to derive effective operational conclusions from the aforementioned data."
+   ],
+   "careers": [
+    "supervision and management in the commercial food service industry in both front and back of the house operations",
+    "resort and lodging management",
+    "private and corporate event planning",
+    "management and leadership in managed services"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 44.5,
+     "max": 44.5
+    },
+    "courses": [
+     {
+      "code": "FDR050",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FDR051A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FDR051B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FDR054",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FDR055",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FDR056",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FDR058",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FDR059",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FDR060",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FDR075",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FDR076",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FDR153",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FDR153L",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "WRK300HM",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Electives",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "FDR096",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "NTR015",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CAP062B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "FDR 105",
+    "why": "not in the text"
+   },
+   {
+    "code": "FDR 106A",
+    "why": "not in the text"
+   },
+   {
+    "code": "FDR 106B",
+    "why": "not in the text"
+   },
+   {
+    "code": "FDR 72",
+    "why": "not in the text"
+   },
+   {
+    "code": "FDR 73",
+    "why": "not in the text"
+   },
+   {
+    "code": "FDR 74",
+    "why": "not in the text"
+   },
+   {
+    "code": "FDR 78",
+    "why": "not in the text"
+   },
+   {
+    "code": "FDR 79",
+    "why": "not in the text"
+   },
+   {
+    "code": "FDR 81",
+    "why": "not in the text"
+   },
+   {
+    "code": "FDR 82",
+    "why": "not in the text"
+   },
+   {
+    "code": "FDR 86",
+    "why": "not in the text"
+   },
+   {
+    "code": "HMT 75",
+    "why": "not in the text"
+   },
+   {
+    "code": "HMT 76",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "Catalog prints 'FDR 153 and FDR 153L must be taken concurrently' as a 0-unit line in the core; recorded as a note, not a course.",
+   "Core block sums to 44.5 as printed; major total 48.5 = 44.5 core + 4 electives.",
+   "Degree requirements list 'Completion of 60 semester units' as a general graduation condition; not recorded as degree_total since no award-specific degree total is printed with GE units.",
+   "Curriculum change section notes FDR 153 and FDR 153L added and FDR 053 deleted from the course block; the closed list does not yet reflect the additions.",
+   "Source URL path references the 24-25 catalog while the program record is labeled 2026fa; reviewer may confirm catalog year.",
+   "Closed-list codes are written with spaces (e.g., FDR 50) while the catalog prints FDR050; treated as the same courses."
+  ]
+ },
+ "extracted_run": "39000023893"
+}

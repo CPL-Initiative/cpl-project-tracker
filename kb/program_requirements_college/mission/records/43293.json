@@ -1,0 +1,187 @@
+{
+ "college": "Mission College",
+ "control_number": "43293",
+ "shape": "noncredit",
+ "title": "Computer Graphics",
+ "award": "Noncredit program",
+ "source_url": "https://mission.elumenapp.com/catalog/24-25/program/computer-graphics-cc-2026fa",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6466,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6466,
+    "output_tokens": 938,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 938,
+  "output_tokens_details": {
+   "thinking_tokens": 281
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04462,
+ "ms": 8032,
+ "seconds": 8.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 3,
+   "share": 0.667,
+   "missing": [
+    "GDS884"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "GDS810"
+   ],
+   "flagged": [
+    "GDS810"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    270.0,
+    270.0
+   ],
+   "stated": [
+    270.0,
+    270.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Computer Graphics CC",
+   "measure": "hours",
+   "total_units": {
+    "min": 270,
+    "max": 270
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Create original illustrations using vector, bitmap, and 3D software.",
+    "Design photo-based compositions, applying the principles of art and design.",
+    "Critique visual compositions, applying principles of constructive criticism to analyze and evaluate creative solutions."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Program Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 270,
+     "max": 270
+    },
+    "courses": [
+     {
+      "code": "GDS810",
+      "units": 90,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GDS862",
+      "units": 90,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GDS864",
+      "units": 90,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "GDS 884",
+    "why": "not in the requirements; the page's curriculum changes say it was deleted from the course block"
+   }
+  ],
+  "notes": [
+   "Noncredit program counted in hours: 'Complete the following number of hours: 270'; each course printed with 90 hours.",
+   "GDS810 (Artificial Intelligence and Creativity) is not in the closed list; the curriculum changes section says it was added to the course block, replacing GDS 884.",
+   "The 'Career Options' paragraph names other degrees and certificates (Graphic Design, Web Design, User Experience Design, Game Design, Fine Art) as next steps rather than careers, so no careers were recorded; a reviewer may wish to check.",
+   "Source URL path contains '24-25' while the program identifier says 2026fa; confirm the catalog year."
+  ]
+ },
+ "extracted_run": "39000023893"
+}

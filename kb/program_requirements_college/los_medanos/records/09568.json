@@ -1,0 +1,298 @@
+{
+ "college": "Los Medanos College",
+ "control_number": "09568",
+ "shape": "degree",
+ "title": "Instrumentation Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://lmc.elumenapp.com/catalog/26-27/program/instrumentation-technology-associate-of-science-degree-as-spring-2022",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6974,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6974,
+    "output_tokens": 1921,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1921,
+  "output_tokens_details": {
+   "thinking_tokens": 510
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06632,
+ "ms": 15780,
+ "seconds": 19.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 15,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "ETEC9"
+   ],
+   "flagged": [
+    "ETEC9"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    44.0,
+    44.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the blocks and general education sum to 44.0-44.0; the catalog prints 60.0-60.0 for the degree"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     44.0,
+     44.0
+    ],
+    "stated": [
+     44.0,
+     44.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Instrumentation Technology Associate of Science Degree (AS)",
+   "measure": "units",
+   "total_units": {
+    "min": 44,
+    "max": 44
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Gain entry-level or mid-level employment in the electrical or instrumentation field.",
+    "Troubleshoot, analyze, operate, repair, and install electrical systems equipment",
+    "Communicate the technical status of equipment in writing and verbally; be able to work and communicate with teams.",
+    "Safely use electrical or instrumentation test equipment.",
+    "Demonstrate the operational concepts of equipment and technology used in the electrical or instrumentation field.",
+    "Demonstrate the skills and knowledge necessary to take and pass certification exams for career advancement in electrical or instrumentation fields."
+   ],
+   "careers": [
+    "electrical technician",
+    "instrumentation technician",
+    "electricians",
+    "instrument technicians"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses for Major",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 44,
+     "max": 44
+    },
+    "courses": [
+     {
+      "code": "CHEM006",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETEC009",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETEC010",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETEC012",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETEC020",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETEC022",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETEC024",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETEC030",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETEC032",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETEC034",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETEC050",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETEC052",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETEC056",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETEC058",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETEC059",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS015",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page prints 'Units: 60.0 units' at the top for the award; recorded as degree_total. The major total of 44 is printed under both 'Courses for Major' and 'Required Courses for Major' (nested headings), recorded once as a single block; course units sum to 44.",
+   "No general education pattern is named beyond the award label 'A.S. Degree Local'; ge_pattern and ge_units left null. The remaining 16 units are presumably local GE/electives but the page does not state this.",
+   "ETEC009 (ETEC Mathematics, 4 units) is not in the closed list; recorded as catalog addition.",
+   "Catalog prints ETEC056 as 'Code for Instrument Application'; closed list title is 'Codes for Instrument Application'.",
+   "Program description mentions graduating with a certificate of achievement and two specializations (electrical technician or instrumentation technician); the degree page lists a single required course list.",
+   "Careers taken from the program description: specialization names and the roles it trains for (electricians, instrument technicians)."
+  ]
+ },
+ "extracted_run": "39001267800"
+}

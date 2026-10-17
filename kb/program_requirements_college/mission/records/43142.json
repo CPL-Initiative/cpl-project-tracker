@@ -1,0 +1,260 @@
+{
+ "college": "Mission College",
+ "control_number": "43142",
+ "shape": "certificate",
+ "title": "Communication Studies CA",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://mission.elumenapp.com/catalog/24-25/program/communication-studies-ca-2025fa",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7088,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7088,
+    "output_tokens": 1569,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1569,
+  "output_tokens_details": {
+   "thinking_tokens": 503
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05973,
+ "ms": 13288,
+ "seconds": 13.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 10,
+   "share": 0.9,
+   "missing": [
+    "COM8"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "COM18",
+    "COM18H"
+   ],
+   "flagged": [
+    "COM18",
+    "COM18H"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    9.0,
+    9.0
+   ],
+   "stated": [
+    9.0,
+    9.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 16,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Communication Studies CA",
+   "measure": "units",
+   "total_units": {
+    "min": 9,
+    "max": 9
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Students will identify, explain, and apply theories about the communication process as they relate to a variety of audiences and contexts.",
+    "Students will create and implement effective communication strategies to orally deliver a message appropriate to the context.",
+    "Students will identify, analyze, and evaluate their own verbal and nonverbal messages as well as those of others in a variety of contexts.",
+    "Students will research, analyze, and critically evaluate reference material to support the development of communication competence."
+   ],
+   "careers": [
+    "broadcasting",
+    "consumer affairs",
+    "public relations",
+    "advertising",
+    "education",
+    "marketing",
+    "government",
+    "human resources",
+    "law",
+    "community/international affairs",
+    "politics negotiations",
+    "journalism",
+    "customer service",
+    "recreation",
+    "management",
+    "recruiting"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Requirements",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COM012",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COM014",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COM015",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COM 018",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COM 018H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "COM 020",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COM 020H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COM080",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COM090A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COM 8",
+    "why": "not in the text; curriculum changes note says COM 008 & 008H were removed from the course block and replaced by COM 018 & 018H"
+   }
+  ],
+  "notes": [
+   "The core block reads 'Complete the following number of credits: 9' over the whole list, recorded as choose 9 units; the 'Complete X or Y' rows are recorded as single entries with alternatives.",
+   "COM 018 and COM 018H are not in the closed list (added per the Program Curriculum Changes section); recorded as catalog additions.",
+   "Source URL references the 24-25 catalog and a 2025fa program version, while the requested catalog year is 2026-2027; reviewer should confirm the year.",
+   "Careers are taken from 'Career/Transfer Opportunities', which speaks of 'A degree in Communication Studies' generally."
+  ]
+ },
+ "extracted_run": "39000023893"
+}
