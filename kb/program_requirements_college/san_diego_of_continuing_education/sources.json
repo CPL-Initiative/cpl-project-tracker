@@ -1,0 +1,3345 @@
+[
+ {
+  "control_number": "24067",
+  "title": "Medical Office Assistant Program",
+  "award": null,
+  "shape": "other",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24080",
+  "title": "Introduction to Diesel Technology Program",
+  "award": null,
+  "shape": "other",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24081",
+  "title": "Quick Service Technician",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO600",
+   "AUTO601"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=45",
+   "title": "Automotive",
+   "h1": "Automotive",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    45
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 3336
+ },
+ {
+  "control_number": "24082",
+  "title": "Sewn Product Business Program",
+  "award": null,
+  "shape": "other",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24085",
+  "title": "Graphic Reproduction Program",
+  "award": null,
+  "shape": "other",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24086",
+  "title": "Multimedia Specialist Program",
+  "award": null,
+  "shape": "other",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24100",
+  "title": "Network Support Specialist Certificate Program",
+  "award": null,
+  "shape": "other",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24101",
+  "title": "Network Security Specialist Certificate Program",
+  "award": null,
+  "shape": "other",
+  "method": "pdf_pages",
+  "coverage": 0.6,
+  "codes_found": [
+   "COMP600",
+   "COMP601",
+   "COMP602"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=74",
+   "title": "Information Technology",
+   "h1": "Information Technology",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    74
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 5,
+  "text_chars": 4166
+ },
+ {
+  "control_number": "24124",
+  "title": "Data Entry Specialist Program",
+  "award": null,
+  "shape": "other",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 7,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24141",
+  "title": "Web Specialist Program",
+  "award": null,
+  "shape": "other",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 10,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24143",
+  "title": "Nursing Assistant Training Program",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HLTH605",
+   "HLTH606"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=67",
+   "title": "Healthcare Careers",
+   "h1": "Healthcare Careers",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    67,
+    68
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 8743
+ },
+ {
+  "control_number": "24148",
+  "title": "Cisco Certified Network Associate (CCNA)",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMP600",
+   "COMP601",
+   "COMP602"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=74",
+   "title": "Information Technology",
+   "h1": "Information Technology",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    74
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 4166
+ },
+ {
+  "control_number": "24165",
+  "title": "Web Server Maintenance and Security Program",
+  "award": null,
+  "shape": "other",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24204",
+  "title": "Food Preparation for Health Care Professionals Program",
+  "award": null,
+  "shape": "other",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24206",
+  "title": "General Educational Development Program",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24236",
+  "title": "Child Development 1",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 0.75,
+  "codes_found": [
+   "HMDV675",
+   "HMDV678",
+   "HMDV699"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=118",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    118,
+    119
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 4,
+  "text_chars": 8341
+ },
+ {
+  "control_number": "24237",
+  "title": "Clothing Construction Program",
+  "award": null,
+  "shape": "other",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CLTX620",
+   "CLTX625",
+   "CLTX630",
+   "CLTX635"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=54",
+   "title": "Clothing & Textiles",
+   "h1": "Clothing & Textiles",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    54
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 4,
+  "text_chars": 4468
+ },
+ {
+  "control_number": "24238",
+  "title": "Child Development 2 Program",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 0.75,
+  "codes_found": [
+   "HMDV675",
+   "HMDV678",
+   "HMDV699"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=118",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    118,
+    119
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 4,
+  "text_chars": 8341
+ },
+ {
+  "control_number": "24240",
+  "title": "Appliance/Refrigeration/Air Conditioning Repair Program",
+  "award": null,
+  "shape": "other",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24241",
+  "title": "Auto Body and Paint Technician Program",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO411",
+   "AUTO411A"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=43",
+   "title": "San Diego College of Continuing eDuCation • 2026-2027          43",
+   "h1": "San Diego College of Continuing eDuCation • 2026-2027          43",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    43
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 3025
+ },
+ {
+  "control_number": "24244",
+  "title": "Steel Fabrication Program",
+  "award": null,
+  "shape": "other",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24278",
+  "title": "Administrative Assistant Program",
+  "award": null,
+  "shape": "other",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24279",
+  "title": "Culinary Arts Program",
+  "award": null,
+  "shape": "other",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "FDNT671",
+   "FDNT672",
+   "FDNT673",
+   "FDNT674",
+   "FDNT675",
+   "FDNT676"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=72",
+   "title": "Hospitality & Culinary Arts",
+   "h1": "Hospitality & Culinary Arts",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    72
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 6,
+  "text_chars": 2264
+ },
+ {
+  "control_number": "24306",
+  "title": "Network Systems Specialist Program",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "COMP608"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=76",
+   "title": "Information Technology",
+   "h1": "Information Technology",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    76,
+    77
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 8433
+ },
+ {
+  "control_number": "24308",
+  "title": "Web Server Program",
+  "award": null,
+  "shape": "other",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24309",
+  "title": "Account Clerk Program",
+  "award": null,
+  "shape": "other",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24313",
+  "title": "Front Desk/Office Assistant Program",
+  "award": null,
+  "shape": "other",
+  "method": "pdf_pages",
+  "coverage": 0.6,
+  "codes_found": [
+   "OFSY527",
+   "OFSY541",
+   "OFSY555",
+   "OFSY575",
+   "OFSY580",
+   "OFSY596"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=131",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    131,
+    132
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 10,
+  "text_chars": 8329
+ },
+ {
+  "control_number": "24316",
+  "title": "Structural Welding Program",
+  "award": null,
+  "shape": "other",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24317",
+  "title": "Pipe Welding/Pipe Fitting Program",
+  "award": null,
+  "shape": "other",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24330",
+  "title": "Electronic and Soldering Technology Program",
+  "award": null,
+  "shape": "other",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24332",
+  "title": "Automotive Technician Program",
+  "award": null,
+  "shape": "other",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO507",
+   "AUTO507A"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=44",
+   "title": "Automotive",
+   "h1": "Automotive",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    44
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 2364
+ },
+ {
+  "control_number": "24333",
+  "title": "Combined Upholstery Trades Program",
+  "award": null,
+  "shape": "other",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO414",
+   "AUTO415",
+   "HMID535"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=45",
+   "title": "Automotive",
+   "h1": "Automotive",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    45
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 3336
+ },
+ {
+  "control_number": "24335",
+  "title": "Machine Shop Program",
+  "award": null,
+  "shape": "other",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24336",
+  "title": "Professional Bakeshop Skills Program",
+  "award": null,
+  "shape": "other",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24337",
+  "title": "Pre-Vocational English as a Second Language (VESL) Program",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24419",
+  "title": "Secondary Education Completion Program",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 0.964,
+  "codes_found": [
+   "HSDP403",
+   "HSDP409",
+   "HSDP411",
+   "HSDP413A",
+   "HSDP413B",
+   "HSDP414",
+   "HSDP415",
+   "HSDP416",
+   "HSDP427",
+   "HSDP432",
+   "HSDP433",
+   "HSDP436",
+   "HSDP465",
+   "HSDP466",
+   "HSDP467A",
+   "HSDP467B",
+   "HSDP478",
+   "HSDP479",
+   "HSDP500",
+   "HSDP501",
+   "HSDP506",
+   "HSDP507",
+   "HSDP511",
+   "HSDP512",
+   "HSDP513",
+   "HSDP514",
+   "INTD500"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=70",
+   "title": "High School Diploma, High School Equivalency & Basic Skills",
+   "h1": "High School Diploma, High School Equivalency & Basic Skills",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    70,
+    71
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 28,
+  "text_chars": 6920
+ },
+ {
+  "control_number": "30382",
+  "title": "Air Conditioning and Heating Program",
+  "award": null,
+  "shape": "other",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30383",
+  "title": "Plumbing Program",
+  "award": null,
+  "shape": "other",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30772",
+  "title": "Beginning English as a Second Language Program",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA415",
+   "ESLA432",
+   "ESLA433"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=63",
+   "title": "English as a Second Language",
+   "h1": "English as a Second Language",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    63
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 3026
+ },
+ {
+  "control_number": "30773",
+  "title": "Intermediate English as a Second Language Program",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA415",
+   "ESLA434",
+   "ESLA435"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=65",
+   "title": "English as a Second Language",
+   "h1": "English as a Second Language",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    65
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 3808
+ },
+ {
+  "control_number": "30789",
+  "title": "Advanced English as a Second Language Program",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA415",
+   "ESLA436",
+   "ESLA437"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=62",
+   "title": "English as a Second Language",
+   "h1": "English as a Second Language",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    62,
+    63
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 6010
+ },
+ {
+  "control_number": "30790",
+  "title": "Brake/Suspension and Light Service Technician Program",
+  "award": null,
+  "shape": "other",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO507",
+   "AUTO507A"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=44",
+   "title": "Automotive",
+   "h1": "Automotive",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    44
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 2364
+ },
+ {
+  "control_number": "31482",
+  "title": "Electronic Technician Program",
+  "award": null,
+  "shape": "other",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELRN451",
+   "ELRN452"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=25",
+   "title": "San Diego College of Continuing eDuCation • 2026-2027          25",
+   "h1": "San Diego College of Continuing eDuCation • 2026-2027          25",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    25
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 2017
+ },
+ {
+  "control_number": "31483",
+  "title": "Shielded Metal Arc Welding",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "INDT601",
+   "INDT602"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=80",
+   "title": "Skilled & Technical Trades",
+   "h1": "Skilled & Technical Trades",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    80
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 4916
+ },
+ {
+  "control_number": "31484",
+  "title": "Gas Metal and Flux-Cored Arc Welding",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "INDT605",
+   "INDT606"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=78",
+   "title": "Skilled & Technical Trades",
+   "h1": "Skilled & Technical Trades",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    78,
+    79
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 7395
+ },
+ {
+  "control_number": "31485",
+  "title": "Pipe Welding Program",
+  "award": null,
+  "shape": "other",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "31486",
+  "title": "Gas Tungsten Arc Welding",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "INDT621",
+   "INDT622"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=79",
+   "title": "Skilled & Technical Trades",
+   "h1": "Skilled & Technical Trades",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    79
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 4288
+ },
+ {
+  "control_number": "31487",
+  "title": "Metal Fabrication Program",
+  "award": null,
+  "shape": "other",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "INDT631",
+   "INDT632"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=80",
+   "title": "Skilled & Technical Trades",
+   "h1": "Skilled & Technical Trades",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    80
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 4916
+ },
+ {
+  "control_number": "32671",
+  "title": "Project Management Program",
+  "award": null,
+  "shape": "other",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSN621",
+   "BUSN622"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=48",
+   "title": "Business, Accounting and Entrepreneurship",
+   "h1": "Business, Accounting and Entrepreneurship",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    48,
+    49
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 7378
+ },
+ {
+  "control_number": "33135",
+  "title": "Front End Web Developer I",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM670",
+   "COMM671"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=59",
+   "title": "Digital Media & Programming",
+   "h1": "Digital Media & Programming",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    59
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 4060
+ },
+ {
+  "control_number": "33136",
+  "title": "Front End Web Developer II",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM672",
+   "COMM673",
+   "COMM674",
+   "COMM675"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=59",
+   "title": "Digital Media & Programming",
+   "h1": "Digital Media & Programming",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    59
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 4,
+  "text_chars": 4060
+ },
+ {
+  "control_number": "33403",
+  "title": "Network Technician",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMP600",
+   "COMP601"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=76",
+   "title": "Information Technology",
+   "h1": "Information Technology",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    76
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 4190
+ },
+ {
+  "control_number": "33749",
+  "title": "Desktop Operating Systems",
+  "award": null,
+  "shape": "other",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33750",
+  "title": "Server Essentials Program",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "COMP641"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=76",
+   "title": "Information Technology",
+   "h1": "Information Technology",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    76
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 4190
+ },
+ {
+  "control_number": "33783",
+  "title": "Desktop Technician",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMP608",
+   "COMP612"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=76",
+   "title": "Information Technology",
+   "h1": "Information Technology",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    76,
+    77
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 4,
+  "text_chars": 8433
+ },
+ {
+  "control_number": "33867",
+  "title": "Security Essentials",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMP608",
+   "COMP609"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=77",
+   "title": "Information Technology",
+   "h1": "Information Technology",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    77
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 4,
+  "text_chars": 4241
+ },
+ {
+  "control_number": "33869",
+  "title": "Linux Server Administration Program",
+  "award": null,
+  "shape": "other",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMP641",
+   "COMP643"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=76",
+   "title": "Information Technology",
+   "h1": "Information Technology",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    76,
+    77
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 8433
+ },
+ {
+  "control_number": "33870",
+  "title": "Culinary Arts Advanced Program",
+  "award": null,
+  "shape": "other",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33871",
+  "title": "Culinary Arts and Sciences Program",
+  "award": null,
+  "shape": "other",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 1,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33949",
+  "title": "Small Business Planning Program",
+  "award": null,
+  "shape": "other",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35139",
+  "title": "Small Business Growth Program",
+  "award": null,
+  "shape": "other",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSN632",
+   "BUSN633",
+   "BUSN634"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=49",
+   "title": "Business, Accounting and Entrepreneurship",
+   "h1": "Business, Accounting and Entrepreneurship",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    49
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 3828
+ },
+ {
+  "control_number": "35140",
+  "title": "Windows System Administration",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "COMP640"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=76",
+   "title": "Information Technology",
+   "h1": "Information Technology",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    76
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 4190
+ },
+ {
+  "control_number": "35141",
+  "title": "Web Server Technologies and Applications Program",
+  "award": null,
+  "shape": "other",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35222",
+  "title": "Mobile Application Development Program",
+  "award": null,
+  "shape": "other",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35837",
+  "title": "Office Assistant I",
+  "award": null,
+  "shape": "other",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35838",
+  "title": "Office Assistant II",
+  "award": null,
+  "shape": "other",
+  "method": "pdf_pages",
+  "coverage": 0.6,
+  "codes_found": [
+   "OFSY505",
+   "OFSY506",
+   "OFSY575"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=47",
+   "title": "Business, Accounting and Entrepreneurship",
+   "h1": "Business, Accounting and Entrepreneurship",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    47
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 5,
+  "text_chars": 4016
+ },
+ {
+  "control_number": "35839",
+  "title": "Fashion Retail Business Program",
+  "award": null,
+  "shape": "other",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35841",
+  "title": "Service Advisor",
+  "award": null,
+  "shape": "other",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO508A"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=45",
+   "title": "Automotive",
+   "h1": "Automotive",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    45
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 1,
+  "text_chars": 3336
+ },
+ {
+  "control_number": "35965",
+  "title": "Virtual Datacenter",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35966",
+  "title": "Administrative Professional: Entry Level Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "OFSY528",
+   "OFSY541",
+   "OFSY596"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=46",
+   "title": "Business, Accounting and Entrepreneurship",
+   "h1": "Business, Accounting and Entrepreneurship",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    46
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 3525
+ },
+ {
+  "control_number": "35967",
+  "title": "Administrative Professional: Technical Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMP628",
+   "OFSY527",
+   "OFSY575"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=47",
+   "title": "Business, Accounting and Entrepreneurship",
+   "h1": "Business, Accounting and Entrepreneurship",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    47
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 4016
+ },
+ {
+  "control_number": "35968",
+  "title": "Administrative Professional: Communication Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "OFSY505",
+   "OFSY506",
+   "OFSY507"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=47",
+   "title": "Business, Accounting and Entrepreneurship",
+   "h1": "Business, Accounting and Entrepreneurship",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    47
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 4016
+ },
+ {
+  "control_number": "36588",
+  "title": "ESL Conversation Program",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA450",
+   "ESLA451"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=64",
+   "title": "English as a Second Language",
+   "h1": "English as a Second Language",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    64
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 3981
+ },
+ {
+  "control_number": "36887",
+  "title": "ESL Pronunciation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA452",
+   "ESLA453"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=65",
+   "title": "English as a Second Language",
+   "h1": "English as a Second Language",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    65
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 3808
+ },
+ {
+  "control_number": "36895",
+  "title": "Cybersecurity Analyst",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMP655",
+   "COMP656",
+   "COMP657"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=75",
+   "title": "Information Technology",
+   "h1": "Information Technology",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    75
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 4235
+ },
+ {
+  "control_number": "36896",
+  "title": "Cyber Threat and Response",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMP655",
+   "COMP656"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=75",
+   "title": "Information Technology",
+   "h1": "Information Technology",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    75
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 4235
+ },
+ {
+  "control_number": "37546",
+  "title": "ESL Grammar",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA454",
+   "ESLA455"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=65",
+   "title": "English as a Second Language",
+   "h1": "English as a Second Language",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    65
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 3808
+ },
+ {
+  "control_number": "37828",
+  "title": "ESL Reading",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA456",
+   "ESLA457"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=65",
+   "title": "English as a Second Language",
+   "h1": "English as a Second Language",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    65
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 3808
+ },
+ {
+  "control_number": "38005",
+  "title": "Health Unit Coordinator",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HLTH612",
+   "HLTH613"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=66",
+   "title": "Healthcare Careers",
+   "h1": "Healthcare Careers",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    66
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 3889
+ },
+ {
+  "control_number": "38411",
+  "title": "Visual and Vector Design",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM660",
+   "COMM661"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=27",
+   "title": "San Diego College of Continuing eDuCation • 2026-2027          27",
+   "h1": "San Diego College of Continuing eDuCation • 2026-2027          27",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    27
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 1815
+ },
+ {
+  "control_number": "38412",
+  "title": "Digital Design",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM660",
+   "COMM661",
+   "COMM662",
+   "COMM663"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=27",
+   "title": "San Diego College of Continuing eDuCation • 2026-2027          27",
+   "h1": "San Diego College of Continuing eDuCation • 2026-2027          27",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    27
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 4,
+  "text_chars": 1815
+ },
+ {
+  "control_number": "38413",
+  "title": "Digital Media 2",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38693",
+  "title": "Nurse Assistant in Behavioral Health Program",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HLTH605",
+   "HLTH611"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=68",
+   "title": "Healthcare Careers",
+   "h1": "Healthcare Careers",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    68
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 4558
+ },
+ {
+  "control_number": "38694",
+  "title": "Nurse Assistant Rehabilitative Program",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HLTH605",
+   "HLTH608"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=68",
+   "title": "Healthcare Careers",
+   "h1": "Healthcare Careers",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    68
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 4558
+ },
+ {
+  "control_number": "38695",
+  "title": "Nurse Assistant Acute Care Program",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HLTH605",
+   "HLTH607"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=67",
+   "title": "Healthcare Careers",
+   "h1": "Healthcare Careers",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    67,
+    68
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 8743
+ },
+ {
+  "control_number": "38720",
+  "title": "English as a Second Language Multilevel Citizenship",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA415",
+   "ESLA442"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=65",
+   "title": "English as a Second Language",
+   "h1": "English as a Second Language",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    65
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 3808
+ },
+ {
+  "control_number": "39186",
+  "title": "Programming with Python",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMP660",
+   "COMP661"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=61",
+   "title": "Digital Media & Programming",
+   "h1": "Digital Media & Programming",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    61
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 3861
+ },
+ {
+  "control_number": "39187",
+  "title": "Data Management with Python",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMP662",
+   "COMP663"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=58",
+   "title": "Digital Media & Programming",
+   "h1": "Digital Media & Programming",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    58
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 4230
+ },
+ {
+  "control_number": "39640",
+  "title": "Personal Care Assistant/Caregiver Program",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HLTH609",
+   "HLTH610"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=69",
+   "title": "High School Diploma, High School Equivalency & Basic Skills",
+   "h1": "High School Diploma, High School Equivalency & Basic Skills",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    69
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 4129
+ },
+ {
+  "control_number": "39700",
+  "title": "AWS Cloud Solutions",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMP671",
+   "COMP672"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=73",
+   "title": "Information Technology",
+   "h1": "Information Technology",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    73,
+    74,
+    75
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 11881
+ },
+ {
+  "control_number": "39774",
+  "title": "Motion and Video Production",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM667",
+   "COMM668"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=27",
+   "title": "San Diego College of Continuing eDuCation • 2026-2027          27",
+   "h1": "San Diego College of Continuing eDuCation • 2026-2027          27",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    27
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 1815
+ },
+ {
+  "control_number": "39924",
+  "title": "Child Care Provider Training",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HMDV575A",
+   "HMDV575B"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=50",
+   "title": "Child Development",
+   "h1": "Child Development",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    50,
+    51,
+    52
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 10565
+ },
+ {
+  "control_number": "39925",
+  "title": "Child Home Care Training",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HMDV575A",
+   "HMDV575B",
+   "HMDV584"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=50",
+   "title": "Child Development",
+   "h1": "Child Development",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    50,
+    51,
+    52
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 10565
+ },
+ {
+  "control_number": "39926",
+  "title": "Early Learner Development",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HMDV582",
+   "HMDV583"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=50",
+   "title": "Child Development",
+   "h1": "Child Development",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    50
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 3833
+ },
+ {
+  "control_number": "39927",
+  "title": "Early Learner Enrichment",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HMDV586",
+   "HMDV591"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=26",
+   "title": "26          San Diego College of Continuing eDuCation •2026-2027",
+   "h1": "26          San Diego College of Continuing eDuCation •2026-2027",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    26
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 1984
+ },
+ {
+  "control_number": "39928",
+  "title": "Infant and Toddler Development",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HMDV580",
+   "HMDV581"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=51",
+   "title": "Child Development",
+   "h1": "Child Development",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    51
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 4162
+ },
+ {
+  "control_number": "39929",
+  "title": "Infant and Toddler Enrichment",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HMDV585",
+   "HMDV590"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=51",
+   "title": "Child Development",
+   "h1": "Child Development",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    51
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 4162
+ },
+ {
+  "control_number": "39930",
+  "title": "Infant Care Specialist",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HMDV575A",
+   "HMDV575B",
+   "HMDV580"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=51",
+   "title": "Child Development",
+   "h1": "Child Development",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    51,
+    52
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 6730
+ },
+ {
+  "control_number": "39936",
+  "title": "Web Design and Content Management",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM666"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=62",
+   "title": "English as a Second Language",
+   "h1": "English as a Second Language",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    62
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 1,
+  "text_chars": 2982
+ },
+ {
+  "control_number": "40118",
+  "title": "Baking and Pastry Arts I",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "FDNT661",
+   "FDNT662"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=29",
+   "title": "San Diego College of Continuing eDuCation • 2026-2027          29",
+   "h1": "San Diego College of Continuing eDuCation • 2026-2027          29",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    29
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 1979
+ },
+ {
+  "control_number": "40119",
+  "title": "Baking and Pastry Arts II",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "FDNT663",
+   "FDNT664"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=29",
+   "title": "San Diego College of Continuing eDuCation • 2026-2027          29",
+   "h1": "San Diego College of Continuing eDuCation • 2026-2027          29",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    29
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 1979
+ },
+ {
+  "control_number": "40120",
+  "title": "Culinary Nutrition",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "FDNT618",
+   "FDNT619"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=73",
+   "title": "Information Technology",
+   "h1": "Information Technology",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    73
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 3476
+ },
+ {
+  "control_number": "40123",
+  "title": "Introduction to Hospitality Industry",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "FDNT501",
+   "INTD500"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=73",
+   "title": "Information Technology",
+   "h1": "Information Technology",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    73
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 3476
+ },
+ {
+  "control_number": "40469",
+  "title": "Beginning High Prevocational ESL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA426A",
+   "ESLA426B"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=64",
+   "title": "English as a Second Language",
+   "h1": "English as a Second Language",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    64
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 3981
+ },
+ {
+  "control_number": "40470",
+  "title": "Beginning Low Prevocational ESL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA425A",
+   "ESLA425B"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=63",
+   "title": "English as a Second Language",
+   "h1": "English as a Second Language",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    63
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 3026
+ },
+ {
+  "control_number": "40471",
+  "title": "Intermediate High Prevocational ESL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA428A",
+   "ESLA428B"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=66",
+   "title": "Healthcare Careers",
+   "h1": "Healthcare Careers",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    66
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 3889
+ },
+ {
+  "control_number": "40472",
+  "title": "Advanced Prevocational ESL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA429A",
+   "ESLA429B"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=63",
+   "title": "English as a Second Language",
+   "h1": "English as a Second Language",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    63
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 3026
+ },
+ {
+  "control_number": "40474",
+  "title": "High School Equivalency Preparation 1",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HSEP400",
+   "HSEP402",
+   "HSEP404"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=70",
+   "title": "High School Diploma, High School Equivalency & Basic Skills",
+   "h1": "High School Diploma, High School Equivalency & Basic Skills",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    70
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 3677
+ },
+ {
+  "control_number": "40475",
+  "title": "High School Equivalency Preparation 2",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HSEP401",
+   "HSEP403",
+   "HSEP405",
+   "HSEP406",
+   "HSEP407"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=70",
+   "title": "High School Diploma, High School Equivalency & Basic Skills",
+   "h1": "High School Diploma, High School Equivalency & Basic Skills",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    70
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 5,
+  "text_chars": 3677
+ },
+ {
+  "control_number": "40516",
+  "title": "Advanced Project Management",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSN621",
+   "BUSN622",
+   "BUSN623"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=90",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    90
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 4278
+ },
+ {
+  "control_number": "40517",
+  "title": "School-Age Care and Leadership",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HMDV595",
+   "HMDV596"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=53",
+   "title": "Clothing & Textiles",
+   "h1": "Clothing & Textiles",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    53
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 4,
+  "text_chars": 3785
+ },
+ {
+  "control_number": "40532",
+  "title": "Intermediate Low Prevocational ESL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA427A",
+   "ESLA427B"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=113",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    113
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 4426
+ },
+ {
+  "control_number": "41451",
+  "title": "Intro to Digital Design Careers",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM550",
+   "COMM660"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=60",
+   "title": "Digital Media & Programming",
+   "h1": "Digital Media & Programming",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    60
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 3672
+ },
+ {
+  "control_number": "41468",
+  "title": "Introduction to Career and College Readiness",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "INTD500",
+   "INTD501"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=70",
+   "title": "High School Diploma, High School Equivalency & Basic Skills",
+   "h1": "High School Diploma, High School Equivalency & Basic Skills",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    70,
+    71
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 6920
+ },
+ {
+  "control_number": "41595",
+  "title": "Three to Five-Year-Old Specialty Curriculum",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HMDV593",
+   "HMDV594"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=53",
+   "title": "Clothing & Textiles",
+   "h1": "Clothing & Textiles",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    53
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 3785
+ },
+ {
+  "control_number": "41623",
+  "title": "Introduction to Child Care as a Career",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HMDV575A",
+   "INTD500"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=52",
+   "title": "Child Development",
+   "h1": "Child Development",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    52
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 2566
+ },
+ {
+  "control_number": "41626",
+  "title": "Full Stack Web Developer",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMP690",
+   "COMP691",
+   "COMP692",
+   "COMP693"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=60",
+   "title": "Digital Media & Programming",
+   "h1": "Digital Media & Programming",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    60
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 4,
+  "text_chars": 3672
+ },
+ {
+  "control_number": "42016",
+  "title": "English as a Second Language Citizenship",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA441",
+   "ESLA442"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=64",
+   "title": "English as a Second Language",
+   "h1": "English as a Second Language",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    64,
+    65
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 7791
+ },
+ {
+  "control_number": "42155",
+  "title": "Business Sales",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSN640",
+   "BUSN641"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=48",
+   "title": "Business, Accounting and Entrepreneurship",
+   "h1": "Business, Accounting and Entrepreneurship",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    48
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 3548
+ },
+ {
+  "control_number": "42360",
+  "title": "Introduction to Healthcare Careers",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HLTH609",
+   "INTD500"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=67",
+   "title": "Healthcare Careers",
+   "h1": "Healthcare Careers",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    67
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 4183
+ },
+ {
+  "control_number": "42361",
+  "title": "Instructional Aide",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HMDV571A",
+   "HMDV571B"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=120",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    120
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 4237
+ },
+ {
+  "control_number": "42646",
+  "title": "Digital Photography",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM650",
+   "COMM651",
+   "COMM652"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=59",
+   "title": "Digital Media & Programming",
+   "h1": "Digital Media & Programming",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    59
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 4060
+ },
+ {
+  "control_number": "44332",
+  "title": "Patternmaking for Product Development",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CLTX661",
+   "CLTX662",
+   "CLTX663"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=55",
+   "title": "Clothing & Textiles",
+   "h1": "Clothing & Textiles",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    55
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 4029
+ },
+ {
+  "control_number": "44333",
+  "title": "Product and Textile Surface Treatments: Embroidery",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CLTX641",
+   "CLTX642"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=56",
+   "title": "Clothing & Textiles",
+   "h1": "Clothing & Textiles",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    56
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 3960
+ },
+ {
+  "control_number": "44334",
+  "title": "Industrial Sewing and Manufacturing",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CLTX541",
+   "CLTX542"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=55",
+   "title": "Clothing & Textiles",
+   "h1": "Clothing & Textiles",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    55
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 4029
+ },
+ {
+  "control_number": "44335",
+  "title": "Product and Textile Surface Treatments: Digital Printing",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CLTX611",
+   "CLTX612",
+   "CLTX613"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=56",
+   "title": "Clothing & Textiles",
+   "h1": "Clothing & Textiles",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    56
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 3960
+ },
+ {
+  "control_number": "44336",
+  "title": "Sewn Product Construction Essentials",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CLTX511",
+   "CLTX512"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=29",
+   "title": "San Diego College of Continuing eDuCation • 2026-2027          29",
+   "h1": "San Diego College of Continuing eDuCation • 2026-2027          29",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    29
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 1979
+ },
+ {
+  "control_number": "44337",
+  "title": "Advanced Sewn Product Construction",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CLTX521",
+   "CLTX522"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=54",
+   "title": "Clothing & Textiles",
+   "h1": "Clothing & Textiles",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    54
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 4468
+ },
+ {
+  "control_number": "44338",
+  "title": "Pattern Fitting Technician",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CLTX531",
+   "CLTX532"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=55",
+   "title": "Clothing & Textiles",
+   "h1": "Clothing & Textiles",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    55
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 4029
+ },
+ {
+  "control_number": "44339",
+  "title": "Essential Digital Tools for Manufacturing",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CLTX601",
+   "CLTX602"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=54",
+   "title": "Clothing & Textiles",
+   "h1": "Clothing & Textiles",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    54
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 4468
+ },
+ {
+  "control_number": "44340",
+  "title": "CMS (Content Management Systems)",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM681",
+   "COMM682",
+   "COMM683"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=57",
+   "title": "Digital Media & Programming",
+   "h1": "Digital Media & Programming",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    57
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 3077
+ },
+ {
+  "control_number": "45374",
+  "title": "English as a Second Language Beginning Listening and Speaking",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA449",
+   "ESLA450"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=64",
+   "title": "English as a Second Language",
+   "h1": "English as a Second Language",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    64
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 3981
+ },
+ {
+  "control_number": "45439",
+  "title": "Artificial Intelligence for Business",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSN650",
+   "BUSN651"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=48",
+   "title": "Business, Accounting and Entrepreneurship",
+   "h1": "Business, Accounting and Entrepreneurship",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    48
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 3548
+ },
+ {
+  "control_number": "45440",
+  "title": "Programming with JavaScript",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMP648",
+   "COMP649"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=61",
+   "title": "Digital Media & Programming",
+   "h1": "Digital Media & Programming",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    61
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 3861
+ },
+ {
+  "control_number": "45441",
+  "title": "Cloud Solutions AWS-Specialty Machine Learning",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMP671",
+   "COMP672",
+   "COMP675"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=74",
+   "title": "Information Technology",
+   "h1": "Information Technology",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    74,
+    75
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 8403
+ },
+ {
+  "control_number": "45442",
+  "title": "Introduction to Software Development",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMP666",
+   "COMP667"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=60",
+   "title": "Digital Media & Programming",
+   "h1": "Digital Media & Programming",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    60
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 3672
+ },
+ {
+  "control_number": "45443",
+  "title": "Cloud Solutions AWS-Specialty Security",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMP671",
+   "COMP672",
+   "COMP673"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=75",
+   "title": "Information Technology",
+   "h1": "Information Technology",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    75
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 4235
+ },
+ {
+  "control_number": "45444",
+  "title": "Google for Business",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "OFSY531",
+   "OFSY532"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=49",
+   "title": "Business, Accounting and Entrepreneurship",
+   "h1": "Business, Accounting and Entrepreneurship",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    49
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 3828
+ },
+ {
+  "control_number": "46209",
+  "title": "School-Age Tutoring",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HMDV595",
+   "HMDV596",
+   "HMDV597"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=53",
+   "title": "Clothing & Textiles",
+   "h1": "Clothing & Textiles",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    53
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 3785
+ },
+ {
+  "control_number": "46210",
+  "title": "Textile Product Innovator",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CLTX506",
+   "CLTX507"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=57",
+   "title": "Digital Media & Programming",
+   "h1": "Digital Media & Programming",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    57
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 3077
+ },
+ {
+  "control_number": "46211",
+  "title": "AWS Cloud Operations Administration",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMP671",
+   "COMP672",
+   "COMP674"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=73",
+   "title": "Information Technology",
+   "h1": "Information Technology",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    73,
+    74,
+    75
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 3,
+  "text_chars": 11881
+ },
+ {
+  "control_number": "46212",
+  "title": "SolidWorks Design",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "INDT681",
+   "INDT682"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=81",
+   "title": "Skilled & Technical Trades",
+   "h1": "Skilled & Technical Trades",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    81
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 1319
+ },
+ {
+  "control_number": "46213",
+  "title": "Optical Technician",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HLTH614",
+   "HLTH615"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=69",
+   "title": "High School Diploma, High School Equivalency & Basic Skills",
+   "h1": "High School Diploma, High School Equivalency & Basic Skills",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    69
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 4129
+ },
+ {
+  "control_number": "46214",
+  "title": "Ophthalmic Assistant",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HLTH616",
+   "HLTH617"
+  ],
+  "source": {
+   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf#page=68",
+   "title": "Healthcare Careers",
+   "h1": "Healthcare Careers",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    68
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 2,
+  "text_chars": 4558
+ }
+]

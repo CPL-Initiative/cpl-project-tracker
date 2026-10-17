@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 144,
  "with_closed_list": 120,
- "started": "2026-10-17T12:58:58Z",
+ "started": "2026-10-17T13:07:55Z",
  "pdf": {
   "url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf",
   "access": "ok",
@@ -1248,7 +1248,7 @@
   "unproven": []
  },
  "loads": 1,
- "seconds": 34.2,
+ "seconds": 33.9,
  "found": 109,
  "by_method": {
   "no_closed_list": 24,
@@ -2598,5 +2598,5 @@
    }
   ]
  },
- "run": "39034614074"
+ "run": "39035224783"
 }
