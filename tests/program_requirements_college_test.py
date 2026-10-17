@@ -1586,6 +1586,26 @@ toc = ["Contents\nAccounting, Associate in Science ........ 4\nACCT 101 ACCT 102
 got = C.pdf_program_pages(toc, {"title": "Accounting", "award": "A.S. Degree"}, PDF_COURSES)
 check(got and got["pages"][0] == 4, "a contents line with a dot leader is no heading: %r" % (got and got["pages"]))
 
+# East LA prints the control number in each heading, and lists every online course on pages up front.
+EL = ["Online courses\nACCT 101 ACCT 102 ACCT 210 BUS 120 BUS 001 ENGLISH 101",
+      "Business Department\nAccounting (Academic Plan E013343D) This certificate prepares students for work "
+      "in an accounting office and runs well past the heading's length on one line as pypdf prints it.\n"
+      "ACCT 101 4\nACCT 102 4\nACCT 210 3",
+      "Accountancy (Academic Plan E013344D)\nACCT 101 4\nACCT 102 4\nACCT 210 3\nBUS 120 3"]
+got = C.pdf_program_pages(EL, {"title": "Accounting", "award": "Certificate of Achievement",
+                               "control_number": "13343"}, PDF_COURSES)
+check(got and got["pages"][0] == 2 and got["control_number_printed"]
+      and got["text"].startswith("[page 2]\nAccounting (Academic Plan E013343D)"),
+      "the page printing the program's control number wins over a course list and a fuller page: %r"
+      % ((got and (got["pages"], got["text"][:60])),))
+check(C.pdf_control_number("Plan E013344D", "13343") == -1 and C.pdf_control_number("call 133430", "13343") == -1
+      and C.pdf_control_number("(Academic Plan E013343D)", "13343") > 0,
+      "a control number matches whole, never inside another number")
+long_head = ["Medical Assistant, Associate in Science Degree (Academic Plan X) A medical assistant interacts with "
+             "doctors, nurses and technicians in a long run-on line as pypdf prints it\nACCT 101 ACCT 102"]
+check(C.pdf_heading(long_head[0], {"title": "Medical Assistant", "award": "A.S. Degree"})[:2] == (1.0, True),
+      "a heading run into its paragraph is read from the line's opening")
+
 
 class StepReader:
     pass

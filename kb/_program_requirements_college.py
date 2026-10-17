@@ -1567,6 +1567,7 @@ def ac_urls(reader, start: str, cache: dict, report: dict) -> list[str]:
 PDF_HEADING_CHARS = 120   # a line this long or shorter can be a program's heading
 PDF_HEADING_BONUS = 5     # codes a heading naming title and award is worth
 PDF_RUN_PAGES = 3         # pages after the start a program's list may continue onto
+PDF_CN_BONUS = 10         # codes the program's own control number printed on the page is worth
 PDF_LEADER = re.compile(r"\.{4,}|(?:\. ){4,}")   # a table of contents' dot leader
 
 
@@ -1577,9 +1578,11 @@ def pdf_heading(text: str, program: dict) -> tuple[float, bool, int]:
     pats = P.AWARD_WORDS.get(P.award_kind(program.get("award")), [])
     best, pos = (0.0, False, -1), 0
     for line in (text or "").split("\n"):
-        low = line.strip().lower()
+        # pypdf runs a heading into the paragraph after it ("Medical Assistant, Associate in Science
+        # Degree (Academic Plan E002456C) A medical assistant interacts..."), so a line's opening is read.
+        low = line.strip().lower()[:PDF_HEADING_CHARS]
         # A contents line ("Architectural Design ....... 2") names a program it does not hold.
-        if low and len(low) <= PDF_HEADING_CHARS and tokens and not PDF_LEADER.search(low):
+        if low and tokens and not PDF_LEADER.search(low):
             share = sum(1 for w in tokens if re.search(r"\b" + re.escape(w) + r"\b", low)) / len(tokens)
             award = any(re.search(a, low) for a in pats)
             if (share, award) > best[:2]:
@@ -1588,21 +1591,34 @@ def pdf_heading(text: str, program: dict) -> tuple[float, bool, int]:
     return best
 
 
+def pdf_control_number(text: str, cn: str | None) -> int:
+    """Where the page prints the program's state control number, or -1. East LA
+    heads each program "Basic Police Academy Preparation (Academic Plan E013343D)"
+    for control number 13343, and no other page names that plan."""
+    if not cn or not text:
+        return -1
+    m = re.search(r"(?:\b[A-Z]0*|plan\W{0,3}0*|control (?:number|no\.?)\W{0,3}0*)" + re.escape(cn.lstrip("0"))
+                  + r"(?:[A-Z]\b|(?![0-9A-Za-z]))", text, re.I)
+    return m.start() if m else -1
+
+
 def pdf_program_pages(pages: list[str], program: dict, courses: list[dict]) -> dict | None:
     """The program's run of pages in a whole-catalog PDF: the page naming the
     most listed codes, worth PDF_HEADING_BONUS more when a heading line names
     the whole title and the award, then the pages after it while they still
     name listed codes. The text starts at that heading, so an A.S. and the
     certificate printed after it each open on their own name."""
-    best, best_score, best_head = None, 0.0, (0.0, False, -1)
+    best, best_score, best_head, best_cn = None, 0.0, (0.0, False, -1), -1
     for i, txt in enumerate(pages):
         found = P.find_codes(txt, courses)
         if not found:
             continue
         head = pdf_heading(txt, program)
-        s = len(found) + (PDF_HEADING_BONUS if head[0] == 1.0 and head[1] else 0)
+        at = pdf_control_number(txt, program.get("control_number"))
+        s = (len(found) + (PDF_HEADING_BONUS if head[0] == 1.0 and head[1] else 0)
+             + (PDF_CN_BONUS if at >= 0 else 0))
         if s > best_score:
-            best, best_score, best_head = i, s, head
+            best, best_score, best_head, best_cn = i, s, head, at
     if best is None:
         return None
     run = [best]
@@ -1613,7 +1629,10 @@ def pdf_program_pages(pages: list[str], program: dict, courses: list[dict]) -> d
     parts = []
     for n, i in enumerate(run):
         txt = pages[i]
-        if n == 0 and best_head[0] == 1.0 and best_head[2] > 0:
+        if n == 0 and best_cn >= 0:
+            # From the start of the line that prints the control number: the heading.
+            txt = txt[txt.rfind("\n", 0, best_cn) + 1:]
+        elif n == 0 and best_head[0] == 1.0 and best_head[2] > 0:
             txt = txt[best_head[2]:]
         parts.append("[page %d]\n%s" % (i + 1, txt))
     text = "\n\n".join(parts)[:P.TEXT_CAP]
@@ -1621,7 +1640,7 @@ def pdf_program_pages(pages: list[str], program: dict, courses: list[dict]) -> d
     first = (text.split("\n", 2) + ["", ""])[1].strip()
     return {"pages": [i + 1 for i in run], "text": text, "found": found,
             "coverage": P.coverage(found, courses), "heading": first[:PDF_HEADING_CHARS],
-            "named": bool(best_head[0] == 1.0 and best_head[1])}
+            "named": bool(best_head[0] == 1.0 and best_head[1]), "control_number_printed": best_cn >= 0}
 
 
 def pdf_start(reader, reg: dict, cache: dict, report: dict) -> tuple[str | None, int]:
@@ -1678,6 +1697,7 @@ def pdf_records(reader, college: str, programs: list[dict], reg: dict, cache: di
                 # A capture-only read files the preview alone: each pick's opening shows whether it is the program's page.
                 report["pdf"].setdefault("picks", []).append(
                     {"control_number": prog["control_number"], "pages": got["pages"], "named": got["named"],
+                     "cn_printed": got["control_number_printed"],
                      "coverage": round(got["coverage"], 3), "opens": re.sub(r"\s+", " ", got["text"][:220])})
             else:
                 rec = source_record(college, prog, reg, None, "not_found")
