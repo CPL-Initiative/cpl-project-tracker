@@ -1,0 +1,191 @@
+{
+ "college": "Yuba College",
+ "control_number": "20201",
+ "shape": "certificate",
+ "title": "Engine Performance/Drivability and Tune-Up",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf#page=68",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11602,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11602,
+    "output_tokens": 1291,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1291,
+  "output_tokens_details": {
+   "thinking_tokens": 557
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07223,
+ "ms": 11429,
+ "seconds": 11.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 10,
+   "share": 0.0,
+   "missing": [
+    "AUTO21",
+    "AUTO50B",
+    "AUTO5236",
+    "AUTO5244",
+    "AUTO5261C",
+    "AUTO5261D",
+    "AUTO5281",
+    "AUTO5333",
+    "AUTO5355",
+    "AUTO95"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "ENGINE PERFORMANCE/ DRIVEABILITY AND TUNE-UP CERTIFICATE OF ACHIEVEMENT",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate the ability to perform advanced automotive tune-up problems pertaining to fuelignition, emission, computers, wiring systems, 5-gas analyzers and combustion, and mechanical engine diagnostics.",
+    "Demonstrate a knowledge of current automotive electrical systems and advanced fuel systems with emphasis on diagnosis, service and repair."
+   ],
+   "careers": [
+    "smog technician",
+    "tune-up technician",
+    "general repair"
+   ]
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AUTO 21",
+    "why": "certificate course list cut off in text; named only in the A.S. section"
+   },
+   {
+    "code": "AUTO 50B",
+    "why": "certificate course list cut off in text; named only in the A.S. and other sections"
+   },
+   {
+    "code": "AUTO 52.36",
+    "why": "certificate course list cut off in text; named only in the A.S. and other sections"
+   },
+   {
+    "code": "AUTO 52.44",
+    "why": "certificate course list cut off in text; named only in the A.S. and other sections"
+   },
+   {
+    "code": "AUTO 52.61C",
+    "why": "certificate course list cut off in text; named only in the A.S. section"
+   },
+   {
+    "code": "AUTO 52.61D",
+    "why": "certificate course list cut off in text; named only in the A.S. section"
+   },
+   {
+    "code": "AUTO 52.81",
+    "why": "certificate course list cut off in text; named only in the A.S. and other sections"
+   },
+   {
+    "code": "AUTO 53.33",
+    "why": "certificate course list cut off in text; named only in the A.S. and other sections"
+   },
+   {
+    "code": "AUTO 53.55",
+    "why": "certificate course list cut off in text; named only in the A.S. and other sections"
+   },
+   {
+    "code": "AUTO 95",
+    "why": "certificate course list cut off in text; named only in the A.S. and other sections"
+   }
+  ],
+  "notes": []
+ },
+ "extracted_run": "39006517642"
+}
