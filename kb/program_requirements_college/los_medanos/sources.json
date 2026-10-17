@@ -1,0 +1,3361 @@
+[
+ {
+  "control_number": "01528",
+  "title": "Accounting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS109",
+   "BUS160",
+   "BUS170",
+   "BUS18",
+   "BUS185",
+   "BUS186",
+   "BUS187",
+   "BUS27",
+   "BUS294",
+   "BUS59"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/accounting-associate-of-science-as-degree-fall-2025",
+   "title": "Accounting Associate of Science (AS) Degree",
+   "h1": "Accounting Associate of Science (AS) Degree",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1852
+ },
+ {
+  "control_number": "01530",
+  "title": "Small Business Operations",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART15",
+   "BUS109",
+   "BUS160",
+   "BUS18",
+   "BUS185",
+   "BUS186",
+   "BUS27",
+   "BUS294",
+   "BUS35",
+   "BUS35A",
+   "BUS35B",
+   "BUS35C",
+   "BUS58",
+   "BUS59",
+   "CNT30",
+   "CNT31",
+   "JOURN100",
+   "MANGT50",
+   "MANGT60",
+   "MANGT65",
+   "MANGT70"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/small-business-operations-associate-of-science-degree-as-fall-2026",
+   "title": "Small Business Operations Associate of Science Degree (AS)",
+   "h1": "Small Business Operations Associate of Science Degree (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 2692
+ },
+ {
+  "control_number": "01531",
+  "title": "Management and Supervision: Business",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.882,
+  "codes_found": [
+   "BUS109",
+   "BUS18",
+   "BUS27",
+   "BUS294",
+   "BUS35",
+   "BUS35A",
+   "BUS35B",
+   "BUS35C",
+   "BUS58",
+   "BUS59",
+   "MANGT50",
+   "MANGT60",
+   "MANGT65",
+   "MANGT70",
+   "MANGT75"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/management-supervision-associate-of-science-degree-as-fall-2026",
+   "title": "Management & Supervision Associate of Science Degree (AS)",
+   "h1": "Management & Supervision Associate of Science Degree (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.667
+   }
+  },
+  "listed": 17,
+  "text_chars": 2156
+ },
+ {
+  "control_number": "01536",
+  "title": "Journalsim",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART15",
+   "ART20",
+   "ART25",
+   "ART50",
+   "ART54",
+   "ART57",
+   "ART58",
+   "ART72",
+   "ART75",
+   "CNT30",
+   "CNT31",
+   "CNT32",
+   "COMM120",
+   "ENGL111",
+   "JOURN100",
+   "JOURN110",
+   "JOURN115A",
+   "JOURN115B",
+   "JOURN115C",
+   "JOURN130",
+   "JOURN131",
+   "JOURN132",
+   "JOURN160"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/journalism-associate-of-arts-degree-aa-fall-2025",
+   "title": "Journalism Associate of Arts Degree (AA)",
+   "h1": "Journalism Associate of Arts Degree (AA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.0
+   }
+  },
+  "listed": 23,
+  "text_chars": 2635
+ },
+ {
+  "control_number": "01540",
+  "title": "Electrical Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ETEC10",
+   "ETEC12",
+   "ETEC20",
+   "ETEC22",
+   "ETEC24",
+   "ETEC30",
+   "ETEC32",
+   "ETEC34",
+   "ETEC40",
+   "ETEC42",
+   "ETEC44",
+   "ETEC46",
+   "PHYS15"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/electrical-technology-associate-in-science-degree-as-spring-2022",
+   "title": "Electrical Technology Associate in Science Degree (AS)",
+   "h1": "Electrical Technology Associate in Science Degree (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 2392
+ },
+ {
+  "control_number": "01544",
+  "title": "Welding Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WELD10",
+   "WELD11",
+   "WELD15",
+   "WELD16",
+   "WELD20",
+   "WELD21",
+   "WELD31",
+   "WELD33",
+   "WELD35",
+   "WELD40",
+   "WELD41",
+   "WELD43"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/welding-associate-of-science-degree-as-spring-2022",
+   "title": "Welding Associate of Science Degree (AS)",
+   "h1": "Welding Associate of Science Degree (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.5
+   }
+  },
+  "listed": 12,
+  "text_chars": 2055
+ },
+ {
+  "control_number": "01546",
+  "title": "Art: Fine Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART10",
+   "ART11",
+   "ART16",
+   "ART17",
+   "ART18",
+   "ART20",
+   "ART21",
+   "ART30",
+   "ART38",
+   "ART40",
+   "ART41",
+   "ART47",
+   "ART5",
+   "ART6",
+   "ART60",
+   "ART62",
+   "ART63",
+   "ART64",
+   "ART65",
+   "ART72",
+   "ART74",
+   "ART75",
+   "ART8",
+   "ART9"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/fine-arts-associate-of-arts-degree-aa-fall-2026",
+   "title": "Fine Arts Associate of Arts Degree (AA)",
+   "h1": "Fine Arts Associate of Arts Degree (AA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.667
+   }
+  },
+  "listed": 24,
+  "text_chars": 2220
+ },
+ {
+  "control_number": "01547",
+  "title": "Music",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSIC13A",
+   "MUSIC13B",
+   "MUSIC14A",
+   "MUSIC14B",
+   "MUSIC16",
+   "MUSIC17",
+   "MUSIC18",
+   "MUSIC19",
+   "MUSIC20",
+   "MUSIC31",
+   "MUSIC32",
+   "MUSIC33A",
+   "MUSIC33B",
+   "MUSIC37",
+   "MUSIC40",
+   "MUSIC5",
+   "MUSIC52",
+   "MUSIC6",
+   "MUSIC60",
+   "MUSIC66",
+   "MUSIC74",
+   "MUSIC77",
+   "MUSIC81",
+   "MUSIC82"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/music-associate-of-arts-aa-summer-2022",
+   "title": "Music Associate of Arts (AA)",
+   "h1": "Music Associate of Arts (AA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 3447
+ },
+ {
+  "control_number": "01553",
+  "title": "Registered Nursing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "01554",
+  "title": "Vocational Nursing",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "VONUR10",
+   "VONUR11",
+   "VONUR12",
+   "VONUR13",
+   "VONUR14",
+   "VONUR15",
+   "VONUR16",
+   "VONUR17",
+   "VONUR18",
+   "VONUR19",
+   "VONUR21",
+   "VONUR4",
+   "VONUR5",
+   "VONUR6",
+   "VONUR7"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/vocational-nursing-certificate-of-achievement-coa-fall-2025",
+   "title": "Vocational Nursing Certificate of Achievement (COA)",
+   "h1": "Vocational Nursing Certificate of Achievement (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2381
+ },
+ {
+  "control_number": "01576",
+  "title": "Fire Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "COMMC1000",
+   "EMS10",
+   "EMS13",
+   "FIRE101",
+   "FIRE102",
+   "FIRE103",
+   "FIRE104",
+   "FIRE105",
+   "FIRE106",
+   "FIRE107",
+   "PHIL110"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/fire-technology-associate-of-science-degree-as-fall-2025",
+   "title": "Fire Technology Associate of Science Degree (AS)",
+   "h1": "Fire Technology Associate of Science Degree (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2068
+ },
+ {
+  "control_number": "01591",
+  "title": "Recording Arts",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "RA10",
+   "RA12",
+   "RA15",
+   "RA20",
+   "RA21",
+   "RA25",
+   "RA30",
+   "RA32",
+   "RA35",
+   "RA40"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/recording-arts-associate-in-arts-degree-aa-spring-2022",
+   "title": "Recording Arts Associate in Arts Degree (AA)",
+   "h1": "Recording Arts Associate in Arts Degree (AA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1552
+ },
+ {
+  "control_number": "09568",
+  "title": "Instrumentation Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM6",
+   "ETEC10",
+   "ETEC12",
+   "ETEC20",
+   "ETEC22",
+   "ETEC24",
+   "ETEC30",
+   "ETEC32",
+   "ETEC34",
+   "ETEC50",
+   "ETEC52",
+   "ETEC56",
+   "ETEC58",
+   "ETEC59",
+   "PHYS15"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/instrumentation-technology-associate-of-science-degree-as-spring-2022",
+   "title": "Instrumentation Technology Associate of Science Degree (AS)",
+   "h1": "Instrumentation Technology Associate of Science Degree (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2557
+ },
+ {
+  "control_number": "09569",
+  "title": "Art: Graphic Communications",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.96,
+  "codes_found": [
+   "ART10",
+   "ART12",
+   "ART14",
+   "ART15",
+   "ART16",
+   "ART17",
+   "ART18",
+   "ART25",
+   "ART250",
+   "ART47",
+   "ART5",
+   "ART50",
+   "ART54",
+   "ART57",
+   "ART58",
+   "ART6",
+   "ART72",
+   "ART74",
+   "ART75",
+   "ART8",
+   "ART84",
+   "ART85",
+   "ART86",
+   "ART9"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/graphic-communications-associate-of-arts-degree-aa-fall-2026",
+   "title": "Graphic Communications Associate of Arts Degree (AA)",
+   "h1": "Graphic Communications Associate of Arts Degree (AA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.667
+   }
+  },
+  "listed": 25,
+  "text_chars": 2265
+ },
+ {
+  "control_number": "11090",
+  "title": "Automotive Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO111",
+   "AUTO112",
+   "AUTO113",
+   "AUTO120",
+   "AUTO121",
+   "AUTO122",
+   "AUTO130",
+   "AUTO132",
+   "AUTO133",
+   "AUTO142",
+   "AUTO150"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/automotive-technology-associate-of-science-degree-as-spring-2022",
+   "title": "Automotive Technology Associate of Science Degree (AS)",
+   "h1": "Automotive Technology Associate of Science Degree (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2276
+ },
+ {
+  "control_number": "16971",
+  "title": "Process Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM6",
+   "CHEM7",
+   "PHYS15",
+   "PTEC10",
+   "PTEC12",
+   "PTEC15",
+   "PTEC24",
+   "PTEC25",
+   "PTEC27",
+   "PTEC35",
+   "PTEC44",
+   "PTEC45",
+   "PTEC48",
+   "PTEC6",
+   "PTEC60",
+   "PTEC7",
+   "PTEC9"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/process-technology-associate-of-science-degree-as-fall-2025",
+   "title": "Process Technology Associate of Science Degree (AS)",
+   "h1": "Process Technology Associate of Science Degree (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3159
+ },
+ {
+  "control_number": "17039",
+  "title": "Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM25",
+   "ENGIN10",
+   "ENGIN20",
+   "ENGIN22",
+   "ENGIN30",
+   "ENGIN36",
+   "ENGIN45",
+   "ENGIN46",
+   "MATH210",
+   "MATH220",
+   "MATH230",
+   "MATH240",
+   "MATH250",
+   "PHYS40",
+   "PHYS41"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/engineering-associate-of-science-degree-as-spring-2022",
+   "title": "Engineering Associate of Science Degree (AS)",
+   "h1": "Engineering Associate of Science Degree (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 3121
+ },
+ {
+  "control_number": "21902",
+  "title": "Accounting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS109",
+   "BUS160",
+   "BUS170",
+   "BUS18",
+   "BUS185",
+   "BUS186",
+   "BUS187",
+   "BUS27",
+   "BUS294",
+   "BUS59"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/accounting-certificate-of-achievement-fall-2025",
+   "title": "Accounting Certificate of Achievement",
+   "h1": "Accounting Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1807
+ },
+ {
+  "control_number": "21903",
+  "title": "Management and Supervision: Business",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.882,
+  "codes_found": [
+   "BUS109",
+   "BUS18",
+   "BUS27",
+   "BUS294",
+   "BUS35",
+   "BUS35A",
+   "BUS35B",
+   "BUS35C",
+   "BUS58",
+   "BUS59",
+   "MANGT50",
+   "MANGT60",
+   "MANGT65",
+   "MANGT70",
+   "MANGT75"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/management-supervision-certificate-of-achievement-coa-fall-2026",
+   "title": "Management & Supervision Certificate of Achievement (COA)",
+   "h1": "Management & Supervision Certificate of Achievement (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.667
+   }
+  },
+  "listed": 17,
+  "text_chars": 2128
+ },
+ {
+  "control_number": "21904",
+  "title": "Small Business Operations",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART15",
+   "BUS109",
+   "BUS160",
+   "BUS18",
+   "BUS185",
+   "BUS186",
+   "BUS27",
+   "BUS294",
+   "BUS35",
+   "BUS35A",
+   "BUS35B",
+   "BUS58",
+   "BUS59",
+   "CNT30",
+   "CNT31",
+   "JOURN100",
+   "MANGT50",
+   "MANGT60",
+   "MANGT65",
+   "MANGT70",
+   "MANGT75"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/small-business-operations-certificate-of-achievement-coa-fall-2026",
+   "title": "Small Business Operations Certificate of Achievement (COA)",
+   "h1": "Small Business Operations Certificate of Achievement (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 21,
+  "text_chars": 2666
+ },
+ {
+  "control_number": "21907",
+  "title": "Electrical Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ETEC10",
+   "ETEC12",
+   "ETEC20",
+   "ETEC22",
+   "ETEC24",
+   "ETEC30",
+   "ETEC32",
+   "ETEC34",
+   "ETEC40",
+   "ETEC42",
+   "ETEC44",
+   "ETEC46",
+   "PHYS15"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/electrical-technology-certificate-of-achievement-coa-spring-2022",
+   "title": "Electrical Technology Certificate of Achievement (COA)",
+   "h1": "Electrical Technology Certificate of Achievement (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 1990
+ },
+ {
+  "control_number": "21908",
+  "title": "Instrumentation Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM6",
+   "ETEC10",
+   "ETEC12",
+   "ETEC20",
+   "ETEC22",
+   "ETEC24",
+   "ETEC30",
+   "ETEC32",
+   "ETEC34",
+   "ETEC50",
+   "ETEC52",
+   "ETEC56",
+   "ETEC58",
+   "ETEC59",
+   "PHYS15"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/instrumentation-technology-certificate-of-achievement-coa-spring-2022",
+   "title": "Instrumentation Technology Certificate of Achievement (COA)",
+   "h1": "Instrumentation Technology Certificate of Achievement (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2583
+ },
+ {
+  "control_number": "21910",
+  "title": "Process Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM6",
+   "CHEM7",
+   "PHYS15",
+   "PTEC10",
+   "PTEC12",
+   "PTEC15",
+   "PTEC24",
+   "PTEC25",
+   "PTEC27",
+   "PTEC35",
+   "PTEC44",
+   "PTEC45",
+   "PTEC48",
+   "PTEC6",
+   "PTEC60",
+   "PTEC7",
+   "PTEC9"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/process-technology-certificate-of-achievement-coa-fall-2025",
+   "title": "Process Technology Certificate of Achievement (COA)",
+   "h1": "Process Technology Certificate of Achievement (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 2933
+ },
+ {
+  "control_number": "21911",
+  "title": "Automotive Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO111",
+   "AUTO112",
+   "AUTO113",
+   "AUTO120",
+   "AUTO121",
+   "AUTO122",
+   "AUTO130",
+   "AUTO132",
+   "AUTO133",
+   "AUTO142",
+   "AUTO150"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/automotive-technology-certificate-of-achievement-coa-spring-2022",
+   "title": "Automotive Technology Certificate of Achievement (COA)",
+   "h1": "Automotive Technology Certificate of Achievement (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 1743
+ },
+ {
+  "control_number": "21913",
+  "title": "Recording Arts",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "RA10",
+   "RA12",
+   "RA15",
+   "RA20",
+   "RA21",
+   "RA25",
+   "RA30",
+   "RA32",
+   "RA35",
+   "RA40"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/recording-arts-certificate-of-achievement-coa-spring-2022",
+   "title": "Recording Arts Certificate of Achievement (COA)",
+   "h1": "Recording Arts Certificate of Achievement (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1519
+ },
+ {
+  "control_number": "21914",
+  "title": "Art: Graphic Communications",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART10",
+   "ART12",
+   "ART14",
+   "ART15",
+   "ART16",
+   "ART17",
+   "ART18",
+   "ART25",
+   "ART250",
+   "ART47",
+   "ART5",
+   "ART50",
+   "ART54",
+   "ART57",
+   "ART58",
+   "ART6",
+   "ART72",
+   "ART74",
+   "ART75",
+   "ART8",
+   "ART84",
+   "ART85",
+   "ART86",
+   "ART87",
+   "ART9"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/graphic-communications-certificate-of-achievement-coa-fall-2026",
+   "title": "Graphic Communications Certificate of Achievement (COA)",
+   "h1": "Graphic Communications Certificate of Achievement (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.667
+   }
+  },
+  "listed": 25,
+  "text_chars": 2227
+ },
+ {
+  "control_number": "21916",
+  "title": "Early Childhood Education",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV10",
+   "CHDEV20",
+   "CHDEV50",
+   "ECE1",
+   "ECE10",
+   "ECE11",
+   "ECE20",
+   "ECE50",
+   "ECE62",
+   "ECE65",
+   "ECE90"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/early-childhood-education-certificate-of-achievement-coa-fall-2026",
+   "title": "Early Childhood Education Certificate of Achievement (COA)",
+   "h1": "Early Childhood Education Certificate of Achievement (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2710
+ },
+ {
+  "control_number": "21917",
+  "title": "Fire Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.75,
+  "codes_found": [
+   "FIRE101",
+   "FIRE106",
+   "FIRE107"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/fire-technology-certificate-of-achievement-coa-fall-2026",
+   "title": "Fire Technology Certificate of Achievement (COA)",
+   "h1": "Fire Technology Certificate of Achievement (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2030
+ },
+ {
+  "control_number": "21918",
+  "title": "Fire Academy",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FIRE101",
+   "FIRE102",
+   "FIRE106",
+   "FIRE120"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/fire-academy-certificate-of-achievement-coa-spring-2027",
+   "title": "Fire Academy Certificate of Achievement (COA)",
+   "h1": "Fire Academy Certificate of Achievement (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 1358
+ },
+ {
+  "control_number": "30466",
+  "title": "Computer Applications Support Specialist",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "CNT30",
+   "CNT31",
+   "CNT32",
+   "CNT37",
+   "CNT61"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/computer-applications-support-specialist-associate-of-science-degree-as-fall-2026",
+   "title": "Computer Applications Support Specialist Associate of Science Degree (AS)",
+   "h1": "Computer Applications Support Specialist Associate of Science Degree (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1659
+ },
+ {
+  "control_number": "30467",
+  "title": "Information Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 12,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30468",
+  "title": "Information Technology (Advanced)",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 10,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30469",
+  "title": "Information Technology (Basic)",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "COMSC122",
+   "COMSC44",
+   "COMSC51"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/information-technology-basic-certificate-of-achievement-coa-fall-2026",
+   "title": "Information Technology (Basic) Certificate of Achievement (COA)",
+   "h1": "Information Technology (Basic) Certificate of Achievement (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 1404
+ },
+ {
+  "control_number": "30473",
+  "title": "Computer  Applications Support Specialist (Advanced)",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "CNT30",
+   "CNT31",
+   "CNT32",
+   "CNT37",
+   "CNT61"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/computer-applications-support-specialist-advanced-certificate-of-achievement-fall-2026",
+   "title": "Computer Applications Support Specialist (Advanced) Certificate of Achievement",
+   "h1": "Computer Applications Support Specialist (Advanced) Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1672
+ },
+ {
+  "control_number": "30476",
+  "title": "Computer Applications Support Specialist (Basic)",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30835",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.571,
+  "codes_found": [
+   "BIOSC10",
+   "BIOSC8",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/psychology-associate-of-arts-degree-for-transfer-aa-t-fall-2026",
+   "title": "Psychology Associate of Arts Degree for Transfer (AA-T)",
+   "h1": "Psychology Associate of Arts Degree for Transfer (AA-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2982
+ },
+ {
+  "control_number": "30849",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "ENGL136",
+   "SJS150",
+   "SOCIO12",
+   "SOCIO15",
+   "SOCIO16",
+   "SOCIO17",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/sociology-associate-in-arts-for-transfer-aa-t-fall-2025",
+   "title": "Sociology Associate in Arts for Transfer (AA-T)",
+   "h1": "Sociology Associate in Arts for Transfer (AA-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2301
+ },
+ {
+  "control_number": "30894",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV10",
+   "CHDEV20",
+   "CHDEV50",
+   "ECE1",
+   "ECE10",
+   "ECE11",
+   "ECE20",
+   "ECE50",
+   "ECE62",
+   "ECE65",
+   "ECE90"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/early-childhood-education-associate-of-science-degree-for-transfer-as-t-fall-2025",
+   "title": "Early Childhood Education Associate of Science Degree for Transfer (AS-T)",
+   "h1": "Early Childhood Education Associate of Science Degree for Transfer (AS-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3297
+ },
+ {
+  "control_number": "31656",
+  "title": "Theatre Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAMA16",
+   "DRAMA20",
+   "DRAMA21",
+   "DRAMA40",
+   "DRAMA41",
+   "DRAMA50",
+   "DRAMA51"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/theatre-arts-associate-of-arts-degree-for-transfer-aa-t-fall-2025",
+   "title": "Theatre Arts Associate of Arts Degree for Transfer (AA-T)",
+   "h1": "Theatre Arts Associate of Arts Degree for Transfer (AA-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2402
+ },
+ {
+  "control_number": "31768",
+  "title": "Associate in Arts in Acting",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAMA15",
+   "DRAMA16",
+   "DRAMA20",
+   "DRAMA21",
+   "DRAMA22",
+   "DRAMA23",
+   "DRAMA61"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/acting-associate-of-arts-degree-aa-spring-2022",
+   "title": "Acting Associate of Arts Degree (AA)",
+   "h1": "Acting Associate of Arts Degree (AA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1608
+ },
+ {
+  "control_number": "31782",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOSC40",
+   "BIOSC45",
+   "CHEM25",
+   "CHEM7",
+   "KINES100",
+   "KINES105",
+   "KINES200",
+   "KNACT10A",
+   "KNACT10B",
+   "KNACT110",
+   "KNACT12",
+   "KNACT120",
+   "KNACT130",
+   "KNACT140",
+   "KNACT14A",
+   "KNACT14B",
+   "KNACT20",
+   "KNACT25",
+   "KNACT26A",
+   "KNACT26B",
+   "KNACT28A",
+   "KNACT30",
+   "KNACT33",
+   "KNACT42",
+   "KNACT46A",
+   "KNACT46B",
+   "KNACT4A",
+   "KNACT4B",
+   "KNACT57A",
+   "KNACT57B",
+   "KNACT6",
+   "KNACT8A",
+   "KNACT8B",
+   "KNDAN53",
+   "KNDAN54",
+   "PHYS15",
+   "PHYS40",
+   "PSYCC1000",
+   "SOCIO15",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/kinesiology-associate-in-arts-for-transfer-aa-t-fall-2025",
+   "title": "Kinesiology Associate in Arts for Transfer (AA-T)",
+   "h1": "Kinesiology Associate in Arts for Transfer (AA-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 40,
+  "text_chars": 4242
+ },
+ {
+  "control_number": "31841",
+  "title": "Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMSC122",
+   "COMSC44",
+   "MATH210",
+   "MATH220",
+   "MATH230",
+   "MATH240",
+   "MATH250",
+   "PHYS40",
+   "PHYS41",
+   "PHYS42"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/physics-associate-in-science-for-transfer-2-0-ast-fall-2026",
+   "title": "Physics Associate in Science for Transfer 2.0 (AST)",
+   "h1": "Physics Associate in Science for Transfer 2.0 (AST)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 1929
+ },
+ {
+  "control_number": "31903",
+  "title": "Basic Law Enforcement Academy - Intensive",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "32029",
+  "title": "Liberal Arts:  Behavioral Science and Social Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.864,
+  "codes_found": [
+   "ACS10",
+   "ADJUS110",
+   "ANTHR4",
+   "ANTHR5",
+   "ANTHR6",
+   "ANTHR8",
+   "BUS109",
+   "BUS294",
+   "CHDEV10",
+   "CHDEV20",
+   "CHDEV50",
+   "COUNS35",
+   "COUNS36",
+   "COUNS38",
+   "ECON5",
+   "ECONC2001",
+   "ECONC2002",
+   "EDUC100",
+   "ETHN101",
+   "ETHN102",
+   "ETHN103",
+   "ETHN110",
+   "ETHN120",
+   "ETHN45",
+   "HIST31",
+   "HIST34",
+   "HIST35",
+   "HIST38",
+   "HIST39",
+   "HIST40",
+   "HIST47",
+   "HIST52",
+   "HIST61",
+   "HIST62",
+   "HIST65",
+   "HIST66",
+   "KINES100",
+   "KINES200",
+   "KINES203",
+   "KINES210",
+   "PHIL133",
+   "POLSC1000",
+   "PSYCC1000",
+   "SJS110",
+   "SJS135",
+   "SJS136",
+   "SJS150",
+   "SOCIO12",
+   "SOCIO15",
+   "SOCIO16",
+   "SOCIO17"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/liberal-arts-behavioral-science-and-social-science-associate-of-arts-fall-2026",
+   "title": "Liberal Arts: Behavioral Science and Social Science, Associate of Arts",
+   "h1": "Liberal Arts: Behavioral Science and Social Science, Associate of Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 59,
+  "text_chars": 4837
+ },
+ {
+  "control_number": "32030",
+  "title": "Liberal Arts:  Math and Science",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.972,
+  "codes_found": [
+   "ANTHR1",
+   "ASTRO10",
+   "ASTRO11",
+   "BIOSC10",
+   "BIOSC20",
+   "BIOSC21",
+   "BIOSC30",
+   "BIOSC40",
+   "BIOSC45",
+   "BIOSC5",
+   "BIOSC50",
+   "BIOSC7",
+   "BIOSC8",
+   "CHEM25",
+   "CHEM26",
+   "CHEM28",
+   "CHEM29",
+   "CHEM6",
+   "CHEM7",
+   "ENGIN10",
+   "MATH155",
+   "MATH210",
+   "MATH220",
+   "MATH230",
+   "MATH240",
+   "MATH250",
+   "NUTRI55",
+   "PHYS15",
+   "PHYS35",
+   "PHYS36",
+   "PHYS40",
+   "PHYS41",
+   "PHYS42",
+   "PHYSC5",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/liberal-arts-math-and-science-associate-of-arts-fall-2026",
+   "title": "Liberal Arts: Math and Science, Associate of Arts",
+   "h1": "Liberal Arts: Math and Science, Associate of Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 36,
+  "text_chars": 3548
+ },
+ {
+  "control_number": "32031",
+  "title": "Liberal Arts:  Arts and Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACS10",
+   "ART16",
+   "ART17",
+   "ART18",
+   "ART19",
+   "ART32",
+   "ART33",
+   "ART34",
+   "ART35",
+   "ART5",
+   "ART6",
+   "ART8",
+   "ART9",
+   "DRAMA15",
+   "DRAMA16",
+   "DRAMA30",
+   "DRAMA70",
+   "EDUC100",
+   "ENGL111",
+   "ENGL113",
+   "ENGL114",
+   "ENGL115",
+   "ENGL120",
+   "ENGL121",
+   "ENGL124",
+   "ENGL127",
+   "ENGL128",
+   "ENGL129",
+   "ENGL132",
+   "ENGL133",
+   "ENGL135",
+   "ENGL136",
+   "ENGL144",
+   "ENGL150",
+   "ENGL230",
+   "ENGL240",
+   "ENGL245",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "ENGLC1001",
+   "FRNCH60",
+   "FRNCH61",
+   "HUMAN19",
+   "HUMAN20",
+   "HUMAN21",
+   "HUMAN22",
+   "HUMAN23",
+   "HUMAN24",
+   "HUMAN30",
+   "HUMAN35",
+   "HUMAN40",
+   "HUMAN50",
+   "HUMAN60",
+   "ITAL60",
+   "ITAL61",
+   "JOURN100",
+   "JOURN110",
+   "MUSIC10",
+   "MUSIC12",
+   "MUSIC15",
+   "PHIL100",
+   "PHIL110",
+   "PHIL120",
+   "PHIL122",
+   "PHIL130",
+   "PHIL132",
+   "PHIL133",
+   "PHIL140",
+   "PHIL150",
+   "PHIL210",
+   "RA10",
+   "RA15",
+   "SIGN50",
+   "SIGN51",
+   "SIGN52",
+   "SIGN53",
+   "SIGN72",
+   "SPAN50",
+   "SPAN51",
+   "SPAN52",
+   "SPAN53",
+   "SPAN57"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/liberal-arts-arts-and-humanities-associate-of-arts-fall-2026",
+   "title": "Liberal Arts: Arts and Humanities, Associate of Arts",
+   "h1": "Liberal Arts: Arts and Humanities, Associate of Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 82,
+  "text_chars": 5875
+ },
+ {
+  "control_number": "32188",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.862,
+  "codes_found": [
+   "ANTHR5",
+   "ANTHR6",
+   "ART6",
+   "ART8",
+   "ART9",
+   "ECON5",
+   "FRNCH60",
+   "FRNCH61",
+   "HIST31",
+   "HIST34",
+   "HIST35",
+   "HIST39",
+   "HIST40",
+   "HIST47",
+   "HIST52",
+   "ITAL60",
+   "ITAL61",
+   "POLSC1000",
+   "PSYCC1000",
+   "SOCIO15",
+   "SOCIO16",
+   "SPAN50",
+   "SPAN51",
+   "SPAN52",
+   "SPAN53"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/history-associate-of-arts-degree-for-transfer-aat-fall-2026",
+   "title": "History Associate of Arts Degree for Transfer (AAT)",
+   "h1": "History Associate of Arts Degree for Transfer (AAT)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 29,
+  "text_chars": 4079
+ },
+ {
+  "control_number": "32221",
+  "title": "Administration of Justice",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJUS110",
+   "ADJUS120",
+   "ADJUS122",
+   "ADJUS140",
+   "ADJUS160",
+   "ADJUS220"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/administration-of-justice-certificate-of-achievement-spring-2022",
+   "title": "Administration of Justice Certificate of Achievement",
+   "h1": "Administration of Justice Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 2800
+ },
+ {
+  "control_number": "32222",
+  "title": "Criminal Investigations",
+  "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "32228",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJUS110",
+   "ADJUS120",
+   "ADJUS122",
+   "ADJUS124",
+   "ADJUS140",
+   "ADJUS160",
+   "ADJUS200",
+   "ADJUS220",
+   "PSYCC1000",
+   "SOCIO15",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/administration-of-justice-associate-of-science-degree-for-transfer-as-t-fall-2025",
+   "title": "Administration of Justice Associate of Science Degree for Transfer (AS-T)",
+   "h1": "Administration of Justice Associate of Science Degree for Transfer (AS-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 2925
+ },
+ {
+  "control_number": "32233",
+  "title": "Criminal Law",
+  "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADJUS110",
+   "ADJUS120",
+   "ADJUS122",
+   "ADJUS160",
+   "ADJUS220"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/criminal-law-certificate-of-achievement-coa-spring-2022",
+   "title": "Criminal Law Certificate of Achievement (COA)",
+   "h1": "Criminal Law Certificate of Achievement (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2123
+ },
+ {
+  "control_number": "32455",
+  "title": "Journalism",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.923,
+  "codes_found": [
+   "COMM120",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1001",
+   "JOURN100",
+   "JOURN110",
+   "JOURN130",
+   "JOURN131",
+   "JOURN160",
+   "POLSC1000",
+   "SOCIO16",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/journalism-associate-in-arts-for-transfer-degree-aa-t-fall-2026",
+   "title": "Journalism Associate in Arts for Transfer Degree (AA-T)",
+   "h1": "Journalism Associate in Arts for Transfer Degree (AA-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3331
+ },
+ {
+  "control_number": "32471",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.971,
+  "codes_found": [
+   "ART10",
+   "ART11",
+   "ART16",
+   "ART17",
+   "ART18",
+   "ART19",
+   "ART20",
+   "ART21",
+   "ART250",
+   "ART30",
+   "ART32",
+   "ART33",
+   "ART34",
+   "ART35",
+   "ART38",
+   "ART40",
+   "ART41",
+   "ART42",
+   "ART43",
+   "ART47",
+   "ART6",
+   "ART60",
+   "ART61",
+   "ART62",
+   "ART63",
+   "ART64",
+   "ART65",
+   "ART67",
+   "ART72",
+   "ART74",
+   "ART75",
+   "ART8",
+   "ART9"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/studio-arts-associate-of-arts-degree-for-transfer-aa-t-fall-2026",
+   "title": "Studio Arts Associate of Arts Degree for Transfer (AA-T)",
+   "h1": "Studio Arts Associate of Arts Degree for Transfer (AA-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 34,
+  "text_chars": 3777
+ },
+ {
+  "control_number": "32483",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHR8",
+   "ENGL111",
+   "ENGL113",
+   "ENGL114",
+   "ENGL115",
+   "ENGL120",
+   "ENGL121",
+   "ENGL124",
+   "ENGL127",
+   "ENGL128",
+   "ENGL129",
+   "ENGL132",
+   "ENGL133",
+   "ENGL135",
+   "ENGL136",
+   "ENGL144",
+   "ENGL146",
+   "ENGL150",
+   "ENGL180",
+   "ENGL230",
+   "ENGL240",
+   "ENGL245",
+   "ENGLC1001",
+   "JOURN110"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/english-associate-in-arts-for-transfer-aa-t-fall-2026",
+   "title": "English Associate in Arts for Transfer (AA-T)",
+   "h1": "English Associate in Arts for Transfer (AA-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 24,
+  "text_chars": 3329
+ },
+ {
+  "control_number": "32655",
+  "title": "Computer Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOSC20",
+   "BIOSC21",
+   "CHEM25",
+   "COMSC122",
+   "COMSC132",
+   "COMSC142",
+   "MATH160",
+   "MATH210",
+   "MATH220",
+   "PHYS40"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/computer-science-associate-in-science-for-transfer-degree-ast-fall-2025",
+   "title": "Computer Science Associate in Science for Transfer Degree (AST)",
+   "h1": "Computer Science Associate in Science for Transfer Degree (AST)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2146
+ },
+ {
+  "control_number": "32657",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.818,
+  "codes_found": [
+   "COMSC132",
+   "COMSC44",
+   "ENGIN20",
+   "MATH210",
+   "MATH220",
+   "MATH230",
+   "MATH240",
+   "MATH250",
+   "PHYS40"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/mathematics-associate-in-science-for-transfer-ast-fall-2025",
+   "title": "Mathematics Associate in Science for Transfer (AST)",
+   "h1": "Mathematics Associate in Science for Transfer (AST)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3058
+ },
+ {
+  "control_number": "32785",
+  "title": "Art History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART10",
+   "ART11",
+   "ART16",
+   "ART17",
+   "ART18",
+   "ART20",
+   "ART250",
+   "ART30",
+   "ART32",
+   "ART33",
+   "ART34",
+   "ART35",
+   "ART5",
+   "ART6",
+   "ART60",
+   "ART62",
+   "ART72",
+   "ART8",
+   "ART9",
+   "HUMAN19",
+   "HUMAN20",
+   "HUMAN21",
+   "HUMAN22",
+   "HUMAN24",
+   "HUMAN30",
+   "HUMAN35",
+   "HUMAN40",
+   "HUMAN50",
+   "HUMAN60"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/art-history-associate-of-arts-degree-for-transfer-aa-t-fall-2026",
+   "title": "Art History Associate of Arts Degree for Transfer (AA-T)",
+   "h1": "Art History Associate of Arts Degree for Transfer (AA-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 29,
+  "text_chars": 4252
+ },
+ {
+  "control_number": "32855",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "ANTHR1",
+   "ANTHR4",
+   "ANTHR6",
+   "ANTHR8",
+   "BIOSC40",
+   "COMM150",
+   "HIST47",
+   "SOCIO15",
+   "SOCIO17",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/anthropology-associate-of-arts-degree-for-transfer-aa-t-fall-2026",
+   "title": "Anthropology Associate of Arts Degree for Transfer (AA-T)",
+   "h1": "Anthropology Associate of Arts Degree for Transfer (AA-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 11,
+  "text_chars": 3418
+ },
+ {
+  "control_number": "32867",
+  "title": "Music",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSIC13A",
+   "MUSIC13B",
+   "MUSIC14A",
+   "MUSIC14B",
+   "MUSIC16",
+   "MUSIC17",
+   "MUSIC18",
+   "MUSIC19",
+   "MUSIC20",
+   "MUSIC40",
+   "MUSIC74",
+   "MUSIC8",
+   "MUSIC82"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/music-associate-in-arts-for-transfer-aa-t-fall-2025",
+   "title": "Music Associate in Arts for Transfer (AA-T)",
+   "h1": "Music Associate in Arts for Transfer (AA-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 3118
+ },
+ {
+  "control_number": "32882",
+  "title": "Intersegmental General Education Transfer Curriculum (IGETC)",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 155,
+  "text_chars": 0
+ },
+ {
+  "control_number": "32883",
+  "title": "CSU General Education (CSU-GE-Breadth)",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 181,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35128",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOSC20",
+   "BIOSC21",
+   "CHEM25",
+   "CHEM26",
+   "MATH140",
+   "MATH210",
+   "PHYS35",
+   "PHYS36",
+   "PHYS40",
+   "PHYS41"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/biology-associate-in-science-for-transfer-degree-ast-fall-2025",
+   "title": "Biology Associate in Science for Transfer Degree (AST)",
+   "h1": "Biology Associate in Science for Transfer Degree (AST)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2658
+ },
+ {
+  "control_number": "35285",
+  "title": "Chemistry",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM25",
+   "CHEM26",
+   "CHEM28",
+   "CHEM29",
+   "MATH210",
+   "MATH220",
+   "PHYS40",
+   "PHYS41"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/chemistry-associate-in-science-for-transfer-degree-ast-fall-2025",
+   "title": "Chemistry Associate in Science for Transfer Degree (AST)",
+   "h1": "Chemistry Associate in Science for Transfer Degree (AST)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 2502
+ },
+ {
+  "control_number": "35433",
+  "title": "Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHR6",
+   "ANTHR8",
+   "COMM150",
+   "DRAMA30",
+   "ENGL120",
+   "ENGL121",
+   "FRNCH60",
+   "FRNCH61",
+   "HIST52",
+   "ITAL60",
+   "SOCIO15",
+   "SPAN46",
+   "SPAN47",
+   "SPAN50",
+   "SPAN51",
+   "SPAN52",
+   "SPAN53",
+   "SPAN57"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/spanish-associate-of-arts-degree-for-transfer-aa-t-fall-2025",
+   "title": "Spanish Associate of Arts Degree for Transfer (AA-T)",
+   "h1": "Spanish Associate of Arts Degree for Transfer (AA-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 18,
+  "text_chars": 2736
+ },
+ {
+  "control_number": "36228",
+  "title": "Social Justice Studies:  LGBTQ Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV50",
+   "ENGL133",
+   "ENGL135",
+   "ENGL136",
+   "ENGL150",
+   "ETHN101",
+   "ETHN102",
+   "ETHN103",
+   "ETHN110",
+   "ETHN111",
+   "ETHN112",
+   "ETHN113",
+   "ETHN120",
+   "ETHN121",
+   "ETHN123",
+   "ETHN45",
+   "HIST37",
+   "HIST47",
+   "HIST52",
+   "HIST54",
+   "HIST55",
+   "HIST57"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/social-justice-lgbtq-studies-associate-in-arts-for-transfer-degree-aat-fall-2026",
+   "title": "Social Justice: LGBTQ Studies Associate in Arts for Transfer Degree (AAT)",
+   "h1": "Social Justice: LGBTQ Studies Associate in Arts for Transfer Degree (AAT)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 22,
+  "text_chars": 3915
+ },
+ {
+  "control_number": "36387",
+  "title": "Basic Vocabulary and Reading",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36496",
+  "title": "Transit Electrical Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ETEC10",
+   "ETEC12",
+   "ETEC20",
+   "ETEC22",
+   "ETEC24",
+   "ETEC40",
+   "ETEC42",
+   "ETEC44",
+   "ETEC46"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/transit-electrical-technology-certificate-of-achievement-coa-spring-2022",
+   "title": "Transit Electrical Technology Certificate of Achievement (COA)",
+   "h1": "Transit Electrical Technology Certificate of Achievement (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 1856
+ },
+ {
+  "control_number": "36530",
+  "title": "Social Justice Studies: African-American Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL129",
+   "ENGL133",
+   "ENGL136",
+   "ETHN101",
+   "ETHN102",
+   "ETHN103",
+   "ETHN110",
+   "ETHN111",
+   "ETHN112",
+   "ETHN113",
+   "ETHN120",
+   "ETHN121",
+   "ETHN123",
+   "ETHN45",
+   "HIST37",
+   "HIST47",
+   "HIST52",
+   "HIST54",
+   "HIST56",
+   "HIST57",
+   "HIST60",
+   "HIST61",
+   "HIST65",
+   "HIST66",
+   "SJS110",
+   "SJS136",
+   "SJS150"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/social-justice-studies-african-american-studies-associate-in-arts-for-transfer-degree-aat-fall-2025",
+   "title": "Social Justice Studies: African American Studies Associate in Arts for Transfer Degree (AAT)",
+   "h1": "Social Justice Studies: African American Studies Associate in Arts for Transfer Degree (AAT)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 27,
+  "text_chars": 4171
+ },
+ {
+  "control_number": "36611",
+  "title": "Foundational Grammar for General Communication",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36616",
+  "title": "Essential Pronunciation and Conversation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36669",
+  "title": "Elementary Algebra and Arithmetic",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38236",
+  "title": "Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.943,
+  "codes_found": [
+   "ANTHR4",
+   "ANTHR5",
+   "ANTHR6",
+   "ANTHR8",
+   "ART16",
+   "ART17",
+   "ART18",
+   "ART6",
+   "ART8",
+   "ART9",
+   "DRAMA15",
+   "DRAMA16",
+   "DRAMA30",
+   "ENGL127",
+   "ENGL128",
+   "ENGL129",
+   "ENGL133",
+   "ENGL135",
+   "ENGL150",
+   "ENGL240",
+   "ENGL245",
+   "ETHN45",
+   "HIST47",
+   "HIST52",
+   "HIST56",
+   "HIST57",
+   "HIST60",
+   "HIST61",
+   "HUMAN19",
+   "HUMAN20",
+   "HUMAN21",
+   "HUMAN22",
+   "HUMAN23",
+   "HUMAN24",
+   "HUMAN30",
+   "HUMAN40",
+   "HUMAN50",
+   "MUSIC10",
+   "MUSIC12",
+   "MUSIC15",
+   "PHIL130",
+   "PHIL132",
+   "PHIL133",
+   "PHIL140",
+   "PHIL150",
+   "POLSC1000",
+   "SJS110",
+   "SJS135",
+   "SJS136",
+   "SJS150"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/humanities-associate-of-arts-degree-aa-fall-2026",
+   "title": "Humanities Associate of Arts Degree (AA)",
+   "h1": "Humanities Associate of Arts Degree (AA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 53,
+  "text_chars": 4766
+ },
+ {
+  "control_number": "38361",
+  "title": "American Sign Language",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SIGN50",
+   "SIGN51",
+   "SIGN52",
+   "SIGN53",
+   "SIGN70",
+   "SIGN71",
+   "SIGN72"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/american-sign-language-associate-of-arts-degree-aa-fall-2024",
+   "title": "American Sign Language Associate of Arts Degree (AA)",
+   "h1": "American Sign Language Associate of Arts Degree (AA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1416
+ },
+ {
+  "control_number": "38363",
+  "title": "American Sign Language",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SIGN50",
+   "SIGN51",
+   "SIGN52",
+   "SIGN53",
+   "SIGN70",
+   "SIGN71",
+   "SIGN72"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/american-sign-language-certificate-of-achievement-coa-spring-2022",
+   "title": "American Sign Language Certificate of Achievement (COA)",
+   "h1": "American Sign Language Certificate of Achievement (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1747
+ },
+ {
+  "control_number": "38364",
+  "title": "Three Dimensional Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART11",
+   "ART12",
+   "ART20",
+   "ART4",
+   "ART60",
+   "ART62",
+   "ART64",
+   "ART66",
+   "ART72"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/three-dimensional-design-certificate-of-achievement-coa-fall-2026",
+   "title": "Three Dimensional Design Certificate of Achievement (COA)",
+   "h1": "Three Dimensional Design Certificate of Achievement (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2430
+ },
+ {
+  "control_number": "38365",
+  "title": "Spanish",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SPAN46",
+   "SPAN47",
+   "SPAN50",
+   "SPAN51",
+   "SPAN52",
+   "SPAN53",
+   "SPAN57"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/spanish-certificate-of-achievement-coa-spring-2022",
+   "title": "Spanish Certificate of Achievement (COA)",
+   "h1": "Spanish Certificate of Achievement (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 2364
+ },
+ {
+  "control_number": "38393",
+  "title": "Philosophy",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "PHIL100",
+   "PHIL120",
+   "PHIL122",
+   "PHIL130",
+   "PHIL132",
+   "PHIL133",
+   "PHIL140",
+   "PHIL150",
+   "PHIL210"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/philosophy-associate-in-arts-for-transfer-degree-aat-fall-2025",
+   "title": "Philosophy Associate in Arts for Transfer Degree (AAT)",
+   "h1": "Philosophy Associate in Arts for Transfer Degree (AAT)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3356
+ },
+ {
+  "control_number": "38480",
+  "title": "Social Justice Studies:  Chicano/a Studies",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART35",
+   "DRAMA30",
+   "ENGL120",
+   "ENGL121",
+   "ENGL133",
+   "ENGL135",
+   "ENGL136",
+   "ETHN101",
+   "ETHN102",
+   "ETHN103",
+   "ETHN110",
+   "ETHN111",
+   "ETHN112",
+   "ETHN113",
+   "ETHN120",
+   "ETHN121",
+   "ETHN123",
+   "HIST37",
+   "HIST47",
+   "HIST52",
+   "HIST54",
+   "HIST56",
+   "HIST57",
+   "HIST60",
+   "HIST65",
+   "HIST66",
+   "SJS110",
+   "SJS135",
+   "SJS136",
+   "SJS150"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/social-justice-chicano-chicana-studies-associate-in-arts-for-transfer-degree-aat-fall-2025",
+   "title": "Social Justice: Chicano/Chicana Studies Associate in Arts for Transfer Degree (AAT)",
+   "h1": "Social Justice: Chicano/Chicana Studies Associate in Arts for Transfer Degree (AAT)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 30,
+  "text_chars": 4045
+ },
+ {
+  "control_number": "38510",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "ECON5",
+   "ECONC2001",
+   "ECONC2002",
+   "HIST40",
+   "POLSC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/political-science-associate-of-arts-degree-for-transfer-aa-t-fall-2026",
+   "title": "Political Science Associate of Arts Degree for Transfer (AA-T)",
+   "h1": "Political Science Associate of Arts Degree for Transfer (AA-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 3302
+ },
+ {
+  "control_number": "38619",
+  "title": "Fundamental Writing Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38697",
+  "title": "Elementary Algebra and Prealgebra Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39636",
+  "title": "Intermediate English for College and Career Success",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39637",
+  "title": "Advanced English for Academic and Professional Advancement",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39829",
+  "title": "College & Career Preparation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COUNS30N",
+   "COUNS32N",
+   "COUNS34N"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/college-career-preparation-certificate-of-completion-noncredit-54-hours-spring-2022",
+   "title": "College & Career Preparation Certificate of Completion (Noncredit- 54 hours)",
+   "h1": "College & Career Preparation Certificate of Completion (Noncredit- 54 hours)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1813
+ },
+ {
+  "control_number": "39830",
+  "title": "Construction Pre-Apprenticeship",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CONST10N",
+   "CONST12N",
+   "CONST15N",
+   "CONST16N"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/construction-pre-apprenticeship-certificate-of-completion-noncredit-220-hours-summer-2024",
+   "title": "Construction Pre-Apprenticeship Certificate of Completion (Noncredit- 220 hours)",
+   "h1": "Construction Pre-Apprenticeship Certificate of Completion (Noncredit- 220 hours)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2462
+ },
+ {
+  "control_number": "40610",
+  "title": "Basic Drone Piloting",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRONE10N",
+   "DRONE12N"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/basic-drone-piloting-certificate-of-completion-fall-2022",
+   "title": "Basic Drone Piloting Certificate of Completion",
+   "h1": "Basic Drone Piloting Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1794
+ },
+ {
+  "control_number": "41896",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS109",
+   "BUS186",
+   "BUS187",
+   "BUS294",
+   "BUS59",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH140",
+   "MATH210",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/business-administration-2-0-associate-of-science-degree-for-transfer-as-t-fall-2026",
+   "title": "Business Administration 2.0 Associate of Science Degree for Transfer (AS-T)",
+   "h1": "Business Administration 2.0 Associate of Science Degree for Transfer (AS-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2776
+ },
+ {
+  "control_number": "42574",
+  "title": "Law, Public Policy and Society",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 0.8,
+  "codes_found": [
+   "ACS10",
+   "ADJUS110",
+   "ADJUS120",
+   "ADJUS122",
+   "ADJUS124",
+   "ADJUS160",
+   "ADJUS200",
+   "ADJUS220",
+   "ANTHR6",
+   "BUS294",
+   "COMM120",
+   "COMM150",
+   "COMMC1000",
+   "COUNS36",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1000",
+   "ENGLC1001",
+   "PHIL120",
+   "POLSC1000",
+   "SJS136",
+   "SJS150",
+   "SOCIO16",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/law-public-policy-and-society-associate-in-arts-for-transfer-fall-2026",
+   "title": "Law, Public Policy and Society, Associate in Arts for Transfer",
+   "h1": "Law, Public Policy and Society, Associate in Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 30,
+  "text_chars": 5037
+ },
+ {
+  "control_number": "42679",
+  "title": "Ethnic Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 0.941,
+  "codes_found": [
+   "ENGL135",
+   "ENGL136",
+   "ETHN101",
+   "ETHN102",
+   "ETHN103",
+   "ETHN110",
+   "ETHN111",
+   "ETHN112",
+   "ETHN113",
+   "ETHN120",
+   "ETHN121",
+   "ETHN123",
+   "SJS110",
+   "SJS135",
+   "SJS136",
+   "SJS150"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/ethnic-studies-associate-of-arts-fall-2023",
+   "title": "Ethnic Studies, Associate of Arts",
+   "h1": "Ethnic Studies, Associate of Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3468
+ },
+ {
+  "control_number": "42680",
+  "title": "Hip Hop Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL144",
+   "HIST61",
+   "HUMAN50",
+   "MUSIC15",
+   "SJS150"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/hip-hop-studies-certificate-of-achievement-fall-2023",
+   "title": "Hip Hop Studies, Certificate of Achievement",
+   "h1": "Hip Hop Studies, Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2776
+ },
+ {
+  "control_number": "42681",
+  "title": "Creative Writing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "ART10",
+   "ART15",
+   "ART20",
+   "ART25",
+   "ART38",
+   "ART50",
+   "ART54",
+   "ART57",
+   "ART72",
+   "ART74",
+   "ART75",
+   "DRAMA15",
+   "DRAMA16",
+   "DRAMA30",
+   "DRAMA61",
+   "DRAMA70",
+   "ENGL111",
+   "ENGL113",
+   "ENGL114",
+   "ENGL115",
+   "ENGL120",
+   "ENGL121",
+   "ENGL124",
+   "ENGL127",
+   "ENGL128",
+   "ENGL129",
+   "ENGL132",
+   "ENGL133",
+   "ENGL144",
+   "ENGL150",
+   "ENGL240",
+   "ENGL245",
+   "ETHN101",
+   "ETHN102",
+   "ETHN103",
+   "ETHN110",
+   "ETHN120",
+   "JOURN110",
+   "JOURN130"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/creative-writing-certificate-of-achievement-fall-2026",
+   "title": "Creative Writing, Certificate of Achievement",
+   "h1": "Creative Writing, Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 42,
+  "text_chars": 3918
+ },
+ {
+  "control_number": "42909",
+  "title": "College ESL Success",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "43225",
+  "title": "Photography",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART19",
+   "ART72",
+   "ART74"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/photography-certificate-of-achievement-summer-2023",
+   "title": "Photography, Certificate of Achievement",
+   "h1": "Photography, Certificate of Achievement",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 1067
+ },
+ {
+  "control_number": "44331",
+  "title": "Automotive Maintenance, Detailing and Surface Enhancement",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTO10N",
+   "AUTO11N"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/automotive-maintenance-detailing-and-surface-enhancement-certificate-of-completion-non-credit-fall-2024",
+   "title": "Automotive Maintenance, Detailing and Surface Enhancement Certificate of Completion (Non-Credit)",
+   "h1": "Automotive Maintenance, Detailing and Surface Enhancement Certificate of Completion (Non-Credit)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 1506
+ },
+ {
+  "control_number": "44473",
+  "title": "Associate in Science  in Early Childhood Education Master Teacher",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV10",
+   "CHDEV20",
+   "CHDEV50",
+   "ECE1",
+   "ECE10",
+   "ECE11",
+   "ECE20",
+   "ECE30",
+   "ECE31",
+   "ECE40",
+   "ECE41",
+   "ECE50",
+   "ECE55",
+   "ECE57",
+   "ECE62",
+   "ECE65",
+   "ECE92"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/associate-in-science-in-early-childhood-education-master-teacher-fall-2024",
+   "title": "Associate in Science in Early Childhood Education Master Teacher",
+   "h1": "Associate in Science in Early Childhood Education Master Teacher",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3911
+ },
+ {
+  "control_number": "44474",
+  "title": "Associate in Science in Early Childhood Education Site Supervisor",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV10",
+   "CHDEV20",
+   "CHDEV50",
+   "ECE1",
+   "ECE10",
+   "ECE11",
+   "ECE20",
+   "ECE30",
+   "ECE31",
+   "ECE40",
+   "ECE41",
+   "ECE50",
+   "ECE55",
+   "ECE57",
+   "ECE62",
+   "ECE65",
+   "ECE92",
+   "ECE95",
+   "ECE96"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/associate-in-science-in-early-childhood-education-site-supervisor-fall-2024",
+   "title": "Associate in Science in Early Childhood Education Site Supervisor",
+   "h1": "Associate in Science in Early Childhood Education Site Supervisor",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 4107
+ },
+ {
+  "control_number": "44494",
+  "title": "Welding Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "BUS160",
+   "WELD10",
+   "WELD11",
+   "WELD15",
+   "WELD16",
+   "WELD20",
+   "WELD21",
+   "WELD31",
+   "WELD33",
+   "WELD35",
+   "WELD40",
+   "WELD41",
+   "WELD43"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/welding-certificate-of-achievement-coa-fall-2026",
+   "title": "Welding Certificate of Achievement (COA)",
+   "h1": "Welding Certificate of Achievement (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.5
+   }
+  },
+  "listed": 14,
+  "text_chars": 2157
+ },
+ {
+  "control_number": "44534",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHR6",
+   "COMM120",
+   "COMM130",
+   "COMM150",
+   "COMM160",
+   "COMMC1000",
+   "ENGL230",
+   "ENGLC1001",
+   "JOURN100",
+   "JOURN110",
+   "PSYCC1000",
+   "SOCIO15"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/communication-studies-2-0-associate-in-arts-for-transfer-degree-aa-t-fall-2025",
+   "title": "Communication Studies 2.0 Associate in Arts for Transfer Degree (AA-T)",
+   "h1": "Communication Studies 2.0 Associate in Arts for Transfer Degree (AA-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 2392
+ },
+ {
+  "control_number": "44667",
+  "title": "Early Childhood Education Site Supervisor",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV10",
+   "CHDEV20",
+   "CHDEV50",
+   "ECE1",
+   "ECE10",
+   "ECE11",
+   "ECE20",
+   "ECE30",
+   "ECE31",
+   "ECE40",
+   "ECE41",
+   "ECE50",
+   "ECE55",
+   "ECE57",
+   "ECE62",
+   "ECE65",
+   "ECE92",
+   "ECE95",
+   "ECE96"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/early-childhood-education-certificate-of-achievement-site-supervisor-coa-spring-2025",
+   "title": "Early Childhood Education Certificate of Achievement- Site Supervisor (COA)",
+   "h1": "Early Childhood Education Certificate of Achievement- Site Supervisor (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 19,
+  "text_chars": 3650
+ },
+ {
+  "control_number": "44821",
+  "title": "Early Childhood Education Master Teacher",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV10",
+   "CHDEV20",
+   "CHDEV50",
+   "ECE1",
+   "ECE10",
+   "ECE11",
+   "ECE20",
+   "ECE30",
+   "ECE31",
+   "ECE40",
+   "ECE41",
+   "ECE50",
+   "ECE55",
+   "ECE57",
+   "ECE62",
+   "ECE65",
+   "ECE92"
+  ],
+  "source": {
+   "url": "https://lmc.elumenapp.com/catalog/26-27/program/early-childhood-education-certificate-of-achievement-master-teacher-coa-spring-2025",
+   "title": "Early Childhood Education Certificate of Achievement- Master Teacher (COA)",
+   "h1": "Early Childhood Education Certificate of Achievement- Master Teacher (COA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3403
+ },
+ {
+  "control_number": "45141",
+  "title": "CSU GE-Breadth",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 184,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45253",
+  "title": "California General Education Transfer Curriculum (Cal-GETC)-COA",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 159,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45774",
+  "title": "Non-Credit Business Communication",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ }
+]
