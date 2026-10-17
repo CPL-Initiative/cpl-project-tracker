@@ -1,0 +1,245 @@
+{
+ "college": "Lake Tahoe Community College",
+ "control_number": "30973",
+ "shape": "adt",
+ "title": "Mathematics",
+ "award": "A.S. T Degree",
+ "source_url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/mathematics-as-t-fall-2025",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6838,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6838,
+    "output_tokens": 1303,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1303,
+  "output_tokens_details": {
+   "thinking_tokens": 271
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05341,
+ "ms": 10794,
+ "seconds": 11.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    28.0,
+    30.0
+   ],
+   "stated": [
+    29.0,
+    30.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 28.0-30.0; the catalog states 29.0-30.0"
+   ],
+   "degree": {
+    "pass": false,
+    "status": "incomplete",
+    "computed": [
+     28.0,
+     30.0
+    ],
+    "stated": [
+     90.0,
+     90.0
+    ],
+    "against": "degree",
+    "ge": null,
+    "why": [
+     "the record names the degree total and the Cal-GETC pattern, but no units for it"
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Mathematics AS-T",
+   "measure": "units",
+   "total_units": {
+    "min": 29,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 90,
+    "max": 90
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Engage in logical and critical thinking.",
+    "Read technical information.",
+    "Demonstrate the solution to problems by translating written language into mathematical statements, interpreting information, sketching relevant diagrams, analyzing given information, formulating appropriate math statements, and checking and verifying resu"
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "B.1. All courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 20,
+     "max": 20
+    },
+    "courses": [
+     {
+      "code": "MAT105",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAT106",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAT107",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAT202",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "B.2. Choose two (one must be a math course)",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "CIS120A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS120B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAT203",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAT204",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Lake Tahoe Community College uses quarter units; the 90-unit figure ('Units: 90 units' and 'ELECTIVE UNITS to bring the total to 90') is recorded as the degree total in quarter units.",
+   "The major total printed is 29-30 units ('Mathematics AS-T (Total 29 - 30)').",
+   "Block B.2 requires two courses, at least one of which must be a math course (MAT203 or MAT204); the page also prints 'Complete the following number of credits: 9-10'.",
+   "The text says 'Completion of 60 semester units or 90 quarter units', which is the generic AS-T requirement; the minimum '18 semester units or 27 quarter units in a major' is not the award's major total.",
+   "No unit figure is printed for the Cal-GETC pattern, so ge_units is null.",
+   "The third program learning outcome appears truncated in the source ('checking and verifying resu'); copied as printed.",
+   "Catalog codes are printed without a space (e.g., MAT105); they match closed-list codes such as MAT 105."
+  ]
+ },
+ "extracted_run": "38984692790"
+}

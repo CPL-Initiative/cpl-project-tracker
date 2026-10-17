@@ -1,0 +1,282 @@
+{
+ "college": "Butte College",
+ "control_number": "37941",
+ "shape": "certificate",
+ "title": "Diesel Technology",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28230",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7910,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7910,
+    "output_tokens": 1745,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1745,
+  "output_tokens_details": {
+   "thinking_tokens": 249
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06654,
+ "ms": 13236,
+ "seconds": 13.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 17,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    48.0,
+    48.0
+   ],
+   "stated": [
+    48.0,
+    48.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 11,
+   "courses": 0,
+   "count": 11,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement in Diesel Technology",
+   "measure": "units",
+   "total_units": {
+    "min": 48,
+    "max": 48
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Explain the operation of diesel engine components and systems.",
+    "Apply the state and federal regulations of the Occupational Safety and Health Association (OSHA) and the Environmental Protection Agency (EPA).",
+    "Apply general principles of preventive maintenance to diesel repair.",
+    "Demonstrate proficiency in the use of industry standard tools and precision measuring instruments.",
+    "Apply safe work habits and practices.",
+    "Troubleshoot and perform repairs on mechanical, electrical, hydraulic and electronic systems.",
+    "Use computers to diagnose equipment and research information.",
+    "Perform preventative maintenance such as engine tune-ups, front-end alignments, and brake adjustments.",
+    "Operate shop machinery and equipment including hoists, hydraulic jacks, steam cleaners, floor jacks, disassembly stands, grinders, drill presses, hydraulic presses, and bead blasters.",
+    "Select and use precision tools such as torque wrenches, micrometers, dial indicators, tap and dies, and bore gauges.",
+    "Effectively communicate vehicle diagnoses, repair procedures, and maintenance recommendations, accurately documenting all work performed in accordance with industry standards."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 48,
+     "max": 48
+    },
+    "courses": [
+     {
+      "code": "AUT 6",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 7",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 8",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 9",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 22",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 23",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 30",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 31",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 52",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 53",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 56",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 57",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 73",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 74",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WLD 18",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The closed list stores AUT8 and AUT9 without a space and with no units; the catalog prints AUT 8 (Auto Engines Lecture, 3 units) and AUT 9 (Automotive Engines Lab, 3 units). These were treated as the same closed-list courses (catalog_addition false). A reviewer should confirm.",
+   "The 'Map' section repeats the same 17 required courses by term (10+16+12+10 = 48 units). It was not recorded as separate blocks.",
+   "The page says 'See AS Degree in Diesel Technology' for the program description and admission, so no careers are named in this section.",
+   "GE Pattern(s) is printed as 'None'."
+  ]
+ },
+ "extracted_run": "38981247046"
+}

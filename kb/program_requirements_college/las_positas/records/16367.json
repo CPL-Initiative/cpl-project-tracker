@@ -1,0 +1,378 @@
+{
+ "college": "Las Positas College",
+ "control_number": "16367",
+ "shape": "degree",
+ "title": "Viticulture",
+ "award": "A.S. Degree",
+ "source_url": "https://laspositas.curriqunet.com/catalog/iq/102/105/180/2119/2127",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7792,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7792,
+    "output_tokens": 2352,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2352,
+  "output_tokens_details": {
+   "thinking_tokens": 541
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07821,
+ "ms": 17261,
+ "seconds": 17.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 18,
+   "listed": 21,
+   "share": 0.857,
+   "missing": [
+    "BIO10",
+    "BIO30",
+    "HORT53"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "WRKX94"
+   ],
+   "flagged": [
+    "WRKX94"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    34.0,
+    36.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Las Positas College General Education (LPC-GE) or Cal-GETC pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     34.0,
+     36.0
+    ],
+    "stated": [
+     34.0,
+     36.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 11,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Viticulture (AS): Program Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 34,
+    "max": 36
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Las Positas College General Education (LPC-GE) or Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Contribute to the wine grape industry and participate in professional organizations at the local, state-wide, national and/or international levels.",
+    "Describe the latest technological advances in vineyard practices and incorporate current technology into their farming plans.",
+    "Identify, plan, and implement sustainable farming practices that will improve fruit quality, provide efficacious pest and disease management, and protect natural resources and the environment.",
+    "Show leadership capabilities by effectively training others to perform hands-on vineyard tasks.",
+    "Use proficient knowledge of the seasonal requirements of a working vineyard.",
+    "Work cooperatively and effectively with winery personnel to determine optimum harvest parameters and coordinate the operations required."
+   ],
+   "careers": [
+    "vineyard manager",
+    "vineyard design and development",
+    "pest control",
+    "irrigation specialist",
+    "vineyard crew supervisor",
+    "equipment supervisor",
+    "quality control",
+    "production manager",
+    "wine hospitality",
+    "grape/juice sales",
+    "wine label design and packaging"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 24,
+     "max": 24
+    },
+    "courses": [
+     {
+      "code": "VWT 10",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VWT 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HORT 54",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "VWT 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VWT 25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VWT 31",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VWT 32",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VWT 33",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VWT 35",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WRKX 94",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "List A: Select One",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "CHEM 30A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 31",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B: Select One",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "BIO 1R",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List C: Select One",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "VWT 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VWT 2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VWT 47",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BIO 10",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIO 30",
+    "why": "not in the text"
+   },
+   {
+    "code": "HORT 53",
+    "why": "not in the text; catalog prints only VWT 35 (no HORT 53 cross-listing shown)"
+   }
+  ],
+  "notes": [
+   "Catalog prints 'Additional General Education and Elective Units 24.0-26.0' as a combined figure for GE plus electives; not recorded as ge_units or degree_elective_units since GE and electives are not separated.",
+   "The page offers either LPC-GE or Cal-GETC as the GE pattern.",
+   "VWT 12 is printed as 'VWT 12/HORT 54' (cross-listed); recorded HORT 54 as an alternative.",
+   "Columns '1st', '2nd', etc. printed beside courses appear to be suggested semester/sequence indicators, not units.",
+   "VWT 47 is titled 'Wines of California' in the catalog vs 'Wine Regions Wines of Calif' in the state file.",
+   "Catalog text begins mid-description; the program description is truncated."
+  ]
+ },
+ "extracted_run": "38984747530"
+}

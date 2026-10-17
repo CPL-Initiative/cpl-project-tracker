@@ -1,0 +1,655 @@
+{
+ "college": "College of Marin",
+ "control_number": "03376",
+ "shape": "degree",
+ "title": "Kinesiology and Health",
+ "award": "A.A. Degree",
+ "source_url": "https://marin.elumenapp.com/catalog/current/program/a-a-in-kinesiology-and-health-fall-2026-credit-noncredit",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9081,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9081,
+    "output_tokens": 4328,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4328,
+  "output_tokens_details": {
+   "thinking_tokens": 738
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.12288,
+ "ms": 32075,
+ "seconds": 33.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 64,
+   "listed": 64,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "KIN178"
+   ],
+   "flagged": [
+    "KIN178"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    21.0,
+    21.0
+   ],
+   "stated": [
+    21.0,
+    21.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 9,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.A. in Kinesiology and Health",
+   "measure": "units",
+   "total_units": {
+    "min": 21,
+    "max": 21
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Analyze and assess various movement activities with an understanding of the basic principles of anatomy, physiology, and/or biomechanics.",
+    "Identify, value and implement wellness strategies and principles that support a healthy lifestyle.",
+    "Apply critical thinking skills in the quantitative and qualitative analysis of successful skill development, proper technique, physiological principles and kinesthetic awareness in activities related to physical education and athletics.",
+    "Utilize current technology to research and compile information in health and wellness, human performance and athletic competition."
+   ],
+   "careers": [
+    "kinesiology",
+    "physical education",
+    "director",
+    "counselor",
+    "instructor",
+    "playground supervisor",
+    "coach of a team",
+    "officiating at sports events",
+    "teaching children with special problems such as physical or mental disabilities"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "1. Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "BIOL107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN114",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "2. List A - Choose 9 units from the following courses",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "BIOL100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HED115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HED130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HED140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HED150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "3. List B - Choose 6 units from the following courses (students may substitute Dance classes for the physical activity requirements)",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "KIN110A",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN110B",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN110C",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN110D",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN112A",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN112B",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN112C",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN112D",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN113A",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN113B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN125A",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN125B",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN125C",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN125D",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN142A",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN142B",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN142C",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN142D",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN143A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN143B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN143C",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN143D",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN144",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN147",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN155A",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN155B",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN155C",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN155D",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN156A",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN156B",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN156C",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN156D",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN160A",
+      "units": 1,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN160B",
+      "units": 1,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN160C",
+      "units": 1,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN160D",
+      "units": 1,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN169A",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN169B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN173A",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN173B",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN173C",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN173D",
+      "units": 0.5,
+      "units_max": 2,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN175",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN176",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN177",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN178",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "KIN179A",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN179B",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN179C",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN179D",
+      "units": 0.5,
+      "units_max": 1,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN180",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN182",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN183",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN190",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN191",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN192",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN193",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN194",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes without a space (e.g., BIOL107); matched to closed-list codes such as 'BIOL 107'.",
+   "KIN178 (Off-Season Intercollegiate Beach Volleyball) is not in the closed list; recorded as a catalog addition.",
+   "List B heading says students may substitute Dance classes for the physical activity requirements; no Dance courses are listed.",
+   "Several catalog units differ from the state file: KIN176 printed 1 (state 1.5), KIN180/182/183 printed 2 (state 3); many activity courses printed as ranges 0.5-2 or 1-2.",
+   "Catalog titles for KIN190 and KIN192 ('Off-Season Intercollegiate Baseball/Basketball') differ from state file titles ('Baseball Theory'/'Basketball Theory').",
+   "No general education pattern or degree total is printed; the page only says additional general education and graduation requirements apply.",
+   "Program Learning Outcomes are printed for the program as a whole; recorded for this A.A. degree."
+  ]
+ },
+ "extracted_run": "38984695817"
+}

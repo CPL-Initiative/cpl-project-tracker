@@ -1,0 +1,259 @@
+{
+ "college": "College of Marin",
+ "control_number": "07171",
+ "shape": "degree",
+ "title": "Multimedia Studies, Graphic Design",
+ "award": "A.S. Degree",
+ "source_url": "https://marin.elumenapp.com/catalog/current/program/a-s-in-multimedia-studies-graphic-design-fall-2026-credit-noncredit",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6612,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6612,
+    "output_tokens": 2052,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2052,
+  "output_tokens_details": {
+   "thinking_tokens": 784
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06749,
+ "ms": 17336,
+ "seconds": 17.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 15,
+   "share": 0.667,
+   "missing": [
+    "GDES112",
+    "GDES115",
+    "MMST120",
+    "MMST122",
+    "MMST200"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.5,
+    24.5
+   ],
+   "stated": [
+    24.5,
+    24.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.S. in Multimedia Studies, Graphic Design",
+   "measure": "units",
+   "total_units": {
+    "min": 24.5,
+    "max": 24.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Develop and update traditional and digital design knowledge and skills.",
+    "Demonstrate understanding of design terminology and comprehension during discussions, presentations, and critiques.",
+    "Use written communication of concepts with visual examples as necessitated (e.g. photographs, sketches, and/or storyboards) for all design assignments.",
+    "Assignments that demonstrate applied research, analysis, and development to solve visual and/or technical problems to communicate ideas.",
+    "Submit accurate, finished assignments and projects that are of suitable for inclusion within a personal portfolio of design work."
+   ],
+   "careers": [
+    "entry-level occupations in the Design and Multimedia Industry"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Major Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 24.5,
+     "max": 24.5
+    },
+    "courses": [
+     {
+      "code": "MMST101",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MMST110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MMST111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MMST112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MMST115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GDES120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GDES122",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GDES132",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MMST132",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GDES200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "GDES 112",
+    "why": "not in the text; MMST112 printed instead"
+   },
+   {
+    "code": "GDES 115",
+    "why": "not in the text; MMST115 printed instead"
+   },
+   {
+    "code": "MMST 120",
+    "why": "not in the text; GDES120 printed instead"
+   },
+   {
+    "code": "MMST 122",
+    "why": "not in the text; GDES122 printed instead"
+   },
+   {
+    "code": "MMST 200",
+    "why": "not in the text; GDES200 printed instead"
+   }
+  ],
+  "notes": [
+   "The catalog prints a single list under 'Complete the following number of credits: 24.5' with no 'or'. GDES132 and MMST132 (both 'Typography') are both listed; summing all printed rows gives 27.5 units, not 24.5. The description says 3 core courses (6.5 units) plus Graphic Design Option courses (18.0 units), which implies only one Typography course counts. I recorded MMST132 as an alternative to GDES132 (cross-listed twin); a reviewer should confirm.",
+   "GDES120 is titled 'Digital Design & AI tools' in the catalog but 'Illustration' in the closed list; the code matches, so it is not marked as a catalog addition.",
+   "Catalog prints codes without a space (e.g. MMST101); these match closed-list codes such as 'MMST 101'.",
+   "No general education pattern or degree total is printed on the page.",
+   "'Graphic Design internships' is not recorded as a career, since internships are not job titles."
+  ]
+ },
+ "extracted_run": "38984695817"
+}

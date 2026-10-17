@@ -1,0 +1,258 @@
+{
+ "college": "Las Positas College",
+ "control_number": "31047",
+ "shape": "degree",
+ "title": "Chemistry Education",
+ "award": "A.S. Degree",
+ "source_url": "https://laspositas.curriqunet.com/catalog/iq/102/105/129/1524/1528",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7335,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7335,
+    "output_tokens": 1613,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1613,
+  "output_tokens_details": {
+   "thinking_tokens": 449
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0616,
+ "ms": 13339,
+ "seconds": 13.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 12,
+   "share": 0.833,
+   "missing": [
+    "CMST10",
+    "COMMC1000"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    42.0,
+    43.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Las Positas College General Education (LPC-GE) or California General Education Transfer Curriculum (Cal-GETC) pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     42.0,
+     43.0
+    ],
+    "stated": [
+     42.0,
+     43.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Chemistry Education (AS): Program Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 42,
+    "max": 43
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Las Positas College General Education (LPC-GE) or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate proficiency in solving complex problems in and conceptual understanding of organic chemistry as measured by the acs full-year organic chemistry exam.",
+    "Design and conduct laboratory experiments, and analyze and interpret their data.",
+    "Effectively communicate the methods, analysis, results, and conclusions of their experiments.",
+    "Quantitively analyze nature at the atomic scale by applying fundamental chemical concepts, ranging from atomic theory to organic synthesis.",
+    "Skillfully perform experimental measurements, techniques, and protocols, properly use standard laboratory instruments, and adhere to safe laboratory practices."
+   ],
+   "careers": [
+    "high school and middle school science teachers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 42,
+     "max": 43
+    },
+    "courses": [
+     {
+      "code": "BIO 1R",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIO 30",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 1A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 1B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 12A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 12B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 1",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 2",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 2A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 2B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CMST 10",
+    "why": "not in the text"
+   },
+   {
+    "code": "COMM C1000",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The page prints 'Additional General Education and Elective Units 17.0-18.0' as one combined figure for GE and electives; it is not recorded as ge_units or degree_elective_units because the GE share is not printed separately.",
+   "Degree total 'Total : 60.0' recorded in degree_total; major total 42.0-43.0 in total_units.",
+   "The first outcome follows the lead-in 'Upon completion of this program, students will be able to:' on the same line; the lead-in was omitted.",
+   "Semester labels (1st, 2nd, 3rd, 4th) beside courses are a suggested sequence and are not recorded.",
+   "Career entry taken from the overview phrase 'designed for future high school and middle school science teachers'; reviewer may check whether it should count as a named career."
+  ]
+ },
+ "extracted_run": "38984747530"
+}

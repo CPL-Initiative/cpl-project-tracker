@@ -1,0 +1,307 @@
+{
+ "college": "Las Positas College",
+ "control_number": "21579",
+ "shape": "certificate",
+ "title": "Administrative Assistant",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://laspositas.curriqunet.com/catalog/iq/102/105/130/1549/1553",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7458,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7458,
+    "output_tokens": 1797,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1797,
+  "output_tokens_details": {
+   "thinking_tokens": 397
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06577,
+ "ms": 15817,
+ "seconds": 16.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 15,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "CIS72A",
+    "CIS72B",
+    "CIS75"
+   ],
+   "flagged": [
+    "CIS72A",
+    "CIS72B",
+    "CIS75"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    29.0,
+    29.0
+   ],
+   "stated": [
+    29.0,
+    29.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 9,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Administrative Assistant (CA): Program Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 29,
+    "max": 29
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Complete business-related documents using the various functions basic, intermediate, and advanced of the software programs: word, excel, powerpoint."
+   ],
+   "careers": [
+    "administrative assistant",
+    "administrative technician",
+    "administrative associate",
+    "office manager",
+    "office clerk",
+    "receptionist",
+    "office professional",
+    "customer service representative",
+    "office coordinator"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 25,
+     "max": 25
+    },
+    "courses": [
+     {
+      "code": "BUSN 40",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSN 48",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSN 51",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 43",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CNT 43",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "CS 43",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 50",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 54",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 74",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 88A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 88B",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Select from Below",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "BUSN 30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 55",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 72A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 72B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 73A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 75",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 89A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The Overview text describes the Administrative Assistant Associate of Arts degree (including General Education), but the requirements table is labeled 'Administrative Assistant (CA): Program Requirements' with Total 29.0; the requirements were read as the Certificate of Achievement. Reviewer may confirm the overview, careers and PLO apply to the CA (they appear to be shared program-level text).",
+   "The single program learning outcome is printed for the program as a whole; recorded for this award as shared.",
+   "CIS 43/CNT 43/CS 43 printed as a cross-listed single entry; recorded CIS 43 with CNT 43 and CS 43 as alternatives.",
+   "Keyboarding competency (40 net wpm) required: may be met by completing Computer Information Systems 71C with a C or better or by a Las Positas College Verification of Proficiency; CIS 71C not recorded in a block since it is a competency path, not a listed requirement course.",
+   "The 1st/2nd column values beside courses (likely suggested semester) were not recorded."
+  ]
+ },
+ "extracted_run": "38984747530"
+}

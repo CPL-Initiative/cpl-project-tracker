@@ -1,0 +1,303 @@
+{
+ "college": "Lake Tahoe Community College",
+ "control_number": "01594",
+ "shape": "degree",
+ "title": "Business- Accounting & Finance",
+ "award": "A.A. Degree",
+ "source_url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/business-accounting-finance-aa-summer-2018",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6708,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6708,
+    "output_tokens": 1814,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1814,
+  "output_tokens_details": {
+   "thinking_tokens": 477
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06311,
+ "ms": 16327,
+ "seconds": 17.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 12,
+   "share": 0.833,
+   "missing": [
+    "ECONC2001",
+    "ECONC2002"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ECO101",
+    "ECO102"
+   ],
+   "flagged": [
+    "ECO101",
+    "ECO102"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    45.0,
+    45.0
+   ],
+   "stated": [
+    45.0,
+    45.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     45.0,
+     45.0
+    ],
+    "stated": [
+     90.0,
+     90.0
+    ],
+    "against": "degree",
+    "ge": null,
+    "why": [],
+    "fill": [
+     45.0,
+     45.0
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business-Accounting & Finance AA",
+   "measure": "units",
+   "total_units": {
+    "min": 45,
+    "max": 45
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": 90,
+    "max": 90
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Apply critical and analytical thought in diverse business situations.",
+    "Identify the basic principles of the disciplines which comprise the major.",
+    "Identify and apply basic financial analysis tools and critical business skills needed to plan and manage strategic activities.",
+    "Identify the key factors contributing to the complexity of the global business environment and its relationship with various political, social, cultural, and technological influences."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "All of the following",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 25,
+     "max": 25
+    },
+    "courses": [
+     {
+      "code": "BSN100",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSN101A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSN102",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSN104",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSN110A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSN110B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "At least one of the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "ECO101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECO102",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "All courses for Accounting & Finance",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "BSN110C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSN111",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSN115",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BSN117",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECONC2001",
+    "why": "not in the text under this code; likely corresponds to ECO102 Principles of Economics (micro), recorded as catalog addition"
+   },
+   {
+    "code": "ECONC2002",
+    "why": "not in the text under this code; likely corresponds to ECO101 Principles of Economics (macro), recorded as catalog addition"
+   }
+  ],
+  "notes": [
+   "Lake Tahoe CC uses quarter units; the page prints 'Units: 90 units' for the degree and 'C. ELECTIVE UNITS to bring the total to 90', recorded as degree_total 90 with electives_fill_degree true.",
+   "Required courses heading reads 'Business-Accounting & Finance AS (Total 45)' although this is the A.A. page; 45 recorded as the major total. Reviewer should check the AS/AA label.",
+   "The 'All courses (Total 29)' group contains the 25-unit core block and the one-of ECO block; it is recorded as those two sub-blocks.",
+   "The ECO block says 'At least one of the following' with Total 4-8; recorded as choose 1 course.",
+   "General education pattern is referenced only as 'General Education Patterns' without naming one; ge_pattern null.",
+   "Program learning outcomes are printed for the Business degree as a whole; recorded for this award."
+  ]
+ },
+ "extracted_run": "38984692790"
+}

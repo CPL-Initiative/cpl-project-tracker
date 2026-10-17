@@ -1,0 +1,285 @@
+{
+ "college": "Butte College",
+ "control_number": "37972",
+ "shape": "certificate",
+ "title": "Automotive Technology – Honda, Professional Automotive Career Training (PACT)",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28228",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7991,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7991,
+    "output_tokens": 1737,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1737,
+  "output_tokens_details": {
+   "thinking_tokens": 245
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0667,
+ "ms": 13521,
+ "seconds": 13.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 18,
+   "listed": 18,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    49.5,
+    49.5
+   ],
+   "stated": [
+    49.5,
+    49.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement in Automotive Technology - Honda, Professional Automotive Career Training (PACT)",
+   "measure": "units",
+   "total_units": {
+    "min": 49.5,
+    "max": 49.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Explain the principles of operation and maintenance required to repair all systems of the modern automobile with emphasis on Honda and Acura automobiles.",
+    "Safely and correctly maintain, diagnose and repair specific areas of the vehicle with emphasis on Honda and Acura automobiles.",
+    "Effectively communicate vehicle diagnoses, repair procedures, and maintenance recommendations, accurately documenting all work performed in accordance with industry standards.",
+    "Apply the state and federal regulations of the Occupational Safety and Health Association (OSHA) and the Environmental Protection Agency (EPA).",
+    "Demonstrate proficiency in the use of industry-standard tools and precision measuring instruments.",
+    "Apply safe work habits and practices."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 49.5,
+     "max": 49.5
+    },
+    "courses": [
+     {
+      "code": "AUT 6",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 7",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 8",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 9",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 22",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 23",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 30",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 31",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 52",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 53",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 56",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 57",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 60",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 81",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 82",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUT 83",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The closed list stores AUT8, AUT9 and AUT82 without a space and without units; these were matched to catalog codes AUT 8, AUT 9 and AUT 82 (3 units each per the catalog) and not flagged as catalog additions.",
+   "The catalog titles AUT 60 'EV, Hybrid and Alternative Fuel Technologies'; the closed list titles it 'Hybrid and Alternative Fuel Technologies'.",
+   "The 'Map' section repeats the same 18 required courses arranged by term (Terms 1-4: 10.00, 15.00, 13.00, 11.50 units; total 49.50); it was not recorded as separate blocks.",
+   "Program description and admission refer to the AS Degree in Automotive Technology - Honda PACT; no career titles are printed in this section.",
+   "The GE Pattern(s) field is blank, as expected for a certificate."
+  ]
+ },
+ "extracted_run": "38948140330"
+}

@@ -1,0 +1,189 @@
+{
+ "college": "Lake Tahoe Community College",
+ "control_number": "43646",
+ "shape": "certificate",
+ "title": "Culinary Arts Level I Foundational Skills",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/culinary-arts-level-i-foundational-skills-certificate-winter-2024",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6632,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6632,
+    "output_tokens": 1237,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1237,
+  "output_tokens_details": {
+   "thinking_tokens": 325
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05127,
+ "ms": 9867,
+ "seconds": 10.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 4,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    14.5,
+    14.5
+   ],
+   "stated": [
+    14.5,
+    14.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 10,
+   "courses": 0,
+   "count": 10,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Culinary Arts Level I Foundational Skills Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 14.5,
+    "max": 14.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Practice the principles of sanitation and food safety to prevent the spread of food-borne illness.",
+    "Practice and understand culinary fundamentals that include cooking methods, food quality discernment, preparation techniques, flavor development, sensory evaluation, and recipe literacy.",
+    "Manage and make informed business decisions to control costs and promote profitability.",
+    "Understand and practice human resource management principles.",
+    "Understand how to communicate, prepare, plan, and execute food and service that is nutritionally mindful.",
+    "Understand advanced cooking methods that include sous vide, molecular gastronomy, charcuterie, restaurant-style cooking and their applications in various food service establishments and settings.",
+    "Understand domestic and international food cultures, traditions, norms, authenticity, ingredients, preparations, and techniques.",
+    "Identify the food-service industry’s styles of service and the functions of service personnel.",
+    "Understand the functions of beverage management and basic principles of food and beverage pairings.",
+    "Work as a team member and leader to achieve common goals and objectives."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Culinary Arts Level 1 Certificate",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 14.5,
+     "max": 14.5
+    },
+    "courses": [
+     {
+      "code": "CUL101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL102",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL103A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL104",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints codes without a space (CUL101, CUL102, CUL103A, CUL104); these match closed-list CUL 101, CUL 102, CUL 103A, CUL 104, so none is a catalog addition.",
+   "The program learning outcomes are printed for the program as a whole; several (e.g., advanced cooking methods, beverage management, human resource management) appear broader than this four-course Level I certificate, so they may be shared across the culinary program.",
+   "The description mentions 'employment or promotion within the culinary industry' but names no specific career or job title; careers left empty."
+  ]
+ },
+ "extracted_run": "38984692790"
+}

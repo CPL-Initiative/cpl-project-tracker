@@ -5,14 +5,11 @@
  "catalog_year": "2026-2027",
  "programs": 204,
  "with_closed_list": 201,
- "started": "2026-10-16T16:52:21Z",
+ "started": "2026-10-17T00:06:53Z",
  "curriqunet": {
   "catalog": 164,
   "view_prefix": "https://laspositas.curriqunet.com/catalog/iq/",
-  "errors": [
-   "https://laspositas.curriqunet.com/Catalog/_getPage?catalogId=164&id=1729: APIRequestContext.get: socket hang up (ECONNRESET)",
-   "https://laspositas.curriqunet.com/Catalog/_getNavigation?id=164&parentId=1901: APIRequestContext.get: socket hang up (ECONNRESET)"
-  ],
+  "errors": [],
   "sections": [
    "Departments, Degrees & Certificates",
    "Student Services and Programs",
@@ -21,565 +18,33 @@
    "PROGRAM CHART PDF BLANK"
   ],
   "nodes_read": 158,
-  "calls": 315,
-  "entries": 20,
+  "calls": 316,
+  "entries": 201,
   "stopped_at_cap": false,
   "same_title_entries": 0,
-  "entries_read": 20
+  "entries_read": 201
  },
- "pages_read": 20,
+ "pages_read": 201,
  "banner_h1": null,
- "loads": 336,
- "seconds": 1472.4,
- "found": 20,
+ "loads": 526,
+ "seconds": 2462.2,
+ "found": 195,
  "by_method": {
   "no_closed_list": 3,
-  "not_found": 69,
-  "page_claimed": 112,
-  "sitemap_page": 20
+  "not_found": 3,
+  "page_claimed": 3,
+  "sitemap_page": 195
  },
  "shared_pages": {
-  "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1875": [
-   "01032",
-   "36431"
+  "https://laspositas.curriqunet.com/catalog/iq/102/105/2167/2169/2173": [
+   "45734",
+   "45735"
   ]
  },
  "not_found": [
   {
-   "control_number": "01005",
-   "title": "Automotive Electronics Technology",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "01023",
-   "title": "Fire Service Technology",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "01036",
-   "title": "Interior Design",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "01057",
-   "title": "Welding Technology",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/158/1905/2154",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 22,
-    "why": "coarse net: the page's code tokens name 0 of 22 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3719,
-     "content": 3719,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "09219",
-   "title": "Automotive Chassis",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "09227",
-   "title": "Early Childhood Development",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "10961",
-   "title": "Automotive Drivability",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "16367",
-   "title": "Viticulture",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "16368",
-   "title": "Enology",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "18906",
-   "title": "Administrative Medical Assistant",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "21574",
-   "title": "Enology",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "21576",
-   "title": "Viticulture",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "21588",
-   "title": "Welding Technology",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/158/1905/2154",
-    "label": {
-     "award": 1,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 15,
-    "why": "coarse net: the page's code tokens name 0 of 15 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3719,
-     "content": 3719,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "21590",
-   "title": "Interior Design",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "21592",
-   "title": "Fire Service Technology",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "30354",
-   "title": "Occupational Safety and Health",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "30866",
-   "title": "Paramedic Sciences",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1875",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 6,
-    "why": "coarse net: the page's code tokens name 0 of 6 listed courses",
-    "error": null,
-    "chars": {
-     "body": 9781,
-     "content": 9781,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "30969",
-   "title": "Emergency Medical Sciences",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "33372",
-   "title": "Journalism",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "33428",
-   "title": "Engineering Technology",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/158/1905/2154",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 13,
-    "why": "coarse net: the page's code tokens name 0 of 13 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3719,
-     "content": 3719,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "36227",
-   "title": "Economics",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "36291",
-   "title": "Ornamental Horticulture",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "36449",
-   "title": "Athletic Training/Sports Medicine",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "36471",
-   "title": "Horticulture",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "36472",
-   "title": "Landscape Design",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "36477",
-   "title": "Landscape Maintenance and Construction",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "36750",
-   "title": "Nursery, Greenhouse, and Grower Operations",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "36853",
-   "title": "Emergency Medical Technologies",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "37486",
-   "title": "College Mathematics Pathway",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "37487",
-   "title": "College Mathematics Support",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "37504",
-   "title": "ESL College Reading and Writing Pathway",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "37506",
-   "title": "ESL College Grammar Pathway",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "37524",
-   "title": "Fire Prevention",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/142/1737/1743",
-    "label": {
-     "award": 1,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.167,
-    "body": 0.167,
-    "content": 0.167,
-    "net": 1,
-    "listed": 6,
-    "why": "coarse net: the page's code tokens name 1 of 6 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3662,
-     "content": 3662,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "37531",
-   "title": "Wine Hospitality",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38240",
-   "title": "Customer Service",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38244",
-   "title": "Innovation, Entrepreneurship, and Small Business Management",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38956",
-   "title": "Automotive Alternative Fuels/Hybrid Technology",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "39070",
-   "title": "Engineering Technology",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/158/1905/2154",
-    "label": {
-     "award": 1,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 12,
-    "why": "coarse net: the page's code tokens name 0 of 12 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3719,
-     "content": 3719,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "39074",
-   "title": "Occupational Safety",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "39076",
-   "title": "Automotive Light Duty Diesel",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "39077",
-   "title": "Automotive Master",
-   "award": "Certificate of Achievement requiring 60+S/90+Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "39143",
-   "title": "Automotive Master",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "39144",
-   "title": "Automotive Light Duty Diesel",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "39145",
-   "title": "Automotive Alternative Fuels/Hybrid Technology",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "39878",
-   "title": "Basic Research Skills",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "41926",
-   "title": "Drone Photography, Mapping, and Piloting",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "41934",
-   "title": "Marine Technology Boating 101",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "42086",
-   "title": "Marine Technology Yachting 101",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
    "control_number": "42163",
    "title": "Vocational ESL: Retail",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43046",
-   "title": "Norcal Laborers Traffic Control",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43047",
-   "title": "Norcal Laborers LiUNA! Laborers’ Construction",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43048",
-   "title": "Norcal Laborers Construction",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43330",
-   "title": "School Matters Program",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43437",
-   "title": "Biotechnology Skills",
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
@@ -594,27 +59,11 @@
    }
   },
   {
-   "control_number": "43735",
-   "title": "ESL College Speaking and Listening Fluency Pathway",
+   "control_number": "45080",
+   "title": "Achievement in Community College for ESL Students",
    "award": "Noncredit program",
    "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43835",
-   "title": "ESL Pre-College Speaking and Listening Fluency Pathway",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43927",
-   "title": "Production Welder",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/158/1905/2154",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/164/1969/1972",
     "label": {
      "award": 1,
      "title": 0.5
@@ -624,321 +73,37 @@
     "body": 0.0,
     "content": 0.0,
     "net": 0,
-    "listed": 8,
-    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
     "error": null,
     "chars": {
-     "body": 3719,
-     "content": 3719,
+     "body": 2819,
+     "content": 2819,
      "tabs": 0
     },
     "tab_panels": []
-   }
-  },
-  {
-   "control_number": "43953",
-   "title": "Communication and Writing in English",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "45080",
-   "title": "Achievement in Community College for ESL Students",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "45474",
-   "title": "Emotional Intelligence in the Workplace",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "45574",
-   "title": "AAG Automotive Chassis Technician",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "45724",
-   "title": "AAG Automotive Service Technician",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "45725",
-   "title": "AAG Automotive Emissions Technician",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "45734",
-   "title": "AAG Automotive Electrical Technician",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "45735",
-   "title": "AAG Automotive Technician",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "45954",
-   "title": "Honors Scholar",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "45993",
-   "title": "Automotive Concepts",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "45994",
-   "title": "Automotive Master",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
    }
   }
  ],
  "page_claimed": [
   {
-   "control_number": "01000",
-   "title": "Accounting Technician",
+   "control_number": "09219",
+   "title": "Automotive Chassis",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1876"
+    "https://laspositas.curriqunet.com/catalog/iq/102/105/126/1372/1400",
+    "https://laspositas.curriqunet.com/catalog/iq/102/105/126/1372/1392",
+    "https://laspositas.curriqunet.com/catalog/iq/102/105/126/1372/1396",
+    "https://laspositas.curriqunet.com/catalog/iq/102/105/126/1372/1397",
+    "https://laspositas.curriqunet.com/catalog/iq/102/105/126/1372/1399"
    ]
   },
   {
-   "control_number": "01001",
-   "title": "Administration of Justice",
-   "award": "A.A. Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1880"
-   ]
-  },
-  {
-   "control_number": "01006",
-   "title": "Biology",
-   "award": "A.A. Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1879"
-   ]
-  },
-  {
-   "control_number": "01008",
-   "title": "Chemistry",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1879"
-   ]
-  },
-  {
-   "control_number": "01010",
-   "title": "Administrative Assistant",
-   "award": "A.A. Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1877"
-   ]
-  },
-  {
-   "control_number": "01011",
-   "title": "Computer Information Systems",
-   "award": "A.A. Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1877"
-   ]
-  },
-  {
-   "control_number": "01037",
-   "title": "Marketing",
-   "award": "A.A. Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1876"
-   ]
-  },
-  {
-   "control_number": "01038",
-   "title": "Business Entrepreneurship",
-   "award": "A.A. Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1876"
-   ]
-  },
-  {
-   "control_number": "01041",
+   "control_number": "30354",
    "title": "Occupational Safety and Health",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1879"
-   ]
-  },
-  {
-   "control_number": "01044",
-   "title": "Physics",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1879"
-   ]
-  },
-  {
-   "control_number": "09211",
-   "title": "Business Administration",
-   "award": "A.A. Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1876"
-   ]
-  },
-  {
-   "control_number": "09212",
-   "title": "Retailing",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1876"
-   ]
-  },
-  {
-   "control_number": "09214",
-   "title": "Computer Science",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1879"
-   ]
-  },
-  {
-   "control_number": "12241",
-   "title": "Retail Management (WAFC)",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1876"
-   ]
-  },
-  {
-   "control_number": "12882",
-   "title": "Associate Teacher",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1880"
-   ]
-  },
-  {
-   "control_number": "12885",
-   "title": "Supervisory Management",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1876"
-   ]
-  },
-  {
-   "control_number": "15321",
-   "title": "Journalism",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1878"
-   ]
-  },
-  {
-   "control_number": "15504",
-   "title": "Cybersecurity and Network Administration",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1877"
-   ]
-  },
-  {
-   "control_number": "15505",
-   "title": "Network Support Professional",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1877"
-   ]
-  },
-  {
-   "control_number": "17764",
-   "title": "English",
-   "award": "A.A. Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1878"
-   ]
-  },
-  {
-   "control_number": "18813",
-   "title": "Early Childhood Intervention",
-   "award": "A.A. Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1880"
-   ]
-  },
-  {
-   "control_number": "18814",
-   "title": "Early Childhood Intervention Assistant",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1880"
-   ]
-  },
-  {
-   "control_number": "21577",
-   "title": "Business Entrepreneurship",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1876"
-   ]
-  },
-  {
-   "control_number": "21579",
-   "title": "Administrative Assistant",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1877"
-   ]
-  },
-  {
-   "control_number": "21581",
-   "title": "Computer Programming",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1877"
-   ]
-  },
-  {
-   "control_number": "21582",
-   "title": "Computer Programming for the Web",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1877"
-   ]
-  },
-  {
-   "control_number": "21591",
-   "title": "Early Childhood Development",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1880"
+    "https://laspositas.curriqunet.com/catalog/iq/102/105/169/2016/2021"
    ]
   },
   {
@@ -946,900 +111,1783 @@
    "title": "Biology: Allied Health",
    "award": "A.S. Degree",
    "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1879"
-   ]
-  },
-  {
-   "control_number": "30415",
-   "title": "Environmental Studies",
-   "award": "A.A. Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1879"
-   ]
-  },
-  {
-   "control_number": "30547",
-   "title": "Journalism and Media Studies",
-   "award": "A.A. Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1878"
-   ]
-  },
-  {
-   "control_number": "30691",
-   "title": "Environmental Science",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1879"
-   ]
-  },
-  {
-   "control_number": "30815",
-   "title": "Sociology",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1880"
-   ]
-  },
-  {
-   "control_number": "31047",
-   "title": "Chemistry Education",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1879"
-   ]
-  },
-  {
-   "control_number": "31613",
-   "title": "Early Childhood Education",
-   "award": "A.S. T Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1880"
-   ]
-  },
-  {
-   "control_number": "31658",
-   "title": "Psychology",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1880"
-   ]
-  },
-  {
-   "control_number": "31901",
-   "title": "Geology",
-   "award": "A.S. T Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1879"
-   ]
-  },
-  {
-   "control_number": "32180",
-   "title": "Philosophy",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1875"
-   ]
-  },
-  {
-   "control_number": "32182",
-   "title": "English",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1878"
-   ]
-  },
-  {
-   "control_number": "32229",
-   "title": "Geography",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1879"
-   ]
-  },
-  {
-   "control_number": "32501",
-   "title": "History",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1875",
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1880"
-   ]
-  },
-  {
-   "control_number": "32508",
-   "title": "Anthropology",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1880"
-   ]
-  },
-  {
-   "control_number": "33219",
-   "title": "Theater Arts",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1875"
-   ]
-  },
-  {
-   "control_number": "33397",
-   "title": "Studio Arts",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1875",
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/125/1270/1272"
-   ]
-  },
-  {
-   "control_number": "33589",
-   "title": "Administration of Justice",
-   "award": "A.S. T Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1880"
-   ]
-  },
-  {
-   "control_number": "33707",
-   "title": "Kinesiology",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/2204"
-   ]
-  },
-  {
-   "control_number": "33900",
-   "title": "Computer Information Technologist",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1877"
-   ]
-  },
-  {
-   "control_number": "33907",
-   "title": "Technical Theater",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1875"
-   ]
-  },
-  {
-   "control_number": "35245",
-   "title": "Biology",
-   "award": "A.S. T Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1879"
-   ]
-  },
-  {
-   "control_number": "35917",
-   "title": "Nutrition and Dietetics",
-   "award": "A.S. T Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1879"
-   ]
-  },
-  {
-   "control_number": "35928",
-   "title": "Music",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/158/1905/1909",
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1875"
-   ]
-  },
-  {
-   "control_number": "35992",
-   "title": "Music",
-   "award": "A.A. Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1875"
-   ]
-  },
-  {
-   "control_number": "36235",
-   "title": "Theater Arts",
-   "award": "A.A. Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1875"
-   ]
-  },
-  {
-   "control_number": "36292",
-   "title": "Web & Interaction Design",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1875"
-   ]
-  },
-  {
-   "control_number": "36334",
-   "title": "Digital Illustration",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1875"
-   ]
-  },
-  {
-   "control_number": "36335",
-   "title": "Geology",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1879"
-   ]
-  },
-  {
-   "control_number": "36351",
-   "title": "Graphic Design",
-   "award": "A.A. Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1875"
-   ]
-  },
-  {
-   "control_number": "36445",
-   "title": "Graphic Design",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1875"
-   ]
-  },
-  {
-   "control_number": "36494",
-   "title": "Computer Applications Software",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1877"
-   ]
-  },
-  {
-   "control_number": "36791",
-   "title": "Political Science",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1880"
-   ]
-  },
-  {
-   "control_number": "36797",
-   "title": "Global Studies",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1880"
-   ]
-  },
-  {
-   "control_number": "36948",
-   "title": "Computational Biology",
-   "award": "A.A. Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1879"
-   ]
-  },
-  {
-   "control_number": "36953",
-   "title": "Computational Biology",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1879"
-   ]
-  },
-  {
-   "control_number": "37017",
-   "title": "Fitness Trainer",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/2204"
-   ]
-  },
-  {
-   "control_number": "37127",
-   "title": "Social Work and Human Services",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1880"
-   ]
-  },
-  {
-   "control_number": "37454",
-   "title": "Child and Adolescent Development",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1880"
-   ]
-  },
-  {
-   "control_number": "37458",
-   "title": "Art History",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/125/1270/1272",
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1875"
-   ]
-  },
-  {
-   "control_number": "37520",
-   "title": "Cybersecurity Professional",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1877"
-   ]
-  },
-  {
-   "control_number": "37522",
-   "title": "Creative Writing",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1878"
-   ]
-  },
-  {
-   "control_number": "37525",
-   "title": "Geology Major",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1879"
-   ]
-  },
-  {
-   "control_number": "37526",
-   "title": "Humanities",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1875"
-   ]
-  },
-  {
-   "control_number": "37527",
-   "title": "IT Support Professional",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1877"
-   ]
-  },
-  {
-   "control_number": "37528",
-   "title": "Jazz Studies",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/158/1905/1909",
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1875"
-   ]
-  },
-  {
-   "control_number": "37529",
-   "title": "Photography",
-   "award": "A.A. Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1875"
-   ]
-  },
-  {
-   "control_number": "37530",
-   "title": "Photography",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1875"
-   ]
-  },
-  {
-   "control_number": "38187",
-   "title": "Acting",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1875"
-   ]
-  },
-  {
-   "control_number": "38194",
-   "title": "Film Studies",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1875"
-   ]
-  },
-  {
-   "control_number": "38195",
-   "title": "Film Studies",
-   "award": "A.A. Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1875"
-   ]
-  },
-  {
-   "control_number": "38196",
-   "title": "Musical Theater",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1875"
-   ]
-  },
-  {
-   "control_number": "38873",
-   "title": "Spanish",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1875",
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1878"
-   ]
-  },
-  {
-   "control_number": "38878",
-   "title": "Biology UC Pathway",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1879"
-   ]
-  },
-  {
-   "control_number": "38879",
-   "title": "Biology UC Pathway",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1879"
-   ]
-  },
-  {
-   "control_number": "38884",
-   "title": "Civil/Mechanical Engineering",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1879"
-   ]
-  },
-  {
-   "control_number": "38885",
-   "title": "Civil/Mechanical Engineering",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1879"
-   ]
-  },
-  {
-   "control_number": "38886",
-   "title": "Electrical Engineering",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1879"
-   ]
-  },
-  {
-   "control_number": "38887",
-   "title": "Electrical Engineering",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1879"
-   ]
-  },
-  {
-   "control_number": "38888",
-   "title": "Electrical Engineering UC Pathway",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1879"
-   ]
-  },
-  {
-   "control_number": "38889",
-   "title": "Electrical Engineering UC Pathway",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1879"
-   ]
-  },
-  {
-   "control_number": "38890",
-   "title": "Engineering",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1879"
-   ]
-  },
-  {
-   "control_number": "38892",
-   "title": "Engineering",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1879"
-   ]
-  },
-  {
-   "control_number": "38893",
-   "title": "Mechanical Engineering UC Pathway",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1879"
-   ]
-  },
-  {
-   "control_number": "38894",
-   "title": "Mechanical Engineering UC Pathway",
-   "award": "Certificate of Achievement requiring 60+S/90+Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1879"
-   ]
-  },
-  {
-   "control_number": "38895",
-   "title": "Software Engineering",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1879"
-   ]
-  },
-  {
-   "control_number": "38896",
-   "title": "Software Engineering",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1879"
-   ]
-  },
-  {
-   "control_number": "38922",
-   "title": "Spanish",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1875",
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1878"
-   ]
-  },
-  {
-   "control_number": "39063",
-   "title": "Bookkeeping",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1876"
-   ]
-  },
-  {
-   "control_number": "39064",
-   "title": "Business Workforce Proficiency",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1877"
-   ]
-  },
-  {
-   "control_number": "39065",
-   "title": "Cloud Computing",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1877"
-   ]
-  },
-  {
-   "control_number": "39071",
-   "title": "Web Development",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1877"
-   ]
-  },
-  {
-   "control_number": "39073",
-   "title": "Project Management",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1877"
-   ]
-  },
-  {
-   "control_number": "40461",
-   "title": "Data Analytics",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1877"
-   ]
-  },
-  {
-   "control_number": "40478",
-   "title": "Red Hat Administration",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1877"
-   ]
-  },
-  {
-   "control_number": "40479",
-   "title": "Artificial Intelligence",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1877"
-   ]
-  },
-  {
-   "control_number": "40480",
-   "title": "Management Information Systems",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1877"
-   ]
-  },
-  {
-   "control_number": "41923",
-   "title": "21st Century Policing",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1880"
-   ]
-  },
-  {
-   "control_number": "41984",
-   "title": "Business Administration 2.0",
-   "award": "A.S. T Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1876"
-   ]
-  },
-  {
-   "control_number": "42162",
-   "title": "Marketing",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1876"
-   ]
-  },
-  {
-   "control_number": "42948",
-   "title": "Communication Studies 2.0",
-   "award": "A.A- T Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1878"
-   ]
-  },
-  {
-   "control_number": "43915",
-   "title": "Piano Technology",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1875"
-   ]
-  },
-  {
-   "control_number": "43917",
-   "title": "Public Health",
-   "award": "A.S. T Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1880"
-   ]
-  },
-  {
-   "control_number": "44793",
-   "title": "Modern Policing",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1880"
-   ]
-  },
-  {
-   "control_number": "45316",
-   "title": "Physical Therapy Aide",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/2204"
-   ]
-  },
-  {
-   "control_number": "46336",
-   "title": "Mathematics 2.0",
-   "award": "A.S. T Degree",
-   "pages": [
+    "https://laspositas.curriqunet.com/catalog/iq/102/105/147/1795/1798",
+    "https://laspositas.curriqunet.com/catalog/iq/102/105/168/2008/2011",
     "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1879"
    ]
   }
  ],
  "coverage_bands": {
-  "0.5-0.8": 0,
-  "0.8-1.0": 5,
-  "1.0": 15
+  "0.5-0.8": 4,
+  "0.8-1.0": 21,
+  "1.0": 170
  },
  "would_extract": {
-  "against": null,
-  "kept": 0,
-  "programs": 20,
+  "against": "kb/program_requirements_college/las_positas",
+  "kept": 19,
+  "programs": 176,
   "list": [
    {
-    "control_number": "01004",
-    "title": "Art: Emphasis in Painting",
+    "control_number": "01000",
+    "title": "Accounting Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/128/1479/1483",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "01001",
+    "title": "Administration of Justice",
     "award": "A.A. Degree",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/125/1270/1272",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/119/738/741",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "01005",
+    "title": "Automotive Electronics Technology",
+    "award": "A.S. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/126/1372/1396",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "01006",
+    "title": "Biology",
+    "award": "A.A. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/127/1443/1446",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "01008",
+    "title": "Chemistry",
+    "award": "A.S. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/129/1524/1527",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "01010",
+    "title": "Administrative Assistant",
+    "award": "A.A. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/130/1549/1552",
+    "coverage": 0.714,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "01011",
+    "title": "Computer Information Systems",
+    "award": "A.A. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/130/1549/1557",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "01023",
+    "title": "Fire Service Technology",
+    "award": "A.S. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/142/1737/1746",
+    "coverage": 0.7,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
     "control_number": "01032",
     "title": "Humanities",
     "award": "A.A. Degree",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1875",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/150/1820/1825",
+    "coverage": 1.0,
+    "was_url": "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1875",
+    "was_coverage": 0.833,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "01036",
+    "title": "Interior Design",
+    "award": "A.S. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/151/1833/1837",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "01037",
+    "title": "Marketing",
+    "award": "A.A. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/157/1888/1891",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "01038",
+    "title": "Business Entrepreneurship",
+    "award": "A.A. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/128/1479/1487",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "01041",
+    "title": "Occupational Safety and Health",
+    "award": "A.S. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/169/2016/2021",
+    "coverage": 0.95,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "01044",
+    "title": "Physics",
+    "award": "A.S. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/173/2042/2045",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "01057",
+    "title": "Welding Technology",
+    "award": "A.S. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/181/2132/2136",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "09211",
+    "title": "Business Administration",
+    "award": "A.A. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/128/1479/1485",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "09212",
+    "title": "Retailing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/157/1888/1893",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "09214",
+    "title": "Computer Science",
+    "award": "A.S. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/133/1620/1628",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "09227",
+    "title": "Early Childhood Development",
+    "award": "A.A. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/134/1637/1643",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "10961",
+    "title": "Automotive Drivability",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/126/1372/1395",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "12241",
+    "title": "Retail Management (WAFC)",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/128/1479/1490",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "12882",
+    "title": "Associate Teacher",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/134/1637/1641",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "12885",
+    "title": "Supervisory Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/128/1479/1491",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "15321",
+    "title": "Journalism",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/152/1845/1849",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "15504",
+    "title": "Cybersecurity and Network Administration",
+    "award": "A.S. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/132/1596/1599",
+    "coverage": 0.944,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "15505",
+    "title": "Network Support Professional",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/132/1596/1602",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "16367",
+    "title": "Viticulture",
+    "award": "A.S. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/180/2119/2127",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "16368",
+    "title": "Enology",
+    "award": "A.S. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/180/2119/2125",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "17764",
+    "title": "English",
+    "award": "A.A. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/137/1672/1676",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "18813",
+    "title": "Early Childhood Intervention",
+    "award": "A.A. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/134/1637/1646",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "18814",
+    "title": "Early Childhood Intervention Assistant",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/134/1637/1647",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "18906",
+    "title": "Administrative Medical Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/130/1549/1554",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "21574",
+    "title": "Enology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/180/2119/2126",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "21576",
+    "title": "Viticulture",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/180/2119/2128",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "21577",
+    "title": "Business Entrepreneurship",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/128/1479/1488",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "21579",
+    "title": "Administrative Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/130/1549/1553",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "21581",
+    "title": "Computer Programming",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/133/1620/1626",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "21582",
+    "title": "Computer Programming for the Web",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/133/1620/1627",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "21588",
+    "title": "Welding Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/181/2132/2137",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "21590",
+    "title": "Interior Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/151/1833/1838",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "21591",
+    "title": "Early Childhood Development",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/134/1637/1644",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "21592",
+    "title": "Fire Service Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/142/1737/1747",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "30415",
+    "title": "Environmental Studies",
+    "award": "A.A. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/140/1720/1724",
+    "coverage": 0.963,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "30547",
+    "title": "Journalism and Media Studies",
+    "award": "A.A. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/152/1845/1850",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "30691",
+    "title": "Environmental Science",
+    "award": "A.S. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/139/1713/1716",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "30815",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/176/2071/2084",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "30866",
+    "title": "Paramedic Sciences",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/136/1659/1667",
     "coverage": 0.833,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
-    "control_number": "36234",
-    "title": "Commercial Music: Music Business",
+    "control_number": "30969",
+    "title": "Emergency Medical Sciences",
+    "award": "A.S. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/136/1659/1665",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "31047",
+    "title": "Chemistry Education",
+    "award": "A.S. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/129/1524/1528",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "31613",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/134/1637/1645",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "31658",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/175/2057/2060",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "31901",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/145/1765/1770",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "32180",
+    "title": "Philosophy",
+    "award": "A.A- T Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/171/2026/2029",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "32182",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/137/1672/1677",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "32229",
+    "title": "Geography",
+    "award": "A.A- T Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/144/1759/1762",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "32501",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/148/1801/1805",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "32508",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/120/1230/1232",
+    "coverage": 0.905,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "33219",
+    "title": "Theater Arts",
+    "award": "A.A- T Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/178/2099/2107",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "33372",
+    "title": "Journalism",
+    "award": "A.A- T Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/152/1845/1848",
+    "coverage": 0.955,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "33397",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/125/1270/1273",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "33428",
+    "title": "Engineering Technology",
+    "award": "A.S. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1699",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "33589",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/119/738/742",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "33707",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/153/1853/1861",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "33900",
+    "title": "Computer Information Technologist",
+    "award": "A.S. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/130/1549/1558",
+    "coverage": 0.955,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "33907",
+    "title": "Technical Theater",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/158/1905/1908",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/178/2099/2105",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "36341",
-    "title": "Liberal Arts & Sciences: Mathematics and Science",
+    "control_number": "35245",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/127/1443/1447",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "35917",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/168/2008/2011",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "35928",
+    "title": "Music",
+    "award": "A.A- T Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/158/1905/1916",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "35992",
+    "title": "Music",
     "award": "A.A. Degree",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1879",
-    "coverage": 0.984,
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/158/1905/1915",
+    "coverage": 0.941,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "36349",
-    "title": "Commercial Music: Teaching Intermediate Piano",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/158/1905/1913",
-    "coverage": 1.0,
+    "control_number": "36227",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/135/1651/1656",
+    "coverage": 0.933,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
-    "control_number": "36350",
-    "title": "Commercial Music: Teaching Beginning Piano",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/158/1905/1912",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36361",
-    "title": "Liberal Arts & Sciences: Computer Studies",
+    "control_number": "36235",
+    "title": "Theater Arts",
     "award": "A.A. Degree",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1877",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/178/2099/2106",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "36362",
-    "title": "Liberal Arts & Sciences: Language Arts and Communication",
-    "award": "A.A. Degree",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1878",
-    "coverage": 0.982,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36363",
-    "title": "Liberal Arts & Sciences: Business",
-    "award": "A.A. Degree",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1876",
-    "coverage": 0.957,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36431",
-    "title": "Liberal Arts & Sciences: Arts and Humanities",
-    "award": "A.A. Degree",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1875",
-    "coverage": 0.971,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36479",
-    "title": "Liberal Arts & Sciences: Social and Behavioral Sciences",
-    "award": "A.A. Degree",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1880",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37521",
-    "title": "Commercial Music: Scoring for Film and Multimedia",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/158/1905/1911",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37523",
-    "title": "Fire Academy - Fire Suppression",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/142/1737/1743",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37535",
-    "title": "Commercial Music: Music Technology Fundamentals",
+    "control_number": "36291",
+    "title": "Ornamental Horticulture",
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/158/1905/1909",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/149/1808/1817",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
-    "control_number": "39066",
-    "title": "Commercial Music: Piano Teaching Fundamentals",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/158/1905/1910",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40063",
-    "title": "Social Justice Studies: LGBTQ Studies",
-    "award": "A.A- T Degree",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/154/1865/1869",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41980",
-    "title": "Social Justice Studies: Gender Studies",
-    "award": "A.A- T Degree",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/182/2143/2146",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45955",
-    "title": "Liberal Arts & Sciences: Health and Wellness",
-    "award": "A.A. Degree",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/2204",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46194",
-    "title": "Commercial Music: Music Technology and Production",
+    "control_number": "36292",
+    "title": "Web & Interaction Design",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/158/1905/2154",
-    "coverage": 1.0,
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/143/1783/1791",
+    "coverage": 0.923,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
-    "control_number": "46334",
-    "title": "Elementary Teacher Education: Integrated Programs",
-    "award": "A.A- T Degree",
-    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/134/1637/1648",
+    "control_number": "36334",
+    "title": "Digital Illustration",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/143/1783/1788",
     "coverage": 1.0,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "36335",
+    "title": "Geology",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/145/1765/1771",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "36351",
+    "title": "Graphic Design",
+    "award": "A.A. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/143/1783/1789",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "36445",
+    "title": "Graphic Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/143/1783/1790",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "36449",
+    "title": "Athletic Training/Sports Medicine",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/153/1853/1858",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "36471",
+    "title": "Horticulture",
+    "award": "A.S. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/149/1808/1813",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "36472",
+    "title": "Landscape Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/149/1808/1814",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "36477",
+    "title": "Landscape Maintenance and Construction",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/149/1808/1815",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "36494",
+    "title": "Computer Applications Software",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/130/1549/1556",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "36750",
+    "title": "Nursery, Greenhouse, and Grower Operations",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/149/1808/1816",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "36791",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/174/2050/2053",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "36797",
+    "title": "Global Studies",
+    "award": "A.A- T Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/146/1775/1778",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "36853",
+    "title": "Emergency Medical Technologies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/136/1659/1666",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "36948",
+    "title": "Computational Biology",
+    "award": "A.A. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/127/1443/1451",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "36953",
+    "title": "Computational Biology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/127/1443/1452",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "37017",
+    "title": "Fitness Trainer",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/153/1853/1859",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "37127",
+    "title": "Social Work and Human Services",
+    "award": "A.A- T Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/170/2065/2068",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "37454",
+    "title": "Child and Adolescent Development",
+    "award": "A.A- T Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/134/1637/1642",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "37458",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/124/1285/1288",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "37486",
+    "title": "College Mathematics Pathway",
+    "award": "Noncredit program",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/166/1987/1990",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "37487",
+    "title": "College Mathematics Support",
+    "award": "Noncredit program",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/166/1987/1991",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "37504",
+    "title": "ESL College Reading and Writing Pathway",
+    "award": "Noncredit program",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/164/1969/1973",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "37506",
+    "title": "ESL College Grammar Pathway",
+    "award": "Noncredit program",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/164/1969/1972",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "37520",
+    "title": "Cybersecurity Professional",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/132/1596/1600",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "37522",
+    "title": "Creative Writing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/137/1672/1675",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "37524",
+    "title": "Fire Prevention",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/142/1737/1745",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "37525",
+    "title": "Geology Major",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/145/1765/1772",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "37526",
+    "title": "Humanities",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/150/1820/1826",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "37527",
+    "title": "IT Support Professional",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/132/1596/1601",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "37528",
+    "title": "Jazz Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/158/1905/1914",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "37529",
+    "title": "Photography",
+    "award": "A.A. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/172/2034/2037",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "37530",
+    "title": "Photography",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/172/2034/2038",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "37531",
+    "title": "Wine Hospitality",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/180/2119/2129",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "38187",
+    "title": "Acting",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/178/2099/2102",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "38194",
+    "title": "Film Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/141/1729/1733",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "38195",
+    "title": "Film Studies",
+    "award": "A.A. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/141/1729/1732",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "38196",
+    "title": "Musical Theater",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/178/2099/2104",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "38240",
+    "title": "Customer Service",
+    "award": "Noncredit program",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/162/1948/1951",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "38244",
+    "title": "Innovation, Entrepreneurship, and Small Business Management",
+    "award": "Noncredit program",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/162/1948/1953",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "38873",
+    "title": "Spanish",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/177/2091/2095",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "38878",
+    "title": "Biology UC Pathway",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/127/1443/1450",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "38879",
+    "title": "Biology UC Pathway",
+    "award": "A.S. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/127/1443/1449",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "38884",
+    "title": "Civil/Mechanical Engineering",
+    "award": "A.S. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1691",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "38885",
+    "title": "Civil/Mechanical Engineering",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1692",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "38886",
+    "title": "Electrical Engineering",
+    "award": "A.S. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1693",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "38887",
+    "title": "Electrical Engineering",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1694",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "38888",
+    "title": "Electrical Engineering UC Pathway",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1696",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "38889",
+    "title": "Electrical Engineering UC Pathway",
+    "award": "A.S. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1695",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "38890",
+    "title": "Engineering",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1698",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "38892",
+    "title": "Engineering",
+    "award": "A.S. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1697",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "38893",
+    "title": "Mechanical Engineering UC Pathway",
+    "award": "A.S. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1701",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "38894",
+    "title": "Mechanical Engineering UC Pathway",
+    "award": "Certificate of Achievement requiring 60+S/90+Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1702",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "38895",
+    "title": "Software Engineering",
+    "award": "A.S. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1703",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "38896",
+    "title": "Software Engineering",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1704",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "38922",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/177/2091/2094",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "38956",
+    "title": "Automotive Alternative Fuels/Hybrid Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/126/1372/1393",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "39063",
+    "title": "Bookkeeping",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/128/1479/1484",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "39064",
+    "title": "Business Workforce Proficiency",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/128/1479/1489",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "39065",
+    "title": "Cloud Computing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/130/1549/1555",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "39070",
+    "title": "Engineering Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1700",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "39071",
+    "title": "Web Development",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/130/1549/1561",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "39073",
+    "title": "Project Management",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/130/1549/1560",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "39074",
+    "title": "Occupational Safety",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/169/2016/2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "39076",
+    "title": "Automotive Light Duty Diesel",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/126/1372/1398",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "39077",
+    "title": "Automotive Master",
+    "award": "Certificate of Achievement requiring 60+S/90+Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/126/1372/1400",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "39143",
+    "title": "Automotive Master",
+    "award": "A.S. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/126/1372/1399",
+    "coverage": 0.941,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "39144",
+    "title": "Automotive Light Duty Diesel",
+    "award": "A.S. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/126/1372/1397",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "39145",
+    "title": "Automotive Alternative Fuels/Hybrid Technology",
+    "award": "A.S. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/126/1372/1392",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "39878",
+    "title": "Basic Research Skills",
+    "award": "Noncredit program",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/165/1982/1984",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "40461",
+    "title": "Data Analytics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/130/1549/1559",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "40478",
+    "title": "Red Hat Administration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/133/1620/1630",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "40479",
+    "title": "Artificial Intelligence",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/133/1620/1625",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "40480",
+    "title": "Management Information Systems",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/133/1620/1629",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "41923",
+    "title": "21st Century Policing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/119/738/744",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "41926",
+    "title": "Drone Photography, Mapping, and Piloting",
+    "award": "Noncredit program",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/160/1935/1939",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "41934",
+    "title": "Marine Technology Boating 101",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/123/1259/1261",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "41984",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/128/1479/1486",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "42086",
+    "title": "Marine Technology Yachting 101",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/123/1259/1262",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "42162",
+    "title": "Marketing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/157/1888/1892",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "42948",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/131/1537/1541",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "43046",
+    "title": "Norcal Laborers Traffic Control",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/121/1240/1244",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "43047",
+    "title": "Norcal Laborers LiUNA! Laborers’ Construction",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/121/1240/1243",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "43048",
+    "title": "Norcal Laborers Construction",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/121/1240/1242",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "43330",
+    "title": "School Matters Program",
+    "award": "Noncredit program",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/164/1969/1976",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "43437",
+    "title": "Biotechnology Skills",
+    "award": "Noncredit program",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/161/1941/1944",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "43735",
+    "title": "ESL College Speaking and Listening Fluency Pathway",
+    "award": "Noncredit program",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/164/1969/1974",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "43835",
+    "title": "ESL Pre-College Speaking and Listening Fluency Pathway",
+    "award": "Noncredit program",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/164/1969/1975",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "43915",
+    "title": "Piano Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/158/1905/1917",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "43917",
+    "title": "Public Health",
+    "award": "A.S. T Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/147/1795/1798",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "43927",
+    "title": "Production Welder",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/181/2132/2135",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "43953",
+    "title": "Communication and Writing in English",
+    "award": "Noncredit program",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/163/1956/1960",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "44793",
+    "title": "Modern Policing",
+    "award": "A.S. Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/119/738/743",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "45316",
+    "title": "Physical Therapy Aide",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/153/1853/1860",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "45474",
+    "title": "Emotional Intelligence in the Workplace",
+    "award": "Noncredit program",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/162/1948/1952",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "45574",
+    "title": "AAG Automotive Chassis Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/2167/2169/2172",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "45724",
+    "title": "AAG Automotive Service Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/2167/2169/2175",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "45725",
+    "title": "AAG Automotive Emissions Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/2167/2169/2174",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "45734",
+    "title": "AAG Automotive Electrical Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/2167/2169/2173",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "45735",
+    "title": "AAG Automotive Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/2167/2169/2173",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "45954",
+    "title": "Honors Scholar",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/2156/2158/2161",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "45993",
+    "title": "Automotive Concepts",
+    "award": "Noncredit program",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/159/1922/1929",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "45994",
+    "title": "Automotive Master",
+    "award": "Noncredit program",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/159/1922/1930",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "46336",
+    "title": "Mathematics 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/156/1899/1902",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    }
   ]
  },
- "run": "38935144431"
+ "run": "38984747530"
 }

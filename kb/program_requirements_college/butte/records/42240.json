@@ -1,0 +1,208 @@
+{
+ "college": "Butte College",
+ "control_number": "42240",
+ "shape": "certificate",
+ "title": "Project Management",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://butte.curriqunet.com/catalog/iq/25398/28090/28397",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6668,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6668,
+    "output_tokens": 1037,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1037,
+  "output_tokens_details": {
+   "thinking_tokens": 234
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04741,
+ "ms": 8310,
+ "seconds": 8.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.0,
+    20.0
+   ],
+   "stated": [
+    20.0,
+    20.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 7,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement in Project Management",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 20
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify, analyze, and resolve project problems. Quality standards and various methodologies are explored as tools and techniques used to manage project quality and resolve problems.",
+    "Identify and define project needs. Explore the project quality management processes of quality planning, quality assurance, and quality control necessary to successfully meet conformance to project requirements and fitness of use.",
+    "Plan project schedules and budgets.",
+    "Manage effectively in a variety of project organizational structures.",
+    "Apply the fundamentals of accounting, supervising and leading, business management and human resources.",
+    "Communicate effectively among various project personnel and stakeholders.",
+    "Utilize the MS Project Management software and MS Outlook software to work in an efficient and productive manner as a project manager.",
+    "Explore program manager jobs in a variety of industries and how these skills are transferrable between industries."
+   ],
+   "careers": [
+    "entry level Program Manager",
+    "construction",
+    "engineering",
+    "architecture",
+    "computing",
+    "healthcare",
+    "telecommunications"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 20,
+     "max": 20
+    },
+    "courses": [
+     {
+      "code": "ACCT 2",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT 4",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BCIS 16",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 35",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 46",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page also prints a two-term map of the same six courses (Total 20.00); it was not recorded as separate blocks.",
+   "GE Pattern(s) printed as 'None'."
+  ]
+ },
+ "extracted_run": "38981247046"
+}

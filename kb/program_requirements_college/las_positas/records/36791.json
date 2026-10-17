@@ -1,0 +1,255 @@
+{
+ "college": "Las Positas College",
+ "control_number": "36791",
+ "shape": "adt",
+ "title": "Political Science",
+ "award": "A.A- T Degree",
+ "source_url": "https://laspositas.curriqunet.com/catalog/iq/102/105/174/2050/2053",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7236,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7236,
+    "output_tokens": 1914,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1914,
+  "output_tokens_details": {
+   "thinking_tokens": 678
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06722,
+ "ms": 16278,
+ "seconds": 16.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    19.0,
+    19.0
+   ],
+   "stated": [
+    59.0,
+    61.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Cal-GETC pattern, but no units for it"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Political Science (AA-T): Program Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 59,
+    "max": 61
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Analyze and assess various types of sources in the discipline.",
+    "Demonstrate an understanding of socioeconomic and/or political power disparities existing along the lines of identities such as race, class, gender, sexuality, legal status, and religion.",
+    "Demonstrate understanding and application of theories and concepts in political science to contemporary political phenomenon.",
+    "Research, synthesize, and argue a political thesis."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core: Select Three (9 Units)",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "POLS C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLI 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLI 25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLI 30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Select Two (6-7 Units)",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLI 12",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B: Select One (3-4 Units)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "HIST C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 5",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GS 1",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "List A also allows 'Any course not selected from Required Core' (3.0 units); List B also allows 'Any course not selected from Required Core or List A' (3.0-4.0 units). These are not course codes and are not recorded as entries.",
+   "'Total Units for the Major' heading prints no figure; total_units left null.",
+   "The page prints 40.0-42.0 for 'Additional General Education and Elective Units' combined (Cal-GETC plus CSU-transferable electives); not recorded as ge_units or degree_elective_units since it mixes GE and electives.",
+   "Degree total printed as 'Total : 59.0- 61.0', though completion requirements state 60 semester units; reviewer may check.",
+   "Ordinal markers (1st, 2nd, 3rd, 4th) beside courses appear to be sequencing/semester indicators and were not interpreted.",
+   "SOC 5/GS 1 printed as a cross-listed pair 'Introduction to Global Studies'; recorded as one choice with GS 1 as alternative.",
+   "Required Core is printed as 'Select Three' of four courses; recorded as printed."
+  ]
+ },
+ "extracted_run": "38984747530"
+}

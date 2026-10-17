@@ -1,0 +1,233 @@
+{
+ "college": "Lake Tahoe Community College",
+ "control_number": "09128",
+ "shape": "degree",
+ "title": "Medical Office Assistant: Administrative",
+ "award": "A.A. Degree",
+ "source_url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/medical-office-assistant-administrative-aa-summer-2021",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6627,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6627,
+    "output_tokens": 1377,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1377,
+  "output_tokens_details": {
+   "thinking_tokens": 424
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05405,
+ "ms": 11775,
+ "seconds": 12.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    29.0,
+    29.0
+   ],
+   "stated": [
+    29.0,
+    29.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     29.0,
+     29.0
+    ],
+    "stated": [
+     90.0,
+     90.0
+    ],
+    "against": "degree",
+    "ge": null,
+    "why": [],
+    "fill": [
+     61.0,
+     61.0
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Medical Office Assistant: Administrative AA",
+   "measure": "units",
+   "total_units": {
+    "min": 29,
+    "max": 29
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": 90,
+    "max": 90
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Demonstrate effective use of advanced medical terminology and apply the principles of anatomy and physiology.",
+    "Identify, evaluate, and appropriately apply principles of medical office administration and demonstrate competency in performing administrative clerical duties.",
+    "Demonstrate accuracy in common medical insurance billing and coding procedures to ensure proper reimbursement.",
+    "Demonstrate accuracy in creating and managing fictitious Electronic Health/Medical Records (EHRs/EMRs)."
+   ],
+   "careers": [
+    "responsible administrative positions in medical offices"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "B. Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 29,
+     "max": 29
+    },
+    "courses": [
+     {
+      "code": "BSN 104",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MOA 235",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MOA 236A",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MOA 236B",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MOA 236C",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MOA 237",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MOA 241",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MOA 249",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "LTCC counts in quarter units; the page prints 'Units: 90 units' for the A.A. and 'ELECTIVE UNITS to bring the total to 90', recorded as degree_total 90 with electives_fill_degree true.",
+   "The catalog text prints codes without a space (e.g. 'BSN104', 'MOA236A'); recorded with the subject separated by a space to match the closed list.",
+   "General education is referenced only as 'General Education Patterns' with no named pattern or units printed; ge_pattern and ge_units left null.",
+   "Career entry is taken from the description phrase 'assume responsible administrative positions in medical offices'; reviewer may judge whether it counts as a named career."
+  ]
+ },
+ "extracted_run": "38984692790"
+}

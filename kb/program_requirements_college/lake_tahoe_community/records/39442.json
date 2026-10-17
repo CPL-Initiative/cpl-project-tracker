@@ -1,0 +1,370 @@
+{
+ "college": "Lake Tahoe Community College",
+ "control_number": "39442",
+ "shape": "certificate",
+ "title": "Environmental Science and Technology",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/environmental-science-technology-certificate-fall-2020",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7129,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7129,
+    "output_tokens": 2724,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2724,
+  "output_tokens_details": {
+   "thinking_tokens": 891
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.083,
+ "ms": 23349,
+ "seconds": 23.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 20,
+   "listed": 23,
+   "share": 0.87,
+   "missing": [
+    "CIS135A",
+    "CIS135B",
+    "STATC1000"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "MAT201"
+   ],
+   "flagged": [
+    "MAT201"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    28.0,
+    39.5
+   ],
+   "stated": [
+    28.0,
+    39.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Environmental Science & Technology - Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 28,
+    "max": 39.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Use scientific methods to identify issues, understand relationships, and solve problems.",
+    "Evaluate environmental issues in local and global contexts."
+   ],
+   "careers": [
+    "environmental fields"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "A.2. Select One 5 - 5.75 Units",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 5.75
+    },
+    "courses": [
+     {
+      "code": "CHM 100",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHM 101",
+      "units": 5.75,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHS 102",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A.3. Minimum of 10 Units",
+    "rule": "choose_units",
+    "minimum": 10,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "EVS 106",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EVS 133",
+      "units": 1,
+      "units_max": 6,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEG 107",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEG 134",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEG 135",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A.4. Select Two (not already used above)",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 8,
+     "max": 10.75
+    },
+    "courses": [
+     {
+      "code": "BIO 101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 149",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 201",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIO 212",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHM 101",
+      "units": 5.75,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEG 101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEG 108",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEG 113",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEL 102",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MAT 201",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHS 117",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHY 104",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A.1. Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "EVS 101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EVS 101L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CIS 135A",
+    "why": "not in the text; catalog lists GEG 134 (same ArcGIS course) instead"
+   },
+   {
+    "code": "CIS 135B",
+    "why": "not in the text; catalog lists GEG 135 (same ArcGIS course) instead"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "not in the text; catalog lists MAT 201 Elementary Statistics instead"
+   }
+  ],
+  "notes": [
+   "Catalog prints codes without a space (e.g. CHM100); recorded with a space to match the closed list format.",
+   "Blocks are recorded in the order printed on the page (A.2, A.3, A.4, A.1); the A.1 Required Courses block is printed last despite its label.",
+   "CHM 101 appears in both A.2 and A.4; A.4 says 'not already used above', so it cannot count twice.",
+   "MAT 201 Elementary Statistics is not on the closed list; it is likely the predecessor of STAT C1000 (state file) - reviewer should check.",
+   "Catalog prints EVS 133 as 1-6 units; closed list stores 1. CHM 101 printed 5.75 vs 5.8 in closed list.",
+   "Catalog titles GEG 134/135 as Introduction/Intermediate Geographic Information Systems, while the closed list titles them ArcGIS Online/ArcGIS Desktop.",
+   "Career entry 'environmental fields' taken from 'entry-level employment in a variety of environmental fields' in the description."
+  ]
+ },
+ "extracted_run": "38984692790"
+}

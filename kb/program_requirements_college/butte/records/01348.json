@@ -1,0 +1,303 @@
+{
+ "college": "Butte College",
+ "control_number": "01348",
+ "shape": "degree",
+ "title": "Fashion Merchandising",
+ "award": "A.S. Degree",
+ "source_url": "https://butte.curriqunet.com/catalog/iq/25398/28124/28296",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7783,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7783,
+    "output_tokens": 2497,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2497,
+  "output_tokens_details": {
+   "thinking_tokens": 1084
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08107,
+ "ms": 20143,
+ "seconds": 20.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 13,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    39.0,
+    39.0
+   ],
+   "stated": [
+    60.0,
+    66.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Butte Local pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     36.0,
+     36.0
+    ],
+    "stated": [
+     36.0,
+     36.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 26,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "AS Degree in Fashion Merchandising",
+   "measure": "units",
+   "total_units": {
+    "min": 36,
+    "max": 36
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 3,
+    "max": 3
+   },
+   "ge_pattern": "Butte Local",
+   "degree_total": {
+    "min": 60,
+    "max": 66
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Analyze and describe the fashion industry including innovations, careers, current trends, the impact of globalization and technology, and the expanding roles of designers.",
+    "Analyze, describe, and apply concepts in the business of buying, distributing and selling of fashion merchandise from the manufacturing level through to the retailer and, ultimately, the consumer.",
+    "Demonstrate command of visual presentation or production, and create a resume or relevant portfolio to be used to market him/herself in the fashion industry."
+   ],
+   "careers": [
+    "Retail",
+    "Buyer",
+    "assistant buyer",
+    "department manager",
+    "fashion/bridal consultant",
+    "store manager",
+    "merchandise manager",
+    "salesperson",
+    "shop owner",
+    "sales representative",
+    "showroom associate",
+    "personal shopper",
+    "management trainee",
+    "Fashion stylist",
+    "fashion coordinator",
+    "public relations",
+    "fashion commentator",
+    "special events director",
+    "model",
+    "Fashion reporter",
+    "copy writer",
+    "fashion illustrator",
+    "fashion writer",
+    "fashion editor",
+    "publicity manager",
+    "fashion researcher"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BCIS 18",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 50",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON 25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FASH 6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FASH 18",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FASH 64",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FASH 74",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FASH 80",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FASH 90",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FASH 99",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "BUS 25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 35",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The 36.00 printed beside 'Required courses:' covers the 33 units of required courses plus the nested 'Select one' (3 units); it is recorded as total_units (Total : 36.00) rather than as the required block's stated total.",
+   "FASH 99 is printed with 3.00 units; the state file stores 0.5 units.",
+   "degree_total 60-66 is taken from the Butte GE program map ('Units: 60.00- 66.00', 'Total : 60.00- 66.00'); the map lists GE area choices by area without printing a single GE total, so ge_units is null.",
+   "The map includes a 3-unit 'Elective (any course numbered 1-199 or C1000-C2999)' marked 'Only necessary if the 60 units needed to graduate have not been completed'; recorded as degree_elective_units 3, but it is conditional.",
+   "'Retail' is recorded as a career field from 'Careers include Retail: Buyer, ...'."
+  ]
+ },
+ "extracted_run": "38981247046"
+}

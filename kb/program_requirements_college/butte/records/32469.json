@@ -1,0 +1,324 @@
+{
+ "college": "Butte College",
+ "control_number": "32469",
+ "shape": "adt",
+ "title": "Music",
+ "award": "A.A- T Degree",
+ "source_url": "https://butte.curriqunet.com/catalog/iq/25398/28152/28315",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8773,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8773,
+    "output_tokens": 2581,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2581,
+  "output_tokens_details": {
+   "thinking_tokens": 870
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08671,
+ "ms": 21199,
+ "seconds": 21.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 17,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    27.0,
+    29.5
+   ],
+   "stated": [
+    60.0,
+    71.0
+   ],
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Cal-GETC pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     21.0,
+     23.5
+    ],
+    "stated": [
+     21.0,
+     23.5
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "AA-T Degree in Music",
+   "measure": "units",
+   "total_units": {
+    "min": 21,
+    "max": 23.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 6,
+    "max": 6
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 71
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Play their chosen instrument or sing at an advanced level.",
+    "Demonstrate the ability to either play or sing new music at sight.",
+    "Analyze a given piece of music in terms of chords and chord structure, modulation, cadences, and form.",
+    "Articulate the principles of playing in an ensemble.",
+    "Describe effective practice techniques.",
+    "Listen to a piece of music and identify its genre."
+   ],
+   "careers": [
+    "music",
+    "music-related fields"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MUS 80",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 82",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 84",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 88",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select four",
+    "rule": "choose_courses",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 5.5
+    },
+    "courses": [
+     {
+      "code": "MUS 60",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 61",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 63",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 64",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 65",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 68",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 69",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 70",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A (Select 3-4 units)",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "MUS 1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 40",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 41",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 42",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 86",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The 'Required courses: 21.00-23.50' figure is printed over the whole requirement list (core plus 'Select four' and List A) and matches 'Total : 21.00-23.50', so it is recorded as total_units; the core block of four courses (14 units) has no printed total of its own, so its stated is null.",
+   "MUS 88 is printed with 2.00 units in the requirements list (the state file stores 0.5); the map shows it taken 0.5 units in each of four terms.",
+   "Closed list writes MUS60 and MUS64 without a space; the catalog's MUS 60 (Orchestra) and MUS 64 (Jazz Ensemble) were treated as those closed-list courses, not catalog additions.",
+   "degree_total 60-71 is taken from the Cal-GETC map ('Units: 60.00- 71.00', 'Total : 60.00- 71.00'); the page prints no single total for Cal-GETC units, only per-area choices, so ge_units is null.",
+   "The map's 'Elective (any course numbered 1-99 or C1000-C2999) 6.00' is recorded as degree_elective_units 6, but the map says it is only necessary if the 60 units needed to graduate have not been completed; reviewer may treat it as 0-6.",
+   "Map note: MUS 41 and MUS 42 must be taken in subsequent terms after MUS 40 to fulfill List A; MUS 1 meets Cal-GETC Area 3A.",
+   "Map recommends POLS C1000 or POS 12 and HIST 18, HIST 26 or HIST C1001 for CSU/UC graduation requirements; these are GE/graduation recommendations, not program courses, and are not recorded in blocks."
+  ]
+ },
+ "extracted_run": "38981247046"
+}

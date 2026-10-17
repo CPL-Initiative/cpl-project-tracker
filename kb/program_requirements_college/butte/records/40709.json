@@ -1,0 +1,282 @@
+{
+ "college": "Butte College",
+ "control_number": "40709",
+ "shape": "certificate",
+ "title": "Cyber-Security Practitioner",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://butte.curriqunet.com/catalog/iq/25398/28100/27592",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7626,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7626,
+    "output_tokens": 1856,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1856,
+  "output_tokens_details": {
+   "thinking_tokens": 260
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06762,
+ "ms": 14554,
+ "seconds": 14.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 14,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    29.0,
+    32.0
+   ],
+   "stated": [
+    29.0,
+    32.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement in Cyber-Security Practitioner",
+   "measure": "units",
+   "total_units": {
+    "min": 29,
+    "max": 32
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Implement, and analyze access control, those policies, standards, and procedures that define who users are, what they can do, which resources they can access, and what operations they can perform on a system.",
+    "Use industry best practices, administer, maintain, and analyze a secure network environment through identification of information assets, and documentation of policies, standards, procedures, and guidelines that ensure confidentiality, integrity and availability.",
+    "Explain security analysis planning and scoping, conduct information gathering and vulnerability identification, and create reports and communicate results of security tests.",
+    "Develop and analyze risk, response, and recovery through the review, analysis and implementation processes essential to the identification, measurement and control of loss associated with uncertain events.",
+    "Analyze and protect systems from malicious code and use countermeasures and prevention techniques for dealing with viruses, worms, logic bombs, Trojan horses and other related forms of intentionally created deviant code.",
+    "Conceptualize, engineer, integrate and implement secure solutions in complex enterprise environments to build resilient networks.",
+    "Explain comprehensive data communications and analysis including: The network structure, transmission methods and techniques, transport formats and security measures used to operate both private and public communication networks."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CSCI 4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSCI 5",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSCI 17",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSCI 18",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSCI 25",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSCI 26",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSCI 49",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Systems Administration",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Complete one track",
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "CSCI 19",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSCI 50",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSCI 52",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSCI 76",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "CCNA",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Complete one track",
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "CSCI 40",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSCI 41",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CSCI 42",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The page heading says 'Certificate of Achievement in Cyber-Security Practitioner' but the summary and map label it 'Advanced Cyber-Security Practitioner (CSCI) - Certificate of Achievement'; reviewer may confirm it is the same award.",
+   "The 'Required courses: 29.00-32.00' figure covers the whole certificate (core 20 units plus a 9-12 unit track), so it is recorded as total_units, not as the core block's stated total. The 'Complete one track' heading prints 9.00-12.00.",
+   "Closed list prints 'CSCI19' without a space; the catalog prints 'CSCI 19' (Computer Networking Fundamentals, 3 units). Treated as the same course, not a catalog addition.",
+   "The 'Map' section repeats the same requirements by term and was not recorded separately.",
+   "The page refers to the AS Degree in Cyber-Security Practitioner; only the certificate requirements were recorded. No careers are named."
+  ]
+ },
+ "extracted_run": "38981247046"
+}

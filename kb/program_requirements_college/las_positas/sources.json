@@ -4,24 +4,72 @@
   "title": "Accounting Technician",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "BUSN1A",
+   "BUSN1B",
+   "BUSN40",
+   "BUSN55",
+   "BUSN61",
+   "BUSN65",
+   "CIS54",
+   "CIS73A"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/128/1479/1483",
+   "title": "Accounting Technician, Certificate of Achievement (CA)",
+   "h1": "Accounting Technician, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 2879
  },
  {
   "control_number": "01001",
   "title": "Administration of Justice",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ50",
+   "AJ54",
+   "AJ55",
+   "AJ59",
+   "AJ60",
+   "AJ61",
+   "AJ63",
+   "AJ64",
+   "AJ66",
+   "AJ70",
+   "AJ89",
+   "ANTR13",
+   "CNT68",
+   "ETHS6",
+   "PSYC12",
+   "PSYC6",
+   "PSYCC1000",
+   "SOC1",
+   "SOC3",
+   "SOC6"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/119/738/741",
+   "title": "Administration of Justice, Associate of Arts (AA)",
+   "h1": "Administration of Justice, Associate of Arts (AA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 20,
-  "text_chars": 0
+  "text_chars": 3919
  },
  {
   "control_number": "01004",
@@ -63,72 +111,202 @@
   "title": "Automotive Electronics Technology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTOA1",
+   "AUTOA2",
+   "AUTOA3",
+   "AUTOA4",
+   "AUTOA5",
+   "AUTOA6",
+   "AUTOA7",
+   "AUTOA8",
+   "AUTOINT",
+   "AUTOINTL",
+   "AUTOL1",
+   "AUTOLABA",
+   "AUTOSDR"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/126/1372/1396",
+   "title": "Automotive Electronics Technology, Associate of Science (AS)",
+   "h1": "Automotive Electronics Technology, Associate of Science (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 3338
  },
  {
   "control_number": "01006",
   "title": "Biology",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO1C",
+   "BIO1R",
+   "CHEM1A",
+   "CHEM1B",
+   "PHYS2A",
+   "PHYS2B"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/127/1443/1446",
+   "title": "Biology, Associate of Arts (AA)",
+   "h1": "Biology, Associate of Arts (AA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 3138
  },
  {
   "control_number": "01008",
   "title": "Chemistry",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM12A",
+   "CHEM12B",
+   "CHEM1A",
+   "CHEM1B",
+   "MATH1",
+   "MATH2",
+   "MATH3",
+   "PHYS1A",
+   "PHYS1B",
+   "PHYS1C"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/129/1524/1527",
+   "title": "Chemistry, Associate of Science (AS)",
+   "h1": "Chemistry, Associate of Science (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 3518
  },
  {
   "control_number": "01010",
   "title": "Administrative Assistant",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.714,
+  "codes_found": [
+   "BUSN30",
+   "BUSN40",
+   "BUSN48",
+   "BUSN51",
+   "CIS43",
+   "CIS50",
+   "CIS54",
+   "CIS55",
+   "CIS73A",
+   "CIS74",
+   "CIS88A",
+   "CIS88B",
+   "CIS89A",
+   "CNT43",
+   "CS43"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/130/1549/1552",
+   "title": "Administrative Assistant, Associate of Arts (AA)",
+   "h1": "Administrative Assistant, Associate of Arts (AA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 21,
-  "text_chars": 0
+  "text_chars": 3635
  },
  {
   "control_number": "01011",
   "title": "Computer Information Systems",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS43",
+   "CIS50",
+   "CIS54",
+   "CIS55",
+   "CIS59",
+   "CIS59C",
+   "CIS60",
+   "CIS62",
+   "CIS66",
+   "CIS81A",
+   "CIS81B",
+   "CIS88A",
+   "CIS88B",
+   "CIS9002",
+   "CNT43",
+   "CNT51",
+   "CNT52",
+   "CS43",
+   "CS7"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/130/1549/1557",
+   "title": "Computer Information Systems, Associate of Arts (AA)",
+   "h1": "Computer Information Systems, Associate of Arts (AA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 19,
-  "text_chars": 0
+  "text_chars": 4019
  },
  {
   "control_number": "01023",
   "title": "Fire Service Technology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.7,
+  "codes_found": [
+   "FST1",
+   "FST2",
+   "FST3",
+   "FST4",
+   "FST5",
+   "FST6",
+   "FST7"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/142/1737/1746",
+   "title": "Fire Service Technology, Associate of Science (AS)",
+   "h1": "Fire Service Technology, Associate of Science (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 3460
  },
  {
   "control_number": "01032",
@@ -136,11 +314,14 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.833,
+  "coverage": 1.0,
   "codes_found": [
    "ARHS2",
    "ARHS7",
    "ARTHC1200",
+   "ENG32",
+   "ENG41",
+   "ENG42",
    "HIST1",
    "HIST2",
    "HIST32",
@@ -157,12 +338,13 @@
    "PHTO67",
    "RELS1",
    "THEA10",
-   "THEA4"
+   "THEA4",
+   "WMST2"
   ],
   "source": {
-   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1875",
-   "title": "Liberal Arts & Sciences: Arts and Humanities, Associate of Arts (AA)",
-   "h1": "Liberal Arts & Sciences: Arts and Humanities, Associate of Arts (AA)",
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/150/1820/1825",
+   "title": "Humanities, Associate of Arts (AA)",
+   "h1": "Humanities, Associate of Arts (AA)",
    "text_from": "innerText",
    "label": {
     "award": 1,
@@ -170,122 +352,338 @@
    }
   },
   "listed": 24,
-  "text_chars": 9781
+  "text_chars": 4082
  },
  {
   "control_number": "01036",
   "title": "Interior Design",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "INTD10",
+   "INTD15",
+   "INTD20",
+   "INTD25",
+   "INTD30",
+   "INTD35",
+   "INTD40",
+   "INTD45",
+   "INTD47",
+   "INTD5"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/151/1833/1837",
+   "title": "Interior Design, Associate of Science (AS)",
+   "h1": "Interior Design, Associate of Science (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 3249
  },
  {
   "control_number": "01037",
   "title": "Marketing",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSN1A",
+   "BUSN40",
+   "BUSN45",
+   "BUSN48",
+   "BUSN51",
+   "BUSN52",
+   "BUSN55",
+   "BUSN56",
+   "BUSN58",
+   "BUSN87",
+   "COMMC1000",
+   "ECON10",
+   "ECONC2001",
+   "ECONC2002",
+   "MKTG50",
+   "MKTG56",
+   "MKTG61",
+   "WRKX95"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/157/1888/1891",
+   "title": "Marketing, Associate of Arts (AA)",
+   "h1": "Marketing, Associate of Arts (AA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 18,
-  "text_chars": 0
+  "text_chars": 4168
  },
  {
   "control_number": "01038",
   "title": "Business Entrepreneurship",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSN1A",
+   "BUSN40",
+   "BUSN45",
+   "BUSN48",
+   "BUSN51",
+   "BUSN52",
+   "BUSN56",
+   "BUSN58",
+   "COMMC1000",
+   "ECON10",
+   "ECONC2001",
+   "MKTG50",
+   "MKTG56",
+   "MKTG61"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/128/1479/1487",
+   "title": "Business Entrepreneurship, Associate of Arts (AA)",
+   "h1": "Business Entrepreneurship, Associate of Arts (AA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 3874
  },
  {
   "control_number": "01041",
   "title": "Occupational Safety and Health",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.95,
+  "codes_found": [
+   "BIO20",
+   "BIO30",
+   "BIO40",
+   "BIO50",
+   "CHEM1A",
+   "CHEM1B",
+   "CHEM30A",
+   "CHEM30B",
+   "CIS50",
+   "FST4",
+   "OSH50",
+   "OSH60",
+   "OSH62",
+   "OSH67",
+   "PHYS10",
+   "RADS40A",
+   "RADS40B",
+   "RADS40C",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/169/2016/2021",
+   "title": "Occupational Safety and Health, Associate of Science (AS)",
+   "h1": "Occupational Safety and Health, Associate of Science (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 20,
-  "text_chars": 0
+  "text_chars": 3996
  },
  {
   "control_number": "01044",
   "title": "Physics",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH1",
+   "MATH2",
+   "MATH3",
+   "MATH5",
+   "PHYS1A",
+   "PHYS1B",
+   "PHYS1C",
+   "PHYS1D"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/173/2042/2045",
+   "title": "Physics, Associate of Science (AS)",
+   "h1": "Physics, Associate of Science (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 3067
  },
  {
   "control_number": "01057",
   "title": "Welding Technology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH39",
+   "WLDT1",
+   "WLDT55",
+   "WLDT61",
+   "WLDT61AL",
+   "WLDT61BL",
+   "WLDT62",
+   "WLDT62AL",
+   "WLDT62BL",
+   "WLDT63",
+   "WLDT66",
+   "WLDT67B",
+   "WLDT67C",
+   "WLDT67D",
+   "WLDT68",
+   "WLDT69BL",
+   "WLDT70",
+   "WLDT71",
+   "WLDT72",
+   "WLDT73",
+   "WLDT75",
+   "WLDT79"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/181/2132/2136",
+   "title": "Welding Technology, Associate of Science (AS)",
+   "h1": "Welding Technology, Associate of Science (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 22,
-  "text_chars": 0
+  "text_chars": 4122
  },
  {
   "control_number": "09211",
   "title": "Business Administration",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSN1A",
+   "BUSN1B",
+   "BUSN20",
+   "BUSN30",
+   "BUSN33",
+   "BUSN40",
+   "BUSN48",
+   "BUSN52",
+   "BUSN56",
+   "BUSN58",
+   "BUSN87",
+   "BUSN88",
+   "CIS10",
+   "CIS11",
+   "CIS55",
+   "ECONC2001",
+   "ECONC2002",
+   "MKTG50"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/128/1479/1485",
+   "title": "Business Administration, Associate of Arts (AA)",
+   "h1": "Business Administration, Associate of Arts (AA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 18,
-  "text_chars": 0
+  "text_chars": 4109
  },
  {
   "control_number": "09212",
   "title": "Retailing",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSN48",
+   "BUSN52",
+   "CIS55",
+   "COMMC1000",
+   "MKTG50",
+   "MKTG56",
+   "MKTG61",
+   "WRKX95"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/157/1888/1893",
+   "title": "Retailing, Certificate of Achievement (CA)",
+   "h1": "Retailing, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2985
  },
  {
   "control_number": "09214",
   "title": "Computer Science",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS17",
+   "CS2",
+   "CS20",
+   "CS21",
+   "MATH1",
+   "MATH10",
+   "MATH2",
+   "MATH7",
+   "PHYS1B"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/133/1620/1628",
+   "title": "Computer Science, Associate of Science (AS)",
+   "h1": "Computer Science, Associate of Science (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 3521
  },
  {
   "control_number": "09219",
   "title": "Automotive Chassis",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -297,295 +695,818 @@
   "title": "Early Childhood Development",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE50",
+   "ECE54",
+   "ECE56",
+   "ECE60",
+   "ECE62",
+   "ECE63",
+   "ECE69",
+   "ECE79",
+   "ECE90",
+   "ECE95",
+   "ECE96"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/134/1637/1643",
+   "title": "Early Childhood Development, Associate of Arts (AA)",
+   "h1": "Early Childhood Development, Associate of Arts (AA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 3618
  },
  {
   "control_number": "10961",
   "title": "Automotive Drivability",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTOA1",
+   "AUTOA6",
+   "AUTOA8",
+   "AUTOINT",
+   "AUTOINTL",
+   "AUTOL1",
+   "AUTOL3",
+   "AUTOLABA"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/126/1372/1395",
+   "title": "Automotive Drivability, Certificate of Achievement (CA)",
+   "h1": "Automotive Drivability, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2446
  },
  {
   "control_number": "12241",
   "title": "Retail Management (WAFC)",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSN1A",
+   "BUSN48",
+   "BUSN51",
+   "BUSN52",
+   "BUSN56",
+   "BUSN88",
+   "CIS55",
+   "MKTG50",
+   "MKTG56"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/128/1479/1490",
+   "title": "Retail Management (WAFC), Certificate of Achievement (CA)",
+   "h1": "Retail Management (WAFC), Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 2951
  },
  {
   "control_number": "12882",
   "title": "Associate Teacher",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE50",
+   "ECE56",
+   "ECE62",
+   "ECE63"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/134/1637/1641",
+   "title": "Associate Teacher, Certificate of Achievement (CA)",
+   "h1": "Associate Teacher, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 1931
  },
  {
   "control_number": "12885",
   "title": "Supervisory Management",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSN1A",
+   "BUSN30",
+   "BUSN40",
+   "BUSN48",
+   "BUSN51",
+   "BUSN52",
+   "BUSN56",
+   "BUSN58",
+   "BUSN87",
+   "BUSN88",
+   "CIS55",
+   "MKTG50",
+   "WRKX95"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/128/1479/1491",
+   "title": "Supervisory Management, Certificate of Achievement (CA)",
+   "h1": "Supervisory Management, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 3341
  },
  {
   "control_number": "15321",
   "title": "Journalism",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GDDM64",
+   "JAMS1",
+   "JAMS11",
+   "JAMS12",
+   "JAMS19A",
+   "JAMS2",
+   "JAMS21A",
+   "JAMS23",
+   "JAMS24A",
+   "JAMS3",
+   "PHTO72",
+   "WRKX95"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/152/1845/1849",
+   "title": "Journalism, Certificate of Achievement (CA)",
+   "h1": "Journalism, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 2904
  },
  {
   "control_number": "15504",
   "title": "Cybersecurity and Network Administration",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.944,
+  "codes_found": [
+   "CIS43",
+   "CIS66",
+   "CNT43",
+   "CNT51",
+   "CNT52",
+   "CNT55",
+   "CNT56",
+   "CNT68",
+   "CNT69",
+   "CNT7285",
+   "CNT7401",
+   "CNT7501",
+   "CNT8001",
+   "CNT8002",
+   "CNT8003",
+   "CS41",
+   "CS43"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/132/1596/1599",
+   "title": "Cybersecurity and Network Administration, Associate of Science (AS)",
+   "h1": "Cybersecurity and Network Administration, Associate of Science (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 18,
-  "text_chars": 0
+  "text_chars": 3925
  },
  {
   "control_number": "15505",
   "title": "Network Support Professional",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS43",
+   "CIS66",
+   "CNT43",
+   "CNT51",
+   "CNT52",
+   "CNT55",
+   "CNT69",
+   "CNT8001",
+   "CNT8002",
+   "CNT8003",
+   "CS43"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/132/1596/1602",
+   "title": "Network Support Professional, Certificate of Achievement (CA)",
+   "h1": "Network Support Professional, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 3017
  },
  {
   "control_number": "16367",
   "title": "Viticulture",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "BIO1R",
+   "CHEM30A",
+   "CHEM31",
+   "GEOG1",
+   "GEOG12",
+   "GEOG15",
+   "HORT54",
+   "VWT1",
+   "VWT10",
+   "VWT12",
+   "VWT2",
+   "VWT20",
+   "VWT25",
+   "VWT31",
+   "VWT32",
+   "VWT33",
+   "VWT35",
+   "VWT47"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/180/2119/2127",
+   "title": "Viticulture, Associate of Science (AS)",
+   "h1": "Viticulture, Associate of Science (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 21,
-  "text_chars": 0
+  "text_chars": 4060
  },
  {
   "control_number": "16368",
   "title": "Enology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1A",
+   "CHEM31",
+   "VWT1",
+   "VWT10",
+   "VWT2",
+   "VWT20",
+   "VWT21",
+   "VWT23",
+   "VWT25",
+   "VWT41",
+   "VWT42",
+   "VWT47"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/180/2119/2125",
+   "title": "Enology, Associate of Science (AS)",
+   "h1": "Enology, Associate of Science (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 3699
  },
  {
   "control_number": "17764",
   "title": "English",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENG11",
+   "ENG12A",
+   "ENG12B",
+   "ENG12C",
+   "ENG13A",
+   "ENG13B",
+   "ENG19A",
+   "ENG20",
+   "ENG32",
+   "ENG35",
+   "ENG4",
+   "ENG41",
+   "ENG42",
+   "ENG44",
+   "ENG45",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ESL24",
+   "ESL25",
+   "ESL26",
+   "HUMN28",
+   "JAMS11",
+   "JAMS19A",
+   "THEA11",
+   "THEA4"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/137/1672/1676",
+   "title": "English, Associate of Arts (AA)",
+   "h1": "English, Associate of Arts (AA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 25,
-  "text_chars": 0
+  "text_chars": 4510
  },
  {
   "control_number": "18813",
   "title": "Early Childhood Intervention",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE40",
+   "ECE50",
+   "ECE54",
+   "ECE56",
+   "ECE60",
+   "ECE62",
+   "ECE63",
+   "ECE67",
+   "ECE69",
+   "ECE79",
+   "ECE90",
+   "ECE91"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/134/1637/1646",
+   "title": "Early Childhood Intervention, Associate of Arts (AA)",
+   "h1": "Early Childhood Intervention, Associate of Arts (AA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 3730
  },
  {
   "control_number": "18814",
   "title": "Early Childhood Intervention Assistant",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE40",
+   "ECE50",
+   "ECE54",
+   "ECE56",
+   "ECE60",
+   "ECE62",
+   "ECE63",
+   "ECE67",
+   "ECE90",
+   "ECE91"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/134/1637/1647",
+   "title": "Early Childhood Intervention Assistant, Certificate of Achievement (CA)",
+   "h1": "Early Childhood Intervention Assistant, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 2439
  },
  {
   "control_number": "18906",
   "title": "Administrative Medical Assistant",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO20",
+   "BIO55",
+   "CIS43",
+   "CIS55",
+   "CIS79",
+   "CNT43",
+   "CS43",
+   "EMS62",
+   "EMS70",
+   "WRKX95"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/130/1549/1554",
+   "title": "Administrative Medical Assistant, Certificate of Achievement (CA)",
+   "h1": "Administrative Medical Assistant, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 3018
  },
  {
   "control_number": "21574",
   "title": "Enology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "VWT1",
+   "VWT10",
+   "VWT2",
+   "VWT20",
+   "VWT21",
+   "VWT23",
+   "VWT25",
+   "VWT41",
+   "VWT42",
+   "VWT47"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/180/2119/2126",
+   "title": "Enology, Certificate of Achievement (CA)",
+   "h1": "Enology, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 2985
  },
  {
   "control_number": "21576",
   "title": "Viticulture",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "VWT1",
+   "VWT10",
+   "VWT12",
+   "VWT2",
+   "VWT20",
+   "VWT25",
+   "VWT31",
+   "VWT32",
+   "VWT33",
+   "VWT35",
+   "VWT47"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/180/2119/2128",
+   "title": "Viticulture, Certificate of Achievement (CA)",
+   "h1": "Viticulture, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 3106
  },
  {
   "control_number": "21577",
   "title": "Business Entrepreneurship",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSN1A",
+   "BUSN33",
+   "BUSN40",
+   "BUSN45",
+   "BUSN48",
+   "BUSN51",
+   "BUSN52",
+   "BUSN55",
+   "BUSN56",
+   "BUSN58",
+   "COMMC1000",
+   "MKTG50",
+   "MKTG61"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/128/1479/1488",
+   "title": "Business Entrepreneurship, Certificate of Achievement (CA)",
+   "h1": "Business Entrepreneurship, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 3235
  },
  {
   "control_number": "21579",
   "title": "Administrative Assistant",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSN30",
+   "BUSN40",
+   "BUSN48",
+   "BUSN51",
+   "CIS43",
+   "CIS50",
+   "CIS54",
+   "CIS55",
+   "CIS73A",
+   "CIS74",
+   "CIS88A",
+   "CIS88B",
+   "CIS89A",
+   "CNT43",
+   "CS43"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/130/1549/1553",
+   "title": "Administrative Assistant, Certificate of Achievement (CA)",
+   "h1": "Administrative Assistant, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 3635
  },
  {
   "control_number": "21581",
   "title": "Computer Programming",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS43",
+   "CIS60",
+   "CNT43",
+   "CS1",
+   "CS2",
+   "CS20",
+   "CS21",
+   "CS31",
+   "CS43",
+   "CS45",
+   "CS47"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/133/1620/1626",
+   "title": "Computer Programming, Certificate of Achievement (CA)",
+   "h1": "Computer Programming, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 2890
  },
  {
   "control_number": "21582",
   "title": "Computer Programming for the Web",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS59",
+   "CIS59C",
+   "CS31",
+   "CS45"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/133/1620/1627",
+   "title": "Computer Programming for the Web, Certificate of Achievement (CA)",
+   "h1": "Computer Programming for the Web, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 2962
  },
  {
   "control_number": "21588",
   "title": "Welding Technology",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WLDT1",
+   "WLDT55",
+   "WLDT61",
+   "WLDT61AL",
+   "WLDT61BL",
+   "WLDT62",
+   "WLDT62AL",
+   "WLDT62BL",
+   "WLDT63",
+   "WLDT66",
+   "WLDT68",
+   "WLDT70",
+   "WLDT73",
+   "WLDT75",
+   "WLDT79"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/181/2132/2137",
+   "title": "Welding Technology, Certificate of Achievement (CA)",
+   "h1": "Welding Technology, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 3142
  },
  {
   "control_number": "21590",
   "title": "Interior Design",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSN52",
+   "INTD10",
+   "INTD15",
+   "INTD20",
+   "INTD25",
+   "INTD30",
+   "INTD35",
+   "INTD40",
+   "INTD45",
+   "INTD47",
+   "INTD5",
+   "MKTG61"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/151/1833/1838",
+   "title": "Interior Design, Certificate of Achievement (CA)",
+   "h1": "Interior Design, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 2777
  },
  {
   "control_number": "21591",
   "title": "Early Childhood Development",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE40",
+   "ECE50",
+   "ECE54",
+   "ECE56",
+   "ECE60",
+   "ECE62",
+   "ECE63",
+   "ECE69",
+   "ECE79",
+   "ECE90",
+   "ECE95",
+   "ECE96"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/134/1637/1644",
+   "title": "Early Childhood Development, Certificate of Achievement (CA)",
+   "h1": "Early Childhood Development, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 3082
  },
  {
   "control_number": "21592",
   "title": "Fire Service Technology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMS30",
+   "FST1",
+   "FST2",
+   "FST3",
+   "FST4",
+   "FST5",
+   "FST6",
+   "FST7"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/142/1737/1747",
+   "title": "Fire Service Technology, Certificate of Achievement (CA)",
+   "h1": "Fire Service Technology, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2771
  },
  {
   "control_number": "30354",
   "title": "Occupational Safety and Health",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -609,336 +1530,1032 @@
   "title": "Environmental Studies",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.963,
+  "codes_found": [
+   "ANTR1",
+   "ANTR2",
+   "ANTR3",
+   "BIO30",
+   "BIO40",
+   "BIO60",
+   "BIO70",
+   "CHEM31",
+   "CHEM6",
+   "ECONC2001",
+   "EVST5",
+   "EVST5L",
+   "GEOG1",
+   "GEOG15",
+   "GEOL1",
+   "GEOL12",
+   "GEOL2",
+   "GEOL5",
+   "GEOL7",
+   "GS1",
+   "HUMN6",
+   "NTRN1",
+   "PHIL2",
+   "POLI12",
+   "SOC5",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/140/1720/1724",
+   "title": "Environmental Studies, Associate of Arts (AA)",
+   "h1": "Environmental Studies, Associate of Arts (AA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 27,
-  "text_chars": 0
+  "text_chars": 4329
  },
  {
   "control_number": "30547",
   "title": "Journalism and Media Studies",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENG19A",
+   "JAMS1",
+   "JAMS11",
+   "JAMS12",
+   "JAMS19A",
+   "JAMS2",
+   "JAMS21A",
+   "JAMS21B",
+   "JAMS21C",
+   "JAMS21D",
+   "JAMS23",
+   "JAMS24A",
+   "JAMS24B",
+   "JAMS3",
+   "PHTO72"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/152/1845/1850",
+   "title": "Journalism and Media Studies, Associate of Arts (AA)",
+   "h1": "Journalism and Media Studies, Associate of Arts (AA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 3548
  },
  {
   "control_number": "30691",
   "title": "Environmental Science",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO1R",
+   "CHEM1A",
+   "CHEM1B",
+   "ECONC2001",
+   "EVST5L",
+   "GEOL1",
+   "GEOL1L",
+   "MATH1",
+   "PHYS2A",
+   "PHYS2B"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/139/1713/1716",
+   "title": "Environmental Science, Associate of Science (AS)",
+   "h1": "Environmental Science, Associate of Science (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 3379
  },
  {
   "control_number": "30815",
   "title": "Sociology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTR3",
+   "ETHS6",
+   "GS1",
+   "PSYC3",
+   "PSYCC1000",
+   "SOC1",
+   "SOC11",
+   "SOC12",
+   "SOC13",
+   "SOC3",
+   "SOC4",
+   "SOC5",
+   "SOC6",
+   "SOC7",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/176/2071/2084",
+   "title": "Sociology, Associate in Arts for Transfer (AA-T)",
+   "h1": "Sociology, Associate in Arts for Transfer (AA-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 3712
  },
  {
   "control_number": "30866",
   "title": "Paramedic Sciences",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "BIO50",
+   "EMS12",
+   "EMS13",
+   "EMS20",
+   "EMS62"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/136/1659/1667",
+   "title": "Paramedic Sciences, Certificate of Achievement (CA)",
+   "h1": "Paramedic Sciences, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 2861
  },
  {
   "control_number": "30969",
   "title": "Emergency Medical Sciences",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO50",
+   "EMS12",
+   "EMS13",
+   "EMS20",
+   "EMS62"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/136/1659/1665",
+   "title": "Emergency Medical Sciences, Associate of Science (AS)",
+   "h1": "Emergency Medical Sciences, Associate of Science (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 3478
  },
  {
   "control_number": "31047",
   "title": "Chemistry Education",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "BIO1R",
+   "BIO30",
+   "CHEM12A",
+   "CHEM12B",
+   "CHEM1A",
+   "CHEM1B",
+   "MATH1",
+   "MATH2",
+   "PHYS2A",
+   "PHYS2B"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/129/1524/1528",
+   "title": "Chemistry Education, Associate of Science (AS)",
+   "h1": "Chemistry Education, Associate of Science (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 3575
  },
  {
   "control_number": "31613",
   "title": "Early Childhood Education",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE50",
+   "ECE54",
+   "ECE56",
+   "ECE62",
+   "ECE63",
+   "ECE69",
+   "ECE79",
+   "ECE90"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/134/1637/1645",
+   "title": "Early Childhood Education, Associate in Science for Transfer (AS-T)",
+   "h1": "Early Childhood Education, Associate in Science for Transfer (AS-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 3412
  },
  {
   "control_number": "31658",
   "title": "Psychology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTR1",
+   "ANTR3",
+   "BIO10",
+   "BIO30",
+   "ETHS5",
+   "MATH1",
+   "PSYC10",
+   "PSYC12",
+   "PSYC13",
+   "PSYC15",
+   "PSYC17",
+   "PSYC21",
+   "PSYC25",
+   "PSYC3",
+   "PSYC4",
+   "PSYC6",
+   "PSYCC1000",
+   "SOC1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/175/2057/2060",
+   "title": "Psychology, Associate of Arts for Transfer (AA-T)",
+   "h1": "Psychology, Associate of Arts for Transfer (AA-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 19,
-  "text_chars": 0
+  "text_chars": 3944
  },
  {
   "control_number": "31901",
   "title": "Geology",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1A",
+   "CHEM1B",
+   "GEOL1",
+   "GEOL1L",
+   "GEOL2",
+   "MATH1",
+   "MATH2"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/145/1765/1770",
+   "title": "Geology, Associate in Science for Transfer (AS-T)",
+   "h1": "Geology, Associate in Science for Transfer (AS-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 3286
  },
  {
   "control_number": "32180",
   "title": "Philosophy",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HIST1",
+   "HIST2",
+   "HUMN10",
+   "HUMN28",
+   "HUMN3",
+   "HUMN6",
+   "PHIL1",
+   "PHIL2",
+   "PHIL3",
+   "PHIL4",
+   "PHIL6",
+   "PHIL8",
+   "RELS1",
+   "RELS3"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/171/2026/2029",
+   "title": "Philosophy, Associate in Arts for Transfer (AA-T)",
+   "h1": "Philosophy, Associate in Arts for Transfer (AA-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 3860
  },
  {
   "control_number": "32182",
   "title": "English",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENG11",
+   "ENG12A",
+   "ENG12B",
+   "ENG12C",
+   "ENG13A",
+   "ENG13B",
+   "ENG19A",
+   "ENG20",
+   "ENG32",
+   "ENG35",
+   "ENG4",
+   "ENG41",
+   "ENG42",
+   "ENG44",
+   "ENG45",
+   "ENGLC1001",
+   "JAMS19A"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/137/1672/1677",
+   "title": "English, Associate in Arts for Transfer (AA-T)",
+   "h1": "English, Associate in Arts for Transfer (AA-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 4095
  },
  {
   "control_number": "32229",
   "title": "Geography",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTR3",
+   "GEOG1",
+   "GEOG12",
+   "GEOG15",
+   "GEOG1L",
+   "GEOG2",
+   "GEOG5",
+   "GEOG8",
+   "GEOL1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/144/1759/1762",
+   "title": "Geography, Associate in Arts for Transfer (AA-T)",
+   "h1": "Geography, Associate in Arts for Transfer (AA-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 3603
  },
  {
   "control_number": "32501",
   "title": "History",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HIST1",
+   "HIST14",
+   "HIST2",
+   "HIST25",
+   "HIST28",
+   "HIST3",
+   "HIST32",
+   "HIST4",
+   "HISTC1001",
+   "HISTC1002"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/148/1801/1805",
+   "title": "History, Associate in Arts for Transfer (AA-T)",
+   "h1": "History, Associate in Arts for Transfer (AA-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 3559
  },
  {
   "control_number": "32508",
   "title": "Anthropology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.905,
+  "codes_found": [
+   "ANTR1",
+   "ANTR12",
+   "ANTR13",
+   "ANTR2",
+   "ANTR3",
+   "ANTR4",
+   "ANTR7",
+   "ANTR8",
+   "ETHS5",
+   "ETHS6",
+   "GEOG15",
+   "GEOL1",
+   "GEOL1L",
+   "HIST14",
+   "HIST25",
+   "PCN13",
+   "PSYC21",
+   "SOC3",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/120/1230/1232",
+   "title": "Anthropology, Associate in Arts for Transfer (AA-T)",
+   "h1": "Anthropology, Associate in Arts for Transfer (AA-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 21,
-  "text_chars": 0
+  "text_chars": 4239
  },
  {
   "control_number": "33219",
   "title": "Theater Arts",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEA10",
+   "THEA1A",
+   "THEA1B",
+   "THEA47A",
+   "THEA48A",
+   "THEA50",
+   "THEA50L",
+   "THEA51",
+   "THEA52",
+   "THEA53",
+   "THEA57A"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/178/2099/2107",
+   "title": "Theater Arts, Associate in Arts for Transfer (AA-T)",
+   "h1": "Theater Arts, Associate in Arts for Transfer (AA-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 3844
  },
  {
   "control_number": "33372",
   "title": "Journalism",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.955,
+  "codes_found": [
+   "CMST4",
+   "CMST46",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1001",
+   "ETHS6",
+   "HISTC1001",
+   "HISTC1002",
+   "JAMS1",
+   "JAMS11",
+   "JAMS12",
+   "JAMS21A",
+   "JAMS21B",
+   "JAMS23",
+   "JAMS3",
+   "PHIL6",
+   "PHIL8",
+   "PHTO72",
+   "POLI20",
+   "SOC3",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/152/1845/1848",
+   "title": "Journalism, Associate in Arts for Transfer (AA-T)",
+   "h1": "Journalism, Associate in Arts for Transfer (AA-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 22,
-  "text_chars": 0
+  "text_chars": 4008
  },
  {
   "control_number": "33397",
   "title": "Studio Arts",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARHS3",
+   "ARHS8",
+   "ARTHC1100",
+   "ARTHC1200",
+   "ARTS12A",
+   "ARTS12B",
+   "ARTS23",
+   "ARTS24",
+   "ARTS26",
+   "ARTS2A",
+   "ARTS3A",
+   "ARTS7A",
+   "GDDM51",
+   "PHTO50"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/125/1270/1273",
+   "title": "Studio Arts, Associate in Arts for Transfer (AA-T)",
+   "h1": "Studio Arts, Associate in Arts for Transfer (AA-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 3803
  },
  {
   "control_number": "33428",
   "title": "Engineering Technology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGR1",
+   "ENGR23",
+   "MATH21",
+   "MATH39",
+   "PHYS10",
+   "PHYS10L",
+   "WLDT10",
+   "WLDT61",
+   "WLDT62",
+   "WLDT62AL",
+   "WLDT63",
+   "WLDT79",
+   "WRKX95"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1699",
+   "title": "Engineering Technology, Associate of Science (AS)",
+   "h1": "Engineering Technology, Associate of Science (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 3897
  },
  {
   "control_number": "33589",
   "title": "Administration of Justice",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ50",
+   "AJ55",
+   "AJ60",
+   "AJ61",
+   "AJ63",
+   "AJ66",
+   "AJ70",
+   "PSYCC1000",
+   "SOC1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/119/738/742",
+   "title": "Administration of Justice, Associate in Science for Transfer (AS-T)",
+   "h1": "Administration of Justice, Associate in Science for Transfer (AS-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 3524
  },
  {
   "control_number": "33707",
   "title": "Kinesiology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO7A",
+   "BIO7B",
+   "CHEM1A",
+   "HEA1",
+   "KIN14",
+   "KIN30",
+   "KIN32A",
+   "KIN38B",
+   "KIN40B",
+   "KIN41B",
+   "KIN48B",
+   "KIN50B",
+   "KINAF1",
+   "KINAR1",
+   "KINBD1",
+   "KINBD2",
+   "KINBL1",
+   "KINBL2",
+   "KINDA1",
+   "KINFG1",
+   "KINFJW1",
+   "KINFJW2",
+   "KINGBW1",
+   "KINGF1",
+   "KINGF2",
+   "KINPF",
+   "KINPL1",
+   "KINSI1",
+   "KINSO1",
+   "KINSW1",
+   "KINSW2",
+   "KINSWF1",
+   "KINSWF2",
+   "KINVB1",
+   "KINWT1",
+   "KINWTW1",
+   "KINYIN1",
+   "KINYO1",
+   "KINZUM1",
+   "PHYS1A",
+   "PHYS2A",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/153/1853/1861",
+   "title": "Kinesiology, Associate in Arts for Transfer (AA-T)",
+   "h1": "Kinesiology, Associate in Arts for Transfer (AA-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 42,
-  "text_chars": 0
+  "text_chars": 4831
  },
  {
   "control_number": "33900",
   "title": "Computer Information Technologist",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.955,
+  "codes_found": [
+   "CIS43",
+   "CIS60",
+   "CIS62",
+   "CIS66",
+   "CIS9002",
+   "CNT43",
+   "CNT51",
+   "CNT52",
+   "CNT55",
+   "CNT56",
+   "CNT69",
+   "CNT7401",
+   "CS1",
+   "CS2",
+   "CS20",
+   "CS31",
+   "CS41",
+   "CS43",
+   "CS47",
+   "CS7",
+   "WRKX95"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/130/1549/1558",
+   "title": "Computer Information Technologist, Associate of Science (AS)",
+   "h1": "Computer Information Technologist, Associate of Science (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 22,
-  "text_chars": 0
+  "text_chars": 4268
  },
  {
   "control_number": "33907",
   "title": "Technical Theater",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS35",
+   "THEA10",
+   "THEA48A",
+   "THEA48B",
+   "THEA48C",
+   "THEA48D",
+   "THEA50",
+   "THEA50L",
+   "THEA51",
+   "THEA52",
+   "WLDT70"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/178/2099/2105",
+   "title": "Technical Theater, Certificate of Achievement (CA)",
+   "h1": "Technical Theater, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 3048
  },
  {
   "control_number": "35245",
   "title": "Biology",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO1C",
+   "BIO1R",
+   "CHEM1A",
+   "CHEM1B",
+   "MATH1",
+   "PHYS2A",
+   "PHYS2B"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/127/1443/1447",
+   "title": "Biology, Associate in Science for Transfer (AS-T)",
+   "h1": "Biology, Associate in Science for Transfer (AS-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 3387
  },
  {
   "control_number": "35917",
   "title": "Nutrition and Dietetics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO7A",
+   "BIO7B",
+   "BIO7C",
+   "CHEM12A",
+   "CHEM12B",
+   "CHEM1A",
+   "CHEM1B",
+   "CHEM30A",
+   "CHEM30B",
+   "ECONC2001",
+   "ECONC2002",
+   "NTRN1",
+   "PSYCC1000",
+   "SOC1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/168/2008/2011",
+   "title": "Nutrition and Dietetics, Associate in Science for Transfer (AS-T)",
+   "h1": "Nutrition and Dietetics, Associate in Science for Transfer (AS-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 3713
  },
  {
   "control_number": "35928",
   "title": "Music",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS10A",
+   "MUS10B",
+   "MUS11",
+   "MUS14",
+   "MUS15",
+   "MUS16",
+   "MUS17",
+   "MUS21A",
+   "MUS38",
+   "MUS44",
+   "MUS45",
+   "MUS46",
+   "MUS48",
+   "MUS8A",
+   "MUS8B"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/158/1905/1916",
+   "title": "Music, Associate in Arts for Transfer (AA-T)",
+   "h1": "Music, Associate in Arts for Transfer (AA-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 4759
  },
  {
   "control_number": "35992",
   "title": "Music",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.941,
+  "codes_found": [
+   "MUS1",
+   "MUS10A",
+   "MUS10B",
+   "MUS11",
+   "MUS13",
+   "MUS14",
+   "MUS15",
+   "MUS16",
+   "MUS17",
+   "MUS18A",
+   "MUS18B",
+   "MUS19",
+   "MUS21A",
+   "MUS21B",
+   "MUS22A",
+   "MUS23A",
+   "MUS23B",
+   "MUS3",
+   "MUS31",
+   "MUS34",
+   "MUS35",
+   "MUS36",
+   "MUS37",
+   "MUS38",
+   "MUS4",
+   "MUS44",
+   "MUS45",
+   "MUS46",
+   "MUS48",
+   "MUS5",
+   "MUS8A",
+   "MUS8B"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/158/1905/1915",
+   "title": "Music, Associate of Arts (AA)",
+   "h1": "Music, Associate of Arts (AA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 34,
-  "text_chars": 0
+  "text_chars": 4475
  },
  {
   "control_number": "36227",
   "title": "Economics",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.933,
+  "codes_found": [
+   "BUSN1A",
+   "BUSN1B",
+   "CIS50",
+   "CS1",
+   "CS7",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH1",
+   "MATH2",
+   "MATH3",
+   "MATH33",
+   "MATH34",
+   "MATH7",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/135/1651/1656",
+   "title": "Economics, Associate in Arts for Transfer (AA-T)",
+   "h1": "Economics, Associate in Arts for Transfer (AA-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 3765
  },
  {
   "control_number": "36234",
@@ -978,60 +2595,175 @@
   "title": "Theater Arts",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CMST2",
+   "CMST5",
+   "DANC1",
+   "DANC2A",
+   "DANC3A",
+   "MUS23A",
+   "MUS44",
+   "MUS45",
+   "MUS46",
+   "MUS6",
+   "THEA10",
+   "THEA11",
+   "THEA1A",
+   "THEA1B",
+   "THEA25",
+   "THEA31A",
+   "THEA39A",
+   "THEA3A",
+   "THEA4",
+   "THEA47A",
+   "THEA48A",
+   "THEA48B",
+   "THEA5",
+   "THEA50",
+   "THEA50L",
+   "THEA51",
+   "THEA52",
+   "THEA53"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/178/2099/2106",
+   "title": "Theater Arts, Associate of Arts (AA)",
+   "h1": "Theater Arts, Associate of Arts (AA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 28,
-  "text_chars": 0
+  "text_chars": 4473
  },
  {
   "control_number": "36291",
   "title": "Ornamental Horticulture",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HORT50",
+   "HORT51",
+   "HORT52",
+   "HORT53"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/149/1808/1817",
+   "title": "Ornamental Horticulture, Certificate of Achievement (CA)",
+   "h1": "Ornamental Horticulture, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 2467
  },
  {
   "control_number": "36292",
   "title": "Web & Interaction Design",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.923,
+  "codes_found": [
+   "ARTS26",
+   "GDDM2",
+   "GDDM3",
+   "GDDM4",
+   "GDDM40",
+   "GDDM51",
+   "GDDM53",
+   "GDDM54",
+   "GDDM55",
+   "GDDM56",
+   "GDDM60",
+   "GDDM62"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/143/1783/1791",
+   "title": "Web & Interaction Design, Certificate of Achievement (CA)",
+   "h1": "Web & Interaction Design, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 2980
  },
  {
   "control_number": "36334",
   "title": "Digital Illustration",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTS12A",
+   "ARTS23",
+   "ARTS2A",
+   "ARTS7A",
+   "GDDM45A",
+   "GDDM45B",
+   "GDDM51",
+   "GDDM53",
+   "GDDM54",
+   "GDDM56",
+   "GDDM58",
+   "GDDM59",
+   "GDDM60"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/143/1783/1788",
+   "title": "Digital Illustration, Certificate of Achievement (CA)",
+   "h1": "Digital Illustration, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 3016
  },
  {
   "control_number": "36335",
   "title": "Geology",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GEOL1",
+   "GEOL12",
+   "GEOL12L",
+   "GEOL1L",
+   "GEOL2",
+   "GEOL20",
+   "GEOL5",
+   "GEOL7"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/145/1765/1771",
+   "title": "Geology, Certificate of Achievement (CA)",
+   "h1": "Geology, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2667
  },
  {
   "control_number": "36341",
@@ -1187,12 +2919,40 @@
   "title": "Graphic Design",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTS26",
+   "GDDM2",
+   "GDDM3",
+   "GDDM4",
+   "GDDM40",
+   "GDDM51",
+   "GDDM52",
+   "GDDM53",
+   "GDDM54",
+   "GDDM55",
+   "GDDM56",
+   "GDDM57",
+   "GDDM58",
+   "GDDM59",
+   "GDDM60",
+   "GDDM64",
+   "GDDM70",
+   "PHTO70"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/143/1783/1789",
+   "title": "Graphic Design, Associate of Arts (AA)",
+   "h1": "Graphic Design, Associate of Arts (AA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 18,
-  "text_chars": 0
+  "text_chars": 3884
  },
  {
   "control_number": "36361",
@@ -1571,60 +3331,171 @@
   "title": "Graphic Design",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTS26",
+   "GDDM2",
+   "GDDM3",
+   "GDDM4",
+   "GDDM40",
+   "GDDM51",
+   "GDDM52",
+   "GDDM53",
+   "GDDM54",
+   "GDDM56",
+   "GDDM57",
+   "GDDM58",
+   "GDDM59",
+   "GDDM60",
+   "GDDM64",
+   "GDDM70"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/143/1783/1790",
+   "title": "Graphic Design, Certificate of Achievement (CA)",
+   "h1": "Graphic Design, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 3164
  },
  {
   "control_number": "36449",
   "title": "Athletic Training/Sports Medicine",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO7A",
+   "BIO7B",
+   "KIN17",
+   "KIN18A",
+   "KIN18B",
+   "KIN19",
+   "KIN30",
+   "NTRN1",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/153/1853/1858",
+   "title": "Athletic Training/Sports Medicine, Certificate of Achievement (CA)",
+   "h1": "Athletic Training/Sports Medicine, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 2928
  },
  {
   "control_number": "36471",
   "title": "Horticulture",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HORT50",
+   "HORT51",
+   "HORT52",
+   "HORT53",
+   "HORT54",
+   "HORT55",
+   "HORT56",
+   "HORT57",
+   "HORT58",
+   "HORT59",
+   "HORT60",
+   "HORT63",
+   "HORT67",
+   "HORT73"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/149/1808/1813",
+   "title": "Horticulture, Associate of Science (AS)",
+   "h1": "Horticulture, Associate of Science (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 3912
  },
  {
   "control_number": "36472",
   "title": "Landscape Design",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HORT50",
+   "HORT51",
+   "HORT52",
+   "HORT53",
+   "HORT54",
+   "HORT56",
+   "HORT57",
+   "HORT58",
+   "HORT59",
+   "HORT60",
+   "HORT63",
+   "HORT73"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/149/1808/1814",
+   "title": "Landscape Design, Certificate of Achievement (CA)",
+   "h1": "Landscape Design, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 2630
  },
  {
   "control_number": "36477",
   "title": "Landscape Maintenance and Construction",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HORT50",
+   "HORT51",
+   "HORT52",
+   "HORT53",
+   "HORT54",
+   "HORT56",
+   "HORT57",
+   "HORT58",
+   "HORT60",
+   "HORT62"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/149/1808/1815",
+   "title": "Landscape Maintenance and Construction, Certificate of Achievement (CA)",
+   "h1": "Landscape Maintenance and Construction, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 2744
  },
  {
   "control_number": "36479",
@@ -1743,192 +3614,514 @@
   "title": "Computer Applications Software",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.875,
+  "codes_found": [
+   "CIS43",
+   "CIS50",
+   "CIS54",
+   "CIS55",
+   "CIS59",
+   "CIS59C",
+   "CIS60",
+   "CIS62",
+   "CIS66",
+   "CIS88A",
+   "CIS88B",
+   "CIS89A",
+   "CNT51",
+   "CS7"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/130/1549/1556",
+   "title": "Computer Applications Software, Certificate of Achievement (CA)",
+   "h1": "Computer Applications Software, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 3286
  },
  {
   "control_number": "36750",
   "title": "Nursery, Greenhouse, and Grower Operations",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HORT50",
+   "HORT51",
+   "HORT52",
+   "HORT53",
+   "HORT54",
+   "HORT55",
+   "HORT60",
+   "HORT62",
+   "HORT67"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/149/1808/1816",
+   "title": "Nursery, Greenhouse, and Grower Operations, Certificate of Achievement (CA)",
+   "h1": "Nursery, Greenhouse, and Grower Operations, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 2936
  },
  {
   "control_number": "36791",
   "title": "Political Science",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GS1",
+   "HISTC1001",
+   "HISTC1002",
+   "POLI12",
+   "POLI20",
+   "POLI25",
+   "POLI30",
+   "POLSC1000",
+   "SOC5",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/174/2050/2053",
+   "title": "Political Science, Associate in Arts for Transfer (AA-T)",
+   "h1": "Political Science, Associate in Arts for Transfer (AA-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 3694
  },
  {
   "control_number": "36797",
   "title": "Global Studies",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTR3",
+   "ECONC2002",
+   "ENG41",
+   "GEOG1",
+   "GEOG2",
+   "GEOG5",
+   "GS1",
+   "GS2",
+   "HIST2",
+   "HIST4",
+   "POLI20",
+   "POLI25",
+   "POLI30",
+   "RELS1",
+   "SOC5",
+   "SPAN21",
+   "SPAN22",
+   "SPAN2A",
+   "SPAN2B"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/146/1775/1778",
+   "title": "Global Studies, Associate in Arts for Transfer (AA-T)",
+   "h1": "Global Studies, Associate in Arts for Transfer (AA-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 19,
-  "text_chars": 0
+  "text_chars": 3989
  },
  {
   "control_number": "36853",
   "title": "Emergency Medical Technologies",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO50",
+   "EMS20",
+   "EMS30",
+   "EMS62"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/136/1659/1666",
+   "title": "Emergency Medical Technologies, Certificate of Achievement (CA)",
+   "h1": "Emergency Medical Technologies, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 2221
  },
  {
   "control_number": "36948",
   "title": "Computational Biology",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO1C",
+   "BIO1R",
+   "BIO2A",
+   "CHEM1A",
+   "CS7",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/127/1443/1451",
+   "title": "Computational Biology, Associate of Arts (AA)",
+   "h1": "Computational Biology, Associate of Arts (AA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 3387
  },
  {
   "control_number": "36953",
   "title": "Computational Biology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO1C",
+   "BIO1R",
+   "BIO2A",
+   "CHEM1A",
+   "CS7",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/127/1443/1452",
+   "title": "Computational Biology, Certificate of Achievement (CA)",
+   "h1": "Computational Biology, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 2767
  },
  {
   "control_number": "37017",
   "title": "Fitness Trainer",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO50",
+   "EMS70",
+   "HEA1",
+   "KIN30",
+   "KIN6",
+   "KINAF1",
+   "KINDA1",
+   "KINGBW1",
+   "KINPL1",
+   "KINPL2",
+   "KINWT1",
+   "KINWT2",
+   "KINWTW1",
+   "KINWTW2",
+   "KINZUM1"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/153/1853/1859",
+   "title": "Fitness Trainer, Certificate of Achievement (CA)",
+   "h1": "Fitness Trainer, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 3467
  },
  {
   "control_number": "37127",
   "title": "Social Work and Human Services",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ50",
+   "ANTR3",
+   "BIO20",
+   "BIO30",
+   "BIO50",
+   "CMST11",
+   "ECE56",
+   "ECE62",
+   "ECONC2001",
+   "ECONC2002",
+   "ETHS6",
+   "PCN13",
+   "PCN35",
+   "PCN5",
+   "PCN50",
+   "PCN50L",
+   "PSYC12",
+   "PSYC6",
+   "PSYCC1000",
+   "SOC1",
+   "SOC3",
+   "SOC6",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/170/2065/2068",
+   "title": "Social Work and Human Services, Associate in Arts for Transfer (AA-T)",
+   "h1": "Social Work and Human Services, Associate in Arts for Transfer (AA-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 23,
-  "text_chars": 0
+  "text_chars": 4053
  },
  {
   "control_number": "37454",
   "title": "Child and Adolescent Development",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.929,
+  "codes_found": [
+   "ANTR3",
+   "BIO10",
+   "BIO30",
+   "BIO50",
+   "ECE50",
+   "ECE56",
+   "ECE62",
+   "PSYC12",
+   "PSYCC1000",
+   "SOC1",
+   "SOC3",
+   "SOC4",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/134/1637/1642",
+   "title": "Child and Adolescent Development, Associate in Arts for Transfer (AA-T)",
+   "h1": "Child and Adolescent Development, Associate in Arts for Transfer (AA-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 3647
  },
  {
   "control_number": "37458",
   "title": "Art History",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARHS2",
+   "ARHS3",
+   "ARHS7",
+   "ARHS8",
+   "ARTHC1100",
+   "ARTHC1200",
+   "ARTS12A",
+   "ARTS23",
+   "ARTS24",
+   "ARTS2A",
+   "ARTS3A",
+   "ARTS7A",
+   "PHTO50",
+   "PHTO60"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/124/1285/1288",
+   "title": "Art History, Associate in Arts for Transfer (AA-T)",
+   "h1": "Art History, Associate in Arts for Transfer (AA-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 4366
  },
  {
   "control_number": "37486",
   "title": "College Mathematics Pathway",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NMAT255",
+   "NMAT256"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/166/1987/1990",
+   "title": "College Mathematics Pathway, Certificate of Competency (NCY)",
+   "h1": "College Mathematics Pathway, Certificate of Competency (NCY)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 2599
  },
  {
   "control_number": "37487",
   "title": "College Mathematics Support",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NMAT200C",
+   "NMAT201C",
+   "NMAT255C"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/166/1987/1991",
+   "title": "College Mathematics Support, Certificate of Competency (NCY)",
+   "h1": "College Mathematics Support, Certificate of Competency (NCY)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 2721
  },
  {
   "control_number": "37504",
   "title": "ESL College Reading and Writing Pathway",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NESL221A",
+   "NESL221B",
+   "NESL231A",
+   "NESL231B"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/164/1969/1973",
+   "title": "ESL College Reading and Writing Pathway, Certificate of Competency (NCY)",
+   "h1": "ESL College Reading and Writing Pathway, Certificate of Competency (NCY)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 2763
  },
  {
   "control_number": "37506",
   "title": "ESL College Grammar Pathway",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NESL220A",
+   "NESL220B",
+   "NESL230A",
+   "NESL230B"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/164/1969/1972",
+   "title": "ESL College Grammar Pathway, Certificate of Competency (NCY)",
+   "h1": "ESL College Grammar Pathway, Certificate of Competency (NCY)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 2799
  },
  {
   "control_number": "37520",
   "title": "Cybersecurity Professional",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS43",
+   "CIS66",
+   "CNT43",
+   "CNT51",
+   "CNT52",
+   "CNT55",
+   "CNT68",
+   "CNT69",
+   "CNT7285",
+   "CNT7401",
+   "CNT7501",
+   "CNT8001",
+   "CNT8002",
+   "CNT8003",
+   "CS41",
+   "CS43"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/132/1596/1600",
+   "title": "Cybersecurity Professional, Certificate of Achievement (CA)",
+   "h1": "Cybersecurity Professional, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 2777
  },
  {
   "control_number": "37521",
@@ -1967,12 +4160,40 @@
   "title": "Creative Writing",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENG11",
+   "ENG12A",
+   "ENG12B",
+   "ENG12C",
+   "ENG13A",
+   "ENG13B",
+   "ENG19A",
+   "ENG20",
+   "ENG32",
+   "ENG35",
+   "ENG4",
+   "ENG41",
+   "ENG42",
+   "ENG44",
+   "ENG45",
+   "JAMS11",
+   "JAMS19A",
+   "JAMS24A"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/137/1672/1675",
+   "title": "Creative Writing, Certificate of Achievement (CA)",
+   "h1": "Creative Writing, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 18,
-  "text_chars": 0
+  "text_chars": 3594
  },
  {
   "control_number": "37523",
@@ -2003,96 +4224,265 @@
   "title": "Fire Prevention",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMS30",
+   "FST1",
+   "FST3",
+   "FST4",
+   "FST5",
+   "FST6"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/142/1737/1745",
+   "title": "Fire Prevention, Certificate of Achievement (CA)",
+   "h1": "Fire Prevention, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 2741
  },
  {
   "control_number": "37525",
   "title": "Geology Major",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1A",
+   "GEOL1",
+   "GEOL2",
+   "MATH1"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/145/1765/1772",
+   "title": "Geology Major, Certificate of Achievement (CA)",
+   "h1": "Geology Major, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 2042
  },
  {
   "control_number": "37526",
   "title": "Humanities",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARHS2",
+   "ARHS7",
+   "ARTHC1200",
+   "ENG32",
+   "ENG41",
+   "HIST1",
+   "HIST2",
+   "HIST32",
+   "HUMN10",
+   "HUMN11",
+   "HUMN12",
+   "HUMN28",
+   "HUMN3",
+   "HUMN4",
+   "HUMN6",
+   "MUS3",
+   "PHIL1",
+   "PHIL2",
+   "PHTO67",
+   "RELS1",
+   "THEA10",
+   "THEA4",
+   "WMST2"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/150/1820/1826",
+   "title": "Humanities, Certificate of Achievement (CA)",
+   "h1": "Humanities, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 23,
-  "text_chars": 0
+  "text_chars": 3484
  },
  {
   "control_number": "37527",
   "title": "IT Support Professional",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS66",
+   "CNT51",
+   "CNT52",
+   "CNT55",
+   "CNT69"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/132/1596/1601",
+   "title": "IT Support Professional, Certificate of Achievement (CA)",
+   "h1": "IT Support Professional, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 2734
  },
  {
   "control_number": "37528",
   "title": "Jazz Studies",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUS11",
+   "MUS14",
+   "MUS15",
+   "MUS17",
+   "MUS18A",
+   "MUS37",
+   "MUS38",
+   "MUS4",
+   "MUS46",
+   "MUS48",
+   "MUS8A",
+   "MUS8B"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/158/1905/1914",
+   "title": "Jazz Studies, Certificate of Achievement (CA)",
+   "h1": "Jazz Studies, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 2791
  },
  {
   "control_number": "37529",
   "title": "Photography",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GDDM70",
+   "JAMS12",
+   "PHTO29P",
+   "PHTO29V",
+   "PHTO50",
+   "PHTO51A",
+   "PHTO56",
+   "PHTO57",
+   "PHTO58",
+   "PHTO60",
+   "PHTO64A",
+   "PHTO66",
+   "PHTO67",
+   "PHTO68",
+   "PHTO69",
+   "PHTO70",
+   "PHTO72"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/172/2034/2037",
+   "title": "Photography, Associate of Arts (AA)",
+   "h1": "Photography, Associate of Arts (AA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 3819
  },
  {
   "control_number": "37530",
   "title": "Photography",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GDDM70",
+   "JAMS12",
+   "PHTO29P",
+   "PHTO29V",
+   "PHTO50",
+   "PHTO51A",
+   "PHTO56",
+   "PHTO57",
+   "PHTO58",
+   "PHTO60",
+   "PHTO64A",
+   "PHTO66",
+   "PHTO67",
+   "PHTO68",
+   "PHTO69",
+   "PHTO70",
+   "PHTO72"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/172/2034/2038",
+   "title": "Photography, Certificate of Achievement (CA)",
+   "h1": "Photography, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 3195
  },
  {
   "control_number": "37531",
   "title": "Wine Hospitality",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "VWT1",
+   "VWT2",
+   "VWT45",
+   "VWT47",
+   "VWT55"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/180/2119/2129",
+   "title": "Wine Hospitality, Certificate of Achievement (CA)",
+   "h1": "Wine Hospitality, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 2395
  },
  {
   "control_number": "37535",
@@ -2133,84 +4523,229 @@
   "title": "Acting",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEA1A",
+   "THEA1B",
+   "THEA25",
+   "THEA31A",
+   "THEA39A",
+   "THEA3A",
+   "THEA47A",
+   "THEA5"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/178/2099/2102",
+   "title": "Acting, Certificate of Achievement (CA)",
+   "h1": "Acting, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2720
  },
  {
   "control_number": "38194",
   "title": "Film Studies",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FLMS2",
+   "HUMN2",
+   "JAMS1",
+   "JAMS2",
+   "JAMS23",
+   "MUS22A",
+   "MUS22B",
+   "MUS34",
+   "PHTO50",
+   "PHTO69",
+   "SOC12",
+   "THEA11",
+   "THEA1A"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/141/1729/1733",
+   "title": "Film Studies, Certificate of Achievement (CA)",
+   "h1": "Film Studies, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 3363
  },
  {
   "control_number": "38195",
   "title": "Film Studies",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FLMS2",
+   "FLMS5",
+   "HUMN2",
+   "HUMN4",
+   "JAMS1",
+   "JAMS2",
+   "JAMS23",
+   "KIN3",
+   "MUS22A",
+   "MUS22B",
+   "MUS34",
+   "PHTO50",
+   "PHTO69",
+   "SOC12",
+   "THEA11",
+   "THEA1A"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/141/1729/1732",
+   "title": "Film Studies, Associate of Arts (AA)",
+   "h1": "Film Studies, Associate of Arts (AA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 4067
  },
  {
   "control_number": "38196",
   "title": "Musical Theater",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DANC1",
+   "DANC2A",
+   "DANC2B",
+   "DANC3A",
+   "MUS21A",
+   "MUS23A",
+   "MUS23B",
+   "MUS44",
+   "MUS45",
+   "THEA1A",
+   "THEA1B",
+   "THEA39A",
+   "THEA39B",
+   "THEA57A"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/178/2099/2104",
+   "title": "Musical Theater, Certificate of Achievement (CA)",
+   "h1": "Musical Theater, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 3098
  },
  {
   "control_number": "38240",
   "title": "Customer Service",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NBUS200",
+   "NBUS202",
+   "NBUS203",
+   "NBUS205",
+   "NBUS206",
+   "NBUS207",
+   "NBUS210"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/162/1948/1951",
+   "title": "Customer Service, Certificate of Completion (NCL)",
+   "h1": "Customer Service, Certificate of Completion (NCL)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 2545
  },
  {
   "control_number": "38244",
   "title": "Innovation, Entrepreneurship, and Small Business Management",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NBUS200",
+   "NBUS202",
+   "NBUS203",
+   "NBUS205",
+   "NBUS206",
+   "NBUS207",
+   "NBUS210",
+   "NBUS211",
+   "NBUS212",
+   "NBUS213",
+   "NBUS214"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/162/1948/1953",
+   "title": "Innovation, Entrepreneurship, and Small Business Management, Certificate of Completion (NCL)",
+   "h1": "Innovation, Entrepreneurship, and Small Business Management, Certificate of Completion (NCL)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 3017
  },
  {
   "control_number": "38873",
   "title": "Spanish",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SPAN1A",
+   "SPAN1B",
+   "SPAN21",
+   "SPAN22",
+   "SPAN2A",
+   "SPAN2B"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/177/2091/2095",
+   "title": "Spanish, Certificate of Achievement (CA)",
+   "h1": "Spanish, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 2791
  },
  {
   "control_number": "38875",
@@ -2229,228 +4764,624 @@
   "title": "Biology UC Pathway",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO1C",
+   "BIO1R",
+   "CHEM12A",
+   "CHEM12B",
+   "CHEM1A",
+   "CHEM1B",
+   "MATH1",
+   "MATH2"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/127/1443/1450",
+   "title": "Biology UC Pathway, Certificate of Achievement (CA)",
+   "h1": "Biology UC Pathway, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2535
  },
  {
   "control_number": "38879",
   "title": "Biology UC Pathway",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO1C",
+   "BIO1R",
+   "CHEM12A",
+   "CHEM12B",
+   "CHEM1A",
+   "CHEM1B",
+   "MATH1",
+   "MATH2"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/127/1443/1449",
+   "title": "Biology UC Pathway, Associate of Science (AS)",
+   "h1": "Biology UC Pathway, Associate of Science (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 3425
  },
  {
   "control_number": "38884",
   "title": "Civil/Mechanical Engineering",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1A",
+   "ENGR1",
+   "ENGR23",
+   "ENGR26",
+   "ENGR35",
+   "ENGR44",
+   "ENGR46",
+   "MATH1",
+   "MATH2",
+   "MATH3",
+   "MATH5",
+   "PHYS1A",
+   "PHYS1C"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1691",
+   "title": "Civil/Mechanical Engineering, Associate of Science (AS)",
+   "h1": "Civil/Mechanical Engineering, Associate of Science (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 3574
  },
  {
   "control_number": "38885",
   "title": "Civil/Mechanical Engineering",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1A",
+   "ENGR1",
+   "ENGR23",
+   "ENGR26",
+   "ENGR35",
+   "ENGR44",
+   "ENGR46",
+   "MATH1",
+   "MATH2",
+   "MATH3",
+   "MATH5",
+   "PHYS1A",
+   "PHYS1C"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1692",
+   "title": "Civil/Mechanical Engineering, Certificate of Achievement (CA)",
+   "h1": "Civil/Mechanical Engineering, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 2853
  },
  {
   "control_number": "38886",
   "title": "Electrical Engineering",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1A",
+   "ENGR1",
+   "ENGR26",
+   "ENGR44",
+   "MATH1",
+   "MATH2",
+   "MATH3",
+   "MATH5",
+   "PHYS1A",
+   "PHYS1C"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1693",
+   "title": "Electrical Engineering, Associate of Science (AS)",
+   "h1": "Electrical Engineering, Associate of Science (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 3498
  },
  {
   "control_number": "38887",
   "title": "Electrical Engineering",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1A",
+   "ENGR1",
+   "ENGR26",
+   "ENGR44",
+   "MATH1",
+   "MATH2",
+   "MATH3",
+   "MATH5",
+   "PHYS1A",
+   "PHYS1C"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1694",
+   "title": "Electrical Engineering, Certificate of Achievement (CA)",
+   "h1": "Electrical Engineering, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 2883
  },
  {
   "control_number": "38888",
   "title": "Electrical Engineering UC Pathway",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "CHEM1A",
+   "ENGR44",
+   "MATH1",
+   "MATH2",
+   "MATH3",
+   "MATH5",
+   "PHYS1A",
+   "PHYS1C"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1696",
+   "title": "Electrical Engineering UC Pathway, Certificate of Achievement (CA)",
+   "h1": "Electrical Engineering UC Pathway, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 2883
  },
  {
   "control_number": "38889",
   "title": "Electrical Engineering UC Pathway",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1A",
+   "CS1",
+   "ENGR44",
+   "MATH1",
+   "MATH2",
+   "MATH3",
+   "MATH5",
+   "MATH7",
+   "PHYS1A",
+   "PHYS1B",
+   "PHYS1C",
+   "PHYS1D"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1695",
+   "title": "Electrical Engineering UC Pathway, Associate of Science (AS)",
+   "h1": "Electrical Engineering UC Pathway, Associate of Science (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 2914
  },
  {
   "control_number": "38890",
   "title": "Engineering",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1A",
+   "CS1",
+   "ENGR1",
+   "ENGR23",
+   "ENGR26",
+   "ENGR35",
+   "ENGR44",
+   "ENGR46",
+   "MATH1",
+   "MATH2",
+   "MATH3",
+   "MATH5",
+   "MATH7",
+   "PHYS1A",
+   "PHYS1B",
+   "PHYS1C",
+   "PHYS1D"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1698",
+   "title": "Engineering, Certificate of Achievement (CA)",
+   "h1": "Engineering, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 3177
  },
  {
   "control_number": "38892",
   "title": "Engineering",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1A",
+   "CS1",
+   "ENGR1",
+   "ENGR23",
+   "ENGR26",
+   "ENGR35",
+   "ENGR44",
+   "ENGR46",
+   "MATH1",
+   "MATH2",
+   "MATH3",
+   "MATH5",
+   "MATH7",
+   "PHYS1A",
+   "PHYS1B",
+   "PHYS1C",
+   "PHYS1D"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1697",
+   "title": "Engineering, Associate of Science (AS)",
+   "h1": "Engineering, Associate of Science (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 3789
  },
  {
   "control_number": "38893",
   "title": "Mechanical Engineering UC Pathway",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1A",
+   "CHEM1B",
+   "CS1",
+   "ENGR1",
+   "ENGR23",
+   "ENGR35",
+   "ENGR44",
+   "MATH1",
+   "MATH2",
+   "MATH3",
+   "MATH5",
+   "MATH7",
+   "PHYS1A",
+   "PHYS1B",
+   "PHYS1C"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1701",
+   "title": "Mechanical Engineering UC Pathway, Associate of Science (AS)",
+   "h1": "Mechanical Engineering UC Pathway, Associate of Science (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 3623
  },
  {
   "control_number": "38894",
   "title": "Mechanical Engineering UC Pathway",
   "award": "Certificate of Achievement requiring 60+S/90+Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM1A",
+   "CHEM1B",
+   "CS1",
+   "ENGR1",
+   "ENGR23",
+   "ENGR35",
+   "ENGR44",
+   "MATH1",
+   "MATH2",
+   "MATH3",
+   "MATH5",
+   "MATH7",
+   "PHYS1A",
+   "PHYS1B",
+   "PHYS1C"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1702",
+   "title": "Mechanical Engineering UC Pathway, Certificate of Achievement (CA)",
+   "h1": "Mechanical Engineering UC Pathway, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 3016
  },
  {
   "control_number": "38895",
   "title": "Software Engineering",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS17",
+   "CS2",
+   "ENGR1",
+   "ENGR26",
+   "ENGR35",
+   "ENGR44",
+   "MATH1",
+   "MATH10",
+   "MATH2",
+   "MATH3",
+   "MATH5",
+   "PHYS1A",
+   "PHYS1C"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1703",
+   "title": "Software Engineering, Associate of Science (AS)",
+   "h1": "Software Engineering, Associate of Science (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 3550
  },
  {
   "control_number": "38896",
   "title": "Software Engineering",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS17",
+   "CS2",
+   "ENGR1",
+   "ENGR26",
+   "ENGR35",
+   "ENGR44",
+   "MATH1",
+   "MATH10",
+   "MATH2",
+   "MATH3",
+   "MATH5",
+   "PHYS1A",
+   "PHYS1C"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1704",
+   "title": "Software Engineering, Certificate of Achievement (CA)",
+   "h1": "Software Engineering, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 2949
  },
  {
   "control_number": "38922",
   "title": "Spanish",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "POLSC1000",
+   "SPAN1A",
+   "SPAN1B",
+   "SPAN21",
+   "SPAN22",
+   "SPAN2A",
+   "SPAN2B"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/177/2091/2094",
+   "title": "Spanish, Associate in Arts for Transfer (AA-T)",
+   "h1": "Spanish, Associate in Arts for Transfer (AA-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 3423
  },
  {
   "control_number": "38956",
   "title": "Automotive Alternative Fuels/Hybrid Technology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTOA1",
+   "AUTOA2",
+   "AUTOA6",
+   "AUTOA8",
+   "AUTOINT",
+   "AUTOINTL",
+   "AUTOL3",
+   "AUTOLABA"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/126/1372/1393",
+   "title": "Automotive Alternative Fuels/Hybrid Technology, Certificate of Achievement (CA)",
+   "h1": "Automotive Alternative Fuels/Hybrid Technology, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2818
  },
  {
   "control_number": "39063",
   "title": "Bookkeeping",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSN30",
+   "BUSN51",
+   "BUSN52",
+   "BUSN55",
+   "CIS54",
+   "WRKX95"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/128/1479/1484",
+   "title": "Bookkeeping, Certificate of Achievement (CA)",
+   "h1": "Bookkeeping, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 2863
  },
  {
   "control_number": "39064",
   "title": "Business Workforce Proficiency",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSN40",
+   "BUSN48",
+   "CIS43",
+   "CIS73A",
+   "CIS74",
+   "CIS89A",
+   "CNT43",
+   "CS43"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/128/1479/1489",
+   "title": "Business Workforce Proficiency, Certificate of Achievement (CA)",
+   "h1": "Business Workforce Proficiency, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 3030
  },
  {
   "control_number": "39065",
   "title": "Cloud Computing",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS81A",
+   "CIS81B",
+   "CNT7401",
+   "CS41",
+   "CS7"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/130/1549/1555",
+   "title": "Cloud Computing, Certificate of Achievement (CA)",
+   "h1": "Cloud Computing, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 2798
  },
  {
   "control_number": "39066",
@@ -2486,120 +5417,318 @@
   "title": "Engineering Technology",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGR1",
+   "ENGR23",
+   "MATH21",
+   "MATH39",
+   "PHYS10",
+   "PHYS10L",
+   "WLDT10",
+   "WLDT62",
+   "WLDT62AL",
+   "WLDT63",
+   "WLDT79",
+   "WRKX95"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1700",
+   "title": "Engineering Technology, Certificate of Achievement (CA)",
+   "h1": "Engineering Technology, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 3271
  },
  {
   "control_number": "39071",
   "title": "Web Development",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS50",
+   "CIS59",
+   "CIS59C",
+   "CIS62",
+   "GDDM2",
+   "GDDM4",
+   "GDDM53"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/130/1549/1561",
+   "title": "Web Development, Certificate of Achievement (CA)",
+   "h1": "Web Development, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 2730
  },
  {
   "control_number": "39073",
   "title": "Project Management",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSN52",
+   "BUSN56",
+   "CIS43",
+   "CIS50",
+   "CIS54",
+   "CIS60",
+   "CIS62",
+   "CNT43",
+   "CS43"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/130/1549/1560",
+   "title": "Project Management, Certificate of Achievement (CA)",
+   "h1": "Project Management, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 2882
  },
  {
   "control_number": "39074",
   "title": "Occupational Safety",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "OSH50",
+   "OSH62",
+   "OSH67"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/169/2016/2022",
+   "title": "Occupational Safety and Health, Certificate of Achievement (CA)",
+   "h1": "Occupational Safety and Health, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 2646
  },
  {
   "control_number": "39076",
   "title": "Automotive Light Duty Diesel",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTOA1",
+   "AUTOA2",
+   "AUTOA6",
+   "AUTOA8",
+   "AUTOA9",
+   "AUTOINT",
+   "AUTOINTL",
+   "AUTOL1",
+   "AUTOLABA"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/126/1372/1398",
+   "title": "Automotive Light Duty Diesel, Certificate of Achievement (CA)",
+   "h1": "Automotive Light Duty Diesel, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 2831
  },
  {
   "control_number": "39077",
   "title": "Automotive Master",
   "award": "Certificate of Achievement requiring 60+S/90+Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTOA1",
+   "AUTOA2",
+   "AUTOA3",
+   "AUTOA4",
+   "AUTOA5",
+   "AUTOA6",
+   "AUTOA7",
+   "AUTOA8",
+   "AUTOA9",
+   "AUTOL1",
+   "AUTOL3",
+   "AUTOLABA",
+   "AUTOLABB",
+   "AUTOSDR"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/126/1372/1400",
+   "title": "Automotive Master, Certificate of Achievement (CA)",
+   "h1": "Automotive Master, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 2793
  },
  {
   "control_number": "39143",
   "title": "Automotive Master",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.941,
+  "codes_found": [
+   "AUTOA1",
+   "AUTOA2",
+   "AUTOA3",
+   "AUTOA4",
+   "AUTOA5",
+   "AUTOA6",
+   "AUTOA7",
+   "AUTOA8",
+   "AUTOA9",
+   "AUTOINT",
+   "AUTOINTL",
+   "AUTOL1",
+   "AUTOL3",
+   "AUTOLABA",
+   "AUTOLABB",
+   "AUTOSDR"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/126/1372/1399",
+   "title": "Automotive Master, Associate of Science (AS)",
+   "h1": "Automotive Master, Associate of Science (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 3558
  },
  {
   "control_number": "39144",
   "title": "Automotive Light Duty Diesel",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTOA1",
+   "AUTOA2",
+   "AUTOA3",
+   "AUTOA4",
+   "AUTOA5",
+   "AUTOA6",
+   "AUTOA7",
+   "AUTOA8",
+   "AUTOA9",
+   "AUTOINT",
+   "AUTOINTL",
+   "AUTOLABA"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/126/1372/1397",
+   "title": "Automotive Light Duty Diesel, Associate of Science (AS)",
+   "h1": "Automotive Light Duty Diesel, Associate of Science (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 3527
  },
  {
   "control_number": "39145",
   "title": "Automotive Alternative Fuels/Hybrid Technology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AUTOA1",
+   "AUTOA2",
+   "AUTOA3",
+   "AUTOA4",
+   "AUTOA5",
+   "AUTOA6",
+   "AUTOA7",
+   "AUTOA8",
+   "AUTOINT",
+   "AUTOINTL",
+   "AUTOL3",
+   "AUTOLABA"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/126/1372/1392",
+   "title": "Automotive Alternative Fuels/Hybrid Technology, Associate of Science (AS)",
+   "h1": "Automotive Alternative Fuels/Hybrid Technology, Associate of Science (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 3600
  },
  {
   "control_number": "39878",
   "title": "Basic Research Skills",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NLIB201",
+   "NLIB202",
+   "NLIB203",
+   "NLIB204"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/165/1982/1984",
+   "title": "Basic Research Skills, Certificate of Completion (NCL)",
+   "h1": "Basic Research Skills, Certificate of Completion (NCL)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 2307
  },
  {
   "control_number": "40063",
@@ -2645,84 +5774,202 @@
   "title": "Data Analytics",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSN55",
+   "CIS10",
+   "CIS11",
+   "CIS54",
+   "CIS60",
+   "CIS81B",
+   "CIS9002",
+   "CS7"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/130/1549/1559",
+   "title": "Data Analytics, Certificate of Achievement (CA)",
+   "h1": "Data Analytics, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2929
  },
  {
   "control_number": "40478",
   "title": "Red Hat Administration",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS43",
+   "CIS66",
+   "CNT43",
+   "CNT51",
+   "CNT52",
+   "CNT69",
+   "CNT7401",
+   "CNT7402",
+   "CS3",
+   "CS41",
+   "CS43",
+   "CS7"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/133/1620/1630",
+   "title": "Red Hat Administration, Certificate of Achievement (CA)",
+   "h1": "Red Hat Administration, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 2552
  },
  {
   "control_number": "40479",
   "title": "Artificial Intelligence",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS1",
+   "CS2",
+   "CS4",
+   "CS5",
+   "CS7",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/133/1620/1625",
+   "title": "Artificial Intelligence, Certificate of Achievement (CA)",
+   "h1": "Artificial Intelligence, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 2666
  },
  {
   "control_number": "40480",
   "title": "Management Information Systems",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSN1A",
+   "BUSN40",
+   "CIS43",
+   "CIS60",
+   "CIS62",
+   "CNT43",
+   "CS1",
+   "CS43",
+   "CS45",
+   "CS7"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/133/1620/1629",
+   "title": "Management Information Systems, Certificate of Achievement (CA)",
+   "h1": "Management Information Systems, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 2420
  },
  {
   "control_number": "41923",
   "title": "21st Century Policing",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ64",
+   "AJ68",
+   "AJ70",
+   "ETHS6",
+   "SOC3",
+   "SOC6"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/119/738/744",
+   "title": "21st Century Policing, Certificate of Achievement (CA)",
+   "h1": "21st Century Policing, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 2694
  },
  {
   "control_number": "41926",
   "title": "Drone Photography, Mapping, and Piloting",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NAVI201",
+   "NAVI202A",
+   "NAVI202B",
+   "NAVI203"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/160/1935/1939",
+   "title": "Drone Photography, Mapping, and Piloting, Certificate of Completion (NCL)",
+   "h1": "Drone Photography, Mapping, and Piloting, Certificate of Completion (NCL)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 3069
  },
  {
   "control_number": "41934",
   "title": "Marine Technology Boating 101",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APMT51",
+   "APMT52"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/123/1259/1261",
+   "title": "Marine Technology Boating 101, Certificate of Achievement (CA)",
+   "h1": "Marine Technology Boating 101, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 2447
  },
  {
   "control_number": "41980",
@@ -2763,36 +6010,90 @@
   "title": "Business Administration 2.0",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSN18",
+   "BUSN1A",
+   "BUSN1B",
+   "BUSN40",
+   "ECONC2001",
+   "ECONC2002",
+   "MATH1",
+   "MATH33",
+   "MATH34",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/128/1479/1486",
+   "title": "Business Administration 2.0, Associate in Science for Transfer (AS-T)",
+   "h1": "Business Administration 2.0, Associate in Science for Transfer (AS-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 3461
  },
  {
   "control_number": "42086",
   "title": "Marine Technology Yachting 101",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APMT51",
+   "APMT52",
+   "APMT53"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/123/1259/1262",
+   "title": "Marine Technology Yachting 101, Certificate of Achievement (CA)",
+   "h1": "Marine Technology Yachting 101, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 2617
  },
  {
   "control_number": "42162",
   "title": "Marketing",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSN40",
+   "BUSN45",
+   "BUSN52",
+   "BUSN56",
+   "BUSN58",
+   "BUSN87",
+   "COMMC1000",
+   "MKTG50",
+   "MKTG56",
+   "MKTG61",
+   "WRKX95"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/157/1888/1892",
+   "title": "Marketing, Certificate of Achievement (CA)",
+   "h1": "Marketing, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 3146
  },
  {
   "control_number": "42163",
@@ -2811,72 +6112,176 @@
   "title": "Communication Studies 2.0",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTR3",
+   "CMST10",
+   "CMST11",
+   "CMST2",
+   "CMST3",
+   "CMST4",
+   "CMST46",
+   "CMST48",
+   "COMMC1000",
+   "ENG4",
+   "ENGLC1001",
+   "JAMS1",
+   "JAMS11",
+   "PSYCC1000",
+   "SOC1"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/131/1537/1541",
+   "title": "Communication Studies 2.0, Associate in Arts for Transfer (AA-T)",
+   "h1": "Communication Studies 2.0, Associate in Arts for Transfer (AA-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 3854
  },
  {
   "control_number": "43046",
   "title": "Norcal Laborers Traffic Control",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APCL102",
+   "APCL106",
+   "APCL109",
+   "APCL110",
+   "APCL111",
+   "APCL112",
+   "APCL113",
+   "APCL114",
+   "APCL115"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/121/1240/1244",
+   "title": "Norcal Laborers Traffic Control, Certificate of Achievement (CA)",
+   "h1": "Norcal Laborers Traffic Control, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 2529
  },
  {
   "control_number": "43047",
   "title": "Norcal Laborers LiUNA! Laborers’ Construction",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APCL100",
+   "APCL101",
+   "APCL102",
+   "APCL103",
+   "APCL104",
+   "APCL105",
+   "APCL106",
+   "APCL107",
+   "APCL108"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/121/1240/1243",
+   "title": "Norcal Laborers LiUNA! Laborers' Construction, Certificate of Achievement (CA)",
+   "h1": "Norcal Laborers LiUNA! Laborers' Construction, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 2672
  },
  {
   "control_number": "43048",
   "title": "Norcal Laborers Construction",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APCL100",
+   "APCL101",
+   "APCL102",
+   "APCL103",
+   "APCL104",
+   "APCL105",
+   "APCL106"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/121/1240/1242",
+   "title": "Norcal Laborers Construction, Certificate of Achievement (CA)",
+   "h1": "Norcal Laborers Construction, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 2529
  },
  {
   "control_number": "43330",
   "title": "School Matters Program",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NESL203",
+   "NESL204"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/164/1969/1976",
+   "title": "School Matters Program, Certificate of Competency (NCY)",
+   "h1": "School Matters Program, Certificate of Competency (NCY)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 2296
  },
  {
   "control_number": "43437",
   "title": "Biotechnology Skills",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NBIO201",
+   "NBIO202"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/161/1941/1944",
+   "title": "Biotechnology Skills, Certificate of Completion (NCL)",
+   "h1": "Biotechnology Skills, Certificate of Completion (NCL)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 2478
  },
  {
   "control_number": "43734",
@@ -2895,84 +6300,226 @@
   "title": "ESL College Speaking and Listening Fluency Pathway",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NESL213",
+   "NESL223",
+   "NESL226"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/164/1969/1974",
+   "title": "ESL College Speaking and Listening Fluency Pathway, Certificate of Competency (NCY)",
+   "h1": "ESL College Speaking and Listening Fluency Pathway, Certificate of Competency (NCY)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 2585
  },
  {
   "control_number": "43835",
   "title": "ESL Pre-College Speaking and Listening Fluency Pathway",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NESL233",
+   "NESL236"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/164/1969/1975",
+   "title": "ESL Pre-College Speaking and Listening Fluency Pathway, Certificate of Competency (NCY)",
+   "h1": "ESL Pre-College Speaking and Listening Fluency Pathway, Certificate of Competency (NCY)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 2353
  },
  {
   "control_number": "43915",
   "title": "Piano Technology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "KINPF",
+   "KINYIN1",
+   "KINYO1",
+   "MKTG61",
+   "MUS1",
+   "MUS145",
+   "MUS146",
+   "MUS147",
+   "MUS16",
+   "MUS18A",
+   "MUS21A",
+   "MUS21B",
+   "MUS25",
+   "MUS27",
+   "MUS28",
+   "MUS35",
+   "MUS37",
+   "MUS44",
+   "MUS45",
+   "MUS6",
+   "MUS8A",
+   "THEA50",
+   "WRKX94"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/158/1905/1917",
+   "title": "Piano Technology, Certificate of Achievement (CA)",
+   "h1": "Piano Technology, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 23,
-  "text_chars": 0
+  "text_chars": 2821
  },
  {
   "control_number": "43917",
   "title": "Public Health",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIO30",
+   "BIO7A",
+   "BIO7B",
+   "CHEM1A",
+   "CHEM30A",
+   "CHEM31",
+   "HEA1",
+   "HEA11",
+   "HEA3",
+   "HEA7",
+   "NTRN1",
+   "PSYC10",
+   "PSYC12",
+   "PSYCC1000",
+   "SOC1",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/147/1795/1798",
+   "title": "Public Health, Associate in Science for Transfer (AS-T)",
+   "h1": "Public Health, Associate in Science for Transfer (AS-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 3765
  },
  {
   "control_number": "43927",
   "title": "Production Welder",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WLDT55",
+   "WLDT61",
+   "WLDT61AL",
+   "WLDT61BL",
+   "WLDT62",
+   "WLDT62AL",
+   "WLDT62BL",
+   "WLDT73"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/181/2132/2135",
+   "title": "Production Welder, Certificate of Achievement (CA)",
+   "h1": "Production Welder, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2556
  },
  {
   "control_number": "43953",
   "title": "Communication and Writing in English",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NENG210",
+   "NENG215"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/163/1956/1960",
+   "title": "Communication and Writing in English, Certificate of Competency (NCY)",
+   "h1": "Communication and Writing in English, Certificate of Competency (NCY)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 2243
  },
  {
   "control_number": "44793",
   "title": "Modern Policing",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "AJ50",
+   "AJ55",
+   "AJ60",
+   "AJ61",
+   "AJ63",
+   "AJ68",
+   "AJ70",
+   "ARHS3",
+   "CMST11",
+   "COMMC1000",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ETHS6",
+   "PHIL2",
+   "PSYC3",
+   "SOC3",
+   "SOC6",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/119/738/743",
+   "title": "Modern Policing, Associate of Science (AS)",
+   "h1": "Modern Policing, Associate of Science (AS)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 18,
-  "text_chars": 0
+  "text_chars": 3897
  },
  {
   "control_number": "44894",
@@ -3015,96 +6562,226 @@
   "title": "Physical Therapy Aide",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EMS62",
+   "KIN14",
+   "KIN17",
+   "KIN18A",
+   "KIN18B",
+   "KIN19",
+   "KINAR1",
+   "KINBD1",
+   "KINBL1",
+   "KINDA1",
+   "KINFJW1",
+   "KINGBW1",
+   "KINGF1",
+   "KINPF",
+   "KINPIC1",
+   "KINPL1",
+   "KINSI1",
+   "KINSO1",
+   "KINSW1",
+   "KINSWF1",
+   "KINVB1",
+   "KINWT1",
+   "KINWTW1",
+   "KINYO1"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/153/1853/1860",
+   "title": "Physical Therapy Aide, Certificate of Achievement (CA)",
+   "h1": "Physical Therapy Aide, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 24,
-  "text_chars": 0
+  "text_chars": 3496
  },
  {
   "control_number": "45474",
   "title": "Emotional Intelligence in the Workplace",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NBUS215",
+   "NBUS216"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/162/1948/1952",
+   "title": "Emotional Intelligence in the Workplace, Certificate of Completion (NCL)",
+   "h1": "Emotional Intelligence in the Workplace, Certificate of Completion (NCL)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 2596
  },
  {
   "control_number": "45574",
   "title": "AAG Automotive Chassis Technician",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APAG2",
+   "APAG2L",
+   "APWX94"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/2167/2169/2172",
+   "title": "AAG Automotive Chassis Technician, Certificate of Achievement (CA)",
+   "h1": "AAG Automotive Chassis Technician, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 2217
  },
  {
   "control_number": "45724",
   "title": "AAG Automotive Service Technician",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APAG1",
+   "APAG1L",
+   "APWX94"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/2167/2169/2175",
+   "title": "AAG Automotive Service Technician, Certificate of Achievement (CA)",
+   "h1": "AAG Automotive Service Technician, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 2218
  },
  {
   "control_number": "45725",
   "title": "AAG Automotive Emissions Technician",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.833,
+  "codes_found": [
+   "APAG3",
+   "APAG3L",
+   "APWX94",
+   "AUTOP1",
+   "AUTOSDR"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/2167/2169/2174",
+   "title": "AAG Automotive Emissions Technician, Certificate of Achievement (CA)",
+   "h1": "AAG Automotive Emissions Technician, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 2385
  },
  {
   "control_number": "45734",
   "title": "AAG Automotive Electrical Technician",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.6,
+  "codes_found": [
+   "APAG4",
+   "APAG4L",
+   "APWX94"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/2167/2169/2173",
+   "title": "AAG Automotive Electrical Technician, Certificate of Achievement (CA)",
+   "h1": "AAG Automotive Electrical Technician, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 2441
  },
  {
   "control_number": "45735",
   "title": "AAG Automotive Technician",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "APAG1",
+   "APAG1L",
+   "APAG2",
+   "APAG2L",
+   "APAG3",
+   "APAG3L",
+   "APAG4",
+   "APAG4L",
+   "APWX94"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/2167/2169/2173",
+   "title": "AAG Automotive Electrical Technician, Certificate of Achievement (CA)",
+   "h1": "AAG Automotive Electrical Technician, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 2441
  },
  {
   "control_number": "45954",
   "title": "Honors Scholar",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HNRS1"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/2156/2158/2161",
+   "title": "Honors Scholar, Certificate of Achievement (CA)",
+   "h1": "Honors Scholar, Certificate of Achievement (CA)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 1,
-  "text_chars": 0
+  "text_chars": 2646
  },
  {
   "control_number": "45955",
@@ -3246,24 +6923,66 @@
   "title": "Automotive Concepts",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NAUTCA1",
+   "NAUTCA2",
+   "NAUTCA3",
+   "NAUTCA4",
+   "NAUTCA5",
+   "NAUTCA6",
+   "NAUTCA7",
+   "NAUTCA8",
+   "NAUTCA9",
+   "NAUTCSDR",
+   "NAUTCSMG",
+   "NAUTINT"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/159/1922/1929",
+   "title": "Automotive Concepts, Certificate of Completion (NCL)",
+   "h1": "Automotive Concepts, Certificate of Completion (NCL)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 2555
  },
  {
   "control_number": "45994",
   "title": "Automotive Master",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "NAUTA1",
+   "NAUTA2",
+   "NAUTA3",
+   "NAUTA4",
+   "NAUTA5",
+   "NAUTA6",
+   "NAUTA7",
+   "NAUTA8",
+   "NAUTINT",
+   "NAUTSDR"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/159/1922/1930",
+   "title": "Automotive Master, Certificate of Completion (NCL)",
+   "h1": "Automotive Master, Certificate of Completion (NCL)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 2600
  },
  {
   "control_number": "46194",
@@ -3343,11 +7062,28 @@
   "title": "Mathematics 2.0",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS1",
+   "MATH1",
+   "MATH2",
+   "MATH3",
+   "MATH5",
+   "MATH7",
+   "PHYS1A"
+  ],
+  "source": {
+   "url": "https://laspositas.curriqunet.com/catalog/iq/102/105/156/1899/1902",
+   "title": "Mathematics 2.0, Associate in Science for Transfer (AS-T)",
+   "h1": "Mathematics 2.0, Associate in Science for Transfer (AS-T)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 3327
  }
 ]

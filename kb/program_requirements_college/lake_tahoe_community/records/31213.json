@@ -1,0 +1,254 @@
+{
+ "college": "Lake Tahoe Community College",
+ "control_number": "31213",
+ "shape": "degree",
+ "title": "Fire Officer",
+ "award": "A.A. Degree",
+ "source_url": "https://ltcc.elumenapp.com/catalog/2026-2027/program/fire-officer-aa-summer-2021",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7292,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7292,
+    "output_tokens": 2025,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2025,
+  "output_tokens_details": {
+   "thinking_tokens": 550
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06967,
+ "ms": 16349,
+ "seconds": 16.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 11,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    28.5,
+    28.5
+   ],
+   "stated": [
+    28.5,
+    28.5
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     28.5,
+     28.5
+    ],
+    "stated": [
+     90.0,
+     90.0
+    ],
+    "against": "degree",
+    "ge": null,
+    "why": [],
+    "fill": [
+     61.5,
+     61.5
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Fire Officer AA",
+   "measure": "units",
+   "total_units": {
+    "min": 28.5,
+    "max": 28.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": 90,
+    "max": 90
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Prepare for and pass all required certification training standards included in the Certification Task Book in the Chief Fire Officer California Training Standard Guide (September 2017), which is based on National Fire Protection Association (NFPA) 1021 Standard for Fire Officer Professional Qualifications (2020), National Fire Protection Association (NFPA) 1051 Standard for Wildland Fire Fighter Professional Qualifications (2020), and National Fire Protection Association (NFPA) 1041 Standard for Fire Instructor Professional Qualifications (2019).",
+    "Prepare for expanding/extended Type 3 incidents also allowed for dual certification with the National Wildland Coordinating Group (NWCG) S-300 Extended Attack Incident Commander course, the base course for California Incident Command Certification (CICCS) certification as an Incident Commander Type 3 (ICT3). The inclusion of the eight functions of command in NFPA 1026, Standard for Incident Management Personnel Professional Qualifications, risk management concepts from NFPA 1500 Standard on Fire Department Occupational Safety, Health, and Wellness Program, and other incident-based industry best practices, such as portions of NFPA 1561, Standard for Emergency Services Incident Management System and Command Safety."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "B. Required Courses (Fire Officer AA)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 28.5,
+     "max": 28.5
+    },
+    "courses": [
+     {
+      "code": "FIR172D",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIR172E",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIR181A",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIR181B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIR181C",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIR181D",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIR181E",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIR182A",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIR182B",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIR182C",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIR182E",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Lake Tahoe Community College uses quarter units; the degree total of 90 is read from 'C. ELECTIVE UNITS to bring the total to 90.' and recorded as degree_total; electives fill the remainder with no printed units.",
+   "General education is listed only as 'General Education Patterns' with no named pattern or units; ge_pattern and ge_units left null.",
+   "Catalog prints codes without a space (e.g., FIR172D); these match closed-list codes (FIR 172D etc.).",
+   "FIR182E is printed with the truncated title 'Chief Fire Officer 3D: Command'.",
+   "The catalog text begins mid-sentence (program description cut off at the start).",
+   "Program learning outcomes appear to be printed for the program as a whole; recorded for this A.A. award.",
+   "No careers or job titles named for the program; 'Fire Officer', 'Lieutenant' and 'Incident Commander Type 3' appear only as certifications or experience requirements, so careers left empty.",
+   "Source URL slug references summer-2021 although the catalog year is 2026-2027; reviewer may confirm currency."
+  ]
+ },
+ "extracted_run": "38984692790"
+}
