@@ -95,8 +95,8 @@
    "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
-   "heading_without_outcomes": false,
+   "heading_printed": true,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
@@ -192,5 +192,6 @@
    "ART 160's course description mentions 'careers in art gallery management', but that is a course description, not the program section, so no careers were recorded."
   ]
  },
- "extracted_run": "39006339282"
+ "extracted_run": 39019550095,
+ "read_run": "39006339282"
 }

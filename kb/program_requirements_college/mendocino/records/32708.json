@@ -104,14 +104,16 @@
    "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
-   "heading_without_outcomes": false,
+   "heading_printed": true,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
    "count": 6,
-   "not_verbatim": [],
-   "pass": true
+   "not_verbatim": [
+    "post-production"
+   ],
+   "pass": false
   },
   "degree": {
    "status": "n/a"
@@ -242,5 +244,6 @@
    "No program learning outcomes are printed in the text."
   ]
  },
- "extracted_run": "39006339282"
+ "extracted_run": 39019550095,
+ "read_run": "39006339282"
 }

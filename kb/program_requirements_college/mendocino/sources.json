@@ -22,8 +22,8 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=93",
-   "title": null,
-   "h1": null,
+   "title": "A.S. Agriculture – Horticulture",
+   "h1": "A.S. Agriculture – Horticulture",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -32,10 +32,11 @@
     95,
     96
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
-  "text_chars": 8764
+  "text_chars": 8621
  },
  {
   "control_number": "03425",
@@ -59,17 +60,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=192",
-   "title": null,
-   "h1": null,
+   "title": "A.S. Natural Resources",
+   "h1": "A.S. Natural Resources",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     192
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 11,
-  "text_chars": 3080
+  "text_chars": 2926
  },
  {
   "control_number": "03426",
@@ -96,18 +98,19 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=113",
-   "title": null,
-   "h1": null,
+   "title": "BIOLOGICAL SCIENCE ASSOCIATE OF SCIENCE",
+   "h1": "BIOLOGICAL SCIENCE ASSOCIATE OF SCIENCE",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     113,
     114
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 14,
-  "text_chars": 5762
+  "text_chars": 5667
  },
  {
   "control_number": "03428",
@@ -126,8 +129,8 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=116",
-   "title": null,
-   "h1": null,
+   "title": "BUSINESS – ACCOUNTING ASSOCIATE OF SCIENCE",
+   "h1": "BUSINESS – ACCOUNTING ASSOCIATE OF SCIENCE",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -136,10 +139,11 @@
     118,
     119
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 7671
+  "text_chars": 7577
  },
  {
   "control_number": "03429",
@@ -167,8 +171,8 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=117",
-   "title": null,
-   "h1": null,
+   "title": "BUSINESS MANAGEMENT ASSOCIATE OF SCIENCE",
+   "h1": "BUSINESS MANAGEMENT ASSOCIATE OF SCIENCE",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -177,10 +181,11 @@
     119,
     120
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 15,
-  "text_chars": 8055
+  "text_chars": 7960
  },
  {
   "control_number": "03433",
@@ -216,8 +221,8 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=132",
-   "title": null,
-   "h1": null,
+   "title": "INFORMATION TECHNOLOGY ASSOCIATE OF SCIENCE",
+   "h1": "INFORMATION TECHNOLOGY ASSOCIATE OF SCIENCE",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -226,10 +231,11 @@
     134,
     135
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 24,
-  "text_chars": 9756
+  "text_chars": 9662
  },
  {
   "control_number": "03438",
@@ -314,8 +320,8 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=333",
-   "title": null,
-   "h1": null,
+   "title": "COURSES",
+   "h1": "COURSES",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -324,7 +330,8 @@
     335,
     336
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 39,
   "text_chars": 15682
@@ -346,8 +353,8 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=327",
-   "title": null,
-   "h1": null,
+   "title": "COURSES",
+   "h1": "COURSES",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -355,7 +362,8 @@
     328,
     329
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
   "text_chars": 12971
@@ -378,18 +386,19 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=103",
-   "title": null,
-   "h1": null,
+   "title": "TEXTILES/CLOTHING CONSTRUCTION CERTIFICATE OF",
+   "h1": "TEXTILES/CLOTHING CONSTRUCTION CERTIFICATE OF",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     103,
     104
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 9,
-  "text_chars": 4949
+  "text_chars": 4464
  },
  {
   "control_number": "03454",
@@ -412,17 +421,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=89",
-   "title": null,
-   "h1": null,
+   "title": "A.S.-T Administration of Justice",
+   "h1": "A.S.-T Administration of Justice",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     89
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 2678
+  "text_chars": 2514
  },
  {
   "control_number": "03455",
@@ -450,17 +460,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=125",
-   "title": null,
-   "h1": null,
+   "title": "CHILD DEVELOPMENT/FAMILY RELATIONS ASSOCIATE OF SCIENCE",
+   "h1": "CHILD DEVELOPMENT/FAMILY RELATIONS ASSOCIATE OF SCIENCE",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     125
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 15,
-  "text_chars": 3376
+  "text_chars": 3281
  },
  {
   "control_number": "03457",
@@ -485,17 +496,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=157",
-   "title": null,
-   "h1": null,
+   "title": "A.S. Fire Science",
+   "h1": "A.S. Fire Science",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     157
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
-  "text_chars": 2314
+  "text_chars": 2162
  },
  {
   "control_number": "03458",
@@ -513,18 +525,19 @@
    "SOC200"
   ],
   "source": {
-   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=79",
-   "title": null,
-   "h1": null,
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=156",
+   "title": "A.A. Ethnic Studies",
+   "h1": "A.A. Ethnic Studies",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    79
+    156
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 5930
+  "text_chars": 1979
  },
  {
   "control_number": "03461",
@@ -548,18 +561,19 @@
    "PSYCC1000"
   ],
   "source": {
-   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=79",
-   "title": null,
-   "h1": null,
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=203",
+   "title": "A.A.-T Psychology",
+   "h1": "A.A.-T Psychology",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    79
+    203
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
-  "text_chars": 5930
+  "text_chars": 1826
  },
  {
   "control_number": "03462",
@@ -588,18 +602,19 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=87",
-   "title": null,
-   "h1": null,
+   "title": "A.S. Addiction and Recovery Counseling",
+   "h1": "A.S. Addiction and Recovery Counseling",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     87,
     88
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 16,
-  "text_chars": 6085
+  "text_chars": 5909
  },
  {
   "control_number": "07775",
@@ -623,8 +638,8 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=95",
-   "title": null,
-   "h1": null,
+   "title": "AGRICULTURE – NURSERY PRODUCTION CERTIFICATE OF",
+   "h1": "AGRICULTURE – NURSERY PRODUCTION CERTIFICATE OF",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -632,10 +647,11 @@
     96,
     97
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 11,
-  "text_chars": 5498
+  "text_chars": 5404
  },
  {
   "control_number": "07776",
@@ -661,8 +677,8 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=94",
-   "title": null,
-   "h1": null,
+   "title": "AGRICULTURE – LANDSCAPE PRACTICES CERTIFICATE OF",
+   "h1": "AGRICULTURE – LANDSCAPE PRACTICES CERTIFICATE OF",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -671,10 +687,11 @@
     96,
     97
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 13,
-  "text_chars": 7586
+  "text_chars": 7493
  },
  {
   "control_number": "07780",
@@ -697,8 +714,8 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=130",
-   "title": null,
-   "h1": null,
+   "title": "The Associate of Science in Computer Applications and Office Administration prepares students for positions that",
+   "h1": "The Associate of Science in Computer Applications and Office Administration prepares students for positions that",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -707,10 +724,11 @@
     132,
     133
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 12225
+  "text_chars": 12059
  },
  {
   "control_number": "07782",
@@ -774,8 +792,8 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=333",
-   "title": null,
-   "h1": null,
+   "title": "COURSES",
+   "h1": "COURSES",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -784,7 +802,8 @@
     335,
     336
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 40,
   "text_chars": 15682
@@ -809,21 +828,22 @@
    "CSC220"
   ],
   "source": {
-   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=130",
-   "title": null,
-   "h1": null,
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=133",
+   "title": "The Computer Applications and Office Administration Certificate of Achievement prepares students for positions",
+   "h1": "The Computer Applications and Office Administration Certificate of Achievement prepares students for positions",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    130,
-    131,
-    132,
-    133
+    133,
+    134,
+    135,
+    136
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 12225
+  "text_chars": 8764
  },
  {
   "control_number": "10587",
@@ -838,14 +858,15 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=78",
-   "title": null,
-   "h1": null,
+   "title": "ACADEMICS",
+   "h1": "ACADEMICS",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     78
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 4,
   "text_chars": 8050
@@ -868,8 +889,8 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=106",
-   "title": null,
-   "h1": null,
+   "title": "AUTOMOTIVE TECHNICIAN CERTIFICATE OF ACHIEVEMENT",
+   "h1": "AUTOMOTIVE TECHNICIAN CERTIFICATE OF ACHIEVEMENT",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -877,10 +898,11 @@
     107,
     108
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 7,
-  "text_chars": 8713
+  "text_chars": 6947
  },
  {
   "control_number": "10589",
@@ -900,8 +922,8 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=106",
-   "title": null,
-   "h1": null,
+   "title": "AUTOMOTIVE CHASSIS SPECIALIST CERTIFICATE OF ACHIEVEMENT",
+   "h1": "AUTOMOTIVE CHASSIS SPECIALIST CERTIFICATE OF ACHIEVEMENT",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -909,10 +931,11 @@
     107,
     108
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 7,
-  "text_chars": 8713
+  "text_chars": 8619
  },
  {
   "control_number": "10590",
@@ -932,18 +955,19 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=107",
-   "title": null,
-   "h1": null,
+   "title": "AUTOMOTIVE TUNE-UP and ELECTRONICS SPECIALIST CERTIFICATE",
+   "h1": "AUTOMOTIVE TUNE-UP and ELECTRONICS SPECIALIST CERTIFICATE",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     107,
     108
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 7,
-  "text_chars": 5904
+  "text_chars": 5212
  },
  {
   "control_number": "10591",
@@ -964,8 +988,8 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=102",
-   "title": null,
-   "h1": null,
+   "title": "ART ASSOCIATE OF ARTS – Ceramics, Painting, or Printmaking",
+   "h1": "ART ASSOCIATE OF ARTS – Ceramics, Painting, or Printmaking",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -973,10 +997,11 @@
     103,
     104
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 7313
+  "text_chars": 7219
  },
  {
   "control_number": "10592",
@@ -1017,14 +1042,15 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=187",
-   "title": null,
-   "h1": null,
+   "title": "PROGRAMS",
+   "h1": "PROGRAMS",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     187
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 16,
   "text_chars": 2210
@@ -1066,18 +1092,22 @@
    "WEE196"
   ],
   "source": {
-   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=141",
-   "title": null,
-   "h1": null,
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=143",
+   "title": "CULINARY ARTS MANAGEMENT CERTIFICATE OF ACHIEVEMENT",
+   "h1": "CULINARY ARTS MANAGEMENT CERTIFICATE OF ACHIEVEMENT",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    141
+    143,
+    144,
+    145,
+    146
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 27,
-  "text_chars": 2186
+  "text_chars": 8334
  },
  {
   "control_number": "12660",
@@ -1098,8 +1128,8 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=135",
-   "title": null,
-   "h1": null,
+   "title": "IT SPECIALIST CERTIFICATE OF ACHIEVEMENT",
+   "h1": "IT SPECIALIST CERTIFICATE OF ACHIEVEMENT",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1108,10 +1138,11 @@
     137,
     138
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 8711
+  "text_chars": 8616
  },
  {
   "control_number": "12876",
@@ -1137,17 +1168,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=138",
-   "title": null,
-   "h1": null,
+   "title": "WEB DEVELOPMENT CERTIFICATE OF ACHIEVEMENT",
+   "h1": "WEB DEVELOPMENT CERTIFICATE OF ACHIEVEMENT",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     138
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 16,
-  "text_chars": 2063
+  "text_chars": 1969
  },
  {
   "control_number": "15174",
@@ -1172,18 +1204,19 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=161",
-   "title": null,
-   "h1": null,
+   "title": "A.S. Health Sciences",
+   "h1": "A.S. Health Sciences",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     161,
     162
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
-  "text_chars": 6133
+  "text_chars": 5965
  },
  {
   "control_number": "15513",
@@ -1225,17 +1258,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=170",
-   "title": null,
-   "h1": null,
+   "title": "HUMAN SERVICE WORKER CERTIFICATE OF ACHIEVEMENT",
+   "h1": "HUMAN SERVICE WORKER CERTIFICATE OF ACHIEVEMENT",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     170
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 29,
-  "text_chars": 3095
+  "text_chars": 3001
  },
  {
   "control_number": "16539",
@@ -1279,19 +1313,21 @@
    "SOC201"
   ],
   "source": {
-   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=194",
-   "title": null,
-   "h1": null,
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=193",
+   "title": "A.S. Registered Nurse",
+   "h1": "A.S. Registered Nurse",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    193,
     194,
     195
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 32,
-  "text_chars": 5478
+  "text_chars": 7298
  },
  {
   "control_number": "16540",
@@ -1326,17 +1362,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=147",
-   "title": null,
-   "h1": null,
+   "title": "A.S. Earth Science",
+   "h1": "A.S. Earth Science",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     147
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 22,
-  "text_chars": 2650
+  "text_chars": 2499
  },
  {
   "control_number": "18732",
@@ -1365,18 +1402,19 @@
    "RLS74"
   ],
   "source": {
-   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=206",
-   "title": null,
-   "h1": null,
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=208",
+   "title": "REAL ESTATE CERTIFICATE OF ACHIEVEMENT",
+   "h1": "REAL ESTATE CERTIFICATE OF ACHIEVEMENT",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    206
+    208
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 17,
-  "text_chars": 1917
+  "text_chars": 2477
  },
  {
   "control_number": "18733",
@@ -1406,17 +1444,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=206",
-   "title": null,
-   "h1": null,
+   "title": "A.S. Real Estate",
+   "h1": "A.S. Real Estate",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     206
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 17,
-  "text_chars": 1917
+  "text_chars": 1763
  },
  {
   "control_number": "21968",
@@ -1439,8 +1478,8 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=118",
-   "title": null,
-   "h1": null,
+   "title": "BUSINESS – ACCOUNTING CERTIFICATE OF ACHIEVEMENT",
+   "h1": "BUSINESS – ACCOUNTING CERTIFICATE OF ACHIEVEMENT",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1449,10 +1488,11 @@
     120,
     121
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 7732
+  "text_chars": 7638
  },
  {
   "control_number": "21969",
@@ -1478,21 +1518,20 @@
    "WEE196"
   ],
   "source": {
-   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=117",
-   "title": null,
-   "h1": null,
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=121",
+   "title": "BUSINESS MANAGEMENT CERTIFICATE OF ACHIEVEMENT",
+   "h1": "BUSINESS MANAGEMENT CERTIFICATE OF ACHIEVEMENT",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    117,
-    118,
-    119,
-    120
+    121,
+    122
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 14,
-  "text_chars": 8055
+  "text_chars": 3513
  },
  {
   "control_number": "21971",
@@ -1522,17 +1561,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=127",
-   "title": null,
-   "h1": null,
+   "title": "CHILD DEVELOPMENT CERTIFICATE OF ACHIEVEMENT",
+   "h1": "CHILD DEVELOPMENT CERTIFICATE OF ACHIEVEMENT",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     127
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 17,
-  "text_chars": 3044
+  "text_chars": 2949
  },
  {
   "control_number": "21972",
@@ -1560,19 +1600,19 @@
    "HUS163"
   ],
   "source": {
-   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=87",
-   "title": null,
-   "h1": null,
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=88",
+   "title": "ADDICTION AND RECOVERY COUNSELING CERTIFICATE OF",
+   "h1": "ADDICTION AND RECOVERY COUNSELING CERTIFICATE OF",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    87,
     88
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 16,
-  "text_chars": 6085
+  "text_chars": 2597
  },
  {
   "control_number": "21973",
@@ -1594,18 +1634,19 @@
    "ADJ207"
   ],
   "source": {
-   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=89",
-   "title": null,
-   "h1": null,
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=92",
+   "title": "ADMINISTRATION OF JUSTICE CERTIFICATE OF ACHIEVEMENT",
+   "h1": "ADMINISTRATION OF JUSTICE CERTIFICATE OF ACHIEVEMENT",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    89
+    92
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 2678
+  "text_chars": 1627
  },
  {
   "control_number": "30501",
@@ -1621,17 +1662,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=155",
-   "title": null,
-   "h1": null,
+   "title": "ADVANCED ESL PREPARATION CERTIFICATE OF COMPLETION",
+   "h1": "ADVANCED ESL PREPARATION CERTIFICATE OF COMPLETION",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     155
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 3,
-  "text_chars": 1726
+  "text_chars": 1631
  },
  {
   "control_number": "30601",
@@ -1653,19 +1695,20 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=81",
-   "title": null,
-   "h1": null,
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=212",
+   "title": "A.A.-T Sociology",
+   "h1": "A.A.-T Sociology",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    81,
-    82
+    212,
+    213
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 10879
+  "text_chars": 4823
  },
  {
   "control_number": "30672",
@@ -1686,17 +1729,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=128",
-   "title": null,
-   "h1": null,
+   "title": "A.A.-T Communication Studies 2.0",
+   "h1": "A.A.-T Communication Studies 2.0",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     128
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 9,
-  "text_chars": 2650
+  "text_chars": 2494
  },
  {
   "control_number": "30677",
@@ -1704,30 +1748,29 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 1.0,
+  "coverage": 0.857,
   "codes_found": [
    "MTH210",
    "MTH211",
    "MTH212",
    "MTH214",
    "MTH215",
-   "PHY220",
-   "STATC1000"
+   "PHY220"
   ],
   "source": {
-   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=78",
-   "title": null,
-   "h1": null,
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=183",
+   "title": "A.S.-T Mathematics",
+   "h1": "A.S.-T Mathematics",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    78,
-    79
+    183
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 7,
-  "text_chars": 13982
+  "text_chars": 2100
  },
  {
   "control_number": "30693",
@@ -1772,8 +1815,8 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=168",
-   "title": null,
-   "h1": null,
+   "title": "HUMAN SERVICES PARAPROFESSIONAL CERTIFICATE OF",
+   "h1": "HUMAN SERVICES PARAPROFESSIONAL CERTIFICATE OF",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1781,10 +1824,11 @@
     169,
     170
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 36,
-  "text_chars": 8035
+  "text_chars": 7941
  },
  {
   "control_number": "30857",
@@ -1804,8 +1848,8 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=216",
-   "title": null,
-   "h1": null,
+   "title": "PROGRAMS",
+   "h1": "PROGRAMS",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1813,7 +1857,8 @@
     217,
     218
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 7,
   "text_chars": 5631
@@ -1835,15 +1880,16 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=217",
-   "title": null,
-   "h1": null,
+   "title": "PROGRAMS",
+   "h1": "PROGRAMS",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     217,
     218
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
   "text_chars": 3596
@@ -1865,14 +1911,15 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=218",
-   "title": null,
-   "h1": null,
+   "title": "PROGRAMS",
+   "h1": "PROGRAMS",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     218
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 7,
   "text_chars": 1797
@@ -1899,18 +1946,19 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=167",
-   "title": null,
-   "h1": null,
+   "title": "A.S. Human Services Paraprofessional",
+   "h1": "A.S. Human Services Paraprofessional",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     167,
     168
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 11,
-  "text_chars": 6536
+  "text_chars": 6378
  },
  {
   "control_number": "31424",
@@ -1929,17 +1977,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=114",
-   "title": null,
-   "h1": null,
+   "title": "A.S.-T Business Administration 2.0",
+   "h1": "A.S.-T Business Administration 2.0",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     114
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 2873
+  "text_chars": 2700
  },
  {
   "control_number": "31425",
@@ -1962,17 +2011,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=201",
-   "title": null,
-   "h1": null,
+   "title": "A.A.-T Political Science",
+   "h1": "A.A.-T Political Science",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     201
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 16,
-  "text_chars": 2602
+  "text_chars": 2453
  },
  {
   "control_number": "31446",
@@ -1992,18 +2042,19 @@
    "MTH211"
   ],
   "source": {
-   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=147",
-   "title": null,
-   "h1": null,
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=160",
+   "title": "A.S.-T Geology",
+   "h1": "A.S.-T Geology",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    147
+    160
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 2650
+  "text_chars": 2762
  },
  {
   "control_number": "31447",
@@ -2026,17 +2077,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=89",
-   "title": null,
-   "h1": null,
+   "title": "A.S.-T Administration of Justice",
+   "h1": "A.S.-T Administration of Justice",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     89
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 2678
+  "text_chars": 2514
  },
  {
   "control_number": "31465",
@@ -2059,17 +2111,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=151",
-   "title": null,
-   "h1": null,
+   "title": "A.A.-T English",
+   "h1": "A.A.-T English",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     151
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 11,
-  "text_chars": 2539
+  "text_chars": 2269
  },
  {
   "control_number": "31957",
@@ -2088,15 +2141,16 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=179",
-   "title": null,
-   "h1": null,
+   "title": "PROGRAMS",
+   "h1": "PROGRAMS",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     179,
     180
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
   "text_chars": 5443
@@ -2136,14 +2190,15 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=178",
-   "title": null,
-   "h1": null,
+   "title": "PROGRAMS",
+   "h1": "PROGRAMS",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     178
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 25,
   "text_chars": 3107
@@ -2173,14 +2228,15 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=180",
-   "title": null,
-   "h1": null,
+   "title": "PROGRAMS",
+   "h1": "PROGRAMS",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     180
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 21,
   "text_chars": 2490
@@ -2214,17 +2270,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=176",
-   "title": null,
-   "h1": null,
+   "title": "A.A. Liberal Arts and Sciences with an Emphasis in Education",
+   "h1": "A.A. Liberal Arts and Sciences with an Emphasis in Education",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     176
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 20,
-  "text_chars": 2860
+  "text_chars": 2692
  },
  {
   "control_number": "31969",
@@ -2264,17 +2321,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=195",
-   "title": null,
-   "h1": null,
+   "title": "LVN-TO-RN CAREER LADDER ASSOCIATE OF SCIENCE",
+   "h1": "LVN-TO-RN CAREER LADDER ASSOCIATE OF SCIENCE",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     195
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 27,
-  "text_chars": 2397
+  "text_chars": 2302
  },
  {
   "control_number": "32049",
@@ -2303,14 +2361,15 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=79",
-   "title": null,
-   "h1": null,
+   "title": "ACADEMICS",
+   "h1": "ACADEMICS",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     79
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 5,
   "text_chars": 5930
@@ -2338,17 +2397,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=185",
-   "title": null,
-   "h1": null,
+   "title": "A.A.-T Music",
+   "h1": "A.A.-T Music",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     185
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
-  "text_chars": 2209
+  "text_chars": 2034
  },
  {
   "control_number": "32085",
@@ -2373,17 +2433,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=220",
-   "title": null,
-   "h1": null,
+   "title": "A.A.-T Theatre Arts",
+   "h1": "A.A.-T Theatre Arts",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     220
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
-  "text_chars": 2318
+  "text_chars": 2137
  },
  {
   "control_number": "32089",
@@ -2410,17 +2471,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=203",
-   "title": null,
-   "h1": null,
+   "title": "A.A.-T Psychology",
+   "h1": "A.A.-T Psychology",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     203
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 14,
-  "text_chars": 2011
+  "text_chars": 1826
  },
  {
   "control_number": "32095",
@@ -2459,18 +2521,19 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=172",
-   "title": null,
-   "h1": null,
+   "title": "A.A.-T Kinesiology",
+   "h1": "A.A.-T Kinesiology",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     172,
     173
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 26,
-  "text_chars": 3791
+  "text_chars": 3637
  },
  {
   "control_number": "32678",
@@ -2491,17 +2554,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=122",
-   "title": null,
-   "h1": null,
+   "title": "BUSINESS – RETAIL MANAGEMENT CERTIFICATE OF ACHIEVEMENT",
+   "h1": "BUSINESS – RETAIL MANAGEMENT CERTIFICATE OF ACHIEVEMENT",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     122
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 1720
+  "text_chars": 1626
  },
  {
   "control_number": "32680",
@@ -2521,17 +2585,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=119",
-   "title": null,
-   "h1": null,
+   "title": "BUSINESS ENTREPRENEURSHIP CERTIFICATE OF ACHIEVEMENT",
+   "h1": "BUSINESS ENTREPRENEURSHIP CERTIFICATE OF ACHIEVEMENT",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     119
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 7,
-  "text_chars": 2651
+  "text_chars": 2556
  },
  {
   "control_number": "32708",
@@ -2563,18 +2628,19 @@
    "MUS210D"
   ],
   "source": {
-   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=189",
-   "title": null,
-   "h1": null,
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=191",
+   "title": "RECORDING ARTS AND TECHNOLOGY CERTIFICATE OF ACHIEVEMENT",
+   "h1": "RECORDING ARTS AND TECHNOLOGY CERTIFICATE OF ACHIEVEMENT",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    189
+    191
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 20,
-  "text_chars": 2500
+  "text_chars": 2226
  },
  {
   "control_number": "32788",
@@ -2596,17 +2662,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=97",
-   "title": null,
-   "h1": null,
+   "title": "AGRICULTURE – VITICULTURE SKILLS CERTIFICATE OF",
+   "h1": "AGRICULTURE – VITICULTURE SKILLS CERTIFICATE OF",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     97
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 9,
-  "text_chars": 1220
+  "text_chars": 1126
  },
  {
   "control_number": "32803",
@@ -2637,15 +2704,16 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=96",
-   "title": null,
-   "h1": null,
+   "title": "PROGRAMS",
+   "h1": "PROGRAMS",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     96,
     97
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 18,
   "text_chars": 3487
@@ -2669,17 +2737,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=149",
-   "title": null,
-   "h1": null,
+   "title": "A.A.-T Economics",
+   "h1": "A.A.-T Economics",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     149
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 2682
+  "text_chars": 2536
  },
  {
   "control_number": "32986",
@@ -2700,18 +2769,19 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=124",
-   "title": null,
-   "h1": null,
+   "title": "A.S.-T Early Childhood Education",
+   "h1": "A.S.-T Early Childhood Education",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     124,
     125
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 6492
+  "text_chars": 6337
  },
  {
   "control_number": "32988",
@@ -2734,17 +2804,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=100",
-   "title": null,
-   "h1": null,
+   "title": "ASSOCIATE IN ARTS IN STUDIO ARTS FOR TRANSFER",
+   "h1": "ASSOCIATE IN ARTS IN STUDIO ARTS FOR TRANSFER",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     100
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 14,
-  "text_chars": 1911
+  "text_chars": 1818
  },
  {
   "control_number": "33016",
@@ -2762,17 +2833,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=98",
-   "title": null,
-   "h1": null,
+   "title": "A.A.-T Art History",
+   "h1": "A.A.-T Art History",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     98
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 9,
-  "text_chars": 2486
+  "text_chars": 2301
  },
  {
   "control_number": "33096",
@@ -2817,17 +2889,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=189",
-   "title": null,
-   "h1": null,
+   "title": "RECORDING ARTS AND TECHNOLOGY ASSOCIATE OF ARTS",
+   "h1": "RECORDING ARTS AND TECHNOLOGY ASSOCIATE OF ARTS",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     189
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 20,
-  "text_chars": 2500
+  "text_chars": 2405
  },
  {
   "control_number": "33595",
@@ -2847,17 +2920,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=129",
-   "title": null,
-   "h1": null,
+   "title": "A.S.-T Computer Science",
+   "h1": "A.S.-T Computer Science",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     129
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 3070
+  "text_chars": 2922
  },
  {
   "control_number": "33597",
@@ -2887,17 +2961,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=213",
-   "title": null,
-   "h1": null,
+   "title": "A.A.-T Spanish",
+   "h1": "A.A.-T Spanish",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     213
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 19,
-  "text_chars": 2380
+  "text_chars": 2194
  },
  {
   "control_number": "33796",
@@ -2923,18 +2998,19 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=161",
-   "title": null,
-   "h1": null,
+   "title": "A.S. Allied Health",
+   "h1": "A.S. Allied Health",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     161,
     162
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 13,
-  "text_chars": 6133
+  "text_chars": 5985
  },
  {
   "control_number": "33812",
@@ -2952,15 +3028,16 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=78",
-   "title": null,
-   "h1": null,
+   "title": "ACADEMICS",
+   "h1": "ACADEMICS",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     78,
     79
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 5,
   "text_chars": 13982
@@ -2987,17 +3064,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=111",
-   "title": null,
-   "h1": null,
+   "title": "A.S.-T Biology",
+   "h1": "A.S.-T Biology",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     111
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 11,
-  "text_chars": 2369
+  "text_chars": 2127
  },
  {
   "control_number": "35137",
@@ -3012,18 +3090,19 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=226",
-   "title": null,
-   "h1": null,
+   "title": "FINE WOODWORKING I CERTIFICATE OF ACHIEVEMENT",
+   "h1": "FINE WOODWORKING I CERTIFICATE OF ACHIEVEMENT",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     226,
     227
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 2,
-  "text_chars": 3556
+  "text_chars": 3352
  },
  {
   "control_number": "35138",
@@ -3038,17 +3117,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=227",
-   "title": null,
-   "h1": null,
+   "title": "FINE WOODWORKING II CERTIFICATE OF ACHIEVEMENT",
+   "h1": "FINE WOODWORKING II CERTIFICATE OF ACHIEVEMENT",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     227
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 2,
-  "text_chars": 1672
+  "text_chars": 1577
  },
  {
   "control_number": "35168",
@@ -3074,18 +3154,19 @@
    "NUR52T"
   ],
   "source": {
-   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=195",
-   "title": null,
-   "h1": null,
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=197",
+   "title": "LVN-TO-RN CERTIFICATE OF ACHIEVEMENT",
+   "h1": "LVN-TO-RN CERTIFICATE OF ACHIEVEMENT",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    195
+    197
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 14,
-  "text_chars": 2397
+  "text_chars": 3370
  },
  {
   "control_number": "35224",
@@ -3093,10 +3174,9 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.818,
+  "coverage": 0.727,
   "codes_found": [
    "ART210A",
-   "ART210B",
    "ART213",
    "ART214",
    "ART232",
@@ -3106,19 +3186,21 @@
    "ART236B"
   ],
   "source": {
-   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=238",
-   "title": null,
-   "h1": null,
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=102",
+   "title": "ART ASSOCIATE OF ARTS – Ceramics, Painting, or Printmaking",
+   "h1": "ART ASSOCIATE OF ARTS – Ceramics, Painting, or Printmaking",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    238,
-    239
+    102,
+    103,
+    104
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 11,
-  "text_chars": 8018
+  "text_chars": 7219
  },
  {
   "control_number": "35331",
@@ -3146,17 +3228,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=146",
-   "title": null,
-   "h1": null,
+   "title": "DIGITAL ARTS AND MEDIA CERTIFICATE OF ACHIEVEMENT",
+   "h1": "DIGITAL ARTS AND MEDIA CERTIFICATE OF ACHIEVEMENT",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     146
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 16,
-  "text_chars": 2091
+  "text_chars": 1894
  },
  {
   "control_number": "36053",
@@ -3196,18 +3279,19 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=199",
-   "title": null,
-   "h1": null,
+   "title": "A.S. Physical Therapist Assistant",
+   "h1": "A.S. Physical Therapist Assistant",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     199,
     200
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 27,
-  "text_chars": 4974
+  "text_chars": 4757
  },
  {
   "control_number": "36246",
@@ -3226,8 +3310,8 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=119",
-   "title": null,
-   "h1": null,
+   "title": "BUSINESS INFORMATION WORKER I CERTIFICATE OF ACHIEVEMENT",
+   "h1": "BUSINESS INFORMATION WORKER I CERTIFICATE OF ACHIEVEMENT",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3236,10 +3320,11 @@
     121,
     122
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 8184
+  "text_chars": 6818
  },
  {
   "control_number": "36290",
@@ -3254,17 +3339,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=110",
-   "title": null,
-   "h1": null,
+   "title": "BASIC ACADEMIC SKILLS CERTIFICATE OF COMPETENCY",
+   "h1": "BASIC ACADEMIC SKILLS CERTIFICATE OF COMPETENCY",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     110
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 2,
-  "text_chars": 2668
+  "text_chars": 2447
  },
  {
   "control_number": "36589",
@@ -3283,17 +3369,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=174",
-   "title": null,
-   "h1": null,
+   "title": "EMPLOYMENT WORK SKILLS CERTIFICATE OF COMPLETION",
+   "h1": "EMPLOYMENT WORK SKILLS CERTIFICATE OF COMPLETION",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     174
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 1897
+  "text_chars": 1663
  },
  {
   "control_number": "36788",
@@ -3315,15 +3402,16 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=78",
-   "title": null,
-   "h1": null,
+   "title": "ACADEMICS",
+   "h1": "ACADEMICS",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     78,
     79
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 13982
@@ -3348,15 +3436,16 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=81",
-   "title": null,
-   "h1": null,
+   "title": "ACADEMICS",
+   "h1": "ACADEMICS",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     81,
     82
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 13,
   "text_chars": 10879
@@ -3374,17 +3463,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=110",
-   "title": null,
-   "h1": null,
+   "title": "BASIC COMPUTER SKILLS CERTIFICATE OF COMPETENCY",
+   "h1": "BASIC COMPUTER SKILLS CERTIFICATE OF COMPETENCY",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     110
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 2,
-  "text_chars": 2668
+  "text_chars": 1135
  },
  {
   "control_number": "38656",
@@ -3392,9 +3482,8 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.667,
+  "coverage": 0.556,
   "codes_found": [
-   "COMM211",
    "ETH202",
    "SOC200",
    "SOC201",
@@ -3402,19 +3491,19 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=81",
-   "title": null,
-   "h1": null,
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=209",
+   "title": "A.A.-T Social Justice Studies for Transfer (General Studies)",
+   "h1": "A.A.-T Social Justice Studies for Transfer (General Studies)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    81,
-    82
+    209
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 9,
-  "text_chars": 10879
+  "text_chars": 2038
  },
  {
   "control_number": "38659",
@@ -3435,19 +3524,19 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=81",
-   "title": null,
-   "h1": null,
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=209",
+   "title": "A.A.-T Social Justice Studies for Transfer (Ethnic Studies)",
+   "h1": "A.A.-T Social Justice Studies for Transfer (Ethnic Studies)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    81,
-    82
+    209
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 13,
-  "text_chars": 10879
+  "text_chars": 2099
  },
  {
   "control_number": "39213",
@@ -3487,17 +3576,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=141",
-   "title": null,
-   "h1": null,
+   "title": "CULINARY ARTS MANAGEMENT ASSOCIATE OF SCIENCE",
+   "h1": "CULINARY ARTS MANAGEMENT ASSOCIATE OF SCIENCE",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     141
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 27,
-  "text_chars": 2186
+  "text_chars": 1879
  },
  {
   "control_number": "40466",
@@ -3517,17 +3607,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=219",
-   "title": null,
-   "h1": null,
+   "title": "The Introduction to the Construction Trades Certificate of Completion combines an overview of the building trades",
+   "h1": "The Introduction to the Construction Trades Certificate of Completion combines an overview of the building trades",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     219
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 7,
-  "text_chars": 2222
+  "text_chars": 2059
  },
  {
   "control_number": "40730",
@@ -3548,17 +3639,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=225",
-   "title": null,
-   "h1": null,
+   "title": "TECHNICAL THEATRE CERTIFICATE OF ACHIEVEMENT",
+   "h1": "TECHNICAL THEATRE CERTIFICATE OF ACHIEVEMENT",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     225
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 2112
+  "text_chars": 2017
  },
  {
   "control_number": "41091",
@@ -3582,14 +3674,15 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=123",
-   "title": null,
-   "h1": null,
+   "title": "PROGRAMS",
+   "h1": "PROGRAMS",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     123
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 3252
@@ -3613,17 +3706,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=114",
-   "title": null,
-   "h1": null,
+   "title": "A.S.-T Business Administration 2.0",
+   "h1": "A.S.-T Business Administration 2.0",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     114
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 9,
-  "text_chars": 2873
+  "text_chars": 2700
  },
  {
   "control_number": "42202",
@@ -3638,17 +3732,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=140",
-   "title": null,
-   "h1": null,
+   "title": "WORD PROCESSING CERTIFICATE OF COMPLETION",
+   "h1": "WORD PROCESSING CERTIFICATE OF COMPLETION",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     140
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 2,
-  "text_chars": 1225
+  "text_chars": 1127
  },
  {
   "control_number": "42219",
@@ -3663,17 +3758,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=139",
-   "title": null,
-   "h1": null,
+   "title": "PRESENTATIONS CERTIFICATE OF COMPLETION",
+   "h1": "PRESENTATIONS CERTIFICATE OF COMPLETION",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     139
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 2,
-  "text_chars": 2367
+  "text_chars": 2272
  },
  {
   "control_number": "42220",
@@ -3688,17 +3784,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=139",
-   "title": null,
-   "h1": null,
+   "title": "SPREADSHEETS CERTIFICATE OF COMPLETION",
+   "h1": "SPREADSHEETS CERTIFICATE OF COMPLETION",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     139
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 2,
-  "text_chars": 2367
+  "text_chars": 1120
  },
  {
   "control_number": "42496",
@@ -3721,8 +3818,8 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=120",
-   "title": null,
-   "h1": null,
+   "title": "BUSINESS INFORMATION WORKER II CERTIFICATE OF ACHIEVEMENT",
+   "h1": "BUSINESS INFORMATION WORKER II CERTIFICATE OF ACHIEVEMENT",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3730,10 +3827,11 @@
     121,
     122
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 5531
+  "text_chars": 5437
  },
  {
   "control_number": "42666",
@@ -3750,14 +3848,15 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=108",
-   "title": null,
-   "h1": null,
+   "title": "PROGRAMS",
+   "h1": "PROGRAMS",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     108
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 4,
   "text_chars": 3390
@@ -3775,17 +3874,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=108",
-   "title": null,
-   "h1": null,
+   "title": "AUTOMOTIVE CHASSIS SPECIALIST CERTIFICATE OF COMPLETION",
+   "h1": "AUTOMOTIVE CHASSIS SPECIALIST CERTIFICATE OF COMPLETION",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     108
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 2,
-  "text_chars": 3390
+  "text_chars": 1436
  },
  {
   "control_number": "42668",
@@ -3800,14 +3900,15 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=109",
-   "title": null,
-   "h1": null,
+   "title": "PROGRAMS",
+   "h1": "PROGRAMS",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     109
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 1595
@@ -3831,17 +3932,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=128",
-   "title": null,
-   "h1": null,
+   "title": "A.A.-T Communication Studies 2.0",
+   "h1": "A.A.-T Communication Studies 2.0",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     128
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 2650
+  "text_chars": 2494
  },
  {
   "control_number": "43158",
@@ -3860,17 +3962,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=154",
-   "title": null,
-   "h1": null,
+   "title": "INTERMEDIATE ESL PREPARATION CERTIFICATE OF COMPLETION",
+   "h1": "INTERMEDIATE ESL PREPARATION CERTIFICATE OF COMPLETION",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     154
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 1897
+  "text_chars": 1803
  },
  {
   "control_number": "43277",
@@ -3884,14 +3987,15 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=157",
-   "title": null,
-   "h1": null,
+   "title": "PROGRAMS",
+   "h1": "PROGRAMS",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     157
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 1,
   "text_chars": 2314
@@ -3918,18 +4022,19 @@
    "WEE196"
   ],
   "source": {
-   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=157",
-   "title": null,
-   "h1": null,
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=159",
+   "title": "FIRE SCIENCE CERTIFICATE OF ACHIEVEMENT",
+   "h1": "FIRE SCIENCE CERTIFICATE OF ACHIEVEMENT",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    157
+    159
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
-  "text_chars": 2314
+  "text_chars": 2662
  },
  {
   "control_number": "43562",
@@ -3955,8 +4060,8 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=131",
-   "title": null,
-   "h1": null,
+   "title": "CYBERSECURITY ASSOCIATE OF SCIENCE",
+   "h1": "CYBERSECURITY ASSOCIATE OF SCIENCE",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3965,10 +4070,11 @@
     133,
     134
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 13,
-  "text_chars": 11571
+  "text_chars": 11476
  },
  {
   "control_number": "43563",
@@ -3990,21 +4096,21 @@
    "CSC221"
   ],
   "source": {
-   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=131",
-   "title": null,
-   "h1": null,
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=136",
+   "title": "NETWORK DEFENSE CERTIFICATE OF ACHIEVEMENT",
+   "h1": "NETWORK DEFENSE CERTIFICATE OF ACHIEVEMENT",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    131,
-    132,
-    133,
-    134
+    136,
+    137,
+    138
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 11571
+  "text_chars": 6709
  },
  {
   "control_number": "43564",
@@ -4028,18 +4134,19 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=137",
-   "title": null,
-   "h1": null,
+   "title": "PENETRATION TEST PROFESSIONAL CERTIFICATE OF ACHIEVEMENT",
+   "h1": "PENETRATION TEST PROFESSIONAL CERTIFICATE OF ACHIEVEMENT",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     137,
     138
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 11,
-  "text_chars": 4262
+  "text_chars": 4167
  },
  {
   "control_number": "43565",
@@ -4060,21 +4167,22 @@
    "CSC161"
   ],
   "source": {
-   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=131",
-   "title": null,
-   "h1": null,
+   "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=134",
+   "title": "DIGITAL FORENSICS CERTIFICATE OF ACHIEVEMENT",
+   "h1": "DIGITAL FORENSICS CERTIFICATE OF ACHIEVEMENT",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    131,
-    132,
-    133,
-    134
+    134,
+    135,
+    136,
+    137
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 9,
-  "text_chars": 11571
+  "text_chars": 8741
  },
  {
   "control_number": "43585",
@@ -4090,17 +4198,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=153",
-   "title": null,
-   "h1": null,
+   "title": "The Communication Skills ESL Preparation Certificate of Competency builds high-intermediate level listening and",
+   "h1": "The Communication Skills ESL Preparation Certificate of Competency builds high-intermediate level listening and",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     153
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 3,
-  "text_chars": 1606
+  "text_chars": 1208
  },
  {
   "control_number": "45263",
@@ -4120,14 +4229,15 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=215",
-   "title": null,
-   "h1": null,
+   "title": "PROGRAMS",
+   "h1": "PROGRAMS",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     215
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
   "text_chars": 2235
@@ -4146,17 +4256,18 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=182",
-   "title": null,
-   "h1": null,
+   "title": "VOCATIONAL NURSING CERTIFICATE OF ACHIEVEMENT",
+   "h1": "VOCATIONAL NURSING CERTIFICATE OF ACHIEVEMENT",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     182
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 3,
-  "text_chars": 3001
+  "text_chars": 2790
  },
  {
   "control_number": "46062",
@@ -4178,14 +4289,15 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=166",
-   "title": null,
-   "h1": null,
+   "title": "PROGRAMS",
+   "h1": "PROGRAMS",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     166
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
   "text_chars": 1966
@@ -4210,8 +4322,8 @@
   ],
   "source": {
    "url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=117",
-   "title": null,
-   "h1": null,
+   "title": "PROGRAMS",
+   "h1": "PROGRAMS",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4220,7 +4332,8 @@
     119,
     120
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
   "text_chars": 8055

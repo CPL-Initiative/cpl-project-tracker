@@ -92,8 +92,8 @@
    "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
-   "heading_without_outcomes": false,
+   "heading_printed": true,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
@@ -176,5 +176,6 @@
    "The Earth Science A.S. lists all eight closed-list courses (Total Major Units 25-27). A reviewer should locate the Geology A.S.-T section elsewhere in the 2026-27 catalog, or confirm whether this program is offered under the Earth Science heading."
   ]
  },
- "extracted_run": "39006339282"
+ "extracted_run": 39019550095,
+ "read_run": "39006339282"
 }

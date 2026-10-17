@@ -131,8 +131,8 @@
    "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
-   "heading_without_outcomes": false,
+   "heading_printed": true,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
@@ -443,5 +443,6 @@
    "No program learning outcomes or careers are printed in this section; 'members of the healthcare team' was not treated as a career title."
   ]
  },
- "extracted_run": "39006339282"
+ "extracted_run": 39019550095,
+ "read_run": "39006339282"
 }

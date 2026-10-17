@@ -101,8 +101,8 @@
    "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
-   "heading_without_outcomes": false,
+   "heading_printed": true,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
@@ -219,5 +219,6 @@
    "The A.S. description names careers (real estate sales, land development, real estate marketing, finance, mortgage lending, appraisal, escrow, property management), but these are printed under the A.S. heading, not the certificate's, so they were not recorded."
   ]
  },
- "extracted_run": "39006339282"
+ "extracted_run": 39019550095,
+ "read_run": "39006339282"
 }

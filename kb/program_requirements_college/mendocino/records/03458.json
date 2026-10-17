@@ -94,8 +94,8 @@
    "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
-   "heading_without_outcomes": false,
+   "heading_printed": true,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
@@ -187,5 +187,6 @@
    "The catalog prints history courses as 'HIST' (e.g., HIST 207, HIST 209, HIST 222) while the closed list uses 'HST'; these likely refer to the same courses."
   ]
  },
- "extracted_run": "39006339282"
+ "extracted_run": 39019550095,
+ "read_run": "39006339282"
 }
