@@ -1,2317 +1,70 @@
 {
  "college": "Cuesta College",
- "catalog_url": "https://www.cuesta.edu/become-student/findclasses/index.html",
- "platform": "custom_html",
- "catalog_year": null,
+ "catalog_url": "https://cuesta.curriqunet.com/catalog/iq/29951",
+ "platform": "curriqunet",
+ "catalog_year": "2026-2027",
  "programs": 206,
  "with_closed_list": 198,
- "started": "2026-10-17T12:34:09Z",
- "scope": null,
- "sitemap": {
-  "url": "https://www.cuesta.edu/sitemap.xml",
-  "status": 200,
-  "listed": 16529,
-  "nested": 0,
-  "program_pages": 1531,
-  "refused": null,
-  "errors": null
+ "started": "2026-10-17T18:20:25Z",
+ "curriqunet": {
+  "catalog": 15,
+  "view_prefix": "https://cuesta.curriqunet.com/catalog/iq/",
+  "errors": [],
+  "sections": [
+   "Degree, Certificate and Transfer Planning ",
+   "Associate Degree & Certificate Programs",
+   "Student Support Services and Special Programs"
+  ],
+  "nodes_read": 84,
+  "calls": 168,
+  "entries": 621,
+  "stopped_at_cap": false,
+  "same_title_entries": 411,
+  "entries_read": 210
  },
- "pages_read": 830,
- "child_pages": 0,
+ "pages_read": 210,
  "banner_h1": null,
- "loads": 1016,
- "seconds": 5339.3,
- "found": 2,
+ "loads": 1009,
+ "seconds": 4423.3,
+ "found": 183,
  "by_method": {
   "no_closed_list": 8,
-  "not_found": 193,
-  "page_claimed": 3,
-  "sitemap_page": 2
+  "not_found": 14,
+  "page_claimed": 1,
+  "sitemap_page": 183
  },
- "shared_pages": {},
+ "shared_pages": {
+  "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30107": [
+   "21050",
+   "38479"
+  ],
+  "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30113": [
+   "31857",
+   "42763"
+  ],
+  "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30096": [
+   "32153",
+   "41742"
+  ],
+  "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30243": [
+   "36266",
+   "44556"
+  ],
+  "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30091": [
+   "41744",
+   "43053"
+  ]
+ },
  "not_found": [
-  {
-   "control_number": "05660",
-   "title": "BUSINESS ADMINISTRATIVE ASSISTANT",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "05661",
-   "title": "JOURNALISM",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "05666",
-   "title": "AUTOMOTIVE TECHNICIAN",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "05667",
-   "title": "CONSTRUCTION TECHNOLOGY",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/areas-of-study/skilled-trades-tech/",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 19,
-    "why": "coarse net: the page's code tokens name 0 of 19 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1900,
-     "content": 27181,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Skilled Trades",
-      1972
-     ],
-     [
-      "Technology",
-      717
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "05668",
-   "title": "WELDING TECHNOLOGY",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/areas-of-study/skilled-trades-tech/",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 11,
-    "why": "coarse net: the page's code tokens name 0 of 11 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1900,
-     "content": 27181,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Skilled Trades",
-      1972
-     ],
-     [
-      "Technology",
-      717
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "05669",
-   "title": "ART HISTORY AND PROFESSIONAL PRACTICES",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/communityprograms/community-education/food-drink/The-Art-of-Tea-History-Culture-Tasting-More.html",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 19,
-    "why": "coarse net: the page's code tokens name 0 of 19 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2938,
-     "content": 20262,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "05675",
-   "title": "NURSING, REGISTERED",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/divisions/nah/nursingdept/registered-nursing-info/CSU-Monterey-Bay-ADN-BSN-Pathway.html",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 21,
-    "why": "coarse net: the page's code tokens name 0 of 21 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2417,
-     "content": 19082,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "item1",
-      38
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "05677",
-   "title": "MEDICAL ASSISTING",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/communityprograms/community-education/Career/Intro-to-Medical-Terminology.html",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 13,
-    "why": "coarse net: the page's code tokens name 0 of 13 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3112,
-     "content": 20466,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "05679",
-   "title": "HUMAN SERVICES",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/areas-of-study/soc-behav-sci-and-human-serv/",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 11,
-    "why": "coarse net: the page's code tokens name 0 of 11 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1927,
-     "content": 26282,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Social Sciences",
-      916
-     ],
-     [
-      "Behavioral Sciences",
-      362
-     ],
-     [
-      "Human Services",
-      1008
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "05680",
-   "title": "EARLY CHILDHOOD EDUCATION",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/divisions/child-dev-edu-ethnic-studies/education/teacher-pathways/educational-options/early-childhood-teacher-pathway.html",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 21,
-    "why": "coarse net: the page's code tokens name 0 of 21 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2399,
-     "content": 18782,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "05684",
-   "title": "LIBRARY/INFORMATION TECHNOLOGY",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/divisions/library-learn-resources/Library-Information-Technology-Program/Advisory-Board.html",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 16,
-    "why": "coarse net: the page's code tokens name 0 of 16 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3274,
-     "content": 21644,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "05686",
-   "title": "PHYSICS",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "05687",
-   "title": "Chemistry",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "05688",
-   "title": "GEOLOGY",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "05690",
-   "title": "CRIMINAL JUSTICE",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/about/student-equity-initiatives/equity/equity-programs-resources/call-to-action-racial-equity.html",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 9,
-    "why": "coarse net: the page's code tokens name 0 of 9 listed courses",
-    "error": null,
-    "chars": {
-     "body": 5456,
-     "content": 25192,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Embrace a Culture of Inquiry: Actively I",
-      107
-     ],
-     [
-      "Commit to Learning, Self-Reflection, and",
-      283
-     ],
-     [
-      "Open Dialogue: Create Intentional Spaces",
-      107
-     ],
-     [
-      "Transform the Student Experience: Embed ",
-      66
-     ],
-     [
-      "Commit to Structural Changes: Identify a",
-      83
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "05696",
-   "title": "ENGINEERING",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/areas-of-study/stem/",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 29,
-    "why": "coarse net: the page's code tokens name 0 of 29 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1814,
-     "content": 22749,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "STEM",
-      1226
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "07672",
-   "title": "ARCHITECTURAL TECHNOLOGY",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/areas-of-study/skilled-trades-tech/",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 21,
-    "why": "coarse net: the page's code tokens name 0 of 21 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1900,
-     "content": 27181,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Skilled Trades",
-      1972
-     ],
-     [
-      "Technology",
-      717
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "07677",
-   "title": "ACCOUNTING CLERK",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "07681",
-   "title": "FILM TELEVISION AND ELECTRONIC MEDIA",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "07684",
-   "title": "RECREATION ADMINISTRATION",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/communityprograms/community-recreation/",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 7,
-    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1952,
-     "content": 18613,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "item1",
-      76
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "07685",
-   "title": "AUTO BODY TECHNICIAN",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "10374",
-   "title": "ENGINE PERFORMANCE SPECIALIST",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "10433",
-   "title": "BUSINESS ADMINISTRATIVE ASSISTANT",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "12223",
-   "title": "PARALEGAL",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "13607",
-   "title": "COMPUTER SCIENCE",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/areas-of-study/stem/",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 12,
-    "why": "coarse net: the page's code tokens name 0 of 12 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1814,
-     "content": 22749,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "STEM",
-      1226
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "13611",
-   "title": "MANAGEMENT INFORMATION SYSTEMS",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "13697",
-   "title": "NURSING, REGISTERED (30 UNIT OPTION)",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/divisions/nah/nursingdept/registered-nursing-info/CSU-Monterey-Bay-ADN-BSN-Pathway.html",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 15,
-    "why": "coarse net: the page's code tokens name 0 of 15 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2417,
-     "content": 19082,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "item1",
-      38
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "13698",
-   "title": "JAZZ STUDIES",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/divisions/child-dev-edu-ethnic-studies/education/teacherpathways.html",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 18,
-    "why": "coarse net: the page's code tokens name 0 of 18 listed courses",
-    "error": null,
-    "chars": {
-     "body": 4911,
-     "content": 22673,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "14441",
-   "title": "COMPUTER AND NETWORKING TECHNOLOGY",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/communityprograms/community-education/computers-technology/Getting-Comfortable-with-your-Microsoft-Windows-Computer.html",
-    "label": {
-     "award": 0,
-     "title": 0.667
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 13,
-    "why": "coarse net: the page's code tokens name 0 of 13 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3386,
-     "content": 20945,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "14793",
-   "title": "ADVANCED ENGINE PERFORMANCE TECHNICIAN",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "14876",
-   "title": "MUSIC PERFORMANCE",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/communityprograms/community-education/music/",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 19,
-    "why": "coarse net: the page's code tokens name 0 of 19 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2545,
-     "content": 18937,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "15487",
-   "title": "POLITICAL SCIENCE",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/areas-of-study/stem/",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 20,
-    "why": "coarse net: the page's code tokens name 0 of 20 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1814,
-     "content": 22749,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "STEM",
-      1226
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "15491",
-   "title": "HISTORY",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/communityprograms/community-education/food-drink/The-Art-of-Tea-History-Culture-Tasting-More.html",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 13,
-    "why": "coarse net: the page's code tokens name 0 of 13 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2938,
-     "content": 20262,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "15547",
-   "title": "LEGAL STUDIES: BUSINESS OPTION",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/areas-of-study/bus-ag-hosp-legal/",
-    "label": {
-     "award": 0,
-     "title": 0.667
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 12,
-    "why": "coarse net: the page's code tokens name 0 of 12 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1983,
-     "content": 28391,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Business Degrees and Certificates",
-      1344
-     ],
-     [
-      "Agriculture Degrees and Certificates",
-      608
-     ],
-     [
-      "Hospitality & Culinary Degrees and Certi",
-      625
-     ],
-     [
-      "Legal Degrees & Certificates",
-      312
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "15548",
-   "title": "LEGAL STUDIES: SOCIAL SCIENCE OPTION",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "16506",
-   "title": "SOCIOLOGY",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "16766",
-   "title": "ELECTRICAL TECHNOLOGY",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/areas-of-study/skilled-trades-tech/",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 10,
-    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1900,
-     "content": 27181,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Skilled Trades",
-      1972
-     ],
-     [
-      "Technology",
-      717
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "16837",
-   "title": "Licensed Vocational Nursing",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "16875",
-   "title": "Paramedic",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/divisions/nah/alliedhealthdept/emsdept/paramedic-info/paramedic-program-estimated-cost.html",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 6,
-    "why": "coarse net: the page's code tokens name 0 of 6 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3378,
-     "content": 28228,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "18710",
-   "title": "LIBERAL ARTS - ARTS AND HUMANITIES",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/areas-of-study/creative-arts-humanities-comm/",
-    "label": {
-     "award": 0,
-     "title": 0.75
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 143,
-    "why": "coarse net: the page's code tokens name 0 of 143 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1913,
-     "content": 25649,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Communication",
-      475
-     ],
-     [
-      "Fine Arts",
-      615
-     ],
-     [
-      "Humanities",
-      246
-     ],
-     [
-      "Performing Arts",
-      603
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "18712",
-   "title": "LIBERAL ARTS - SOCIAL AND BEHAVIORAL SCIENCES",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/areas-of-study/soc-behav-sci-and-human-serv/",
-    "label": {
-     "award": 0,
-     "title": 0.6
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 75,
-    "why": "coarse net: the page's code tokens name 0 of 75 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1927,
-     "content": 26282,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Social Sciences",
-      916
-     ],
-     [
-      "Behavioral Sciences",
-      362
-     ],
-     [
-      "Human Services",
-      1008
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "20945",
-   "title": "PSYCHIATRIC TECHNICIAN",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "20946",
-   "title": "PSYCHIATRIC TECHNICIAN",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "21033",
-   "title": "BUSINESS CAREER TRACK CORE",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "21040",
-   "title": "AUTO BODY TECHNICIAN",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "21041",
-   "title": "CONSTRUCTION TECHNOLOGY",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/areas-of-study/skilled-trades-tech/",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 19,
-    "why": "coarse net: the page's code tokens name 0 of 19 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1900,
-     "content": 27181,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Skilled Trades",
-      1972
-     ],
-     [
-      "Technology",
-      717
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "21042",
-   "title": "ELECTRONICS AND STATE ELECTRICIAN",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "21043",
-   "title": "WELDING TECHNOLOGY",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/areas-of-study/skilled-trades-tech/",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 7,
-    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1900,
-     "content": 27181,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Skilled Trades",
-      1972
-     ],
-     [
-      "Technology",
-      717
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "21044",
-   "title": "Medical Assisting",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/communityprograms/community-education/Career/Intro-to-Medical-Terminology.html",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 13,
-    "why": "coarse net: the page's code tokens name 0 of 13 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3112,
-     "content": 20466,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "21050",
-   "title": "CHILD DEVELOPMENT TEACHER",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/areas-of-study/child-dev-education-information/",
-    "label": {
-     "award": 0,
-     "title": 0.667
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 8,
-    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1889,
-     "content": 25764,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Child Development",
-      937
-     ],
-     [
-      "Education",
-      1028
-     ],
-     [
-      "Information",
-      379
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "21053",
-   "title": "Paralegal",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "21054",
-   "title": "LIBRARY/INFORMATION TECHNOLOGY",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/divisions/library-learn-resources/Library-Information-Technology-Program/Advisory-Board.html",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 16,
-    "why": "coarse net: the page's code tokens name 0 of 16 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3274,
-     "content": 21644,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "24397",
-   "title": "NONCREDIT VOCATIONAL ENGLISH AS A SECOND LANGUAGE",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/continuinged/esl-program/",
-    "label": {
-     "award": 0,
-     "title": 0.667
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 2,
-    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3731,
-     "content": 22635,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "24462",
-   "title": "SECONDARY EDUCATION",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/continuinged/non-credit-cte/noncredit-ranch-education.html",
-    "label": {
-     "award": 1,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 10,
-    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
-    "error": null,
-    "chars": {
-     "body": 4875,
-     "content": 22588,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "30452",
-   "title": "BUSINESS ADMINISTRATION - CAREER TRACK",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "30845",
-   "title": "Sociology",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "30918",
-   "title": "Mathematics",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31857",
-   "title": "Communication Studies",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/areas-of-study/creative-arts-humanities-comm/",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 13,
-    "why": "coarse net: the page's code tokens name 0 of 13 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1913,
-     "content": 25649,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Communication",
-      475
-     ],
-     [
-      "Fine Arts",
-      615
-     ],
-     [
-      "Humanities",
-      246
-     ],
-     [
-      "Performing Arts",
-      603
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "31885",
-   "title": "POLITICAL SCIENCE",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/areas-of-study/stem/",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 7,
-    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1814,
-     "content": 22749,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "STEM",
-      1226
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "31933",
-   "title": "Administration of Justice",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/about/student-equity-initiatives/equity/equity-programs-resources/call-to-action-racial-equity.html",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 11,
-    "why": "coarse net: the page's code tokens name 0 of 11 listed courses",
-    "error": null,
-    "chars": {
-     "body": 5456,
-     "content": 25192,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Embrace a Culture of Inquiry: Actively I",
-      107
-     ],
-     [
-      "Commit to Learning, Self-Reflection, and",
-      283
-     ],
-     [
-      "Open Dialogue: Create Intentional Spaces",
-      107
-     ],
-     [
-      "Transform the Student Experience: Embed ",
-      66
-     ],
-     [
-      "Commit to Structural Changes: Identify a",
-      83
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "32131",
-   "title": "STUDIO ARTS",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/areas-of-study/creative-arts-humanities-comm/",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 33,
-    "why": "coarse net: the page's code tokens name 0 of 33 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1913,
-     "content": 25649,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Communication",
-      475
-     ],
-     [
-      "Fine Arts",
-      615
-     ],
-     [
-      "Humanities",
-      246
-     ],
-     [
-      "Performing Arts",
-      603
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "32139",
-   "title": "Anthropology",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "32140",
-   "title": "Theatre Arts",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/areas-of-study/creative-arts-humanities-comm/",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 17,
-    "why": "coarse net: the page's code tokens name 0 of 17 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1913,
-     "content": 25649,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Communication",
-      475
-     ],
-     [
-      "Fine Arts",
-      615
-     ],
-     [
-      "Humanities",
-      246
-     ],
-     [
-      "Performing Arts",
-      603
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "32153",
-   "title": "BUSINESS ADMINISTRATION",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/areas-of-study/bus-ag-hosp-legal/",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 2,
-    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1983,
-     "content": 28391,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Business Degrees and Certificates",
-      1344
-     ],
-     [
-      "Agriculture Degrees and Certificates",
-      608
-     ],
-     [
-      "Hospitality & Culinary Degrees and Certi",
-      625
-     ],
-     [
-      "Legal Degrees & Certificates",
-      312
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "32157",
-   "title": "JOURNALISM",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "32198",
-   "title": "MUSIC",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/communityprograms/community-education/music/1_Multiple_Date_Offerings_TEMPLATE.html",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 15,
-    "why": "coarse net: the page's code tokens name 0 of 15 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2406,
-     "content": 19700,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "32270",
-   "title": "ART HISTORY",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/communityprograms/community-education/food-drink/The-Art-of-Tea-History-Culture-Tasting-More.html",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 33,
-    "why": "coarse net: the page's code tokens name 0 of 33 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2938,
-     "content": 20262,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "32271",
-   "title": "English",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/continuinged/esl-program/",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 28,
-    "why": "coarse net: the page's code tokens name 0 of 28 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3731,
-     "content": 22635,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "32321",
-   "title": "Geology",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "32377",
-   "title": "EARLY CHILDHOOD EDUCATION",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/divisions/child-dev-edu-ethnic-studies/education/teacher-pathways/educational-options/early-childhood-teacher-pathway.html",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 8,
-    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2399,
-     "content": 18782,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "32453",
-   "title": "Physics",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "32454",
-   "title": "Psychology",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "32562",
-   "title": "SPANISH",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/become-student/images/student-type/spanish-student-boxes/transfer-spanish.jpg",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 15,
-    "why": "coarse net: the page's code tokens name 0 of 15 listed courses",
-    "error": null,
-    "chars": {
-     "body": 0,
-     "content": 0,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "32593",
-   "title": "HISTORY",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/communityprograms/community-education/food-drink/The-Art-of-Tea-History-Culture-Tasting-More.html",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 14,
-    "why": "coarse net: the page's code tokens name 0 of 14 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2938,
-     "content": 20262,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "32960",
-   "title": "PARAMEDIC",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/divisions/nah/alliedhealthdept/emsdept/paramedic-info/paramedic-program-estimated-cost.html",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 6,
-    "why": "coarse net: the page's code tokens name 0 of 6 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3378,
-     "content": 28228,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "33041",
-   "title": "Economics",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "33400",
-   "title": "NONCREDIT ENGLISH AS A SECOND LANGUAGE - LEVEL I",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/continuinged/esl-program/",
-    "label": {
-     "award": 0,
-     "title": 0.8
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 2,
-    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3731,
-     "content": 22635,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "33401",
-   "title": "NONCREDIT ENGLISH AS A SECOND LANGUAGE - LEVEL II",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/continuinged/esl-program/",
-    "label": {
-     "award": 0,
-     "title": 0.667
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 2,
-    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3731,
-     "content": 22635,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "33402",
-   "title": "NONCREDIT ENGLISH AS A SECOND LANGUAGE - LEVEL III",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/continuinged/esl-program/",
-    "label": {
-     "award": 0,
-     "title": 0.667
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 2,
-    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3731,
-     "content": 22635,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "33634",
-   "title": "Nutrition and Dietetics",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "33704",
-   "title": "AGRICULTURE BUSINESS",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/areas-of-study/bus-ag-hosp-legal/",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 7,
-    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1983,
-     "content": 28391,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Business Degrees and Certificates",
-      1344
-     ],
-     [
-      "Agriculture Degrees and Certificates",
-      608
-     ],
-     [
-      "Hospitality & Culinary Degrees and Certi",
-      625
-     ],
-     [
-      "Legal Degrees & Certificates",
-      312
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "33875",
-   "title": "LIBERAL ARTS - SCIENCE",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "33910",
-   "title": "PRE-NURSING",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/divisions/child-dev-edu-ethnic-studies/education/teacher-pathways/educational-options/early-childhood-teacher-pathway.html",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 25,
-    "why": "coarse net: the page's code tokens name 0 of 25 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2399,
-     "content": 18782,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "33939",
-   "title": "ART STUDIO",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/community/cuesta-arts/artgallery/pastexhibitions/2021-virtual-programming/inverse2020.html",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 56,
-    "why": "coarse net: the page's code tokens name 0 of 56 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3440,
-     "content": 20583,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "item7",
-      425
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "33963",
-   "title": "Biology",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "35008",
-   "title": "Licensed Vocational Nursing",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "35076",
-   "title": "Graphics",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "35099",
-   "title": "PSYCHOLOGY",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "35142",
-   "title": "NONCREDIT ESL: LISTENING AND SPEAKING FOR ENGLISH SPEAKERS OF OTHER LANGUAGES",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "36261",
-   "title": "FILM, TELEVISION, AND ELECTRONIC MEDIA",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "36266",
-   "title": "Public Health Science",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "36269",
-   "title": "CHILD AND ADOLESCENT DEVELOPMENT",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/areas-of-study/child-dev-education-information/",
-    "label": {
-     "award": 0,
-     "title": 0.667
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 11,
-    "why": "coarse net: the page's code tokens name 0 of 11 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1889,
-     "content": 25764,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Child Development",
-      937
-     ],
-     [
-      "Education",
-      1028
-     ],
-     [
-      "Information",
-      379
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "36271",
-   "title": "Global Studies",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/divisions/child-dev-edu-ethnic-studies/education/teacherpathways.html",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 17,
-    "why": "coarse net: the page's code tokens name 0 of 17 listed courses",
-    "error": null,
-    "chars": {
-     "body": 4911,
-     "content": 22673,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "36603",
-   "title": "SOCIAL JUSTICE STUDIES",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/about/student-equity-initiatives/equity/equity-programs-resources/call-to-action-racial-equity.html",
-    "label": {
-     "award": 0,
-     "title": 0.667
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 43,
-    "why": "coarse net: the page's code tokens name 0 of 43 listed courses",
-    "error": null,
-    "chars": {
-     "body": 5456,
-     "content": 25192,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Embrace a Culture of Inquiry: Actively I",
-      107
-     ],
-     [
-      "Commit to Learning, Self-Reflection, and",
-      283
-     ],
-     [
-      "Open Dialogue: Create Intentional Spaces",
-      107
-     ],
-     [
-      "Transform the Student Experience: Embed ",
-      66
-     ],
-     [
-      "Commit to Structural Changes: Identify a",
-      83
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "36738",
-   "title": "Elementary Teacher Education",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/divisions/child-dev-edu-ethnic-studies/education/teacher-pathways/educational-options/elementary-teacher-pathway.html",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 24,
-    "why": "coarse net: the page's code tokens name 0 of 24 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3573,
-     "content": 21505,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "36762",
-   "title": "LAW, PUBLIC POLICY, AND SOCIETY",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "36960",
-   "title": "Environmental Sciences",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/areas-of-study/soc-behav-sci-and-human-serv/",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 14,
-    "why": "coarse net: the page's code tokens name 0 of 14 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1927,
-     "content": 26282,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Social Sciences",
-      916
-     ],
-     [
-      "Behavioral Sciences",
-      362
-     ],
-     [
-      "Human Services",
-      1008
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "37046",
-   "title": "Automotive Technician",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "37062",
-   "title": "SOCIAL WORK AND HUMAN SERVICES",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/areas-of-study/soc-behav-sci-and-human-serv/",
-    "label": {
-     "award": 0,
-     "title": 0.75
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 16,
-    "why": "coarse net: the page's code tokens name 0 of 16 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1927,
-     "content": 26282,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Social Sciences",
-      916
-     ],
-     [
-      "Behavioral Sciences",
-      362
-     ],
-     [
-      "Human Services",
-      1008
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "37077",
-   "title": "MECHANIZED AGRICULTURE",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/areas-of-study/bus-ag-hosp-legal/",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 6,
-    "why": "coarse net: the page's code tokens name 0 of 6 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1983,
-     "content": 28391,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Business Degrees and Certificates",
-      1344
-     ],
-     [
-      "Agriculture Degrees and Certificates",
-      608
-     ],
-     [
-      "Hospitality & Culinary Degrees and Certi",
-      625
-     ],
-     [
-      "Legal Degrees & Certificates",
-      312
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "37078",
-   "title": "ADDICTION TREATMENT STUDIES",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "37079",
-   "title": "ADDICTION TREATMENT STUDIES",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "37170",
-   "title": "MAINTENANCE AND LIGHT REPAIR TECHNICIAN",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "37252",
-   "title": "NONCREDIT ENGLISH AS A SECOND LANGUAGE LEVEL IV",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/continuinged/esl-program/",
-    "label": {
-     "award": 0,
-     "title": 0.667
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 2,
-    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3731,
-     "content": 22635,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "37253",
-   "title": "NONCREDIT ENGLISH AS A SECOND LANGUAGE - LEVEL V",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/continuinged/esl-program/",
-    "label": {
-     "award": 0,
-     "title": 0.8
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 2,
-    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3731,
-     "content": 22635,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
   {
    "control_number": "37255",
    "title": "NONCREDIT ENGLISH AS A SECOND LANGUAGE GRAMMAR",
    "award": "Noncredit program",
    "near_miss": {
-    "url": "https://www.cuesta.edu/academics/continuinged/esl-program/",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30202",
     "label": {
-     "award": 0,
-     "title": 0.667
+     "award": 1,
+     "title": 0.833
     },
     "field": "innerText",
     "coverage": 0.0,
@@ -2322,119 +75,8 @@
     "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
     "error": null,
     "chars": {
-     "body": 3731,
-     "content": 22635,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "37257",
-   "title": "NONCREDIT AUTO/BODY COLLISION REPAIR",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "37258",
-   "title": "NONCREDIT AUTOMOTIVE REFINISH REPAIR",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "37339",
-   "title": "HOSPITALITY MANAGEMENT",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/areas-of-study/bus-ag-hosp-legal/",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 10,
-    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1983,
-     "content": 28391,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Business Degrees and Certificates",
-      1344
-     ],
-     [
-      "Agriculture Degrees and Certificates",
-      608
-     ],
-     [
-      "Hospitality & Culinary Degrees and Certi",
-      625
-     ],
-     [
-      "Legal Degrees & Certificates",
-      312
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "37433",
-   "title": "MUSIC",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/communityprograms/community-education/music/1_Multiple_Date_Offerings_TEMPLATE.html",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 22,
-    "why": "coarse net: the page's code tokens name 0 of 22 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2406,
-     "content": 19700,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "37435",
-   "title": "PREMEDICAL STUDIES",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/divisions/child-dev-edu-ethnic-studies/education/teacherpathways.html",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 19,
-    "why": "coarse net: the page's code tokens name 0 of 19 listed courses",
-    "error": null,
-    "chars": {
-     "body": 4911,
-     "content": 22673,
+     "body": 881,
+     "content": 881,
      "tabs": 0
     },
     "tab_panels": []
@@ -2445,17 +87,9 @@
    "title": "NONCREDIT READING, WRITING, AND GRAMMAR",
    "award": "Noncredit program",
    "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "37651",
-   "title": "PK – 3 PATHWAY FOR ELEMENTARY EDUCATORS",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/divisions/child-dev-edu-ethnic-studies/education/teacher-pathways/educational-options/elementary-teacher-pathway.html",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30208",
     "label": {
-     "award": 0,
+     "award": 1,
      "title": 0.5
     },
     "field": "innerText",
@@ -2463,94 +97,20 @@
     "body": 0.0,
     "content": 0.0,
     "net": 0,
-    "listed": 8,
-    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
     "error": null,
     "chars": {
-     "body": 3573,
-     "content": 21505,
+     "body": 795,
+     "content": 795,
      "tabs": 0
     },
     "tab_panels": []
-   }
-  },
-  {
-   "control_number": "37979",
-   "title": "CERAMICS",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "37980",
-   "title": "PHOTOGRAPHY",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/communityprograms/community-education/photography/1_Multiple_Date_Offerings_TEMPLATE.html",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 7,
-    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2124,
-     "content": 19326,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "37981",
-   "title": "SCULPTURE FOUNDRY",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38201",
-   "title": "NONCREDIT BASIC OFFICE SOFTWARE SKILLS",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
    }
   },
   {
    "control_number": "38249",
    "title": "NONCREDIT WORKPLACE ESSENTIALS",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38250",
-   "title": "NONCREDIT BASIC INTERNET SKILLS",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38254",
-   "title": "NONCREDIT BEGINNING COMPUTER SKILLS",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38260",
-   "title": "NONCREDIT CAREER STRATEGIST",
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
@@ -2609,28 +169,30 @@
    "title": "NONCREDIT MANAGEMENT TOOL BOX",
    "award": "Noncredit program",
    "near_miss": {
-    "why": "no page read names the program"
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30160",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 994,
+     "content": 994,
+     "tabs": 0
+    },
+    "tab_panels": []
    }
   },
   {
    "control_number": "38305",
    "title": "NONCREDIT HIGH PERFORMANCE TEAMS",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38358",
-   "title": "GEOGRAPHIC INFORMATION SYSTEMS",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38384",
-   "title": "HOSPITALITY MANAGEMENT NONCREDIT",
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
@@ -2649,17 +211,9 @@
    "title": "NONCREDIT COMPUTER AND DEVICE FUNDAMENTALS",
    "award": "Noncredit program",
    "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38465",
-   "title": "AUDIO TECHNOLOGY I",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/areas-of-study/skilled-trades-tech/",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30200",
     "label": {
-     "award": 0,
+     "award": 1,
      "title": 0.5
     },
     "field": "innerText",
@@ -2667,205 +221,15 @@
     "body": 0.0,
     "content": 0.0,
     "net": 0,
-    "listed": 5,
-    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
     "error": null,
     "chars": {
-     "body": 1900,
-     "content": 27181,
+     "body": 800,
+     "content": 800,
      "tabs": 0
     },
-    "tab_panels": [
-     [
-      "Skilled Trades",
-      1972
-     ],
-     [
-      "Technology",
-      717
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "38466",
-   "title": "ADDICTION STUDIES FOUNDATION",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38467",
-   "title": "NUTRITION EDUCATION/COACHING",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38468",
-   "title": "HOSPITALITY MANAGEMENT FOUNDATION",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38469",
-   "title": "PARAPROFESSIONAL COUNSELING SKILLS",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38470",
-   "title": "CHILD DEVELOPMENT ASSOCIATE TEACHER",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/areas-of-study/child-dev-education-information/",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 4,
-    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1889,
-     "content": 25764,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Child Development",
-      937
-     ],
-     [
-      "Education",
-      1028
-     ],
-     [
-      "Information",
-      379
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "38471",
-   "title": "CHILD DEVELOPMENT SITE SUPERVISOR",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/areas-of-study/child-dev-education-information/",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 11,
-    "why": "coarse net: the page's code tokens name 0 of 11 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1889,
-     "content": 25764,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Child Development",
-      937
-     ],
-     [
-      "Education",
-      1028
-     ],
-     [
-      "Information",
-      379
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "38472",
-   "title": "PARENTING EDUCATION/FAMILY ADVOCACY",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38479",
-   "title": "CHILD DEVELOPMENT MASTER TEACHER",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/areas-of-study/child-dev-education-information/",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 21,
-    "why": "coarse net: the page's code tokens name 0 of 21 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1889,
-     "content": 25764,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Child Development",
-      937
-     ],
-     [
-      "Education",
-      1028
-     ],
-     [
-      "Information",
-      379
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "38500",
-   "title": "POWER AND INSTRUMENTATION",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38515",
-   "title": "EQUIPMENT TECHNICIAN",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38687",
-   "title": "NONCREDIT STRUCTURAL STEEL CERTIFICATION",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
+    "tab_panels": []
    }
   },
   {
@@ -2875,1026 +239,1833 @@
    "near_miss": {
     "why": "no page read names the program"
    }
-  },
-  {
-   "control_number": "38772",
-   "title": "NONCREDIT ESL: BEGINNING CONVERSATION",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38836",
-   "title": "PARAPROFESSIONAL EDUCATOR/PRE-TEACHING",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38837",
-   "title": "PARAPROFESSIONAL EDUCATOR/PRE-TEACHING",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "39678",
-   "title": "HIGH SCHOOL/MIDDLE SCHOOL TEACHER PATHWAY",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/divisions/child-dev-edu-ethnic-studies/education/teacher-pathways/educational-options/middle-and-high-school-teacher-pathway.html",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 3,
-    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1581,
-     "content": 17768,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "39907",
-   "title": "CLOUD COMPUTING",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "39908",
-   "title": "CULINARY ARTS STUDIES",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "39909",
-   "title": "MANAGEMENT SPECIALIZATION",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/communityprograms/community-education/businessfinance/Social-Media-Management-for-Small-Business-Accounts.html",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 5,
-    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3988,
-     "content": 21430,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "39911",
-   "title": "VITICULTURE",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "40057",
-   "title": "FARM MANAGEMENT",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/communityprograms/community-education/businessfinance/Social-Media-Management-for-Small-Business-Accounts.html",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 7,
-    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3988,
-     "content": 21430,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "40085",
-   "title": "CULINARY ARTS",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/areas-of-study/creative-arts-humanities-comm/",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 18,
-    "why": "coarse net: the page's code tokens name 0 of 18 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1913,
-     "content": 25649,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Communication",
-      475
-     ],
-     [
-      "Fine Arts",
-      615
-     ],
-     [
-      "Humanities",
-      246
-     ],
-     [
-      "Performing Arts",
-      603
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "40104",
-   "title": "INCLUSION AND SPECIAL NEEDS",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "40825",
-   "title": "EMPLOYABILITY & TRANSITIONS",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "40856",
-   "title": "CALIFORNIA CONSERVATION AWARENESS",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "41234",
-   "title": "EXERCISE SCIENCE - FITNESS PROFESSIONAL",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "41526",
-   "title": "COMMERCIAL MUSIC",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/communityprograms/community-education/music/1_Multiple_Date_Offerings_TEMPLATE.html",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 28,
-    "why": "coarse net: the page's code tokens name 0 of 28 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2406,
-     "content": 19700,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "41555",
-   "title": "FITNESS AND HEALTH",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/areas-of-study/health-wellness/",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 9,
-    "why": "coarse net: the page's code tokens name 0 of 9 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1785,
-     "content": 25574,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Health and Wellness",
-      713
-     ],
-     [
-      "Nursing and Allied Health",
-      1484
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "41742",
-   "title": "BUSINESS ADMINISTRATION 2.0",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/areas-of-study/bus-ag-hosp-legal/",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 10,
-    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1983,
-     "content": 28391,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Business Degrees and Certificates",
-      1344
-     ],
-     [
-      "Agriculture Degrees and Certificates",
-      608
-     ],
-     [
-      "Hospitality & Culinary Degrees and Certi",
-      625
-     ],
-     [
-      "Legal Degrees & Certificates",
-      312
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "42040",
-   "title": "DIGITAL COMMERCE CONCENTRATION",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "42042",
-   "title": "ACCOUNTING CONCENTRATION",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "42043",
-   "title": "GENERAL BUSINESS CONCENTRATION",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "42044",
-   "title": "MARKETING CONCENTRATION",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/about/images/marketing-images/awards/2024_Fall_PresidentsLeadershipAward.jpg",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 6,
-    "why": "coarse net: the page's code tokens name 0 of 6 listed courses",
-    "error": null,
-    "chars": {
-     "body": 0,
-     "content": 0,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "42045",
-   "title": "SMALL BUSINESS MANAGEMENT CONCENTRATION",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/communityprograms/community-education/businessfinance/Social-Media-Management-for-Small-Business-Accounts.html",
-    "label": {
-     "award": 0,
-     "title": 0.75
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 10,
-    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3988,
-     "content": 21430,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "42046",
-   "title": "MULTIMEDIA JOURNALISM",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "42411",
-   "title": "CHILD DEVELOPMENT AND FAMILY STUDIES",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/areas-of-study/child-dev-education-information/",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 8,
-    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1889,
-     "content": 25764,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Child Development",
-      937
-     ],
-     [
-      "Education",
-      1028
-     ],
-     [
-      "Information",
-      379
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "42763",
-   "title": "COMMUNICATION STUDIES 2.0",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/areas-of-study/creative-arts-humanities-comm/",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 14,
-    "why": "coarse net: the page's code tokens name 0 of 14 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1913,
-     "content": 25649,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Communication",
-      475
-     ],
-     [
-      "Fine Arts",
-      615
-     ],
-     [
-      "Humanities",
-      246
-     ],
-     [
-      "Performing Arts",
-      603
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "42770",
-   "title": "CAREER TECHNICAL EDUCATION TEACHER PREPARATION",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/careered/",
-    "label": {
-     "award": 0,
-     "title": 0.6
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 2,
-    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3015,
-     "content": 23807,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "42774",
-   "title": "SPORTS MEDICINE",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "42865",
-   "title": "ESL CITIZENSHIP",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/areas-of-study/esl-adult-education/",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 2,
-    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1840,
-     "content": 26339,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "ESL and Adult Education Certificates",
-      2586
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "42883",
-   "title": "TRANSITIONS",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "42891",
-   "title": "ACADEMIC SKILLS BRIDGE TO COLLEGE CREDIT",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "42973",
-   "title": "AVIATION MECHANIC - GENERAL",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43368",
-   "title": "TECHNICAL THEATER",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/careered/",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 10,
-    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3015,
-     "content": 23807,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "43682",
-   "title": "LIBERAL ARTS: HEALTH AND WELLNESS",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/areas-of-study/health-wellness/",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 69,
-    "why": "coarse net: the page's code tokens name 0 of 69 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1785,
-     "content": 25574,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Health and Wellness",
-      713
-     ],
-     [
-      "Nursing and Allied Health",
-      1484
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "43707",
-   "title": "ETHNIC STUDIES FOR EDUCATORS",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/divisions/child-dev-edu-ethnic-studies/education/teacherpathways.html",
-    "label": {
-     "award": 0,
-     "title": 0.667
-    },
-    "field": "innerText",
-    "coverage": 0.071,
-    "body": 0.071,
-    "content": 0.071,
-    "net": 1,
-    "listed": 14,
-    "why": "coarse net: the page's code tokens name 1 of 14 listed courses",
-    "error": null,
-    "chars": {
-     "body": 4911,
-     "content": 22673,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "43775",
-   "title": "ELEMENTARY EDUCATION: LIBERAL STUDIES WITH CHILD DEVELOPMENT EMPHASIS (PK-6 PREP)",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43794",
-   "title": "MATH PREPARATION FOR COLLEGE SUCCESS",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/about/student-equity-initiatives/guided-pathways/student-success-teams.html",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 2,
-    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2930,
-     "content": 19849,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "44278",
-   "title": "SOCIAL JUSTICE: ETHNIC STUDIES",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/about/student-equity-initiatives/equity/equity-programs-resources/call-to-action-racial-equity.html",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 33,
-    "why": "coarse net: the page's code tokens name 0 of 33 listed courses",
-    "error": null,
-    "chars": {
-     "body": 5456,
-     "content": 25192,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Embrace a Culture of Inquiry: Actively I",
-      107
-     ],
-     [
-      "Commit to Learning, Self-Reflection, and",
-      283
-     ],
-     [
-      "Open Dialogue: Create Intentional Spaces",
-      107
-     ],
-     [
-      "Transform the Student Experience: Embed ",
-      66
-     ],
-     [
-      "Commit to Structural Changes: Identify a",
-      83
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "44552",
-   "title": "SOCIAL JUSTICE: GENDER STUDIES",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/about/student-equity-initiatives/equity/equity-programs-resources/call-to-action-racial-equity.html",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 12,
-    "why": "coarse net: the page's code tokens name 0 of 12 listed courses",
-    "error": null,
-    "chars": {
-     "body": 5456,
-     "content": 25192,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Embrace a Culture of Inquiry: Actively I",
-      107
-     ],
-     [
-      "Commit to Learning, Self-Reflection, and",
-      283
-     ],
-     [
-      "Open Dialogue: Create Intentional Spaces",
-      107
-     ],
-     [
-      "Transform the Student Experience: Embed ",
-      66
-     ],
-     [
-      "Commit to Structural Changes: Identify a",
-      83
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "44556",
-   "title": "PUBLIC HEALTH",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/academics/areas-of-study/health-wellness/",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 14,
-    "why": "coarse net: the page's code tokens name 0 of 14 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1785,
-     "content": 25574,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Health and Wellness",
-      713
-     ],
-     [
-      "Nursing and Allied Health",
-      1484
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "44776",
-   "title": "WOMEN'S, FEMINIST, AND QUEER STUDIES",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "44824",
-   "title": "FOOD, NUTRITION, AND SYSTEMS STUDIES",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "44904",
-   "title": "SOCIAL JUSTICE: CHICANO STUDIES",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/about/student-equity-initiatives/equity/equity-programs-resources/call-to-action-racial-equity.html",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 17,
-    "why": "coarse net: the page's code tokens name 0 of 17 listed courses",
-    "error": null,
-    "chars": {
-     "body": 5456,
-     "content": 25192,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "Embrace a Culture of Inquiry: Actively I",
-      107
-     ],
-     [
-      "Commit to Learning, Self-Reflection, and",
-      283
-     ],
-     [
-      "Open Dialogue: Create Intentional Spaces",
-      107
-     ],
-     [
-      "Transform the Student Experience: Embed ",
-      66
-     ],
-     [
-      "Commit to Structural Changes: Identify a",
-      83
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "45157",
-   "title": "COMMERCIAL DRIVER'S LICENSE",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "45889",
-   "title": "DATA SCIENCE",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/about/college-resources/research/programreviewdata.html",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 20,
-    "why": "coarse net: the page's code tokens name 0 of 20 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2776,
-     "content": 20452,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "item7",
-      263
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "45890",
-   "title": "DATA SCIENCE",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/about/college-resources/research/programreviewdata.html",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 20,
-    "why": "coarse net: the page's code tokens name 0 of 20 listed courses",
-    "error": null,
-    "chars": {
-     "body": 2776,
-     "content": 20452,
-     "tabs": 0
-    },
-    "tab_panels": [
-     [
-      "item7",
-      263
-     ]
-    ]
-   }
-  },
-  {
-   "control_number": "46075",
-   "title": "BLACKSMITHING",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://www.cuesta.edu/communityprograms/community-education/special-interest/Blacksmithing-Novice-Making-a-Hot-Cut-Chisel.html",
-    "label": {
-     "award": 0,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 2,
-    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
-    "error": null,
-    "chars": {
-     "body": 3600,
-     "content": 21118,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "46389",
-   "title": "AGRICULTURE ANIMAL SCIENCES",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
   }
  ],
  "page_claimed": [
   {
-   "control_number": "41744",
-   "title": "AVIATION MECHANIC - AIRFRAME & POWERPLANT",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "pages": [
-    "https://www.cuesta.edu/academics/divisions/skilled-trades-technology/aviation-maintenance/aviation-maintanence-tech-program/certification-information.html"
-   ]
-  },
-  {
-   "control_number": "43036",
-   "title": "AVIATION MECHANIC - AIRFRAME",
+   "control_number": "41555",
+   "title": "FITNESS AND HEALTH",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "pages": [
-    "https://www.cuesta.edu/academics/divisions/skilled-trades-technology/aviation-maintenance/aviation-maintanence-tech-program/certification-information.html"
-   ]
-  },
-  {
-   "control_number": "43053",
-   "title": "AVIATION MECHANIC - POWERPLANT",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://www.cuesta.edu/academics/divisions/skilled-trades-technology/aviation-maintenance/aviation-maintanence-tech-program/certification-information.html"
+    "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30174"
    ]
   }
  ],
  "coverage_bands": {
-  "0.5-0.8": 1,
-  "0.8-1.0": 0,
-  "1.0": 1
+  "0.5-0.8": 2,
+  "0.8-1.0": 13,
+  "1.0": 168
  },
  "would_extract": {
   "against": null,
   "kept": 0,
-  "programs": 2,
+  "programs": 183,
   "list": [
+   {
+    "control_number": "05660",
+    "title": "BUSINESS ADMINISTRATIVE ASSISTANT",
+    "award": "A.A. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30097",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05661",
+    "title": "JOURNALISM",
+    "award": "A.A. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30166",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05666",
+    "title": "AUTOMOTIVE TECHNICIAN",
+    "award": "A.S. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30088",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05667",
+    "title": "CONSTRUCTION TECHNOLOGY",
+    "award": "A.S. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30118",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05668",
+    "title": "WELDING TECHNOLOGY",
+    "award": "A.S. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30260",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05669",
+    "title": "ART HISTORY AND PROFESSIONAL PRACTICES",
+    "award": "A.A. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30083",
+    "coverage": 0.895,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05675",
+    "title": "NURSING, REGISTERED",
+    "award": "A.S. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30214",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05677",
+    "title": "MEDICAL ASSISTING",
+    "award": "A.S. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30188",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05679",
+    "title": "HUMAN SERVICES",
+    "award": "A.A. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30161",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05680",
+    "title": "EARLY CHILDHOOD EDUCATION",
+    "award": "A.A. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30126",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05684",
+    "title": "LIBRARY/INFORMATION TECHNOLOGY",
+    "award": "A.S. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30177",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05686",
+    "title": "PHYSICS",
+    "award": "A.S. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30230",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05687",
+    "title": "Chemistry",
+    "award": "A.S. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30103",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05688",
+    "title": "GEOLOGY",
+    "award": "A.S. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30151",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05690",
+    "title": "CRIMINAL JUSTICE",
+    "award": "A.A. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30120",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "05696",
+    "title": "ENGINEERING",
+    "award": "A.S. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30137",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07672",
+    "title": "ARCHITECTURAL TECHNOLOGY",
+    "award": "A.S. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30081",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07677",
+    "title": "ACCOUNTING CLERK",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30070",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07681",
+    "title": "FILM TELEVISION AND ELECTRONIC MEDIA",
+    "award": "A.A. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30146",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07684",
+    "title": "RECREATION ADMINISTRATION",
+    "award": "A.A. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30244",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07685",
+    "title": "AUTO BODY TECHNICIAN",
+    "award": "A.S. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30086",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10374",
+    "title": "ENGINE PERFORMANCE SPECIALIST",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30136",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10433",
+    "title": "BUSINESS ADMINISTRATIVE ASSISTANT",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30098",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12223",
+    "title": "PARALEGAL",
+    "award": "A.A. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30218",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "13607",
+    "title": "COMPUTER SCIENCE",
+    "award": "A.S. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30116",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "13611",
+    "title": "MANAGEMENT INFORMATION SYSTEMS",
+    "award": "A.S. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30182",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "13697",
+    "title": "NURSING, REGISTERED (30 UNIT OPTION)",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30215",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "13698",
+    "title": "JAZZ STUDIES",
+    "award": "A.A. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30165",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "14441",
+    "title": "COMPUTER AND NETWORKING TECHNOLOGY",
+    "award": "A.S. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30114",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "14793",
+    "title": "ADVANCED ENGINE PERFORMANCE TECHNICIAN",
+    "award": "A.S. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30076",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "14876",
+    "title": "MUSIC PERFORMANCE",
+    "award": "A.A. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30194",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15487",
+    "title": "POLITICAL SCIENCE",
+    "award": "A.A. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30234",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15491",
+    "title": "HISTORY",
+    "award": "A.A. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30156",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15547",
+    "title": "LEGAL STUDIES: BUSINESS OPTION",
+    "award": "A.A. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30170",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15548",
+    "title": "LEGAL STUDIES: SOCIAL SCIENCE OPTION",
+    "award": "A.A. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30171",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16506",
+    "title": "SOCIOLOGY",
+    "award": "A.A. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30251",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16766",
+    "title": "ELECTRICAL TECHNOLOGY",
+    "award": "A.S. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30129",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16837",
+    "title": "Licensed Vocational Nursing",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30213",
+    "coverage": 0.909,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16875",
+    "title": "Paramedic",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30221",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18710",
+    "title": "LIBERAL ARTS - ARTS AND HUMANITIES",
+    "award": "A.A. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30173",
+    "coverage": 0.972,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18712",
+    "title": "LIBERAL ARTS - SOCIAL AND BEHAVIORAL SCIENCES",
+    "award": "A.A. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30175",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20945",
+    "title": "PSYCHIATRIC TECHNICIAN",
+    "award": "A.S. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30239",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20946",
+    "title": "PSYCHIATRIC TECHNICIAN",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30240",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21033",
+    "title": "BUSINESS CAREER TRACK CORE",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30099",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21040",
+    "title": "AUTO BODY TECHNICIAN",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30087",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21041",
+    "title": "CONSTRUCTION TECHNOLOGY",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30119",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21042",
+    "title": "ELECTRONICS AND STATE ELECTRICIAN",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30130",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21043",
+    "title": "WELDING TECHNOLOGY",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30261",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21044",
+    "title": "Medical Assisting",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30189",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21050",
+    "title": "CHILD DEVELOPMENT TEACHER",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30107",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21053",
+    "title": "Paralegal",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30219",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21054",
+    "title": "LIBRARY/INFORMATION TECHNOLOGY",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30178",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24397",
+    "title": "NONCREDIT VOCATIONAL ENGLISH AS A SECOND LANGUAGE",
+    "award": "Noncredit program",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30211",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "24462",
+    "title": "SECONDARY EDUCATION",
+    "award": "Noncredit program",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30247",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30452",
+    "title": "BUSINESS ADMINISTRATION - CAREER TRACK",
+    "award": "A.A. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30095",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30845",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30252",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30918",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30186",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31857",
+    "title": "Communication Studies",
+    "award": "A.A- T Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30113",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31885",
+    "title": "POLITICAL SCIENCE",
+    "award": "A.A- T Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30235",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31933",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30075",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32131",
+    "title": "STUDIO ARTS",
+    "award": "A.A- T Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30255",
+    "coverage": 0.939,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32139",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30080",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32140",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30257",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32153",
+    "title": "BUSINESS ADMINISTRATION",
+    "award": "A.S. T Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30096",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32157",
+    "title": "JOURNALISM",
+    "award": "A.A- T Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30167",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32198",
+    "title": "MUSIC",
+    "award": "A.A- T Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30192",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32270",
+    "title": "ART HISTORY",
+    "award": "A.A- T Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30082",
+    "coverage": 0.939,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32271",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30138",
+    "coverage": 0.643,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32321",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30152",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32377",
+    "title": "EARLY CHILDHOOD EDUCATION",
+    "award": "A.S. T Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30127",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32453",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30231",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32454",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30242",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32562",
+    "title": "SPANISH",
+    "award": "A.A- T Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30253",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32593",
+    "title": "HISTORY",
+    "award": "A.A- T Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30157",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32960",
+    "title": "PARAMEDIC",
+    "award": "A.S. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30220",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33041",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30128",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33400",
+    "title": "NONCREDIT ENGLISH AS A SECOND LANGUAGE - LEVEL I",
+    "award": "Noncredit program",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30202",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33401",
+    "title": "NONCREDIT ENGLISH AS A SECOND LANGUAGE - LEVEL II",
+    "award": "Noncredit program",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30203",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33402",
+    "title": "NONCREDIT ENGLISH AS A SECOND LANGUAGE - LEVEL III",
+    "award": "Noncredit program",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30204",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33634",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30216",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33704",
+    "title": "AGRICULTURE BUSINESS",
+    "award": "A.S. T Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30077",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33875",
+    "title": "LIBERAL ARTS - SCIENCE",
+    "award": "A.A. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30172",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33910",
+    "title": "PRE-NURSING",
+    "award": "A.S. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30238",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33939",
+    "title": "ART STUDIO",
+    "award": "A.A. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30084",
+    "coverage": 0.964,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33963",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30094",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35008",
+    "title": "Licensed Vocational Nursing",
+    "award": "A.S. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30180",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35076",
+    "title": "Graphics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30154",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35099",
+    "title": "PSYCHOLOGY",
+    "award": "A.A. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30241",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35142",
+    "title": "NONCREDIT ESL: LISTENING AND SPEAKING FOR ENGLISH SPEAKERS OF OTHER LANGUAGES",
+    "award": "Noncredit program",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30209",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36261",
+    "title": "FILM, TELEVISION, AND ELECTRONIC MEDIA",
+    "award": "A.S. T Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30147",
+    "coverage": 0.913,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36266",
+    "title": "Public Health Science",
+    "award": "A.S. T Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30243",
+    "coverage": 0.625,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36269",
+    "title": "CHILD AND ADOLESCENT DEVELOPMENT",
+    "award": "A.A- T Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30104",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36271",
+    "title": "Global Studies",
+    "award": "A.A- T Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30153",
+    "coverage": 0.882,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36603",
+    "title": "SOCIAL JUSTICE STUDIES",
+    "award": "A.A- T Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30249",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36738",
+    "title": "Elementary Teacher Education",
+    "award": "A.A- T Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30132",
+    "coverage": 0.958,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36762",
+    "title": "LAW, PUBLIC POLICY, AND SOCIETY",
+    "award": "A.A- T Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30169",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36960",
+    "title": "Environmental Sciences",
+    "award": "A.S. T Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30139",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37046",
+    "title": "Automotive Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30089",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37062",
+    "title": "SOCIAL WORK AND HUMAN SERVICES",
+    "award": "A.A- T Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30250",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37077",
+    "title": "MECHANIZED AGRICULTURE",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30187",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37078",
+    "title": "ADDICTION TREATMENT STUDIES",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30074",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37079",
+    "title": "ADDICTION TREATMENT STUDIES",
+    "award": "A.A. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30073",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37170",
+    "title": "MAINTENANCE AND LIGHT REPAIR TECHNICIAN",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30181",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37252",
+    "title": "NONCREDIT ENGLISH AS A SECOND LANGUAGE LEVEL IV",
+    "award": "Noncredit program",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30205",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37253",
+    "title": "NONCREDIT ENGLISH AS A SECOND LANGUAGE - LEVEL V",
+    "award": "Noncredit program",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30206",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37257",
+    "title": "NONCREDIT AUTO/BODY COLLISION REPAIR",
+    "award": "Noncredit program",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30196",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37258",
+    "title": "NONCREDIT AUTOMOTIVE REFINISH REPAIR",
+    "award": "Noncredit program",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30197",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37339",
+    "title": "HOSPITALITY MANAGEMENT",
+    "award": "A.S. T Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30158",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37433",
+    "title": "MUSIC",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30193",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37435",
+    "title": "PREMEDICAL STUDIES",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30237",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37651",
+    "title": "PK – 3 PATHWAY FOR ELEMENTARY EDUCATORS",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30232",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37979",
+    "title": "CERAMICS",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30102",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37980",
+    "title": "PHOTOGRAPHY",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30229",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37981",
+    "title": "SCULPTURE FOUNDRY",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30245",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38201",
+    "title": "NONCREDIT BASIC OFFICE SOFTWARE SKILLS",
+    "award": "Noncredit program",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30199",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38250",
+    "title": "NONCREDIT BASIC INTERNET SKILLS",
+    "award": "Noncredit program",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30198",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38254",
+    "title": "NONCREDIT BEGINNING COMPUTER SKILLS",
+    "award": "Noncredit program",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30200",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38260",
+    "title": "NONCREDIT CAREER STRATEGIST",
+    "award": "Noncredit program",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30201",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38358",
+    "title": "GEOGRAPHIC INFORMATION SYSTEMS",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30150",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38384",
+    "title": "HOSPITALITY MANAGEMENT NONCREDIT",
+    "award": "Noncredit program",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30160",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38465",
+    "title": "AUDIO TECHNOLOGY I",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30085",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38466",
+    "title": "ADDICTION STUDIES FOUNDATION",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30072",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38467",
+    "title": "NUTRITION EDUCATION/COACHING",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30217",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38468",
+    "title": "HOSPITALITY MANAGEMENT FOUNDATION",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30159",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38469",
+    "title": "PARAPROFESSIONAL COUNSELING SKILLS",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30222",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38470",
+    "title": "CHILD DEVELOPMENT ASSOCIATE TEACHER",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30106",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38471",
+    "title": "CHILD DEVELOPMENT SITE SUPERVISOR",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30108",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38472",
+    "title": "PARENTING EDUCATION/FAMILY ADVOCACY",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30226",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38479",
+    "title": "CHILD DEVELOPMENT MASTER TEACHER",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30107",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38500",
+    "title": "POWER AND INSTRUMENTATION",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30236",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38515",
+    "title": "EQUIPMENT TECHNICIAN",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30140",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38687",
+    "title": "NONCREDIT STRUCTURAL STEEL CERTIFICATION",
+    "award": "Noncredit program",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30210",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38772",
+    "title": "NONCREDIT ESL: BEGINNING CONVERSATION",
+    "award": "Noncredit program",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30207",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38836",
+    "title": "PARAPROFESSIONAL EDUCATOR/PRE-TEACHING",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30225",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38837",
+    "title": "PARAPROFESSIONAL EDUCATOR/PRE-TEACHING",
+    "award": "A.A. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30224",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39678",
+    "title": "HIGH SCHOOL/MIDDLE SCHOOL TEACHER PATHWAY",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30155",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39907",
+    "title": "CLOUD COMPUTING",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30110",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39908",
+    "title": "CULINARY ARTS STUDIES",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30122",
+    "coverage": 0.941,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39909",
+    "title": "MANAGEMENT SPECIALIZATION",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30183",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39911",
+    "title": "VITICULTURE",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30259",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40057",
+    "title": "FARM MANAGEMENT",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30145",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40085",
+    "title": "CULINARY ARTS",
+    "award": "A.S. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30123",
+    "coverage": 0.944,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40104",
+    "title": "INCLUSION AND SPECIAL NEEDS",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30162",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40825",
+    "title": "EMPLOYABILITY & TRANSITIONS",
+    "award": "Noncredit program",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30135",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40856",
+    "title": "CALIFORNIA CONSERVATION AWARENESS",
+    "award": "Noncredit program",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30100",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41234",
+    "title": "EXERCISE SCIENCE - FITNESS PROFESSIONAL",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30144",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41526",
+    "title": "COMMERCIAL MUSIC",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30112",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41742",
+    "title": "BUSINESS ADMINISTRATION 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30096",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41744",
+    "title": "AVIATION MECHANIC - AIRFRAME & POWERPLANT",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30091",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42040",
+    "title": "DIGITAL COMMERCE CONCENTRATION",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30125",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42042",
+    "title": "ACCOUNTING CONCENTRATION",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30071",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42043",
+    "title": "GENERAL BUSINESS CONCENTRATION",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30149",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42044",
+    "title": "MARKETING CONCENTRATION",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30184",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42045",
+    "title": "SMALL BUSINESS MANAGEMENT CONCENTRATION",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30248",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42046",
+    "title": "MULTIMEDIA JOURNALISM",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30191",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42411",
+    "title": "CHILD DEVELOPMENT AND FAMILY STUDIES",
+    "award": "A.A. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30105",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42763",
+    "title": "COMMUNICATION STUDIES 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30113",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42770",
+    "title": "CAREER TECHNICAL EDUCATION TEACHER PREPARATION",
+    "award": "A.S. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30101",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42774",
+    "title": "SPORTS MEDICINE",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30254",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42865",
+    "title": "ESL CITIZENSHIP",
+    "award": "Noncredit program",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30141",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42883",
+    "title": "TRANSITIONS",
+    "award": "Noncredit program",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30258",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42891",
+    "title": "ACADEMIC SKILLS BRIDGE TO COLLEGE CREDIT",
+    "award": "Noncredit program",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30069",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42973",
+    "title": "AVIATION MECHANIC - GENERAL",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30092",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43036",
+    "title": "AVIATION MECHANIC - AIRFRAME",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30090",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43053",
+    "title": "AVIATION MECHANIC - POWERPLANT",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30091",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43368",
+    "title": "TECHNICAL THEATER",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30256",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43682",
+    "title": "LIBERAL ARTS: HEALTH AND WELLNESS",
+    "award": "A.A. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30174",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43707",
+    "title": "ETHNIC STUDIES FOR EDUCATORS",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30143",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43775",
+    "title": "ELEMENTARY EDUCATION: LIBERAL STUDIES WITH CHILD DEVELOPMENT EMPHASIS (PK-6 PREP)",
+    "award": "A.A. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30131",
+    "coverage": 0.964,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43794",
+    "title": "MATH PREPARATION FOR COLLEGE SUCCESS",
+    "award": "Noncredit program",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30185",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
    {
     "control_number": "44171",
     "title": "ESSENTIAL RANCHING SKILLS",
     "award": "Noncredit program",
-    "url": "https://www.cuesta.edu/academics/continuinged/non-credit-cte/noncredit-ranch-education.html",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32560",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44278",
+    "title": "SOCIAL JUSTICE: ETHNIC STUDIES",
+    "award": "A.A- T Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32561",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44552",
+    "title": "SOCIAL JUSTICE: GENDER STUDIES",
+    "award": "A.A- T Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32617",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44556",
+    "title": "PUBLIC HEALTH",
+    "award": "A.S. T Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/30243",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44776",
+    "title": "WOMEN'S, FEMINIST, AND QUEER STUDIES",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32619",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44824",
+    "title": "FOOD, NUTRITION, AND SYSTEMS STUDIES",
+    "award": "A.S. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32618",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44904",
+    "title": "SOCIAL JUSTICE: CHICANO STUDIES",
+    "award": "A.A- T Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32673",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45157",
+    "title": "COMMERCIAL DRIVER'S LICENSE",
+    "award": "Noncredit program",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32672",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45889",
+    "title": "DATA SCIENCE",
+    "award": "A.S. Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32700",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45890",
+    "title": "DATA SCIENCE",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32701",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46075",
+    "title": "BLACKSMITHING",
+    "award": "Noncredit program",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32702",
     "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
@@ -3904,13 +2075,23 @@
     "control_number": "46278",
     "title": "AVIATION MAINTENANCE TECHNOLOGY",
     "award": "A.S. Degree",
-    "url": "https://www.cuesta.edu/academics/divisions/skilled-trades-technology/aviation-maintenance/aviation-maintanence-tech-program/certification-information.html",
-    "coverage": 0.667,
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32738",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46389",
+    "title": "AGRICULTURE ANIMAL SCIENCES",
+    "award": "A.S. T Degree",
+    "url": "https://cuesta.curriqunet.com/catalog/iq/30065/30067/32751",
+    "coverage": 1.0,
     "was_url": null,
     "was_coverage": null,
     "was_method": null
    }
   ]
  },
- "run": "39032973487"
+ "run": "39057578219"
 }
