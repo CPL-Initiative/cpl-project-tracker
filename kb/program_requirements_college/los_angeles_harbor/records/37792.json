@@ -1,0 +1,215 @@
+{
+ "college": "Los Angeles Harbor College",
+ "control_number": "37792",
+ "shape": "noncredit",
+ "title": "FUNDAMENTALS OF WAREHOUSING AND DISTRIBUTION",
+ "award": "Noncredit program",
+ "source_url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=64",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7191,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7191,
+    "output_tokens": 1557,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1557,
+  "output_tokens_details": {
+   "thinking_tokens": 555
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0599,
+ "ms": 12210,
+ "seconds": 12.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 5,
+   "listed": 6,
+   "share": 0.833,
+   "missing": [
+    "VOCED534CE"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    72.0,
+    72.0
+   ],
+   "stated": [
+    72.0,
+    72.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Fundamentals of Warehousing and Distribution - Certificate of Completion (CN)",
+   "measure": "hours",
+   "total_units": {
+    "min": 72,
+    "max": 72
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "identify the five common functional areas in warehousing and distribution facilities and the operational tools that are used in each of the functional areas.",
+    "discuss different types of warehouses and how the operations in these warehouses varying design and equipment in completing their order fulfillment process: receiving, storage, picking, packing, and shipping.",
+    "discuss different types of warehouses and how the operations in these warehouses vary in design and equipment in completing their order fulfillment process: receiving, storage, picking, packing, and shipping.",
+    "complete a group project using a warehousing/distribution center scenario to identify the equipment and informational technology needed to effectively handle movement, storage, control, and protection of the goods/materials delivered to the warehouse/ distribution center."
+   ],
+   "careers": [
+    "warehouse worker",
+    "transportation",
+    "warehousing",
+    "distribution"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "COMPLETE THE FOLLOWING 4 REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "VOC ED 530CE",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOC ED 531CE",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOC ED 532CE",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOC ED 533CE",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Optional Course",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ESL NC 361CE",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "VOC ED 534CE",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "Noncredit certificate of completion counted in hours; all units fields hold hours. Total Hours 72 equals the four required 18-hour courses; the optional 54-hour ESL course is not counted.",
+   "ESL NC 361CE is printed as an optional course recommended for non-native English speakers, recorded as recommended.",
+   "The second and third program learning outcomes are near-duplicates as printed (\"varying design\" vs. \"vary in design\"); both copied as printed.",
+   "Careers 'transportation', 'warehousing', 'distribution' are read from 'advance their career in transportation, warehousing and distribution'; reviewer may prefer 'warehousing and distribution' as one field."
+  ]
+ },
+ "extracted_run": "39006381839"
+}

@@ -1,0 +1,4644 @@
+[
+ {
+  "control_number": "02768",
+  "title": "Architectural Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARC115",
+   "ARC121",
+   "ARC132",
+   "ARC151",
+   "ARC160",
+   "ARC162",
+   "ARC164",
+   "ARC172",
+   "ARC173",
+   "ARC201",
+   "ARC223",
+   "ARC261",
+   "ARC271",
+   "ARC272",
+   "ENV101"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=39",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    39,
+    40,
+    41,
+    42
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 15,
+  "text_chars": 9883
+ },
+ {
+  "control_number": "02770",
+  "title": "Business Administration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.944,
+  "codes_found": [
+   "ACCTG1",
+   "ACCTG2",
+   "BUS1",
+   "BUS32",
+   "BUS38",
+   "BUS5",
+   "CIS101",
+   "CIS190",
+   "FINANCE1",
+   "FINANCE2",
+   "INTBUS1",
+   "MARKET1",
+   "MARKET21",
+   "MARKET23",
+   "MGMT13",
+   "MGMT2",
+   "SUPV1"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=56",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    56,
+    57,
+    58,
+    59
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 18,
+  "text_chars": 10008
+ },
+ {
+  "control_number": "02775",
+  "title": "Administrative Assistant",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS1",
+   "BUS5",
+   "CAOT1",
+   "CAOT110",
+   "CAOT33",
+   "CAOT34",
+   "CAOT47",
+   "CAOT48",
+   "CAOT64",
+   "CAOT67",
+   "CAOT78",
+   "CAOT82",
+   "CAOT84",
+   "CAOT85",
+   "CAOT86",
+   "CAOT87",
+   "CAOT88",
+   "CAOT92"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=54",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    54,
+    55,
+    56,
+    57
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 18,
+  "text_chars": 11330
+ },
+ {
+  "control_number": "02790",
+  "title": "Nursing Professional RN",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.9,
+  "codes_found": [
+   "ANATOMY1",
+   "ANTHRO102",
+   "COMMC1000",
+   "ENGLC1000",
+   "MICRO20",
+   "NURSING343",
+   "NURSING345",
+   "NURSING347",
+   "PHYSIOL1"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=139",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    139
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 3735
+ },
+ {
+  "control_number": "02797",
+  "title": "Chemistry",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM101",
+   "CHEM102",
+   "CHEM211",
+   "CHEM212",
+   "MATH265",
+   "MATH266",
+   "PHYSICS37",
+   "PHYSICS38"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=69",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    69,
+    70
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 4933
+ },
+ {
+  "control_number": "02799",
+  "title": "Administration of Justice",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJUS14",
+   "ADMJUS2",
+   "ADMJUS37",
+   "ADMJUS42",
+   "ADMJUS5",
+   "ADMJUS6",
+   "ADMJUS67",
+   "ADMJUS8"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=35",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    35,
+    36
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 4620
+ },
+ {
+  "control_number": "02800",
+  "title": "Fire Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "FIRETEK201",
+   "FIRETEK202",
+   "FIRETEK204",
+   "FIRETEK207",
+   "FIRETEK209",
+   "FIRETEK210",
+   "FIRETEK213",
+   "FIRETEK217"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=104",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    104,
+    105
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 5022
+ },
+ {
+  "control_number": "08298",
+  "title": "Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM101",
+   "CS116",
+   "EGDTEK101",
+   "ENGGEN101",
+   "ENGGEN122",
+   "ENGGEN131",
+   "ENGGEN151",
+   "ENGGEN220",
+   "ENGGEN231",
+   "ENGGEN241",
+   "MATH265",
+   "MATH266",
+   "MATH267",
+   "PHYSICS37",
+   "PHYSICS38"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=97",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    97
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 15,
+  "text_chars": 3798
+ },
+ {
+  "control_number": "08303",
+  "title": "Music Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSIC101",
+   "MUSIC161",
+   "MUSIC165",
+   "MUSIC2161",
+   "MUSIC2171",
+   "MUSIC2611",
+   "MUSIC2651",
+   "MUSIC280",
+   "MUSIC321",
+   "MUSIC501",
+   "MUSIC700",
+   "MUSIC775"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=131",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    131,
+    132,
+    133,
+    134
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 12159
+ },
+ {
+  "control_number": "08304",
+  "title": "Nursing Professional RN - LVN to RN",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.955,
+  "codes_found": [
+   "ANATOMY1",
+   "ANTHRO102",
+   "COMMC1000",
+   "ENGLC1000",
+   "MICRO20",
+   "NURSING311",
+   "NURSING321",
+   "NURSING323",
+   "NURSING325",
+   "NURSING329A",
+   "NURSING329B",
+   "NURSING333",
+   "NURSING335",
+   "NURSING339",
+   "NURSING343",
+   "NURSING345",
+   "NURSING347",
+   "PHYSIOL1",
+   "PSYCC1000",
+   "PSYCH41",
+   "SOC1"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=142",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    142,
+    143,
+    144,
+    145
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 22,
+  "text_chars": 11790
+ },
+ {
+  "control_number": "08305",
+  "title": "Child Development",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.96,
+  "codes_found": [
+   "CHDEV1",
+   "CHDEV10",
+   "CHDEV11",
+   "CHDEV12",
+   "CHDEV172",
+   "CHDEV185",
+   "CHDEV2",
+   "CHDEV22",
+   "CHDEV23",
+   "CHDEV3",
+   "CHDEV30",
+   "CHDEV31",
+   "CHDEV34",
+   "CHDEV36",
+   "CHDEV38",
+   "CHDEV39",
+   "CHDEV42",
+   "CHDEV44",
+   "CHDEV45",
+   "CHDEV5",
+   "CHDEV65",
+   "CHDEV7",
+   "CHDEV75",
+   "EDUC1"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=78",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    78,
+    79
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 25,
+  "text_chars": 5760
+ },
+ {
+  "control_number": "10683",
+  "title": "Accounting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "ACCTG11",
+   "ACCTG15",
+   "ACCTG16",
+   "ACCTG2",
+   "ACCTG3"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=28",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    28,
+    29,
+    30
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 8316
+ },
+ {
+  "control_number": "10686",
+  "title": "Computer Information Systems",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS101",
+   "CIS111",
+   "CIS113",
+   "CIS147",
+   "CIS214",
+   "CIS223",
+   "CIS237",
+   "CS113"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=83",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    83,
+    84,
+    85,
+    86
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 10111
+ },
+ {
+  "control_number": "10693",
+  "title": "Music Performance",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSIC1801",
+   "MUSIC1802",
+   "MUSIC1803",
+   "MUSIC181",
+   "MUSIC182",
+   "MUSIC183",
+   "MUSIC2161",
+   "MUSIC2162",
+   "MUSIC2163",
+   "MUSIC2171",
+   "MUSIC2172",
+   "MUSIC2173",
+   "MUSIC280",
+   "MUSIC321",
+   "MUSIC322",
+   "MUSIC323",
+   "MUSIC324",
+   "MUSIC411",
+   "MUSIC412",
+   "MUSIC413",
+   "MUSIC414",
+   "MUSIC501",
+   "MUSIC650",
+   "MUSIC651",
+   "MUSIC652",
+   "MUSIC653",
+   "MUSIC654",
+   "MUSIC700",
+   "MUSIC775"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=132",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    132,
+    133,
+    134
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 29,
+  "text_chars": 8188
+ },
+ {
+  "control_number": "10694",
+  "title": "Music",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSIC100",
+   "MUSIC101",
+   "MUSIC111",
+   "MUSIC116",
+   "MUSIC118",
+   "MUSIC141",
+   "MUSIC161",
+   "MUSIC165",
+   "MUSIC1801",
+   "MUSIC1802",
+   "MUSIC1803",
+   "MUSIC1804",
+   "MUSIC181",
+   "MUSIC182",
+   "MUSIC183",
+   "MUSIC184",
+   "MUSIC2161",
+   "MUSIC2162",
+   "MUSIC2163",
+   "MUSIC2164",
+   "MUSIC2171",
+   "MUSIC2172",
+   "MUSIC2173",
+   "MUSIC2174",
+   "MUSIC2611",
+   "MUSIC2612",
+   "MUSIC2613",
+   "MUSIC2651",
+   "MUSIC2652",
+   "MUSIC2653",
+   "MUSIC271",
+   "MUSIC272",
+   "MUSIC273",
+   "MUSIC280",
+   "MUSIC321",
+   "MUSIC322",
+   "MUSIC323",
+   "MUSIC324",
+   "MUSIC411",
+   "MUSIC412",
+   "MUSIC413",
+   "MUSIC414",
+   "MUSIC501",
+   "MUSIC650",
+   "MUSIC651",
+   "MUSIC652",
+   "MUSIC653",
+   "MUSIC654",
+   "MUSIC700",
+   "MUSIC775"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=131",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    131,
+    132,
+    133,
+    134
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 50,
+  "text_chars": 12159
+ },
+ {
+  "control_number": "10698",
+  "title": "Music Songwriting",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSIC2161",
+   "MUSIC2162",
+   "MUSIC2171",
+   "MUSIC2172",
+   "MUSIC271",
+   "MUSIC272",
+   "MUSIC273",
+   "MUSIC280",
+   "MUSIC501",
+   "MUSIC700",
+   "MUSIC775"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=133",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    133,
+    134
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 4755
+ },
+ {
+  "control_number": "17778",
+  "title": "Business Administration",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "ACCTG2",
+   "BUS1",
+   "BUS32",
+   "BUS5",
+   "CIS101",
+   "CIS190",
+   "ECON1",
+   "ECON2",
+   "FINANCE1",
+   "FINANCE2",
+   "INTBUS1",
+   "MARKET1",
+   "MARKET11",
+   "MARKET21",
+   "MARKET23",
+   "MGMT13",
+   "MGMT2",
+   "SUPV1"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=55",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    55,
+    56,
+    57,
+    58
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 19,
+  "text_chars": 10820
+ },
+ {
+  "control_number": "18706",
+  "title": "Liberal Arts and Sciences - Arts and Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.739,
+  "codes_found": [
+   "COUNSEL1",
+   "COUNSEL17",
+   "COUNSEL2",
+   "COUNSEL20",
+   "COUNSEL22",
+   "COUNSEL4",
+   "COUNSEL40",
+   "COUNSEL5",
+   "COUNSEL6",
+   "DANCEST805",
+   "ENGLISH213",
+   "ENGLISH214",
+   "ENGLISH215",
+   "ENGLISH218",
+   "ENGLISH219",
+   "ENGLISH223",
+   "ENGLISH234",
+   "ENGLISH239",
+   "ENGLISH240",
+   "ENGLISH251",
+   "ENGLISH260",
+   "ENGLISH265",
+   "ENGLISH270",
+   "ENGLISH271",
+   "ENGLISH272",
+   "FRENCH1",
+   "FRENCH10",
+   "FRENCH2",
+   "FRENCH26",
+   "FRENCH3",
+   "FRENCH4",
+   "FRENCH5",
+   "HISTORY43",
+   "HISTORY44",
+   "HISTORY74",
+   "HISTORY81",
+   "HISTORY82",
+   "HISTORY86",
+   "HISTORY87",
+   "HUMAN1",
+   "HUMAN17",
+   "HUMAN3",
+   "HUMAN30",
+   "HUMAN6",
+   "HUMAN60",
+   "HUMAN77",
+   "JAPAN1",
+   "LIBSCI101",
+   "MUSIC100",
+   "MUSIC101",
+   "MUSIC111",
+   "MUSIC116",
+   "MUSIC118",
+   "MUSIC141",
+   "MUSIC2161",
+   "MUSIC2162",
+   "MUSIC2163",
+   "MUSIC2164",
+   "MUSIC2171",
+   "MUSIC2172",
+   "MUSIC2173",
+   "MUSIC2174",
+   "MUSIC501",
+   "MUSIC700",
+   "PHILOS1",
+   "PHILOS20",
+   "PHILOS33",
+   "PHILOS6",
+   "SPANISH1",
+   "SPANISH12",
+   "SPANISH2",
+   "SPANISH21",
+   "SPANISH22",
+   "SPANISH3",
+   "SPANISH35",
+   "SPANISH36",
+   "SPANISH4",
+   "THEATER100",
+   "THEATER110",
+   "THEATER270",
+   "THEATER275",
+   "THEATER300"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=122",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    122,
+    123,
+    124,
+    125
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 111,
+  "text_chars": 13317
+ },
+ {
+  "control_number": "18707",
+  "title": "Liberal Arts and Sciences - Health and Fitness",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.694,
+  "codes_found": [
+   "ANATOMY1",
+   "ANTHRO102",
+   "BIOLOGY3",
+   "BIOLOGY5",
+   "CHEM65",
+   "COUNSEL1",
+   "COUNSEL17",
+   "COUNSEL2",
+   "COUNSEL20",
+   "COUNSEL22",
+   "COUNSEL4",
+   "COUNSEL40",
+   "COUNSEL5",
+   "COUNSEL6",
+   "DANCEST805",
+   "DANCETQ141",
+   "FAM&CS21",
+   "HEALTH11",
+   "HEALTH12",
+   "HEALTH2",
+   "HEALTH6",
+   "KINATH503",
+   "KINATH504",
+   "KINATH506",
+   "KINATH508",
+   "KINATH511",
+   "KINATH512",
+   "KINATH516",
+   "KINATH552",
+   "KINATH553",
+   "KINATH556",
+   "KINATH557",
+   "KINATH558",
+   "KINMAJ100",
+   "KINMAJ103",
+   "KINMAJ119",
+   "LIBSCI101",
+   "MICRO20",
+   "NURSING302",
+   "NURSING364",
+   "PHYSIOL1",
+   "PSYCC1000",
+   "PSYCH14",
+   "PSYCH2",
+   "PSYCH3",
+   "PSYCH41",
+   "SOC1",
+   "SOC12",
+   "SOC2",
+   "SOC21"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=123",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    123,
+    124,
+    125,
+    126
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 72,
+  "text_chars": 11449
+ },
+ {
+  "control_number": "18708",
+  "title": "Liberal Arts and Sciences: Mathematics and Natural Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.935,
+  "codes_found": [
+   "ANATOMY1",
+   "ANTHRO101",
+   "ANTHRO111",
+   "ASTRON1",
+   "ASTRON5",
+   "BIOLOGY3",
+   "BIOLOGY5",
+   "BIOLOGY6",
+   "BIOLOGY7",
+   "CHEM101",
+   "CHEM102",
+   "CHEM211",
+   "CHEM212",
+   "CHEM65",
+   "CHEM66",
+   "COUNSEL1",
+   "COUNSEL17",
+   "COUNSEL2",
+   "COUNSEL20",
+   "COUNSEL22",
+   "COUNSEL4",
+   "COUNSEL40",
+   "COUNSEL5",
+   "COUNSEL6",
+   "ENVSCI1",
+   "ENVSCI2",
+   "GEOG1",
+   "GEOG15",
+   "GEOLOGY1",
+   "GEOLOGY6",
+   "LIBSCI101",
+   "MATH215",
+   "MATH216",
+   "MATH234",
+   "MATH236",
+   "MATH240",
+   "MATH260",
+   "MATH265",
+   "MATH266",
+   "MATH267",
+   "MATH270",
+   "MATH275",
+   "MICRO20",
+   "OCEANO1",
+   "OCEANO10",
+   "OCEANO12",
+   "PHYSICS11",
+   "PHYSICS37",
+   "PHYSICS38",
+   "PHYSICS39",
+   "PHYSICS6",
+   "PHYSICS7",
+   "PHYSIOL1",
+   "PHYSSC1",
+   "PHYSSC14",
+   "PSYCH2",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=125",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    125,
+    126,
+    127,
+    128
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 62,
+  "text_chars": 12711
+ },
+ {
+  "control_number": "18709",
+  "title": "Liberal Arts and Sciences: Social and Behavioral Sciences",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJUS1",
+   "AFROAM4",
+   "AFROAM5",
+   "ANTHRO101",
+   "ANTHRO102",
+   "ANTHRO103",
+   "ANTHRO104",
+   "ANTHRO111",
+   "ANTHRO121",
+   "BUS1",
+   "CHDEV1",
+   "COMM190",
+   "COUNSEL1",
+   "COUNSEL17",
+   "COUNSEL2",
+   "COUNSEL20",
+   "COUNSEL22",
+   "COUNSEL4",
+   "COUNSEL40",
+   "COUNSEL5",
+   "COUNSEL6",
+   "ECON1",
+   "ECON2",
+   "GEOG7",
+   "HISTC1001",
+   "HISTC1002",
+   "HISTORY1",
+   "HISTORY2",
+   "HISTORY20",
+   "HISTORY21",
+   "HISTORY41",
+   "HISTORY42",
+   "HISTORY43",
+   "HISTORY44",
+   "HISTORY5",
+   "HISTORY52",
+   "HISTORY58",
+   "HISTORY6",
+   "HISTORY74",
+   "HISTORY81",
+   "HISTORY82",
+   "HISTORY86",
+   "HISTORY87",
+   "LIBSCI101",
+   "MUSIC100",
+   "POLSC1000",
+   "POLSCI2",
+   "POLSCI30",
+   "POLSCI4",
+   "POLSCI7",
+   "PSYCC1000",
+   "PSYCH14",
+   "PSYCH15",
+   "PSYCH2",
+   "PSYCH3",
+   "PSYCH41",
+   "SOC1",
+   "SOC12",
+   "SOC2",
+   "SOC21",
+   "SOC4",
+   "STAT1"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=127",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    127,
+    128
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 62,
+  "text_chars": 6785
+ },
+ {
+  "control_number": "19343",
+  "title": "Culinary Arts",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CLNART113",
+   "CLNART114",
+   "CLNART115",
+   "CLNART116",
+   "CLNART117",
+   "CLNART123",
+   "CLNART124",
+   "CLNART125",
+   "CLNART126",
+   "CLNART133",
+   "CLNART134",
+   "CLNART135",
+   "CLNART136"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=89",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    89,
+    90,
+    91,
+    92
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 11705
+ },
+ {
+  "control_number": "19344",
+  "title": "Culinary Arts",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CLNART113",
+   "CLNART114",
+   "CLNART115",
+   "CLNART116",
+   "CLNART117",
+   "CLNART123",
+   "CLNART124",
+   "CLNART125",
+   "CLNART126",
+   "CLNART133",
+   "CLNART134",
+   "CLNART135",
+   "CLNART136"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=89",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    89,
+    90,
+    91,
+    92
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 11705
+ },
+ {
+  "control_number": "19850",
+  "title": "Art",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART201",
+   "ART204",
+   "ART205",
+   "ART206",
+   "ART207",
+   "ART300",
+   "ART301",
+   "ART302",
+   "ART303",
+   "ART304",
+   "ART305",
+   "ART306",
+   "ART310",
+   "ART311",
+   "ART312",
+   "ART501",
+   "ART521",
+   "ART531",
+   "ART637",
+   "ART639",
+   "ART640",
+   "ART706",
+   "ART707",
+   "ART713",
+   "ART714",
+   "ARTHC1100",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=44",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    44
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 27,
+  "text_chars": 2855
+ },
+ {
+  "control_number": "21630",
+  "title": "Architectural Technology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARC115",
+   "ARC151",
+   "ARC160",
+   "ARC162",
+   "ARC164",
+   "ARC172",
+   "ARC173",
+   "ARC271"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=39",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    39,
+    40,
+    41,
+    42
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 9883
+ },
+ {
+  "control_number": "21632",
+  "title": "Business Administration",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.941,
+  "codes_found": [
+   "ACCTG1",
+   "ACCTG2",
+   "BUS1",
+   "BUS32",
+   "BUS38",
+   "BUS5",
+   "CIS101",
+   "CIS190",
+   "FINANCE1",
+   "FINANCE2",
+   "INTBUS1",
+   "MARKET1",
+   "MARKET21",
+   "MGMT13",
+   "MGMT2",
+   "SUPV1"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=56",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    56,
+    57,
+    58,
+    59
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 17,
+  "text_chars": 10008
+ },
+ {
+  "control_number": "21633",
+  "title": "Real Estate",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "BUS1",
+   "BUS32",
+   "BUS38",
+   "BUS5",
+   "CIS101",
+   "MARKET1",
+   "MARKET21",
+   "REALES1",
+   "REALES14",
+   "REALES3",
+   "REALES5",
+   "REALES7"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=155",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    155,
+    156
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 5090
+ },
+ {
+  "control_number": "21645",
+  "title": "Child Development",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV1",
+   "CHDEV10",
+   "CHDEV11",
+   "CHDEV12",
+   "CHDEV172",
+   "CHDEV185",
+   "CHDEV2",
+   "CHDEV22",
+   "CHDEV23",
+   "CHDEV3",
+   "CHDEV30",
+   "CHDEV31",
+   "CHDEV34",
+   "CHDEV36",
+   "CHDEV38",
+   "CHDEV39",
+   "CHDEV42",
+   "CHDEV44",
+   "CHDEV45",
+   "CHDEV5",
+   "CHDEV65",
+   "CHDEV7",
+   "CHDEV75",
+   "EDUC1",
+   "ENGLC1000",
+   "ENGLC1000E"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=78",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    78,
+    79
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 26,
+  "text_chars": 5760
+ },
+ {
+  "control_number": "21646",
+  "title": "Administration of Justice",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJUS1",
+   "ADMJUS14",
+   "ADMJUS16",
+   "ADMJUS2",
+   "ADMJUS3",
+   "ADMJUS319",
+   "ADMJUS37",
+   "ADMJUS42",
+   "ADMJUS5",
+   "ADMJUS6",
+   "ADMJUS67",
+   "ADMJUS75",
+   "ADMJUS750",
+   "ADMJUS8",
+   "COMMC1000"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=36",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    36
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 15,
+  "text_chars": 2029
+ },
+ {
+  "control_number": "21648",
+  "title": "Fire Technology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "EDA10A",
+   "EDA10B",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "FIRETEK201",
+   "FIRETEK202",
+   "FIRETEK204",
+   "FIRETEK207",
+   "FIRETEK209",
+   "FIRETEK210",
+   "FIRETEK213",
+   "MATH115"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=105",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    105
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 2320
+ },
+ {
+  "control_number": "22949",
+  "title": "Kinesiology",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANATOMY1",
+   "HEALTH12",
+   "KIN2171",
+   "KIN2291",
+   "KIN2451",
+   "KIN2501",
+   "KIN2511",
+   "KIN272",
+   "KIN2871",
+   "KIN2911",
+   "KIN3501",
+   "KINMAJ100",
+   "PHYSIOL1"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=118",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    118
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 3343
+ },
+ {
+  "control_number": "22950",
+  "title": "Liberal Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHRO103",
+   "ART103",
+   "BIOLOGY3",
+   "CHDEV1",
+   "DANCEST805",
+   "ENGLISH218",
+   "GEOG7",
+   "HISTORY86",
+   "MATH215",
+   "MATH216",
+   "MUSIC101",
+   "MUSIC111",
+   "THEATER100"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=77",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    77,
+    78,
+    79
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 8236
+ },
+ {
+  "control_number": "30026",
+  "title": "Computer Science and Engineering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM101",
+   "CIS147",
+   "CIS212",
+   "CIS213",
+   "CS111",
+   "CS113",
+   "CS116",
+   "CS130",
+   "CS131",
+   "CS136",
+   "MATH265",
+   "MATH266",
+   "MATH267",
+   "PHYSICS37",
+   "PHYSICS38"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=82",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    82,
+    83,
+    84
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 15,
+  "text_chars": 7640
+ },
+ {
+  "control_number": "30319",
+  "title": "Psychology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHRO101",
+   "ANTHRO102",
+   "PSYCC1000",
+   "PSYCH10",
+   "PSYCH14",
+   "PSYCH15",
+   "PSYCH2",
+   "PSYCH3",
+   "PSYCH41",
+   "SOC1",
+   "SOC21",
+   "STAT1",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=152",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    152,
+    153,
+    154
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 7307
+ },
+ {
+  "control_number": "31028",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.837,
+  "codes_found": [
+   "ANATOMY1",
+   "CHEM101",
+   "CHEM65",
+   "HEALTH11",
+   "HEALTH12",
+   "KIN10",
+   "KIN2171",
+   "KIN2291",
+   "KIN2451",
+   "KIN2501",
+   "KIN2502",
+   "KIN2511",
+   "KIN272",
+   "KIN2871",
+   "KIN2872",
+   "KIN2881",
+   "KIN2911",
+   "KIN2912",
+   "KIN3501",
+   "KINATH504",
+   "KINATH506",
+   "KINATH511",
+   "KINATH512",
+   "KINATH516",
+   "KINATH557",
+   "KINATH558",
+   "KINMAJ100",
+   "KINMAJ119",
+   "PHYSICS37",
+   "PHYSICS6",
+   "PHYSIOL1",
+   "PSYCC1000",
+   "SOC1",
+   "STAT1",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=117",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    117,
+    118,
+    119,
+    120
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 43,
+  "text_chars": 11555
+ },
+ {
+  "control_number": "31029",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART201",
+   "ART202",
+   "ART204",
+   "ART205",
+   "ART300",
+   "ART301",
+   "ART304",
+   "ART310",
+   "ART501",
+   "ART502",
+   "ART706",
+   "ART707",
+   "ART713",
+   "ART714",
+   "ARTHC1100",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=43",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    43,
+    44
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 16,
+  "text_chars": 6716
+ },
+ {
+  "control_number": "31221",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AFROAM4",
+   "AFROAM5",
+   "CHICANO7",
+   "CHICANO8",
+   "FRENCH2",
+   "FRENCH3",
+   "FRENCH4",
+   "HISTC1001",
+   "HISTC1002",
+   "HISTORY1",
+   "HISTORY2",
+   "HISTORY20",
+   "HISTORY21",
+   "HISTORY5",
+   "HISTORY52",
+   "HISTORY58",
+   "HISTORY6",
+   "HISTORY74",
+   "HISTORY81",
+   "HISTORY82",
+   "HISTORY86",
+   "HISTORY87",
+   "POLSCI2",
+   "SPANISH2",
+   "SPANISH3",
+   "SPANISH4"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=109",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    109
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 26,
+  "text_chars": 4566
+ },
+ {
+  "control_number": "32099",
+  "title": "Music",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSIC111",
+   "MUSIC161",
+   "MUSIC165",
+   "MUSIC181",
+   "MUSIC182",
+   "MUSIC183",
+   "MUSIC184",
+   "MUSIC2161",
+   "MUSIC2162",
+   "MUSIC2163",
+   "MUSIC2164",
+   "MUSIC2171",
+   "MUSIC2172",
+   "MUSIC2173",
+   "MUSIC2174",
+   "MUSIC2611",
+   "MUSIC2612",
+   "MUSIC2613",
+   "MUSIC2651",
+   "MUSIC2652",
+   "MUSIC2653",
+   "MUSIC321",
+   "MUSIC322",
+   "MUSIC323",
+   "MUSIC501",
+   "MUSIC700",
+   "MUSIC775"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=130",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    130,
+    131,
+    132,
+    133
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 27,
+  "text_chars": 14115
+ },
+ {
+  "control_number": "32613",
+  "title": "PSYCHOLOGY",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PSYCC1000",
+   "PSYCH10",
+   "PSYCH14",
+   "PSYCH15",
+   "PSYCH2",
+   "PSYCH3",
+   "PSYCH41",
+   "PSYCH42",
+   "PSYCH52",
+   "PSYCH66",
+   "STAT1",
+   "STAT1S",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=151",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    151,
+    152,
+    153,
+    154
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 11484
+ },
+ {
+  "control_number": "32673",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHRO104",
+   "BUS32",
+   "ENGLC1001",
+   "ENGLISH102",
+   "ENGLISH127",
+   "ENGLISH203",
+   "ENGLISH204",
+   "ENGLISH205",
+   "ENGLISH206",
+   "ENGLISH207",
+   "ENGLISH208",
+   "ENGLISH209",
+   "ENGLISH211",
+   "ENGLISH213",
+   "ENGLISH214",
+   "ENGLISH215",
+   "ENGLISH218",
+   "ENGLISH219",
+   "ENGLISH223",
+   "ENGLISH234",
+   "ENGLISH239",
+   "ENGLISH240",
+   "ENGLISH251",
+   "ENGLISH260",
+   "ENGLISH265",
+   "ENGLISH270",
+   "ENGLISH271",
+   "ENGLISH272",
+   "HUMAN1",
+   "JOURNAL101",
+   "THEATER100"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=98",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    98,
+    99
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 31,
+  "text_chars": 7296
+ },
+ {
+  "control_number": "32688",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.857,
+  "codes_found": [
+   "MATH265",
+   "MATH266",
+   "MATH267",
+   "MATH270",
+   "MATH275",
+   "PHYSICS37"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=129",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    129
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 3435
+ },
+ {
+  "control_number": "32690",
+  "title": "EARLY CHILDHOOD EDUCATION",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV1",
+   "CHDEV10",
+   "CHDEV11",
+   "CHDEV2",
+   "CHDEV22",
+   "CHDEV34",
+   "CHDEV42",
+   "CHDEV7"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=73",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    73,
+    74
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 7037
+ },
+ {
+  "control_number": "32810",
+  "title": "Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH265",
+   "MATH266",
+   "MATH267",
+   "PHYSICS37",
+   "PHYSICS38",
+   "PHYSICS39"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=69",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    69,
+    70
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 4933
+ },
+ {
+  "control_number": "33087",
+  "title": "Administration of Justice",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJUS2",
+   "ADMJUS37",
+   "ADMJUS5",
+   "ADMJUS67",
+   "ADMJUS8",
+   "MATH229",
+   "POLSC1000",
+   "PSYCC1000",
+   "SOC1",
+   "STAT1",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=34",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    34,
+    35,
+    36,
+    37
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 12179
+ },
+ {
+  "control_number": "33285",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.96,
+  "codes_found": [
+   "ANATOMY1",
+   "ANTHRO101",
+   "ANTHRO102",
+   "ANTHRO103",
+   "ANTHRO104",
+   "ANTHRO111",
+   "ANTHRO121",
+   "ANTHRO132",
+   "CHICANO19",
+   "COMM122",
+   "GEOLOGY1",
+   "GEOLOGY6",
+   "MATH229",
+   "MUSIC100",
+   "PHILOS33",
+   "PSYCC1000",
+   "SOC1",
+   "SOC11",
+   "SOC4",
+   "STAT1",
+   "STAT101",
+   "STAT1S",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=37",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    37,
+    38
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 25,
+  "text_chars": 4953
+ },
+ {
+  "control_number": "33509",
+  "title": "Intersegmental General Education Transfer Curriculum",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.528,
+  "codes_found": [
+   "ANATOMY1",
+   "ANTHRO101",
+   "ANTHRO102",
+   "ASTRON1",
+   "ASTRON5",
+   "BIOLOGY3",
+   "BIOLOGY5",
+   "CHEM101",
+   "CHEM102",
+   "CHEM211",
+   "CHEM212",
+   "CHEM65",
+   "ENGLISH214",
+   "ENGLISH215",
+   "ENGLISH219",
+   "ENGLISH234",
+   "ENGLISH239",
+   "ENGLISH240",
+   "ENVSCI1",
+   "ENVSCI2",
+   "FRENCH1",
+   "FRENCH2",
+   "GEOG1",
+   "GEOG15",
+   "GEOLOGY1",
+   "GEOLOGY6",
+   "HISTORY1",
+   "HISTORY2",
+   "HISTORY43",
+   "HISTORY44",
+   "HISTORY74",
+   "HISTORY81",
+   "HISTORY82",
+   "HISTORY86",
+   "HISTORY87",
+   "HUMAN1",
+   "HUMAN17",
+   "HUMAN6",
+   "HUMAN60",
+   "MATH234",
+   "MICRO20",
+   "MUSIC101",
+   "MUSIC111",
+   "MUSIC116",
+   "MUSIC141",
+   "PHILOS1",
+   "PHILOS20",
+   "PHILOS33",
+   "PHYSIOL1",
+   "PSYCC1000",
+   "PSYCH14",
+   "PSYCH2",
+   "PSYCH41",
+   "SOC1",
+   "SOC12",
+   "SOC2",
+   "SOC21",
+   "SPANISH1",
+   "SPANISH12",
+   "SPANISH2",
+   "SPANISH22",
+   "SPANISH3",
+   "SPANISH35",
+   "SPANISH36",
+   "SPANISH4",
+   "THEATER100"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=122",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    122,
+    123,
+    124,
+    125
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 125,
+  "text_chars": 13317
+ },
+ {
+  "control_number": "33797",
+  "title": "CSU General Education",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 152,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35548",
+  "title": "Business Information Worker 1",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS32",
+   "CAOT1",
+   "CAOT47",
+   "CAOT67",
+   "CAOT84",
+   "CAOT85",
+   "CAOT92",
+   "CIS101",
+   "MGMT33"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=59",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    59,
+    60,
+    61,
+    62
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 8534
+ },
+ {
+  "control_number": "36644",
+  "title": "Global Trade and Logistics",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS1",
+   "BUS32",
+   "CIS190",
+   "INTBUS1",
+   "INTBUS601",
+   "INTBUS612"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=61",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    61
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 1732
+ },
+ {
+  "control_number": "36908",
+  "title": "College Readiness: Math Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36919",
+  "title": "GENERAL EDUCATION DIPLOMA (GED)",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL83CE",
+   "BSICSKL84CE",
+   "BSICSKL85CE",
+   "BSICSKL86CE",
+   "BSICSKL87CE"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=108",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    108
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 2552
+ },
+ {
+  "control_number": "36972",
+  "title": "ESL I - Beginning",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37140",
+  "title": "BOOKKEEPING",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED544CE",
+   "VOCED545CE"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=31",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    31,
+    32
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 5657
+ },
+ {
+  "control_number": "37141",
+  "title": "EMERGENCY MEDICAL TECHNICIAN PREPARATION",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED547CE",
+   "VOCED548CE"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=145",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    145
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 3074
+ },
+ {
+  "control_number": "37245",
+  "title": "Business Information Worker II",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAOT110",
+   "CAOT33",
+   "CAOT47",
+   "CAOT48",
+   "CAOT78",
+   "CAOT86",
+   "CAOT87"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=60",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    60
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 2071
+ },
+ {
+  "control_number": "37385",
+  "title": "ITTP I: Computer Sales and Support",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS1",
+   "BUS32",
+   "CAOT48",
+   "CIS101",
+   "CIS212",
+   "CIS213"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=86",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    86,
+    87
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 5659
+ },
+ {
+  "control_number": "37517",
+  "title": "Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHRO102",
+   "ANTHRO104",
+   "CHICANO19",
+   "CHICANO2",
+   "CHICANO7",
+   "CHICANO8",
+   "COMM122",
+   "ENGLISH203",
+   "ENGLISH204",
+   "FRENCH2",
+   "FRENCH3",
+   "FRENCH4",
+   "HISTORY43",
+   "HISTORY44",
+   "HISTORY5",
+   "HISTORY6",
+   "SOC1",
+   "SOC11",
+   "SOC31",
+   "SPANISH1",
+   "SPANISH12",
+   "SPANISH2",
+   "SPANISH21",
+   "SPANISH22",
+   "SPANISH3",
+   "SPANISH35",
+   "SPANISH36",
+   "SPANISH4"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=162",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    162,
+    163
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 28,
+  "text_chars": 5223
+ },
+ {
+  "control_number": "37792",
+  "title": "FUNDAMENTALS OF WAREHOUSING AND DISTRIBUTION",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 0.833,
+  "codes_found": [
+   "ESLNC361CE",
+   "VOCED530CE",
+   "VOCED531CE",
+   "VOCED532CE",
+   "VOCED533CE"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=64",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    64
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 3027
+ },
+ {
+  "control_number": "38068",
+  "title": "Journalism",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.955,
+  "codes_found": [
+   "COMM104",
+   "COMM121",
+   "COMM190",
+   "COMMC1000",
+   "ECON1",
+   "ECON2",
+   "ENGLC1001",
+   "JOURNAL101",
+   "JOURNAL105",
+   "JOURNAL2171",
+   "JOURNAL2181",
+   "JOURNAL2182",
+   "JOURNAL2191",
+   "JOURNAL220",
+   "JOURNAL258",
+   "POLSCI2",
+   "PUBREL1",
+   "STAT1",
+   "STAT1S",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=113",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    113,
+    114,
+    115
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 22,
+  "text_chars": 11912
+ },
+ {
+  "control_number": "38586",
+  "title": "Philosophy",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.804,
+  "codes_found": [
+   "ENGLISH214",
+   "ENGLISH215",
+   "ENGLISH218",
+   "ENGLISH219",
+   "ENGLISH234",
+   "ENGLISH239",
+   "ENGLISH240",
+   "ENGLISH251",
+   "ENGLISH260",
+   "ENGLISH265",
+   "ENGLISH270",
+   "ENGLISH271",
+   "FRENCH10",
+   "FRENCH2",
+   "FRENCH26",
+   "FRENCH3",
+   "HISTORY1",
+   "HISTORY2",
+   "HISTORY74",
+   "HISTORY81",
+   "HISTORY82",
+   "HISTORY86",
+   "HISTORY87",
+   "HUMAN1",
+   "HUMAN17",
+   "HUMAN6",
+   "HUMAN60",
+   "PHILOS1",
+   "PHILOS20",
+   "PHILOS33",
+   "PHILOS6",
+   "SPANISH12",
+   "SPANISH2",
+   "SPANISH3",
+   "SPANISH35",
+   "SPANISH36",
+   "SPANISH4"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=122",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    122
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 46,
+  "text_chars": 3776
+ },
+ {
+  "control_number": "38592",
+  "title": "Biotechnology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOTECH2",
+   "BIOTECH3",
+   "BIOTECH6",
+   "CHEM51",
+   "CHEM65",
+   "MICRO20",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=49",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    49,
+    50,
+    51,
+    52
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 11308
+ },
+ {
+  "control_number": "38611",
+  "title": "International Sales and Marketing Professional",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED536CE",
+   "VOCED537CE",
+   "VOCED538CE"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=65",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    65
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 2269
+ },
+ {
+  "control_number": "38682",
+  "title": "Culinary Basics Training",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED539CE",
+   "VOCED540CE",
+   "VOCED541CE",
+   "VOCED542CE"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=95",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    95
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 1859
+ },
+ {
+  "control_number": "38696",
+  "title": "ESL III - Advanced",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLNC94CE",
+   "ESLNC95CE",
+   "ESLNC96CE"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=102",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    102
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 1654
+ },
+ {
+  "control_number": "38715",
+  "title": "Biotechnology Research Lab Assistant",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOTECH2",
+   "BIOTECH3",
+   "CHEM51",
+   "CHEM65",
+   "MICRO20",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=51",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    51,
+    52
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 5605
+ },
+ {
+  "control_number": "38716",
+  "title": "Biotechnology Lab Assistant",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOTECH2",
+   "BIOTECH3",
+   "CHEM51",
+   "CHEM65"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=50",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    50,
+    51
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 4747
+ },
+ {
+  "control_number": "38718",
+  "title": "ESL Civics",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38880",
+  "title": "Humanities",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARTHC1100",
+   "ARTHC1200",
+   "ENGLISH203",
+   "ENGLISH204",
+   "HISTORY1",
+   "HISTORY2",
+   "HUMAN1",
+   "HUMAN17",
+   "HUMAN2",
+   "HUMAN3",
+   "HUMAN30",
+   "HUMAN6",
+   "HUMAN60",
+   "HUMAN77",
+   "MUSIC111",
+   "PHILOS1",
+   "PHILOS20",
+   "PHILOS33",
+   "THEATER110"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=112",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    112
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 19,
+  "text_chars": 4313
+ },
+ {
+  "control_number": "39199",
+  "title": "ESL II - Intermediate",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLNC64CE",
+   "ESLNC65CE",
+   "ESLNC66CE"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=101",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    101
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 2702
+ },
+ {
+  "control_number": "39203",
+  "title": "QUICKBOOKS",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED544CE",
+   "VOCED545CE",
+   "VOCED546CE"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=32",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    32
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 2844
+ },
+ {
+  "control_number": "39712",
+  "title": "CLOUD COMPUTING",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS112",
+   "CIS113",
+   "CIS192",
+   "CIS193",
+   "CIS194",
+   "CS113"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=84",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    84
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 2096
+ },
+ {
+  "control_number": "39984",
+  "title": "Environmental Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLOGY6",
+   "BIOLOGY7",
+   "CHEM101",
+   "ECON1",
+   "ENVSCI2",
+   "GEOLOGY1",
+   "GEOLOGY6",
+   "MATH236",
+   "PHYSICS6",
+   "PHYSICS7",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=103",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    103
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 3826
+ },
+ {
+  "control_number": "40037",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "ACCTG2",
+   "BUS32",
+   "CIS101",
+   "CS131",
+   "ECON1",
+   "ECON2",
+   "MATH236",
+   "MATH265",
+   "MATH265S",
+   "MATH266",
+   "MATH267",
+   "MATH270",
+   "STAT1",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=96",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    96,
+    97,
+    98
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 16,
+  "text_chars": 12101
+ },
+ {
+  "control_number": "40109",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHRO102",
+   "BUS1",
+   "ECON1",
+   "ECON2",
+   "HISTC1001",
+   "HISTC1002",
+   "HISTORY1",
+   "HISTORY2",
+   "POLSC1000",
+   "POLSCI2",
+   "POLSCI3",
+   "POLSCI30",
+   "POLSCI4",
+   "POLSCI5",
+   "POLSCI50",
+   "POLSCI7",
+   "SOC1",
+   "STAT1",
+   "STAT1S",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=150",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    150,
+    151,
+    152,
+    153
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 21,
+  "text_chars": 14804
+ },
+ {
+  "control_number": "40145",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLOGY6",
+   "BIOLOGY7",
+   "CHEM101",
+   "CHEM102",
+   "MATH265",
+   "MATH265S",
+   "PHYSICS37",
+   "PHYSICS38",
+   "PHYSICS6",
+   "PHYSICS7"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=48",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    48
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 3389
+ },
+ {
+  "control_number": "40231",
+  "title": "Sociology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.8,
+  "codes_found": [
+   "HISTC1001",
+   "HISTC1002",
+   "HISTORY1",
+   "HISTORY2",
+   "HISTORY41",
+   "HISTORY42",
+   "HISTORY43",
+   "HISTORY44",
+   "HISTORY52",
+   "HISTORY86",
+   "HISTORY87",
+   "POLSCI4",
+   "SOC1",
+   "SOC12",
+   "SOC2",
+   "SOC21",
+   "SOC4",
+   "STAT1",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=128",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    128
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 25,
+  "text_chars": 2850
+ },
+ {
+  "control_number": "41041",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "ACCTG2",
+   "BUS1",
+   "BUS15",
+   "BUS32",
+   "BUS5",
+   "ECON1",
+   "ECON2",
+   "MATH236",
+   "MATH265",
+   "MATH265S",
+   "STAT1",
+   "STAT1S",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=52",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    52,
+    53,
+    54,
+    55
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 15,
+  "text_chars": 9906
+ },
+ {
+  "control_number": "41096",
+  "title": "French",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.875,
+  "codes_found": [
+   "FRENCH1",
+   "FRENCH10",
+   "FRENCH2",
+   "FRENCH26",
+   "FRENCH3",
+   "FRENCH4",
+   "FRENCH5"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=106",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    106,
+    107
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 4604
+ },
+ {
+  "control_number": "41102",
+  "title": "UCTP Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.9,
+  "codes_found": [
+   "CHEM101",
+   "CHEM102",
+   "MATH265",
+   "MATH266",
+   "MATH267",
+   "MATH275",
+   "PHYSICS37",
+   "PHYSICS38",
+   "PHYSICS39"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=69",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    69,
+    70
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 4933
+ },
+ {
+  "control_number": "41103",
+  "title": "Pre-Health Professions",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANATOMY1",
+   "BIOLOGY33",
+   "CHEM101",
+   "CHEM51",
+   "CHEM65",
+   "MICRO20",
+   "PHYSIOL1",
+   "PSYCC1000",
+   "PSYCH41"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=144",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    144,
+    145,
+    146
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 9456
+ },
+ {
+  "control_number": "41104",
+  "title": "Pre-Health Professions",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANATOMY1",
+   "ANTHRO102",
+   "BIOLOGY33",
+   "CHEM101",
+   "CHEM51",
+   "CHEM65",
+   "MICRO20",
+   "NURSING302",
+   "NURSING364",
+   "PHYSIOL1",
+   "PSYCC1000",
+   "PSYCH41",
+   "SOC1"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=144",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    144,
+    145,
+    146
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 9456
+ },
+ {
+  "control_number": "41111",
+  "title": "Quickbooks Online",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED549CE",
+   "VOCED629CE"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=33",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    33
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 2019
+ },
+ {
+  "control_number": "41129",
+  "title": "UCTP Chemistry",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM101",
+   "CHEM102",
+   "CHEM211",
+   "CHEM212",
+   "MATH265",
+   "MATH266",
+   "MATH267",
+   "MATH275",
+   "PHYSICS37",
+   "PHYSICS38",
+   "PHYSICS39"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=69",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    69,
+    70
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 4933
+ },
+ {
+  "control_number": "41253",
+  "title": "COLLEGE READINESS:  READING SKILLS",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL208CE",
+   "BSICSKL209CE",
+   "BSICSKL210CE"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=204",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    204
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 3751
+ },
+ {
+  "control_number": "41254",
+  "title": "COLLEGE READINESS:  WRITING SKILLS",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BSICSKL204CE",
+   "BSICSKL205CE",
+   "BSICSKL206CE"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=203",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    203
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 3,
+  "text_chars": 3108
+ },
+ {
+  "control_number": "41357",
+  "title": "Nutrition and Dietetics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANATOMY1",
+   "CHEM101",
+   "CHEM102",
+   "CHEM211",
+   "CHEM65",
+   "CHEM66",
+   "CLNART113",
+   "CLNART117",
+   "CLNART123",
+   "FAM&CS21",
+   "MICRO20",
+   "PHYSIOL1",
+   "PSYCC1000",
+   "STAT1",
+   "STAT1S",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=146",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    146
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 17,
+  "text_chars": 3904
+ },
+ {
+  "control_number": "41370",
+  "title": "Hospitality Management",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "BUS5",
+   "CLNART113",
+   "CLNART117",
+   "ECON1",
+   "FAM&CS21",
+   "HOSPT100",
+   "HOSPT120",
+   "HOSPT140",
+   "HOSPT320",
+   "STAT1",
+   "STAT1S",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=110",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    110,
+    111
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 14,
+  "text_chars": 6452
+ },
+ {
+  "control_number": "41763",
+  "title": "ITTP II: Help Desk User Support",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CAOT48",
+   "CIS111",
+   "CIS214",
+   "CIS215",
+   "CIS223",
+   "CIS228"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=87",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    87
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 2638
+ },
+ {
+  "control_number": "42458",
+  "title": "Elementary Teacher Education",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.905,
+  "codes_found": [
+   "ART103",
+   "BIOLOGY3",
+   "CHDEV1",
+   "COMMC1000",
+   "DANCEST805",
+   "EDUC1",
+   "ENGLC1000",
+   "ENGLISH102",
+   "GEOG7",
+   "GEOLOGY1",
+   "GEOLOGY6",
+   "HISTC1001",
+   "HISTORY86",
+   "MATH215",
+   "MUSIC111",
+   "PHYSSC1",
+   "PHYSSC14",
+   "POLSC1000",
+   "THEATER100"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=74",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    74,
+    75,
+    76,
+    77
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 21,
+  "text_chars": 12011
+ },
+ {
+  "control_number": "43108",
+  "title": "Communication Studies 2.0",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHRO102",
+   "COMM104",
+   "COMM121",
+   "COMM122",
+   "COMM151",
+   "COMM190",
+   "COMMC1000",
+   "ENGLC1001",
+   "ENGLISH102",
+   "JOURNAL101",
+   "JOURNAL105",
+   "PSYCC1000",
+   "SOC1"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=80",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    80
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 13,
+  "text_chars": 3498
+ },
+ {
+  "control_number": "43398",
+  "title": "Social Sciences Data Analytics",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PSYCH10",
+   "PSYCH66",
+   "PSYCH76",
+   "PSYCH98",
+   "STAT101"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=159",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    159
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 2333
+ },
+ {
+  "control_number": "43420",
+  "title": "Professional Baking and Pastry Arts",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CLNART117",
+   "PROFBKG100",
+   "PROFBKG110",
+   "PROFBKG122",
+   "PROFBKG132"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=92",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    92
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 3016
+ },
+ {
+  "control_number": "43586",
+  "title": "Business Data Analytics",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS1",
+   "BUS15",
+   "BUS5",
+   "FINANCE1",
+   "PSYCH66",
+   "PSYCH76",
+   "STAT1",
+   "STAT101",
+   "STAT185"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=58",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    58
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 9,
+  "text_chars": 2248
+ },
+ {
+  "control_number": "43701",
+  "title": "Introduction to Sustainable Small Business Development",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED190CE",
+   "VOCED195CE"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=66",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    66,
+    67
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 4138
+ },
+ {
+  "control_number": "43702",
+  "title": "Fundamentals of Developing a Sustainable Small Business Enterprise",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED191CE",
+   "VOCED192CE"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=63",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    63
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 2809
+ },
+ {
+  "control_number": "43703",
+  "title": "Strategies for Marketing a Sustainable Small Business Enterprise",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED193CE",
+   "VOCED194CE"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=66",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    66,
+    67
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 4138
+ },
+ {
+  "control_number": "43704",
+  "title": "Sustainable Small Business Development",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED190CE",
+   "VOCED191CE",
+   "VOCED192CE",
+   "VOCED193CE",
+   "VOCED194CE",
+   "VOCED195CE"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=67",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    67
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 1495
+ },
+ {
+  "control_number": "43724",
+  "title": "Digital Marketing Pre-Apprenticeship",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED917CE",
+   "VOCED918CE"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=63",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    63
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 2809
+ },
+ {
+  "control_number": "43922",
+  "title": "Computer Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOLOGY6",
+   "BIOLOGY7",
+   "CHEM101",
+   "CS116",
+   "CS130",
+   "CS131",
+   "CS136",
+   "MATH265",
+   "MATH265S",
+   "MATH266",
+   "PHYSICS37",
+   "PHYSICS38"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=81",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    81,
+    82
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 6621
+ },
+ {
+  "control_number": "44009",
+  "title": "Advanced Professional Baking and Pastry Arts",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CLNART136",
+   "HOSPT120",
+   "PROFBKG130",
+   "PROFBKG135"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=92",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    92
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 3016
+ },
+ {
+  "control_number": "44180",
+  "title": "Hospitality Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CLNART113",
+   "CLNART117",
+   "CLNART136",
+   "HOSPT100",
+   "HOSPT120",
+   "HOSPT136",
+   "HOSPT140",
+   "HOSPT320"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=111",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    111
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 8,
+  "text_chars": 2807
+ },
+ {
+  "control_number": "44271",
+  "title": "Creative Writing",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGLC1000",
+   "ENGLC1000E",
+   "ENGLISH127",
+   "ENGLISH212",
+   "ENGLISH213",
+   "ENGLISH214",
+   "ENGLISH223",
+   "ENGLISH32",
+   "ESL110",
+   "JOURNAL105",
+   "THEATER275"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=99",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    99,
+    100,
+    101,
+    102
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 11,
+  "text_chars": 10880
+ },
+ {
+  "control_number": "44320",
+  "title": "Child and Adolescent Development",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHRO102",
+   "BIOLOGY3",
+   "CHDEV1",
+   "CHDEV10",
+   "CHDEV11",
+   "CHDEV12",
+   "CHDEV2",
+   "CHDEV22",
+   "CHDEV23",
+   "CHDEV30",
+   "CHDEV34",
+   "CHDEV42",
+   "CHDEV45",
+   "PSYCC1000",
+   "PSYCH41",
+   "SOC1",
+   "SOC11",
+   "SOC12",
+   "STAT1",
+   "STAT1S",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=71",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    71,
+    72,
+    73,
+    74
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 22,
+  "text_chars": 12250
+ },
+ {
+  "control_number": "44347",
+  "title": "Pro Tools Certification",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED926CE",
+   "VOCED927CE"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=135",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    135
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 3405
+ },
+ {
+  "control_number": "44348",
+  "title": "Hospitality, First Time Supervisor",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED300CE",
+   "VOCED930CE"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=111",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    111
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 2807
+ },
+ {
+  "control_number": "44376",
+  "title": "Media Arts - Animation",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANIMATN212",
+   "ANIMATN218",
+   "ANIMATN219",
+   "ANIMATN221",
+   "ANIMATN225",
+   "ANIMATN227"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=45",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    45
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 6,
+  "text_chars": 2691
+ },
+ {
+  "control_number": "44415",
+  "title": "Media Arts - Game Art and Design",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART634",
+   "ART636",
+   "GAD101",
+   "GAD102",
+   "GAD103",
+   "GAD104",
+   "GAD2101"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=46",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    46
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 2812
+ },
+ {
+  "control_number": "44499",
+  "title": "Law, Public Policy, and Society",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.889,
+  "codes_found": [
+   "ADMJUS1",
+   "ADMJUS2",
+   "ADMJUS3",
+   "ADMJUS37",
+   "ADMJUS67",
+   "ADMJUS75",
+   "ADMJUS8",
+   "AFROAM4",
+   "AFROAM5",
+   "ANTHRO102",
+   "ANTHRO132",
+   "BUS5",
+   "COMM104",
+   "COMM122",
+   "COMM151",
+   "COMMC1000",
+   "COOPED395",
+   "COUNSEL40",
+   "ECON1",
+   "ECON2",
+   "HISTC1001",
+   "HISTC1002",
+   "HISTORY43",
+   "HISTORY44",
+   "HISTORY52",
+   "HISTORY58",
+   "PHILOS20",
+   "PHILOS6",
+   "POLSC1000",
+   "POLSCI2",
+   "POLSCI3",
+   "POLSCI5",
+   "POLSCI50",
+   "POLSCI7",
+   "SOC11",
+   "SOC2",
+   "SOC3",
+   "SOC31",
+   "STAT1",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=120",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    120,
+    121,
+    122,
+    123
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 45,
+  "text_chars": 15009
+ },
+ {
+  "control_number": "44815",
+  "title": "Music Internship",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED931CE",
+   "VOCED932CE"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=135",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    135
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 3405
+ },
+ {
+  "control_number": "44947",
+  "title": "California General Education Transfer Curriculum (Cal-GETC)",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 195,
+  "text_chars": 0
+ },
+ {
+  "control_number": "45230",
+  "title": "Social Justice Studies: General",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AFROAM4",
+   "AFROAM5",
+   "CHICANO19",
+   "CHICANO2",
+   "CHICANO31",
+   "CHICANO32",
+   "CHICANO33",
+   "CHICANO34",
+   "CHICANO36",
+   "CHICANO47",
+   "CHICANO7",
+   "CHICANO8",
+   "ENGLISH234",
+   "ENGLISH239",
+   "ENGLISH265",
+   "HISTORY43",
+   "HISTORY44",
+   "HISTORY52",
+   "HISTORY58",
+   "HISTORY6",
+   "PSYCH10",
+   "SOC11",
+   "SOC31",
+   "SOC4",
+   "SPANISH1",
+   "SPANISH12",
+   "SPANISH2",
+   "SPANISH3",
+   "SPANISH35",
+   "SPANISH4",
+   "STAT1",
+   "STAT101",
+   "STAT1S",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=157",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    157,
+    158,
+    159,
+    160
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 35,
+  "text_chars": 12556
+ },
+ {
+  "control_number": "45238",
+  "title": "Basic Barista Skill II",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED705CE",
+   "VOCED706CE"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=94",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    94
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 3013
+ },
+ {
+  "control_number": "45372",
+  "title": "Public Health",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.957,
+  "codes_found": [
+   "ANATOMY1",
+   "ANTHRO102",
+   "BIOLOGY3",
+   "BIOLOGY33",
+   "BIOLOGY5",
+   "BIOLOGY6",
+   "BUS15",
+   "CHEM101",
+   "CHEM65",
+   "HEALTH101",
+   "HEALTH11",
+   "HEALTH15",
+   "MICRO20",
+   "PHYSIOL1",
+   "PSYCC1000",
+   "PSYCH52",
+   "SOC1",
+   "SOC2",
+   "STAT1",
+   "STAT101",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=153",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    153,
+    154
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 23,
+  "text_chars": 4313
+ },
+ {
+  "control_number": "45436",
+  "title": "Basic Barista Skill I",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED701CE",
+   "VOCED702CE",
+   "VOCED703CE",
+   "VOCED704CE"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=93",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    93
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 4,
+  "text_chars": 2709
+ },
+ {
+  "control_number": "45733",
+  "title": "Theatre Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "THEATER100",
+   "THEATER110",
+   "THEATER114",
+   "THEATER270",
+   "THEATER271",
+   "THEATER275",
+   "THEATER280",
+   "THEATER291",
+   "THEATER292",
+   "THEATER300",
+   "THEATER301",
+   "THEATER310",
+   "THEATER323",
+   "THEATER342",
+   "THEATER550"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=164",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    164
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 15,
+  "text_chars": 4085
+ },
+ {
+  "control_number": "45817",
+  "title": "Special Needs and Neurodiversity",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHDEV1",
+   "CHDEV11",
+   "CHDEV2",
+   "CHDEV34",
+   "CHDEV44",
+   "CHDEV45",
+   "CHDEV7"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=79",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    79
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 2663
+ },
+ {
+  "control_number": "45834",
+  "title": "Cybersecurity Analyst",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS111",
+   "CIS162",
+   "CIS170",
+   "CIS191",
+   "CIS211"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=85",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    85
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 2674
+ },
+ {
+  "control_number": "46129",
+  "title": "Physics 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS113",
+   "CS116",
+   "CS119",
+   "MATH265",
+   "MATH265S",
+   "MATH266",
+   "MATH267",
+   "MATH270",
+   "MATH275",
+   "PHYSICS37",
+   "PHYSICS38",
+   "PHYSICS39"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=149",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    149
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 12,
+  "text_chars": 3629
+ },
+ {
+  "control_number": "46138",
+  "title": "Mathematics 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CS113",
+   "CS116",
+   "CS119",
+   "MATH265",
+   "MATH265S",
+   "MATH266",
+   "MATH267",
+   "MATH270",
+   "MATH275",
+   "PHYSICS37"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=129",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    129
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 10,
+  "text_chars": 3435
+ },
+ {
+  "control_number": "46276",
+  "title": "Library Technical Services",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED269CE",
+   "VOCED270CE"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=308",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    308,
+    309
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 2,
+  "text_chars": 6626
+ },
+ {
+  "control_number": "46297",
+  "title": "Elementary Teacher Education: Integrated Programs",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.971,
+  "codes_found": [
+   "ANTHRO103",
+   "ART103",
+   "BIOLOGY3",
+   "CHDEV1",
+   "COMMC1000",
+   "DANCEST805",
+   "EDUC1",
+   "ENGLC1000",
+   "ENGLC1000E",
+   "ENGLISH102",
+   "ENGLISH203",
+   "ENGLISH204",
+   "ENGLISH205",
+   "ENGLISH206",
+   "ENGLISH207",
+   "ENGLISH208",
+   "ENGLISH218",
+   "GEOG7",
+   "GEOLOGY1",
+   "GEOLOGY6",
+   "HISTC1001",
+   "HISTORY86",
+   "HISTORY87",
+   "MATH215",
+   "MATH216",
+   "MUSIC111",
+   "PHILOS1",
+   "PHILOS20",
+   "PHILOS33",
+   "PHYSSC1",
+   "PHYSSC14",
+   "POLSC1000",
+   "THEATER100"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=74",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    74,
+    75,
+    76,
+    77
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 34,
+  "text_chars": 12011
+ },
+ {
+  "control_number": "46353",
+  "title": "Business Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCTG1",
+   "BUS1",
+   "BUS32",
+   "BUS5",
+   "MGMT2"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=55",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    55,
+    56,
+    57,
+    58
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 5,
+  "text_chars": 10820
+ },
+ {
+  "control_number": "46354",
+  "title": "Entrepreneurial Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.857,
+  "codes_found": [
+   "BUS1",
+   "BUS5",
+   "FINANCE1",
+   "FINANCE8",
+   "MARKET21",
+   "MGMT13"
+  ],
+  "source": {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=55",
+   "title": null,
+   "h1": null,
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    55,
+    56,
+    57,
+    58
+   ],
+   "extractor": "pypdf"
+  },
+  "listed": 7,
+  "text_chars": 10820
+ },
+ {
+  "control_number": "46494",
+  "title": "Banking and Finance",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 11,
+  "text_chars": 0
+ }
+]

@@ -1,0 +1,763 @@
+{
+ "college": "Los Angeles Harbor College",
+ "control_number": "33509",
+ "shape": "certificate",
+ "title": "Intersegmental General Education Transfer Curriculum",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=122",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 15719,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 15719,
+    "output_tokens": 5547,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 5547,
+  "output_tokens_details": {
+   "thinking_tokens": 1431
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.17382,
+ "ms": 38378,
+ "seconds": 38.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 125,
+   "share": 0.0,
+   "missing": [
+    "ANATOMY1",
+    "ANTHRO101",
+    "ANTHRO102",
+    "ANTHRO121",
+    "ARC132",
+    "ARC133",
+    "ART100",
+    "ART103",
+    "ART111",
+    "ART201",
+    "ARTHC1100",
+    "ARTHC1200",
+    "ASTRON1",
+    "ASTRON5",
+    "BIOLOGY3",
+    "BIOLOGY5",
+    "CHEM101",
+    "CHEM102",
+    "CHEM211",
+    "CHEM212",
+    "CHEM65",
+    "COMM121",
+    "COMM190",
+    "COMMC1000",
+    "ECON1",
+    "ECON2",
+    "ENGLC1000",
+    "ENGLISH102",
+    "ENGLISH203",
+    "ENGLISH204",
+    "ENGLISH205",
+    "ENGLISH206",
+    "ENGLISH207",
+    "ENGLISH208",
+    "ENGLISH209",
+    "ENGLISH211",
+    "ENGLISH214",
+    "ENGLISH215",
+    "ENGLISH219",
+    "ENGLISH234",
+    "ENGLISH239",
+    "ENGLISH240",
+    "ENVSCI1",
+    "ENVSCI2",
+    "FRENCH1",
+    "FRENCH2",
+    "GEOG1",
+    "GEOG15",
+    "GEOG7",
+    "GEOLOGY1",
+    "GEOLOGY6",
+    "HISTC1001",
+    "HISTC1002",
+    "HISTORY1",
+    "HISTORY2",
+    "HISTORY20",
+    "HISTORY21",
+    "HISTORY41",
+    "HISTORY42",
+    "HISTORY43",
+    "HISTORY44",
+    "HISTORY52",
+    "HISTORY58",
+    "HISTORY6",
+    "HISTORY74",
+    "HISTORY81",
+    "HISTORY82",
+    "HISTORY86",
+    "HISTORY87",
+    "HUMAN1",
+    "HUMAN17",
+    "HUMAN6",
+    "HUMAN60",
+    "KIN2912",
+    "MATH234",
+    "MATH236",
+    "MATH260",
+    "MATH265",
+    "MATH266",
+    "MATH267",
+    "MATH270",
+    "MATH275",
+    "MICRO20",
+    "MUSIC101",
+    "MUSIC111",
+    "MUSIC116",
+    "MUSIC141",
+    "OCEANO1",
+    "OCEANO10",
+    "OCEANO12",
+    "PHILOS1",
+    "PHILOS20",
+    "PHILOS33",
+    "PHYSICS11",
+    "PHYSICS37",
+    "PHYSICS38",
+    "PHYSICS39",
+    "PHYSICS6",
+    "PHYSICS7",
+    "PHYSIOL1",
+    "PHYSSC1",
+    "PHYSSC14",
+    "POLSC1000",
+    "POLSCI2",
+    "POLSCI30",
+    "POLSCI7",
+    "PSYCC1000",
+    "PSYCH14",
+    "PSYCH2",
+    "PSYCH41",
+    "SOC1",
+    "SOC12",
+    "SOC2",
+    "SOC21",
+    "SPANISH1",
+    "SPANISH12",
+    "SPANISH2",
+    "SPANISH22",
+    "SPANISH3",
+    "SPANISH35",
+    "SPANISH36",
+    "SPANISH4",
+    "STAT1",
+    "STATC1000",
+    "THEATER100"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not found: the text holds no IGETC Certificate of Achievement section",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANATOMY 1",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "ANTHRO 101",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "ANTHRO 102",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "ANTHRO 121",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARC 132",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARC 133",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 100",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 103",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 111",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 201",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTHC1100",
+    "why": "not in the text"
+   },
+   {
+    "code": "ARTHC1200",
+    "why": "not in the text"
+   },
+   {
+    "code": "ASTRON 1",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "ASTRON 5",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "BIOLOGY 3",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "BIOLOGY 5",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "CHEM 101",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "CHEM 102",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "CHEM 211",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "CHEM 212",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "CHEM 65",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "COMM 121",
+    "why": "not in the text"
+   },
+   {
+    "code": "COMM 190",
+    "why": "not in the text"
+   },
+   {
+    "code": "COMM C1000",
+    "why": "not in the text"
+   },
+   {
+    "code": "ECON 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "ECON 2",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL C1000",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 102",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 203",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 204",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 205",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 206",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 207",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 208",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 209",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 211",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGLISH 214",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "ENGLISH 215",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "ENGLISH 219",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "ENGLISH 234",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "ENGLISH 239",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "ENGLISH 240",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "ENV SCI 1",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "ENV SCI 2",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "FRENCH 1",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "FRENCH 2",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "GEOG 1",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "GEOG 15",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "GEOG 7",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOLOGY 1",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "GEOLOGY 6",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "HISTC1001",
+    "why": "not in the text"
+   },
+   {
+    "code": "HISTC1002",
+    "why": "not in the text"
+   },
+   {
+    "code": "HISTORY 1",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "HISTORY 2",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "HISTORY 20",
+    "why": "not in the text"
+   },
+   {
+    "code": "HISTORY 21",
+    "why": "not in the text"
+   },
+   {
+    "code": "HISTORY 41",
+    "why": "not in the text"
+   },
+   {
+    "code": "HISTORY 42",
+    "why": "not in the text"
+   },
+   {
+    "code": "HISTORY 43",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "HISTORY 44",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "HISTORY 52",
+    "why": "not in the text"
+   },
+   {
+    "code": "HISTORY 58",
+    "why": "not in the text"
+   },
+   {
+    "code": "HISTORY 6",
+    "why": "not in the text"
+   },
+   {
+    "code": "HISTORY 74",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "HISTORY 81",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "HISTORY 82",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "HISTORY 86",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "HISTORY 87",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "HUMAN 1",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "HUMAN 17",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "HUMAN 6",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "HUMAN 60",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "KIN 291-2",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 234",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "MATH 236",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 260",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 265",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 266",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 267",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 270",
+    "why": "not in the text"
+   },
+   {
+    "code": "MATH 275",
+    "why": "not in the text"
+   },
+   {
+    "code": "MICRO 20",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "MUSIC 101",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "MUSIC 111",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "MUSIC 116",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "MUSIC 141",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "OCEANO 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "OCEANO 10",
+    "why": "not in the text"
+   },
+   {
+    "code": "OCEANO 12",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHILOS 1",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "PHILOS 20",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "PHILOS 33",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "PHYS SC 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYS SC 14",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYSICS 11",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYSICS 37",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYSICS 38",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYSICS 39",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYSICS 6",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYSICS 7",
+    "why": "not in the text"
+   },
+   {
+    "code": "PHYSIOL 1",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "POL SCI 2",
+    "why": "not in the text"
+   },
+   {
+    "code": "POL SCI 30",
+    "why": "not in the text"
+   },
+   {
+    "code": "POL SCI 7",
+    "why": "not in the text"
+   },
+   {
+    "code": "POLS C1000",
+    "why": "not in the text"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "PSYCH 14",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "PSYCH 2",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "PSYCH 41",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "SOC 1",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "SOC 12",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "SOC 2",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "SOC 21",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "SPANISH 1",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "SPANISH 12",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "SPANISH 2",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "SPANISH 22",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "SPANISH 3",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "SPANISH 35",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "SPANISH 36",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "SPANISH 4",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   },
+   {
+    "code": "STAT 1",
+    "why": "not in the text"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "not in the text"
+   },
+   {
+    "code": "THEATER 100",
+    "why": "IGETC section not in text; only in LAS AA major lists"
+   }
+  ],
+  "notes": [
+   "The supplied catalog text (PDF pages 122-125) contains only Liberal Arts & Sciences AA degree sections: the end of one emphasis list, Health and Fitness (H018707C), and Mathematics & Natural Sciences (H018708C, cut off mid-list at page 125). No section for the IGETC Certificate of Achievement appears, so no blocks, totals, outcomes or careers were recorded.",
+   "The Liberal Arts & Sciences degree course lists and outcomes belong to other awards and were deliberately not recorded here.",
+   "Reviewer should locate the IGETC/Cal-GETC certificate page in the 2026-2027 LAHC catalog; the PDF page link (#page=122) appears to point to the wrong section."
+  ]
+ },
+ "extracted_run": "39006381839"
+}

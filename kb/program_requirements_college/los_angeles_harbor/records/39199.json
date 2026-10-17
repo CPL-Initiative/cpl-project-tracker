@@ -1,0 +1,175 @@
+{
+ "college": "Los Angeles Harbor College",
+ "control_number": "39199",
+ "shape": "noncredit",
+ "title": "ESL II - Intermediate",
+ "award": "Noncredit program",
+ "source_url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf#page=101",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6849,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6849,
+    "output_tokens": 1149,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1149,
+  "output_tokens_details": {
+   "thinking_tokens": 325
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05038,
+ "ms": 9139,
+ "seconds": 9.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    162.0,
+    162.0
+   ],
+   "stated": [
+    162.0,
+    162.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "ESL II – Intermediate - Certificate of Competency (CY)",
+   "measure": "hours",
+   "total_units": {
+    "min": 162,
+    "max": 162
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "develop communicative skills in listening and speaking that will enable them to understand and engage in extended conversations, discussions, and lectures. These skills will increase students’ self-esteem and enable them to confidently communicate and participate in social and educational settings.",
+    "acquire intermediate academic reading and writing skills. Students will engage in reading authentic material and developing important reading skills such as identifying main ideas, supporting details, skimming, scanning, and inferencing. They will also focus on writing structurally accurate complex sentence structures and focus on improving paragraph writing skills. These skills will prepare students to transition from a noncredit ESL program to credit programs in ESL and English. In addition, students will have sufficient language skills that will enable them to enroll in regular college level academic and vocational coursework which will be foundational in supporting them to pursue their educational goals.",
+    "improve skills in listening/speaking and reading/writing open the doors for students to handle entry level and mid-level jobs and thereby improve students’ prospects of becoming gainfully employed."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "COMPLETE THE FOLLOWING 3 REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ESL NC 064CE",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL NC 065CE",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL NC 066CE",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit Certificate of Competency counted in hours; each course printed at 54 hours, Total Hours 162.",
+   "In the first outcome, 'self-esteem' was broken across a line after its hyphen ('self-' / 'esteem'); recorded as 'self-esteem'.",
+   "The third outcome mentions 'entry level and mid-level jobs' generically; not recorded as a named career."
+  ]
+ },
+ "extracted_run": "39006381839"
+}

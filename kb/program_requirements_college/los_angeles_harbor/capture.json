@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 124,
  "with_closed_list": 121,
- "started": "2026-10-17T05:26:19Z",
+ "started": "2026-10-17T05:29:31Z",
  "pdf": {
   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf",
   "access": "ok",
@@ -22,7 +22,7 @@
   "extractor": "pypdf"
  },
  "loads": 1,
- "seconds": 64.0,
+ "seconds": 63.9,
  "found": 118,
  "by_method": {
   "no_closed_list": 3,
@@ -1321,5 +1321,5 @@
    }
   ]
  },
- "run": "39006196994"
+ "run": "39006381839"
 }
