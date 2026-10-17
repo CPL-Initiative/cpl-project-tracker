@@ -1,0 +1,31 @@
+{
+ "_readme": "S407 SkyMesquite, 2026-10-17. Pasadena City College's 2026-2027 catalog is at curriculum.pasadena.edu (page read 39053672566: 'Catalog Home | Pasadena City College Academic Catalog', programs under /academic-programs/<department>/<program>/, earlier years under /archive/<year>/). This read loads its sitemap.xml and one program page, so the correction card can say which reader takes it. Two loads, no model call.",
+ "college": "Pasadena City College",
+ "questions": {
+  "catalog_platform": "Whether curriculum.pasadena.edu serves a CourseLeaf sitemap.xml listing its program pages, and whether a program page prints its course list as Code, Title, Units with a total."
+ },
+ "keywords": [
+  "[Cc]ourse [Ll]ist",
+  "[Tt]otal [Uu]nits",
+  "Code",
+  "Units",
+  "courseleaf",
+  "academic-programs"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "catalog_platform"
+   ],
+   "url": "https://curriculum.pasadena.edu/sitemap.xml",
+   "links": "academic-programs/accounting"
+  },
+  {
+   "answers": [
+    "catalog_platform"
+   ],
+   "url": "https://curriculum.pasadena.edu/academic-programs/accounting/accounting-certified-bookkeeper-as-cert-achievement/",
+   "links": "courseleaf|requirements"
+  }
+ ]
+}
