@@ -1,0 +1,343 @@
+{
+ "college": "Cosumnes River College",
+ "control_number": "07088",
+ "shape": "degree",
+ "title": "Horticulture, Sustainable Landscape Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=414",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12037,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12037,
+    "output_tokens": 2859,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2859,
+  "output_tokens_details": {
+   "thinking_tokens": 1065
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10533,
+ "ms": 21896,
+ "seconds": 22.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 17,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "HORT498"
+   ],
+   "flagged": [
+    "HORT498"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    39.0,
+    39.0
+   ],
+   "stated": [
+    39.0,
+    39.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 15,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.S. in Horticulture, Sustainable Landscape Technology",
+   "measure": "units",
+   "total_units": {
+    "min": 39,
+    "max": 39
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Demonstrate a fundamental understanding of basic horticultural principles and practices.",
+    "Demonstrate a fundamental understanding of soils, soil development, soil building and preparation, and sustainable soil management.",
+    "Demonstrate a fundamental understanding of plant identification, selection, use, and maintenance of plant material best suited for conventional and sustainable landscapes.",
+    "Demonstrate a fundamental understanding of basic landscape design principles and practices.",
+    "Demonstrate proficiency at implementing sustainable landscape construction principles and practices to install landscapes and landscape systems.",
+    "Demonstrate proficiency at implementing sustainable tree care, landscape maintenance, and integrated pest management principles and practices to care for and maintain landscapes and green spaces.",
+    "Demonstrate proficiency at implementing the principles and practices of irrigation design and installation to design, install, and manage water efficient irrigation systems."
+   ],
+   "careers": [
+    "Landscapers",
+    "arboriculture",
+    "landscape material, supply, and specialty services",
+    "landscape contracting",
+    "landscape construction and installation",
+    "landscape and grounds maintenance",
+    "turf management",
+    "arboriculture and tree care",
+    "parks and recreation",
+    "landscape irrigation and water management",
+    "landscape design and consulting",
+    "nurseries and garden centers",
+    "landscape pest management",
+    "horticulture materials supply and power equipment servicing",
+    "other horticultural specialties"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HORT 105",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT 302",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PLTS 310",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT 303",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PLTS 332",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 6 units from the following",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "HORT 305",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT 306",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT 307",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Degree Requirements (continued)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HORT 320",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MAT 300",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT 324",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT 340",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT 350",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT 351",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT 353",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT 360",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 2 units from the following",
+    "rule": "choose_units",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 2
+    },
+    "courses": [
+     {
+      "code": "HORT 498",
+      "units": 0.5,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Units printed as '31' beside HORT 303 and '32' beside HORT 340 read as 3 units with footnote markers 1 and 2 (ARC HORT 100 meets HORT 303; ARC HORT 322 meets HORT 340).",
+   "Required courses split into two 'all' blocks around the 6-unit plant identification choice to keep catalog order.",
+   "Degree text says 'plus sufficient electives for a total of at least 60 units'; read as electives filling the degree, degree_total left null since no explicit award total line is printed. Reviewer may consider 60 as degree_total.",
+   "Outcome labels 'PSLO 1:' etc. removed as list numbering.",
+   "HORT 498 is not in the closed list; recorded as catalog addition.",
+   "Block sums 39, matching printed Total Units: 39."
+  ]
+ },
+ "extracted_run": "39047009824"
+}

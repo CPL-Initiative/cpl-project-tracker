@@ -1,0 +1,271 @@
+{
+ "college": "Cosumnes River College",
+ "control_number": "04622",
+ "shape": "degree",
+ "title": "Medical Assisting",
+ "award": "A.S. Degree",
+ "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=493",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11695,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11695,
+    "output_tokens": 1899,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1899,
+  "output_tokens_details": {
+   "thinking_tokens": 598
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08476,
+ "ms": 22814,
+ "seconds": 23.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 11,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "MEDA230"
+   ],
+   "flagged": [
+    "MEDA230"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    31.5,
+    31.5
+   ],
+   "stated": [
+    31.5,
+    31.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.S. in Medical Assisting",
+   "measure": "units",
+   "total_units": {
+    "min": 31.5,
+    "max": 31.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Enter the allied health workforce as a competent, entry-level Medical Assistant trained in the cognitive, affective and psychomotor domains of the occupation (PSLO #1).",
+    "Declare eligibility for the AAMA national certification examination with the goal of obtaining the CMA (AAMA) credential (PSLO #2)."
+   ],
+   "careers": [
+    "Administrative Medical Assistant",
+    "Clinical Medical Assistant"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Fall Semester",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MEDA 124",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MEDA 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 325",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH 313",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "AH 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Spring Semester",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AH 124",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FCS 324",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 371",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MEDA 230",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Summer Semester",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MEDA 145",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MEDA 140",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Trailing digits after units are footnote markers: 'COMM 325 (3) 31' = 3 units footnote 1; 'PSYC C1000 (3) 32' = 3 units footnote 2; 'MEDA 140 3.53' = 3.5 units footnote 3 (capstone, taken last). Footnotes 1 and 2 say COMM 325/ANTH 313 and PSYC C1000 may be taken either fall or spring semester.",
+   "The degree text says the A.S. requires the program plus Local GE or Cal-GETC plus sufficient electives for a total of at least 60 units; recorded as electives_fill_degree true, degree_total left null since it is a minimum rather than a printed award total.",
+   "Prerequisites for program enrollment (AH 311, BIOL 102, CISC 302, MEDA 100, English eligibility) are not counted in the 31.5-unit requirements and are not recorded as blocks.",
+   "The Student Learning Outcomes and Career Information printed after the A.S. section are recorded; the Medical Assisting Certificate prints the same outcomes.",
+   "MEDA 230 Clinical Procedures (6 units) is required but not in the closed list."
+  ]
+ },
+ "extracted_run": "39047009824"
+}

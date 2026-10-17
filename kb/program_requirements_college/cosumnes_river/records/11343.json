@@ -1,0 +1,274 @@
+{
+ "college": "Cosumnes River College",
+ "control_number": "11343",
+ "shape": "certificate",
+ "title": "Medical Assisting, Administrative",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=493",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11665,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11665,
+    "output_tokens": 2663,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2663,
+  "output_tokens_details": {
+   "thinking_tokens": 1281
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09992,
+ "ms": 22364,
+ "seconds": 22.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 9,
+   "share": 0.889,
+   "missing": [
+    "BIOL100"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "BIOL302",
+    "BIOL430",
+    "BIOL431"
+   ],
+   "flagged": [
+    "BIOL302",
+    "BIOL430",
+    "BIOL431"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.0,
+    27.0
+   ],
+   "stated": [
+    20.0,
+    27.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 1,
+   "courses": 0,
+   "count": 1,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Medical Assisting, Administrative Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 27
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Perform the entry-level skills of an administrative medical assistant, such as effective scheduling, proper use of a multi-line phone system, ICD and CPT coding, and insurance claims completion. (PSLO #1)"
+   ],
+   "careers": [
+    "Administrative Medical Assistant",
+    "entry-level Insurance Biller",
+    "Hospital Unit Secretary"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AH 311",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISC 302",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MEDA 100",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MEDA 110",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MEDA 124",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AH 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "BIOL 430 and BIOL 431",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Anatomy and Physiology",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL 430",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 431",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "BIOL 102 or BIOL 302",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": "Anatomy and Physiology",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL 102",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL 302",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BIOL 100",
+    "why": "not in this certificate's section; named only in the enrollment eligibility of the A.S. and Medical Assisting Certificate sections, while this section names BIOL 302 instead"
+   }
+  ],
+  "notes": [
+   "The anatomy and physiology requirement is printed as '[BIOL 430 and BIOL 431] or [BIOL 102 or BIOL 302]' with a single printed total of 3 - 10 units for the whole choice; recorded as two blocks in option_group 'Anatomy and Physiology'. The 3-10 stated figure applies to the choice as a whole, so each block's stated is left null.",
+   "Units for the BIOL courses are taken from the parenthetical figures printed beside them: BIOL 430 (5), BIOL 431 (5), BIOL 102 (4), BIOL 302 (3).",
+   "The required course table is split by a repeated 'Course Code Course Title Units' header (column break); read as one list.",
+   "BIOL 302 (Concepts of Human Anatomy and Physiology) is not in the closed list; the closed list has BIOL 100 (Introduction to Concepts of Human Anatomy and Physiology), which may be the same course under an older or different number. A reviewer should check.",
+   "AH 311, BIOL 102, BUS 100, CISC 302 and MEDA 100 are also named as enrollment prerequisites for this certificate; they are placed because they are printed in the Certificate Requirements table.",
+   "The page prints one Student Learning Outcome for this certificate, recorded word for word including '(PSLO #1)'."
+  ]
+ },
+ "extracted_run": "39047009824"
+}

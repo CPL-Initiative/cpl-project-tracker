@@ -1,0 +1,327 @@
+{
+ "college": "Cosumnes River College",
+ "control_number": "12667",
+ "shape": "degree",
+ "title": "Communication, Organizational Communication",
+ "award": "A.A. Degree",
+ "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=239",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11752,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11752,
+    "output_tokens": 2410,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2410,
+  "output_tokens_details": {
+   "thinking_tokens": 783
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09521,
+ "ms": 19559,
+ "seconds": 19.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 13,
+   "share": 0.923,
+   "missing": [
+    "BUS300"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "BUS310",
+    "JOUR300",
+    "JOUR310",
+    "RTVF300"
+   ],
+   "flagged": [
+    "BUS310",
+    "JOUR300",
+    "JOUR310",
+    "RTVF300"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    30.0,
+    30.0
+   ],
+   "stated": [
+    30.0,
+    30.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 20,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Degree Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 30,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Design and relate messages clearly for effective and appropriate oral communication (PSLO-1).",
+    "Apply effective listening skills to comprehend spoken messages, analyze information critically and consider multiple perspectives (PSLO-2).",
+    "Compose ideas clearly in effective, appropriate and well-organized written messages (PSLO-3).",
+    "Analyze and formulate critical thinking within the evidence and reasoning of spoken and written messages (PSLO-4).",
+    "Assess individual responsibility within one's ability to influence ethical, effective and appropriate communication among diverse settings and people (PSLO-5).",
+    "Define and identify various theoretical perspectives across the discipline of communication studies (PSLO-6)."
+   ],
+   "careers": [
+    "Public Information",
+    "Human Resources Development",
+    "Corporate Training",
+    "Motivational Speaking",
+    "Political Speech Writing",
+    "Radio & Television",
+    "Advertising",
+    "Public Relations",
+    "College & University Instruction",
+    "Organizational Administration",
+    "Negotiation & Mediation Services",
+    "Writing for Publication",
+    "Personnel Management",
+    "Customer Service",
+    "Social Science Research",
+    "Corporate Imaging",
+    "Campaign Management",
+    "Marketing",
+    "Community Relations",
+    "Grant Writing"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 311",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM C1004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 325",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 331",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOUR 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "RTVF 300",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Communication in Organizations",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "COMM 341",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 315",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 330",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "SGVT 315",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Written Communication",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ENGL C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUS 310",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "JOUR 300",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "JOUR 301",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BUS 300",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The A.A. program heading and description begin before page 239 and are cut off; the section is read from 'Degree Requirements' through its Career Information, before the Applied Communication Skills Certificate.",
+   "Footnote 1 on the COMM 315/BUS 330/SGVT 315 choice: it may instead be satisfied by 3 units earned through any department approved internship, e.g. COMM 498 or WEXP 498 (Work Experience in Communication Studies); these are not recorded as alternatives since no units are printed beside them in the requirement list.",
+   "The '31' printed beside COMM 315 is read as 3 units with footnote marker 1.",
+   "The page says the degree requires the program plus GE plus sufficient electives for a total of at least 60 units; no degree total line is printed, so degree_total is left null and electives_fill_degree is true.",
+   "The Student Learning Outcomes and Career Information lists recorded are the ones printed under the A.A. degree section (PSLO-1 to PSLO-6); the certificate's separate SLO list was not used."
+  ]
+ },
+ "extracted_run": "39047009824"
+}

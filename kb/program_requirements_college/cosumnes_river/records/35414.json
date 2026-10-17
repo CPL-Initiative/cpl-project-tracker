@@ -1,0 +1,270 @@
+{
+ "college": "Cosumnes River College",
+ "control_number": "35414",
+ "shape": "certificate",
+ "title": "Television Production",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=621",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9344,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9344,
+    "output_tokens": 1694,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1694,
+  "output_tokens_details": {
+   "thinking_tokens": 472
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07126,
+ "ms": 13473,
+ "seconds": 13.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 10,
+   "share": 0.9,
+   "missing": [
+    "RTVF378"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "RTVF354",
+    "RTVF498"
+   ],
+   "flagged": [
+    "RTVF354",
+    "RTVF498"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    17.0,
+    17.0
+   ],
+   "stated": [
+    17.0,
+    17.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 11,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement – Television Production Certificate",
+   "measure": "units",
+   "total_units": {
+    "min": 17,
+    "max": 17
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Resolve and execute standard pre-production skills including planning, scripting, budgeting, and crew and equipment selection. (PSLO-1)",
+    "Utilize basic video production equipment correctly, safely and creatively, including cameras, lights and audio, and control room equipment such as audio mixers, switchers, video recording, character generation and TelePrompter. (PSLO-2)",
+    "Operate essential post production equipment for audio and video editing and distribution in a variety of contemporary and emerging methods. (PSLO-3)",
+    "Demonstrate a hands-on ability to perform the professional level critical thinking needed for successful teamwork in television, film or other media employment. (PSLO-4)"
+   ],
+   "careers": [
+    "Camera Operator",
+    "Non-Linear Video Editors",
+    "Technical Director",
+    "Audio Engineer",
+    "Broadcast Technician",
+    "Production Assistant",
+    "TV, Film, DVD, or Internet Producer/Director",
+    "Personal or Corporate Video",
+    "television",
+    "Cable TV",
+    "business and industry"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "RTVF 330",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RTVF 331",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RTVF 340",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RTVF 360",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 6 units from the following",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "RTVF 341",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RTVF 354",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "RTVF 361",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RTVF 362",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RTVF 365",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RTVF 376",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RTVF 498",
+      "units": 0.5,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "RTVF 378",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The elective list continues across the page break from page 621 to page 622; read as one list.",
+   "The A.A. degree section printed above (Total Units: 29) was not used for this certificate record.",
+   "Careers 'television', 'Cable TV', 'business and industry' are taken from the certificate description ('entry level jobs in television, Cable TV, business and industry'); reviewer may check whether these should count as career fields.",
+   "'Personal or Corporate Video' is copied as printed; the career list runs into the following sentence without punctuation."
+  ]
+ },
+ "extracted_run": "39047009824"
+}

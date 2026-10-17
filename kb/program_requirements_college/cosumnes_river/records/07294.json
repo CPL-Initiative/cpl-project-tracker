@@ -1,0 +1,357 @@
+{
+ "college": "Cosumnes River College",
+ "control_number": "07294",
+ "shape": "degree",
+ "title": "Television Production",
+ "award": "A.A. Degree",
+ "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=621",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9576,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9576,
+    "output_tokens": 2678,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2678,
+  "output_tokens_details": {
+   "thinking_tokens": 801
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09186,
+ "ms": 21398,
+ "seconds": 21.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 20,
+   "listed": 22,
+   "share": 0.909,
+   "missing": [
+    "PHOTO301",
+    "RTVF378"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "RTVF306",
+    "RTVF498"
+   ],
+   "flagged": [
+    "RTVF306",
+    "RTVF498"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    29.0,
+    29.0
+   ],
+   "stated": [
+    29.0,
+    29.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 9,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Degree Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 29,
+    "max": 29
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Write in clear, concise English.",
+    "Research critically, filter the results and present them in a cogent manner.",
+    "Resolve and execute standard pre-production skills including planning, scripting, budgeting, and crew and equipment selection.",
+    "Utilize basic video production equipment correctly, safely and creatively, including cameras, lights and audio, and control room equipment such as audio mixers, switchers, video recording, character generation and TelePrompter.",
+    "Operate essential post production equipment for audio and video editing and distribution in a variety of contemporary and emerging methods.",
+    "Analyze, interpret, and exercise critical judgment in the evaluation of media productions.",
+    "Demonstrate through projects that with the power of a communicator, comes moral and ethical responsibility.",
+    "Demonstrate a hands-on ability to perform the professional level critical thinking needed for successful teamwork in television, film or other media employment."
+   ],
+   "careers": [
+    "Camera Operator",
+    "Computer Graphic Artist",
+    "Non-Linear Video Editor",
+    "Technical Director",
+    "Audio Engineer",
+    "Broadcast Technician",
+    "Production Assistant",
+    "TV, Film, DVD, or Internet Producer/Director",
+    "Personal or Corporate Video"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "RTVF 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RTVF 306",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "RTVF 330",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RTVF 331",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RTVF 340",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RTVF 360",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RTVF 362",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RTVF 370",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "RTVF 380",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 6 units from the following",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "RTVF 304",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RTVF 312",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RTVF 315",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RTVF 319",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RTVF 341",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RTVF 342",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RTVF 354",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RTVF 361",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RTVF 365",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RTVF 371",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RTVF 376",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RTVF 498",
+      "units": 0.5,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MKT 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "PHOTO 301",
+    "why": "not in the text"
+   },
+   {
+    "code": "RTVF 378",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The excerpt begins mid-section on page 621; the A.A. degree's own heading is not visible, so section_heading uses the printed 'Degree Requirements' heading. The Certificate of Achievement section that follows was not read.",
+   "The degree text says the A.A. requires the program plus Local GE or Cal-GETC 'plus sufficient electives for a total of at least 60 units'; read as electives filling the degree, not as a printed degree total, so degree_total is null and electives_fill_degree is true.",
+   "RTVF 312 is printed as 'Beginning Radio and Podcasting' while the closed list titles it 'Beginning Radio Production'.",
+   "RTVF 306 and RTVF 498 appear in the catalog but not in the closed list (catalog additions).",
+   "Outcomes are copied without their trailing '(PSLO-n)' labels, treated as list numbering."
+  ]
+ },
+ "extracted_run": "39047009824"
+}

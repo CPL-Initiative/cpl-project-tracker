@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 226,
  "with_closed_list": 219,
- "started": "2026-10-17T15:49:01Z",
+ "started": "2026-10-17T15:54:21Z",
  "pdf": {
   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf",
   "access": "hand_filed",
@@ -2849,7 +2849,7 @@
   "unproven": []
  },
  "loads": 0,
- "seconds": 201.7,
+ "seconds": 171.3,
  "found": 217,
  "by_method": {
   "no_closed_list": 7,
@@ -5294,5 +5294,5 @@
    }
   ]
  },
- "run": "39046626740"
+ "run": "39047009824"
 }

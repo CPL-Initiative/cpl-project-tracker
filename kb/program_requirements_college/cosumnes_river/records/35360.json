@@ -1,0 +1,159 @@
+{
+ "college": "Cosumnes River College",
+ "control_number": "35360",
+ "shape": "certificate",
+ "title": "Automotive Engine Performance (Ford ASSET)",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=181",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7559,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7559,
+    "output_tokens": 1008,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1008,
+  "output_tokens_details": {
+   "thinking_tokens": 381
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0504,
+ "ms": 10481,
+ "seconds": 11.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 4,
+   "share": 0.0,
+   "missing": [
+    "AMT371",
+    "AMT381",
+    "AMT382",
+    "AMT383"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Degree Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AMT 371",
+    "why": "Certificate section not in text; named only in the Ford ASSET A.S. degree section"
+   },
+   {
+    "code": "AMT 381",
+    "why": "Certificate section not in text; named only in the Ford ASSET A.S. degree section"
+   },
+   {
+    "code": "AMT 382",
+    "why": "Certificate section not in text; named only in the Ford ASSET A.S. degree section"
+   },
+   {
+    "code": "AMT 383",
+    "why": "Certificate section not in text; named only in the Ford ASSET A.S. degree section"
+   }
+  ],
+  "notes": [
+   "The supplied page (181) prints only the Automotive Mechanics Technology (Ford ASSET) A.S. degree requirements (Total Units: 59; Local GE or Cal-GETC, at least 60 units total). It does not contain the Automotive Engine Performance (Ford ASSET) Certificate of Achievement section, so no blocks, totals, outcomes or careers were recorded for this award.",
+   "section_heading names the only requirements heading on the page, which belongs to the A.S. degree, not to this certificate.",
+   "The certificate's requirements likely appear on an adjacent page; a reviewer should check the next page of the catalog. Based on the closed list, it presumably requires AMT 371, AMT 381, AMT 382 and AMT 383 (13 units), but the text does not state this.",
+   "The degree description says students will be 'highly certified Ford/Lincoln Service Technicians'; it was not recorded as a career because it describes the degree program, not this certificate."
+  ]
+ },
+ "extracted_run": "39047009824"
+}

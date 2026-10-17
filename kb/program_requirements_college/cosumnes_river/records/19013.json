@@ -1,0 +1,504 @@
+{
+ "college": "Cosumnes River College",
+ "control_number": "19013",
+ "shape": "degree",
+ "title": "Environmental Studies & Sustainability",
+ "award": "A.S. Degree",
+ "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=384",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 13096,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 13096,
+    "output_tokens": 5187,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 5187,
+  "output_tokens_details": {
+   "thinking_tokens": 2120
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.15612,
+ "ms": 39035,
+ "seconds": 39.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 24,
+   "listed": 27,
+   "share": 0.889,
+   "missing": [
+    "BIOL300",
+    "BIOL307",
+    "BIOL310"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "BIOLC1001",
+    "BIOLC1001L",
+    "GEOG335",
+    "STATC1000H"
+   ],
+   "flagged": [
+    "BIOLC1001",
+    "BIOLC1001L",
+    "GEOG335",
+    "STATC1000H"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    31.0,
+    31.0
+   ],
+   "stated": [
+    31.0,
+    31.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 14,
+   "courses": 0,
+   "count": 14,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 26,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Degree Requirements",
+   "measure": "units",
+   "total_units": {
+    "min": 31,
+    "max": 31
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Articulate an understanding of the natural environment and human societies’ relationship to it. This includes the ability to:",
+    "Communicate effectively about environmental issues and sustainability, correctly utilizing vocabulary while indicating a complex understanding of disciplines in the program.",
+    "Articulate an awareness of the relevance of environmental studies to the student’s life and wider community at both local and global scales.",
+    "Recognize the importance of interdisciplinary and multidisciplinary approaches to solving environmental problems.",
+    "Evaluate and analyze environmental processes and human impacts on the natural environment. This includes the ability to:",
+    "Use logical and quantitative reasoning to solve environmental problems.",
+    "Analyze critical environmental problems facing the world today.",
+    "Evaluate data and draw reasonable conclusions.",
+    "Utilize the scientific method.",
+    "Employ information-gathering tools to investigate environmental ideas.",
+    "Recognize the ethical dimensions of decisions and actions and engage in the ethical reasoning necessary to be a responsible local and global citizen. This includes the ability to:",
+    "Recognize the ethical implications of research and the responsibility to use knowledge wisely.",
+    "Articulate the value of understanding environmental systems.",
+    "Transfer to a 4-year program and further prepare for employment in an environmental career."
+   ],
+   "careers": [
+    "Natural Resource Management",
+    "Forestry",
+    "Range Management",
+    "Park Ranger",
+    "Wildlife Biology",
+    "Agriculture",
+    "Soil and Water Conservation",
+    "Land Use Planning",
+    "Waste Management",
+    "Environmental Education",
+    "Environmental Policy And Planning",
+    "Environmental Law",
+    "Environmental Consulting",
+    "Environmental Lobbying",
+    "Environmental Planning",
+    "Environmental Protection",
+    "Environmental Compliance",
+    "Environmental Engineering",
+    "Air Quality Control",
+    "Landscape Architecture",
+    "Urban and Regional Planning",
+    "Alternative Energy Development",
+    "Risk Analysis",
+    "Contaminated Lands Reclamation",
+    "Research",
+    "Consulting"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "GEOG 302",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 350",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL 352",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON 306",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Field/Applied Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Natural Science/Ecology Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "GEOG 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Chemistry Courses",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "GEOG 391",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 392",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 393",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 394",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 390",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 331",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 335",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Earth Science Courses",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "BIOL C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL C1001L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 400",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Quantitative Courses",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "CHEM 305",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 400",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Social Science Courses",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "GEOG 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 301",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 305",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 301",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "A minimum of 3 units from the following",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ECON 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 330",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000E",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 400",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000H",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BIOL 300",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOL 307",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOL 310",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The text begins at 'Degree Requirements' on page 384; the program's own heading (e.g. 'A.S. in Environmental Studies & Sustainability') and description are not in the extracted text, so section_heading uses the printed 'Degree Requirements'.",
+   "Block headings appear shifted by one position relative to their course lists (e.g. 'Chemistry Courses:' precedes geography/geology field studies and GIS courses; 'Quantitative Courses:' precedes CHEM 305/400; 'Social Science Courses:' precedes physical geography/geology; the statistics/calculus list has no heading). Blocks are named by the heading printed directly above each list. Likely intended structure: Core = GEOG 302, BIOL 350/352, ECON 306, ECON C2001, GEOG 310 (15 units); Field/Applied = field studies/GIS (3); Natural Science/Ecology = BIOL courses (3); Chemistry = CHEM (4); Earth Science = GEOG 300/301/305, GEOL 300/301 (3); Quantitative = statistics/calculus (3); this sums to the printed 31. Reviewer should verify against the web catalog.",
+   "STAT C1000H (honors) is printed as a separate row, not as an 'or' twin of STAT C1000E, so it is recorded as its own course.",
+   "Outcomes are printed as PSLO-1 to PSLO-4 headings, each with numbered sub-abilities; each heading and sub-item is recorded as its own entry with the 'PSLO-n:' label and numbers removed. PSLO-4 continues on page 385.",
+   "Degree is completed with the Local GE pattern or Cal-GETC plus sufficient electives for at least 60 units; no degree total or GE unit figure is printed for this award.",
+   "Pages 385-387 contain the A.S. in General Science and A.S. in Geography sections, which were not used."
+  ]
+ },
+ "extracted_run": "39047009824"
+}
