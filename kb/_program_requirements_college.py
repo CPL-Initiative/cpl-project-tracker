@@ -1824,9 +1824,11 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
     if reads_as_pdf(reg) and (start or reg.get("procedure")):
         recs = capture_pdf(college, out_dir, programs, reg, report)
         return finish_capture(college, out_dir, recs, report, t0)
-    if not start or platform not in ("courseleaf", "curriqunet", "elumen", "acalog"):
+    # A college's own HTML catalog (custom_html, S404) takes CourseLeaf's road: its
+    # sitemap, or its front page's program indexes, then each page's children.
+    if not start or platform not in ("courseleaf", "curriqunet", "elumen", "acalog", "custom_html"):
         # Phase 2 opens on CourseLeaf (Cerritos), curriQunet (S357), eLumen (S380) and Acalog (S389); another platform names its own enumeration first.
-        report["stopped"] = "this pass enumerates CourseLeaf, curriQunet, eLumen and Acalog catalogs; %s reads %s" % (college, platform)
+        report["stopped"] = "this pass enumerates CourseLeaf, curriQunet, eLumen, Acalog and own-HTML catalogs; %s reads %s" % (college, platform)
         _write(os.path.join(out_dir, "capture.json"), report)
         print(report["stopped"])
         return 1

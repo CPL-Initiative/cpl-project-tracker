@@ -1521,9 +1521,12 @@ check(rep_menu["acalog"]["catalog_year_read"] == "2025-2026" and rep_menu["acalo
 CS = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "kb", "_program_requirements_college.py")).read()
 check("reg = dict(reg, catalog_year=read_year)" in CS and 'report["catalog_year"] = read_year' in CS,
       "an Acalog year read from the page fills a registry row that names none, in the records and the report alike")
-check('platform not in ("courseleaf", "curriqunet", "elumen", "acalog")' in CS
+check('platform not in ("courseleaf", "curriqunet", "elumen", "acalog", "custom_html")' in CS
       and 'platform not in ("curriqunet", "elumen", "acalog")' in CS,
       "the capture reads Acalog, without the child-page walk or the link search its program list makes needless")
+# S404: a college's own HTML catalog takes the sitemap road, with the child-page walk and the link search.
+check('else:\n            scope = district_scope(start' in CS and '"custom_html"' in CS.split('def capture(')[1].split('delay = ')[0],
+      "the capture reads an own-HTML catalog (custom_html) through the sitemap, its children and the link search")
 
 # A dropped connection is tried again (S401: Las Positas's two ECONNRESETs left
 # 20 of 201 found; Butte's three left nodes unread). A status is never retried.
