@@ -1553,6 +1553,34 @@ for final in (FlakyResp(404, None), Exception("Timeout 60000ms exceeded")):
     check(C.cq_json(fr, "https://x.curriqunet.com/b", ferr) is None and fr.loads == 1,
           "an HTTP status or another error is final, never retried: %r" % ferr)
 
+# ── a whole-catalog PDF (S403): the program's own page, never the course descriptions ──
+# A catalog PDF prints each subject's course descriptions, which name an A.S.'s
+# courses too, and prints the certificate after the A.S. with the same list. The
+# heading that names the title and the award decides; the text opens on it.
+PDF_COURSES = [{"code": c} for c in ("ACCT 101", "ACCT 102", "ACCT 210", "BUS 120")]
+PDF_PAGES = [
+    "Course Descriptions\nAccounting\nACCT 101 Financial Accounting 4 units\nACCT 102 Managerial "
+    "Accounting 4 units\nACCT 210 Cost Accounting 3 units\nACCT 220 Tax 3 units",
+    "Welcome to the college",
+    "Business Administration, A.A.\nBUS 100 Intro 3\nBUS 120 Law 3",
+    "Accounting, Associate in Science\nRequired courses\nACCT 101 Financial Accounting 4\n"
+    "ACCT 102 Managerial Accounting 4\nACCT 210 Cost Accounting 3\nBUS 120 Business Law 3\nTotal 14",
+    "Accounting Certificate of Achievement\nACCT 101 4\nACCT 102 4\nACCT 210 3\nBUS 120 3",
+]
+as_ = C.pdf_program_pages(PDF_PAGES, {"title": "Accounting", "award": "A.S. Degree"}, PDF_COURSES)
+check(as_ and as_["pages"][0] == 4 and as_["named"] and as_["coverage"] == 1.0
+      and as_["text"].startswith("[page 4]\nAccounting, Associate in Science"),
+      "the A.S. opens on its own heading, not the course descriptions: %r" % (as_ and as_["pages"]))
+coa = C.pdf_program_pages(PDF_PAGES, {"title": "Accounting", "award": "Certificate of Achievement"}, PDF_COURSES)
+check(coa and coa["pages"] == [5] and coa["named"],
+      "the certificate printed after the A.S. takes its own page: %r" % (coa and coa["pages"]))
+check(C.pdf_program_pages(PDF_PAGES, {"title": "Welding", "award": "A.S. Degree"},
+                          [{"code": "WELD 101"}]) is None,
+      "a program the PDF does not name finds no pages")
+check(C.is_pdf_catalog({"catalog_platform": "pdf"}) and C.is_pdf_catalog({"catalog_url": "https://x.edu/c.PDF?v=2"})
+      and not C.is_pdf_catalog({"catalog_platform": "courseleaf", "catalog_url": "https://x.edu/catalog/"}),
+      "a PDF catalog is known by its platform, its format or its address")
+
 if failures:
     print("FAIL: %d" % len(failures))
     for f in failures:
