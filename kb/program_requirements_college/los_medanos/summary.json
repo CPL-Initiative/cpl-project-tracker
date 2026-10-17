@@ -2,270 +2,44 @@
  "college": "Los Medanos College",
  "programs": 103,
  "with_closed_list": 97,
- "found": 7,
- "extracted": 7,
+ "found": 83,
+ "extracted": 83,
  "errors": 0,
- "passed_machine_checks": 4,
+ "passed_machine_checks": 29,
  "failed": {
-  "coverage": 0,
-  "invented": 0,
-  "arithmetic": 3,
+  "coverage": 8,
+  "invented": 8,
+  "arithmetic": 51,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 0.51,
- "cost_per_program": 0.0727,
+ "cost_usd": 6.01,
+ "cost_per_program": 0.0724,
  "not_found": [
-  {
-   "control_number": "01528",
-   "title": "Accounting",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "01530",
-   "title": "Small Business Operations",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "01531",
-   "title": "Management and Supervision: Business",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "01536",
-   "title": "Journalsim",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "01540",
-   "title": "Electrical Technology",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "01544",
-   "title": "Welding Technology",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "01547",
-   "title": "Music",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "01554",
-   "title": "Vocational Nursing",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "01576",
-   "title": "Fire Technology",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "01591",
-   "title": "Recording Arts",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://lmc.elumenapp.com/catalog/26-27/program/art-history-associate-of-arts-degree-for-transfer-aa-t-fall-2026",
-    "label": {
-     "award": 1,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 10,
-    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
-    "error": null,
-    "chars": {
-     "body": 4468,
-     "content": 4468,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "09568",
-   "title": "Instrumentation Technology",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "11090",
-   "title": "Automotive Technology",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "16971",
-   "title": "Process Technology",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "17039",
-   "title": "Engineering",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "21902",
-   "title": "Accounting",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "21903",
-   "title": "Management and Supervision: Business",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "21904",
-   "title": "Small Business Operations",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "21907",
-   "title": "Electrical Technology",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "21908",
-   "title": "Instrumentation Technology",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "21910",
-   "title": "Process Technology",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "21911",
-   "title": "Automotive Technology",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "21913",
-   "title": "Recording Arts",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "near_miss": {
-    "url": "https://lmc.elumenapp.com/catalog/26-27/program/art-history-associate-of-arts-degree-for-transfer-aa-t-fall-2026",
-    "label": {
-     "award": 0,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 10,
-    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
-    "error": null,
-    "chars": {
-     "body": 4468,
-     "content": 4468,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "21916",
-   "title": "Early Childhood Education",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "21917",
-   "title": "Fire Technology",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "21918",
-   "title": "Fire Academy",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "30466",
-   "title": "Computer Applications Support Specialist",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
   {
    "control_number": "30467",
    "title": "Information Technology",
    "award": "A.S. Degree",
    "near_miss": {
-    "why": "no page read names the program"
+    "url": "https://lmc.elumenapp.com/catalog/26-27/program/information-technology-associate-of-science-degree-as-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.417,
+    "body": 0.417,
+    "content": 0.417,
+    "net": 5,
+    "listed": 12,
+    "why": "coverage 0.42 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 1715,
+     "content": 1715,
+     "tabs": 0
+    },
+    "tab_panels": []
    }
   },
   {
@@ -273,23 +47,25 @@
    "title": "Information Technology (Advanced)",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "30469",
-   "title": "Information Technology (Basic)",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "30473",
-   "title": "Computer  Applications Support Specialist (Advanced)",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
+    "url": "https://lmc.elumenapp.com/catalog/26-27/program/information-technology-advanced-certificate-of-achievement-coa-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.3,
+    "body": 0.3,
+    "content": 0.3,
+    "net": 3,
+    "listed": 10,
+    "why": "coarse net: the page's code tokens name 3 of 10 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1722,
+     "content": 1722,
+     "tabs": 0
+    },
+    "tab_panels": []
    }
   },
   {
@@ -297,239 +73,25 @@
    "title": "Computer Applications Support Specialist (Basic)",
    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
    "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "30835",
-   "title": "Psychology",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "30849",
-   "title": "Sociology",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "30894",
-   "title": "Early Childhood Education",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31656",
-   "title": "Theatre Arts",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "url": "https://lmc.elumenapp.com/catalog/26-27/program/art-history-associate-of-arts-degree-for-transfer-aa-t-fall-2026",
-    "label": {
-     "award": 1,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 7,
-    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
-    "error": null,
-    "chars": {
-     "body": 4468,
-     "content": 4468,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "31768",
-   "title": "Associate in Arts in Acting",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://lmc.elumenapp.com/catalog/26-27/program/art-history-associate-of-arts-degree-for-transfer-aa-t-fall-2026",
-    "label": {
-     "award": 1,
-     "title": 0.667
-    },
-    "field": "innerText",
-    "coverage": 0.0,
-    "body": 0.0,
-    "content": 0.0,
-    "net": 0,
-    "listed": 7,
-    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
-    "error": null,
-    "chars": {
-     "body": 4468,
-     "content": 4468,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "31782",
-   "title": "Kinesiology",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31841",
-   "title": "Physics",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "32029",
-   "title": "Liberal Arts:  Behavioral Science and Social Science",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "32030",
-   "title": "Liberal Arts:  Math and Science",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "32031",
-   "title": "Liberal Arts:  Arts and Humanities",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://lmc.elumenapp.com/catalog/26-27/program/art-history-associate-of-arts-degree-for-transfer-aa-t-fall-2026",
-    "label": {
-     "award": 1,
-     "title": 0.5
-    },
-    "field": "innerText",
-    "coverage": 0.268,
-    "body": 0.268,
-    "content": 0.268,
-    "net": 22,
-    "listed": 82,
-    "why": "coarse net: the page's code tokens name 22 of 82 listed courses",
-    "error": null,
-    "chars": {
-     "body": 4468,
-     "content": 4468,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "32188",
-   "title": "History",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "url": "https://lmc.elumenapp.com/catalog/26-27/program/art-history-associate-of-arts-degree-for-transfer-aa-t-fall-2026",
+    "url": "https://lmc.elumenapp.com/catalog/26-27/program/computer-applications-support-specialist-basic-certificate-of-achievement-fall-2026",
     "label": {
      "award": 1,
      "title": 1.0
     },
     "field": "innerText",
-    "coverage": 0.103,
-    "body": 0.103,
-    "content": 0.103,
-    "net": 3,
-    "listed": 29,
-    "why": "coarse net: the page's code tokens name 3 of 29 listed courses",
+    "coverage": 0.25,
+    "body": 0.25,
+    "content": 0.25,
+    "net": 1,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 1 of 4 listed courses",
     "error": null,
     "chars": {
-     "body": 4468,
-     "content": 4468,
+     "body": 1182,
+     "content": 1182,
      "tabs": 0
     },
     "tab_panels": []
-   }
-  },
-  {
-   "control_number": "32221",
-   "title": "Administration of Justice",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "32228",
-   "title": "Administration of Justice",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "32233",
-   "title": "Criminal Law",
-   "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "32455",
-   "title": "Journalism",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "32483",
-   "title": "English",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "32655",
-   "title": "Computer Science",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "32657",
-   "title": "Mathematics",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "32855",
-   "title": "Anthropology",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "32867",
-   "title": "Music",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
    }
   },
   {
@@ -549,59 +111,29 @@
    }
   },
   {
-   "control_number": "35128",
-   "title": "Biology",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "35285",
-   "title": "Chemistry",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "35433",
-   "title": "Spanish",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "36228",
-   "title": "Social Justice Studies:  LGBTQ Studies",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "36496",
-   "title": "Transit Electrical Technology",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "36530",
-   "title": "Social Justice Studies: African-American Studies",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
    "control_number": "36611",
    "title": "Foundational Grammar for General Communication",
    "award": "Noncredit program",
    "near_miss": {
-    "why": "no page read names the program"
+    "url": "https://lmc.elumenapp.com/catalog/26-27/program/foundational-grammar-for-general-communication-college-skills-certificate-fall-2022",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2565,
+     "content": 2565,
+     "tabs": 0
+    },
+    "tab_panels": []
    }
   },
   {
@@ -609,63 +141,25 @@
    "title": "Essential Pronunciation and Conversation",
    "award": "Noncredit program",
    "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38236",
-   "title": "Humanities",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38361",
-   "title": "American Sign Language",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38363",
-   "title": "American Sign Language",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38365",
-   "title": "Spanish",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38393",
-   "title": "Philosophy",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38480",
-   "title": "Social Justice Studies:  Chicano/a Studies",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38510",
-   "title": "Political Science",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
+    "url": "https://lmc.elumenapp.com/catalog/26-27/program/essential-pronunciation-conversation-college-skills-certificate-fall-2022",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2562,
+     "content": 2562,
+     "tabs": 0
+    },
+    "tab_panels": []
    }
   },
   {
@@ -673,7 +167,25 @@
    "title": "Fundamental Writing Skills",
    "award": "Noncredit program",
    "near_miss": {
-    "why": "no page read names the program"
+    "url": "https://lmc.elumenapp.com/catalog/26-27/program/fundamental-writing-skills-college-skills-certificate-fall-2022",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2505,
+     "content": 2505,
+     "tabs": 0
+    },
+    "tab_panels": []
    }
   },
   {
@@ -681,7 +193,25 @@
    "title": "Intermediate English for College and Career Success",
    "award": "Noncredit program",
    "near_miss": {
-    "why": "no page read names the program"
+    "url": "https://lmc.elumenapp.com/catalog/26-27/program/intermediate-english-for-college-career-success-college-skills-certificate-fall-2022",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2688,
+     "content": 2688,
+     "tabs": 0
+    },
+    "tab_panels": []
    }
   },
   {
@@ -689,71 +219,25 @@
    "title": "Advanced English for Academic and Professional Advancement",
    "award": "Noncredit program",
    "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "39829",
-   "title": "College & Career Preparation",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "39830",
-   "title": "Construction Pre-Apprenticeship",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "40610",
-   "title": "Basic Drone Piloting",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "41896",
-   "title": "Business Administration 2.0",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "42574",
-   "title": "Law, Public Policy and Society",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "42679",
-   "title": "Ethnic Studies",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "42680",
-   "title": "Hip Hop Studies",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "42681",
-   "title": "Creative Writing",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
+    "url": "https://lmc.elumenapp.com/catalog/26-27/program/advanced-english-for-academic-professional-advancement-skills-college-skills-certificate-fall-2022",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2686,
+     "content": 2686,
+     "tabs": 0
+    },
+    "tab_panels": []
    }
   },
   {
@@ -761,63 +245,25 @@
    "title": "College ESL Success",
    "award": "Noncredit program",
    "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "44331",
-   "title": "Automotive Maintenance, Detailing and Surface Enhancement",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "44473",
-   "title": "Associate in Science  in Early Childhood Education Master Teacher",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "44474",
-   "title": "Associate in Science in Early Childhood Education Site Supervisor",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "44494",
-   "title": "Welding Technology",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "44534",
-   "title": "Communication Studies 2.0",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "44667",
-   "title": "Early Childhood Education Site Supervisor",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "44821",
-   "title": "Early Childhood Education Master Teacher",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
+    "url": "https://lmc.elumenapp.com/catalog/26-27/program/intermediate-english-for-college-career-success-college-skills-certificate-fall-2022",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2688,
+     "content": 2688,
+     "tabs": 0
+    },
+    "tab_panels": []
    }
   },
   {
@@ -841,9 +287,27 @@
    "title": "Non-Credit Business Communication",
    "award": "Noncredit program",
    "near_miss": {
-    "why": "no page read names the program"
+    "url": "https://lmc.elumenapp.com/catalog/26-27/program/automotive-maintenance-detailing-and-surface-enhancement-certificate-of-completion-non-credit-fall-2024",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1506,
+     "content": 1506,
+     "tabs": 0
+    },
+    "tab_panels": []
    }
   }
  ],
- "run": "38986123746"
+ "run": "39001267800"
 }
