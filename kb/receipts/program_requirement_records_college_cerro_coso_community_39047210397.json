@@ -1,0 +1,126 @@
+{
+ "college": "Cerro Coso Community College",
+ "load_run": "39047210397",
+ "function": "program_requirement_records_college_load",
+ "at": "2026-10-17T15:56:41Z",
+ "records": 65,
+ "posted": 52,
+ "batches": 3,
+ "inserted": 52,
+ "kept": 0,
+ "skipped": [
+  {
+   "control_number": "01980",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "11580",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "20632",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "30793",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33715",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "38666",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "38705",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "42678",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "44598",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "44996",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46220",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46361",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46375",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "extracted_runs": [
+  "39046789844"
+ ],
+ "machine_pass": 25,
+ "inserted_keys": [
+  "01930",
+  "01946",
+  "10976",
+  "10977",
+  "11577",
+  "11578",
+  "11579",
+  "15576",
+  "18917",
+  "18952",
+  "18953",
+  "20640",
+  "30766",
+  "31066",
+  "31159",
+  "31540",
+  "31855",
+  "31961",
+  "31962",
+  "32606",
+  "33516",
+  "33718",
+  "33776",
+  "33889",
+  "35195",
+  "35273",
+  "38665",
+  "40250",
+  "40447",
+  "40448",
+  "40449",
+  "40707",
+  "40868",
+  "40922",
+  "40972",
+  "41968",
+  "43206",
+  "43663",
+  "43671",
+  "44085",
+  "44097",
+  "44364",
+  "44450",
+  "44726",
+  "44727",
+  "44728",
+  "44884",
+  "44885",
+  "45087",
+  "45235",
+  "45236",
+  "45237"
+ ],
+ "kept_keys": [],
+ "rollback": "delete from public.program_requirement_records where college = 'Cerro Coso Community College' and checked = false and control_number in ('01930', '01946', '10976', '10977', '11577', '11578', '11579', '15576', '18917', '18952', '18953', '20640', '30766', '31066', '31159', '31540', '31855', '31961', '31962', '32606', '33516', '33718', '33776', '33889', '35195', '35273', '38665', '40250', '40447', '40448', '40449', '40707', '40868', '40922', '40972', '41968', '43206', '43663', '43671', '44085', '44097', '44364', '44450', '44726', '44727', '44728', '44884', '44885', '45087', '45235', '45236', '45237');"
+}
