@@ -1643,6 +1643,12 @@ PI = ["Program list\nAccounting (Academic Plan E013343D) ACCT 101", "General edu
 check(C.pdf_program_pages(PI, {"title": "Accounting", "award": "Certificate of Achievement",
                                "control_number": "13343"}, AC_COURSES) == [2],
       "a control number on a page naming too few listed codes gives way to the page that covers the list")
+below = C.pdf_best("https://x.edu/c.pdf", ["Accounting\nACCT 101 4\nACCT 102 4\nACCT 210 3\nBUS 120 3\n"
+                                           "Accounting (Academic Plan E013343D)"],
+                   {"title": "Accounting", "award": "Certificate of Achievement", "control_number": "13343"},
+                   AC_COURSES, "pypdf")
+check(below and below["coverage"] == 1.0 and below["text"].startswith("[page 1]\nAccounting\nACCT 101"),
+      "a control number printed below the list never cuts the list away (Pierce)")
 check(C.reads_as_pdf({"procedure": {"catalog": {"start": "https://x.edu/catalog", "follow": "2026", "format": "pdf"}}})
       and not C.reads_as_pdf({"catalog_format": "single_pdf", "catalog_url": "https://www.ccsf.edu/catalog"}),
       "a procedure record whose catalog step is a PDF reads as one")

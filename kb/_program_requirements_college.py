@@ -1672,11 +1672,16 @@ def pdf_best(url: str, pages: list[str], program: dict, courses: list[dict], ext
     parts = []
     for n, i in enumerate(run):
         txt = pages[i]
+        cut = txt
         if n == 0 and cn_at >= 0:
             # From the start of the line that prints the control number: the heading.
-            txt = txt[txt.rfind("\n", 0, cn_at) + 1:]
+            cut = txt[txt.rfind("\n", 0, cn_at) + 1:]
         elif n == 0 and head[0] == 1.0 and head[1] and head[2] > 0:
-            txt = txt[head[2]:]
+            cut = txt[head[2]:]
+        # Only while the cut keeps every listed code the page names: Pierce prints the number
+        # and the heading's words below the list, and the cut left 80 programs no codes (S403).
+        if len(P.find_codes(cut, courses)) == len(P.find_codes(txt, courses)):
+            txt = cut
         parts.append("[page %d]\n%s" % (i + 1, txt))
     text = "\n\n".join(parts)
     found = P.find_codes(text, courses)
