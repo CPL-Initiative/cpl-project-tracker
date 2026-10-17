@@ -1,0 +1,215 @@
+{
+ "college": "Clovis Community College",
+ "control_number": "33434",
+ "shape": "degree",
+ "title": "Business Administration Marketing",
+ "award": "A.S. Degree",
+ "source_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=110",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7345,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7345,
+    "output_tokens": 1115,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1115,
+  "output_tokens_details": {
+   "thinking_tokens": 185
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05168,
+ "ms": 9455,
+ "seconds": 9.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 15,
+   "share": 0.0,
+   "missing": [
+    "ACCTG40",
+    "ACCTG4A",
+    "BA10",
+    "BA19V",
+    "BA23",
+    "BA33",
+    "BA39",
+    "BA47",
+    "BA5",
+    "ECONC2001",
+    "ECONC2002",
+    "IS15",
+    "MKTG10",
+    "MKTG11",
+    "MKTG12"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not found in text (page 110 shows only SMALL BUSINESS MANAGEMENT sections and a COMMUNICATION outcomes fragment)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ACCTG 40",
+    "why": "Marketing A.S. section not in the text; appears only in Small Business Management sections"
+   },
+   {
+    "code": "ACCTG 4A",
+    "why": "Marketing A.S. section not in the text; appears only as a substitute in Small Business Management sections"
+   },
+   {
+    "code": "BA 10",
+    "why": "Marketing A.S. section not in the text; appears only in Small Business Management sections"
+   },
+   {
+    "code": "BA 19V",
+    "why": "not in the text"
+   },
+   {
+    "code": "BA 23",
+    "why": "Marketing A.S. section not in the text; appears only in Small Business Management A.S."
+   },
+   {
+    "code": "BA 33",
+    "why": "Marketing A.S. section not in the text; appears only in Small Business Management sections"
+   },
+   {
+    "code": "BA 39",
+    "why": "Marketing A.S. section not in the text; appears only in Small Business Management A.S."
+   },
+   {
+    "code": "BA 47",
+    "why": "Marketing A.S. section not in the text; appears only in Small Business Management sections"
+   },
+   {
+    "code": "BA 5",
+    "why": "Marketing A.S. section not in the text; appears only in Small Business Management A.S."
+   },
+   {
+    "code": "ECON C2001",
+    "why": "not in the text"
+   },
+   {
+    "code": "ECON C2002",
+    "why": "not in the text"
+   },
+   {
+    "code": "IS 15",
+    "why": "Marketing A.S. section not in the text; appears only in Small Business Management sections"
+   },
+   {
+    "code": "MKTG 10",
+    "why": "Marketing A.S. section not in the text; appears only in Small Business Management sections"
+   },
+   {
+    "code": "MKTG 11",
+    "why": "not in the text"
+   },
+   {
+    "code": "MKTG 12",
+    "why": "Marketing A.S. section not in the text; appears only in Small Business Management certificate"
+   }
+  ],
+  "notes": [
+   "The supplied catalog text (page 110) does not contain the Business Administration Marketing A.S. Degree section. It contains Small Business Management A.S. (C.2030.AS) and Certificate of Achievement (C.2030.CA) sections, plus the start of a COMMUNICATION section with program learning outcomes; none of these belong to the requested award, so no blocks, totals, outcomes or careers were recorded.",
+   "Reviewer should locate the correct page for Business Administration Marketing in the 2026-2027 Clovis catalog (likely an adjacent page) and re-extract."
+  ]
+ },
+ "extracted_run": "39006155986"
+}

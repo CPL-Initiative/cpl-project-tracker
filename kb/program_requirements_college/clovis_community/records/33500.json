@@ -1,0 +1,286 @@
+{
+ "college": "Clovis Community College",
+ "control_number": "33500",
+ "shape": "adt",
+ "title": "Kinesiology",
+ "award": "A.A- T Degree",
+ "source_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=147",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8880,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8880,
+    "output_tokens": 3357,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3357,
+  "output_tokens_details": {
+   "thinking_tokens": 1586
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10266,
+ "ms": 29150,
+ "seconds": 29.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 29,
+   "share": 0.0,
+   "missing": [
+    "BA23",
+    "BIOL20",
+    "BIOL22",
+    "BIOL5",
+    "CHEM1A",
+    "CHEM3A",
+    "DANCE10",
+    "DANCE12A",
+    "DANCE14",
+    "DANCE15",
+    "DANCE28",
+    "DANCE9",
+    "HLTH2",
+    "KINES22",
+    "PE12",
+    "PE12B",
+    "PE14",
+    "PE15",
+    "PE15B",
+    "PE16",
+    "PE19",
+    "PE29",
+    "PE49A",
+    "PE6",
+    "PE7",
+    "PE71",
+    "PHYS2A",
+    "PHYS4A",
+    "STATC1000"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not found in the text (Kinesiology A.A.-T section not included)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BA 23",
+    "why": "not in the text"
+   },
+   {
+    "code": "BIOL 20",
+    "why": "appears only in an unnamed non-transfer program's list, not the A.A.-T"
+   },
+   {
+    "code": "BIOL 22",
+    "why": "appears only in an unnamed non-transfer program's list, not the A.A.-T"
+   },
+   {
+    "code": "BIOL 5",
+    "why": "appears only as the core of an unnamed non-transfer program, not the A.A.-T"
+   },
+   {
+    "code": "CHEM 1A",
+    "why": "named only in the Physical Science A.S. section"
+   },
+   {
+    "code": "CHEM 3A",
+    "why": "named only in an unnamed program and the Physical Science A.S. section"
+   },
+   {
+    "code": "DANCE 10",
+    "why": "appears only in an unnamed non-transfer program's list, not the A.A.-T"
+   },
+   {
+    "code": "DANCE 12A",
+    "why": "appears only in an unnamed non-transfer program's list, not the A.A.-T"
+   },
+   {
+    "code": "DANCE 14",
+    "why": "appears only in an unnamed non-transfer program's list, not the A.A.-T"
+   },
+   {
+    "code": "DANCE 15",
+    "why": "appears only in an unnamed non-transfer program's list, not the A.A.-T"
+   },
+   {
+    "code": "DANCE 28",
+    "why": "appears only in an unnamed non-transfer program's list, not the A.A.-T"
+   },
+   {
+    "code": "DANCE 9",
+    "why": "appears only in an unnamed non-transfer program's list, not the A.A.-T"
+   },
+   {
+    "code": "HLTH 2",
+    "why": "appears only in an unnamed non-transfer program's list, not the A.A.-T"
+   },
+   {
+    "code": "KINES 22",
+    "why": "appears only in an unnamed non-transfer program's list, not the A.A.-T"
+   },
+   {
+    "code": "PE 12",
+    "why": "appears only in an unnamed non-transfer program's list, not the A.A.-T"
+   },
+   {
+    "code": "PE 12B",
+    "why": "appears only in an unnamed non-transfer program's list, not the A.A.-T"
+   },
+   {
+    "code": "PE 14",
+    "why": "appears only in an unnamed non-transfer program's list, not the A.A.-T"
+   },
+   {
+    "code": "PE 15",
+    "why": "appears only in an unnamed non-transfer program's list, not the A.A.-T"
+   },
+   {
+    "code": "PE 15B",
+    "why": "appears only in an unnamed non-transfer program's list, not the A.A.-T"
+   },
+   {
+    "code": "PE 16",
+    "why": "appears only in an unnamed non-transfer program's list, not the A.A.-T"
+   },
+   {
+    "code": "PE 19",
+    "why": "appears only in an unnamed non-transfer program's list, not the A.A.-T"
+   },
+   {
+    "code": "PE 29",
+    "why": "appears only in an unnamed non-transfer program's list, not the A.A.-T"
+   },
+   {
+    "code": "PE 49A",
+    "why": "appears only in an unnamed non-transfer program's list, not the A.A.-T"
+   },
+   {
+    "code": "PE 6",
+    "why": "appears only in an unnamed non-transfer program's list, not the A.A.-T"
+   },
+   {
+    "code": "PE 7",
+    "why": "appears only in an unnamed non-transfer program's list, not the A.A.-T"
+   },
+   {
+    "code": "PE 71",
+    "why": "appears only in an unnamed non-transfer program's list, not the A.A.-T"
+   },
+   {
+    "code": "PHYS 2A",
+    "why": "named only in the Physical Science A.S. section"
+   },
+   {
+    "code": "PHYS 4A",
+    "why": "named only in the Physical Science A.S. section"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The text (catalog pages 147-148) does not contain the Kinesiology A.A.-T section. It begins mid-program with an unnamed section whose heading is on the previous page (Required Core Course BIOL 5; minimum 8 units from BIOL 20, BIOL 22, CHEM 3A, CHEM 10, FN 35, FN 40, HLTH 1, HLTH 2, KINES 22; 3 units of DANCE/PE activity and intercollegiate courses; 'Total Units for the Major: 18'; Advisor: Albertson, Ramirez), followed by PHYSICAL SCIENCE (A.S.) and SOCIAL SCIENCE (A.A.).",
+   "That unnamed section is not read as the A.A.-T: KINES 22 is optional there (the Kinesiology TMC requires it as core), it has no statistics or physics options (BA 23, STAT C1000, PHYS 2A/4A, CHEM 1A are on the closed list), it uses local 'Select additional units from the above areas to total at least 18 units' wording, and it sits alphabetically just before Physical Science, suggesting a local Physical Education/Kinesiology A.A. Reviewer should check the page before 147 for its heading and locate the actual Kinesiology A.A.-T page in the catalog.",
+   "No blocks, totals, outcomes or careers recorded because the named award's section is absent from the provided text."
+  ]
+ },
+ "extracted_run": "39006155986"
+}

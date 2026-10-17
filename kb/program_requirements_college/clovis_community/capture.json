@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 129,
  "with_closed_list": 121,
- "started": "2026-10-17T05:23:10Z",
+ "started": "2026-10-17T05:25:41Z",
  "pdf": {
   "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf",
   "access": "ok",
@@ -22,7 +22,7 @@
   "extractor": "pypdf"
  },
  "loads": 1,
- "seconds": 39.4,
+ "seconds": 39.5,
  "found": 115,
  "by_method": {
   "no_closed_list": 8,
@@ -1379,5 +1379,5 @@
    }
   ]
  },
- "run": "39005932890"
+ "run": "39006155986"
 }
