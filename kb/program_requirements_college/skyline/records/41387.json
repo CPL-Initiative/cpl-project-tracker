@@ -1,0 +1,20 @@
+{
+ "college": "Skyline College",
+ "control_number": "41387",
+ "shape": "certificate",
+ "title": "User Experience Design",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://catalog.skylinecollege.edu/current/programs/user-experience-design-ca.php",
+ "record_shape": 6,
+ "model": null,
+ "stop_reason": null,
+ "usage": null,
+ "cost_usd": null,
+ "ms": null,
+ "seconds": 1.6,
+ "parts": null,
+ "error": "HTTP 401: {\"error\":\"unauthorized\"}",
+ "score": null,
+ "record": null,
+ "extracted_run": "39032119511"
+}

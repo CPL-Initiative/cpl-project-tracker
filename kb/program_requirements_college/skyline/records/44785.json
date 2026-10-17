@@ -1,0 +1,20 @@
+{
+ "college": "Skyline College",
+ "control_number": "44785",
+ "shape": "adt",
+ "title": "Philosophy",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.skylinecollege.edu/current/programs/philosophy-for-transfer-aa-t.php",
+ "record_shape": 6,
+ "model": null,
+ "stop_reason": null,
+ "usage": null,
+ "cost_usd": null,
+ "ms": null,
+ "seconds": 2.0,
+ "parts": null,
+ "error": "HTTP 401: {\"error\":\"unauthorized\"}",
+ "score": null,
+ "record": null,
+ "extracted_run": "39032119511"
+}

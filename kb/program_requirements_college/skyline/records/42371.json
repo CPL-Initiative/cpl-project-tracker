@@ -1,0 +1,20 @@
+{
+ "college": "Skyline College",
+ "control_number": "42371",
+ "shape": "certificate",
+ "title": "Barbering",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.skylinecollege.edu/current/programs/barbering-ca.php",
+ "record_shape": 6,
+ "model": null,
+ "stop_reason": null,
+ "usage": null,
+ "cost_usd": null,
+ "ms": null,
+ "seconds": 2.3,
+ "parts": null,
+ "error": "HTTP 401: {\"error\":\"unauthorized\"}",
+ "score": null,
+ "record": null,
+ "extracted_run": "39032119511"
+}

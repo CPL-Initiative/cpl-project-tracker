@@ -1,0 +1,20 @@
+{
+ "college": "Skyline College",
+ "control_number": "44779",
+ "shape": "adt",
+ "title": "Computer Science",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.skylinecollege.edu/current/programs/computer-science-for-transfer-as-t.php",
+ "record_shape": 6,
+ "model": null,
+ "stop_reason": null,
+ "usage": null,
+ "cost_usd": null,
+ "ms": null,
+ "seconds": 1.8,
+ "parts": null,
+ "error": "HTTP 401: {\"error\":\"unauthorized\"}",
+ "score": null,
+ "record": null,
+ "extracted_run": "39032119511"
+}
