@@ -1,0 +1,24 @@
+{
+ "_readme": "S408 SkyAgave, 2026-10-17. College of the Desert's catalog page links its 2026-2027 catalog twice: one PDF (the procedure's catalog step, which the harvest read: 323 records loaded, run 39061689556) and an online catalog at catalog.collegeofthedesert.edu, which the page calls the most current. This read opens the online catalog's front page and one program link to name its platform (Acalog, CourseLeaf, Coursedog, SmartCatalog, eLumen or the college's own HTML) and its year, so the procedure record can say which copy the reader should follow. Pages only, no model call, no table write.",
+ "college": "College of the Desert",
+ "questions": {
+  "platform": "Which catalog platform serves catalog.collegeofthedesert.edu, read from its page addresses, its scripts' data calls and its footer.",
+  "year": "Which catalog year the online catalog shows, and whether it lists programs with their requirements."
+ },
+ "keywords": [
+  "[Aa]calog|catoid|preview_program",
+  "[Cc]ourse[Ll]eaf|sitemap",
+  "[Cc]oursedog|smartcatalog|[Ee][Ll]umen|[Cc]urriq",
+  "20\\d\\d\\s*[-–]\\s*20\\d\\d",
+  "[Pp]rogram|[Dd]egree|[Cc]ertificate"
+ ],
+ "pages": [
+  {
+   "answers": ["platform", "year"],
+   "url": "https://catalog.collegeofthedesert.edu/",
+   "network": true,
+   "links": "program|degree|catoid|preview|areas-of-study|programs",
+   "follow": "[Pp]rograms|[Dd]egrees|[Aa]reas of [Ss]tudy"
+  }
+ ]
+}
